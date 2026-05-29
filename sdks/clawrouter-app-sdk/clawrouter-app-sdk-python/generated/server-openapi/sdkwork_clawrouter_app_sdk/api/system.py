@@ -272,12 +272,11 @@ class SystemPromotionsCodesRedemptionsApi:
         self._client = client
 
 
-    def create(self, body: PromotionCodeRedemptionRequest, idempotency_key: str, x_request_id: Optional[str] = None) -> PromotionsCodesRedemptionsCreateResult:
+    def create(self, body: PromotionCodeRedemptionRequest, idempotency_key: str) -> PromotionsCodesRedemptionsCreateResult:
         """Promotion Code Redemption Create"""
         request_headers = build_request_headers(
             {
                 'Idempotency-Key': {'value': idempotency_key, 'style': 'simple', 'explode': False},
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
             },
             {}
         )
@@ -291,34 +290,31 @@ class SystemPromotionsDiscountApplicationsApi:
         self.reversals = SystemPromotionsDiscountApplicationsReversalsApi(client)
 
 
-    def create(self, body: PromotionCommandRequest, idempotency_key: str, x_request_id: Optional[str] = None) -> PromotionsDiscountApplicationsCreateResult:
+    def create(self, body: PromotionCommandRequest, idempotency_key: str) -> PromotionsDiscountApplicationsCreateResult:
         """Promotion Discount Application Create"""
         request_headers = build_request_headers(
             {
                 'Idempotency-Key': {'value': idempotency_key, 'style': 'simple', 'explode': False},
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
             },
             {}
         )
         return self._client.post(f"/app/v3/api/promotions/discount_applications", json=body, headers=request_headers)
 
-    def release(self, application_id: str, body: PromotionCommandRequest, idempotency_key: str, x_request_id: Optional[str] = None) -> PromotionsDiscountApplicationsReleaseResult:
+    def release(self, application_id: str, body: PromotionCommandRequest, idempotency_key: str) -> PromotionsDiscountApplicationsReleaseResult:
         """Promotion Discount Application Release"""
         request_headers = build_request_headers(
             {
                 'Idempotency-Key': {'value': idempotency_key, 'style': 'simple', 'explode': False},
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
             },
             {}
         )
         return self._client.post(f"/app/v3/api/promotions/discount_applications/{serialize_path_parameter(application_id, {'name': 'applicationId', 'style': 'simple', 'explode': False})}/releases", json=body, headers=request_headers)
 
-    def settle(self, application_id: str, body: PromotionCommandRequest, idempotency_key: str, x_request_id: Optional[str] = None) -> PromotionsDiscountApplicationsSettleResult:
+    def settle(self, application_id: str, body: PromotionCommandRequest, idempotency_key: str) -> PromotionsDiscountApplicationsSettleResult:
         """Promotion Discount Application Settle"""
         request_headers = build_request_headers(
             {
                 'Idempotency-Key': {'value': idempotency_key, 'style': 'simple', 'explode': False},
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
             },
             {}
         )
@@ -331,12 +327,11 @@ class SystemPromotionsDiscountApplicationsReversalsApi:
         self._client = client
 
 
-    def create(self, body: PromotionCommandRequest, idempotency_key: str, x_request_id: Optional[str] = None) -> PromotionsDiscountApplicationsReversalsCreateResult:
+    def create(self, body: PromotionCommandRequest, idempotency_key: str) -> PromotionsDiscountApplicationsReversalsCreateResult:
         """Promotion Discount Application Reversal Create"""
         request_headers = build_request_headers(
             {
                 'Idempotency-Key': {'value': idempotency_key, 'style': 'simple', 'explode': False},
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
             },
             {}
         )
@@ -358,12 +353,11 @@ class SystemPromotionsUserCouponsClaimsApi:
         self._client = client
 
 
-    def create(self, body: PromotionCommandRequest, idempotency_key: str, x_request_id: Optional[str] = None) -> PromotionsUserCouponsClaimsCreateResult:
+    def create(self, body: PromotionCommandRequest, idempotency_key: str) -> PromotionsUserCouponsClaimsCreateResult:
         """Promotion User Coupon Claim Create"""
         request_headers = build_request_headers(
             {
                 'Idempotency-Key': {'value': idempotency_key, 'style': 'simple', 'explode': False},
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
             },
             {}
         )

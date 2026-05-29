@@ -14,7 +14,6 @@ type AdminAiModelCreateRequest struct {
 	MaxOutputTokens int `json:"maxOutputTokens"`
 	Modalities []string `json:"modalities"`
 	Model string `json:"model"`
-	Name string `json:"name"`
 	OutputModalities []string `json:"outputModalities"`
 	PriceIn string `json:"priceIn"`
 	PriceOut string `json:"priceOut"`

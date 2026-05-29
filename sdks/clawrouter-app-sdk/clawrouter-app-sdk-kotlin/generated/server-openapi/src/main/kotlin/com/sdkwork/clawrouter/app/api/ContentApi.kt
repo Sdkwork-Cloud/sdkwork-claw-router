@@ -21,14 +21,8 @@ class ContentApi(private val client: HttpClient) {
     }
 
     /** Create forum comment */
-    suspend fun commentsCreate(body: ForumCreateCommentRequest, xRequestId: String? = null): CommentsCreateResult? {
-        val requestHeaders = buildRequestHeaders(
-            mapOf(
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
-            ),
-            emptyMap()
-        )
-        val raw = client.post(ApiPaths.appPath("/content/comments"), body, null, requestHeaders, "application/json")
+    suspend fun commentsCreate(body: ForumCreateCommentRequest): CommentsCreateResult? {
+        val raw = client.post(ApiPaths.appPath("/content/comments"), body, null, null, "application/json")
         return client.convertValue(raw, object : TypeReference<CommentsCreateResult>() {})
     }
 
@@ -55,14 +49,8 @@ class ContentApi(private val client: HttpClient) {
     }
 
     /** Like forum comment */
-    suspend fun commentsLikesCreate(commentId: String, xRequestId: String? = null): CommentsLikesCreateResult? {
-        val requestHeaders = buildRequestHeaders(
-            mapOf(
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
-            ),
-            emptyMap()
-        )
-        val raw = client.post(ApiPaths.appPath("/content/comments/${serializePathParameter(commentId, PathParameterSpec("commentId", "simple", false))}/likes"), null, null, requestHeaders)
+    suspend fun commentsLikesCreate(commentId: String): CommentsLikesCreateResult? {
+        val raw = client.post(ApiPaths.appPath("/content/comments/${serializePathParameter(commentId, PathParameterSpec("commentId", "simple", false))}/likes"), null)
         return client.convertValue(raw, object : TypeReference<CommentsLikesCreateResult>() {})
     }
 
@@ -73,14 +61,8 @@ class ContentApi(private val client: HttpClient) {
     }
 
     /** Pin forum comment */
-    suspend fun commentsPinsCreate(commentId: String, xRequestId: String? = null): CommentsPinsCreateResult? {
-        val requestHeaders = buildRequestHeaders(
-            mapOf(
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
-            ),
-            emptyMap()
-        )
-        val raw = client.post(ApiPaths.appPath("/content/comments/${serializePathParameter(commentId, PathParameterSpec("commentId", "simple", false))}/pins"), null, null, requestHeaders)
+    suspend fun commentsPinsCreate(commentId: String): CommentsPinsCreateResult? {
+        val raw = client.post(ApiPaths.appPath("/content/comments/${serializePathParameter(commentId, PathParameterSpec("commentId", "simple", false))}/pins"), null)
         return client.convertValue(raw, object : TypeReference<CommentsPinsCreateResult>() {})
     }
 
@@ -101,14 +83,8 @@ class ContentApi(private val client: HttpClient) {
     }
 
     /** Reply forum comment */
-    suspend fun commentsReplyCreate(commentId: String, body: ForumReplyCommentRequest, xRequestId: String? = null): CommentsReplyCreateResult? {
-        val requestHeaders = buildRequestHeaders(
-            mapOf(
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
-            ),
-            emptyMap()
-        )
-        val raw = client.post(ApiPaths.appPath("/content/comments/${serializePathParameter(commentId, PathParameterSpec("commentId", "simple", false))}/reply"), body, null, requestHeaders, "application/json")
+    suspend fun commentsReplyCreate(commentId: String, body: ForumReplyCommentRequest): CommentsReplyCreateResult? {
+        val raw = client.post(ApiPaths.appPath("/content/comments/${serializePathParameter(commentId, PathParameterSpec("commentId", "simple", false))}/reply"), body, null, null, "application/json")
         return client.convertValue(raw, object : TypeReference<CommentsReplyCreateResult>() {})
     }
 
@@ -127,14 +103,8 @@ class ContentApi(private val client: HttpClient) {
     }
 
     /** Create forum feed */
-    suspend fun feedsCreate(body: ForumCreateFeedRequest, xRequestId: String? = null): FeedsCreateResult? {
-        val requestHeaders = buildRequestHeaders(
-            mapOf(
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
-            ),
-            emptyMap()
-        )
-        val raw = client.post(ApiPaths.appPath("/content/feeds"), body, null, requestHeaders, "application/json")
+    suspend fun feedsCreate(body: ForumCreateFeedRequest): FeedsCreateResult? {
+        val raw = client.post(ApiPaths.appPath("/content/feeds"), body, null, null, "application/json")
         return client.convertValue(raw, object : TypeReference<FeedsCreateResult>() {})
     }
 
@@ -212,29 +182,17 @@ class ContentApi(private val client: HttpClient) {
     }
 
     /** Collect forum feed */
-    suspend fun feedsCollectionsCreate(id: String, folderId: Int? = null, xRequestId: String? = null): FeedsCollectionsCreateResult? {
+    suspend fun feedsCollectionsCreate(id: String, folderId: Int? = null): FeedsCollectionsCreateResult? {
         val query = buildQueryString(listOf(
             QueryParameterSpec("folder_id", folderId, "form", true, false, null)
         ))
-        val requestHeaders = buildRequestHeaders(
-            mapOf(
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
-            ),
-            emptyMap()
-        )
-        val raw = client.post(ApiPaths.appendQueryString(ApiPaths.appPath("/content/feeds/${serializePathParameter(id, PathParameterSpec("id", "simple", false))}/collections"), query), null, null, requestHeaders)
+        val raw = client.post(ApiPaths.appendQueryString(ApiPaths.appPath("/content/feeds/${serializePathParameter(id, PathParameterSpec("id", "simple", false))}/collections"), query), null)
         return client.convertValue(raw, object : TypeReference<FeedsCollectionsCreateResult>() {})
     }
 
     /** Uncollect forum feed */
-    suspend fun feedsCollectionsCurrentDelete(id: String, xRequestId: String? = null): FeedsCollectionsCurrentDeleteResult? {
-        val requestHeaders = buildRequestHeaders(
-            mapOf(
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
-            ),
-            emptyMap()
-        )
-        val raw = client.delete(ApiPaths.appPath("/content/feeds/${serializePathParameter(id, PathParameterSpec("id", "simple", false))}/collections/current"), null, requestHeaders)
+    suspend fun feedsCollectionsCurrentDelete(id: String): FeedsCollectionsCurrentDeleteResult? {
+        val raw = client.delete(ApiPaths.appPath("/content/feeds/${serializePathParameter(id, PathParameterSpec("id", "simple", false))}/collections/current"))
         return client.convertValue(raw, object : TypeReference<FeedsCollectionsCurrentDeleteResult>() {})
     }
 
@@ -245,38 +203,20 @@ class ContentApi(private val client: HttpClient) {
     }
 
     /** Like forum feed */
-    suspend fun feedsLikesCreate(id: String, xRequestId: String? = null): FeedsLikesCreateResult? {
-        val requestHeaders = buildRequestHeaders(
-            mapOf(
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
-            ),
-            emptyMap()
-        )
-        val raw = client.post(ApiPaths.appPath("/content/feeds/${serializePathParameter(id, PathParameterSpec("id", "simple", false))}/likes"), null, null, requestHeaders)
+    suspend fun feedsLikesCreate(id: String): FeedsLikesCreateResult? {
+        val raw = client.post(ApiPaths.appPath("/content/feeds/${serializePathParameter(id, PathParameterSpec("id", "simple", false))}/likes"), null)
         return client.convertValue(raw, object : TypeReference<FeedsLikesCreateResult>() {})
     }
 
     /** Unlike forum feed */
-    suspend fun feedsLikesCurrentDelete(id: String, xRequestId: String? = null): FeedsLikesCurrentDeleteResult? {
-        val requestHeaders = buildRequestHeaders(
-            mapOf(
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
-            ),
-            emptyMap()
-        )
-        val raw = client.delete(ApiPaths.appPath("/content/feeds/${serializePathParameter(id, PathParameterSpec("id", "simple", false))}/likes/current"), null, requestHeaders)
+    suspend fun feedsLikesCurrentDelete(id: String): FeedsLikesCurrentDeleteResult? {
+        val raw = client.delete(ApiPaths.appPath("/content/feeds/${serializePathParameter(id, PathParameterSpec("id", "simple", false))}/likes/current"))
         return client.convertValue(raw, object : TypeReference<FeedsLikesCurrentDeleteResult>() {})
     }
 
     /** Share forum feed */
-    suspend fun feedsSharesCreate(id: String, xRequestId: String? = null): FeedsSharesCreateResult? {
-        val requestHeaders = buildRequestHeaders(
-            mapOf(
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
-            ),
-            emptyMap()
-        )
-        val raw = client.post(ApiPaths.appPath("/content/feeds/${serializePathParameter(id, PathParameterSpec("id", "simple", false))}/shares"), null, null, requestHeaders)
+    suspend fun feedsSharesCreate(id: String): FeedsSharesCreateResult? {
+        val raw = client.post(ApiPaths.appPath("/content/feeds/${serializePathParameter(id, PathParameterSpec("id", "simple", false))}/shares"), null)
         return client.convertValue(raw, object : TypeReference<FeedsSharesCreateResult>() {})
     }
 
@@ -505,50 +445,4 @@ class ContentApi(private val client: HttpClient) {
         return java.net.URLEncoder.encode(value, java.nio.charset.StandardCharsets.UTF_8)
     }
 
-    private data class HeaderParameterSpec(val value: Any?, val style: String, val explode: Boolean, val contentType: String?)
-
-    private val headerObjectMapper = ObjectMapper().registerKotlinModule()
-
-    private fun buildRequestHeaders(headers: Map<String, HeaderParameterSpec>, cookies: Map<String, HeaderParameterSpec>): Map<String, String>? {
-        val requestHeaders = linkedMapOf<String, String>()
-        headers.forEach { (name, parameter) ->
-            serializeParameterValue(parameter)?.let { requestHeaders[name] = it }
-        }
-
-        val cookieHeader = buildCookieHeader(cookies)
-        if (cookieHeader.isNotEmpty()) {
-            requestHeaders["Cookie"] = requestHeaders["Cookie"]?.let { "$it; $cookieHeader" } ?: cookieHeader
-        }
-
-        return requestHeaders.takeIf { it.isNotEmpty() }
-    }
-
-    private fun buildCookieHeader(cookies: Map<String, HeaderParameterSpec>): String {
-        return cookies.mapNotNull { (name, parameter) ->
-            serializeParameterValue(parameter)?.let {
-                java.net.URLEncoder.encode(name, java.nio.charset.StandardCharsets.UTF_8) + "=" +
-                    java.net.URLEncoder.encode(it, java.nio.charset.StandardCharsets.UTF_8)
-            }
-        }.joinToString("; ")
-    }
-
-    private fun serializeParameterValue(parameter: HeaderParameterSpec?): String? {
-        val value = parameter?.value ?: return null
-        if (!parameter.contentType.isNullOrBlank()) {
-            return headerObjectMapper.writeValueAsString(value)
-        }
-        return when (value) {
-            is Iterable<*> -> value.mapNotNull { it?.toString() }.joinToString(",")
-            is Map<*, *> -> value.mapNotNull { (key, item) ->
-                if (item == null) {
-                    null
-                } else if (parameter.explode) {
-                    "$key=$item"
-                } else {
-                    listOf(key.toString(), item.toString()).joinToString(",")
-                }
-            }.joinToString(",")
-            else -> value.toString()
-        }
-    }
 }

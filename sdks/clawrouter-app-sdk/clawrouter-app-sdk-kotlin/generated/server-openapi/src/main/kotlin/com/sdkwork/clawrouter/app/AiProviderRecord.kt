@@ -1,0 +1,31 @@
+package com.sdkwork.clawrouter.app
+
+data class AiProviderRecord(
+    val authType: String? = null,
+    val baseUrl: String? = null,
+    val colorToken: String? = null,
+    val createdAt: String? = null,
+    val dataScope: String? = null,
+    val defaultVendorCode: String? = null,
+    val deletedAt: String? = null,
+    val deletedBy: String? = null,
+    val description: String? = null,
+    val displayName: String? = null,
+    val docsUrl: String? = null,
+    val iconUrl: String? = null,
+    val id: String? = null,
+    val metadata: Map<String, String>? = null,
+    val metadataSchemaVersion: String? = null,
+    val organizationId: String? = null,
+    val protocolCode: String? = null,
+    val providerCode: String? = null,
+    val providerType: String? = null,
+    val resourceSchema: Map<String, String>? = null,
+    val sortOrder: Int? = null,
+    val status: String? = null,
+    val tenantId: String? = null,
+    val updatedAt: String? = null,
+    val uuid: String? = null,
+    val version: String? = null,
+    val websiteUrl: String? = null
+)

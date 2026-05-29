@@ -14,9 +14,9 @@ public class SystemApi {
     }
 
     /** Promotion Code Redemption Create */
-    public PromotionsCodesRedemptionsCreateResult promotionsCodesRedemptionsCreate(PromotionCodeRedemptionRequest body, String idempotencyKey, String xRequestId) throws Exception {
+    public PromotionsCodesRedemptionsCreateResult promotionsCodesRedemptionsCreate(PromotionCodeRedemptionRequest body, String idempotencyKey) throws Exception {
         Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null), "X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
+                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null)),
                 Map.of()
         );
         Object raw = client.post(ApiPaths.appPath("/promotions/codes/redemptions"), body, null, requestHeaders, "application/json");
@@ -24,9 +24,9 @@ public class SystemApi {
     }
 
     /** Promotion Discount Application Create */
-    public PromotionsDiscountApplicationsCreateResult promotionsDiscountApplicationsCreate(PromotionCommandRequest body, String idempotencyKey, String xRequestId) throws Exception {
+    public PromotionsDiscountApplicationsCreateResult promotionsDiscountApplicationsCreate(PromotionCommandRequest body, String idempotencyKey) throws Exception {
         Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null), "X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
+                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null)),
                 Map.of()
         );
         Object raw = client.post(ApiPaths.appPath("/promotions/discount_applications"), body, null, requestHeaders, "application/json");
@@ -34,9 +34,9 @@ public class SystemApi {
     }
 
     /** Promotion Discount Application Reversal Create */
-    public PromotionsDiscountApplicationsReversalsCreateResult promotionsDiscountApplicationsReversalsCreate(PromotionCommandRequest body, String idempotencyKey, String xRequestId) throws Exception {
+    public PromotionsDiscountApplicationsReversalsCreateResult promotionsDiscountApplicationsReversalsCreate(PromotionCommandRequest body, String idempotencyKey) throws Exception {
         Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null), "X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
+                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null)),
                 Map.of()
         );
         Object raw = client.post(ApiPaths.appPath("/promotions/discount_applications/reversals"), body, null, requestHeaders, "application/json");
@@ -44,9 +44,9 @@ public class SystemApi {
     }
 
     /** Promotion Discount Application Release */
-    public PromotionsDiscountApplicationsReleaseResult promotionsDiscountApplicationsRelease(String applicationId, PromotionCommandRequest body, String idempotencyKey, String xRequestId) throws Exception {
+    public PromotionsDiscountApplicationsReleaseResult promotionsDiscountApplicationsRelease(String applicationId, PromotionCommandRequest body, String idempotencyKey) throws Exception {
         Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null), "X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
+                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null)),
                 Map.of()
         );
         Object raw = client.post(ApiPaths.appPath("/promotions/discount_applications/" + serializePathParameter(applicationId, new PathParameterSpec("applicationId", "simple", false)) + "/releases"), body, null, requestHeaders, "application/json");
@@ -54,9 +54,9 @@ public class SystemApi {
     }
 
     /** Promotion Discount Application Settle */
-    public PromotionsDiscountApplicationsSettleResult promotionsDiscountApplicationsSettle(String applicationId, PromotionCommandRequest body, String idempotencyKey, String xRequestId) throws Exception {
+    public PromotionsDiscountApplicationsSettleResult promotionsDiscountApplicationsSettle(String applicationId, PromotionCommandRequest body, String idempotencyKey) throws Exception {
         Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null), "X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
+                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null)),
                 Map.of()
         );
         Object raw = client.post(ApiPaths.appPath("/promotions/discount_applications/" + serializePathParameter(applicationId, new PathParameterSpec("applicationId", "simple", false)) + "/settlements"), body, null, requestHeaders, "application/json");
@@ -64,9 +64,9 @@ public class SystemApi {
     }
 
     /** Promotion User Coupon Claim Create */
-    public PromotionsUserCouponsClaimsCreateResult promotionsUserCouponsClaimsCreate(PromotionCommandRequest body, String idempotencyKey, String xRequestId) throws Exception {
+    public PromotionsUserCouponsClaimsCreateResult promotionsUserCouponsClaimsCreate(PromotionCommandRequest body, String idempotencyKey) throws Exception {
         Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null), "X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
+                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null)),
                 Map.of()
         );
         Object raw = client.post(ApiPaths.appPath("/promotions/user_coupon_claims"), body, null, requestHeaders, "application/json");

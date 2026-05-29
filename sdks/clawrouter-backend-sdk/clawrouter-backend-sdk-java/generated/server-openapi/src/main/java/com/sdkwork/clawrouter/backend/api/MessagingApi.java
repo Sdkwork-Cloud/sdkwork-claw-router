@@ -14,19 +14,15 @@ public class MessagingApi {
     }
 
     /** Messaging route simulation */
-    public DiagnosticsRouteSimulationCreateResult diagnosticsRouteSimulationCreate(MessagingRouteSimulationRequest body, String xRequestId) throws Exception {
-        Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
-                Map.of()
-        );
-        Object raw = client.post(ApiPaths.backendPath("/messaging/diagnostics/route_simulation"), body, null, requestHeaders, "application/json");
+    public DiagnosticsRouteSimulationCreateResult diagnosticsRouteSimulationCreate(MessagingRouteSimulationRequest body) throws Exception {
+        Object raw = client.post(ApiPaths.backendPath("/messaging/diagnostics/route_simulation"), body, null, null, "application/json");
         return client.convertValue(raw, new TypeReference<DiagnosticsRouteSimulationCreateResult>() {});
     }
 
     /** Messaging test send */
-    public DiagnosticsTestSendsCreateResult diagnosticsTestSendsCreate(MessagingTestSendRequest body, String idempotencyKey, String xRequestId) throws Exception {
+    public DiagnosticsTestSendsCreateResult diagnosticsTestSendsCreate(MessagingTestSendRequest body, String idempotencyKey) throws Exception {
         Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null), "X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
+                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null)),
                 Map.of()
         );
         Object raw = client.post(ApiPaths.backendPath("/messaging/diagnostics/test_sends"), body, null, requestHeaders, "application/json");
@@ -48,9 +44,9 @@ public class MessagingApi {
     }
 
     /** Messaging provider account create */
-    public ProviderAccountsCreateResult providerAccountsCreate(MessagingProviderAccountCreateRequest body, String idempotencyKey, String xRequestId) throws Exception {
+    public ProviderAccountsCreateResult providerAccountsCreate(MessagingProviderAccountCreateRequest body, String idempotencyKey) throws Exception {
         Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null), "X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
+                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null)),
                 Map.of()
         );
         Object raw = client.post(ApiPaths.backendPath("/messaging/provider_accounts"), body, null, requestHeaders, "application/json");
@@ -87,9 +83,9 @@ public class MessagingApi {
     }
 
     /** Messaging route rule create */
-    public RouteRulesCreateResult routeRulesCreate(MessagingRouteRuleCreateRequest body, String idempotencyKey, String xRequestId) throws Exception {
+    public RouteRulesCreateResult routeRulesCreate(MessagingRouteRuleCreateRequest body, String idempotencyKey) throws Exception {
         Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null), "X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
+                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null)),
                 Map.of()
         );
         Object raw = client.post(ApiPaths.backendPath("/messaging/route_rules"), body, null, requestHeaders, "application/json");
@@ -126,9 +122,9 @@ public class MessagingApi {
     }
 
     /** Messaging sender identity create */
-    public SenderIdentitiesCreateResult senderIdentitiesCreate(MessagingSenderIdentityCreateRequest body, String idempotencyKey, String xRequestId) throws Exception {
+    public SenderIdentitiesCreateResult senderIdentitiesCreate(MessagingSenderIdentityCreateRequest body, String idempotencyKey) throws Exception {
         Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null), "X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
+                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null)),
                 Map.of()
         );
         Object raw = client.post(ApiPaths.backendPath("/messaging/sender_identities"), body, null, requestHeaders, "application/json");
@@ -150,9 +146,9 @@ public class MessagingApi {
     }
 
     /** Messaging suppression create */
-    public SuppressionsCreateResult suppressionsCreate(MessagingSuppressionCreateRequest body, String idempotencyKey, String xRequestId) throws Exception {
+    public SuppressionsCreateResult suppressionsCreate(MessagingSuppressionCreateRequest body, String idempotencyKey) throws Exception {
         Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null), "X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
+                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null)),
                 Map.of()
         );
         Object raw = client.post(ApiPaths.backendPath("/messaging/suppressions"), body, null, requestHeaders, "application/json");
@@ -160,9 +156,9 @@ public class MessagingApi {
     }
 
     /** Messaging template send */
-    public TemplateSendsCreateResult templateSendsCreate(MessagingTemplateSendRequest body, String idempotencyKey, String xRequestId) throws Exception {
+    public TemplateSendsCreateResult templateSendsCreate(MessagingTemplateSendRequest body, String idempotencyKey) throws Exception {
         Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null), "X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
+                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null)),
                 Map.of()
         );
         Object raw = client.post(ApiPaths.backendPath("/messaging/template_sends"), body, null, requestHeaders, "application/json");
@@ -184,9 +180,9 @@ public class MessagingApi {
     }
 
     /** Messaging template create */
-    public TemplatesCreateResult templatesCreate(MessagingTemplateCreateRequest body, String idempotencyKey, String xRequestId) throws Exception {
+    public TemplatesCreateResult templatesCreate(MessagingTemplateCreateRequest body, String idempotencyKey) throws Exception {
         Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null), "X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
+                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null)),
                 Map.of()
         );
         Object raw = client.post(ApiPaths.backendPath("/messaging/templates"), body, null, requestHeaders, "application/json");
@@ -194,12 +190,8 @@ public class MessagingApi {
     }
 
     /** Messaging template version publish */
-    public TemplatesVersionsPublishResult templatesVersionsPublish(String templateId, String versionId, String xRequestId) throws Exception {
-        Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
-                Map.of()
-        );
-        Object raw = client.post(ApiPaths.backendPath("/messaging/templates/" + serializePathParameter(templateId, new PathParameterSpec("templateId", "simple", false)) + "/versions/" + serializePathParameter(versionId, new PathParameterSpec("versionId", "simple", false)) + "/publish"), null, null, requestHeaders);
+    public TemplatesVersionsPublishResult templatesVersionsPublish(String templateId, String versionId) throws Exception {
+        Object raw = client.post(ApiPaths.backendPath("/messaging/templates/" + serializePathParameter(templateId, new PathParameterSpec("templateId", "simple", false)) + "/versions/" + serializePathParameter(versionId, new PathParameterSpec("versionId", "simple", false)) + "/publish"), null);
         return client.convertValue(raw, new TypeReference<TemplatesVersionsPublishResult>() {});
     }
 
@@ -218,12 +210,8 @@ public class MessagingApi {
     }
 
     /** Verification policy update */
-    public VerificationPoliciesUpdateResult verificationPoliciesUpdate(String policyId, VerificationPolicyUpdateRequest body, String xRequestId) throws Exception {
-        Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
-                Map.of()
-        );
-        Object raw = client.put(ApiPaths.backendPath("/messaging/verification_policies/" + serializePathParameter(policyId, new PathParameterSpec("policyId", "simple", false)) + ""), body, null, requestHeaders, "application/json");
+    public VerificationPoliciesUpdateResult verificationPoliciesUpdate(String policyId, VerificationPolicyUpdateRequest body) throws Exception {
+        Object raw = client.put(ApiPaths.backendPath("/messaging/verification_policies/" + serializePathParameter(policyId, new PathParameterSpec("policyId", "simple", false)) + ""), body, null, null, "application/json");
         return client.convertValue(raw, new TypeReference<VerificationPoliciesUpdateResult>() {});
     }
 

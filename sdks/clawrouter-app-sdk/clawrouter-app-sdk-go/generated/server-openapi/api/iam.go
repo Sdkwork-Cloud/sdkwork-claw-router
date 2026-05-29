@@ -38,12 +38,9 @@ func (a *IamApi) ApiKeysList() (sdktypes.ApiKeysListResult, error) {
 }
 
 // Create key
-func (a *IamApi) ApiKeysCreate(body sdktypes.CreateApiKeyRequest, idempotencyKey string, xRequestId *string) (sdktypes.ApiKeysCreateResult, error) {
+func (a *IamApi) ApiKeysCreate(body sdktypes.CreateApiKeyRequest, idempotencyKey string) (sdktypes.ApiKeysCreateResult, error) {
     headers := BuildRequestHeaders(
-        map[string]ParameterSpec{
-            "Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},
-            "X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},
-        },
+        map[string]ParameterSpec{"Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},},
         map[string]ParameterSpec{},
     )
     raw, err := a.client.Post(AppApiPath("/iam/api_keys"), body, nil, headers, "application/json")
@@ -65,12 +62,8 @@ func (a *IamApi) ApiKeysDelete(apiKeyId string) (sdktypes.ApiKeysDeleteResult, e
 }
 
 // Update key
-func (a *IamApi) ApiKeysUpdate(apiKeyId string, body sdktypes.UpdateApiKeyRequest, xRequestId *string) (sdktypes.ApiKeysUpdateResult, error) {
-    headers := BuildRequestHeaders(
-        map[string]ParameterSpec{"X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},},
-        map[string]ParameterSpec{},
-    )
-    raw, err := a.client.Patch(AppApiPath(fmt.Sprintf("/iam/api_keys/%s", SerializePathParameter(apiKeyId, PathParameterSpec{Name: "apiKeyId", Style: "simple", Explode: false}))), body, nil, headers, "application/json")
+func (a *IamApi) ApiKeysUpdate(apiKeyId string, body sdktypes.UpdateApiKeyRequest) (sdktypes.ApiKeysUpdateResult, error) {
+    raw, err := a.client.Patch(AppApiPath(fmt.Sprintf("/iam/api_keys/%s", SerializePathParameter(apiKeyId, PathParameterSpec{Name: "apiKeyId", Style: "simple", Explode: false}))), body, nil, nil, "application/json")
     if err != nil {
         var zero sdktypes.ApiKeysUpdateResult
         return zero, err

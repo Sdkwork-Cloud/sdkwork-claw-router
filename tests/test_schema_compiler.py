@@ -58,6 +58,41 @@ class SchemaCompilerTest(unittest.TestCase):
             self.assertIn("    unit_price NUMERIC(38, 12),", sql)
             self.assertIn("    published_at TIMESTAMPTZ", sql)
 
+    def test_compiles_tables_from_registry_fragments(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            registry = self.write_registry(
+                root,
+                """
+                schema_registry:
+                  common_column_groups:
+                    tenant_entity: [id, uuid, tenant_id, organization_id, status]
+                table_fragments:
+                  - tables/ai.yaml
+                """,
+            )
+            fragment = registry.parent / "tables" / "ai.yaml"
+            fragment.parent.mkdir(parents=True, exist_ok=True)
+            fragment.write_text(
+                textwrap.dedent(
+                    """
+                    tables:
+                      - table: ai_model_vendor
+                        domain: ai
+                        common_columns: tenant_entity
+                        columns:
+                          vendor_code: string(64)
+                    """
+                ).strip()
+                + "\n",
+                encoding="utf-8",
+            )
+
+            sql = SchemaCompiler(root=root, registry_path=registry).compile_postgres()
+
+            self.assertIn("CREATE TABLE IF NOT EXISTS ai_model_vendor", sql)
+            self.assertIn("    vendor_code VARCHAR(64)", sql)
+
     def test_compiles_unique_and_regular_indexes(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)

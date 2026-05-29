@@ -166,10 +166,19 @@ fn unique_sqlite_url() -> String {
         .as_nanos();
     let sequence = SQLITE_DB_SEQUENCE.fetch_add(1, Ordering::Relaxed);
     let process_id = std::process::id();
-    let path =
-        format!("target/test-dbs/app-contract-routes-{process_id}-{sequence}-{nonce}.sqlite");
-    std::fs::create_dir_all("target/test-dbs").unwrap();
-    format!("sqlite://{path}")
+    let mut path = sqlite_test_database_dir();
+    std::fs::create_dir_all(&path).unwrap();
+    path.push(format!(
+        "app-contract-routes-{process_id}-{sequence}-{nonce}.sqlite"
+    ));
+    format!("sqlite://{}", path.to_string_lossy().replace('\\', "/"))
+}
+
+fn sqlite_test_database_dir() -> std::path::PathBuf {
+    std::env::var_os("CARGO_TARGET_DIR")
+        .map(std::path::PathBuf::from)
+        .unwrap_or_else(std::env::temp_dir)
+        .join("test-dbs")
 }
 
 fn clear_generator_env() {

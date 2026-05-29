@@ -268,12 +268,11 @@ class PromptsDefinitionsApi:
         ])
         return self._client.get(_append_query_string(f"/backend/v3/api/prompts", query))
 
-    def create(self, body: AdminPromptCreateRequest, idempotency_key: str, x_request_id: Optional[str] = None) -> DefinitionsCreateResult:
+    def create(self, body: AdminPromptCreateRequest, idempotency_key: str) -> DefinitionsCreateResult:
         """Create admin prompt"""
         request_headers = build_request_headers(
             {
                 'Idempotency-Key': {'value': idempotency_key, 'style': 'simple', 'explode': False},
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
             },
             {}
         )
@@ -286,26 +285,19 @@ class PromptsDefinitionBindingsApi:
         self._client = client
 
 
-    def update(self, binding_id: str, body: AdminPromptBindingUpdateRequest, x_request_id: Optional[str] = None) -> DefinitionBindingsUpdateResult:
+    def update(self, binding_id: str, body: AdminPromptBindingUpdateRequest) -> DefinitionBindingsUpdateResult:
         """Update prompt binding"""
-        request_headers = build_request_headers(
-            {
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
-            },
-            {}
-        )
-        return self._client.put(f"/backend/v3/api/prompts/bindings/{serialize_path_parameter(binding_id, {'name': 'bindingId', 'style': 'simple', 'explode': False})}", json=body, headers=request_headers)
+        return self._client.put(f"/backend/v3/api/prompts/bindings/{serialize_path_parameter(binding_id, {'name': 'bindingId', 'style': 'simple', 'explode': False})}", json=body)
 
     def list(self, prompt_id: str) -> DefinitionBindingsListResult:
         """List prompt bindings"""
         return self._client.get(f"/backend/v3/api/prompts/{serialize_path_parameter(prompt_id, {'name': 'promptId', 'style': 'simple', 'explode': False})}/bindings")
 
-    def create(self, prompt_id: str, body: AdminPromptBindingCreateRequest, idempotency_key: str, x_request_id: Optional[str] = None) -> DefinitionBindingsCreateResult:
+    def create(self, prompt_id: str, body: AdminPromptBindingCreateRequest, idempotency_key: str) -> DefinitionBindingsCreateResult:
         """Create prompt binding"""
         request_headers = build_request_headers(
             {
                 'Idempotency-Key': {'value': idempotency_key, 'style': 'simple', 'explode': False},
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
             },
             {}
         )
@@ -318,26 +310,19 @@ class PromptsVersionsApi:
         self._client = client
 
 
-    def publish(self, version_id: str, x_request_id: Optional[str] = None) -> VersionsPublishResult:
+    def publish(self, version_id: str) -> VersionsPublishResult:
         """Publish prompt version"""
-        request_headers = build_request_headers(
-            {
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
-            },
-            {}
-        )
-        return self._client.post(f"/backend/v3/api/prompts/versions/{serialize_path_parameter(version_id, {'name': 'versionId', 'style': 'simple', 'explode': False})}/publish", headers=request_headers)
+        return self._client.post(f"/backend/v3/api/prompts/versions/{serialize_path_parameter(version_id, {'name': 'versionId', 'style': 'simple', 'explode': False})}/publish")
 
     def list(self, prompt_id: str) -> VersionsListResult:
         """List prompt versions"""
         return self._client.get(f"/backend/v3/api/prompts/{serialize_path_parameter(prompt_id, {'name': 'promptId', 'style': 'simple', 'explode': False})}/versions")
 
-    def create(self, prompt_id: str, body: AdminPromptVersionCreateRequest, idempotency_key: str, x_request_id: Optional[str] = None) -> VersionsCreateResult:
+    def create(self, prompt_id: str, body: AdminPromptVersionCreateRequest, idempotency_key: str) -> VersionsCreateResult:
         """Create prompt version"""
         request_headers = build_request_headers(
             {
                 'Idempotency-Key': {'value': idempotency_key, 'style': 'simple', 'explode': False},
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
             },
             {}
         )
@@ -350,12 +335,6 @@ class PromptsVersionRendersApi:
         self._client = client
 
 
-    def create(self, version_id: str, body: AdminPromptRenderRequest, x_request_id: Optional[str] = None) -> VersionRendersCreateResult:
+    def create(self, version_id: str, body: AdminPromptRenderRequest) -> VersionRendersCreateResult:
         """Render prompt version"""
-        request_headers = build_request_headers(
-            {
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
-            },
-            {}
-        )
-        return self._client.post(f"/backend/v3/api/prompts/versions/{serialize_path_parameter(version_id, {'name': 'versionId', 'style': 'simple', 'explode': False})}/render", json=body, headers=request_headers)
+        return self._client.post(f"/backend/v3/api/prompts/versions/{serialize_path_parameter(version_id, {'name': 'versionId', 'style': 'simple', 'explode': False})}/render", json=body)

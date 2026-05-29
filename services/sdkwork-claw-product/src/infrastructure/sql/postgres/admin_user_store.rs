@@ -16,7 +16,7 @@ const API_KEY_STATUS_REVOKED: i32 = 4;
 const TARGET_TYPE_USER: i32 = 61;
 const TARGET_TYPE_API_KEY: i32 = 62;
 const TARGET_TYPE_ACCOUNT: i32 = 63;
-const DEFAULT_API_KEY_GROUP_CODE: &str = "default";
+const DEFAULT_CHANNEL_GROUP_CODE: &str = "default";
 const DEFAULT_API_KEY_GROUP_NAME: &str = "Default";
 const DEFAULT_PRICING_PLAN_CODE: &str = "standard";
 const CASH_CURRENCY_CODE: &str = "USD";
@@ -811,10 +811,10 @@ async fn find_default_api_key_group(
     sqlx::query_scalar(
         r#"
         SELECT id
-        FROM iam_gateway_api_key_group
+        FROM ai_channel_group
         WHERE (tenant_id IS NULL OR tenant_id = $1)
           AND (organization_id IS NULL OR organization_id = $2)
-          AND code = $3
+          AND group_code = $3
           AND status = 1
           AND deleted_at IS NULL
         ORDER BY updated_at DESC NULLS LAST,
@@ -824,7 +824,7 @@ async fn find_default_api_key_group(
     )
     .bind(tenant_id)
     .bind(organization_id)
-    .bind(DEFAULT_API_KEY_GROUP_CODE)
+    .bind(DEFAULT_CHANNEL_GROUP_CODE)
     .fetch_optional(&mut **tx)
     .await
     .map_err(|error| store_error("failed to load default api key group", error))
@@ -845,19 +845,19 @@ async fn ensure_default_api_key_group(
     let pricing_plan_id = find_default_pricing_plan_id(tx, tenant_id, organization_id).await?;
     let row = sqlx::query_scalar(
         r#"
-        INSERT INTO iam_gateway_api_key_group
-            (uuid, tenant_id, organization_id, data_scope, status, created_at, updated_at, version, name, code, description, group_type, environment, pricing_plan_id, pricing_plan_code, rate_multiplier, official_price_multiplier, billing_type, capacity_limit, allowed_origin, metadata)
+        INSERT INTO ai_channel_group
+            (uuid, tenant_id, organization_id, data_scope, status, created_at, updated_at, version, group_name, group_code, description, group_type, environment, pricing_plan_id, pricing_plan_code, rate_multiplier, official_price_multiplier, billing_type, capacity_limit, allowed_origin, metadata)
         VALUES
-            ($1, $2, $3, 1, 1, $4::timestamptz, $4::timestamptz, 0, $5, $6, '', 1, 1, $7, $8, '1.000000'::numeric, '1.000000'::numeric, 1, 0, '{}'::jsonb, '{}'::jsonb)
-        ON CONFLICT (tenant_id, organization_id, code)
+            ($1, $2, $3, 1, 1, $4::timestamptz, $4::timestamptz, 0, $5, $6, '', 'default', 1, $7, $8, '1.000000'::numeric, '1.000000'::numeric, 1, 0, '{}'::jsonb, '{}'::jsonb)
+        ON CONFLICT (tenant_id, organization_id, group_code)
         DO UPDATE SET
             status = 1,
             deleted_at = NULL,
-            name = COALESCE(NULLIF(iam_gateway_api_key_group.name, ''), EXCLUDED.name),
-            pricing_plan_id = COALESCE(iam_gateway_api_key_group.pricing_plan_id, EXCLUDED.pricing_plan_id),
-            pricing_plan_code = COALESCE(NULLIF(iam_gateway_api_key_group.pricing_plan_code, ''), EXCLUDED.pricing_plan_code),
-            rate_multiplier = COALESCE(iam_gateway_api_key_group.rate_multiplier, EXCLUDED.rate_multiplier),
-            official_price_multiplier = COALESCE(iam_gateway_api_key_group.official_price_multiplier, EXCLUDED.official_price_multiplier),
+            group_name = COALESCE(NULLIF(ai_channel_group.group_name, ''), EXCLUDED.group_name),
+            pricing_plan_id = COALESCE(ai_channel_group.pricing_plan_id, EXCLUDED.pricing_plan_id),
+            pricing_plan_code = COALESCE(NULLIF(ai_channel_group.pricing_plan_code, ''), EXCLUDED.pricing_plan_code),
+            rate_multiplier = COALESCE(ai_channel_group.rate_multiplier, EXCLUDED.rate_multiplier),
+            official_price_multiplier = COALESCE(ai_channel_group.official_price_multiplier, EXCLUDED.official_price_multiplier),
             updated_at = EXCLUDED.updated_at
         RETURNING id
         "#,
@@ -867,7 +867,7 @@ async fn ensure_default_api_key_group(
     .bind(organization_id)
     .bind(requested_at)
     .bind(DEFAULT_API_KEY_GROUP_NAME)
-    .bind(DEFAULT_API_KEY_GROUP_CODE)
+    .bind(DEFAULT_CHANNEL_GROUP_CODE)
     .bind(pricing_plan_id)
     .bind(DEFAULT_PRICING_PLAN_CODE)
     .fetch_one(&mut **tx)
@@ -917,7 +917,7 @@ async fn insert_api_key(
     sqlx::query_scalar(
         r#"
         INSERT INTO iam_gateway_api_key
-            (uuid, tenant_id, organization_id, user_id, group_id, name, key_prefix, key_display_masked, key_hash, hash_alg, secret_version, idempotency_key, status, created_at, updated_at, last_revealed_at)
+            (uuid, tenant_id, organization_id, user_id, channel_group_id, name, key_prefix, key_display_masked, key_hash, hash_alg, secret_version, idempotency_key, status, created_at, updated_at, last_revealed_at)
         VALUES
             ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, 1, $13::timestamp AT TIME ZONE 'UTC', $13::timestamp AT TIME ZONE 'UTC', CURRENT_TIMESTAMP)
         RETURNING id

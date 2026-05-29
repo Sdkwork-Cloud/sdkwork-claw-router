@@ -18,31 +18,17 @@ namespace Sdkwork.ClawRouter.Backend.Api
         /// <summary>
         /// Update MCP binding
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.ServersBindingsUpdateResult?> ServersBindingsUpdateAsync(string bindingId, Sdkwork.ClawRouter.Backend.Models.AdminMcpBindingUpdateRequest body, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.ServersBindingsUpdateResult?> ServersBindingsUpdateAsync(string bindingId, Sdkwork.ClawRouter.Backend.Models.AdminMcpBindingUpdateRequest body)
         {
-            var requestHeaders = BuildRequestHeaders(
-                new Dictionary<string, HeaderParameterSpec>
-                {
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
-                },
-                new Dictionary<string, HeaderParameterSpec>()
-            );
-            return await _client.PutAsync<Sdkwork.ClawRouter.Backend.Models.ServersBindingsUpdateResult>(ApiPaths.BackendPath($"/mcp/bindings/{SerializePathParameter(bindingId, new PathParameterSpec("bindingId", "simple", false))}"), body, null, requestHeaders, "application/json");
+            return await _client.PutAsync<Sdkwork.ClawRouter.Backend.Models.ServersBindingsUpdateResult>(ApiPaths.BackendPath($"/mcp/bindings/{SerializePathParameter(bindingId, new PathParameterSpec("bindingId", "simple", false))}"), body, null, null, "application/json");
         }
 
         /// <summary>
         /// Publish MCP server revision
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.RevisionsPublishResult?> RevisionsPublishAsync(string revisionId, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.RevisionsPublishResult?> RevisionsPublishAsync(string revisionId)
         {
-            var requestHeaders = BuildRequestHeaders(
-                new Dictionary<string, HeaderParameterSpec>
-                {
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
-                },
-                new Dictionary<string, HeaderParameterSpec>()
-            );
-            return await _client.PostAsync<Sdkwork.ClawRouter.Backend.Models.RevisionsPublishResult>(ApiPaths.BackendPath($"/mcp/revisions/{SerializePathParameter(revisionId, new PathParameterSpec("revisionId", "simple", false))}/publish"), null, null, requestHeaders);
+            return await _client.PostAsync<Sdkwork.ClawRouter.Backend.Models.RevisionsPublishResult>(ApiPaths.BackendPath($"/mcp/revisions/{SerializePathParameter(revisionId, new PathParameterSpec("revisionId", "simple", false))}/publish"), null);
         }
 
         /// <summary>
@@ -66,13 +52,12 @@ namespace Sdkwork.ClawRouter.Backend.Api
         /// <summary>
         /// Create MCP server
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.ServersCreateResult?> ServersCreateAsync(Sdkwork.ClawRouter.Backend.Models.AdminMcpServerCreateRequest body, string idempotencyKey, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.ServersCreateResult?> ServersCreateAsync(Sdkwork.ClawRouter.Backend.Models.AdminMcpServerCreateRequest body, string idempotencyKey)
         {
             var requestHeaders = BuildRequestHeaders(
                 new Dictionary<string, HeaderParameterSpec>
                 {
                     ["Idempotency-Key"] = new HeaderParameterSpec(idempotencyKey, "simple", false, null),
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
                 },
                 new Dictionary<string, HeaderParameterSpec>()
             );
@@ -90,16 +75,9 @@ namespace Sdkwork.ClawRouter.Backend.Api
         /// <summary>
         /// Update MCP server
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.ServersUpdateResult?> ServersUpdateAsync(string serverId, Sdkwork.ClawRouter.Backend.Models.AdminMcpServerUpdateRequest body, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.ServersUpdateResult?> ServersUpdateAsync(string serverId, Sdkwork.ClawRouter.Backend.Models.AdminMcpServerUpdateRequest body)
         {
-            var requestHeaders = BuildRequestHeaders(
-                new Dictionary<string, HeaderParameterSpec>
-                {
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
-                },
-                new Dictionary<string, HeaderParameterSpec>()
-            );
-            return await _client.PutAsync<Sdkwork.ClawRouter.Backend.Models.ServersUpdateResult>(ApiPaths.BackendPath($"/mcp/servers/{SerializePathParameter(serverId, new PathParameterSpec("serverId", "simple", false))}"), body, null, requestHeaders, "application/json");
+            return await _client.PutAsync<Sdkwork.ClawRouter.Backend.Models.ServersUpdateResult>(ApiPaths.BackendPath($"/mcp/servers/{SerializePathParameter(serverId, new PathParameterSpec("serverId", "simple", false))}"), body, null, null, "application/json");
         }
 
         /// <summary>
@@ -113,13 +91,12 @@ namespace Sdkwork.ClawRouter.Backend.Api
         /// <summary>
         /// Create MCP binding
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.ServersBindingsCreateResult?> ServersBindingsCreateAsync(string serverId, Sdkwork.ClawRouter.Backend.Models.AdminMcpBindingCreateRequest body, string idempotencyKey, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.ServersBindingsCreateResult?> ServersBindingsCreateAsync(string serverId, Sdkwork.ClawRouter.Backend.Models.AdminMcpBindingCreateRequest body, string idempotencyKey)
         {
             var requestHeaders = BuildRequestHeaders(
                 new Dictionary<string, HeaderParameterSpec>
                 {
                     ["Idempotency-Key"] = new HeaderParameterSpec(idempotencyKey, "simple", false, null),
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
                 },
                 new Dictionary<string, HeaderParameterSpec>()
             );
@@ -129,31 +106,17 @@ namespace Sdkwork.ClawRouter.Backend.Api
         /// <summary>
         /// Discover MCP tools
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.ServersToolsRefreshResult?> ServersToolsRefreshAsync(string serverId, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.ServersToolsRefreshResult?> ServersToolsRefreshAsync(string serverId)
         {
-            var requestHeaders = BuildRequestHeaders(
-                new Dictionary<string, HeaderParameterSpec>
-                {
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
-                },
-                new Dictionary<string, HeaderParameterSpec>()
-            );
-            return await _client.PostAsync<Sdkwork.ClawRouter.Backend.Models.ServersToolsRefreshResult>(ApiPaths.BackendPath($"/mcp/servers/{SerializePathParameter(serverId, new PathParameterSpec("serverId", "simple", false))}/discover"), null, null, requestHeaders);
+            return await _client.PostAsync<Sdkwork.ClawRouter.Backend.Models.ServersToolsRefreshResult>(ApiPaths.BackendPath($"/mcp/servers/{SerializePathParameter(serverId, new PathParameterSpec("serverId", "simple", false))}/discover"), null);
         }
 
         /// <summary>
         /// Check MCP server health
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.ServersHealthChecksCreateResult?> ServersHealthChecksCreateAsync(string serverId, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.ServersHealthChecksCreateResult?> ServersHealthChecksCreateAsync(string serverId)
         {
-            var requestHeaders = BuildRequestHeaders(
-                new Dictionary<string, HeaderParameterSpec>
-                {
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
-                },
-                new Dictionary<string, HeaderParameterSpec>()
-            );
-            return await _client.PostAsync<Sdkwork.ClawRouter.Backend.Models.ServersHealthChecksCreateResult>(ApiPaths.BackendPath($"/mcp/servers/{SerializePathParameter(serverId, new PathParameterSpec("serverId", "simple", false))}/health_check"), null, null, requestHeaders);
+            return await _client.PostAsync<Sdkwork.ClawRouter.Backend.Models.ServersHealthChecksCreateResult>(ApiPaths.BackendPath($"/mcp/servers/{SerializePathParameter(serverId, new PathParameterSpec("serverId", "simple", false))}/health_check"), null);
         }
 
         /// <summary>
@@ -167,13 +130,12 @@ namespace Sdkwork.ClawRouter.Backend.Api
         /// <summary>
         /// Create MCP server revision
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.ServersRevisionsCreateResult?> ServersRevisionsCreateAsync(string serverId, Sdkwork.ClawRouter.Backend.Models.AdminMcpServerRevisionCreateRequest body, string idempotencyKey, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.ServersRevisionsCreateResult?> ServersRevisionsCreateAsync(string serverId, Sdkwork.ClawRouter.Backend.Models.AdminMcpServerRevisionCreateRequest body, string idempotencyKey)
         {
             var requestHeaders = BuildRequestHeaders(
                 new Dictionary<string, HeaderParameterSpec>
                 {
                     ["Idempotency-Key"] = new HeaderParameterSpec(idempotencyKey, "simple", false, null),
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
                 },
                 new Dictionary<string, HeaderParameterSpec>()
             );
@@ -191,16 +153,9 @@ namespace Sdkwork.ClawRouter.Backend.Api
         /// <summary>
         /// Update MCP tool
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.ToolsUpdateResult?> ToolsUpdateAsync(string toolId, Sdkwork.ClawRouter.Backend.Models.AdminMcpToolUpdateRequest body, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.ToolsUpdateResult?> ToolsUpdateAsync(string toolId, Sdkwork.ClawRouter.Backend.Models.AdminMcpToolUpdateRequest body)
         {
-            var requestHeaders = BuildRequestHeaders(
-                new Dictionary<string, HeaderParameterSpec>
-                {
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
-                },
-                new Dictionary<string, HeaderParameterSpec>()
-            );
-            return await _client.PutAsync<Sdkwork.ClawRouter.Backend.Models.ToolsUpdateResult>(ApiPaths.BackendPath($"/mcp/tools/{SerializePathParameter(toolId, new PathParameterSpec("toolId", "simple", false))}"), body, null, requestHeaders, "application/json");
+            return await _client.PutAsync<Sdkwork.ClawRouter.Backend.Models.ToolsUpdateResult>(ApiPaths.BackendPath($"/mcp/tools/{SerializePathParameter(toolId, new PathParameterSpec("toolId", "simple", false))}"), body, null, null, "application/json");
         }
 
         private sealed record PathParameterSpec(string Name, string Style, bool Explode);

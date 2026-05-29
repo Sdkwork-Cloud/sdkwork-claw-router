@@ -6,6 +6,8 @@ export interface AiQuotaPolicyRecord {
   block_duration_seconds?: string;
   /** Burst limit field on ai quota policy record. */
   burst_limit?: string;
+  /** Channel group id field on ai quota policy record. */
+  channel_group_id?: string;
   /** Created at field on ai quota policy record. */
   created_at?: string;
   /** Data scope field on ai quota policy record. */
@@ -20,8 +22,6 @@ export interface AiQuotaPolicyRecord {
   effective_to?: string;
   /** Exhausted at field on ai quota policy record. */
   exhausted_at?: string;
-  /** Group id field on ai quota policy record. */
-  group_id?: string;
   /** Id field on ai quota policy record. */
   id?: string;
   /** Metadata field on ai quota policy record. */

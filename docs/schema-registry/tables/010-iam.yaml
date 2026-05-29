@@ -1,0 +1,80 @@
+tables:
+- table: iam_gateway_api_key
+  domain: iam
+  profile: credential_index
+  compliance_level: L3
+  system_of_record: conditional
+  write_owner: api-key-service
+  common_columns: user_entity
+  frontend_routes:
+  - /console/routing
+  - /console/api-keys
+  - /admin/user
+  - /admin/ratelimit
+  - /admin/service-providers/bindings
+  api_surfaces:
+  - app
+  - backend
+  - openai_v1
+  columns:
+    legacy_api_key_id: int64
+    channel_group_id: int64
+    name: string(128)
+    key_prefix: string(32)
+    key_display_masked: string(64)
+    key_hash: string(128)
+    hash_alg: string(32)
+    secret_version: int64
+    idempotency_key: string(128)
+    policy_id: int64
+    quota_policy_id: int64
+    rate_limit_policy_id: int64
+    environment: enum_int32
+    expire_at: instant
+    last_used_at: instant
+    last_used_ip_hash: string(128)
+    last_used_ip_masked: string(64)
+    last_used_ip_region: string(128)
+    last_revealed_at: instant
+    rotated_from_key_id: int64
+    revoked_at: instant
+    revoked_by: int64
+  required_columns:
+  - tenant_id
+  - organization_id
+  - user_id
+  - idempotency_key
+  indexes:
+  - name: uk_iam_gateway_api_key_hash
+    unique: true
+    columns:
+    - key_hash
+  - name: uk_iam_gateway_api_key_legacy
+    unique: true
+    columns:
+    - legacy_api_key_id
+  - name: uk_iam_gateway_api_key_idempotency
+    unique: true
+    columns:
+    - tenant_id
+    - idempotency_key
+  - name: idx_iam_gateway_api_key_tenant_user_status
+    columns:
+    - tenant_id
+    - organization_id
+    - user_id
+    - status
+    - updated_at
+    - id
+  - name: idx_iam_gateway_api_key_ai_channel_group_status
+    columns:
+    - tenant_id
+    - organization_id
+    - channel_group_id
+    - status
+    - updated_at
+    - id
+  security:
+    sensitivity: SECRET_HASH
+    stores_secret_plaintext: false
+    audit_required: true

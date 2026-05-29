@@ -1,4 +1,4 @@
-﻿import { createIdempotencyParams, getClawRouterBackendSdkClient } from 'sdkwork-claw-router-commons/runtime';
+import { createIdempotencyParams, getClawRouterBackendSdkClient } from 'sdkwork-claw-router-commons/runtime';
 
 type BackendCommerce = ReturnType<typeof getClawRouterBackendSdkClient>['commerce'];
 

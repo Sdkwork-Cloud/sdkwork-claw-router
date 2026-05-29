@@ -1,7 +1,7 @@
-source: apps/sdkwork-claw-router-portal/src/App.tsx
-schema: sdkwork-claw-router-frontend-field-contracts
 version: 0.1.0
+schema: sdkwork-claw-router-frontend-field-contracts
 rule: every actual portal route must be backed by explicit schema tables; page-critical fields must map to generated columns or Java-owned physical columns.
+source: apps/sdkwork-claw-router-portal/src/App.tsx
 x_response_entities:
   admin_announcement_item:
     name: AdminAnnouncementItem
@@ -3613,6 +3613,14 @@ x_response_entities:
     - group
     - type
     - model
+    - providerNativeModel
+    - requestedModelCatalogKey
+    - status
+    - httpStatus
+    - httpMethod
+    - errorCode
+    - errorType
+    - errorMessage
     - totalTime
     - ttft
     - isStream
@@ -3627,6 +3635,7 @@ x_response_entities:
     - path
     - reasoningEffort
     - ip
+    - userAgent
     properties:
       id:
         type: string
@@ -3660,6 +3669,40 @@ x_response_entities:
         type: string
         minLength: 1
         maxLength: 128
+      providerNativeModel:
+        type: string
+        maxLength: 128
+      requestedModelCatalogKey:
+        type: string
+        maxLength: 256
+      status:
+        type: string
+        enum:
+        - success
+        - error
+      httpStatus:
+        type: integer
+        format: int64
+        minimum: 0
+      httpMethod:
+        type: string
+        enum:
+        - GET
+        - POST
+        - PUT
+        - PATCH
+        - DELETE
+        - OPTIONS
+        - HEAD
+      errorCode:
+        type: string
+        maxLength: 128
+      errorType:
+        type: string
+        maxLength: 128
+      errorMessage:
+        type: string
+        maxLength: 2048
       totalTime:
         type: string
         minLength: 1
@@ -3708,6 +3751,10 @@ x_response_entities:
         type: string
         minLength: 1
         maxLength: 128
+      userAgent:
+        type: string
+        maxLength: 1024
+        description: Full HTTP User-Agent header captured from the gateway request. Empty when the client omitted the header.
   admin_api_keys_map_response:
     name: AdminApiKeysMapResponse
     type: object
@@ -10719,8 +10766,10 @@ frontend_models:
   interface: ChannelItem
   fields:
   - id
+  - channelId
   - name
   - vendor
+  - channelType
   - protocol
   - accessType
   - baseUrl
@@ -10730,6 +10779,7 @@ frontend_models:
   - expiresAt
   - models
   - capabilities
+  - resourceCodes
   - isMultimodal
   - timeoutMs
   - retryPolicy
@@ -10739,10 +10789,11 @@ frontend_models:
   - balance
   - errors
   data_sources:
-  - integration_channel
-  - integration_channel_model
-  - integration_provider
-  - integration_provider_account
+  - ai_channel
+  - ai_channel_model
+  - ai_provider
+  - ai_channel
+  - ai_channel_resource
   - integration_provider_health_snapshot
 - route: /admin/channel
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts
@@ -10762,6 +10813,7 @@ frontend_models:
   fields:
   - name
   - vendor
+  - channelType
   - protocol
   - accessType
   - baseUrl
@@ -10770,22 +10822,26 @@ frontend_models:
   - expiresAt
   - models
   - capabilities
+  - resourceCodes
   - timeoutMs
   - retryPolicy
   - circuitBreakerPolicy
   - weight
   - status
   data_sources:
-  - integration_channel
-  - integration_channel_model
-  - integration_provider
-  - integration_provider_account
+  - ai_channel
+  - ai_channel_model
+  - ai_provider
+  - ai_channel
+  - ai_channel_resource
+  - ai_channel_resource
 - route: /admin/channel
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts
   interface: ChannelUpdateInput
   fields:
   - name
   - vendor
+  - channelType
   - protocol
   - accessType
   - baseUrl
@@ -10794,16 +10850,19 @@ frontend_models:
   - expiresAt
   - models
   - capabilities
+  - resourceCodes
   - timeoutMs
   - retryPolicy
   - circuitBreakerPolicy
   - weight
   - status
   data_sources:
-  - integration_channel
-  - integration_channel_model
-  - integration_provider
-  - integration_provider_account
+  - ai_channel
+  - ai_channel_model
+  - ai_provider
+  - ai_channel
+  - ai_channel_resource
+  - ai_channel_resource
 - route: /admin/channel
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts
   interface: ChannelTestResult
@@ -10814,8 +10873,10 @@ frontend_models:
   - latency
   - item
   - item.id
+  - item.channelId
   - item.name
   - item.vendor
+  - item.channelType
   - item.protocol
   - item.accessType
   - item.baseUrl
@@ -10825,6 +10886,7 @@ frontend_models:
   - item.expiresAt
   - item.models
   - item.capabilities
+  - item.resourceCodes
   - item.isMultimodal
   - item.timeoutMs
   - item.retryPolicy
@@ -10834,8 +10896,9 @@ frontend_models:
   - item.balance
   - item.errors
   data_sources:
-  - integration_channel
-  - integration_provider_account
+  - ai_channel
+  - ai_channel_resource
+  - ai_channel
   - integration_provider_health_snapshot
   - ops_config_snapshot
   - ops_audit_log
@@ -10854,7 +10917,7 @@ frontend_models:
   - createdAt
   - updatedAt
   data_sources:
-  - integration_provider_account
+  - ai_channel
 - route: /admin/channel
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts
   interface: ProviderSecretInput
@@ -10865,7 +10928,7 @@ frontend_models:
   - secretRef
   - status
   data_sources:
-  - integration_provider_account
+  - ai_channel
 - route: /admin/channel
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts
   interface: ProviderSecretUpdateInput
@@ -10876,7 +10939,158 @@ frontend_models:
   - secretRef
   - status
   data_sources:
-  - integration_provider_account
+  - ai_channel
+- route: /admin/channel/endpoints
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts
+  interface: ChannelEndpoint
+  fields:
+  - id
+  - channelId
+  - providerCode
+  - channelCode
+  - channelType
+  - vendorCode
+  - regionCode
+  - apiEndpointCode
+  - baseUrl
+  - priority
+  - weight
+  - healthStatus
+  - status
+  - effectiveFrom
+  - effectiveTo
+  data_sources:
+  - ai_channel
+  - ai_channel_endpoint
+  - ai_model_vendor
+  - ai_api_endpoint
+- route: /admin/channel/endpoints
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts
+  interface: ChannelEndpointCreateInput
+  fields:
+  - channelId
+  - vendorCode
+  - regionCode
+  - apiEndpointCode
+  - baseUrl
+  - priority
+  - weight
+  - status
+  - effectiveFrom
+  - effectiveTo
+  data_sources:
+  - ai_channel
+  - ai_channel_endpoint
+  - ai_model_vendor
+  - ai_api_endpoint
+  - ops_audit_log
+- route: /admin/channel/endpoints
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts
+  interface: ChannelEndpointUpdateInput
+  fields:
+  - vendorCode
+  - regionCode
+  - apiEndpointCode
+  - baseUrl
+  - priority
+  - weight
+  - status
+  - effectiveFrom
+  - effectiveTo
+  data_sources:
+  - ai_channel_endpoint
+  - ai_model_vendor
+  - ai_api_endpoint
+  - ops_audit_log
+- route: /admin/channel/resources
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts
+  interface: AiResource
+  fields:
+  - id
+  - resourceCode
+  - resourceType
+  - displayName
+  - vendorCode
+  - modalityCode
+  - apiEndpointCode
+  - catalogKey
+  - model
+  - providerNativeModel
+  - compositionMode
+  - status
+  - sortOrder
+  - members
+  - members.parentResourceCode
+  - members.memberResourceCode
+  - members.memberRole
+  - members.required
+  - members.sortOrder
+  data_sources:
+  - ai_resource
+  - ai_resource_group_item
+- route: /admin/channel/resources
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts
+  interface: AiResourceMember
+  fields:
+  - parentResourceCode
+  - memberResourceCode
+  - memberRole
+  - required
+  - sortOrder
+  data_sources:
+  - ai_resource_group_item
+- route: /admin/channel/resources
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts
+  interface: AiResourceMemberInput
+  fields:
+  - memberResourceCode
+  - memberRole
+  - required
+  - sortOrder
+  data_sources:
+  - ai_resource_group_item
+- route: /admin/channel/resources
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts
+  interface: AiResourceCreateInput
+  fields:
+  - resourceCode
+  - resourceType
+  - displayName
+  - vendorCode
+  - modalityCode
+  - apiEndpointCode
+  - catalogKey
+  - model
+  - providerNativeModel
+  - compositionMode
+  - status
+  - sortOrder
+  - members
+  data_sources:
+  - ai_resource
+  - ai_resource_group_item
+  - ops_audit_log
+- route: /admin/channel/resources
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts
+  interface: AiResourceUpdateInput
+  fields:
+  - resourceCode
+  - resourceType
+  - displayName
+  - vendorCode
+  - modalityCode
+  - apiEndpointCode
+  - catalogKey
+  - model
+  - providerNativeModel
+  - compositionMode
+  - status
+  - sortOrder
+  - members
+  data_sources:
+  - ai_resource
+  - ai_resource_group_item
+  - ops_audit_log
 - route: /admin/dashboard
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-dashboard/src/dashboardService.ts
   interface: PieChartData
@@ -10941,8 +11155,8 @@ frontend_models:
   - usage
   - status
   data_sources:
-  - iam_gateway_api_key_group
-  - iam_gateway_api_key_group_metric_snapshot
+  - ai_channel_group
+  - ai_channel_group_metric_snapshot
   - ai_pricing_plan
 - route: /admin/group
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-group/src/groupService.ts
@@ -10956,7 +11170,7 @@ frontend_models:
   - capacity
   - status
   data_sources:
-  - iam_gateway_api_key_group
+  - ai_channel_group
   - ai_pricing_plan
 - route: /admin/group
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-group/src/groupService.ts
@@ -10970,7 +11184,7 @@ frontend_models:
   - capacity
   - status
   data_sources:
-  - iam_gateway_api_key_group
+  - ai_channel_group
   - ai_pricing_plan
 - route: /admin/group
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-group/src/groupService.ts
@@ -10991,10 +11205,10 @@ frontend_models:
   - status
   - healthStatus
   data_sources:
-  - iam_api_key_group_channel
-  - integration_provider
-  - integration_channel
-  - integration_channel_model
+  - ai_channel_group_member
+  - ai_provider
+  - ai_channel
+  - ai_channel_model
 - route: /admin/group
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-group/src/groupService.ts
   interface: GroupChannelBindingInput
@@ -11006,8 +11220,8 @@ frontend_models:
   - modelScope
   - capabilities
   data_sources:
-  - iam_api_key_group_channel
-  - integration_channel
+  - ai_channel_group_member
+  - ai_channel
 - route: /admin/group
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-group/src/groupService.ts
   interface: GroupChannelOption
@@ -11022,9 +11236,9 @@ frontend_models:
   - status
   - healthStatus
   data_sources:
-  - integration_provider
-  - integration_channel
-  - integration_channel_model
+  - ai_provider
+  - ai_channel
+  - ai_channel_model
 - route: /admin/marketing/referrals
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-marketing/src/marketingService.ts
   interface: ReferralStat
@@ -11498,7 +11712,6 @@ frontend_models:
   - vendorId
   - model
   - displayName
-  - name
   - type
   - priceIn
   - priceOut
@@ -11975,7 +12188,7 @@ frontend_models:
   - tpm
   data_sources:
   - ai_quota_policy
-  - iam_gateway_api_key_group
+  - ai_channel_group
 - route: /admin/ratelimit
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-ratelimit/src/ratelimitService.ts
   interface: ModelLimitRule
@@ -11988,7 +12201,7 @@ frontend_models:
   - status
   data_sources:
   - ai_quota_policy
-  - iam_gateway_api_key_group
+  - ai_channel_group
 - route: /admin/ratelimit
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-ratelimit/src/ratelimitService.ts
   interface: TokenLimitCreateInput
@@ -12027,6 +12240,14 @@ frontend_models:
   - group
   - type
   - model
+  - providerNativeModel
+  - requestedModelCatalogKey
+  - status
+  - httpStatus
+  - httpMethod
+  - errorCode
+  - errorType
+  - errorMessage
   - totalTime
   - ttft
   - isStream
@@ -12041,6 +12262,7 @@ frontend_models:
   - path
   - reasoningEffort
   - ip
+  - userAgent
   data_sources:
   - ai_request_trace
   - ai_usage_fact
@@ -13194,8 +13416,8 @@ frontend_models:
   - groupName
   data_sources:
   - iam_gateway_api_key
-  - iam_gateway_api_key_group
-  - iam_gateway_api_key_group_metric_snapshot
+  - ai_channel_group
+  - ai_channel_group_metric_snapshot
   - iam_gateway_access_policy
   - ai_quota_policy
   - ai_model_pricing
@@ -13209,8 +13431,8 @@ frontend_models:
   - name
   - rate
   data_sources:
-  - iam_gateway_api_key_group
-  - iam_gateway_api_key_group_metric_snapshot
+  - ai_channel_group
+  - ai_channel_group_metric_snapshot
   - ai_pricing_plan
 - route: /console/api-keys
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-api-keys/src/apiKeyService.ts
@@ -13250,7 +13472,7 @@ frontend_models:
   - expires
   - defaultForRuntime
   data_sources:
-  - iam_gateway_api_key_group
+  - ai_channel_group
   - iam_gateway_access_policy
   - ai_quota_policy
 - route: /console/checkout
@@ -13709,11 +13931,12 @@ frontend_models:
   - path
   - reasoningEffort
   - ip
+  - userAgent
   data_sources:
   - ai_request_trace
   - ai_usage_fact
   - ai_routing_decision_log
-  - iam_gateway_api_key_group
+  - ai_channel_group
 - route: /console/user
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-user/src/userService.ts
   interface: UserProfile
@@ -14108,7 +14331,6 @@ frontend_models:
   - useCases
   data_sources:
   - ai_model_vendor
-  - ai_model_vendor_region
   - ai_model
   - ai_model_capability
   - ai_model_pricing
@@ -14153,7 +14375,6 @@ frontend_models:
   - limit
   data_sources:
   - ai_model_vendor
-  - ai_model_vendor_region
   - ai_model
   - ai_model_capability
   - ai_model_pricing
@@ -14165,7 +14386,7 @@ frontend_models:
   - label
   - modelCount
   data_sources:
-  - iam_gateway_api_key_group
+  - ai_channel_group
 - route: /models
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-models/src/modelService.ts
   interface: ModelCatalogResult
@@ -14177,12 +14398,11 @@ frontend_models:
   - groups.modelCount
   data_sources:
   - ai_model_vendor
-  - ai_model_vendor_region
   - ai_model
   - ai_model_capability
   - ai_model_pricing
-  - iam_gateway_api_key_group
-  - iam_api_key_group_channel
+  - ai_channel_group
+  - ai_channel_group_member
 - route: /models
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-models/src/runtimeModelCatalog.ts
   interface: RuntimeModelCatalogItem
@@ -14222,7 +14442,6 @@ frontend_models:
   - priceAvailability
   data_sources:
   - ai_model_vendor
-  - ai_model_vendor_region
   - ai_model
   - ai_model_capability
   - ai_model_pricing
@@ -16162,8 +16381,8 @@ frontend_operations:
   - ai_model
   - ai_model_capability
   - ai_model_pricing
-  - iam_gateway_api_key_group
-  - iam_api_key_group_channel
+  - ai_channel_group
+  - ai_channel_group_member
   query_parameters:
   - name: billing_meter
     schema:
@@ -17220,6 +17439,7 @@ frontend_operations:
           - path
           - reasoningEffort
           - ip
+          - userAgent
           properties:
             id:
               type: string
@@ -17242,7 +17462,7 @@ frontend_operations:
               description: Provider native model id, for example gpt-5.5.
             requestedModelCatalogKey:
               type: string
-              description: Routed catalog model identity in vendor/region/model form, for example openai/global/gpt-5.5.
+              description: Routed base catalog model identity in vendor/model form, for example openai/gpt-5.5. Region-specific pricing or ranking keys are stored separately from the routed model identity.
             status:
               type: string
             httpStatus:
@@ -17291,6 +17511,10 @@ frontend_operations:
               type: string
             ip:
               type: string
+            userAgent:
+              type: string
+              maxLength: 1024
+              description: Full HTTP User-Agent header captured from the gateway request. Empty when the client omitted the header.
       total:
         type: integer
         format: int64
@@ -25407,8 +25631,8 @@ frontend_operations:
   api_path: /app/v3/api/iam/api_keys
   read_sources:
   - iam_gateway_api_key
-  - iam_gateway_api_key_group
-  - iam_gateway_api_key_group_metric_snapshot
+  - ai_channel_group
+  - ai_channel_group_metric_snapshot
   - iam_gateway_access_policy
   - ai_quota_policy
   - ai_model_pricing
@@ -25543,8 +25767,8 @@ frontend_operations:
   api_method: GET
   api_path: /app/v3/api/iam/api_key_groups
   read_sources:
-  - iam_gateway_api_key_group
-  - iam_gateway_api_key_group_metric_snapshot
+  - ai_channel_group
+  - ai_channel_group_metric_snapshot
   - ai_pricing_plan
   query_parameters: []
   response_schema:
@@ -25564,9 +25788,9 @@ frontend_operations:
   api_path: /app/v3/api/iam/api_keys
   idempotency_required: true
   read_sources:
-  - iam_gateway_api_key_group
+  - ai_channel_group
   write_tables:
-  - iam_gateway_api_key_group
+  - ai_channel_group
   - iam_gateway_api_key
   - iam_gateway_access_policy
   - ai_quota_policy
@@ -25642,7 +25866,7 @@ frontend_operations:
   api_path: /app/v3/api/iam/api_keys/{apiKeyId}
   read_sources:
   - iam_gateway_api_key
-  - iam_gateway_api_key_group
+  - ai_channel_group
   - iam_gateway_access_policy
   - ai_quota_policy
   write_tables:
@@ -28762,6 +28986,268 @@ frontend_operations:
   - agentId
   query_parameters: []
   response_schema: *id141
+- route: /admin/channel/resources
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts
+  operation: fetchAiResources
+  operation_id: aiResources.list
+  kind: read
+  api_surface: backend
+  api_method: GET
+  api_path: /backend/v3/api/ai/resources
+  read_sources:
+  - ai_resource
+  - ai_resource_group_item
+  query_parameters: []
+  response_schema:
+    name: AdminAiResourcesResponse
+    required:
+    - items
+    properties:
+      items:
+        type: array
+        items:
+          name: AdminAiResourceItem
+          type: object
+          additionalProperties: false
+          required: &id142
+          - id
+          - resourceCode
+          - resourceType
+          - displayName
+          - compositionMode
+          - status
+          - members
+          properties: &id143
+            id:
+              type: string
+              minLength: 1
+              maxLength: 128
+            resourceCode:
+              type: string
+              minLength: 1
+              maxLength: 192
+              pattern: ^[A-Za-z0-9._-]+$
+            resourceType:
+              type: string
+              enum:
+              - vendor
+              - modality
+              - api_endpoint
+              - model_api
+              - bundle
+            displayName:
+              type: string
+              minLength: 1
+              maxLength: 128
+            vendorCode:
+              type: string
+              maxLength: 64
+            modalityCode:
+              type: string
+              maxLength: 64
+            apiEndpointCode:
+              type: string
+              maxLength: 128
+            catalogKey:
+              type: string
+              maxLength: 256
+            model:
+              type: string
+              maxLength: 128
+            providerNativeModel:
+              type: string
+              maxLength: 256
+            compositionMode:
+              type: string
+              enum:
+              - single
+              - any
+              - all
+            status:
+              type: string
+              enum:
+              - active
+              - disabled
+              - inactive
+            sortOrder:
+              type: integer
+              format: int64
+            members:
+              type: array
+              maxItems: 512
+              items:
+                name: AdminAiResourceMemberItem
+                type: object
+                additionalProperties: false
+                required:
+                - parentResourceCode
+                - memberResourceCode
+                - memberRole
+                - required
+                properties:
+                  parentResourceCode:
+                    type: string
+                    minLength: 1
+                    maxLength: 192
+                  memberResourceCode:
+                    type: string
+                    minLength: 1
+                    maxLength: 192
+                  memberRole:
+                    type: string
+                    enum:
+                    - included
+                    - optional
+                    - fallback
+                  required:
+                    type: boolean
+                  sortOrder:
+                    type: integer
+                    format: int64
+- route: /admin/channel/resources
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts
+  operation: createAiResource
+  operation_id: aiResources.create
+  kind: create
+  api_surface: backend
+  api_method: POST
+  api_path: /backend/v3/api/ai/resources
+  read_sources:
+  - ai_resource
+  - ai_resource_group_item
+  write_tables:
+  - ai_resource
+  - ai_resource_group_item
+  - ops_audit_log
+  request_schema:
+    name: AdminAiResourceCreateRequest
+    required:
+    - resourceCode
+    - resourceType
+    - displayName
+    properties: &id144
+      resourceCode:
+        type: string
+        minLength: 1
+        maxLength: 192
+        pattern: ^[A-Za-z0-9._-]+$
+        description: Stable normalized AI resource code.
+      resourceType:
+        type: string
+        enum:
+        - vendor
+        - modality
+        - api_endpoint
+        - model_api
+        - bundle
+      displayName:
+        type: string
+        minLength: 1
+        maxLength: 128
+      vendorCode:
+        type: string
+        nullable: true
+        maxLength: 64
+        pattern: ^[A-Za-z0-9._-]+$
+      modalityCode:
+        type: string
+        nullable: true
+        maxLength: 64
+        pattern: ^[A-Za-z0-9._-]+$
+      apiEndpointCode:
+        type: string
+        nullable: true
+        maxLength: 128
+        pattern: ^[A-Za-z0-9._-]+$
+      catalogKey:
+        type: string
+        nullable: true
+        maxLength: 256
+      model:
+        type: string
+        nullable: true
+        maxLength: 128
+      providerNativeModel:
+        type: string
+        nullable: true
+        maxLength: 256
+      compositionMode:
+        type: string
+        enum:
+        - single
+        - any
+        - all
+      status:
+        type: string
+        enum:
+        - active
+        - disabled
+        - inactive
+      sortOrder:
+        type: integer
+        format: int64
+        nullable: true
+        minimum: 0
+      members:
+        type: array
+        maxItems: 512
+        items:
+          name: AdminAiResourceMemberInput
+          type: object
+          additionalProperties: false
+          required:
+          - memberResourceCode
+          properties:
+            memberResourceCode:
+              type: string
+              minLength: 1
+              maxLength: 192
+              pattern: ^[A-Za-z0-9._-]+$
+            memberRole:
+              type: string
+              enum:
+              - included
+              - optional
+              - fallback
+            required:
+              type: boolean
+            sortOrder:
+              type: integer
+              format: int64
+              nullable: true
+              minimum: 0
+  response_schema: &id145
+    name: AdminAiResourceMutationResponse
+    required:
+    - item
+    properties:
+      item:
+        name: AdminAiResourceItem
+        type: object
+        additionalProperties: false
+        required: *id142
+        properties: *id143
+- route: /admin/channel/resources
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts
+  operation: updateAiResource
+  operation_id: aiResources.update
+  kind: update
+  api_surface: backend
+  api_method: PUT
+  api_path: /backend/v3/api/ai/resources/{resourceId}
+  path_params:
+  - resourceId
+  read_sources:
+  - ai_resource
+  - ai_resource_group_item
+  write_tables:
+  - ai_resource
+  - ai_resource_group_item
+  - ops_audit_log
+  request_schema:
+    name: AdminAiResourceUpdateRequest
+    properties: *id144
+  response_schema: *id145
 - route: /admin/channel
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts
   operation: fetchModels
@@ -28831,14 +29317,14 @@ frontend_operations:
           name: AdminModelVendorItem
           type: object
           additionalProperties: false
-          required: &id142
+          required: &id146
           - id
           - vendorCode
           - name
           - status
           - color
           - description
-          properties: &id143
+          properties: &id147
             id:
               type: string
               minLength: 1
@@ -28888,7 +29374,7 @@ frontend_operations:
           name: AdminAiModelItem
           type: object
           additionalProperties: false
-          required: &id144
+          required: &id148
           - id
           - vendorId
           - vendorCode
@@ -28921,7 +29407,7 @@ frontend_operations:
           - shelfState
           - routingState
           - replacementModel
-          properties: &id145
+          properties: &id149
             id:
               type: string
               minLength: 1
@@ -29128,8 +29614,8 @@ frontend_operations:
           name: AdminModelVendorItem
           type: object
           additionalProperties: false
-          required: *id142
-          properties: *id143
+          required: *id146
+          properties: *id147
         description: Model vendor snapshots after optional initialization.
       models:
         type: array
@@ -29137,8 +29623,8 @@ frontend_operations:
           name: AdminAiModelItem
           type: object
           additionalProperties: false
-          required: *id144
-          properties: *id145
+          required: *id148
+          properties: *id149
         description: AI model snapshots after optional initialization.
 - route: /admin/model
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts
@@ -30082,8 +30568,8 @@ frontend_operations:
           name: AdminModelVendorItem
           type: object
           additionalProperties: false
-          required: *id142
-          properties: *id143
+          required: *id146
+          properties: *id147
         description: Current model vendor snapshots after sync.
       models:
         type: array
@@ -30091,8 +30577,8 @@ frontend_operations:
           name: AdminAiModelItem
           type: object
           additionalProperties: false
-          required: *id144
-          properties: *id145
+          required: *id148
+          properties: *id149
         description: Current ai model snapshots after sync.
 - route: /admin/model
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts
@@ -30145,8 +30631,8 @@ frontend_operations:
         name: AdminModelVendorItem
         type: object
         additionalProperties: false
-        required: *id142
-        properties: *id143
+        required: *id146
+        properties: *id147
         description: Persisted model vendor snapshot returned by the backend.
 - route: /admin/model
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts
@@ -30191,12 +30677,6 @@ frontend_operations:
         nullable: true
         maxLength: 128
         description: Optional product display name. Empty or null falls back to model.
-      name:
-        type: string
-        minLength: 1
-        maxLength: 128
-        pattern: ^[A-Za-z0-9._:/-]+$
-        description: Deprecated compatibility alias for model.
       type:
         type: string
         enum:
@@ -30228,7 +30708,7 @@ frontend_operations:
         type: array
         minItems: 1
         maxItems: 32
-        items: &id146
+        items: &id150
           name: AdminAiModelRegionPrice
           type: object
           additionalProperties: false
@@ -30361,8 +30841,8 @@ frontend_operations:
         name: AdminAiModelItem
         type: object
         additionalProperties: false
-        required: *id144
-        properties: *id145
+        required: *id148
+        properties: *id149
         description: Persisted ai model snapshot returned by the backend.
 - route: /admin/model
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts
@@ -30400,12 +30880,6 @@ frontend_operations:
         nullable: true
         maxLength: 128
         description: Optional product display name update. Empty or null falls back to model.
-      name:
-        type: string
-        minLength: 1
-        maxLength: 128
-        pattern: ^[A-Za-z0-9._:/-]+$
-        description: Deprecated compatibility alias for model.
       type:
         type: string
         enum:
@@ -30437,7 +30911,7 @@ frontend_operations:
         type: array
         minItems: 1
         maxItems: 32
-        items: *id146
+        items: *id150
         description: Optional official reference prices by region.
       status:
         type: string
@@ -30545,8 +31019,8 @@ frontend_operations:
         name: AdminAiModelItem
         type: object
         additionalProperties: false
-        required: *id144
-        properties: *id145
+        required: *id148
+        properties: *id149
         description: Persisted ai model snapshot returned by the backend.
 - route: /admin/model
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts
@@ -30786,7 +31260,7 @@ frontend_operations:
     properties:
       items:
         type: array
-        items: &id147
+        items: &id151
           name: CommerceProductCategoryItem
           type: object
           additionalProperties: false
@@ -30873,7 +31347,7 @@ frontend_operations:
   write_tables:
   - commerce_product_category
   - ops_audit_log
-  request_schema: &id148
+  request_schema: &id152
     name: CommerceProductCategoryMutationRequest
     type: object
     additionalProperties: false
@@ -30904,14 +31378,14 @@ frontend_operations:
         type: integer
         format: int64
         minimum: 0
-  response_schema: &id149
+  response_schema: &id153
     name: CommerceProductCategoryMutationResponse
     type: object
     additionalProperties: false
     required:
     - item
     properties:
-      item: *id147
+      item: *id151
 - route: /admin/catalog
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-catalog/src/catalogService.ts
   operation: updateCommerceCategory
@@ -30929,8 +31403,8 @@ frontend_operations:
   write_tables:
   - commerce_product_category
   - ops_audit_log
-  request_schema: *id148
-  response_schema: *id149
+  request_schema: *id152
+  response_schema: *id153
 - route: /admin/catalog
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-catalog/src/catalogService.ts
   operation: deleteCommerceCategory
@@ -31019,7 +31493,7 @@ frontend_operations:
     properties:
       items:
         type: array
-        items: &id150
+        items: &id154
           name: CommerceProductSpuItem
           type: object
           additionalProperties: false
@@ -31186,7 +31660,7 @@ frontend_operations:
   - commerce_product_spu
   - commerce_product_media
   - ops_audit_log
-  request_schema: &id151
+  request_schema: &id155
     name: CommerceProductSpuMutationRequest
     type: object
     additionalProperties: false
@@ -31237,14 +31711,14 @@ frontend_operations:
         - active
         - inactive
         - archived
-  response_schema: &id152
+  response_schema: &id156
     name: CommerceProductSpuMutationResponse
     type: object
     additionalProperties: false
     required:
     - item
     properties:
-      item: *id150
+      item: *id154
 - route: /admin/catalog
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-catalog/src/catalogService.ts
   operation: updateCommerceProduct
@@ -31264,8 +31738,8 @@ frontend_operations:
   - commerce_product_spu
   - commerce_product_media
   - ops_audit_log
-  request_schema: *id151
-  response_schema: *id152
+  request_schema: *id155
+  response_schema: *id156
 - route: /admin/catalog
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-catalog/src/catalogService.ts
   operation: listCommerceSkus
@@ -31321,7 +31795,7 @@ frontend_operations:
     properties:
       items:
         type: array
-        items: &id154
+        items: &id158
           name: CommerceProductSkuItem
           type: object
           additionalProperties: false
@@ -31392,7 +31866,7 @@ frontend_operations:
               maxLength: 64
             attributes:
               type: array
-              items: &id153
+              items: &id157
                 name: CommerceProductSkuAttributeItem
                 type: object
                 additionalProperties: false
@@ -31466,7 +31940,7 @@ frontend_operations:
   - commerce_product_sku
   - commerce_product_sku_attribute
   - ops_audit_log
-  request_schema: &id155
+  request_schema: &id159
     name: CommerceProductSkuMutationRequest
     type: object
     additionalProperties: false
@@ -31526,15 +32000,15 @@ frontend_operations:
         - archived
       attributes:
         type: array
-        items: *id153
-  response_schema: &id156
+        items: *id157
+  response_schema: &id160
     name: CommerceProductSkuMutationResponse
     type: object
     additionalProperties: false
     required:
     - item
     properties:
-      item: *id154
+      item: *id158
 - route: /admin/catalog
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-catalog/src/catalogService.ts
   operation: updateCommerceSku
@@ -31556,8 +32030,8 @@ frontend_operations:
   - commerce_product_sku
   - commerce_product_sku_attribute
   - ops_audit_log
-  request_schema: *id155
-  response_schema: *id156
+  request_schema: *id159
+  response_schema: *id160
 - route: /admin/catalog
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-catalog/src/catalogService.ts
   operation: listCommerceAttributes
@@ -31604,7 +32078,7 @@ frontend_operations:
     properties:
       items:
         type: array
-        items: &id157
+        items: &id161
           name: CommerceProductAttributeItem
           type: object
           additionalProperties: false
@@ -31743,7 +32217,7 @@ frontend_operations:
     required:
     - item
     properties:
-      item: *id157
+      item: *id161
 - route: /admin/catalog
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-catalog/src/catalogService.ts
   operation: listCommercePriceLists
@@ -31794,7 +32268,7 @@ frontend_operations:
     properties:
       items:
         type: array
-        items: &id158
+        items: &id162
           name: CommercePriceListItem
           type: object
           additionalProperties: false
@@ -31924,7 +32398,7 @@ frontend_operations:
     required:
     - item
     properties:
-      item: *id158
+      item: *id162
 - route: /admin/marketing
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-marketing/src/marketingService.ts
   operation: backendPromotionOffersList
@@ -31959,7 +32433,7 @@ frontend_operations:
     schema:
       type: string
       maxLength: 32
-  response_schema: &id159
+  response_schema: &id163
     name: PromotionCollectionResponse
     type: object
     additionalProperties: false
@@ -32040,7 +32514,7 @@ frontend_operations:
     schema:
       type: string
       maxLength: 32
-  response_schema: *id159
+  response_schema: *id163
 - route: /admin/marketing
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-marketing/src/marketingService.ts
   operation: backendPromotionCodesList
@@ -32075,7 +32549,7 @@ frontend_operations:
     schema:
       type: string
       maxLength: 32
-  response_schema: *id159
+  response_schema: *id163
 - route: /admin/marketing
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-marketing/src/marketingService.ts
   operation: backendPromotionDiscountApplicationsList
@@ -32113,7 +32587,7 @@ frontend_operations:
     schema:
       type: string
       maxLength: 32
-  response_schema: *id159
+  response_schema: *id163
 - route: /admin/marketing
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-marketing/src/marketingService.ts
   operation: backendPromotionCodeRedemptionsList
@@ -32149,7 +32623,7 @@ frontend_operations:
     schema:
       type: string
       maxLength: 64
-  response_schema: *id159
+  response_schema: *id163
 - route: /admin/marketing
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-marketing/src/marketingService.ts
   operation: backendPromotionUserCouponsList
@@ -32185,7 +32659,7 @@ frontend_operations:
     schema:
       type: string
       maxLength: 64
-  response_schema: *id159
+  response_schema: *id163
 - route: /admin/marketing
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-marketing/src/marketingService.ts
   operation: backendPromotionDiscountAllocationsList
@@ -32207,7 +32681,7 @@ frontend_operations:
     schema:
       type: string
       maxLength: 128
-  response_schema: *id159
+  response_schema: *id163
 - route: /admin/marketing
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-marketing/src/marketingService.ts
   operation: backendPromotionCouponLedgerEntriesList
@@ -32229,7 +32703,7 @@ frontend_operations:
     schema:
       type: string
       maxLength: 128
-  response_schema: *id159
+  response_schema: *id163
 - route: /admin/marketing
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-marketing/src/marketingService.ts
   operation: backendPromotionBudgetLedgerEntriesList
@@ -32250,7 +32724,7 @@ frontend_operations:
     schema:
       type: string
       maxLength: 128
-  response_schema: *id159
+  response_schema: *id163
 - route: /admin/marketing
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-marketing/src/marketingService.ts
   operation: backendPromotionExternalBindingsList
@@ -32274,7 +32748,7 @@ frontend_operations:
     schema:
       type: string
       maxLength: 64
-  response_schema: *id159
+  response_schema: *id163
 - route: /admin/marketing
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-marketing/src/marketingService.ts
   operation: backendPromotionEventsList
@@ -32293,7 +32767,7 @@ frontend_operations:
     schema:
       type: string
       maxLength: 64
-  response_schema: *id159
+  response_schema: *id163
 - route: /admin/orders
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-orders/src/ordersService.ts
   operation: backendFulfillmentsList
@@ -32425,7 +32899,7 @@ frontend_operations:
     properties:
       items:
         type: array
-        items: &id160
+        items: &id164
           name: CommerceInventoryStockItem
           type: object
           additionalProperties: false
@@ -32550,7 +33024,7 @@ frontend_operations:
     required:
     - item
     properties:
-      item: *id160
+      item: *id164
 - route: /admin/inventory
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-inventory/src/inventoryService.ts
   operation: listInventoryReservations
@@ -32840,7 +33314,7 @@ frontend_operations:
     schema:
       type: string
       maxLength: 32
-  response_schema: &id161
+  response_schema: &id165
     name: CommerceStandardCollectionResponse
     type: object
     additionalProperties: false
@@ -32921,7 +33395,7 @@ frontend_operations:
     schema:
       type: string
       maxLength: 32
-  response_schema: *id161
+  response_schema: *id165
 - route: /admin/finance
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-finance/src/financeService.ts
   operation: backendInvoicesRetrieve
@@ -33008,7 +33482,7 @@ frontend_operations:
     schema:
       type: string
       maxLength: 32
-  response_schema: &id164
+  response_schema: &id168
     name: CommerceStandardCollectionResponse
     type: object
     additionalProperties: false
@@ -33074,7 +33548,7 @@ frontend_operations:
   - commerce_membership_plan
   - commerce_membership_entitlement
   - ops_audit_log
-  request_schema: &id162
+  request_schema: &id166
     name: CommerceMembershipPlanMutationRequest
     type: object
     additionalProperties: false
@@ -33146,7 +33620,7 @@ frontend_operations:
         - active
         - inactive
         - disabled
-  response_schema: &id163
+  response_schema: &id167
     name: CommerceStandardResourceResponse
     type: object
     additionalProperties: false
@@ -33194,8 +33668,8 @@ frontend_operations:
   - commerce_membership_plan
   - commerce_membership_entitlement
   - ops_audit_log
-  request_schema: *id162
-  response_schema: *id163
+  request_schema: *id166
+  response_schema: *id167
 - route: /admin/memberships
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts
   operation: backendMembershipsPlansDelete
@@ -33214,7 +33688,7 @@ frontend_operations:
   write_tables:
   - commerce_membership_plan
   - ops_audit_log
-  response_schema: &id166
+  response_schema: &id170
     name: AdminDeleteResponse
     type: object
     additionalProperties: false
@@ -33269,7 +33743,7 @@ frontend_operations:
     schema:
       type: string
       maxLength: 32
-  response_schema: *id164
+  response_schema: *id168
 - route: /admin/memberships
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts
   operation: fetchMembershipAdminPackageCatalog
@@ -33355,7 +33829,7 @@ frontend_operations:
   - commerce_product_spu
   - commerce_product_sku
   - ops_audit_log
-  request_schema: &id165
+  request_schema: &id169
     name: CommerceMembershipPackageMutationRequest
     type: object
     additionalProperties: false
@@ -33402,7 +33876,7 @@ frontend_operations:
         - active
         - inactive
         - disabled
-  response_schema: *id163
+  response_schema: *id167
 - route: /admin/memberships
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts
   operation: backendMembershipsPackagesUpdate
@@ -33426,8 +33900,8 @@ frontend_operations:
   - commerce_product_spu
   - commerce_product_sku
   - ops_audit_log
-  request_schema: *id165
-  response_schema: *id163
+  request_schema: *id169
+  response_schema: *id167
 - route: /admin/memberships
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts
   operation: backendMembershipsPackagesDelete
@@ -33446,7 +33920,7 @@ frontend_operations:
   write_tables:
   - commerce_membership_package
   - ops_audit_log
-  response_schema: *id166
+  response_schema: *id170
 - route: /admin/memberships
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts
   operation: backendMembershipsPackageGroupsList
@@ -33478,7 +33952,7 @@ frontend_operations:
     schema:
       type: string
       maxLength: 32
-  response_schema: *id164
+  response_schema: *id168
 - route: /admin/memberships
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts
   operation: backendMembershipsPackageGroupsCreate
@@ -33498,7 +33972,7 @@ frontend_operations:
   write_tables:
   - commerce_membership_package_group
   - ops_audit_log
-  request_schema: &id167
+  request_schema: &id171
     name: CommerceMembershipPackageGroupMutationRequest
     type: object
     additionalProperties: false
@@ -33539,7 +34013,7 @@ frontend_operations:
         - active
         - inactive
         - disabled
-  response_schema: *id163
+  response_schema: *id167
 - route: /admin/memberships
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts
   operation: backendMembershipsPackageGroupsUpdate
@@ -33559,8 +34033,8 @@ frontend_operations:
   write_tables:
   - commerce_membership_package_group
   - ops_audit_log
-  request_schema: *id167
-  response_schema: *id163
+  request_schema: *id171
+  response_schema: *id167
 - route: /admin/memberships
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts
   operation: backendMembershipsPackageGroupsDelete
@@ -33578,7 +34052,7 @@ frontend_operations:
   write_tables:
   - commerce_membership_package_group
   - ops_audit_log
-  response_schema: *id166
+  response_schema: *id170
 - route: /admin/memberships
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts
   operation: backendMembershipsMembersList
@@ -33629,7 +34103,7 @@ frontend_operations:
     schema:
       type: string
       maxLength: 32
-  response_schema: *id164
+  response_schema: *id168
 - route: /admin/memberships
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts
   operation: backendMembershipsMembersStatusUpdate
@@ -33663,7 +34137,7 @@ frontend_operations:
         - expired
         - suspended
         - cancelled
-  response_schema: *id163
+  response_schema: *id167
 - route: /admin/memberships
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts
   operation: backendMembershipsEntitlementsList
@@ -33710,7 +34184,7 @@ frontend_operations:
     schema:
       type: string
       maxLength: 32
-  response_schema: *id164
+  response_schema: *id168
 - route: /admin/memberships
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts
   operation: fetchMembershipAdminPackageGroups
@@ -33747,8 +34221,8 @@ frontend_operations:
   write_tables:
   - commerce_membership_package_group
   - ops_audit_log
-  request_schema: *id167
-  response_schema: *id163
+  request_schema: *id171
+  response_schema: *id167
 - route: /admin/memberships
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts
   operation: updateMembershipAdminPackageGroup
@@ -33769,8 +34243,8 @@ frontend_operations:
   write_tables:
   - commerce_membership_package_group
   - ops_audit_log
-  request_schema: *id167
-  response_schema: *id163
+  request_schema: *id171
+  response_schema: *id167
 - route: /admin/memberships
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts
   operation: deleteMembershipAdminPackageGroup
@@ -33790,7 +34264,7 @@ frontend_operations:
   write_tables:
   - commerce_membership_package_group
   - ops_audit_log
-  response_schema: *id166
+  response_schema: *id170
 - route: /admin/memberships
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts
   operation: fetchMembershipAdminPackages
@@ -33833,8 +34307,8 @@ frontend_operations:
   - commerce_product_spu
   - commerce_product_sku
   - ops_audit_log
-  request_schema: *id165
-  response_schema: *id163
+  request_schema: *id169
+  response_schema: *id167
 - route: /admin/memberships
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts
   operation: updateMembershipAdminPackage
@@ -33859,8 +34333,8 @@ frontend_operations:
   - commerce_product_spu
   - commerce_product_sku
   - ops_audit_log
-  request_schema: *id165
-  response_schema: *id163
+  request_schema: *id169
+  response_schema: *id167
 - route: /admin/memberships
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts
   operation: deleteMembershipAdminPackage
@@ -33881,7 +34355,7 @@ frontend_operations:
   write_tables:
   - commerce_membership_package
   - ops_audit_log
-  response_schema: *id166
+  response_schema: *id170
 - route: /admin/memberships
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts
   operation: updateMembershipAdminPlan
@@ -33902,8 +34376,8 @@ frontend_operations:
   - commerce_membership_plan
   - commerce_membership_entitlement
   - ops_audit_log
-  request_schema: *id162
-  response_schema: *id163
+  request_schema: *id166
+  response_schema: *id167
 - route: /admin/memberships
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts
   operation: deleteMembershipAdminPlan
@@ -33924,7 +34398,7 @@ frontend_operations:
   write_tables:
   - commerce_membership_plan
   - ops_audit_log
-  response_schema: *id166
+  response_schema: *id170
 - route: /admin/memberships
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts
   operation: updateMembershipAdminMemberStatus
@@ -33944,7 +34418,7 @@ frontend_operations:
   write_tables:
   - commerce_membership
   - ops_audit_log
-  response_schema: *id163
+  response_schema: *id167
 - route: /admin/orders
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-orders/src/ordersService.ts
   operation: backendOrdersList
@@ -33983,7 +34457,7 @@ frontend_operations:
     schema:
       type: string
       maxLength: 32
-  response_schema: &id168
+  response_schema: &id172
     name: CommerceStandardCollectionResponse
     type: object
     additionalProperties: false
@@ -34120,7 +34594,7 @@ frontend_operations:
     schema:
       type: string
       maxLength: 32
-  response_schema: *id168
+  response_schema: *id172
 - route: /admin/payments
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-payments/src/paymentsService.ts
   operation: backendPaymentsProvidersList
@@ -34132,7 +34606,7 @@ frontend_operations:
   sdk_domain: commerce
   summary: Payments Providers List
   description: Standard appbase commerce API for payments.providers.list; no legacy billing compatibility route is exposed.
-  read_sources: &id178
+  read_sources: &id182
   - commerce_payment_provider
   - commerce_payment_provider_account
   - commerce_payment_method
@@ -34142,7 +34616,7 @@ frontend_operations:
   - commerce_payment_attempt
   - commerce_payment_webhook_event
   - commerce_payment_reconciliation_run
-  query_parameters: &id184
+  query_parameters: &id188
   - name: page
     schema:
       type: integer
@@ -34186,11 +34660,11 @@ frontend_operations:
           - createdAt
           - updatedAt
           properties:
-            id: &id173
+            id: &id177
               type: string
               minLength: 1
               maxLength: 128
-            providerCode: &id170
+            providerCode: &id174
               type: string
               enum:
               - wechat_pay
@@ -34220,14 +34694,14 @@ frontend_operations:
               - platform
             supportedCountries:
               type: array
-              items: &id174
+              items: &id178
                 type: string
                 minLength: 2
                 maxLength: 2
                 pattern: ^[A-Z]{2}$
             supportedCurrencies:
               type: array
-              items: &id175
+              items: &id179
                 type: string
                 minLength: 3
                 maxLength: 3
@@ -34244,26 +34718,26 @@ frontend_operations:
                 - webhook
                 - reconciliation
                 - tokenization
-            status: &id176
+            status: &id180
               type: string
               enum:
               - active
               - inactive
               - disabled
-            createdAt: &id169
+            createdAt: &id173
               type: string
               minLength: 1
               maxLength: 64
-            updatedAt: *id169
-      total: &id177
+            updatedAt: *id173
+      total: &id181
         type: integer
         format: int64
         minimum: 0
-      page: &id171
+      page: &id175
         type: integer
         format: int64
         minimum: 1
-      pageSize: &id172
+      pageSize: &id176
         type: integer
         format: int64
         minimum: 1
@@ -34284,11 +34758,11 @@ frontend_operations:
   - ops_audit_log
   query_parameters:
   - name: provider_code
-    schema: *id170
+    schema: *id174
   - name: page
-    schema: *id171
+    schema: *id175
   - name: page_size
-    schema: *id172
+    schema: *id176
   - name: status
     schema:
       type: string
@@ -34305,7 +34779,7 @@ frontend_operations:
     properties:
       items:
         type: array
-        items: &id183
+        items: &id187
           name: CommercePaymentProviderAccountItem
           type: object
           additionalProperties: false
@@ -34322,25 +34796,25 @@ frontend_operations:
           - createdAt
           - updatedAt
           properties:
-            id: *id173
-            accountNo: &id179
+            id: *id177
+            accountNo: &id183
               type: string
               minLength: 1
               maxLength: 128
               pattern: ^[A-Za-z0-9_-]+$
-            providerCode: *id170
-            merchantId: &id180
+            providerCode: *id174
+            merchantId: &id184
               type: string
               minLength: 1
               maxLength: 128
-            environment: &id181
+            environment: &id185
               type: string
               enum:
               - sandbox
               - production
-            countryCode: *id174
-            settlementCurrency: *id175
-            secretRef: &id182
+            countryCode: *id178
+            settlementCurrency: *id179
+            secretRef: &id186
               type: string
               minLength: 1
               maxLength: 256
@@ -34356,16 +34830,16 @@ frontend_operations:
               type: string
               nullable: true
               maxLength: 64
-            status: *id176
+            status: *id180
             note:
               type: string
               nullable: true
               maxLength: 512
-            createdAt: *id169
-            updatedAt: *id169
-      total: *id177
-      page: *id171
-      pageSize: *id172
+            createdAt: *id173
+            updatedAt: *id173
+      total: *id181
+      page: *id175
+      pageSize: *id176
 - route: /admin/payments
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-payments/src/paymentsService.ts
   operation: backendPaymentsProviderAccountsCreate
@@ -34377,7 +34851,7 @@ frontend_operations:
   sdk_domain: commerce
   summary: Payments Provider Accounts Create
   description: Standard appbase commerce API for payments.providerAccounts.create; no legacy billing compatibility route is exposed.
-  read_sources: *id178
+  read_sources: *id182
   idempotency_required: true
   write_tables:
   - commerce_payment_provider_account
@@ -34396,13 +34870,13 @@ frontend_operations:
     - secretRef
     - status
     properties:
-      accountNo: *id179
-      providerCode: *id170
-      merchantId: *id180
-      environment: *id181
-      countryCode: *id174
-      settlementCurrency: *id175
-      secretRef: *id182
+      accountNo: *id183
+      providerCode: *id174
+      merchantId: *id184
+      environment: *id185
+      countryCode: *id178
+      settlementCurrency: *id179
+      secretRef: *id186
       webhookSecretRef:
         type: string
         nullable: true
@@ -34415,7 +34889,7 @@ frontend_operations:
         type: string
         nullable: true
         maxLength: 64
-      status: *id176
+      status: *id180
       clientRequestNo:
         type: string
         minLength: 1
@@ -34431,7 +34905,7 @@ frontend_operations:
     required:
     - item
     properties:
-      item: *id183
+      item: *id187
 - route: /admin/payments
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-payments/src/paymentsService.ts
   operation: backendPaymentsMethodsList
@@ -34443,8 +34917,8 @@ frontend_operations:
   sdk_domain: commerce
   summary: Payments Methods List
   description: Standard appbase commerce API for payments.methods.list; no legacy billing compatibility route is exposed.
-  read_sources: *id178
-  query_parameters: *id184
+  read_sources: *id182
+  query_parameters: *id188
   response_schema:
     name: CommercePaymentMethodListResponse
     type: object
@@ -34472,8 +34946,8 @@ frontend_operations:
           - createdAt
           - updatedAt
           properties:
-            id: *id173
-            methodCode: &id185
+            id: *id177
+            methodCode: &id189
               type: string
               enum:
               - wechat_pay
@@ -34507,7 +34981,7 @@ frontend_operations:
               - account_balance
             checkoutScenes:
               type: array
-              items: &id186
+              items: &id190
                 type: string
                 enum:
                 - checkout
@@ -34516,16 +34990,16 @@ frontend_operations:
                 - wallet_recharge
                 - subscription
                 - invoice
-            status: *id176
+            status: *id180
             sortOrder:
               type: integer
               format: int64
               minimum: 0
-            createdAt: *id169
-            updatedAt: *id169
-      total: *id177
-      page: *id171
-      pageSize: *id172
+            createdAt: *id173
+            updatedAt: *id173
+      total: *id181
+      page: *id175
+      pageSize: *id176
 - route: /admin/payments
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-payments/src/paymentsService.ts
   operation: backendPaymentsChannelsList
@@ -34537,18 +35011,18 @@ frontend_operations:
   sdk_domain: commerce
   summary: Payments Channels List
   description: Standard appbase commerce API for payments.channels.list; no legacy billing compatibility route is exposed.
-  read_sources: *id178
+  read_sources: *id182
   query_parameters:
   - name: provider_account_id
     schema:
       type: string
       maxLength: 128
   - name: method_code
-    schema: *id185
+    schema: *id189
   - name: page
-    schema: *id171
+    schema: *id175
   - name: page_size
-    schema: *id172
+    schema: *id176
   - name: status
     schema:
       type: string
@@ -34583,27 +35057,27 @@ frontend_operations:
           - createdAt
           - updatedAt
           properties:
-            id: *id173
+            id: *id177
             channelNo:
               type: string
               minLength: 1
               maxLength: 128
-            methodCode: *id185
-            providerCode: *id170
-            providerAccountId: *id173
-            countryCode: *id174
-            currencyCode: *id175
-            sceneCode: *id186
+            methodCode: *id189
+            providerCode: *id174
+            providerAccountId: *id177
+            countryCode: *id178
+            currencyCode: *id179
+            sceneCode: *id190
             priority:
               type: integer
               format: int64
               minimum: 0
-            status: *id176
-            createdAt: *id169
-            updatedAt: *id169
-      total: *id177
-      page: *id171
-      pageSize: *id172
+            status: *id180
+            createdAt: *id173
+            updatedAt: *id173
+      total: *id181
+      page: *id175
+      pageSize: *id176
 - route: /admin/payments
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-payments/src/paymentsService.ts
   operation: backendPaymentsRouteRulesList
@@ -34615,18 +35089,18 @@ frontend_operations:
   sdk_domain: commerce
   summary: Payments Route Rules List
   description: Standard appbase commerce API for payments.routeRules.list; no legacy billing compatibility route is exposed.
-  read_sources: *id178
+  read_sources: *id182
   query_parameters:
   - name: method_code
-    schema: *id185
+    schema: *id189
   - name: country_code
-    schema: *id174
+    schema: *id178
   - name: currency_code
-    schema: *id175
+    schema: *id179
   - name: page
-    schema: *id171
+    schema: *id175
   - name: page_size
-    schema: *id172
+    schema: *id176
   - name: status
     schema:
       type: string
@@ -34660,15 +35134,15 @@ frontend_operations:
           - createdAt
           - updatedAt
           properties:
-            id: *id173
+            id: *id177
             ruleNo:
               type: string
               minLength: 1
               maxLength: 128
-            methodCode: *id185
-            countryCode: *id174
-            currencyCode: *id175
-            sceneCode: *id186
+            methodCode: *id189
+            countryCode: *id178
+            currencyCode: *id179
+            sceneCode: *id190
             channelId:
               type: string
               nullable: true
@@ -34683,12 +35157,12 @@ frontend_operations:
               minimum: 0
             fallbackEnabled:
               type: boolean
-            status: *id176
-            createdAt: *id169
-            updatedAt: *id169
-      total: *id177
-      page: *id171
-      pageSize: *id172
+            status: *id180
+            createdAt: *id173
+            updatedAt: *id173
+      total: *id181
+      page: *id175
+      pageSize: *id176
 - route: /admin/payments
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-payments/src/paymentsService.ts
   operation: backendPaymentsIntentsList
@@ -34700,18 +35174,18 @@ frontend_operations:
   sdk_domain: commerce
   summary: Payments Intents List
   description: Standard appbase commerce API for payments.intents.list; no legacy billing compatibility route is exposed.
-  read_sources: *id178
+  read_sources: *id182
   query_parameters:
   - name: order_id
     schema:
       type: string
       maxLength: 128
   - name: provider_code
-    schema: *id170
+    schema: *id174
   - name: page
-    schema: *id171
+    schema: *id175
   - name: page_size
-    schema: *id172
+    schema: *id176
   - name: status
     schema:
       type: string
@@ -34743,12 +35217,12 @@ frontend_operations:
           - createdAt
           - updatedAt
           properties:
-            id: *id173
+            id: *id177
             intentNo:
               type: string
               minLength: 1
               maxLength: 128
-            orderId: *id173
+            orderId: *id177
             checkoutSessionId:
               type: string
               nullable: true
@@ -34783,11 +35257,11 @@ frontend_operations:
               - stripe
               - apple_pay
               - google_pay
-            amount: &id187
+            amount: &id191
               type: string
               pattern: ^\d+(?:\.\d{1,6})?$
-            currencyCode: *id175
-            status: &id188
+            currencyCode: *id179
+            status: &id192
               type: string
               enum:
               - pending
@@ -34798,11 +35272,11 @@ frontend_operations:
               - expired
               - refunding
               - refunded
-            createdAt: *id169
-            updatedAt: *id169
-      total: *id177
-      page: *id171
-      pageSize: *id172
+            createdAt: *id173
+            updatedAt: *id173
+      total: *id181
+      page: *id175
+      pageSize: *id176
 - route: /admin/payments
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-payments/src/paymentsService.ts
   operation: backendPaymentsAttemptsList
@@ -34814,18 +35288,18 @@ frontend_operations:
   sdk_domain: commerce
   summary: Payments Attempts List
   description: Standard appbase commerce API for payments.attempts.list; no legacy billing compatibility route is exposed.
-  read_sources: *id178
+  read_sources: *id182
   query_parameters:
   - name: intent_id
     schema:
       type: string
       maxLength: 128
   - name: provider_code
-    schema: *id170
+    schema: *id174
   - name: page
-    schema: *id171
+    schema: *id175
   - name: page_size
-    schema: *id172
+    schema: *id176
   - name: status
     schema:
       type: string
@@ -34856,33 +35330,33 @@ frontend_operations:
           - status
           - createdAt
           properties:
-            id: *id173
+            id: *id177
             attemptNo:
               type: string
               minLength: 1
               maxLength: 128
-            intentId: *id173
-            providerCode: *id170
-            methodCode: *id185
+            intentId: *id177
+            providerCode: *id174
+            methodCode: *id189
             externalTradeNo:
               type: string
               nullable: true
               maxLength: 128
-            amount: *id187
-            currencyCode: *id175
-            status: *id188
+            amount: *id191
+            currencyCode: *id179
+            status: *id192
             paidAt:
               type: string
               nullable: true
               maxLength: 64
-            createdAt: *id169
+            createdAt: *id173
             updatedAt:
               type: string
               nullable: true
               maxLength: 64
-      total: *id177
-      page: *id171
-      pageSize: *id172
+      total: *id181
+      page: *id175
+      pageSize: *id176
 - route: /admin/payments
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-payments/src/paymentsService.ts
   operation: backendPaymentsWebhookEventsList
@@ -34894,14 +35368,14 @@ frontend_operations:
   sdk_domain: commerce
   summary: Payments Webhook Events List
   description: Standard appbase commerce API for payments.webhookEvents.list; no legacy billing compatibility route is exposed.
-  read_sources: *id178
+  read_sources: *id182
   query_parameters:
   - name: provider_code
-    schema: *id170
+    schema: *id174
   - name: page
-    schema: *id171
+    schema: *id175
   - name: page_size
-    schema: *id172
+    schema: *id176
   - name: status
     schema:
       type: string
@@ -34930,12 +35404,12 @@ frontend_operations:
           - processStatus
           - receivedAt
           properties:
-            id: *id173
+            id: *id177
             eventNo:
               type: string
               minLength: 1
               maxLength: 128
-            providerCode: *id170
+            providerCode: *id174
             eventType:
               type: string
               minLength: 1
@@ -34952,14 +35426,14 @@ frontend_operations:
               - processed
               - ignored
               - failed
-            receivedAt: *id169
+            receivedAt: *id173
             processedAt:
               type: string
               nullable: true
               maxLength: 64
-      total: *id177
-      page: *id171
-      pageSize: *id172
+      total: *id181
+      page: *id175
+      pageSize: *id176
 - route: /admin/payments
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-payments/src/paymentsService.ts
   operation: backendPaymentsReconciliationRunsList
@@ -34971,18 +35445,18 @@ frontend_operations:
   sdk_domain: commerce
   summary: Payments Reconciliation Runs List
   description: Standard appbase commerce API for payments.reconciliationRuns.list; no legacy billing compatibility route is exposed.
-  read_sources: *id178
+  read_sources: *id182
   query_parameters:
   - name: provider_code
-    schema: *id170
+    schema: *id174
   - name: business_date
     schema:
       type: string
       maxLength: 32
   - name: page
-    schema: *id171
+    schema: *id175
   - name: page_size
-    schema: *id172
+    schema: *id176
   - name: status
     schema:
       type: string
@@ -35011,12 +35485,12 @@ frontend_operations:
           - status
           - createdAt
           properties:
-            id: *id173
+            id: *id177
             runNo:
               type: string
               minLength: 1
               maxLength: 128
-            providerCode: *id170
+            providerCode: *id174
             businessDate:
               type: string
               minLength: 1
@@ -35033,10 +35507,10 @@ frontend_operations:
               type: string
               nullable: true
               maxLength: 64
-            createdAt: *id169
-      total: *id177
-      page: *id171
-      pageSize: *id172
+            createdAt: *id173
+      total: *id181
+      page: *id175
+      pageSize: *id176
 - route: /admin/memberships/recharge-packages
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts
   operation: backendMembershipsRechargePackagesList
@@ -35074,7 +35548,7 @@ frontend_operations:
     schema:
       type: string
       maxLength: 32
-  response_schema: &id192
+  response_schema: &id196
     name: CommerceStandardCollectionResponse
     type: object
     additionalProperties: false
@@ -35142,7 +35616,7 @@ frontend_operations:
   - commerce_product_spu
   - commerce_product_sku
   - ops_audit_log
-  request_schema: &id189
+  request_schema: &id193
     name: CommerceRechargePackageMutationRequest
     type: object
     additionalProperties: false
@@ -35162,7 +35636,7 @@ frontend_operations:
         enum:
         - active
         - inactive
-  response_schema: &id190
+  response_schema: &id194
     name: AdminRechargePackageMutationResponse
     type: object
     additionalProperties: false
@@ -35215,8 +35689,8 @@ frontend_operations:
   - commerce_product_spu
   - commerce_product_sku
   - ops_audit_log
-  request_schema: *id189
-  response_schema: *id190
+  request_schema: *id193
+  response_schema: *id194
 - route: /admin/memberships/recharge-packages
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts
   operation: backendMembershipsRechargePackagesDelete
@@ -35234,7 +35708,7 @@ frontend_operations:
   write_tables:
   - commerce_recharge_package
   - ops_audit_log
-  response_schema: &id191
+  response_schema: &id195
     name: AdminDeleteResponse
     type: object
     additionalProperties: false
@@ -35288,8 +35762,8 @@ frontend_operations:
   - commerce_product_spu
   - commerce_product_sku
   - ops_audit_log
-  request_schema: *id189
-  response_schema: *id190
+  request_schema: *id193
+  response_schema: *id194
 - route: /admin/memberships/recharge-packages
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts
   operation: updateMembershipAdminRechargePackage
@@ -35312,8 +35786,8 @@ frontend_operations:
   - commerce_product_spu
   - commerce_product_sku
   - ops_audit_log
-  request_schema: *id189
-  response_schema: *id190
+  request_schema: *id193
+  response_schema: *id194
 - route: /admin/memberships/recharge-packages
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts
   operation: deleteMembershipAdminRechargePackage
@@ -35333,7 +35807,7 @@ frontend_operations:
   write_tables:
   - commerce_recharge_package
   - ops_audit_log
-  response_schema: *id191
+  response_schema: *id195
 - route: /admin/wallet
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-wallet/src/walletService.ts
   operation: backendRechargesOrdersList
@@ -35371,7 +35845,7 @@ frontend_operations:
     schema:
       type: string
       maxLength: 32
-  response_schema: *id192
+  response_schema: *id196
 - route: /admin/orders
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-orders/src/ordersService.ts
   operation: backendRefundsList
@@ -35587,7 +36061,7 @@ frontend_operations:
     schema:
       type: string
       maxLength: 32
-  response_schema: &id193
+  response_schema: &id197
     name: CommerceStandardCollectionResponse
     type: object
     additionalProperties: false
@@ -35670,7 +36144,7 @@ frontend_operations:
     schema:
       type: string
       maxLength: 32
-  response_schema: *id193
+  response_schema: *id197
 - route: /admin/orders
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-orders/src/ordersService.ts
   operation: backendShipmentsList
@@ -35703,7 +36177,7 @@ frontend_operations:
     schema:
       type: string
       maxLength: 32
-  response_schema: &id194
+  response_schema: &id198
     name: CommerceStandardCollectionResponse
     type: object
     additionalProperties: false
@@ -35782,7 +36256,7 @@ frontend_operations:
     schema:
       type: string
       maxLength: 32
-  response_schema: *id194
+  response_schema: *id198
 - route: /admin/wallet
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-wallet/src/walletService.ts
   operation: backendWalletAccountsList
@@ -35817,7 +36291,7 @@ frontend_operations:
     schema:
       type: string
       maxLength: 32
-  response_schema: &id195
+  response_schema: &id199
     name: CommerceStandardCollectionResponse
     type: object
     additionalProperties: false
@@ -35898,7 +36372,7 @@ frontend_operations:
     schema:
       type: string
       maxLength: 32
-  response_schema: *id195
+  response_schema: *id199
 - route: /admin/wallet
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-wallet/src/walletService.ts
   operation: backendWalletAdjustmentsCreate
@@ -36005,7 +36479,7 @@ frontend_operations:
     schema:
       type: string
       maxLength: 32
-  response_schema: *id195
+  response_schema: *id199
 - route: /admin/courses
   module: admin-courses
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-courses/src/courseAdminService.ts
@@ -36097,7 +36571,7 @@ frontend_operations:
   description: Course catalog records available to content administrators.
   read_sources:
   - content_course
-  query_parameters: &id198
+  query_parameters: &id202
   - name: page
     schema:
       type: integer
@@ -36192,7 +36666,7 @@ frontend_operations:
   write_tables:
   - content_course
   - ops_audit_log
-  request_schema: &id196
+  request_schema: &id200
     name: AdminCourseMutationRequest
     type: object
     additionalProperties: false
@@ -36225,7 +36699,7 @@ frontend_operations:
       metadata:
         type: object
         additionalProperties: true
-  response_schema: &id197
+  response_schema: &id201
     name: AdminCourseMutationResponse
     type: object
     additionalProperties: false
@@ -36272,8 +36746,8 @@ frontend_operations:
   write_tables:
   - content_course
   - ops_audit_log
-  request_schema: *id196
-  response_schema: *id197
+  request_schema: *id200
+  response_schema: *id201
 - route: /admin/courses
   module: admin-courses
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-courses/src/courseAdminService.ts
@@ -36291,7 +36765,7 @@ frontend_operations:
   write_tables:
   - content_course
   - ops_audit_log
-  response_schema: &id201
+  response_schema: &id205
     name: AdminCourseDeleteResponse
     type: object
     additionalProperties: false
@@ -36314,7 +36788,7 @@ frontend_operations:
   description: Sections for a selected course.
   read_sources:
   - content_course_section
-  query_parameters: *id198
+  query_parameters: *id202
   response_schema:
     name: AdminCourseSectionCollectionResponse
     type: object
@@ -36381,7 +36855,7 @@ frontend_operations:
   write_tables:
   - content_course_section
   - ops_audit_log
-  request_schema: &id199
+  request_schema: &id203
     name: AdminCourseSectionMutationRequest
     type: object
     additionalProperties: false
@@ -36405,7 +36879,7 @@ frontend_operations:
       metadata:
         type: object
         additionalProperties: true
-  response_schema: &id200
+  response_schema: &id204
     name: AdminCourseSectionMutationResponse
     type: object
     additionalProperties: false
@@ -36452,8 +36926,8 @@ frontend_operations:
   write_tables:
   - content_course_section
   - ops_audit_log
-  request_schema: *id199
-  response_schema: *id200
+  request_schema: *id203
+  response_schema: *id204
 - route: /admin/courses
   module: admin-courses
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-courses/src/courseAdminService.ts
@@ -36471,7 +36945,7 @@ frontend_operations:
   write_tables:
   - content_course_section
   - ops_audit_log
-  response_schema: *id201
+  response_schema: *id205
 - route: /admin/courses
   module: admin-courses
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-courses/src/courseAdminService.ts
@@ -36486,7 +36960,7 @@ frontend_operations:
   description: Lessons for a selected course.
   read_sources:
   - content_course_lesson
-  query_parameters: *id198
+  query_parameters: *id202
   response_schema:
     name: AdminCourseLessonCollectionResponse
     type: object
@@ -36556,7 +37030,7 @@ frontend_operations:
   write_tables:
   - content_course_lesson
   - ops_audit_log
-  request_schema: &id202
+  request_schema: &id206
     name: AdminCourseLessonMutationRequest
     type: object
     additionalProperties: false
@@ -36591,7 +37065,7 @@ frontend_operations:
       metadata:
         type: object
         additionalProperties: true
-  response_schema: &id203
+  response_schema: &id207
     name: AdminCourseLessonMutationResponse
     type: object
     additionalProperties: false
@@ -36642,8 +37116,8 @@ frontend_operations:
   write_tables:
   - content_course_lesson
   - ops_audit_log
-  request_schema: *id202
-  response_schema: *id203
+  request_schema: *id206
+  response_schema: *id207
 - route: /admin/courses
   module: admin-courses
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-courses/src/courseAdminService.ts
@@ -36661,7 +37135,7 @@ frontend_operations:
   write_tables:
   - content_course_lesson
   - ops_audit_log
-  response_schema: *id201
+  response_schema: *id205
 - route: /admin/courses
   module: admin-courses
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-courses/src/courseAdminService.ts
@@ -36676,8 +37150,8 @@ frontend_operations:
   description: Related course graph rows for a selected course.
   read_sources:
   - content_course_relation
-  query_parameters: *id198
-  response_schema: &id204
+  query_parameters: *id202
+  response_schema: &id208
     name: AdminCourseRelationCollectionResponse
     type: object
     additionalProperties: false
@@ -36760,7 +37234,7 @@ frontend_operations:
             status:
               type: string
               maxLength: 64
-  response_schema: *id204
+  response_schema: *id208
 - route: /admin/courses
   module: admin-courses
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-courses/src/courseAdminService.ts
@@ -36775,7 +37249,7 @@ frontend_operations:
   description: Submitted course applications waiting for review or historical governance.
   read_sources:
   - content_course_application
-  query_parameters: *id198
+  query_parameters: *id202
   response_schema:
     name: AdminCourseApplicationCollectionResponse
     type: object
@@ -36895,8 +37369,8 @@ frontend_operations:
   description: Course-related comments for moderation and content governance.
   read_sources:
   - content_forum_comment
-  query_parameters: *id198
-  response_schema: &id205
+  query_parameters: *id202
+  response_schema: &id209
     name: AdminCourseCommentCollectionResponse
     type: object
     additionalProperties: false
@@ -36967,7 +37441,7 @@ frontend_operations:
       moderationNote:
         type: string
         maxLength: 4000
-  response_schema: *id205
+  response_schema: *id209
 - route: /admin/courses
   module: admin-courses
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-courses/src/courseAdminService.ts
@@ -36983,7 +37457,7 @@ frontend_operations:
   read_sources:
   - content_reaction
   - content_course_relation
-  query_parameters: *id198
+  query_parameters: *id202
   response_schema:
     name: AdminCourseEngagementCollectionResponse
     type: object
@@ -37046,7 +37520,7 @@ frontend_operations:
           name: AdminAnnouncementItem
           type: object
           additionalProperties: false
-          required: &id206
+          required: &id210
           - id
           - title
           - target
@@ -37054,7 +37528,7 @@ frontend_operations:
           - showAsPopup
           - date
           - content
-          properties: &id207
+          properties: &id211
             id:
               type: string
               minLength: 1
@@ -37142,8 +37616,8 @@ frontend_operations:
         name: AdminAnnouncementItem
         type: object
         additionalProperties: false
-        required: *id206
-        properties: *id207
+        required: *id210
+        properties: *id211
         description: Persisted announcement snapshot returned by the backend.
 - route: /admin/announcement
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-announcement/src/announcementService.ts
@@ -37196,8 +37670,8 @@ frontend_operations:
         name: AdminAnnouncementItem
         type: object
         additionalProperties: false
-        required: *id206
-        properties: *id207
+        required: *id210
+        properties: *id211
         description: Persisted announcement snapshot returned by the backend.
 - route: /admin/announcement
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-announcement/src/announcementService.ts
@@ -37241,14 +37715,14 @@ frontend_operations:
           name: AdminSkillCategoryItem
           type: object
           additionalProperties: false
-          required: &id208
+          required: &id212
           - id
           - name
           - sortWeight
           - visible
           - status
           - type
-          properties: &id209
+          properties: &id213
             id:
               type: string
               minLength: 1
@@ -37361,8 +37835,8 @@ frontend_operations:
         name: AdminSkillCategoryItem
         type: object
         additionalProperties: false
-        required: *id208
-        properties: *id209
+        required: *id212
+        properties: *id213
         description: Persisted skill category snapshot returned by the backend.
 - route: /admin/skill
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-skill/src/skillService.ts
@@ -37436,8 +37910,8 @@ frontend_operations:
         name: AdminSkillCategoryItem
         type: object
         additionalProperties: false
-        required: *id208
-        properties: *id209
+        required: *id212
+        properties: *id213
         description: Updated skill category snapshot returned by the backend.
 - route: /admin/skill
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-skill/src/skillService.ts
@@ -37506,7 +37980,7 @@ frontend_operations:
           name: AdminSkillPackageItem
           type: object
           additionalProperties: false
-          required: &id210
+          required: &id214
           - id
           - packageKey
           - name
@@ -37516,7 +37990,7 @@ frontend_operations:
           - tags
           - createdAt
           - updatedAt
-          properties: &id211
+          properties: &id215
             id:
               type: string
               minLength: 1
@@ -37596,8 +38070,8 @@ frontend_operations:
         name: AdminSkillPackageItem
         type: object
         additionalProperties: false
-        required: *id210
-        properties: *id211
+        required: *id214
+        properties: *id215
         description: Skill package snapshot returned by the backend.
 - route: /admin/skill
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-skill/src/skillService.ts
@@ -37670,8 +38144,8 @@ frontend_operations:
         name: AdminSkillPackageItem
         type: object
         additionalProperties: false
-        required: *id210
-        properties: *id211
+        required: *id214
+        properties: *id215
         description: Persisted skill package snapshot returned by the backend.
 - route: /admin/skill
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-skill/src/skillService.ts
@@ -37745,8 +38219,8 @@ frontend_operations:
         name: AdminSkillPackageItem
         type: object
         additionalProperties: false
-        required: *id210
-        properties: *id211
+        required: *id214
+        properties: *id215
         description: Updated skill package snapshot returned by the backend.
 - route: /admin/skill
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-skill/src/skillService.ts
@@ -37792,8 +38266,8 @@ frontend_operations:
         name: AdminSkillPackageItem
         type: object
         additionalProperties: false
-        required: *id210
-        properties: *id211
+        required: *id214
+        properties: *id215
         description: Enabled skill package snapshot returned by the backend.
 - route: /admin/skill
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-skill/src/skillService.ts
@@ -37817,8 +38291,8 @@ frontend_operations:
         name: AdminSkillPackageItem
         type: object
         additionalProperties: false
-        required: *id210
-        properties: *id211
+        required: *id214
+        properties: *id215
         description: Disabled skill package snapshot returned by the backend.
 - route: /admin/skill
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-skill/src/skillService.ts
@@ -37887,7 +38361,7 @@ frontend_operations:
           name: AdminSkillItem
           type: object
           additionalProperties: false
-          required: &id212
+          required: &id216
           - id
           - skillKey
           - name
@@ -37910,7 +38384,7 @@ frontend_operations:
           - defaultConfig
           - createdAt
           - updatedAt
-          properties: &id213
+          properties: &id217
             id:
               type: string
               minLength: 1
@@ -38098,8 +38572,8 @@ frontend_operations:
         name: AdminSkillItem
         type: object
         additionalProperties: false
-        required: *id212
-        properties: *id213
+        required: *id216
+        properties: *id217
         description: Agent skill snapshot returned by the backend.
 - route: /admin/skill
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-skill/src/skillService.ts
@@ -38262,8 +38736,8 @@ frontend_operations:
         name: AdminSkillItem
         type: object
         additionalProperties: false
-        required: *id212
-        properties: *id213
+        required: *id216
+        properties: *id217
         description: Persisted agent skill snapshot returned by the backend.
 - route: /admin/skill
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-skill/src/skillService.ts
@@ -38421,8 +38895,8 @@ frontend_operations:
         name: AdminSkillItem
         type: object
         additionalProperties: false
-        required: *id212
-        properties: *id213
+        required: *id216
+        properties: *id217
         description: Updated agent skill snapshot returned by the backend.
 - route: /admin/skill
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-skill/src/skillService.ts
@@ -38468,8 +38942,8 @@ frontend_operations:
         name: AdminSkillItem
         type: object
         additionalProperties: false
-        required: *id212
-        properties: *id213
+        required: *id216
+        properties: *id217
         description: Enabled agent skill snapshot returned by the backend.
 - route: /admin/skill
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-skill/src/skillService.ts
@@ -38493,8 +38967,8 @@ frontend_operations:
         name: AdminSkillItem
         type: object
         additionalProperties: false
-        required: *id212
-        properties: *id213
+        required: *id216
+        properties: *id217
         description: Disabled agent skill snapshot returned by the backend.
 - route: /admin/skill
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-skill/src/skillService.ts
@@ -38518,8 +38992,8 @@ frontend_operations:
         name: AdminSkillItem
         type: object
         additionalProperties: false
-        required: *id212
-        properties: *id213
+        required: *id216
+        properties: *id217
         description: Published agent skill snapshot returned by the backend.
 - route: /admin/skill
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-skill/src/skillService.ts
@@ -38543,8 +39017,8 @@ frontend_operations:
         name: AdminSkillItem
         type: object
         additionalProperties: false
-        required: *id212
-        properties: *id213
+        required: *id216
+        properties: *id217
         description: Offline agent skill snapshot returned by the backend.
 - route: /admin/skill
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-skill/src/skillService.ts
@@ -38577,8 +39051,8 @@ frontend_operations:
         name: AdminSkillItem
         type: object
         additionalProperties: false
-        required: *id212
-        properties: *id213
+        required: *id216
+        properties: *id217
         description: Reviewed agent skill snapshot returned by the backend.
 - route: /admin/skill
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-skill/src/skillService.ts
@@ -38611,8 +39085,8 @@ frontend_operations:
         name: AdminSkillItem
         type: object
         additionalProperties: false
-        required: *id212
-        properties: *id213
+        required: *id216
+        properties: *id217
         description: Reviewed agent skill snapshot returned by the backend.
 - route: /admin/skill
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-skill/src/skillService.ts
@@ -38637,7 +39111,7 @@ frontend_operations:
           name: AdminSkillAssetItem
           type: object
           additionalProperties: false
-          required: &id214
+          required: &id218
           - id
           - skillId
           - targetType
@@ -38648,7 +39122,7 @@ frontend_operations:
           - status
           - createdAt
           - updatedAt
-          properties: &id215
+          properties: &id219
             id:
               type: string
               minLength: 1
@@ -38755,8 +39229,8 @@ frontend_operations:
         name: AdminSkillAssetItem
         type: object
         additionalProperties: false
-        required: *id214
-        properties: *id215
+        required: *id218
+        properties: *id219
         description: Skill catalog asset snapshot returned by the backend.
 - route: /admin/skill
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-skill/src/skillService.ts
@@ -38837,8 +39311,8 @@ frontend_operations:
         name: AdminSkillAssetItem
         type: object
         additionalProperties: false
-        required: *id214
-        properties: *id215
+        required: *id218
+        properties: *id219
         description: Persisted skill catalog asset snapshot returned by the backend.
 - route: /admin/skill
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-skill/src/skillService.ts
@@ -38926,8 +39400,8 @@ frontend_operations:
         name: AdminSkillAssetItem
         type: object
         additionalProperties: false
-        required: *id214
-        properties: *id215
+        required: *id218
+        properties: *id219
         description: Updated skill catalog asset snapshot returned by the backend.
 - route: /admin/skill
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-skill/src/skillService.ts
@@ -38973,7 +39447,7 @@ frontend_operations:
           name: AdminSkillArtifactItem
           type: object
           additionalProperties: false
-          required: &id216
+          required: &id220
           - id
           - skillId
           - targetType
@@ -38987,7 +39461,7 @@ frontend_operations:
           - status
           - createdAt
           - updatedAt
-          properties: &id217
+          properties: &id221
             id:
               type: string
               minLength: 1
@@ -39104,8 +39578,8 @@ frontend_operations:
         name: AdminSkillArtifactItem
         type: object
         additionalProperties: false
-        required: *id216
-        properties: *id217
+        required: *id220
+        properties: *id221
         description: Skill catalog artifact snapshot returned by the backend.
 - route: /admin/skill
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-skill/src/skillService.ts
@@ -39193,8 +39667,8 @@ frontend_operations:
         name: AdminSkillArtifactItem
         type: object
         additionalProperties: false
-        required: *id216
-        properties: *id217
+        required: *id220
+        properties: *id221
         description: Persisted skill catalog artifact snapshot returned by the backend.
 - route: /admin/skill
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-skill/src/skillService.ts
@@ -39290,8 +39764,8 @@ frontend_operations:
         name: AdminSkillArtifactItem
         type: object
         additionalProperties: false
-        required: *id216
-        properties: *id217
+        required: *id220
+        properties: *id221
         description: Updated skill catalog artifact snapshot returned by the backend.
 - route: /admin/skill
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-skill/src/skillService.ts
@@ -39440,10 +39914,11 @@ frontend_operations:
   api_method: GET
   api_path: /backend/v3/api/integration/channels
   read_sources:
-  - integration_provider
-  - integration_channel
-  - integration_channel_model
-  - integration_provider_account
+  - ai_provider
+  - ai_channel
+  - ai_channel_model
+  - ai_channel
+  - ai_channel_resource
   - integration_provider_health_snapshot
   query_parameters: []
   response_schema:
@@ -39457,25 +39932,34 @@ frontend_operations:
           name: AdminChannelItem
           type: object
           additionalProperties: false
-          required: &id219
+          required: &id223
           - id
+          - channelId
           - name
           - vendor
+          - channelType
           - protocol
           - accessType
           - models
           - capabilities
+          - resourceCodes
           - isMultimodal
           - weight
           - status
           - balance
           - errors
           - createdAt
-          properties: &id220
+          properties: &id224
             id:
               type: string
               minLength: 1
               maxLength: 128
+            channelId:
+              type: string
+              minLength: 1
+              maxLength: 128
+              pattern: ^[1-9][0-9]*$
+              description: Scoped ai_channel id used by channel endpoint configuration.
             name:
               type: string
               minLength: 1
@@ -39484,6 +39968,11 @@ frontend_operations:
               type: string
               minLength: 1
               maxLength: 64
+            channelType:
+              type: string
+              enum:
+              - official
+              - relay
             protocol:
               type: string
               minLength: 1
@@ -39502,7 +39991,7 @@ frontend_operations:
             apiKey:
               type: string
               maxLength: 4096
-              description: Full plaintext provider API key returned by authenticated admin management responses for channel account relay operations.
+              description: Full plaintext provider API key returned by authenticated admin management responses for channel credential relay operations.
             createdAt:
               type: string
               minLength: 1
@@ -39511,7 +40000,7 @@ frontend_operations:
               type: string
               nullable: true
               maxLength: 64
-              description: Optional channel account expiration timestamp. Null or absence means the channel account never expires.
+              description: Optional channel credential expiration timestamp. Null or absence means the channel credential never expires.
             models:
               type: array
               maxItems: 200
@@ -39531,6 +40020,15 @@ frontend_operations:
                 - music
                 - sfx
                 - video
+            resourceCodes:
+              type: array
+              maxItems: 256
+              uniqueItems: true
+              items:
+                type: string
+                minLength: 1
+                maxLength: 192
+                pattern: ^[A-Za-z0-9._-]+$
             isMultimodal:
               type: boolean
             timeoutMs:
@@ -39569,13 +40067,13 @@ frontend_operations:
                   type: integer
                   minimum: 0
                   maximum: 2000
-            circuitBreakerPolicy: &id218
+            circuitBreakerPolicy: &id222
               name: ProviderCircuitBreakerPolicy
               type: object
               additionalProperties: false
-              required: &id221
+              required: &id225
               - failureThreshold
-              properties: &id222
+              properties: &id226
                 failureThreshold:
                   type: integer
                   minimum: 1
@@ -39606,14 +40104,20 @@ frontend_operations:
   api_method: POST
   api_path: /backend/v3/api/integration/channels
   read_sources:
-  - integration_provider
-  - integration_channel
-  - integration_channel_model
-  - integration_provider_account
+  - ai_provider
+  - ai_channel
+  - ai_channel_model
+  - ai_channel
+  - ai_channel_vendor
+  - ai_channel_resource
+  - ai_channel_resource
   write_tables:
-  - integration_channel
-  - integration_channel_model
-  - integration_provider_account
+  - ai_channel
+  - ai_channel_model
+  - ai_channel
+  - ai_channel_vendor
+  - ai_channel_resource
+  - ai_channel_resource
   - ops_config_snapshot
   - ops_audit_log
   request_schema:
@@ -39633,6 +40137,12 @@ frontend_operations:
         minLength: 1
         maxLength: 64
         pattern: ^[A-Za-z0-9 _().-]+$
+      channelType:
+        type: string
+        enum:
+        - official
+        - relay
+        description: Channel type. official means a direct vendor account; relay means an upstream aggregator account that can expose multiple vendors.
       protocol:
         type: string
         minLength: 1
@@ -39648,7 +40158,7 @@ frontend_operations:
         type: string
         minLength: 1
         maxLength: 4096
-        description: Plaintext provider API key accepted only on create/update input. Backend encrypts it into integration_provider_account.auth_config and never returns it.
+        description: Plaintext provider API key accepted only on create/update input. Backend encrypts it into ai_channel.auth_config and never returns it.
       secretRef:
         type: string
         minLength: 1
@@ -39659,7 +40169,7 @@ frontend_operations:
         type: string
         nullable: true
         maxLength: 64
-        description: Optional channel account expiration timestamp. Omit or null to keep the channel account permanently valid.
+        description: Optional channel credential expiration timestamp. Omit or null to keep the channel credential permanently valid.
       models:
         type: array
         minItems: 1
@@ -39683,6 +40193,16 @@ frontend_operations:
           - music
           - sfx
           - video
+      resourceCodes:
+        type: array
+        maxItems: 256
+        uniqueItems: true
+        description: Resource bindings selected from ai_resource or ai_resource_group, such as vendor.openai, api.openai.chat_completions, model.openai.gpt-4o-mini.chat, or bundle.openrouter.openai.standard.
+        items:
+          type: string
+          minLength: 1
+          maxLength: 192
+          pattern: ^[A-Za-z0-9._-]+$
       timeoutMs:
         type: integer
         format: int64
@@ -39721,7 +40241,7 @@ frontend_operations:
             type: integer
             minimum: 0
             maximum: 2000
-      circuitBreakerPolicy: *id218
+      circuitBreakerPolicy: *id222
       weight:
         type: integer
         format: int64
@@ -39742,8 +40262,8 @@ frontend_operations:
         name: AdminChannelItem
         type: object
         additionalProperties: false
-        required: *id219
-        properties: *id220
+        required: *id223
+        properties: *id224
         description: Persisted channel snapshot returned by the backend.
 - route: /admin/channel
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts
@@ -39753,14 +40273,20 @@ frontend_operations:
   api_method: PUT
   api_path: /backend/v3/api/integration/channels
   read_sources:
-  - integration_provider
-  - integration_channel
-  - integration_channel_model
-  - integration_provider_account
+  - ai_provider
+  - ai_channel
+  - ai_channel_model
+  - ai_channel
+  - ai_channel_vendor
+  - ai_channel_resource
+  - ai_channel_resource
   write_tables:
-  - integration_channel
-  - integration_channel_model
-  - integration_provider_account
+  - ai_channel
+  - ai_channel_model
+  - ai_channel
+  - ai_channel_vendor
+  - ai_channel_resource
+  - ai_channel_resource
   - ops_config_snapshot
   - ops_audit_log
   request_schema:
@@ -39781,6 +40307,11 @@ frontend_operations:
         minLength: 1
         maxLength: 64
         pattern: ^[A-Za-z0-9 _().-]+$
+      channelType:
+        type: string
+        enum:
+        - official
+        - relay
       protocol:
         type: string
         minLength: 1
@@ -39797,7 +40328,7 @@ frontend_operations:
         type: string
         minLength: 1
         maxLength: 4096
-        description: Plaintext provider API key accepted only on create/update input. Backend encrypts it into integration_provider_account.auth_config and never returns it.
+        description: Plaintext provider API key accepted only on create/update input. Backend encrypts it into ai_channel.auth_config and never returns it.
       secretRef:
         type: string
         minLength: 1
@@ -39808,7 +40339,7 @@ frontend_operations:
         type: string
         nullable: true
         maxLength: 64
-        description: Optional channel account expiration timestamp. Null clears the expiration and makes the channel account permanently valid.
+        description: Optional channel credential expiration timestamp. Null clears the expiration and makes the channel credential permanently valid.
       models:
         type: array
         maxItems: 200
@@ -39831,6 +40362,15 @@ frontend_operations:
           - music
           - sfx
           - video
+      resourceCodes:
+        type: array
+        maxItems: 256
+        uniqueItems: true
+        items:
+          type: string
+          minLength: 1
+          maxLength: 192
+          pattern: ^[A-Za-z0-9._-]+$
       timeoutMs:
         type: integer
         format: int64
@@ -39875,8 +40415,8 @@ frontend_operations:
         name: ProviderCircuitBreakerPolicy
         type: object
         additionalProperties: false
-        required: *id221
-        properties: *id222
+        required: *id225
+        properties: *id226
         nullable: true
       weight:
         type: integer
@@ -39898,8 +40438,8 @@ frontend_operations:
         name: AdminChannelItem
         type: object
         additionalProperties: false
-        required: *id219
-        properties: *id220
+        required: *id223
+        properties: *id224
         description: Persisted channel snapshot returned by the backend.
 - route: /admin/channel
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts
@@ -39909,14 +40449,15 @@ frontend_operations:
   api_method: DELETE
   api_path: /backend/v3/api/integration/channels/{channelId}
   read_sources:
-  - integration_channel
-  - integration_channel_model
+  - ai_channel
+  - ai_channel_model
+  - ai_channel_resource
   write_tables:
-  - integration_channel
-  - integration_channel_model
+  - ai_channel
+  - ai_channel_model
   - ops_config_snapshot
   - ops_audit_log
-  response_schema: &id225
+  response_schema: &id231
     name: AdminDeleteResponse
     type: object
     additionalProperties: false
@@ -39933,12 +40474,13 @@ frontend_operations:
   api_method: POST
   api_path: /backend/v3/api/integration/channels/{channelId}/verify
   read_sources:
-  - integration_channel
-  - integration_channel_model
-  - integration_provider_account
+  - ai_channel
+  - ai_channel_model
+  - ai_channel
+  - ai_channel_resource
   write_tables:
-  - integration_channel
-  - integration_provider_account
+  - ai_channel
+  - ai_channel
   - integration_provider_health_snapshot
   - ops_config_snapshot
   - ops_audit_log
@@ -39968,9 +40510,290 @@ frontend_operations:
         name: AdminChannelItem
         type: object
         additionalProperties: false
-        required: *id219
-        properties: *id220
-        description: Persisted channel snapshot returned after the provider health probe. Admin management responses may return the stored plaintext provider API key for channel account relay operations.
+        required: *id223
+        properties: *id224
+        description: Persisted channel snapshot returned after the provider health probe. Admin management responses may return the stored plaintext provider API key for channel credential relay operations.
+- route: /admin/channel/endpoints
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts
+  operation: fetchChannelEndpoints
+  operation_id: channelEndpoints.list
+  kind: read
+  api_surface: backend
+  api_method: GET
+  api_path: /backend/v3/api/integration/channel_endpoints
+  sdk_domain: integration
+  read_sources:
+  - ai_channel
+  - ai_channel_endpoint
+  - ai_model_vendor
+  - ai_api_endpoint
+  query_parameters: []
+  response_schema:
+    name: AdminChannelEndpointsResponse
+    required:
+    - items
+    properties:
+      items:
+        type: array
+        items:
+          name: AdminChannelEndpointItem
+          type: object
+          additionalProperties: false
+          required: &id227
+          - id
+          - channelId
+          - providerCode
+          - channelCode
+          - channelType
+          - vendorCode
+          - regionCode
+          - apiEndpointCode
+          - baseUrl
+          - priority
+          - weight
+          - healthStatus
+          - status
+          properties: &id228
+            id:
+              type: string
+              minLength: 1
+              maxLength: 128
+              pattern: ^[1-9][0-9]*$
+            channelId:
+              type: string
+              minLength: 1
+              maxLength: 128
+              pattern: ^[1-9][0-9]*$
+            providerCode:
+              type: string
+              minLength: 1
+              maxLength: 64
+              pattern: ^[a-z0-9_-]+$
+            channelCode:
+              type: string
+              minLength: 1
+              maxLength: 128
+            channelType:
+              type: string
+              enum:
+              - official
+              - relay
+            vendorCode:
+              type: string
+              minLength: 1
+              maxLength: 128
+              pattern: ^[a-z0-9._*-]+$
+            regionCode:
+              type: string
+              minLength: 1
+              maxLength: 64
+              pattern: ^[a-z0-9._*-]+$
+            apiEndpointCode:
+              type: string
+              minLength: 1
+              maxLength: 128
+              pattern: ^[a-z0-9._*-]+$
+            baseUrl:
+              type: string
+              minLength: 1
+              maxLength: 512
+              pattern: ^https?://[^\\s]+$
+            priority:
+              type: integer
+              format: int64
+              minimum: 1
+              maximum: 1000000
+            weight:
+              type: integer
+              format: int64
+              minimum: 1
+              maximum: 1000000
+            healthStatus:
+              type: string
+              enum:
+              - healthy
+              - unhealthy
+              - unknown
+            status:
+              type: string
+              enum:
+              - active
+              - disabled
+              - inactive
+            effectiveFrom:
+              type: string
+              nullable: true
+              maxLength: 64
+            effectiveTo:
+              type: string
+              nullable: true
+              maxLength: 64
+- route: /admin/channel/endpoints
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts
+  operation: createChannelEndpoint
+  operation_id: channelEndpoints.create
+  kind: create
+  api_surface: backend
+  api_method: POST
+  api_path: /backend/v3/api/integration/channel_endpoints
+  sdk_domain: integration
+  read_sources:
+  - ai_channel
+  - ai_model_vendor
+  - ai_api_endpoint
+  write_tables:
+  - ai_channel_endpoint
+  - ops_audit_log
+  request_schema:
+    name: AdminChannelEndpointCreateRequest
+    additionalProperties: false
+    required:
+    - channelId
+    - vendorCode
+    - regionCode
+    - apiEndpointCode
+    - baseUrl
+    properties:
+      channelId:
+        type: string
+        minLength: 1
+        maxLength: 128
+        pattern: ^[1-9][0-9]*$
+        description: Scoped ai_channel id. Provider and channel identity are derived by the backend and are never trusted from request input.
+      vendorCode:
+        type: string
+        minLength: 1
+        maxLength: 128
+        pattern: ^[A-Za-z0-9._*-]+$
+      regionCode:
+        type: string
+        minLength: 1
+        maxLength: 64
+        pattern: ^[A-Za-z0-9._*-]+$
+      apiEndpointCode:
+        type: string
+        minLength: 1
+        maxLength: 128
+        pattern: ^[A-Za-z0-9._*-]+$
+      baseUrl:
+        type: string
+        minLength: 1
+        maxLength: 512
+        pattern: ^https?://[^\\s]+$
+      priority:
+        type: integer
+        format: int64
+        minimum: 1
+        maximum: 1000000
+      weight:
+        type: integer
+        format: int64
+        minimum: 1
+        maximum: 1000000
+      status:
+        type: string
+        enum:
+        - active
+        - disabled
+        - inactive
+      effectiveFrom:
+        type: string
+        nullable: true
+        maxLength: 64
+      effectiveTo:
+        type: string
+        nullable: true
+        maxLength: 64
+  response_schema:
+    name: AdminChannelEndpointMutationResponse
+    required:
+    - item
+    properties:
+      item:
+        name: AdminChannelEndpointItem
+        type: object
+        additionalProperties: false
+        required: *id227
+        properties: *id228
+        description: Persisted channel regional endpoint snapshot returned by the backend.
+- route: /admin/channel/endpoints
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts
+  operation: updateChannelEndpoint
+  operation_id: channelEndpoints.update
+  kind: update
+  api_surface: backend
+  api_method: PUT
+  api_path: /backend/v3/api/integration/channel_endpoints/{endpointId}
+  sdk_domain: integration
+  read_sources:
+  - ai_channel_endpoint
+  - ai_model_vendor
+  - ai_api_endpoint
+  write_tables:
+  - ai_channel_endpoint
+  - ops_audit_log
+  request_schema:
+    name: AdminChannelEndpointUpdateRequest
+    additionalProperties: false
+    properties:
+      vendorCode:
+        type: string
+        minLength: 1
+        maxLength: 128
+        pattern: ^[A-Za-z0-9._*-]+$
+      regionCode:
+        type: string
+        minLength: 1
+        maxLength: 64
+        pattern: ^[A-Za-z0-9._*-]+$
+      apiEndpointCode:
+        type: string
+        minLength: 1
+        maxLength: 128
+        pattern: ^[A-Za-z0-9._*-]+$
+      baseUrl:
+        type: string
+        minLength: 1
+        maxLength: 512
+        pattern: ^https?://[^\\s]+$
+      priority:
+        type: integer
+        format: int64
+        minimum: 1
+        maximum: 1000000
+      weight:
+        type: integer
+        format: int64
+        minimum: 1
+        maximum: 1000000
+      status:
+        type: string
+        enum:
+        - active
+        - disabled
+        - inactive
+      effectiveFrom:
+        type: string
+        nullable: true
+        maxLength: 64
+        description: Null clears the endpoint effective start time; omitted leaves it unchanged.
+      effectiveTo:
+        type: string
+        nullable: true
+        maxLength: 64
+        description: Null clears the endpoint effective end time; omitted leaves it unchanged.
+  response_schema:
+    name: AdminChannelEndpointMutationResponse
+    required:
+    - item
+    properties:
+      item:
+        name: AdminChannelEndpointItem
+        type: object
+        additionalProperties: false
+        required: *id227
+        properties: *id228
+        description: Persisted channel regional endpoint snapshot returned by the backend.
 - route: /admin/channel
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts
   operation: fetchProviderSecrets
@@ -39979,7 +40802,7 @@ frontend_operations:
   api_method: GET
   api_path: /backend/v3/api/integration/provider_secrets
   read_sources:
-  - integration_provider_account
+  - ai_channel
   query_parameters:
   - name: provider_code
     schema:
@@ -40003,7 +40826,7 @@ frontend_operations:
           name: AdminProviderSecretItem
           type: object
           additionalProperties: false
-          required: &id223
+          required: &id229
           - id
           - providerCode
           - accountCode
@@ -40014,7 +40837,7 @@ frontend_operations:
           - status
           - createdAt
           - updatedAt
-          properties: &id224
+          properties: &id230
             id:
               type: string
               minLength: 1
@@ -40064,9 +40887,9 @@ frontend_operations:
   api_method: POST
   api_path: /backend/v3/api/integration/provider_secrets
   read_sources:
-  - integration_provider_account
+  - ai_channel
   write_tables:
-  - integration_provider_account
+  - ai_channel
   - ops_config_snapshot
   - ops_audit_log
   request_schema:
@@ -40108,8 +40931,8 @@ frontend_operations:
         name: AdminProviderSecretItem
         type: object
         additionalProperties: false
-        required: *id223
-        properties: *id224
+        required: *id229
+        properties: *id230
         description: Persisted provider secret account snapshot returned by the backend.
 - route: /admin/channel
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts
@@ -40119,9 +40942,9 @@ frontend_operations:
   api_method: PUT
   api_path: /backend/v3/api/integration/provider_secrets
   read_sources:
-  - integration_provider_account
+  - ai_channel
   write_tables:
-  - integration_provider_account
+  - ai_channel
   - ops_config_snapshot
   - ops_audit_log
   request_schema:
@@ -40165,8 +40988,8 @@ frontend_operations:
         name: AdminProviderSecretItem
         type: object
         additionalProperties: false
-        required: *id223
-        properties: *id224
+        required: *id229
+        properties: *id230
         description: Persisted provider secret account snapshot returned by the backend.
 - route: /admin/channel
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts
@@ -40176,12 +40999,12 @@ frontend_operations:
   api_method: DELETE
   api_path: /backend/v3/api/integration/provider_secrets/{secretId}
   read_sources:
-  - integration_provider_account
+  - ai_channel
   write_tables:
-  - integration_provider_account
+  - ai_channel
   - ops_config_snapshot
   - ops_audit_log
-  response_schema: *id225
+  response_schema: *id231
 - route: /admin/messaging/providers
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-messaging/src/messagingService.ts
   operation: listMessagingProviderAccounts
@@ -40194,10 +41017,10 @@ frontend_operations:
   summary: Messaging provider accounts list
   description: Lists SMS and email provider accounts with messaging capability, health, and approval posture.
   read_sources:
-  - integration_provider
-  - integration_provider_account
+  - messaging_provider
+  - messaging_provider_account
   - messaging_provider_capability
-  query_parameters: &id226
+  query_parameters: &id232
   - name: page
     schema:
       type: integer
@@ -40227,7 +41050,7 @@ frontend_operations:
     schema:
       type: string
       maxLength: 64
-  response_schema: &id227
+  response_schema: &id233
     name: MessagingCollectionResponse
     type: object
     additionalProperties: false
@@ -40391,9 +41214,9 @@ frontend_operations:
   summary: Messaging provider account create
   description: Creates a provider account credential reference and declares its SMS or email delivery capability.
   read_sources:
-  - integration_provider
+  - messaging_provider
   write_tables:
-  - integration_provider_account
+  - messaging_provider_account
   - messaging_provider_capability
   - ops_audit_log
   request_schema:
@@ -40446,7 +41269,7 @@ frontend_operations:
       capabilitySchema:
         type: object
         additionalProperties: true
-  response_schema: &id228
+  response_schema: &id234
     name: MessagingMutationResponse
     type: object
     additionalProperties: false
@@ -40475,9 +41298,9 @@ frontend_operations:
   description: Lists approved and pending SMS signatures, sender IDs, email from addresses, domains, and reply-to identities.
   read_sources:
   - messaging_sender_identity
-  - integration_provider_account
-  query_parameters: *id226
-  response_schema: *id227
+  - messaging_provider_account
+  query_parameters: *id232
+  response_schema: *id233
 - route: /admin/messaging/sender-identities
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-messaging/src/messagingService.ts
   operation: createMessagingSenderIdentity
@@ -40491,7 +41314,7 @@ frontend_operations:
   summary: Messaging sender identity create
   description: Creates a reusable sender identity for SMS signatures, sender IDs, email from addresses, domains, and reply-to settings.
   read_sources:
-  - integration_provider_account
+  - messaging_provider_account
   write_tables:
   - messaging_sender_identity
   - ops_audit_log
@@ -40541,7 +41364,7 @@ frontend_operations:
       countryCode:
         type: string
         maxLength: 16
-  response_schema: *id228
+  response_schema: *id234
 - route: /admin/messaging/templates
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-messaging/src/messagingService.ts
   operation: listMessagingTemplates
@@ -40558,8 +41381,8 @@ frontend_operations:
   - messaging_template_version
   - messaging_template_variant
   - messaging_template_binding
-  query_parameters: *id226
-  response_schema: *id227
+  query_parameters: *id232
+  response_schema: *id233
 - route: /admin/messaging/templates
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-messaging/src/messagingService.ts
   operation: createMessagingTemplate
@@ -40639,7 +41462,7 @@ frontend_operations:
       variableSchema:
         type: object
         additionalProperties: true
-  response_schema: *id228
+  response_schema: *id234
 - route: /admin/messaging/templates
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-messaging/src/messagingService.ts
   operation: publishMessagingTemplateVersion
@@ -40659,7 +41482,7 @@ frontend_operations:
   - messaging_template_version
   - ops_audit_log
   request_body_required: false
-  response_schema: *id228
+  response_schema: *id234
 - route: /admin/messaging/route-rules
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-messaging/src/messagingService.ts
   operation: listMessagingRouteRules
@@ -40676,8 +41499,8 @@ frontend_operations:
   - messaging_route_rule_target
   - messaging_sender_identity
   - messaging_template_binding
-  query_parameters: *id226
-  response_schema: *id227
+  query_parameters: *id232
+  response_schema: *id233
 - route: /admin/messaging/route-rules
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-messaging/src/messagingService.ts
   operation: createMessagingRouteRule
@@ -40692,7 +41515,7 @@ frontend_operations:
   description: Creates weighted and ordered delivery routing targets for one SMS or email scene.
   read_sources:
   - messaging_template
-  - integration_provider_account
+  - messaging_provider_account
   - messaging_sender_identity
   - messaging_template_binding
   write_tables:
@@ -40775,7 +41598,7 @@ frontend_operations:
               type: integer
               minimum: 1
               maximum: 10000
-  response_schema: *id228
+  response_schema: *id234
 - route: /admin/messaging/send-requests
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-messaging/src/messagingService.ts
   operation: listMessagingSendRequests
@@ -40825,7 +41648,7 @@ frontend_operations:
     schema:
       type: string
       maxLength: 128
-  response_schema: *id227
+  response_schema: *id233
 - route: /admin/messaging/diagnostics
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-messaging/src/messagingService.ts
   operation: simulateMessagingRoute
@@ -41138,7 +41961,7 @@ frontend_operations:
     schema:
       type: string
       maxLength: 128
-  response_schema: *id227
+  response_schema: *id233
 - route: /admin/messaging/suppressions
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-messaging/src/messagingService.ts
   operation: createMessagingSuppression
@@ -41213,7 +42036,7 @@ frontend_operations:
         type: string
         nullable: true
         maxLength: 512
-  response_schema: *id228
+  response_schema: *id234
 - route: /admin/messaging/rate-limits
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-messaging/src/messagingService.ts
   operation: listMessagingRateLimitBuckets
@@ -41261,7 +42084,7 @@ frontend_operations:
     schema:
       type: string
       maxLength: 128
-  response_schema: *id227
+  response_schema: *id233
 - route: /admin/messaging/verification-policies
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-messaging/src/messagingService.ts
   operation: listVerificationPolicies
@@ -41276,8 +42099,8 @@ frontend_operations:
   read_sources:
   - iam_verification_scene_policy
   - messaging_template
-  query_parameters: *id226
-  response_schema: *id227
+  query_parameters: *id232
+  response_schema: *id233
 - route: /admin/messaging/verification-policies
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-messaging/src/messagingService.ts
   operation: updateVerificationPolicy
@@ -41348,7 +42171,7 @@ frontend_operations:
       riskPolicy:
         type: object
         additionalProperties: true
-  response_schema: *id228
+  response_schema: *id234
 - route: /admin/marketing/referrals
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-marketing/src/marketingService.ts
   operation: fetchReferralStats
@@ -41457,7 +42280,7 @@ frontend_operations:
       items:
         type: array
         maxItems: 200
-        items: &id229
+        items: &id235
           name: AdminPromptItem
           type: object
           additionalProperties: false
@@ -41606,7 +42429,7 @@ frontend_operations:
     required:
     - item
     properties:
-      item: *id229
+      item: *id235
 - route: /admin/prompts
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-prompts/src/promptService.ts
   operation: listPromptVersions
@@ -41633,7 +42456,7 @@ frontend_operations:
       items:
         type: array
         maxItems: 200
-        items: &id231
+        items: &id237
           name: AdminPromptVersionItem
           type: object
           additionalProperties: false
@@ -41690,15 +42513,15 @@ frontend_operations:
               type: string
               minLength: 1
               maxLength: 50000
-            variableSchema: &id230
+            variableSchema: &id236
               type: object
               additionalProperties: true
-            outputSchema: *id230
-            modelConstraints: *id230
-            safetyPolicy: *id230
+            outputSchema: *id236
+            modelConstraints: *id236
+            safetyPolicy: *id236
             examplesJson:
               type: array
-              items: *id230
+              items: *id236
             checksumHash:
               type: string
               minLength: 1
@@ -41771,15 +42594,15 @@ frontend_operations:
         type: string
         minLength: 1
         maxLength: 50000
-      variableSchema: *id230
-      outputSchema: *id230
-      modelConstraints: *id230
-      safetyPolicy: *id230
+      variableSchema: *id236
+      outputSchema: *id236
+      modelConstraints: *id236
+      safetyPolicy: *id236
       examplesJson:
         oneOf:
         - type: array
-          items: *id230
-        - *id230
+          items: *id236
+        - *id236
   response_schema:
     name: AdminPromptVersionMutationResponse
     type: object
@@ -41787,7 +42610,7 @@ frontend_operations:
     required:
     - item
     properties:
-      item: *id231
+      item: *id237
 - route: /admin/prompts
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-prompts/src/promptService.ts
   operation: publishPromptVersion
@@ -41834,7 +42657,7 @@ frontend_operations:
     type: object
     additionalProperties: false
     properties:
-      variables: *id230
+      variables: *id236
   response_schema:
     name: AdminPromptRenderResponse
     type: object
@@ -41872,7 +42695,7 @@ frontend_operations:
       items:
         type: array
         maxItems: 200
-        items: &id232
+        items: &id238
           name: AdminPromptBindingItem
           type: object
           additionalProperties: false
@@ -41931,8 +42754,8 @@ frontend_operations:
               format: int32
             enabled:
               type: boolean
-            policyJson: *id230
-            snapshotJson: *id230
+            policyJson: *id236
+            snapshotJson: *id236
             createdAt:
               type: string
               minLength: 1
@@ -41992,7 +42815,7 @@ frontend_operations:
         format: int32
       enabled:
         type: boolean
-      policyJson: *id230
+      policyJson: *id236
   response_schema:
     name: AdminPromptBindingMutationResponse
     type: object
@@ -42000,7 +42823,7 @@ frontend_operations:
     required:
     - item
     properties:
-      item: *id232
+      item: *id238
 - route: /admin/prompts
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-prompts/src/promptService.ts
   operation: updatePromptBinding
@@ -42045,7 +42868,7 @@ frontend_operations:
         format: int32
       enabled:
         type: boolean
-      policyJson: *id230
+      policyJson: *id236
   response_schema:
     name: AdminPromptBindingMutationResponse
     schema:
@@ -42106,7 +42929,7 @@ frontend_operations:
       items:
         type: array
         maxItems: 200
-        items: &id233
+        items: &id239
           name: AdminMcpServerItem
           type: object
           additionalProperties: false
@@ -42237,7 +43060,7 @@ frontend_operations:
     required:
     - item
     properties:
-      item: *id233
+      item: *id239
 - route: /admin/mcp
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-mcp/src/mcpService.ts
   operation: createMcpServer
@@ -42376,7 +43199,7 @@ frontend_operations:
       items:
         type: array
         maxItems: 200
-        items: &id236
+        items: &id242
           name: AdminMcpServerRevisionItem
           type: object
           additionalProperties: false
@@ -42435,11 +43258,11 @@ frontend_operations:
               type: string
               nullable: true
               maxLength: 1024
-            argsJson: &id235
+            argsJson: &id241
               type: array
               items:
                 type: string
-            envSchema: &id234
+            envSchema: &id240
               type: object
               additionalProperties: true
             authType:
@@ -42454,7 +43277,7 @@ frontend_operations:
               format: int32
               minimum: 100
               maximum: 300000
-            retryPolicy: *id234
+            retryPolicy: *id240
             configHash:
               type: string
               minLength: 1
@@ -42525,8 +43348,8 @@ frontend_operations:
       command:
         type: string
         maxLength: 1024
-      argsJson: *id235
-      envSchema: *id234
+      argsJson: *id241
+      envSchema: *id240
       authType:
         type: string
         maxLength: 64
@@ -42538,7 +43361,7 @@ frontend_operations:
         format: int32
         minimum: 100
         maximum: 300000
-      retryPolicy: *id234
+      retryPolicy: *id240
   response_schema:
     name: AdminMcpServerRevisionMutationResponse
     type: object
@@ -42546,7 +43369,7 @@ frontend_operations:
     required:
     - item
     properties:
-      item: *id236
+      item: *id242
 - route: /admin/mcp
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-mcp/src/mcpService.ts
   operation: publishMcpServerRevision
@@ -42610,7 +43433,7 @@ frontend_operations:
       tools:
         type: array
         maxItems: 200
-        items: &id237
+        items: &id243
           name: AdminMcpToolItem
           type: object
           additionalProperties: false
@@ -42670,8 +43493,8 @@ frontend_operations:
               type: string
               nullable: true
               maxLength: 4000
-            inputSchema: *id234
-            outputSchema: *id234
+            inputSchema: *id240
+            outputSchema: *id240
             riskLevel:
               type: string
               maxLength: 64
@@ -42682,7 +43505,7 @@ frontend_operations:
             status:
               type: string
               maxLength: 64
-            rateLimitPolicy: *id234
+            rateLimitPolicy: *id240
             schemaHash:
               type: string
               minLength: 1
@@ -42785,7 +43608,7 @@ frontend_operations:
       items:
         type: array
         maxItems: 200
-        items: *id237
+        items: *id243
 - route: /admin/mcp
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-mcp/src/mcpService.ts
   operation: updateMcpTool
@@ -42815,8 +43638,8 @@ frontend_operations:
         type: string
         nullable: true
         maxLength: 4000
-      inputSchema: *id234
-      outputSchema: *id234
+      inputSchema: *id240
+      outputSchema: *id240
       riskLevel:
         type: string
         maxLength: 64
@@ -42827,7 +43650,7 @@ frontend_operations:
       status:
         type: string
         maxLength: 64
-      rateLimitPolicy: *id234
+      rateLimitPolicy: *id240
       sortWeight:
         type: integer
         format: int32
@@ -42838,7 +43661,7 @@ frontend_operations:
     required:
     - item
     properties:
-      item: *id237
+      item: *id243
 - route: /admin/mcp
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-mcp/src/mcpService.ts
   operation: listMcpBindings
@@ -42866,7 +43689,7 @@ frontend_operations:
       items:
         type: array
         maxItems: 200
-        items: &id238
+        items: &id244
           name: AdminMcpBindingItem
           type: object
           additionalProperties: false
@@ -42923,9 +43746,9 @@ frontend_operations:
               type: integer
               format: int64
               minimum: 1
-            allowedTools: *id235
-            deniedTools: *id235
-            policyJson: *id234
+            allowedTools: *id241
+            deniedTools: *id241
+            policyJson: *id240
             priority:
               type: integer
               format: int32
@@ -42934,7 +43757,7 @@ frontend_operations:
             status:
               type: string
               maxLength: 64
-            snapshotJson: *id234
+            snapshotJson: *id240
             createdAt:
               type: string
               minLength: 1
@@ -42989,9 +43812,9 @@ frontend_operations:
         type: integer
         format: int64
         minimum: 1
-      allowedTools: *id235
-      deniedTools: *id235
-      policyJson: *id234
+      allowedTools: *id241
+      deniedTools: *id241
+      policyJson: *id240
       priority:
         type: integer
         format: int32
@@ -43007,7 +43830,7 @@ frontend_operations:
     required:
     - item
     properties:
-      item: *id238
+      item: *id244
 - route: /admin/mcp
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-mcp/src/mcpService.ts
   operation: updateMcpBinding
@@ -43049,9 +43872,9 @@ frontend_operations:
         type: integer
         format: int64
         minimum: 1
-      allowedTools: *id235
-      deniedTools: *id235
-      policyJson: *id234
+      allowedTools: *id241
+      deniedTools: *id241
+      policyJson: *id240
       priority:
         type: integer
         format: int32
@@ -43257,7 +44080,7 @@ frontend_operations:
     properties:
       items:
         type: array
-        items: &id241
+        items: &id247
           name: OpenPlatformAccountItem
           type: object
           additionalProperties: false
@@ -43285,7 +44108,7 @@ frontend_operations:
               maxLength: 128
             provider:
               type: string
-              enum: &id239
+              enum: &id245
               - wechat
               - alipay
               - douyin
@@ -43294,7 +44117,7 @@ frontend_operations:
               - feishu
             type:
               type: string
-              enum: &id240
+              enum: &id246
               - official_account
               - mini_app
               - life_account
@@ -43323,7 +44146,7 @@ frontend_operations:
               type: boolean
             status:
               type: string
-              enum: &id243
+              enum: &id249
               - active
               - inactive
             createdAt:
@@ -43365,10 +44188,10 @@ frontend_operations:
         maxLength: 128
       provider:
         type: string
-        enum: *id239
+        enum: *id245
       type:
         type: string
-        enum: *id240
+        enum: *id246
       appId:
         type: string
         nullable: true
@@ -43385,12 +44208,12 @@ frontend_operations:
         type: string
         nullable: true
         maxLength: 4096
-  response_schema: &id242
+  response_schema: &id248
     name: OpenPlatformAccountResponse
     required:
     - item
     properties:
-      item: *id241
+      item: *id247
 - route: /admin/open-platform
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-open-platform/src/openPlatformAdminService.ts
   operation: retrieveOpenPlatformAccount
@@ -43403,7 +44226,7 @@ frontend_operations:
   read_sources:
   - open_platform_account
   query_parameters: []
-  response_schema: *id242
+  response_schema: *id248
 - route: /admin/open-platform
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-open-platform/src/openPlatformAdminService.ts
   operation: updateOpenPlatformAccount
@@ -43450,8 +44273,8 @@ frontend_operations:
         type: boolean
       status:
         type: string
-        enum: *id243
-  response_schema: *id242
+        enum: *id249
+  response_schema: *id248
 - route: /admin/open-platform
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-open-platform/src/openPlatformAdminService.ts
   operation: deleteOpenPlatformAccount
@@ -43467,7 +44290,7 @@ frontend_operations:
   - open_platform_account
   - ops_audit_log
   request_body_required: false
-  response_schema: *id242
+  response_schema: *id248
 - route: /admin/open-platform
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-open-platform/src/openPlatformAdminService.ts
   operation: listOpenPlatformAccountEntries
@@ -43488,7 +44311,7 @@ frontend_operations:
     properties:
       items:
         type: array
-        items: &id245
+        items: &id251
           name: OpenPlatformEntryItem
           type: object
           additionalProperties: false
@@ -43515,7 +44338,7 @@ frontend_operations:
               pattern: ^[a-z0-9][a-z0-9._:-]*$
             type:
               type: string
-              enum: &id244
+              enum: &id250
               - url
               - qr
               - mini_app_url
@@ -43525,7 +44348,7 @@ frontend_operations:
               maxLength: 1024
             status:
               type: string
-              enum: *id243
+              enum: *id249
             createdAt:
               type: string
               maxLength: 64
@@ -43561,17 +44384,17 @@ frontend_operations:
         pattern: ^[a-z0-9][a-z0-9._:-]*$
       type:
         type: string
-        enum: *id244
+        enum: *id250
       url:
         type: string
         minLength: 1
         maxLength: 1024
-  response_schema: &id246
+  response_schema: &id252
     name: OpenPlatformEntryResponse
     required:
     - item
     properties:
-      item: *id245
+      item: *id251
 - route: /admin/open-platform
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-open-platform/src/openPlatformAdminService.ts
   operation: updateOpenPlatformAccountEntry
@@ -43599,15 +44422,15 @@ frontend_operations:
         pattern: ^[a-z0-9][a-z0-9._:-]*$
       type:
         type: string
-        enum: *id244
+        enum: *id250
       url:
         type: string
         minLength: 1
         maxLength: 1024
       status:
         type: string
-        enum: *id243
-  response_schema: *id246
+        enum: *id249
+  response_schema: *id252
 - route: /admin/open-platform
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-open-platform/src/openPlatformAdminService.ts
   operation: deleteOpenPlatformAccountEntry
@@ -43625,7 +44448,7 @@ frontend_operations:
   - open_platform_account
   - ops_audit_log
   request_body_required: false
-  response_schema: *id246
+  response_schema: *id252
 - route: /admin/open-platform
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-open-platform/src/openPlatformAdminService.ts
   operation: listOpenPlatformAccountPayBindings
@@ -43646,7 +44469,7 @@ frontend_operations:
     properties:
       items:
         type: array
-        items: &id249
+        items: &id255
           name: OpenPlatformPayBindingItem
           type: object
           additionalProperties: false
@@ -43676,20 +44499,20 @@ frontend_operations:
               maxLength: 128
             scene:
               type: string
-              enum: &id247
+              enum: &id253
               - official_account
               - mini_app
               - h5
               - app
             mode:
               type: string
-              enum: &id248
+              enum: &id254
               - direct
               - cashier
               - escrow
             status:
               type: string
-              enum: *id243
+              enum: *id249
             createdAt:
               type: string
               maxLength: 64
@@ -43728,16 +44551,16 @@ frontend_operations:
         maxLength: 128
       scene:
         type: string
-        enum: *id247
+        enum: *id253
       mode:
         type: string
-        enum: *id248
-  response_schema: &id250
+        enum: *id254
+  response_schema: &id256
     name: OpenPlatformPayBindingResponse
     required:
     - item
     properties:
-      item: *id249
+      item: *id255
 - route: /admin/open-platform
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-open-platform/src/openPlatformAdminService.ts
   operation: deleteOpenPlatformAccountPayBinding
@@ -43754,7 +44577,7 @@ frontend_operations:
   - open_platform_pay_binding
   - ops_audit_log
   request_body_required: false
-  response_schema: *id250
+  response_schema: *id256
 - route: /admin/app
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-app-center/src/services/adminAppService.ts
   operation: fetchApps
@@ -43822,7 +44645,7 @@ frontend_operations:
           name: AdminAppItemResponse
           type: object
           additionalProperties: false
-          required: &id258
+          required: &id264
           - id
           - uuid
           - name
@@ -43838,7 +44661,7 @@ frontend_operations:
           - releaseNotes
           - createdAt
           - updatedAt
-          properties: &id259
+          properties: &id265
             id:
               type: string
               minLength: 1
@@ -43885,9 +44708,9 @@ frontend_operations:
               name: AdminAppConfig
               type: object
               additionalProperties: true
-              required: &id256
+              required: &id262
               - standard
-              properties: &id257
+              properties: &id263
                 standard:
                   name: AdminAppConfigStandard
                   type: object
@@ -44013,14 +44836,14 @@ frontend_operations:
           name: AdminAppCategoryItem
           type: object
           additionalProperties: false
-          required: &id251
+          required: &id257
           - id
           - name
           - sortWeight
           - visible
           - status
           - type
-          properties: &id252
+          properties: &id258
             id:
               type: string
               minLength: 1
@@ -44127,8 +44950,8 @@ frontend_operations:
         name: AdminAppCategoryItem
         type: object
         additionalProperties: false
-        required: *id251
-        properties: *id252
+        required: *id257
+        properties: *id258
         description: Persisted app store category snapshot returned by the backend.
 - route: /admin/app
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-app-center/src/services/adminAppService.ts
@@ -44197,8 +45020,8 @@ frontend_operations:
         name: AdminAppCategoryItem
         type: object
         additionalProperties: false
-        required: *id251
-        properties: *id252
+        required: *id257
+        properties: *id258
         description: Updated app store category snapshot returned by the backend.
 - route: /admin/app
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-app-center/src/services/adminAppService.ts
@@ -44288,7 +45111,7 @@ frontend_operations:
           name: AdminAppTemplateItemResponse
           type: object
           additionalProperties: false
-          required: &id253
+          required: &id259
           - id
           - uuid
           - templateNo
@@ -44305,7 +45128,7 @@ frontend_operations:
           - capabilityManifest
           - createdAt
           - updatedAt
-          properties: &id254
+          properties: &id260
             id:
               type: string
               minLength: 1
@@ -44582,7 +45405,7 @@ frontend_operations:
         items:
           type: object
           additionalProperties: true
-  response_schema: &id255
+  response_schema: &id261
     name: AdminAppTemplateMutationResponse
     required:
     - item
@@ -44591,8 +45414,8 @@ frontend_operations:
         name: AdminAppTemplateItemResponse
         type: object
         additionalProperties: false
-        required: *id253
-        properties: *id254
+        required: *id259
+        properties: *id260
         description: Persisted app template snapshot returned by the backend.
 - route: /admin/app
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-app-center/src/services/adminAppService.ts
@@ -44605,7 +45428,7 @@ frontend_operations:
   read_sources:
   - studio_app_template
   query_parameters: []
-  response_schema: *id255
+  response_schema: *id261
 - route: /admin/app
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-app-center/src/services/adminAppService.ts
   operation: updateAppTemplate
@@ -44729,7 +45552,7 @@ frontend_operations:
         items:
           type: object
           additionalProperties: true
-  response_schema: *id255
+  response_schema: *id261
 - route: /admin/app
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-app-center/src/services/adminAppService.ts
   operation: deleteAppTemplate
@@ -44773,7 +45596,7 @@ frontend_operations:
   - studio_app_template
   - ops_audit_log
   request_body_required: false
-  response_schema: *id255
+  response_schema: *id261
 - route: /admin/app
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-app-center/src/services/adminAppService.ts
   operation: offlineAppTemplate
@@ -44789,7 +45612,7 @@ frontend_operations:
   - studio_app_template
   - ops_audit_log
   request_body_required: false
-  response_schema: *id255
+  response_schema: *id261
 - route: /admin/app
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-app-center/src/services/adminAppService.ts
   operation: createApp
@@ -44847,8 +45670,8 @@ frontend_operations:
         name: AdminAppConfig
         type: object
         additionalProperties: true
-        required: *id256
-        properties: *id257
+        required: *id262
+        properties: *id263
         description: Java-compatible PlusApp config. Standard app keys are stored under config.standard.appKey; marketStatus is stored under config.portal.marketStatus.
       status:
         type: string
@@ -44904,8 +45727,8 @@ frontend_operations:
         name: AdminAppItemResponse
         type: object
         additionalProperties: false
-        required: *id258
-        properties: *id259
+        required: *id264
+        properties: *id265
         description: Persisted PlusApp snapshot returned by the backend.
 - route: /admin/app
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-app-center/src/services/adminAppService.ts
@@ -44929,8 +45752,8 @@ frontend_operations:
         name: AdminAppItemResponse
         type: object
         additionalProperties: false
-        required: *id258
-        properties: *id259
+        required: *id264
+        properties: *id265
         description: PlusApp detail snapshot returned by the backend.
 - route: /admin/app
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-app-center/src/services/adminAppService.ts
@@ -44991,8 +45814,8 @@ frontend_operations:
         name: AdminAppConfig
         type: object
         additionalProperties: true
-        required: *id256
-        properties: *id257
+        required: *id262
+        properties: *id263
         description: Java-compatible PlusApp config. When supplied, config.standard.appKey is required and must use lowercase kebab-case.
       appType:
         type: string
@@ -45042,8 +45865,8 @@ frontend_operations:
         name: AdminAppItemResponse
         type: object
         additionalProperties: false
-        required: *id258
-        properties: *id259
+        required: *id264
+        properties: *id265
         description: Updated PlusApp snapshot returned by the backend.
 - route: /admin/app
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-app-center/src/services/adminAppService.ts
@@ -45094,8 +45917,8 @@ frontend_operations:
         name: AdminAppItemResponse
         type: object
         additionalProperties: false
-        required: *id258
-        properties: *id259
+        required: *id264
+        properties: *id265
         description: Enabled PlusApp snapshot returned by the backend.
 - route: /admin/app
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-app-center/src/services/adminAppService.ts
@@ -45120,8 +45943,8 @@ frontend_operations:
         name: AdminAppItemResponse
         type: object
         additionalProperties: false
-        required: *id258
-        properties: *id259
+        required: *id264
+        properties: *id265
         description: Disabled PlusApp snapshot returned by the backend.
 - route: /admin/app
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-app-center/src/services/adminAppService.ts
@@ -45146,8 +45969,8 @@ frontend_operations:
         name: AdminAppItemResponse
         type: object
         additionalProperties: false
-        required: *id258
-        properties: *id259
+        required: *id264
+        properties: *id265
         description: Published PlusApp snapshot returned by the backend.
 - route: /admin/app
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-app-center/src/services/adminAppService.ts
@@ -45172,8 +45995,8 @@ frontend_operations:
         name: AdminAppItemResponse
         type: object
         additionalProperties: false
-        required: *id258
-        properties: *id259
+        required: *id264
+        properties: *id265
         description: Offline PlusApp snapshot returned by the backend.
 - route: /admin/storage/providers
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-file-platform/src/storageService.ts
@@ -45201,7 +46024,7 @@ frontend_operations:
       items:
         type: array
         maxItems: 200
-        items: &id260
+        items: &id266
           name: StorageProviderConfig
           type: object
           additionalProperties: false
@@ -45352,7 +46175,7 @@ frontend_operations:
         type: boolean
       objectLock:
         type: boolean
-  response_schema: &id261
+  response_schema: &id267
     name: StorageProviderMutationResponse
     type: object
     additionalProperties: false
@@ -45360,7 +46183,7 @@ frontend_operations:
     - provider
     - requestId
     properties:
-      provider: *id260
+      provider: *id266
       requestId:
         type: string
         minLength: 1
@@ -45399,7 +46222,7 @@ frontend_operations:
         type: string
         minLength: 1
         maxLength: 512
-  response_schema: *id261
+  response_schema: *id267
 - route: /admin/storage/providers
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-file-platform/src/storageService.ts
   operation: checkStorageProviderHealth
@@ -45487,7 +46310,7 @@ frontend_operations:
       items:
         type: array
         maxItems: 200
-        items: &id262
+        items: &id268
           name: StorageBucketConfig
           type: object
           additionalProperties: false
@@ -45674,7 +46497,7 @@ frontend_operations:
         type: boolean
       blockPublicAccess:
         type: boolean
-  response_schema: &id263
+  response_schema: &id269
     name: StorageBucketMutationResponse
     type: object
     additionalProperties: false
@@ -45682,7 +46505,7 @@ frontend_operations:
     - bucket
     - requestId
     properties:
-      bucket: *id262
+      bucket: *id268
       requestId:
         type: string
         minLength: 1
@@ -45722,7 +46545,7 @@ frontend_operations:
         type: string
         minLength: 1
         maxLength: 512
-  response_schema: *id263
+  response_schema: *id269
 - route: /admin/storage/default-buckets
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-file-platform/src/storageService.ts
   operation: fetchStorageDefaultBuckets
@@ -45761,7 +46584,7 @@ frontend_operations:
       items:
         type: array
         maxItems: 64
-        items: &id264
+        items: &id270
           name: StorageDefaultBucketConfig
           type: object
           additionalProperties: false
@@ -45878,7 +46701,7 @@ frontend_operations:
     - defaultBucket
     - requestId
     properties:
-      defaultBucket: *id264
+      defaultBucket: *id270
       requestId:
         type: string
         minLength: 1
@@ -45908,7 +46731,7 @@ frontend_operations:
       items:
         type: array
         maxItems: 200
-        items: &id265
+        items: &id271
           name: StorageQuotaPolicy
           type: object
           additionalProperties: false
@@ -46035,7 +46858,7 @@ frontend_operations:
     - quotaPolicy
     - requestId
     properties:
-      quotaPolicy: *id265
+      quotaPolicy: *id271
       requestId:
         type: string
         minLength: 1
@@ -46053,7 +46876,7 @@ frontend_operations:
   description: Lists current storage usage counters for tenants, organizations, users, apps, business domains, and drive spaces.
   read_sources:
   - storage_usage_counter
-  query_parameters: &id266
+  query_parameters: &id272
   - name: cursor
     schema:
       type: string
@@ -46168,7 +46991,7 @@ frontend_operations:
   description: Lists append-only storage usage deltas for audit, billing, and quota reconciliation.
   read_sources:
   - storage_usage_ledger
-  query_parameters: *id266
+  query_parameters: *id272
   response_schema:
     name: StorageUsageLedgerListResponse
     type: object
@@ -46223,7 +47046,7 @@ frontend_operations:
   description: Lists historical usage snapshots for tenant, organization, user, app, and drive-space reporting.
   read_sources:
   - storage_usage_snapshot
-  query_parameters: *id266
+  query_parameters: *id272
   response_schema:
     name: StorageUsageSnapshotListResponse
     type: object
@@ -46343,7 +47166,7 @@ frontend_operations:
       items:
         type: array
         maxItems: 200
-        items: &id267
+        items: &id273
           name: StorageReconciliationRun
           type: object
           additionalProperties: false
@@ -46462,7 +47285,7 @@ frontend_operations:
     - reconciliationRun
     - requestId
     properties:
-      reconciliationRun: *id267
+      reconciliationRun: *id273
       requestId:
         type: string
         minLength: 1
@@ -46513,7 +47336,7 @@ frontend_operations:
       items:
         type: array
         maxItems: 200
-        items: &id268
+        items: &id274
           name: StorageGarbageCollectionJob
           type: object
           additionalProperties: false
@@ -46615,7 +47438,7 @@ frontend_operations:
     - job
     - requestId
     properties:
-      job: *id268
+      job: *id274
       requestId:
         type: string
         minLength: 1
@@ -46892,7 +47715,7 @@ frontend_operations:
   - ai_usage_service_provider_edge
   - commerce_service_provider_exposure_snapshot
   - analytics_service_provider_daily
-  query_parameters: &id269
+  query_parameters: &id275
   - name: page
     schema:
       type: integer
@@ -46989,8 +47812,8 @@ frontend_operations:
   description: Commercial service-provider subjects visible to the current admin scope.
   read_sources:
   - integration_service_provider
-  query_parameters: *id269
-  response_schema: &id270
+  query_parameters: *id275
+  response_schema: &id276
     name: ServiceProviderCollectionResponse
     type: object
     additionalProperties: false
@@ -47051,8 +47874,8 @@ frontend_operations:
   read_sources:
   - integration_service_provider_edge
   - integration_service_provider_closure
-  query_parameters: *id269
-  response_schema: *id270
+  query_parameters: *id275
+  response_schema: *id276
 - route: /admin/service-providers/downstreams
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-service-provider/src/serviceProviderService.ts
   operation: backendServiceProviderDownstreamsList
@@ -47069,8 +47892,8 @@ frontend_operations:
   - integration_service_provider_edge
   - integration_service_provider_closure
   - analytics_service_provider_edge_daily
-  query_parameters: *id269
-  response_schema: *id270
+  query_parameters: *id275
+  response_schema: *id276
 - route: /admin/service-providers/downstreams
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-service-provider/src/serviceProviderService.ts
   operation: backendServiceProviderDownstreamCreate
@@ -47199,8 +48022,8 @@ frontend_operations:
   description: Service-provider member roles and permission assignments.
   read_sources:
   - integration_service_provider_member
-  query_parameters: *id269
-  response_schema: *id270
+  query_parameters: *id275
+  response_schema: *id276
 - route: /admin/service-providers/bindings
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-service-provider/src/serviceProviderService.ts
   operation: backendServiceProviderBindingsList
@@ -47215,9 +48038,9 @@ frontend_operations:
   read_sources:
   - integration_service_provider_subject_binding
   - iam_gateway_api_key
-  - iam_gateway_api_key_group
-  query_parameters: *id269
-  response_schema: *id270
+  - ai_channel_group
+  query_parameters: *id275
+  response_schema: *id276
 - route: /admin/service-providers/contracts
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-service-provider/src/serviceProviderService.ts
   operation: backendServiceProviderContractsList
@@ -47233,8 +48056,8 @@ frontend_operations:
   - integration_service_provider_contract
   - integration_service_provider_contract_version
   - integration_service_provider_finance_profile
-  query_parameters: *id269
-  response_schema: *id270
+  query_parameters: *id275
+  response_schema: *id276
 - route: /admin/service-providers/pricing
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-service-provider/src/serviceProviderService.ts
   operation: backendServiceProviderPricingRulesList
@@ -47249,8 +48072,8 @@ frontend_operations:
   read_sources:
   - integration_service_provider_price_plan
   - integration_service_provider_price_rule
-  query_parameters: *id269
-  response_schema: *id270
+  query_parameters: *id275
+  response_schema: *id276
 - route: /admin/service-providers/pricing
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-service-provider/src/serviceProviderService.ts
   operation: backendServiceProviderPricingRuleCreate
@@ -47327,7 +48150,7 @@ frontend_operations:
       priority:
         type: integer
         format: int32
-  response_schema: &id271
+  response_schema: &id277
     name: ServiceProviderPricingRuleMutationResponse
     type: object
     additionalProperties: false
@@ -47451,7 +48274,7 @@ frontend_operations:
         - active
         - inactive
         - suspended
-  response_schema: *id271
+  response_schema: *id277
 - route: /admin/service-providers/pricing
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-service-provider/src/serviceProviderService.ts
   operation: backendServiceProviderPriceSimulationCreate
@@ -47539,8 +48362,8 @@ frontend_operations:
   - ai_usage_fact
   - ai_usage_service_provider_chain
   - ai_usage_service_provider_edge
-  query_parameters: *id269
-  response_schema: *id270
+  query_parameters: *id275
+  response_schema: *id276
 - route: /admin/service-providers/wallet
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-service-provider/src/serviceProviderService.ts
   operation: backendServiceProviderWalletAccountsList
@@ -47556,8 +48379,8 @@ frontend_operations:
   - integration_service_provider_account_binding
   - commerce_account
   - commerce_service_provider_exposure_snapshot
-  query_parameters: *id269
-  response_schema: *id270
+  query_parameters: *id275
+  response_schema: *id276
 - route: /admin/service-providers/statements
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-service-provider/src/serviceProviderService.ts
   operation: backendServiceProviderStatementsList
@@ -47572,8 +48395,8 @@ frontend_operations:
   read_sources:
   - commerce_usage_service_provider_statement
   - commerce_usage_service_provider_statement_item
-  query_parameters: *id269
-  response_schema: *id270
+  query_parameters: *id275
+  response_schema: *id276
 - route: /admin/service-providers/reconciliation
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-service-provider/src/serviceProviderService.ts
   operation: backendServiceProviderReconciliationRunsList
@@ -47590,8 +48413,8 @@ frontend_operations:
   - commerce_usage_service_provider_reconciliation_item
   - integration_provider_invoice_import
   - integration_provider_invoice_item
-  query_parameters: *id269
-  response_schema: *id270
+  query_parameters: *id275
+  response_schema: *id276
 - route: /admin/service-providers/adjustments
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-service-provider/src/serviceProviderService.ts
   operation: backendServiceProviderAdjustmentsList
@@ -47605,8 +48428,8 @@ frontend_operations:
   description: Refund, credit, debit, correction, and dispute-hold adjustments.
   read_sources:
   - commerce_usage_service_provider_adjustment
-  query_parameters: *id269
-  response_schema: *id270
+  query_parameters: *id275
+  response_schema: *id276
 - route: /admin/service-providers/risk
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-service-provider/src/serviceProviderService.ts
   operation: backendServiceProviderRiskEventsList
@@ -47621,8 +48444,8 @@ frontend_operations:
   read_sources:
   - commerce_service_provider_exposure_snapshot
   - ops_audit_log
-  query_parameters: *id269
-  response_schema: *id270
+  query_parameters: *id275
+  response_schema: *id276
 - route: /admin/service-providers/audit
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-service-provider/src/serviceProviderService.ts
   operation: backendServiceProviderAuditEventsList
@@ -47636,8 +48459,8 @@ frontend_operations:
   description: Audited commercial operations for hierarchy, pricing, contracts, settlements, and adjustments.
   read_sources:
   - ops_audit_log
-  query_parameters: *id269
-  response_schema: *id270
+  query_parameters: *id275
+  response_schema: *id276
 - route: /admin/group
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-group/src/groupService.ts
   operation: fetchGroups
@@ -47646,8 +48469,8 @@ frontend_operations:
   api_method: GET
   api_path: /backend/v3/api/router/access_groups
   read_sources:
-  - iam_gateway_api_key_group
-  - iam_gateway_api_key_group_metric_snapshot
+  - ai_channel_group
+  - ai_channel_group_metric_snapshot
   - ai_pricing_plan
   query_parameters: []
   response_schema:
@@ -47661,7 +48484,7 @@ frontend_operations:
           name: AdminAccessGroupItem
           type: object
           additionalProperties: false
-          required: &id272
+          required: &id278
           - id
           - name
           - platform
@@ -47672,7 +48495,7 @@ frontend_operations:
           - capacity
           - usage
           - status
-          properties: &id273
+          properties: &id279
             id:
               type: string
               minLength: 1
@@ -47754,10 +48577,10 @@ frontend_operations:
   api_method: POST
   api_path: /backend/v3/api/router/access_groups
   read_sources:
-  - iam_gateway_api_key_group
+  - ai_channel_group
   - ai_pricing_plan
   write_tables:
-  - iam_gateway_api_key_group
+  - ai_channel_group
   - ai_pricing_plan_binding
   - ops_audit_log
   request_schema:
@@ -47815,8 +48638,8 @@ frontend_operations:
         name: AdminAccessGroupItem
         type: object
         additionalProperties: false
-        required: *id272
-        properties: *id273
+        required: *id278
+        properties: *id279
         description: Persisted access group snapshot returned by the backend.
 - route: /admin/group
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-group/src/groupService.ts
@@ -47826,10 +48649,10 @@ frontend_operations:
   api_method: PATCH
   api_path: /backend/v3/api/router/access_groups/{groupId}
   read_sources:
-  - iam_gateway_api_key_group
+  - ai_channel_group
   - ai_pricing_plan
   write_tables:
-  - iam_gateway_api_key_group
+  - ai_channel_group
   - ai_pricing_plan_binding
   - ops_audit_log
   request_schema:
@@ -47886,8 +48709,8 @@ frontend_operations:
         name: AdminAccessGroupItem
         type: object
         additionalProperties: false
-        required: *id272
-        properties: *id273
+        required: *id278
+        properties: *id279
         description: Persisted access group snapshot returned by the backend.
 - route: /admin/group
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-group/src/groupService.ts
@@ -47897,12 +48720,12 @@ frontend_operations:
   api_method: DELETE
   api_path: /backend/v3/api/router/access_groups/{groupId}
   read_sources:
-  - iam_gateway_api_key_group
+  - ai_channel_group
   write_tables:
-  - iam_gateway_api_key_group
+  - ai_channel_group
   - ai_pricing_plan_binding
   - ops_audit_log
-  response_schema: &id281
+  response_schema: &id287
     name: AdminDeleteResponse
     type: object
     additionalProperties: false
@@ -47919,10 +48742,10 @@ frontend_operations:
   api_method: GET
   api_path: /backend/v3/api/integration/channels
   read_sources:
-  - integration_provider
-  - integration_channel
-  - integration_channel_model
-  - integration_provider_account
+  - ai_provider
+  - ai_channel
+  - ai_channel_model
+  - ai_channel
   query_parameters: []
   openapi_exposed: false
   response_schema:
@@ -47946,11 +48769,11 @@ frontend_operations:
   api_method: GET
   api_path: /backend/v3/api/router/access_groups/{groupId}/channel_bindings
   read_sources:
-  - iam_gateway_api_key_group
-  - iam_api_key_group_channel
-  - integration_channel
-  - integration_channel_model
-  - integration_provider
+  - ai_channel_group
+  - ai_channel_group_member
+  - ai_channel
+  - ai_channel_model
+  - ai_provider
   query_parameters: []
   response_schema:
     name: AdminAccessGroupChannelBindingsResponse
@@ -47966,7 +48789,7 @@ frontend_operations:
           name: AdminAccessGroupChannelBindingItem
           type: object
           additionalProperties: false
-          required: &id274
+          required: &id280
           - id
           - groupId
           - channelId
@@ -47981,7 +48804,7 @@ frontend_operations:
           - weight
           - status
           - healthStatus
-          properties: &id275
+          properties: &id281
             id:
               type: string
               minLength: 1
@@ -48057,13 +48880,13 @@ frontend_operations:
   api_method: PUT
   api_path: /backend/v3/api/router/access_groups/{groupId}/channel_bindings
   read_sources:
-  - iam_gateway_api_key_group
-  - iam_api_key_group_channel
-  - integration_channel
-  - integration_channel_model
-  - integration_provider
+  - ai_channel_group
+  - ai_channel_group_member
+  - ai_channel
+  - ai_channel_model
+  - ai_provider
   write_tables:
-  - iam_api_key_group_channel
+  - ai_channel_group_member
   - ops_audit_log
   - ops_config_snapshot
   request_schema:
@@ -48128,8 +48951,8 @@ frontend_operations:
           name: AdminAccessGroupChannelBindingItem
           type: object
           additionalProperties: false
-          required: *id274
-          properties: *id275
+          required: *id280
+          properties: *id281
 - route: /admin/monitor
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-monitor/src/monitorService.ts
   operation: fetchNodes
@@ -48312,13 +49135,13 @@ frontend_operations:
     properties:
       items:
         type: array
-        items: &id278
+        items: &id284
           name: AdminRateLimitItem
           type: object
           additionalProperties: false
-          required: &id276
+          required: &id282
           - id
-          properties: &id277
+          properties: &id283
             id:
               type: string
               minLength: 1
@@ -48425,8 +49248,8 @@ frontend_operations:
         name: AdminRateLimitItem
         type: object
         additionalProperties: false
-        required: *id276
-        properties: *id277
+        required: *id282
+        properties: *id283
         description: Persisted rate limit rule snapshot returned by the backend.
 - route: /admin/ratelimit
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-ratelimit/src/ratelimitService.ts
@@ -48446,7 +49269,7 @@ frontend_operations:
     properties:
       items:
         type: array
-        items: *id278
+        items: *id284
 - route: /admin/ratelimit
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-ratelimit/src/ratelimitService.ts
   operation: addTokenLimit
@@ -48508,8 +49331,8 @@ frontend_operations:
         name: AdminRateLimitItem
         type: object
         additionalProperties: false
-        required: *id276
-        properties: *id277
+        required: *id282
+        properties: *id283
         description: Persisted rate limit rule snapshot returned by the backend.
 - route: /admin/ratelimit
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-ratelimit/src/ratelimitService.ts
@@ -48520,7 +49343,7 @@ frontend_operations:
   api_path: /backend/v3/api/router/rate_limits/models
   read_sources:
   - ai_quota_policy
-  - iam_gateway_api_key_group
+  - ai_channel_group
   query_parameters: []
   response_schema:
     name: AdminModelLimitsResponse
@@ -48529,7 +49352,7 @@ frontend_operations:
     properties:
       items:
         type: array
-        items: *id278
+        items: *id284
 - route: /admin/ratelimit
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-ratelimit/src/ratelimitService.ts
   operation: addModelLimit
@@ -48539,7 +49362,7 @@ frontend_operations:
   api_path: /backend/v3/api/router/rate_limits/models
   read_sources:
   - ai_quota_policy
-  - iam_gateway_api_key_group
+  - ai_channel_group
   write_tables:
   - ai_quota_policy
   - ops_audit_log
@@ -48585,8 +49408,8 @@ frontend_operations:
         name: AdminRateLimitItem
         type: object
         additionalProperties: false
-        required: *id276
-        properties: *id277
+        required: *id282
+        properties: *id283
         description: Persisted rate limit rule snapshot returned by the backend.
 - route: /admin/ratelimit
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-ratelimit/src/ratelimitService.ts
@@ -48609,13 +49432,13 @@ frontend_operations:
           name: AdminFirewallItem
           type: object
           additionalProperties: false
-          required: &id279
+          required: &id285
           - id
           - type
           - value
           - reason
           - time
-          properties: &id280
+          properties: &id286
             id:
               type: string
               minLength: 1
@@ -48679,8 +49502,8 @@ frontend_operations:
         name: AdminFirewallItem
         type: object
         additionalProperties: false
-        required: *id279
-        properties: *id280
+        required: *id285
+        properties: *id286
         description: Persisted firewall rule snapshot returned by the backend.
 - route: /admin/ratelimit
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-ratelimit/src/ratelimitService.ts
@@ -48694,7 +49517,7 @@ frontend_operations:
   write_tables:
   - iam_gateway_risk_rule
   - ops_audit_log
-  response_schema: *id281
+  response_schema: *id287
 - route: /admin/settings
   source: apps/sdkwork-claw-router-portal/src/auth/clawRouterAuthSettingsService.ts
   operation: fetchClawRouterAuthSettings
@@ -48709,7 +49532,7 @@ frontend_operations:
   read_sources:
   - ops_config_snapshot
   query_parameters: []
-  response_schema: &id285
+  response_schema: &id291
     name: AdminAuthSettingsResponse
     type: object
     additionalProperties: false
@@ -48786,7 +49609,7 @@ frontend_operations:
           enum:
           - email
           - phone
-      verificationPolicy: &id282
+      verificationPolicy: &id288
         name: AdminAuthVerificationPolicy
         type: object
         additionalProperties: false
@@ -48815,7 +49638,7 @@ frontend_operations:
           official:
             type: array
             maxItems: 8
-            items: &id283
+            items: &id289
               name: AdminAuthWechatOfficial
               type: object
               additionalProperties: false
@@ -48875,7 +49698,7 @@ frontend_operations:
           mini:
             type: array
             maxItems: 8
-            items: &id284
+            items: &id290
               name: AdminAuthWechatMini
               type: object
               additionalProperties: false
@@ -49009,7 +49832,7 @@ frontend_operations:
           enum:
           - email
           - phone
-      verificationPolicy: *id282
+      verificationPolicy: *id288
       wechat:
         name: AdminAuthWechatSettingsUpdate
         type: object
@@ -49018,12 +49841,12 @@ frontend_operations:
           official:
             type: array
             maxItems: 8
-            items: *id283
+            items: *id289
           mini:
             type: array
             maxItems: 8
-            items: *id284
-  response_schema: *id285
+            items: *id290
+  response_schema: *id291
 - route: /admin/site
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-site/src/SiteSettingsService.ts
   operation: fetchSettings
@@ -49038,7 +49861,7 @@ frontend_operations:
   read_sources:
   - ops_config_snapshot
   query_parameters: []
-  response_schema: &id286
+  response_schema: &id292
     name: AdminSiteSettingsResponse
     type: object
     additionalProperties: false
@@ -49207,7 +50030,81 @@ frontend_operations:
       customCss:
         type: string
         maxLength: 20000
-  response_schema: *id286
+  response_schema: *id292
+- route: /admin/runtime-region
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-runtime-region/src/runtimeRegionService.ts
+  operation: fetchSettings
+  operation_id: runtimeRegion.settings.retrieve
+  kind: read
+  api_surface: backend
+  api_method: GET
+  api_path: /backend/v3/api/system/runtime_region/settings
+  sdk_domain: system
+  summary: Retrieve runtime region settings
+  description: Returns the tenant-scoped default runtime region used for route, endpoint, and regional pricing selection. Defaults to China region when no snapshot has been published.
+  read_sources:
+  - ops_config_snapshot
+  query_parameters: []
+  response_schema: &id293
+    name: AdminRuntimeRegionSettingsResponse
+    type: object
+    additionalProperties: false
+    required:
+    - currentRegionCode
+    - currentRegionName
+    - remark
+    properties:
+      currentRegionCode:
+        type: string
+        minLength: 1
+        maxLength: 64
+        pattern: ^[a-z0-9_-]+$
+        description: Lowercase runtime region code. The default value is cn.
+      currentRegionName:
+        type: string
+        minLength: 1
+        maxLength: 128
+        description: Human-readable runtime region name displayed in admin operations.
+      remark:
+        type: string
+        maxLength: 512
+        description: Operator-facing explanation for how this runtime region is used.
+- route: /admin/runtime-region
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-runtime-region/src/runtimeRegionService.ts
+  operation: updateSettings
+  operation_id: runtimeRegion.settings.update
+  kind: update
+  api_surface: backend
+  api_method: PATCH
+  api_path: /backend/v3/api/system/runtime_region/settings
+  sdk_domain: system
+  summary: Update runtime region settings
+  description: Updates the tenant-scoped default runtime region used for route, endpoint, and regional pricing selection, writes an immutable configuration snapshot, and records an operations audit entry.
+  read_sources:
+  - ops_config_snapshot
+  write_tables:
+  - ops_config_snapshot
+  - ops_audit_log
+  request_schema:
+    name: AdminRuntimeRegionSettingsUpdateRequest
+    type: object
+    additionalProperties: false
+    properties:
+      currentRegionCode:
+        type: string
+        minLength: 1
+        maxLength: 64
+        pattern: ^[a-z0-9_-]+$
+        description: Lowercase runtime region code, for example cn, us, eu, or global.
+      currentRegionName:
+        type: string
+        maxLength: 128
+        description: Human-readable runtime region name displayed in admin operations.
+      remark:
+        type: string
+        maxLength: 512
+        description: Operator-facing explanation for how this runtime region is used.
+  response_schema: *id293
 - route: /admin/cache
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-cache/src/cacheService.ts
   operation: fetchOverview
@@ -49490,7 +50387,7 @@ frontend_operations:
   write_tables:
   - ops_audit_log
   request_body_required: false
-  response_schema: &id287
+  response_schema: &id294
     name: AdminCacheOperationResponse
     type: object
     additionalProperties: false
@@ -49551,7 +50448,7 @@ frontend_operations:
       type: string
       minLength: 1
       maxLength: 128
-  response_schema: *id287
+  response_schema: *id294
 - route: /admin/cache
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-cache/src/cacheService.ts
   operation: deleteInstance
@@ -49574,7 +50471,7 @@ frontend_operations:
       type: string
       minLength: 1
       maxLength: 128
-  response_schema: *id287
+  response_schema: *id294
 - route: /admin/cache
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-cache/src/cacheService.ts
   operation: deleteNamespace
@@ -49597,7 +50494,7 @@ frontend_operations:
       type: string
       minLength: 1
       maxLength: 160
-  response_schema: *id287
+  response_schema: *id294
 - route: /admin/cache
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-cache/src/cacheService.ts
   operation: refreshNamespace
@@ -49621,7 +50518,7 @@ frontend_operations:
       type: string
       minLength: 1
       maxLength: 160
-  response_schema: *id287
+  response_schema: *id294
 - route: /admin/cache
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-cache/src/cacheService.ts
   operation: listKeys
@@ -49760,7 +50657,7 @@ frontend_operations:
       type: string
       minLength: 1
       maxLength: 512
-  response_schema: *id287
+  response_schema: *id294
 - route: /admin/dashboard
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-dashboard/src/dashboardService.ts
   operation: fetchDashboardData
@@ -49785,7 +50682,7 @@ frontend_operations:
     properties:
       userConsumption:
         type: array
-        items: &id288
+        items: &id295
           name: AdminPieChartItem
           type: object
           additionalProperties: false
@@ -49807,7 +50704,7 @@ frontend_operations:
               maxLength: 64
       multimodal:
         type: array
-        items: *id288
+        items: *id295
       traffic:
         type: array
         items:
@@ -49835,7 +50732,7 @@ frontend_operations:
               minimum: 0
       modelDistribution:
         type: array
-        items: *id288
+        items: *id295
       recentUsage:
         type: array
         items:
@@ -50130,7 +51027,7 @@ frontend_operations:
           points:
             type: array
             maxItems: 50
-            items: &id289
+            items: &id296
               name: AdminAnalyticsUserRankItem
               type: object
               additionalProperties: false
@@ -50172,15 +51069,15 @@ frontend_operations:
                 modelDistribution:
                   type: array
                   maxItems: 12
-                  items: *id288
+                  items: *id295
           tokens:
             type: array
             maxItems: 50
-            items: *id289
+            items: *id296
           requests:
             type: array
             maxItems: 50
-            items: *id289
+            items: *id296
       modelRankings:
         name: AdminAnalyticsModelRankings
         type: object
@@ -50193,7 +51090,7 @@ frontend_operations:
           points:
             type: array
             maxItems: 50
-            items: &id290
+            items: &id297
               name: AdminAnalyticsModelRankItem
               type: object
               additionalProperties: false
@@ -50257,19 +51154,19 @@ frontend_operations:
           tokens:
             type: array
             maxItems: 50
-            items: *id290
+            items: *id297
           requests:
             type: array
             maxItems: 50
-            items: *id290
+            items: *id297
       modelDistribution:
         type: array
         maxItems: 50
-        items: *id288
+        items: *id295
       modalityDistribution:
         type: array
         maxItems: 20
-        items: *id288
+        items: *id295
       insights:
         type: array
         maxItems: 12
@@ -50364,6 +51261,14 @@ frontend_operations:
           - group
           - type
           - model
+          - providerNativeModel
+          - requestedModelCatalogKey
+          - status
+          - httpStatus
+          - httpMethod
+          - errorCode
+          - errorType
+          - errorMessage
           - totalTime
           - ttft
           - isStream
@@ -50378,6 +51283,7 @@ frontend_operations:
           - path
           - reasoningEffort
           - ip
+          - userAgent
           properties:
             id:
               type: string
@@ -50411,6 +51317,40 @@ frontend_operations:
               type: string
               minLength: 1
               maxLength: 128
+            providerNativeModel:
+              type: string
+              maxLength: 128
+            requestedModelCatalogKey:
+              type: string
+              maxLength: 256
+            status:
+              type: string
+              enum:
+              - success
+              - error
+            httpStatus:
+              type: integer
+              format: int64
+              minimum: 0
+            httpMethod:
+              type: string
+              enum:
+              - GET
+              - POST
+              - PUT
+              - PATCH
+              - DELETE
+              - OPTIONS
+              - HEAD
+            errorCode:
+              type: string
+              maxLength: 128
+            errorType:
+              type: string
+              maxLength: 128
+            errorMessage:
+              type: string
+              maxLength: 2048
             totalTime:
               type: string
               minLength: 1
@@ -50459,6 +51399,10 @@ frontend_operations:
               type: string
               minLength: 1
               maxLength: 128
+            userAgent:
+              type: string
+              maxLength: 1024
+              description: Full HTTP User-Agent header captured from the gateway request. Empty when the client omitted the header.
       total:
         type: integer
         format: int64
@@ -50506,7 +51450,7 @@ frontend_operations:
       items:
         type: array
         maxItems: 500
-        items: &id291
+        items: &id298
           name: AdminServiceNodeItem
           type: object
           additionalProperties: false
@@ -50597,14 +51541,14 @@ frontend_operations:
         enum:
         - enabled
         - disabled
-  response_schema: &id292
+  response_schema: &id299
     name: AdminServiceNodeMutationResponse
     type: object
     additionalProperties: false
     required:
     - item
     properties:
-      item: *id291
+      item: *id298
 - route: /admin/service-nodes
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-service-nodes/src/serviceNodeService.ts
   operation: updateNode
@@ -50640,7 +51584,7 @@ frontend_operations:
       remark:
         type: string
         maxLength: 512
-  response_schema: *id292
+  response_schema: *id299
 - route: /admin/service-nodes
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-service-nodes/src/serviceNodeService.ts
   operation: updateNodeStatus
@@ -50668,7 +51612,7 @@ frontend_operations:
         enum:
         - enabled
         - disabled
-  response_schema: *id292
+  response_schema: *id299
 - route: /admin/service-nodes
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-service-nodes/src/serviceNodeService.ts
   operation: deleteNode
@@ -50739,7 +51683,7 @@ frontend_operations:
         name: AdminUserItem
         type: object
         additionalProperties: false
-        required: &id293
+        required: &id300
         - id
         - email
         - username
@@ -50750,7 +51694,7 @@ frontend_operations:
         - lastActive
         - lastUsed
         - createdAt
-        properties: &id294
+        properties: &id301
           id:
             type: integer
             minimum: 1
@@ -50834,8 +51778,8 @@ frontend_operations:
         name: AdminUserItem
         type: object
         additionalProperties: false
-        required: *id293
-        properties: *id294
+        required: *id300
+        properties: *id301
         description: Persisted admin user snapshot returned by the backend.
 routes:
 - route: /
@@ -50870,25 +51814,17 @@ routes:
 - route: /models
   required_tables:
   - ai_model_vendor
-  - ai_model_vendor_region
   - ai_model
   - ai_model_capability
   - ai_model_pricing
   - ai_billing_meter
-  - iam_gateway_api_key_group
-  - iam_api_key_group_channel
+  - ai_channel_group
+  - ai_channel_group_member
   required_columns:
     ai_model_vendor:
     - vendor_code
     - display_name
     - color_token
-    ai_model_vendor_region:
-    - vendor_code
-    - region_code
-    - display_name
-    - market_scope
-    - billing_currency
-    - billing_jurisdiction
     ai_model:
     - model
     - display_name
@@ -50907,6 +51843,7 @@ routes:
     - parameter_schema
     ai_model_pricing:
     - model
+    - region_code
     - price_side
     - billing_mode
     - billing_meter_code
@@ -50915,18 +51852,10 @@ routes:
 - route: /models/:id
   required_tables:
   - ai_model_vendor
-  - ai_model_vendor_region
   - ai_model
   - ai_model_capability
   - ai_model_pricing
   required_columns:
-    ai_model_vendor_region:
-    - vendor_code
-    - region_code
-    - display_name
-    - market_scope
-    - billing_currency
-    - billing_jurisdiction
     ai_model:
     - model
     - display_name
@@ -50938,6 +51867,7 @@ routes:
     - performance_profile
     ai_model_pricing:
     - model
+    - region_code
     - price_side
     - unit_price
     - currency
@@ -50946,18 +51876,10 @@ routes:
 - route: /models/:provider/:model
   required_tables:
   - ai_model_vendor
-  - ai_model_vendor_region
   - ai_model
   - ai_model_capability
   - ai_model_pricing
   required_columns:
-    ai_model_vendor_region:
-    - vendor_code
-    - region_code
-    - display_name
-    - market_scope
-    - billing_currency
-    - billing_jurisdiction
     ai_model:
     - model
     - display_name
@@ -50966,6 +51888,7 @@ routes:
     - model_aliases
     - docs_url
     ai_model_pricing:
+    - region_code
     - provider_code
     - provider_model
     - price_side
@@ -51404,7 +52327,7 @@ routes:
   - ai_generation_asset_action
   - ai_request_trace
   - ai_usage_fact
-  - integration_provider
+  - ai_provider
   - ai_agent
   - ai_agent_version
   - ai_agent_tool_binding
@@ -51685,13 +52608,13 @@ routes:
   - ai_usage_fact
   - ai_routing_decision_log
   - ai_billing_meter
-  - iam_gateway_api_key_group
+  - ai_channel_group
   required_columns:
     ai_request_trace:
     - request_id
-    - api_key_group_id
+    - channel_group_id
     - api_key_name_snapshot
-    - api_key_group_snapshot
+    - channel_group_snapshot
     - requested_model
     - request_path
     - latency_ms
@@ -51710,8 +52633,8 @@ routes:
     - base_input_unit_price
     - base_output_unit_price
     - cache_read_unit_price
-    iam_gateway_api_key_group:
-    - name
+    ai_channel_group:
+    - group_name
 - route: /console/gateway
   required_tables:
   - ai_request_trace
@@ -51733,8 +52656,8 @@ routes:
 - route: /console/api-keys
   required_tables:
   - iam_gateway_api_key
-  - iam_gateway_api_key_group
-  - iam_gateway_api_key_group_metric_snapshot
+  - ai_channel_group
+  - ai_channel_group_metric_snapshot
   - iam_gateway_access_policy
   - ai_quota_policy
   - ai_model_pricing
@@ -51745,13 +52668,13 @@ routes:
     - name
     - key_prefix
     - key_display_masked
-    - group_id
+    - channel_group_id
     - quota_policy_id
     - rate_limit_policy_id
     - expire_at
-    iam_gateway_api_key_group:
-    - name
-    - code
+    ai_channel_group:
+    - group_name
+    - group_code
     - pricing_plan_id
     - rate_multiplier
     - official_price_multiplier
@@ -52157,6 +53080,25 @@ routes:
   required_tables:
   - ops_config_snapshot
   - ops_audit_log
+- route: /admin/runtime-region
+  required_tables:
+  - ops_config_snapshot
+  - ops_audit_log
+  required_columns:
+    ops_config_snapshot:
+    - tenant_id
+    - organization_id
+    - status
+    - source_table
+    - config_payload
+    - published_at
+    ops_audit_log:
+    - tenant_id
+    - organization_id
+    - operator_id
+    - action
+    - request_id
+    - change_summary
 - route: /admin/site
   required_tables:
   - ops_config_snapshot
@@ -52180,18 +53122,17 @@ routes:
     - request_id
 - route: /admin/group
   required_tables:
-  - iam_gateway_api_key_group
-  - iam_gateway_api_key_group_metric_snapshot
+  - ai_channel_group
+  - ai_channel_group_metric_snapshot
   - ai_pricing_plan
   - ai_pricing_plan_binding
   - ai_pricing_rule
   - ai_pricing_tier
   - ai_billing_meter
-  - iam_api_key_group_channel
-  - integration_provider
-  - integration_channel
-  - integration_channel_model
-  - integration_provider_account
+  - ai_channel_group_member
+  - ai_provider
+  - ai_channel
+  - ai_channel_model
   - ops_audit_log
   - ops_config_snapshot
 - route: /admin/model
@@ -52527,24 +53468,68 @@ routes:
     - updated_at
 - route: /admin/channel
   required_tables:
-  - integration_provider
-  - integration_channel
-  - integration_channel_model
-  - integration_provider_account
+  - ai_provider
+  - ai_channel
+  - ai_channel_model
+  - ai_channel_vendor
+  - ai_channel_resource
+  - ai_channel_endpoint
   - integration_provider_health_snapshot
   - ai_model_vendor
   - ai_model
+  - ai_api_endpoint
   - ai_routing_policy
   - ai_routing_profile
   - ai_routing_rule
   - ops_config_snapshot
   - ops_audit_log
+- route: /admin/channel/resources
+  required_tables:
+  - ai_resource
+  - ai_resource_group_item
+  - ops_audit_log
+  required_columns:
+    ops_audit_log:
+    - tenant_id
+    - organization_id
+    - operator_id
+    - action
+    - target_type
+    - target_id
+    - request_id
+- route: /admin/channel/endpoints
+  required_tables:
+  - ai_channel
+  - ai_channel_endpoint
+  - ai_model_vendor
+  - ai_api_endpoint
+  - ops_audit_log
+  required_columns:
+    ai_channel_endpoint:
+    - channel_id
+    - channel_code
+    - vendor_code
+    - region_code
+    - api_code
+    - base_url
+    - priority
+    - weight
+    - health_status
+    - status
+    ops_audit_log:
+    - tenant_id
+    - organization_id
+    - operator_id
+    - action
+    - target_type
+    - target_id
+    - request_id
 - route: /admin/announcement
   required_tables:
   - content_announcement
   - ops_audit_log
 - route: /admin/marketing
-  required_tables: &id297
+  required_tables: &id304
   - promotion_offer
   - promotion_offer_version
   - promotion_offer_presentation
@@ -52616,7 +53601,7 @@ routes:
 - route: /admin/ratelimit
   required_tables:
   - iam_gateway_api_key
-  - iam_gateway_api_key_group
+  - ai_channel_group
   - ai_quota_policy
   - ai_rate_limit_bucket
   - iam_gateway_risk_rule
@@ -52626,14 +53611,14 @@ routes:
     - name
     - key_prefix
     - key_display_masked
-    - group_id
-    iam_gateway_api_key_group:
-    - name
-    - code
+    - channel_group_id
+    ai_channel_group:
+    - group_name
+    - group_code
     ai_quota_policy:
     - subject_type
     - subject_id
-    - group_id
+    - channel_group_id
     - model
     - requests_per_second
     - requests_per_day
@@ -52648,7 +53633,7 @@ routes:
     - requests_per_minute
     - block_duration_seconds
 - route: /admin/storage
-  required_tables: &id295
+  required_tables: &id302
   - object_provider
   - object_bucket
   - object_blob
@@ -52663,21 +53648,21 @@ routes:
   - storage_gc_job
   - ops_audit_log
 - route: /admin/storage/providers
-  required_tables: *id295
+  required_tables: *id302
 - route: /admin/storage/buckets
-  required_tables: *id295
+  required_tables: *id302
 - route: /admin/storage/default-buckets
-  required_tables: *id295
+  required_tables: *id302
 - route: /admin/storage/quotas
-  required_tables: *id295
+  required_tables: *id302
 - route: /admin/storage/usage
-  required_tables: *id295
+  required_tables: *id302
 - route: /admin/storage/reconciliation
-  required_tables: *id295
+  required_tables: *id302
 - route: /admin/storage/garbage-collection
-  required_tables: *id295
+  required_tables: *id302
 - route: /admin/drive
-  required_tables: &id296
+  required_tables: &id303
   - drive_space
   - drive_node
   - drive_acl_entry
@@ -52688,15 +53673,15 @@ routes:
   - file_audit_log
   - ops_audit_log
 - route: /admin/drive/spaces
-  required_tables: *id296
+  required_tables: *id303
 - route: /admin/drive/nodes
-  required_tables: *id296
+  required_tables: *id303
 - route: /admin/drive/permissions
-  required_tables: *id296
+  required_tables: *id303
 - route: /admin/drive/share-links
-  required_tables: *id296
+  required_tables: *id303
 - route: /admin/drive/audit
-  required_tables: *id296
+  required_tables: *id303
 - route: /console/account
   required_tables:
   - iam_user
@@ -53390,7 +54375,7 @@ routes:
   - integration_service_provider
   - integration_service_provider_subject_binding
   - iam_gateway_api_key
-  - iam_gateway_api_key_group
+  - ai_channel_group
   - ops_audit_log
 - route: /admin/service-providers/contracts
   required_tables:
@@ -53455,13 +54440,13 @@ routes:
   - messaging_rate_limit_bucket
 - route: /admin/messaging/providers
   required_tables:
-  - integration_provider
-  - integration_provider_account
+  - messaging_provider
+  - messaging_provider_account
   - messaging_provider_capability
   - ops_audit_log
 - route: /admin/messaging/sender-identities
   required_tables:
-  - integration_provider_account
+  - messaging_provider_account
   - messaging_sender_identity
   - ops_audit_log
 - route: /admin/messaging/templates
@@ -53474,7 +54459,7 @@ routes:
 - route: /admin/messaging/route-rules
   required_tables:
   - messaging_template
-  - integration_provider_account
+  - messaging_provider_account
   - messaging_sender_identity
   - messaging_template_binding
   - messaging_route_rule
@@ -53599,27 +54584,27 @@ routes:
   - commerce_usage_statement
   - commerce_usage_settlement
 - route: /admin/marketing/offers
-  required_tables: *id297
+  required_tables: *id304
 - route: /admin/marketing/promotion-coupon-stocks
-  required_tables: *id297
+  required_tables: *id304
 - route: /admin/marketing/promotion-codes
-  required_tables: *id297
+  required_tables: *id304
 - route: /admin/marketing/promotion-code-redemptions
-  required_tables: *id297
+  required_tables: *id304
 - route: /admin/marketing/user-coupons
-  required_tables: *id297
+  required_tables: *id304
 - route: /admin/marketing/discount-applications
-  required_tables: *id297
+  required_tables: *id304
 - route: /admin/marketing/discount-allocations
-  required_tables: *id297
+  required_tables: *id304
 - route: /admin/marketing/promotion-coupon-ledger
-  required_tables: *id297
+  required_tables: *id304
 - route: /admin/marketing/budget-ledger
-  required_tables: *id297
+  required_tables: *id304
 - route: /admin/marketing/external-bindings
-  required_tables: *id297
+  required_tables: *id304
 - route: /admin/marketing/events
-  required_tables: *id297
+  required_tables: *id304
 - route: /admin/finance/payment-reconciliation
   required_tables:
   - commerce_invoice_title

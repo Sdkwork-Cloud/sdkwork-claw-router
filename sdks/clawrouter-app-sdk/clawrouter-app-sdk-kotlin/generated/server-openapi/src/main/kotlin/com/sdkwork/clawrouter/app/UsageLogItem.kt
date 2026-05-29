@@ -28,5 +28,6 @@ data class UsageLogItem(
     val tokenName: String? = null,
     val totalTime: String? = null,
     val ttft: String? = null,
-    val type: String? = null
+    val type: String? = null,
+    val userAgent: String? = null
 )

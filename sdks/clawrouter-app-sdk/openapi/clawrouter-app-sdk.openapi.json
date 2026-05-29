@@ -3390,6 +3390,150 @@
         "x-generated-by-this-project": true,
         "x-table": "ai_agent_version"
       },
+      "AiApiEndpointRecord": {
+        "additionalProperties": false,
+        "description": "Ai api endpoint record schema exposed by Claw Router.",
+        "properties": {
+          "created_at": {
+            "description": "Created at field on ai api endpoint record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "data_scope": {
+            "description": "Data scope field on ai api endpoint record.",
+            "type": "string",
+            "x-db-type": "enum_int32"
+          },
+          "deleted_at": {
+            "description": "Deleted at field on ai api endpoint record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "deleted_by": {
+            "description": "Deleted by field on ai api endpoint record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "display_name": {
+            "description": "Display name field on ai api endpoint record.",
+            "maxLength": 128,
+            "type": "string"
+          },
+          "endpoint_code": {
+            "description": "Endpoint code field on ai api endpoint record.",
+            "maxLength": 128,
+            "type": "string"
+          },
+          "id": {
+            "description": "Id field on ai api endpoint record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "metadata": {
+            "additionalProperties": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/JsonValue"
+                }
+              ],
+              "description": "Metadata field on ai api endpoint record."
+            },
+            "description": "Metadata field on ai api endpoint record.",
+            "type": "object"
+          },
+          "method": {
+            "description": "Method field on ai api endpoint record.",
+            "maxLength": 16,
+            "type": "string"
+          },
+          "organization_id": {
+            "description": "Organization id field on ai api endpoint record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "path_template": {
+            "description": "Path template field on ai api endpoint record.",
+            "maxLength": 256,
+            "type": "string"
+          },
+          "protocol_code": {
+            "description": "Protocol code field on ai api endpoint record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "request_schema": {
+            "additionalProperties": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/JsonValue"
+                }
+              ],
+              "description": "Request schema field on ai api endpoint record."
+            },
+            "description": "Request schema field on ai api endpoint record.",
+            "type": "object"
+          },
+          "response_schema": {
+            "additionalProperties": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/JsonValue"
+                }
+              ],
+              "description": "Response schema field on ai api endpoint record."
+            },
+            "description": "Response schema field on ai api endpoint record.",
+            "type": "object"
+          },
+          "sort_order": {
+            "description": "Sort order field on ai api endpoint record.",
+            "format": "int32",
+            "type": "integer"
+          },
+          "status": {
+            "description": "Status field on ai api endpoint record.",
+            "type": "string",
+            "x-db-type": "enum_int32"
+          },
+          "streaming_supported": {
+            "description": "Streaming supported field on ai api endpoint record.",
+            "type": "boolean"
+          },
+          "tenant_id": {
+            "description": "Tenant id field on ai api endpoint record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "updated_at": {
+            "description": "Updated at field on ai api endpoint record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "uuid": {
+            "description": "Uuid field on ai api endpoint record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "version": {
+            "description": "Version field on ai api endpoint record.",
+            "format": "int64",
+            "type": "string"
+          }
+        },
+        "required": [
+          "uuid",
+          "tenant_id",
+          "organization_id",
+          "status",
+          "endpoint_code",
+          "protocol_code",
+          "path_template"
+        ],
+        "type": "object",
+        "x-domain": "ai",
+        "x-generated-by-this-project": true,
+        "x-table": "ai_api_endpoint"
+      },
       "AiBillingMeterRecord": {
         "additionalProperties": false,
         "description": "Ai billing meter record schema exposed by Claw Router.",
@@ -3559,6 +3703,1458 @@
         "x-domain": "ai",
         "x-generated-by-this-project": true,
         "x-table": "ai_billing_meter"
+      },
+      "AiChannelEndpointRecord": {
+        "additionalProperties": false,
+        "description": "Ai channel endpoint record schema exposed by Claw Router.",
+        "properties": {
+          "api_code": {
+            "description": "Api code field on ai channel endpoint record.",
+            "maxLength": 128,
+            "type": "string"
+          },
+          "api_endpoint_id": {
+            "description": "Api endpoint id field on ai channel endpoint record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "base_url": {
+            "description": "Base url field on ai channel endpoint record.",
+            "maxLength": 512,
+            "type": "string"
+          },
+          "channel_code": {
+            "description": "Channel code field on ai channel endpoint record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "channel_id": {
+            "description": "Channel id field on ai channel endpoint record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "channel_type": {
+            "description": "Channel type field on ai channel endpoint record.",
+            "maxLength": 32,
+            "type": "string"
+          },
+          "consecutive_error_count": {
+            "description": "Consecutive error count field on ai channel endpoint record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "created_at": {
+            "description": "Created at field on ai channel endpoint record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "data_scope": {
+            "description": "Data scope field on ai channel endpoint record.",
+            "type": "string",
+            "x-db-type": "enum_int32"
+          },
+          "deleted_at": {
+            "description": "Deleted at field on ai channel endpoint record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "deleted_by": {
+            "description": "Deleted by field on ai channel endpoint record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "effective_from": {
+            "description": "Effective from field on ai channel endpoint record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "effective_to": {
+            "description": "Effective to field on ai channel endpoint record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "id": {
+            "description": "Id field on ai channel endpoint record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "last_latency_ms": {
+            "description": "Last latency ms field on ai channel endpoint record.",
+            "format": "int32",
+            "type": "integer"
+          },
+          "metadata": {
+            "additionalProperties": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/JsonValue"
+                }
+              ],
+              "description": "Metadata field on ai channel endpoint record."
+            },
+            "description": "Metadata field on ai channel endpoint record.",
+            "type": "object"
+          },
+          "organization_id": {
+            "description": "Organization id field on ai channel endpoint record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "path_prefix": {
+            "description": "Path prefix field on ai channel endpoint record.",
+            "maxLength": 256,
+            "type": "string"
+          },
+          "provider_code": {
+            "description": "Provider code field on ai channel endpoint record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "region_code": {
+            "description": "Region code field on ai channel endpoint record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "retry_policy": {
+            "additionalProperties": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/JsonValue"
+                }
+              ],
+              "description": "Retry policy field on ai channel endpoint record."
+            },
+            "description": "Retry policy field on ai channel endpoint record.",
+            "type": "object"
+          },
+          "status": {
+            "description": "Status field on ai channel endpoint record.",
+            "type": "string",
+            "x-db-type": "enum_int32"
+          },
+          "tenant_id": {
+            "description": "Tenant id field on ai channel endpoint record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "timeout_ms": {
+            "description": "Timeout ms field on ai channel endpoint record.",
+            "format": "int32",
+            "type": "integer"
+          },
+          "updated_at": {
+            "description": "Updated at field on ai channel endpoint record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "uuid": {
+            "description": "Uuid field on ai channel endpoint record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "vendor_code": {
+            "description": "Vendor code field on ai channel endpoint record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "vendor_id": {
+            "description": "Vendor id field on ai channel endpoint record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "version": {
+            "description": "Version field on ai channel endpoint record.",
+            "format": "int64",
+            "type": "string"
+          }
+        },
+        "required": [
+          "uuid",
+          "tenant_id",
+          "organization_id",
+          "status",
+          "channel_id",
+          "channel_code",
+          "channel_type",
+          "vendor_code",
+          "region_code",
+          "api_code",
+          "base_url"
+        ],
+        "type": "object",
+        "x-domain": "ai",
+        "x-generated-by-this-project": true,
+        "x-table": "ai_channel_endpoint"
+      },
+      "AiChannelGroupMemberRecord": {
+        "additionalProperties": false,
+        "description": "Ai channel group member record schema exposed by Claw Router.",
+        "properties": {
+          "channel_group_id": {
+            "description": "Channel group id field on ai channel group member record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "channel_id": {
+            "description": "Channel id field on ai channel group member record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "created_at": {
+            "description": "Created at field on ai channel group member record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "data_scope": {
+            "description": "Data scope field on ai channel group member record.",
+            "type": "string",
+            "x-db-type": "enum_int32"
+          },
+          "deleted_at": {
+            "description": "Deleted at field on ai channel group member record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "deleted_by": {
+            "description": "Deleted by field on ai channel group member record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "effective_from": {
+            "description": "Effective from field on ai channel group member record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "effective_to": {
+            "description": "Effective to field on ai channel group member record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "id": {
+            "description": "Id field on ai channel group member record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "metadata": {
+            "additionalProperties": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/JsonValue"
+                }
+              ],
+              "description": "Metadata field on ai channel group member record."
+            },
+            "description": "Metadata field on ai channel group member record.",
+            "type": "object"
+          },
+          "organization_id": {
+            "description": "Organization id field on ai channel group member record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "status": {
+            "description": "Status field on ai channel group member record.",
+            "type": "string",
+            "x-db-type": "enum_int32"
+          },
+          "tenant_id": {
+            "description": "Tenant id field on ai channel group member record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "updated_at": {
+            "description": "Updated at field on ai channel group member record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "uuid": {
+            "description": "Uuid field on ai channel group member record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "version": {
+            "description": "Version field on ai channel group member record.",
+            "format": "int64",
+            "type": "string"
+          }
+        },
+        "required": [
+          "uuid",
+          "tenant_id",
+          "organization_id",
+          "status",
+          "channel_group_id",
+          "channel_id"
+        ],
+        "type": "object",
+        "x-domain": "ai",
+        "x-generated-by-this-project": true,
+        "x-table": "ai_channel_group_member"
+      },
+      "AiChannelGroupMetricSnapshotRecord": {
+        "additionalProperties": false,
+        "description": "Ai channel group metric snapshot record schema exposed by Claw Router.",
+        "properties": {
+          "capacity_limit": {
+            "description": "Capacity limit field on ai channel group metric snapshot record.",
+            "format": "decimal",
+            "type": "string"
+          },
+          "capacity_used": {
+            "description": "Capacity used field on ai channel group metric snapshot record.",
+            "format": "decimal",
+            "type": "string"
+          },
+          "channel_available_count": {
+            "description": "Channel available count field on ai channel group metric snapshot record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "channel_group_id": {
+            "description": "Channel group id field on ai channel group metric snapshot record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "channel_total_count": {
+            "description": "Channel total count field on ai channel group metric snapshot record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "created_at": {
+            "description": "Created at field on ai channel group metric snapshot record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "group_code": {
+            "description": "Group code field on ai channel group metric snapshot record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "health_status": {
+            "description": "Health status field on ai channel group metric snapshot record.",
+            "type": "string",
+            "x-db-type": "enum_int32"
+          },
+          "id": {
+            "description": "Id field on ai channel group metric snapshot record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "metadata": {
+            "additionalProperties": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/JsonValue"
+                }
+              ],
+              "description": "Metadata field on ai channel group metric snapshot record."
+            },
+            "description": "Metadata field on ai channel group metric snapshot record.",
+            "type": "object"
+          },
+          "organization_id": {
+            "description": "Organization id field on ai channel group metric snapshot record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "provider_code": {
+            "description": "Provider code field on ai channel group metric snapshot record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "rebuild_version": {
+            "description": "Rebuild version field on ai channel group metric snapshot record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "request_count_today": {
+            "description": "Request count today field on ai channel group metric snapshot record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "request_count_total": {
+            "description": "Request count total field on ai channel group metric snapshot record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "snapshot_at": {
+            "description": "Snapshot at field on ai channel group metric snapshot record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "source_id": {
+            "description": "Source id field on ai channel group metric snapshot record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "source_type": {
+            "description": "Source type field on ai channel group metric snapshot record.",
+            "maxLength": 128,
+            "type": "string"
+          },
+          "source_version": {
+            "description": "Source version field on ai channel group metric snapshot record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "status": {
+            "description": "Status field on ai channel group metric snapshot record.",
+            "type": "string",
+            "x-db-type": "enum_int32"
+          },
+          "tenant_id": {
+            "description": "Tenant id field on ai channel group metric snapshot record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "updated_at": {
+            "description": "Updated at field on ai channel group metric snapshot record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "usage_amount_today": {
+            "description": "Usage amount today field on ai channel group metric snapshot record.",
+            "format": "decimal",
+            "type": "string"
+          },
+          "usage_amount_total": {
+            "description": "Usage amount total field on ai channel group metric snapshot record.",
+            "format": "decimal",
+            "type": "string"
+          },
+          "uuid": {
+            "description": "Uuid field on ai channel group metric snapshot record.",
+            "maxLength": 64,
+            "type": "string"
+          }
+        },
+        "required": [
+          "uuid",
+          "tenant_id",
+          "organization_id",
+          "status"
+        ],
+        "type": "object",
+        "x-domain": "ai",
+        "x-generated-by-this-project": true,
+        "x-table": "ai_channel_group_metric_snapshot"
+      },
+      "AiChannelGroupRecord": {
+        "additionalProperties": false,
+        "description": "Ai channel group record schema exposed by Claw Router.",
+        "properties": {
+          "allowed_origin": {
+            "additionalProperties": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/JsonValue"
+                }
+              ],
+              "description": "Allowed origin field on ai channel group record."
+            },
+            "description": "Allowed origin field on ai channel group record.",
+            "type": "object"
+          },
+          "billing_type": {
+            "description": "Billing type field on ai channel group record.",
+            "type": "string",
+            "x-db-type": "enum_int32"
+          },
+          "capacity_limit": {
+            "description": "Capacity limit field on ai channel group record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "created_at": {
+            "description": "Created at field on ai channel group record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "data_scope": {
+            "description": "Data scope field on ai channel group record.",
+            "type": "string",
+            "x-db-type": "enum_int32"
+          },
+          "deleted_at": {
+            "description": "Deleted at field on ai channel group record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "deleted_by": {
+            "description": "Deleted by field on ai channel group record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "description": {
+            "description": "Description field on ai channel group record.",
+            "maxLength": 512,
+            "type": "string"
+          },
+          "environment": {
+            "description": "Environment field on ai channel group record.",
+            "type": "string",
+            "x-db-type": "enum_int32"
+          },
+          "group_code": {
+            "description": "Group code field on ai channel group record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "group_name": {
+            "description": "Group name field on ai channel group record.",
+            "maxLength": 128,
+            "type": "string"
+          },
+          "group_type": {
+            "description": "Group type field on ai channel group record.",
+            "maxLength": 32,
+            "type": "string"
+          },
+          "id": {
+            "description": "Id field on ai channel group record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "metadata": {
+            "additionalProperties": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/JsonValue"
+                }
+              ],
+              "description": "Metadata field on ai channel group record."
+            },
+            "description": "Metadata field on ai channel group record.",
+            "type": "object"
+          },
+          "official_price_multiplier": {
+            "description": "Official price multiplier field on ai channel group record.",
+            "format": "decimal",
+            "type": "string"
+          },
+          "organization_id": {
+            "description": "Organization id field on ai channel group record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "price_reference_mode": {
+            "description": "Price reference mode field on ai channel group record.",
+            "type": "string",
+            "x-db-type": "enum_int32"
+          },
+          "pricing_plan_code": {
+            "description": "Pricing plan code field on ai channel group record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "pricing_plan_id": {
+            "description": "Pricing plan id field on ai channel group record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "provider_code": {
+            "description": "Provider code field on ai channel group record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "quota_policy_id": {
+            "description": "Quota policy id field on ai channel group record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "rate_limit_policy_id": {
+            "description": "Rate limit policy id field on ai channel group record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "rate_multiplier": {
+            "description": "Rate multiplier field on ai channel group record.",
+            "format": "decimal",
+            "type": "string"
+          },
+          "routing_policy_id": {
+            "description": "Routing policy id field on ai channel group record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "status": {
+            "description": "Status field on ai channel group record.",
+            "type": "string",
+            "x-db-type": "enum_int32"
+          },
+          "tenant_id": {
+            "description": "Tenant id field on ai channel group record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "updated_at": {
+            "description": "Updated at field on ai channel group record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "uuid": {
+            "description": "Uuid field on ai channel group record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "version": {
+            "description": "Version field on ai channel group record.",
+            "format": "int64",
+            "type": "string"
+          }
+        },
+        "required": [
+          "uuid",
+          "tenant_id",
+          "organization_id",
+          "status",
+          "group_code",
+          "group_name"
+        ],
+        "type": "object",
+        "x-domain": "ai",
+        "x-generated-by-this-project": true,
+        "x-table": "ai_channel_group"
+      },
+      "AiChannelGroupResourceRecord": {
+        "additionalProperties": false,
+        "description": "Ai channel group resource record schema exposed by Claw Router.",
+        "properties": {
+          "channel_group_id": {
+            "description": "Channel group id field on ai channel group resource record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "created_at": {
+            "description": "Created at field on ai channel group resource record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "data_scope": {
+            "description": "Data scope field on ai channel group resource record.",
+            "type": "string",
+            "x-db-type": "enum_int32"
+          },
+          "deleted_at": {
+            "description": "Deleted at field on ai channel group resource record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "deleted_by": {
+            "description": "Deleted by field on ai channel group resource record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "effective_from": {
+            "description": "Effective from field on ai channel group resource record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "effective_to": {
+            "description": "Effective to field on ai channel group resource record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "id": {
+            "description": "Id field on ai channel group resource record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "metadata": {
+            "additionalProperties": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/JsonValue"
+                }
+              ],
+              "description": "Metadata field on ai channel group resource record."
+            },
+            "description": "Metadata field on ai channel group resource record.",
+            "type": "object"
+          },
+          "organization_id": {
+            "description": "Organization id field on ai channel group resource record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "resource_code": {
+            "description": "Resource code field on ai channel group resource record.",
+            "maxLength": 192,
+            "type": "string"
+          },
+          "resource_group_code": {
+            "description": "Resource group code field on ai channel group resource record.",
+            "maxLength": 128,
+            "type": "string"
+          },
+          "resource_group_id": {
+            "description": "Resource group id field on ai channel group resource record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "resource_id": {
+            "description": "Resource id field on ai channel group resource record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "status": {
+            "description": "Status field on ai channel group resource record.",
+            "type": "string",
+            "x-db-type": "enum_int32"
+          },
+          "tenant_id": {
+            "description": "Tenant id field on ai channel group resource record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "updated_at": {
+            "description": "Updated at field on ai channel group resource record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "uuid": {
+            "description": "Uuid field on ai channel group resource record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "version": {
+            "description": "Version field on ai channel group resource record.",
+            "format": "int64",
+            "type": "string"
+          }
+        },
+        "required": [
+          "uuid",
+          "tenant_id",
+          "organization_id",
+          "status",
+          "channel_group_id"
+        ],
+        "type": "object",
+        "x-domain": "ai",
+        "x-generated-by-this-project": true,
+        "x-table": "ai_channel_group_resource"
+      },
+      "AiChannelModelRecord": {
+        "additionalProperties": false,
+        "description": "Ai channel model record schema exposed by Claw Router.",
+        "properties": {
+          "api_code": {
+            "description": "Api code field on ai channel model record.",
+            "maxLength": 128,
+            "type": "string"
+          },
+          "capability": {
+            "description": "Capability field on ai channel model record.",
+            "type": "string",
+            "x-db-type": "enum_int32"
+          },
+          "catalog_key": {
+            "description": "Catalog key field on ai channel model record.",
+            "maxLength": 256,
+            "type": "string"
+          },
+          "channel_id": {
+            "description": "Channel id field on ai channel model record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "created_at": {
+            "description": "Created at field on ai channel model record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "data_scope": {
+            "description": "Data scope field on ai channel model record.",
+            "type": "string",
+            "x-db-type": "enum_int32"
+          },
+          "default_parameters": {
+            "additionalProperties": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/JsonValue"
+                }
+              ],
+              "description": "Default parameters field on ai channel model record."
+            },
+            "description": "Default parameters field on ai channel model record.",
+            "type": "object"
+          },
+          "deleted_at": {
+            "description": "Deleted at field on ai channel model record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "deleted_by": {
+            "description": "Deleted by field on ai channel model record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "effective_from": {
+            "description": "Effective from field on ai channel model record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "effective_to": {
+            "description": "Effective to field on ai channel model record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "id": {
+            "description": "Id field on ai channel model record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "max_input_tokens": {
+            "description": "Max input tokens field on ai channel model record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "max_output_tokens": {
+            "description": "Max output tokens field on ai channel model record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "metadata": {
+            "additionalProperties": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/JsonValue"
+                }
+              ],
+              "description": "Metadata field on ai channel model record."
+            },
+            "description": "Metadata field on ai channel model record.",
+            "type": "object"
+          },
+          "model": {
+            "description": "Model field on ai channel model record.",
+            "maxLength": 128,
+            "type": "string"
+          },
+          "model_aliases": {
+            "additionalProperties": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/JsonValue"
+                }
+              ],
+              "description": "Model aliases field on ai channel model record."
+            },
+            "description": "Model aliases field on ai channel model record.",
+            "type": "object"
+          },
+          "model_id": {
+            "description": "Model id field on ai channel model record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "organization_id": {
+            "description": "Organization id field on ai channel model record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "provider_model": {
+            "description": "Provider model field on ai channel model record.",
+            "maxLength": 128,
+            "type": "string"
+          },
+          "provider_native_model": {
+            "description": "Provider native model field on ai channel model record.",
+            "maxLength": 256,
+            "type": "string"
+          },
+          "status": {
+            "description": "Status field on ai channel model record.",
+            "type": "string",
+            "x-db-type": "enum_int32"
+          },
+          "supports_streaming": {
+            "description": "Supports streaming field on ai channel model record.",
+            "type": "boolean"
+          },
+          "supports_tools": {
+            "description": "Supports tools field on ai channel model record.",
+            "type": "boolean"
+          },
+          "tenant_id": {
+            "description": "Tenant id field on ai channel model record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "updated_at": {
+            "description": "Updated at field on ai channel model record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "uuid": {
+            "description": "Uuid field on ai channel model record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "vendor_code": {
+            "description": "Vendor code field on ai channel model record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "version": {
+            "description": "Version field on ai channel model record.",
+            "format": "int64",
+            "type": "string"
+          }
+        },
+        "type": "object",
+        "x-domain": "ai",
+        "x-generated-by-this-project": true,
+        "x-table": "ai_channel_model"
+      },
+      "AiChannelRecord": {
+        "additionalProperties": false,
+        "description": "Ai channel record schema exposed by Claw Router.",
+        "properties": {
+          "auth_config": {
+            "additionalProperties": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/JsonValue"
+                }
+              ],
+              "description": "Auth config field on ai channel record."
+            },
+            "description": "Auth config field on ai channel record.",
+            "type": "object"
+          },
+          "auth_type": {
+            "description": "Auth type field on ai channel record.",
+            "type": "string",
+            "x-db-type": "enum_int32"
+          },
+          "base_url": {
+            "description": "Base url field on ai channel record.",
+            "maxLength": 512,
+            "type": "string"
+          },
+          "channel_code": {
+            "description": "Channel code field on ai channel record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "channel_name": {
+            "description": "Channel name field on ai channel record.",
+            "maxLength": 128,
+            "type": "string"
+          },
+          "channel_type": {
+            "description": "Channel type field on ai channel record.",
+            "maxLength": 32,
+            "type": "string"
+          },
+          "circuit_breaker_policy": {
+            "additionalProperties": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/JsonValue"
+                }
+              ],
+              "description": "Circuit breaker policy field on ai channel record."
+            },
+            "description": "Circuit breaker policy field on ai channel record.",
+            "type": "object"
+          },
+          "consecutive_error_count": {
+            "description": "Consecutive error count field on ai channel record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "created_at": {
+            "description": "Created at field on ai channel record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "credential_hash": {
+            "description": "Credential hash field on ai channel record.",
+            "maxLength": 128,
+            "type": "string"
+          },
+          "credential_profile": {
+            "description": "Credential profile field on ai channel record.",
+            "type": "string",
+            "x-db-type": "enum_int32"
+          },
+          "credential_ref": {
+            "description": "Credential ref field on ai channel record.",
+            "maxLength": 256,
+            "type": "string"
+          },
+          "credential_rotation_policy": {
+            "additionalProperties": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/JsonValue"
+                }
+              ],
+              "description": "Credential rotation policy field on ai channel record."
+            },
+            "description": "Credential rotation policy field on ai channel record.",
+            "type": "object"
+          },
+          "credential_version": {
+            "description": "Credential version field on ai channel record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "data_scope": {
+            "description": "Data scope field on ai channel record.",
+            "type": "string",
+            "x-db-type": "enum_int32"
+          },
+          "deleted_at": {
+            "description": "Deleted at field on ai channel record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "deleted_by": {
+            "description": "Deleted by field on ai channel record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "environment": {
+            "description": "Environment field on ai channel record.",
+            "type": "string",
+            "x-db-type": "enum_int32"
+          },
+          "external_channel_id": {
+            "description": "External channel id field on ai channel record.",
+            "maxLength": 128,
+            "type": "string"
+          },
+          "id": {
+            "description": "Id field on ai channel record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "last_balance_checked_at": {
+            "description": "Last balance checked at field on ai channel record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "last_latency_ms": {
+            "description": "Last latency ms field on ai channel record.",
+            "format": "int32",
+            "type": "integer"
+          },
+          "last_rotated_at": {
+            "description": "Last rotated at field on ai channel record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "last_used_at": {
+            "description": "Last used at field on ai channel record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "last_verified_at": {
+            "description": "Last verified at field on ai channel record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "masked_label": {
+            "description": "Masked label field on ai channel record.",
+            "maxLength": 128,
+            "type": "string"
+          },
+          "metadata": {
+            "additionalProperties": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/JsonValue"
+                }
+              ],
+              "description": "Metadata field on ai channel record."
+            },
+            "description": "Metadata field on ai channel record.",
+            "type": "object"
+          },
+          "next_rotate_at": {
+            "description": "Next rotate at field on ai channel record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "organization_id": {
+            "description": "Organization id field on ai channel record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "protocol_code": {
+            "description": "Protocol code field on ai channel record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "provider_code": {
+            "description": "Provider code field on ai channel record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "provider_id": {
+            "description": "Provider id field on ai channel record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "proxy_id": {
+            "description": "Proxy id field on ai channel record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "quota_limit": {
+            "description": "Quota limit field on ai channel record.",
+            "format": "decimal",
+            "type": "string"
+          },
+          "quota_unit": {
+            "description": "Quota unit field on ai channel record.",
+            "type": "string",
+            "x-db-type": "enum_int32"
+          },
+          "quota_used": {
+            "description": "Quota used field on ai channel record.",
+            "format": "decimal",
+            "type": "string"
+          },
+          "region_code": {
+            "description": "Region code field on ai channel record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "retry_policy": {
+            "additionalProperties": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/JsonValue"
+                }
+              ],
+              "description": "Retry policy field on ai channel record."
+            },
+            "description": "Retry policy field on ai channel record.",
+            "type": "object"
+          },
+          "risk_level": {
+            "description": "Risk level field on ai channel record.",
+            "type": "string",
+            "x-db-type": "enum_int32"
+          },
+          "rpm_limit": {
+            "description": "Rpm limit field on ai channel record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "status": {
+            "description": "Status field on ai channel record.",
+            "type": "string",
+            "x-db-type": "enum_int32"
+          },
+          "tenant_id": {
+            "description": "Tenant id field on ai channel record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "timeout_ms": {
+            "description": "Timeout ms field on ai channel record.",
+            "format": "int32",
+            "type": "integer"
+          },
+          "updated_at": {
+            "description": "Updated at field on ai channel record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "upstream_balance_amount": {
+            "description": "Upstream balance amount field on ai channel record.",
+            "format": "decimal",
+            "type": "string"
+          },
+          "upstream_balance_currency": {
+            "description": "Upstream balance currency field on ai channel record.",
+            "maxLength": 10,
+            "type": "string"
+          },
+          "uuid": {
+            "description": "Uuid field on ai channel record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "version": {
+            "description": "Version field on ai channel record.",
+            "format": "int64",
+            "type": "string"
+          }
+        },
+        "required": [
+          "uuid",
+          "tenant_id",
+          "organization_id",
+          "status",
+          "channel_code",
+          "channel_name",
+          "channel_type"
+        ],
+        "type": "object",
+        "x-domain": "ai",
+        "x-generated-by-this-project": true,
+        "x-table": "ai_channel"
+      },
+      "AiChannelResourceRecord": {
+        "additionalProperties": false,
+        "description": "Ai channel resource record schema exposed by Claw Router.",
+        "properties": {
+          "channel_code": {
+            "description": "Channel code field on ai channel resource record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "channel_id": {
+            "description": "Channel id field on ai channel resource record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "created_at": {
+            "description": "Created at field on ai channel resource record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "data_scope": {
+            "description": "Data scope field on ai channel resource record.",
+            "type": "string",
+            "x-db-type": "enum_int32"
+          },
+          "deleted_at": {
+            "description": "Deleted at field on ai channel resource record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "deleted_by": {
+            "description": "Deleted by field on ai channel resource record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "effective_from": {
+            "description": "Effective from field on ai channel resource record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "effective_to": {
+            "description": "Effective to field on ai channel resource record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "id": {
+            "description": "Id field on ai channel resource record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "metadata": {
+            "additionalProperties": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/JsonValue"
+                }
+              ],
+              "description": "Metadata field on ai channel resource record."
+            },
+            "description": "Metadata field on ai channel resource record.",
+            "type": "object"
+          },
+          "organization_id": {
+            "description": "Organization id field on ai channel resource record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "provider_code": {
+            "description": "Provider code field on ai channel resource record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "resource_code": {
+            "description": "Resource code field on ai channel resource record.",
+            "maxLength": 192,
+            "type": "string"
+          },
+          "resource_group_code": {
+            "description": "Resource group code field on ai channel resource record.",
+            "maxLength": 128,
+            "type": "string"
+          },
+          "resource_group_id": {
+            "description": "Resource group id field on ai channel resource record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "resource_id": {
+            "description": "Resource id field on ai channel resource record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "status": {
+            "description": "Status field on ai channel resource record.",
+            "type": "string",
+            "x-db-type": "enum_int32"
+          },
+          "tenant_id": {
+            "description": "Tenant id field on ai channel resource record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "updated_at": {
+            "description": "Updated at field on ai channel resource record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "uuid": {
+            "description": "Uuid field on ai channel resource record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "version": {
+            "description": "Version field on ai channel resource record.",
+            "format": "int64",
+            "type": "string"
+          }
+        },
+        "required": [
+          "uuid",
+          "tenant_id",
+          "organization_id",
+          "status",
+          "channel_id"
+        ],
+        "type": "object",
+        "x-domain": "ai",
+        "x-generated-by-this-project": true,
+        "x-table": "ai_channel_resource"
+      },
+      "AiChannelVendorRecord": {
+        "additionalProperties": false,
+        "description": "Ai channel vendor record schema exposed by Claw Router.",
+        "properties": {
+          "channel_code": {
+            "description": "Channel code field on ai channel vendor record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "channel_id": {
+            "description": "Channel id field on ai channel vendor record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "channel_type": {
+            "description": "Channel type field on ai channel vendor record.",
+            "maxLength": 32,
+            "type": "string"
+          },
+          "created_at": {
+            "description": "Created at field on ai channel vendor record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "data_scope": {
+            "description": "Data scope field on ai channel vendor record.",
+            "type": "string",
+            "x-db-type": "enum_int32"
+          },
+          "deleted_at": {
+            "description": "Deleted at field on ai channel vendor record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "deleted_by": {
+            "description": "Deleted by field on ai channel vendor record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "id": {
+            "description": "Id field on ai channel vendor record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "metadata": {
+            "additionalProperties": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/JsonValue"
+                }
+              ],
+              "description": "Metadata field on ai channel vendor record."
+            },
+            "description": "Metadata field on ai channel vendor record.",
+            "type": "object"
+          },
+          "organization_id": {
+            "description": "Organization id field on ai channel vendor record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "provider_code": {
+            "description": "Provider code field on ai channel vendor record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "sort_order": {
+            "description": "Sort order field on ai channel vendor record.",
+            "format": "int32",
+            "type": "integer"
+          },
+          "status": {
+            "description": "Status field on ai channel vendor record.",
+            "type": "string",
+            "x-db-type": "enum_int32"
+          },
+          "supported": {
+            "description": "Supported field on ai channel vendor record.",
+            "type": "boolean"
+          },
+          "tenant_id": {
+            "description": "Tenant id field on ai channel vendor record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "updated_at": {
+            "description": "Updated at field on ai channel vendor record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "uuid": {
+            "description": "Uuid field on ai channel vendor record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "vendor_code": {
+            "description": "Vendor code field on ai channel vendor record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "vendor_id": {
+            "description": "Vendor id field on ai channel vendor record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "version": {
+            "description": "Version field on ai channel vendor record.",
+            "format": "int64",
+            "type": "string"
+          }
+        },
+        "required": [
+          "uuid",
+          "tenant_id",
+          "organization_id",
+          "status",
+          "channel_id",
+          "vendor_code"
+        ],
+        "type": "object",
+        "x-domain": "ai",
+        "x-generated-by-this-project": true,
+        "x-table": "ai_channel_vendor"
       },
       "AiChatContextSnapshotRecord": {
         "additionalProperties": false,
@@ -6772,6 +8368,383 @@
         "x-generated-by-this-project": true,
         "x-table": "ai_memory_space"
       },
+      "AiModalityApiEndpointRecord": {
+        "additionalProperties": false,
+        "description": "Ai modality api endpoint record schema exposed by Claw Router.",
+        "properties": {
+          "api_endpoint_id": {
+            "description": "Api endpoint id field on ai modality api endpoint record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "created_at": {
+            "description": "Created at field on ai modality api endpoint record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "data_scope": {
+            "description": "Data scope field on ai modality api endpoint record.",
+            "type": "string",
+            "x-db-type": "enum_int32"
+          },
+          "deleted_at": {
+            "description": "Deleted at field on ai modality api endpoint record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "deleted_by": {
+            "description": "Deleted by field on ai modality api endpoint record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "endpoint_code": {
+            "description": "Endpoint code field on ai modality api endpoint record.",
+            "maxLength": 128,
+            "type": "string"
+          },
+          "id": {
+            "description": "Id field on ai modality api endpoint record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "metadata": {
+            "additionalProperties": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/JsonValue"
+                }
+              ],
+              "description": "Metadata field on ai modality api endpoint record."
+            },
+            "description": "Metadata field on ai modality api endpoint record.",
+            "type": "object"
+          },
+          "modality_code": {
+            "description": "Modality code field on ai modality api endpoint record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "modality_id": {
+            "description": "Modality id field on ai modality api endpoint record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "organization_id": {
+            "description": "Organization id field on ai modality api endpoint record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "sort_order": {
+            "description": "Sort order field on ai modality api endpoint record.",
+            "format": "int32",
+            "type": "integer"
+          },
+          "status": {
+            "description": "Status field on ai modality api endpoint record.",
+            "type": "string",
+            "x-db-type": "enum_int32"
+          },
+          "supported": {
+            "description": "Supported field on ai modality api endpoint record.",
+            "type": "boolean"
+          },
+          "tenant_id": {
+            "description": "Tenant id field on ai modality api endpoint record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "updated_at": {
+            "description": "Updated at field on ai modality api endpoint record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "uuid": {
+            "description": "Uuid field on ai modality api endpoint record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "version": {
+            "description": "Version field on ai modality api endpoint record.",
+            "format": "int64",
+            "type": "string"
+          }
+        },
+        "required": [
+          "uuid",
+          "tenant_id",
+          "organization_id",
+          "status",
+          "modality_code",
+          "endpoint_code"
+        ],
+        "type": "object",
+        "x-domain": "ai",
+        "x-generated-by-this-project": true,
+        "x-table": "ai_modality_api_endpoint"
+      },
+      "AiModalityRecord": {
+        "additionalProperties": false,
+        "description": "Ai modality record schema exposed by Claw Router.",
+        "properties": {
+          "created_at": {
+            "description": "Created at field on ai modality record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "data_scope": {
+            "description": "Data scope field on ai modality record.",
+            "type": "string",
+            "x-db-type": "enum_int32"
+          },
+          "deleted_at": {
+            "description": "Deleted at field on ai modality record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "deleted_by": {
+            "description": "Deleted by field on ai modality record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "description": {
+            "description": "Description field on ai modality record.",
+            "maxLength": 512,
+            "type": "string"
+          },
+          "display_name": {
+            "description": "Display name field on ai modality record.",
+            "maxLength": 128,
+            "type": "string"
+          },
+          "id": {
+            "description": "Id field on ai modality record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "input_supported": {
+            "description": "Input supported field on ai modality record.",
+            "type": "boolean"
+          },
+          "metadata": {
+            "additionalProperties": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/JsonValue"
+                }
+              ],
+              "description": "Metadata field on ai modality record."
+            },
+            "description": "Metadata field on ai modality record.",
+            "type": "object"
+          },
+          "modality_code": {
+            "description": "Modality code field on ai modality record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "modality_group": {
+            "description": "Modality group field on ai modality record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "organization_id": {
+            "description": "Organization id field on ai modality record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "output_supported": {
+            "description": "Output supported field on ai modality record.",
+            "type": "boolean"
+          },
+          "sort_order": {
+            "description": "Sort order field on ai modality record.",
+            "format": "int32",
+            "type": "integer"
+          },
+          "status": {
+            "description": "Status field on ai modality record.",
+            "type": "string",
+            "x-db-type": "enum_int32"
+          },
+          "tenant_id": {
+            "description": "Tenant id field on ai modality record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "updated_at": {
+            "description": "Updated at field on ai modality record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "uuid": {
+            "description": "Uuid field on ai modality record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "version": {
+            "description": "Version field on ai modality record.",
+            "format": "int64",
+            "type": "string"
+          }
+        },
+        "required": [
+          "uuid",
+          "tenant_id",
+          "organization_id",
+          "status",
+          "modality_code",
+          "display_name"
+        ],
+        "type": "object",
+        "x-domain": "ai",
+        "x-generated-by-this-project": true,
+        "x-table": "ai_modality"
+      },
+      "AiModelApiEndpointRecord": {
+        "additionalProperties": false,
+        "description": "Ai model api endpoint record schema exposed by Claw Router.",
+        "properties": {
+          "api_endpoint_id": {
+            "description": "Api endpoint id field on ai model api endpoint record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "catalog_key": {
+            "description": "Catalog key field on ai model api endpoint record.",
+            "maxLength": 256,
+            "type": "string"
+          },
+          "created_at": {
+            "description": "Created at field on ai model api endpoint record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "data_scope": {
+            "description": "Data scope field on ai model api endpoint record.",
+            "type": "string",
+            "x-db-type": "enum_int32"
+          },
+          "default_parameters": {
+            "additionalProperties": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/JsonValue"
+                }
+              ],
+              "description": "Default parameters field on ai model api endpoint record."
+            },
+            "description": "Default parameters field on ai model api endpoint record.",
+            "type": "object"
+          },
+          "deleted_at": {
+            "description": "Deleted at field on ai model api endpoint record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "deleted_by": {
+            "description": "Deleted by field on ai model api endpoint record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "endpoint_code": {
+            "description": "Endpoint code field on ai model api endpoint record.",
+            "maxLength": 128,
+            "type": "string"
+          },
+          "id": {
+            "description": "Id field on ai model api endpoint record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "metadata": {
+            "additionalProperties": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/JsonValue"
+                }
+              ],
+              "description": "Metadata field on ai model api endpoint record."
+            },
+            "description": "Metadata field on ai model api endpoint record.",
+            "type": "object"
+          },
+          "model": {
+            "description": "Model field on ai model api endpoint record.",
+            "maxLength": 128,
+            "type": "string"
+          },
+          "model_id": {
+            "description": "Model id field on ai model api endpoint record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "organization_id": {
+            "description": "Organization id field on ai model api endpoint record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "provider_native_model": {
+            "description": "Provider native model field on ai model api endpoint record.",
+            "maxLength": 256,
+            "type": "string"
+          },
+          "sort_order": {
+            "description": "Sort order field on ai model api endpoint record.",
+            "format": "int32",
+            "type": "integer"
+          },
+          "status": {
+            "description": "Status field on ai model api endpoint record.",
+            "type": "string",
+            "x-db-type": "enum_int32"
+          },
+          "supported": {
+            "description": "Supported field on ai model api endpoint record.",
+            "type": "boolean"
+          },
+          "supports_streaming": {
+            "description": "Supports streaming field on ai model api endpoint record.",
+            "type": "boolean"
+          },
+          "tenant_id": {
+            "description": "Tenant id field on ai model api endpoint record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "updated_at": {
+            "description": "Updated at field on ai model api endpoint record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "uuid": {
+            "description": "Uuid field on ai model api endpoint record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "vendor_code": {
+            "description": "Vendor code field on ai model api endpoint record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "version": {
+            "description": "Version field on ai model api endpoint record.",
+            "format": "int64",
+            "type": "string"
+          }
+        },
+        "required": [
+          "uuid",
+          "tenant_id",
+          "organization_id",
+          "status",
+          "catalog_key",
+          "endpoint_code"
+        ],
+        "type": "object",
+        "x-domain": "ai",
+        "x-generated-by-this-project": true,
+        "x-table": "ai_model_api_endpoint"
+      },
       "AiModelCapabilityRecord": {
         "additionalProperties": false,
         "description": "Ai model capability record schema exposed by Claw Router.",
@@ -7464,11 +9437,6 @@
             "type": "string",
             "x-db-type": "enum_int32"
           },
-          "region_code": {
-            "description": "Region code field on ai model family record.",
-            "maxLength": 64,
-            "type": "string"
-          },
           "sort_order": {
             "description": "Sort order field on ai model family record.",
             "format": "int32",
@@ -7516,7 +9484,6 @@
           "organization_id",
           "status",
           "vendor_code",
-          "region_code",
           "family_code",
           "display_name"
         ],
@@ -7524,6 +9491,135 @@
         "x-domain": "ai",
         "x-generated-by-this-project": true,
         "x-table": "ai_model_family"
+      },
+      "AiModelModalityRecord": {
+        "additionalProperties": false,
+        "description": "Ai model modality record schema exposed by Claw Router.",
+        "properties": {
+          "catalog_key": {
+            "description": "Catalog key field on ai model modality record.",
+            "maxLength": 256,
+            "type": "string"
+          },
+          "created_at": {
+            "description": "Created at field on ai model modality record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "data_scope": {
+            "description": "Data scope field on ai model modality record.",
+            "type": "string",
+            "x-db-type": "enum_int32"
+          },
+          "deleted_at": {
+            "description": "Deleted at field on ai model modality record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "deleted_by": {
+            "description": "Deleted by field on ai model modality record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "direction": {
+            "description": "Direction field on ai model modality record.",
+            "maxLength": 32,
+            "type": "string"
+          },
+          "id": {
+            "description": "Id field on ai model modality record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "metadata": {
+            "additionalProperties": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/JsonValue"
+                }
+              ],
+              "description": "Metadata field on ai model modality record."
+            },
+            "description": "Metadata field on ai model modality record.",
+            "type": "object"
+          },
+          "modality_code": {
+            "description": "Modality code field on ai model modality record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "modality_id": {
+            "description": "Modality id field on ai model modality record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "model": {
+            "description": "Model field on ai model modality record.",
+            "maxLength": 128,
+            "type": "string"
+          },
+          "model_id": {
+            "description": "Model id field on ai model modality record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "organization_id": {
+            "description": "Organization id field on ai model modality record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "sort_order": {
+            "description": "Sort order field on ai model modality record.",
+            "format": "int32",
+            "type": "integer"
+          },
+          "status": {
+            "description": "Status field on ai model modality record.",
+            "type": "string",
+            "x-db-type": "enum_int32"
+          },
+          "supported": {
+            "description": "Supported field on ai model modality record.",
+            "type": "boolean"
+          },
+          "tenant_id": {
+            "description": "Tenant id field on ai model modality record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "updated_at": {
+            "description": "Updated at field on ai model modality record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "uuid": {
+            "description": "Uuid field on ai model modality record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "vendor_code": {
+            "description": "Vendor code field on ai model modality record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "version": {
+            "description": "Version field on ai model modality record.",
+            "format": "int64",
+            "type": "string"
+          }
+        },
+        "required": [
+          "uuid",
+          "tenant_id",
+          "organization_id",
+          "status",
+          "catalog_key",
+          "modality_code"
+        ],
+        "type": "object",
+        "x-domain": "ai",
+        "x-generated-by-this-project": true,
+        "x-table": "ai_model_modality"
       },
       "AiModelPricingRecord": {
         "additionalProperties": false,
@@ -8662,189 +10758,6 @@
         "x-domain": "ai",
         "x-generated-by-this-project": true,
         "x-table": "ai_model_vendor"
-      },
-      "AiModelVendorRegionRecord": {
-        "additionalProperties": false,
-        "description": "Ai model vendor region record schema exposed by Claw Router.",
-        "properties": {
-          "billing_currency": {
-            "description": "Billing currency field on ai model vendor region record.",
-            "maxLength": 10,
-            "type": "string"
-          },
-          "billing_jurisdiction": {
-            "description": "Billing jurisdiction field on ai model vendor region record.",
-            "maxLength": 64,
-            "type": "string"
-          },
-          "capabilities": {
-            "additionalProperties": {
-              "allOf": [
-                {
-                  "$ref": "#/components/schemas/JsonValue"
-                }
-              ],
-              "description": "Capabilities field on ai model vendor region record."
-            },
-            "description": "Capabilities field on ai model vendor region record.",
-            "type": "object"
-          },
-          "country_region": {
-            "description": "Country region field on ai model vendor region record.",
-            "maxLength": 64,
-            "type": "string"
-          },
-          "created_at": {
-            "description": "Created at field on ai model vendor region record.",
-            "format": "date-time",
-            "type": "string"
-          },
-          "data_scope": {
-            "description": "Data scope field on ai model vendor region record.",
-            "type": "string",
-            "x-db-type": "enum_int32"
-          },
-          "deleted_at": {
-            "description": "Deleted at field on ai model vendor region record.",
-            "format": "date-time",
-            "type": "string"
-          },
-          "deleted_by": {
-            "description": "Deleted by field on ai model vendor region record.",
-            "format": "int64",
-            "type": "string"
-          },
-          "description": {
-            "description": "Description field on ai model vendor region record.",
-            "maxLength": 512,
-            "type": "string"
-          },
-          "display_name": {
-            "description": "Display name field on ai model vendor region record.",
-            "maxLength": 128,
-            "type": "string"
-          },
-          "docs_url": {
-            "description": "Docs url field on ai model vendor region record.",
-            "maxLength": 512,
-            "type": "string"
-          },
-          "id": {
-            "description": "Id field on ai model vendor region record.",
-            "format": "int64",
-            "type": "string"
-          },
-          "legal_name": {
-            "description": "Legal name field on ai model vendor region record.",
-            "maxLength": 256,
-            "type": "string"
-          },
-          "market_scope": {
-            "description": "Market scope field on ai model vendor region record.",
-            "maxLength": 64,
-            "type": "string"
-          },
-          "metadata": {
-            "additionalProperties": {
-              "allOf": [
-                {
-                  "$ref": "#/components/schemas/JsonValue"
-                }
-              ],
-              "description": "Metadata field on ai model vendor region record."
-            },
-            "description": "Metadata field on ai model vendor region record.",
-            "type": "object"
-          },
-          "open_source": {
-            "description": "Open source field on ai model vendor region record.",
-            "type": "boolean"
-          },
-          "operating_regions": {
-            "additionalProperties": {
-              "allOf": [
-                {
-                  "$ref": "#/components/schemas/JsonValue"
-                }
-              ],
-              "description": "Operating regions field on ai model vendor region record."
-            },
-            "description": "Operating regions field on ai model vendor region record.",
-            "type": "object"
-          },
-          "organization_id": {
-            "description": "Organization id field on ai model vendor region record.",
-            "format": "int64",
-            "type": "string"
-          },
-          "region_code": {
-            "description": "Region code field on ai model vendor region record.",
-            "maxLength": 64,
-            "type": "string"
-          },
-          "sort_order": {
-            "description": "Sort order field on ai model vendor region record.",
-            "format": "int32",
-            "type": "integer"
-          },
-          "status": {
-            "description": "Status field on ai model vendor region record.",
-            "type": "string",
-            "x-db-type": "enum_int32"
-          },
-          "tenant_id": {
-            "description": "Tenant id field on ai model vendor region record.",
-            "format": "int64",
-            "type": "string"
-          },
-          "updated_at": {
-            "description": "Updated at field on ai model vendor region record.",
-            "format": "date-time",
-            "type": "string"
-          },
-          "uuid": {
-            "description": "Uuid field on ai model vendor region record.",
-            "maxLength": 64,
-            "type": "string"
-          },
-          "vendor_code": {
-            "description": "Vendor code field on ai model vendor region record.",
-            "maxLength": 64,
-            "type": "string"
-          },
-          "vendor_id": {
-            "description": "Vendor id field on ai model vendor region record.",
-            "format": "int64",
-            "type": "string"
-          },
-          "version": {
-            "description": "Version field on ai model vendor region record.",
-            "format": "int64",
-            "type": "string"
-          },
-          "website_url": {
-            "description": "Website url field on ai model vendor region record.",
-            "maxLength": 512,
-            "type": "string"
-          }
-        },
-        "required": [
-          "uuid",
-          "tenant_id",
-          "organization_id",
-          "status",
-          "vendor_code",
-          "region_code",
-          "display_name",
-          "market_scope",
-          "billing_currency",
-          "billing_jurisdiction",
-          "operating_regions"
-        ],
-        "type": "object",
-        "x-domain": "ai",
-        "x-generated-by-this-project": true,
-        "x-table": "ai_model_vendor_region"
       },
       "AiPricingImportSnapshotRecord": {
         "additionalProperties": false,
@@ -10250,6 +12163,173 @@
         "x-generated-by-this-project": true,
         "x-table": "ai_prompt_version"
       },
+      "AiProviderRecord": {
+        "additionalProperties": false,
+        "description": "Ai provider record schema exposed by Claw Router.",
+        "properties": {
+          "auth_type": {
+            "description": "Auth type field on ai provider record.",
+            "type": "string",
+            "x-db-type": "enum_int32"
+          },
+          "base_url": {
+            "description": "Base url field on ai provider record.",
+            "maxLength": 512,
+            "type": "string"
+          },
+          "color_token": {
+            "description": "Color token field on ai provider record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "created_at": {
+            "description": "Created at field on ai provider record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "data_scope": {
+            "description": "Data scope field on ai provider record.",
+            "type": "string",
+            "x-db-type": "enum_int32"
+          },
+          "default_vendor_code": {
+            "description": "Default vendor code field on ai provider record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "deleted_at": {
+            "description": "Deleted at field on ai provider record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "deleted_by": {
+            "description": "Deleted by field on ai provider record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "description": {
+            "description": "Description field on ai provider record.",
+            "maxLength": 512,
+            "type": "string"
+          },
+          "display_name": {
+            "description": "Display name field on ai provider record.",
+            "maxLength": 128,
+            "type": "string"
+          },
+          "docs_url": {
+            "description": "Docs url field on ai provider record.",
+            "maxLength": 512,
+            "type": "string"
+          },
+          "icon_url": {
+            "description": "Icon url field on ai provider record.",
+            "maxLength": 512,
+            "type": "string"
+          },
+          "id": {
+            "description": "Id field on ai provider record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "metadata": {
+            "additionalProperties": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/JsonValue"
+                }
+              ],
+              "description": "Metadata field on ai provider record."
+            },
+            "description": "Metadata field on ai provider record.",
+            "type": "object"
+          },
+          "metadata_schema_version": {
+            "description": "Metadata schema version field on ai provider record.",
+            "maxLength": 32,
+            "type": "string"
+          },
+          "organization_id": {
+            "description": "Organization id field on ai provider record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "protocol_code": {
+            "description": "Protocol code field on ai provider record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "provider_code": {
+            "description": "Provider code field on ai provider record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "provider_type": {
+            "description": "Provider type field on ai provider record.",
+            "maxLength": 32,
+            "type": "string"
+          },
+          "resource_schema": {
+            "additionalProperties": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/JsonValue"
+                }
+              ],
+              "description": "Resource schema field on ai provider record."
+            },
+            "description": "Resource schema field on ai provider record.",
+            "type": "object"
+          },
+          "sort_order": {
+            "description": "Sort order field on ai provider record.",
+            "format": "int32",
+            "type": "integer"
+          },
+          "status": {
+            "description": "Status field on ai provider record.",
+            "type": "string",
+            "x-db-type": "enum_int32"
+          },
+          "tenant_id": {
+            "description": "Tenant id field on ai provider record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "updated_at": {
+            "description": "Updated at field on ai provider record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "uuid": {
+            "description": "Uuid field on ai provider record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "version": {
+            "description": "Version field on ai provider record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "website_url": {
+            "description": "Website url field on ai provider record.",
+            "maxLength": 512,
+            "type": "string"
+          }
+        },
+        "required": [
+          "uuid",
+          "tenant_id",
+          "organization_id",
+          "status",
+          "provider_code",
+          "display_name"
+        ],
+        "type": "object",
+        "x-domain": "ai",
+        "x-generated-by-this-project": true,
+        "x-table": "ai_provider"
+      },
       "AiQuotaPolicyRecord": {
         "additionalProperties": false,
         "description": "Ai quota policy record schema exposed by Claw Router.",
@@ -10262,6 +12342,11 @@
           "burst_limit": {
             "description": "Burst limit field on ai quota policy record.",
             "format": "decimal",
+            "type": "string"
+          },
+          "channel_group_id": {
+            "description": "Channel group id field on ai quota policy record.",
+            "format": "int64",
             "type": "string"
           },
           "created_at": {
@@ -10297,11 +12382,6 @@
           "exhausted_at": {
             "description": "Exhausted at field on ai quota policy record.",
             "format": "date-time",
-            "type": "string"
-          },
-          "group_id": {
-            "description": "Group id field on ai quota policy record.",
-            "format": "int64",
             "type": "string"
           },
           "id": {
@@ -10578,16 +12658,6 @@
         "additionalProperties": false,
         "description": "Ai request trace record schema exposed by Claw Router.",
         "properties": {
-          "api_key_group_id": {
-            "description": "Api key group id field on ai request trace record.",
-            "format": "int64",
-            "type": "string"
-          },
-          "api_key_group_snapshot": {
-            "description": "Api key group snapshot field on ai request trace record.",
-            "maxLength": 128,
-            "type": "string"
-          },
           "api_key_id": {
             "description": "Api key id field on ai request trace record.",
             "format": "int64",
@@ -10606,6 +12676,16 @@
           "cached_tokens": {
             "description": "Cached tokens field on ai request trace record.",
             "format": "int64",
+            "type": "string"
+          },
+          "channel_group_id": {
+            "description": "Channel group id field on ai request trace record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "channel_group_snapshot": {
+            "description": "Channel group snapshot field on ai request trace record.",
+            "maxLength": 128,
             "type": "string"
           },
           "channel_id": {
@@ -10739,11 +12819,6 @@
             "format": "int64",
             "type": "string"
           },
-          "provider_account_id": {
-            "description": "Provider account id field on ai request trace record.",
-            "format": "int64",
-            "type": "string"
-          },
           "provider_error_code": {
             "description": "Provider error code field on ai request trace record.",
             "maxLength": 128,
@@ -10868,6 +12943,598 @@
         "x-domain": "ai",
         "x-generated-by-this-project": true,
         "x-table": "ai_request_trace"
+      },
+      "AiResourceGroupItemRecord": {
+        "additionalProperties": false,
+        "description": "Ai resource group item record schema exposed by Claw Router.",
+        "properties": {
+          "child_resource_group_code": {
+            "description": "Child resource group code field on ai resource group item record.",
+            "maxLength": 128,
+            "type": "string"
+          },
+          "child_resource_group_id": {
+            "description": "Child resource group id field on ai resource group item record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "created_at": {
+            "description": "Created at field on ai resource group item record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "data_scope": {
+            "description": "Data scope field on ai resource group item record.",
+            "type": "string",
+            "x-db-type": "enum_int32"
+          },
+          "deleted_at": {
+            "description": "Deleted at field on ai resource group item record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "deleted_by": {
+            "description": "Deleted by field on ai resource group item record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "id": {
+            "description": "Id field on ai resource group item record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "item_role": {
+            "description": "Item role field on ai resource group item record.",
+            "maxLength": 32,
+            "type": "string"
+          },
+          "item_type": {
+            "description": "Item type field on ai resource group item record.",
+            "maxLength": 32,
+            "type": "string"
+          },
+          "metadata": {
+            "additionalProperties": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/JsonValue"
+                }
+              ],
+              "description": "Metadata field on ai resource group item record."
+            },
+            "description": "Metadata field on ai resource group item record.",
+            "type": "object"
+          },
+          "organization_id": {
+            "description": "Organization id field on ai resource group item record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "resource_code": {
+            "description": "Resource code field on ai resource group item record.",
+            "maxLength": 192,
+            "type": "string"
+          },
+          "resource_group_code": {
+            "description": "Resource group code field on ai resource group item record.",
+            "maxLength": 128,
+            "type": "string"
+          },
+          "resource_group_id": {
+            "description": "Resource group id field on ai resource group item record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "resource_id": {
+            "description": "Resource id field on ai resource group item record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "sort_order": {
+            "description": "Sort order field on ai resource group item record.",
+            "format": "int32",
+            "type": "integer"
+          },
+          "status": {
+            "description": "Status field on ai resource group item record.",
+            "type": "string",
+            "x-db-type": "enum_int32"
+          },
+          "tenant_id": {
+            "description": "Tenant id field on ai resource group item record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "updated_at": {
+            "description": "Updated at field on ai resource group item record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "uuid": {
+            "description": "Uuid field on ai resource group item record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "version": {
+            "description": "Version field on ai resource group item record.",
+            "format": "int64",
+            "type": "string"
+          }
+        },
+        "required": [
+          "uuid",
+          "tenant_id",
+          "organization_id",
+          "status",
+          "resource_group_id",
+          "item_type"
+        ],
+        "type": "object",
+        "x-domain": "ai",
+        "x-generated-by-this-project": true,
+        "x-table": "ai_resource_group_item"
+      },
+      "AiResourceGroupRecord": {
+        "additionalProperties": false,
+        "description": "Ai resource group record schema exposed by Claw Router.",
+        "properties": {
+          "created_at": {
+            "description": "Created at field on ai resource group record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "data_scope": {
+            "description": "Data scope field on ai resource group record.",
+            "type": "string",
+            "x-db-type": "enum_int32"
+          },
+          "deleted_at": {
+            "description": "Deleted at field on ai resource group record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "deleted_by": {
+            "description": "Deleted by field on ai resource group record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "description": {
+            "description": "Description field on ai resource group record.",
+            "maxLength": 512,
+            "type": "string"
+          },
+          "group_code": {
+            "description": "Group code field on ai resource group record.",
+            "maxLength": 128,
+            "type": "string"
+          },
+          "group_name": {
+            "description": "Group name field on ai resource group record.",
+            "maxLength": 128,
+            "type": "string"
+          },
+          "group_type": {
+            "description": "Group type field on ai resource group record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "id": {
+            "description": "Id field on ai resource group record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "metadata": {
+            "additionalProperties": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/JsonValue"
+                }
+              ],
+              "description": "Metadata field on ai resource group record."
+            },
+            "description": "Metadata field on ai resource group record.",
+            "type": "object"
+          },
+          "organization_id": {
+            "description": "Organization id field on ai resource group record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "selection_mode": {
+            "description": "Selection mode field on ai resource group record.",
+            "maxLength": 32,
+            "type": "string"
+          },
+          "sort_order": {
+            "description": "Sort order field on ai resource group record.",
+            "format": "int32",
+            "type": "integer"
+          },
+          "status": {
+            "description": "Status field on ai resource group record.",
+            "type": "string",
+            "x-db-type": "enum_int32"
+          },
+          "tenant_id": {
+            "description": "Tenant id field on ai resource group record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "updated_at": {
+            "description": "Updated at field on ai resource group record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "uuid": {
+            "description": "Uuid field on ai resource group record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "version": {
+            "description": "Version field on ai resource group record.",
+            "format": "int64",
+            "type": "string"
+          }
+        },
+        "required": [
+          "uuid",
+          "tenant_id",
+          "organization_id",
+          "status",
+          "group_code",
+          "group_name"
+        ],
+        "type": "object",
+        "x-domain": "ai",
+        "x-generated-by-this-project": true,
+        "x-table": "ai_resource_group"
+      },
+      "AiResourceRecord": {
+        "additionalProperties": false,
+        "description": "Ai resource record schema exposed by Claw Router.",
+        "properties": {
+          "api_code": {
+            "description": "Api code field on ai resource record.",
+            "maxLength": 128,
+            "type": "string"
+          },
+          "api_endpoint_id": {
+            "description": "Api endpoint id field on ai resource record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "catalog_key": {
+            "description": "Catalog key field on ai resource record.",
+            "maxLength": 256,
+            "type": "string"
+          },
+          "created_at": {
+            "description": "Created at field on ai resource record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "data_scope": {
+            "description": "Data scope field on ai resource record.",
+            "type": "string",
+            "x-db-type": "enum_int32"
+          },
+          "deleted_at": {
+            "description": "Deleted at field on ai resource record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "deleted_by": {
+            "description": "Deleted by field on ai resource record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "description": {
+            "description": "Description field on ai resource record.",
+            "maxLength": 512,
+            "type": "string"
+          },
+          "display_name": {
+            "description": "Display name field on ai resource record.",
+            "maxLength": 128,
+            "type": "string"
+          },
+          "id": {
+            "description": "Id field on ai resource record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "metadata": {
+            "additionalProperties": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/JsonValue"
+                }
+              ],
+              "description": "Metadata field on ai resource record."
+            },
+            "description": "Metadata field on ai resource record.",
+            "type": "object"
+          },
+          "metadata_schema": {
+            "additionalProperties": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/JsonValue"
+                }
+              ],
+              "description": "Metadata schema field on ai resource record."
+            },
+            "description": "Metadata schema field on ai resource record.",
+            "type": "object"
+          },
+          "modality_code": {
+            "description": "Modality code field on ai resource record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "modality_id": {
+            "description": "Modality id field on ai resource record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "model": {
+            "description": "Model field on ai resource record.",
+            "maxLength": 128,
+            "type": "string"
+          },
+          "model_code": {
+            "description": "Model code field on ai resource record.",
+            "maxLength": 128,
+            "type": "string"
+          },
+          "model_id": {
+            "description": "Model id field on ai resource record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "organization_id": {
+            "description": "Organization id field on ai resource record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "provider_native_model": {
+            "description": "Provider native model field on ai resource record.",
+            "maxLength": 256,
+            "type": "string"
+          },
+          "resource_code": {
+            "description": "Resource code field on ai resource record.",
+            "maxLength": 192,
+            "type": "string"
+          },
+          "resource_schema": {
+            "additionalProperties": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/JsonValue"
+                }
+              ],
+              "description": "Resource schema field on ai resource record."
+            },
+            "description": "Resource schema field on ai resource record.",
+            "type": "object"
+          },
+          "resource_type": {
+            "description": "Resource type field on ai resource record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "sort_order": {
+            "description": "Sort order field on ai resource record.",
+            "format": "int32",
+            "type": "integer"
+          },
+          "status": {
+            "description": "Status field on ai resource record.",
+            "type": "string",
+            "x-db-type": "enum_int32"
+          },
+          "tenant_id": {
+            "description": "Tenant id field on ai resource record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "updated_at": {
+            "description": "Updated at field on ai resource record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "uuid": {
+            "description": "Uuid field on ai resource record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "vendor_code": {
+            "description": "Vendor code field on ai resource record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "vendor_id": {
+            "description": "Vendor id field on ai resource record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "version": {
+            "description": "Version field on ai resource record.",
+            "format": "int64",
+            "type": "string"
+          }
+        },
+        "required": [
+          "uuid",
+          "tenant_id",
+          "organization_id",
+          "status",
+          "resource_code",
+          "resource_type"
+        ],
+        "type": "object",
+        "x-domain": "ai",
+        "x-generated-by-this-project": true,
+        "x-table": "ai_resource"
+      },
+      "AiRouteCandidateRecord": {
+        "additionalProperties": false,
+        "description": "Ai route candidate record schema exposed by Claw Router.",
+        "properties": {
+          "api_code": {
+            "description": "Api code field on ai route candidate record.",
+            "maxLength": 128,
+            "type": "string"
+          },
+          "catalog_key": {
+            "description": "Catalog key field on ai route candidate record.",
+            "maxLength": 256,
+            "type": "string"
+          },
+          "channel_group_id": {
+            "description": "Channel group id field on ai route candidate record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "channel_id": {
+            "description": "Channel id field on ai route candidate record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "channel_type": {
+            "description": "Channel type field on ai route candidate record.",
+            "maxLength": 32,
+            "type": "string"
+          },
+          "config_version": {
+            "description": "Config version field on ai route candidate record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "created_at": {
+            "description": "Created at field on ai route candidate record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "endpoint_id": {
+            "description": "Endpoint id field on ai route candidate record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "health_status": {
+            "description": "Health status field on ai route candidate record.",
+            "type": "string",
+            "x-db-type": "enum_int32"
+          },
+          "id": {
+            "description": "Id field on ai route candidate record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "metadata": {
+            "additionalProperties": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/JsonValue"
+                }
+              ],
+              "description": "Metadata field on ai route candidate record."
+            },
+            "description": "Metadata field on ai route candidate record.",
+            "type": "object"
+          },
+          "model_code": {
+            "description": "Model code field on ai route candidate record.",
+            "maxLength": 128,
+            "type": "string"
+          },
+          "organization_id": {
+            "description": "Organization id field on ai route candidate record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "priority": {
+            "description": "Priority field on ai route candidate record.",
+            "format": "int32",
+            "type": "integer"
+          },
+          "provider_code": {
+            "description": "Provider code field on ai route candidate record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "rebuild_version": {
+            "description": "Rebuild version field on ai route candidate record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "refreshed_at": {
+            "description": "Refreshed at field on ai route candidate record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "region_code": {
+            "description": "Region code field on ai route candidate record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "source_id": {
+            "description": "Source id field on ai route candidate record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "source_type": {
+            "description": "Source type field on ai route candidate record.",
+            "maxLength": 128,
+            "type": "string"
+          },
+          "source_version": {
+            "description": "Source version field on ai route candidate record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "status": {
+            "description": "Status field on ai route candidate record.",
+            "type": "string",
+            "x-db-type": "enum_int32"
+          },
+          "tenant_id": {
+            "description": "Tenant id field on ai route candidate record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "updated_at": {
+            "description": "Updated at field on ai route candidate record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "uuid": {
+            "description": "Uuid field on ai route candidate record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "vendor_code": {
+            "description": "Vendor code field on ai route candidate record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "weight": {
+            "description": "Weight field on ai route candidate record.",
+            "format": "int32",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "uuid",
+          "tenant_id",
+          "organization_id",
+          "status"
+        ],
+        "type": "object",
+        "x-domain": "ai",
+        "x-generated-by-this-project": true,
+        "x-table": "ai_route_candidate"
       },
       "AiRoutingDecisionLogRecord": {
         "additionalProperties": false,
@@ -12238,16 +14905,6 @@
         "additionalProperties": false,
         "description": "Ai usage fact record schema exposed by Claw Router.",
         "properties": {
-          "api_key_group_id": {
-            "description": "Api key group id field on ai usage fact record.",
-            "format": "int64",
-            "type": "string"
-          },
-          "api_key_group_snapshot": {
-            "description": "Api key group snapshot field on ai usage fact record.",
-            "maxLength": 128,
-            "type": "string"
-          },
           "api_key_id": {
             "description": "Api key id field on ai usage fact record.",
             "format": "int64",
@@ -12326,6 +14983,16 @@
           "catalog_key": {
             "description": "Catalog key field on ai usage fact record.",
             "maxLength": 256,
+            "type": "string"
+          },
+          "channel_group_id": {
+            "description": "Channel group id field on ai usage fact record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "channel_group_snapshot": {
+            "description": "Channel group snapshot field on ai usage fact record.",
+            "maxLength": 128,
             "type": "string"
           },
           "channel_id": {
@@ -12488,11 +15155,6 @@
           },
           "prompt_tokens": {
             "description": "Prompt tokens field on ai usage fact record.",
-            "format": "int64",
-            "type": "string"
-          },
-          "provider_account_id": {
-            "description": "Provider account id field on ai usage fact record.",
             "format": "int64",
             "type": "string"
           },
@@ -12975,6 +15637,234 @@
         "x-domain": "ai",
         "x-generated-by-this-project": true,
         "x-table": "ai_usage_service_provider_edge"
+      },
+      "AiVendorApiEndpointRecord": {
+        "additionalProperties": false,
+        "description": "Ai vendor api endpoint record schema exposed by Claw Router.",
+        "properties": {
+          "api_endpoint_id": {
+            "description": "Api endpoint id field on ai vendor api endpoint record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "created_at": {
+            "description": "Created at field on ai vendor api endpoint record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "data_scope": {
+            "description": "Data scope field on ai vendor api endpoint record.",
+            "type": "string",
+            "x-db-type": "enum_int32"
+          },
+          "deleted_at": {
+            "description": "Deleted at field on ai vendor api endpoint record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "deleted_by": {
+            "description": "Deleted by field on ai vendor api endpoint record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "endpoint_code": {
+            "description": "Endpoint code field on ai vendor api endpoint record.",
+            "maxLength": 128,
+            "type": "string"
+          },
+          "id": {
+            "description": "Id field on ai vendor api endpoint record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "metadata": {
+            "additionalProperties": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/JsonValue"
+                }
+              ],
+              "description": "Metadata field on ai vendor api endpoint record."
+            },
+            "description": "Metadata field on ai vendor api endpoint record.",
+            "type": "object"
+          },
+          "organization_id": {
+            "description": "Organization id field on ai vendor api endpoint record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "sort_order": {
+            "description": "Sort order field on ai vendor api endpoint record.",
+            "format": "int32",
+            "type": "integer"
+          },
+          "status": {
+            "description": "Status field on ai vendor api endpoint record.",
+            "type": "string",
+            "x-db-type": "enum_int32"
+          },
+          "supported": {
+            "description": "Supported field on ai vendor api endpoint record.",
+            "type": "boolean"
+          },
+          "tenant_id": {
+            "description": "Tenant id field on ai vendor api endpoint record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "updated_at": {
+            "description": "Updated at field on ai vendor api endpoint record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "uuid": {
+            "description": "Uuid field on ai vendor api endpoint record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "vendor_code": {
+            "description": "Vendor code field on ai vendor api endpoint record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "vendor_id": {
+            "description": "Vendor id field on ai vendor api endpoint record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "version": {
+            "description": "Version field on ai vendor api endpoint record.",
+            "format": "int64",
+            "type": "string"
+          }
+        },
+        "required": [
+          "uuid",
+          "tenant_id",
+          "organization_id",
+          "status",
+          "vendor_code",
+          "endpoint_code"
+        ],
+        "type": "object",
+        "x-domain": "ai",
+        "x-generated-by-this-project": true,
+        "x-table": "ai_vendor_api_endpoint"
+      },
+      "AiVendorModalityRecord": {
+        "additionalProperties": false,
+        "description": "Ai vendor modality record schema exposed by Claw Router.",
+        "properties": {
+          "created_at": {
+            "description": "Created at field on ai vendor modality record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "data_scope": {
+            "description": "Data scope field on ai vendor modality record.",
+            "type": "string",
+            "x-db-type": "enum_int32"
+          },
+          "deleted_at": {
+            "description": "Deleted at field on ai vendor modality record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "deleted_by": {
+            "description": "Deleted by field on ai vendor modality record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "id": {
+            "description": "Id field on ai vendor modality record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "metadata": {
+            "additionalProperties": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/JsonValue"
+                }
+              ],
+              "description": "Metadata field on ai vendor modality record."
+            },
+            "description": "Metadata field on ai vendor modality record.",
+            "type": "object"
+          },
+          "modality_code": {
+            "description": "Modality code field on ai vendor modality record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "modality_id": {
+            "description": "Modality id field on ai vendor modality record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "organization_id": {
+            "description": "Organization id field on ai vendor modality record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "sort_order": {
+            "description": "Sort order field on ai vendor modality record.",
+            "format": "int32",
+            "type": "integer"
+          },
+          "status": {
+            "description": "Status field on ai vendor modality record.",
+            "type": "string",
+            "x-db-type": "enum_int32"
+          },
+          "supported": {
+            "description": "Supported field on ai vendor modality record.",
+            "type": "boolean"
+          },
+          "tenant_id": {
+            "description": "Tenant id field on ai vendor modality record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "updated_at": {
+            "description": "Updated at field on ai vendor modality record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "uuid": {
+            "description": "Uuid field on ai vendor modality record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "vendor_code": {
+            "description": "Vendor code field on ai vendor modality record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "vendor_id": {
+            "description": "Vendor id field on ai vendor modality record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "version": {
+            "description": "Version field on ai vendor modality record.",
+            "format": "int64",
+            "type": "string"
+          }
+        },
+        "required": [
+          "uuid",
+          "tenant_id",
+          "organization_id",
+          "status",
+          "vendor_code",
+          "modality_code"
+        ],
+        "type": "object",
+        "x-domain": "ai",
+        "x-generated-by-this-project": true,
+        "x-table": "ai_vendor_modality"
       },
       "AnalyticsServiceProviderDailyRecord": {
         "additionalProperties": false,
@@ -29461,137 +32351,6 @@
         "type": "object",
         "x-operation-id": "generation.list"
       },
-      "IamApiKeyGroupChannelRecord": {
-        "additionalProperties": false,
-        "description": "Iam api key group channel record schema exposed by Claw Router.",
-        "properties": {
-          "capabilities": {
-            "additionalProperties": {
-              "allOf": [
-                {
-                  "$ref": "#/components/schemas/JsonValue"
-                }
-              ],
-              "description": "Capabilities field on iam api key group channel record."
-            },
-            "description": "Capabilities field on iam api key group channel record.",
-            "type": "object"
-          },
-          "channel_id": {
-            "description": "Channel id field on iam api key group channel record.",
-            "format": "int64",
-            "type": "string"
-          },
-          "created_at": {
-            "description": "Created at field on iam api key group channel record.",
-            "format": "date-time",
-            "type": "string"
-          },
-          "data_scope": {
-            "description": "Data scope field on iam api key group channel record.",
-            "type": "string",
-            "x-db-type": "enum_int32"
-          },
-          "deleted_at": {
-            "description": "Deleted at field on iam api key group channel record.",
-            "format": "date-time",
-            "type": "string"
-          },
-          "deleted_by": {
-            "description": "Deleted by field on iam api key group channel record.",
-            "format": "int64",
-            "type": "string"
-          },
-          "effective_from": {
-            "description": "Effective from field on iam api key group channel record.",
-            "format": "date-time",
-            "type": "string"
-          },
-          "effective_to": {
-            "description": "Effective to field on iam api key group channel record.",
-            "format": "date-time",
-            "type": "string"
-          },
-          "group_id": {
-            "description": "Group id field on iam api key group channel record.",
-            "format": "int64",
-            "type": "string"
-          },
-          "id": {
-            "description": "Id field on iam api key group channel record.",
-            "format": "int64",
-            "type": "string"
-          },
-          "metadata": {
-            "additionalProperties": {
-              "allOf": [
-                {
-                  "$ref": "#/components/schemas/JsonValue"
-                }
-              ],
-              "description": "Metadata field on iam api key group channel record."
-            },
-            "description": "Metadata field on iam api key group channel record.",
-            "type": "object"
-          },
-          "model_scope": {
-            "additionalProperties": {
-              "allOf": [
-                {
-                  "$ref": "#/components/schemas/JsonValue"
-                }
-              ],
-              "description": "Model scope field on iam api key group channel record."
-            },
-            "description": "Model scope field on iam api key group channel record.",
-            "type": "object"
-          },
-          "organization_id": {
-            "description": "Organization id field on iam api key group channel record.",
-            "format": "int64",
-            "type": "string"
-          },
-          "priority": {
-            "description": "Priority field on iam api key group channel record.",
-            "format": "int32",
-            "type": "integer"
-          },
-          "status": {
-            "description": "Status field on iam api key group channel record.",
-            "type": "string",
-            "x-db-type": "enum_int32"
-          },
-          "tenant_id": {
-            "description": "Tenant id field on iam api key group channel record.",
-            "format": "int64",
-            "type": "string"
-          },
-          "updated_at": {
-            "description": "Updated at field on iam api key group channel record.",
-            "format": "date-time",
-            "type": "string"
-          },
-          "uuid": {
-            "description": "Uuid field on iam api key group channel record.",
-            "maxLength": 64,
-            "type": "string"
-          },
-          "version": {
-            "description": "Version field on iam api key group channel record.",
-            "format": "int64",
-            "type": "string"
-          },
-          "weight": {
-            "description": "Weight field on iam api key group channel record.",
-            "format": "int32",
-            "type": "integer"
-          }
-        },
-        "type": "object",
-        "x-domain": "iam",
-        "x-generated-by-this-project": true,
-        "x-table": "iam_api_key_group_channel"
-      },
       "IamApiKeyRecord": {
         "additionalProperties": false,
         "description": "Iam api key record schema exposed by Claw Router.",
@@ -30184,316 +32943,15 @@
         "x-generated-by-this-project": true,
         "x-table": "iam_gateway_access_policy"
       },
-      "IamGatewayApiKeyGroupMetricSnapshotRecord": {
-        "additionalProperties": false,
-        "description": "Iam gateway api key group metric snapshot record schema exposed by Claw Router.",
-        "properties": {
-          "account_available_count": {
-            "description": "Account available count field on iam gateway api key group metric snapshot record.",
-            "format": "int64",
-            "type": "string"
-          },
-          "account_total_count": {
-            "description": "Account total count field on iam gateway api key group metric snapshot record.",
-            "format": "int64",
-            "type": "string"
-          },
-          "capacity_limit": {
-            "description": "Capacity limit field on iam gateway api key group metric snapshot record.",
-            "format": "decimal",
-            "type": "string"
-          },
-          "capacity_used": {
-            "description": "Capacity used field on iam gateway api key group metric snapshot record.",
-            "format": "decimal",
-            "type": "string"
-          },
-          "created_at": {
-            "description": "Created at field on iam gateway api key group metric snapshot record.",
-            "format": "date-time",
-            "type": "string"
-          },
-          "group_code": {
-            "description": "Group code field on iam gateway api key group metric snapshot record.",
-            "maxLength": 64,
-            "type": "string"
-          },
-          "group_id": {
-            "description": "Group id field on iam gateway api key group metric snapshot record.",
-            "format": "int64",
-            "type": "string"
-          },
-          "health_status": {
-            "description": "Health status field on iam gateway api key group metric snapshot record.",
-            "type": "string",
-            "x-db-type": "enum_int32"
-          },
-          "id": {
-            "description": "Id field on iam gateway api key group metric snapshot record.",
-            "format": "int64",
-            "type": "string"
-          },
-          "metadata": {
-            "additionalProperties": {
-              "allOf": [
-                {
-                  "$ref": "#/components/schemas/JsonValue"
-                }
-              ],
-              "description": "Metadata field on iam gateway api key group metric snapshot record."
-            },
-            "description": "Metadata field on iam gateway api key group metric snapshot record.",
-            "type": "object"
-          },
-          "organization_id": {
-            "description": "Organization id field on iam gateway api key group metric snapshot record.",
-            "format": "int64",
-            "type": "string"
-          },
-          "provider_code": {
-            "description": "Provider code field on iam gateway api key group metric snapshot record.",
-            "maxLength": 64,
-            "type": "string"
-          },
-          "rebuild_version": {
-            "description": "Rebuild version field on iam gateway api key group metric snapshot record.",
-            "format": "int64",
-            "type": "string"
-          },
-          "request_count_today": {
-            "description": "Request count today field on iam gateway api key group metric snapshot record.",
-            "format": "int64",
-            "type": "string"
-          },
-          "request_count_total": {
-            "description": "Request count total field on iam gateway api key group metric snapshot record.",
-            "format": "int64",
-            "type": "string"
-          },
-          "snapshot_at": {
-            "description": "Snapshot at field on iam gateway api key group metric snapshot record.",
-            "format": "date-time",
-            "type": "string"
-          },
-          "source_id": {
-            "description": "Source id field on iam gateway api key group metric snapshot record.",
-            "format": "int64",
-            "type": "string"
-          },
-          "source_type": {
-            "description": "Source type field on iam gateway api key group metric snapshot record.",
-            "maxLength": 128,
-            "type": "string"
-          },
-          "source_version": {
-            "description": "Source version field on iam gateway api key group metric snapshot record.",
-            "format": "int64",
-            "type": "string"
-          },
-          "status": {
-            "description": "Status field on iam gateway api key group metric snapshot record.",
-            "type": "string",
-            "x-db-type": "enum_int32"
-          },
-          "tenant_id": {
-            "description": "Tenant id field on iam gateway api key group metric snapshot record.",
-            "format": "int64",
-            "type": "string"
-          },
-          "updated_at": {
-            "description": "Updated at field on iam gateway api key group metric snapshot record.",
-            "format": "date-time",
-            "type": "string"
-          },
-          "usage_amount_today": {
-            "description": "Usage amount today field on iam gateway api key group metric snapshot record.",
-            "format": "decimal",
-            "type": "string"
-          },
-          "usage_amount_total": {
-            "description": "Usage amount total field on iam gateway api key group metric snapshot record.",
-            "format": "decimal",
-            "type": "string"
-          },
-          "uuid": {
-            "description": "Uuid field on iam gateway api key group metric snapshot record.",
-            "maxLength": 64,
-            "type": "string"
-          }
-        },
-        "type": "object",
-        "x-domain": "iam",
-        "x-generated-by-this-project": true,
-        "x-table": "iam_gateway_api_key_group_metric_snapshot"
-      },
-      "IamGatewayApiKeyGroupRecord": {
-        "additionalProperties": false,
-        "description": "Iam gateway api key group record schema exposed by Claw Router.",
-        "properties": {
-          "allowed_origin": {
-            "additionalProperties": {
-              "allOf": [
-                {
-                  "$ref": "#/components/schemas/JsonValue"
-                }
-              ],
-              "description": "Allowed origin field on iam gateway api key group record."
-            },
-            "description": "Allowed origin field on iam gateway api key group record.",
-            "type": "object"
-          },
-          "billing_type": {
-            "description": "Billing type field on iam gateway api key group record.",
-            "type": "string",
-            "x-db-type": "enum_int32"
-          },
-          "capacity_limit": {
-            "description": "Capacity limit field on iam gateway api key group record.",
-            "format": "int64",
-            "type": "string"
-          },
-          "code": {
-            "description": "Code field on iam gateway api key group record.",
-            "maxLength": 64,
-            "type": "string"
-          },
-          "created_at": {
-            "description": "Created at field on iam gateway api key group record.",
-            "format": "date-time",
-            "type": "string"
-          },
-          "data_scope": {
-            "description": "Data scope field on iam gateway api key group record.",
-            "type": "string",
-            "x-db-type": "enum_int32"
-          },
-          "default_policy_id": {
-            "description": "Default policy id field on iam gateway api key group record.",
-            "format": "int64",
-            "type": "string"
-          },
-          "default_quota_policy_id": {
-            "description": "Default quota policy id field on iam gateway api key group record.",
-            "format": "int64",
-            "type": "string"
-          },
-          "deleted_at": {
-            "description": "Deleted at field on iam gateway api key group record.",
-            "format": "date-time",
-            "type": "string"
-          },
-          "deleted_by": {
-            "description": "Deleted by field on iam gateway api key group record.",
-            "format": "int64",
-            "type": "string"
-          },
-          "description": {
-            "description": "Description field on iam gateway api key group record.",
-            "maxLength": 512,
-            "type": "string"
-          },
-          "environment": {
-            "description": "Environment field on iam gateway api key group record.",
-            "type": "string",
-            "x-db-type": "enum_int32"
-          },
-          "group_type": {
-            "description": "Group type field on iam gateway api key group record.",
-            "type": "string",
-            "x-db-type": "enum_int32"
-          },
-          "id": {
-            "description": "Id field on iam gateway api key group record.",
-            "format": "int64",
-            "type": "string"
-          },
-          "metadata": {
-            "additionalProperties": {
-              "allOf": [
-                {
-                  "$ref": "#/components/schemas/JsonValue"
-                }
-              ],
-              "description": "Metadata field on iam gateway api key group record."
-            },
-            "description": "Metadata field on iam gateway api key group record.",
-            "type": "object"
-          },
-          "name": {
-            "description": "Name field on iam gateway api key group record.",
-            "maxLength": 128,
-            "type": "string"
-          },
-          "official_price_multiplier": {
-            "description": "Official price multiplier field on iam gateway api key group record.",
-            "format": "decimal",
-            "type": "string"
-          },
-          "organization_id": {
-            "description": "Organization id field on iam gateway api key group record.",
-            "format": "int64",
-            "type": "string"
-          },
-          "price_reference_mode": {
-            "description": "Price reference mode field on iam gateway api key group record.",
-            "type": "string",
-            "x-db-type": "enum_int32"
-          },
-          "pricing_plan_code": {
-            "description": "Pricing plan code field on iam gateway api key group record.",
-            "maxLength": 64,
-            "type": "string"
-          },
-          "pricing_plan_id": {
-            "description": "Pricing plan id field on iam gateway api key group record.",
-            "format": "int64",
-            "type": "string"
-          },
-          "provider_code": {
-            "description": "Provider code field on iam gateway api key group record.",
-            "maxLength": 64,
-            "type": "string"
-          },
-          "rate_multiplier": {
-            "description": "Rate multiplier field on iam gateway api key group record.",
-            "format": "decimal",
-            "type": "string"
-          },
-          "status": {
-            "description": "Status field on iam gateway api key group record.",
-            "type": "string",
-            "x-db-type": "enum_int32"
-          },
-          "tenant_id": {
-            "description": "Tenant id field on iam gateway api key group record.",
-            "format": "int64",
-            "type": "string"
-          },
-          "updated_at": {
-            "description": "Updated at field on iam gateway api key group record.",
-            "format": "date-time",
-            "type": "string"
-          },
-          "uuid": {
-            "description": "Uuid field on iam gateway api key group record.",
-            "maxLength": 64,
-            "type": "string"
-          },
-          "version": {
-            "description": "Version field on iam gateway api key group record.",
-            "format": "int64",
-            "type": "string"
-          }
-        },
-        "type": "object",
-        "x-domain": "iam",
-        "x-generated-by-this-project": true,
-        "x-table": "iam_gateway_api_key_group"
-      },
       "IamGatewayApiKeyRecord": {
         "additionalProperties": false,
         "description": "Iam gateway api key record schema exposed by Claw Router.",
         "properties": {
+          "channel_group_id": {
+            "description": "Channel group id field on iam gateway api key record.",
+            "format": "int64",
+            "type": "string"
+          },
           "created_at": {
             "description": "Created at field on iam gateway api key record.",
             "format": "date-time",
@@ -30522,11 +32980,6 @@
           "expire_at": {
             "description": "Expire at field on iam gateway api key record.",
             "format": "date-time",
-            "type": "string"
-          },
-          "group_id": {
-            "description": "Group id field on iam gateway api key record.",
-            "format": "int64",
             "type": "string"
           },
           "hash_alg": {
@@ -32938,599 +35391,6 @@
         "x-generated-by-this-project": true,
         "x-table": "iam_verification_scene_policy"
       },
-      "IntegrationChannelModelRecord": {
-        "additionalProperties": false,
-        "description": "Integration channel model record schema exposed by Claw Router.",
-        "properties": {
-          "capability": {
-            "description": "Capability field on integration channel model record.",
-            "type": "string",
-            "x-db-type": "enum_int32"
-          },
-          "catalog_key": {
-            "description": "Catalog key field on integration channel model record.",
-            "maxLength": 256,
-            "type": "string"
-          },
-          "channel_id": {
-            "description": "Channel id field on integration channel model record.",
-            "format": "int64",
-            "type": "string"
-          },
-          "created_at": {
-            "description": "Created at field on integration channel model record.",
-            "format": "date-time",
-            "type": "string"
-          },
-          "data_scope": {
-            "description": "Data scope field on integration channel model record.",
-            "type": "string",
-            "x-db-type": "enum_int32"
-          },
-          "default_parameters": {
-            "additionalProperties": {
-              "allOf": [
-                {
-                  "$ref": "#/components/schemas/JsonValue"
-                }
-              ],
-              "description": "Default parameters field on integration channel model record."
-            },
-            "description": "Default parameters field on integration channel model record.",
-            "type": "object"
-          },
-          "deleted_at": {
-            "description": "Deleted at field on integration channel model record.",
-            "format": "date-time",
-            "type": "string"
-          },
-          "deleted_by": {
-            "description": "Deleted by field on integration channel model record.",
-            "format": "int64",
-            "type": "string"
-          },
-          "effective_from": {
-            "description": "Effective from field on integration channel model record.",
-            "format": "date-time",
-            "type": "string"
-          },
-          "effective_to": {
-            "description": "Effective to field on integration channel model record.",
-            "format": "date-time",
-            "type": "string"
-          },
-          "id": {
-            "description": "Id field on integration channel model record.",
-            "format": "int64",
-            "type": "string"
-          },
-          "max_input_tokens": {
-            "description": "Max input tokens field on integration channel model record.",
-            "format": "int64",
-            "type": "string"
-          },
-          "max_output_tokens": {
-            "description": "Max output tokens field on integration channel model record.",
-            "format": "int64",
-            "type": "string"
-          },
-          "metadata": {
-            "additionalProperties": {
-              "allOf": [
-                {
-                  "$ref": "#/components/schemas/JsonValue"
-                }
-              ],
-              "description": "Metadata field on integration channel model record."
-            },
-            "description": "Metadata field on integration channel model record.",
-            "type": "object"
-          },
-          "model": {
-            "description": "Model field on integration channel model record.",
-            "maxLength": 128,
-            "type": "string"
-          },
-          "model_aliases": {
-            "additionalProperties": {
-              "allOf": [
-                {
-                  "$ref": "#/components/schemas/JsonValue"
-                }
-              ],
-              "description": "Model aliases field on integration channel model record."
-            },
-            "description": "Model aliases field on integration channel model record.",
-            "type": "object"
-          },
-          "model_id": {
-            "description": "Model id field on integration channel model record.",
-            "format": "int64",
-            "type": "string"
-          },
-          "organization_id": {
-            "description": "Organization id field on integration channel model record.",
-            "format": "int64",
-            "type": "string"
-          },
-          "provider_model": {
-            "description": "Provider model field on integration channel model record.",
-            "maxLength": 128,
-            "type": "string"
-          },
-          "status": {
-            "description": "Status field on integration channel model record.",
-            "type": "string",
-            "x-db-type": "enum_int32"
-          },
-          "supports_streaming": {
-            "description": "Supports streaming field on integration channel model record.",
-            "type": "boolean"
-          },
-          "supports_tools": {
-            "description": "Supports tools field on integration channel model record.",
-            "type": "boolean"
-          },
-          "tenant_id": {
-            "description": "Tenant id field on integration channel model record.",
-            "format": "int64",
-            "type": "string"
-          },
-          "updated_at": {
-            "description": "Updated at field on integration channel model record.",
-            "format": "date-time",
-            "type": "string"
-          },
-          "uuid": {
-            "description": "Uuid field on integration channel model record.",
-            "maxLength": 64,
-            "type": "string"
-          },
-          "vendor_code": {
-            "description": "Vendor code field on integration channel model record.",
-            "maxLength": 64,
-            "type": "string"
-          },
-          "version": {
-            "description": "Version field on integration channel model record.",
-            "format": "int64",
-            "type": "string"
-          }
-        },
-        "type": "object",
-        "x-domain": "integration",
-        "x-generated-by-this-project": true,
-        "x-table": "integration_channel_model"
-      },
-      "IntegrationChannelRecord": {
-        "additionalProperties": false,
-        "description": "Integration channel record schema exposed by Claw Router.",
-        "properties": {
-          "access_type": {
-            "description": "Access type field on integration channel record.",
-            "type": "string",
-            "x-db-type": "enum_int32"
-          },
-          "account_id": {
-            "description": "Account id field on integration channel record.",
-            "format": "int64",
-            "type": "string"
-          },
-          "base_url": {
-            "description": "Base url field on integration channel record.",
-            "maxLength": 512,
-            "type": "string"
-          },
-          "capabilities": {
-            "additionalProperties": {
-              "allOf": [
-                {
-                  "$ref": "#/components/schemas/JsonValue"
-                }
-              ],
-              "description": "Capabilities field on integration channel record."
-            },
-            "description": "Capabilities field on integration channel record.",
-            "type": "object"
-          },
-          "channel_code": {
-            "description": "Channel code field on integration channel record.",
-            "maxLength": 64,
-            "type": "string"
-          },
-          "circuit_breaker_policy": {
-            "additionalProperties": {
-              "allOf": [
-                {
-                  "$ref": "#/components/schemas/JsonValue"
-                }
-              ],
-              "description": "Circuit breaker policy field on integration channel record."
-            },
-            "description": "Circuit breaker policy field on integration channel record.",
-            "type": "object"
-          },
-          "consecutive_error_count": {
-            "description": "Consecutive error count field on integration channel record.",
-            "format": "int64",
-            "type": "string"
-          },
-          "created_at": {
-            "description": "Created at field on integration channel record.",
-            "format": "date-time",
-            "type": "string"
-          },
-          "data_scope": {
-            "description": "Data scope field on integration channel record.",
-            "type": "string",
-            "x-db-type": "enum_int32"
-          },
-          "deleted_at": {
-            "description": "Deleted at field on integration channel record.",
-            "format": "date-time",
-            "type": "string"
-          },
-          "deleted_by": {
-            "description": "Deleted by field on integration channel record.",
-            "format": "int64",
-            "type": "string"
-          },
-          "environment": {
-            "description": "Environment field on integration channel record.",
-            "type": "string",
-            "x-db-type": "enum_int32"
-          },
-          "health_status": {
-            "description": "Health status field on integration channel record.",
-            "type": "string",
-            "x-db-type": "enum_int32"
-          },
-          "id": {
-            "description": "Id field on integration channel record.",
-            "format": "int64",
-            "type": "string"
-          },
-          "last_latency_ms": {
-            "description": "Last latency ms field on integration channel record.",
-            "format": "int32",
-            "type": "integer"
-          },
-          "metadata": {
-            "additionalProperties": {
-              "allOf": [
-                {
-                  "$ref": "#/components/schemas/JsonValue"
-                }
-              ],
-              "description": "Metadata field on integration channel record."
-            },
-            "description": "Metadata field on integration channel record.",
-            "type": "object"
-          },
-          "model_mode": {
-            "description": "Model mode field on integration channel record.",
-            "type": "string",
-            "x-db-type": "enum_int32"
-          },
-          "name": {
-            "description": "Name field on integration channel record.",
-            "maxLength": 128,
-            "type": "string"
-          },
-          "organization_id": {
-            "description": "Organization id field on integration channel record.",
-            "format": "int64",
-            "type": "string"
-          },
-          "priority": {
-            "description": "Priority field on integration channel record.",
-            "format": "int32",
-            "type": "integer"
-          },
-          "protocol": {
-            "description": "Protocol field on integration channel record.",
-            "type": "string",
-            "x-db-type": "enum_int32"
-          },
-          "provider_code": {
-            "description": "Provider code field on integration channel record.",
-            "maxLength": 64,
-            "type": "string"
-          },
-          "provider_id": {
-            "description": "Provider id field on integration channel record.",
-            "format": "int64",
-            "type": "string"
-          },
-          "proxy_id": {
-            "description": "Proxy id field on integration channel record.",
-            "format": "int64",
-            "type": "string"
-          },
-          "region": {
-            "description": "Region field on integration channel record.",
-            "maxLength": 64,
-            "type": "string"
-          },
-          "retry_policy": {
-            "additionalProperties": {
-              "allOf": [
-                {
-                  "$ref": "#/components/schemas/JsonValue"
-                }
-              ],
-              "description": "Retry policy field on integration channel record."
-            },
-            "description": "Retry policy field on integration channel record.",
-            "type": "object"
-          },
-          "rpm_limit": {
-            "description": "Rpm limit field on integration channel record.",
-            "format": "int64",
-            "type": "string"
-          },
-          "status": {
-            "description": "Status field on integration channel record.",
-            "type": "string",
-            "x-db-type": "enum_int32"
-          },
-          "tenant_id": {
-            "description": "Tenant id field on integration channel record.",
-            "format": "int64",
-            "type": "string"
-          },
-          "timeout_ms": {
-            "description": "Timeout ms field on integration channel record.",
-            "format": "int32",
-            "type": "integer"
-          },
-          "updated_at": {
-            "description": "Updated at field on integration channel record.",
-            "format": "date-time",
-            "type": "string"
-          },
-          "uuid": {
-            "description": "Uuid field on integration channel record.",
-            "maxLength": 64,
-            "type": "string"
-          },
-          "version": {
-            "description": "Version field on integration channel record.",
-            "format": "int64",
-            "type": "string"
-          },
-          "weight": {
-            "description": "Weight field on integration channel record.",
-            "format": "int32",
-            "type": "integer"
-          }
-        },
-        "type": "object",
-        "x-domain": "integration",
-        "x-generated-by-this-project": true,
-        "x-table": "integration_channel"
-      },
-      "IntegrationProviderAccountRecord": {
-        "additionalProperties": false,
-        "description": "Integration provider account record schema exposed by Claw Router.",
-        "properties": {
-          "account_code": {
-            "description": "Account code field on integration provider account record.",
-            "maxLength": 64,
-            "type": "string"
-          },
-          "account_name": {
-            "description": "Account name field on integration provider account record.",
-            "maxLength": 128,
-            "type": "string"
-          },
-          "auth_config": {
-            "additionalProperties": {
-              "allOf": [
-                {
-                  "$ref": "#/components/schemas/JsonValue"
-                }
-              ],
-              "description": "Auth config field on integration provider account record."
-            },
-            "description": "Auth config field on integration provider account record.",
-            "type": "object"
-          },
-          "auth_type": {
-            "description": "Auth type field on integration provider account record.",
-            "type": "string",
-            "x-db-type": "enum_int32"
-          },
-          "base_url": {
-            "description": "Base url field on integration provider account record.",
-            "maxLength": 512,
-            "type": "string"
-          },
-          "consecutive_error_count": {
-            "description": "Consecutive error count field on integration provider account record.",
-            "format": "int64",
-            "type": "string"
-          },
-          "created_at": {
-            "description": "Created at field on integration provider account record.",
-            "format": "date-time",
-            "type": "string"
-          },
-          "credential_profile": {
-            "description": "Credential profile field on integration provider account record.",
-            "type": "string",
-            "x-db-type": "enum_int32"
-          },
-          "data_scope": {
-            "description": "Data scope field on integration provider account record.",
-            "type": "string",
-            "x-db-type": "enum_int32"
-          },
-          "deleted_at": {
-            "description": "Deleted at field on integration provider account record.",
-            "format": "date-time",
-            "type": "string"
-          },
-          "deleted_by": {
-            "description": "Deleted by field on integration provider account record.",
-            "format": "int64",
-            "type": "string"
-          },
-          "external_account_id": {
-            "description": "External account id field on integration provider account record.",
-            "maxLength": 128,
-            "type": "string"
-          },
-          "id": {
-            "description": "Id field on integration provider account record.",
-            "format": "int64",
-            "type": "string"
-          },
-          "last_balance_checked_at": {
-            "description": "Last balance checked at field on integration provider account record.",
-            "format": "date-time",
-            "type": "string"
-          },
-          "last_rotated_at": {
-            "description": "Last rotated at field on integration provider account record.",
-            "format": "date-time",
-            "type": "string"
-          },
-          "last_used_at": {
-            "description": "Last used at field on integration provider account record.",
-            "format": "date-time",
-            "type": "string"
-          },
-          "last_verified_at": {
-            "description": "Last verified at field on integration provider account record.",
-            "format": "date-time",
-            "type": "string"
-          },
-          "masked_label": {
-            "description": "Masked label field on integration provider account record.",
-            "maxLength": 128,
-            "type": "string"
-          },
-          "metadata": {
-            "additionalProperties": {
-              "allOf": [
-                {
-                  "$ref": "#/components/schemas/JsonValue"
-                }
-              ],
-              "description": "Metadata field on integration provider account record."
-            },
-            "description": "Metadata field on integration provider account record.",
-            "type": "object"
-          },
-          "next_rotate_at": {
-            "description": "Next rotate at field on integration provider account record.",
-            "format": "date-time",
-            "type": "string"
-          },
-          "organization_id": {
-            "description": "Organization id field on integration provider account record.",
-            "format": "int64",
-            "type": "string"
-          },
-          "provider_code": {
-            "description": "Provider code field on integration provider account record.",
-            "maxLength": 64,
-            "type": "string"
-          },
-          "provider_id": {
-            "description": "Provider id field on integration provider account record.",
-            "format": "int64",
-            "type": "string"
-          },
-          "quota_limit": {
-            "description": "Quota limit field on integration provider account record.",
-            "format": "decimal",
-            "type": "string"
-          },
-          "quota_unit": {
-            "description": "Quota unit field on integration provider account record.",
-            "type": "string",
-            "x-db-type": "enum_int32"
-          },
-          "quota_used": {
-            "description": "Quota used field on integration provider account record.",
-            "format": "decimal",
-            "type": "string"
-          },
-          "risk_level": {
-            "description": "Risk level field on integration provider account record.",
-            "type": "string",
-            "x-db-type": "enum_int32"
-          },
-          "secret_hash": {
-            "description": "Secret hash field on integration provider account record.",
-            "maxLength": 128,
-            "type": "string"
-          },
-          "secret_ref": {
-            "description": "Secret ref field on integration provider account record.",
-            "maxLength": 256,
-            "type": "string"
-          },
-          "secret_rotation_policy": {
-            "additionalProperties": {
-              "allOf": [
-                {
-                  "$ref": "#/components/schemas/JsonValue"
-                }
-              ],
-              "description": "Secret rotation policy field on integration provider account record."
-            },
-            "description": "Secret rotation policy field on integration provider account record.",
-            "type": "object"
-          },
-          "secret_version": {
-            "description": "Secret version field on integration provider account record.",
-            "format": "int64",
-            "type": "string"
-          },
-          "status": {
-            "description": "Status field on integration provider account record.",
-            "type": "string",
-            "x-db-type": "enum_int32"
-          },
-          "tenant_id": {
-            "description": "Tenant id field on integration provider account record.",
-            "format": "int64",
-            "type": "string"
-          },
-          "updated_at": {
-            "description": "Updated at field on integration provider account record.",
-            "format": "date-time",
-            "type": "string"
-          },
-          "upstream_balance_amount": {
-            "description": "Upstream balance amount field on integration provider account record.",
-            "format": "decimal",
-            "type": "string"
-          },
-          "upstream_balance_currency": {
-            "description": "Upstream balance currency field on integration provider account record.",
-            "maxLength": 10,
-            "type": "string"
-          },
-          "uuid": {
-            "description": "Uuid field on integration provider account record.",
-            "maxLength": 64,
-            "type": "string"
-          },
-          "version": {
-            "description": "Version field on integration provider account record.",
-            "format": "int64",
-            "type": "string"
-          }
-        },
-        "type": "object",
-        "x-domain": "integration",
-        "x-generated-by-this-project": true,
-        "x-table": "integration_provider_account"
-      },
       "IntegrationProviderHealthSnapshotRecord": {
         "additionalProperties": false,
         "description": "Integration provider health snapshot record schema exposed by Claw Router.",
@@ -33670,7 +35530,7 @@
           }
         },
         "type": "object",
-        "x-domain": "integration",
+        "x-domain": "ai",
         "x-generated-by-this-project": true,
         "x-table": "integration_provider_health_snapshot"
       },
@@ -33935,175 +35795,6 @@
         "x-domain": "integration",
         "x-generated-by-this-project": true,
         "x-table": "integration_provider_invoice_item"
-      },
-      "IntegrationProviderRecord": {
-        "additionalProperties": false,
-        "description": "Integration provider record schema exposed by Claw Router.",
-        "properties": {
-          "auth_type": {
-            "description": "Auth type field on integration provider record.",
-            "type": "string",
-            "x-db-type": "enum_int32"
-          },
-          "base_url": {
-            "description": "Base url field on integration provider record.",
-            "maxLength": 512,
-            "type": "string"
-          },
-          "capabilities": {
-            "additionalProperties": {
-              "allOf": [
-                {
-                  "$ref": "#/components/schemas/JsonValue"
-                }
-              ],
-              "description": "Capabilities field on integration provider record."
-            },
-            "description": "Capabilities field on integration provider record.",
-            "type": "object"
-          },
-          "color_token": {
-            "description": "Color token field on integration provider record.",
-            "maxLength": 64,
-            "type": "string"
-          },
-          "created_at": {
-            "description": "Created at field on integration provider record.",
-            "format": "date-time",
-            "type": "string"
-          },
-          "data_scope": {
-            "description": "Data scope field on integration provider record.",
-            "type": "string",
-            "x-db-type": "enum_int32"
-          },
-          "default_vendor_code": {
-            "description": "Default vendor code field on integration provider record.",
-            "maxLength": 64,
-            "type": "string"
-          },
-          "deleted_at": {
-            "description": "Deleted at field on integration provider record.",
-            "format": "date-time",
-            "type": "string"
-          },
-          "deleted_by": {
-            "description": "Deleted by field on integration provider record.",
-            "format": "int64",
-            "type": "string"
-          },
-          "description": {
-            "description": "Description field on integration provider record.",
-            "maxLength": 512,
-            "type": "string"
-          },
-          "display_name": {
-            "description": "Display name field on integration provider record.",
-            "maxLength": 128,
-            "type": "string"
-          },
-          "docs_url": {
-            "description": "Docs url field on integration provider record.",
-            "maxLength": 512,
-            "type": "string"
-          },
-          "icon_url": {
-            "description": "Icon url field on integration provider record.",
-            "maxLength": 512,
-            "type": "string"
-          },
-          "id": {
-            "description": "Id field on integration provider record.",
-            "format": "int64",
-            "type": "string"
-          },
-          "integration_type": {
-            "description": "Integration type field on integration provider record.",
-            "type": "string",
-            "x-db-type": "enum_int32"
-          },
-          "metadata": {
-            "additionalProperties": {
-              "allOf": [
-                {
-                  "$ref": "#/components/schemas/JsonValue"
-                }
-              ],
-              "description": "Metadata field on integration provider record."
-            },
-            "description": "Metadata field on integration provider record.",
-            "type": "object"
-          },
-          "metadata_schema_version": {
-            "description": "Metadata schema version field on integration provider record.",
-            "maxLength": 32,
-            "type": "string"
-          },
-          "organization_id": {
-            "description": "Organization id field on integration provider record.",
-            "format": "int64",
-            "type": "string"
-          },
-          "protocol": {
-            "description": "Protocol field on integration provider record.",
-            "type": "string",
-            "x-db-type": "enum_int32"
-          },
-          "provider_code": {
-            "description": "Provider code field on integration provider record.",
-            "maxLength": 64,
-            "type": "string"
-          },
-          "sort_order": {
-            "description": "Sort order field on integration provider record.",
-            "format": "int32",
-            "type": "integer"
-          },
-          "status": {
-            "description": "Status field on integration provider record.",
-            "type": "string",
-            "x-db-type": "enum_int32"
-          },
-          "tenant_id": {
-            "description": "Tenant id field on integration provider record.",
-            "format": "int64",
-            "type": "string"
-          },
-          "updated_at": {
-            "description": "Updated at field on integration provider record.",
-            "format": "date-time",
-            "type": "string"
-          },
-          "upstream_provider_code": {
-            "description": "Upstream provider code field on integration provider record.",
-            "maxLength": 64,
-            "type": "string"
-          },
-          "upstream_vendor_code": {
-            "description": "Upstream vendor code field on integration provider record.",
-            "maxLength": 64,
-            "type": "string"
-          },
-          "uuid": {
-            "description": "Uuid field on integration provider record.",
-            "maxLength": 64,
-            "type": "string"
-          },
-          "version": {
-            "description": "Version field on integration provider record.",
-            "format": "int64",
-            "type": "string"
-          },
-          "website_url": {
-            "description": "Website url field on integration provider record.",
-            "maxLength": 512,
-            "type": "string"
-          }
-        },
-        "type": "object",
-        "x-domain": "integration",
-        "x-generated-by-this-project": true,
-        "x-table": "integration_provider"
       },
       "IntegrationProxyRecord": {
         "additionalProperties": false,
@@ -37345,6 +39036,139 @@
         "x-generated-by-this-project": true,
         "x-table": "messaging_delivery_event"
       },
+      "MessagingProviderAccountRecord": {
+        "additionalProperties": false,
+        "description": "Messaging provider account record schema exposed by Claw Router.",
+        "properties": {
+          "auth_type": {
+            "description": "Auth type field on messaging provider account record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "base_url": {
+            "description": "Base url field on messaging provider account record.",
+            "maxLength": 512,
+            "type": "string"
+          },
+          "created_at": {
+            "description": "Created at field on messaging provider account record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "credential_hash": {
+            "description": "Credential hash field on messaging provider account record.",
+            "maxLength": 128,
+            "type": "string"
+          },
+          "credential_ref": {
+            "description": "Credential ref field on messaging provider account record.",
+            "maxLength": 256,
+            "type": "string"
+          },
+          "credential_version": {
+            "description": "Credential version field on messaging provider account record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "data_scope": {
+            "description": "Data scope field on messaging provider account record.",
+            "type": "string",
+            "x-db-type": "enum_int32"
+          },
+          "deleted_at": {
+            "description": "Deleted at field on messaging provider account record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "deleted_by": {
+            "description": "Deleted by field on messaging provider account record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "delivery_purpose": {
+            "description": "Delivery purpose field on messaging provider account record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "id": {
+            "description": "Id field on messaging provider account record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "last_used_at": {
+            "description": "Last used at field on messaging provider account record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "last_verified_at": {
+            "description": "Last verified at field on messaging provider account record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "masked_label": {
+            "description": "Masked label field on messaging provider account record.",
+            "maxLength": 128,
+            "type": "string"
+          },
+          "metadata": {
+            "additionalProperties": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/JsonValue"
+                }
+              ],
+              "description": "Metadata field on messaging provider account record."
+            },
+            "description": "Metadata field on messaging provider account record.",
+            "type": "object"
+          },
+          "organization_id": {
+            "description": "Organization id field on messaging provider account record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "provider_id": {
+            "description": "Provider id field on messaging provider account record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "status": {
+            "description": "Status field on messaging provider account record.",
+            "type": "string",
+            "x-db-type": "enum_int32"
+          },
+          "tenant_id": {
+            "description": "Tenant id field on messaging provider account record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "updated_at": {
+            "description": "Updated at field on messaging provider account record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "uuid": {
+            "description": "Uuid field on messaging provider account record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "version": {
+            "description": "Version field on messaging provider account record.",
+            "format": "int64",
+            "type": "string"
+          }
+        },
+        "required": [
+          "uuid",
+          "tenant_id",
+          "organization_id",
+          "status"
+        ],
+        "type": "object",
+        "x-domain": "messaging",
+        "x-generated-by-this-project": true,
+        "x-table": "messaging_provider_account"
+      },
       "MessagingProviderCapabilityRecord": {
         "additionalProperties": false,
         "description": "Messaging provider capability record schema exposed by Claw Router.",
@@ -37426,6 +39250,119 @@
         "x-domain": "messaging",
         "x-generated-by-this-project": true,
         "x-table": "messaging_provider_capability"
+      },
+      "MessagingProviderRecord": {
+        "additionalProperties": false,
+        "description": "Messaging provider record schema exposed by Claw Router.",
+        "properties": {
+          "created_at": {
+            "description": "Created at field on messaging provider record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "data_scope": {
+            "description": "Data scope field on messaging provider record.",
+            "type": "string",
+            "x-db-type": "enum_int32"
+          },
+          "deleted_at": {
+            "description": "Deleted at field on messaging provider record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "deleted_by": {
+            "description": "Deleted by field on messaging provider record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "docs_url": {
+            "description": "Docs url field on messaging provider record.",
+            "maxLength": 512,
+            "type": "string"
+          },
+          "icon_url": {
+            "description": "Icon url field on messaging provider record.",
+            "maxLength": 512,
+            "type": "string"
+          },
+          "id": {
+            "description": "Id field on messaging provider record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "metadata": {
+            "additionalProperties": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/JsonValue"
+                }
+              ],
+              "description": "Metadata field on messaging provider record."
+            },
+            "description": "Metadata field on messaging provider record.",
+            "type": "object"
+          },
+          "metadata_schema_version": {
+            "description": "Metadata schema version field on messaging provider record.",
+            "maxLength": 32,
+            "type": "string"
+          },
+          "organization_id": {
+            "description": "Organization id field on messaging provider record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "provider_type": {
+            "description": "Provider type field on messaging provider record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "sort_order": {
+            "description": "Sort order field on messaging provider record.",
+            "format": "int32",
+            "type": "integer"
+          },
+          "status": {
+            "description": "Status field on messaging provider record.",
+            "type": "string",
+            "x-db-type": "enum_int32"
+          },
+          "tenant_id": {
+            "description": "Tenant id field on messaging provider record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "updated_at": {
+            "description": "Updated at field on messaging provider record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "uuid": {
+            "description": "Uuid field on messaging provider record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "version": {
+            "description": "Version field on messaging provider record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "website_url": {
+            "description": "Website url field on messaging provider record.",
+            "maxLength": 512,
+            "type": "string"
+          }
+        },
+        "required": [
+          "uuid",
+          "tenant_id",
+          "organization_id",
+          "status"
+        ],
+        "type": "object",
+        "x-domain": "messaging",
+        "x-generated-by-this-project": true,
+        "x-table": "messaging_provider"
       },
       "MessagingRateLimitBucketRecord": {
         "additionalProperties": false,
@@ -52128,7 +54065,7 @@
             "type": "string"
           },
           "requestedModelCatalogKey": {
-            "description": "Routed catalog model identity in vendor/region/model form, for example openai/global/gpt-5.5.",
+            "description": "Routed base catalog model identity in vendor/model form, for example openai/gpt-5.5. Region-specific pricing or ranking keys are stored separately from the routed model identity.",
             "type": "string"
           },
           "status": {
@@ -52153,6 +54090,11 @@
           },
           "type": {
             "description": "Type field on usage log item.",
+            "type": "string"
+          },
+          "userAgent": {
+            "description": "Full HTTP User-Agent header captured from the gateway request. Empty when the client omitted the header.",
+            "maxLength": 1024,
             "type": "string"
           }
         },
@@ -52184,7 +54126,8 @@
           "cacheReadPrice",
           "path",
           "reasoningEffort",
-          "ip"
+          "ip",
+          "userAgent"
         ],
         "type": "object"
       },
@@ -55219,7 +57162,7 @@
     },
     "/app/v3/api/ai/models": {
       "get": {
-        "description": "List models. Reads ai_model_vendor, ai_model, ai_model_capability, ai_model_pricing, iam_gateway_api_key_group, iam_api_key_group_channel. Writes none. File targets none.",
+        "description": "List models. Reads ai_model_vendor, ai_model, ai_model_capability, ai_model_pricing, ai_channel_group, ai_channel_group_member. Writes none. File targets none.",
         "operationId": "models.list",
         "parameters": [
           {
@@ -55416,8 +57359,8 @@
           "ai_model",
           "ai_model_capability",
           "ai_model_pricing",
-          "iam_gateway_api_key_group",
-          "iam_api_key_group_channel"
+          "ai_channel_group",
+          "ai_channel_group_member"
         ],
         "x-route-scope": "public",
         "x-sdk-domain": "intelligence",
@@ -63262,7 +65205,7 @@
     },
     "/app/v3/api/iam/api_key_groups": {
       "get": {
-        "description": "List groups. Reads iam_gateway_api_key_group, iam_gateway_api_key_group_metric_snapshot, ai_pricing_plan. Writes none. File targets none.",
+        "description": "List groups. Reads ai_channel_group, ai_channel_group_metric_snapshot, ai_pricing_plan. Writes none. File targets none.",
         "operationId": "apiKeyGroups.list",
         "parameters": [],
         "responses": {
@@ -63330,8 +65273,8 @@
         "x-contract-kind": "read",
         "x-file-targets": [],
         "x-read-sources": [
-          "iam_gateway_api_key_group",
-          "iam_gateway_api_key_group_metric_snapshot",
+          "ai_channel_group",
+          "ai_channel_group_metric_snapshot",
           "ai_pricing_plan"
         ],
         "x-route-scope": "console",
@@ -63344,7 +65287,7 @@
     },
     "/app/v3/api/iam/api_keys": {
       "get": {
-        "description": "List keys. Reads iam_gateway_api_key, iam_gateway_api_key_group, iam_gateway_api_key_group_metric_snapshot, iam_gateway_access_policy, ai_quota_policy, ai_model_pricing, ai_pricing_plan. Writes none. File targets none.",
+        "description": "List keys. Reads iam_gateway_api_key, ai_channel_group, ai_channel_group_metric_snapshot, iam_gateway_access_policy, ai_quota_policy, ai_model_pricing, ai_pricing_plan. Writes none. File targets none.",
         "operationId": "apiKeys.list",
         "parameters": [],
         "responses": {
@@ -63413,8 +65356,8 @@
         "x-file-targets": [],
         "x-read-sources": [
           "iam_gateway_api_key",
-          "iam_gateway_api_key_group",
-          "iam_gateway_api_key_group_metric_snapshot",
+          "ai_channel_group",
+          "ai_channel_group_metric_snapshot",
           "iam_gateway_access_policy",
           "ai_quota_policy",
           "ai_model_pricing",
@@ -63428,7 +65371,7 @@
         "x-write-tables": []
       },
       "post": {
-        "description": "Create key. Reads iam_gateway_api_key_group. Writes iam_gateway_api_key_group, iam_gateway_api_key, iam_gateway_access_policy, ai_quota_policy, ops_audit_log. File targets none.",
+        "description": "Create key. Reads ai_channel_group. Writes ai_channel_group, iam_gateway_api_key, iam_gateway_access_policy, ai_quota_policy, ops_audit_log. File targets none.",
         "operationId": "apiKeys.create",
         "parameters": [
           {
@@ -63518,7 +65461,7 @@
         "x-contract-kind": "create",
         "x-file-targets": [],
         "x-read-sources": [
-          "iam_gateway_api_key_group"
+          "ai_channel_group"
         ],
         "x-route-scope": "console",
         "x-sdk-domain": "iam",
@@ -63526,7 +65469,7 @@
         "x-sdkwork-resource": "apiKeys",
         "x-source-file": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-api-keys/src/apiKeyService.ts",
         "x-write-tables": [
-          "iam_gateway_api_key_group",
+          "ai_channel_group",
           "iam_gateway_api_key",
           "iam_gateway_access_policy",
           "ai_quota_policy",
@@ -63627,7 +65570,7 @@
         ]
       },
       "patch": {
-        "description": "Update key. Reads iam_gateway_api_key, iam_gateway_api_key_group, iam_gateway_access_policy, ai_quota_policy. Writes iam_gateway_api_key, iam_gateway_access_policy, ai_quota_policy, ops_audit_log. File targets none.",
+        "description": "Update key. Reads iam_gateway_api_key, ai_channel_group, iam_gateway_access_policy, ai_quota_policy. Writes iam_gateway_api_key, iam_gateway_access_policy, ai_quota_policy, ops_audit_log. File targets none.",
         "operationId": "apiKeys.update",
         "parameters": [
           {
@@ -63717,7 +65660,7 @@
         "x-file-targets": [],
         "x-read-sources": [
           "iam_gateway_api_key",
-          "iam_gateway_api_key_group",
+          "ai_channel_group",
           "iam_gateway_access_policy",
           "ai_quota_policy"
         ],

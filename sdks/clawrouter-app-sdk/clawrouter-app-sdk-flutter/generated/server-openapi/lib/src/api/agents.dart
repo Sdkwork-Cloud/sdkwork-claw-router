@@ -26,11 +26,10 @@ class AgentsApi {
   }
 
   /// Create Playground agent definition
-  Future<AgentDefinitionsCreateResult?> agentDefinitionsCreate(AgentCreateRequest body, String idempotencyKey, [String? xRequestId]) async {
+  Future<AgentDefinitionsCreateResult?> agentDefinitionsCreate(AgentCreateRequest body, String idempotencyKey) async {
     final requestHeaders = buildRequestHeaders(
       <String, HeaderParameterSpec>{
         'Idempotency-Key': HeaderParameterSpec(idempotencyKey, 'simple', false, null),
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
       },
       <String, HeaderParameterSpec>{},
     );
@@ -52,11 +51,10 @@ class AgentsApi {
   }
 
   /// Complete Playground agent run
-  Future<AgentRunsSubmitResult?> agentRunsSubmit(String runId, AgentRunCompleteRequest body, String idempotencyKey, [String? xRequestId]) async {
+  Future<AgentRunsSubmitResult?> agentRunsSubmit(String runId, AgentRunCompleteRequest body, String idempotencyKey) async {
     final requestHeaders = buildRequestHeaders(
       <String, HeaderParameterSpec>{
         'Idempotency-Key': HeaderParameterSpec(idempotencyKey, 'simple', false, null),
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
       },
       <String, HeaderParameterSpec>{},
     );
@@ -82,11 +80,10 @@ class AgentsApi {
   }
 
   /// Create Playground agent run step
-  Future<AgentRunStepsCreateResult?> agentRunStepsCreate(String runId, AgentRunStepCreateRequest body, String idempotencyKey, [String? xRequestId]) async {
+  Future<AgentRunStepsCreateResult?> agentRunStepsCreate(String runId, AgentRunStepCreateRequest body, String idempotencyKey) async {
     final requestHeaders = buildRequestHeaders(
       <String, HeaderParameterSpec>{
         'Idempotency-Key': HeaderParameterSpec(idempotencyKey, 'simple', false, null),
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
       },
       <String, HeaderParameterSpec>{},
     );
@@ -99,11 +96,10 @@ class AgentsApi {
   }
 
   /// Complete Playground agent run step
-  Future<AgentRunStepsSubmitResult?> agentRunStepsSubmit(String runId, String stepId, AgentRunStepCompleteRequest body, String idempotencyKey, [String? xRequestId]) async {
+  Future<AgentRunStepsSubmitResult?> agentRunStepsSubmit(String runId, String stepId, AgentRunStepCompleteRequest body, String idempotencyKey) async {
     final requestHeaders = buildRequestHeaders(
       <String, HeaderParameterSpec>{
         'Idempotency-Key': HeaderParameterSpec(idempotencyKey, 'simple', false, null),
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
       },
       <String, HeaderParameterSpec>{},
     );
@@ -138,11 +134,10 @@ class AgentsApi {
   }
 
   /// Create Playground agent run
-  Future<AgentRunsCreateResult?> agentRunsCreate(String sessionId, AgentRunCreateRequest body, String idempotencyKey, [String? xRequestId]) async {
+  Future<AgentRunsCreateResult?> agentRunsCreate(String sessionId, AgentRunCreateRequest body, String idempotencyKey) async {
     final requestHeaders = buildRequestHeaders(
       <String, HeaderParameterSpec>{
         'Idempotency-Key': HeaderParameterSpec(idempotencyKey, 'simple', false, null),
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
       },
       <String, HeaderParameterSpec>{},
     );
@@ -177,11 +172,10 @@ class AgentsApi {
   }
 
   /// Create Playground agent session
-  Future<AgentSessionsCreateResult?> agentSessionsCreate(String agentId, AgentSessionCreateRequest body, String idempotencyKey, [String? xRequestId]) async {
+  Future<AgentSessionsCreateResult?> agentSessionsCreate(String agentId, AgentSessionCreateRequest body, String idempotencyKey) async {
     final requestHeaders = buildRequestHeaders(
       <String, HeaderParameterSpec>{
         'Idempotency-Key': HeaderParameterSpec(idempotencyKey, 'simple', false, null),
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
       },
       <String, HeaderParameterSpec>{},
     );

@@ -2,6 +2,8 @@
 import json
 from pathlib import Path
 
+import yaml
+
 from tools.api_contract_manifest import ApiContractManifestGenerator
 
 
@@ -21,6 +23,9 @@ class AdminChannelRuntimeStandardTest(unittest.TestCase):
         fetch_provider_secrets = operations[f"{source}#fetchProviderSecrets"]
         add_provider_secret = operations[f"{source}#addProviderSecret"]
         update_provider_secret = operations[f"{source}#updateProviderSecret"]
+        fetch_channel_endpoints = operations[f"{source}#fetchChannelEndpoints"]
+        create_provider_account_endpoint = operations[f"{source}#createChannelEndpoint"]
+        update_provider_account_endpoint = operations[f"{source}#updateChannelEndpoint"]
 
         self.assertIsNone(fetch_channels.get("request_schema"))
 
@@ -67,6 +72,44 @@ class AdminChannelRuntimeStandardTest(unittest.TestCase):
         self.assertEqual(["id"], update_provider_secret["request_schema"]["schema"]["required"])
         self.assertEqual("AdminProviderSecretMutationResponse", update_provider_secret["response_schema"]["name"])
 
+        self.assertIsNone(fetch_channel_endpoints.get("request_schema"))
+        self.assertEqual(
+            "/backend/v3/api/integration/channel_endpoints",
+            fetch_channel_endpoints["api_path"],
+        )
+        self.assertEqual("channelEndpoints.list", fetch_channel_endpoints["operation_id"])
+        self.assertEqual(
+            "AdminChannelEndpointCreateRequest",
+            create_provider_account_endpoint["request_schema"]["name"],
+        )
+        self.assertEqual(
+            ["channelId", "vendorCode", "regionCode", "apiEndpointCode", "baseUrl"],
+            create_provider_account_endpoint["request_schema"]["schema"]["required"],
+        )
+        create_properties = create_provider_account_endpoint["request_schema"]["schema"]["properties"]
+        self.assertIn("effectiveFrom", create_properties)
+        self.assertIn("effectiveTo", create_properties)
+        self.assertNotIn("providerCode", create_properties)
+        self.assertNotIn("accountCode", create_properties)
+        self.assertNotIn("channelType", create_properties)
+        self.assertEqual(
+            "AdminChannelEndpointMutationResponse",
+            create_provider_account_endpoint["response_schema"]["name"],
+        )
+        self.assertEqual(
+            "/backend/v3/api/integration/channel_endpoints/{endpointId}",
+            update_provider_account_endpoint["api_path"],
+        )
+        self.assertEqual("channelEndpoints.update", update_provider_account_endpoint["operation_id"])
+        self.assertEqual(
+            "AdminChannelEndpointUpdateRequest",
+            update_provider_account_endpoint["request_schema"]["name"],
+        )
+        self.assertEqual(
+            "AdminChannelEndpointMutationResponse",
+            update_provider_account_endpoint["response_schema"]["name"],
+        )
+
     def test_admin_channel_frontend_and_backend_sdk_do_not_use_generic_payloads(self) -> None:
         service = (
             ROOT
@@ -102,6 +145,16 @@ class AdminChannelRuntimeStandardTest(unittest.TestCase):
             "toProviderSecretListRequest",
             "toCreateProviderSecretRequest",
             "toUpdateProviderSecretRequest",
+            "ChannelEndpointService",
+            "AdminChannelEndpointCreateRequest",
+            "AdminChannelEndpointUpdateRequest",
+            "AdminChannelEndpointItem",
+            "integration.channelEndpoints.list()",
+            "integration.channelEndpoints.create(",
+            "integration.channelEndpoints.update(",
+            "toCreateChannelEndpointRequest",
+            "toUpdateChannelEndpointRequest",
+            "normalizeChannelEndpoint",
         ]:
             self.assertIn(token, service)
 
@@ -110,9 +163,9 @@ class AdminChannelRuntimeStandardTest(unittest.TestCase):
         self.assertNotIn("{ id, ...updates } as Record<string, unknown>", service)
 
         self.assertIn("async list(): Promise<ChannelsListResult>", channel_api)
-        self.assertIn("async create(body: AdminChannelCreateRequest, params?: IntegrationChannelsCreateParams): Promise<ChannelsCreateResult>", channel_api)
-        self.assertIn("async update(body: AdminChannelUpdateRequest, params?: IntegrationChannelsUpdateParams): Promise<ChannelsUpdateResult>", channel_api)
-        self.assertIn("async verify(channelId: string, params?: IntegrationChannelsVerifyParams): Promise<ChannelsVerifyResult>", channel_api)
+        self.assertIn("async create(body: AdminChannelCreateRequest): Promise<ChannelsCreateResult>", channel_api)
+        self.assertIn("async update(body: AdminChannelUpdateRequest): Promise<ChannelsUpdateResult>", channel_api)
+        self.assertIn("async verify(channelId: string): Promise<ChannelsVerifyResult>", channel_api)
         self.assertIn("retryPolicy?: ProviderRetryPolicy", (ROOT / "sdks" / "clawrouter-backend-sdk" / "clawrouter-backend-sdk-typescript" / "src" / "types" / "admin-channel-create-request.ts").read_text(encoding="utf-8"))
         self.assertIn("timeoutMs?: number", (ROOT / "sdks" / "clawrouter-backend-sdk" / "clawrouter-backend-sdk-typescript" / "src" / "types" / "admin-channel-create-request.ts").read_text(encoding="utf-8"))
         self.assertIn("retryPolicy?: ProviderRetryPolicy | JsonNull", (ROOT / "sdks" / "clawrouter-backend-sdk" / "clawrouter-backend-sdk-typescript" / "src" / "types" / "admin-channel-update-request.ts").read_text(encoding="utf-8"))
@@ -124,8 +177,12 @@ class AdminChannelRuntimeStandardTest(unittest.TestCase):
         self.assertNotIn("channelId: string | number", channel_api)
 
         self.assertIn("async list(params?: IntegrationProviderSecretsListParams): Promise<ProviderSecretsListResult>", provider_secret_api)
-        self.assertIn("async create(body: AdminProviderSecretCreateRequest, params?: IntegrationProviderSecretsCreateParams): Promise<ProviderSecretsCreateResult>", provider_secret_api)
-        self.assertIn("async update(body: AdminProviderSecretUpdateRequest, params?: IntegrationProviderSecretsUpdateParams): Promise<ProviderSecretsUpdateResult>", provider_secret_api)
+        self.assertIn("async create(body: AdminProviderSecretCreateRequest): Promise<ProviderSecretsCreateResult>", provider_secret_api)
+        self.assertIn("async update(body: AdminProviderSecretUpdateRequest): Promise<ProviderSecretsUpdateResult>", provider_secret_api)
+        self.assertIn("readonly channelEndpoints: IntegrationChannelEndpointsApi", provider_secret_api)
+        self.assertIn("async list(): Promise<ChannelEndpointsListResult>", provider_secret_api)
+        self.assertIn("async create(body: AdminChannelEndpointCreateRequest): Promise<ChannelEndpointsCreateResult>", provider_secret_api)
+        self.assertIn("async update(endpointId: string, body: AdminChannelEndpointUpdateRequest): Promise<ChannelEndpointsUpdateResult>", provider_secret_api)
         self.assertNotIn("async create(body?: OperationRequest): Promise<PlusApiResult>", provider_secret_api)
         self.assertNotIn("async update(body?: OperationRequest): Promise<PlusApiResult>", provider_secret_api)
 
@@ -144,6 +201,14 @@ class AdminChannelRuntimeStandardTest(unittest.TestCase):
             "ProviderSecretsCreateResult",
             "ProviderSecretsListResult",
             "ProviderSecretsUpdateResult",
+            "AdminChannelEndpointCreateRequest",
+            "AdminChannelEndpointUpdateRequest",
+            "AdminChannelEndpointItem",
+            "AdminChannelEndpointMutationResponse",
+            "AdminChannelEndpointsResponse",
+            "ChannelEndpointsCreateResult",
+            "ChannelEndpointsListResult",
+            "ChannelEndpointsUpdateResult",
         ]:
             self.assertIn(f"export type {{ {token} }}", type_exports)
 
@@ -171,6 +236,8 @@ class AdminChannelRuntimeStandardTest(unittest.TestCase):
         self.assertEqual(package["scripts"]["typecheck"], "tsc --noEmit")
         self.assertIn("export type ChannelCreateInput", service)
         self.assertIn("export type ChannelUpdateInput", service)
+        self.assertIn("channelId: string", service)
+        self.assertIn("channelId: readPositiveIdText(item, 'channelId'", service)
         self.assertIn("static async addChannel(channel: ChannelCreateInput): Promise<ChannelItem>", service)
         self.assertIn("static async updateChannel(id: string, updates: ChannelUpdateInput): Promise<ChannelItem>", service)
         self.assertIn("readRequiredApiItem(result, 'Updated channel response is missing data')", service)
@@ -202,6 +269,74 @@ class AdminChannelRuntimeStandardTest(unittest.TestCase):
         self.assertNotIn("Date.now()", form)
         self.assertNotIn("Math.random()", form)
         self.assertIn("admin-channel-runtime.test.ts", verifier)
+
+    def test_admin_provider_account_endpoint_page_uses_dedicated_sdk_service(self) -> None:
+        source_dir = (
+            ROOT
+            / "apps"
+            / "sdkwork-claw-router-portal"
+            / "packages"
+            / "sdkwork-claw-router-admin-channel"
+            / "src"
+        )
+        view = (source_dir / "index.tsx").read_text(encoding="utf-8")
+        service = (source_dir / "channelService.ts").read_text(encoding="utf-8")
+        form = (source_dir / "channelForm.ts").read_text(encoding="utf-8")
+        app = (ROOT / "apps" / "sdkwork-claw-router-portal" / "src" / "App.tsx").read_text(encoding="utf-8")
+        registry = (ROOT / "apps" / "sdkwork-claw-router-portal" / "src" / "adminModuleRegistry.ts").read_text(encoding="utf-8")
+
+        self.assertIn("export function ChannelEndpointAdmin", view)
+        self.assertIn("function ChannelEndpointFormModal", view)
+        self.assertIn("ChannelEndpointService.fetchChannelEndpoints()", view)
+        self.assertIn("ChannelEndpointService.createChannelEndpoint", view)
+        self.assertIn("ChannelEndpointService.updateChannelEndpoint", view)
+        self.assertIn("ChannelService.fetchChannels()", view)
+        self.assertIn("name=\"channelId\"", view)
+        self.assertIn("name=\"vendorCode\"", view)
+        self.assertIn("name=\"regionCode\"", view)
+        self.assertIn("name=\"apiEndpointCode\"", view)
+        self.assertIn("name=\"baseUrl\"", view)
+        self.assertIn("createChannelEndpointInputFromForm", view)
+        self.assertIn("createChannelEndpointUpdateInputFromForm", view)
+        self.assertIn("export type ChannelEndpointFormValues", form)
+        self.assertIn("export function createChannelEndpointInputFromForm", form)
+        self.assertIn("export function createChannelEndpointUpdateInputFromForm", form)
+        self.assertIn("ChannelEndpointCreateInput", service)
+        self.assertIn("ChannelEndpointUpdateInput", service)
+        self.assertNotIn("providerCode?:", service.split("export interface ChannelEndpointCreateInput", 1)[1].split("}", 1)[0])
+        self.assertNotIn("accountCode?:", service.split("export interface ChannelEndpointCreateInput", 1)[1].split("}", 1)[0])
+        self.assertNotIn("channelType?:", service.split("export interface ChannelEndpointCreateInput", 1)[1].split("}", 1)[0])
+        self.assertIn("const ChannelEndpointAdmin = lazyRoute", app)
+        self.assertIn('path="channel/endpoints"', app)
+        self.assertIn("/admin/channel/endpoints", registry)
+        self.assertIn("admin.menu.channelEndpoints", registry)
+
+    def test_admin_provider_account_endpoint_models_use_dedicated_route_contract(self) -> None:
+        contract = yaml.safe_load(
+            (ROOT / "docs" / "schema-registry" / "frontend-field-contracts.yaml").read_text(
+                encoding="utf-8"
+            )
+        )
+        endpoint_model_routes = {
+            item["interface"]: item["route"]
+            for item in contract["frontend_models"]
+            if item.get("source") == "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts"
+            and item.get("interface")
+            in {
+                "ChannelEndpoint",
+                "ChannelEndpointCreateInput",
+                "ChannelEndpointUpdateInput",
+            }
+        }
+
+        self.assertEqual(
+            {
+                "ChannelEndpoint": "/admin/channel/endpoints",
+                "ChannelEndpointCreateInput": "/admin/channel/endpoints",
+                "ChannelEndpointUpdateInput": "/admin/channel/endpoints",
+            },
+            endpoint_model_routes,
+        )
 
     def test_admin_provider_secret_forms_use_dedicated_command_inputs(self) -> None:
         package_root = (
@@ -297,7 +432,8 @@ class AdminChannelRuntimeStandardTest(unittest.TestCase):
 
         self.assertIn("static async testChannel(id: string): Promise<ChannelTestResult>", service)
         self.assertIn("channelBackendClient().integration.channels.verify(", service)
-        self.assertIn("requestParams('admin-channel-test')", service)
+        self.assertNotIn("createIdempotencyParams('admin-channel-test')", service)
+        self.assertNotIn("requestParams('admin-channel-test')", service)
         self.assertIn("readRequiredApiItem(result, 'Channel test response is missing channel data', ['item'])", service)
         self.assertNotIn("emptyTestChannelRequest", service)
         self.assertNotIn("TestChannelRequest", service)

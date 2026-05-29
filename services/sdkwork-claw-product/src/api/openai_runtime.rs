@@ -224,22 +224,18 @@ where
             billing_meter,
         })
         .map_err(provider_route_selection_error)?;
-    let account_pool_routes = catalog.list_provider_account_pool_routes();
+    let channel_routes = catalog.list_provider_channel_routes();
     let routes = model_plan
         .routes
         .into_iter()
         .map(|selection| {
-            resolve_model_route(
-                routing_catalog_key.as_str(),
-                selection,
-                &account_pool_routes,
-            )
+            resolve_model_route(routing_catalog_key.as_str(), selection, &channel_routes)
         })
         .collect::<Result<Vec<_>, _>>()?;
     if routes.is_empty() {
         return Err(provider_route_selection_error(
             ProviderRouteSelectionError::provider_route_unavailable(format!(
-                "provider route is not available for configured account pool: route plan is empty for model {}",
+                "provider route is not available for configured channel route: route plan is empty for model {}",
                 routing_catalog_key
             )),
         ));
@@ -261,35 +257,35 @@ fn route_scope_catalog_key(requested_model: &str, model_catalog_key: &str) -> St
 fn resolve_model_route(
     catalog_key: &str,
     selection: SelectedProviderRoute,
-    account_pool_routes: &[crate::domain::ProviderAccountPoolRoute],
+    channel_routes: &[crate::domain::ProviderChannelRoute],
 ) -> Result<ResolvedOpenAiProviderRoute, OpenAiRouteError> {
     let model_route = selection.route;
-    let account_pool_route = account_pool_routes
+    let channel_route = channel_routes
         .iter()
         .find(|route| route.channel_id == model_route.channel_id)
         .cloned()
         .ok_or_else(|| {
             provider_route_selection_error(ProviderRouteSelectionError::provider_route_unavailable(
                 format!(
-                    "provider route is not available for configured account pool: selected channel {} has no configured account pool route for model {}",
+                    "provider route is not available for configured channel route: selected channel {} has no configured channel route for model {}",
                     model_route.channel_id, catalog_key
                 ),
             ))
         })?;
-    if account_pool_route.provider_code != model_route.provider_code {
+    if channel_route.provider_code != model_route.provider_code {
         return Err(provider_route_selection_error(
             ProviderRouteSelectionError::provider_route_unavailable(format!(
-                "provider route is not available for configured account pool: selected channel {} provider mismatch for model {}",
+                "provider route is not available for configured channel route: selected channel {} provider mismatch for model {}",
                 model_route.channel_id, catalog_key
             )),
         ));
     }
-    if !has_text(account_pool_route.base_url.as_deref())
-        || !has_text(account_pool_route.secret_ref.as_deref())
+    if !has_text(channel_route.base_url.as_deref())
+        || !has_text(channel_route.secret_ref.as_deref())
     {
         return Err(provider_route_selection_error(
             ProviderRouteSelectionError::provider_route_unavailable(format!(
-                "provider route is not available for configured account pool: selected channel {} is missing callable account pool endpoint for model {}",
+                "provider route is not available for configured channel route: selected channel {} is missing callable channel endpoint for model {}",
                 model_route.channel_id, catalog_key
             )),
         ));
@@ -308,11 +304,11 @@ fn resolve_model_route(
         provider_code: model_route.provider_code,
         channel_id: model_route.channel_id,
         provider_model,
-        provider_base_url: account_pool_route.base_url,
-        provider_secret_ref: account_pool_route.secret_ref,
-        provider_auth_profile: account_pool_route.auth_profile,
-        provider_timeout_ms: account_pool_route.timeout_ms,
-        provider_retry_policy: account_pool_route.retry_policy,
+        provider_base_url: channel_route.base_url,
+        provider_secret_ref: channel_route.secret_ref,
+        provider_auth_profile: channel_route.auth_profile,
+        provider_timeout_ms: channel_route.timeout_ms,
+        provider_retry_policy: channel_route.retry_policy,
     })
 }
 

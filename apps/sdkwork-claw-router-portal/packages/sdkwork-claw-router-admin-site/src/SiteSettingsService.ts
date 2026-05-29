@@ -1,4 +1,4 @@
-﻿import type { AdminSiteSettingsResponse, AdminSiteSettingsUpdateRequest } from '@sdkwork/clawrouter-backend-sdk';
+import type { AdminSiteSettingsResponse, AdminSiteSettingsUpdateRequest } from '@sdkwork/clawrouter-backend-sdk';
 import {
   ensureSdkworkApiSuccess,
   getClawRouterBackendSdkClient,

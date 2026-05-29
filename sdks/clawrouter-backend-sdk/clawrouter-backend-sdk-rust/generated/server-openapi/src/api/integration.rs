@@ -1,10 +1,9 @@
 use std::sync::Arc;
 
-use crate::api::base::{RequestHeaders};
 use crate::api::paths::backend_path;
 use crate::api::paths::append_query_string;
 use crate::http::{SdkworkError, SdkworkHttpClient};
-use crate::models::{AdminChannelCreateRequest, AdminChannelUpdateRequest, AdminProviderSecretCreateRequest, AdminProviderSecretUpdateRequest, ChannelsCreateResult, ChannelsDeleteResult, ChannelsListResult, ChannelsUpdateResult, ChannelsVerifyResult, ProviderSecretsCreateResult, ProviderSecretsDeleteResult, ProviderSecretsListResult, ProviderSecretsUpdateResult};
+use crate::models::{AdminChannelCreateRequest, AdminChannelEndpointCreateRequest, AdminChannelEndpointUpdateRequest, AdminChannelUpdateRequest, AdminProviderSecretCreateRequest, AdminProviderSecretUpdateRequest, ChannelEndpointsCreateResult, ChannelEndpointsListResult, ChannelEndpointsUpdateResult, ChannelsCreateResult, ChannelsDeleteResult, ChannelsListResult, ChannelsUpdateResult, ChannelsVerifyResult, ProviderSecretsCreateResult, ProviderSecretsDeleteResult, ProviderSecretsListResult, ProviderSecretsUpdateResult};
 
 #[derive(Clone)]
 pub struct IntegrationApi {
@@ -16,6 +15,24 @@ impl IntegrationApi {
         Self { client }
     }
 
+    /// List channel endpoints
+    pub async fn channel_endpoints_list(&self) -> Result<ChannelEndpointsListResult, SdkworkError> {
+        let path = backend_path(&"/integration/channel_endpoints".to_string());
+        self.client.get(&path, None, None).await
+    }
+
+    /// Create channel endpoint
+    pub async fn channel_endpoints_create(&self, body: &AdminChannelEndpointCreateRequest) -> Result<ChannelEndpointsCreateResult, SdkworkError> {
+        let path = backend_path(&"/integration/channel_endpoints".to_string());
+        self.client.post(&path, Some(body), None, None, Some("application/json")).await
+    }
+
+    /// Update channel endpoint
+    pub async fn channel_endpoints_update(&self, endpoint_id: &str, body: &AdminChannelEndpointUpdateRequest) -> Result<ChannelEndpointsUpdateResult, SdkworkError> {
+        let path = backend_path(&format!("/integration/channel_endpoints/{}", serialize_path_parameter(endpoint_id, PathParameterSpec::new("endpointId", "simple", false))));
+        self.client.put(&path, Some(body), None, None, Some("application/json")).await
+    }
+
     /// List channels
     pub async fn channels_list(&self) -> Result<ChannelsListResult, SdkworkError> {
         let path = backend_path(&"/integration/channels".to_string());
@@ -23,27 +40,15 @@ impl IntegrationApi {
     }
 
     /// Create channel
-    pub async fn channels_create(&self, body: &AdminChannelCreateRequest, x_request_id: Option<&str>) -> Result<ChannelsCreateResult, SdkworkError> {
+    pub async fn channels_create(&self, body: &AdminChannelCreateRequest) -> Result<ChannelsCreateResult, SdkworkError> {
         let path = backend_path(&"/integration/channels".to_string());
-        let headers = build_request_headers(
-            &[
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
-            ],
-            &[],
-        );
-        self.client.post(&path, Some(body), None, headers.as_ref(), Some("application/json")).await
+        self.client.post(&path, Some(body), None, None, Some("application/json")).await
     }
 
     /// Update channel
-    pub async fn channels_update(&self, body: &AdminChannelUpdateRequest, x_request_id: Option<&str>) -> Result<ChannelsUpdateResult, SdkworkError> {
+    pub async fn channels_update(&self, body: &AdminChannelUpdateRequest) -> Result<ChannelsUpdateResult, SdkworkError> {
         let path = backend_path(&"/integration/channels".to_string());
-        let headers = build_request_headers(
-            &[
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
-            ],
-            &[],
-        );
-        self.client.put(&path, Some(body), None, headers.as_ref(), Some("application/json")).await
+        self.client.put(&path, Some(body), None, None, Some("application/json")).await
     }
 
     /// Delete channel
@@ -53,15 +58,9 @@ impl IntegrationApi {
     }
 
     /// Test channel
-    pub async fn channels_verify(&self, channel_id: &str, x_request_id: Option<&str>) -> Result<ChannelsVerifyResult, SdkworkError> {
+    pub async fn channels_verify(&self, channel_id: &str) -> Result<ChannelsVerifyResult, SdkworkError> {
         let path = backend_path(&format!("/integration/channels/{}/verify", serialize_path_parameter(channel_id, PathParameterSpec::new("channelId", "simple", false))));
-        let headers = build_request_headers(
-            &[
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
-            ],
-            &[],
-        );
-        self.client.post(&path, Option::<&serde_json::Value>::None, None, headers.as_ref(), None).await
+        self.client.post(&path, Option::<&serde_json::Value>::None, None, None, None).await
     }
 
     /// List provider secrets
@@ -75,27 +74,15 @@ impl IntegrationApi {
     }
 
     /// Create provider secret
-    pub async fn provider_secrets_create(&self, body: &AdminProviderSecretCreateRequest, x_request_id: Option<&str>) -> Result<ProviderSecretsCreateResult, SdkworkError> {
+    pub async fn provider_secrets_create(&self, body: &AdminProviderSecretCreateRequest) -> Result<ProviderSecretsCreateResult, SdkworkError> {
         let path = backend_path(&"/integration/provider_secrets".to_string());
-        let headers = build_request_headers(
-            &[
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
-            ],
-            &[],
-        );
-        self.client.post(&path, Some(body), None, headers.as_ref(), Some("application/json")).await
+        self.client.post(&path, Some(body), None, None, Some("application/json")).await
     }
 
     /// Update provider secret
-    pub async fn provider_secrets_update(&self, body: &AdminProviderSecretUpdateRequest, x_request_id: Option<&str>) -> Result<ProviderSecretsUpdateResult, SdkworkError> {
+    pub async fn provider_secrets_update(&self, body: &AdminProviderSecretUpdateRequest) -> Result<ProviderSecretsUpdateResult, SdkworkError> {
         let path = backend_path(&"/integration/provider_secrets".to_string());
-        let headers = build_request_headers(
-            &[
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
-            ],
-            &[],
-        );
-        self.client.put(&path, Some(body), None, headers.as_ref(), Some("application/json")).await
+        self.client.put(&path, Some(body), None, None, Some("application/json")).await
     }
 
     /// Delete provider secret
@@ -204,118 +191,6 @@ fn path_primitive_prefix(name: &str, style: &str) -> String {
     }
 }
 
-struct HeaderParameterSpec {
-    value: serde_json::Value,
-    explode: bool,
-    content_type: Option<&'static str>,
-}
-
-impl HeaderParameterSpec {
-    fn new<T: serde::Serialize>(
-        value: T,
-        _style: &'static str,
-        explode: bool,
-        content_type: Option<&'static str>,
-    ) -> Self {
-        Self {
-            value: serde_json::to_value(value).unwrap_or(serde_json::Value::Null),
-            explode,
-            content_type,
-        }
-    }
-}
-
-fn build_request_headers(headers: &[(&str, HeaderParameterSpec)], cookies: &[(&str, HeaderParameterSpec)]) -> Option<RequestHeaders> {
-    let mut request_headers = RequestHeaders::new();
-    for (name, parameter) in headers {
-        if let Some(value) = serialize_header_parameter(parameter) {
-            request_headers.insert((*name).to_string(), value);
-        }
-    }
-
-    let cookie_header = build_cookie_header(cookies);
-    if !cookie_header.is_empty() {
-        request_headers
-            .entry("Cookie".to_string())
-            .and_modify(|existing| {
-                existing.push_str("; ");
-                existing.push_str(&cookie_header);
-            })
-            .or_insert(cookie_header);
-    }
-
-    if request_headers.is_empty() {
-        None
-    } else {
-        Some(request_headers)
-    }
-}
-
-fn build_cookie_header(cookies: &[(&str, HeaderParameterSpec)]) -> String {
-    cookies
-        .iter()
-        .filter_map(|(name, value)| {
-            serialize_header_parameter(value)
-                .map(|value| format!("{}={}", percent_encode(name), percent_encode(&value)))
-        })
-        .collect::<Vec<_>>()
-        .join("; ")
-}
-
-fn serialize_header_parameter(parameter: &HeaderParameterSpec) -> Option<String> {
-    if parameter.value.is_null() {
-        return None;
-    }
-    if parameter.content_type.is_some() {
-        return Some(parameter.value.to_string());
-    }
-    match &parameter.value {
-        serde_json::Value::Null => None,
-        serde_json::Value::String(value) => Some(value.clone()),
-        serde_json::Value::Number(value) => Some(value.to_string()),
-        serde_json::Value::Bool(value) => Some(value.to_string()),
-        serde_json::Value::Array(values) => {
-            let serialized = values
-                .iter()
-                .filter_map(serialize_json_value)
-                .collect::<Vec<_>>();
-            if serialized.is_empty() {
-                None
-            } else {
-                Some(serialized.join(","))
-            }
-        }
-        serde_json::Value::Object(values) => {
-            let serialized = values
-                .iter()
-                .filter_map(|(key, value)| {
-                    serialize_json_value(value).map(|serialized| {
-                        if parameter.explode {
-                            format!("{}={}", key, serialized)
-                        } else {
-                            format!("{},{}", key, serialized)
-                        }
-                    })
-                })
-                .collect::<Vec<_>>();
-            if serialized.is_empty() {
-                None
-            } else {
-                Some(serialized.join(","))
-            }
-        }
-    }
-}
-
-fn serialize_json_value(value: &serde_json::Value) -> Option<String> {
-    match value {
-        serde_json::Value::Null => None,
-        serde_json::Value::String(value) => Some(value.clone()),
-        serde_json::Value::Number(value) => Some(value.to_string()),
-        serde_json::Value::Bool(value) => Some(value.to_string()),
-        other => Some(other.to_string()),
-    }
-}
 
 struct QueryParameterSpec<'a> {
     name: &'a str,

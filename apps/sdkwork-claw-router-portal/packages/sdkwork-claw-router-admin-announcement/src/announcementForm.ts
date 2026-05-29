@@ -28,10 +28,6 @@ export function createAnnouncementUpdateInputFromForm(values: AnnouncementFormVa
   };
 }
 
-export function createAnnouncementPublishInput(): AnnouncementUpdateInput {
-  return createAnnouncementStatusInput('published');
-}
-
 export function createAnnouncementStatusInput(status: AnnouncementCreateInput['status']): AnnouncementUpdateInput {
   return { status };
 }

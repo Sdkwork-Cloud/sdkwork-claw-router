@@ -2,10 +2,6 @@ import type { JsonValue } from './json-value';
 
 /** Ai usage fact record schema exposed by Claw Router. */
 export interface AiUsageFactRecord {
-  /** Api key group id field on ai usage fact record. */
-  api_key_group_id?: string;
-  /** Api key group snapshot field on ai usage fact record. */
-  api_key_group_snapshot?: string;
   /** Api key id field on ai usage fact record. */
   api_key_id?: string;
   /** Api key name snapshot field on ai usage fact record. */
@@ -38,6 +34,10 @@ export interface AiUsageFactRecord {
   cached_tokens?: string;
   /** Catalog key field on ai usage fact record. */
   catalog_key: string;
+  /** Channel group id field on ai usage fact record. */
+  channel_group_id?: string;
+  /** Channel group snapshot field on ai usage fact record. */
+  channel_group_snapshot?: string;
   /** Channel id field on ai usage fact record. */
   channel_id?: string;
   /** Character count field on ai usage fact record. */
@@ -98,8 +98,6 @@ export interface AiUsageFactRecord {
   pricing_tier_id?: string;
   /** Prompt tokens field on ai usage fact record. */
   prompt_tokens?: string;
-  /** Provider account id field on ai usage fact record. */
-  provider_account_id?: string;
   /** Provider id field on ai usage fact record. */
   provider_id?: string;
   /** Provider native model field on ai usage fact record. */

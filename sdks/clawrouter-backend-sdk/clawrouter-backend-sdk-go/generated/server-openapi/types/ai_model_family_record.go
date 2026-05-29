@@ -20,7 +20,6 @@ type AiModelFamilyRecord struct {
 	ModelCount string `json:"model_count"`
 	OrganizationId string `json:"organization_id"`
 	PrimaryModality string `json:"primary_modality"`
-	RegionCode string `json:"region_code"`
 	SortOrder int `json:"sort_order"`
 	Status string `json:"status"`
 	TenantId string `json:"tenant_id"`

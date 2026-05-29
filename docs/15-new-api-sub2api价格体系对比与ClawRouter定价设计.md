@@ -6,13 +6,13 @@
 
 ## 1. 结论
 
-Claw Router 不采用 `ai_pricing_group` 作为表名或领域名。产品里的 Group 是业务分组，用 `iam_gateway_api_key_group` 表达；创建 API Key 时选择该分组，落到 `iam_gateway_api_key.group_id`。价格只作为分组的一项默认策略，通过 `iam_gateway_api_key_group.pricing_plan_id` 指向 `ai_pricing_plan`。
+Claw Router 不采用 `ai_pricing_group` 作为表名或领域名。产品里的 Group 是业务分组，用 `ai_channel_group` 表达；创建 API Key 时选择该分组，落到 `iam_gateway_api_key.channel_group_id`。价格只作为分组的一项默认策略，通过 `ai_channel_group.pricing_plan_id` 指向 `ai_pricing_plan`。
 
 定价核心拆成五层：
 
 1. `ai_billing_meter`：统一计量表，定义 token、请求、结果、个数、秒数、字符、存储、流量等可计费维度。
 2. `ai_model_pricing`：模型价格簿，保存官方参考价、供应商成本价、客户销售价和内部结算价。
-3. `iam_gateway_api_key_group`：业务分组，保存平台、计费类型、倍率、默认策略、容量和默认定价方案。
+3. `ai_channel_group`：业务分组，保存平台、计费类型、倍率、默认策略、容量和默认定价方案。
 4. `ai_pricing_plan`：定价方案，定义默认参考价侧、默认倍率、币种、取整、缺价策略和版本。
 5. `ai_pricing_rule` + `ai_pricing_tier`：定价规则和阶梯，按模型、厂家、供应商、渠道、能力、计量表和价格项覆盖默认方案。
 6. `ai_usage_fact.pricing_snapshot`：请求完成时固化价格快照，历史账单不回查当前价格表重算。
@@ -31,7 +31,7 @@ new-api 的优点是配置简单、热路径计算直接，核心概念包括：
 
 | new-api 概念 | 作用 | Claw Router 落点 |
 | --- | --- | --- |
-| `GroupRatio` | 使用分组倍率 | `iam_gateway_api_key_group.rate_multiplier`、`ai_pricing_plan.default_multiplier` |
+| `GroupRatio` | 使用分组倍率 | `ai_channel_group.rate_multiplier`、`ai_pricing_plan.default_multiplier` |
 | `GroupGroupRatio` | 用户组到使用分组的特殊倍率 | `ai_pricing_plan_binding.multiplier_override` |
 | `ModelRatio` | 模型倍率 | `ai_pricing_rule.formula_mode=multiplier` |
 | `ModelPrice` | 固定模型价格 | `ai_pricing_rule.formula_mode=fixed` 或 `ai_model_pricing.unit_price` |
@@ -62,9 +62,9 @@ sub2api 的优点是渠道定价、区间定价和定价来源回退链比较清
 
 | sub2api 概念 | 作用 | Claw Router 落点 |
 | --- | --- | --- |
-| `groups.rate_multiplier` | 分组费率倍率 | `iam_gateway_api_key_group.rate_multiplier` |
-| `api_keys.group_id` | API Key 选择分组 | `iam_gateway_api_key.group_id`，兼容 `plus_api_key` 时通过 `legacy_api_key_id` |
-| `account_groups` | 上游账号可绑定分组 | `integration_provider_account` + 分组策略或后续 `integration_account_group_binding` |
+| `groups.rate_multiplier` | 分组费率倍率 | `ai_channel_group.rate_multiplier` |
+| `api_keys.group_id` | API Key 选择分组 | `iam_gateway_api_key.channel_group_id`，兼容 `plus_api_key` 时通过 `legacy_api_key_id` |
+| `ai_channel_groups` | 上游账号可绑定分组 | `integration_provider_account` + 分组策略或后续 `ai_channel_group_member` |
 | `user_group_rate_multipliers` | 用户专属分组倍率 | `ai_pricing_plan_binding.subject_type=user + multiplier_override` |
 | `channel_model_pricing.billing_mode` | token/per_request/image 模式 | `ai_model_pricing.billing_mode`、`ai_pricing_rule.billing_mode` |
 | `channel_pricing_intervals` | token/context/request/image 区间 | `ai_pricing_tier` |
@@ -101,14 +101,14 @@ sub2api 的优点是渠道定价、区间定价和定价来源回退链比较清
 
 ### 4.1 Group 是业务分组
 
-`iam_gateway_api_key_group` 是 `/admin/group` 和 `/console/api-keys` 的事实来源：
+`ai_channel_group` 是 `/admin/group` 和 `/console/api-keys` 的事实来源：
 
-- 创建 API Key 时选择分组：`iam_gateway_api_key.group_id`。
+- 创建 API Key 时选择分组：`iam_gateway_api_key.channel_group_id`。
 - 分组默认访问策略：`default_policy_id`。
 - 分组默认配额策略：`default_quota_policy_id`。
 - 分组默认定价方案：`pricing_plan_id`、`pricing_plan_code`。
 - 分组快速倍率：`rate_multiplier`、`official_price_multiplier`。
-- 分组容量和用量：`iam_gateway_api_key_group_metric_snapshot`。
+- 分组容量和用量：`ai_channel_group_metric_snapshot`。
 
 因此不建立 `ai_pricing_group`。这样可以避免“业务分组”和“价格分组”两个概念在 UI、API、数据表和 SDK 中互相覆盖。
 
@@ -162,7 +162,7 @@ ai_model(model = gpt-4o)
 在线请求计费解析应按以下顺序执行：
 
 1. 解析 API Key，得到 `api_key_id`、`group_id`、用户、租户、组织。
-2. 读取 `iam_gateway_api_key_group.pricing_plan_id`，再检查 `ai_pricing_plan_binding` 是否有更高优先级的 user/api_key/vip/sku 专属绑定。
+2. 读取 `ai_channel_group.pricing_plan_id`，再检查 `ai_pricing_plan_binding` 是否有更高优先级的 user/api_key/vip/sku 专属绑定。
 3. 在命中的 `ai_pricing_plan` 下匹配 `ai_pricing_rule`，优先级为 channel > provider > model > family > vendor > wildcard。
 4. 解析 `billing_meter_code` 和 `billable_quantity`。LLM 使用 token，图片可使用结果数或像素，语音/视频可使用秒数，通用 API 可使用请求数、结果数或条目数。
 5. 规则若指定 `unit_price_override`，使用固定价。
@@ -239,8 +239,8 @@ billable_quantity = ceil(media_duration_seconds / quantity_step) * quantity_step
 
 | 页面 | 数据需求 | 落点 |
 | --- | --- | --- |
-| `/console/api-keys` | 创建 Key 时选择分组；展示分组容量、额度、用量 | `iam_gateway_api_key.group_id`、`iam_gateway_api_key_group`、`iam_gateway_api_key_group_metric_snapshot` |
-| `/admin/group` | 分组、平台、计费类型、倍率、默认定价方案、账号容量、使用量 | `iam_gateway_api_key_group`、`ai_pricing_plan`、`ai_pricing_plan_binding`、`iam_gateway_api_key_group_metric_snapshot` |
+| `/console/api-keys` | 创建 Key 时选择分组；展示分组容量、额度、用量 | `iam_gateway_api_key.channel_group_id`、`ai_channel_group`、`ai_channel_group_metric_snapshot` |
+| `/admin/group` | 分组、平台、计费类型、倍率、默认定价方案、账号容量、使用量 | `ai_channel_group`、`ai_pricing_plan`、`ai_pricing_plan_binding`、`ai_channel_group_metric_snapshot` |
 | `/admin/model` | 计量表、官方价、供应商成本价、销售价、阶梯、表达式、来源 hash | `ai_billing_meter`、`ai_model_pricing`、`ai_pricing_rule`、`ai_pricing_tier`、`ai_pricing_import_snapshot` |
 | `/models` | 当前用户或默认分组可见销售价，必要时标记回退来源 | `ai_model_pricing.price_side=customer_charge`，缺失时回退 `official_reference` |
 | `/admin/record` | 计费明细、倍率、命中规则、价格快照 | `ai_usage_fact.pricing_snapshot` |
@@ -248,7 +248,7 @@ billable_quantity = ceil(media_duration_seconds / quantity_step) * quantity_step
 ## 9. 热路径和审计
 
 - 热路径读取缓存化后的 `GatewayGroupPricingSnapshot`，不在请求中多表深 join。
-- 控制面修改 `iam_gateway_api_key_group`、`ai_pricing_plan`、`ai_pricing_rule`、`ai_pricing_tier` 后必须发出 `ops_outbox_event`，网关刷新缓存。
+- 控制面修改 `ai_channel_group`、`ai_pricing_plan`、`ai_pricing_rule`、`ai_pricing_tier` 后必须发出 `ops_outbox_event`，网关刷新缓存。
 - `ai_pricing_import_snapshot` 记录来源 hash，用于判断官方价是否变化。
 - `ai_usage_fact` 是计费事实，不能因价格表变更重算历史账单。
 - `ops_audit_log` 记录后台修改价格、分组倍率、表达式、供应商成本价等高风险操作。

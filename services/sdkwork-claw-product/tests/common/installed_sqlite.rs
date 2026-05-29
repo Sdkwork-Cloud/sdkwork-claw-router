@@ -15,7 +15,7 @@ use std::time::{Duration, Instant, SystemTime, UNIX_EPOCH};
 
 const INSTALLED_SQLITE_TEMPLATE_REVISION: &str = "v2";
 const REPAIR_SQLITE_TEMPLATE_REVISION: &str = "v1";
-const SCHEMA_SQLITE_TEMPLATE_REVISION: &str = "v1";
+const SCHEMA_SQLITE_TEMPLATE_REVISION: &str = "v2";
 
 static SQLITE_DB_COUNTER: AtomicU64 = AtomicU64::new(0);
 static INSTALLED_SQLITE_TEMPLATE_LOCK: tokio::sync::Mutex<()> = tokio::sync::Mutex::const_new(());
@@ -316,8 +316,12 @@ async fn schema_sqlite_template_state_current(pool: &SqlitePool) -> bool {
 async fn sqlite_template_objects_current(pool: &SqlitePool) -> bool {
     let required_schema_objects = [
         ("table", "system_installation_state"),
-        ("table", "iam_api_key_group_channel"),
+        ("table", "ai_channel_group_member"),
         ("table", "iam_verification_scene_policy"),
+        ("table", "ai_resource"),
+        ("table", "ai_resource_group"),
+        ("table", "ai_resource_group_item"),
+        ("table", "ai_channel_endpoint"),
         ("table", "messaging_template"),
         ("table", "plus_app"),
         ("table", "plus_agent_skill"),
@@ -328,6 +332,8 @@ async fn sqlite_template_objects_current(pool: &SqlitePool) -> bool {
         ("index", "idx_plus_agent_skill_package_seed_scope"),
         ("index", "idx_plus_agent_skill_seed_scope"),
         ("index", "idx_plus_agent_skill_official_seed"),
+        ("index", "uk_ai_channel_endpoint_scope"),
+        ("index", "idx_ai_channel_endpoint_lookup"),
     ];
     for (object_type, name) in required_schema_objects {
         let exists: i64 = match sqlx::query_scalar(

@@ -182,59 +182,6 @@ def encode_query_value(value: str, allow_reserved: bool) -> str:
 
     return quote(value, safe=':/?#[]@!$&\'()*+,;=' if allow_reserved else '')
 
-def build_request_headers(headers: Dict[str, Dict[str, Any]], cookies: Optional[Dict[str, Dict[str, Any]]] = None) -> Optional[Dict[str, str]]:
-    request_headers: Dict[str, str] = {}
-    for name, parameter in headers.items():
-        serialized = serialize_parameter_value(parameter)
-        if serialized is not None:
-            request_headers[name] = serialized
-
-    cookie_header = build_cookie_header(cookies or {})
-    if cookie_header:
-        request_headers['Cookie'] = (
-            f"{request_headers['Cookie']}; {cookie_header}"
-            if 'Cookie' in request_headers
-            else cookie_header
-        )
-
-    return request_headers or None
-
-
-def build_cookie_header(cookies: Dict[str, Dict[str, Any]]) -> Optional[str]:
-    from urllib.parse import quote
-
-    pairs: List[str] = []
-    for name, parameter in cookies.items():
-        serialized = serialize_parameter_value(parameter)
-        if serialized is not None:
-            pairs.append(f"{quote(str(name), safe='')}={quote(serialized, safe='')}")
-    return '; '.join(pairs) if pairs else None
-
-
-def serialize_parameter_value(parameter: Optional[Dict[str, Any]]) -> Optional[str]:
-    value = None if parameter is None else parameter.get('value')
-    if value is None:
-        return None
-    if parameter and parameter.get('content_type'):
-        import json
-
-        return json.dumps(value, separators=(',', ':'))
-    if isinstance(value, (list, tuple)):
-        return ','.join(serialize_header_primitive(item) for item in value if item is not None)
-    if isinstance(value, dict):
-        return serialize_header_object(value, bool(parameter and parameter.get('explode')))
-    return serialize_header_primitive(value)
-
-
-def serialize_header_object(value: Dict[str, Any], explode: bool) -> str:
-    entries = [(key, entry_value) for key, entry_value in value.items() if entry_value is not None]
-    if explode:
-        return ','.join(f"{key}={serialize_header_primitive(entry_value)}" for key, entry_value in entries)
-    return ','.join(item for key, entry_value in entries for item in (str(key), serialize_header_primitive(entry_value)))
-
-
-def serialize_header_primitive(value: Any) -> str:
-    return str(value)
 
 
 class EcosystemApi:
@@ -271,15 +218,9 @@ class EcosystemSkillsApi:
         ])
         return self._client.get(_append_query_string(f"/backend/v3/api/ecosystem/skills", query))
 
-    def create(self, body: AdminSkillCreateRequest, x_request_id: Optional[str] = None) -> SkillsCreateResult:
+    def create(self, body: AdminSkillCreateRequest) -> SkillsCreateResult:
         """Create skill"""
-        request_headers = build_request_headers(
-            {
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
-            },
-            {}
-        )
-        return self._client.post(f"/backend/v3/api/ecosystem/skills", json=body, headers=request_headers)
+        return self._client.post(f"/backend/v3/api/ecosystem/skills", json=body)
 
     def delete(self, skill_id: str) -> SkillsDeleteResult:
         """Delete skill"""
@@ -289,55 +230,25 @@ class EcosystemSkillsApi:
         """Get skill"""
         return self._client.get(f"/backend/v3/api/ecosystem/skills/{serialize_path_parameter(skill_id, {'name': 'skillId', 'style': 'simple', 'explode': False})}")
 
-    def update(self, skill_id: str, body: AdminSkillUpdateRequest, x_request_id: Optional[str] = None) -> SkillsUpdateResult:
+    def update(self, skill_id: str, body: AdminSkillUpdateRequest) -> SkillsUpdateResult:
         """Update skill"""
-        request_headers = build_request_headers(
-            {
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
-            },
-            {}
-        )
-        return self._client.put(f"/backend/v3/api/ecosystem/skills/{serialize_path_parameter(skill_id, {'name': 'skillId', 'style': 'simple', 'explode': False})}", json=body, headers=request_headers)
+        return self._client.put(f"/backend/v3/api/ecosystem/skills/{serialize_path_parameter(skill_id, {'name': 'skillId', 'style': 'simple', 'explode': False})}", json=body)
 
-    def disable(self, skill_id: str, x_request_id: Optional[str] = None) -> SkillsDisableResult:
+    def disable(self, skill_id: str) -> SkillsDisableResult:
         """Disable skill"""
-        request_headers = build_request_headers(
-            {
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
-            },
-            {}
-        )
-        return self._client.post(f"/backend/v3/api/ecosystem/skills/{serialize_path_parameter(skill_id, {'name': 'skillId', 'style': 'simple', 'explode': False})}/disable", headers=request_headers)
+        return self._client.post(f"/backend/v3/api/ecosystem/skills/{serialize_path_parameter(skill_id, {'name': 'skillId', 'style': 'simple', 'explode': False})}/disable")
 
-    def enable(self, skill_id: str, x_request_id: Optional[str] = None) -> SkillsEnableResult:
+    def enable(self, skill_id: str) -> SkillsEnableResult:
         """Enable skill"""
-        request_headers = build_request_headers(
-            {
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
-            },
-            {}
-        )
-        return self._client.post(f"/backend/v3/api/ecosystem/skills/{serialize_path_parameter(skill_id, {'name': 'skillId', 'style': 'simple', 'explode': False})}/enable", headers=request_headers)
+        return self._client.post(f"/backend/v3/api/ecosystem/skills/{serialize_path_parameter(skill_id, {'name': 'skillId', 'style': 'simple', 'explode': False})}/enable")
 
-    def publish(self, skill_id: str, x_request_id: Optional[str] = None) -> SkillsPublishResult:
+    def publish(self, skill_id: str) -> SkillsPublishResult:
         """Publish skill"""
-        request_headers = build_request_headers(
-            {
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
-            },
-            {}
-        )
-        return self._client.post(f"/backend/v3/api/ecosystem/skills/{serialize_path_parameter(skill_id, {'name': 'skillId', 'style': 'simple', 'explode': False})}/publish", headers=request_headers)
+        return self._client.post(f"/backend/v3/api/ecosystem/skills/{serialize_path_parameter(skill_id, {'name': 'skillId', 'style': 'simple', 'explode': False})}/publish")
 
-    def unpublish(self, skill_id: str, x_request_id: Optional[str] = None) -> SkillsUnpublishResult:
+    def unpublish(self, skill_id: str) -> SkillsUnpublishResult:
         """Offline skill"""
-        request_headers = build_request_headers(
-            {
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
-            },
-            {}
-        )
-        return self._client.post(f"/backend/v3/api/ecosystem/skills/{serialize_path_parameter(skill_id, {'name': 'skillId', 'style': 'simple', 'explode': False})}/unpublish", headers=request_headers)
+        return self._client.post(f"/backend/v3/api/ecosystem/skills/{serialize_path_parameter(skill_id, {'name': 'skillId', 'style': 'simple', 'explode': False})}/unpublish")
 
 class EcosystemSkillsCategoriesApi:
     """ecosystem ecosystem.skills.categories API client."""
@@ -350,35 +261,17 @@ class EcosystemSkillsCategoriesApi:
         """List skill categories"""
         return self._client.get(f"/backend/v3/api/ecosystem/skills/categories")
 
-    def create(self, body: AdminSkillCategoryCreateRequest, x_request_id: Optional[str] = None) -> SkillsCategoriesCreateResult:
+    def create(self, body: AdminSkillCategoryCreateRequest) -> SkillsCategoriesCreateResult:
         """Create skill category"""
-        request_headers = build_request_headers(
-            {
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
-            },
-            {}
-        )
-        return self._client.post(f"/backend/v3/api/ecosystem/skills/categories", json=body, headers=request_headers)
+        return self._client.post(f"/backend/v3/api/ecosystem/skills/categories", json=body)
 
-    def delete(self, category_id: str, x_request_id: Optional[str] = None) -> SkillsCategoriesDeleteResult:
+    def delete(self, category_id: str) -> SkillsCategoriesDeleteResult:
         """Delete skill category"""
-        request_headers = build_request_headers(
-            {
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
-            },
-            {}
-        )
-        return self._client.delete(f"/backend/v3/api/ecosystem/skills/categories/{serialize_path_parameter(category_id, {'name': 'categoryId', 'style': 'simple', 'explode': False})}", headers=request_headers)
+        return self._client.delete(f"/backend/v3/api/ecosystem/skills/categories/{serialize_path_parameter(category_id, {'name': 'categoryId', 'style': 'simple', 'explode': False})}")
 
-    def update(self, category_id: str, body: AdminSkillCategoryUpdateRequest, x_request_id: Optional[str] = None) -> SkillsCategoriesUpdateResult:
+    def update(self, category_id: str, body: AdminSkillCategoryUpdateRequest) -> SkillsCategoriesUpdateResult:
         """Update skill category"""
-        request_headers = build_request_headers(
-            {
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
-            },
-            {}
-        )
-        return self._client.put(f"/backend/v3/api/ecosystem/skills/categories/{serialize_path_parameter(category_id, {'name': 'categoryId', 'style': 'simple', 'explode': False})}", json=body, headers=request_headers)
+        return self._client.put(f"/backend/v3/api/ecosystem/skills/categories/{serialize_path_parameter(category_id, {'name': 'categoryId', 'style': 'simple', 'explode': False})}", json=body)
 
 class EcosystemSkillsPackageApi:
     """ecosystem ecosystem.skills.package API client."""
@@ -398,15 +291,9 @@ class EcosystemSkillsPackageApi:
         ])
         return self._client.get(_append_query_string(f"/backend/v3/api/ecosystem/skills/package", query))
 
-    def create(self, body: AdminSkillPackageCreateRequest, x_request_id: Optional[str] = None) -> SkillsPackageCreateResult:
+    def create(self, body: AdminSkillPackageCreateRequest) -> SkillsPackageCreateResult:
         """Create skill package"""
-        request_headers = build_request_headers(
-            {
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
-            },
-            {}
-        )
-        return self._client.post(f"/backend/v3/api/ecosystem/skills/package", json=body, headers=request_headers)
+        return self._client.post(f"/backend/v3/api/ecosystem/skills/package", json=body)
 
     def delete(self, package_id: str) -> SkillsPackageDeleteResult:
         """Delete skill package"""
@@ -416,35 +303,17 @@ class EcosystemSkillsPackageApi:
         """Get skill package"""
         return self._client.get(f"/backend/v3/api/ecosystem/skills/package/{serialize_path_parameter(package_id, {'name': 'packageId', 'style': 'simple', 'explode': False})}")
 
-    def update(self, package_id: str, body: AdminSkillPackageUpdateRequest, x_request_id: Optional[str] = None) -> SkillsPackageUpdateResult:
+    def update(self, package_id: str, body: AdminSkillPackageUpdateRequest) -> SkillsPackageUpdateResult:
         """Update skill package"""
-        request_headers = build_request_headers(
-            {
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
-            },
-            {}
-        )
-        return self._client.put(f"/backend/v3/api/ecosystem/skills/package/{serialize_path_parameter(package_id, {'name': 'packageId', 'style': 'simple', 'explode': False})}", json=body, headers=request_headers)
+        return self._client.put(f"/backend/v3/api/ecosystem/skills/package/{serialize_path_parameter(package_id, {'name': 'packageId', 'style': 'simple', 'explode': False})}", json=body)
 
-    def disable(self, package_id: str, x_request_id: Optional[str] = None) -> SkillsPackageDisableResult:
+    def disable(self, package_id: str) -> SkillsPackageDisableResult:
         """Disable skill package"""
-        request_headers = build_request_headers(
-            {
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
-            },
-            {}
-        )
-        return self._client.post(f"/backend/v3/api/ecosystem/skills/package/{serialize_path_parameter(package_id, {'name': 'packageId', 'style': 'simple', 'explode': False})}/disable", headers=request_headers)
+        return self._client.post(f"/backend/v3/api/ecosystem/skills/package/{serialize_path_parameter(package_id, {'name': 'packageId', 'style': 'simple', 'explode': False})}/disable")
 
-    def enable(self, package_id: str, x_request_id: Optional[str] = None) -> SkillsPackageEnableResult:
+    def enable(self, package_id: str) -> SkillsPackageEnableResult:
         """Enable skill package"""
-        request_headers = build_request_headers(
-            {
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
-            },
-            {}
-        )
-        return self._client.post(f"/backend/v3/api/ecosystem/skills/package/{serialize_path_parameter(package_id, {'name': 'packageId', 'style': 'simple', 'explode': False})}/enable", headers=request_headers)
+        return self._client.post(f"/backend/v3/api/ecosystem/skills/package/{serialize_path_parameter(package_id, {'name': 'packageId', 'style': 'simple', 'explode': False})}/enable")
 
 class EcosystemSkillsArtifactsApi:
     """ecosystem ecosystem.skills.artifacts API client."""
@@ -457,39 +326,21 @@ class EcosystemSkillsArtifactsApi:
         """List skill artifacts"""
         return self._client.get(f"/backend/v3/api/ecosystem/skills/{serialize_path_parameter(skill_id, {'name': 'skillId', 'style': 'simple', 'explode': False})}/artifacts")
 
-    def create(self, skill_id: str, body: AdminSkillArtifactCreateRequest, x_request_id: Optional[str] = None) -> SkillsArtifactsCreateResult:
+    def create(self, skill_id: str, body: AdminSkillArtifactCreateRequest) -> SkillsArtifactsCreateResult:
         """Create skill artifact"""
-        request_headers = build_request_headers(
-            {
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
-            },
-            {}
-        )
-        return self._client.post(f"/backend/v3/api/ecosystem/skills/{serialize_path_parameter(skill_id, {'name': 'skillId', 'style': 'simple', 'explode': False})}/artifacts", json=body, headers=request_headers)
+        return self._client.post(f"/backend/v3/api/ecosystem/skills/{serialize_path_parameter(skill_id, {'name': 'skillId', 'style': 'simple', 'explode': False})}/artifacts", json=body)
 
-    def delete(self, skill_id: str, artifact_id: str, x_request_id: Optional[str] = None) -> SkillsArtifactsDeleteResult:
+    def delete(self, skill_id: str, artifact_id: str) -> SkillsArtifactsDeleteResult:
         """Delete skill artifact"""
-        request_headers = build_request_headers(
-            {
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
-            },
-            {}
-        )
-        return self._client.delete(f"/backend/v3/api/ecosystem/skills/{serialize_path_parameter(skill_id, {'name': 'skillId', 'style': 'simple', 'explode': False})}/artifacts/{serialize_path_parameter(artifact_id, {'name': 'artifactId', 'style': 'simple', 'explode': False})}", headers=request_headers)
+        return self._client.delete(f"/backend/v3/api/ecosystem/skills/{serialize_path_parameter(skill_id, {'name': 'skillId', 'style': 'simple', 'explode': False})}/artifacts/{serialize_path_parameter(artifact_id, {'name': 'artifactId', 'style': 'simple', 'explode': False})}")
 
     def retrieve(self, skill_id: str, artifact_id: str) -> SkillsArtifactsRetrieveResult:
         """Get skill artifact"""
         return self._client.get(f"/backend/v3/api/ecosystem/skills/{serialize_path_parameter(skill_id, {'name': 'skillId', 'style': 'simple', 'explode': False})}/artifacts/{serialize_path_parameter(artifact_id, {'name': 'artifactId', 'style': 'simple', 'explode': False})}")
 
-    def update(self, skill_id: str, artifact_id: str, body: AdminSkillArtifactUpdateRequest, x_request_id: Optional[str] = None) -> SkillsArtifactsUpdateResult:
+    def update(self, skill_id: str, artifact_id: str, body: AdminSkillArtifactUpdateRequest) -> SkillsArtifactsUpdateResult:
         """Update skill artifact"""
-        request_headers = build_request_headers(
-            {
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
-            },
-            {}
-        )
-        return self._client.put(f"/backend/v3/api/ecosystem/skills/{serialize_path_parameter(skill_id, {'name': 'skillId', 'style': 'simple', 'explode': False})}/artifacts/{serialize_path_parameter(artifact_id, {'name': 'artifactId', 'style': 'simple', 'explode': False})}", json=body, headers=request_headers)
+        return self._client.put(f"/backend/v3/api/ecosystem/skills/{serialize_path_parameter(skill_id, {'name': 'skillId', 'style': 'simple', 'explode': False})}/artifacts/{serialize_path_parameter(artifact_id, {'name': 'artifactId', 'style': 'simple', 'explode': False})}", json=body)
 
 class EcosystemSkillsAssetsApi:
     """ecosystem ecosystem.skills.assets API client."""
@@ -502,39 +353,21 @@ class EcosystemSkillsAssetsApi:
         """List skill assets"""
         return self._client.get(f"/backend/v3/api/ecosystem/skills/{serialize_path_parameter(skill_id, {'name': 'skillId', 'style': 'simple', 'explode': False})}/assets")
 
-    def create(self, skill_id: str, body: AdminSkillAssetCreateRequest, x_request_id: Optional[str] = None) -> SkillsAssetsCreateResult:
+    def create(self, skill_id: str, body: AdminSkillAssetCreateRequest) -> SkillsAssetsCreateResult:
         """Create skill asset"""
-        request_headers = build_request_headers(
-            {
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
-            },
-            {}
-        )
-        return self._client.post(f"/backend/v3/api/ecosystem/skills/{serialize_path_parameter(skill_id, {'name': 'skillId', 'style': 'simple', 'explode': False})}/assets", json=body, headers=request_headers)
+        return self._client.post(f"/backend/v3/api/ecosystem/skills/{serialize_path_parameter(skill_id, {'name': 'skillId', 'style': 'simple', 'explode': False})}/assets", json=body)
 
-    def delete(self, skill_id: str, asset_id: str, x_request_id: Optional[str] = None) -> SkillsAssetsDeleteResult:
+    def delete(self, skill_id: str, asset_id: str) -> SkillsAssetsDeleteResult:
         """Delete skill asset"""
-        request_headers = build_request_headers(
-            {
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
-            },
-            {}
-        )
-        return self._client.delete(f"/backend/v3/api/ecosystem/skills/{serialize_path_parameter(skill_id, {'name': 'skillId', 'style': 'simple', 'explode': False})}/assets/{serialize_path_parameter(asset_id, {'name': 'assetId', 'style': 'simple', 'explode': False})}", headers=request_headers)
+        return self._client.delete(f"/backend/v3/api/ecosystem/skills/{serialize_path_parameter(skill_id, {'name': 'skillId', 'style': 'simple', 'explode': False})}/assets/{serialize_path_parameter(asset_id, {'name': 'assetId', 'style': 'simple', 'explode': False})}")
 
     def retrieve(self, skill_id: str, asset_id: str) -> SkillsAssetsRetrieveResult:
         """Get skill asset"""
         return self._client.get(f"/backend/v3/api/ecosystem/skills/{serialize_path_parameter(skill_id, {'name': 'skillId', 'style': 'simple', 'explode': False})}/assets/{serialize_path_parameter(asset_id, {'name': 'assetId', 'style': 'simple', 'explode': False})}")
 
-    def update(self, skill_id: str, asset_id: str, body: AdminSkillAssetUpdateRequest, x_request_id: Optional[str] = None) -> SkillsAssetsUpdateResult:
+    def update(self, skill_id: str, asset_id: str, body: AdminSkillAssetUpdateRequest) -> SkillsAssetsUpdateResult:
         """Update skill asset"""
-        request_headers = build_request_headers(
-            {
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
-            },
-            {}
-        )
-        return self._client.put(f"/backend/v3/api/ecosystem/skills/{serialize_path_parameter(skill_id, {'name': 'skillId', 'style': 'simple', 'explode': False})}/assets/{serialize_path_parameter(asset_id, {'name': 'assetId', 'style': 'simple', 'explode': False})}", json=body, headers=request_headers)
+        return self._client.put(f"/backend/v3/api/ecosystem/skills/{serialize_path_parameter(skill_id, {'name': 'skillId', 'style': 'simple', 'explode': False})}/assets/{serialize_path_parameter(asset_id, {'name': 'assetId', 'style': 'simple', 'explode': False})}", json=body)
 
 class EcosystemSkillsReviewApi:
     """ecosystem ecosystem.skills.review API client."""
@@ -543,22 +376,10 @@ class EcosystemSkillsReviewApi:
         self._client = client
 
 
-    def approve(self, skill_id: str, body: AdminSkillReviewRequest, x_request_id: Optional[str] = None) -> SkillsReviewApproveResult:
+    def approve(self, skill_id: str, body: AdminSkillReviewRequest) -> SkillsReviewApproveResult:
         """Approve skill"""
-        request_headers = build_request_headers(
-            {
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
-            },
-            {}
-        )
-        return self._client.post(f"/backend/v3/api/ecosystem/skills/{serialize_path_parameter(skill_id, {'name': 'skillId', 'style': 'simple', 'explode': False})}/review/approve", json=body, headers=request_headers)
+        return self._client.post(f"/backend/v3/api/ecosystem/skills/{serialize_path_parameter(skill_id, {'name': 'skillId', 'style': 'simple', 'explode': False})}/review/approve", json=body)
 
-    def reject(self, skill_id: str, body: AdminSkillReviewRequest, x_request_id: Optional[str] = None) -> SkillsReviewRejectResult:
+    def reject(self, skill_id: str, body: AdminSkillReviewRequest) -> SkillsReviewRejectResult:
         """Reject skill"""
-        request_headers = build_request_headers(
-            {
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
-            },
-            {}
-        )
-        return self._client.post(f"/backend/v3/api/ecosystem/skills/{serialize_path_parameter(skill_id, {'name': 'skillId', 'style': 'simple', 'explode': False})}/review/reject", json=body, headers=request_headers)
+        return self._client.post(f"/backend/v3/api/ecosystem/skills/{serialize_path_parameter(skill_id, {'name': 'skillId', 'style': 'simple', 'explode': False})}/review/reject", json=body)

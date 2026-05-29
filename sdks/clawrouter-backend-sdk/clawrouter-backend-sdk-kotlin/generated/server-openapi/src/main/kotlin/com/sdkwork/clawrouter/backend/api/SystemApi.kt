@@ -138,14 +138,8 @@ class SystemApi(private val client: HttpClient) {
     }
 
     /** Update IAM auth runtime settings */
-    suspend fun authSettingsUpdate(body: AdminAuthSettingsUpdateRequest, xRequestId: String? = null): AuthSettingsUpdateResult? {
-        val requestHeaders = buildRequestHeaders(
-            mapOf(
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
-            ),
-            emptyMap()
-        )
-        val raw = client.patch(ApiPaths.backendPath("/system/auth/settings"), body, null, requestHeaders, "application/json")
+    suspend fun authSettingsUpdate(body: AdminAuthSettingsUpdateRequest): AuthSettingsUpdateResult? {
+        val raw = client.patch(ApiPaths.backendPath("/system/auth/settings"), body, null, null, "application/json")
         return client.convertValue(raw, object : TypeReference<AuthSettingsUpdateResult>() {})
     }
 
@@ -214,14 +208,8 @@ class SystemApi(private val client: HttpClient) {
     }
 
     /** Create firewall */
-    suspend fun firewallsRulesCreate(body: AdminFirewallRuleCreateRequest, xRequestId: String? = null): FirewallsRulesCreateResult? {
-        val requestHeaders = buildRequestHeaders(
-            mapOf(
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
-            ),
-            emptyMap()
-        )
-        val raw = client.post(ApiPaths.backendPath("/system/firewalls/rules"), body, null, requestHeaders, "application/json")
+    suspend fun firewallsRulesCreate(body: AdminFirewallRuleCreateRequest): FirewallsRulesCreateResult? {
+        val raw = client.post(ApiPaths.backendPath("/system/firewalls/rules"), body, null, null, "application/json")
         return client.convertValue(raw, object : TypeReference<FirewallsRulesCreateResult>() {})
     }
 
@@ -268,14 +256,8 @@ class SystemApi(private val client: HttpClient) {
     }
 
     /** Create token limit */
-    suspend fun rateLimitsApiKeysCreate(body: AdminTokenLimitCreateRequest, xRequestId: String? = null): RateLimitsApiKeysCreateResult? {
-        val requestHeaders = buildRequestHeaders(
-            mapOf(
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
-            ),
-            emptyMap()
-        )
-        val raw = client.post(ApiPaths.backendPath("/system/rate_limits/api_keys"), body, null, requestHeaders, "application/json")
+    suspend fun rateLimitsApiKeysCreate(body: AdminTokenLimitCreateRequest): RateLimitsApiKeysCreateResult? {
+        val raw = client.post(ApiPaths.backendPath("/system/rate_limits/api_keys"), body, null, null, "application/json")
         return client.convertValue(raw, object : TypeReference<RateLimitsApiKeysCreateResult>() {})
     }
 
@@ -286,14 +268,8 @@ class SystemApi(private val client: HttpClient) {
     }
 
     /** Create IP limit */
-    suspend fun rateLimitsIpCreate(body: AdminIpLimitCreateRequest, xRequestId: String? = null): RateLimitsIpCreateResult? {
-        val requestHeaders = buildRequestHeaders(
-            mapOf(
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
-            ),
-            emptyMap()
-        )
-        val raw = client.post(ApiPaths.backendPath("/system/rate_limits/ip"), body, null, requestHeaders, "application/json")
+    suspend fun rateLimitsIpCreate(body: AdminIpLimitCreateRequest): RateLimitsIpCreateResult? {
+        val raw = client.post(ApiPaths.backendPath("/system/rate_limits/ip"), body, null, null, "application/json")
         return client.convertValue(raw, object : TypeReference<RateLimitsIpCreateResult>() {})
     }
 
@@ -304,14 +280,8 @@ class SystemApi(private val client: HttpClient) {
     }
 
     /** Create model limit */
-    suspend fun rateLimitsModelsCreate(body: AdminModelLimitCreateRequest, xRequestId: String? = null): RateLimitsModelsCreateResult? {
-        val requestHeaders = buildRequestHeaders(
-            mapOf(
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
-            ),
-            emptyMap()
-        )
-        val raw = client.post(ApiPaths.backendPath("/system/rate_limits/models"), body, null, requestHeaders, "application/json")
+    suspend fun rateLimitsModelsCreate(body: AdminModelLimitCreateRequest): RateLimitsModelsCreateResult? {
+        val raw = client.post(ApiPaths.backendPath("/system/rate_limits/models"), body, null, null, "application/json")
         return client.convertValue(raw, object : TypeReference<RateLimitsModelsCreateResult>() {})
     }
 
@@ -326,6 +296,18 @@ class SystemApi(private val client: HttpClient) {
         ))
         val raw = client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/system/records"), query))
         return client.convertValue(raw, object : TypeReference<RecordsListResult>() {})
+    }
+
+    /** Retrieve runtime region settings */
+    suspend fun runtimeRegionSettingsRetrieve(): RuntimeRegionSettingsRetrieveResult? {
+        val raw = client.get(ApiPaths.backendPath("/system/runtime_region/settings"))
+        return client.convertValue(raw, object : TypeReference<RuntimeRegionSettingsRetrieveResult>() {})
+    }
+
+    /** Update runtime region settings */
+    suspend fun runtimeRegionSettingsUpdate(body: AdminRuntimeRegionSettingsUpdateRequest): RuntimeRegionSettingsUpdateResult? {
+        val raw = client.patch(ApiPaths.backendPath("/system/runtime_region/settings"), body, null, null, "application/json")
+        return client.convertValue(raw, object : TypeReference<RuntimeRegionSettingsUpdateResult>() {})
     }
 
     /** List service nodes */
@@ -369,14 +351,8 @@ class SystemApi(private val client: HttpClient) {
     }
 
     /** Update site branding and deployment personalization settings */
-    suspend fun siteSettingsUpdate(body: AdminSiteSettingsUpdateRequest, xRequestId: String? = null): SiteSettingsUpdateResult? {
-        val requestHeaders = buildRequestHeaders(
-            mapOf(
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
-            ),
-            emptyMap()
-        )
-        val raw = client.patch(ApiPaths.backendPath("/system/site/settings"), body, null, requestHeaders, "application/json")
+    suspend fun siteSettingsUpdate(body: AdminSiteSettingsUpdateRequest): SiteSettingsUpdateResult? {
+        val raw = client.patch(ApiPaths.backendPath("/system/site/settings"), body, null, null, "application/json")
         return client.convertValue(raw, object : TypeReference<SiteSettingsUpdateResult>() {})
     }
 
@@ -552,50 +528,4 @@ class SystemApi(private val client: HttpClient) {
         return java.net.URLEncoder.encode(value, java.nio.charset.StandardCharsets.UTF_8)
     }
 
-    private data class HeaderParameterSpec(val value: Any?, val style: String, val explode: Boolean, val contentType: String?)
-
-    private val headerObjectMapper = ObjectMapper().registerKotlinModule()
-
-    private fun buildRequestHeaders(headers: Map<String, HeaderParameterSpec>, cookies: Map<String, HeaderParameterSpec>): Map<String, String>? {
-        val requestHeaders = linkedMapOf<String, String>()
-        headers.forEach { (name, parameter) ->
-            serializeParameterValue(parameter)?.let { requestHeaders[name] = it }
-        }
-
-        val cookieHeader = buildCookieHeader(cookies)
-        if (cookieHeader.isNotEmpty()) {
-            requestHeaders["Cookie"] = requestHeaders["Cookie"]?.let { "$it; $cookieHeader" } ?: cookieHeader
-        }
-
-        return requestHeaders.takeIf { it.isNotEmpty() }
-    }
-
-    private fun buildCookieHeader(cookies: Map<String, HeaderParameterSpec>): String {
-        return cookies.mapNotNull { (name, parameter) ->
-            serializeParameterValue(parameter)?.let {
-                java.net.URLEncoder.encode(name, java.nio.charset.StandardCharsets.UTF_8) + "=" +
-                    java.net.URLEncoder.encode(it, java.nio.charset.StandardCharsets.UTF_8)
-            }
-        }.joinToString("; ")
-    }
-
-    private fun serializeParameterValue(parameter: HeaderParameterSpec?): String? {
-        val value = parameter?.value ?: return null
-        if (!parameter.contentType.isNullOrBlank()) {
-            return headerObjectMapper.writeValueAsString(value)
-        }
-        return when (value) {
-            is Iterable<*> -> value.mapNotNull { it?.toString() }.joinToString(",")
-            is Map<*, *> -> value.mapNotNull { (key, item) ->
-                if (item == null) {
-                    null
-                } else if (parameter.explode) {
-                    "$key=$item"
-                } else {
-                    listOf(key.toString(), item.toString()).joinToString(",")
-                }
-            }.joinToString(",")
-            else -> value.toString()
-        }
-    }
 }

@@ -25,7 +25,6 @@ class AdminAiModelCreateRequest:
     limitations: Optional[List[str]] = None
     max_output_tokens: Optional[int] = None
     modalities: Optional[List[str]] = None
-    name: Optional[str] = None
     output_modalities: Optional[List[str]] = None
     region_prices: Optional[List[AdminAiModelRegionPrice]] = None
     release_stage: Optional[int] = None

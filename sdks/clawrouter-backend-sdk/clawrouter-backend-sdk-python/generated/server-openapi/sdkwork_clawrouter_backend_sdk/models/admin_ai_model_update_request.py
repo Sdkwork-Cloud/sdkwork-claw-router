@@ -21,7 +21,6 @@ class AdminAiModelUpdateRequest:
     max_output_tokens: Optional[int] = None
     modalities: Optional[List[str]] = None
     model: Optional[str] = None
-    name: Optional[str] = None
     output_modalities: Optional[List[str]] = None
     price_in: Optional[str] = None
     price_out: Optional[str] = None

@@ -30,7 +30,7 @@ The main improvements made in this pass are:
   as `windows-x64-service`, `linux-arm64-container`, and
   `macos-arm64-desktop`
 - server release packages (`archive`, `service`, and `container`) now default
-  to PostgreSQL through `config/sdkwork-claw-router.toml.example`, while
+  to PostgreSQL through `config/clawrouter.toml.example`, while
   desktop packages default to a local SQLite database in the OS user data
   directory
 - runtime database configuration is now shared by the gateway, installer,
@@ -74,8 +74,10 @@ The main improvements made in this pass are:
   `tools.frontend_static_source_manifest` generates the `sha256` hashes in
   `generated/schema/frontend/frontend-static-source-manifest.json`
 - stricter delivery-document standards: root `README.md` and
-  `CHECK_RESULT.md` are ASCII-only and include the commands and environment
-  variables needed for repeatable delivery verification
+  `CHECK_RESULT.md` are readable UTF-8 without mojibake, replacement
+  characters, private-use code points, or control characters, and include the
+  commands and environment variables needed for repeatable delivery
+  verification
 - stricter frontend source hygiene: production portal source cannot ship
   mock/fake business naming, known mojibake text, or browser runtime console
   logging outside copyable documentation examples
@@ -3418,7 +3420,7 @@ Solution applied:
   deployment modes
 - every package contract declares the edge binary, installer binary,
   `portal/dist`, `portal/dist/sdk-archives`, `.env.release.example`,
-  `config/sdkwork-claw-router.toml.example`, `install-manifest.json`,
+  `config/clawrouter.toml.example`, `install-manifest.json`,
   mode-specific service/container/desktop metadata, fast init commands, and
   `/healthz` plus `/readyz`
 - archive, service, and container are server release profiles and default to PostgreSQL

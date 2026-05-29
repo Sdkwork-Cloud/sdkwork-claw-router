@@ -3610,6 +3610,14 @@ x_response_entities:
     - group
     - type
     - model
+    - providerNativeModel
+    - requestedModelCatalogKey
+    - status
+    - httpStatus
+    - httpMethod
+    - errorCode
+    - errorType
+    - errorMessage
     - totalTime
     - ttft
     - isStream
@@ -3624,6 +3632,7 @@ x_response_entities:
     - path
     - reasoningEffort
     - ip
+    - userAgent
     properties:
       id:
         type: string
@@ -3657,6 +3666,40 @@ x_response_entities:
         type: string
         minLength: 1
         maxLength: 128
+      providerNativeModel:
+        type: string
+        maxLength: 128
+      requestedModelCatalogKey:
+        type: string
+        maxLength: 256
+      status:
+        type: string
+        enum:
+        - success
+        - error
+      httpStatus:
+        type: integer
+        format: int64
+        minimum: 0
+      httpMethod:
+        type: string
+        enum:
+        - GET
+        - POST
+        - PUT
+        - PATCH
+        - DELETE
+        - OPTIONS
+        - HEAD
+      errorCode:
+        type: string
+        maxLength: 128
+      errorType:
+        type: string
+        maxLength: 128
+      errorMessage:
+        type: string
+        maxLength: 2048
       totalTime:
         type: string
         minLength: 1
@@ -3705,6 +3748,10 @@ x_response_entities:
         type: string
         minLength: 1
         maxLength: 128
+      userAgent:
+        type: string
+        maxLength: 1024
+        description: Full HTTP User-Agent header captured from the gateway request. Empty when the client omitted the header.
   admin_api_keys_map_response:
     name: AdminApiKeysMapResponse
     type: object

@@ -5,6 +5,8 @@ from pathlib import Path
 
 import yaml
 
+from tools.schema_registry_loader import render_schema_registry
+
 
 ROOT = Path(__file__).resolve().parents[1]
 COURSES_PACKAGE = (
@@ -372,7 +374,7 @@ class CoursesRuntimeStandardTest(unittest.TestCase):
         ports_source = ports_path.read_text(encoding="utf-8")
         sqlite_store_source = sqlite_store_path.read_text(encoding="utf-8")
         postgres_store_source = postgres_store_path.read_text(encoding="utf-8")
-        schema_source = schema_path.read_text(encoding="utf-8")
+        schema_source = render_schema_registry(schema_path)
         frontend_contract_source = frontend_contract_path.read_text(encoding="utf-8")
         catalog_source = catalog_path.read_text(encoding="utf-8")
         product_test_source = product_test_path.read_text(encoding="utf-8")

@@ -25,7 +25,7 @@ async fn sqlite_gateway_usage_recorder_upserts_trace_and_usage_fact_without_dupl
     recorder.record_gateway_usage(command).await.unwrap();
 
     let trace = sqlx::query(
-        "SELECT request_id, trace_id, tenant_id, organization_id, user_id, api_key_id, api_key_group_snapshot, requested_model, requested_model_catalog_key, provider_model, provider_native_model, http_status, streaming, prompt_tokens, completion_tokens, total_tokens FROM ai_request_trace",
+        "SELECT request_id, trace_id, tenant_id, organization_id, user_id, api_key_id, channel_group_snapshot, requested_model, requested_model_catalog_key, provider_model, provider_native_model, http_status, streaming, prompt_tokens, completion_tokens, total_tokens, metadata, user_agent_hash FROM ai_request_trace",
     )
     .fetch_one(&pool)
     .await
@@ -44,7 +44,7 @@ async fn sqlite_gateway_usage_recorder_upserts_trace_and_usage_fact_without_dupl
     assert_eq!(101_i64, trace.get::<i64, _>("api_key_id"));
     assert_eq!(
         "standard-group",
-        trace.get::<String, _>("api_key_group_snapshot")
+        trace.get::<String, _>("channel_group_snapshot")
     );
     assert_eq!("gpt-4o-mini", trace.get::<String, _>("requested_model"));
     assert_eq!(
@@ -61,6 +61,15 @@ async fn sqlite_gateway_usage_recorder_upserts_trace_and_usage_fact_without_dupl
     assert_eq!(11_i64, trace.get::<i64, _>("prompt_tokens"));
     assert_eq!(7_i64, trace.get::<i64, _>("completion_tokens"));
     assert_eq!(18_i64, trace.get::<i64, _>("total_tokens"));
+    let trace_metadata: serde_json::Value =
+        serde_json::from_str(&trace.get::<String, _>("metadata")).unwrap();
+    assert_eq!(
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/126.0.0.0",
+        trace_metadata["userAgent"]
+    );
+    let user_agent_hash = trace.get::<String, _>("user_agent_hash");
+    assert_eq!(64, user_agent_hash.len());
+    assert!(user_agent_hash.chars().all(|ch| ch.is_ascii_hexdigit()));
 
     let usage = sqlx::query(
         "SELECT request_id, api_key_id, catalog_key, requested_model_catalog_key, model, provider_native_model, channel_id, usage_type, billing_meter_code, billable_quantity, prompt_tokens, completion_tokens, cached_tokens, total_tokens, base_input_unit_price, base_output_unit_price, cache_read_unit_price, rate_multiplier, reference_multiplier, official_reference_amount, upstream_cost_amount, customer_charge_amount, cost_amount, currency, pricing_plan_code, pricing_snapshot, occurred_at, settlement_status FROM ai_usage_fact",
@@ -175,7 +184,7 @@ async fn sqlite_gateway_usage_recorder_records_failed_trace_without_usage_fact()
     let trace = sqlx::query(
         r#"
         SELECT request_id, trace_id, tenant_id, organization_id, user_id, api_key_id,
-               api_key_group_snapshot, requested_model, requested_model_catalog_key,
+               channel_group_snapshot, requested_model, requested_model_catalog_key,
                provider_model, provider_native_model, http_status,
                provider_error_code, error_type, error_message_masked, latency_ms,
                streaming, prompt_tokens, completion_tokens, total_tokens
@@ -200,7 +209,7 @@ async fn sqlite_gateway_usage_recorder_records_failed_trace_without_usage_fact()
     assert_eq!(101_i64, trace.get::<i64, _>("api_key_id"));
     assert_eq!(
         "standard-group",
-        trace.get::<String, _>("api_key_group_snapshot")
+        trace.get::<String, _>("channel_group_snapshot")
     );
     assert_eq!("gpt-4o-mini", trace.get::<String, _>("requested_model"));
     assert_eq!(
@@ -671,8 +680,8 @@ fn usage_command(request_id: &str, http_status: u16) -> GatewayUsageRecordComman
         user_id: 30,
         api_key_id: 101,
         api_key_name_snapshot: "Owner Usage Key".to_owned(),
-        api_key_group_id: 10,
-        api_key_group_snapshot: "standard-group".to_owned(),
+        channel_group_id: 10,
+        channel_group_snapshot: "standard-group".to_owned(),
         catalog_key: "openai/global/gpt-4o-mini".to_owned(),
         requested_model: "gpt-4o-mini".to_owned(),
         requested_model_catalog_key: "openai/global/gpt-4o-mini".to_owned(),
@@ -682,6 +691,9 @@ fn usage_command(request_id: &str, http_status: u16) -> GatewayUsageRecordComman
         provider_native_model: "gpt-4o-mini".to_owned(),
         request_path: "/v1/chat/completions".to_owned(),
         http_method: "POST".to_owned(),
+        user_agent: Some(
+            "Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/126.0.0.0".to_owned(),
+        ),
         http_status,
         streaming: false,
         modality: 1,
@@ -727,8 +739,8 @@ fn failed_trace_command(request_id: &str) -> GatewayRequestTraceCommand {
         user_id: 30,
         api_key_id: 101,
         api_key_name_snapshot: "Owner Usage Key".to_owned(),
-        api_key_group_id: 10,
-        api_key_group_snapshot: "standard-group".to_owned(),
+        channel_group_id: 10,
+        channel_group_snapshot: "standard-group".to_owned(),
         catalog_key: "openai/global/gpt-4o-mini".to_owned(),
         requested_model: "gpt-4o-mini".to_owned(),
         requested_model_catalog_key: "openai/global/gpt-4o-mini".to_owned(),
@@ -738,6 +750,7 @@ fn failed_trace_command(request_id: &str) -> GatewayRequestTraceCommand {
         provider_native_model: "gpt-4o-mini".to_owned(),
         request_path: "/v1/chat/completions".to_owned(),
         http_method: "POST".to_owned(),
+        user_agent: Some("Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/126.0.0.0".to_owned()),
         http_status: Some(503),
         streaming: false,
         prompt_tokens: 0,
@@ -767,8 +780,8 @@ async fn create_usage_tables(pool: &sqlx::SqlitePool) {
             attempt_no INTEGER,
             api_key_id INTEGER,
             api_key_name_snapshot TEXT,
-            api_key_group_id INTEGER,
-            api_key_group_snapshot TEXT,
+            channel_group_id INTEGER,
+            channel_group_snapshot TEXT,
             owner_type INTEGER,
             owner_id INTEGER,
             channel_id INTEGER,
@@ -781,6 +794,8 @@ async fn create_usage_tables(pool: &sqlx::SqlitePool) {
             request_path TEXT,
             http_method TEXT,
             http_status INTEGER,
+            metadata TEXT NOT NULL DEFAULT '{}',
+            user_agent_hash TEXT,
             provider_error_code TEXT,
             error_type TEXT,
             error_message_masked TEXT,
@@ -808,8 +823,8 @@ async fn create_usage_tables(pool: &sqlx::SqlitePool) {
             status INTEGER NOT NULL,
             api_key_id INTEGER,
             api_key_name_snapshot TEXT,
-            api_key_group_id INTEGER,
-            api_key_group_snapshot TEXT,
+            channel_group_id INTEGER,
+            channel_group_snapshot TEXT,
             owner_type INTEGER,
             owner_id INTEGER,
             catalog_key TEXT NOT NULL,

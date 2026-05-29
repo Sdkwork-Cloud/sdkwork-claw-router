@@ -185,16 +185,9 @@ namespace Sdkwork.ClawRouter.Backend.Api
         /// <summary>
         /// Update IAM auth runtime settings
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.AuthSettingsUpdateResult?> AuthSettingsUpdateAsync(Sdkwork.ClawRouter.Backend.Models.AdminAuthSettingsUpdateRequest body, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.AuthSettingsUpdateResult?> AuthSettingsUpdateAsync(Sdkwork.ClawRouter.Backend.Models.AdminAuthSettingsUpdateRequest body)
         {
-            var requestHeaders = BuildRequestHeaders(
-                new Dictionary<string, HeaderParameterSpec>
-                {
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
-                },
-                new Dictionary<string, HeaderParameterSpec>()
-            );
-            return await _client.PatchAsync<Sdkwork.ClawRouter.Backend.Models.AuthSettingsUpdateResult>(ApiPaths.BackendPath("/system/auth/settings"), body, null, requestHeaders, "application/json");
+            return await _client.PatchAsync<Sdkwork.ClawRouter.Backend.Models.AuthSettingsUpdateResult>(ApiPaths.BackendPath("/system/auth/settings"), body, null, null, "application/json");
         }
 
         /// <summary>
@@ -285,16 +278,9 @@ namespace Sdkwork.ClawRouter.Backend.Api
         /// <summary>
         /// Create firewall
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.FirewallsRulesCreateResult?> FirewallsRulesCreateAsync(Sdkwork.ClawRouter.Backend.Models.AdminFirewallRuleCreateRequest body, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.FirewallsRulesCreateResult?> FirewallsRulesCreateAsync(Sdkwork.ClawRouter.Backend.Models.AdminFirewallRuleCreateRequest body)
         {
-            var requestHeaders = BuildRequestHeaders(
-                new Dictionary<string, HeaderParameterSpec>
-                {
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
-                },
-                new Dictionary<string, HeaderParameterSpec>()
-            );
-            return await _client.PostAsync<Sdkwork.ClawRouter.Backend.Models.FirewallsRulesCreateResult>(ApiPaths.BackendPath("/system/firewalls/rules"), body, null, requestHeaders, "application/json");
+            return await _client.PostAsync<Sdkwork.ClawRouter.Backend.Models.FirewallsRulesCreateResult>(ApiPaths.BackendPath("/system/firewalls/rules"), body, null, null, "application/json");
         }
 
         /// <summary>
@@ -356,16 +342,9 @@ namespace Sdkwork.ClawRouter.Backend.Api
         /// <summary>
         /// Create token limit
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.RateLimitsApiKeysCreateResult?> RateLimitsApiKeysCreateAsync(Sdkwork.ClawRouter.Backend.Models.AdminTokenLimitCreateRequest body, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.RateLimitsApiKeysCreateResult?> RateLimitsApiKeysCreateAsync(Sdkwork.ClawRouter.Backend.Models.AdminTokenLimitCreateRequest body)
         {
-            var requestHeaders = BuildRequestHeaders(
-                new Dictionary<string, HeaderParameterSpec>
-                {
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
-                },
-                new Dictionary<string, HeaderParameterSpec>()
-            );
-            return await _client.PostAsync<Sdkwork.ClawRouter.Backend.Models.RateLimitsApiKeysCreateResult>(ApiPaths.BackendPath("/system/rate_limits/api_keys"), body, null, requestHeaders, "application/json");
+            return await _client.PostAsync<Sdkwork.ClawRouter.Backend.Models.RateLimitsApiKeysCreateResult>(ApiPaths.BackendPath("/system/rate_limits/api_keys"), body, null, null, "application/json");
         }
 
         /// <summary>
@@ -379,16 +358,9 @@ namespace Sdkwork.ClawRouter.Backend.Api
         /// <summary>
         /// Create IP limit
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.RateLimitsIpCreateResult?> RateLimitsIpCreateAsync(Sdkwork.ClawRouter.Backend.Models.AdminIpLimitCreateRequest body, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.RateLimitsIpCreateResult?> RateLimitsIpCreateAsync(Sdkwork.ClawRouter.Backend.Models.AdminIpLimitCreateRequest body)
         {
-            var requestHeaders = BuildRequestHeaders(
-                new Dictionary<string, HeaderParameterSpec>
-                {
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
-                },
-                new Dictionary<string, HeaderParameterSpec>()
-            );
-            return await _client.PostAsync<Sdkwork.ClawRouter.Backend.Models.RateLimitsIpCreateResult>(ApiPaths.BackendPath("/system/rate_limits/ip"), body, null, requestHeaders, "application/json");
+            return await _client.PostAsync<Sdkwork.ClawRouter.Backend.Models.RateLimitsIpCreateResult>(ApiPaths.BackendPath("/system/rate_limits/ip"), body, null, null, "application/json");
         }
 
         /// <summary>
@@ -402,16 +374,9 @@ namespace Sdkwork.ClawRouter.Backend.Api
         /// <summary>
         /// Create model limit
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.RateLimitsModelsCreateResult?> RateLimitsModelsCreateAsync(Sdkwork.ClawRouter.Backend.Models.AdminModelLimitCreateRequest body, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.RateLimitsModelsCreateResult?> RateLimitsModelsCreateAsync(Sdkwork.ClawRouter.Backend.Models.AdminModelLimitCreateRequest body)
         {
-            var requestHeaders = BuildRequestHeaders(
-                new Dictionary<string, HeaderParameterSpec>
-                {
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
-                },
-                new Dictionary<string, HeaderParameterSpec>()
-            );
-            return await _client.PostAsync<Sdkwork.ClawRouter.Backend.Models.RateLimitsModelsCreateResult>(ApiPaths.BackendPath("/system/rate_limits/models"), body, null, requestHeaders, "application/json");
+            return await _client.PostAsync<Sdkwork.ClawRouter.Backend.Models.RateLimitsModelsCreateResult>(ApiPaths.BackendPath("/system/rate_limits/models"), body, null, null, "application/json");
         }
 
         /// <summary>
@@ -428,6 +393,22 @@ namespace Sdkwork.ClawRouter.Backend.Api
                 new QueryParameterSpec("model", model, "form", true, false, null),
             });
             return await _client.GetAsync<Sdkwork.ClawRouter.Backend.Models.RecordsListResult>(ApiPaths.AppendQueryString(ApiPaths.BackendPath("/system/records"), queryString));
+        }
+
+        /// <summary>
+        /// Retrieve runtime region settings
+        /// </summary>
+        public async Task<Sdkwork.ClawRouter.Backend.Models.RuntimeRegionSettingsRetrieveResult?> RuntimeRegionSettingsRetrieveAsync()
+        {
+            return await _client.GetAsync<Sdkwork.ClawRouter.Backend.Models.RuntimeRegionSettingsRetrieveResult>(ApiPaths.BackendPath("/system/runtime_region/settings"));
+        }
+
+        /// <summary>
+        /// Update runtime region settings
+        /// </summary>
+        public async Task<Sdkwork.ClawRouter.Backend.Models.RuntimeRegionSettingsUpdateResult?> RuntimeRegionSettingsUpdateAsync(Sdkwork.ClawRouter.Backend.Models.AdminRuntimeRegionSettingsUpdateRequest body)
+        {
+            return await _client.PatchAsync<Sdkwork.ClawRouter.Backend.Models.RuntimeRegionSettingsUpdateResult>(ApiPaths.BackendPath("/system/runtime_region/settings"), body, null, null, "application/json");
         }
 
         /// <summary>
@@ -486,16 +467,9 @@ namespace Sdkwork.ClawRouter.Backend.Api
         /// <summary>
         /// Update site branding and deployment personalization settings
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.SiteSettingsUpdateResult?> SiteSettingsUpdateAsync(Sdkwork.ClawRouter.Backend.Models.AdminSiteSettingsUpdateRequest body, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.SiteSettingsUpdateResult?> SiteSettingsUpdateAsync(Sdkwork.ClawRouter.Backend.Models.AdminSiteSettingsUpdateRequest body)
         {
-            var requestHeaders = BuildRequestHeaders(
-                new Dictionary<string, HeaderParameterSpec>
-                {
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
-                },
-                new Dictionary<string, HeaderParameterSpec>()
-            );
-            return await _client.PatchAsync<Sdkwork.ClawRouter.Backend.Models.SiteSettingsUpdateResult>(ApiPaths.BackendPath("/system/site/settings"), body, null, requestHeaders, "application/json");
+            return await _client.PatchAsync<Sdkwork.ClawRouter.Backend.Models.SiteSettingsUpdateResult>(ApiPaths.BackendPath("/system/site/settings"), body, null, null, "application/json");
         }
 
         private sealed record PathParameterSpec(string Name, string Style, bool Explode);
@@ -725,92 +699,5 @@ namespace Sdkwork.ClawRouter.Backend.Api
                 .Replace("%3B", ";").Replace("%3D", "=");
         }
 
-        private sealed record HeaderParameterSpec(object? Value, string Style, bool Explode, string? ContentType);
-
-        private static Dictionary<string, string>? BuildRequestHeaders(
-            Dictionary<string, HeaderParameterSpec> headers,
-            Dictionary<string, HeaderParameterSpec> cookies)
-        {
-            var requestHeaders = new Dictionary<string, string>();
-            foreach (var item in headers)
-            {
-                var serialized = SerializeParameterValue(item.Value);
-                if (serialized is not null)
-                {
-                    requestHeaders[item.Key] = serialized;
-                }
-            }
-
-            var cookieHeader = BuildCookieHeader(cookies);
-            if (!string.IsNullOrEmpty(cookieHeader))
-            {
-                requestHeaders["Cookie"] = requestHeaders.TryGetValue("Cookie", out var existing) && !string.IsNullOrEmpty(existing)
-                    ? existing + "; " + cookieHeader
-                    : cookieHeader;
-            }
-
-            return requestHeaders.Count == 0 ? null : requestHeaders;
-        }
-
-        private static string BuildCookieHeader(Dictionary<string, HeaderParameterSpec> cookies)
-        {
-            var pairs = new List<string>();
-            foreach (var item in cookies)
-            {
-                var serialized = SerializeParameterValue(item.Value);
-                if (serialized is not null)
-                {
-                    pairs.Add(Uri.EscapeDataString(item.Key) + "=" + Uri.EscapeDataString(serialized));
-                }
-            }
-            return string.Join("; ", pairs);
-        }
-
-        private static string? SerializeParameterValue(HeaderParameterSpec? parameter)
-        {
-            var value = parameter?.Value;
-            if (value is null)
-            {
-                return null;
-            }
-            if (!string.IsNullOrWhiteSpace(parameter!.ContentType))
-            {
-                return System.Text.Json.JsonSerializer.Serialize(value);
-            }
-            if (value is System.Collections.IEnumerable enumerable && value is not string)
-            {
-                var values = new List<string>();
-                foreach (var item in enumerable)
-                {
-                    if (item is not null)
-                    {
-                        values.Add(item.ToString() ?? string.Empty);
-                    }
-                }
-                return string.Join(",", values);
-            }
-            if (value is System.Collections.IDictionary dictionary)
-            {
-                var values = new List<string>();
-                foreach (System.Collections.DictionaryEntry item in dictionary)
-                {
-                    if (item.Value is null)
-                    {
-                        continue;
-                    }
-                    if (parameter.Explode)
-                    {
-                        values.Add((item.Key.ToString() ?? string.Empty) + "=" + (item.Value.ToString() ?? string.Empty));
-                    }
-                    else
-                    {
-                        values.Add(item.Key.ToString() ?? string.Empty);
-                        values.Add(item.Value.ToString() ?? string.Empty);
-                    }
-                }
-                return string.Join(",", values);
-            }
-            return value.ToString();
-        }
     }
 }

@@ -199,12 +199,8 @@ func (a *SystemApi) AuthSettingsRetrieve() (sdktypes.AuthSettingsRetrieveResult,
 }
 
 // Update IAM auth runtime settings
-func (a *SystemApi) AuthSettingsUpdate(body sdktypes.AdminAuthSettingsUpdateRequest, xRequestId *string) (sdktypes.AuthSettingsUpdateResult, error) {
-    headers := BuildRequestHeaders(
-        map[string]ParameterSpec{"X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},},
-        map[string]ParameterSpec{},
-    )
-    raw, err := a.client.Patch(BackendApiPath("/system/auth/settings"), body, nil, headers, "application/json")
+func (a *SystemApi) AuthSettingsUpdate(body sdktypes.AdminAuthSettingsUpdateRequest) (sdktypes.AuthSettingsUpdateResult, error) {
+    raw, err := a.client.Patch(BackendApiPath("/system/auth/settings"), body, nil, nil, "application/json")
     if err != nil {
         var zero sdktypes.AuthSettingsUpdateResult
         return zero, err
@@ -317,12 +313,8 @@ func (a *SystemApi) FirewallsRulesList() (sdktypes.FirewallsRulesListResult, err
 }
 
 // Create firewall
-func (a *SystemApi) FirewallsRulesCreate(body sdktypes.AdminFirewallRuleCreateRequest, xRequestId *string) (sdktypes.FirewallsRulesCreateResult, error) {
-    headers := BuildRequestHeaders(
-        map[string]ParameterSpec{"X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},},
-        map[string]ParameterSpec{},
-    )
-    raw, err := a.client.Post(BackendApiPath("/system/firewalls/rules"), body, nil, headers, "application/json")
+func (a *SystemApi) FirewallsRulesCreate(body sdktypes.AdminFirewallRuleCreateRequest) (sdktypes.FirewallsRulesCreateResult, error) {
+    raw, err := a.client.Post(BackendApiPath("/system/firewalls/rules"), body, nil, nil, "application/json")
     if err != nil {
         var zero sdktypes.FirewallsRulesCreateResult
         return zero, err
@@ -401,12 +393,8 @@ func (a *SystemApi) RateLimitsApiKeysList() (sdktypes.RateLimitsApiKeysListResul
 }
 
 // Create token limit
-func (a *SystemApi) RateLimitsApiKeysCreate(body sdktypes.AdminTokenLimitCreateRequest, xRequestId *string) (sdktypes.RateLimitsApiKeysCreateResult, error) {
-    headers := BuildRequestHeaders(
-        map[string]ParameterSpec{"X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},},
-        map[string]ParameterSpec{},
-    )
-    raw, err := a.client.Post(BackendApiPath("/system/rate_limits/api_keys"), body, nil, headers, "application/json")
+func (a *SystemApi) RateLimitsApiKeysCreate(body sdktypes.AdminTokenLimitCreateRequest) (sdktypes.RateLimitsApiKeysCreateResult, error) {
+    raw, err := a.client.Post(BackendApiPath("/system/rate_limits/api_keys"), body, nil, nil, "application/json")
     if err != nil {
         var zero sdktypes.RateLimitsApiKeysCreateResult
         return zero, err
@@ -425,12 +413,8 @@ func (a *SystemApi) RateLimitsIpList() (sdktypes.RateLimitsIpListResult, error) 
 }
 
 // Create IP limit
-func (a *SystemApi) RateLimitsIpCreate(body sdktypes.AdminIpLimitCreateRequest, xRequestId *string) (sdktypes.RateLimitsIpCreateResult, error) {
-    headers := BuildRequestHeaders(
-        map[string]ParameterSpec{"X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},},
-        map[string]ParameterSpec{},
-    )
-    raw, err := a.client.Post(BackendApiPath("/system/rate_limits/ip"), body, nil, headers, "application/json")
+func (a *SystemApi) RateLimitsIpCreate(body sdktypes.AdminIpLimitCreateRequest) (sdktypes.RateLimitsIpCreateResult, error) {
+    raw, err := a.client.Post(BackendApiPath("/system/rate_limits/ip"), body, nil, nil, "application/json")
     if err != nil {
         var zero sdktypes.RateLimitsIpCreateResult
         return zero, err
@@ -449,12 +433,8 @@ func (a *SystemApi) RateLimitsModelsList() (sdktypes.RateLimitsModelsListResult,
 }
 
 // Create model limit
-func (a *SystemApi) RateLimitsModelsCreate(body sdktypes.AdminModelLimitCreateRequest, xRequestId *string) (sdktypes.RateLimitsModelsCreateResult, error) {
-    headers := BuildRequestHeaders(
-        map[string]ParameterSpec{"X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},},
-        map[string]ParameterSpec{},
-    )
-    raw, err := a.client.Post(BackendApiPath("/system/rate_limits/models"), body, nil, headers, "application/json")
+func (a *SystemApi) RateLimitsModelsCreate(body sdktypes.AdminModelLimitCreateRequest) (sdktypes.RateLimitsModelsCreateResult, error) {
+    raw, err := a.client.Post(BackendApiPath("/system/rate_limits/models"), body, nil, nil, "application/json")
     if err != nil {
         var zero sdktypes.RateLimitsModelsCreateResult
         return zero, err
@@ -477,6 +457,26 @@ func (a *SystemApi) RecordsList(page *int, pageSize *int, user *string, token *s
         return zero, err
     }
     return decodeResult[sdktypes.RecordsListResult](raw)
+}
+
+// Retrieve runtime region settings
+func (a *SystemApi) RuntimeRegionSettingsRetrieve() (sdktypes.RuntimeRegionSettingsRetrieveResult, error) {
+    raw, err := a.client.Get(BackendApiPath("/system/runtime_region/settings"), nil, nil)
+    if err != nil {
+        var zero sdktypes.RuntimeRegionSettingsRetrieveResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.RuntimeRegionSettingsRetrieveResult](raw)
+}
+
+// Update runtime region settings
+func (a *SystemApi) RuntimeRegionSettingsUpdate(body sdktypes.AdminRuntimeRegionSettingsUpdateRequest) (sdktypes.RuntimeRegionSettingsUpdateResult, error) {
+    raw, err := a.client.Patch(BackendApiPath("/system/runtime_region/settings"), body, nil, nil, "application/json")
+    if err != nil {
+        var zero sdktypes.RuntimeRegionSettingsUpdateResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.RuntimeRegionSettingsUpdateResult](raw)
 }
 
 // List service nodes
@@ -544,12 +544,8 @@ func (a *SystemApi) SiteSettingsRetrieve() (sdktypes.SiteSettingsRetrieveResult,
 }
 
 // Update site branding and deployment personalization settings
-func (a *SystemApi) SiteSettingsUpdate(body sdktypes.AdminSiteSettingsUpdateRequest, xRequestId *string) (sdktypes.SiteSettingsUpdateResult, error) {
-    headers := BuildRequestHeaders(
-        map[string]ParameterSpec{"X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},},
-        map[string]ParameterSpec{},
-    )
-    raw, err := a.client.Patch(BackendApiPath("/system/site/settings"), body, nil, headers, "application/json")
+func (a *SystemApi) SiteSettingsUpdate(body sdktypes.AdminSiteSettingsUpdateRequest) (sdktypes.SiteSettingsUpdateResult, error) {
+    raw, err := a.client.Patch(BackendApiPath("/system/site/settings"), body, nil, nil, "application/json")
     if err != nil {
         var zero sdktypes.SiteSettingsUpdateResult
         return zero, err
@@ -783,92 +779,7 @@ func EncodeQueryValue(value string, allowReserved bool) string {
 }
 
 
-type ParameterSpec struct {
-    Value       interface{}
-    Style       string
-    Explode     bool
-    ContentType string
-}
 
-func BuildRequestHeaders(headers map[string]ParameterSpec, cookies map[string]ParameterSpec) map[string]string {
-    requestHeaders := map[string]string{}
-    for name, parameter := range headers {
-        if serialized, ok := SerializeParameterValue(parameter); ok {
-            requestHeaders[name] = serialized
-        }
-    }
-
-    if cookieHeader := BuildCookieHeader(cookies); cookieHeader != "" {
-        if existing, ok := requestHeaders["Cookie"]; ok && existing != "" {
-            requestHeaders["Cookie"] = existing + "; " + cookieHeader
-        } else {
-            requestHeaders["Cookie"] = cookieHeader
-        }
-    }
-
-    if len(requestHeaders) == 0 {
-        return nil
-    }
-    return requestHeaders
-}
-
-func BuildCookieHeader(cookies map[string]ParameterSpec) string {
-    pairs := make([]string, 0, len(cookies))
-    for name, parameter := range cookies {
-        if serialized, ok := SerializeParameterValue(parameter); ok {
-            pairs = append(pairs, url.QueryEscape(name)+"="+url.QueryEscape(serialized))
-        }
-    }
-    return strings.Join(pairs, "; ")
-}
-
-func SerializeParameterValue(parameter ParameterSpec) (string, bool) {
-    value := parameter.Value
-    if value == nil {
-        return "", false
-    }
-    if parameter.ContentType != "" {
-        encoded, _ := json.Marshal(value)
-        return string(encoded), true
-    }
-    switch typed := value.(type) {
-    case string:
-        return typed, true
-    case fmt.Stringer:
-        return typed.String(), true
-    case []string:
-        return strings.Join(typed, ","), true
-    case []int:
-        values := make([]string, 0, len(typed))
-        for _, item := range typed {
-            values = append(values, fmt.Sprint(item))
-        }
-        return strings.Join(values, ","), true
-    case map[string]string:
-        return SerializeHeaderObject(stringMapToInterface(typed), parameter.Explode), true
-    case map[string]int:
-        return SerializeHeaderObject(intMapToInterface(typed), parameter.Explode), true
-    case map[string]interface{}:
-        return SerializeHeaderObject(typed, parameter.Explode), true
-    default:
-        return fmt.Sprint(value), true
-    }
-}
-
-func SerializeHeaderObject(values map[string]interface{}, explode bool) string {
-    serialized := make([]string, 0, len(values)*2)
-    for key, value := range values {
-        if value == nil {
-            continue
-        }
-        if explode {
-            serialized = append(serialized, key+"="+fmt.Sprint(value))
-        } else {
-            serialized = append(serialized, key, fmt.Sprint(value))
-        }
-    }
-    return strings.Join(serialized, ",")
-}
 func stringSliceToInterface(values []string) []interface{} {
     result := make([]interface{}, 0, len(values))
     for _, value := range values {

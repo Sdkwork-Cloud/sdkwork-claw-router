@@ -3,10 +3,10 @@ use sqlx::{Row, Sqlite, SqlitePool, Transaction};
 use crate::domain::{DomainError, DomainResult};
 use crate::infrastructure::sql::installer::ENV_MODELS_CATALOG_ROOT;
 use crate::infrastructure::sql::model_catalog_import::{
-    catalog_key as build_model_catalog_key, catalog_preview_admin_items, catalog_scope_counts,
-    catalog_scope_source_hash, catalog_scope_vendor_codes, catalog_with_selected_vendors,
-    is_dry_run_mode, load_catalog_root_with_pin, model_base_catalog_key, stable_uuid,
-    CatalogScopeCounts,
+    catalog_preview_admin_items, catalog_scope_counts, catalog_scope_source_hash,
+    catalog_scope_vendor_codes, catalog_with_selected_vendors, is_dry_run_mode,
+    load_catalog_root_with_pin, model_catalog_key as build_model_base_catalog_key,
+    pricing_catalog_key as build_model_pricing_catalog_key, stable_uuid, CatalogScopeCounts,
 };
 use crate::infrastructure::sql::model_modality;
 use crate::ports::{
@@ -20,7 +20,6 @@ const MODEL_VENDOR_TARGET_TYPE: i32 = 41;
 const AI_MODEL_TARGET_TYPE: i32 = 42;
 const MODEL_CATALOG_SYNC_TARGET_TYPE: i32 = 43;
 const OFFICIAL_REFERENCE_PRICE_SIDE: i32 = 1;
-const DEFAULT_MODEL_REGION_CODE: &str = "global";
 const INPUT_BILLING_METER_FILTER_SQL: &str = "('llm_input_token', 'embedding_input_token', 'image_input_token', 'audio_input_second', 'audio_input_minute', 'tts_input_character', 'api_request')";
 const OUTPUT_BILLING_METER_FILTER_SQL: &str = "('llm_output_token', 'image_output_token', 'image_result', 'audio_output_second', 'music_output_second', 'sfx_result', 'video_output_second', 'api_result')";
 const CACHE_READ_BILLING_METER_FILTER_SQL: &str = "('llm_cache_read_token')";
@@ -839,7 +838,7 @@ async fn insert_model(
     let limitations = json_array_text(&command.limitations)?;
     let supported_languages = json_array_text(&command.supported_languages)?;
     let use_cases = json_array_text(&command.use_cases)?;
-    let catalog_key = model_base_catalog_key(&vendor.code, &command.model);
+    let catalog_key = build_model_base_catalog_key(&vendor.code, &command.model);
     sqlx::query(
         r#"
         INSERT INTO ai_model
@@ -892,7 +891,7 @@ async fn insert_model_capability(
     vendor: &VendorIdentity,
 ) -> DomainResult<()> {
     let capability_code_text = model_capability_code(&command.model_type);
-    let catalog_key = model_base_catalog_key(&vendor.code, &command.model);
+    let catalog_key = build_model_base_catalog_key(&vendor.code, &command.model);
     sqlx::query(
         r#"
         INSERT INTO ai_model_capability
@@ -1003,7 +1002,7 @@ async fn insert_region_model_pricing(
     priority: i32,
     price_kind: &str,
 ) -> DomainResult<()> {
-    let catalog_key = model_catalog_key(&vendor.code, region_code, &command.model);
+    let catalog_key = model_pricing_catalog_key(&vendor.code, &command.model);
     let uuid = stable_uuid(
         "admin-price",
         &[&command.model_uuid, region_code, meter, price_kind],
@@ -1604,7 +1603,7 @@ async fn update_model_core(
     .bind(&update.display_name)
     .bind(vendor.id)
     .bind(&vendor.code)
-    .bind(model_base_catalog_key(&vendor.code, &update.model))
+    .bind(build_model_base_catalog_key(&vendor.code, &update.model))
     .bind(&vendor.name)
     .bind(capability_code(&update.model_type))
     .bind(json_array_text(&update.modalities)?)
@@ -1663,7 +1662,7 @@ async fn upsert_model_capability(
     .bind(&command.requested_at)
     .bind(&update.model)
     .bind(&vendor.code)
-    .bind(model_base_catalog_key(&vendor.code, &update.model))
+    .bind(build_model_base_catalog_key(&vendor.code, &update.model))
     .bind(capability_code(&update.model_type))
     .bind(capability_code_text)
     .bind(modality_code(&update.model_type))
@@ -1690,7 +1689,7 @@ async fn upsert_model_capability(
     .bind(&command.requested_at)
     .bind(&command.requested_at)
     .bind(model_id)
-    .bind(model_base_catalog_key(&vendor.code, &update.model))
+    .bind(build_model_base_catalog_key(&vendor.code, &update.model))
     .bind(&update.model)
     .bind(&vendor.code)
     .bind(capability_code(&update.model_type))
@@ -1765,11 +1764,7 @@ async fn upsert_model_pricing(
     .bind(&command.requested_at)
     .bind(&update.model)
     .bind(&vendor.code)
-    .bind(model_catalog_key(
-        &vendor.code,
-        &update.region_code,
-        &update.model,
-    ))
+    .bind(model_pricing_catalog_key(&vendor.code, &update.model))
     .bind(&update.region_code)
     .bind(meter)
     .bind(unit_price)
@@ -1799,7 +1794,7 @@ async fn upsert_model_pricing(
     .bind(&command.requested_at)
     .bind(&command.requested_at)
     .bind(model_id)
-    .bind(model_catalog_key(&vendor.code, &update.region_code, &update.model))
+    .bind(model_pricing_catalog_key(&vendor.code, &update.model))
     .bind(&update.model)
     .bind(&vendor.code)
     .bind(&update.region_code)
@@ -1839,7 +1834,6 @@ async fn upsert_optional_model_pricing(
             updated_at = ?
         WHERE model_id = ?
           AND price_side = ?
-          AND COALESCE(region_code, ?) = ?
           AND billing_meter_code IN {meter_filter_sql}
           AND deleted_at IS NULL
         "#,
@@ -1850,8 +1844,6 @@ async fn upsert_optional_model_pricing(
         .bind(&command.requested_at)
         .bind(model_id)
         .bind(OFFICIAL_REFERENCE_PRICE_SIDE)
-        .bind(&update.region_code)
-        .bind(&update.region_code)
         .execute(&mut **tx)
         .await
         .map_err(|error| store_error("failed to clear optional model pricing", error))?;
@@ -1890,11 +1882,7 @@ async fn upsert_optional_model_pricing(
     .bind(&command.requested_at)
     .bind(&update.model)
     .bind(&vendor.code)
-    .bind(model_catalog_key(
-        &vendor.code,
-        &update.region_code,
-        &update.model,
-    ))
+    .bind(model_pricing_catalog_key(&vendor.code, &update.model))
     .bind(&update.region_code)
     .bind(meter)
     .bind(unit_price)
@@ -1924,7 +1912,7 @@ async fn upsert_optional_model_pricing(
     .bind(&command.requested_at)
     .bind(&command.requested_at)
     .bind(model_id)
-    .bind(model_catalog_key(&vendor.code, &update.region_code, &update.model))
+    .bind(model_pricing_catalog_key(&vendor.code, &update.model))
     .bind(&update.model)
     .bind(&vendor.code)
     .bind(&update.region_code)
@@ -2047,7 +2035,7 @@ async fn insert_update_region_model_pricing(
     priority: i32,
     price_kind: &str,
 ) -> DomainResult<()> {
-    let catalog_key = model_catalog_key(&vendor.code, region_code, &update.model);
+    let catalog_key = model_pricing_catalog_key(&vendor.code, &update.model);
     let uuid = stable_uuid(
         "admin-price",
         &[&command.model_id, region_code, meter, price_kind],
@@ -2522,13 +2510,8 @@ fn json_array_text(values: &[String]) -> DomainResult<String> {
         .map_err(|error| DomainError::new(format!("failed to encode ai model json array: {error}")))
 }
 
-fn model_catalog_key(vendor_code: &str, region_code: &str, model: &str) -> String {
-    let region_code = if region_code.trim().is_empty() {
-        DEFAULT_MODEL_REGION_CODE
-    } else {
-        region_code.trim()
-    };
-    build_model_catalog_key(vendor_code, region_code, model)
+fn model_pricing_catalog_key(vendor_code: &str, model: &str) -> String {
+    build_model_pricing_catalog_key(vendor_code, model)
 }
 
 fn input_billing_meter(model_type: &str) -> &'static str {

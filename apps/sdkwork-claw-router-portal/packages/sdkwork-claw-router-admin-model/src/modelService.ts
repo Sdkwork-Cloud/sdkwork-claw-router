@@ -1,5 +1,4 @@
 import {
-  createIdempotencyParams,
   ensureSdkworkApiSuccess,
   getClawRouterBackendSdkClient,
   isRecord,
@@ -145,7 +144,6 @@ export type ModelCreateInput = {
   vendorId: string;
   model?: string;
   displayName?: string | null;
-  name?: string;
   type: Model['type'];
   priceIn: string;
   priceOut: string;
@@ -268,7 +266,6 @@ export class ModelService {
   static async syncVendorsAndModels(): Promise<ModelCatalogSyncReport> {
     const result = await getClawRouterBackendSdkClient().ai.models.refresh(
       toSyncCatalogRequest(),
-      createIdempotencyParams('admin-model-catalog-sync'),
     );
     ensureSdkworkApiSuccess(result, 'Failed to sync vendors and models');
     const data = readApiRecord(result);
@@ -302,7 +299,6 @@ export class ModelService {
   static async addVendor(vendor: VendorCreateInput): Promise<Vendor> {
     const result = await getClawRouterBackendSdkClient().ai.modelVendors.create(
       toCreateVendorRequest(vendor),
-      createIdempotencyParams('admin-model-vendor-create'),
     );
     ensureSdkworkApiSuccess(result, 'Failed to add vendor');
     return normalizeVendor(readRequiredApiItem(result, 'Created vendor response is missing data'));
@@ -311,7 +307,6 @@ export class ModelService {
   static async addModel(model: ModelCreateInput): Promise<Model> {
     const result = await getClawRouterBackendSdkClient().ai.models.create(
       toCreateModelRequest(model),
-      createIdempotencyParams('admin-ai-model-create'),
     );
     ensureSdkworkApiSuccess(result, 'Failed to add model');
     return normalizeModel(readRequiredApiItem(result, 'Created model response is missing data'));
@@ -499,7 +494,7 @@ function toUpdateModelRequest(model: ModelPatchInput): AdminAiModelUpdateRequest
   if (model.vendorId !== undefined) {
     request.vendorId = requiredText(model.vendorId, 'vendorId');
   }
-  if (model.model !== undefined || model.name !== undefined) {
+  if (model.model !== undefined) {
     request.model = modelName(resolveModelIdentifier(model));
   }
   if (model.displayName !== undefined) {
@@ -592,8 +587,8 @@ function modelName(value: string): string {
   return normalized;
 }
 
-function resolveModelIdentifier(model: Pick<ModelCreateInput, 'model' | 'name'>): string {
-  const runtimeModel = model.model?.trim() || model.name?.trim() || '';
+function resolveModelIdentifier(model: Pick<ModelCreateInput, 'model'>): string {
+  const runtimeModel = model.model?.trim() || '';
   if (!runtimeModel) {
     throw new Error('model is required');
   }
@@ -855,6 +850,14 @@ function readRequiredStringField(item: ApiRecord, key: string, message: string):
     throw new Error(message);
   }
   return readString(item, key).trim();
+}
+
+function readOptionalString(item: ApiRecord, key: string): string | undefined {
+  if (!(key in item) || item[key] === null || item[key] === undefined) {
+    return undefined;
+  }
+  const value = readString(item, key).trim();
+  return value.length > 0 ? value : undefined;
 }
 
 function readRequiredNullableNumber(item: ApiRecord, key: string, message: string, label: string): number | null {

@@ -1,17 +1,31 @@
 import { API_BASE_URL } from 'sdkwork-claw-router-commons/runtime';
 import { resolveApiRequestUrl } from 'sdkwork-claw-router-commons/runtime';
 
+function isRequestIdentityHeader(name: string): boolean {
+  return name.trim().toLowerCase().replace(/[^a-z0-9]/g, '').endsWith('requestid');
+}
+
+function stripRequestIdentityHeaders(curlCommand: string): string {
+  return curlCommand
+    .replace(/\s+-H\s+"[^"]*:\s*[^"]*"/g, (header) => {
+      const headerName = header.match(/^\s+-H\s+"([^":]+)\s*:/)?.[1] ?? '';
+      return isRequestIdentityHeader(headerName) ? '' : header;
+    })
+    .trim();
+}
+
 export function generateCodeSnippets(curlCommand: string) {
   try {
+    const sanitizedCurlCommand = stripRequestIdentityHeaders(curlCommand);
     // Extract URL
-    const urlMatch = curlCommand.match(/curl\s+([^\s\\]+)/);
+    const urlMatch = sanitizedCurlCommand.match(/curl\s+([^\s\\]+)/);
     const url = urlMatch ? urlMatch[1] : resolveApiRequestUrl(API_BASE_URL, '/v1/chat/completions').url;
 
     // Extract Headers
     const headers: Record<string, string> = {};
     const headerRegex = /-H\s+"([^"]+)"/g;
     let match;
-    while ((match = headerRegex.exec(curlCommand)) !== null) {
+    while ((match = headerRegex.exec(sanitizedCurlCommand)) !== null) {
       const parts = match[1].split(': ');
       if (parts.length === 2) {
         headers[parts[0]] = parts[1];
@@ -19,7 +33,7 @@ export function generateCodeSnippets(curlCommand: string) {
     }
 
     // Extract Body
-    const bodyMatch = curlCommand.match(/-d\s+'([^']+)'/);
+    const bodyMatch = sanitizedCurlCommand.match(/-d\s+'([^']+)'/);
     let body = bodyMatch ? bodyMatch[1] : '{}';
 
     // Format JSON body for snippets
@@ -47,7 +61,7 @@ response = requests.post(url, headers=headers, json=data)
 print(response.json())`;
 
     return {
-      cURL: curlCommand,
+      cURL: sanitizedCurlCommand,
       JavaScript: jsSnippet,
       Python: pythonSnippet,
     };

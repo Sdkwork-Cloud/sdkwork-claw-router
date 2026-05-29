@@ -11,6 +11,35 @@ class IntegrationApi {
 
   IntegrationApi(this._client);
 
+  /// List channel endpoints
+  Future<ChannelEndpointsListResult?> channelEndpointsList() async {
+    final response = await _client.get(ApiPaths.backendPath('/integration/channel_endpoints'));
+    return (() {
+      final map = sdkworkResponseAsMap(response);
+      return map == null ? null : ChannelEndpointsListResult.fromJson(map);
+    })();
+  }
+
+  /// Create channel endpoint
+  Future<ChannelEndpointsCreateResult?> channelEndpointsCreate(AdminChannelEndpointCreateRequest body) async {
+    final payload = body.toJson();
+    final response = await _client.post(ApiPaths.backendPath('/integration/channel_endpoints'), body: payload, contentType: 'application/json');
+    return (() {
+      final map = sdkworkResponseAsMap(response);
+      return map == null ? null : ChannelEndpointsCreateResult.fromJson(map);
+    })();
+  }
+
+  /// Update channel endpoint
+  Future<ChannelEndpointsUpdateResult?> channelEndpointsUpdate(String endpointId, AdminChannelEndpointUpdateRequest body) async {
+    final payload = body.toJson();
+    final response = await _client.put(ApiPaths.backendPath('/integration/channel_endpoints/${serializePathParameter(endpointId, const PathParameterSpec('endpointId', 'simple', false))}'), body: payload, contentType: 'application/json');
+    return (() {
+      final map = sdkworkResponseAsMap(response);
+      return map == null ? null : ChannelEndpointsUpdateResult.fromJson(map);
+    })();
+  }
+
   /// List channels
   Future<ChannelsListResult?> channelsList() async {
     final response = await _client.get(ApiPaths.backendPath('/integration/channels'));
@@ -21,15 +50,9 @@ class IntegrationApi {
   }
 
   /// Create channel
-  Future<ChannelsCreateResult?> channelsCreate(AdminChannelCreateRequest body, [String? xRequestId]) async {
-    final requestHeaders = buildRequestHeaders(
-      <String, HeaderParameterSpec>{
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
-      },
-      <String, HeaderParameterSpec>{},
-    );
+  Future<ChannelsCreateResult?> channelsCreate(AdminChannelCreateRequest body) async {
     final payload = body.toJson();
-    final response = await _client.post(ApiPaths.backendPath('/integration/channels'), body: payload, headers: requestHeaders, contentType: 'application/json');
+    final response = await _client.post(ApiPaths.backendPath('/integration/channels'), body: payload, contentType: 'application/json');
     return (() {
       final map = sdkworkResponseAsMap(response);
       return map == null ? null : ChannelsCreateResult.fromJson(map);
@@ -37,15 +60,9 @@ class IntegrationApi {
   }
 
   /// Update channel
-  Future<ChannelsUpdateResult?> channelsUpdate(AdminChannelUpdateRequest body, [String? xRequestId]) async {
-    final requestHeaders = buildRequestHeaders(
-      <String, HeaderParameterSpec>{
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
-      },
-      <String, HeaderParameterSpec>{},
-    );
+  Future<ChannelsUpdateResult?> channelsUpdate(AdminChannelUpdateRequest body) async {
     final payload = body.toJson();
-    final response = await _client.put(ApiPaths.backendPath('/integration/channels'), body: payload, headers: requestHeaders, contentType: 'application/json');
+    final response = await _client.put(ApiPaths.backendPath('/integration/channels'), body: payload, contentType: 'application/json');
     return (() {
       final map = sdkworkResponseAsMap(response);
       return map == null ? null : ChannelsUpdateResult.fromJson(map);
@@ -62,14 +79,8 @@ class IntegrationApi {
   }
 
   /// Test channel
-  Future<ChannelsVerifyResult?> channelsVerify(String channelId, [String? xRequestId]) async {
-    final requestHeaders = buildRequestHeaders(
-      <String, HeaderParameterSpec>{
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
-      },
-      <String, HeaderParameterSpec>{},
-    );
-    final response = await _client.post(ApiPaths.backendPath('/integration/channels/${serializePathParameter(channelId, const PathParameterSpec('channelId', 'simple', false))}/verify'), headers: requestHeaders);
+  Future<ChannelsVerifyResult?> channelsVerify(String channelId) async {
+    final response = await _client.post(ApiPaths.backendPath('/integration/channels/${serializePathParameter(channelId, const PathParameterSpec('channelId', 'simple', false))}/verify'));
     return (() {
       final map = sdkworkResponseAsMap(response);
       return map == null ? null : ChannelsVerifyResult.fromJson(map);
@@ -90,15 +101,9 @@ class IntegrationApi {
   }
 
   /// Create provider secret
-  Future<ProviderSecretsCreateResult?> providerSecretsCreate(AdminProviderSecretCreateRequest body, [String? xRequestId]) async {
-    final requestHeaders = buildRequestHeaders(
-      <String, HeaderParameterSpec>{
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
-      },
-      <String, HeaderParameterSpec>{},
-    );
+  Future<ProviderSecretsCreateResult?> providerSecretsCreate(AdminProviderSecretCreateRequest body) async {
     final payload = body.toJson();
-    final response = await _client.post(ApiPaths.backendPath('/integration/provider_secrets'), body: payload, headers: requestHeaders, contentType: 'application/json');
+    final response = await _client.post(ApiPaths.backendPath('/integration/provider_secrets'), body: payload, contentType: 'application/json');
     return (() {
       final map = sdkworkResponseAsMap(response);
       return map == null ? null : ProviderSecretsCreateResult.fromJson(map);
@@ -106,15 +111,9 @@ class IntegrationApi {
   }
 
   /// Update provider secret
-  Future<ProviderSecretsUpdateResult?> providerSecretsUpdate(AdminProviderSecretUpdateRequest body, [String? xRequestId]) async {
-    final requestHeaders = buildRequestHeaders(
-      <String, HeaderParameterSpec>{
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
-      },
-      <String, HeaderParameterSpec>{},
-    );
+  Future<ProviderSecretsUpdateResult?> providerSecretsUpdate(AdminProviderSecretUpdateRequest body) async {
     final payload = body.toJson();
-    final response = await _client.put(ApiPaths.backendPath('/integration/provider_secrets'), body: payload, headers: requestHeaders, contentType: 'application/json');
+    final response = await _client.put(ApiPaths.backendPath('/integration/provider_secrets'), body: payload, contentType: 'application/json');
     return (() {
       final map = sdkworkResponseAsMap(response);
       return map == null ? null : ProviderSecretsUpdateResult.fromJson(map);
@@ -334,75 +333,3 @@ String encodeQueryValue(String value, bool allowReserved) {
 }
 
 String urlEncode(String value) => Uri.encodeQueryComponent(value);
-class HeaderParameterSpec {
-  final dynamic value;
-  final String style;
-  final bool explode;
-  final String? contentType;
-
-  HeaderParameterSpec(this.value, this.style, this.explode, this.contentType);
-}
-
-Map<String, String>? buildRequestHeaders(
-  Map<String, HeaderParameterSpec> headers, [
-  Map<String, HeaderParameterSpec> cookies = const {},
-]) {
-  final requestHeaders = <String, String>{};
-
-  headers.forEach((name, parameter) {
-    final serialized = serializeParameterValue(parameter);
-    if (serialized != null) {
-      requestHeaders[name] = serialized;
-    }
-  });
-
-  final cookieHeader = buildCookieHeader(cookies);
-  if (cookieHeader != null && cookieHeader.isNotEmpty) {
-    requestHeaders['Cookie'] = requestHeaders.containsKey('Cookie')
-        ? '${requestHeaders['Cookie']}; $cookieHeader'
-        : cookieHeader;
-  }
-
-  return requestHeaders.isEmpty ? null : requestHeaders;
-}
-
-String? buildCookieHeader(Map<String, HeaderParameterSpec> cookies) {
-  final pairs = <String>[];
-  cookies.forEach((name, parameter) {
-    final serialized = serializeParameterValue(parameter);
-    if (serialized != null) {
-      pairs.add('${Uri.encodeComponent(name)}=${Uri.encodeComponent(serialized)}');
-    }
-  });
-  return pairs.isEmpty ? null : pairs.join('; ');
-}
-
-String? serializeParameterValue(HeaderParameterSpec? parameter) {
-  final value = parameter?.value;
-  if (value == null) return null;
-  if (parameter!.contentType != null && parameter.contentType!.trim().isNotEmpty) {
-    return jsonEncode(value);
-  }
-  if (value is DateTime) return value.toIso8601String();
-  if (value is Iterable) {
-    return value
-        .where((item) => item != null)
-        .map((item) => item.toString())
-        .whereType<String>()
-        .join(',');
-  }
-  if (value is Map) {
-    final serialized = <String>[];
-    value.forEach((key, item) {
-      if (item == null) return;
-      if (parameter.explode) {
-        serialized.add('$key=$item');
-      } else {
-        serialized.add(key.toString());
-        serialized.add(item.toString());
-      }
-    });
-    return serialized.join(',');
-  }
-  return value.toString();
-}

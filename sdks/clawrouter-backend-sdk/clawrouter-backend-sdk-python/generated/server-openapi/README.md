@@ -143,8 +143,8 @@ print(result)
 ### integration
 
 ```python
-# List channels
-result = client.integration.channels.list()
+# List channel endpoints
+result = client.integration.channel_endpoints.list()
 print(result)
 ```
 

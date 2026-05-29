@@ -17,7 +17,6 @@ public class RuntimeInvocationCreateRequest {
     private String model;
     private String permissionMode;
     private String provider;
-    private String requestId;
     private Map<String, String> requestJson;
     private String runtime;
     private String sandboxPolicy;
@@ -137,14 +136,6 @@ public class RuntimeInvocationCreateRequest {
 
     public void setProvider(String provider) {
         this.provider = provider;
-    }
-
-    public String getRequestId() {
-        return this.requestId;
-    }
-
-    public void setRequestId(String requestId) {
-        this.requestId = requestId;
     }
 
     public Map<String, String> getRequestJson() {

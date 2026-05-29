@@ -26,11 +26,10 @@ class CommerceApi(private val client: HttpClient) {
     }
 
     /** Addresses Create */
-    suspend fun addressesCreate(body: CommerceStandardCommandRequest, idempotencyKey: String, xRequestId: String? = null): AddressesCreateResult? {
+    suspend fun addressesCreate(body: CommerceStandardCommandRequest, idempotencyKey: String): AddressesCreateResult? {
         val requestHeaders = buildRequestHeaders(
             mapOf(
                 "Idempotency-Key" to HeaderParameterSpec(idempotencyKey, "simple", false, null),
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
             ),
             emptyMap()
         )
@@ -39,11 +38,10 @@ class CommerceApi(private val client: HttpClient) {
     }
 
     /** Addresses Delete */
-    suspend fun addressesDelete(addressId: String, idempotencyKey: String, xRequestId: String? = null): AddressesDeleteResult? {
+    suspend fun addressesDelete(addressId: String, idempotencyKey: String): AddressesDeleteResult? {
         val requestHeaders = buildRequestHeaders(
             mapOf(
                 "Idempotency-Key" to HeaderParameterSpec(idempotencyKey, "simple", false, null),
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
             ),
             emptyMap()
         )
@@ -52,11 +50,10 @@ class CommerceApi(private val client: HttpClient) {
     }
 
     /** Addresses Update */
-    suspend fun addressesUpdate(addressId: String, body: CommerceStandardCommandRequest, idempotencyKey: String, xRequestId: String? = null): AddressesUpdateResult? {
+    suspend fun addressesUpdate(addressId: String, body: CommerceStandardCommandRequest, idempotencyKey: String): AddressesUpdateResult? {
         val requestHeaders = buildRequestHeaders(
             mapOf(
                 "Idempotency-Key" to HeaderParameterSpec(idempotencyKey, "simple", false, null),
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
             ),
             emptyMap()
         )
@@ -65,11 +62,10 @@ class CommerceApi(private val client: HttpClient) {
     }
 
     /** Addresses Default Selection Create */
-    suspend fun addressesDefaultSelectionCreate(addressId: String, body: CommerceStandardCommandRequest, idempotencyKey: String, xRequestId: String? = null): AddressesDefaultSelectionCreateResult? {
+    suspend fun addressesDefaultSelectionCreate(addressId: String, body: CommerceStandardCommandRequest, idempotencyKey: String): AddressesDefaultSelectionCreateResult? {
         val requestHeaders = buildRequestHeaders(
             mapOf(
                 "Idempotency-Key" to HeaderParameterSpec(idempotencyKey, "simple", false, null),
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
             ),
             emptyMap()
         )
@@ -96,11 +92,10 @@ class CommerceApi(private val client: HttpClient) {
     }
 
     /** Cart Items Create */
-    suspend fun cartItemsCreate(body: CommerceStandardCommandRequest, idempotencyKey: String, xRequestId: String? = null): CartItemsCreateResult? {
+    suspend fun cartItemsCreate(body: CommerceStandardCommandRequest, idempotencyKey: String): CartItemsCreateResult? {
         val requestHeaders = buildRequestHeaders(
             mapOf(
                 "Idempotency-Key" to HeaderParameterSpec(idempotencyKey, "simple", false, null),
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
             ),
             emptyMap()
         )
@@ -109,11 +104,10 @@ class CommerceApi(private val client: HttpClient) {
     }
 
     /** Cart Items Delete */
-    suspend fun cartItemsDelete(cartItemId: String, idempotencyKey: String, xRequestId: String? = null): CartItemsDeleteResult? {
+    suspend fun cartItemsDelete(cartItemId: String, idempotencyKey: String): CartItemsDeleteResult? {
         val requestHeaders = buildRequestHeaders(
             mapOf(
                 "Idempotency-Key" to HeaderParameterSpec(idempotencyKey, "simple", false, null),
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
             ),
             emptyMap()
         )
@@ -122,11 +116,10 @@ class CommerceApi(private val client: HttpClient) {
     }
 
     /** Cart Items Update */
-    suspend fun cartItemsUpdate(cartItemId: String, body: CommerceStandardCommandRequest, idempotencyKey: String, xRequestId: String? = null): CartItemsUpdateResult? {
+    suspend fun cartItemsUpdate(cartItemId: String, body: CommerceStandardCommandRequest, idempotencyKey: String): CartItemsUpdateResult? {
         val requestHeaders = buildRequestHeaders(
             mapOf(
                 "Idempotency-Key" to HeaderParameterSpec(idempotencyKey, "simple", false, null),
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
             ),
             emptyMap()
         )
@@ -174,11 +167,10 @@ class CommerceApi(private val client: HttpClient) {
     }
 
     /** Checkout Sessions Create */
-    suspend fun checkoutSessionsCreate(body: CommerceStandardCommandRequest, idempotencyKey: String, xRequestId: String? = null): CheckoutSessionsCreateResult? {
+    suspend fun checkoutSessionsCreate(body: CommerceStandardCommandRequest, idempotencyKey: String): CheckoutSessionsCreateResult? {
         val requestHeaders = buildRequestHeaders(
             mapOf(
                 "Idempotency-Key" to HeaderParameterSpec(idempotencyKey, "simple", false, null),
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
             ),
             emptyMap()
         )
@@ -193,11 +185,10 @@ class CommerceApi(private val client: HttpClient) {
     }
 
     /** Checkout Sessions Orders Create */
-    suspend fun checkoutSessionsOrdersCreate(checkoutSessionId: String, body: CommerceStandardCommandRequest, idempotencyKey: String, xRequestId: String? = null): CheckoutSessionsOrdersCreateResult? {
+    suspend fun checkoutSessionsOrdersCreate(checkoutSessionId: String, body: CommerceStandardCommandRequest, idempotencyKey: String): CheckoutSessionsOrdersCreateResult? {
         val requestHeaders = buildRequestHeaders(
             mapOf(
                 "Idempotency-Key" to HeaderParameterSpec(idempotencyKey, "simple", false, null),
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
             ),
             emptyMap()
         )
@@ -206,11 +197,10 @@ class CommerceApi(private val client: HttpClient) {
     }
 
     /** Checkout Sessions Quotes Create */
-    suspend fun checkoutSessionsQuotesCreate(checkoutSessionId: String, body: CommerceStandardCommandRequest, idempotencyKey: String, xRequestId: String? = null): CheckoutSessionsQuotesCreateResult? {
+    suspend fun checkoutSessionsQuotesCreate(checkoutSessionId: String, body: CommerceStandardCommandRequest, idempotencyKey: String): CheckoutSessionsQuotesCreateResult? {
         val requestHeaders = buildRequestHeaders(
             mapOf(
                 "Idempotency-Key" to HeaderParameterSpec(idempotencyKey, "simple", false, null),
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
             ),
             emptyMap()
         )
@@ -247,11 +237,10 @@ class CommerceApi(private val client: HttpClient) {
     }
 
     /** Invoices Create */
-    suspend fun invoicesCreate(body: CommerceStandardCommandRequest, idempotencyKey: String, xRequestId: String? = null): InvoicesCreateResult? {
+    suspend fun invoicesCreate(body: CommerceStandardCommandRequest, idempotencyKey: String): InvoicesCreateResult? {
         val requestHeaders = buildRequestHeaders(
             mapOf(
                 "Idempotency-Key" to HeaderParameterSpec(idempotencyKey, "simple", false, null),
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
             ),
             emptyMap()
         )
@@ -341,14 +330,8 @@ class CommerceApi(private val client: HttpClient) {
     }
 
     /** Memberships Points Daily Rewards Create */
-    suspend fun membershipsPointsDailyRewardsCreate(body: MembershipsPointsDailyRewardsCreateRequest? = null, xRequestId: String? = null): MembershipsPointsDailyRewardsCreateResult? {
-        val requestHeaders = buildRequestHeaders(
-            mapOf(
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
-            ),
-            emptyMap()
-        )
-        val raw = client.post(ApiPaths.appPath("/memberships/points/daily_rewards"), body, null, requestHeaders, "application/json")
+    suspend fun membershipsPointsDailyRewardsCreate(body: MembershipsPointsDailyRewardsCreateRequest? = null): MembershipsPointsDailyRewardsCreateResult? {
+        val raw = client.post(ApiPaths.appPath("/memberships/points/daily_rewards"), body, null, null, "application/json")
         return client.convertValue(raw, object : TypeReference<MembershipsPointsDailyRewardsCreateResult>() {})
     }
 
@@ -370,14 +353,8 @@ class CommerceApi(private val client: HttpClient) {
     }
 
     /** Memberships Privileges Speed Ups Create */
-    suspend fun membershipsPrivilegesSpeedUpsCreate(body: MembershipsPrivilegesSpeedUpsCreateRequest? = null, xRequestId: String? = null): MembershipsPrivilegesSpeedUpsCreateResult? {
-        val requestHeaders = buildRequestHeaders(
-            mapOf(
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
-            ),
-            emptyMap()
-        )
-        val raw = client.post(ApiPaths.appPath("/memberships/privileges/speed_ups"), body, null, requestHeaders, "application/json")
+    suspend fun membershipsPrivilegesSpeedUpsCreate(body: MembershipsPrivilegesSpeedUpsCreateRequest? = null): MembershipsPrivilegesSpeedUpsCreateResult? {
+        val raw = client.post(ApiPaths.appPath("/memberships/privileges/speed_ups"), body, null, null, "application/json")
         return client.convertValue(raw, object : TypeReference<MembershipsPrivilegesSpeedUpsCreateResult>() {})
     }
 
@@ -388,11 +365,10 @@ class CommerceApi(private val client: HttpClient) {
     }
 
     /** Memberships Purchases Create */
-    suspend fun membershipsPurchasesCreate(body: CommerceMembershipPurchaseRequest, idempotencyKey: String, xRequestId: String? = null): MembershipsPurchasesCreateResult? {
+    suspend fun membershipsPurchasesCreate(body: CommerceMembershipPurchaseRequest, idempotencyKey: String): MembershipsPurchasesCreateResult? {
         val requestHeaders = buildRequestHeaders(
             mapOf(
                 "Idempotency-Key" to HeaderParameterSpec(idempotencyKey, "simple", false, null),
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
             ),
             emptyMap()
         )
@@ -401,11 +377,10 @@ class CommerceApi(private val client: HttpClient) {
     }
 
     /** Memberships Purchases Renew */
-    suspend fun membershipsPurchasesRenew(body: CommerceMembershipPurchaseRequest, idempotencyKey: String, xRequestId: String? = null): MembershipsPurchasesRenewResult? {
+    suspend fun membershipsPurchasesRenew(body: CommerceMembershipPurchaseRequest, idempotencyKey: String): MembershipsPurchasesRenewResult? {
         val requestHeaders = buildRequestHeaders(
             mapOf(
                 "Idempotency-Key" to HeaderParameterSpec(idempotencyKey, "simple", false, null),
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
             ),
             emptyMap()
         )
@@ -414,11 +389,10 @@ class CommerceApi(private val client: HttpClient) {
     }
 
     /** Memberships Purchases Upgrade */
-    suspend fun membershipsPurchasesUpgrade(body: CommerceMembershipPurchaseRequest, idempotencyKey: String, xRequestId: String? = null): MembershipsPurchasesUpgradeResult? {
+    suspend fun membershipsPurchasesUpgrade(body: CommerceMembershipPurchaseRequest, idempotencyKey: String): MembershipsPurchasesUpgradeResult? {
         val requestHeaders = buildRequestHeaders(
             mapOf(
                 "Idempotency-Key" to HeaderParameterSpec(idempotencyKey, "simple", false, null),
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
             ),
             emptyMap()
         )
@@ -444,11 +418,10 @@ class CommerceApi(private val client: HttpClient) {
     }
 
     /** Orders Cancellations Create */
-    suspend fun ordersCancellationsCreate(orderId: String, body: CommerceStandardCommandRequest, idempotencyKey: String, xRequestId: String? = null): OrdersCancellationsCreateResult? {
+    suspend fun ordersCancellationsCreate(orderId: String, body: CommerceStandardCommandRequest, idempotencyKey: String): OrdersCancellationsCreateResult? {
         val requestHeaders = buildRequestHeaders(
             mapOf(
                 "Idempotency-Key" to HeaderParameterSpec(idempotencyKey, "simple", false, null),
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
             ),
             emptyMap()
         )
@@ -474,11 +447,10 @@ class CommerceApi(private val client: HttpClient) {
     }
 
     /** Payments Intents Create */
-    suspend fun paymentsIntentsCreate(body: CommercePaymentIntentCreateRequest, idempotencyKey: String, xRequestId: String? = null): PaymentsIntentsCreateResult? {
+    suspend fun paymentsIntentsCreate(body: CommercePaymentIntentCreateRequest, idempotencyKey: String): PaymentsIntentsCreateResult? {
         val requestHeaders = buildRequestHeaders(
             mapOf(
                 "Idempotency-Key" to HeaderParameterSpec(idempotencyKey, "simple", false, null),
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
             ),
             emptyMap()
         )
@@ -493,11 +465,10 @@ class CommerceApi(private val client: HttpClient) {
     }
 
     /** Payments Intents Attempts Create */
-    suspend fun paymentsIntentsAttemptsCreate(paymentIntentId: String, body: CommercePaymentAttemptCreateRequest, idempotencyKey: String, xRequestId: String? = null): PaymentsIntentsAttemptsCreateResult? {
+    suspend fun paymentsIntentsAttemptsCreate(paymentIntentId: String, body: CommercePaymentAttemptCreateRequest, idempotencyKey: String): PaymentsIntentsAttemptsCreateResult? {
         val requestHeaders = buildRequestHeaders(
             mapOf(
                 "Idempotency-Key" to HeaderParameterSpec(idempotencyKey, "simple", false, null),
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
             ),
             emptyMap()
         )
@@ -517,11 +488,10 @@ class CommerceApi(private val client: HttpClient) {
     }
 
     /** Recharges Orders Create */
-    suspend fun rechargesOrdersCreate(body: CommerceStandardCommandRequest, idempotencyKey: String, xRequestId: String? = null): RechargesOrdersCreateResult? {
+    suspend fun rechargesOrdersCreate(body: CommerceStandardCommandRequest, idempotencyKey: String): RechargesOrdersCreateResult? {
         val requestHeaders = buildRequestHeaders(
             mapOf(
                 "Idempotency-Key" to HeaderParameterSpec(idempotencyKey, "simple", false, null),
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
             ),
             emptyMap()
         )
@@ -558,11 +528,10 @@ class CommerceApi(private val client: HttpClient) {
     }
 
     /** Refunds Create */
-    suspend fun refundsCreate(body: CommerceStandardCommandRequest, idempotencyKey: String, xRequestId: String? = null): RefundsCreateResult? {
+    suspend fun refundsCreate(body: CommerceStandardCommandRequest, idempotencyKey: String): RefundsCreateResult? {
         val requestHeaders = buildRequestHeaders(
             mapOf(
                 "Idempotency-Key" to HeaderParameterSpec(idempotencyKey, "simple", false, null),
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
             ),
             emptyMap()
         )

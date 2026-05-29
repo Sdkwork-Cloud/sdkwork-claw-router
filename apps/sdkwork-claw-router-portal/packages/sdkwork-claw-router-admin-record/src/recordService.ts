@@ -1,4 +1,4 @@
-﻿import {
+import {
   ensureSdkworkApiSuccess,
   getClawRouterBackendSdkClient,
   isRecord,
@@ -17,6 +17,8 @@ const MAX_RECORD_LOG_PAGE_SIZE = 200;
 const MAX_RECORD_LOG_FILTER_LENGTH = 128;
 
 type RecordLogFilters = Record<string, unknown>;
+type LogRecordStatus = 'success' | 'error';
+type LogHttpMethod = 'GET' | 'POST' | 'PUT' | 'PATCH' | 'DELETE' | 'OPTIONS' | 'HEAD';
 
 export interface LogRecord {
   id: string;
@@ -27,6 +29,14 @@ export interface LogRecord {
   group: string;
   type: string;
   model: string;
+  providerNativeModel: string;
+  requestedModelCatalogKey: string;
+  status: LogRecordStatus;
+  httpStatus: number;
+  httpMethod: LogHttpMethod;
+  errorCode: string;
+  errorType: string;
+  errorMessage: string;
   totalTime: string;
   ttft: string;
   isStream: boolean;
@@ -41,6 +51,7 @@ export interface LogRecord {
   path: string;
   reasoningEffort: string;
   ip: string;
+  userAgent: string;
 }
 
 export class RecordService {
@@ -95,6 +106,11 @@ function optionalVisibleAsciiText(value: unknown, fieldName: string): string | u
 
 function normalizeLogRecord(value: unknown): LogRecord {
   const item = readRequiredRecord(value, 'Log record is required');
+  const model = readRequiredString(item, 'model', 'Log model is required');
+  const httpStatus = readOptionalNonNegativeNumber(item, 'httpStatus');
+  const errorCode = readOptionalString(item, 'errorCode');
+  const errorType = readOptionalString(item, 'errorType');
+  const errorMessage = readOptionalString(item, 'errorMessage');
   return {
     id: readRequiredString(item, 'id', 'Log record id is required'),
     user: readRequiredString(item, 'user', 'Log user is required'),
@@ -103,7 +119,16 @@ function normalizeLogRecord(value: unknown): LogRecord {
     tokenName: readRequiredString(item, 'tokenName', 'Log token name is required'),
     group: readRequiredString(item, 'group', 'Log group is required'),
     type: readRequiredString(item, 'type', 'Log type is required'),
-    model: readRequiredString(item, 'model', 'Log model is required'),
+    model,
+    providerNativeModel: readOptionalString(item, 'providerNativeModel') || model,
+    requestedModelCatalogKey: readOptionalString(item, 'requestedModelCatalogKey'),
+    status: readOptionalLogRecordStatus(item, 'status')
+      ?? ((httpStatus >= 400 || errorCode || errorType || errorMessage) ? 'error' : 'success'),
+    httpStatus,
+    httpMethod: readHttpMethod(item, 'httpMethod'),
+    errorCode,
+    errorType,
+    errorMessage,
     totalTime: readRequiredString(item, 'totalTime', 'Log total time is required'),
     ttft: readRequiredString(item, 'ttft', 'Log TTFT is required'),
     isStream: readRequiredBoolean(item, 'isStream', 'Log stream flag is required'),
@@ -138,6 +163,7 @@ function normalizeLogRecord(value: unknown): LogRecord {
     path: readRequiredString(item, 'path', 'Log path is required'),
     reasoningEffort: readRequiredString(item, 'reasoningEffort', 'Log reasoning effort is required'),
     ip: readRequiredString(item, 'ip', 'Log ip is required'),
+    userAgent: readOptionalString(item, 'userAgent'),
   };
 }
 
@@ -146,6 +172,53 @@ function readRequiredRecord(value: unknown, message: string): ApiRecord {
     throw new Error(message);
   }
   return value;
+}
+
+function readOptionalString(record: ApiRecord, key: string): string {
+  const value = record[key];
+  if (value === undefined || value === null) {
+    return '';
+  }
+  return String(value).trim();
+}
+
+function readOptionalNonNegativeNumber(record: ApiRecord, key: string): number {
+  const value = record[key];
+  if (value === undefined || value === null || value === '') {
+    return 0;
+  }
+  const parsed = typeof value === 'number' ? value : Number(String(value).trim());
+  if (Number.isFinite(parsed) && parsed >= 0) {
+    return parsed;
+  }
+  throw new Error(`Log ${key} must be a non-negative number`);
+}
+
+function readOptionalLogRecordStatus(record: ApiRecord, key: string): LogRecordStatus | undefined {
+  const value = readOptionalString(record, key).toLowerCase();
+  if (!value) {
+    return undefined;
+  }
+  if (value === 'success' || value === 'error') {
+    return value;
+  }
+  throw new Error('Log status must be success or error');
+}
+
+function readHttpMethod(record: ApiRecord, key: string): LogHttpMethod {
+  const value = readRequiredString(record, key, 'Log HTTP method is required').toUpperCase();
+  if (
+    value === 'GET'
+    || value === 'POST'
+    || value === 'PUT'
+    || value === 'PATCH'
+    || value === 'DELETE'
+    || value === 'OPTIONS'
+    || value === 'HEAD'
+  ) {
+    return value;
+  }
+  throw new Error('Log HTTP method is required');
 }
 
 function readRequiredBoolean(record: ApiRecord, key: string, message: string): boolean {

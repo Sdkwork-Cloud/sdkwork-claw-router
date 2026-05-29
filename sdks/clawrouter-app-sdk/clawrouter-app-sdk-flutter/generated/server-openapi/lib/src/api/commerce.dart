@@ -35,11 +35,10 @@ class CommerceApi {
   }
 
   /// Addresses Create
-  Future<AddressesCreateResult?> addressesCreate(CommerceStandardCommandRequest body, String idempotencyKey, [String? xRequestId]) async {
+  Future<AddressesCreateResult?> addressesCreate(CommerceStandardCommandRequest body, String idempotencyKey) async {
     final requestHeaders = buildRequestHeaders(
       <String, HeaderParameterSpec>{
         'Idempotency-Key': HeaderParameterSpec(idempotencyKey, 'simple', false, null),
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
       },
       <String, HeaderParameterSpec>{},
     );
@@ -52,11 +51,10 @@ class CommerceApi {
   }
 
   /// Addresses Delete
-  Future<AddressesDeleteResult?> addressesDelete(String addressId, String idempotencyKey, [String? xRequestId]) async {
+  Future<AddressesDeleteResult?> addressesDelete(String addressId, String idempotencyKey) async {
     final requestHeaders = buildRequestHeaders(
       <String, HeaderParameterSpec>{
         'Idempotency-Key': HeaderParameterSpec(idempotencyKey, 'simple', false, null),
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
       },
       <String, HeaderParameterSpec>{},
     );
@@ -68,11 +66,10 @@ class CommerceApi {
   }
 
   /// Addresses Update
-  Future<AddressesUpdateResult?> addressesUpdate(String addressId, CommerceStandardCommandRequest body, String idempotencyKey, [String? xRequestId]) async {
+  Future<AddressesUpdateResult?> addressesUpdate(String addressId, CommerceStandardCommandRequest body, String idempotencyKey) async {
     final requestHeaders = buildRequestHeaders(
       <String, HeaderParameterSpec>{
         'Idempotency-Key': HeaderParameterSpec(idempotencyKey, 'simple', false, null),
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
       },
       <String, HeaderParameterSpec>{},
     );
@@ -85,11 +82,10 @@ class CommerceApi {
   }
 
   /// Addresses Default Selection Create
-  Future<AddressesDefaultSelectionCreateResult?> addressesDefaultSelectionCreate(String addressId, CommerceStandardCommandRequest body, String idempotencyKey, [String? xRequestId]) async {
+  Future<AddressesDefaultSelectionCreateResult?> addressesDefaultSelectionCreate(String addressId, CommerceStandardCommandRequest body, String idempotencyKey) async {
     final requestHeaders = buildRequestHeaders(
       <String, HeaderParameterSpec>{
         'Idempotency-Key': HeaderParameterSpec(idempotencyKey, 'simple', false, null),
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
       },
       <String, HeaderParameterSpec>{},
     );
@@ -126,11 +122,10 @@ class CommerceApi {
   }
 
   /// Cart Items Create
-  Future<CartItemsCreateResult?> cartItemsCreate(CommerceStandardCommandRequest body, String idempotencyKey, [String? xRequestId]) async {
+  Future<CartItemsCreateResult?> cartItemsCreate(CommerceStandardCommandRequest body, String idempotencyKey) async {
     final requestHeaders = buildRequestHeaders(
       <String, HeaderParameterSpec>{
         'Idempotency-Key': HeaderParameterSpec(idempotencyKey, 'simple', false, null),
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
       },
       <String, HeaderParameterSpec>{},
     );
@@ -143,11 +138,10 @@ class CommerceApi {
   }
 
   /// Cart Items Delete
-  Future<CartItemsDeleteResult?> cartItemsDelete(String cartItemId, String idempotencyKey, [String? xRequestId]) async {
+  Future<CartItemsDeleteResult?> cartItemsDelete(String cartItemId, String idempotencyKey) async {
     final requestHeaders = buildRequestHeaders(
       <String, HeaderParameterSpec>{
         'Idempotency-Key': HeaderParameterSpec(idempotencyKey, 'simple', false, null),
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
       },
       <String, HeaderParameterSpec>{},
     );
@@ -159,11 +153,10 @@ class CommerceApi {
   }
 
   /// Cart Items Update
-  Future<CartItemsUpdateResult?> cartItemsUpdate(String cartItemId, CommerceStandardCommandRequest body, String idempotencyKey, [String? xRequestId]) async {
+  Future<CartItemsUpdateResult?> cartItemsUpdate(String cartItemId, CommerceStandardCommandRequest body, String idempotencyKey) async {
     final requestHeaders = buildRequestHeaders(
       <String, HeaderParameterSpec>{
         'Idempotency-Key': HeaderParameterSpec(idempotencyKey, 'simple', false, null),
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
       },
       <String, HeaderParameterSpec>{},
     );
@@ -227,11 +220,10 @@ class CommerceApi {
   }
 
   /// Checkout Sessions Create
-  Future<CheckoutSessionsCreateResult?> checkoutSessionsCreate(CommerceStandardCommandRequest body, String idempotencyKey, [String? xRequestId]) async {
+  Future<CheckoutSessionsCreateResult?> checkoutSessionsCreate(CommerceStandardCommandRequest body, String idempotencyKey) async {
     final requestHeaders = buildRequestHeaders(
       <String, HeaderParameterSpec>{
         'Idempotency-Key': HeaderParameterSpec(idempotencyKey, 'simple', false, null),
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
       },
       <String, HeaderParameterSpec>{},
     );
@@ -253,11 +245,10 @@ class CommerceApi {
   }
 
   /// Checkout Sessions Orders Create
-  Future<CheckoutSessionsOrdersCreateResult?> checkoutSessionsOrdersCreate(String checkoutSessionId, CommerceStandardCommandRequest body, String idempotencyKey, [String? xRequestId]) async {
+  Future<CheckoutSessionsOrdersCreateResult?> checkoutSessionsOrdersCreate(String checkoutSessionId, CommerceStandardCommandRequest body, String idempotencyKey) async {
     final requestHeaders = buildRequestHeaders(
       <String, HeaderParameterSpec>{
         'Idempotency-Key': HeaderParameterSpec(idempotencyKey, 'simple', false, null),
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
       },
       <String, HeaderParameterSpec>{},
     );
@@ -270,11 +261,10 @@ class CommerceApi {
   }
 
   /// Checkout Sessions Quotes Create
-  Future<CheckoutSessionsQuotesCreateResult?> checkoutSessionsQuotesCreate(String checkoutSessionId, CommerceStandardCommandRequest body, String idempotencyKey, [String? xRequestId]) async {
+  Future<CheckoutSessionsQuotesCreateResult?> checkoutSessionsQuotesCreate(String checkoutSessionId, CommerceStandardCommandRequest body, String idempotencyKey) async {
     final requestHeaders = buildRequestHeaders(
       <String, HeaderParameterSpec>{
         'Idempotency-Key': HeaderParameterSpec(idempotencyKey, 'simple', false, null),
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
       },
       <String, HeaderParameterSpec>{},
     );
@@ -324,11 +314,10 @@ class CommerceApi {
   }
 
   /// Invoices Create
-  Future<InvoicesCreateResult?> invoicesCreate(CommerceStandardCommandRequest body, String idempotencyKey, [String? xRequestId]) async {
+  Future<InvoicesCreateResult?> invoicesCreate(CommerceStandardCommandRequest body, String idempotencyKey) async {
     final requestHeaders = buildRequestHeaders(
       <String, HeaderParameterSpec>{
         'Idempotency-Key': HeaderParameterSpec(idempotencyKey, 'simple', false, null),
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
       },
       <String, HeaderParameterSpec>{},
     );
@@ -455,15 +444,9 @@ class CommerceApi {
   }
 
   /// Memberships Points Daily Rewards Create
-  Future<MembershipsPointsDailyRewardsCreateResult?> membershipsPointsDailyRewardsCreate([MembershipsPointsDailyRewardsCreateRequest? body, String? xRequestId]) async {
-    final requestHeaders = buildRequestHeaders(
-      <String, HeaderParameterSpec>{
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
-      },
-      <String, HeaderParameterSpec>{},
-    );
+  Future<MembershipsPointsDailyRewardsCreateResult?> membershipsPointsDailyRewardsCreate([MembershipsPointsDailyRewardsCreateRequest? body]) async {
     final payload = body?.toJson();
-    final response = await _client.post(ApiPaths.appPath('/memberships/points/daily_rewards'), body: payload, headers: requestHeaders, contentType: 'application/json');
+    final response = await _client.post(ApiPaths.appPath('/memberships/points/daily_rewards'), body: payload, contentType: 'application/json');
     return (() {
       final map = sdkworkResponseAsMap(response);
       return map == null ? null : MembershipsPointsDailyRewardsCreateResult.fromJson(map);
@@ -494,15 +477,9 @@ class CommerceApi {
   }
 
   /// Memberships Privileges Speed Ups Create
-  Future<MembershipsPrivilegesSpeedUpsCreateResult?> membershipsPrivilegesSpeedUpsCreate([MembershipsPrivilegesSpeedUpsCreateRequest? body, String? xRequestId]) async {
-    final requestHeaders = buildRequestHeaders(
-      <String, HeaderParameterSpec>{
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
-      },
-      <String, HeaderParameterSpec>{},
-    );
+  Future<MembershipsPrivilegesSpeedUpsCreateResult?> membershipsPrivilegesSpeedUpsCreate([MembershipsPrivilegesSpeedUpsCreateRequest? body]) async {
     final payload = body?.toJson();
-    final response = await _client.post(ApiPaths.appPath('/memberships/privileges/speed_ups'), body: payload, headers: requestHeaders, contentType: 'application/json');
+    final response = await _client.post(ApiPaths.appPath('/memberships/privileges/speed_ups'), body: payload, contentType: 'application/json');
     return (() {
       final map = sdkworkResponseAsMap(response);
       return map == null ? null : MembershipsPrivilegesSpeedUpsCreateResult.fromJson(map);
@@ -519,11 +496,10 @@ class CommerceApi {
   }
 
   /// Memberships Purchases Create
-  Future<MembershipsPurchasesCreateResult?> membershipsPurchasesCreate(CommerceMembershipPurchaseRequest body, String idempotencyKey, [String? xRequestId]) async {
+  Future<MembershipsPurchasesCreateResult?> membershipsPurchasesCreate(CommerceMembershipPurchaseRequest body, String idempotencyKey) async {
     final requestHeaders = buildRequestHeaders(
       <String, HeaderParameterSpec>{
         'Idempotency-Key': HeaderParameterSpec(idempotencyKey, 'simple', false, null),
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
       },
       <String, HeaderParameterSpec>{},
     );
@@ -536,11 +512,10 @@ class CommerceApi {
   }
 
   /// Memberships Purchases Renew
-  Future<MembershipsPurchasesRenewResult?> membershipsPurchasesRenew(CommerceMembershipPurchaseRequest body, String idempotencyKey, [String? xRequestId]) async {
+  Future<MembershipsPurchasesRenewResult?> membershipsPurchasesRenew(CommerceMembershipPurchaseRequest body, String idempotencyKey) async {
     final requestHeaders = buildRequestHeaders(
       <String, HeaderParameterSpec>{
         'Idempotency-Key': HeaderParameterSpec(idempotencyKey, 'simple', false, null),
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
       },
       <String, HeaderParameterSpec>{},
     );
@@ -553,11 +528,10 @@ class CommerceApi {
   }
 
   /// Memberships Purchases Upgrade
-  Future<MembershipsPurchasesUpgradeResult?> membershipsPurchasesUpgrade(CommerceMembershipPurchaseRequest body, String idempotencyKey, [String? xRequestId]) async {
+  Future<MembershipsPurchasesUpgradeResult?> membershipsPurchasesUpgrade(CommerceMembershipPurchaseRequest body, String idempotencyKey) async {
     final requestHeaders = buildRequestHeaders(
       <String, HeaderParameterSpec>{
         'Idempotency-Key': HeaderParameterSpec(idempotencyKey, 'simple', false, null),
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
       },
       <String, HeaderParameterSpec>{},
     );
@@ -593,11 +567,10 @@ class CommerceApi {
   }
 
   /// Orders Cancellations Create
-  Future<OrdersCancellationsCreateResult?> ordersCancellationsCreate(String orderId, CommerceStandardCommandRequest body, String idempotencyKey, [String? xRequestId]) async {
+  Future<OrdersCancellationsCreateResult?> ordersCancellationsCreate(String orderId, CommerceStandardCommandRequest body, String idempotencyKey) async {
     final requestHeaders = buildRequestHeaders(
       <String, HeaderParameterSpec>{
         'Idempotency-Key': HeaderParameterSpec(idempotencyKey, 'simple', false, null),
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
       },
       <String, HeaderParameterSpec>{},
     );
@@ -633,11 +606,10 @@ class CommerceApi {
   }
 
   /// Payments Intents Create
-  Future<PaymentsIntentsCreateResult?> paymentsIntentsCreate(CommercePaymentIntentCreateRequest body, String idempotencyKey, [String? xRequestId]) async {
+  Future<PaymentsIntentsCreateResult?> paymentsIntentsCreate(CommercePaymentIntentCreateRequest body, String idempotencyKey) async {
     final requestHeaders = buildRequestHeaders(
       <String, HeaderParameterSpec>{
         'Idempotency-Key': HeaderParameterSpec(idempotencyKey, 'simple', false, null),
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
       },
       <String, HeaderParameterSpec>{},
     );
@@ -659,11 +631,10 @@ class CommerceApi {
   }
 
   /// Payments Intents Attempts Create
-  Future<PaymentsIntentsAttemptsCreateResult?> paymentsIntentsAttemptsCreate(String paymentIntentId, CommercePaymentAttemptCreateRequest body, String idempotencyKey, [String? xRequestId]) async {
+  Future<PaymentsIntentsAttemptsCreateResult?> paymentsIntentsAttemptsCreate(String paymentIntentId, CommercePaymentAttemptCreateRequest body, String idempotencyKey) async {
     final requestHeaders = buildRequestHeaders(
       <String, HeaderParameterSpec>{
         'Idempotency-Key': HeaderParameterSpec(idempotencyKey, 'simple', false, null),
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
       },
       <String, HeaderParameterSpec>{},
     );
@@ -690,11 +661,10 @@ class CommerceApi {
   }
 
   /// Recharges Orders Create
-  Future<RechargesOrdersCreateResult?> rechargesOrdersCreate(CommerceStandardCommandRequest body, String idempotencyKey, [String? xRequestId]) async {
+  Future<RechargesOrdersCreateResult?> rechargesOrdersCreate(CommerceStandardCommandRequest body, String idempotencyKey) async {
     final requestHeaders = buildRequestHeaders(
       <String, HeaderParameterSpec>{
         'Idempotency-Key': HeaderParameterSpec(idempotencyKey, 'simple', false, null),
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
       },
       <String, HeaderParameterSpec>{},
     );
@@ -744,11 +714,10 @@ class CommerceApi {
   }
 
   /// Refunds Create
-  Future<RefundsCreateResult?> refundsCreate(CommerceStandardCommandRequest body, String idempotencyKey, [String? xRequestId]) async {
+  Future<RefundsCreateResult?> refundsCreate(CommerceStandardCommandRequest body, String idempotencyKey) async {
     final requestHeaders = buildRequestHeaders(
       <String, HeaderParameterSpec>{
         'Idempotency-Key': HeaderParameterSpec(idempotencyKey, 'simple', false, null),
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
       },
       <String, HeaderParameterSpec>{},
     );

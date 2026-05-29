@@ -1,6 +1,5 @@
 use std::sync::Arc;
 
-use crate::api::base::{RequestHeaders};
 use crate::api::paths::backend_path;
 use crate::api::paths::append_query_string;
 use crate::http::{SdkworkError, SdkworkHttpClient};
@@ -23,15 +22,9 @@ impl ContentApi {
     }
 
     /// Create announcement
-    pub async fn announcements_create(&self, body: &AdminAnnouncementCreateRequest, x_request_id: Option<&str>) -> Result<AnnouncementsCreateResult, SdkworkError> {
+    pub async fn announcements_create(&self, body: &AdminAnnouncementCreateRequest) -> Result<AnnouncementsCreateResult, SdkworkError> {
         let path = backend_path(&"/content/announcements".to_string());
-        let headers = build_request_headers(
-            &[
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
-            ],
-            &[],
-        );
-        self.client.post(&path, Some(body), None, headers.as_ref(), Some("application/json")).await
+        self.client.post(&path, Some(body), None, None, Some("application/json")).await
     }
 
     /// Delete announcement
@@ -41,15 +34,9 @@ impl ContentApi {
     }
 
     /// Update announcement
-    pub async fn announcements_update(&self, announcement_id: &str, body: &AdminAnnouncementUpdateRequest, x_request_id: Option<&str>) -> Result<AnnouncementsUpdateResult, SdkworkError> {
+    pub async fn announcements_update(&self, announcement_id: &str, body: &AdminAnnouncementUpdateRequest) -> Result<AnnouncementsUpdateResult, SdkworkError> {
         let path = backend_path(&format!("/content/announcements/{}", serialize_path_parameter(announcement_id, PathParameterSpec::new("announcementId", "simple", false))));
-        let headers = build_request_headers(
-            &[
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
-            ],
-            &[],
-        );
-        self.client.patch(&path, Some(body), None, headers.as_ref(), Some("application/json")).await
+        self.client.patch(&path, Some(body), None, None, Some("application/json")).await
     }
 
     /// Admin Course Applications List
@@ -65,63 +52,33 @@ impl ContentApi {
     }
 
     /// Admin Course Application Review
-    pub async fn course_applications_review(&self, application_id: &str, body: &AdminCourseApplicationReviewRequest, x_request_id: Option<&str>) -> Result<CourseApplicationsReviewResult, SdkworkError> {
+    pub async fn course_applications_review(&self, application_id: &str, body: &AdminCourseApplicationReviewRequest) -> Result<CourseApplicationsReviewResult, SdkworkError> {
         let path = backend_path(&format!("/content/course-applications/{}/review", serialize_path_parameter(application_id, PathParameterSpec::new("applicationId", "simple", false))));
-        let headers = build_request_headers(
-            &[
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
-            ],
-            &[],
-        );
-        self.client.patch(&path, Some(body), None, headers.as_ref(), Some("application/json")).await
+        self.client.patch(&path, Some(body), None, None, Some("application/json")).await
     }
 
     /// Admin Course Lesson Delete
-    pub async fn course_lessons_delete(&self, lesson_id: &str, x_request_id: Option<&str>) -> Result<CourseLessonsDeleteResult, SdkworkError> {
+    pub async fn course_lessons_delete(&self, lesson_id: &str) -> Result<CourseLessonsDeleteResult, SdkworkError> {
         let path = backend_path(&format!("/content/course-lessons/{}", serialize_path_parameter(lesson_id, PathParameterSpec::new("lessonId", "simple", false))));
-        let headers = build_request_headers(
-            &[
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
-            ],
-            &[],
-        );
-        self.client.delete(&path, None, headers.as_ref()).await
+        self.client.delete(&path, None, None).await
     }
 
     /// Admin Course Lesson Update
-    pub async fn course_lessons_update(&self, lesson_id: &str, body: &AdminCourseLessonMutationRequest, x_request_id: Option<&str>) -> Result<CourseLessonsUpdateResult, SdkworkError> {
+    pub async fn course_lessons_update(&self, lesson_id: &str, body: &AdminCourseLessonMutationRequest) -> Result<CourseLessonsUpdateResult, SdkworkError> {
         let path = backend_path(&format!("/content/course-lessons/{}", serialize_path_parameter(lesson_id, PathParameterSpec::new("lessonId", "simple", false))));
-        let headers = build_request_headers(
-            &[
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
-            ],
-            &[],
-        );
-        self.client.patch(&path, Some(body), None, headers.as_ref(), Some("application/json")).await
+        self.client.patch(&path, Some(body), None, None, Some("application/json")).await
     }
 
     /// Admin Course Section Delete
-    pub async fn course_sections_delete(&self, section_id: &str, x_request_id: Option<&str>) -> Result<CourseSectionsDeleteResult, SdkworkError> {
+    pub async fn course_sections_delete(&self, section_id: &str) -> Result<CourseSectionsDeleteResult, SdkworkError> {
         let path = backend_path(&format!("/content/course-sections/{}", serialize_path_parameter(section_id, PathParameterSpec::new("sectionId", "simple", false))));
-        let headers = build_request_headers(
-            &[
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
-            ],
-            &[],
-        );
-        self.client.delete(&path, None, headers.as_ref()).await
+        self.client.delete(&path, None, None).await
     }
 
     /// Admin Course Section Update
-    pub async fn course_sections_update(&self, section_id: &str, body: &AdminCourseSectionMutationRequest, x_request_id: Option<&str>) -> Result<CourseSectionsUpdateResult, SdkworkError> {
+    pub async fn course_sections_update(&self, section_id: &str, body: &AdminCourseSectionMutationRequest) -> Result<CourseSectionsUpdateResult, SdkworkError> {
         let path = backend_path(&format!("/content/course-sections/{}", serialize_path_parameter(section_id, PathParameterSpec::new("sectionId", "simple", false))));
-        let headers = build_request_headers(
-            &[
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
-            ],
-            &[],
-        );
-        self.client.patch(&path, Some(body), None, headers.as_ref(), Some("application/json")).await
+        self.client.patch(&path, Some(body), None, None, Some("application/json")).await
     }
 
     /// Admin Courses List
@@ -137,15 +94,9 @@ impl ContentApi {
     }
 
     /// Admin Course Create
-    pub async fn courses_create(&self, body: &AdminCourseMutationRequest, x_request_id: Option<&str>) -> Result<CoursesCreateResult, SdkworkError> {
+    pub async fn courses_create(&self, body: &AdminCourseMutationRequest) -> Result<CoursesCreateResult, SdkworkError> {
         let path = backend_path(&"/content/courses".to_string());
-        let headers = build_request_headers(
-            &[
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
-            ],
-            &[],
-        );
-        self.client.post(&path, Some(body), None, headers.as_ref(), Some("application/json")).await
+        self.client.post(&path, Some(body), None, None, Some("application/json")).await
     }
 
     /// Admin Course Comments List
@@ -161,15 +112,9 @@ impl ContentApi {
     }
 
     /// Admin Course Comment Moderate
-    pub async fn course_comments_moderate(&self, comment_id: &str, body: &AdminCourseCommentModerationRequest, x_request_id: Option<&str>) -> Result<CourseCommentsModerateResult, SdkworkError> {
+    pub async fn course_comments_moderate(&self, comment_id: &str, body: &AdminCourseCommentModerationRequest) -> Result<CourseCommentsModerateResult, SdkworkError> {
         let path = backend_path(&format!("/content/courses/comments/{}/moderation", serialize_path_parameter(comment_id, PathParameterSpec::new("commentId", "simple", false))));
-        let headers = build_request_headers(
-            &[
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
-            ],
-            &[],
-        );
-        self.client.patch(&path, Some(body), None, headers.as_ref(), Some("application/json")).await
+        self.client.patch(&path, Some(body), None, None, Some("application/json")).await
     }
 
     /// Course Dashboard Retrieve
@@ -191,27 +136,15 @@ impl ContentApi {
     }
 
     /// Admin Course Delete
-    pub async fn courses_delete(&self, course_id: &str, x_request_id: Option<&str>) -> Result<CoursesDeleteResult, SdkworkError> {
+    pub async fn courses_delete(&self, course_id: &str) -> Result<CoursesDeleteResult, SdkworkError> {
         let path = backend_path(&format!("/content/courses/{}", serialize_path_parameter(course_id, PathParameterSpec::new("courseId", "simple", false))));
-        let headers = build_request_headers(
-            &[
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
-            ],
-            &[],
-        );
-        self.client.delete(&path, None, headers.as_ref()).await
+        self.client.delete(&path, None, None).await
     }
 
     /// Admin Course Update
-    pub async fn courses_update(&self, course_id: &str, body: &AdminCourseMutationRequest, x_request_id: Option<&str>) -> Result<CoursesUpdateResult, SdkworkError> {
+    pub async fn courses_update(&self, course_id: &str, body: &AdminCourseMutationRequest) -> Result<CoursesUpdateResult, SdkworkError> {
         let path = backend_path(&format!("/content/courses/{}", serialize_path_parameter(course_id, PathParameterSpec::new("courseId", "simple", false))));
-        let headers = build_request_headers(
-            &[
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
-            ],
-            &[],
-        );
-        self.client.patch(&path, Some(body), None, headers.as_ref(), Some("application/json")).await
+        self.client.patch(&path, Some(body), None, None, Some("application/json")).await
     }
 
     /// Admin Course Lessons List
@@ -227,15 +160,9 @@ impl ContentApi {
     }
 
     /// Admin Course Lesson Create
-    pub async fn courses_lessons_create(&self, course_id: &str, body: &AdminCourseLessonMutationRequest, x_request_id: Option<&str>) -> Result<CoursesLessonsCreateResult, SdkworkError> {
+    pub async fn courses_lessons_create(&self, course_id: &str, body: &AdminCourseLessonMutationRequest) -> Result<CoursesLessonsCreateResult, SdkworkError> {
         let path = backend_path(&format!("/content/courses/{}/lessons", serialize_path_parameter(course_id, PathParameterSpec::new("courseId", "simple", false))));
-        let headers = build_request_headers(
-            &[
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
-            ],
-            &[],
-        );
-        self.client.post(&path, Some(body), None, headers.as_ref(), Some("application/json")).await
+        self.client.post(&path, Some(body), None, None, Some("application/json")).await
     }
 
     /// Admin Course Relations List
@@ -251,15 +178,9 @@ impl ContentApi {
     }
 
     /// Admin Course Relations Replace
-    pub async fn courses_relations_replace(&self, course_id: &str, body: &AdminCourseRelationsReplaceRequest, x_request_id: Option<&str>) -> Result<CoursesRelationsReplaceResult, SdkworkError> {
+    pub async fn courses_relations_replace(&self, course_id: &str, body: &AdminCourseRelationsReplaceRequest) -> Result<CoursesRelationsReplaceResult, SdkworkError> {
         let path = backend_path(&format!("/content/courses/{}/relations", serialize_path_parameter(course_id, PathParameterSpec::new("courseId", "simple", false))));
-        let headers = build_request_headers(
-            &[
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
-            ],
-            &[],
-        );
-        self.client.put(&path, Some(body), None, headers.as_ref(), Some("application/json")).await
+        self.client.put(&path, Some(body), None, None, Some("application/json")).await
     }
 
     /// Admin Course Sections List
@@ -275,15 +196,9 @@ impl ContentApi {
     }
 
     /// Admin Course Section Create
-    pub async fn courses_sections_create(&self, course_id: &str, body: &AdminCourseSectionMutationRequest, x_request_id: Option<&str>) -> Result<CoursesSectionsCreateResult, SdkworkError> {
+    pub async fn courses_sections_create(&self, course_id: &str, body: &AdminCourseSectionMutationRequest) -> Result<CoursesSectionsCreateResult, SdkworkError> {
         let path = backend_path(&format!("/content/courses/{}/sections", serialize_path_parameter(course_id, PathParameterSpec::new("courseId", "simple", false))));
-        let headers = build_request_headers(
-            &[
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
-            ],
-            &[],
-        );
-        self.client.post(&path, Some(body), None, headers.as_ref(), Some("application/json")).await
+        self.client.post(&path, Some(body), None, None, Some("application/json")).await
     }
 
 }
@@ -386,118 +301,6 @@ fn path_primitive_prefix(name: &str, style: &str) -> String {
     }
 }
 
-struct HeaderParameterSpec {
-    value: serde_json::Value,
-    explode: bool,
-    content_type: Option<&'static str>,
-}
-
-impl HeaderParameterSpec {
-    fn new<T: serde::Serialize>(
-        value: T,
-        _style: &'static str,
-        explode: bool,
-        content_type: Option<&'static str>,
-    ) -> Self {
-        Self {
-            value: serde_json::to_value(value).unwrap_or(serde_json::Value::Null),
-            explode,
-            content_type,
-        }
-    }
-}
-
-fn build_request_headers(headers: &[(&str, HeaderParameterSpec)], cookies: &[(&str, HeaderParameterSpec)]) -> Option<RequestHeaders> {
-    let mut request_headers = RequestHeaders::new();
-    for (name, parameter) in headers {
-        if let Some(value) = serialize_header_parameter(parameter) {
-            request_headers.insert((*name).to_string(), value);
-        }
-    }
-
-    let cookie_header = build_cookie_header(cookies);
-    if !cookie_header.is_empty() {
-        request_headers
-            .entry("Cookie".to_string())
-            .and_modify(|existing| {
-                existing.push_str("; ");
-                existing.push_str(&cookie_header);
-            })
-            .or_insert(cookie_header);
-    }
-
-    if request_headers.is_empty() {
-        None
-    } else {
-        Some(request_headers)
-    }
-}
-
-fn build_cookie_header(cookies: &[(&str, HeaderParameterSpec)]) -> String {
-    cookies
-        .iter()
-        .filter_map(|(name, value)| {
-            serialize_header_parameter(value)
-                .map(|value| format!("{}={}", percent_encode(name), percent_encode(&value)))
-        })
-        .collect::<Vec<_>>()
-        .join("; ")
-}
-
-fn serialize_header_parameter(parameter: &HeaderParameterSpec) -> Option<String> {
-    if parameter.value.is_null() {
-        return None;
-    }
-    if parameter.content_type.is_some() {
-        return Some(parameter.value.to_string());
-    }
-    match &parameter.value {
-        serde_json::Value::Null => None,
-        serde_json::Value::String(value) => Some(value.clone()),
-        serde_json::Value::Number(value) => Some(value.to_string()),
-        serde_json::Value::Bool(value) => Some(value.to_string()),
-        serde_json::Value::Array(values) => {
-            let serialized = values
-                .iter()
-                .filter_map(serialize_json_value)
-                .collect::<Vec<_>>();
-            if serialized.is_empty() {
-                None
-            } else {
-                Some(serialized.join(","))
-            }
-        }
-        serde_json::Value::Object(values) => {
-            let serialized = values
-                .iter()
-                .filter_map(|(key, value)| {
-                    serialize_json_value(value).map(|serialized| {
-                        if parameter.explode {
-                            format!("{}={}", key, serialized)
-                        } else {
-                            format!("{},{}", key, serialized)
-                        }
-                    })
-                })
-                .collect::<Vec<_>>();
-            if serialized.is_empty() {
-                None
-            } else {
-                Some(serialized.join(","))
-            }
-        }
-    }
-}
-
-fn serialize_json_value(value: &serde_json::Value) -> Option<String> {
-    match value {
-        serde_json::Value::Null => None,
-        serde_json::Value::String(value) => Some(value.clone()),
-        serde_json::Value::Number(value) => Some(value.to_string()),
-        serde_json::Value::Bool(value) => Some(value.to_string()),
-        other => Some(other.to_string()),
-    }
-}
 
 struct QueryParameterSpec<'a> {
     name: &'a str,

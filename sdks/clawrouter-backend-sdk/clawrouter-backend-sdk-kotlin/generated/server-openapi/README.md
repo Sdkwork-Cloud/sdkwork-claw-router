@@ -148,8 +148,8 @@ println(result)
 ### integration
 
 ```kotlin
-// List channels
-val result = client.integration.channelsList()
+// List channel endpoints
+val result = client.integration.channelEndpointsList()
 println(result)
 ```
 

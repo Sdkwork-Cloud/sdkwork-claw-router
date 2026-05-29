@@ -268,12 +268,11 @@ class RuntimeInvocationsApi:
         ])
         return self._client.get(_append_query_string(f"/app/v3/api/runtime/invocations", query))
 
-    def create(self, body: RuntimeInvocationCreateRequest, idempotency_key: str, x_request_id: Optional[str] = None) -> InvocationsCreateResult:
+    def create(self, body: RuntimeInvocationCreateRequest, idempotency_key: str) -> InvocationsCreateResult:
         """Create runtime invocation"""
         request_headers = build_request_headers(
             {
                 'Idempotency-Key': {'value': idempotency_key, 'style': 'simple', 'explode': False},
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
             },
             {}
         )
@@ -283,12 +282,11 @@ class RuntimeInvocationsApi:
         """Retrieve runtime invocation"""
         return self._client.get(f"/app/v3/api/runtime/invocations/{serialize_path_parameter(invocation_id, {'name': 'invocationId', 'style': 'simple', 'explode': False})}")
 
-    def submit(self, invocation_id: str, body: RuntimeInvocationCompleteRequest, idempotency_key: str, x_request_id: Optional[str] = None) -> InvocationsSubmitResult:
+    def submit(self, invocation_id: str, body: RuntimeInvocationCompleteRequest, idempotency_key: str) -> InvocationsSubmitResult:
         """Complete runtime invocation"""
         request_headers = build_request_headers(
             {
                 'Idempotency-Key': {'value': idempotency_key, 'style': 'simple', 'explode': False},
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
             },
             {}
         )
@@ -309,12 +307,11 @@ class RuntimeArtifactsApi:
         ])
         return self._client.get(_append_query_string(f"/app/v3/api/runtime/invocations/{serialize_path_parameter(invocation_id, {'name': 'invocationId', 'style': 'simple', 'explode': False})}/artifacts", query))
 
-    def create(self, invocation_id: str, body: RuntimeArtifactCreateRequest, idempotency_key: str, x_request_id: Optional[str] = None) -> ArtifactsCreateResult:
+    def create(self, invocation_id: str, body: RuntimeArtifactCreateRequest, idempotency_key: str) -> ArtifactsCreateResult:
         """Create runtime artifact"""
         request_headers = build_request_headers(
             {
                 'Idempotency-Key': {'value': idempotency_key, 'style': 'simple', 'explode': False},
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
             },
             {}
         )
@@ -335,12 +332,11 @@ class RuntimeInvocationEventsApi:
         ])
         return self._client.get(_append_query_string(f"/app/v3/api/runtime/invocations/{serialize_path_parameter(invocation_id, {'name': 'invocationId', 'style': 'simple', 'explode': False})}/events", query))
 
-    def create(self, invocation_id: str, body: RuntimeEventCreateRequest, idempotency_key: str, x_request_id: Optional[str] = None) -> InvocationEventsCreateResult:
+    def create(self, invocation_id: str, body: RuntimeEventCreateRequest, idempotency_key: str) -> InvocationEventsCreateResult:
         """Create runtime invocation event"""
         request_headers = build_request_headers(
             {
                 'Idempotency-Key': {'value': idempotency_key, 'style': 'simple', 'explode': False},
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
             },
             {}
         )

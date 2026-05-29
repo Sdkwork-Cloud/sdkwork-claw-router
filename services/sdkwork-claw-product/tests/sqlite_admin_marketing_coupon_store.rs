@@ -1,4 +1,4 @@
-﻿use sdkwork_claw_product::infrastructure::sql::sqlite::SqliteAdminMarketingStore;
+use sdkwork_claw_product::infrastructure::sql::sqlite::SqliteAdminMarketingStore;
 use sdkwork_claw_product::ports::{
     AdminMarketingStore, AdminMarketingSubject, CreatePromotionOfferCommand,
     GeneratePromotionCouponStockCommand, ListPromotionCodesQuery, ListPromotionCouponStocksQuery,

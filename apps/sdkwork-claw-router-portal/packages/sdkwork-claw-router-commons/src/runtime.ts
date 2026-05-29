@@ -1,6 +1,8 @@
 import { APP_API_PREFIX, type ClawRouterAppSdkClient } from './sdk-clients.ts';
 import type { RuntimeEventItem } from '@sdkwork/clawrouter-app-sdk';
 
+export * from './user-agent.ts';
+
 export type RuntimeStreamEvent = RuntimeEventItem;
 
 export async function* streamRuntimeInvocationEvents(

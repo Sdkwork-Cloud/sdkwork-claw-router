@@ -12,6 +12,14 @@ frontend_models:
   - group
   - type
   - model
+  - providerNativeModel
+  - requestedModelCatalogKey
+  - status
+  - httpStatus
+  - httpMethod
+  - errorCode
+  - errorType
+  - errorMessage
   - totalTime
   - ttft
   - isStream
@@ -26,6 +34,7 @@ frontend_models:
   - path
   - reasoningEffort
   - ip
+  - userAgent
   data_sources:
   - ai_request_trace
   - ai_usage_fact

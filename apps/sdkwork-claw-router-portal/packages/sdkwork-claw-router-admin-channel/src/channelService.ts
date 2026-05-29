@@ -1,4 +1,4 @@
-import {
+﻿import {
   ensureSdkworkApiSuccess,
   getClawRouterBackendSdkClient,
   isRecord,
@@ -15,8 +15,16 @@ import {
   type ApiRecord,
 } from 'sdkwork-claw-router-commons/runtime';
 import type {
+  AdminAiResourceCreateRequest,
+  AdminAiResourceItem,
+  AdminAiResourceMemberInput,
+  AdminAiResourceMemberItem,
+  AdminAiResourceUpdateRequest,
   AdminChannelCreateRequest,
   AdminChannelUpdateRequest,
+  AdminChannelEndpointCreateRequest,
+  AdminChannelEndpointItem,
+  AdminChannelEndpointUpdateRequest,
   AdminProviderSecretCreateRequest,
   AdminProviderSecretUpdateRequest,
   IntegrationProviderSecretsListParams,
@@ -24,10 +32,14 @@ import type {
   ProviderRetryPolicy,
 } from '@sdkwork/clawrouter-backend-sdk';
 
+type ChannelType = NonNullable<AdminChannelCreateRequest['channelType']>;
+
 export interface ChannelItem {
   id: string;
+  channelId: string;
   name: string;
   vendor: string;
+  channelType: ChannelType;
   protocol: string;
   accessType: string;
   baseUrl?: string;
@@ -37,6 +49,7 @@ export interface ChannelItem {
   expiresAt?: string;
   models: string[];
   capabilities: string[];
+  resourceCodes: string[];
   isMultimodal: boolean;
   timeoutMs?: number;
   retryPolicy?: ProviderRetryPolicy;
@@ -55,9 +68,48 @@ export interface ChannelModelCatalogItem {
   regionCode: string;
 }
 
+export type AiResource = AdminAiResourceItem;
+
+export type AiResourceMember = AdminAiResourceMemberItem;
+
+export type AiResourceMemberInput = AdminAiResourceMemberInput;
+
+export type AiResourceCreateInput = {
+  resourceCode: string;
+  resourceType: AiResource['resourceType'];
+  displayName: string;
+  vendorCode?: string | null;
+  modalityCode?: string | null;
+  apiEndpointCode?: string | null;
+  catalogKey?: string | null;
+  model?: string | null;
+  providerNativeModel?: string | null;
+  compositionMode?: AiResource['compositionMode'];
+  status?: AiResource['status'];
+  sortOrder?: number | null;
+  members?: AiResourceMemberInput[];
+};
+
+export type AiResourceUpdateInput = {
+  resourceCode?: string;
+  resourceType?: AiResource['resourceType'];
+  displayName?: string;
+  vendorCode?: string | null;
+  modalityCode?: string | null;
+  apiEndpointCode?: string | null;
+  catalogKey?: string | null;
+  model?: string | null;
+  providerNativeModel?: string | null;
+  compositionMode?: AiResource['compositionMode'];
+  status?: AiResource['status'];
+  sortOrder?: number | null;
+  members?: AiResourceMemberInput[];
+};
+
 export type ChannelCreateInput = {
   name: string;
   vendor: string;
+  channelType?: ChannelType;
   protocol?: string;
   accessType?: string;
   baseUrl?: string;
@@ -66,6 +118,7 @@ export type ChannelCreateInput = {
   expiresAt?: string;
   models: string[];
   capabilities?: NonNullable<AdminChannelCreateRequest['capabilities']>;
+  resourceCodes?: string[];
   timeoutMs?: number;
   retryPolicy?: ProviderRetryPolicy;
   circuitBreakerPolicy?: ProviderCircuitBreakerPolicy;
@@ -76,6 +129,7 @@ export type ChannelCreateInput = {
 export type ChannelUpdateInput = {
   name?: string;
   vendor?: string;
+  channelType?: ChannelType;
   protocol?: string;
   accessType?: string;
   baseUrl?: string | null;
@@ -84,6 +138,7 @@ export type ChannelUpdateInput = {
   expiresAt?: string | null;
   models?: string[];
   capabilities?: NonNullable<AdminChannelUpdateRequest['capabilities']>;
+  resourceCodes?: string[];
   timeoutMs?: number | null;
   retryPolicy?: ProviderRetryPolicy | null;
   circuitBreakerPolicy?: ProviderCircuitBreakerPolicy | null;
@@ -127,6 +182,33 @@ export type ProviderSecretUpdateInput = {
   secretRef?: string;
   status?: 'active' | 'disabled';
 };
+
+export type ChannelEndpoint = AdminChannelEndpointItem;
+
+export interface ChannelEndpointCreateInput {
+  channelId: string;
+  vendorCode: string;
+  regionCode: string;
+  apiEndpointCode: string;
+  baseUrl: string;
+  priority?: number;
+  weight?: number;
+  status?: ChannelEndpoint['status'];
+  effectiveFrom?: string | null;
+  effectiveTo?: string | null;
+}
+
+export interface ChannelEndpointUpdateInput {
+  vendorCode?: string;
+  regionCode?: string;
+  apiEndpointCode?: string;
+  baseUrl?: string;
+  priority?: number;
+  weight?: number;
+  status?: ChannelEndpoint['status'];
+  effectiveFrom?: string | null;
+  effectiveTo?: string | null;
+}
 
 export class ChannelService {
   static async fetchChannels(): Promise<ChannelItem[]> {
@@ -186,6 +268,68 @@ export class ChannelModelCatalogService {
   }
 }
 
+export class ChannelAiResourceService {
+  static async fetchAiResources(): Promise<AiResource[]> {
+    const result = await channelBackendClient().ai.aiResources.list();
+    ensureSdkworkApiSuccess(result, 'Failed to fetch AI resources');
+    return readRequiredApiItems(result, 'Failed to fetch AI resources')
+      .map(normalizeAiResource);
+  }
+
+  static async createAiResource(input: AiResourceCreateInput): Promise<AiResource> {
+    const result = await channelBackendClient().ai.aiResources.create(
+      toCreateAiResourceRequest(input),
+    );
+    ensureSdkworkApiSuccess(result, 'Failed to create AI resource');
+    return normalizeAiResource(readRequiredApiItem(result, 'Created AI resource response is missing data'));
+  }
+
+  static async updateAiResource(
+    id: string,
+    input: AiResourceUpdateInput,
+  ): Promise<AiResource> {
+    const aiResourceId = requiredSafePathSegment(id, 'aiResourceId');
+    const result = await channelBackendClient().ai.aiResources.update(
+      aiResourceId,
+      toUpdateAiResourceRequest(input),
+    );
+    ensureSdkworkApiSuccess(result, 'Failed to update AI resource');
+    return normalizeAiResource(readRequiredApiItem(result, 'Updated AI resource response is missing data'));
+  }
+}
+
+export class ChannelEndpointService {
+  static async fetchChannelEndpoints(): Promise<ChannelEndpoint[]> {
+    const result = await channelBackendClient().integration.channelEndpoints.list();
+    ensureSdkworkApiSuccess(result, 'Failed to fetch channel endpoints');
+    return readRequiredApiItems(result, 'Failed to fetch channel endpoints')
+      .map(normalizeChannelEndpoint);
+  }
+
+  static async createChannelEndpoint(
+    input: ChannelEndpointCreateInput,
+  ): Promise<ChannelEndpoint> {
+    const result = await channelBackendClient().integration.channelEndpoints.create(
+      toCreateChannelEndpointRequest(input),
+    );
+    ensureSdkworkApiSuccess(result, 'Failed to create channel endpoint');
+    return normalizeChannelEndpoint(readRequiredApiItem(result, 'Created channel endpoint response is missing data'));
+  }
+
+  static async updateChannelEndpoint(
+    id: string,
+    input: ChannelEndpointUpdateInput,
+  ): Promise<ChannelEndpoint> {
+    const endpointId = requiredSafePathSegment(id, 'channelEndpointId');
+    const result = await channelBackendClient().integration.channelEndpoints.update(
+      endpointId,
+      toUpdateChannelEndpointRequest(input),
+    );
+    ensureSdkworkApiSuccess(result, 'Failed to update channel endpoint');
+    return normalizeChannelEndpoint(readRequiredApiItem(result, 'Updated channel endpoint response is missing data'));
+  }
+}
+
 export class ProviderSecretService {
   static async fetchProviderSecrets(filter: Partial<Pick<ProviderSecretItem, 'providerCode' | 'status'>> = {}): Promise<ProviderSecretItem[]> {
     const result = await channelBackendClient().integration.providerSecrets.list(toProviderSecretListRequest(filter));
@@ -232,9 +376,10 @@ function toCreateChannelRequest(channel: ChannelCreateInput): AdminChannelCreate
   if (apiKey && secretRef) {
     throw new Error('channel credential must provide either apiKey or secretRef, not both');
   }
-  const request = pruneUndefined({
+    const request = pruneUndefined({
     name: requiredText(channel.name, 'name'),
     vendor: requiredText(channel.vendor, 'vendor'),
+    channelType: channel.channelType === undefined ? undefined : channelTypeValue(channel.channelType),
     protocol: optionalText(channel.protocol),
     accessType: optionalText(channel.accessType),
     baseUrl: optionalText(channel.baseUrl),
@@ -243,6 +388,9 @@ function toCreateChannelRequest(channel: ChannelCreateInput): AdminChannelCreate
     expiresAt: optionalText(channel.expiresAt),
     models: requiredCatalogModelKeys(channel.models, channel.vendor),
     capabilities: channel.capabilities === undefined ? undefined : toChannelCapabilities(channel.capabilities),
+    resourceCodes: channel.resourceCodes === undefined
+      ? undefined
+      : toResourceCodes(channel.resourceCodes),
     timeoutMs: optionalInteger(channel.timeoutMs),
     retryPolicy: channel.retryPolicy,
     circuitBreakerPolicy: channel.circuitBreakerPolicy === undefined
@@ -261,6 +409,7 @@ function toUpdateChannelRequest(id: string, updates: ChannelUpdateInput): AdminC
     id,
     name: updates.name === undefined ? undefined : requiredText(updates.name, 'name'),
     vendor: updates.vendor === undefined ? undefined : requiredText(updates.vendor, 'vendor'),
+    channelType: updates.channelType === undefined ? undefined : channelTypeValue(updates.channelType),
     protocol: optionalText(updates.protocol),
     accessType: optionalText(updates.accessType),
     baseUrl: updates.baseUrl === undefined ? undefined : updates.baseUrl === null ? null : updates.baseUrl.trim(),
@@ -269,6 +418,9 @@ function toUpdateChannelRequest(id: string, updates: ChannelUpdateInput): AdminC
     expiresAt: updates.expiresAt === undefined ? undefined : updates.expiresAt === null ? null : updates.expiresAt.trim(),
     models: updates.models === undefined ? undefined : requiredCatalogModelKeys(updates.models, updates.vendor),
     capabilities: updates.capabilities === undefined ? undefined : toChannelCapabilities(updates.capabilities),
+    resourceCodes: updates.resourceCodes === undefined
+      ? undefined
+      : toResourceCodesForUpdate(updates.resourceCodes),
     timeoutMs: updates.timeoutMs === undefined ? undefined : optionalNullableInteger(updates.timeoutMs),
     retryPolicy: updates.retryPolicy,
     circuitBreakerPolicy: updates.circuitBreakerPolicy === undefined
@@ -314,6 +466,107 @@ function toUpdateProviderSecretRequest(
   });
 }
 
+function toCreateChannelEndpointRequest(
+  input: ChannelEndpointCreateInput,
+): AdminChannelEndpointCreateRequest {
+  return pruneUndefined({
+    channelId: requiredPositiveIdText(input.channelId, 'channelId'),
+    vendorCode: requiredProviderEndpointCode(input.vendorCode, 'vendorCode'),
+    regionCode: requiredProviderEndpointCode(input.regionCode, 'regionCode'),
+    apiEndpointCode: requiredProviderEndpointCode(input.apiEndpointCode, 'apiEndpointCode'),
+    baseUrl: requiredProviderEndpointBaseUrl(input.baseUrl),
+    priority: optionalBoundedPositiveInteger(input.priority, 'priority', 1_000_000),
+    weight: optionalBoundedPositiveInteger(input.weight, 'weight', 1_000_000),
+    status: input.status === undefined ? undefined : channelEndpointStatus(input.status),
+    effectiveFrom: optionalNullableText(input.effectiveFrom),
+    effectiveTo: optionalNullableText(input.effectiveTo),
+  });
+}
+
+function toUpdateChannelEndpointRequest(
+  input: ChannelEndpointUpdateInput,
+): AdminChannelEndpointUpdateRequest {
+  return pruneUndefined({
+    vendorCode: input.vendorCode === undefined
+      ? undefined
+      : requiredProviderEndpointCode(input.vendorCode, 'vendorCode'),
+    regionCode: input.regionCode === undefined
+      ? undefined
+      : requiredProviderEndpointCode(input.regionCode, 'regionCode'),
+    apiEndpointCode: input.apiEndpointCode === undefined
+      ? undefined
+      : requiredProviderEndpointCode(input.apiEndpointCode, 'apiEndpointCode'),
+    baseUrl: input.baseUrl === undefined
+      ? undefined
+      : requiredProviderEndpointBaseUrl(input.baseUrl),
+    priority: optionalBoundedPositiveInteger(input.priority, 'priority', 1_000_000),
+    weight: optionalBoundedPositiveInteger(input.weight, 'weight', 1_000_000),
+    status: input.status === undefined ? undefined : channelEndpointStatus(input.status),
+    effectiveFrom: input.effectiveFrom === undefined ? undefined : optionalNullableText(input.effectiveFrom),
+    effectiveTo: input.effectiveTo === undefined ? undefined : optionalNullableText(input.effectiveTo),
+  });
+}
+
+function toCreateAiResourceRequest(
+  input: AiResourceCreateInput,
+): AdminAiResourceCreateRequest {
+  return pruneUndefined({
+    resourceCode: requiredAiResourceCode(input.resourceCode, 'resourceCode'),
+    resourceType: aiResourceType(input.resourceType),
+    displayName: requiredText(input.displayName, 'displayName'),
+    vendorCode: optionalNormalizedCode(input.vendorCode, 'vendorCode'),
+    modalityCode: optionalNormalizedCode(input.modalityCode, 'modalityCode'),
+    apiEndpointCode: optionalNormalizedCode(input.apiEndpointCode, 'apiEndpointCode'),
+    catalogKey: optionalNullableText(input.catalogKey),
+    model: optionalNullableText(input.model),
+    providerNativeModel: optionalNullableText(input.providerNativeModel),
+    compositionMode: input.compositionMode === undefined
+      ? undefined
+      : aiResourceCompositionMode(input.compositionMode),
+    status: input.status === undefined ? undefined : aiResourceStatus(input.status),
+    sortOrder: optionalNullableNonNegativeInteger(input.sortOrder),
+    members: input.members === undefined ? undefined : toAiResourceMemberInputs(input.members),
+  });
+}
+
+function toUpdateAiResourceRequest(
+  input: AiResourceUpdateInput,
+): AdminAiResourceUpdateRequest {
+  return pruneUndefined({
+    resourceCode: input.resourceCode === undefined
+      ? undefined
+      : requiredAiResourceCode(input.resourceCode, 'resourceCode'),
+    resourceType: input.resourceType === undefined
+      ? undefined
+      : aiResourceType(input.resourceType),
+    displayName: input.displayName === undefined
+      ? undefined
+      : requiredText(input.displayName, 'displayName'),
+    vendorCode: input.vendorCode === undefined
+      ? undefined
+      : optionalNormalizedCode(input.vendorCode, 'vendorCode'),
+    modalityCode: input.modalityCode === undefined
+      ? undefined
+      : optionalNormalizedCode(input.modalityCode, 'modalityCode'),
+    apiEndpointCode: input.apiEndpointCode === undefined
+      ? undefined
+      : optionalNormalizedCode(input.apiEndpointCode, 'apiEndpointCode'),
+    catalogKey: input.catalogKey === undefined ? undefined : optionalNullableText(input.catalogKey),
+    model: input.model === undefined ? undefined : optionalNullableText(input.model),
+    providerNativeModel: input.providerNativeModel === undefined
+      ? undefined
+      : optionalNullableText(input.providerNativeModel),
+    compositionMode: input.compositionMode === undefined
+      ? undefined
+      : aiResourceCompositionMode(input.compositionMode),
+    status: input.status === undefined ? undefined : aiResourceStatus(input.status),
+    sortOrder: input.sortOrder === undefined
+      ? undefined
+      : optionalNullableNonNegativeInteger(input.sortOrder),
+    members: input.members === undefined ? undefined : toAiResourceMemberInputs(input.members),
+  });
+}
+
 function toChannelCapabilities(
   capabilities: string[],
 ): NonNullable<AdminChannelCreateRequest['capabilities']> | undefined {
@@ -334,6 +587,145 @@ function toChannelCapabilities(
     normalized.push(capability as NonNullable<AdminChannelCreateRequest['capabilities']>[number]);
   }
   return normalized.length > 0 ? normalized : undefined;
+}
+
+function channelTypeValue(value: string): ChannelType {
+  if (value === 'official' || value === 'relay') {
+    return value;
+  }
+  throw new Error(`Unsupported channel type: ${value}`);
+}
+
+function toResourceCodes(values: string[]): string[] | undefined {
+  const normalized = Array.from(new Set(
+    normalizedStringArray(values).map((value) => value.toLowerCase()),
+  ));
+  validateResourceCodes(normalized);
+  return normalized.length > 0 ? normalized : undefined;
+}
+
+function toResourceCodesForUpdate(values: string[]): string[] {
+  const normalized = Array.from(new Set(
+    normalizedStringArray(values).map((value) => value.toLowerCase()),
+  ));
+  validateResourceCodes(normalized);
+  return normalized;
+}
+
+function validateResourceCodes(values: string[]): void {
+  for (const code of values) {
+    if (!/^[a-z0-9._-]+$/.test(code)) {
+      throw new Error(`Unsupported AI resource code: ${code}`);
+    }
+  }
+}
+
+function toAiResourceMemberInputs(
+  members: AiResourceMemberInput[],
+): AdminAiResourceMemberInput[] {
+  return members.map((member, index) => pruneUndefined({
+    memberResourceCode: requiredAiResourceCode(
+      member.memberResourceCode,
+      `members[${index}].memberResourceCode`,
+    ),
+    memberRole: member.memberRole === undefined
+      ? undefined
+      : aiResourceMemberRole(member.memberRole),
+    required: member.required,
+    sortOrder: member.sortOrder === undefined
+      ? undefined
+      : optionalNullableNonNegativeInteger(member.sortOrder),
+  }));
+}
+
+function requiredAiResourceCode(value: string | undefined, fieldName: string): string {
+  const normalized = requiredText(value, fieldName).toLowerCase();
+  if (!/^[a-z0-9._-]+$/.test(normalized)) {
+    throw new Error(`${fieldName} must be an AI resource code`);
+  }
+  return normalized;
+}
+
+function optionalNormalizedCode(value: string | null | undefined, fieldName: string): string | null | undefined {
+  if (value === null) {
+    return null;
+  }
+  const normalized = optionalText(value)?.toLowerCase();
+  if (normalized === undefined) {
+    return undefined;
+  }
+  if (!/^[a-z0-9._-]+$/.test(normalized)) {
+    throw new Error(`${fieldName} must be an AI resource code`);
+  }
+  return normalized;
+}
+
+function aiResourceType(value: string): AiResource['resourceType'] {
+  if (
+    value === 'vendor'
+    || value === 'modality'
+    || value === 'api_endpoint'
+    || value === 'model_api'
+    || value === 'bundle'
+  ) {
+    return value;
+  }
+  throw new Error(`Unsupported AI resource type: ${value}`);
+}
+
+function aiResourceCompositionMode(value: string): AiResource['compositionMode'] {
+  if (value === 'single' || value === 'any' || value === 'all') {
+    return value;
+  }
+  throw new Error(`Unsupported AI resource composition mode: ${value}`);
+}
+
+function aiResourceStatus(value: string): AiResource['status'] {
+  if (value === 'active' || value === 'disabled' || value === 'inactive') {
+    return value;
+  }
+  throw new Error(`Unsupported AI resource status: ${value}`);
+}
+
+function aiResourceMemberRole(value: string): NonNullable<AdminAiResourceMemberInput['memberRole']> {
+  if (value === 'included' || value === 'optional' || value === 'fallback') {
+    return value;
+  }
+  throw new Error(`Unsupported AI resource member role: ${value}`);
+}
+
+function requiredPositiveIdText(value: string, fieldName: string): string {
+  const normalized = requiredText(value, fieldName);
+  if (!/^[1-9][0-9]*$/.test(normalized)) {
+    throw new Error(`${fieldName} must be a positive integer`);
+  }
+  return normalized;
+}
+
+function requiredProviderEndpointCode(value: string, fieldName: string): string {
+  const normalized = requiredText(value, fieldName).toLowerCase();
+  if (!/^[a-z0-9._*-]+$/.test(normalized)) {
+    throw new Error(`${fieldName} may only contain letters, numbers, ., -, _, and *`);
+  }
+  return normalized;
+}
+
+function requiredProviderEndpointBaseUrl(value: string): string {
+  const normalized = requiredText(value, 'baseUrl');
+  if (!/^https?:\/\//i.test(normalized)) {
+    throw new Error('baseUrl must start with http:// or https://');
+  }
+  if (/\s|[\u0000-\u001f\u007f]/.test(normalized)) {
+    throw new Error('baseUrl must not contain whitespace or control characters');
+  }
+  return normalized;
+}
+
+function channelEndpointStatus(value: string): ChannelEndpoint['status'] {
+  if (value === 'active' || value === 'disabled' || value === 'inactive') {
+    return value;
+  }
+  throw new Error(`Unsupported channel endpoint status: ${value}`);
 }
 
 function normalizedStringArray(values: string[]): string[] {
@@ -407,11 +799,41 @@ function optionalInteger(value: number | undefined): number | undefined {
   return value;
 }
 
+function optionalBoundedPositiveInteger(value: number | undefined, fieldName: string, maxValue: number): number | undefined {
+  if (value === undefined) {
+    return undefined;
+  }
+  if (!Number.isSafeInteger(value) || value < 1 || value > maxValue) {
+    throw new Error(`${fieldName} must be between 1 and ${maxValue}`);
+  }
+  return value;
+}
+
 function optionalNullableInteger(value: number | null | undefined): number | null | undefined {
   if (value === null) {
     return null;
   }
   return optionalInteger(value);
+}
+
+function optionalNullableNonNegativeInteger(value: number | null | undefined): number | null | undefined {
+  if (value === null) {
+    return null;
+  }
+  if (value === undefined) {
+    return undefined;
+  }
+  if (!Number.isSafeInteger(value) || value < 0) {
+    throw new Error('value must be a non-negative integer');
+  }
+  return value;
+}
+
+function optionalNullableText(value: string | null | undefined): string | null | undefined {
+  if (value === null) {
+    return null;
+  }
+  return optionalText(value);
 }
 
 function pruneUndefined<T extends object>(value: T): T {
@@ -433,8 +855,10 @@ function normalizeChannel(value: unknown): ChannelItem {
   const item = readRequiredRecord(value, 'Channel record is required');
   return {
     id: readRequiredString(item, 'id', 'Channel id is required'),
+    channelId: readPositiveIdText(item, 'channelId', 'Channel id is required'),
     name: readRequiredString(item, 'name', 'Channel name is required'),
     vendor: readRequiredString(item, 'vendor', 'Channel vendor is required'),
+    channelType: readChannelType(item),
     protocol: readRequiredString(item, 'protocol', 'Channel protocol is required'),
     accessType: readRequiredString(item, 'accessType', 'Channel access type is required'),
     baseUrl: readOptionalString(item, 'baseUrl'),
@@ -444,6 +868,7 @@ function normalizeChannel(value: unknown): ChannelItem {
     expiresAt: readOptionalString(item, 'expiresAt'),
     models: readRequiredStringArray(item, 'models', 'Channel models are required'),
     capabilities: readRequiredStringArray(item, 'capabilities', 'Channel capabilities are required'),
+    resourceCodes: readRequiredStringArrayField(item, 'resourceCodes', 'Channel AI resource codes are required'),
     isMultimodal: readRequiredBoolean(item, 'isMultimodal', 'Channel multimodal flag is required'),
     timeoutMs: readOptionalNumber(item, 'timeoutMs'),
     retryPolicy: readRetryPolicy(item),
@@ -475,11 +900,174 @@ function normalizeModelCatalogItem(value: unknown): ChannelModelCatalogItem | nu
   };
 }
 
+function normalizeAiResource(value: unknown): AiResource {
+  const item = readRequiredRecord(value, 'AI resource record is required');
+  return {
+    id: readRequiredString(item, 'id', 'AI resource id is required'),
+    resourceCode: readAiResourceCode(item, 'resourceCode', 'AI resource code is required'),
+    resourceType: readAiResourceType(item),
+    displayName: readRequiredString(item, 'displayName', 'AI resource display name is required'),
+    vendorCode: readOptionalString(item, 'vendorCode'),
+    modalityCode: readOptionalString(item, 'modalityCode'),
+    apiEndpointCode: readOptionalString(item, 'apiEndpointCode'),
+    catalogKey: readOptionalString(item, 'catalogKey'),
+    model: readOptionalString(item, 'model'),
+    providerNativeModel: readOptionalString(item, 'providerNativeModel'),
+    compositionMode: readAiResourceCompositionMode(item),
+    status: readAiResourceStatus(item),
+    sortOrder: readOptionalNonNegativeInteger(item, 'sortOrder', 'AI resource sort order must be a non-negative integer'),
+    members: readAiResourceMembers(item),
+  };
+}
+
+function normalizeAiResourceMember(value: unknown): AiResourceMember {
+  const item = readRequiredRecord(value, 'AI resource member record is required');
+  return {
+    parentResourceCode: readAiResourceCode(item, 'parentResourceCode', 'AI resource member parent code is required'),
+    memberResourceCode: readAiResourceCode(item, 'memberResourceCode', 'AI resource member code is required'),
+    memberRole: readAiResourceMemberRole(item),
+    required: readRequiredBoolean(item, 'required', 'AI resource member required flag is required'),
+    sortOrder: readOptionalNonNegativeInteger(item, 'sortOrder', 'AI resource member sort order must be a non-negative integer'),
+  };
+}
+
+function normalizeChannelEndpoint(value: unknown): ChannelEndpoint {
+  const item = readRequiredRecord(value, 'Channel endpoint record is required');
+  return {
+    id: readPositiveIdText(item, 'id', 'Channel endpoint id is required'),
+    channelId: readPositiveIdText(item, 'channelId', 'Channel endpoint channel id is required'),
+    providerCode: readRequiredString(item, 'providerCode', 'Channel endpoint provider code is required'),
+    channelCode: readRequiredString(item, 'channelCode', 'Channel endpoint channel code is required'),
+    channelType: readChannelEndpointType(item),
+    vendorCode: readProviderEndpointCode(item, 'vendorCode', 'Channel endpoint vendor code is required'),
+    regionCode: readProviderEndpointCode(item, 'regionCode', 'Channel endpoint region code is required'),
+    apiEndpointCode: readProviderEndpointCode(item, 'apiEndpointCode', 'Channel endpoint API code is required'),
+    baseUrl: readProviderEndpointBaseUrl(item),
+    priority: readRequiredBoundedInteger(item, 'priority', 'Channel endpoint priority must be between 1 and 1000000', 1, 1_000_000),
+    weight: readRequiredBoundedInteger(item, 'weight', 'Channel endpoint weight must be between 1 and 1000000', 1, 1_000_000),
+    healthStatus: readChannelEndpointHealthStatus(item),
+    status: readChannelEndpointStatus(item),
+    effectiveFrom: readOptionalNullableString(item, 'effectiveFrom'),
+    effectiveTo: readOptionalNullableString(item, 'effectiveTo'),
+  };
+}
+
+function readAiResourceType(item: ApiRecord): AiResource['resourceType'] {
+  const kind = readRequiredString(item, 'resourceType', 'AI resource type is required');
+  if (
+    kind === 'vendor'
+    || kind === 'modality'
+    || kind === 'api_endpoint'
+    || kind === 'model_api'
+    || kind === 'bundle'
+  ) {
+    return kind;
+  }
+  throw new Error(`Unsupported AI resource type: ${kind}`);
+}
+
+function readAiResourceCompositionMode(item: ApiRecord): AiResource['compositionMode'] {
+  const mode = readRequiredString(item, 'compositionMode', 'AI resource composition mode is required');
+  if (mode === 'single' || mode === 'any' || mode === 'all') {
+    return mode;
+  }
+  throw new Error(`Unsupported AI resource composition mode: ${mode}`);
+}
+
+function readAiResourceStatus(item: ApiRecord): AiResource['status'] {
+  const status = readRequiredString(item, 'status', 'AI resource status is required');
+  if (status === 'active' || status === 'disabled' || status === 'inactive') {
+    return status;
+  }
+  throw new Error(`Unsupported AI resource status: ${status}`);
+}
+
+function readAiResourceMemberRole(item: ApiRecord): AiResourceMember['memberRole'] {
+  const role = readRequiredString(item, 'memberRole', 'AI resource member role is required');
+  if (role === 'included' || role === 'optional' || role === 'fallback') {
+    return role;
+  }
+  throw new Error(`Unsupported AI resource member role: ${role}`);
+}
+
+function readAiResourceMembers(item: ApiRecord): AiResourceMember[] {
+  if (!Array.isArray(item.members)) {
+    throw new Error('AI resource members are required');
+  }
+  return item.members.map(normalizeAiResourceMember);
+}
+
+function readAiResourceCode(item: ApiRecord, key: string, message: string): string {
+  const value = readRequiredString(item, key, message).trim();
+  if (!/^[A-Za-z0-9._-]+$/.test(value)) {
+    throw new Error(`${key} must be an AI resource code`);
+  }
+  return value;
+}
+
+function readPositiveIdText(item: ApiRecord, key: string, message: string): string {
+  const value = readRequiredString(item, key, message).trim();
+  if (!/^[1-9][0-9]*$/.test(value)) {
+    throw new Error(`${key} must be a positive integer`);
+  }
+  return value;
+}
+
+function readProviderEndpointCode(item: ApiRecord, key: string, message: string): string {
+  const value = readRequiredString(item, key, message).trim().toLowerCase();
+  if (!/^[a-z0-9._*-]+$/.test(value)) {
+    throw new Error(`${key} may only contain letters, numbers, ., -, _, and *`);
+  }
+  return value;
+}
+
+function readProviderEndpointBaseUrl(item: ApiRecord): string {
+  const value = readRequiredString(item, 'baseUrl', 'Channel endpoint base URL is required').trim();
+  if (!/^https?:\/\//i.test(value)) {
+    throw new Error('Channel endpoint base URL must start with http:// or https://');
+  }
+  if (/\s|[\u0000-\u001f\u007f]/.test(value)) {
+    throw new Error('Channel endpoint base URL must not contain whitespace or control characters');
+  }
+  return value;
+}
+
+function readChannelEndpointType(item: ApiRecord): ChannelEndpoint['channelType'] {
+  const kind = readRequiredString(item, 'channelType', 'Channel endpoint channel type is required');
+  if (kind === 'official' || kind === 'relay') {
+    return kind;
+  }
+  throw new Error(`Unsupported channel endpoint channel type: ${kind}`);
+}
+
+function readChannelEndpointHealthStatus(item: ApiRecord): ChannelEndpoint['healthStatus'] {
+  const status = readRequiredString(item, 'healthStatus', 'Channel endpoint health status is required');
+  if (status === 'healthy' || status === 'unhealthy' || status === 'unknown') {
+    return status;
+  }
+  throw new Error(`Unsupported channel endpoint health status: ${status}`);
+}
+
+function readChannelEndpointStatus(item: ApiRecord): ChannelEndpoint['status'] {
+  const status = readRequiredString(item, 'status', 'Channel endpoint status is required');
+  return channelEndpointStatus(status);
+}
+
 function catalogRegionFromKey(catalogKey: string | undefined): string | undefined {
   if (!catalogKey || !isCatalogModelKey(catalogKey)) {
     return undefined;
   }
   return catalogKey.split('/')[1];
+}
+
+function readOptionalNullableString(item: ApiRecord, key: string): string | null | undefined {
+  if (!(key in item) || item[key] === undefined) {
+    return undefined;
+  }
+  if (item[key] === null) {
+    return null;
+  }
+  return readOptionalString(item, key);
 }
 
 function readOptionalString(item: ApiRecord, key: string): string | undefined {
@@ -511,6 +1099,13 @@ function readRequiredStringArray(item: ApiRecord, key: string, message: string):
     throw new Error(message);
   }
   return values;
+}
+
+function readRequiredStringArrayField(item: ApiRecord, key: string, message: string): string[] {
+  if (!Array.isArray(item[key])) {
+    throw new Error(message);
+  }
+  return readStringArray(item, key);
 }
 
 function readRetryPolicy(item: ApiRecord): ProviderRetryPolicy | undefined {
@@ -623,6 +1218,13 @@ function readRequiredNonNegativeInteger(item: ApiRecord, key: string, message: s
   return value;
 }
 
+function readOptionalNonNegativeInteger(item: ApiRecord, key: string, message: string): number | undefined {
+  if (!(key in item) || item[key] === null || item[key] === undefined || item[key] === '') {
+    return undefined;
+  }
+  return readRequiredNonNegativeInteger(item, key, message);
+}
+
 function readRequiredBoolean(item: ApiRecord, key: string, message: string): boolean {
   const value = item[key];
   if (typeof value !== 'boolean') {
@@ -637,6 +1239,10 @@ function readChannelStatus(item: ApiRecord): 'active' | 'error' | 'disabled' {
     return status;
   }
   throw new Error(status ? `Unsupported channel status: ${status}` : 'Channel status is required');
+}
+
+function readChannelType(item: ApiRecord): ChannelType {
+  return channelTypeValue(readRequiredString(item, 'channelType', 'Channel type is required'));
 }
 
 function normalizeProviderSecret(value: unknown): ProviderSecretItem {

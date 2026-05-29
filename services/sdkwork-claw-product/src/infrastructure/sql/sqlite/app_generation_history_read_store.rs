@@ -1,4 +1,4 @@
-﻿use sqlx::{Row, SqlitePool};
+use sqlx::{Row, SqlitePool};
 
 use crate::domain::{DomainError, DomainResult};
 use crate::ports::{

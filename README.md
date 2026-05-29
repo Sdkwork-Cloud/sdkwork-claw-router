@@ -1234,8 +1234,8 @@ If SDK package output must be regenerated, use the project skills under
 - No table, column, index, migration, or embedded database schema change without
   explicit approval.
 - No sensitive values in logs, traces, UI state, screenshots, or generated docs.
-- Root delivery docs stay ASCII-only so Windows, CI, and customer terminals show
-  stable content.
+- Root delivery docs must be readable UTF-8 and must not contain mojibake,
+  replacement characters, private-use code points, or control characters.
 - Every feature path must have schema, OpenAPI, SDK, backend, frontend, and test
   coverage appropriate to its risk.
 

@@ -3,6 +3,7 @@ import { readFileSync } from "node:fs";
 import test from "node:test";
 
 import { getLoadErrorMessage } from "./packages/sdkwork-claw-router-commons/src/load-error.ts";
+import { formatUserAgentDeviceLabel } from "./packages/sdkwork-claw-router-commons/src/user-agent.ts";
 import { createClientOperationToken, createIdempotencyParams } from "./packages/sdkwork-claw-router-commons/src/idempotency.ts";
 import {
   ensureSdkworkApiSuccess,
@@ -51,6 +52,7 @@ import {
   isReferenceSidebarGroupCollapsed,
   toggleReferenceSidebarGroup,
 } from "./packages/sdkwork-claw-router-commons/src/reference-sidebar-groups.ts";
+import { generateCodeSnippets } from "./packages/sdkwork-claw-router-core/src/index.ts";
 
 const originalCryptoDescriptor = Object.getOwnPropertyDescriptor(globalThis, "crypto");
 const originalFetch = globalThis.fetch;
@@ -89,6 +91,19 @@ test("createClientOperationToken uses cryptographic random bytes without crypto.
   );
 
   assert.equal(token, "api-key-01020304-0506-4708-890a-0b0c0d0e0f10");
+});
+
+test("formatUserAgentDeviceLabel returns compact device and client information", () => {
+  assert.equal(
+    formatUserAgentDeviceLabel("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/126.0.0.0 Safari/537.36"),
+    "Windows / Chrome",
+  );
+  assert.equal(
+    formatUserAgentDeviceLabel("Mozilla/5.0 (iPhone; CPU iPhone OS 17_5 like Mac OS X) Version/17.5 Mobile/15E148 Safari/604.1"),
+    "iPhone / Safari",
+  );
+  assert.equal(formatUserAgentDeviceLabel("curl/8.7.1"), "CLI / curl");
+  assert.equal(formatUserAgentDeviceLabel(""), "Unknown");
 });
 
 test("createClientOperationToken falls back only to cryptographic random bytes", () => {
@@ -150,6 +165,24 @@ test("createIdempotencyParams creates only idempotency keys for generated SDK wr
   assert.deepEqual(params, {
     idempotencyKey: "commerce-wallet-topup-11111111-2222-4333-8444-555555555555",
   });
+});
+
+test("curl snippet conversion strips caller-owned request id headers", () => {
+  const snippets = generateCodeSnippets(`curl https://api.example.test/v1/chat/completions \\
+  -H "Authorization: Bearer sk-test" \\
+  -H "X-Request-Id: client-generated" \\
+  -H "Vendor-Request-Id: client-generated" \\
+  -H "Content-Type: application/json" \\
+  -d '{"model":"gpt-4o","messages":[]}'`);
+
+  assert.equal(snippets.cURL.includes("X-Request-Id"), false);
+  assert.equal(snippets.cURL.includes("Vendor-Request-Id"), false);
+  assert.equal(snippets.JavaScript?.includes("X-Request-Id"), false);
+  assert.equal(snippets.JavaScript?.includes("Vendor-Request-Id"), false);
+  assert.equal(snippets.Python?.includes("X-Request-Id"), false);
+  assert.equal(snippets.Python?.includes("Vendor-Request-Id"), false);
+  assert.equal(snippets.JavaScript?.includes("Authorization"), true);
+  assert.equal(snippets.Python?.includes("Content-Type"), true);
 });
 
 test("getLoadErrorMessage returns Error messages", () => {
@@ -420,7 +453,21 @@ test("console layout keeps readable navigation labels and valid logout markup", 
     assert.match(source, new RegExp(`['">]${label}['"<]`));
   }
 
-  assert.doesNotMatch(source, /[\u3400-\u9fff]|浠|璋|閽|璐|娑|宸|鏈|閰|閫/u);
+  const legacyConsoleMojibakePattern = new RegExp(
+    `[\\u3400-\\u9fff]|${[
+      "\\u6d60",
+      "\\u748b",
+      "\\u95bd",
+      "\\u7490",
+      "\\u5a11",
+      "\\u5bb8",
+      "\\u93c8",
+      "\\u95b0",
+      "\\u95ab",
+    ].join("|")}`,
+    "u",
+  );
+  assert.doesNotMatch(source, legacyConsoleMojibakePattern);
   assert.doesNotMatch(source, /path:\s*'\/console\/recharge'/);
   assert.doesNotMatch(source, /path:\s*'\/console\/checkout'/);
   assert.doesNotMatch(source, /console\.recharge\.nav\.recharge/);
@@ -531,7 +578,29 @@ test("console wallet uses recharge exchange wording and concise tabs", () => {
   assert.doesNotMatch(walletSource, /fetchRechargeHistory/);
   assert.doesNotMatch(walletSource, /"钱包与充值"|"卡密兑换"/);
   assert.doesNotMatch(rechargeSource, /"卡密兑换"|"在线充值"/);
-  assert.doesNotMatch(walletSource, /璐︽埛|鍏戞崲|姝ｅ湪|涓撳睘|鐘舵|鏈湀|棰勮|杈撳叆|渚嬪|绔嬪嵆|閭€璇|浜岀淮|閲戦|鏀粯|澶辫触|鏆傛棤|鍏呭€/);
+  const legacyWalletMojibakePattern = new RegExp(
+    [
+      "\\u7490\\ufe3d\\u57db",
+      "\\u934f\\u621e\\u5d32",
+      "\\u59dd\\uff45\\u6e6a",
+      "\\u6d93\\u64b3\\u7758",
+      "\\u9418\\u8235",
+      "\\u93c8\\ue101\\u6e40",
+      "\\u68f0\\u52ee",
+      "\\u6748\\u64b3\\u53c6",
+      "\\u6e1a\\u5b2a",
+      "\\u7ed4\\u5b2a\\u5d46",
+      "\\u95ad\\u20ac\\u7487",
+      "\\u6d5c\\u5c80\\u6dee",
+      "\\u95b2\\u6226",
+      "\\u93c0\\ue219\\u7caf",
+      "\\u6fb6\\u8fab\\u89e6",
+      "\\u93c6\\u509b\\u68e4",
+      "\\u934f\\u546d\\u20ac",
+    ].join("|"),
+    "u",
+  );
+  assert.doesNotMatch(walletSource, legacyWalletMojibakePattern);
   assert.doesNotMatch(billingI18nSource, /"console\.billing\.billingview\.text\.gd62li": "\u94b1\u5305\u4e0e\u5145\u503c"/u);
   assert.doesNotMatch(billingI18nSource, /"console\.billing\.billingview\.text\.1iq97ql": "\u5361\u5bc6\u5151\u6362"/u);
   assert.doesNotMatch(billingI18nSource, /"console\.billing\.billingview\.text\.1wlfhep": "\u5728\u7ebf\u5145\u503c"/u);

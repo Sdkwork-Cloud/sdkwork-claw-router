@@ -26,8 +26,6 @@ export interface AdminAiModelCreateRequest {
   modalities?: string[];
   /** Runtime model identifier used for provider calls, routing, and pricing keys. */
   model: string;
-  /** Deprecated compatibility alias for model. */
-  name?: string;
   /** Output modalities field on admin ai model create request. */
   outputModalities?: string[];
   /** Official reference input unit price in USD. */

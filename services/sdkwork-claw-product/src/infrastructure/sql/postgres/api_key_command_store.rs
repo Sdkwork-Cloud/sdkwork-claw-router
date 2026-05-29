@@ -130,26 +130,26 @@ async fn ensure_default_api_key_group(
     let pricing_plan_id = find_pricing_plan_id(tx, command).await?;
     let group = sqlx::query(
         r#"
-        INSERT INTO iam_gateway_api_key_group
-            (uuid, tenant_id, organization_id, data_scope, status, created_at, updated_at, version, name, code, description, group_type, environment, pricing_plan_id, pricing_plan_code, rate_multiplier, official_price_multiplier, billing_type, capacity_limit, allowed_origin, metadata)
+        INSERT INTO ai_channel_group
+            (uuid, tenant_id, organization_id, data_scope, status, created_at, updated_at, version, group_name, group_code, description, group_type, environment, pricing_plan_id, pricing_plan_code, rate_multiplier, official_price_multiplier, billing_type, capacity_limit, allowed_origin, metadata)
         VALUES
-            ($1, $2, $3, 1, 1, $4::timestamptz, $5::timestamptz, 0, $6, $7, '', 1, 1, $8, $9, $10::numeric, $11::numeric, 1, 0, '{}'::jsonb, '{}'::jsonb)
-        ON CONFLICT (tenant_id, organization_id, code)
+            ($1, $2, $3, 1, 1, $4::timestamptz, $5::timestamptz, 0, $6, $7, '', 'default', 1, $8, $9, $10::numeric, $11::numeric, 1, 0, '{}'::jsonb, '{}'::jsonb)
+        ON CONFLICT (tenant_id, organization_id, group_code)
         DO UPDATE SET
             status = 1,
             deleted_at = NULL,
-            name = COALESCE(NULLIF(iam_gateway_api_key_group.name, ''), EXCLUDED.name),
-            pricing_plan_id = COALESCE(iam_gateway_api_key_group.pricing_plan_id, EXCLUDED.pricing_plan_id),
-            pricing_plan_code = COALESCE(NULLIF(iam_gateway_api_key_group.pricing_plan_code, ''), EXCLUDED.pricing_plan_code),
-            rate_multiplier = COALESCE(iam_gateway_api_key_group.rate_multiplier, EXCLUDED.rate_multiplier),
-            official_price_multiplier = COALESCE(iam_gateway_api_key_group.official_price_multiplier, EXCLUDED.official_price_multiplier),
+            group_name = COALESCE(NULLIF(ai_channel_group.group_name, ''), EXCLUDED.group_name),
+            pricing_plan_id = COALESCE(ai_channel_group.pricing_plan_id, EXCLUDED.pricing_plan_id),
+            pricing_plan_code = COALESCE(NULLIF(ai_channel_group.pricing_plan_code, ''), EXCLUDED.pricing_plan_code),
+            rate_multiplier = COALESCE(ai_channel_group.rate_multiplier, EXCLUDED.rate_multiplier),
+            official_price_multiplier = COALESCE(ai_channel_group.official_price_multiplier, EXCLUDED.official_price_multiplier),
             updated_at = EXCLUDED.updated_at
         RETURNING
             id,
             COALESCE(tenant_id, 0) AS tenant_id,
             COALESCE(organization_id, 0) AS organization_id,
-            COALESCE(NULLIF(name, ''), COALESCE(code, '')) AS name,
-            COALESCE(code, '') AS code,
+            COALESCE(NULLIF(group_name, ''), COALESCE(group_code, '')) AS name,
+            COALESCE(group_code, '') AS code,
             COALESCE(NULLIF(pricing_plan_code, ''), $9) AS pricing_plan_code,
             COALESCE(rate_multiplier::text, '1.000000') AS rate_multiplier,
             COALESCE(official_price_multiplier::text, '1.000000') AS official_price_multiplier
@@ -329,7 +329,7 @@ async fn insert_api_key(
     let id: i64 = sqlx::query_scalar(
         r#"
         INSERT INTO iam_gateway_api_key
-            (uuid, tenant_id, organization_id, user_id, group_id, name, key_prefix, key_display_masked, key_hash, hash_alg, secret_version, idempotency_key, policy_id, quota_policy_id, status, created_at, updated_at, expire_at, last_revealed_at, metadata)
+            (uuid, tenant_id, organization_id, user_id, channel_group_id, name, key_prefix, key_display_masked, key_hash, hash_alg, secret_version, idempotency_key, policy_id, quota_policy_id, status, created_at, updated_at, expire_at, last_revealed_at, metadata)
         VALUES
             ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, 1, $15::timestamptz, $16::timestamptz, $17::timestamptz, CURRENT_TIMESTAMP, $18::jsonb)
         RETURNING id
@@ -496,7 +496,7 @@ async fn update_api_key(
         r#"
         UPDATE iam_gateway_api_key
         SET name = $1,
-            group_id = $2,
+            channel_group_id = $2,
             policy_id = $3,
             quota_policy_id = $4,
             expire_at = $5::timestamptz,
@@ -546,7 +546,7 @@ async fn load_owned_api_key(
             COALESCE(tenant_id, 0) AS tenant_id,
             COALESCE(organization_id, 0) AS organization_id,
             COALESCE(user_id, 0) AS user_id,
-            COALESCE(group_id, 0) AS group_id,
+            COALESCE(channel_group_id, 0) AS group_id,
             COALESCE(name, '') AS name,
             COALESCE(key_prefix, '') AS key_prefix,
             COALESCE(NULLIF(key_display_masked, ''), COALESCE(key_prefix, '') || '********') AS key_display_masked,

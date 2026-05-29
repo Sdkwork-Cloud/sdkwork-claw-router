@@ -1,4 +1,4 @@
-﻿import { createClientOperationToken } from 'sdkwork-claw-router-commons/idempotency';
+import { createClientOperationToken } from 'sdkwork-claw-router-commons/idempotency';
 import { getClawRouterAppSdkClient } from 'sdkwork-claw-router-commons/sdk-clients';
 import {
   ensureSdkworkApiSuccess,

@@ -9,7 +9,6 @@ class AiModelFamilyRecord:
     display_name: str
     family_code: str
     organization_id: str
-    region_code: str
     status: str
     tenant_id: str
     uuid: str

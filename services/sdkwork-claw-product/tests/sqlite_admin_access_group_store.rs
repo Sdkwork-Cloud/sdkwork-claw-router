@@ -51,7 +51,7 @@ async fn sqlite_admin_access_group_store_allows_one_channel_in_multiple_groups()
     let shared_channel_active_group_count: i64 = sqlx::query_scalar(
         r#"
         SELECT COUNT(1)
-        FROM iam_api_key_group_channel
+        FROM ai_channel_group_member
         WHERE tenant_id = 10
           AND organization_id = 20
           AND channel_id = 3001
@@ -131,7 +131,7 @@ fn binding_input(
         priority,
         weight,
         status: status.to_owned(),
-        model_scope: vec!["openai/global/gpt-4o-mini".to_owned()],
+        model_scope: vec!["openai/gpt-4o-mini".to_owned()],
         capabilities: vec!["llm".to_owned()],
     }
 }
@@ -139,8 +139,8 @@ fn binding_input(
 async fn seed_access_group_channel_fixture(pool: &sqlx::SqlitePool) {
     sqlx::query(
         r#"
-        INSERT INTO iam_gateway_api_key_group
-            (id, uuid, tenant_id, organization_id, status, name, code, provider_code, group_type)
+        INSERT INTO ai_channel_group
+            (id, uuid, tenant_id, organization_id, status, group_name, group_code, provider_code, group_type)
         VALUES
             (10, 'group-standard', 10, 20, 1, 'Standard group', 'standard-group', 'openai', 1),
             (11, 'group-premium', 10, 20, 1, 'Premium group', 'premium-group', 'openai', 1)
@@ -152,7 +152,7 @@ async fn seed_access_group_channel_fixture(pool: &sqlx::SqlitePool) {
 
     sqlx::query(
         r#"
-        INSERT INTO integration_provider
+        INSERT INTO ai_provider
             (id, uuid, tenant_id, organization_id, status, provider_code, display_name, base_url)
         VALUES
             (1001, 'provider-openai', 10, 20, 1, 'openai', 'OpenAI', 'https://api.openai.com/v1'),
@@ -165,24 +165,11 @@ async fn seed_access_group_channel_fixture(pool: &sqlx::SqlitePool) {
 
     sqlx::query(
         r#"
-        INSERT INTO integration_provider_account
-            (id, uuid, tenant_id, organization_id, status, provider_id, provider_code, account_code, account_name, secret_ref, masked_label)
+        INSERT INTO ai_channel
+            (id, uuid, tenant_id, organization_id, status, provider_id, provider_code, channel_code, channel_name, channel_type, base_url, credential_ref, masked_label, priority, weight, health_status)
         VALUES
-            (9001, 'account-openai-main', 10, 20, 1, 1001, 'openai', 'openai-main', 'OpenAI main', 'secret://provider-accounts/openai/main', 'sk-***main'),
-            (9003, 'account-google-main', 10, 20, 1, 1003, 'google', 'google-main', 'Google main', 'secret://provider-accounts/google/main', 'sk-***main')
-        "#,
-    )
-    .execute(pool)
-    .await
-    .unwrap();
-
-    sqlx::query(
-        r#"
-        INSERT INTO integration_channel
-            (id, uuid, tenant_id, organization_id, status, provider_id, provider_code, channel_code, name, base_url, account_id, priority, weight, health_status)
-        VALUES
-            (3001, 'channel-openai-primary', 10, 20, 1, 1001, 'openai', 'openai-primary', 'OpenAI primary', 'https://api.openai.com/v1', 9001, 10, 80, 1),
-            (3003, 'channel-google-fallback', 10, 20, 1, 1003, 'google', 'google-fallback', 'Google fallback', 'https://generativelanguage.googleapis.com/v1', 9003, 20, 30, 1)
+            (3001, 'channel-openai-primary', 10, 20, 1, 1001, 'openai', 'openai-primary', 'OpenAI primary', 'official', 'https://api.openai.com/v1', 'secret://ai-channels/openai/main', 'sk-***main', 10, 80, 1),
+            (3003, 'channel-google-fallback', 10, 20, 1, 1003, 'google', 'google-fallback', 'Google fallback', 'official', 'https://generativelanguage.googleapis.com/v1', 'secret://ai-channels/google/main', 'sk-***main', 20, 30, 1)
         "#,
     )
     .execute(pool)

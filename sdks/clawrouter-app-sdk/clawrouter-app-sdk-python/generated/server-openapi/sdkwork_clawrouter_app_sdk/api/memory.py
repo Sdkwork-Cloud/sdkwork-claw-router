@@ -265,12 +265,11 @@ class MemoryEntriesApi:
         ])
         return self._client.get(_append_query_string(f"/app/v3/api/memory/spaces/{serialize_path_parameter(space_id, {'name': 'spaceId', 'style': 'simple', 'explode': False})}/entries", query))
 
-    def create(self, space_id: str, body: MemoryEntryCreateRequest, idempotency_key: str, x_request_id: Optional[str] = None) -> EntriesCreateResult:
+    def create(self, space_id: str, body: MemoryEntryCreateRequest, idempotency_key: str) -> EntriesCreateResult:
         """Create memory entry"""
         request_headers = build_request_headers(
             {
                 'Idempotency-Key': {'value': idempotency_key, 'style': 'simple', 'explode': False},
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
             },
             {}
         )
@@ -291,12 +290,11 @@ class MemorySpacesApi:
         ])
         return self._client.get(_append_query_string(f"/app/v3/api/memory/spaces", query))
 
-    def create(self, body: MemorySpaceCreateRequest, idempotency_key: str, x_request_id: Optional[str] = None) -> SpacesCreateResult:
+    def create(self, body: MemorySpaceCreateRequest, idempotency_key: str) -> SpacesCreateResult:
         """Create memory space"""
         request_headers = build_request_headers(
             {
                 'Idempotency-Key': {'value': idempotency_key, 'style': 'simple', 'explode': False},
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
             },
             {}
         )

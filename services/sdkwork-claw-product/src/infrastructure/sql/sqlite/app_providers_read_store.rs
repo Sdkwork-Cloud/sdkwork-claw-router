@@ -17,10 +17,9 @@ WITH latest_config AS (
       AND organization_id = ?2
       AND status = 1
       AND source_table IN (
-          'integration_provider',
-          'integration_channel',
-          'integration_channel_model',
-          'integration_provider_account',
+          'ai_provider',
+          'ai_channel',
+          'ai_channel_model',
           'integration_proxy'
       )
     GROUP BY tenant_id, organization_id
@@ -30,12 +29,11 @@ ranked_channel AS (
         c.id AS channel_id,
         c.provider_id,
         c.provider_code,
-        c.account_id AS account_id,
+        c.id AS channel_identity_id,
         c.proxy_id AS proxy_id,
         COALESCE(NULLIF(c.base_url, ''), NULLIF(px.endpoint, '')) AS channel_url,
         c.status AS channel_status,
         c.health_status AS channel_health_status,
-        a.status AS account_status,
         px.status AS proxy_status,
         px.health_status AS proxy_health_status,
         COUNT(m.id) AS model_count,
@@ -48,18 +46,13 @@ ranked_channel AS (
                 COALESCE(c.weight, 0) DESC,
                 c.id DESC
         ) AS channel_rank
-    FROM integration_channel c
-    LEFT JOIN integration_provider_account a
-      ON a.id = c.account_id
-     AND a.tenant_id = c.tenant_id
-     AND a.organization_id = c.organization_id
-     AND a.deleted_at IS NULL
+    FROM ai_channel c
     LEFT JOIN integration_proxy px
       ON px.id = c.proxy_id
      AND px.tenant_id = c.tenant_id
      AND px.organization_id = c.organization_id
      AND px.deleted_at IS NULL
-    LEFT JOIN integration_channel_model m
+    LEFT JOIN ai_channel_model m
       ON m.channel_id = c.id
      AND m.tenant_id = c.tenant_id
      AND m.organization_id = c.organization_id
@@ -74,13 +67,12 @@ ranked_channel AS (
         c.id,
         c.provider_id,
         c.provider_code,
-        c.account_id,
+        c.channel_code,
         c.proxy_id,
         c.base_url,
         px.endpoint,
         c.status,
         c.health_status,
-        a.status,
         px.status,
         px.health_status,
         c.priority,
@@ -90,22 +82,24 @@ SELECT
     CAST(p.id AS TEXT) AS id,
     COALESCE(NULLIF(p.provider_code, ''), CAST(p.id AS TEXT)) AS provider_code,
     COALESCE(NULLIF(p.default_vendor_code, ''), '') AS default_vendor_code,
-    p.integration_type AS integration_type,
+    CASE COALESCE(NULLIF(p.provider_type, ''), '')
+        WHEN 'cloud_platform' THEN 2
+        WHEN 'relay_aggregator' THEN 3
+        ELSE COALESCE(p.auth_type, 0)
+    END AS integration_type,
     COALESCE(NULLIF(p.display_name, ''), NULLIF(p.provider_code, ''), 'Provider') AS name,
     COALESCE(NULLIF(p.description, ''), NULLIF(p.provider_code, ''), 'Provider integration') AS description,
     COALESCE(NULLIF(rc.channel_url, ''), NULLIF(p.base_url, ''), '') AS url,
     rc.channel_id AS channel_id,
-    rc.account_id AS account_id,
     rc.proxy_id AS proxy_id,
     p.status AS provider_status,
     rc.channel_status AS channel_status,
     rc.channel_health_status AS channel_health_status,
-    rc.account_status AS account_status,
     rc.proxy_status AS proxy_status,
     rc.proxy_health_status AS proxy_health_status,
     COALESCE(rc.model_count, 0) AS model_count,
     CAST(lc.latest_config_at AS TEXT) AS latest_config_at
-FROM integration_provider p
+FROM ai_provider p
 LEFT JOIN ranked_channel rc
   ON rc.channel_rank = 1
  AND (

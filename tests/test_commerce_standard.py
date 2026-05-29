@@ -1,10 +1,12 @@
-﻿import json
+import json
 import re
 import unittest
 from collections import Counter
 from pathlib import Path
 
 import yaml
+
+from tools.schema_registry_loader import load_schema_registry, render_schema_registry
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -220,6 +222,14 @@ def load_frontend_operations() -> list[dict[str, object]]:
         for operation in contract.get("frontend_operations", [])
         if isinstance(operation, dict)
     ]
+
+
+def load_table_registry() -> dict[str, object]:
+    return load_schema_registry(TABLE_REGISTRY_PATH)
+
+
+def render_table_registry() -> str:
+    return render_schema_registry(TABLE_REGISTRY_PATH)
 
 
 class CommerceStandardTest(unittest.TestCase):
@@ -470,7 +480,7 @@ class CommerceStandardTest(unittest.TestCase):
 
     def test_product_center_uses_unified_standard_tables(self) -> None:
         capability = APPBASE_CAPABILITY_PATH.read_text(encoding="utf-8")
-        table_registry = TABLE_REGISTRY_PATH.read_text(encoding="utf-8")
+        table_registry = render_table_registry()
         field_contracts = FIELD_CONTRACTS_PATH.read_text(encoding="utf-8")
 
         for scope in [
@@ -506,7 +516,7 @@ class CommerceStandardTest(unittest.TestCase):
         self.assertNotIn("commerce_product, commerce_sku", field_contracts)
 
     def test_transaction_loop_uses_complete_standard_tables(self) -> None:
-        table_registry = TABLE_REGISTRY_PATH.read_text(encoding="utf-8")
+        table_registry = render_table_registry()
         field_contracts = FIELD_CONTRACTS_PATH.read_text(encoding="utf-8")
 
         for table in [
@@ -728,7 +738,7 @@ class CommerceStandardTest(unittest.TestCase):
         )
 
     def test_promotion_coupon_currency_is_first_class_across_lifecycle(self) -> None:
-        registry = yaml.safe_load(TABLE_REGISTRY_PATH.read_text(encoding="utf-8"))
+        registry = load_table_registry()
         tables = {
             table.get("table"): table
             for table in registry.get("tables", [])
@@ -775,7 +785,7 @@ class CommerceStandardTest(unittest.TestCase):
             self.assertIn("currency_code", tables[table].get("not_null_columns", []))
 
     def test_promotion_coupon_industry_platform_capabilities_are_first_class(self) -> None:
-        registry = yaml.safe_load(TABLE_REGISTRY_PATH.read_text(encoding="utf-8"))
+        registry = load_table_registry()
         tables = {
             table.get("table"): table
             for table in registry.get("tables", [])
@@ -887,7 +897,7 @@ class CommerceStandardTest(unittest.TestCase):
         )
 
     def test_promotion_coupon_external_platform_interface_details_are_first_class(self) -> None:
-        registry = yaml.safe_load(TABLE_REGISTRY_PATH.read_text(encoding="utf-8"))
+        registry = load_table_registry()
         tables = {
             table.get("table"): table
             for table in registry.get("tables", [])
@@ -1276,82 +1286,82 @@ class CommerceStandardTest(unittest.TestCase):
                 "catalogService.ts",
                 "CatalogAdmin",
                 [
-                "listCommerceProducts",
-                "listCommerceSkus",
-                "listCommerceCategories",
-                "listCommerceAttributes",
-                "listCommercePriceLists",
+                    "listCommerceProducts",
+                    "listCommerceSkus",
+                    "listCommerceCategories",
+                    "listCommerceAttributes",
+                    "listCommercePriceLists",
                 ],
             ),
             "sdkwork-claw-router-admin-inventory": (
                 "inventoryService.ts",
                 "InventoryAdmin",
                 [
-                "listInventoryStocks",
-                "listInventoryReservations",
-                "listInventoryLedgerEntries",
+                    "listInventoryStocks",
+                    "listInventoryReservations",
+                    "listInventoryLedgerEntries",
                 ],
             ),
             "sdkwork-claw-router-admin-orders": (
                 "ordersService.ts",
                 "OrdersAdmin",
                 [
-                "backendOrdersList",
-                "backendRefundsList",
-                "backendFulfillmentsList",
-                "backendShipmentsList",
+                    "backendOrdersList",
+                    "backendRefundsList",
+                    "backendFulfillmentsList",
+                    "backendShipmentsList",
                 ],
             ),
             "sdkwork-claw-router-admin-payments": (
                 "paymentsService.ts",
                 "PaymentsAdmin",
                 [
-                "backendPaymentsProvidersList",
-                "backendPaymentsProviderAccountsList",
-                "backendPaymentsMethodsList",
-                "backendPaymentsChannelsList",
-                "backendPaymentsRouteRulesList",
-                "backendPaymentsIntentsList",
-                "backendPaymentsAttemptsList",
-                "backendPaymentsWebhookEventsList",
-                "backendPaymentsReconciliationRunsList",
-                "backendPaymentsProviderAccountsCreate",
+                    "backendPaymentsProvidersList",
+                    "backendPaymentsProviderAccountsList",
+                    "backendPaymentsMethodsList",
+                    "backendPaymentsChannelsList",
+                    "backendPaymentsRouteRulesList",
+                    "backendPaymentsIntentsList",
+                    "backendPaymentsAttemptsList",
+                    "backendPaymentsWebhookEventsList",
+                    "backendPaymentsReconciliationRunsList",
+                    "backendPaymentsProviderAccountsCreate",
                 ],
             ),
             "sdkwork-claw-router-admin-memberships": (
                 "membershipsService.ts",
                 "MembershipsAdmin",
                 [
-                "backendMembershipsPlansList",
-                "backendMembershipsPackagesList",
-                "backendMembershipsMembersList",
-                "backendMembershipsEntitlementsList",
-                "backendMembershipsRechargePackagesList",
-                "backendMembershipsRechargePackagesCreate",
-                "backendMembershipsRechargePackagesUpdate",
-                "backendMembershipsRechargePackagesDelete",
+                    "backendMembershipsPlansList",
+                    "backendMembershipsPackagesList",
+                    "backendMembershipsMembersList",
+                    "backendMembershipsEntitlementsList",
+                    "backendMembershipsRechargePackagesList",
+                    "backendMembershipsRechargePackagesCreate",
+                    "backendMembershipsRechargePackagesUpdate",
+                    "backendMembershipsRechargePackagesDelete",
                 ],
             ),
             "sdkwork-claw-router-admin-wallet": (
                 "walletService.ts",
                 "WalletAdmin",
                 [
-                "backendRechargesOrdersList",
-                "backendWalletAccountsList",
-                "backendWalletLedgerEntriesList",
-                "backendWalletExchangeRulesList",
+                    "backendRechargesOrdersList",
+                    "backendWalletAccountsList",
+                    "backendWalletLedgerEntriesList",
+                    "backendWalletExchangeRulesList",
                 ],
             ),
             "sdkwork-claw-router-admin-finance": (
                 "financeService.ts",
                 "FinanceAdmin",
                 [
-                "backendInvoicesTitlesList",
-                "backendInvoicesList",
-                "backendCommerceReportsPaymentReconciliationRetrieve",
-                "backendCommerceReportsOrderRevenueList",
-                "backendCommerceReportsRefundsList",
-                "backendAuditCommerceEventsList",
+                    "backendInvoicesTitlesList",
+                    "backendInvoicesList",
+                    "backendCommerceReportsPaymentReconciliationRetrieve",
+                    "backendCommerceReportsOrderRevenueList",
+                    "backendCommerceReportsRefundsList",
+                    "backendAuditCommerceEventsList",
                 ],
             ),
         }
@@ -1423,26 +1433,18 @@ class CommerceStandardTest(unittest.TestCase):
         migrated_files = {
             "AccountOverviewView.tsx": [
                 "AccountOverviewView",
-                "璐︽埛璇︽儏涓庤储鍔℃€昏",
                 "/console/commerce?tab=recharge",
             ],
             "CommerceRechargeView.tsx": [
                 "CommerceRechargeView",
-                "浣欓鍏呭€?,
-                "寰俊鏀粯 (WeChat Pay)",
-                "鍥介檯淇＄敤鍗?(Stripe)",
                 "/console/commerce?tab=checkout",
             ],
             "CommerceCheckoutView.tsx": [
                 "CommerceCheckoutView",
-                "鏀堕摱鍙?,
-                "鍒涘缓鎵爜鏀粯璁㈠崟",
                 "CommerceService.fetchCheckoutStatus",
             ],
             "CommerceSettlementsView.tsx": [
                 "CommerceSettlementsView",
-                "璐﹀崟涓庡妯℃€佺粨绠?,
-                "鏈湀澶氭ā鎬佹棩鍧囨秷鑰楄秼鍔?,
                 "CommerceService.fetchSettlementDashboard",
             ],
         }
@@ -1531,10 +1533,6 @@ class CommerceStandardTest(unittest.TestCase):
 
         for token in [
             "AdminFinancePanel",
-            "璐㈠姟涓績",
-            "璧勯噾娴佹按",
-            "璐﹀崟缁撶畻",
-            "瀵煎嚭鎶ヨ〃",
         ]:
             self.assertIn(token, finance_panel)
 

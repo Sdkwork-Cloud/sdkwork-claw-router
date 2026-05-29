@@ -32,9 +32,11 @@ usage_by_request AS (
         request_id,
         MAX(owner_name_snapshot) AS owner_name_snapshot,
         MAX(api_key_name_snapshot) AS api_key_name_snapshot,
-        MAX(api_key_group_snapshot) AS api_key_group_snapshot,
+        MAX(channel_group_snapshot) AS channel_group_snapshot,
         MAX(catalog_key) AS catalog_key,
+        MAX(requested_model_catalog_key) AS requested_model_catalog_key,
         MAX(model) AS model,
+        MAX(provider_native_model) AS provider_native_model,
         MAX(modality) AS modality,
         CAST(COALESCE(SUM(COALESCE(prompt_tokens, 0)), 0) AS TEXT) AS prompt_tokens,
         CAST(COALESCE(SUM(COALESCE(cached_tokens, 0)), 0) AS TEXT) AS cached_tokens,
@@ -65,9 +67,37 @@ SELECT
     COALESCE(NULLIF(t.request_id, ''), CAST(t.id AS TEXT)) AS request_id,
     CAST(COALESCE(t.started_at, t.created_at) AS TEXT) AS started_at,
     COALESCE(NULLIF(t.api_key_name_snapshot, ''), NULLIF(u.api_key_name_snapshot, ''), '-') AS api_key_name_snapshot,
-    COALESCE(NULLIF(t.api_key_group_snapshot, ''), NULLIF(u.api_key_group_snapshot, ''), '-') AS api_key_group_snapshot,
+    COALESCE(NULLIF(t.channel_group_snapshot, ''), NULLIF(u.channel_group_snapshot, ''), '-') AS channel_group_snapshot,
     u.modality AS modality,
-    COALESCE(NULLIF(u.catalog_key, ''), NULLIF(d.resolved_model, ''), NULLIF(t.provider_model, ''), NULLIF(t.requested_model, ''), '-') AS model,
+    COALESCE(NULLIF(u.provider_native_model, ''), NULLIF(t.provider_native_model, ''), NULLIF(u.model, ''), NULLIF(t.provider_model, ''), '-') AS model,
+    COALESCE(NULLIF(u.provider_native_model, ''), NULLIF(t.provider_native_model, ''), NULLIF(u.model, ''), NULLIF(t.provider_model, ''), '') AS provider_native_model,
+    COALESCE(NULLIF(u.requested_model_catalog_key, ''), NULLIF(t.requested_model_catalog_key, ''), NULLIF(u.catalog_key, ''), NULLIF(d.resolved_model, ''), NULLIF(t.requested_model, ''), '') AS requested_model_catalog_key,
+    CASE
+        WHEN (
+            (t.http_status IS NOT NULL AND t.http_status >= 400)
+            OR NULLIF(t.provider_error_code, '') IS NOT NULL
+            OR NULLIF(NULLIF(CAST(t.error_type AS TEXT), ''), '0') IS NOT NULL
+        ) THEN 'error'
+        ELSE 'success'
+    END AS log_status,
+    COALESCE(t.http_status, 0) AS http_status,
+    COALESCE(NULLIF(t.http_method, ''), 'POST') AS http_method,
+    COALESCE(NULLIF(t.provider_error_code, ''), '') AS error_code,
+    CASE NULLIF(NULLIF(CAST(t.error_type AS TEXT), ''), '0')
+        WHEN '1' THEN 'provider_error'
+        WHEN '2' THEN 'invalid_request_error'
+        WHEN '3' THEN 'billing_error'
+        ELSE COALESCE(
+            NULLIF(NULLIF(CAST(t.error_type AS TEXT), ''), '0'),
+            CASE
+                WHEN (t.http_status IS NOT NULL AND t.http_status >= 500) THEN 'server_error'
+                WHEN (t.http_status IS NOT NULL AND t.http_status >= 400) THEN 'invalid_request_error'
+                WHEN NULLIF(t.provider_error_code, '') IS NOT NULL THEN 'provider_error'
+                ELSE ''
+            END
+        )
+    END AS error_type,
+    COALESCE(NULLIF(t.error_message_masked, ''), '') AS error_message,
     t.latency_ms AS latency_ms,
     COALESCE(t.ttft_ms, 0) AS ttft_ms,
     CASE WHEN COALESCE(t.streaming, false) THEN 1 ELSE 0 END AS is_stream,
@@ -81,7 +111,8 @@ SELECT
     COALESCE(u.cache_read_unit_price, '0') AS cache_read_unit_price,
     COALESCE(NULLIF(t.request_path, ''), NULLIF(t.endpoint, ''), '-') AS request_path,
     COALESCE(NULLIF(t.reasoning_effort, ''), '-') AS reasoning_effort,
-    COALESCE(NULLIF(t.client_ip_masked, ''), '-') AS client_ip_masked
+    COALESCE(NULLIF(t.client_ip_masked, ''), '-') AS client_ip_masked,
+    COALESCE(NULLIF(t.metadata->>'userAgent', ''), '') AS user_agent
 FROM selected_trace t
 LEFT JOIN usage_by_request u
   ON u.tenant_id = t.tenant_id
@@ -108,9 +139,9 @@ AND (
     $4::text IS NULL
     OR lower(COALESCE(t.request_id, '')) LIKE $4
     OR lower(COALESCE(t.api_key_name_snapshot, '')) LIKE $4
-    OR lower(COALESCE(t.api_key_group_snapshot, '')) LIKE $4
+    OR lower(COALESCE(t.channel_group_snapshot, '')) LIKE $4
     OR lower(COALESCE(u.api_key_name_snapshot, '')) LIKE $4
-    OR lower(COALESCE(u.api_key_group_snapshot, '')) LIKE $4
+    OR lower(COALESCE(u.channel_group_snapshot, '')) LIKE $4
 )
 AND (
     $5::text IS NULL
@@ -150,9 +181,11 @@ usage_by_request AS (
         request_id,
         MAX(owner_name_snapshot) AS owner_name_snapshot,
         MAX(api_key_name_snapshot) AS api_key_name_snapshot,
-        MAX(api_key_group_snapshot) AS api_key_group_snapshot,
+        MAX(channel_group_snapshot) AS channel_group_snapshot,
         MAX(catalog_key) AS catalog_key,
-        MAX(model) AS model
+        MAX(requested_model_catalog_key) AS requested_model_catalog_key,
+        MAX(model) AS model,
+        MAX(provider_native_model) AS provider_native_model
     FROM ai_usage_fact
     WHERE status = 1
       AND tenant_id = $1
@@ -187,9 +220,9 @@ AND (
     $4::text IS NULL
     OR lower(COALESCE(t.request_id, '')) LIKE $4
     OR lower(COALESCE(t.api_key_name_snapshot, '')) LIKE $4
-    OR lower(COALESCE(t.api_key_group_snapshot, '')) LIKE $4
+    OR lower(COALESCE(t.channel_group_snapshot, '')) LIKE $4
     OR lower(COALESCE(u.api_key_name_snapshot, '')) LIKE $4
-    OR lower(COALESCE(u.api_key_group_snapshot, '')) LIKE $4
+    OR lower(COALESCE(u.channel_group_snapshot, '')) LIKE $4
 )
 AND (
     $5::text IS NULL
@@ -265,10 +298,18 @@ fn row_to_log(row: sqlx::postgres::PgRow) -> Result<AdminRecordLogItem, DomainEr
         request_id: string_cell(&row, "request_id"),
         time: string_cell(&row, "started_at"),
         token_name: string_cell(&row, "api_key_name_snapshot"),
-        group: string_cell(&row, "api_key_group_snapshot"),
+        group: string_cell(&row, "channel_group_snapshot"),
         log_type: modality_label(optional_integer_cell(&row, "modality")),
         model: string_cell(&row, "model"),
-        total_time: duration_label(latency_cell(&row, "latency_ms")?),
+        provider_native_model: string_cell(&row, "provider_native_model"),
+        requested_model_catalog_key: string_cell(&row, "requested_model_catalog_key"),
+        status: string_cell(&row, "log_status"),
+        http_status: integer_cell(&row, "http_status"),
+        http_method: http_method_label(&string_cell(&row, "http_method")),
+        error_code: string_cell(&row, "error_code"),
+        error_type: string_cell(&row, "error_type"),
+        error_message: string_cell(&row, "error_message"),
+        total_time: duration_label(required_latency_cell(&row, "latency_ms")?),
         ttft: duration_label(integer_cell(&row, "ttft_ms")),
         is_stream: integer_cell(&row, "is_stream") != 0,
         input_tokens: integer_cell(&row, "prompt_tokens"),
@@ -302,6 +343,7 @@ fn row_to_log(row: sqlx::postgres::PgRow) -> Result<AdminRecordLogItem, DomainEr
         path: string_cell(&row, "request_path"),
         reasoning_effort: string_cell(&row, "reasoning_effort"),
         ip: string_cell(&row, "client_ip_masked"),
+        user_agent: string_cell(&row, "user_agent"),
     })
 }
 
@@ -317,6 +359,19 @@ fn modality_label(value: Option<i64>) -> String {
     model_modality::label(value).to_owned()
 }
 
+fn http_method_label(value: &str) -> String {
+    match value.trim().to_ascii_uppercase().as_str() {
+        "GET" => "GET",
+        "PUT" => "PUT",
+        "PATCH" => "PATCH",
+        "DELETE" => "DELETE",
+        "OPTIONS" => "OPTIONS",
+        "HEAD" => "HEAD",
+        _ => "POST",
+    }
+    .to_owned()
+}
+
 fn string_cell(row: &sqlx::postgres::PgRow, column: &str) -> String {
     row.try_get::<Option<String>, _>(column)
         .ok()
@@ -328,8 +383,14 @@ fn integer_cell(row: &sqlx::postgres::PgRow, column: &str) -> i64 {
     optional_integer_cell(row, column).unwrap_or(0)
 }
 
-fn latency_cell(row: &sqlx::postgres::PgRow, column: &str) -> Result<i64, DomainError> {
-    let value = integer_cell(row, column);
+fn required_latency_cell(row: &sqlx::postgres::PgRow, column: &str) -> Result<i64, DomainError> {
+    let value = optional_integer_cell(row, column).ok_or_else(|| {
+        if column == "latency_ms" {
+            DomainError::new("missing admin record latency_ms from database row")
+        } else {
+            DomainError::new(format!("missing admin record {column} from database row"))
+        }
+    })?;
     if value < 0 {
         if column == "latency_ms" {
             return Err(DomainError::new(format!(
@@ -402,6 +463,20 @@ mod tests {
     }
 
     #[test]
+    fn http_method_label_normalizes_known_methods_and_defaults_to_post() {
+        assert_eq!("GET", http_method_label("get"));
+        assert_eq!("PATCH", http_method_label(" PATCH "));
+        assert_eq!("POST", http_method_label(""));
+        assert_eq!("POST", http_method_label("TRACE"));
+    }
+
+    #[test]
+    fn list_logs_projects_http_method_for_request_url_signature() {
+        assert!(LIST_ADMIN_RECORD_LOGS
+            .contains("COALESCE(NULLIF(t.http_method, ''), 'POST') AS http_method"));
+    }
+
+    #[test]
     fn decimal_value_string_rejects_invalid_database_amount() {
         assert_eq!(
             "12.300000",
@@ -433,6 +508,18 @@ mod tests {
             assert!(sql.contains("lower(COALESCE(iu.email, '')) LIKE $3"));
             assert!(sql.contains("lower(COALESCE(iu.username, '')) LIKE $3"));
         }
+    }
+
+    #[test]
+    fn list_logs_projects_user_agent_from_trace_metadata() {
+        assert!(
+            LIST_ADMIN_RECORD_LOGS.contains("t.metadata->>'userAgent'"),
+            "admin record Postgres SQL must project the full User-Agent from trace metadata"
+        );
+        assert!(
+            LIST_ADMIN_RECORD_LOGS.contains("AS user_agent"),
+            "admin record Postgres SQL must expose a user_agent column for API serialization"
+        );
     }
 
     fn assert_user_label_order(sql: &str) {

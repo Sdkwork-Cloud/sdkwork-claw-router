@@ -40,13 +40,12 @@ namespace Sdkwork.ClawRouter.App.Api
         /// <summary>
         /// Addresses Create
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.App.Models.AddressesCreateResult?> AddressesCreateAsync(Sdkwork.ClawRouter.App.Models.CommerceStandardCommandRequest body, string idempotencyKey, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.App.Models.AddressesCreateResult?> AddressesCreateAsync(Sdkwork.ClawRouter.App.Models.CommerceStandardCommandRequest body, string idempotencyKey)
         {
             var requestHeaders = BuildRequestHeaders(
                 new Dictionary<string, HeaderParameterSpec>
                 {
                     ["Idempotency-Key"] = new HeaderParameterSpec(idempotencyKey, "simple", false, null),
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
                 },
                 new Dictionary<string, HeaderParameterSpec>()
             );
@@ -56,13 +55,12 @@ namespace Sdkwork.ClawRouter.App.Api
         /// <summary>
         /// Addresses Delete
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.App.Models.AddressesDeleteResult?> AddressesDeleteAsync(string addressId, string idempotencyKey, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.App.Models.AddressesDeleteResult?> AddressesDeleteAsync(string addressId, string idempotencyKey)
         {
             var requestHeaders = BuildRequestHeaders(
                 new Dictionary<string, HeaderParameterSpec>
                 {
                     ["Idempotency-Key"] = new HeaderParameterSpec(idempotencyKey, "simple", false, null),
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
                 },
                 new Dictionary<string, HeaderParameterSpec>()
             );
@@ -72,13 +70,12 @@ namespace Sdkwork.ClawRouter.App.Api
         /// <summary>
         /// Addresses Update
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.App.Models.AddressesUpdateResult?> AddressesUpdateAsync(string addressId, Sdkwork.ClawRouter.App.Models.CommerceStandardCommandRequest body, string idempotencyKey, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.App.Models.AddressesUpdateResult?> AddressesUpdateAsync(string addressId, Sdkwork.ClawRouter.App.Models.CommerceStandardCommandRequest body, string idempotencyKey)
         {
             var requestHeaders = BuildRequestHeaders(
                 new Dictionary<string, HeaderParameterSpec>
                 {
                     ["Idempotency-Key"] = new HeaderParameterSpec(idempotencyKey, "simple", false, null),
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
                 },
                 new Dictionary<string, HeaderParameterSpec>()
             );
@@ -88,13 +85,12 @@ namespace Sdkwork.ClawRouter.App.Api
         /// <summary>
         /// Addresses Default Selection Create
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.App.Models.AddressesDefaultSelectionCreateResult?> AddressesDefaultSelectionCreateAsync(string addressId, Sdkwork.ClawRouter.App.Models.CommerceStandardCommandRequest body, string idempotencyKey, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.App.Models.AddressesDefaultSelectionCreateResult?> AddressesDefaultSelectionCreateAsync(string addressId, Sdkwork.ClawRouter.App.Models.CommerceStandardCommandRequest body, string idempotencyKey)
         {
             var requestHeaders = BuildRequestHeaders(
                 new Dictionary<string, HeaderParameterSpec>
                 {
                     ["Idempotency-Key"] = new HeaderParameterSpec(idempotencyKey, "simple", false, null),
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
                 },
                 new Dictionary<string, HeaderParameterSpec>()
             );
@@ -127,13 +123,12 @@ namespace Sdkwork.ClawRouter.App.Api
         /// <summary>
         /// Cart Items Create
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.App.Models.CartItemsCreateResult?> CartItemsCreateAsync(Sdkwork.ClawRouter.App.Models.CommerceStandardCommandRequest body, string idempotencyKey, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.App.Models.CartItemsCreateResult?> CartItemsCreateAsync(Sdkwork.ClawRouter.App.Models.CommerceStandardCommandRequest body, string idempotencyKey)
         {
             var requestHeaders = BuildRequestHeaders(
                 new Dictionary<string, HeaderParameterSpec>
                 {
                     ["Idempotency-Key"] = new HeaderParameterSpec(idempotencyKey, "simple", false, null),
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
                 },
                 new Dictionary<string, HeaderParameterSpec>()
             );
@@ -143,13 +138,12 @@ namespace Sdkwork.ClawRouter.App.Api
         /// <summary>
         /// Cart Items Delete
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.App.Models.CartItemsDeleteResult?> CartItemsDeleteAsync(string cartItemId, string idempotencyKey, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.App.Models.CartItemsDeleteResult?> CartItemsDeleteAsync(string cartItemId, string idempotencyKey)
         {
             var requestHeaders = BuildRequestHeaders(
                 new Dictionary<string, HeaderParameterSpec>
                 {
                     ["Idempotency-Key"] = new HeaderParameterSpec(idempotencyKey, "simple", false, null),
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
                 },
                 new Dictionary<string, HeaderParameterSpec>()
             );
@@ -159,13 +153,12 @@ namespace Sdkwork.ClawRouter.App.Api
         /// <summary>
         /// Cart Items Update
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.App.Models.CartItemsUpdateResult?> CartItemsUpdateAsync(string cartItemId, Sdkwork.ClawRouter.App.Models.CommerceStandardCommandRequest body, string idempotencyKey, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.App.Models.CartItemsUpdateResult?> CartItemsUpdateAsync(string cartItemId, Sdkwork.ClawRouter.App.Models.CommerceStandardCommandRequest body, string idempotencyKey)
         {
             var requestHeaders = BuildRequestHeaders(
                 new Dictionary<string, HeaderParameterSpec>
                 {
                     ["Idempotency-Key"] = new HeaderParameterSpec(idempotencyKey, "simple", false, null),
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
                 },
                 new Dictionary<string, HeaderParameterSpec>()
             );
@@ -224,13 +217,12 @@ namespace Sdkwork.ClawRouter.App.Api
         /// <summary>
         /// Checkout Sessions Create
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.App.Models.CheckoutSessionsCreateResult?> CheckoutSessionsCreateAsync(Sdkwork.ClawRouter.App.Models.CommerceStandardCommandRequest body, string idempotencyKey, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.App.Models.CheckoutSessionsCreateResult?> CheckoutSessionsCreateAsync(Sdkwork.ClawRouter.App.Models.CommerceStandardCommandRequest body, string idempotencyKey)
         {
             var requestHeaders = BuildRequestHeaders(
                 new Dictionary<string, HeaderParameterSpec>
                 {
                     ["Idempotency-Key"] = new HeaderParameterSpec(idempotencyKey, "simple", false, null),
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
                 },
                 new Dictionary<string, HeaderParameterSpec>()
             );
@@ -248,13 +240,12 @@ namespace Sdkwork.ClawRouter.App.Api
         /// <summary>
         /// Checkout Sessions Orders Create
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.App.Models.CheckoutSessionsOrdersCreateResult?> CheckoutSessionsOrdersCreateAsync(string checkoutSessionId, Sdkwork.ClawRouter.App.Models.CommerceStandardCommandRequest body, string idempotencyKey, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.App.Models.CheckoutSessionsOrdersCreateResult?> CheckoutSessionsOrdersCreateAsync(string checkoutSessionId, Sdkwork.ClawRouter.App.Models.CommerceStandardCommandRequest body, string idempotencyKey)
         {
             var requestHeaders = BuildRequestHeaders(
                 new Dictionary<string, HeaderParameterSpec>
                 {
                     ["Idempotency-Key"] = new HeaderParameterSpec(idempotencyKey, "simple", false, null),
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
                 },
                 new Dictionary<string, HeaderParameterSpec>()
             );
@@ -264,13 +255,12 @@ namespace Sdkwork.ClawRouter.App.Api
         /// <summary>
         /// Checkout Sessions Quotes Create
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.App.Models.CheckoutSessionsQuotesCreateResult?> CheckoutSessionsQuotesCreateAsync(string checkoutSessionId, Sdkwork.ClawRouter.App.Models.CommerceStandardCommandRequest body, string idempotencyKey, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.App.Models.CheckoutSessionsQuotesCreateResult?> CheckoutSessionsQuotesCreateAsync(string checkoutSessionId, Sdkwork.ClawRouter.App.Models.CommerceStandardCommandRequest body, string idempotencyKey)
         {
             var requestHeaders = BuildRequestHeaders(
                 new Dictionary<string, HeaderParameterSpec>
                 {
                     ["Idempotency-Key"] = new HeaderParameterSpec(idempotencyKey, "simple", false, null),
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
                 },
                 new Dictionary<string, HeaderParameterSpec>()
             );
@@ -316,13 +306,12 @@ namespace Sdkwork.ClawRouter.App.Api
         /// <summary>
         /// Invoices Create
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.App.Models.InvoicesCreateResult?> InvoicesCreateAsync(Sdkwork.ClawRouter.App.Models.CommerceStandardCommandRequest body, string idempotencyKey, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.App.Models.InvoicesCreateResult?> InvoicesCreateAsync(Sdkwork.ClawRouter.App.Models.CommerceStandardCommandRequest body, string idempotencyKey)
         {
             var requestHeaders = BuildRequestHeaders(
                 new Dictionary<string, HeaderParameterSpec>
                 {
                     ["Idempotency-Key"] = new HeaderParameterSpec(idempotencyKey, "simple", false, null),
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
                 },
                 new Dictionary<string, HeaderParameterSpec>()
             );
@@ -439,16 +428,9 @@ namespace Sdkwork.ClawRouter.App.Api
         /// <summary>
         /// Memberships Points Daily Rewards Create
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.App.Models.MembershipsPointsDailyRewardsCreateResult?> MembershipsPointsDailyRewardsCreateAsync(Sdkwork.ClawRouter.App.Models.MembershipsPointsDailyRewardsCreateRequest? body = null, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.App.Models.MembershipsPointsDailyRewardsCreateResult?> MembershipsPointsDailyRewardsCreateAsync(Sdkwork.ClawRouter.App.Models.MembershipsPointsDailyRewardsCreateRequest? body = null)
         {
-            var requestHeaders = BuildRequestHeaders(
-                new Dictionary<string, HeaderParameterSpec>
-                {
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
-                },
-                new Dictionary<string, HeaderParameterSpec>()
-            );
-            return await _client.PostAsync<Sdkwork.ClawRouter.App.Models.MembershipsPointsDailyRewardsCreateResult>(ApiPaths.AppPath("/memberships/points/daily_rewards"), body, null, requestHeaders, "application/json");
+            return await _client.PostAsync<Sdkwork.ClawRouter.App.Models.MembershipsPointsDailyRewardsCreateResult>(ApiPaths.AppPath("/memberships/points/daily_rewards"), body, null, null, "application/json");
         }
 
         /// <summary>
@@ -476,16 +458,9 @@ namespace Sdkwork.ClawRouter.App.Api
         /// <summary>
         /// Memberships Privileges Speed Ups Create
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.App.Models.MembershipsPrivilegesSpeedUpsCreateResult?> MembershipsPrivilegesSpeedUpsCreateAsync(Sdkwork.ClawRouter.App.Models.MembershipsPrivilegesSpeedUpsCreateRequest? body = null, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.App.Models.MembershipsPrivilegesSpeedUpsCreateResult?> MembershipsPrivilegesSpeedUpsCreateAsync(Sdkwork.ClawRouter.App.Models.MembershipsPrivilegesSpeedUpsCreateRequest? body = null)
         {
-            var requestHeaders = BuildRequestHeaders(
-                new Dictionary<string, HeaderParameterSpec>
-                {
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
-                },
-                new Dictionary<string, HeaderParameterSpec>()
-            );
-            return await _client.PostAsync<Sdkwork.ClawRouter.App.Models.MembershipsPrivilegesSpeedUpsCreateResult>(ApiPaths.AppPath("/memberships/privileges/speed_ups"), body, null, requestHeaders, "application/json");
+            return await _client.PostAsync<Sdkwork.ClawRouter.App.Models.MembershipsPrivilegesSpeedUpsCreateResult>(ApiPaths.AppPath("/memberships/privileges/speed_ups"), body, null, null, "application/json");
         }
 
         /// <summary>
@@ -499,13 +474,12 @@ namespace Sdkwork.ClawRouter.App.Api
         /// <summary>
         /// Memberships Purchases Create
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.App.Models.MembershipsPurchasesCreateResult?> MembershipsPurchasesCreateAsync(Sdkwork.ClawRouter.App.Models.CommerceMembershipPurchaseRequest body, string idempotencyKey, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.App.Models.MembershipsPurchasesCreateResult?> MembershipsPurchasesCreateAsync(Sdkwork.ClawRouter.App.Models.CommerceMembershipPurchaseRequest body, string idempotencyKey)
         {
             var requestHeaders = BuildRequestHeaders(
                 new Dictionary<string, HeaderParameterSpec>
                 {
                     ["Idempotency-Key"] = new HeaderParameterSpec(idempotencyKey, "simple", false, null),
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
                 },
                 new Dictionary<string, HeaderParameterSpec>()
             );
@@ -515,13 +489,12 @@ namespace Sdkwork.ClawRouter.App.Api
         /// <summary>
         /// Memberships Purchases Renew
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.App.Models.MembershipsPurchasesRenewResult?> MembershipsPurchasesRenewAsync(Sdkwork.ClawRouter.App.Models.CommerceMembershipPurchaseRequest body, string idempotencyKey, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.App.Models.MembershipsPurchasesRenewResult?> MembershipsPurchasesRenewAsync(Sdkwork.ClawRouter.App.Models.CommerceMembershipPurchaseRequest body, string idempotencyKey)
         {
             var requestHeaders = BuildRequestHeaders(
                 new Dictionary<string, HeaderParameterSpec>
                 {
                     ["Idempotency-Key"] = new HeaderParameterSpec(idempotencyKey, "simple", false, null),
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
                 },
                 new Dictionary<string, HeaderParameterSpec>()
             );
@@ -531,13 +504,12 @@ namespace Sdkwork.ClawRouter.App.Api
         /// <summary>
         /// Memberships Purchases Upgrade
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.App.Models.MembershipsPurchasesUpgradeResult?> MembershipsPurchasesUpgradeAsync(Sdkwork.ClawRouter.App.Models.CommerceMembershipPurchaseRequest body, string idempotencyKey, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.App.Models.MembershipsPurchasesUpgradeResult?> MembershipsPurchasesUpgradeAsync(Sdkwork.ClawRouter.App.Models.CommerceMembershipPurchaseRequest body, string idempotencyKey)
         {
             var requestHeaders = BuildRequestHeaders(
                 new Dictionary<string, HeaderParameterSpec>
                 {
                     ["Idempotency-Key"] = new HeaderParameterSpec(idempotencyKey, "simple", false, null),
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
                 },
                 new Dictionary<string, HeaderParameterSpec>()
             );
@@ -569,13 +541,12 @@ namespace Sdkwork.ClawRouter.App.Api
         /// <summary>
         /// Orders Cancellations Create
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.App.Models.OrdersCancellationsCreateResult?> OrdersCancellationsCreateAsync(string orderId, Sdkwork.ClawRouter.App.Models.CommerceStandardCommandRequest body, string idempotencyKey, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.App.Models.OrdersCancellationsCreateResult?> OrdersCancellationsCreateAsync(string orderId, Sdkwork.ClawRouter.App.Models.CommerceStandardCommandRequest body, string idempotencyKey)
         {
             var requestHeaders = BuildRequestHeaders(
                 new Dictionary<string, HeaderParameterSpec>
                 {
                     ["Idempotency-Key"] = new HeaderParameterSpec(idempotencyKey, "simple", false, null),
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
                 },
                 new Dictionary<string, HeaderParameterSpec>()
             );
@@ -607,13 +578,12 @@ namespace Sdkwork.ClawRouter.App.Api
         /// <summary>
         /// Payments Intents Create
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.App.Models.PaymentsIntentsCreateResult?> PaymentsIntentsCreateAsync(Sdkwork.ClawRouter.App.Models.CommercePaymentIntentCreateRequest body, string idempotencyKey, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.App.Models.PaymentsIntentsCreateResult?> PaymentsIntentsCreateAsync(Sdkwork.ClawRouter.App.Models.CommercePaymentIntentCreateRequest body, string idempotencyKey)
         {
             var requestHeaders = BuildRequestHeaders(
                 new Dictionary<string, HeaderParameterSpec>
                 {
                     ["Idempotency-Key"] = new HeaderParameterSpec(idempotencyKey, "simple", false, null),
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
                 },
                 new Dictionary<string, HeaderParameterSpec>()
             );
@@ -631,13 +601,12 @@ namespace Sdkwork.ClawRouter.App.Api
         /// <summary>
         /// Payments Intents Attempts Create
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.App.Models.PaymentsIntentsAttemptsCreateResult?> PaymentsIntentsAttemptsCreateAsync(string paymentIntentId, Sdkwork.ClawRouter.App.Models.CommercePaymentAttemptCreateRequest body, string idempotencyKey, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.App.Models.PaymentsIntentsAttemptsCreateResult?> PaymentsIntentsAttemptsCreateAsync(string paymentIntentId, Sdkwork.ClawRouter.App.Models.CommercePaymentAttemptCreateRequest body, string idempotencyKey)
         {
             var requestHeaders = BuildRequestHeaders(
                 new Dictionary<string, HeaderParameterSpec>
                 {
                     ["Idempotency-Key"] = new HeaderParameterSpec(idempotencyKey, "simple", false, null),
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
                 },
                 new Dictionary<string, HeaderParameterSpec>()
             );
@@ -661,13 +630,12 @@ namespace Sdkwork.ClawRouter.App.Api
         /// <summary>
         /// Recharges Orders Create
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.App.Models.RechargesOrdersCreateResult?> RechargesOrdersCreateAsync(Sdkwork.ClawRouter.App.Models.CommerceStandardCommandRequest body, string idempotencyKey, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.App.Models.RechargesOrdersCreateResult?> RechargesOrdersCreateAsync(Sdkwork.ClawRouter.App.Models.CommerceStandardCommandRequest body, string idempotencyKey)
         {
             var requestHeaders = BuildRequestHeaders(
                 new Dictionary<string, HeaderParameterSpec>
                 {
                     ["Idempotency-Key"] = new HeaderParameterSpec(idempotencyKey, "simple", false, null),
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
                 },
                 new Dictionary<string, HeaderParameterSpec>()
             );
@@ -713,13 +681,12 @@ namespace Sdkwork.ClawRouter.App.Api
         /// <summary>
         /// Refunds Create
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.App.Models.RefundsCreateResult?> RefundsCreateAsync(Sdkwork.ClawRouter.App.Models.CommerceStandardCommandRequest body, string idempotencyKey, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.App.Models.RefundsCreateResult?> RefundsCreateAsync(Sdkwork.ClawRouter.App.Models.CommerceStandardCommandRequest body, string idempotencyKey)
         {
             var requestHeaders = BuildRequestHeaders(
                 new Dictionary<string, HeaderParameterSpec>
                 {
                     ["Idempotency-Key"] = new HeaderParameterSpec(idempotencyKey, "simple", false, null),
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
                 },
                 new Dictionary<string, HeaderParameterSpec>()
             );

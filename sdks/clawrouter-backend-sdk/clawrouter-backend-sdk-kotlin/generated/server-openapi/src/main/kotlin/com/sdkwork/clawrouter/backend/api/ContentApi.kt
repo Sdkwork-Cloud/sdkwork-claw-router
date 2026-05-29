@@ -15,14 +15,8 @@ class ContentApi(private val client: HttpClient) {
     }
 
     /** Create announcement */
-    suspend fun announcementsCreate(body: AdminAnnouncementCreateRequest, xRequestId: String? = null): AnnouncementsCreateResult? {
-        val requestHeaders = buildRequestHeaders(
-            mapOf(
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
-            ),
-            emptyMap()
-        )
-        val raw = client.post(ApiPaths.backendPath("/content/announcements"), body, null, requestHeaders, "application/json")
+    suspend fun announcementsCreate(body: AdminAnnouncementCreateRequest): AnnouncementsCreateResult? {
+        val raw = client.post(ApiPaths.backendPath("/content/announcements"), body, null, null, "application/json")
         return client.convertValue(raw, object : TypeReference<AnnouncementsCreateResult>() {})
     }
 
@@ -33,14 +27,8 @@ class ContentApi(private val client: HttpClient) {
     }
 
     /** Update announcement */
-    suspend fun announcementsUpdate(announcementId: String, body: AdminAnnouncementUpdateRequest, xRequestId: String? = null): AnnouncementsUpdateResult? {
-        val requestHeaders = buildRequestHeaders(
-            mapOf(
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
-            ),
-            emptyMap()
-        )
-        val raw = client.patch(ApiPaths.backendPath("/content/announcements/${serializePathParameter(announcementId, PathParameterSpec("announcementId", "simple", false))}"), body, null, requestHeaders, "application/json")
+    suspend fun announcementsUpdate(announcementId: String, body: AdminAnnouncementUpdateRequest): AnnouncementsUpdateResult? {
+        val raw = client.patch(ApiPaths.backendPath("/content/announcements/${serializePathParameter(announcementId, PathParameterSpec("announcementId", "simple", false))}"), body, null, null, "application/json")
         return client.convertValue(raw, object : TypeReference<AnnouncementsUpdateResult>() {})
     }
 
@@ -57,62 +45,32 @@ class ContentApi(private val client: HttpClient) {
     }
 
     /** Admin Course Application Review */
-    suspend fun courseApplicationsReview(applicationId: String, body: AdminCourseApplicationReviewRequest, xRequestId: String? = null): CourseApplicationsReviewResult? {
-        val requestHeaders = buildRequestHeaders(
-            mapOf(
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
-            ),
-            emptyMap()
-        )
-        val raw = client.patch(ApiPaths.backendPath("/content/course-applications/${serializePathParameter(applicationId, PathParameterSpec("applicationId", "simple", false))}/review"), body, null, requestHeaders, "application/json")
+    suspend fun courseApplicationsReview(applicationId: String, body: AdminCourseApplicationReviewRequest): CourseApplicationsReviewResult? {
+        val raw = client.patch(ApiPaths.backendPath("/content/course-applications/${serializePathParameter(applicationId, PathParameterSpec("applicationId", "simple", false))}/review"), body, null, null, "application/json")
         return client.convertValue(raw, object : TypeReference<CourseApplicationsReviewResult>() {})
     }
 
     /** Admin Course Lesson Delete */
-    suspend fun courseLessonsDelete(lessonId: String, xRequestId: String? = null): CourseLessonsDeleteResult? {
-        val requestHeaders = buildRequestHeaders(
-            mapOf(
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
-            ),
-            emptyMap()
-        )
-        val raw = client.delete(ApiPaths.backendPath("/content/course-lessons/${serializePathParameter(lessonId, PathParameterSpec("lessonId", "simple", false))}"), null, requestHeaders)
+    suspend fun courseLessonsDelete(lessonId: String): CourseLessonsDeleteResult? {
+        val raw = client.delete(ApiPaths.backendPath("/content/course-lessons/${serializePathParameter(lessonId, PathParameterSpec("lessonId", "simple", false))}"))
         return client.convertValue(raw, object : TypeReference<CourseLessonsDeleteResult>() {})
     }
 
     /** Admin Course Lesson Update */
-    suspend fun courseLessonsUpdate(lessonId: String, body: AdminCourseLessonMutationRequest, xRequestId: String? = null): CourseLessonsUpdateResult? {
-        val requestHeaders = buildRequestHeaders(
-            mapOf(
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
-            ),
-            emptyMap()
-        )
-        val raw = client.patch(ApiPaths.backendPath("/content/course-lessons/${serializePathParameter(lessonId, PathParameterSpec("lessonId", "simple", false))}"), body, null, requestHeaders, "application/json")
+    suspend fun courseLessonsUpdate(lessonId: String, body: AdminCourseLessonMutationRequest): CourseLessonsUpdateResult? {
+        val raw = client.patch(ApiPaths.backendPath("/content/course-lessons/${serializePathParameter(lessonId, PathParameterSpec("lessonId", "simple", false))}"), body, null, null, "application/json")
         return client.convertValue(raw, object : TypeReference<CourseLessonsUpdateResult>() {})
     }
 
     /** Admin Course Section Delete */
-    suspend fun courseSectionsDelete(sectionId: String, xRequestId: String? = null): CourseSectionsDeleteResult? {
-        val requestHeaders = buildRequestHeaders(
-            mapOf(
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
-            ),
-            emptyMap()
-        )
-        val raw = client.delete(ApiPaths.backendPath("/content/course-sections/${serializePathParameter(sectionId, PathParameterSpec("sectionId", "simple", false))}"), null, requestHeaders)
+    suspend fun courseSectionsDelete(sectionId: String): CourseSectionsDeleteResult? {
+        val raw = client.delete(ApiPaths.backendPath("/content/course-sections/${serializePathParameter(sectionId, PathParameterSpec("sectionId", "simple", false))}"))
         return client.convertValue(raw, object : TypeReference<CourseSectionsDeleteResult>() {})
     }
 
     /** Admin Course Section Update */
-    suspend fun courseSectionsUpdate(sectionId: String, body: AdminCourseSectionMutationRequest, xRequestId: String? = null): CourseSectionsUpdateResult? {
-        val requestHeaders = buildRequestHeaders(
-            mapOf(
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
-            ),
-            emptyMap()
-        )
-        val raw = client.patch(ApiPaths.backendPath("/content/course-sections/${serializePathParameter(sectionId, PathParameterSpec("sectionId", "simple", false))}"), body, null, requestHeaders, "application/json")
+    suspend fun courseSectionsUpdate(sectionId: String, body: AdminCourseSectionMutationRequest): CourseSectionsUpdateResult? {
+        val raw = client.patch(ApiPaths.backendPath("/content/course-sections/${serializePathParameter(sectionId, PathParameterSpec("sectionId", "simple", false))}"), body, null, null, "application/json")
         return client.convertValue(raw, object : TypeReference<CourseSectionsUpdateResult>() {})
     }
 
@@ -129,14 +87,8 @@ class ContentApi(private val client: HttpClient) {
     }
 
     /** Admin Course Create */
-    suspend fun coursesCreate(body: AdminCourseMutationRequest, xRequestId: String? = null): CoursesCreateResult? {
-        val requestHeaders = buildRequestHeaders(
-            mapOf(
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
-            ),
-            emptyMap()
-        )
-        val raw = client.post(ApiPaths.backendPath("/content/courses"), body, null, requestHeaders, "application/json")
+    suspend fun coursesCreate(body: AdminCourseMutationRequest): CoursesCreateResult? {
+        val raw = client.post(ApiPaths.backendPath("/content/courses"), body, null, null, "application/json")
         return client.convertValue(raw, object : TypeReference<CoursesCreateResult>() {})
     }
 
@@ -153,14 +105,8 @@ class ContentApi(private val client: HttpClient) {
     }
 
     /** Admin Course Comment Moderate */
-    suspend fun courseCommentsModerate(commentId: String, body: AdminCourseCommentModerationRequest, xRequestId: String? = null): CourseCommentsModerateResult? {
-        val requestHeaders = buildRequestHeaders(
-            mapOf(
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
-            ),
-            emptyMap()
-        )
-        val raw = client.patch(ApiPaths.backendPath("/content/courses/comments/${serializePathParameter(commentId, PathParameterSpec("commentId", "simple", false))}/moderation"), body, null, requestHeaders, "application/json")
+    suspend fun courseCommentsModerate(commentId: String, body: AdminCourseCommentModerationRequest): CourseCommentsModerateResult? {
+        val raw = client.patch(ApiPaths.backendPath("/content/courses/comments/${serializePathParameter(commentId, PathParameterSpec("commentId", "simple", false))}/moderation"), body, null, null, "application/json")
         return client.convertValue(raw, object : TypeReference<CourseCommentsModerateResult>() {})
     }
 
@@ -183,26 +129,14 @@ class ContentApi(private val client: HttpClient) {
     }
 
     /** Admin Course Delete */
-    suspend fun coursesDelete(courseId: String, xRequestId: String? = null): CoursesDeleteResult? {
-        val requestHeaders = buildRequestHeaders(
-            mapOf(
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
-            ),
-            emptyMap()
-        )
-        val raw = client.delete(ApiPaths.backendPath("/content/courses/${serializePathParameter(courseId, PathParameterSpec("courseId", "simple", false))}"), null, requestHeaders)
+    suspend fun coursesDelete(courseId: String): CoursesDeleteResult? {
+        val raw = client.delete(ApiPaths.backendPath("/content/courses/${serializePathParameter(courseId, PathParameterSpec("courseId", "simple", false))}"))
         return client.convertValue(raw, object : TypeReference<CoursesDeleteResult>() {})
     }
 
     /** Admin Course Update */
-    suspend fun coursesUpdate(courseId: String, body: AdminCourseMutationRequest, xRequestId: String? = null): CoursesUpdateResult? {
-        val requestHeaders = buildRequestHeaders(
-            mapOf(
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
-            ),
-            emptyMap()
-        )
-        val raw = client.patch(ApiPaths.backendPath("/content/courses/${serializePathParameter(courseId, PathParameterSpec("courseId", "simple", false))}"), body, null, requestHeaders, "application/json")
+    suspend fun coursesUpdate(courseId: String, body: AdminCourseMutationRequest): CoursesUpdateResult? {
+        val raw = client.patch(ApiPaths.backendPath("/content/courses/${serializePathParameter(courseId, PathParameterSpec("courseId", "simple", false))}"), body, null, null, "application/json")
         return client.convertValue(raw, object : TypeReference<CoursesUpdateResult>() {})
     }
 
@@ -219,14 +153,8 @@ class ContentApi(private val client: HttpClient) {
     }
 
     /** Admin Course Lesson Create */
-    suspend fun coursesLessonsCreate(courseId: String, body: AdminCourseLessonMutationRequest, xRequestId: String? = null): CoursesLessonsCreateResult? {
-        val requestHeaders = buildRequestHeaders(
-            mapOf(
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
-            ),
-            emptyMap()
-        )
-        val raw = client.post(ApiPaths.backendPath("/content/courses/${serializePathParameter(courseId, PathParameterSpec("courseId", "simple", false))}/lessons"), body, null, requestHeaders, "application/json")
+    suspend fun coursesLessonsCreate(courseId: String, body: AdminCourseLessonMutationRequest): CoursesLessonsCreateResult? {
+        val raw = client.post(ApiPaths.backendPath("/content/courses/${serializePathParameter(courseId, PathParameterSpec("courseId", "simple", false))}/lessons"), body, null, null, "application/json")
         return client.convertValue(raw, object : TypeReference<CoursesLessonsCreateResult>() {})
     }
 
@@ -243,14 +171,8 @@ class ContentApi(private val client: HttpClient) {
     }
 
     /** Admin Course Relations Replace */
-    suspend fun coursesRelationsReplace(courseId: String, body: AdminCourseRelationsReplaceRequest, xRequestId: String? = null): CoursesRelationsReplaceResult? {
-        val requestHeaders = buildRequestHeaders(
-            mapOf(
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
-            ),
-            emptyMap()
-        )
-        val raw = client.put(ApiPaths.backendPath("/content/courses/${serializePathParameter(courseId, PathParameterSpec("courseId", "simple", false))}/relations"), body, null, requestHeaders, "application/json")
+    suspend fun coursesRelationsReplace(courseId: String, body: AdminCourseRelationsReplaceRequest): CoursesRelationsReplaceResult? {
+        val raw = client.put(ApiPaths.backendPath("/content/courses/${serializePathParameter(courseId, PathParameterSpec("courseId", "simple", false))}/relations"), body, null, null, "application/json")
         return client.convertValue(raw, object : TypeReference<CoursesRelationsReplaceResult>() {})
     }
 
@@ -267,14 +189,8 @@ class ContentApi(private val client: HttpClient) {
     }
 
     /** Admin Course Section Create */
-    suspend fun coursesSectionsCreate(courseId: String, body: AdminCourseSectionMutationRequest, xRequestId: String? = null): CoursesSectionsCreateResult? {
-        val requestHeaders = buildRequestHeaders(
-            mapOf(
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
-            ),
-            emptyMap()
-        )
-        val raw = client.post(ApiPaths.backendPath("/content/courses/${serializePathParameter(courseId, PathParameterSpec("courseId", "simple", false))}/sections"), body, null, requestHeaders, "application/json")
+    suspend fun coursesSectionsCreate(courseId: String, body: AdminCourseSectionMutationRequest): CoursesSectionsCreateResult? {
+        val raw = client.post(ApiPaths.backendPath("/content/courses/${serializePathParameter(courseId, PathParameterSpec("courseId", "simple", false))}/sections"), body, null, null, "application/json")
         return client.convertValue(raw, object : TypeReference<CoursesSectionsCreateResult>() {})
     }
 
@@ -450,50 +366,4 @@ class ContentApi(private val client: HttpClient) {
         return java.net.URLEncoder.encode(value, java.nio.charset.StandardCharsets.UTF_8)
     }
 
-    private data class HeaderParameterSpec(val value: Any?, val style: String, val explode: Boolean, val contentType: String?)
-
-    private val headerObjectMapper = ObjectMapper().registerKotlinModule()
-
-    private fun buildRequestHeaders(headers: Map<String, HeaderParameterSpec>, cookies: Map<String, HeaderParameterSpec>): Map<String, String>? {
-        val requestHeaders = linkedMapOf<String, String>()
-        headers.forEach { (name, parameter) ->
-            serializeParameterValue(parameter)?.let { requestHeaders[name] = it }
-        }
-
-        val cookieHeader = buildCookieHeader(cookies)
-        if (cookieHeader.isNotEmpty()) {
-            requestHeaders["Cookie"] = requestHeaders["Cookie"]?.let { "$it; $cookieHeader" } ?: cookieHeader
-        }
-
-        return requestHeaders.takeIf { it.isNotEmpty() }
-    }
-
-    private fun buildCookieHeader(cookies: Map<String, HeaderParameterSpec>): String {
-        return cookies.mapNotNull { (name, parameter) ->
-            serializeParameterValue(parameter)?.let {
-                java.net.URLEncoder.encode(name, java.nio.charset.StandardCharsets.UTF_8) + "=" +
-                    java.net.URLEncoder.encode(it, java.nio.charset.StandardCharsets.UTF_8)
-            }
-        }.joinToString("; ")
-    }
-
-    private fun serializeParameterValue(parameter: HeaderParameterSpec?): String? {
-        val value = parameter?.value ?: return null
-        if (!parameter.contentType.isNullOrBlank()) {
-            return headerObjectMapper.writeValueAsString(value)
-        }
-        return when (value) {
-            is Iterable<*> -> value.mapNotNull { it?.toString() }.joinToString(",")
-            is Map<*, *> -> value.mapNotNull { (key, item) ->
-                if (item == null) {
-                    null
-                } else if (parameter.explode) {
-                    "$key=$item"
-                } else {
-                    listOf(key.toString(), item.toString()).joinToString(",")
-                }
-            }.joinToString(",")
-            else -> value.toString()
-        }
-    }
 }

@@ -120,11 +120,10 @@ class ServiceProvidersApi {
   }
 
   /// Service Provider Downstream Create
-  Future<DownstreamsCreateResult?> downstreamsCreate(ServiceProviderDownstreamCreateRequest body, String idempotencyKey, [String? xRequestId]) async {
+  Future<DownstreamsCreateResult?> downstreamsCreate(ServiceProviderDownstreamCreateRequest body, String idempotencyKey) async {
     final requestHeaders = buildRequestHeaders(
       <String, HeaderParameterSpec>{
         'Idempotency-Key': HeaderParameterSpec(idempotencyKey, 'simple', false, null),
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
       },
       <String, HeaderParameterSpec>{},
     );
@@ -173,11 +172,10 @@ class ServiceProvidersApi {
   }
 
   /// Service Provider Pricing Rule Create
-  Future<PricingRulesCreateResult?> pricingRulesCreate(ServiceProviderPricingRuleCreateRequest body, String idempotencyKey, [String? xRequestId]) async {
+  Future<PricingRulesCreateResult?> pricingRulesCreate(ServiceProviderPricingRuleCreateRequest body, String idempotencyKey) async {
     final requestHeaders = buildRequestHeaders(
       <String, HeaderParameterSpec>{
         'Idempotency-Key': HeaderParameterSpec(idempotencyKey, 'simple', false, null),
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
       },
       <String, HeaderParameterSpec>{},
     );
@@ -190,11 +188,10 @@ class ServiceProvidersApi {
   }
 
   /// Service Provider Pricing Rule Update
-  Future<PricingRulesUpdateResult?> pricingRulesUpdate(String ruleId, ServiceProviderPricingRuleUpdateRequest body, String idempotencyKey, [String? xRequestId]) async {
+  Future<PricingRulesUpdateResult?> pricingRulesUpdate(String ruleId, ServiceProviderPricingRuleUpdateRequest body, String idempotencyKey) async {
     final requestHeaders = buildRequestHeaders(
       <String, HeaderParameterSpec>{
         'Idempotency-Key': HeaderParameterSpec(idempotencyKey, 'simple', false, null),
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
       },
       <String, HeaderParameterSpec>{},
     );
@@ -207,11 +204,10 @@ class ServiceProvidersApi {
   }
 
   /// Service Provider Price Simulation Create
-  Future<PriceSimulationCreateResult?> priceSimulationCreate(ServiceProviderPriceSimulationRequest body, String idempotencyKey, [String? xRequestId]) async {
+  Future<PriceSimulationCreateResult?> priceSimulationCreate(ServiceProviderPriceSimulationRequest body, String idempotencyKey) async {
     final requestHeaders = buildRequestHeaders(
       <String, HeaderParameterSpec>{
         'Idempotency-Key': HeaderParameterSpec(idempotencyKey, 'simple', false, null),
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
       },
       <String, HeaderParameterSpec>{},
     );

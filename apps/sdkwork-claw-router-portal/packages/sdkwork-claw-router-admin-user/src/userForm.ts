@@ -1,10 +1,5 @@
 import type { ApiKeyCreateInput, UserCreateInput, UserUpdateInput } from './userService';
 
-export type UserBalanceAdjustmentInput = {
-  amount: number;
-  type: 'recharge' | 'refund';
-};
-
 export function createUserInputFromForm(formData: FormData): UserCreateInput {
   return omitUndefined({
     email: readFormText(formData, 'email'),
@@ -37,30 +32,6 @@ export function createUserStatusUpdateInput(status: string): UserUpdateInput {
     return { status };
   }
   throw new Error('status must be active or banned');
-}
-
-export function createUserBalanceAdjustmentInputFromForm(
-  formData: FormData,
-  type: UserBalanceAdjustmentInput['type'],
-): UserBalanceAdjustmentInput {
-  if (type !== 'recharge' && type !== 'refund') {
-    throw new Error('type must be recharge or refund');
-  }
-  const rawAmount = readFormText(formData, 'amount');
-  if (!rawAmount) {
-    throw new Error('amount is required');
-  }
-  const amount = Number(rawAmount.replace(/,/g, ''));
-  if (!Number.isFinite(amount)) {
-    throw new Error('amount must be a money amount');
-  }
-  if (amount <= 0) {
-    throw new Error('amount must be greater than zero');
-  }
-  return {
-    amount: Math.round(amount * 100) / 100,
-    type,
-  };
 }
 
 function readFormText(formData: FormData, key: string): string {

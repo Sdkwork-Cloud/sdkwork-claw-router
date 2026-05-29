@@ -7,31 +7,34 @@ public class IntegrationApi {
         self.client = client
     }
 
+    /// List channel endpoints
+    public func channelEndpointsList() async throws -> ChannelEndpointsListResult? {
+        return try await client.get(ApiPaths.backendPath("/integration/channel_endpoints"), responseType: ChannelEndpointsListResult.self)
+    }
+
+    /// Create channel endpoint
+    public func channelEndpointsCreate(body: AdminChannelEndpointCreateRequest) async throws -> ChannelEndpointsCreateResult? {
+        return try await client.post(ApiPaths.backendPath("/integration/channel_endpoints"), body: body, params: nil, headers: nil, contentType: "application/json", responseType: ChannelEndpointsCreateResult.self)
+    }
+
+    /// Update channel endpoint
+    public func channelEndpointsUpdate(endpointId: String, body: AdminChannelEndpointUpdateRequest) async throws -> ChannelEndpointsUpdateResult? {
+        return try await client.put(ApiPaths.backendPath("/integration/channel_endpoints/\(serializePathParameter(endpointId, PathParameterSpec(name: "endpointId", style: "simple", explode: false)))"), body: body, params: nil, headers: nil, contentType: "application/json", responseType: ChannelEndpointsUpdateResult.self)
+    }
+
     /// List channels
     public func channelsList() async throws -> ChannelsListResult? {
         return try await client.get(ApiPaths.backendPath("/integration/channels"), responseType: ChannelsListResult.self)
     }
 
     /// Create channel
-    public func channelsCreate(body: AdminChannelCreateRequest, xRequestId: String? = nil) async throws -> ChannelsCreateResult? {
-        let requestHeaders = buildRequestHeaders(
-            [
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
-            ],
-            [:]
-        )
-        return try await client.post(ApiPaths.backendPath("/integration/channels"), body: body, params: nil, headers: requestHeaders, contentType: "application/json", responseType: ChannelsCreateResult.self)
+    public func channelsCreate(body: AdminChannelCreateRequest) async throws -> ChannelsCreateResult? {
+        return try await client.post(ApiPaths.backendPath("/integration/channels"), body: body, params: nil, headers: nil, contentType: "application/json", responseType: ChannelsCreateResult.self)
     }
 
     /// Update channel
-    public func channelsUpdate(body: AdminChannelUpdateRequest, xRequestId: String? = nil) async throws -> ChannelsUpdateResult? {
-        let requestHeaders = buildRequestHeaders(
-            [
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
-            ],
-            [:]
-        )
-        return try await client.put(ApiPaths.backendPath("/integration/channels"), body: body, params: nil, headers: requestHeaders, contentType: "application/json", responseType: ChannelsUpdateResult.self)
+    public func channelsUpdate(body: AdminChannelUpdateRequest) async throws -> ChannelsUpdateResult? {
+        return try await client.put(ApiPaths.backendPath("/integration/channels"), body: body, params: nil, headers: nil, contentType: "application/json", responseType: ChannelsUpdateResult.self)
     }
 
     /// Delete channel
@@ -40,14 +43,8 @@ public class IntegrationApi {
     }
 
     /// Test channel
-    public func channelsVerify(channelId: String, xRequestId: String? = nil) async throws -> ChannelsVerifyResult? {
-        let requestHeaders = buildRequestHeaders(
-            [
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
-            ],
-            [:]
-        )
-        return try await client.post(ApiPaths.backendPath("/integration/channels/\(serializePathParameter(channelId, PathParameterSpec(name: "channelId", style: "simple", explode: false)))/verify"), body: nil, params: nil, headers: requestHeaders, responseType: ChannelsVerifyResult.self)
+    public func channelsVerify(channelId: String) async throws -> ChannelsVerifyResult? {
+        return try await client.post(ApiPaths.backendPath("/integration/channels/\(serializePathParameter(channelId, PathParameterSpec(name: "channelId", style: "simple", explode: false)))/verify"), body: nil, responseType: ChannelsVerifyResult.self)
     }
 
     /// List provider secrets
@@ -60,25 +57,13 @@ public class IntegrationApi {
     }
 
     /// Create provider secret
-    public func providerSecretsCreate(body: AdminProviderSecretCreateRequest, xRequestId: String? = nil) async throws -> ProviderSecretsCreateResult? {
-        let requestHeaders = buildRequestHeaders(
-            [
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
-            ],
-            [:]
-        )
-        return try await client.post(ApiPaths.backendPath("/integration/provider_secrets"), body: body, params: nil, headers: requestHeaders, contentType: "application/json", responseType: ProviderSecretsCreateResult.self)
+    public func providerSecretsCreate(body: AdminProviderSecretCreateRequest) async throws -> ProviderSecretsCreateResult? {
+        return try await client.post(ApiPaths.backendPath("/integration/provider_secrets"), body: body, params: nil, headers: nil, contentType: "application/json", responseType: ProviderSecretsCreateResult.self)
     }
 
     /// Update provider secret
-    public func providerSecretsUpdate(body: AdminProviderSecretUpdateRequest, xRequestId: String? = nil) async throws -> ProviderSecretsUpdateResult? {
-        let requestHeaders = buildRequestHeaders(
-            [
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
-            ],
-            [:]
-        )
-        return try await client.put(ApiPaths.backendPath("/integration/provider_secrets"), body: body, params: nil, headers: requestHeaders, contentType: "application/json", responseType: ProviderSecretsUpdateResult.self)
+    public func providerSecretsUpdate(body: AdminProviderSecretUpdateRequest) async throws -> ProviderSecretsUpdateResult? {
+        return try await client.put(ApiPaths.backendPath("/integration/provider_secrets"), body: body, params: nil, headers: nil, contentType: "application/json", responseType: ProviderSecretsUpdateResult.self)
     }
 
     /// Delete provider secret
@@ -263,68 +248,4 @@ public class IntegrationApi {
         value.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? value
     }
 
-    private struct HeaderParameterSpec {
-        let value: Any?
-        let style: String
-        let explode: Bool
-        let contentType: String?
-    }
-
-    private func buildRequestHeaders(_ headers: [String: HeaderParameterSpec], _ cookies: [String: HeaderParameterSpec]) -> [String: String]? {
-        var requestHeaders: [String: String] = [:]
-        for (name, parameter) in headers {
-            if let serialized = serializeParameterValue(parameter) {
-                requestHeaders[name] = serialized
-            }
-        }
-
-        if let cookieHeader = buildCookieHeader(cookies), !cookieHeader.isEmpty {
-            requestHeaders["Cookie"] = requestHeaders["Cookie"].map { "\($0); \(cookieHeader)" } ?? cookieHeader
-        }
-
-        return requestHeaders.isEmpty ? nil : requestHeaders
-    }
-
-    private func buildCookieHeader(_ cookies: [String: HeaderParameterSpec]) -> String? {
-        let pairs = cookies.compactMap { name, parameter -> String? in
-            guard let serialized = serializeParameterValue(parameter) else { return nil }
-            return "\(urlEncode(name))=\(urlEncode(serialized))"
-        }
-        return pairs.isEmpty ? nil : pairs.joined(separator: "; ")
-    }
-
-    private func serializeParameterValue(_ parameter: HeaderParameterSpec?) -> String? {
-        guard let parameter, let value = parameter.value else { return nil }
-        if let contentType = parameter.contentType, !contentType.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
-            if JSONSerialization.isValidJSONObject(value),
-               let data = try? JSONSerialization.data(withJSONObject: value, options: []),
-               let json = String(data: data, encoding: .utf8) {
-                return json
-            }
-            return String(describing: value)
-        }
-        if let array = value as? [Any?] {
-            return array.compactMap { $0.map { String(describing: $0) } }.joined(separator: ",")
-        }
-        if let object = value as? [String: Any] {
-            var values: [String] = []
-            for (key, item) in object {
-                if parameter.explode {
-                    values.append("\(key)=\(item)")
-                } else {
-                    values.append(key)
-                    values.append(String(describing: item))
-                }
-            }
-            return values.joined(separator: ",")
-        }
-        if let date = value as? Date {
-            return ISO8601DateFormatter().string(from: date)
-        }
-        return String(describing: value)
-    }
-
-    private func urlEncode(_ value: String) -> String {
-        value.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? value
-    }
 }

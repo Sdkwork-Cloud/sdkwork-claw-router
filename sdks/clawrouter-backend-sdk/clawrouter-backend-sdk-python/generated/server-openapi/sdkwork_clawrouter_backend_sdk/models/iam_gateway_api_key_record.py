@@ -6,13 +6,13 @@ from typing import TYPE_CHECKING, Optional, List, Dict, Any
 @dataclass
 class IamGatewayApiKeyRecord:
     """Iam gateway api key record schema exposed by Claw Router."""
+    channel_group_id: Optional[str] = None
     created_at: Optional[str] = None
     data_scope: Optional[str] = None
     deleted_at: Optional[str] = None
     deleted_by: Optional[str] = None
     environment: Optional[str] = None
     expire_at: Optional[str] = None
-    group_id: Optional[str] = None
     hash_alg: Optional[str] = None
     id: Optional[str] = None
     idempotency_key: Optional[str] = None

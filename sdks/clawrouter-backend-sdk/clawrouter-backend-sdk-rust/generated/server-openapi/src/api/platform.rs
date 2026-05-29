@@ -1,6 +1,5 @@
 use std::sync::Arc;
 
-use crate::api::base::{RequestHeaders};
 use crate::api::paths::backend_path;
 use crate::api::paths::append_query_string;
 use crate::http::{SdkworkError, SdkworkHttpClient};
@@ -17,7 +16,7 @@ impl PlatformApi {
     }
 
     /// List apps
-    pub async fn apps_list(&self, q: Option<&str>, status: Option<&str>, market_status: Option<&str>, app_type: Option<&str>, category_id: Option<i64>, page: Option<i64>, page_size: Option<i64>, x_request_id: Option<&str>) -> Result<AppsListResult, SdkworkError> {
+    pub async fn apps_list(&self, q: Option<&str>, status: Option<&str>, market_status: Option<&str>, app_type: Option<&str>, category_id: Option<i64>, page: Option<i64>, page_size: Option<i64>) -> Result<AppsListResult, SdkworkError> {
         let query = build_query_string(&[
             QueryParameterSpec::new("q", q, "form", true, false, None),
             QueryParameterSpec::new("status", status, "form", true, false, None),
@@ -28,25 +27,13 @@ impl PlatformApi {
             QueryParameterSpec::new("page_size", page_size, "form", true, false, None),
         ]);
         let path = append_query_string(backend_path(&"/platform/apps".to_string()), &query);
-        let headers = build_request_headers(
-            &[
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
-            ],
-            &[],
-        );
-        self.client.get(&path, None, headers.as_ref()).await
+        self.client.get(&path, None, None).await
     }
 
     /// Create app
-    pub async fn apps_create(&self, body: &AdminAppCreateRequest, x_request_id: Option<&str>) -> Result<AppsCreateResult, SdkworkError> {
+    pub async fn apps_create(&self, body: &AdminAppCreateRequest) -> Result<AppsCreateResult, SdkworkError> {
         let path = backend_path(&"/platform/apps".to_string());
-        let headers = build_request_headers(
-            &[
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
-            ],
-            &[],
-        );
-        self.client.post(&path, Some(body), None, headers.as_ref(), Some("application/json")).await
+        self.client.post(&path, Some(body), None, None, Some("application/json")).await
     }
 
     /// List app categories
@@ -56,43 +43,25 @@ impl PlatformApi {
     }
 
     /// Create app category
-    pub async fn apps_categories_create(&self, body: &AdminAppCategoryCreateRequest, x_request_id: Option<&str>) -> Result<AppsCategoriesCreateResult, SdkworkError> {
+    pub async fn apps_categories_create(&self, body: &AdminAppCategoryCreateRequest) -> Result<AppsCategoriesCreateResult, SdkworkError> {
         let path = backend_path(&"/platform/apps/categories".to_string());
-        let headers = build_request_headers(
-            &[
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
-            ],
-            &[],
-        );
-        self.client.post(&path, Some(body), None, headers.as_ref(), Some("application/json")).await
+        self.client.post(&path, Some(body), None, None, Some("application/json")).await
     }
 
     /// Delete app category
-    pub async fn apps_categories_delete(&self, category_id: &str, x_request_id: Option<&str>) -> Result<AppsCategoriesDeleteResult, SdkworkError> {
+    pub async fn apps_categories_delete(&self, category_id: &str) -> Result<AppsCategoriesDeleteResult, SdkworkError> {
         let path = backend_path(&format!("/platform/apps/categories/{}", serialize_path_parameter(category_id, PathParameterSpec::new("categoryId", "simple", false))));
-        let headers = build_request_headers(
-            &[
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
-            ],
-            &[],
-        );
-        self.client.delete(&path, None, headers.as_ref()).await
+        self.client.delete(&path, None, None).await
     }
 
     /// Update app category
-    pub async fn apps_categories_update(&self, category_id: &str, body: &AdminAppCategoryUpdateRequest, x_request_id: Option<&str>) -> Result<AppsCategoriesUpdateResult, SdkworkError> {
+    pub async fn apps_categories_update(&self, category_id: &str, body: &AdminAppCategoryUpdateRequest) -> Result<AppsCategoriesUpdateResult, SdkworkError> {
         let path = backend_path(&format!("/platform/apps/categories/{}", serialize_path_parameter(category_id, PathParameterSpec::new("categoryId", "simple", false))));
-        let headers = build_request_headers(
-            &[
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
-            ],
-            &[],
-        );
-        self.client.put(&path, Some(body), None, headers.as_ref(), Some("application/json")).await
+        self.client.put(&path, Some(body), None, None, Some("application/json")).await
     }
 
     /// List app templates
-    pub async fn apps_templates_list(&self, q: Option<&str>, publish_status: Option<&str>, template_type: Option<&str>, runtime: Option<&str>, category_id: Option<i64>, page: Option<i64>, page_size: Option<i64>, x_request_id: Option<&str>) -> Result<AppsTemplatesListResult, SdkworkError> {
+    pub async fn apps_templates_list(&self, q: Option<&str>, publish_status: Option<&str>, template_type: Option<&str>, runtime: Option<&str>, category_id: Option<i64>, page: Option<i64>, page_size: Option<i64>) -> Result<AppsTemplatesListResult, SdkworkError> {
         let query = build_query_string(&[
             QueryParameterSpec::new("q", q, "form", true, false, None),
             QueryParameterSpec::new("publish_status", publish_status, "form", true, false, None),
@@ -103,169 +72,85 @@ impl PlatformApi {
             QueryParameterSpec::new("page_size", page_size, "form", true, false, None),
         ]);
         let path = append_query_string(backend_path(&"/platform/apps/templates".to_string()), &query);
-        let headers = build_request_headers(
-            &[
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
-            ],
-            &[],
-        );
-        self.client.get(&path, None, headers.as_ref()).await
+        self.client.get(&path, None, None).await
     }
 
     /// Create app template
-    pub async fn apps_templates_create(&self, body: &AdminAppTemplateCreateRequest, x_request_id: Option<&str>) -> Result<AppsTemplatesCreateResult, SdkworkError> {
+    pub async fn apps_templates_create(&self, body: &AdminAppTemplateCreateRequest) -> Result<AppsTemplatesCreateResult, SdkworkError> {
         let path = backend_path(&"/platform/apps/templates".to_string());
-        let headers = build_request_headers(
-            &[
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
-            ],
-            &[],
-        );
-        self.client.post(&path, Some(body), None, headers.as_ref(), Some("application/json")).await
+        self.client.post(&path, Some(body), None, None, Some("application/json")).await
     }
 
     /// Delete app template
-    pub async fn apps_templates_delete(&self, template_id: &str, x_request_id: Option<&str>) -> Result<AppsTemplatesDeleteResult, SdkworkError> {
+    pub async fn apps_templates_delete(&self, template_id: &str) -> Result<AppsTemplatesDeleteResult, SdkworkError> {
         let path = backend_path(&format!("/platform/apps/templates/{}", serialize_path_parameter(template_id, PathParameterSpec::new("templateId", "simple", false))));
-        let headers = build_request_headers(
-            &[
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
-            ],
-            &[],
-        );
-        self.client.delete(&path, None, headers.as_ref()).await
+        self.client.delete(&path, None, None).await
     }
 
     /// List app template
-    pub async fn apps_templates_retrieve(&self, template_id: &str, x_request_id: Option<&str>) -> Result<AppsTemplatesRetrieveResult, SdkworkError> {
+    pub async fn apps_templates_retrieve(&self, template_id: &str) -> Result<AppsTemplatesRetrieveResult, SdkworkError> {
         let path = backend_path(&format!("/platform/apps/templates/{}", serialize_path_parameter(template_id, PathParameterSpec::new("templateId", "simple", false))));
-        let headers = build_request_headers(
-            &[
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
-            ],
-            &[],
-        );
-        self.client.get(&path, None, headers.as_ref()).await
+        self.client.get(&path, None, None).await
     }
 
     /// Update app template
-    pub async fn apps_templates_update(&self, template_id: &str, body: &AdminAppTemplateUpdateRequest, x_request_id: Option<&str>) -> Result<AppsTemplatesUpdateResult, SdkworkError> {
+    pub async fn apps_templates_update(&self, template_id: &str, body: &AdminAppTemplateUpdateRequest) -> Result<AppsTemplatesUpdateResult, SdkworkError> {
         let path = backend_path(&format!("/platform/apps/templates/{}", serialize_path_parameter(template_id, PathParameterSpec::new("templateId", "simple", false))));
-        let headers = build_request_headers(
-            &[
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
-            ],
-            &[],
-        );
-        self.client.put(&path, Some(body), None, headers.as_ref(), Some("application/json")).await
+        self.client.put(&path, Some(body), None, None, Some("application/json")).await
     }
 
     /// Publish app template
-    pub async fn apps_templates_publish(&self, template_id: &str, x_request_id: Option<&str>) -> Result<AppsTemplatesPublishResult, SdkworkError> {
+    pub async fn apps_templates_publish(&self, template_id: &str) -> Result<AppsTemplatesPublishResult, SdkworkError> {
         let path = backend_path(&format!("/platform/apps/templates/{}/publish", serialize_path_parameter(template_id, PathParameterSpec::new("templateId", "simple", false))));
-        let headers = build_request_headers(
-            &[
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
-            ],
-            &[],
-        );
-        self.client.post(&path, Option::<&serde_json::Value>::None, None, headers.as_ref(), None).await
+        self.client.post(&path, Option::<&serde_json::Value>::None, None, None, None).await
     }
 
     /// Offline app template
-    pub async fn apps_templates_unpublish(&self, template_id: &str, x_request_id: Option<&str>) -> Result<AppsTemplatesUnpublishResult, SdkworkError> {
+    pub async fn apps_templates_unpublish(&self, template_id: &str) -> Result<AppsTemplatesUnpublishResult, SdkworkError> {
         let path = backend_path(&format!("/platform/apps/templates/{}/unpublish", serialize_path_parameter(template_id, PathParameterSpec::new("templateId", "simple", false))));
-        let headers = build_request_headers(
-            &[
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
-            ],
-            &[],
-        );
-        self.client.post(&path, Option::<&serde_json::Value>::None, None, headers.as_ref(), None).await
+        self.client.post(&path, Option::<&serde_json::Value>::None, None, None, None).await
     }
 
     /// Delete app
-    pub async fn apps_delete(&self, app_id: &str, x_request_id: Option<&str>) -> Result<AppsDeleteResult, SdkworkError> {
+    pub async fn apps_delete(&self, app_id: &str) -> Result<AppsDeleteResult, SdkworkError> {
         let path = backend_path(&format!("/platform/apps/{}", serialize_path_parameter(app_id, PathParameterSpec::new("appId", "simple", false))));
-        let headers = build_request_headers(
-            &[
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
-            ],
-            &[],
-        );
-        self.client.delete(&path, None, headers.as_ref()).await
+        self.client.delete(&path, None, None).await
     }
 
     /// List app
-    pub async fn apps_retrieve(&self, app_id: &str, x_request_id: Option<&str>) -> Result<AppsRetrieveResult, SdkworkError> {
+    pub async fn apps_retrieve(&self, app_id: &str) -> Result<AppsRetrieveResult, SdkworkError> {
         let path = backend_path(&format!("/platform/apps/{}", serialize_path_parameter(app_id, PathParameterSpec::new("appId", "simple", false))));
-        let headers = build_request_headers(
-            &[
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
-            ],
-            &[],
-        );
-        self.client.get(&path, None, headers.as_ref()).await
+        self.client.get(&path, None, None).await
     }
 
     /// Update app
-    pub async fn apps_update(&self, app_id: &str, body: &AdminAppUpdateRequest, x_request_id: Option<&str>) -> Result<AppsUpdateResult, SdkworkError> {
+    pub async fn apps_update(&self, app_id: &str, body: &AdminAppUpdateRequest) -> Result<AppsUpdateResult, SdkworkError> {
         let path = backend_path(&format!("/platform/apps/{}", serialize_path_parameter(app_id, PathParameterSpec::new("appId", "simple", false))));
-        let headers = build_request_headers(
-            &[
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
-            ],
-            &[],
-        );
-        self.client.put(&path, Some(body), None, headers.as_ref(), Some("application/json")).await
+        self.client.put(&path, Some(body), None, None, Some("application/json")).await
     }
 
     /// Disable app
-    pub async fn apps_disable(&self, app_id: &str, x_request_id: Option<&str>) -> Result<AppsDisableResult, SdkworkError> {
+    pub async fn apps_disable(&self, app_id: &str) -> Result<AppsDisableResult, SdkworkError> {
         let path = backend_path(&format!("/platform/apps/{}/disable", serialize_path_parameter(app_id, PathParameterSpec::new("appId", "simple", false))));
-        let headers = build_request_headers(
-            &[
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
-            ],
-            &[],
-        );
-        self.client.post(&path, Option::<&serde_json::Value>::None, None, headers.as_ref(), None).await
+        self.client.post(&path, Option::<&serde_json::Value>::None, None, None, None).await
     }
 
     /// Enable app
-    pub async fn apps_enable(&self, app_id: &str, x_request_id: Option<&str>) -> Result<AppsEnableResult, SdkworkError> {
+    pub async fn apps_enable(&self, app_id: &str) -> Result<AppsEnableResult, SdkworkError> {
         let path = backend_path(&format!("/platform/apps/{}/enable", serialize_path_parameter(app_id, PathParameterSpec::new("appId", "simple", false))));
-        let headers = build_request_headers(
-            &[
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
-            ],
-            &[],
-        );
-        self.client.post(&path, Option::<&serde_json::Value>::None, None, headers.as_ref(), None).await
+        self.client.post(&path, Option::<&serde_json::Value>::None, None, None, None).await
     }
 
     /// Publish app
-    pub async fn apps_publish(&self, app_id: &str, x_request_id: Option<&str>) -> Result<AppsPublishResult, SdkworkError> {
+    pub async fn apps_publish(&self, app_id: &str) -> Result<AppsPublishResult, SdkworkError> {
         let path = backend_path(&format!("/platform/apps/{}/publish", serialize_path_parameter(app_id, PathParameterSpec::new("appId", "simple", false))));
-        let headers = build_request_headers(
-            &[
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
-            ],
-            &[],
-        );
-        self.client.post(&path, Option::<&serde_json::Value>::None, None, headers.as_ref(), None).await
+        self.client.post(&path, Option::<&serde_json::Value>::None, None, None, None).await
     }
 
     /// Offline app
-    pub async fn apps_unpublish(&self, app_id: &str, x_request_id: Option<&str>) -> Result<AppsUnpublishResult, SdkworkError> {
+    pub async fn apps_unpublish(&self, app_id: &str) -> Result<AppsUnpublishResult, SdkworkError> {
         let path = backend_path(&format!("/platform/apps/{}/unpublish", serialize_path_parameter(app_id, PathParameterSpec::new("appId", "simple", false))));
-        let headers = build_request_headers(
-            &[
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
-            ],
-            &[],
-        );
-        self.client.post(&path, Option::<&serde_json::Value>::None, None, headers.as_ref(), None).await
+        self.client.post(&path, Option::<&serde_json::Value>::None, None, None, None).await
     }
 
 }
@@ -368,118 +253,6 @@ fn path_primitive_prefix(name: &str, style: &str) -> String {
     }
 }
 
-struct HeaderParameterSpec {
-    value: serde_json::Value,
-    explode: bool,
-    content_type: Option<&'static str>,
-}
-
-impl HeaderParameterSpec {
-    fn new<T: serde::Serialize>(
-        value: T,
-        _style: &'static str,
-        explode: bool,
-        content_type: Option<&'static str>,
-    ) -> Self {
-        Self {
-            value: serde_json::to_value(value).unwrap_or(serde_json::Value::Null),
-            explode,
-            content_type,
-        }
-    }
-}
-
-fn build_request_headers(headers: &[(&str, HeaderParameterSpec)], cookies: &[(&str, HeaderParameterSpec)]) -> Option<RequestHeaders> {
-    let mut request_headers = RequestHeaders::new();
-    for (name, parameter) in headers {
-        if let Some(value) = serialize_header_parameter(parameter) {
-            request_headers.insert((*name).to_string(), value);
-        }
-    }
-
-    let cookie_header = build_cookie_header(cookies);
-    if !cookie_header.is_empty() {
-        request_headers
-            .entry("Cookie".to_string())
-            .and_modify(|existing| {
-                existing.push_str("; ");
-                existing.push_str(&cookie_header);
-            })
-            .or_insert(cookie_header);
-    }
-
-    if request_headers.is_empty() {
-        None
-    } else {
-        Some(request_headers)
-    }
-}
-
-fn build_cookie_header(cookies: &[(&str, HeaderParameterSpec)]) -> String {
-    cookies
-        .iter()
-        .filter_map(|(name, value)| {
-            serialize_header_parameter(value)
-                .map(|value| format!("{}={}", percent_encode(name), percent_encode(&value)))
-        })
-        .collect::<Vec<_>>()
-        .join("; ")
-}
-
-fn serialize_header_parameter(parameter: &HeaderParameterSpec) -> Option<String> {
-    if parameter.value.is_null() {
-        return None;
-    }
-    if parameter.content_type.is_some() {
-        return Some(parameter.value.to_string());
-    }
-    match &parameter.value {
-        serde_json::Value::Null => None,
-        serde_json::Value::String(value) => Some(value.clone()),
-        serde_json::Value::Number(value) => Some(value.to_string()),
-        serde_json::Value::Bool(value) => Some(value.to_string()),
-        serde_json::Value::Array(values) => {
-            let serialized = values
-                .iter()
-                .filter_map(serialize_json_value)
-                .collect::<Vec<_>>();
-            if serialized.is_empty() {
-                None
-            } else {
-                Some(serialized.join(","))
-            }
-        }
-        serde_json::Value::Object(values) => {
-            let serialized = values
-                .iter()
-                .filter_map(|(key, value)| {
-                    serialize_json_value(value).map(|serialized| {
-                        if parameter.explode {
-                            format!("{}={}", key, serialized)
-                        } else {
-                            format!("{},{}", key, serialized)
-                        }
-                    })
-                })
-                .collect::<Vec<_>>();
-            if serialized.is_empty() {
-                None
-            } else {
-                Some(serialized.join(","))
-            }
-        }
-    }
-}
-
-fn serialize_json_value(value: &serde_json::Value) -> Option<String> {
-    match value {
-        serde_json::Value::Null => None,
-        serde_json::Value::String(value) => Some(value.clone()),
-        serde_json::Value::Number(value) => Some(value.to_string()),
-        serde_json::Value::Bool(value) => Some(value.to_string()),
-        other => Some(other.to_string()),
-    }
-}
 
 struct QueryParameterSpec<'a> {
     name: &'a str,

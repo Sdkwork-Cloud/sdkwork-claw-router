@@ -1,5 +1,6 @@
 mod admin_access_group;
 mod admin_agents;
+mod admin_ai_resource;
 mod admin_analytics;
 mod admin_announcement;
 mod admin_api_key_rate_limit;
@@ -7,6 +8,7 @@ mod admin_app;
 mod admin_auth_settings;
 mod admin_cache;
 mod admin_channel;
+mod admin_channel_endpoint;
 mod admin_dashboard;
 mod admin_finance;
 mod admin_firewall_rule;
@@ -22,6 +24,7 @@ mod admin_open_platform;
 mod admin_prompts;
 mod admin_provider_secret;
 mod admin_record;
+mod admin_runtime_region_settings;
 mod admin_service_node;
 mod admin_service_provider;
 mod admin_skill;
@@ -73,6 +76,7 @@ mod subject;
 
 pub use admin_access_group::admin_access_group_router_with_store;
 pub use admin_agents::admin_agent_router_with_store;
+pub use admin_ai_resource::admin_ai_resource_router_with_store;
 pub use admin_analytics::admin_analytics_router_with_read_store;
 pub use admin_announcement::admin_announcement_router_with_store;
 pub use admin_api_key_rate_limit::admin_api_key_rate_limit_router_with_store;
@@ -81,6 +85,7 @@ pub use admin_app::admin_app_router_with_store_and_json_body_limit;
 pub use admin_auth_settings::admin_auth_settings_router_with_store;
 pub use admin_cache::admin_cache_router_with_manager;
 pub use admin_channel::admin_channel_router_with_store;
+pub use admin_channel_endpoint::admin_channel_endpoint_router_with_store;
 pub use admin_dashboard::admin_dashboard_router_with_read_store;
 pub use admin_finance::admin_finance_router_with_store;
 pub use admin_firewall_rule::admin_firewall_rule_router_with_store;
@@ -97,6 +102,7 @@ pub use admin_open_platform::admin_open_platform_router_with_store;
 pub use admin_prompts::admin_prompt_router_with_store;
 pub use admin_provider_secret::admin_provider_secret_router_with_store;
 pub use admin_record::admin_record_router_with_store;
+pub use admin_runtime_region_settings::admin_runtime_region_settings_router_with_store;
 pub use admin_service_node::admin_service_node_router_with_store;
 pub use admin_service_provider::admin_service_provider_router_with_store;
 pub use admin_skill::admin_skill_router_with_store;
@@ -215,10 +221,10 @@ pub use openai_embeddings::openai_embeddings_router_with_relay_plugins_and_failu
 pub use openai_embeddings::openai_embeddings_router_with_relay_usage_recorder_plugins_and_failure_strategy;
 pub use openai_embeddings::openai_embeddings_router_with_relay_usage_recorder_plugins_and_runtime_config;
 pub use openai_invocation::{
-    OpenAiInvocationContext, OpenAiInvocationEndpoint, OpenAiInvocationFault,
-    OpenAiInvocationFaultKind, OpenAiInvocationPlugin, OpenAiInvocationPluginError,
-    OpenAiInvocationPluginFuture, OpenAiInvocationPluginRef, OpenAiInvocationRelayOutcome,
-    OpenAiProviderRoute,
+    normalize_user_agent_header, OpenAiInvocationContext, OpenAiInvocationEndpoint,
+    OpenAiInvocationFault, OpenAiInvocationFaultKind, OpenAiInvocationPlugin,
+    OpenAiInvocationPluginError, OpenAiInvocationPluginFuture, OpenAiInvocationPluginRef,
+    OpenAiInvocationRelayOutcome, OpenAiProviderRoute,
 };
 pub use openai_models::openai_models_router;
 pub use openai_responses::openai_responses_router;

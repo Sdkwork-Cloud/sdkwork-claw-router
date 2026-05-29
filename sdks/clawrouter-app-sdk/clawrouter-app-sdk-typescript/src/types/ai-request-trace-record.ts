@@ -2,10 +2,6 @@ import type { JsonValue } from './json-value';
 
 /** Ai request trace record schema exposed by Claw Router. */
 export interface AiRequestTraceRecord {
-  /** Api key group id field on ai request trace record. */
-  api_key_group_id?: string;
-  /** Api key group snapshot field on ai request trace record. */
-  api_key_group_snapshot?: string;
   /** Api key id field on ai request trace record. */
   api_key_id?: string;
   /** Api key name snapshot field on ai request trace record. */
@@ -14,6 +10,10 @@ export interface AiRequestTraceRecord {
   attempt_no?: number;
   /** Cached tokens field on ai request trace record. */
   cached_tokens?: string;
+  /** Channel group id field on ai request trace record. */
+  channel_group_id?: string;
+  /** Channel group snapshot field on ai request trace record. */
+  channel_group_snapshot?: string;
   /** Channel id field on ai request trace record. */
   channel_id?: string;
   /** Channel name snapshot field on ai request trace record. */
@@ -64,8 +64,6 @@ export interface AiRequestTraceRecord {
   payload_hash?: string;
   /** Prompt tokens field on ai request trace record. */
   prompt_tokens?: string;
-  /** Provider account id field on ai request trace record. */
-  provider_account_id?: string;
   /** Provider error code field on ai request trace record. */
   provider_error_code?: string;
   /** Provider id field on ai request trace record. */

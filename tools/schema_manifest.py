@@ -6,6 +6,8 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
 
+from tools.schema_registry_loader import load_schema_registry, render_schema_registry
+
 try:
     import yaml
 except ImportError as exc:  # pragma: no cover - exercised only on missing tooling
@@ -90,6 +92,9 @@ class SchemaManifestGenerator:
     def render_json(self) -> str:
         return json.dumps(self.generate(), ensure_ascii=False, indent=2, sort_keys=True) + "\n"
 
+    def render_effective_registry(self) -> str:
+        return render_schema_registry(self.registry_path)
+
     def write(self, output_path: Path | None = None) -> Path:
         target = (
             Path(output_path)
@@ -98,6 +103,13 @@ class SchemaManifestGenerator:
         )
         target.parent.mkdir(parents=True, exist_ok=True)
         target.write_text(self.render_json(), encoding="utf-8")
+        self.write_effective_registry()
+        return target
+
+    def write_effective_registry(self, output_path: Path | None = None) -> Path:
+        target = self._effective_registry_path(output_path)
+        target.parent.mkdir(parents=True, exist_ok=True)
+        target.write_text(self.render_effective_registry(), encoding="utf-8")
         return target
 
     def check(self, output_path: Path | None = None) -> SchemaManifestCheckResult:
@@ -106,27 +118,28 @@ class SchemaManifestGenerator:
             if output_path is not None
             else self.root / "generated" / "schema" / "manifest" / "schema-manifest.json"
         )
+        messages: list[str] = []
         expected = self.render_json()
         if not target.exists():
-            return SchemaManifestCheckResult(ok=False, messages=[f"schema manifest is missing: {target}"])
+            messages.append(f"schema manifest is missing: {target}")
+        else:
+            actual = target.read_text(encoding="utf-8")
+            if actual != expected:
+                messages.append(f"schema manifest is stale: {target}")
 
-        actual = target.read_text(encoding="utf-8")
-        if actual != expected:
-            return SchemaManifestCheckResult(ok=False, messages=[f"schema manifest is stale: {target}"])
+        effective_registry = self._effective_registry_path()
+        expected_effective_registry = self.render_effective_registry()
+        if not effective_registry.exists():
+            messages.append(f"effective schema registry is missing: {effective_registry}")
+        else:
+            actual_effective_registry = effective_registry.read_text(encoding="utf-8")
+            if actual_effective_registry != expected_effective_registry:
+                messages.append(f"effective schema registry is stale: {effective_registry}")
 
-        return SchemaManifestCheckResult(ok=True, messages=[])
+        return SchemaManifestCheckResult(ok=not messages, messages=messages)
 
     def _load_registry(self) -> dict[str, Any]:
-        if yaml is None:
-            raise RuntimeError("PyYAML is required to load schema registry YAML") from _YAML_IMPORT_ERROR
-        if not self.registry_path.exists():
-            raise FileNotFoundError(f"schema registry not found: {self.registry_path}")
-        registry = yaml.safe_load(self.registry_path.read_text(encoding="utf-8"))
-        if registry is None:
-            return {}
-        if not isinstance(registry, dict):
-            raise ValueError("schema registry root must be a mapping")
-        return registry
+        return load_schema_registry(self.registry_path)
 
     def _compile_table(self, table: dict[str, Any], common_column_groups: dict[str, Any]) -> dict[str, Any]:
         table_name = table["table"]
@@ -346,6 +359,13 @@ class SchemaManifestGenerator:
             return path.relative_to(self.root).as_posix()
         except ValueError:
             return path.as_posix()
+
+    def _effective_registry_path(self, output_path: Path | None = None) -> Path:
+        return (
+            Path(output_path)
+            if output_path is not None
+            else self.root / "generated" / "schema" / "registry" / "sdkwork-claw-router.tables.effective.yaml"
+        )
 
 
 def main() -> int:

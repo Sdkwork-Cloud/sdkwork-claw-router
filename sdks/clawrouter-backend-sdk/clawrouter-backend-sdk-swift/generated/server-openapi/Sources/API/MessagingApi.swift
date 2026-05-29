@@ -8,22 +8,15 @@ public class MessagingApi {
     }
 
     /// Messaging route simulation
-    public func diagnosticsRouteSimulationCreate(body: MessagingRouteSimulationRequest, xRequestId: String? = nil) async throws -> DiagnosticsRouteSimulationCreateResult? {
-        let requestHeaders = buildRequestHeaders(
-            [
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
-            ],
-            [:]
-        )
-        return try await client.post(ApiPaths.backendPath("/messaging/diagnostics/route_simulation"), body: body, params: nil, headers: requestHeaders, contentType: "application/json", responseType: DiagnosticsRouteSimulationCreateResult.self)
+    public func diagnosticsRouteSimulationCreate(body: MessagingRouteSimulationRequest) async throws -> DiagnosticsRouteSimulationCreateResult? {
+        return try await client.post(ApiPaths.backendPath("/messaging/diagnostics/route_simulation"), body: body, params: nil, headers: nil, contentType: "application/json", responseType: DiagnosticsRouteSimulationCreateResult.self)
     }
 
     /// Messaging test send
-    public func diagnosticsTestSendsCreate(body: MessagingTestSendRequest, idempotencyKey: String, xRequestId: String? = nil) async throws -> DiagnosticsTestSendsCreateResult? {
+    public func diagnosticsTestSendsCreate(body: MessagingTestSendRequest, idempotencyKey: String) async throws -> DiagnosticsTestSendsCreateResult? {
         let requestHeaders = buildRequestHeaders(
             [
                 "Idempotency-Key": HeaderParameterSpec(value: idempotencyKey, style: "simple", explode: false, contentType: nil),
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
             ],
             [:]
         )
@@ -44,11 +37,10 @@ public class MessagingApi {
     }
 
     /// Messaging provider account create
-    public func providerAccountsCreate(body: MessagingProviderAccountCreateRequest, idempotencyKey: String, xRequestId: String? = nil) async throws -> ProviderAccountsCreateResult? {
+    public func providerAccountsCreate(body: MessagingProviderAccountCreateRequest, idempotencyKey: String) async throws -> ProviderAccountsCreateResult? {
         let requestHeaders = buildRequestHeaders(
             [
                 "Idempotency-Key": HeaderParameterSpec(value: idempotencyKey, style: "simple", explode: false, contentType: nil),
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
             ],
             [:]
         )
@@ -83,11 +75,10 @@ public class MessagingApi {
     }
 
     /// Messaging route rule create
-    public func routeRulesCreate(body: MessagingRouteRuleCreateRequest, idempotencyKey: String, xRequestId: String? = nil) async throws -> RouteRulesCreateResult? {
+    public func routeRulesCreate(body: MessagingRouteRuleCreateRequest, idempotencyKey: String) async throws -> RouteRulesCreateResult? {
         let requestHeaders = buildRequestHeaders(
             [
                 "Idempotency-Key": HeaderParameterSpec(value: idempotencyKey, style: "simple", explode: false, contentType: nil),
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
             ],
             [:]
         )
@@ -122,11 +113,10 @@ public class MessagingApi {
     }
 
     /// Messaging sender identity create
-    public func senderIdentitiesCreate(body: MessagingSenderIdentityCreateRequest, idempotencyKey: String, xRequestId: String? = nil) async throws -> SenderIdentitiesCreateResult? {
+    public func senderIdentitiesCreate(body: MessagingSenderIdentityCreateRequest, idempotencyKey: String) async throws -> SenderIdentitiesCreateResult? {
         let requestHeaders = buildRequestHeaders(
             [
                 "Idempotency-Key": HeaderParameterSpec(value: idempotencyKey, style: "simple", explode: false, contentType: nil),
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
             ],
             [:]
         )
@@ -147,11 +137,10 @@ public class MessagingApi {
     }
 
     /// Messaging suppression create
-    public func suppressionsCreate(body: MessagingSuppressionCreateRequest, idempotencyKey: String, xRequestId: String? = nil) async throws -> SuppressionsCreateResult? {
+    public func suppressionsCreate(body: MessagingSuppressionCreateRequest, idempotencyKey: String) async throws -> SuppressionsCreateResult? {
         let requestHeaders = buildRequestHeaders(
             [
                 "Idempotency-Key": HeaderParameterSpec(value: idempotencyKey, style: "simple", explode: false, contentType: nil),
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
             ],
             [:]
         )
@@ -159,11 +148,10 @@ public class MessagingApi {
     }
 
     /// Messaging template send
-    public func templateSendsCreate(body: MessagingTemplateSendRequest, idempotencyKey: String, xRequestId: String? = nil) async throws -> TemplateSendsCreateResult? {
+    public func templateSendsCreate(body: MessagingTemplateSendRequest, idempotencyKey: String) async throws -> TemplateSendsCreateResult? {
         let requestHeaders = buildRequestHeaders(
             [
                 "Idempotency-Key": HeaderParameterSpec(value: idempotencyKey, style: "simple", explode: false, contentType: nil),
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
             ],
             [:]
         )
@@ -184,11 +172,10 @@ public class MessagingApi {
     }
 
     /// Messaging template create
-    public func templatesCreate(body: MessagingTemplateCreateRequest, idempotencyKey: String, xRequestId: String? = nil) async throws -> TemplatesCreateResult? {
+    public func templatesCreate(body: MessagingTemplateCreateRequest, idempotencyKey: String) async throws -> TemplatesCreateResult? {
         let requestHeaders = buildRequestHeaders(
             [
                 "Idempotency-Key": HeaderParameterSpec(value: idempotencyKey, style: "simple", explode: false, contentType: nil),
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
             ],
             [:]
         )
@@ -196,14 +183,8 @@ public class MessagingApi {
     }
 
     /// Messaging template version publish
-    public func templatesVersionsPublish(templateId: String, versionId: String, xRequestId: String? = nil) async throws -> TemplatesVersionsPublishResult? {
-        let requestHeaders = buildRequestHeaders(
-            [
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
-            ],
-            [:]
-        )
-        return try await client.post(ApiPaths.backendPath("/messaging/templates/\(serializePathParameter(templateId, PathParameterSpec(name: "templateId", style: "simple", explode: false)))/versions/\(serializePathParameter(versionId, PathParameterSpec(name: "versionId", style: "simple", explode: false)))/publish"), body: nil, params: nil, headers: requestHeaders, responseType: TemplatesVersionsPublishResult.self)
+    public func templatesVersionsPublish(templateId: String, versionId: String) async throws -> TemplatesVersionsPublishResult? {
+        return try await client.post(ApiPaths.backendPath("/messaging/templates/\(serializePathParameter(templateId, PathParameterSpec(name: "templateId", style: "simple", explode: false)))/versions/\(serializePathParameter(versionId, PathParameterSpec(name: "versionId", style: "simple", explode: false)))/publish"), body: nil, responseType: TemplatesVersionsPublishResult.self)
     }
 
     /// Verification policies list
@@ -220,14 +201,8 @@ public class MessagingApi {
     }
 
     /// Verification policy update
-    public func verificationPoliciesUpdate(policyId: String, body: VerificationPolicyUpdateRequest, xRequestId: String? = nil) async throws -> VerificationPoliciesUpdateResult? {
-        let requestHeaders = buildRequestHeaders(
-            [
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
-            ],
-            [:]
-        )
-        return try await client.put(ApiPaths.backendPath("/messaging/verification_policies/\(serializePathParameter(policyId, PathParameterSpec(name: "policyId", style: "simple", explode: false)))"), body: body, params: nil, headers: requestHeaders, contentType: "application/json", responseType: VerificationPoliciesUpdateResult.self)
+    public func verificationPoliciesUpdate(policyId: String, body: VerificationPolicyUpdateRequest) async throws -> VerificationPoliciesUpdateResult? {
+        return try await client.put(ApiPaths.backendPath("/messaging/verification_policies/\(serializePathParameter(policyId, PathParameterSpec(name: "policyId", style: "simple", explode: false)))"), body: body, params: nil, headers: nil, contentType: "application/json", responseType: VerificationPoliciesUpdateResult.self)
     }
 
     private struct PathParameterSpec {

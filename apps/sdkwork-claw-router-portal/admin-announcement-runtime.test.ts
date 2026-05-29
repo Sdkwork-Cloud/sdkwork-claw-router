@@ -4,7 +4,6 @@ import test from "node:test";
 
 import {
   createAnnouncementInputFromForm,
-  createAnnouncementPublishInput,
   createAnnouncementStatusInput,
   createAnnouncementUpdateInputFromForm,
 } from "./packages/sdkwork-claw-router-admin-announcement/src/announcementForm.ts";
@@ -135,12 +134,6 @@ test("admin announcement page localizes page copy, form placeholders, and modal 
 
   assert.doesNotMatch(pageSource, /admin\.announcement\.title/);
   assert.doesNotMatch(pageSource, /admin\.announcement\.subtitle/);
-
-  assert.match(
-    announcementI18nSource,
-    /"admin\.announcement\.errors\.publishFallback"/,
-    "legacy publish fallback resource should remain available for compatibility",
-  );
 
   for (const hardcodedText of [
     "Announcement Management",
@@ -273,8 +266,8 @@ test("admin announcement update input normalizes editable fields only", () => {
   }
 });
 
-test("admin announcement publish input is a minimal status command", () => {
-  const input = createAnnouncementPublishInput();
+test("admin announcement status input builds a minimal publish command", () => {
+  const input = createAnnouncementStatusInput("published");
 
   assert.deepEqual(input, { status: "published" });
   for (const field of ["id", "title", "target", "date", "content"]) {

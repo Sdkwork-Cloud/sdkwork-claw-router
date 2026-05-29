@@ -304,11 +304,12 @@ async fn transaction_center_provider_account_create_persists_to_database() {
         FROM ops_audit_log
         WHERE tenant_id = 10
           AND organization_id = 20
-          AND request_id = 'provider-account-request-1'
+          AND target_uuid = ?
           AND action = 'payments.provider_account.create'
         ORDER BY id ASC
         "#,
     )
+    .bind(payload["data"]["item"]["id"].as_str().unwrap())
     .fetch_all(&audit_pool)
     .await
     .unwrap();
@@ -317,7 +318,7 @@ async fn transaction_center_provider_account_create_persists_to_database() {
     assert_eq!(1, audit_rows.len());
     let audit = &audit_rows[0];
     assert_eq!("payments.provider_account.create", audit.0);
-    assert_eq!("provider-account-request-1", audit.1);
+    assert_server_request_id(&audit.1, "provider-account-request-1");
     assert_eq!(payload["data"]["item"]["id"], audit.2);
     assert_eq!(30, audit.4);
     assert_eq!(1, audit.5);
@@ -645,6 +646,24 @@ fn signed_request_builder(
         .header("x-sdkwork-subject-user-id", subject.user_id.to_string())
         .header("x-sdkwork-subject-timestamp", timestamp.to_string())
         .header("x-sdkwork-subject-signature", signature)
+}
+
+fn assert_server_request_id(value: &str, client_header_value: &str) {
+    let bytes = value.as_bytes();
+    assert_eq!(36, bytes.len(), "request id must be a canonical UUID");
+    assert_ne!(
+        client_header_value, value,
+        "server-generated request id must ignore client X-Request-Id"
+    );
+    assert_eq!(b'-', bytes[8], "request id must use canonical dashes");
+    assert_eq!(b'-', bytes[13], "request id must use canonical dashes");
+    assert_eq!(b'-', bytes[18], "request id must use canonical dashes");
+    assert_eq!(b'-', bytes[23], "request id must use canonical dashes");
+    assert_eq!(b'4', bytes[14], "request id must be UUID v4");
+    assert!(
+        matches!(bytes[19], b'8' | b'9' | b'a' | b'b'),
+        "request id must use the RFC 4122 UUID variant"
+    );
 }
 
 async fn request_json(router: axum::Router, request: Request<Body>) -> Value {

@@ -275,26 +275,19 @@ class StorageOssBucketsApi:
         ])
         return self._client.get(_append_query_string(f"/backend/v3/api/storage/buckets", query))
 
-    def create(self, body: CreateStorageBucketRequest, idempotency_key: str, x_request_id: Optional[str] = None) -> OssBucketsCreateResult:
+    def create(self, body: CreateStorageBucketRequest, idempotency_key: str) -> OssBucketsCreateResult:
         """Create storage bucket"""
         request_headers = build_request_headers(
             {
                 'Idempotency-Key': {'value': idempotency_key, 'style': 'simple', 'explode': False},
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
             },
             {}
         )
         return self._client.post(f"/backend/v3/api/storage/buckets", json=body, headers=request_headers)
 
-    def update(self, bucket_id: str, body: UpdateStorageBucketRequest, x_request_id: Optional[str] = None) -> OssBucketsUpdateResult:
+    def update(self, bucket_id: str, body: UpdateStorageBucketRequest) -> OssBucketsUpdateResult:
         """Update storage bucket status"""
-        request_headers = build_request_headers(
-            {
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
-            },
-            {}
-        )
-        return self._client.patch(f"/backend/v3/api/storage/buckets/{serialize_path_parameter(bucket_id, {'name': 'bucketId', 'style': 'simple', 'explode': False})}", json=body, headers=request_headers)
+        return self._client.patch(f"/backend/v3/api/storage/buckets/{serialize_path_parameter(bucket_id, {'name': 'bucketId', 'style': 'simple', 'explode': False})}", json=body)
 
 class StorageOssDefaultBucketsApi:
     """storage storage.oss.default_buckets API client."""
@@ -310,15 +303,9 @@ class StorageOssDefaultBucketsApi:
         ])
         return self._client.get(_append_query_string(f"/backend/v3/api/storage/default_buckets", query))
 
-    def update(self, logical_scope: str, body: SetStorageDefaultBucketRequest, x_request_id: Optional[str] = None) -> OssDefaultBucketsUpdateResult:
+    def update(self, logical_scope: str, body: SetStorageDefaultBucketRequest) -> OssDefaultBucketsUpdateResult:
         """Set default storage bucket route"""
-        request_headers = build_request_headers(
-            {
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
-            },
-            {}
-        )
-        return self._client.patch(f"/backend/v3/api/storage/default_buckets/{serialize_path_parameter(logical_scope, {'name': 'logicalScope', 'style': 'simple', 'explode': False})}", json=body, headers=request_headers)
+        return self._client.patch(f"/backend/v3/api/storage/default_buckets/{serialize_path_parameter(logical_scope, {'name': 'logicalScope', 'style': 'simple', 'explode': False})}", json=body)
 
 class StorageOssGcJobsApi:
     """storage storage.oss.gc_jobs API client."""
@@ -336,12 +323,11 @@ class StorageOssGcJobsApi:
         ])
         return self._client.get(_append_query_string(f"/backend/v3/api/storage/gc_jobs", query))
 
-    def create(self, body: CreateStorageGarbageCollectionJobRequest, idempotency_key: str, x_request_id: Optional[str] = None) -> OssGcJobsCreateResult:
+    def create(self, body: CreateStorageGarbageCollectionJobRequest, idempotency_key: str) -> OssGcJobsCreateResult:
         """Create storage garbage collection job"""
         request_headers = build_request_headers(
             {
                 'Idempotency-Key': {'value': idempotency_key, 'style': 'simple', 'explode': False},
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
             },
             {}
         )
@@ -359,26 +345,19 @@ class StorageOssProvidersApi:
         """List storage providers"""
         return self._client.get(f"/backend/v3/api/storage/providers")
 
-    def create(self, body: CreateStorageProviderRequest, idempotency_key: str, x_request_id: Optional[str] = None) -> OssProvidersCreateResult:
+    def create(self, body: CreateStorageProviderRequest, idempotency_key: str) -> OssProvidersCreateResult:
         """Create storage provider"""
         request_headers = build_request_headers(
             {
                 'Idempotency-Key': {'value': idempotency_key, 'style': 'simple', 'explode': False},
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
             },
             {}
         )
         return self._client.post(f"/backend/v3/api/storage/providers", json=body, headers=request_headers)
 
-    def update(self, provider_id: str, body: UpdateStorageProviderRequest, x_request_id: Optional[str] = None) -> OssProvidersUpdateResult:
+    def update(self, provider_id: str, body: UpdateStorageProviderRequest) -> OssProvidersUpdateResult:
         """Update storage provider status"""
-        request_headers = build_request_headers(
-            {
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
-            },
-            {}
-        )
-        return self._client.patch(f"/backend/v3/api/storage/providers/{serialize_path_parameter(provider_id, {'name': 'providerId', 'style': 'simple', 'explode': False})}", json=body, headers=request_headers)
+        return self._client.patch(f"/backend/v3/api/storage/providers/{serialize_path_parameter(provider_id, {'name': 'providerId', 'style': 'simple', 'explode': False})}", json=body)
 
 class StorageOssProvidersHealthChecksApi:
     """storage storage.oss.providers.health_checks API client."""
@@ -387,15 +366,9 @@ class StorageOssProvidersHealthChecksApi:
         self._client = client
 
 
-    def create(self, provider_id: str, x_request_id: Optional[str] = None) -> OssProvidersHealthChecksCreateResult:
+    def create(self, provider_id: str) -> OssProvidersHealthChecksCreateResult:
         """Check storage provider health"""
-        request_headers = build_request_headers(
-            {
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
-            },
-            {}
-        )
-        return self._client.post(f"/backend/v3/api/storage/providers/{serialize_path_parameter(provider_id, {'name': 'providerId', 'style': 'simple', 'explode': False})}/health_check", headers=request_headers)
+        return self._client.post(f"/backend/v3/api/storage/providers/{serialize_path_parameter(provider_id, {'name': 'providerId', 'style': 'simple', 'explode': False})}/health_check")
 
 class StorageOssQuotasApi:
     """storage storage.oss.quotas API client."""
@@ -408,12 +381,11 @@ class StorageOssQuotasApi:
         """List storage quota policies"""
         return self._client.get(f"/backend/v3/api/storage/quotas")
 
-    def create(self, body: CreateStorageQuotaPolicyRequest, idempotency_key: str, x_request_id: Optional[str] = None) -> OssQuotasCreateResult:
+    def create(self, body: CreateStorageQuotaPolicyRequest, idempotency_key: str) -> OssQuotasCreateResult:
         """Create storage quota policy"""
         request_headers = build_request_headers(
             {
                 'Idempotency-Key': {'value': idempotency_key, 'style': 'simple', 'explode': False},
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
             },
             {}
         )
@@ -436,12 +408,11 @@ class StorageOssReconciliationRunsApi:
         ])
         return self._client.get(_append_query_string(f"/backend/v3/api/storage/reconciliation_runs", query))
 
-    def create(self, body: CreateStorageReconciliationRunRequest, idempotency_key: str, x_request_id: Optional[str] = None) -> OssReconciliationRunsCreateResult:
+    def create(self, body: CreateStorageReconciliationRunRequest, idempotency_key: str) -> OssReconciliationRunsCreateResult:
         """Create storage reconciliation run"""
         request_headers = build_request_headers(
             {
                 'Idempotency-Key': {'value': idempotency_key, 'style': 'simple', 'explode': False},
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
             },
             {}
         )

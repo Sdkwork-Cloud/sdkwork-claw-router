@@ -1,4 +1,4 @@
-﻿import {
+import {
   createClientOperationToken,
   getClawRouterBackendSdkClient,
 } from 'sdkwork-claw-router-commons/runtime';

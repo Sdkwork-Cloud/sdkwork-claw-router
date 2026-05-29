@@ -7,7 +7,6 @@ import { resetClawRouterSdkClients } from "./packages/sdkwork-claw-router-common
 import { UserService } from "./packages/sdkwork-claw-router-admin-user/src/userService.ts";
 import {
   createApiKeyInputFromForm,
-  createUserBalanceAdjustmentInputFromForm,
   createUserGroupUpdateInputFromForm,
   createUserInputFromForm,
   createUserProfileUpdateInputFromForm,
@@ -120,41 +119,19 @@ test("admin API key create input uses stable command naming without clock drift"
   });
 });
 
-test("admin user balance adjustment input is parsed as an explicit command", () => {
-  const recharge = new FormData();
-  recharge.set("amount", " 1,234.567 ");
-  recharge.set("id", "99");
-  recharge.set("balance", "999999");
-  recharge.set("remark", "ignored because backend has no remark field");
-
-  assert.deepEqual(createUserBalanceAdjustmentInputFromForm(recharge, "recharge"), {
-    amount: 1234.57,
-    type: "recharge",
-  });
-
-  const invalidRefund = new FormData();
-  invalidRefund.set("amount", "-10");
-
-  assert.throws(
-    () => createUserBalanceAdjustmentInputFromForm(invalidRefund, "refund"),
-    /amount must be greater than zero/,
-  );
-
-  const missingAmount = new FormData();
-  assert.throws(
-    () => createUserBalanceAdjustmentInputFromForm(missingAmount, "recharge"),
-    /amount is required/,
-  );
-});
-
 test("admin user balance adjustment modals do not expose unsupported remark fields", () => {
   const source = readFileSync(
     new URL("./packages/sdkwork-claw-router-admin-user/src/index.tsx", import.meta.url),
     "utf8",
   );
+  const formSource = readFileSync(
+    new URL("./packages/sdkwork-claw-router-admin-user/src/userForm.ts", import.meta.url),
+    "utf8",
+  );
 
   assert.doesNotMatch(source, /name="remark"/);
-  assert.doesNotMatch(source, />婢跺洦鏁?\/label>/);
+  assert.doesNotMatch(formSource, /createUserBalanceAdjustmentInputFromForm/);
+  assert.doesNotMatch(source, />\u5a62\u8dfa\u6d26\u93c1?\/label>/u);
 });
 
 test("admin user records modal does not render static fake success rows", () => {
@@ -187,7 +164,7 @@ test("admin user create modal does not expose unsupported concurrency controls",
   );
 
   assert.doesNotMatch(source, /name="concurrency"/);
-  assert.doesNotMatch(source, />楠炶泛褰傞弫?\/label>/);
+  assert.doesNotMatch(source, />\u6960\u70b6\u6cdb\u8930\u509e\u5f2b?\/label>/u);
   assert.doesNotMatch(source, />Concurrency<\/label>/);
 });
 
@@ -277,7 +254,6 @@ test("admin user static copy is translated through i18n keys", () => {
     "admin.user.errors.fetchUsersFallback",
     "admin.user.errors.fetchApiKeysFallback",
     "admin.user.errors.addUserFallback",
-    "admin.user.errors.updateBalanceFallback",
     "admin.user.errors.updateUserFallback",
     "admin.user.errors.createApiKeyFallback",
   ]) {

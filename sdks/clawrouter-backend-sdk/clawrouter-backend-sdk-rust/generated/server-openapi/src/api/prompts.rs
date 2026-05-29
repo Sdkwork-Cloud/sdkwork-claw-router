@@ -32,12 +32,11 @@ impl PromptsApi {
     }
 
     /// Create admin prompt
-    pub async fn definitions_create(&self, body: &AdminPromptCreateRequest, idempotency_key: &str, x_request_id: Option<&str>) -> Result<DefinitionsCreateResult, SdkworkError> {
+    pub async fn definitions_create(&self, body: &AdminPromptCreateRequest, idempotency_key: &str) -> Result<DefinitionsCreateResult, SdkworkError> {
         let path = backend_path(&"/prompts".to_string());
         let headers = build_request_headers(
             &[
                 ("Idempotency-Key", HeaderParameterSpec::new(idempotency_key, "simple", false, None)),
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
             ],
             &[],
         );
@@ -45,39 +44,21 @@ impl PromptsApi {
     }
 
     /// Update prompt binding
-    pub async fn definition_bindings_update(&self, binding_id: &str, body: &AdminPromptBindingUpdateRequest, x_request_id: Option<&str>) -> Result<DefinitionBindingsUpdateResult, SdkworkError> {
+    pub async fn definition_bindings_update(&self, binding_id: &str, body: &AdminPromptBindingUpdateRequest) -> Result<DefinitionBindingsUpdateResult, SdkworkError> {
         let path = backend_path(&format!("/prompts/bindings/{}", serialize_path_parameter(binding_id, PathParameterSpec::new("bindingId", "simple", false))));
-        let headers = build_request_headers(
-            &[
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
-            ],
-            &[],
-        );
-        self.client.put(&path, Some(body), None, headers.as_ref(), Some("application/json")).await
+        self.client.put(&path, Some(body), None, None, Some("application/json")).await
     }
 
     /// Publish prompt version
-    pub async fn versions_publish(&self, version_id: &str, x_request_id: Option<&str>) -> Result<VersionsPublishResult, SdkworkError> {
+    pub async fn versions_publish(&self, version_id: &str) -> Result<VersionsPublishResult, SdkworkError> {
         let path = backend_path(&format!("/prompts/versions/{}/publish", serialize_path_parameter(version_id, PathParameterSpec::new("versionId", "simple", false))));
-        let headers = build_request_headers(
-            &[
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
-            ],
-            &[],
-        );
-        self.client.post(&path, Option::<&serde_json::Value>::None, None, headers.as_ref(), None).await
+        self.client.post(&path, Option::<&serde_json::Value>::None, None, None, None).await
     }
 
     /// Render prompt version
-    pub async fn version_renders_create(&self, version_id: &str, body: &AdminPromptRenderRequest, x_request_id: Option<&str>) -> Result<VersionRendersCreateResult, SdkworkError> {
+    pub async fn version_renders_create(&self, version_id: &str, body: &AdminPromptRenderRequest) -> Result<VersionRendersCreateResult, SdkworkError> {
         let path = backend_path(&format!("/prompts/versions/{}/render", serialize_path_parameter(version_id, PathParameterSpec::new("versionId", "simple", false))));
-        let headers = build_request_headers(
-            &[
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
-            ],
-            &[],
-        );
-        self.client.post(&path, Some(body), None, headers.as_ref(), Some("application/json")).await
+        self.client.post(&path, Some(body), None, None, Some("application/json")).await
     }
 
     /// List prompt bindings
@@ -87,12 +68,11 @@ impl PromptsApi {
     }
 
     /// Create prompt binding
-    pub async fn definition_bindings_create(&self, prompt_id: &str, body: &AdminPromptBindingCreateRequest, idempotency_key: &str, x_request_id: Option<&str>) -> Result<DefinitionBindingsCreateResult, SdkworkError> {
+    pub async fn definition_bindings_create(&self, prompt_id: &str, body: &AdminPromptBindingCreateRequest, idempotency_key: &str) -> Result<DefinitionBindingsCreateResult, SdkworkError> {
         let path = backend_path(&format!("/prompts/{}/bindings", serialize_path_parameter(prompt_id, PathParameterSpec::new("promptId", "simple", false))));
         let headers = build_request_headers(
             &[
                 ("Idempotency-Key", HeaderParameterSpec::new(idempotency_key, "simple", false, None)),
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
             ],
             &[],
         );
@@ -106,12 +86,11 @@ impl PromptsApi {
     }
 
     /// Create prompt version
-    pub async fn versions_create(&self, prompt_id: &str, body: &AdminPromptVersionCreateRequest, idempotency_key: &str, x_request_id: Option<&str>) -> Result<VersionsCreateResult, SdkworkError> {
+    pub async fn versions_create(&self, prompt_id: &str, body: &AdminPromptVersionCreateRequest, idempotency_key: &str) -> Result<VersionsCreateResult, SdkworkError> {
         let path = backend_path(&format!("/prompts/{}/versions", serialize_path_parameter(prompt_id, PathParameterSpec::new("promptId", "simple", false))));
         let headers = build_request_headers(
             &[
                 ("Idempotency-Key", HeaderParameterSpec::new(idempotency_key, "simple", false, None)),
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
             ],
             &[],
         );

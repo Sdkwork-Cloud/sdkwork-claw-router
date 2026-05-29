@@ -11,6 +11,8 @@ namespace Sdkwork.ClawRouter.Backend.Models
         public string? Balance { get; set; }
         public string? BaseUrl { get; set; }
         public List<string>? Capabilities { get; set; }
+        public string? ChannelId { get; set; }
+        public string? ChannelType { get; set; }
         public ProviderCircuitBreakerPolicy? CircuitBreakerPolicy { get; set; }
         public string? CreatedAt { get; set; }
         public int? Errors { get; set; }
@@ -20,6 +22,7 @@ namespace Sdkwork.ClawRouter.Backend.Models
         public List<string>? Models { get; set; }
         public string? Name { get; set; }
         public string? Protocol { get; set; }
+        public List<string>? ResourceCodes { get; set; }
         public ProviderRetryPolicy? RetryPolicy { get; set; }
         public string? SecretRef { get; set; }
         public string? Status { get; set; }

@@ -17,6 +17,27 @@ use std::collections::BTreeSet;
 use std::sync::{Arc, Mutex};
 use tower::ServiceExt;
 
+fn assert_server_generated_request_id(actual: &str, client_request_id: &str) {
+    assert_ne!(
+        client_request_id, actual,
+        "gateway must ignore client supplied x-request-id and use a server request id"
+    );
+    assert_eq!(36, actual.len(), "server request id must be a UUID");
+    assert_eq!(Some('-'), actual.chars().nth(8));
+    assert_eq!(Some('-'), actual.chars().nth(13));
+    assert_eq!(Some('-'), actual.chars().nth(18));
+    assert_eq!(Some('-'), actual.chars().nth(23));
+    assert_eq!(Some('4'), actual.chars().nth(14));
+    let variant = actual
+        .chars()
+        .nth(19)
+        .expect("server request id must include UUID variant");
+    assert!(
+        matches!(variant, '8' | '9' | 'a' | 'b'),
+        "server request id must be an RFC 4122 variant UUID"
+    );
+}
+
 #[test]
 fn openai_compatible_passthrough_path_manifest_stays_complete() {
     let paths = sdkwork_claw_gateway::openai_compatible_passthrough_paths();
@@ -538,7 +559,7 @@ async fn gateway_provider_native_passthrough_adapts_registered_non_standard_prov
 }
 
 #[tokio::test]
-async fn gateway_database_provider_native_adapter_routes_after_account_pool_selection() {
+async fn gateway_database_provider_native_adapter_routes_after_channel_route_selection() {
     let direct_captured = Arc::new(Mutex::new(Vec::new()));
     let direct_provider = Router::new()
         .route(
@@ -568,7 +589,7 @@ async fn gateway_database_provider_native_adapter_routes_after_account_pool_sele
     let catalog = sdkwork_claw_test_support::seeded_sqlite_catalog()
         .await
         .unwrap();
-    seed_tencent_cloud_vidu_start_end2video_account_pool(
+    seed_tencent_cloud_vidu_start_end2video_channel_route(
         &catalog,
         &format!("http://{direct_addr}/vidu"),
     )
@@ -705,7 +726,7 @@ async fn gateway_database_provider_native_adapter_records_standard_usage_lines()
     let catalog = sdkwork_claw_test_support::seeded_sqlite_catalog()
         .await
         .unwrap();
-    seed_tencent_cloud_vidu_start_end2video_account_pool(
+    seed_tencent_cloud_vidu_start_end2video_channel_route(
         &catalog,
         &format!("http://{direct_addr}/vidu"),
     )
@@ -781,6 +802,28 @@ async fn gateway_database_provider_native_adapter_records_standard_usage_lines()
         direct_captured.lock().unwrap().is_empty(),
         "billable provider-native adapter route must not call the direct provider target"
     );
+    let adapter_calls = adapter_captured.lock().unwrap().clone();
+    assert_eq!(
+        1,
+        adapter_calls.len(),
+        "billable provider-native route must invoke the configured adapter"
+    );
+    let adapter_request_id = adapter_calls[0]
+        .body
+        .invocation
+        .request_id
+        .as_deref()
+        .expect("adapter invocation must carry the server request id");
+    assert_server_generated_request_id(adapter_request_id, "req-provider-adapter-video-usage");
+    assert_eq!(
+        Some("trace-provider-adapter-video-usage".to_owned()),
+        adapter_calls[0].body.invocation.trace_id
+    );
+    assert_eq!(
+        "tencent-cloud",
+        adapter_calls[0].body.provider.provider_code
+    );
+    assert_eq!(9301_i64, adapter_calls[0].body.provider.channel_id);
 
     let pool = catalog.open_pool().await.unwrap();
     let rows = sqlx::query(
@@ -794,7 +837,7 @@ async fn gateway_database_provider_native_adapter_records_standard_usage_lines()
                printf('%.12f', customer_charge_amount) AS customer_charge_amount,
                currency, pricing_plan_code, pricing_snapshot, settlement_status
         FROM ai_usage_fact
-        WHERE request_id = 'req-provider-adapter-video-usage'
+        WHERE trace_id = 'trace-provider-adapter-video-usage'
         ORDER BY billing_meter_code ASC
         "#,
     )
@@ -808,6 +851,13 @@ async fn gateway_database_provider_native_adapter_records_standard_usage_lines()
         rows.len(),
         "adapter usageLines must become independent billable usage facts"
     );
+    for row in &rows {
+        assert_eq!(adapter_request_id, row.get::<String, _>("request_id"));
+        assert_eq!(
+            "trace-provider-adapter-video-usage",
+            row.get::<String, _>("trace_id")
+        );
+    }
     assert_ne!(
         rows[0].get::<i64, _>("usage_type"),
         rows[1].get::<i64, _>("usage_type"),
@@ -819,7 +869,7 @@ async fn gateway_database_provider_native_adapter_records_standard_usage_lines()
         .find(|row| row.get::<String, _>("billing_meter_code") == "api_request")
         .expect("api_request usage line must be recorded");
     assert_eq!(
-        "tencent-cloud/global/vidu2.0",
+        "tencent-cloud/vidu2.0",
         request_row.get::<String, _>("catalog_key")
     );
     assert_eq!(
@@ -884,6 +934,10 @@ async fn gateway_database_provider_native_adapter_records_standard_usage_lines()
         serde_json::from_str(&duration_row.get::<String, _>("pricing_snapshot")).unwrap();
     assert_eq!("video_output_second", pricing_snapshot["meter"]["code"]);
     assert_eq!(
+        "tencent-cloud/vidu2.0",
+        pricing_snapshot["model"]["catalogKey"]
+    );
+    assert_eq!(
         "tencent-cloud/global/vidu2.0",
         pricing_snapshot["model"]["requestedCatalogKey"]
     );
@@ -922,7 +976,7 @@ async fn gateway_database_provider_native_adapter_directs_when_selected_account_
     let catalog = sdkwork_claw_test_support::seeded_sqlite_catalog()
         .await
         .unwrap();
-    seed_vidu_start_end2video_account_pool(&catalog, &format!("http://{direct_addr}/vidu")).await;
+    seed_vidu_start_end2video_channel_route(&catalog, &format!("http://{direct_addr}/vidu")).await;
     let adapter_config = ProviderAdapterConfig::from_json(
         format!(
             r#"{{
@@ -1646,7 +1700,7 @@ async fn gateway_database_router_does_not_duplicate_openai_v1_prefix_for_configu
 }
 
 #[tokio::test]
-async fn gateway_database_openai_passthrough_routes_by_api_key_group_account_pool() {
+async fn gateway_database_openai_passthrough_routes_by_api_key_group_channel_route() {
     let captured_standard = Arc::new(Mutex::new(Vec::new()));
     let standard_provider = Router::new()
         .route(
@@ -1680,7 +1734,7 @@ async fn gateway_database_openai_passthrough_routes_by_api_key_group_account_poo
     let catalog = sdkwork_claw_test_support::seeded_sqlite_catalog()
         .await
         .unwrap();
-    seed_openai_passthrough_group_account_pools(
+    seed_openai_passthrough_group_channel_routes(
         &catalog,
         &format!("http://{standard_addr}"),
         &format!("http://{premium_addr}"),
@@ -1709,11 +1763,11 @@ async fn gateway_database_openai_passthrough_routes_by_api_key_group_account_poo
     for (authorization, prompt) in [
         (
             catalog.gateway_authorization_header(),
-            "standard account pool",
+            "standard channel route",
         ),
         (
             "Bearer sk-premium-live-secret".to_owned(),
-            "premium account pool",
+            "premium channel route",
         ),
     ] {
         let response = router
@@ -1745,7 +1799,7 @@ async fn gateway_database_openai_passthrough_routes_by_api_key_group_account_poo
         "/v1/images/generations",
         captured_standard[0].path_and_query
     );
-    assert!(captured_standard[0].body.contains("standard account pool"));
+    assert!(captured_standard[0].body.contains("standard channel route"));
 
     let captured_premium = captured_premium.lock().unwrap();
     assert_eq!(1, captured_premium.len());
@@ -1754,7 +1808,7 @@ async fn gateway_database_openai_passthrough_routes_by_api_key_group_account_poo
         captured_premium[0].authorization
     );
     assert_eq!("/v1/images/generations", captured_premium[0].path_and_query);
-    assert!(captured_premium[0].body.contains("premium account pool"));
+    assert!(captured_premium[0].body.contains("premium channel route"));
 }
 
 #[tokio::test]
@@ -1786,7 +1840,7 @@ async fn gateway_database_route_scoped_openai_passthrough_rewrites_multipart_mod
     let catalog = sdkwork_claw_test_support::seeded_sqlite_catalog()
         .await
         .unwrap();
-    seed_openai_passthrough_group_account_pools(
+    seed_openai_passthrough_group_channel_routes(
         &catalog,
         &format!("http://{standard_addr}"),
         &format!("http://{premium_addr}"),
@@ -1871,7 +1925,8 @@ fake-png-bytes\r\n\
 }
 
 #[tokio::test]
-async fn gateway_database_openai_passthrough_prefers_group_account_pool_when_global_relay_exists() {
+async fn gateway_database_openai_passthrough_prefers_group_channel_route_when_global_relay_exists()
+{
     let captured_standard = Arc::new(Mutex::new(Vec::new()));
     let standard_provider = Router::new()
         .route(
@@ -1918,7 +1973,7 @@ async fn gateway_database_openai_passthrough_prefers_group_account_pool_when_glo
     let catalog = sdkwork_claw_test_support::seeded_sqlite_catalog()
         .await
         .unwrap();
-    seed_openai_passthrough_group_account_pools(
+    seed_openai_passthrough_group_channel_routes(
         &catalog,
         &format!("http://{standard_addr}"),
         &format!("http://{premium_addr}"),
@@ -1955,7 +2010,7 @@ async fn gateway_database_openai_passthrough_prefers_group_account_pool_when_glo
                 .header("authorization", catalog.gateway_authorization_header())
                 .header("content-type", "application/json")
                 .body(Body::from(
-                    r#"{"model":"gpt-image-1","prompt":"standard account pool"}"#,
+                    r#"{"model":"gpt-image-1","prompt":"standard channel route"}"#,
                 ))
                 .unwrap(),
         )
@@ -1968,12 +2023,12 @@ async fn gateway_database_openai_passthrough_prefers_group_account_pool_when_glo
     assert_eq!(
         0,
         captured_global.lock().unwrap().len(),
-        "global OpenAI relay must not bypass route-scoped group account pool routing"
+        "global OpenAI relay must not bypass route-scoped group channel route routing"
     );
 }
 
 #[tokio::test]
-async fn gateway_database_openai_passthrough_uses_global_default_account_pool_when_group_pool_is_not_bound(
+async fn gateway_database_openai_passthrough_uses_global_default_channel_route_when_group_pool_is_not_bound(
 ) {
     let captured_group = Arc::new(Mutex::new(Vec::new()));
     let group_provider = Router::new()
@@ -2000,7 +2055,7 @@ async fn gateway_database_openai_passthrough_uses_global_default_account_pool_wh
     let catalog = sdkwork_claw_test_support::seeded_sqlite_catalog()
         .await
         .unwrap();
-    seed_openai_passthrough_default_account_pool_fallback(
+    seed_openai_passthrough_default_channel_route_fallback(
         &catalog,
         &format!("http://{group_addr}"),
         &format!("http://{default_addr}"),
@@ -2052,7 +2107,7 @@ async fn gateway_database_openai_passthrough_uses_global_default_account_pool_wh
 }
 
 #[tokio::test]
-async fn gateway_database_route_scoped_openai_passthrough_uses_account_pool_header_auth_profile() {
+async fn gateway_database_route_scoped_openai_passthrough_uses_channel_route_header_auth_profile() {
     let captured = Arc::new(Mutex::new(Vec::new()));
     let provider = Router::new()
         .route("/v1/files", any(capture_native_provider_request))
@@ -2066,7 +2121,7 @@ async fn gateway_database_route_scoped_openai_passthrough_uses_account_pool_head
     let catalog = sdkwork_claw_test_support::seeded_sqlite_catalog()
         .await
         .unwrap();
-    seed_openai_passthrough_header_auth_account_pool(&catalog, &format!("http://{addr}")).await;
+    seed_openai_passthrough_header_auth_channel_route(&catalog, &format!("http://{addr}")).await;
 
     let router = sdkwork_claw_gateway::router_with_database_api_key_and_provider_configs(
         catalog.database_config().unwrap(),
@@ -2109,7 +2164,7 @@ async fn gateway_database_route_scoped_openai_passthrough_uses_account_pool_head
 }
 
 #[tokio::test]
-async fn gateway_database_route_scoped_openai_passthrough_applies_account_pool_default_headers() {
+async fn gateway_database_route_scoped_openai_passthrough_applies_channel_route_default_headers() {
     let captured = Arc::new(Mutex::new(Vec::new()));
     let provider = Router::new()
         .route("/v1/files", any(capture_native_provider_request))
@@ -2123,7 +2178,7 @@ async fn gateway_database_route_scoped_openai_passthrough_applies_account_pool_d
     let catalog = sdkwork_claw_test_support::seeded_sqlite_catalog()
         .await
         .unwrap();
-    seed_openai_passthrough_header_auth_account_pool_with_auth_config(
+    seed_openai_passthrough_header_auth_channel_route_with_auth_config(
         &catalog,
         &format!("http://{addr}"),
         r#"{"name":"x-api-key","defaultHeaders":{"anthropic-version":"2023-06-01"}}"#,
@@ -2290,7 +2345,7 @@ async fn gateway_database_route_scoped_openai_chat_passthrough_records_usage() {
     let pool = catalog.open_pool().await.unwrap();
     sqlx::query(
         r#"
-        UPDATE integration_channel
+        UPDATE ai_channel
         SET base_url = ?
         WHERE id = 3001
         "#,
@@ -2353,16 +2408,16 @@ async fn gateway_database_route_scoped_openai_chat_passthrough_records_usage() {
     let usage = sqlx::query(
         r#"
         SELECT request_id, trace_id, tenant_id, organization_id, user_id, api_key_id,
-               api_key_group_snapshot, model, requested_model_catalog_key,
+               channel_group_snapshot, model, requested_model_catalog_key,
                provider_native_model, channel_id, usage_type,
                billing_meter_code, billable_quantity, prompt_tokens, completion_tokens,
                cached_tokens, total_tokens, customer_charge_amount, cost_amount,
                currency, pricing_plan_code, settlement_status
         FROM ai_usage_fact
-        WHERE request_id = ?
+        WHERE trace_id = ?
         "#,
     )
-    .bind("req-route-scoped-chat-usage-1")
+    .bind("trace-route-scoped-chat-usage-1")
     .fetch_optional(&read_pool)
     .await
     .unwrap();
@@ -2371,6 +2426,8 @@ async fn gateway_database_route_scoped_openai_chat_passthrough_records_usage() {
         "route-scoped OpenAI-compatible passthrough must write ai_usage_fact"
     );
     let usage = usage.unwrap();
+    let request_id = usage.get::<String, _>("request_id");
+    assert_server_generated_request_id(&request_id, "req-route-scoped-chat-usage-1");
     assert_eq!(
         "trace-route-scoped-chat-usage-1",
         usage.get::<String, _>("trace_id")
@@ -2381,11 +2438,11 @@ async fn gateway_database_route_scoped_openai_chat_passthrough_records_usage() {
     assert_eq!(100_i64, usage.get::<i64, _>("api_key_id"));
     assert_eq!(
         "standard-group",
-        usage.get::<String, _>("api_key_group_snapshot")
+        usage.get::<String, _>("channel_group_snapshot")
     );
     assert_eq!("gpt-4o-mini", usage.get::<String, _>("model"));
     assert_eq!(
-        "openai/global/gpt-4o-mini",
+        "openai/gpt-4o-mini",
         usage.get::<String, _>("requested_model_catalog_key")
     );
     assert_eq!(
@@ -2432,7 +2489,7 @@ async fn gateway_database_route_scoped_openai_legacy_completion_passthrough_reco
     let pool = catalog.open_pool().await.unwrap();
     sqlx::query(
         r#"
-        UPDATE integration_channel
+        UPDATE ai_channel
         SET base_url = ?
         WHERE id = 3001
         "#,
@@ -2496,16 +2553,16 @@ async fn gateway_database_route_scoped_openai_legacy_completion_passthrough_reco
     let usage = sqlx::query(
         r#"
         SELECT request_id, trace_id, tenant_id, organization_id, user_id, api_key_id,
-               api_key_group_snapshot, model, requested_model_catalog_key,
+               channel_group_snapshot, model, requested_model_catalog_key,
                provider_native_model, channel_id, usage_type, billing_meter_code,
                billable_quantity, prompt_tokens, completion_tokens, cached_tokens,
                total_tokens, customer_charge_amount, cost_amount, currency,
                pricing_plan_code, settlement_status
         FROM ai_usage_fact
-        WHERE request_id = ?
+        WHERE trace_id = ?
         "#,
     )
-    .bind("req-route-scoped-completion-usage-1")
+    .bind("trace-route-scoped-completion-usage-1")
     .fetch_optional(&read_pool)
     .await
     .unwrap();
@@ -2514,6 +2571,8 @@ async fn gateway_database_route_scoped_openai_legacy_completion_passthrough_reco
         "route-scoped legacy completions passthrough must write ai_usage_fact"
     );
     let usage = usage.unwrap();
+    let request_id = usage.get::<String, _>("request_id");
+    assert_server_generated_request_id(&request_id, "req-route-scoped-completion-usage-1");
     assert_eq!(
         "trace-route-scoped-completion-usage-1",
         usage.get::<String, _>("trace_id")
@@ -2524,11 +2583,11 @@ async fn gateway_database_route_scoped_openai_legacy_completion_passthrough_reco
     assert_eq!(100_i64, usage.get::<i64, _>("api_key_id"));
     assert_eq!(
         "standard-group",
-        usage.get::<String, _>("api_key_group_snapshot")
+        usage.get::<String, _>("channel_group_snapshot")
     );
     assert_eq!("gpt-4o-mini", usage.get::<String, _>("model"));
     assert_eq!(
-        "openai/global/gpt-4o-mini",
+        "openai/gpt-4o-mini",
         usage.get::<String, _>("requested_model_catalog_key")
     );
     assert_eq!(
@@ -2575,7 +2634,7 @@ async fn gateway_database_route_scoped_openai_image_passthrough_records_image_re
     let catalog = sdkwork_claw_test_support::seeded_sqlite_catalog()
         .await
         .unwrap();
-    seed_openai_passthrough_group_account_pools(
+    seed_openai_passthrough_group_channel_routes(
         &catalog,
         &format!("http://{addr}"),
         &format!("http://{addr}"),
@@ -2640,15 +2699,15 @@ async fn gateway_database_route_scoped_openai_image_passthrough_records_image_re
     let read_pool = catalog.open_pool().await.unwrap();
     let usage = sqlx::query(
         r#"
-        SELECT request_id, trace_id, model, requested_model_catalog_key,
+        SELECT request_id, trace_id, catalog_key, model, requested_model_catalog_key,
                provider_native_model, channel_id, modality, billing_meter_code,
                billable_quantity, image_count, request_count, customer_charge_amount,
                cost_amount, currency, pricing_plan_code, settlement_status
         FROM ai_usage_fact
-        WHERE request_id = ?
+        WHERE trace_id = ?
         "#,
     )
-    .bind("req-route-scoped-image-usage-1")
+    .bind("trace-route-scoped-image-usage-1")
     .fetch_optional(&read_pool)
     .await
     .unwrap();
@@ -2657,17 +2716,20 @@ async fn gateway_database_route_scoped_openai_image_passthrough_records_image_re
         "route-scoped image passthrough must write image_result usage"
     );
     let usage = usage.unwrap();
+    let request_id = usage.get::<String, _>("request_id");
+    assert_server_generated_request_id(&request_id, "req-route-scoped-image-usage-1");
     assert_eq!(
         "trace-route-scoped-image-usage-1",
         usage.get::<String, _>("trace_id")
     );
     assert_eq!("gpt-image-1", usage.get::<String, _>("model"));
+    assert_eq!("openai/gpt-image-1", usage.get::<String, _>("catalog_key"));
     assert_eq!(
-        "openai/global/gpt-image-1",
+        "openai/gpt-image-1",
         usage.get::<String, _>("requested_model_catalog_key")
     );
     assert_eq!(
-        "openrouter/gpt-image-1-standard",
+        "gpt-image-1-standard",
         usage.get::<String, _>("provider_native_model")
     );
     assert_eq!(3001_i64, usage.get::<i64, _>("channel_id"));
@@ -2688,7 +2750,7 @@ async fn gateway_database_route_scoped_openai_image_passthrough_records_image_re
 }
 
 #[tokio::test]
-async fn gateway_database_route_scoped_stored_chat_list_uses_account_pool_without_rewriting_query_model(
+async fn gateway_database_route_scoped_stored_chat_list_uses_channel_route_without_rewriting_query_model(
 ) {
     let captured_standard = Arc::new(Mutex::new(Vec::new()));
     let standard_provider = Router::new()
@@ -2717,7 +2779,7 @@ async fn gateway_database_route_scoped_stored_chat_list_uses_account_pool_withou
     let catalog = sdkwork_claw_test_support::seeded_sqlite_catalog()
         .await
         .unwrap();
-    seed_openai_passthrough_group_account_pools(
+    seed_openai_passthrough_group_channel_routes(
         &catalog,
         &format!("http://{standard_addr}"),
         &format!("http://{premium_addr}"),
@@ -2798,7 +2860,7 @@ async fn gateway_database_route_scoped_openai_passthrough_rewrites_delete_path_m
     let catalog = sdkwork_claw_test_support::seeded_sqlite_catalog()
         .await
         .unwrap();
-    seed_openai_passthrough_group_account_pools(
+    seed_openai_passthrough_group_channel_routes(
         &catalog,
         &format!("http://{standard_addr}"),
         &format!("http://{premium_addr}"),
@@ -2851,7 +2913,7 @@ async fn gateway_database_route_scoped_openai_passthrough_rewrites_delete_path_m
 }
 
 #[tokio::test]
-async fn gateway_database_route_scoped_openai_passthrough_routes_bodyless_management_calls_by_group_account_pool(
+async fn gateway_database_route_scoped_openai_passthrough_routes_bodyless_management_calls_by_group_channel_route(
 ) {
     let captured_standard = Arc::new(Mutex::new(Vec::new()));
     let standard_provider = Router::new()
@@ -2880,7 +2942,7 @@ async fn gateway_database_route_scoped_openai_passthrough_routes_bodyless_manage
     let catalog = sdkwork_claw_test_support::seeded_sqlite_catalog()
         .await
         .unwrap();
-    seed_openai_passthrough_group_account_pools(
+    seed_openai_passthrough_group_channel_routes(
         &catalog,
         &format!("http://{standard_addr}"),
         &format!("http://{premium_addr}"),
@@ -2962,7 +3024,7 @@ async fn gateway_database_route_scoped_openai_passthrough_routes_audio_voice_man
     let catalog = sdkwork_claw_test_support::seeded_sqlite_catalog()
         .await
         .unwrap();
-    seed_openai_passthrough_group_account_pools(
+    seed_openai_passthrough_group_channel_routes(
         &catalog,
         &format!("http://{standard_addr}"),
         &format!("http://{premium_addr}"),
@@ -3064,7 +3126,7 @@ async fn gateway_database_route_scoped_openai_passthrough_routes_response_resour
     let catalog = sdkwork_claw_test_support::seeded_sqlite_catalog()
         .await
         .unwrap();
-    seed_openai_passthrough_group_account_pools(
+    seed_openai_passthrough_group_channel_routes(
         &catalog,
         &format!("http://{standard_addr}"),
         &format!("http://{premium_addr}"),
@@ -3166,7 +3228,7 @@ async fn gateway_database_route_scoped_openai_passthrough_routes_video_resource_
     let catalog = sdkwork_claw_test_support::seeded_sqlite_catalog()
         .await
         .unwrap();
-    seed_openai_passthrough_group_account_pools(
+    seed_openai_passthrough_group_channel_routes(
         &catalog,
         &format!("http://{standard_addr}"),
         &format!("http://{premium_addr}"),
@@ -3276,7 +3338,7 @@ async fn gateway_database_route_scoped_openai_passthrough_routes_optional_model_
     let catalog = sdkwork_claw_test_support::seeded_sqlite_catalog()
         .await
         .unwrap();
-    seed_openai_passthrough_group_account_pools(
+    seed_openai_passthrough_group_channel_routes(
         &catalog,
         &format!("http://{standard_addr}"),
         &format!("http://{premium_addr}"),
@@ -3302,7 +3364,7 @@ async fn gateway_database_route_scoped_openai_passthrough_routes_optional_model_
     .await
     .unwrap();
 
-    let account_pool_response = router
+    let channel_route_response = router
         .clone()
         .oneshot(
             Request::builder()
@@ -3330,7 +3392,7 @@ async fn gateway_database_route_scoped_openai_passthrough_routes_optional_model_
         .await
         .unwrap();
 
-    assert_eq!(StatusCode::CREATED, account_pool_response.status());
+    assert_eq!(StatusCode::CREATED, channel_route_response.status());
     assert_eq!(StatusCode::CREATED, nested_model_response.status());
     let captured_standard = captured_standard_thread.lock().unwrap();
     assert_eq!(2, captured_standard.len());
@@ -3393,7 +3455,7 @@ async fn gateway_database_route_scoped_openai_passthrough_rejects_malformed_opti
     let catalog = sdkwork_claw_test_support::seeded_sqlite_catalog()
         .await
         .unwrap();
-    seed_openai_passthrough_group_account_pools(
+    seed_openai_passthrough_group_channel_routes(
         &catalog,
         &format!("http://{standard_addr}"),
         &format!("http://{premium_addr}"),
@@ -3447,7 +3509,7 @@ async fn gateway_database_route_scoped_openai_passthrough_rejects_malformed_opti
 }
 
 #[tokio::test]
-async fn gateway_database_route_scoped_openai_passthrough_rejects_blank_optional_model_before_account_pool_routing(
+async fn gateway_database_route_scoped_openai_passthrough_rejects_blank_optional_model_before_channel_route_routing(
 ) {
     let captured_standard = Arc::new(Mutex::new(Vec::new()));
     let standard_provider = Router::new()
@@ -3482,7 +3544,7 @@ async fn gateway_database_route_scoped_openai_passthrough_rejects_blank_optional
     let catalog = sdkwork_claw_test_support::seeded_sqlite_catalog()
         .await
         .unwrap();
-    seed_openai_passthrough_group_account_pools(
+    seed_openai_passthrough_group_channel_routes(
         &catalog,
         &format!("http://{standard_addr}"),
         &format!("http://{premium_addr}"),
@@ -3536,7 +3598,7 @@ async fn gateway_database_route_scoped_openai_passthrough_rejects_blank_optional
 }
 
 #[tokio::test]
-async fn gateway_database_route_scoped_openai_passthrough_rejects_non_string_optional_model_before_account_pool_routing(
+async fn gateway_database_route_scoped_openai_passthrough_rejects_non_string_optional_model_before_channel_route_routing(
 ) {
     let captured_standard = Arc::new(Mutex::new(Vec::new()));
     let standard_provider = Router::new()
@@ -3571,7 +3633,7 @@ async fn gateway_database_route_scoped_openai_passthrough_rejects_non_string_opt
     let catalog = sdkwork_claw_test_support::seeded_sqlite_catalog()
         .await
         .unwrap();
-    seed_openai_passthrough_group_account_pools(
+    seed_openai_passthrough_group_channel_routes(
         &catalog,
         &format!("http://{standard_addr}"),
         &format!("http://{premium_addr}"),
@@ -3625,7 +3687,7 @@ async fn gateway_database_route_scoped_openai_passthrough_rejects_non_string_opt
 }
 
 #[tokio::test]
-async fn gateway_database_route_scoped_openai_passthrough_rejects_multipart_without_boundary_before_account_pool_routing(
+async fn gateway_database_route_scoped_openai_passthrough_rejects_multipart_without_boundary_before_channel_route_routing(
 ) {
     let captured_standard = Arc::new(Mutex::new(Vec::new()));
     let standard_provider = Router::new()
@@ -3654,7 +3716,7 @@ async fn gateway_database_route_scoped_openai_passthrough_rejects_multipart_with
     let catalog = sdkwork_claw_test_support::seeded_sqlite_catalog()
         .await
         .unwrap();
-    seed_openai_passthrough_group_account_pools(
+    seed_openai_passthrough_group_channel_routes(
         &catalog,
         &format!("http://{standard_addr}"),
         &format!("http://{premium_addr}"),
@@ -4685,11 +4747,11 @@ async fn capture_provider_native_adapter_request_with_video_usage(
     )
 }
 
-async fn seed_vidu_start_end2video_account_pool(
+async fn seed_vidu_start_end2video_channel_route(
     catalog: &sdkwork_claw_test_support::SeededSqliteCatalog,
     base_url: &str,
 ) {
-    seed_start_end2video_account_pool(
+    seed_start_end2video_channel_route(
         catalog,
         9301,
         "vidu-official",
@@ -4703,11 +4765,11 @@ async fn seed_vidu_start_end2video_account_pool(
     .await;
 }
 
-async fn seed_tencent_cloud_vidu_start_end2video_account_pool(
+async fn seed_tencent_cloud_vidu_start_end2video_channel_route(
     catalog: &sdkwork_claw_test_support::SeededSqliteCatalog,
     base_url: &str,
 ) {
-    seed_start_end2video_account_pool(
+    seed_start_end2video_channel_route(
         catalog,
         9301,
         "tencent-cloud",
@@ -4721,7 +4783,7 @@ async fn seed_tencent_cloud_vidu_start_end2video_account_pool(
     .await;
 }
 
-async fn seed_start_end2video_account_pool(
+async fn seed_start_end2video_channel_route(
     catalog: &sdkwork_claw_test_support::SeededSqliteCatalog,
     id: i64,
     provider_code: &str,
@@ -4735,11 +4797,10 @@ async fn seed_start_end2video_account_pool(
     let pool = catalog.open_pool().await.unwrap();
     sqlx::query(
         r#"
-        INSERT INTO integration_provider
-            (id, provider_code, integration_type, upstream_vendor_code,
-             upstream_provider_code, base_url, status)
+        INSERT INTO ai_provider
+            (id, provider_code, default_vendor_code, provider_type, protocol_code, base_url, status)
         VALUES
-            (?, ?, 3, ?, ?, ?, 1)
+            (?, ?, ?, 'relay_aggregator', ?, ?, 1)
         "#,
     )
     .bind(id)
@@ -4752,32 +4813,24 @@ async fn seed_start_end2video_account_pool(
     .unwrap();
     sqlx::query(
         r#"
-        INSERT INTO integration_provider_account
-            (id, provider_code, secret_ref, status, auth_type, auth_config)
+        INSERT INTO ai_channel
+            (id, tenant_id, organization_id, provider_id, provider_code, channel_code,
+             channel_name, channel_type, protocol_code, auth_type, auth_config,
+             credential_ref, base_url, status, priority, weight, health_status)
         VALUES
-            (?, ?, ?, 1, ?, ?)
+            (?, 10, 20, ?, ?, ?, ?, 'relay', ?, ?, ?, ?, ?, 1, 10, 100, 1)
         "#,
     )
     .bind(id)
+    .bind(id)
     .bind(provider_code)
-    .bind(secret_ref)
+    .bind(format!("{provider_code}-main"))
+    .bind(format!("{provider_code} Main"))
+    .bind(upstream_provider_code)
     .bind(auth_type)
     .bind(auth_config)
-    .execute(&pool)
-    .await
-    .unwrap();
-    sqlx::query(
-        r#"
-        INSERT INTO integration_channel
-            (id, provider_code, base_url, account_id, status, priority, weight)
-        VALUES
-            (?, ?, ?, ?, 1, 10, 100)
-        "#,
-    )
-    .bind(id)
-    .bind(provider_code)
+    .bind(secret_ref)
     .bind(base_url)
-    .bind(id)
     .execute(&pool)
     .await
     .unwrap();
@@ -4827,15 +4880,34 @@ async fn seed_start_end2video_account_pool(
     .unwrap();
     sqlx::query(
         r#"
-        INSERT INTO iam_api_key_group_channel
-            (id, tenant_id, organization_id, group_id, channel_id, priority, weight,
-             model_scope, capabilities, status)
+        INSERT INTO ai_channel_group_member
+            (id, tenant_id, organization_id, channel_group_id, channel_id, priority, weight,
+             enabled, status)
         VALUES
-            (?, 10, 20, 10, ?, 1, 100, '[]', '["video"]', 1)
+            (?, 10, 20, 10, ?, 1, 100, 1, 1)
         "#,
     )
     .bind(id)
     .bind(id)
+    .execute(&pool)
+    .await
+    .unwrap();
+    sqlx::query(
+        r#"
+        INSERT INTO ai_route_candidate
+            (id, uuid, tenant_id, organization_id, channel_group_id, channel_id,
+             provider_code, channel_type, vendor_code, api_code, model_code, catalog_key,
+             region_code, priority, weight, health_status, status)
+        VALUES
+            (?, ?, 10, 20, 10, ?, ?, 'relay', ?, 'video.start_end2video',
+             NULL, NULL, 'global', 1, 100, 1, 1)
+        "#,
+    )
+    .bind(id)
+    .bind(format!("route-{provider_code}-start-end2video"))
+    .bind(id)
+    .bind(provider_code)
+    .bind(upstream_vendor_code)
     .execute(&pool)
     .await
     .unwrap();
@@ -4859,27 +4931,12 @@ async fn seed_tencent_cloud_vidu_billing_catalog(
     .unwrap();
     sqlx::query(
         r#"
-        INSERT INTO ai_model_vendor_region
-            (id, uuid, tenant_id, organization_id, vendor_id, vendor_code, region_code,
-             display_name, market_scope, billing_currency, billing_jurisdiction,
-             operating_regions, capabilities, status, sort_order)
-        VALUES
-            (9401, 'vendor-region-tencent-cloud-global', 10, 20, 9401,
-             'tencent-cloud', 'global', 'Tencent Cloud Global', 'global', 'USD',
-             'CN', '["GLOBAL"]', '["video"]', 1, 9401)
-        "#,
-    )
-    .execute(&pool)
-    .await
-    .unwrap();
-    sqlx::query(
-        r#"
         INSERT INTO ai_model_family
-            (id, uuid, tenant_id, organization_id, vendor_id, vendor_code, region_code,
-             family_code, display_name, status, sort_order)
+            (id, uuid, tenant_id, organization_id, vendor_id, vendor_code, family_code,
+             display_name, status, sort_order)
         VALUES
-            (9401, 'family-tencent-cloud-global-vidu', 10, 20, 9401,
-             'tencent-cloud', 'global', 'vidu', 'Vidu', 1, 9401)
+            (9401, 'family-tencent-cloud-vidu', 10, 20, 9401,
+             'tencent-cloud', 'vidu', 'Vidu', 1, 9401)
         "#,
     )
     .execute(&pool)
@@ -4894,8 +4951,8 @@ async fn seed_tencent_cloud_vidu_billing_catalog(
              supports_streaming, supports_tools, supports_json_schema, api_format,
              shelf_state, routing_state, status, rank_score)
         VALUES
-            (9401, 'model-tencent-cloud-global-vidu2', 10, 20,
-             'tencent-cloud/global/vidu2.0', 'vidu2.0', 'Vidu 2.0',
+            (9401, 'model-tencent-cloud-vidu2', 10, 20,
+             'tencent-cloud/vidu2.0', 'vidu2.0', 'Vidu 2.0',
              9401, 'tencent-cloud', 'Tencent Cloud', 9401, 'vidu', 5,
              '["video"]', '["video"]', '["image","text"]', '["video"]',
              0, 0, 0, 'provider-native', 1, 1, 1, '70.0')
@@ -4912,7 +4969,7 @@ async fn seed_tencent_cloud_vidu_billing_catalog(
              output_modalities, supported, status, sort_order)
         VALUES
             (9401, 'cap-tencent-cloud-global-vidu2-video', 10, 20, 9401,
-             'tencent-cloud/global/vidu2.0', 'vidu2.0', 'tencent-cloud',
+             'tencent-cloud/vidu2.0', 'vidu2.0', 'tencent-cloud',
              5, 'video', 5, '["image","text"]', '["video"]', 1, 1, 9401)
         "#,
     )
@@ -4921,13 +4978,28 @@ async fn seed_tencent_cloud_vidu_billing_catalog(
     .unwrap();
     sqlx::query(
         r#"
-        INSERT INTO integration_channel_model
+        INSERT INTO ai_channel_model
             (id, uuid, tenant_id, organization_id, catalog_key, model, vendor_code,
-             channel_id, provider_model, status)
+             channel_id, provider_model, provider_native_model, api_code, status)
         VALUES
             (9401, 'channel-model-tencent-cloud-global-vidu2', 10, 20,
-             'tencent-cloud/global/vidu2.0', 'vidu2.0', 'tencent-cloud',
-             9301, 'vidu2.0', 1)
+             'tencent-cloud/vidu2.0', 'vidu2.0', 'tencent-cloud',
+             9301, 'vidu2.0', 'vidu2.0', 'video.start_end2video', 1)
+        "#,
+    )
+    .execute(&pool)
+    .await
+    .unwrap();
+    sqlx::query(
+        r#"
+        INSERT INTO ai_route_candidate
+            (id, uuid, tenant_id, organization_id, channel_group_id, channel_id,
+             provider_code, channel_type, vendor_code, api_code, model_code, catalog_key,
+             region_code, priority, weight, health_status, status)
+        VALUES
+            (9401, 'route-tencent-cloud-vidu2-start-end2video', 10, 20, 10, 9301,
+             'tencent-cloud', 'relay', 'tencent-cloud', 'video.start_end2video',
+             'vidu2.0', 'tencent-cloud/vidu2.0', 'global', 1, 100, 1, 1)
         "#,
     )
     .execute(&pool)
@@ -4941,10 +5013,10 @@ async fn seed_tencent_cloud_vidu_billing_catalog(
              currency, status, priority)
         VALUES
             (9401, 'price-tencent-cloud-vidu-api-request-reference', 10, 20, 9401,
-             'tencent-cloud/global/vidu2.0', 'vidu2.0', 'tencent-cloud',
+             'tencent-cloud/vidu2.0', 'vidu2.0', 'tencent-cloud',
              'global', 1, 'api_request', '0.020000', 'USD', 1, 1),
             (9402, 'price-tencent-cloud-vidu-video-second-reference', 10, 20, 9401,
-             'tencent-cloud/global/vidu2.0', 'vidu2.0', 'tencent-cloud',
+             'tencent-cloud/vidu2.0', 'vidu2.0', 'tencent-cloud',
              'global', 1, 'video_output_second', '0.100000', 'USD', 1, 1)
         "#,
     )
@@ -4959,11 +5031,11 @@ async fn seed_tencent_cloud_vidu_billing_catalog(
              currency, provider_code, channel_id, status, priority)
         VALUES
             (9403, 'price-tencent-cloud-vidu-api-request-upstream', 10, 20, 9401,
-             'tencent-cloud/global/vidu2.0', 'vidu2.0', 'tencent-cloud',
+             'tencent-cloud/vidu2.0', 'vidu2.0', 'tencent-cloud',
              'global', 2, 'api_request', '0.010000', 'USD', 'tencent-cloud',
              9301, 1, 1),
             (9404, 'price-tencent-cloud-vidu-video-second-upstream', 10, 20, 9401,
-             'tencent-cloud/global/vidu2.0', 'vidu2.0', 'tencent-cloud',
+             'tencent-cloud/vidu2.0', 'vidu2.0', 'tencent-cloud',
              'global', 2, 'video_output_second', '0.060000', 'USD',
              'tencent-cloud', 9301, 1, 1)
         "#,
@@ -4974,7 +5046,7 @@ async fn seed_tencent_cloud_vidu_billing_catalog(
     pool.close().await;
 }
 
-async fn seed_openai_passthrough_group_account_pools(
+async fn seed_openai_passthrough_group_channel_routes(
     catalog: &sdkwork_claw_test_support::SeededSqliteCatalog,
     standard_base_url: &str,
     premium_base_url: &str,
@@ -4995,7 +5067,7 @@ async fn seed_openai_passthrough_group_account_pools(
              status, rank_score)
         VALUES
             (9001, 'model-openai-global-gpt-image-1', 10, 20,
-             'openai/global/gpt-image-1', 'gpt-image-1', 'GPT Image 1',
+             'openai/gpt-image-1', 'gpt-image-1', 'GPT Image 1',
              1, 'openai', 'OpenAI', 1, 'gpt-4o', 2,
              '["image"]', '["image"]', 0, 0, 0, 'openai-compatible',
              1, 1, 1, '80.0')
@@ -5012,7 +5084,7 @@ async fn seed_openai_passthrough_group_account_pools(
              input_modalities, output_modalities, supported, status, sort_order)
         VALUES
             (9001, 'cap-openai-global-gpt-image-1-image', 10, 20, 9001,
-             'openai/global/gpt-image-1', 'gpt-image-1', 'openai',
+             'openai/gpt-image-1', 'gpt-image-1', 'openai',
              2, 'image', 2, '["text","image"]', '["image"]', 1, 1, 9001)
         "#,
     )
@@ -5022,7 +5094,7 @@ async fn seed_openai_passthrough_group_account_pools(
 
     sqlx::query(
         r#"
-        UPDATE integration_channel
+        UPDATE ai_channel
         SET base_url = ?
         WHERE id = 3001
         "#,
@@ -5033,21 +5105,14 @@ async fn seed_openai_passthrough_group_account_pools(
     .unwrap();
     sqlx::query(
         r#"
-        INSERT INTO integration_provider_account
-            (id, provider_code, secret_ref, status)
+        INSERT INTO ai_channel
+            (id, uuid, tenant_id, organization_id, provider_code, channel_code,
+             channel_name, channel_type, credential_ref, base_url, status, priority,
+             weight, health_status)
         VALUES
-            (9003, 'openrouter', 'vault://providers/openrouter/account/premium', 1)
-        "#,
-    )
-    .execute(&pool)
-    .await
-    .unwrap();
-    sqlx::query(
-        r#"
-        INSERT INTO integration_channel
-            (id, provider_code, base_url, account_id, status, priority, weight)
-        VALUES
-            (3002, 'openrouter', ?, 9003, 1, 10, 100)
+            (3002, 'channel-openrouter-premium', 10, 20, 'openrouter',
+             'openrouter-premium', 'OpenRouter Premium', 'relay',
+             'vault://providers/openrouter/account/premium', ?, 1, 10, 100, 1)
         "#,
     )
     .bind(premium_base_url)
@@ -5056,16 +5121,16 @@ async fn seed_openai_passthrough_group_account_pools(
     .unwrap();
     sqlx::query(
         r#"
-        INSERT INTO integration_channel_model
+        INSERT INTO ai_channel_model
             (id, uuid, tenant_id, organization_id, catalog_key, model, vendor_code,
-             channel_id, provider_model, status)
+             channel_id, provider_model, provider_native_model, api_code, status)
         VALUES
             (9001, 'channel-model-openai-global-gpt-image-1-standard',
-             10, 20, 'openai/global/gpt-image-1', 'gpt-image-1', 'openai',
-             3001, 'openrouter/gpt-image-1-standard', 1),
+             10, 20, 'openai/gpt-image-1', 'gpt-image-1', 'openai',
+             3001, 'openrouter/gpt-image-1-standard', 'gpt-image-1', 'openai.images', 1),
             (9002, 'channel-model-openai-global-gpt-image-1-premium',
-             10, 20, 'openai/global/gpt-image-1', 'gpt-image-1', 'openai',
-             3002, 'openrouter/gpt-image-1-premium', 1)
+             10, 20, 'openai/gpt-image-1', 'gpt-image-1', 'openai',
+             3002, 'openrouter/gpt-image-1-premium', 'gpt-image-1', 'openai.images', 1)
         "#,
     )
     .execute(&pool)
@@ -5074,10 +5139,12 @@ async fn seed_openai_passthrough_group_account_pools(
 
     sqlx::query(
         r#"
-        INSERT INTO iam_gateway_api_key_group
-            (id, code, pricing_plan_code, rate_multiplier, official_price_multiplier, status)
+        INSERT INTO ai_channel_group
+            (id, tenant_id, organization_id, group_code, group_name, pricing_plan_code,
+             rate_multiplier, official_price_multiplier, status)
         VALUES
-            (11, 'premium-group', 'standard', '1.000000', '1.100000', 1)
+            (11, 10, 20, 'premium-group', 'Premium Group', 'standard',
+             '1.000000', '1.100000', 1)
         "#,
     )
     .execute(&pool)
@@ -5086,7 +5153,7 @@ async fn seed_openai_passthrough_group_account_pools(
     sqlx::query(
         r#"
         INSERT INTO iam_gateway_api_key
-            (id, tenant_id, organization_id, user_id, group_id, key_prefix, key_hash,
+            (id, tenant_id, organization_id, user_id, channel_group_id, key_prefix, key_hash,
              idempotency_key, status)
         VALUES
             (101, 10, 20, 31, 11, 'sk-premium', ?, 'seed-api-key-101', 1)
@@ -5098,11 +5165,29 @@ async fn seed_openai_passthrough_group_account_pools(
     .unwrap();
     sqlx::query(
         r#"
-        INSERT INTO iam_api_key_group_channel
-            (id, tenant_id, organization_id, group_id, channel_id, priority, weight,
-             model_scope, capabilities, status)
+        INSERT INTO ai_channel_group_member
+            (id, tenant_id, organization_id, channel_group_id, channel_id, priority, weight,
+             enabled, status)
         VALUES
-            (601, 10, 20, 11, 3002, 1, 100, '[]', '[]', 1)
+            (601, 10, 20, 11, 3002, 1, 100, 1, 1)
+        "#,
+    )
+    .execute(&pool)
+    .await
+    .unwrap();
+    sqlx::query(
+        r#"
+        INSERT INTO ai_route_candidate
+            (id, uuid, tenant_id, organization_id, channel_group_id, channel_id,
+             provider_code, channel_type, vendor_code, api_code, model_code, catalog_key,
+             region_code, priority, weight, health_status, status)
+        VALUES
+            (9001, 'route-openrouter-standard-gpt-image-1', 10, 20, 10, 3001,
+             'openrouter', 'relay', 'openai', 'openai.images', 'gpt-image-1',
+             'openai/gpt-image-1', 'global', 1, 100, 1, 1),
+            (9002, 'route-openrouter-premium-gpt-image-1', 10, 20, 11, 3002,
+             'openrouter', 'relay', 'openai', 'openai.images', 'gpt-image-1',
+             'openai/gpt-image-1', 'global', 1, 100, 1, 1)
         "#,
     )
     .execute(&pool)
@@ -5117,7 +5202,7 @@ async fn seed_openai_passthrough_group_account_pools(
              currency, status, priority)
         VALUES
             (9001, 'price-openai-global-gpt-image-1-reference', 10, 20, 9001,
-             'openai/global/gpt-image-1', 'gpt-image-1', 'openai', 'global',
+             'openai/gpt-image-1', 'gpt-image-1', 'openai', 'global',
              1, 'image_result', '0.050000', 'USD', 1, 1)
         "#,
     )
@@ -5132,11 +5217,11 @@ async fn seed_openai_passthrough_group_account_pools(
              currency, provider_code, channel_id, status, priority)
         VALUES
             (9002, 'price-openai-global-gpt-image-1-standard-upstream', 10, 20,
-             9001, 'openai/global/gpt-image-1', 'gpt-image-1', 'openai',
+             9001, 'openai/gpt-image-1', 'gpt-image-1', 'openai',
              'global', 2, 'image_result', '0.030000', 'USD', 'openrouter',
              3001, 1, 1),
             (9003, 'price-openai-global-gpt-image-1-premium-upstream', 10, 20,
-             9001, 'openai/global/gpt-image-1', 'gpt-image-1', 'openai',
+             9001, 'openai/gpt-image-1', 'gpt-image-1', 'openai',
              'global', 2, 'image_result', '0.040000', 'USD', 'openrouter',
              3002, 1, 1)
         "#,
@@ -5186,12 +5271,12 @@ async fn seed_openai_passthrough_group_account_pools(
              constraints, status)
         VALUES
             (9211, 10, 20, 9201, 'standard-gpt-image-1', 1,
-             '{"catalogKey":"openai/global/gpt-image-1"}',
-             'openai/global/gpt-image-1', '[{"channel_id":3001,"weight":100}]',
+             '{"catalogKey":"openai/gpt-image-1"}',
+             'openai/gpt-image-1', '[{"channel_id":3001,"weight":100}]',
              '[]', '{}', 1),
             (9212, 10, 20, 9202, 'premium-gpt-image-1', 1,
-             '{"catalogKey":"openai/global/gpt-image-1"}',
-             'openai/global/gpt-image-1', '[{"channel_id":3002,"weight":100}]',
+             '{"catalogKey":"openai/gpt-image-1"}',
+             'openai/gpt-image-1', '[{"channel_id":3002,"weight":100}]',
              '[]', '{}', 1)
         "#,
     )
@@ -5201,7 +5286,7 @@ async fn seed_openai_passthrough_group_account_pools(
     pool.close().await;
 }
 
-async fn seed_openai_passthrough_default_account_pool_fallback(
+async fn seed_openai_passthrough_default_channel_route_fallback(
     catalog: &sdkwork_claw_test_support::SeededSqliteCatalog,
     group_base_url: &str,
     default_base_url: &str,
@@ -5210,7 +5295,7 @@ async fn seed_openai_passthrough_default_account_pool_fallback(
 
     sqlx::query(
         r#"
-        UPDATE integration_channel
+        UPDATE ai_channel
         SET base_url = ?
         WHERE id = 3001
         "#,
@@ -5232,21 +5317,14 @@ async fn seed_openai_passthrough_default_account_pool_fallback(
     .unwrap();
     sqlx::query(
         r#"
-        INSERT INTO integration_provider_account
-            (id, provider_code, secret_ref, status)
+        INSERT INTO ai_channel
+            (id, uuid, tenant_id, organization_id, provider_code, channel_code,
+             channel_name, channel_type, credential_ref, base_url, status, priority,
+             weight, health_status)
         VALUES
-            (9004, 'openrouter', 'vault://providers/openrouter/account/default', 1)
-        "#,
-    )
-    .execute(&pool)
-    .await
-    .unwrap();
-    sqlx::query(
-        r#"
-        INSERT INTO integration_channel
-            (id, provider_code, base_url, account_id, status, priority, weight)
-        VALUES
-            (3004, 'openrouter', ?, 9004, 1, 20, 100)
+            (3004, 'channel-openrouter-default', 10, 20, 'openrouter',
+             'openrouter-default', 'OpenRouter Default', 'relay',
+             'vault://providers/openrouter/account/default', ?, 1, 20, 100, 1)
         "#,
     )
     .bind(default_base_url)
@@ -5299,11 +5377,26 @@ async fn seed_openai_passthrough_default_account_pool_fallback(
     .unwrap();
     sqlx::query(
         r#"
-        INSERT INTO iam_api_key_group_channel
-            (id, tenant_id, organization_id, group_id, channel_id, priority, weight,
-             model_scope, capabilities, status)
+        INSERT INTO ai_channel_group_member
+            (id, tenant_id, organization_id, channel_group_id, channel_id, priority, weight,
+             enabled, status)
         VALUES
-            (604, 10, 20, 10, 3004, 1, 100, '[]', '["network"]', 1)
+            (604, 10, 20, 10, 3004, 1, 100, 1, 1)
+        "#,
+    )
+    .execute(&pool)
+    .await
+    .unwrap();
+    sqlx::query(
+        r#"
+        INSERT INTO ai_route_candidate
+            (id, uuid, tenant_id, organization_id, channel_group_id, channel_id,
+             provider_code, channel_type, vendor_code, api_code, model_code, catalog_key,
+             region_code, priority, weight, health_status, status)
+        VALUES
+            (9004, 'route-openrouter-default-files', 10, 20, 10, 3004,
+             'openrouter', 'relay', 'openai', 'openai.files',
+             NULL, NULL, 'global', 1, 100, 1, 1)
         "#,
     )
     .execute(&pool)
@@ -5313,11 +5406,11 @@ async fn seed_openai_passthrough_default_account_pool_fallback(
     pool.close().await;
 }
 
-async fn seed_openai_passthrough_header_auth_account_pool(
+async fn seed_openai_passthrough_header_auth_channel_route(
     catalog: &sdkwork_claw_test_support::SeededSqliteCatalog,
     base_url: &str,
 ) {
-    seed_openai_passthrough_header_auth_account_pool_with_auth_config(
+    seed_openai_passthrough_header_auth_channel_route_with_auth_config(
         catalog,
         base_url,
         r#"{"name":"x-goog-api-key"}"#,
@@ -5325,7 +5418,7 @@ async fn seed_openai_passthrough_header_auth_account_pool(
     .await;
 }
 
-async fn seed_openai_passthrough_header_auth_account_pool_with_auth_config(
+async fn seed_openai_passthrough_header_auth_channel_route_with_auth_config(
     catalog: &sdkwork_claw_test_support::SeededSqliteCatalog,
     base_url: &str,
     auth_config: &str,
@@ -5334,11 +5427,11 @@ async fn seed_openai_passthrough_header_auth_account_pool_with_auth_config(
 
     sqlx::query(
         r#"
-        INSERT INTO integration_provider
-            (id, provider_code, integration_type, upstream_vendor_code,
-             upstream_provider_code, base_url, status)
+        INSERT INTO ai_provider
+            (id, provider_code, default_vendor_code, provider_type, protocol_code,
+             base_url, status)
         VALUES
-            (9005, 'google', 3, 'google', 'google', ?, 1)
+            (9005, 'google', 'google', 'relay_aggregator', 'google', ?, 1)
         "#,
     )
     .bind(base_url)
@@ -5347,27 +5440,22 @@ async fn seed_openai_passthrough_header_auth_account_pool_with_auth_config(
     .unwrap();
     sqlx::query(
         r#"
-        INSERT INTO integration_provider_account
-            (id, provider_code, secret_ref, auth_type, auth_config, status)
-        VALUES
-            (9005, 'google', 'vault://providers/google/account/main',
-             'header', ?, 1)
-        "#,
-    )
-    .bind(auth_config)
-    .execute(&pool)
-    .await
-    .unwrap();
-    sqlx::query(
-        r#"
-        UPDATE integration_channel
+        UPDATE ai_channel
         SET provider_code = 'google',
+            provider_id = 9005,
+            channel_code = 'google-main',
+            channel_name = 'Google Main',
+            channel_type = 'relay',
+            protocol_code = 'google',
             base_url = ?,
-            account_id = 9005
+            credential_ref = 'vault://providers/google/account/main',
+            auth_type = 'header',
+            auth_config = ?
         WHERE id = 3001
         "#,
     )
     .bind(base_url)
+    .bind(auth_config)
     .execute(&pool)
     .await
     .unwrap();
@@ -5387,6 +5475,22 @@ async fn seed_openai_passthrough_header_auth_account_pool_with_auth_config(
         SET match_expression = '{"routeKey":"openai/management/files"}',
             target_model = 'openai/management/files'
         WHERE id = 9102
+        "#,
+    )
+    .execute(&pool)
+    .await
+    .unwrap();
+    sqlx::query(
+        r#"
+        UPDATE ai_route_candidate
+        SET provider_code = 'google',
+            channel_type = 'relay',
+            vendor_code = 'google',
+            api_code = 'openai.files',
+            model_code = NULL,
+            catalog_key = NULL
+        WHERE channel_id = 3001
+          AND channel_group_id = 10
         "#,
     )
     .execute(&pool)

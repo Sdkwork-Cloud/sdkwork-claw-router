@@ -1,4 +1,4 @@
-﻿import unittest
+import unittest
 import json
 from pathlib import Path
 
@@ -22,7 +22,7 @@ class AdminAnnouncementRuntimeStandardTest(unittest.TestCase):
 
         self.assertEqual("AdminAnnouncementCreateRequest", add_announcement["request_schema"]["name"])
         self.assertEqual(
-            ["title", "target", "status", "content"],
+            ["title", "target", "status", "showAsPopup", "content"],
             add_announcement["request_schema"]["schema"]["required"],
         )
         self.assertEqual("AdminAnnouncementMutationResponse", add_announcement["response_schema"]["name"])
@@ -55,22 +55,21 @@ class AdminAnnouncementRuntimeStandardTest(unittest.TestCase):
             "AdminAnnouncementUpdateRequest",
             "toCreateAnnouncementRequest",
             "toUpdateAnnouncementRequest",
-            "requestParams('admin-announcement-create')",
-            "requestParams('admin-announcement-update')",
-            "createClientOperationToken(scope)",
         ]:
             self.assertIn(token, service)
+        self.assertNotIn("createIdempotencyParams('admin-announcement-create')", service)
+        self.assertNotIn("createIdempotencyParams('admin-announcement-update')", service)
 
         self.assertNotIn("router.updateAnnouncement(id, updates)", service)
         self.assertNotIn("router.addAnnouncement(ann)", service)
         self.assertNotIn("as unknown as Record<string, unknown>", service)
 
         self.assertIn(
-            "async create(body: AdminAnnouncementCreateRequest, params?: ContentAnnouncementsCreateParams): Promise<AnnouncementsCreateResult>",
+            "async create(body: AdminAnnouncementCreateRequest): Promise<AnnouncementsCreateResult>",
             router_api,
         )
         self.assertIn(
-            "async update(announcementId: string, body: AdminAnnouncementUpdateRequest, params?: ContentAnnouncementsUpdateParams): Promise<AnnouncementsUpdateResult>",
+            "async update(announcementId: string, body: AdminAnnouncementUpdateRequest): Promise<AnnouncementsUpdateResult>",
             router_api,
         )
         self.assertNotIn("async create(body?: OperationRequest): Promise<PlusApiResult>", router_api)
@@ -119,13 +118,14 @@ class AdminAnnouncementRuntimeStandardTest(unittest.TestCase):
         self.assertNotIn("Partial<Announcement", service)
         self.assertIn("createAnnouncementInputFromForm", view)
         self.assertIn("createAnnouncementUpdateInputFromForm", view)
-        self.assertIn("createAnnouncementPublishInput", view)
+        self.assertIn("createAnnouncementStatusInput", view)
         self.assertIn("AnnouncementService.addAnnouncement(createAnnouncementInputFromForm", view)
         self.assertIn("AnnouncementService.updateAnnouncement(editingId, createAnnouncementUpdateInputFromForm", view)
-        self.assertIn("AnnouncementService.updateAnnouncement(id, createAnnouncementPublishInput())", view)
+        self.assertIn("AnnouncementService.updateAnnouncement(id, createAnnouncementStatusInput(nextStatus))", view)
         self.assertIn("export function createAnnouncementInputFromForm", form)
         self.assertIn("export function createAnnouncementUpdateInputFromForm", form)
-        self.assertIn("export function createAnnouncementPublishInput", form)
+        self.assertIn("export function createAnnouncementStatusInput", form)
+        self.assertNotIn("createAnnouncementPublishInput", form)
         self.assertNotIn("Date.now()", view)
         self.assertNotIn("Math.random()", view)
         self.assertNotIn("Date.now()", form)
@@ -143,24 +143,24 @@ class AdminAnnouncementRuntimeStandardTest(unittest.TestCase):
             compact_store = " ".join(store.split())
             with self.subTest(store=relative_path):
                 self.assertIn(
-                    'target: target_label(required_integer_cell(&row, "target_scope", "target")?)?',
+                    'target: target_label( required_integer_cell(row, "recipient_type")?, &string_cell(row, "recipient_value"), optional_non_empty_string_cell(row, "recipient_role_code").as_deref(), )?',
                     compact_store,
                 )
                 self.assertIn(
-                    'status: status_label(required_integer_cell(&row, "status", "status")?)?',
+                    'status: status_label(required_integer_cell(row, "status")?)?',
                     compact_store,
                 )
                 self.assertIn(
-                    "fn target_label(value: i64) -> DomainResult<String>",
+                    "fn target_label( recipient_type: i64, recipient_value: &str, recipient_role_code: Option<&str>, ) -> DomainResult<String>",
                     compact_store,
                 )
                 self.assertIn(
                     "fn status_label(value: i64) -> DomainResult<String>",
                     compact_store,
                 )
-                self.assertIn("missing admin announcement target from database row", store)
-                self.assertIn("missing admin announcement status from database row", store)
+                self.assertIn("missing admin announcement {column} from database row", store)
                 self.assertIn("invalid admin announcement target from database row", store)
+                self.assertIn("invalid admin announcement recipient type from database row", store)
                 self.assertIn("invalid admin announcement status from database row", store)
                 self.assertNotIn('target_label(optional_integer_cell(&row, "target_scope"))', store)
                 self.assertNotIn('status_label(optional_integer_cell(&row, "status"))', store)

@@ -1,4 +1,4 @@
-# Verification Code Delivery Standard
+﻿# Verification Code Delivery Standard
 
 ## Runtime Behavior
 
@@ -44,7 +44,7 @@ Provider selection uses `VerificationDeliveryConfigStore`. The store selects an
 active delivery config by tenant, organization, channel, scene, priority, and
 weight from the standard integration tables:
 
-- `integration_channel`
+- `ai_channel`
 - `integration_provider_account`
 
 The selected config includes provider code, channel id, account id, account code,

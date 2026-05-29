@@ -263,12 +263,11 @@ class ChatConversationsApi:
         ])
         return self._client.get(_append_query_string(f"/app/v3/api/chat/conversations", query))
 
-    def create(self, body: ChatConversationCreateRequest, idempotency_key: str, x_request_id: Optional[str] = None) -> ConversationsCreateResult:
+    def create(self, body: ChatConversationCreateRequest, idempotency_key: str) -> ConversationsCreateResult:
         """Create product chat conversation"""
         request_headers = build_request_headers(
             {
                 'Idempotency-Key': {'value': idempotency_key, 'style': 'simple', 'explode': False},
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
             },
             {}
         )
@@ -300,12 +299,11 @@ class ChatTurnsApi:
         self._client = client
 
 
-    def create(self, conversation_id: str, body: ChatTurnCreateRequest, idempotency_key: str, x_request_id: Optional[str] = None) -> TurnsCreateResult:
+    def create(self, conversation_id: str, body: ChatTurnCreateRequest, idempotency_key: str) -> TurnsCreateResult:
         """Create product chat turn"""
         request_headers = build_request_headers(
             {
                 'Idempotency-Key': {'value': idempotency_key, 'style': 'simple', 'explode': False},
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
             },
             {}
         )
@@ -318,12 +316,11 @@ class ChatTurnResponsesApi:
         self._client = client
 
 
-    def create(self, conversation_id: str, turn_id: str, body: ChatTurnResponseRequest, idempotency_key: str, x_request_id: Optional[str] = None) -> TurnResponsesCreateResult:
+    def create(self, conversation_id: str, turn_id: str, body: ChatTurnResponseRequest, idempotency_key: str) -> TurnResponsesCreateResult:
         """Complete product chat turn response"""
         request_headers = build_request_headers(
             {
                 'Idempotency-Key': {'value': idempotency_key, 'style': 'simple', 'explode': False},
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
             },
             {}
         )

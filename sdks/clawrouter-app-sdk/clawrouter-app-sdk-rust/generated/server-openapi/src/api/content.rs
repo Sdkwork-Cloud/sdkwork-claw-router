@@ -1,6 +1,5 @@
 use std::sync::Arc;
 
-use crate::api::base::{RequestHeaders};
 use crate::api::paths::app_path;
 use crate::api::paths::append_query_string;
 use crate::http::{SdkworkError, SdkworkHttpClient};
@@ -29,15 +28,9 @@ impl ContentApi {
     }
 
     /// Create forum comment
-    pub async fn comments_create(&self, body: &ForumCreateCommentRequest, x_request_id: Option<&str>) -> Result<CommentsCreateResult, SdkworkError> {
+    pub async fn comments_create(&self, body: &ForumCreateCommentRequest) -> Result<CommentsCreateResult, SdkworkError> {
         let path = app_path(&"/content/comments".to_string());
-        let headers = build_request_headers(
-            &[
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
-            ],
-            &[],
-        );
-        self.client.post(&path, Some(body), None, headers.as_ref(), Some("application/json")).await
+        self.client.post(&path, Some(body), None, None, Some("application/json")).await
     }
 
     /// List forum comment statistics
@@ -63,15 +56,9 @@ impl ContentApi {
     }
 
     /// Like forum comment
-    pub async fn comments_likes_create(&self, comment_id: &str, x_request_id: Option<&str>) -> Result<CommentsLikesCreateResult, SdkworkError> {
+    pub async fn comments_likes_create(&self, comment_id: &str) -> Result<CommentsLikesCreateResult, SdkworkError> {
         let path = app_path(&format!("/content/comments/{}/likes", serialize_path_parameter(comment_id, PathParameterSpec::new("commentId", "simple", false))));
-        let headers = build_request_headers(
-            &[
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
-            ],
-            &[],
-        );
-        self.client.post(&path, Option::<&serde_json::Value>::None, None, headers.as_ref(), None).await
+        self.client.post(&path, Option::<&serde_json::Value>::None, None, None, None).await
     }
 
     /// Unlike forum comment
@@ -81,15 +68,9 @@ impl ContentApi {
     }
 
     /// Pin forum comment
-    pub async fn comments_pins_create(&self, comment_id: &str, x_request_id: Option<&str>) -> Result<CommentsPinsCreateResult, SdkworkError> {
+    pub async fn comments_pins_create(&self, comment_id: &str) -> Result<CommentsPinsCreateResult, SdkworkError> {
         let path = app_path(&format!("/content/comments/{}/pins", serialize_path_parameter(comment_id, PathParameterSpec::new("commentId", "simple", false))));
-        let headers = build_request_headers(
-            &[
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
-            ],
-            &[],
-        );
-        self.client.post(&path, Option::<&serde_json::Value>::None, None, headers.as_ref(), None).await
+        self.client.post(&path, Option::<&serde_json::Value>::None, None, None, None).await
     }
 
     /// Unpin forum comment
@@ -109,15 +90,9 @@ impl ContentApi {
     }
 
     /// Reply forum comment
-    pub async fn comments_reply_create(&self, comment_id: &str, body: &ForumReplyCommentRequest, x_request_id: Option<&str>) -> Result<CommentsReplyCreateResult, SdkworkError> {
+    pub async fn comments_reply_create(&self, comment_id: &str, body: &ForumReplyCommentRequest) -> Result<CommentsReplyCreateResult, SdkworkError> {
         let path = app_path(&format!("/content/comments/{}/reply", serialize_path_parameter(comment_id, PathParameterSpec::new("commentId", "simple", false))));
-        let headers = build_request_headers(
-            &[
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
-            ],
-            &[],
-        );
-        self.client.post(&path, Some(body), None, headers.as_ref(), Some("application/json")).await
+        self.client.post(&path, Some(body), None, None, Some("application/json")).await
     }
 
     /// List forum feeds
@@ -135,15 +110,9 @@ impl ContentApi {
     }
 
     /// Create forum feed
-    pub async fn feeds_create(&self, body: &ForumCreateFeedRequest, x_request_id: Option<&str>) -> Result<FeedsCreateResult, SdkworkError> {
+    pub async fn feeds_create(&self, body: &ForumCreateFeedRequest) -> Result<FeedsCreateResult, SdkworkError> {
         let path = app_path(&"/content/feeds".to_string());
-        let headers = build_request_headers(
-            &[
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
-            ],
-            &[],
-        );
-        self.client.post(&path, Some(body), None, headers.as_ref(), Some("application/json")).await
+        self.client.post(&path, Some(body), None, None, Some("application/json")).await
     }
 
     /// List category forum feeds
@@ -220,30 +189,18 @@ impl ContentApi {
     }
 
     /// Collect forum feed
-    pub async fn feeds_collections_create(&self, id: &str, folder_id: Option<i64>, x_request_id: Option<&str>) -> Result<FeedsCollectionsCreateResult, SdkworkError> {
+    pub async fn feeds_collections_create(&self, id: &str, folder_id: Option<i64>) -> Result<FeedsCollectionsCreateResult, SdkworkError> {
         let query = build_query_string(&[
             QueryParameterSpec::new("folder_id", folder_id, "form", true, false, None),
         ]);
         let path = append_query_string(app_path(&format!("/content/feeds/{}/collections", serialize_path_parameter(id, PathParameterSpec::new("id", "simple", false)))), &query);
-        let headers = build_request_headers(
-            &[
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
-            ],
-            &[],
-        );
-        self.client.post(&path, Option::<&serde_json::Value>::None, None, headers.as_ref(), None).await
+        self.client.post(&path, Option::<&serde_json::Value>::None, None, None, None).await
     }
 
     /// Uncollect forum feed
-    pub async fn feeds_collections_current_delete(&self, id: &str, x_request_id: Option<&str>) -> Result<FeedsCollectionsCurrentDeleteResult, SdkworkError> {
+    pub async fn feeds_collections_current_delete(&self, id: &str) -> Result<FeedsCollectionsCurrentDeleteResult, SdkworkError> {
         let path = app_path(&format!("/content/feeds/{}/collections/current", serialize_path_parameter(id, PathParameterSpec::new("id", "simple", false))));
-        let headers = build_request_headers(
-            &[
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
-            ],
-            &[],
-        );
-        self.client.delete(&path, None, headers.as_ref()).await
+        self.client.delete(&path, None, None).await
     }
 
     /// Check forum feed collected
@@ -253,39 +210,21 @@ impl ContentApi {
     }
 
     /// Like forum feed
-    pub async fn feeds_likes_create(&self, id: &str, x_request_id: Option<&str>) -> Result<FeedsLikesCreateResult, SdkworkError> {
+    pub async fn feeds_likes_create(&self, id: &str) -> Result<FeedsLikesCreateResult, SdkworkError> {
         let path = app_path(&format!("/content/feeds/{}/likes", serialize_path_parameter(id, PathParameterSpec::new("id", "simple", false))));
-        let headers = build_request_headers(
-            &[
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
-            ],
-            &[],
-        );
-        self.client.post(&path, Option::<&serde_json::Value>::None, None, headers.as_ref(), None).await
+        self.client.post(&path, Option::<&serde_json::Value>::None, None, None, None).await
     }
 
     /// Unlike forum feed
-    pub async fn feeds_likes_current_delete(&self, id: &str, x_request_id: Option<&str>) -> Result<FeedsLikesCurrentDeleteResult, SdkworkError> {
+    pub async fn feeds_likes_current_delete(&self, id: &str) -> Result<FeedsLikesCurrentDeleteResult, SdkworkError> {
         let path = app_path(&format!("/content/feeds/{}/likes/current", serialize_path_parameter(id, PathParameterSpec::new("id", "simple", false))));
-        let headers = build_request_headers(
-            &[
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
-            ],
-            &[],
-        );
-        self.client.delete(&path, None, headers.as_ref()).await
+        self.client.delete(&path, None, None).await
     }
 
     /// Share forum feed
-    pub async fn feeds_shares_create(&self, id: &str, x_request_id: Option<&str>) -> Result<FeedsSharesCreateResult, SdkworkError> {
+    pub async fn feeds_shares_create(&self, id: &str) -> Result<FeedsSharesCreateResult, SdkworkError> {
         let path = app_path(&format!("/content/feeds/{}/shares", serialize_path_parameter(id, PathParameterSpec::new("id", "simple", false))));
-        let headers = build_request_headers(
-            &[
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
-            ],
-            &[],
-        );
-        self.client.post(&path, Option::<&serde_json::Value>::None, None, headers.as_ref(), None).await
+        self.client.post(&path, Option::<&serde_json::Value>::None, None, None, None).await
     }
 
     /// List my forum comments
@@ -441,118 +380,6 @@ fn path_primitive_prefix(name: &str, style: &str) -> String {
     }
 }
 
-struct HeaderParameterSpec {
-    value: serde_json::Value,
-    explode: bool,
-    content_type: Option<&'static str>,
-}
-
-impl HeaderParameterSpec {
-    fn new<T: serde::Serialize>(
-        value: T,
-        _style: &'static str,
-        explode: bool,
-        content_type: Option<&'static str>,
-    ) -> Self {
-        Self {
-            value: serde_json::to_value(value).unwrap_or(serde_json::Value::Null),
-            explode,
-            content_type,
-        }
-    }
-}
-
-fn build_request_headers(headers: &[(&str, HeaderParameterSpec)], cookies: &[(&str, HeaderParameterSpec)]) -> Option<RequestHeaders> {
-    let mut request_headers = RequestHeaders::new();
-    for (name, parameter) in headers {
-        if let Some(value) = serialize_header_parameter(parameter) {
-            request_headers.insert((*name).to_string(), value);
-        }
-    }
-
-    let cookie_header = build_cookie_header(cookies);
-    if !cookie_header.is_empty() {
-        request_headers
-            .entry("Cookie".to_string())
-            .and_modify(|existing| {
-                existing.push_str("; ");
-                existing.push_str(&cookie_header);
-            })
-            .or_insert(cookie_header);
-    }
-
-    if request_headers.is_empty() {
-        None
-    } else {
-        Some(request_headers)
-    }
-}
-
-fn build_cookie_header(cookies: &[(&str, HeaderParameterSpec)]) -> String {
-    cookies
-        .iter()
-        .filter_map(|(name, value)| {
-            serialize_header_parameter(value)
-                .map(|value| format!("{}={}", percent_encode(name), percent_encode(&value)))
-        })
-        .collect::<Vec<_>>()
-        .join("; ")
-}
-
-fn serialize_header_parameter(parameter: &HeaderParameterSpec) -> Option<String> {
-    if parameter.value.is_null() {
-        return None;
-    }
-    if parameter.content_type.is_some() {
-        return Some(parameter.value.to_string());
-    }
-    match &parameter.value {
-        serde_json::Value::Null => None,
-        serde_json::Value::String(value) => Some(value.clone()),
-        serde_json::Value::Number(value) => Some(value.to_string()),
-        serde_json::Value::Bool(value) => Some(value.to_string()),
-        serde_json::Value::Array(values) => {
-            let serialized = values
-                .iter()
-                .filter_map(serialize_json_value)
-                .collect::<Vec<_>>();
-            if serialized.is_empty() {
-                None
-            } else {
-                Some(serialized.join(","))
-            }
-        }
-        serde_json::Value::Object(values) => {
-            let serialized = values
-                .iter()
-                .filter_map(|(key, value)| {
-                    serialize_json_value(value).map(|serialized| {
-                        if parameter.explode {
-                            format!("{}={}", key, serialized)
-                        } else {
-                            format!("{},{}", key, serialized)
-                        }
-                    })
-                })
-                .collect::<Vec<_>>();
-            if serialized.is_empty() {
-                None
-            } else {
-                Some(serialized.join(","))
-            }
-        }
-    }
-}
-
-fn serialize_json_value(value: &serde_json::Value) -> Option<String> {
-    match value {
-        serde_json::Value::Null => None,
-        serde_json::Value::String(value) => Some(value.clone()),
-        serde_json::Value::Number(value) => Some(value.to_string()),
-        serde_json::Value::Bool(value) => Some(value.to_string()),
-        other => Some(other.to_string()),
-    }
-}
 
 struct QueryParameterSpec<'a> {
     name: &'a str,

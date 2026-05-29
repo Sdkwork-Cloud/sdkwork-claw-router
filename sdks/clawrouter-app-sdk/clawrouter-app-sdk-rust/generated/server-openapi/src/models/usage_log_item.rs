@@ -80,7 +80,7 @@ pub struct UsageLogItem {
     #[serde(rename = "requestId")]
     pub request_id: String,
 
-    /// Routed catalog model identity in vendor/region/model form, for example openai/global/gpt-5.5.
+    /// Routed base catalog model identity in vendor/model form, for example openai/gpt-5.5. Region-specific pricing or ranking keys are stored separately from the routed model identity.
     #[serde(rename = "requestedModelCatalogKey")]
     pub requested_model_catalog_key: String,
 
@@ -103,4 +103,8 @@ pub struct UsageLogItem {
 
     /// Type field on usage log item.
     pub r#type: String,
+
+    /// Full HTTP User-Agent header captured from the gateway request. Empty when the client omitted the header.
+    #[serde(rename = "userAgent")]
+    pub user_agent: String,
 }

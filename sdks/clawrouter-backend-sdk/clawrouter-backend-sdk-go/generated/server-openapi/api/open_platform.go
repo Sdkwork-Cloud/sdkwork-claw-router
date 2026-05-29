@@ -35,12 +35,8 @@ func (a *OpenPlatformApi) AccountsList(provider *string, type_ *string, status *
 }
 
 // Create open platform account
-func (a *OpenPlatformApi) AccountsCreate(body sdktypes.OpenPlatformAccountCreateRequest, xRequestId *string) (sdktypes.AccountsCreateResult, error) {
-    headers := BuildRequestHeaders(
-        map[string]ParameterSpec{"X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},},
-        map[string]ParameterSpec{},
-    )
-    raw, err := a.client.Post(BackendApiPath("/open_platform/accounts"), body, nil, headers, "application/json")
+func (a *OpenPlatformApi) AccountsCreate(body sdktypes.OpenPlatformAccountCreateRequest) (sdktypes.AccountsCreateResult, error) {
+    raw, err := a.client.Post(BackendApiPath("/open_platform/accounts"), body, nil, nil, "application/json")
     if err != nil {
         var zero sdktypes.AccountsCreateResult
         return zero, err
@@ -49,12 +45,8 @@ func (a *OpenPlatformApi) AccountsCreate(body sdktypes.OpenPlatformAccountCreate
 }
 
 // Delete open platform account
-func (a *OpenPlatformApi) AccountsDelete(accountId string, xRequestId *string) (sdktypes.AccountsDeleteResult, error) {
-    headers := BuildRequestHeaders(
-        map[string]ParameterSpec{"X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},},
-        map[string]ParameterSpec{},
-    )
-    raw, err := a.client.Delete(BackendApiPath(fmt.Sprintf("/open_platform/accounts/%s", SerializePathParameter(accountId, PathParameterSpec{Name: "accountId", Style: "simple", Explode: false}))), nil, headers)
+func (a *OpenPlatformApi) AccountsDelete(accountId string) (sdktypes.AccountsDeleteResult, error) {
+    raw, err := a.client.Delete(BackendApiPath(fmt.Sprintf("/open_platform/accounts/%s", SerializePathParameter(accountId, PathParameterSpec{Name: "accountId", Style: "simple", Explode: false}))), nil, nil)
     if err != nil {
         var zero sdktypes.AccountsDeleteResult
         return zero, err
@@ -73,12 +65,8 @@ func (a *OpenPlatformApi) AccountsRetrieve(accountId string) (sdktypes.AccountsR
 }
 
 // Update open platform account
-func (a *OpenPlatformApi) AccountsUpdate(accountId string, body sdktypes.OpenPlatformAccountUpdateRequest, xRequestId *string) (sdktypes.AccountsUpdateResult, error) {
-    headers := BuildRequestHeaders(
-        map[string]ParameterSpec{"X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},},
-        map[string]ParameterSpec{},
-    )
-    raw, err := a.client.Patch(BackendApiPath(fmt.Sprintf("/open_platform/accounts/%s", SerializePathParameter(accountId, PathParameterSpec{Name: "accountId", Style: "simple", Explode: false}))), body, nil, headers, "application/json")
+func (a *OpenPlatformApi) AccountsUpdate(accountId string, body sdktypes.OpenPlatformAccountUpdateRequest) (sdktypes.AccountsUpdateResult, error) {
+    raw, err := a.client.Patch(BackendApiPath(fmt.Sprintf("/open_platform/accounts/%s", SerializePathParameter(accountId, PathParameterSpec{Name: "accountId", Style: "simple", Explode: false}))), body, nil, nil, "application/json")
     if err != nil {
         var zero sdktypes.AccountsUpdateResult
         return zero, err
@@ -97,12 +85,8 @@ func (a *OpenPlatformApi) AccountsEntriesList(accountId string) (sdktypes.Accoun
 }
 
 // Create open platform account entry
-func (a *OpenPlatformApi) AccountsEntriesCreate(accountId string, body sdktypes.OpenPlatformEntryCreateRequest, xRequestId *string) (sdktypes.AccountsEntriesCreateResult, error) {
-    headers := BuildRequestHeaders(
-        map[string]ParameterSpec{"X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},},
-        map[string]ParameterSpec{},
-    )
-    raw, err := a.client.Post(BackendApiPath(fmt.Sprintf("/open_platform/accounts/%s/entries", SerializePathParameter(accountId, PathParameterSpec{Name: "accountId", Style: "simple", Explode: false}))), body, nil, headers, "application/json")
+func (a *OpenPlatformApi) AccountsEntriesCreate(accountId string, body sdktypes.OpenPlatformEntryCreateRequest) (sdktypes.AccountsEntriesCreateResult, error) {
+    raw, err := a.client.Post(BackendApiPath(fmt.Sprintf("/open_platform/accounts/%s/entries", SerializePathParameter(accountId, PathParameterSpec{Name: "accountId", Style: "simple", Explode: false}))), body, nil, nil, "application/json")
     if err != nil {
         var zero sdktypes.AccountsEntriesCreateResult
         return zero, err
@@ -111,12 +95,8 @@ func (a *OpenPlatformApi) AccountsEntriesCreate(accountId string, body sdktypes.
 }
 
 // Delete open platform account entry
-func (a *OpenPlatformApi) AccountsEntriesDelete(accountId string, entryId string, xRequestId *string) (sdktypes.AccountsEntriesDeleteResult, error) {
-    headers := BuildRequestHeaders(
-        map[string]ParameterSpec{"X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},},
-        map[string]ParameterSpec{},
-    )
-    raw, err := a.client.Delete(BackendApiPath(fmt.Sprintf("/open_platform/accounts/%s/entries/%s", SerializePathParameter(accountId, PathParameterSpec{Name: "accountId", Style: "simple", Explode: false}), SerializePathParameter(entryId, PathParameterSpec{Name: "entryId", Style: "simple", Explode: false}))), nil, headers)
+func (a *OpenPlatformApi) AccountsEntriesDelete(accountId string, entryId string) (sdktypes.AccountsEntriesDeleteResult, error) {
+    raw, err := a.client.Delete(BackendApiPath(fmt.Sprintf("/open_platform/accounts/%s/entries/%s", SerializePathParameter(accountId, PathParameterSpec{Name: "accountId", Style: "simple", Explode: false}), SerializePathParameter(entryId, PathParameterSpec{Name: "entryId", Style: "simple", Explode: false}))), nil, nil)
     if err != nil {
         var zero sdktypes.AccountsEntriesDeleteResult
         return zero, err
@@ -125,12 +105,8 @@ func (a *OpenPlatformApi) AccountsEntriesDelete(accountId string, entryId string
 }
 
 // Update open platform account entry
-func (a *OpenPlatformApi) AccountsEntriesUpdate(accountId string, entryId string, body sdktypes.OpenPlatformEntryUpdateRequest, xRequestId *string) (sdktypes.AccountsEntriesUpdateResult, error) {
-    headers := BuildRequestHeaders(
-        map[string]ParameterSpec{"X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},},
-        map[string]ParameterSpec{},
-    )
-    raw, err := a.client.Patch(BackendApiPath(fmt.Sprintf("/open_platform/accounts/%s/entries/%s", SerializePathParameter(accountId, PathParameterSpec{Name: "accountId", Style: "simple", Explode: false}), SerializePathParameter(entryId, PathParameterSpec{Name: "entryId", Style: "simple", Explode: false}))), body, nil, headers, "application/json")
+func (a *OpenPlatformApi) AccountsEntriesUpdate(accountId string, entryId string, body sdktypes.OpenPlatformEntryUpdateRequest) (sdktypes.AccountsEntriesUpdateResult, error) {
+    raw, err := a.client.Patch(BackendApiPath(fmt.Sprintf("/open_platform/accounts/%s/entries/%s", SerializePathParameter(accountId, PathParameterSpec{Name: "accountId", Style: "simple", Explode: false}), SerializePathParameter(entryId, PathParameterSpec{Name: "entryId", Style: "simple", Explode: false}))), body, nil, nil, "application/json")
     if err != nil {
         var zero sdktypes.AccountsEntriesUpdateResult
         return zero, err
@@ -149,12 +125,8 @@ func (a *OpenPlatformApi) AccountsPayBindingsList(accountId string) (sdktypes.Ac
 }
 
 // Create open platform account pay binding
-func (a *OpenPlatformApi) AccountsPayBindingsCreate(accountId string, body sdktypes.OpenPlatformPayBindingCreateRequest, xRequestId *string) (sdktypes.AccountsPayBindingsCreateResult, error) {
-    headers := BuildRequestHeaders(
-        map[string]ParameterSpec{"X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},},
-        map[string]ParameterSpec{},
-    )
-    raw, err := a.client.Post(BackendApiPath(fmt.Sprintf("/open_platform/accounts/%s/pay_bindings", SerializePathParameter(accountId, PathParameterSpec{Name: "accountId", Style: "simple", Explode: false}))), body, nil, headers, "application/json")
+func (a *OpenPlatformApi) AccountsPayBindingsCreate(accountId string, body sdktypes.OpenPlatformPayBindingCreateRequest) (sdktypes.AccountsPayBindingsCreateResult, error) {
+    raw, err := a.client.Post(BackendApiPath(fmt.Sprintf("/open_platform/accounts/%s/pay_bindings", SerializePathParameter(accountId, PathParameterSpec{Name: "accountId", Style: "simple", Explode: false}))), body, nil, nil, "application/json")
     if err != nil {
         var zero sdktypes.AccountsPayBindingsCreateResult
         return zero, err
@@ -163,12 +135,8 @@ func (a *OpenPlatformApi) AccountsPayBindingsCreate(accountId string, body sdkty
 }
 
 // Delete open platform account pay binding
-func (a *OpenPlatformApi) AccountsPayBindingsDelete(accountId string, bindingId string, xRequestId *string) (sdktypes.AccountsPayBindingsDeleteResult, error) {
-    headers := BuildRequestHeaders(
-        map[string]ParameterSpec{"X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},},
-        map[string]ParameterSpec{},
-    )
-    raw, err := a.client.Delete(BackendApiPath(fmt.Sprintf("/open_platform/accounts/%s/pay_bindings/%s", SerializePathParameter(accountId, PathParameterSpec{Name: "accountId", Style: "simple", Explode: false}), SerializePathParameter(bindingId, PathParameterSpec{Name: "bindingId", Style: "simple", Explode: false}))), nil, headers)
+func (a *OpenPlatformApi) AccountsPayBindingsDelete(accountId string, bindingId string) (sdktypes.AccountsPayBindingsDeleteResult, error) {
+    raw, err := a.client.Delete(BackendApiPath(fmt.Sprintf("/open_platform/accounts/%s/pay_bindings/%s", SerializePathParameter(accountId, PathParameterSpec{Name: "accountId", Style: "simple", Explode: false}), SerializePathParameter(bindingId, PathParameterSpec{Name: "bindingId", Style: "simple", Explode: false}))), nil, nil)
     if err != nil {
         var zero sdktypes.AccountsPayBindingsDeleteResult
         return zero, err
@@ -429,92 +397,7 @@ func EncodeQueryValue(value string, allowReserved bool) string {
 }
 
 
-type ParameterSpec struct {
-    Value       interface{}
-    Style       string
-    Explode     bool
-    ContentType string
-}
 
-func BuildRequestHeaders(headers map[string]ParameterSpec, cookies map[string]ParameterSpec) map[string]string {
-    requestHeaders := map[string]string{}
-    for name, parameter := range headers {
-        if serialized, ok := SerializeParameterValue(parameter); ok {
-            requestHeaders[name] = serialized
-        }
-    }
-
-    if cookieHeader := BuildCookieHeader(cookies); cookieHeader != "" {
-        if existing, ok := requestHeaders["Cookie"]; ok && existing != "" {
-            requestHeaders["Cookie"] = existing + "; " + cookieHeader
-        } else {
-            requestHeaders["Cookie"] = cookieHeader
-        }
-    }
-
-    if len(requestHeaders) == 0 {
-        return nil
-    }
-    return requestHeaders
-}
-
-func BuildCookieHeader(cookies map[string]ParameterSpec) string {
-    pairs := make([]string, 0, len(cookies))
-    for name, parameter := range cookies {
-        if serialized, ok := SerializeParameterValue(parameter); ok {
-            pairs = append(pairs, url.QueryEscape(name)+"="+url.QueryEscape(serialized))
-        }
-    }
-    return strings.Join(pairs, "; ")
-}
-
-func SerializeParameterValue(parameter ParameterSpec) (string, bool) {
-    value := parameter.Value
-    if value == nil {
-        return "", false
-    }
-    if parameter.ContentType != "" {
-        encoded, _ := json.Marshal(value)
-        return string(encoded), true
-    }
-    switch typed := value.(type) {
-    case string:
-        return typed, true
-    case fmt.Stringer:
-        return typed.String(), true
-    case []string:
-        return strings.Join(typed, ","), true
-    case []int:
-        values := make([]string, 0, len(typed))
-        for _, item := range typed {
-            values = append(values, fmt.Sprint(item))
-        }
-        return strings.Join(values, ","), true
-    case map[string]string:
-        return SerializeHeaderObject(stringMapToInterface(typed), parameter.Explode), true
-    case map[string]int:
-        return SerializeHeaderObject(intMapToInterface(typed), parameter.Explode), true
-    case map[string]interface{}:
-        return SerializeHeaderObject(typed, parameter.Explode), true
-    default:
-        return fmt.Sprint(value), true
-    }
-}
-
-func SerializeHeaderObject(values map[string]interface{}, explode bool) string {
-    serialized := make([]string, 0, len(values)*2)
-    for key, value := range values {
-        if value == nil {
-            continue
-        }
-        if explode {
-            serialized = append(serialized, key+"="+fmt.Sprint(value))
-        } else {
-            serialized = append(serialized, key, fmt.Sprint(value))
-        }
-    }
-    return strings.Join(serialized, ",")
-}
 func stringSliceToInterface(values []string) []interface{} {
     result := make([]interface{}, 0, len(values))
     for _, value := range values {

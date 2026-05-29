@@ -29,14 +29,8 @@ public class AiApi {
     }
 
     /// Trigger model ranking refresh
-    public func modelRankingsRefresh(body: ModelRankingRefreshTriggerRequest, xRequestId: String? = nil) async throws -> ModelRankingsRefreshResult? {
-        let requestHeaders = buildRequestHeaders(
-            [
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
-            ],
-            [:]
-        )
-        return try await client.post(ApiPaths.backendPath("/ai/model_rankings/refresh"), body: body, params: nil, headers: requestHeaders, contentType: "application/json", responseType: ModelRankingsRefreshResult.self)
+    public func modelRankingsRefresh(body: ModelRankingRefreshTriggerRequest) async throws -> ModelRankingsRefreshResult? {
+        return try await client.post(ApiPaths.backendPath("/ai/model_rankings/refresh"), body: body, params: nil, headers: nil, contentType: "application/json", responseType: ModelRankingsRefreshResult.self)
     }
 
     /// List model ranking refresh status
@@ -53,14 +47,8 @@ public class AiApi {
     }
 
     /// Create vendor
-    public func modelVendorsCreate(body: AdminModelVendorCreateRequest, xRequestId: String? = nil) async throws -> ModelVendorsCreateResult? {
-        let requestHeaders = buildRequestHeaders(
-            [
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
-            ],
-            [:]
-        )
-        return try await client.post(ApiPaths.backendPath("/ai/model_vendors"), body: body, params: nil, headers: requestHeaders, contentType: "application/json", responseType: ModelVendorsCreateResult.self)
+    public func modelVendorsCreate(body: AdminModelVendorCreateRequest) async throws -> ModelVendorsCreateResult? {
+        return try await client.post(ApiPaths.backendPath("/ai/model_vendors"), body: body, params: nil, headers: nil, contentType: "application/json", responseType: ModelVendorsCreateResult.self)
     }
 
     /// List models
@@ -69,25 +57,13 @@ public class AiApi {
     }
 
     /// Create model
-    public func modelsCreate(body: AdminAiModelCreateRequest, xRequestId: String? = nil) async throws -> ModelsCreateResult? {
-        let requestHeaders = buildRequestHeaders(
-            [
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
-            ],
-            [:]
-        )
-        return try await client.post(ApiPaths.backendPath("/ai/models"), body: body, params: nil, headers: requestHeaders, contentType: "application/json", responseType: ModelsCreateResult.self)
+    public func modelsCreate(body: AdminAiModelCreateRequest) async throws -> ModelsCreateResult? {
+        return try await client.post(ApiPaths.backendPath("/ai/models"), body: body, params: nil, headers: nil, contentType: "application/json", responseType: ModelsCreateResult.self)
     }
 
     /// Sync vendors and models
-    public func modelsRefresh(body: AdminModelCatalogSyncRequest, xRequestId: String? = nil) async throws -> ModelsRefreshResult? {
-        let requestHeaders = buildRequestHeaders(
-            [
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
-            ],
-            [:]
-        )
-        return try await client.post(ApiPaths.backendPath("/ai/models/refresh"), body: body, params: nil, headers: requestHeaders, contentType: "application/json", responseType: ModelsRefreshResult.self)
+    public func modelsRefresh(body: AdminModelCatalogSyncRequest) async throws -> ModelsRefreshResult? {
+        return try await client.post(ApiPaths.backendPath("/ai/models/refresh"), body: body, params: nil, headers: nil, contentType: "application/json", responseType: ModelsRefreshResult.self)
     }
 
     /// Delete model
@@ -96,14 +72,23 @@ public class AiApi {
     }
 
     /// Update model
-    public func modelsUpdate(modelId: String, body: AdminAiModelUpdateRequest, xRequestId: String? = nil) async throws -> ModelsUpdateResult? {
-        let requestHeaders = buildRequestHeaders(
-            [
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
-            ],
-            [:]
-        )
-        return try await client.patch(ApiPaths.backendPath("/ai/models/\(serializePathParameter(modelId, PathParameterSpec(name: "modelId", style: "simple", explode: false)))"), body: body, params: nil, headers: requestHeaders, contentType: "application/json", responseType: ModelsUpdateResult.self)
+    public func modelsUpdate(modelId: String, body: AdminAiModelUpdateRequest) async throws -> ModelsUpdateResult? {
+        return try await client.patch(ApiPaths.backendPath("/ai/models/\(serializePathParameter(modelId, PathParameterSpec(name: "modelId", style: "simple", explode: false)))"), body: body, params: nil, headers: nil, contentType: "application/json", responseType: ModelsUpdateResult.self)
+    }
+
+    /// List ai resources
+    public func resourcesList() async throws -> AiResourcesListResult? {
+        return try await client.get(ApiPaths.backendPath("/ai/resources"), responseType: AiResourcesListResult.self)
+    }
+
+    /// Create ai resource
+    public func resourcesCreate(body: AdminAiResourceCreateRequest) async throws -> AiResourcesCreateResult? {
+        return try await client.post(ApiPaths.backendPath("/ai/resources"), body: body, params: nil, headers: nil, contentType: "application/json", responseType: AiResourcesCreateResult.self)
+    }
+
+    /// Update ai resource
+    public func resourcesUpdate(resourceId: String, body: AdminAiResourceUpdateRequest) async throws -> AiResourcesUpdateResult? {
+        return try await client.put(ApiPaths.backendPath("/ai/resources/\(serializePathParameter(resourceId, PathParameterSpec(name: "resourceId", style: "simple", explode: false)))"), body: body, params: nil, headers: nil, contentType: "application/json", responseType: AiResourcesUpdateResult.self)
     }
 
     private struct PathParameterSpec {
@@ -283,68 +268,4 @@ public class AiApi {
         value.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? value
     }
 
-    private struct HeaderParameterSpec {
-        let value: Any?
-        let style: String
-        let explode: Bool
-        let contentType: String?
-    }
-
-    private func buildRequestHeaders(_ headers: [String: HeaderParameterSpec], _ cookies: [String: HeaderParameterSpec]) -> [String: String]? {
-        var requestHeaders: [String: String] = [:]
-        for (name, parameter) in headers {
-            if let serialized = serializeParameterValue(parameter) {
-                requestHeaders[name] = serialized
-            }
-        }
-
-        if let cookieHeader = buildCookieHeader(cookies), !cookieHeader.isEmpty {
-            requestHeaders["Cookie"] = requestHeaders["Cookie"].map { "\($0); \(cookieHeader)" } ?? cookieHeader
-        }
-
-        return requestHeaders.isEmpty ? nil : requestHeaders
-    }
-
-    private func buildCookieHeader(_ cookies: [String: HeaderParameterSpec]) -> String? {
-        let pairs = cookies.compactMap { name, parameter -> String? in
-            guard let serialized = serializeParameterValue(parameter) else { return nil }
-            return "\(urlEncode(name))=\(urlEncode(serialized))"
-        }
-        return pairs.isEmpty ? nil : pairs.joined(separator: "; ")
-    }
-
-    private func serializeParameterValue(_ parameter: HeaderParameterSpec?) -> String? {
-        guard let parameter, let value = parameter.value else { return nil }
-        if let contentType = parameter.contentType, !contentType.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
-            if JSONSerialization.isValidJSONObject(value),
-               let data = try? JSONSerialization.data(withJSONObject: value, options: []),
-               let json = String(data: data, encoding: .utf8) {
-                return json
-            }
-            return String(describing: value)
-        }
-        if let array = value as? [Any?] {
-            return array.compactMap { $0.map { String(describing: $0) } }.joined(separator: ",")
-        }
-        if let object = value as? [String: Any] {
-            var values: [String] = []
-            for (key, item) in object {
-                if parameter.explode {
-                    values.append("\(key)=\(item)")
-                } else {
-                    values.append(key)
-                    values.append(String(describing: item))
-                }
-            }
-            return values.joined(separator: ",")
-        }
-        if let date = value as? Date {
-            return ISO8601DateFormatter().string(from: date)
-        }
-        return String(describing: value)
-    }
-
-    private func urlEncode(_ value: String) -> String {
-        value.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? value
-    }
 }

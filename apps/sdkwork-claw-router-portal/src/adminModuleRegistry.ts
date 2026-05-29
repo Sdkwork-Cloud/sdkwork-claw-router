@@ -1,4 +1,4 @@
-import {
+﻿import {
   Activity,
   BadgePercent,
   BarChart3,
@@ -11,6 +11,7 @@ import {
   Database,
   FileText,
   FolderOpen,
+  Globe2,
   GraduationCap,
   HardDrive,
   Handshake,
@@ -169,7 +170,7 @@ export const ADMIN_MODULES: AdminModuleDef[] = [
     nameKey: 'admin.header.operations',
     icon: Wrench,
     defaultPath: '/admin/monitor',
-    pathPrefixes: ['/admin/ratelimit', '/admin/monitor', '/admin/cache', '/admin/service-nodes', '/admin/settings', '/admin/site'],
+    pathPrefixes: ['/admin/ratelimit', '/admin/monitor', '/admin/cache', '/admin/service-nodes', '/admin/settings', '/admin/runtime-region', '/admin/site'],
   }),
   moduleBlock({
     id: 'messagingCenter',
@@ -203,6 +204,8 @@ export const ADMIN_MODULE_MENUS: AdminModuleMenu[] = [
       groupBlock('admin.menu.home.accountPoolManagement', [
         itemBlock({ path: '/admin/group', labelKey: 'admin.menu.groups', icon: UserCog }),
         itemBlock({ path: '/admin/channel', labelKey: 'admin.menu.channels', icon: Network }),
+        itemBlock({ path: '/admin/channel/resources', labelKey: 'admin.menu.aiResources', icon: Boxes, iconColor: 'text-indigo-500' }),
+        itemBlock({ path: '/admin/channel/endpoints', labelKey: 'admin.menu.channelEndpoints', icon: Server, iconColor: 'text-cyan-500' }),
       ]),
       groupBlock('admin.menu.home.agentSkills', [
         itemBlock({ path: '/admin/agents', labelKey: 'admin.menu.agents', icon: Bot }),
@@ -399,6 +402,7 @@ export const ADMIN_MODULE_MENUS: AdminModuleMenu[] = [
       ]),
       groupBlock('admin.menu.ops.system', [
         itemBlock({ path: '/admin/settings', labelKey: 'admin.menu.authSettings', icon: ShieldCheck, iconColor: 'text-blue-500' }),
+        itemBlock({ path: '/admin/runtime-region', labelKey: 'admin.menu.runtimeRegion', icon: Globe2, iconColor: 'text-cyan-500' }),
         itemBlock({ path: '/admin/site', labelKey: 'admin.menu.siteSettings', icon: Settings, iconColor: 'text-indigo-500' }),
       ]),
     ],

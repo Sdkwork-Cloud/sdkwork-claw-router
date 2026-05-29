@@ -17,24 +17,17 @@ impl MessagingApi {
     }
 
     /// Messaging route simulation
-    pub async fn diagnostics_route_simulation_create(&self, body: &MessagingRouteSimulationRequest, x_request_id: Option<&str>) -> Result<DiagnosticsRouteSimulationCreateResult, SdkworkError> {
+    pub async fn diagnostics_route_simulation_create(&self, body: &MessagingRouteSimulationRequest) -> Result<DiagnosticsRouteSimulationCreateResult, SdkworkError> {
         let path = backend_path(&"/messaging/diagnostics/route_simulation".to_string());
-        let headers = build_request_headers(
-            &[
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
-            ],
-            &[],
-        );
-        self.client.post(&path, Some(body), None, headers.as_ref(), Some("application/json")).await
+        self.client.post(&path, Some(body), None, None, Some("application/json")).await
     }
 
     /// Messaging test send
-    pub async fn diagnostics_test_sends_create(&self, body: &MessagingTestSendRequest, idempotency_key: &str, x_request_id: Option<&str>) -> Result<DiagnosticsTestSendsCreateResult, SdkworkError> {
+    pub async fn diagnostics_test_sends_create(&self, body: &MessagingTestSendRequest, idempotency_key: &str) -> Result<DiagnosticsTestSendsCreateResult, SdkworkError> {
         let path = backend_path(&"/messaging/diagnostics/test_sends".to_string());
         let headers = build_request_headers(
             &[
                 ("Idempotency-Key", HeaderParameterSpec::new(idempotency_key, "simple", false, None)),
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
             ],
             &[],
         );
@@ -56,12 +49,11 @@ impl MessagingApi {
     }
 
     /// Messaging provider account create
-    pub async fn provider_accounts_create(&self, body: &MessagingProviderAccountCreateRequest, idempotency_key: &str, x_request_id: Option<&str>) -> Result<ProviderAccountsCreateResult, SdkworkError> {
+    pub async fn provider_accounts_create(&self, body: &MessagingProviderAccountCreateRequest, idempotency_key: &str) -> Result<ProviderAccountsCreateResult, SdkworkError> {
         let path = backend_path(&"/messaging/provider_accounts".to_string());
         let headers = build_request_headers(
             &[
                 ("Idempotency-Key", HeaderParameterSpec::new(idempotency_key, "simple", false, None)),
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
             ],
             &[],
         );
@@ -98,12 +90,11 @@ impl MessagingApi {
     }
 
     /// Messaging route rule create
-    pub async fn route_rules_create(&self, body: &MessagingRouteRuleCreateRequest, idempotency_key: &str, x_request_id: Option<&str>) -> Result<RouteRulesCreateResult, SdkworkError> {
+    pub async fn route_rules_create(&self, body: &MessagingRouteRuleCreateRequest, idempotency_key: &str) -> Result<RouteRulesCreateResult, SdkworkError> {
         let path = backend_path(&"/messaging/route_rules".to_string());
         let headers = build_request_headers(
             &[
                 ("Idempotency-Key", HeaderParameterSpec::new(idempotency_key, "simple", false, None)),
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
             ],
             &[],
         );
@@ -140,12 +131,11 @@ impl MessagingApi {
     }
 
     /// Messaging sender identity create
-    pub async fn sender_identities_create(&self, body: &MessagingSenderIdentityCreateRequest, idempotency_key: &str, x_request_id: Option<&str>) -> Result<SenderIdentitiesCreateResult, SdkworkError> {
+    pub async fn sender_identities_create(&self, body: &MessagingSenderIdentityCreateRequest, idempotency_key: &str) -> Result<SenderIdentitiesCreateResult, SdkworkError> {
         let path = backend_path(&"/messaging/sender_identities".to_string());
         let headers = build_request_headers(
             &[
                 ("Idempotency-Key", HeaderParameterSpec::new(idempotency_key, "simple", false, None)),
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
             ],
             &[],
         );
@@ -167,12 +157,11 @@ impl MessagingApi {
     }
 
     /// Messaging suppression create
-    pub async fn suppressions_create(&self, body: &MessagingSuppressionCreateRequest, idempotency_key: &str, x_request_id: Option<&str>) -> Result<SuppressionsCreateResult, SdkworkError> {
+    pub async fn suppressions_create(&self, body: &MessagingSuppressionCreateRequest, idempotency_key: &str) -> Result<SuppressionsCreateResult, SdkworkError> {
         let path = backend_path(&"/messaging/suppressions".to_string());
         let headers = build_request_headers(
             &[
                 ("Idempotency-Key", HeaderParameterSpec::new(idempotency_key, "simple", false, None)),
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
             ],
             &[],
         );
@@ -180,12 +169,11 @@ impl MessagingApi {
     }
 
     /// Messaging template send
-    pub async fn template_sends_create(&self, body: &MessagingTemplateSendRequest, idempotency_key: &str, x_request_id: Option<&str>) -> Result<TemplateSendsCreateResult, SdkworkError> {
+    pub async fn template_sends_create(&self, body: &MessagingTemplateSendRequest, idempotency_key: &str) -> Result<TemplateSendsCreateResult, SdkworkError> {
         let path = backend_path(&"/messaging/template_sends".to_string());
         let headers = build_request_headers(
             &[
                 ("Idempotency-Key", HeaderParameterSpec::new(idempotency_key, "simple", false, None)),
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
             ],
             &[],
         );
@@ -207,12 +195,11 @@ impl MessagingApi {
     }
 
     /// Messaging template create
-    pub async fn templates_create(&self, body: &MessagingTemplateCreateRequest, idempotency_key: &str, x_request_id: Option<&str>) -> Result<TemplatesCreateResult, SdkworkError> {
+    pub async fn templates_create(&self, body: &MessagingTemplateCreateRequest, idempotency_key: &str) -> Result<TemplatesCreateResult, SdkworkError> {
         let path = backend_path(&"/messaging/templates".to_string());
         let headers = build_request_headers(
             &[
                 ("Idempotency-Key", HeaderParameterSpec::new(idempotency_key, "simple", false, None)),
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
             ],
             &[],
         );
@@ -220,15 +207,9 @@ impl MessagingApi {
     }
 
     /// Messaging template version publish
-    pub async fn templates_versions_publish(&self, template_id: &str, version_id: &str, x_request_id: Option<&str>) -> Result<TemplatesVersionsPublishResult, SdkworkError> {
+    pub async fn templates_versions_publish(&self, template_id: &str, version_id: &str) -> Result<TemplatesVersionsPublishResult, SdkworkError> {
         let path = backend_path(&format!("/messaging/templates/{}/versions/{}/publish", serialize_path_parameter(template_id, PathParameterSpec::new("templateId", "simple", false)), serialize_path_parameter(version_id, PathParameterSpec::new("versionId", "simple", false))));
-        let headers = build_request_headers(
-            &[
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
-            ],
-            &[],
-        );
-        self.client.post(&path, Option::<&serde_json::Value>::None, None, headers.as_ref(), None).await
+        self.client.post(&path, Option::<&serde_json::Value>::None, None, None, None).await
     }
 
     /// Verification policies list
@@ -246,15 +227,9 @@ impl MessagingApi {
     }
 
     /// Verification policy update
-    pub async fn verification_policies_update(&self, policy_id: &str, body: &VerificationPolicyUpdateRequest, x_request_id: Option<&str>) -> Result<VerificationPoliciesUpdateResult, SdkworkError> {
+    pub async fn verification_policies_update(&self, policy_id: &str, body: &VerificationPolicyUpdateRequest) -> Result<VerificationPoliciesUpdateResult, SdkworkError> {
         let path = backend_path(&format!("/messaging/verification_policies/{}", serialize_path_parameter(policy_id, PathParameterSpec::new("policyId", "simple", false))));
-        let headers = build_request_headers(
-            &[
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
-            ],
-            &[],
-        );
-        self.client.put(&path, Some(body), None, headers.as_ref(), Some("application/json")).await
+        self.client.put(&path, Some(body), None, None, Some("application/json")).await
     }
 
 }

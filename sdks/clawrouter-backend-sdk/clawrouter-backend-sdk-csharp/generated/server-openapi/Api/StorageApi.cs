@@ -32,13 +32,12 @@ namespace Sdkwork.ClawRouter.Backend.Api
         /// <summary>
         /// Create storage bucket
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.OssBucketsCreateResult?> OssBucketsCreateAsync(Sdkwork.ClawRouter.Backend.Models.CreateStorageBucketRequest body, string idempotencyKey, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.OssBucketsCreateResult?> OssBucketsCreateAsync(Sdkwork.ClawRouter.Backend.Models.CreateStorageBucketRequest body, string idempotencyKey)
         {
             var requestHeaders = BuildRequestHeaders(
                 new Dictionary<string, HeaderParameterSpec>
                 {
                     ["Idempotency-Key"] = new HeaderParameterSpec(idempotencyKey, "simple", false, null),
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
                 },
                 new Dictionary<string, HeaderParameterSpec>()
             );
@@ -48,16 +47,9 @@ namespace Sdkwork.ClawRouter.Backend.Api
         /// <summary>
         /// Update storage bucket status
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.OssBucketsUpdateResult?> OssBucketsUpdateAsync(string bucketId, Sdkwork.ClawRouter.Backend.Models.UpdateStorageBucketRequest body, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.OssBucketsUpdateResult?> OssBucketsUpdateAsync(string bucketId, Sdkwork.ClawRouter.Backend.Models.UpdateStorageBucketRequest body)
         {
-            var requestHeaders = BuildRequestHeaders(
-                new Dictionary<string, HeaderParameterSpec>
-                {
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
-                },
-                new Dictionary<string, HeaderParameterSpec>()
-            );
-            return await _client.PatchAsync<Sdkwork.ClawRouter.Backend.Models.OssBucketsUpdateResult>(ApiPaths.BackendPath($"/storage/buckets/{SerializePathParameter(bucketId, new PathParameterSpec("bucketId", "simple", false))}"), body, null, requestHeaders, "application/json");
+            return await _client.PatchAsync<Sdkwork.ClawRouter.Backend.Models.OssBucketsUpdateResult>(ApiPaths.BackendPath($"/storage/buckets/{SerializePathParameter(bucketId, new PathParameterSpec("bucketId", "simple", false))}"), body, null, null, "application/json");
         }
 
         /// <summary>
@@ -75,16 +67,9 @@ namespace Sdkwork.ClawRouter.Backend.Api
         /// <summary>
         /// Set default storage bucket route
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.OssDefaultBucketsUpdateResult?> OssDefaultBucketsUpdateAsync(string logicalScope, Sdkwork.ClawRouter.Backend.Models.SetStorageDefaultBucketRequest body, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.OssDefaultBucketsUpdateResult?> OssDefaultBucketsUpdateAsync(string logicalScope, Sdkwork.ClawRouter.Backend.Models.SetStorageDefaultBucketRequest body)
         {
-            var requestHeaders = BuildRequestHeaders(
-                new Dictionary<string, HeaderParameterSpec>
-                {
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
-                },
-                new Dictionary<string, HeaderParameterSpec>()
-            );
-            return await _client.PatchAsync<Sdkwork.ClawRouter.Backend.Models.OssDefaultBucketsUpdateResult>(ApiPaths.BackendPath($"/storage/default_buckets/{SerializePathParameter(logicalScope, new PathParameterSpec("logicalScope", "simple", false))}"), body, null, requestHeaders, "application/json");
+            return await _client.PatchAsync<Sdkwork.ClawRouter.Backend.Models.OssDefaultBucketsUpdateResult>(ApiPaths.BackendPath($"/storage/default_buckets/{SerializePathParameter(logicalScope, new PathParameterSpec("logicalScope", "simple", false))}"), body, null, null, "application/json");
         }
 
         /// <summary>
@@ -104,13 +89,12 @@ namespace Sdkwork.ClawRouter.Backend.Api
         /// <summary>
         /// Create storage garbage collection job
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.OssGcJobsCreateResult?> OssGcJobsCreateAsync(Sdkwork.ClawRouter.Backend.Models.CreateStorageGarbageCollectionJobRequest body, string idempotencyKey, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.OssGcJobsCreateResult?> OssGcJobsCreateAsync(Sdkwork.ClawRouter.Backend.Models.CreateStorageGarbageCollectionJobRequest body, string idempotencyKey)
         {
             var requestHeaders = BuildRequestHeaders(
                 new Dictionary<string, HeaderParameterSpec>
                 {
                     ["Idempotency-Key"] = new HeaderParameterSpec(idempotencyKey, "simple", false, null),
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
                 },
                 new Dictionary<string, HeaderParameterSpec>()
             );
@@ -128,13 +112,12 @@ namespace Sdkwork.ClawRouter.Backend.Api
         /// <summary>
         /// Create storage provider
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.OssProvidersCreateResult?> OssProvidersCreateAsync(Sdkwork.ClawRouter.Backend.Models.CreateStorageProviderRequest body, string idempotencyKey, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.OssProvidersCreateResult?> OssProvidersCreateAsync(Sdkwork.ClawRouter.Backend.Models.CreateStorageProviderRequest body, string idempotencyKey)
         {
             var requestHeaders = BuildRequestHeaders(
                 new Dictionary<string, HeaderParameterSpec>
                 {
                     ["Idempotency-Key"] = new HeaderParameterSpec(idempotencyKey, "simple", false, null),
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
                 },
                 new Dictionary<string, HeaderParameterSpec>()
             );
@@ -144,31 +127,17 @@ namespace Sdkwork.ClawRouter.Backend.Api
         /// <summary>
         /// Update storage provider status
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.OssProvidersUpdateResult?> OssProvidersUpdateAsync(string providerId, Sdkwork.ClawRouter.Backend.Models.UpdateStorageProviderRequest body, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.OssProvidersUpdateResult?> OssProvidersUpdateAsync(string providerId, Sdkwork.ClawRouter.Backend.Models.UpdateStorageProviderRequest body)
         {
-            var requestHeaders = BuildRequestHeaders(
-                new Dictionary<string, HeaderParameterSpec>
-                {
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
-                },
-                new Dictionary<string, HeaderParameterSpec>()
-            );
-            return await _client.PatchAsync<Sdkwork.ClawRouter.Backend.Models.OssProvidersUpdateResult>(ApiPaths.BackendPath($"/storage/providers/{SerializePathParameter(providerId, new PathParameterSpec("providerId", "simple", false))}"), body, null, requestHeaders, "application/json");
+            return await _client.PatchAsync<Sdkwork.ClawRouter.Backend.Models.OssProvidersUpdateResult>(ApiPaths.BackendPath($"/storage/providers/{SerializePathParameter(providerId, new PathParameterSpec("providerId", "simple", false))}"), body, null, null, "application/json");
         }
 
         /// <summary>
         /// Check storage provider health
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.OssProvidersHealthChecksCreateResult?> OssProvidersHealthChecksCreateAsync(string providerId, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.OssProvidersHealthChecksCreateResult?> OssProvidersHealthChecksCreateAsync(string providerId)
         {
-            var requestHeaders = BuildRequestHeaders(
-                new Dictionary<string, HeaderParameterSpec>
-                {
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
-                },
-                new Dictionary<string, HeaderParameterSpec>()
-            );
-            return await _client.PostAsync<Sdkwork.ClawRouter.Backend.Models.OssProvidersHealthChecksCreateResult>(ApiPaths.BackendPath($"/storage/providers/{SerializePathParameter(providerId, new PathParameterSpec("providerId", "simple", false))}/health_check"), null, null, requestHeaders);
+            return await _client.PostAsync<Sdkwork.ClawRouter.Backend.Models.OssProvidersHealthChecksCreateResult>(ApiPaths.BackendPath($"/storage/providers/{SerializePathParameter(providerId, new PathParameterSpec("providerId", "simple", false))}/health_check"), null);
         }
 
         /// <summary>
@@ -182,13 +151,12 @@ namespace Sdkwork.ClawRouter.Backend.Api
         /// <summary>
         /// Create storage quota policy
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.OssQuotasCreateResult?> OssQuotasCreateAsync(Sdkwork.ClawRouter.Backend.Models.CreateStorageQuotaPolicyRequest body, string idempotencyKey, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.OssQuotasCreateResult?> OssQuotasCreateAsync(Sdkwork.ClawRouter.Backend.Models.CreateStorageQuotaPolicyRequest body, string idempotencyKey)
         {
             var requestHeaders = BuildRequestHeaders(
                 new Dictionary<string, HeaderParameterSpec>
                 {
                     ["Idempotency-Key"] = new HeaderParameterSpec(idempotencyKey, "simple", false, null),
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
                 },
                 new Dictionary<string, HeaderParameterSpec>()
             );
@@ -213,13 +181,12 @@ namespace Sdkwork.ClawRouter.Backend.Api
         /// <summary>
         /// Create storage reconciliation run
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.OssReconciliationRunsCreateResult?> OssReconciliationRunsCreateAsync(Sdkwork.ClawRouter.Backend.Models.CreateStorageReconciliationRunRequest body, string idempotencyKey, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.OssReconciliationRunsCreateResult?> OssReconciliationRunsCreateAsync(Sdkwork.ClawRouter.Backend.Models.CreateStorageReconciliationRunRequest body, string idempotencyKey)
         {
             var requestHeaders = BuildRequestHeaders(
                 new Dictionary<string, HeaderParameterSpec>
                 {
                     ["Idempotency-Key"] = new HeaderParameterSpec(idempotencyKey, "simple", false, null),
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
                 },
                 new Dictionary<string, HeaderParameterSpec>()
             );

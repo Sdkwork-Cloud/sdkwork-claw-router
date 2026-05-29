@@ -1,21 +1,27 @@
-import assert from "node:assert/strict";
+﻿import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import test from "node:test";
 
 import { clearStoredAppSessionToken } from "./packages/sdkwork-claw-router-commons/src/app-session-token.ts";
 import { resetClawRouterSdkClients } from "./packages/sdkwork-claw-router-commons/src/sdk-clients.ts";
 import {
+  ChannelAiResourceService,
   ChannelModelCatalogService,
   ChannelService,
+  ChannelEndpointService,
   ProviderSecretService,
 } from "./packages/sdkwork-claw-router-admin-channel/src/channelService.ts";
 import {
+  createAiResourceInputFromForm,
+  createAiResourceUpdateInputFromForm,
   createChannelInputFromForm,
   createChannelCopyDraft,
   createChannelEditDraft,
   createChannelStatusUpdateInput,
   createChannelUpdateInputFromForm,
   createProviderSecretInputFromForm,
+  createChannelEndpointInputFromForm,
+  createChannelEndpointUpdateInputFromForm,
   createProviderSecretStatusUpdateInput,
   createProviderSecretUpdateInputFromForm,
   resolveAuthTypeFormValue,
@@ -78,16 +84,26 @@ async function withBackendSdkFetch<T>(
   }
 }
 
+function channelContractDefaults() {
+  return {
+    channelId: "9001",
+    channelType: "official",
+    resourceCodes: [],
+  } as const;
+}
+
 test("admin channel create input does not reuse returned channel view model", () => {
   const input = createChannelInputFromForm({
     name: " OpenAI Primary ",
     vendor: " OpenAI ",
+    channelType: " relay ",
     protocol: " OpenAI ",
     accessType: " Standard API Key ",
     baseUrl: " https://api.openai.com/v1 ",
     apiKey: " sk-live-openai ",
     expiresAt: " 2026-06-30T08:00:00Z ",
     capabilities: ["llm", " image ", "llm"],
+    resourceCodes: [" Bundle.OpenRouter.OpenAI.Chat ", "bundle.openrouter.openai.chat"],
     models: [" gpt-4o ", " ", "gpt-4o-mini"],
     circuitBreakerEnabled: true,
     circuitBreakerFailureThreshold: "4",
@@ -98,12 +114,14 @@ test("admin channel create input does not reuse returned channel view model", ()
   assert.deepEqual(input, {
     name: "OpenAI Primary",
     vendor: "OpenAI",
+    channelType: "relay",
     protocol: "OpenAI",
     accessType: "Standard API Key",
     baseUrl: "https://api.openai.com/v1",
     apiKey: "sk-live-openai",
     expiresAt: "2026-06-30T08:00:00Z",
     capabilities: ["llm", "image"],
+    resourceCodes: ["bundle.openrouter.openai.chat"],
     models: ["gpt-4o", "gpt-4o-mini"],
     circuitBreakerPolicy: { failureThreshold: 4 },
     weight: 125,
@@ -290,11 +308,13 @@ test("admin channel update input does not reuse returned channel view model", ()
   const input = createChannelUpdateInputFromForm({
     name: " Anthropic Backup ",
     vendor: " Anthropic ",
+    channelType: " official ",
     protocol: " Anthropic ",
     accessType: " Standard API Key ",
     baseUrl: " ",
     apiKey: " ",
     capabilities: ["llm"],
+    resourceCodes: [" Vendor.Anthropic.Chat "],
     models: [" claude-3-5-sonnet-20241022 "],
     circuitBreakerEnabled: false,
     circuitBreakerFailureThreshold: "",
@@ -305,9 +325,11 @@ test("admin channel update input does not reuse returned channel view model", ()
   assert.deepEqual(input, {
     name: "Anthropic Backup",
     vendor: "Anthropic",
+    channelType: "official",
     protocol: "Anthropic",
     accessType: "Standard API Key",
     capabilities: ["llm"],
+    resourceCodes: ["vendor.anthropic.chat"],
     models: ["claude-3-5-sonnet-20241022"],
     circuitBreakerPolicy: null,
     weight: 20,
@@ -318,11 +340,34 @@ test("admin channel update input does not reuse returned channel view model", ()
   }
 });
 
+test("admin channel update input preserves an explicit empty AI resource list", () => {
+  const input = createChannelUpdateInputFromForm({
+    name: "OpenAI Primary",
+    vendor: "OpenAI",
+    channelType: "official",
+    protocol: "OpenAI",
+    accessType: "api-key",
+    baseUrl: "https://api.openai.com/v1",
+    apiKey: " ",
+    capabilities: ["llm"],
+    resourceCodes: [],
+    models: ["openai/global/gpt-4o"],
+    circuitBreakerEnabled: false,
+    circuitBreakerFailureThreshold: "",
+    weight: 100,
+    status: "active",
+  });
+
+  assert.equal("resourceCodes" in input, true);
+  assert.deepEqual(input.resourceCodes, []);
+});
+
 test("admin channel copy-create draft reuses routing settings but clears secret material", () => {
   const sourceChannel = {
     id: "channel-1",
     name: "OpenAI Primary",
     vendor: "OpenAI",
+    ...channelContractDefaults(),
     protocol: "OpenAI",
     accessType: "api-key",
     baseUrl: "https://api.openai.com/v1",
@@ -346,12 +391,14 @@ test("admin channel copy-create draft reuses routing settings but clears secret 
   assert.deepEqual(editDraft, {
     name: "OpenAI Primary",
     vendor: "OpenAI",
+    channelType: "official",
     protocol: "OpenAI",
     accessType: "api-key",
     baseUrl: "https://api.openai.com/v1",
     apiKey: "",
     expiresAt: "2026-06-30T08:00:00Z",
     capabilities: ["llm", "image"],
+    resourceCodes: [],
     models: ["openai/global/gpt-4o"],
     circuitBreakerEnabled: true,
     circuitBreakerFailureThreshold: 2,
@@ -361,12 +408,14 @@ test("admin channel copy-create draft reuses routing settings but clears secret 
   assert.deepEqual(copyDraft, {
     name: "OpenAI Primary",
     vendor: "OpenAI",
+    channelType: "official",
     protocol: "OpenAI",
     accessType: "api-key",
     baseUrl: "https://api.openai.com/v1",
     apiKey: "",
     expiresAt: "2026-06-30T08:00:00Z",
     capabilities: ["llm", "image"],
+    resourceCodes: [],
     models: ["openai/global/gpt-4o"],
     circuitBreakerEnabled: true,
     circuitBreakerFailureThreshold: 2,
@@ -379,9 +428,157 @@ test("admin channel copy-create draft reuses routing settings but clears secret 
   assert.equal("secretRef" in copyDraft, false);
 });
 
+test("admin channel account form normalizes channel type and AI resource codes", () => {
+  assert.throws(
+    () =>
+      createChannelInputFromForm({
+        name: "Relay",
+        vendor: "OpenRouter",
+        channelType: "aggregator",
+        protocol: "OpenAI",
+        accessType: "api-key",
+        baseUrl: "https://openrouter.ai/api/v1",
+        apiKey: "sk-relay",
+        capabilities: ["llm"],
+        resourceCodes: ["bundle.openrouter.openai.chat"],
+        models: ["openai/global/gpt-5.5"],
+        weight: 100,
+        status: "active",
+      }),
+    /Unsupported channel type: aggregator/,
+  );
+  assert.throws(
+    () =>
+      createChannelInputFromForm({
+        name: "Relay",
+        vendor: "OpenRouter",
+        channelType: "relay",
+        protocol: "OpenAI",
+        accessType: "api-key",
+        baseUrl: "https://openrouter.ai/api/v1",
+        apiKey: "sk-relay",
+        capabilities: ["llm"],
+        resourceCodes: ["bundle/openrouter/openai/chat"],
+        models: ["openai/global/gpt-5.5"],
+        weight: 100,
+        status: "active",
+      }),
+    /Unsupported AI resource code: bundle\/openrouter\/openai\/chat/,
+  );
+});
+
 test("admin channel status update input is a minimal command", () => {
   assert.deepEqual(createChannelStatusUpdateInput("disabled"), { status: "disabled" });
   assert.deepEqual(createChannelStatusUpdateInput("active"), { status: "active" });
+});
+
+test("admin AI resource form creates structured commands and preserves optional field semantics", () => {
+  const createInput = createAiResourceInputFromForm({
+    resourceCode: " Bundle.OpenRouter.OpenAI.Chat ",
+    resourceType: " bundle ",
+    displayName: " OpenRouter OpenAI Chat ",
+    vendorCode: " OpenAI ",
+    modalityCode: " Chat ",
+    apiEndpointCode: " Chat_Completions ",
+    catalogKey: " openai/global/gpt-5.5 ",
+    model: " gpt-5.5 ",
+    providerNativeModel: " gpt-5.5 ",
+    compositionMode: " any ",
+    status: " active ",
+    sortOrder: "10",
+    membersText: [
+      " Model.OpenAI.GPT-5.5.Chat | included | true | 1 ",
+      "model.openai.gpt-4o-mini.chat|fallback|false|2",
+    ].join("\n"),
+  });
+
+  assert.deepEqual(createInput, {
+    resourceCode: "Bundle.OpenRouter.OpenAI.Chat",
+    resourceType: "bundle",
+    displayName: "OpenRouter OpenAI Chat",
+    vendorCode: "OpenAI",
+    modalityCode: "Chat",
+    apiEndpointCode: "Chat_Completions",
+    catalogKey: "openai/global/gpt-5.5",
+    model: "gpt-5.5",
+    providerNativeModel: "gpt-5.5",
+    compositionMode: "any",
+    status: "active",
+    sortOrder: 10,
+    members: [
+      {
+        memberResourceCode: "Model.OpenAI.GPT-5.5.Chat",
+        memberRole: "included",
+        required: true,
+        sortOrder: 1,
+      },
+      {
+        memberResourceCode: "model.openai.gpt-4o-mini.chat",
+        memberRole: "fallback",
+        required: false,
+        sortOrder: 2,
+      },
+    ],
+  });
+
+  const updateInput = createAiResourceUpdateInputFromForm({
+    resourceCode: " ",
+    resourceType: " ",
+    displayName: " OpenRouter Realtime ",
+    vendorCode: " ",
+    modalityCode: " ",
+    apiEndpointCode: " ",
+    catalogKey: " ",
+    model: " ",
+    providerNativeModel: " ",
+    compositionMode: " ",
+    status: " disabled ",
+    sortOrder: " ",
+    membersText: " ",
+  });
+
+  assert.deepEqual(updateInput, {
+    displayName: "OpenRouter Realtime",
+    vendorCode: null,
+    modalityCode: null,
+    apiEndpointCode: null,
+    catalogKey: null,
+    model: null,
+    providerNativeModel: null,
+    status: "disabled",
+    sortOrder: null,
+    members: [],
+  });
+});
+
+test("admin AI resource form rejects malformed member lines", () => {
+  assert.throws(
+    () => createAiResourceInputFromForm({
+      resourceCode: "bundle.openrouter.openai.chat",
+      resourceType: "bundle",
+      displayName: "OpenRouter OpenAI Chat",
+      membersText: "model.openai.gpt-5.5.chat | unknown | true | 1",
+    }),
+    /Unsupported AI resource member role: unknown/,
+  );
+  assert.throws(
+    () => createAiResourceInputFromForm({
+      resourceCode: "bundle.openrouter.openai.chat",
+      resourceType: "bundle",
+      displayName: "OpenRouter OpenAI Chat",
+      membersText: "model.openai.gpt-5.5.chat | included | maybe | 1",
+    }),
+    /members\[0\]\.required must be true or false/,
+  );
+  assert.throws(
+    () => createAiResourceInputFromForm({
+      resourceCode: "bundle.openrouter.openai.chat",
+      resourceType: "bundle",
+      displayName: "OpenRouter OpenAI Chat",
+      sortOrder: "-1",
+    }),
+    /sortOrder must be a non-negative integer/,
+  );
 });
 
 test("admin channel modal rejects invalid traffic weight instead of defaulting it", () => {
@@ -662,13 +859,68 @@ test("admin channel visible account copy is routed through i18n resources", () =
   }
 });
 
+test("admin channel AI resources belong to AI channel management navigation", () => {
+  const registrySource = readFileSync(
+    new URL("./src/adminModuleRegistry.ts", import.meta.url),
+    "utf8",
+  );
+  const appSource = readFileSync(
+    new URL("./src/App.tsx", import.meta.url),
+    "utf8",
+  );
+
+  assert.match(registrySource, /groupBlock\('admin\.menu\.home\.accountPoolManagement'[\s\S]*\/admin\/channel\/resources/);
+  assert.match(registrySource, /labelKey: 'admin\.menu\.aiResources'/);
+  assert.match(appSource, /path="channel\/resources"/);
+  assert.doesNotMatch(registrySource, /\/admin\/model\/capabilities/);
+  assert.doesNotMatch(appSource, /path="model\/capabilities"/);
+});
+
+test("admin channel endpoints belong to AI channel management navigation", () => {
+  const registrySource = readFileSync(
+    new URL("./src/adminModuleRegistry.ts", import.meta.url),
+    "utf8",
+  );
+  const appSource = readFileSync(
+    new URL("./src/App.tsx", import.meta.url),
+    "utf8",
+  );
+
+  assert.match(registrySource, /groupBlock\('admin\.menu\.home\.accountPoolManagement'[\s\S]*\/admin\/channel\/endpoints/);
+  assert.match(registrySource, /labelKey: 'admin\.menu\.channelEndpoints'/);
+  assert.match(appSource, /const ChannelEndpointAdmin = lazyRoute\(\(\) => import\('sdkwork-claw-router-admin-channel'\), 'ChannelEndpointAdmin'\)/);
+  assert.match(appSource, /path="channel\/endpoints"/);
+});
+
+test("admin channel account modal supports account type and reusable AI resource binding", () => {
+  const source = readFileSync(
+    new URL("./packages/sdkwork-claw-router-admin-channel/src/index.tsx", import.meta.url),
+    "utf8",
+  );
+  const packageManifest = readFileSync(
+    new URL("./packages/sdkwork-claw-router-admin-channel/package.json", import.meta.url),
+    "utf8",
+  );
+
+  assert.match(source, /ChannelAiResourceService\.fetchAiResources\(\)/);
+  assert.doesNotMatch(source, /sdkwork-claw-router-admin-model/);
+  assert.doesNotMatch(packageManifest, /sdkwork-claw-router-admin-model/);
+  assert.match(source, /channelType/);
+  assert.match(source, /resourceCodes/);
+  assert.match(source, /admin\.channel\.fields\.channelType/);
+  assert.match(source, /admin\.channel\.fields\.aiResources/);
+  assert.match(source, /admin\.channel\.channelType\.official/);
+  assert.match(source, /admin\.channel\.channelType\.relay/);
+});
+
 test("admin channel credentials are viewed from account row actions instead of a standalone table", () => {
   const source = readFileSync(
     new URL("./packages/sdkwork-claw-router-admin-channel/src/index.tsx", import.meta.url),
     "utf8",
   );
 
-  assert.equal((source.match(/<table\b/g) ?? []).length, 1);
+  assert.ok((source.match(/<table\b/g) ?? []).length >= 2);
+  assert.match(source, /export function AiResourceAdmin/);
   assert.doesNotMatch(source, /name="secretRef"/);
   assert.doesNotMatch(source, /setSecretRef/);
   assert.doesNotMatch(source, /availableSecrets/);
@@ -685,6 +937,357 @@ test("admin channel credentials are viewed from account row actions instead of a
   assert.match(source, /viewingCredentialChannel/);
   assert.match(source, /findCredentialForChannel/);
   assert.match(source, /admin\.channel\.actions\.viewCredential/);
+});
+
+test("admin channel endpoint admin exposes regional endpoint management", () => {
+  const source = readFileSync(
+    new URL("./packages/sdkwork-claw-router-admin-channel/src/index.tsx", import.meta.url),
+    "utf8",
+  );
+  const i18nSource = readFileSync(
+    new URL("./packages/sdkwork-claw-router-i18n/src/resources/admin/channel.ts", import.meta.url),
+    "utf8",
+  );
+
+  assert.match(source, /export function ChannelEndpointAdmin/);
+  assert.match(source, /function ChannelEndpointFormModal/);
+  assert.match(source, /ChannelEndpointService\.fetchChannelEndpoints\(\)/);
+  assert.match(source, /ChannelEndpointService\.createChannelEndpoint/);
+  assert.match(source, /ChannelEndpointService\.updateChannelEndpoint/);
+  assert.match(source, /ChannelService\.fetchChannels\(\)/);
+  assert.match(source, /channelId/);
+  assert.match(source, /name="channelId"/);
+  assert.match(source, /name="vendorCode"/);
+  assert.match(source, /name="regionCode"/);
+  assert.match(source, /name="apiEndpointCode"/);
+  assert.match(source, /name="baseUrl"/);
+  assert.match(source, /admin\.channel\.channelEndpoints\.actions\.add/);
+  assert.match(source, /admin\.channel\.channelEndpoints\.actions\.edit/);
+  assert.match(source, /admin\.channel\.channelEndpoints\.actions\.disable/);
+  assert.match(source, /admin\.channel\.channelEndpoints\.actions\.enable/);
+  assert.doesNotMatch(source, /name="providerCode"[\s\S]*ChannelEndpointFormModal/s);
+  assert.doesNotMatch(source, /name="accountCode"[\s\S]*ChannelEndpointFormModal/s);
+  assert.doesNotMatch(source, /name="channelType"[\s\S]*ChannelEndpointFormModal/s);
+
+  for (const key of [
+    "admin.channel.channelEndpoints.title",
+    "admin.channel.channelEndpoints.subtitle",
+    "admin.channel.channelEndpoints.actions.add",
+    "admin.channel.channelEndpoints.actions.edit",
+    "admin.channel.channelEndpoints.actions.disable",
+    "admin.channel.channelEndpoints.actions.enable",
+    "admin.channel.channelEndpoints.messages.created",
+    "admin.channel.channelEndpoints.messages.updated",
+    "admin.channel.channelEndpoints.messages.disabled",
+    "admin.channel.channelEndpoints.messages.enabled",
+    "admin.channel.channelEndpoints.modals.createTitle",
+    "admin.channel.channelEndpoints.modals.editTitle",
+  ]) {
+    const occurrences = i18nSource.match(new RegExp(`"${key.replaceAll(".", "\\.")}"`, "g"))?.length ?? 0;
+    assert.equal(occurrences, 2, `expected ${key} to exist in English and Chinese resources`);
+  }
+});
+
+test("admin channel AI resource service calls generated backend SDK path and normalizes data", async () => {
+  await withBackendSdkFetch(
+    (url, init) => {
+      const method = init?.method ?? "GET";
+      if (url === "/backend/v3/api/ai/resources" && method === "GET") {
+        return {
+          items: [
+            {
+              id: "cap-1",
+              resourceCode: "bundle.openrouter.openai.chat",
+              resourceType: "bundle",
+              displayName: "OpenRouter OpenAI Chat",
+              vendorCode: "openai",
+              modalityCode: "chat",
+              apiEndpointCode: "chat_completions",
+              catalogKey: "openai/global/gpt-5.5",
+              model: "gpt-5.5",
+              providerNativeModel: "gpt-5.5",
+              compositionMode: "any",
+              status: "active",
+              sortOrder: 10,
+              members: [
+                {
+                  parentResourceCode: "bundle.openrouter.openai.chat",
+                  memberResourceCode: "model.openai.gpt-5.5.chat_completions",
+                  memberRole: "included",
+                  required: true,
+                  sortOrder: 1,
+                },
+              ],
+            },
+          ],
+        };
+      }
+      throw new Error(`Unexpected ${method} ${url}`);
+    },
+    async (captured) => {
+      const resources = await ChannelAiResourceService.fetchAiResources();
+
+      assert.equal(captured.length, 1);
+      assert.equal(captured[0].url, "/backend/v3/api/ai/resources");
+      assert.deepEqual(resources, [
+        {
+          id: "cap-1",
+          resourceCode: "bundle.openrouter.openai.chat",
+          resourceType: "bundle",
+          displayName: "OpenRouter OpenAI Chat",
+          vendorCode: "openai",
+          modalityCode: "chat",
+          apiEndpointCode: "chat_completions",
+          catalogKey: "openai/global/gpt-5.5",
+          model: "gpt-5.5",
+          providerNativeModel: "gpt-5.5",
+          compositionMode: "any",
+          status: "active",
+          sortOrder: 10,
+          members: [
+            {
+              parentResourceCode: "bundle.openrouter.openai.chat",
+              memberResourceCode: "model.openai.gpt-5.5.chat_completions",
+              memberRole: "included",
+              required: true,
+              sortOrder: 1,
+            },
+          ],
+        },
+      ]);
+    },
+  );
+});
+
+test("admin channel AI resource service creates and updates through generated backend SDK", async () => {
+  await withBackendSdkFetch(
+    (url, init) => {
+      const method = init?.method ?? "GET";
+      const body = init?.body ? JSON.parse(String(init.body)) : {};
+      if (url === "/backend/v3/api/ai/resources" && method === "POST") {
+        assert.deepEqual(body, {
+          resourceCode: "bundle.openrouter.openai.standard",
+          resourceType: "bundle",
+          displayName: "OpenRouter OpenAI Standard",
+          vendorCode: "openai",
+          compositionMode: "all",
+          status: "active",
+          sortOrder: 5,
+          members: [
+            {
+              memberResourceCode: "model.openai.gpt-4o-mini.chat",
+              memberRole: "included",
+              required: true,
+              sortOrder: 1,
+            },
+          ],
+        });
+        return {
+          item: {
+            id: "resource-5",
+            ...body,
+            modalityCode: body.modalityCode ?? null,
+            apiEndpointCode: body.apiEndpointCode ?? null,
+            catalogKey: body.catalogKey ?? null,
+            model: body.model ?? null,
+            providerNativeModel: body.providerNativeModel ?? null,
+            members: body.members.map((member: Record<string, unknown>) => ({
+              parentResourceCode: body.resourceCode,
+              ...member,
+            })),
+          },
+        };
+      }
+      if (url === "/backend/v3/api/ai/resources/resource-5" && method === "PUT") {
+        return {
+          item: {
+            id: "resource-5",
+            resourceCode: "bundle.openrouter.openai.standard",
+            resourceType: "bundle",
+            displayName: body.displayName ?? "OpenRouter OpenAI Standard",
+            vendorCode: body.vendorCode,
+            modalityCode: null,
+            apiEndpointCode: null,
+            catalogKey: null,
+            model: null,
+            providerNativeModel: null,
+            compositionMode: body.compositionMode ?? "all",
+            status: body.status ?? "active",
+            sortOrder: body.sortOrder,
+            members: body.members ?? [],
+          },
+        };
+      }
+      throw new Error(`Unexpected ${method} ${url}`);
+    },
+    async (captured) => {
+      const created = await ChannelAiResourceService.createAiResource({
+        resourceCode: " Bundle.OpenRouter.OpenAI.Standard ",
+        resourceType: "bundle",
+        displayName: " OpenRouter OpenAI Standard ",
+        vendorCode: " OpenAI ",
+        compositionMode: "all",
+        status: "active",
+        sortOrder: 5,
+        members: [
+          {
+            memberResourceCode: " Model.OpenAI.GPT-4o-Mini.Chat ",
+            memberRole: "included",
+            required: true,
+            sortOrder: 1,
+          },
+        ],
+      });
+      const updated = await ChannelAiResourceService.updateAiResource("resource-5", {
+        displayName: " OpenRouter OpenAI Realtime ",
+        vendorCode: null,
+        sortOrder: null,
+        members: [],
+      });
+      await ChannelAiResourceService.updateAiResource("resource-5", { status: "disabled" });
+
+      assert.equal(created.id, "resource-5");
+      assert.equal(updated.vendorCode, undefined);
+      assert.deepEqual(
+        captured.map((request) => `${request.method} ${request.url}`),
+        [
+          "POST /backend/v3/api/ai/resources",
+          "PUT /backend/v3/api/ai/resources/resource-5",
+          "PUT /backend/v3/api/ai/resources/resource-5",
+        ],
+      );
+      assert.deepEqual(JSON.parse(captured[1].body), {
+        displayName: "OpenRouter OpenAI Realtime",
+        vendorCode: null,
+        sortOrder: null,
+        members: [],
+      });
+      assert.deepEqual(JSON.parse(captured[2].body), { status: "disabled" });
+    },
+  );
+});
+
+test("admin channel AI resource service rejects unsafe mutation input before SDK calls", async () => {
+  await withBackendSdkFetch(
+    () => {
+      throw new Error("SDK fetch should not be called for invalid AI resource input");
+    },
+    async (captured) => {
+      await assert.rejects(
+        () => ChannelAiResourceService.updateAiResource("resource/5", { status: "active" }),
+        /aiResourceId must be a safe path segment/,
+      );
+      await assert.rejects(
+        () => ChannelAiResourceService.createAiResource({
+          resourceCode: "bundle/openrouter/openai/chat",
+          resourceType: "bundle",
+          displayName: "OpenRouter OpenAI Chat",
+        }),
+        /resourceCode must be an AI resource code/,
+      );
+      assert.equal(captured.length, 0);
+    },
+  );
+});
+
+test("admin channel AI resource admin exposes create edit and status actions", () => {
+  const source = readFileSync(
+    new URL("./packages/sdkwork-claw-router-admin-channel/src/index.tsx", import.meta.url),
+    "utf8",
+  );
+  const i18nSource = readFileSync(
+    new URL("./packages/sdkwork-claw-router-i18n/src/resources/admin/channel.ts", import.meta.url),
+    "utf8",
+  );
+
+  assert.match(source, /function AiResourceFormModal/);
+  assert.match(source, /ChannelAiResourceService\.createAiResource/);
+  assert.match(source, /ChannelAiResourceService\.updateAiResource/);
+  assert.match(source, /name="resourceCode"/);
+  assert.match(source, /name="resourceType"/);
+  assert.match(source, /name="membersText"/);
+  assert.match(source, /admin\.channel\.aiResources\.actions\.add/);
+  assert.match(source, /admin\.channel\.aiResources\.actions\.edit/);
+  assert.match(source, /admin\.channel\.aiResources\.actions\.disable/);
+  assert.match(source, /admin\.channel\.aiResources\.actions\.enable/);
+
+  for (const key of [
+    "admin.channel.aiResources.actions.add",
+    "admin.channel.aiResources.actions.edit",
+    "admin.channel.aiResources.actions.disable",
+    "admin.channel.aiResources.actions.enable",
+    "admin.channel.aiResources.messages.created",
+    "admin.channel.aiResources.messages.updated",
+    "admin.channel.aiResources.messages.disabled",
+    "admin.channel.aiResources.messages.enabled",
+    "admin.channel.aiResources.modals.createTitle",
+    "admin.channel.aiResources.modals.editTitle",
+  ]) {
+    const occurrences = i18nSource.match(new RegExp(`"${key.replaceAll(".", "\\.")}"`, "g"))?.length ?? 0;
+    assert.equal(occurrences, 2, `expected ${key} to exist in English and Chinese resources`);
+  }
+});
+
+test("admin channel AI resource create and update submit paths stay strongly typed", () => {
+  const source = readFileSync(
+    new URL("./packages/sdkwork-claw-router-admin-channel/src/index.tsx", import.meta.url),
+    "utf8",
+  );
+
+  assert.match(source, /onCreateSubmit:\s*\(input:\s*AiResourceCreateInput\)\s*=>\s*Promise<void>/);
+  assert.match(source, /onUpdateSubmit:\s*\(input:\s*AiResourceUpdateInput\)\s*=>\s*Promise<void>/);
+  assert.match(source, /const handleCreateResource = async \(input: AiResourceCreateInput\)/);
+  assert.match(source, /const handleUpdateResource = async \(input: AiResourceUpdateInput\)/);
+  assert.doesNotMatch(source, /createAiResource\(input as AiResourceCreateInput\)/);
+});
+
+test("admin channel AI resource modal uses catalog and resource selectors instead of raw model and member text entry", () => {
+  const source = readFileSync(
+    new URL("./packages/sdkwork-claw-router-admin-channel/src/index.tsx", import.meta.url),
+    "utf8",
+  );
+
+  assert.match(source, /availableModels:\s*ChannelModelCatalogItem\[\]/);
+  assert.match(source, /availableResources:\s*AiResource\[\]/);
+  assert.match(source, /function AiResourceModelSelector/);
+  assert.match(source, /function AiResourceMemberSelector/);
+  assert.match(source, /data-ai-resource-model-selector/);
+  assert.match(source, /data-ai-resource-member-selector/);
+  assert.match(source, /<select[\s\S]*name="catalogKey"/s);
+  assert.match(source, /name="providerNativeModel"[\s\S]*readOnly/s);
+  assert.match(source, /name="membersText"[\s\S]*className="sr-only"/s);
+  assert.match(source, /availableModels=\{modelCatalog\}/);
+  assert.match(source, /availableResources=\{resources\}/);
+});
+
+test("admin channel AI resource service fails closed for malformed rows", async () => {
+  await withBackendSdkFetch(
+    (url, init) => {
+      const method = init?.method ?? "GET";
+      if (url === "/backend/v3/api/ai/resources" && method === "GET") {
+        return {
+          items: [
+            {
+              id: "cap-1",
+              resourceCode: "bundle/openrouter/openai/chat",
+              resourceType: "bundle",
+              displayName: "OpenRouter OpenAI Chat",
+              compositionMode: "any",
+              status: "active",
+              members: [],
+            },
+          ],
+        };
+      }
+      throw new Error(`Unexpected ${method} ${url}`);
+    },
+    async () => {
+      await assert.rejects(
+        () => ChannelAiResourceService.fetchAiResources(),
+        /resourceCode must be an AI resource code/,
+      );
+    },
+  );
 });
 
 test("admin channel model catalog maps runtime ids instead of display aliases", async () => {
@@ -770,6 +1373,69 @@ test("admin provider secret create input does not reuse returned credential fiel
   }
 });
 
+test("admin channel endpoint form creates dedicated commands without derived account identity", () => {
+  const createInput = createChannelEndpointInputFromForm({
+    channelId: " 9002 ",
+    vendorCode: " OpenAI ",
+    regionCode: " Global ",
+    apiEndpointCode: " Chat_Completions ",
+    baseUrl: " https://api.openai.com/v1 ",
+    priority: "10",
+    weight: "20",
+    status: "active",
+    effectiveFrom: "",
+    effectiveTo: " 2026-06-30T08:00:00Z ",
+  });
+  assert.deepEqual(createInput, {
+    channelId: "9002",
+    vendorCode: "openai",
+    regionCode: "global",
+    apiEndpointCode: "chat_completions",
+    baseUrl: "https://api.openai.com/v1",
+    priority: 10,
+    weight: 20,
+    status: "active",
+    effectiveTo: "2026-06-30T08:00:00Z",
+  });
+  assert.equal("providerCode" in createInput, false);
+  assert.equal("accountCode" in createInput, false);
+  assert.equal("channelType" in createInput, false);
+
+  const updateInput = createChannelEndpointUpdateInputFromForm({
+    vendorCode: " OpenAI ",
+    regionCode: " us-east-1 ",
+    apiEndpointCode: " responses ",
+    baseUrl: " https://api.openai.com/v1 ",
+    priority: 30,
+    weight: 40,
+    status: "disabled",
+    effectiveFrom: "",
+    effectiveTo: "",
+  });
+  assert.deepEqual(updateInput, {
+    vendorCode: "openai",
+    regionCode: "us-east-1",
+    apiEndpointCode: "responses",
+    baseUrl: "https://api.openai.com/v1",
+    priority: 30,
+    weight: 40,
+    status: "disabled",
+    effectiveFrom: null,
+    effectiveTo: null,
+  });
+
+  assert.throws(
+    () => createChannelEndpointInputFromForm({
+      channelId: "channel-1",
+      vendorCode: "openai",
+      regionCode: "global",
+      apiEndpointCode: "chat_completions",
+      baseUrl: "https://api.openai.com/v1",
+    }),
+    /channelId must be a positive integer/,
+  );
+});
+
 test("admin provider secret update input is a dedicated command", () => {
   const input = createProviderSecretUpdateInputFromForm({
     providerCode: " anthropic ",
@@ -842,6 +1508,7 @@ test("admin channel service persists and clears circuit breaker policy through b
             id: "channel-circuit",
             name: "OpenAI Circuit",
             vendor: "OpenAI",
+            ...channelContractDefaults(),
             protocol: "OpenAI",
             accessType: "api-key",
             baseUrl: "https://api.openai.com/v1",
@@ -866,6 +1533,7 @@ test("admin channel service persists and clears circuit breaker policy through b
             id: "channel-circuit",
             name: "OpenAI Circuit",
             vendor: "OpenAI",
+            ...channelContractDefaults(),
             protocol: "OpenAI",
             accessType: "api-key",
             baseUrl: "https://api.openai.com/v1",
@@ -910,6 +1578,45 @@ test("admin channel service persists and clears circuit breaker policy through b
   );
 });
 
+test("admin channel service sends an empty AI resource list when clearing bindings", async () => {
+  await withBackendSdkFetch(
+    (url, init) => {
+      const method = init?.method ?? "GET";
+      if (url === "/backend/v3/api/integration/channels" && method === "PUT") {
+        return {
+          item: {
+            id: "channel-clear-resources",
+            name: "OpenAI Primary",
+            vendor: "OpenAI",
+            ...channelContractDefaults(),
+            protocol: "OpenAI",
+            accessType: "api-key",
+            baseUrl: "https://api.openai.com/v1",
+            secretRef: "vault://providers/openai/main",
+            createdAt: "2026-05-05T08:00:00Z",
+            models: ["openai/global/gpt-4o"],
+            capabilities: ["llm"],
+            resourceCodes: [],
+            isMultimodal: false,
+            weight: 100,
+            status: "active",
+            balance: "N/A",
+            errors: 0,
+          },
+        };
+      }
+      throw new Error(`Unexpected SDK request ${method} ${url}`);
+    },
+    async (captured) => {
+      await ChannelService.updateChannel("channel-clear-resources", {
+        resourceCodes: [],
+      });
+
+      assert.deepEqual(JSON.parse(captured[0].body).resourceCodes, []);
+    },
+  );
+});
+
 test("admin channel list fails closed when backend returns malformed circuit breaker policy", async () => {
   await withBackendSdkFetch(
     (url, init) => {
@@ -920,6 +1627,7 @@ test("admin channel list fails closed when backend returns malformed circuit bre
               id: "channel-1",
               name: "OpenAI Primary",
               vendor: "OpenAI",
+              ...channelContractDefaults(),
               protocol: "OpenAI",
               accessType: "api-key",
               secretRef: "vault://providers/openai/main",
@@ -958,8 +1666,10 @@ test("admin channel service calls generated backend SDK paths and normalizes cha
           items: [
             {
               id: "channel-1",
+              channelId: "9001",
               name: "OpenAI Primary",
               vendor: "OpenAI",
+              ...channelContractDefaults(),
               protocol: "OpenAI",
               accessType: "api-key",
               baseUrl: "https://api.openai.com/v1",
@@ -993,6 +1703,8 @@ test("admin channel service calls generated backend SDK paths and normalizes cha
             id: "channel-2",
             name: "Anthropic Backup",
             vendor: "Anthropic",
+            ...channelContractDefaults(),
+            channelId: "9002",
             protocol: "Anthropic",
             accessType: "api-key",
             baseUrl: "https://api.anthropic.com",
@@ -1018,6 +1730,8 @@ test("admin channel service calls generated backend SDK paths and normalizes cha
             id: "channel-2",
             name: "Anthropic Updated",
             vendor: "Anthropic",
+            ...channelContractDefaults(),
+            channelId: "9002",
             protocol: "Anthropic",
             accessType: "api-key",
             apiKey: "sk-ant-live-secret",
@@ -1040,10 +1754,12 @@ test("admin channel service calls generated backend SDK paths and normalizes cha
         success: true,
         status: "active",
         latency: "88ms",
-        item: {
+          item: {
           id: "7",
+          channelId: "9001",
           name: "OpenAI Primary",
           vendor: "OpenAI",
+          ...channelContractDefaults(),
           protocol: "OpenAI",
           accessType: "api-key",
           apiKey: "sk-live-openai",
@@ -1090,6 +1806,7 @@ test("admin channel service calls generated backend SDK paths and normalizes cha
       const deleted = await ChannelService.deleteChannel("channel-2");
 
       assert.equal(channels[0].id, "channel-1");
+      assert.equal(channels[0].channelId, "9001");
       assert.equal(channels[0].status, "error");
       assert.equal(channels[0].apiKey, "sk-live-openai");
       assert.equal(channels[0].createdAt, "2026-05-05T08:00:00Z");
@@ -1098,6 +1815,7 @@ test("admin channel service calls generated backend SDK paths and normalizes cha
       assert.deepEqual(channels[0].retryPolicy?.retryableStatusCodes, [429, 500]);
       assert.deepEqual(channels[0].circuitBreakerPolicy, { failureThreshold: 2 });
       assert.equal(created.id, "channel-2");
+      assert.equal(created.channelId, "9002");
       assert.deepEqual(created.circuitBreakerPolicy, { failureThreshold: 4 });
       assert.equal(updated?.status, "disabled");
       assert.equal(updated?.circuitBreakerPolicy, undefined);
@@ -1151,6 +1869,7 @@ test("admin channel service prefixes slash-containing native models instead of r
             id: "channel-openrouter",
             name: "OpenRouter",
             vendor: "OpenRouter",
+            ...channelContractDefaults(),
             protocol: "OpenAI",
             accessType: "api-key",
             baseUrl: "https://openrouter.ai/api/v1",
@@ -1302,6 +2021,119 @@ test("admin provider secret service calls generated backend SDK paths and normal
   );
 });
 
+test("admin channel endpoint service uses generated backend SDK and normalizes regional endpoints", async () => {
+  await withBackendSdkFetch(
+    (url, init) => {
+      const method = init?.method ?? "GET";
+      const body = init?.body ? JSON.parse(String(init.body)) : {};
+      if (url === "/backend/v3/api/integration/channel_endpoints" && method === "GET") {
+        return {
+          items: [
+            {
+              id: "1",
+              channelId: "9002",
+              providerCode: "openrouter",
+              channelCode: "openrouter-main",
+              channelType: "relay",
+              vendorCode: "openai",
+              regionCode: "global",
+              apiEndpointCode: "openai.chat_completions",
+              baseUrl: "https://provider-proxy.internal/openrouter/openai",
+              priority: 20,
+              weight: 300,
+              healthStatus: "healthy",
+              status: "active",
+              effectiveFrom: "2026-05-28 10:00:00",
+              effectiveTo: null,
+            },
+          ],
+        };
+      }
+      if (url === "/backend/v3/api/integration/channel_endpoints" && method === "POST") {
+        assert.deepEqual(body, {
+          channelId: "9002",
+          vendorCode: "openai",
+          regionCode: "global",
+          apiEndpointCode: "openai.chat_completions",
+          baseUrl: "https://provider-proxy.internal/openrouter/openai",
+          priority: 20,
+          weight: 300,
+          status: "active",
+        });
+        return {
+          item: {
+            id: "2",
+            providerCode: "openrouter",
+            channelCode: "openrouter-main",
+            channelType: "relay",
+            healthStatus: "unknown",
+            effectiveFrom: null,
+            effectiveTo: null,
+            ...body,
+          },
+        };
+      }
+      if (url === "/backend/v3/api/integration/channel_endpoints/2" && method === "PUT") {
+        assert.deepEqual(body, {
+          regionCode: "us-east-1",
+          baseUrl: "https://us-east.provider-proxy.internal/openrouter/openai",
+          priority: 5,
+          effectiveTo: null,
+        });
+        return {
+          item: {
+            id: "2",
+            channelId: "9002",
+            providerCode: "openrouter",
+            channelCode: "openrouter-main",
+            channelType: "relay",
+            vendorCode: "openai",
+            apiEndpointCode: "openai.chat_completions",
+            weight: 300,
+            healthStatus: "healthy",
+            status: "active",
+            effectiveFrom: null,
+            ...body,
+          },
+        };
+      }
+      throw new Error(`Unexpected SDK request ${method} ${url}`);
+    },
+    async (captured) => {
+      const endpoints = await ChannelEndpointService.fetchChannelEndpoints();
+      const created = await ChannelEndpointService.createChannelEndpoint({
+        channelId: " 9002 ",
+        vendorCode: " OpenAI ",
+        regionCode: " Global ",
+        apiEndpointCode: " OpenAI.Chat_Completions ",
+        baseUrl: " https://provider-proxy.internal/openrouter/openai ",
+        priority: 20,
+        weight: 300,
+        status: "active",
+      });
+      const updated = await ChannelEndpointService.updateChannelEndpoint("2", {
+        regionCode: " US-East-1 ",
+        baseUrl: " https://us-east.provider-proxy.internal/openrouter/openai ",
+        priority: 5,
+        effectiveTo: null,
+      });
+
+      assert.equal(endpoints[0].id, "1");
+      assert.equal(endpoints[0].channelType, "relay");
+      assert.equal(created.providerCode, "openrouter");
+      assert.equal(updated.regionCode, "us-east-1");
+      assert.deepEqual(
+        captured.map((request) => `${request.method} ${request.url}`),
+        [
+          "GET /backend/v3/api/integration/channel_endpoints",
+          "POST /backend/v3/api/integration/channel_endpoints",
+          "PUT /backend/v3/api/integration/channel_endpoints/2",
+        ],
+      );
+    },
+  );
+});
+
 test("admin channel service rejects invalid commands before calling generated backend SDK", async () => {
   await withBackendSdkFetch(
     () => {
@@ -1443,6 +2275,7 @@ test("admin channel test fails closed when backend omits required test metadata"
     id: "channel-2",
     name: "Anthropic Backup",
     vendor: "Anthropic",
+    ...channelContractDefaults(),
     protocol: "Anthropic",
     accessType: "api-key",
     models: ["claude-3-5-sonnet"],
@@ -1493,6 +2326,7 @@ test("admin channel list fails closed when backend omits stable channel ids", as
             {
               name: "Missing Id Channel",
               vendor: "OpenAI",
+              ...channelContractDefaults(),
               protocol: "OpenAI",
               accessType: "api-key",
               secretRef: "vault://providers/openai/main",
@@ -1529,6 +2363,7 @@ test("admin channel list fails closed when backend returns malformed channel row
               id: "channel-1",
               name: "OpenAI Primary",
               vendor: "OpenAI",
+              ...channelContractDefaults(),
               protocol: "OpenAI",
               accessType: "api-key",
               secretRef: "vault://providers/openai/main",
@@ -1566,6 +2401,7 @@ test("admin channel list fails closed when backend omits channel models", async 
               id: "channel-1",
               name: "OpenAI Primary",
               vendor: "OpenAI",
+              ...channelContractDefaults(),
               protocol: "OpenAI",
               accessType: "api-key",
               secretRef: "vault://providers/openai/main",
@@ -1601,6 +2437,7 @@ test("admin channel list fails closed when backend returns unsupported channel s
               id: "channel-1",
               name: "OpenAI Primary",
               vendor: "OpenAI",
+              ...channelContractDefaults(),
               protocol: "OpenAI",
               accessType: "api-key",
               secretRef: "vault://providers/openai/main",
@@ -1671,6 +2508,7 @@ test("admin channel list fails closed when backend returns incomplete retry poli
               id: "channel-1",
               name: "OpenAI Primary",
               vendor: "OpenAI",
+              ...channelContractDefaults(),
               protocol: "OpenAI",
               accessType: "api-key",
               secretRef: "vault://providers/openai/main",
@@ -1710,6 +2548,7 @@ test("admin channel list fails closed when backend returns unsupported retry sta
               id: "channel-1",
               name: "OpenAI Primary",
               vendor: "OpenAI",
+              ...channelContractDefaults(),
               protocol: "OpenAI",
               accessType: "api-key",
               secretRef: "vault://providers/openai/main",

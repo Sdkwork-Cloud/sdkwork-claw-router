@@ -27,22 +27,14 @@ public class OpenPlatformApi {
     }
 
     /** Create open platform account */
-    public AccountsCreateResult accountsCreate(OpenPlatformAccountCreateRequest body, String xRequestId) throws Exception {
-        Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
-                Map.of()
-        );
-        Object raw = client.post(ApiPaths.backendPath("/open_platform/accounts"), body, null, requestHeaders, "application/json");
+    public AccountsCreateResult accountsCreate(OpenPlatformAccountCreateRequest body) throws Exception {
+        Object raw = client.post(ApiPaths.backendPath("/open_platform/accounts"), body, null, null, "application/json");
         return client.convertValue(raw, new TypeReference<AccountsCreateResult>() {});
     }
 
     /** Delete open platform account */
-    public AccountsDeleteResult accountsDelete(String accountId, String xRequestId) throws Exception {
-        Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
-                Map.of()
-        );
-        Object raw = client.delete(ApiPaths.backendPath("/open_platform/accounts/" + serializePathParameter(accountId, new PathParameterSpec("accountId", "simple", false)) + ""), null, requestHeaders);
+    public AccountsDeleteResult accountsDelete(String accountId) throws Exception {
+        Object raw = client.delete(ApiPaths.backendPath("/open_platform/accounts/" + serializePathParameter(accountId, new PathParameterSpec("accountId", "simple", false)) + ""));
         return client.convertValue(raw, new TypeReference<AccountsDeleteResult>() {});
     }
 
@@ -53,12 +45,8 @@ public class OpenPlatformApi {
     }
 
     /** Update open platform account */
-    public AccountsUpdateResult accountsUpdate(String accountId, OpenPlatformAccountUpdateRequest body, String xRequestId) throws Exception {
-        Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
-                Map.of()
-        );
-        Object raw = client.patch(ApiPaths.backendPath("/open_platform/accounts/" + serializePathParameter(accountId, new PathParameterSpec("accountId", "simple", false)) + ""), body, null, requestHeaders, "application/json");
+    public AccountsUpdateResult accountsUpdate(String accountId, OpenPlatformAccountUpdateRequest body) throws Exception {
+        Object raw = client.patch(ApiPaths.backendPath("/open_platform/accounts/" + serializePathParameter(accountId, new PathParameterSpec("accountId", "simple", false)) + ""), body, null, null, "application/json");
         return client.convertValue(raw, new TypeReference<AccountsUpdateResult>() {});
     }
 
@@ -69,32 +57,20 @@ public class OpenPlatformApi {
     }
 
     /** Create open platform account entry */
-    public AccountsEntriesCreateResult accountsEntriesCreate(String accountId, OpenPlatformEntryCreateRequest body, String xRequestId) throws Exception {
-        Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
-                Map.of()
-        );
-        Object raw = client.post(ApiPaths.backendPath("/open_platform/accounts/" + serializePathParameter(accountId, new PathParameterSpec("accountId", "simple", false)) + "/entries"), body, null, requestHeaders, "application/json");
+    public AccountsEntriesCreateResult accountsEntriesCreate(String accountId, OpenPlatformEntryCreateRequest body) throws Exception {
+        Object raw = client.post(ApiPaths.backendPath("/open_platform/accounts/" + serializePathParameter(accountId, new PathParameterSpec("accountId", "simple", false)) + "/entries"), body, null, null, "application/json");
         return client.convertValue(raw, new TypeReference<AccountsEntriesCreateResult>() {});
     }
 
     /** Delete open platform account entry */
-    public AccountsEntriesDeleteResult accountsEntriesDelete(String accountId, String entryId, String xRequestId) throws Exception {
-        Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
-                Map.of()
-        );
-        Object raw = client.delete(ApiPaths.backendPath("/open_platform/accounts/" + serializePathParameter(accountId, new PathParameterSpec("accountId", "simple", false)) + "/entries/" + serializePathParameter(entryId, new PathParameterSpec("entryId", "simple", false)) + ""), null, requestHeaders);
+    public AccountsEntriesDeleteResult accountsEntriesDelete(String accountId, String entryId) throws Exception {
+        Object raw = client.delete(ApiPaths.backendPath("/open_platform/accounts/" + serializePathParameter(accountId, new PathParameterSpec("accountId", "simple", false)) + "/entries/" + serializePathParameter(entryId, new PathParameterSpec("entryId", "simple", false)) + ""));
         return client.convertValue(raw, new TypeReference<AccountsEntriesDeleteResult>() {});
     }
 
     /** Update open platform account entry */
-    public AccountsEntriesUpdateResult accountsEntriesUpdate(String accountId, String entryId, OpenPlatformEntryUpdateRequest body, String xRequestId) throws Exception {
-        Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
-                Map.of()
-        );
-        Object raw = client.patch(ApiPaths.backendPath("/open_platform/accounts/" + serializePathParameter(accountId, new PathParameterSpec("accountId", "simple", false)) + "/entries/" + serializePathParameter(entryId, new PathParameterSpec("entryId", "simple", false)) + ""), body, null, requestHeaders, "application/json");
+    public AccountsEntriesUpdateResult accountsEntriesUpdate(String accountId, String entryId, OpenPlatformEntryUpdateRequest body) throws Exception {
+        Object raw = client.patch(ApiPaths.backendPath("/open_platform/accounts/" + serializePathParameter(accountId, new PathParameterSpec("accountId", "simple", false)) + "/entries/" + serializePathParameter(entryId, new PathParameterSpec("entryId", "simple", false)) + ""), body, null, null, "application/json");
         return client.convertValue(raw, new TypeReference<AccountsEntriesUpdateResult>() {});
     }
 
@@ -105,22 +81,14 @@ public class OpenPlatformApi {
     }
 
     /** Create open platform account pay binding */
-    public AccountsPayBindingsCreateResult accountsPayBindingsCreate(String accountId, OpenPlatformPayBindingCreateRequest body, String xRequestId) throws Exception {
-        Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
-                Map.of()
-        );
-        Object raw = client.post(ApiPaths.backendPath("/open_platform/accounts/" + serializePathParameter(accountId, new PathParameterSpec("accountId", "simple", false)) + "/pay_bindings"), body, null, requestHeaders, "application/json");
+    public AccountsPayBindingsCreateResult accountsPayBindingsCreate(String accountId, OpenPlatformPayBindingCreateRequest body) throws Exception {
+        Object raw = client.post(ApiPaths.backendPath("/open_platform/accounts/" + serializePathParameter(accountId, new PathParameterSpec("accountId", "simple", false)) + "/pay_bindings"), body, null, null, "application/json");
         return client.convertValue(raw, new TypeReference<AccountsPayBindingsCreateResult>() {});
     }
 
     /** Delete open platform account pay binding */
-    public AccountsPayBindingsDeleteResult accountsPayBindingsDelete(String accountId, String bindingId, String xRequestId) throws Exception {
-        Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
-                Map.of()
-        );
-        Object raw = client.delete(ApiPaths.backendPath("/open_platform/accounts/" + serializePathParameter(accountId, new PathParameterSpec("accountId", "simple", false)) + "/pay_bindings/" + serializePathParameter(bindingId, new PathParameterSpec("bindingId", "simple", false)) + ""), null, requestHeaders);
+    public AccountsPayBindingsDeleteResult accountsPayBindingsDelete(String accountId, String bindingId) throws Exception {
+        Object raw = client.delete(ApiPaths.backendPath("/open_platform/accounts/" + serializePathParameter(accountId, new PathParameterSpec("accountId", "simple", false)) + "/pay_bindings/" + serializePathParameter(bindingId, new PathParameterSpec("bindingId", "simple", false)) + ""));
         return client.convertValue(raw, new TypeReference<AccountsPayBindingsDeleteResult>() {});
     }
 
@@ -332,74 +300,6 @@ public class OpenPlatformApi {
         return new com.fasterxml.jackson.databind.ObjectMapper();
     }
 
-    private record HeaderParameterSpec(Object value, String style, boolean explode, String contentType) {}
-
-    private static Map<String, String> buildRequestHeaders(Map<String, HeaderParameterSpec> headers, Map<String, HeaderParameterSpec> cookies) throws Exception {
-        Map<String, String> requestHeaders = new java.util.LinkedHashMap<>();
-        for (Map.Entry<String, HeaderParameterSpec> entry : headers.entrySet()) {
-            String serialized = serializeParameterValue(entry.getValue());
-            if (serialized != null) {
-                requestHeaders.put(entry.getKey(), serialized);
-            }
-        }
-
-        String cookieHeader = buildCookieHeader(cookies);
-        if (cookieHeader != null && !cookieHeader.isEmpty()) {
-            requestHeaders.merge("Cookie", cookieHeader, (left, right) -> left + "; " + right);
-        }
-
-        return requestHeaders.isEmpty() ? null : requestHeaders;
-    }
-
-    private static String buildCookieHeader(Map<String, HeaderParameterSpec> cookies) throws Exception {
-        java.util.List<String> pairs = new java.util.ArrayList<>();
-        for (Map.Entry<String, HeaderParameterSpec> entry : cookies.entrySet()) {
-            String serialized = serializeParameterValue(entry.getValue());
-            if (serialized != null) {
-                pairs.add(urlEncode(entry.getKey()) + "=" + urlEncode(serialized));
-            }
-        }
-        return String.join("; ", pairs);
-    }
-
-    private static String serializeParameterValue(HeaderParameterSpec parameter) throws Exception {
-        if (parameter == null || parameter.value() == null) {
-            return null;
-        }
-        Object value = parameter.value();
-        if (parameter.contentType() != null && !parameter.contentType().isBlank()) {
-            return headerObjectMapper().writeValueAsString(value);
-        }
-        if (value instanceof Iterable<?> iterable) {
-            java.util.List<String> values = new java.util.ArrayList<>();
-            for (Object item : iterable) {
-                if (item != null) {
-                    values.add(String.valueOf(item));
-                }
-            }
-            return String.join(",", values);
-        }
-        if (value instanceof Map<?, ?> map) {
-            java.util.List<String> values = new java.util.ArrayList<>();
-            map.forEach((key, item) -> {
-                if (item == null) {
-                    return;
-                }
-                if (parameter.explode()) {
-                    values.add(String.valueOf(key) + "=" + String.valueOf(item));
-                } else {
-                    values.add(String.valueOf(key));
-                    values.add(String.valueOf(item));
-                }
-            });
-            return String.join(",", values);
-        }
-        return String.valueOf(value);
-    }
-
-    private static com.fasterxml.jackson.databind.ObjectMapper headerObjectMapper() {
-        return new com.fasterxml.jackson.databind.ObjectMapper();
-    }
 
     private static String urlEncode(String value) {
         return java.net.URLEncoder.encode(value, java.nio.charset.StandardCharsets.UTF_8);

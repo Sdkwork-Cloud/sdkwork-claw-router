@@ -47,16 +47,9 @@ namespace Sdkwork.ClawRouter.Backend.Api
         /// <summary>
         /// Trigger model ranking refresh
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.ModelRankingsRefreshResult?> ModelRankingsRefreshAsync(Sdkwork.ClawRouter.Backend.Models.ModelRankingRefreshTriggerRequest body, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.ModelRankingsRefreshResult?> ModelRankingsRefreshAsync(Sdkwork.ClawRouter.Backend.Models.ModelRankingRefreshTriggerRequest body)
         {
-            var requestHeaders = BuildRequestHeaders(
-                new Dictionary<string, HeaderParameterSpec>
-                {
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
-                },
-                new Dictionary<string, HeaderParameterSpec>()
-            );
-            return await _client.PostAsync<Sdkwork.ClawRouter.Backend.Models.ModelRankingsRefreshResult>(ApiPaths.BackendPath("/ai/model_rankings/refresh"), body, null, requestHeaders, "application/json");
+            return await _client.PostAsync<Sdkwork.ClawRouter.Backend.Models.ModelRankingsRefreshResult>(ApiPaths.BackendPath("/ai/model_rankings/refresh"), body, null, null, "application/json");
         }
 
         /// <summary>
@@ -82,16 +75,9 @@ namespace Sdkwork.ClawRouter.Backend.Api
         /// <summary>
         /// Create vendor
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.ModelVendorsCreateResult?> ModelVendorsCreateAsync(Sdkwork.ClawRouter.Backend.Models.AdminModelVendorCreateRequest body, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.ModelVendorsCreateResult?> ModelVendorsCreateAsync(Sdkwork.ClawRouter.Backend.Models.AdminModelVendorCreateRequest body)
         {
-            var requestHeaders = BuildRequestHeaders(
-                new Dictionary<string, HeaderParameterSpec>
-                {
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
-                },
-                new Dictionary<string, HeaderParameterSpec>()
-            );
-            return await _client.PostAsync<Sdkwork.ClawRouter.Backend.Models.ModelVendorsCreateResult>(ApiPaths.BackendPath("/ai/model_vendors"), body, null, requestHeaders, "application/json");
+            return await _client.PostAsync<Sdkwork.ClawRouter.Backend.Models.ModelVendorsCreateResult>(ApiPaths.BackendPath("/ai/model_vendors"), body, null, null, "application/json");
         }
 
         /// <summary>
@@ -105,31 +91,17 @@ namespace Sdkwork.ClawRouter.Backend.Api
         /// <summary>
         /// Create model
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.ModelsCreateResult?> ModelsCreateAsync(Sdkwork.ClawRouter.Backend.Models.AdminAiModelCreateRequest body, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.ModelsCreateResult?> ModelsCreateAsync(Sdkwork.ClawRouter.Backend.Models.AdminAiModelCreateRequest body)
         {
-            var requestHeaders = BuildRequestHeaders(
-                new Dictionary<string, HeaderParameterSpec>
-                {
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
-                },
-                new Dictionary<string, HeaderParameterSpec>()
-            );
-            return await _client.PostAsync<Sdkwork.ClawRouter.Backend.Models.ModelsCreateResult>(ApiPaths.BackendPath("/ai/models"), body, null, requestHeaders, "application/json");
+            return await _client.PostAsync<Sdkwork.ClawRouter.Backend.Models.ModelsCreateResult>(ApiPaths.BackendPath("/ai/models"), body, null, null, "application/json");
         }
 
         /// <summary>
         /// Sync vendors and models
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.ModelsRefreshResult?> ModelsRefreshAsync(Sdkwork.ClawRouter.Backend.Models.AdminModelCatalogSyncRequest body, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.ModelsRefreshResult?> ModelsRefreshAsync(Sdkwork.ClawRouter.Backend.Models.AdminModelCatalogSyncRequest body)
         {
-            var requestHeaders = BuildRequestHeaders(
-                new Dictionary<string, HeaderParameterSpec>
-                {
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
-                },
-                new Dictionary<string, HeaderParameterSpec>()
-            );
-            return await _client.PostAsync<Sdkwork.ClawRouter.Backend.Models.ModelsRefreshResult>(ApiPaths.BackendPath("/ai/models/refresh"), body, null, requestHeaders, "application/json");
+            return await _client.PostAsync<Sdkwork.ClawRouter.Backend.Models.ModelsRefreshResult>(ApiPaths.BackendPath("/ai/models/refresh"), body, null, null, "application/json");
         }
 
         /// <summary>
@@ -143,16 +115,33 @@ namespace Sdkwork.ClawRouter.Backend.Api
         /// <summary>
         /// Update model
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.ModelsUpdateResult?> ModelsUpdateAsync(string modelId, Sdkwork.ClawRouter.Backend.Models.AdminAiModelUpdateRequest body, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.ModelsUpdateResult?> ModelsUpdateAsync(string modelId, Sdkwork.ClawRouter.Backend.Models.AdminAiModelUpdateRequest body)
         {
-            var requestHeaders = BuildRequestHeaders(
-                new Dictionary<string, HeaderParameterSpec>
-                {
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
-                },
-                new Dictionary<string, HeaderParameterSpec>()
-            );
-            return await _client.PatchAsync<Sdkwork.ClawRouter.Backend.Models.ModelsUpdateResult>(ApiPaths.BackendPath($"/ai/models/{SerializePathParameter(modelId, new PathParameterSpec("modelId", "simple", false))}"), body, null, requestHeaders, "application/json");
+            return await _client.PatchAsync<Sdkwork.ClawRouter.Backend.Models.ModelsUpdateResult>(ApiPaths.BackendPath($"/ai/models/{SerializePathParameter(modelId, new PathParameterSpec("modelId", "simple", false))}"), body, null, null, "application/json");
+        }
+
+        /// <summary>
+        /// List ai resources
+        /// </summary>
+        public async Task<Sdkwork.ClawRouter.Backend.Models.AiResourcesListResult?> ResourcesListAsync()
+        {
+            return await _client.GetAsync<Sdkwork.ClawRouter.Backend.Models.AiResourcesListResult>(ApiPaths.BackendPath("/ai/resources"));
+        }
+
+        /// <summary>
+        /// Create ai resource
+        /// </summary>
+        public async Task<Sdkwork.ClawRouter.Backend.Models.AiResourcesCreateResult?> ResourcesCreateAsync(Sdkwork.ClawRouter.Backend.Models.AdminAiResourceCreateRequest body)
+        {
+            return await _client.PostAsync<Sdkwork.ClawRouter.Backend.Models.AiResourcesCreateResult>(ApiPaths.BackendPath("/ai/resources"), body, null, null, "application/json");
+        }
+
+        /// <summary>
+        /// Update ai resource
+        /// </summary>
+        public async Task<Sdkwork.ClawRouter.Backend.Models.AiResourcesUpdateResult?> ResourcesUpdateAsync(string resourceId, Sdkwork.ClawRouter.Backend.Models.AdminAiResourceUpdateRequest body)
+        {
+            return await _client.PutAsync<Sdkwork.ClawRouter.Backend.Models.AiResourcesUpdateResult>(ApiPaths.BackendPath($"/ai/resources/{SerializePathParameter(resourceId, new PathParameterSpec("resourceId", "simple", false))}"), body, null, null, "application/json");
         }
 
         private sealed record PathParameterSpec(string Name, string Style, bool Explode);
@@ -382,92 +371,5 @@ namespace Sdkwork.ClawRouter.Backend.Api
                 .Replace("%3B", ";").Replace("%3D", "=");
         }
 
-        private sealed record HeaderParameterSpec(object? Value, string Style, bool Explode, string? ContentType);
-
-        private static Dictionary<string, string>? BuildRequestHeaders(
-            Dictionary<string, HeaderParameterSpec> headers,
-            Dictionary<string, HeaderParameterSpec> cookies)
-        {
-            var requestHeaders = new Dictionary<string, string>();
-            foreach (var item in headers)
-            {
-                var serialized = SerializeParameterValue(item.Value);
-                if (serialized is not null)
-                {
-                    requestHeaders[item.Key] = serialized;
-                }
-            }
-
-            var cookieHeader = BuildCookieHeader(cookies);
-            if (!string.IsNullOrEmpty(cookieHeader))
-            {
-                requestHeaders["Cookie"] = requestHeaders.TryGetValue("Cookie", out var existing) && !string.IsNullOrEmpty(existing)
-                    ? existing + "; " + cookieHeader
-                    : cookieHeader;
-            }
-
-            return requestHeaders.Count == 0 ? null : requestHeaders;
-        }
-
-        private static string BuildCookieHeader(Dictionary<string, HeaderParameterSpec> cookies)
-        {
-            var pairs = new List<string>();
-            foreach (var item in cookies)
-            {
-                var serialized = SerializeParameterValue(item.Value);
-                if (serialized is not null)
-                {
-                    pairs.Add(Uri.EscapeDataString(item.Key) + "=" + Uri.EscapeDataString(serialized));
-                }
-            }
-            return string.Join("; ", pairs);
-        }
-
-        private static string? SerializeParameterValue(HeaderParameterSpec? parameter)
-        {
-            var value = parameter?.Value;
-            if (value is null)
-            {
-                return null;
-            }
-            if (!string.IsNullOrWhiteSpace(parameter!.ContentType))
-            {
-                return System.Text.Json.JsonSerializer.Serialize(value);
-            }
-            if (value is System.Collections.IEnumerable enumerable && value is not string)
-            {
-                var values = new List<string>();
-                foreach (var item in enumerable)
-                {
-                    if (item is not null)
-                    {
-                        values.Add(item.ToString() ?? string.Empty);
-                    }
-                }
-                return string.Join(",", values);
-            }
-            if (value is System.Collections.IDictionary dictionary)
-            {
-                var values = new List<string>();
-                foreach (System.Collections.DictionaryEntry item in dictionary)
-                {
-                    if (item.Value is null)
-                    {
-                        continue;
-                    }
-                    if (parameter.Explode)
-                    {
-                        values.Add((item.Key.ToString() ?? string.Empty) + "=" + (item.Value.ToString() ?? string.Empty));
-                    }
-                    else
-                    {
-                        values.Add(item.Key.ToString() ?? string.Empty);
-                        values.Add(item.Value.ToString() ?? string.Empty);
-                    }
-                }
-                return string.Join(",", values);
-            }
-            return value.ToString();
-        }
     }
 }

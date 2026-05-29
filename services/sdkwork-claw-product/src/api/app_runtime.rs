@@ -164,7 +164,7 @@ struct RuntimeGatewayRouteProbeFailure {
 
 struct RuntimeGatewayRequestPlan {
     request: AppRuntimeGatewayRequest,
-    vendor_region_model: String,
+    routing_catalog_key: String,
     model: String,
 }
 
@@ -1739,7 +1739,7 @@ where
         invocation_id = %invocation_id,
         runtime = %execution.item.runtime,
         endpoint = execution.item.endpoint.as_deref().unwrap_or(""),
-        vendor_region_model = execution.item.model.as_deref().unwrap_or(""),
+        requested_model_key = execution.item.model.as_deref().unwrap_or(""),
         provider = execution.item.provider.as_deref().unwrap_or(""),
         "app runtime gateway stream execution started"
     );
@@ -1768,7 +1768,7 @@ where
         method = %request_plan.request.method,
         path = %request_plan.request.path,
         model = %request_plan.model,
-        vendor_region_model = %request_plan.vendor_region_model,
+        routing_catalog_key = %request_plan.routing_catalog_key,
         "app runtime forwarding request to gateway"
     );
     let response = send_runtime_gateway_request_with_empty_snapshot_retry(
@@ -1881,7 +1881,7 @@ fn runtime_gateway_error_is_route_snapshot_miss(message: &str) -> bool {
     message.contains("provider_route_not_available")
         && message.contains("route diagnostics:")
         && runtime_gateway_route_diagnostic_usize(message, "model_routes_loaded") == Some(0)
-        && runtime_gateway_route_diagnostic_usize(message, "account_pool_routes_loaded") == Some(0)
+        && runtime_gateway_route_diagnostic_usize(message, "channel_routes_loaded") == Some(0)
         && runtime_gateway_route_diagnostic_bool(message, "any_group_bindings") == Some(false)
         && runtime_gateway_route_diagnostic_usize(message, "matching_group_bound_channels")
             == Some(0)
@@ -1928,12 +1928,17 @@ fn build_runtime_gateway_request<C>(
 where
     C: PricingCatalog,
 {
-    let vendor_region_model = execution.item.model.as_deref().ok_or_else(|| {
+    let requested_model_key = execution.item.model.as_deref().ok_or_else(|| {
         DomainError::new("runtime invocation model is required for gateway execution")
     })?;
-    let catalog_model = find_runtime_catalog_model(catalog, vendor_region_model);
-    let gateway_model = vendor_region_model.trim().to_owned();
-    let provider_model = provider_native_model_id(vendor_region_model, catalog_model.as_ref());
+    let catalog_model = find_runtime_catalog_model(catalog, requested_model_key);
+    let provider_model = provider_native_model_id(requested_model_key, catalog_model.as_ref());
+    let routing_model = catalog_model
+        .as_ref()
+        .map(|model| model.catalog_key.trim())
+        .filter(|value| !value.is_empty())
+        .unwrap_or_else(|| requested_model_key.trim())
+        .to_owned();
     let api = runtime_gateway_api(
         &execution.item,
         catalog_model.as_ref(),
@@ -1943,26 +1948,26 @@ where
         RuntimeGatewayApi::OpenAiChatCompletions => AppRuntimeGatewayRequest::new(
             Method::POST,
             "/v1/chat/completions",
-            build_runtime_chat_request_body(&gateway_model, &execution.request_json)?,
+            build_runtime_chat_request_body(&provider_model, &execution.request_json)?,
         ),
         RuntimeGatewayApi::OpenAiResponses => AppRuntimeGatewayRequest::new(
             Method::POST,
             "/v1/responses",
-            build_runtime_responses_request_body(&gateway_model, &execution.request_json)?,
+            build_runtime_responses_request_body(&provider_model, &execution.request_json)?,
         ),
         RuntimeGatewayApi::OpenAiImageGenerations => AppRuntimeGatewayRequest::new(
             Method::POST,
             "/v1/images/generations",
-            build_runtime_image_generation_request_body(&gateway_model, &execution.request_json)?,
+            build_runtime_image_generation_request_body(&provider_model, &execution.request_json)?,
         ),
         RuntimeGatewayApi::OpenAiImageEdits => {
-            build_runtime_image_edit_gateway_request(&gateway_model, &execution.request_json)?
+            build_runtime_image_edit_gateway_request(&provider_model, &execution.request_json)?
         }
         RuntimeGatewayApi::OpenAiAudioSpeech => AppRuntimeGatewayRequest::new(
             Method::POST,
             "/v1/audio/speech",
             build_runtime_openai_audio_speech_request_body(
-                &gateway_model,
+                &provider_model,
                 &execution.request_json,
             )?,
         ),
@@ -2022,8 +2027,8 @@ where
     }
     Ok(RuntimeGatewayRequestPlan {
         request,
-        vendor_region_model: gateway_model.clone(),
-        model: gateway_model,
+        routing_catalog_key: routing_model.clone(),
+        model: routing_model,
     })
 }
 
@@ -3063,10 +3068,10 @@ fn gemini_parts_from_message_content(content: Option<&Value>) -> Option<Value> {
     }
 }
 
-fn provider_native_model_id(vendor_region_model: &str, catalog_model: Option<&AiModel>) -> String {
+fn provider_native_model_id(requested_model_key: &str, catalog_model: Option<&AiModel>) -> String {
     catalog_model
         .map(|model| model.model.clone())
-        .unwrap_or_else(|| crate::domain::provider_native_model_id(vendor_region_model))
+        .unwrap_or_else(|| crate::domain::provider_native_model_id(requested_model_key))
 }
 
 fn remove_runtime_only_fields(object: &mut Map<String, Value>) {
@@ -3544,7 +3549,7 @@ fn select_runtime_api_key(
     subject: AppRuntimeSubject,
     execution: &AppRuntimeInvocationExecution,
 ) -> Result<GatewayApiKey, DomainError> {
-    let vendor_region_model = runtime_execution_vendor_region_model_label(execution);
+    let requested_model_key = runtime_execution_requested_model_key_label(execution);
     if let Some(api_key_id) = runtime_request_route_key_id(execution) {
         let api_key = catalog.find_api_key(api_key_id).ok_or_else(|| {
             DomainError::new(format!("runtime route API key was not found: {api_key_id}"))
@@ -3556,7 +3561,7 @@ fn select_runtime_api_key(
                         tenant_id = subject.tenant_id,
                         organization_id = subject.organization_id,
                         user_id = subject.user_id,
-                        vendor_region_model = %vendor_region_model,
+                        requested_model_key = %requested_model_key,
                         route_key_id = api_key.id,
                         api_key_id = api_key.id,
                         group_id = api_key.group_id,
@@ -3570,7 +3575,7 @@ fn select_runtime_api_key(
                             tenant_id = subject.tenant_id,
                             organization_id = subject.organization_id,
                             user_id = subject.user_id,
-                            vendor_region_model = %vendor_region_model,
+                            requested_model_key = %requested_model_key,
                             route_key_id = api_key.id,
                             api_key_id = api_key.id,
                             group_id = api_key.group_id,
@@ -3619,7 +3624,7 @@ fn select_runtime_api_key(
         tenant_id = subject.tenant_id,
         organization_id = subject.organization_id,
         user_id = subject.user_id,
-        vendor_region_model = %vendor_region_model,
+        requested_model_key = %requested_model_key,
         candidate_count = candidates.len(),
         route_capable_candidate_count = route_capable_candidates.len(),
         first_probe_error = first_probe_failure
@@ -3639,7 +3644,7 @@ fn select_runtime_api_key(
                 tenant_id = subject.tenant_id,
                 organization_id = subject.organization_id,
                 user_id = subject.user_id,
-                vendor_region_model = %vendor_region_model,
+                requested_model_key = %requested_model_key,
                 api_key_id = api_key.id,
                 group_id = api_key.group_id,
                 default_for_runtime = api_key.default_for_runtime,
@@ -3652,7 +3657,7 @@ fn select_runtime_api_key(
             tenant_id = subject.tenant_id,
             organization_id = subject.organization_id,
             user_id = subject.user_id,
-            vendor_region_model = %vendor_region_model,
+            requested_model_key = %requested_model_key,
             api_key_id = api_key.id,
             group_id = api_key.group_id,
             default_for_runtime = api_key.default_for_runtime,
@@ -3670,7 +3675,7 @@ fn select_runtime_api_key(
                 tenant_id = subject.tenant_id,
                 organization_id = subject.organization_id,
                 user_id = subject.user_id,
-                vendor_region_model = %vendor_region_model,
+                requested_model_key = %requested_model_key,
                 api_key_id = api_key.id,
                 group_id = api_key.group_id,
                 default_for_runtime = api_key.default_for_runtime,
@@ -3683,7 +3688,7 @@ fn select_runtime_api_key(
             tenant_id = subject.tenant_id,
             organization_id = subject.organization_id,
             user_id = subject.user_id,
-            vendor_region_model = %vendor_region_model,
+            requested_model_key = %requested_model_key,
             api_key_id = api_key.id,
             group_id = api_key.group_id,
             default_for_runtime = api_key.default_for_runtime,
@@ -3707,7 +3712,7 @@ fn select_runtime_api_key(
             tenant_id = subject.tenant_id,
             organization_id = subject.organization_id,
             user_id = subject.user_id,
-            vendor_region_model = %vendor_region_model,
+            requested_model_key = %requested_model_key,
             api_key_id = api_key.id,
             group_id = api_key.group_id,
             default_for_runtime = api_key.default_for_runtime,
@@ -3720,7 +3725,7 @@ fn select_runtime_api_key(
         tenant_id = subject.tenant_id,
         organization_id = subject.organization_id,
         user_id = subject.user_id,
-        vendor_region_model = %vendor_region_model,
+        requested_model_key = %requested_model_key,
         api_key_id = api_key.id,
         group_id = api_key.group_id,
         default_for_runtime = api_key.default_for_runtime,
@@ -3759,7 +3764,7 @@ fn runtime_api_key_gateway_route_probe<C>(
 where
     C: PricingCatalog,
 {
-    let Some(vendor_region_model) = execution
+    let Some(requested_model_key) = execution
         .item
         .model
         .as_deref()
@@ -3768,7 +3773,7 @@ where
     else {
         return Ok(RuntimeGatewayRouteProbeStatus::NotRequired);
     };
-    let catalog_model = find_runtime_catalog_model(catalog, vendor_region_model);
+    let catalog_model = find_runtime_catalog_model(catalog, requested_model_key);
     let Some((accepted_capabilities, capability_label, capability, billing_meter)) =
         runtime_openai_route_probe(
             &execution.item,
@@ -3782,7 +3787,7 @@ where
             user_id = subject.user_id,
             api_key_id = api_key.id,
             group_id = api_key.group_id,
-            vendor_region_model,
+            requested_model_key,
             "app runtime gateway route probe is not required for request"
         );
         return Ok(RuntimeGatewayRouteProbeStatus::NotRequired);
@@ -3792,7 +3797,7 @@ where
             api_key,
             None,
             Some(capability_label),
-            format!("model is not available: {vendor_region_model}"),
+            format!("model is not available: {requested_model_key}"),
             false,
         )
     })?;
@@ -3813,7 +3818,7 @@ where
             user_id = subject.user_id,
             api_key_id = api_key.id,
             group_id = api_key.group_id,
-            vendor_region_model,
+            requested_model_key,
             capability = capability_label,
             error = %failure.reason,
             "app runtime gateway route probe failed"
@@ -3837,7 +3842,7 @@ where
             user_id = subject.user_id,
             api_key_id = api_key.id,
             group_id = api_key.group_id,
-            vendor_region_model,
+            requested_model_key,
             capability = capability_label,
             error = %failure.reason,
             "app runtime gateway route probe failed"
@@ -3855,11 +3860,11 @@ where
         pricing_plan_code: group.pricing_plan_code,
     };
     let routing_catalog_key =
-        runtime_route_scope_catalog_key(vendor_region_model, catalog_model.catalog_key.as_str());
+        runtime_route_scope_catalog_key(requested_model_key, catalog_model.catalog_key.as_str());
     match ProviderRouteSelector::new(catalog).select_plan(SelectProviderRouteQuery {
         context,
         catalog_key: routing_catalog_key.clone(),
-        requested_model: vendor_region_model.to_owned(),
+        requested_model: requested_model_key.to_owned(),
         capability,
         billing_meter,
     }) {
@@ -3870,7 +3875,7 @@ where
                 user_id = subject.user_id,
                 api_key_id = api_key.id,
                 group_id = api_key.group_id,
-                vendor_region_model,
+                requested_model_key,
                 routing_catalog_key,
                 capability = capability_label,
                 route_count = plan.routes.len(),
@@ -3894,7 +3899,7 @@ where
                 user_id = subject.user_id,
                 api_key_id = api_key.id,
                 group_id = api_key.group_id,
-                vendor_region_model,
+                requested_model_key,
                 routing_catalog_key,
                 capability = capability_label,
                 error = %failure.reason,
@@ -3912,7 +3917,7 @@ fn runtime_gateway_route_probe_required<C>(
 where
     C: PricingCatalog,
 {
-    let Some(vendor_region_model) = execution
+    let Some(requested_model_key) = execution
         .item
         .model
         .as_deref()
@@ -3921,7 +3926,7 @@ where
     else {
         return false;
     };
-    let catalog_model = find_runtime_catalog_model(catalog, vendor_region_model);
+    let catalog_model = find_runtime_catalog_model(catalog, requested_model_key);
     runtime_openai_route_probe(
         &execution.item,
         catalog_model.as_ref(),
@@ -3935,7 +3940,7 @@ fn runtime_api_key_cannot_route_error(
     api_key_id: Option<i64>,
     failure: Option<&RuntimeGatewayRouteProbeFailure>,
 ) -> DomainError {
-    let vendor_region_model = execution
+    let requested_model_key = execution
         .item
         .model
         .as_deref()
@@ -3959,7 +3964,7 @@ fn runtime_api_key_cannot_route_error(
         })
         .unwrap_or_default();
     DomainError::new(format!(
-        "runtime route API key cannot route requested model: {vendor_region_model};{selected_key}{probe_failure} verify the API key group is bound to an active channel account in the account pool and has a valid pricing plan"
+        "runtime route API key cannot route requested model: {requested_model_key};{selected_key}{probe_failure} verify the API key group is bound to an active channel account in the channel route and has a valid pricing plan"
     ))
 }
 
@@ -3983,11 +3988,11 @@ fn runtime_route_probe_has_empty_route_snapshot<C>(catalog: &C, catalog_key: &st
 where
     C: PricingCatalog,
 {
-    catalog.list_provider_account_pool_routes().is_empty()
+    catalog.list_provider_channel_routes().is_empty()
         && catalog.list_provider_routes(catalog_key).is_empty()
 }
 
-fn runtime_execution_vendor_region_model_label(
+fn runtime_execution_requested_model_key_label(
     execution: &AppRuntimeInvocationExecution,
 ) -> String {
     execution

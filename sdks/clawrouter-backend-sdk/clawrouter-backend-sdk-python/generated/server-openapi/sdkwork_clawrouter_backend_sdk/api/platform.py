@@ -182,59 +182,6 @@ def encode_query_value(value: str, allow_reserved: bool) -> str:
 
     return quote(value, safe=':/?#[]@!$&\'()*+,;=' if allow_reserved else '')
 
-def build_request_headers(headers: Dict[str, Dict[str, Any]], cookies: Optional[Dict[str, Dict[str, Any]]] = None) -> Optional[Dict[str, str]]:
-    request_headers: Dict[str, str] = {}
-    for name, parameter in headers.items():
-        serialized = serialize_parameter_value(parameter)
-        if serialized is not None:
-            request_headers[name] = serialized
-
-    cookie_header = build_cookie_header(cookies or {})
-    if cookie_header:
-        request_headers['Cookie'] = (
-            f"{request_headers['Cookie']}; {cookie_header}"
-            if 'Cookie' in request_headers
-            else cookie_header
-        )
-
-    return request_headers or None
-
-
-def build_cookie_header(cookies: Dict[str, Dict[str, Any]]) -> Optional[str]:
-    from urllib.parse import quote
-
-    pairs: List[str] = []
-    for name, parameter in cookies.items():
-        serialized = serialize_parameter_value(parameter)
-        if serialized is not None:
-            pairs.append(f"{quote(str(name), safe='')}={quote(serialized, safe='')}")
-    return '; '.join(pairs) if pairs else None
-
-
-def serialize_parameter_value(parameter: Optional[Dict[str, Any]]) -> Optional[str]:
-    value = None if parameter is None else parameter.get('value')
-    if value is None:
-        return None
-    if parameter and parameter.get('content_type'):
-        import json
-
-        return json.dumps(value, separators=(',', ':'))
-    if isinstance(value, (list, tuple)):
-        return ','.join(serialize_header_primitive(item) for item in value if item is not None)
-    if isinstance(value, dict):
-        return serialize_header_object(value, bool(parameter and parameter.get('explode')))
-    return serialize_header_primitive(value)
-
-
-def serialize_header_object(value: Dict[str, Any], explode: bool) -> str:
-    entries = [(key, entry_value) for key, entry_value in value.items() if entry_value is not None]
-    if explode:
-        return ','.join(f"{key}={serialize_header_primitive(entry_value)}" for key, entry_value in entries)
-    return ','.join(item for key, entry_value in entries for item in (str(key), serialize_header_primitive(entry_value)))
-
-
-def serialize_header_primitive(value: Any) -> str:
-    return str(value)
 
 
 class PlatformApi:
@@ -254,7 +201,7 @@ class PlatformAppsApi:
         self.templates = PlatformAppsTemplatesApi(client)
 
 
-    def list(self, q: Optional[str] = None, status: Optional[str] = None, market_status: Optional[str] = None, app_type: Optional[str] = None, category_id: Optional[int] = None, page: Optional[int] = None, page_size: Optional[int] = None, x_request_id: Optional[str] = None) -> AppsListResult:
+    def list(self, q: Optional[str] = None, status: Optional[str] = None, market_status: Optional[str] = None, app_type: Optional[str] = None, category_id: Optional[int] = None, page: Optional[int] = None, page_size: Optional[int] = None) -> AppsListResult:
         """List apps"""
         query = build_query_string([
             {'name': 'q', 'value': q, 'style': 'form', 'explode': True, 'allow_reserved': False},
@@ -265,93 +212,39 @@ class PlatformAppsApi:
             {'name': 'page', 'value': page, 'style': 'form', 'explode': True, 'allow_reserved': False},
             {'name': 'page_size', 'value': page_size, 'style': 'form', 'explode': True, 'allow_reserved': False},
         ])
-        request_headers = build_request_headers(
-            {
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
-            },
-            {}
-        )
-        return self._client.get(_append_query_string(f"/backend/v3/api/platform/apps", query), headers=request_headers)
+        return self._client.get(_append_query_string(f"/backend/v3/api/platform/apps", query))
 
-    def create(self, body: AdminAppCreateRequest, x_request_id: Optional[str] = None) -> AppsCreateResult:
+    def create(self, body: AdminAppCreateRequest) -> AppsCreateResult:
         """Create app"""
-        request_headers = build_request_headers(
-            {
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
-            },
-            {}
-        )
-        return self._client.post(f"/backend/v3/api/platform/apps", json=body, headers=request_headers)
+        return self._client.post(f"/backend/v3/api/platform/apps", json=body)
 
-    def delete(self, app_id: str, x_request_id: Optional[str] = None) -> AppsDeleteResult:
+    def delete(self, app_id: str) -> AppsDeleteResult:
         """Delete app"""
-        request_headers = build_request_headers(
-            {
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
-            },
-            {}
-        )
-        return self._client.delete(f"/backend/v3/api/platform/apps/{serialize_path_parameter(app_id, {'name': 'appId', 'style': 'simple', 'explode': False})}", headers=request_headers)
+        return self._client.delete(f"/backend/v3/api/platform/apps/{serialize_path_parameter(app_id, {'name': 'appId', 'style': 'simple', 'explode': False})}")
 
-    def retrieve(self, app_id: str, x_request_id: Optional[str] = None) -> AppsRetrieveResult:
+    def retrieve(self, app_id: str) -> AppsRetrieveResult:
         """List app"""
-        request_headers = build_request_headers(
-            {
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
-            },
-            {}
-        )
-        return self._client.get(f"/backend/v3/api/platform/apps/{serialize_path_parameter(app_id, {'name': 'appId', 'style': 'simple', 'explode': False})}", headers=request_headers)
+        return self._client.get(f"/backend/v3/api/platform/apps/{serialize_path_parameter(app_id, {'name': 'appId', 'style': 'simple', 'explode': False})}")
 
-    def update(self, app_id: str, body: AdminAppUpdateRequest, x_request_id: Optional[str] = None) -> AppsUpdateResult:
+    def update(self, app_id: str, body: AdminAppUpdateRequest) -> AppsUpdateResult:
         """Update app"""
-        request_headers = build_request_headers(
-            {
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
-            },
-            {}
-        )
-        return self._client.put(f"/backend/v3/api/platform/apps/{serialize_path_parameter(app_id, {'name': 'appId', 'style': 'simple', 'explode': False})}", json=body, headers=request_headers)
+        return self._client.put(f"/backend/v3/api/platform/apps/{serialize_path_parameter(app_id, {'name': 'appId', 'style': 'simple', 'explode': False})}", json=body)
 
-    def disable(self, app_id: str, x_request_id: Optional[str] = None) -> AppsDisableResult:
+    def disable(self, app_id: str) -> AppsDisableResult:
         """Disable app"""
-        request_headers = build_request_headers(
-            {
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
-            },
-            {}
-        )
-        return self._client.post(f"/backend/v3/api/platform/apps/{serialize_path_parameter(app_id, {'name': 'appId', 'style': 'simple', 'explode': False})}/disable", headers=request_headers)
+        return self._client.post(f"/backend/v3/api/platform/apps/{serialize_path_parameter(app_id, {'name': 'appId', 'style': 'simple', 'explode': False})}/disable")
 
-    def enable(self, app_id: str, x_request_id: Optional[str] = None) -> AppsEnableResult:
+    def enable(self, app_id: str) -> AppsEnableResult:
         """Enable app"""
-        request_headers = build_request_headers(
-            {
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
-            },
-            {}
-        )
-        return self._client.post(f"/backend/v3/api/platform/apps/{serialize_path_parameter(app_id, {'name': 'appId', 'style': 'simple', 'explode': False})}/enable", headers=request_headers)
+        return self._client.post(f"/backend/v3/api/platform/apps/{serialize_path_parameter(app_id, {'name': 'appId', 'style': 'simple', 'explode': False})}/enable")
 
-    def publish(self, app_id: str, x_request_id: Optional[str] = None) -> AppsPublishResult:
+    def publish(self, app_id: str) -> AppsPublishResult:
         """Publish app"""
-        request_headers = build_request_headers(
-            {
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
-            },
-            {}
-        )
-        return self._client.post(f"/backend/v3/api/platform/apps/{serialize_path_parameter(app_id, {'name': 'appId', 'style': 'simple', 'explode': False})}/publish", headers=request_headers)
+        return self._client.post(f"/backend/v3/api/platform/apps/{serialize_path_parameter(app_id, {'name': 'appId', 'style': 'simple', 'explode': False})}/publish")
 
-    def unpublish(self, app_id: str, x_request_id: Optional[str] = None) -> AppsUnpublishResult:
+    def unpublish(self, app_id: str) -> AppsUnpublishResult:
         """Offline app"""
-        request_headers = build_request_headers(
-            {
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
-            },
-            {}
-        )
-        return self._client.post(f"/backend/v3/api/platform/apps/{serialize_path_parameter(app_id, {'name': 'appId', 'style': 'simple', 'explode': False})}/unpublish", headers=request_headers)
+        return self._client.post(f"/backend/v3/api/platform/apps/{serialize_path_parameter(app_id, {'name': 'appId', 'style': 'simple', 'explode': False})}/unpublish")
 
 class PlatformAppsCategoriesApi:
     """platform platform.apps.categories API client."""
@@ -364,35 +257,17 @@ class PlatformAppsCategoriesApi:
         """List app categories"""
         return self._client.get(f"/backend/v3/api/platform/apps/categories")
 
-    def create(self, body: AdminAppCategoryCreateRequest, x_request_id: Optional[str] = None) -> AppsCategoriesCreateResult:
+    def create(self, body: AdminAppCategoryCreateRequest) -> AppsCategoriesCreateResult:
         """Create app category"""
-        request_headers = build_request_headers(
-            {
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
-            },
-            {}
-        )
-        return self._client.post(f"/backend/v3/api/platform/apps/categories", json=body, headers=request_headers)
+        return self._client.post(f"/backend/v3/api/platform/apps/categories", json=body)
 
-    def delete(self, category_id: str, x_request_id: Optional[str] = None) -> AppsCategoriesDeleteResult:
+    def delete(self, category_id: str) -> AppsCategoriesDeleteResult:
         """Delete app category"""
-        request_headers = build_request_headers(
-            {
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
-            },
-            {}
-        )
-        return self._client.delete(f"/backend/v3/api/platform/apps/categories/{serialize_path_parameter(category_id, {'name': 'categoryId', 'style': 'simple', 'explode': False})}", headers=request_headers)
+        return self._client.delete(f"/backend/v3/api/platform/apps/categories/{serialize_path_parameter(category_id, {'name': 'categoryId', 'style': 'simple', 'explode': False})}")
 
-    def update(self, category_id: str, body: AdminAppCategoryUpdateRequest, x_request_id: Optional[str] = None) -> AppsCategoriesUpdateResult:
+    def update(self, category_id: str, body: AdminAppCategoryUpdateRequest) -> AppsCategoriesUpdateResult:
         """Update app category"""
-        request_headers = build_request_headers(
-            {
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
-            },
-            {}
-        )
-        return self._client.put(f"/backend/v3/api/platform/apps/categories/{serialize_path_parameter(category_id, {'name': 'categoryId', 'style': 'simple', 'explode': False})}", json=body, headers=request_headers)
+        return self._client.put(f"/backend/v3/api/platform/apps/categories/{serialize_path_parameter(category_id, {'name': 'categoryId', 'style': 'simple', 'explode': False})}", json=body)
 
 class PlatformAppsTemplatesApi:
     """platform platform.apps.templates API client."""
@@ -401,7 +276,7 @@ class PlatformAppsTemplatesApi:
         self._client = client
 
 
-    def list(self, q: Optional[str] = None, publish_status: Optional[str] = None, template_type: Optional[str] = None, runtime: Optional[str] = None, category_id: Optional[int] = None, page: Optional[int] = None, page_size: Optional[int] = None, x_request_id: Optional[str] = None) -> AppsTemplatesListResult:
+    def list(self, q: Optional[str] = None, publish_status: Optional[str] = None, template_type: Optional[str] = None, runtime: Optional[str] = None, category_id: Optional[int] = None, page: Optional[int] = None, page_size: Optional[int] = None) -> AppsTemplatesListResult:
         """List app templates"""
         query = build_query_string([
             {'name': 'q', 'value': q, 'style': 'form', 'explode': True, 'allow_reserved': False},
@@ -412,70 +287,28 @@ class PlatformAppsTemplatesApi:
             {'name': 'page', 'value': page, 'style': 'form', 'explode': True, 'allow_reserved': False},
             {'name': 'page_size', 'value': page_size, 'style': 'form', 'explode': True, 'allow_reserved': False},
         ])
-        request_headers = build_request_headers(
-            {
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
-            },
-            {}
-        )
-        return self._client.get(_append_query_string(f"/backend/v3/api/platform/apps/templates", query), headers=request_headers)
+        return self._client.get(_append_query_string(f"/backend/v3/api/platform/apps/templates", query))
 
-    def create(self, body: AdminAppTemplateCreateRequest, x_request_id: Optional[str] = None) -> AppsTemplatesCreateResult:
+    def create(self, body: AdminAppTemplateCreateRequest) -> AppsTemplatesCreateResult:
         """Create app template"""
-        request_headers = build_request_headers(
-            {
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
-            },
-            {}
-        )
-        return self._client.post(f"/backend/v3/api/platform/apps/templates", json=body, headers=request_headers)
+        return self._client.post(f"/backend/v3/api/platform/apps/templates", json=body)
 
-    def delete(self, template_id: str, x_request_id: Optional[str] = None) -> AppsTemplatesDeleteResult:
+    def delete(self, template_id: str) -> AppsTemplatesDeleteResult:
         """Delete app template"""
-        request_headers = build_request_headers(
-            {
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
-            },
-            {}
-        )
-        return self._client.delete(f"/backend/v3/api/platform/apps/templates/{serialize_path_parameter(template_id, {'name': 'templateId', 'style': 'simple', 'explode': False})}", headers=request_headers)
+        return self._client.delete(f"/backend/v3/api/platform/apps/templates/{serialize_path_parameter(template_id, {'name': 'templateId', 'style': 'simple', 'explode': False})}")
 
-    def retrieve(self, template_id: str, x_request_id: Optional[str] = None) -> AppsTemplatesRetrieveResult:
+    def retrieve(self, template_id: str) -> AppsTemplatesRetrieveResult:
         """List app template"""
-        request_headers = build_request_headers(
-            {
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
-            },
-            {}
-        )
-        return self._client.get(f"/backend/v3/api/platform/apps/templates/{serialize_path_parameter(template_id, {'name': 'templateId', 'style': 'simple', 'explode': False})}", headers=request_headers)
+        return self._client.get(f"/backend/v3/api/platform/apps/templates/{serialize_path_parameter(template_id, {'name': 'templateId', 'style': 'simple', 'explode': False})}")
 
-    def update(self, template_id: str, body: AdminAppTemplateUpdateRequest, x_request_id: Optional[str] = None) -> AppsTemplatesUpdateResult:
+    def update(self, template_id: str, body: AdminAppTemplateUpdateRequest) -> AppsTemplatesUpdateResult:
         """Update app template"""
-        request_headers = build_request_headers(
-            {
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
-            },
-            {}
-        )
-        return self._client.put(f"/backend/v3/api/platform/apps/templates/{serialize_path_parameter(template_id, {'name': 'templateId', 'style': 'simple', 'explode': False})}", json=body, headers=request_headers)
+        return self._client.put(f"/backend/v3/api/platform/apps/templates/{serialize_path_parameter(template_id, {'name': 'templateId', 'style': 'simple', 'explode': False})}", json=body)
 
-    def publish(self, template_id: str, x_request_id: Optional[str] = None) -> AppsTemplatesPublishResult:
+    def publish(self, template_id: str) -> AppsTemplatesPublishResult:
         """Publish app template"""
-        request_headers = build_request_headers(
-            {
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
-            },
-            {}
-        )
-        return self._client.post(f"/backend/v3/api/platform/apps/templates/{serialize_path_parameter(template_id, {'name': 'templateId', 'style': 'simple', 'explode': False})}/publish", headers=request_headers)
+        return self._client.post(f"/backend/v3/api/platform/apps/templates/{serialize_path_parameter(template_id, {'name': 'templateId', 'style': 'simple', 'explode': False})}/publish")
 
-    def unpublish(self, template_id: str, x_request_id: Optional[str] = None) -> AppsTemplatesUnpublishResult:
+    def unpublish(self, template_id: str) -> AppsTemplatesUnpublishResult:
         """Offline app template"""
-        request_headers = build_request_headers(
-            {
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
-            },
-            {}
-        )
-        return self._client.post(f"/backend/v3/api/platform/apps/templates/{serialize_path_parameter(template_id, {'name': 'templateId', 'style': 'simple', 'explode': False})}/unpublish", headers=request_headers)
+        return self._client.post(f"/backend/v3/api/platform/apps/templates/{serialize_path_parameter(template_id, {'name': 'templateId', 'style': 'simple', 'explode': False})}/unpublish")

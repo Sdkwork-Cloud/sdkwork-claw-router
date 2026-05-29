@@ -25,14 +25,8 @@ class EcosystemApi(private val client: HttpClient) {
     }
 
     /** Create skill */
-    suspend fun skillsCreate(body: AdminSkillCreateRequest, xRequestId: String? = null): SkillsCreateResult? {
-        val requestHeaders = buildRequestHeaders(
-            mapOf(
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
-            ),
-            emptyMap()
-        )
-        val raw = client.post(ApiPaths.backendPath("/ecosystem/skills"), body, null, requestHeaders, "application/json")
+    suspend fun skillsCreate(body: AdminSkillCreateRequest): SkillsCreateResult? {
+        val raw = client.post(ApiPaths.backendPath("/ecosystem/skills"), body, null, null, "application/json")
         return client.convertValue(raw, object : TypeReference<SkillsCreateResult>() {})
     }
 
@@ -43,38 +37,20 @@ class EcosystemApi(private val client: HttpClient) {
     }
 
     /** Create skill category */
-    suspend fun skillsCategoriesCreate(body: AdminSkillCategoryCreateRequest, xRequestId: String? = null): SkillsCategoriesCreateResult? {
-        val requestHeaders = buildRequestHeaders(
-            mapOf(
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
-            ),
-            emptyMap()
-        )
-        val raw = client.post(ApiPaths.backendPath("/ecosystem/skills/categories"), body, null, requestHeaders, "application/json")
+    suspend fun skillsCategoriesCreate(body: AdminSkillCategoryCreateRequest): SkillsCategoriesCreateResult? {
+        val raw = client.post(ApiPaths.backendPath("/ecosystem/skills/categories"), body, null, null, "application/json")
         return client.convertValue(raw, object : TypeReference<SkillsCategoriesCreateResult>() {})
     }
 
     /** Delete skill category */
-    suspend fun skillsCategoriesDelete(categoryId: String, xRequestId: String? = null): SkillsCategoriesDeleteResult? {
-        val requestHeaders = buildRequestHeaders(
-            mapOf(
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
-            ),
-            emptyMap()
-        )
-        val raw = client.delete(ApiPaths.backendPath("/ecosystem/skills/categories/${serializePathParameter(categoryId, PathParameterSpec("categoryId", "simple", false))}"), null, requestHeaders)
+    suspend fun skillsCategoriesDelete(categoryId: String): SkillsCategoriesDeleteResult? {
+        val raw = client.delete(ApiPaths.backendPath("/ecosystem/skills/categories/${serializePathParameter(categoryId, PathParameterSpec("categoryId", "simple", false))}"))
         return client.convertValue(raw, object : TypeReference<SkillsCategoriesDeleteResult>() {})
     }
 
     /** Update skill category */
-    suspend fun skillsCategoriesUpdate(categoryId: String, body: AdminSkillCategoryUpdateRequest, xRequestId: String? = null): SkillsCategoriesUpdateResult? {
-        val requestHeaders = buildRequestHeaders(
-            mapOf(
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
-            ),
-            emptyMap()
-        )
-        val raw = client.put(ApiPaths.backendPath("/ecosystem/skills/categories/${serializePathParameter(categoryId, PathParameterSpec("categoryId", "simple", false))}"), body, null, requestHeaders, "application/json")
+    suspend fun skillsCategoriesUpdate(categoryId: String, body: AdminSkillCategoryUpdateRequest): SkillsCategoriesUpdateResult? {
+        val raw = client.put(ApiPaths.backendPath("/ecosystem/skills/categories/${serializePathParameter(categoryId, PathParameterSpec("categoryId", "simple", false))}"), body, null, null, "application/json")
         return client.convertValue(raw, object : TypeReference<SkillsCategoriesUpdateResult>() {})
     }
 
@@ -92,14 +68,8 @@ class EcosystemApi(private val client: HttpClient) {
     }
 
     /** Create skill package */
-    suspend fun skillsPackageCreate(body: AdminSkillPackageCreateRequest, xRequestId: String? = null): SkillsPackageCreateResult? {
-        val requestHeaders = buildRequestHeaders(
-            mapOf(
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
-            ),
-            emptyMap()
-        )
-        val raw = client.post(ApiPaths.backendPath("/ecosystem/skills/package"), body, null, requestHeaders, "application/json")
+    suspend fun skillsPackageCreate(body: AdminSkillPackageCreateRequest): SkillsPackageCreateResult? {
+        val raw = client.post(ApiPaths.backendPath("/ecosystem/skills/package"), body, null, null, "application/json")
         return client.convertValue(raw, object : TypeReference<SkillsPackageCreateResult>() {})
     }
 
@@ -116,38 +86,20 @@ class EcosystemApi(private val client: HttpClient) {
     }
 
     /** Update skill package */
-    suspend fun skillsPackageUpdate(packageId: String, body: AdminSkillPackageUpdateRequest, xRequestId: String? = null): SkillsPackageUpdateResult? {
-        val requestHeaders = buildRequestHeaders(
-            mapOf(
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
-            ),
-            emptyMap()
-        )
-        val raw = client.put(ApiPaths.backendPath("/ecosystem/skills/package/${serializePathParameter(packageId, PathParameterSpec("packageId", "simple", false))}"), body, null, requestHeaders, "application/json")
+    suspend fun skillsPackageUpdate(packageId: String, body: AdminSkillPackageUpdateRequest): SkillsPackageUpdateResult? {
+        val raw = client.put(ApiPaths.backendPath("/ecosystem/skills/package/${serializePathParameter(packageId, PathParameterSpec("packageId", "simple", false))}"), body, null, null, "application/json")
         return client.convertValue(raw, object : TypeReference<SkillsPackageUpdateResult>() {})
     }
 
     /** Disable skill package */
-    suspend fun skillsPackageDisable(packageId: String, xRequestId: String? = null): SkillsPackageDisableResult? {
-        val requestHeaders = buildRequestHeaders(
-            mapOf(
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
-            ),
-            emptyMap()
-        )
-        val raw = client.post(ApiPaths.backendPath("/ecosystem/skills/package/${serializePathParameter(packageId, PathParameterSpec("packageId", "simple", false))}/disable"), null, null, requestHeaders)
+    suspend fun skillsPackageDisable(packageId: String): SkillsPackageDisableResult? {
+        val raw = client.post(ApiPaths.backendPath("/ecosystem/skills/package/${serializePathParameter(packageId, PathParameterSpec("packageId", "simple", false))}/disable"), null)
         return client.convertValue(raw, object : TypeReference<SkillsPackageDisableResult>() {})
     }
 
     /** Enable skill package */
-    suspend fun skillsPackageEnable(packageId: String, xRequestId: String? = null): SkillsPackageEnableResult? {
-        val requestHeaders = buildRequestHeaders(
-            mapOf(
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
-            ),
-            emptyMap()
-        )
-        val raw = client.post(ApiPaths.backendPath("/ecosystem/skills/package/${serializePathParameter(packageId, PathParameterSpec("packageId", "simple", false))}/enable"), null, null, requestHeaders)
+    suspend fun skillsPackageEnable(packageId: String): SkillsPackageEnableResult? {
+        val raw = client.post(ApiPaths.backendPath("/ecosystem/skills/package/${serializePathParameter(packageId, PathParameterSpec("packageId", "simple", false))}/enable"), null)
         return client.convertValue(raw, object : TypeReference<SkillsPackageEnableResult>() {})
     }
 
@@ -164,14 +116,8 @@ class EcosystemApi(private val client: HttpClient) {
     }
 
     /** Update skill */
-    suspend fun skillsUpdate(skillId: String, body: AdminSkillUpdateRequest, xRequestId: String? = null): SkillsUpdateResult? {
-        val requestHeaders = buildRequestHeaders(
-            mapOf(
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
-            ),
-            emptyMap()
-        )
-        val raw = client.put(ApiPaths.backendPath("/ecosystem/skills/${serializePathParameter(skillId, PathParameterSpec("skillId", "simple", false))}"), body, null, requestHeaders, "application/json")
+    suspend fun skillsUpdate(skillId: String, body: AdminSkillUpdateRequest): SkillsUpdateResult? {
+        val raw = client.put(ApiPaths.backendPath("/ecosystem/skills/${serializePathParameter(skillId, PathParameterSpec("skillId", "simple", false))}"), body, null, null, "application/json")
         return client.convertValue(raw, object : TypeReference<SkillsUpdateResult>() {})
     }
 
@@ -182,26 +128,14 @@ class EcosystemApi(private val client: HttpClient) {
     }
 
     /** Create skill artifact */
-    suspend fun skillsArtifactsCreate(skillId: String, body: AdminSkillArtifactCreateRequest, xRequestId: String? = null): SkillsArtifactsCreateResult? {
-        val requestHeaders = buildRequestHeaders(
-            mapOf(
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
-            ),
-            emptyMap()
-        )
-        val raw = client.post(ApiPaths.backendPath("/ecosystem/skills/${serializePathParameter(skillId, PathParameterSpec("skillId", "simple", false))}/artifacts"), body, null, requestHeaders, "application/json")
+    suspend fun skillsArtifactsCreate(skillId: String, body: AdminSkillArtifactCreateRequest): SkillsArtifactsCreateResult? {
+        val raw = client.post(ApiPaths.backendPath("/ecosystem/skills/${serializePathParameter(skillId, PathParameterSpec("skillId", "simple", false))}/artifacts"), body, null, null, "application/json")
         return client.convertValue(raw, object : TypeReference<SkillsArtifactsCreateResult>() {})
     }
 
     /** Delete skill artifact */
-    suspend fun skillsArtifactsDelete(skillId: String, artifactId: String, xRequestId: String? = null): SkillsArtifactsDeleteResult? {
-        val requestHeaders = buildRequestHeaders(
-            mapOf(
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
-            ),
-            emptyMap()
-        )
-        val raw = client.delete(ApiPaths.backendPath("/ecosystem/skills/${serializePathParameter(skillId, PathParameterSpec("skillId", "simple", false))}/artifacts/${serializePathParameter(artifactId, PathParameterSpec("artifactId", "simple", false))}"), null, requestHeaders)
+    suspend fun skillsArtifactsDelete(skillId: String, artifactId: String): SkillsArtifactsDeleteResult? {
+        val raw = client.delete(ApiPaths.backendPath("/ecosystem/skills/${serializePathParameter(skillId, PathParameterSpec("skillId", "simple", false))}/artifacts/${serializePathParameter(artifactId, PathParameterSpec("artifactId", "simple", false))}"))
         return client.convertValue(raw, object : TypeReference<SkillsArtifactsDeleteResult>() {})
     }
 
@@ -212,14 +146,8 @@ class EcosystemApi(private val client: HttpClient) {
     }
 
     /** Update skill artifact */
-    suspend fun skillsArtifactsUpdate(skillId: String, artifactId: String, body: AdminSkillArtifactUpdateRequest, xRequestId: String? = null): SkillsArtifactsUpdateResult? {
-        val requestHeaders = buildRequestHeaders(
-            mapOf(
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
-            ),
-            emptyMap()
-        )
-        val raw = client.put(ApiPaths.backendPath("/ecosystem/skills/${serializePathParameter(skillId, PathParameterSpec("skillId", "simple", false))}/artifacts/${serializePathParameter(artifactId, PathParameterSpec("artifactId", "simple", false))}"), body, null, requestHeaders, "application/json")
+    suspend fun skillsArtifactsUpdate(skillId: String, artifactId: String, body: AdminSkillArtifactUpdateRequest): SkillsArtifactsUpdateResult? {
+        val raw = client.put(ApiPaths.backendPath("/ecosystem/skills/${serializePathParameter(skillId, PathParameterSpec("skillId", "simple", false))}/artifacts/${serializePathParameter(artifactId, PathParameterSpec("artifactId", "simple", false))}"), body, null, null, "application/json")
         return client.convertValue(raw, object : TypeReference<SkillsArtifactsUpdateResult>() {})
     }
 
@@ -230,26 +158,14 @@ class EcosystemApi(private val client: HttpClient) {
     }
 
     /** Create skill asset */
-    suspend fun skillsAssetsCreate(skillId: String, body: AdminSkillAssetCreateRequest, xRequestId: String? = null): SkillsAssetsCreateResult? {
-        val requestHeaders = buildRequestHeaders(
-            mapOf(
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
-            ),
-            emptyMap()
-        )
-        val raw = client.post(ApiPaths.backendPath("/ecosystem/skills/${serializePathParameter(skillId, PathParameterSpec("skillId", "simple", false))}/assets"), body, null, requestHeaders, "application/json")
+    suspend fun skillsAssetsCreate(skillId: String, body: AdminSkillAssetCreateRequest): SkillsAssetsCreateResult? {
+        val raw = client.post(ApiPaths.backendPath("/ecosystem/skills/${serializePathParameter(skillId, PathParameterSpec("skillId", "simple", false))}/assets"), body, null, null, "application/json")
         return client.convertValue(raw, object : TypeReference<SkillsAssetsCreateResult>() {})
     }
 
     /** Delete skill asset */
-    suspend fun skillsAssetsDelete(skillId: String, assetId: String, xRequestId: String? = null): SkillsAssetsDeleteResult? {
-        val requestHeaders = buildRequestHeaders(
-            mapOf(
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
-            ),
-            emptyMap()
-        )
-        val raw = client.delete(ApiPaths.backendPath("/ecosystem/skills/${serializePathParameter(skillId, PathParameterSpec("skillId", "simple", false))}/assets/${serializePathParameter(assetId, PathParameterSpec("assetId", "simple", false))}"), null, requestHeaders)
+    suspend fun skillsAssetsDelete(skillId: String, assetId: String): SkillsAssetsDeleteResult? {
+        val raw = client.delete(ApiPaths.backendPath("/ecosystem/skills/${serializePathParameter(skillId, PathParameterSpec("skillId", "simple", false))}/assets/${serializePathParameter(assetId, PathParameterSpec("assetId", "simple", false))}"))
         return client.convertValue(raw, object : TypeReference<SkillsAssetsDeleteResult>() {})
     }
 
@@ -260,86 +176,44 @@ class EcosystemApi(private val client: HttpClient) {
     }
 
     /** Update skill asset */
-    suspend fun skillsAssetsUpdate(skillId: String, assetId: String, body: AdminSkillAssetUpdateRequest, xRequestId: String? = null): SkillsAssetsUpdateResult? {
-        val requestHeaders = buildRequestHeaders(
-            mapOf(
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
-            ),
-            emptyMap()
-        )
-        val raw = client.put(ApiPaths.backendPath("/ecosystem/skills/${serializePathParameter(skillId, PathParameterSpec("skillId", "simple", false))}/assets/${serializePathParameter(assetId, PathParameterSpec("assetId", "simple", false))}"), body, null, requestHeaders, "application/json")
+    suspend fun skillsAssetsUpdate(skillId: String, assetId: String, body: AdminSkillAssetUpdateRequest): SkillsAssetsUpdateResult? {
+        val raw = client.put(ApiPaths.backendPath("/ecosystem/skills/${serializePathParameter(skillId, PathParameterSpec("skillId", "simple", false))}/assets/${serializePathParameter(assetId, PathParameterSpec("assetId", "simple", false))}"), body, null, null, "application/json")
         return client.convertValue(raw, object : TypeReference<SkillsAssetsUpdateResult>() {})
     }
 
     /** Disable skill */
-    suspend fun skillsDisable(skillId: String, xRequestId: String? = null): SkillsDisableResult? {
-        val requestHeaders = buildRequestHeaders(
-            mapOf(
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
-            ),
-            emptyMap()
-        )
-        val raw = client.post(ApiPaths.backendPath("/ecosystem/skills/${serializePathParameter(skillId, PathParameterSpec("skillId", "simple", false))}/disable"), null, null, requestHeaders)
+    suspend fun skillsDisable(skillId: String): SkillsDisableResult? {
+        val raw = client.post(ApiPaths.backendPath("/ecosystem/skills/${serializePathParameter(skillId, PathParameterSpec("skillId", "simple", false))}/disable"), null)
         return client.convertValue(raw, object : TypeReference<SkillsDisableResult>() {})
     }
 
     /** Enable skill */
-    suspend fun skillsEnable(skillId: String, xRequestId: String? = null): SkillsEnableResult? {
-        val requestHeaders = buildRequestHeaders(
-            mapOf(
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
-            ),
-            emptyMap()
-        )
-        val raw = client.post(ApiPaths.backendPath("/ecosystem/skills/${serializePathParameter(skillId, PathParameterSpec("skillId", "simple", false))}/enable"), null, null, requestHeaders)
+    suspend fun skillsEnable(skillId: String): SkillsEnableResult? {
+        val raw = client.post(ApiPaths.backendPath("/ecosystem/skills/${serializePathParameter(skillId, PathParameterSpec("skillId", "simple", false))}/enable"), null)
         return client.convertValue(raw, object : TypeReference<SkillsEnableResult>() {})
     }
 
     /** Publish skill */
-    suspend fun skillsPublish(skillId: String, xRequestId: String? = null): SkillsPublishResult? {
-        val requestHeaders = buildRequestHeaders(
-            mapOf(
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
-            ),
-            emptyMap()
-        )
-        val raw = client.post(ApiPaths.backendPath("/ecosystem/skills/${serializePathParameter(skillId, PathParameterSpec("skillId", "simple", false))}/publish"), null, null, requestHeaders)
+    suspend fun skillsPublish(skillId: String): SkillsPublishResult? {
+        val raw = client.post(ApiPaths.backendPath("/ecosystem/skills/${serializePathParameter(skillId, PathParameterSpec("skillId", "simple", false))}/publish"), null)
         return client.convertValue(raw, object : TypeReference<SkillsPublishResult>() {})
     }
 
     /** Approve skill */
-    suspend fun skillsReviewApprove(skillId: String, body: AdminSkillReviewRequest, xRequestId: String? = null): SkillsReviewApproveResult? {
-        val requestHeaders = buildRequestHeaders(
-            mapOf(
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
-            ),
-            emptyMap()
-        )
-        val raw = client.post(ApiPaths.backendPath("/ecosystem/skills/${serializePathParameter(skillId, PathParameterSpec("skillId", "simple", false))}/review/approve"), body, null, requestHeaders, "application/json")
+    suspend fun skillsReviewApprove(skillId: String, body: AdminSkillReviewRequest): SkillsReviewApproveResult? {
+        val raw = client.post(ApiPaths.backendPath("/ecosystem/skills/${serializePathParameter(skillId, PathParameterSpec("skillId", "simple", false))}/review/approve"), body, null, null, "application/json")
         return client.convertValue(raw, object : TypeReference<SkillsReviewApproveResult>() {})
     }
 
     /** Reject skill */
-    suspend fun skillsReviewReject(skillId: String, body: AdminSkillReviewRequest, xRequestId: String? = null): SkillsReviewRejectResult? {
-        val requestHeaders = buildRequestHeaders(
-            mapOf(
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
-            ),
-            emptyMap()
-        )
-        val raw = client.post(ApiPaths.backendPath("/ecosystem/skills/${serializePathParameter(skillId, PathParameterSpec("skillId", "simple", false))}/review/reject"), body, null, requestHeaders, "application/json")
+    suspend fun skillsReviewReject(skillId: String, body: AdminSkillReviewRequest): SkillsReviewRejectResult? {
+        val raw = client.post(ApiPaths.backendPath("/ecosystem/skills/${serializePathParameter(skillId, PathParameterSpec("skillId", "simple", false))}/review/reject"), body, null, null, "application/json")
         return client.convertValue(raw, object : TypeReference<SkillsReviewRejectResult>() {})
     }
 
     /** Offline skill */
-    suspend fun skillsUnpublish(skillId: String, xRequestId: String? = null): SkillsUnpublishResult? {
-        val requestHeaders = buildRequestHeaders(
-            mapOf(
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
-            ),
-            emptyMap()
-        )
-        val raw = client.post(ApiPaths.backendPath("/ecosystem/skills/${serializePathParameter(skillId, PathParameterSpec("skillId", "simple", false))}/unpublish"), null, null, requestHeaders)
+    suspend fun skillsUnpublish(skillId: String): SkillsUnpublishResult? {
+        val raw = client.post(ApiPaths.backendPath("/ecosystem/skills/${serializePathParameter(skillId, PathParameterSpec("skillId", "simple", false))}/unpublish"), null)
         return client.convertValue(raw, object : TypeReference<SkillsUnpublishResult>() {})
     }
 
@@ -515,50 +389,4 @@ class EcosystemApi(private val client: HttpClient) {
         return java.net.URLEncoder.encode(value, java.nio.charset.StandardCharsets.UTF_8)
     }
 
-    private data class HeaderParameterSpec(val value: Any?, val style: String, val explode: Boolean, val contentType: String?)
-
-    private val headerObjectMapper = ObjectMapper().registerKotlinModule()
-
-    private fun buildRequestHeaders(headers: Map<String, HeaderParameterSpec>, cookies: Map<String, HeaderParameterSpec>): Map<String, String>? {
-        val requestHeaders = linkedMapOf<String, String>()
-        headers.forEach { (name, parameter) ->
-            serializeParameterValue(parameter)?.let { requestHeaders[name] = it }
-        }
-
-        val cookieHeader = buildCookieHeader(cookies)
-        if (cookieHeader.isNotEmpty()) {
-            requestHeaders["Cookie"] = requestHeaders["Cookie"]?.let { "$it; $cookieHeader" } ?: cookieHeader
-        }
-
-        return requestHeaders.takeIf { it.isNotEmpty() }
-    }
-
-    private fun buildCookieHeader(cookies: Map<String, HeaderParameterSpec>): String {
-        return cookies.mapNotNull { (name, parameter) ->
-            serializeParameterValue(parameter)?.let {
-                java.net.URLEncoder.encode(name, java.nio.charset.StandardCharsets.UTF_8) + "=" +
-                    java.net.URLEncoder.encode(it, java.nio.charset.StandardCharsets.UTF_8)
-            }
-        }.joinToString("; ")
-    }
-
-    private fun serializeParameterValue(parameter: HeaderParameterSpec?): String? {
-        val value = parameter?.value ?: return null
-        if (!parameter.contentType.isNullOrBlank()) {
-            return headerObjectMapper.writeValueAsString(value)
-        }
-        return when (value) {
-            is Iterable<*> -> value.mapNotNull { it?.toString() }.joinToString(",")
-            is Map<*, *> -> value.mapNotNull { (key, item) ->
-                if (item == null) {
-                    null
-                } else if (parameter.explode) {
-                    "$key=$item"
-                } else {
-                    listOf(key.toString(), item.toString()).joinToString(",")
-                }
-            }.joinToString(",")
-            else -> value.toString()
-        }
-    }
 }

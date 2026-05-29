@@ -1,0 +1,119 @@
+tables:
+- table: ai_usage_service_provider_chain
+  domain: ai
+  profile: commercial_usage_chain_fact
+  compliance_level: L3
+  system_of_record: true
+  write_owner: gateway-runtime
+  common_columns: event_log
+  source_tables:
+  - ai_usage_fact
+  - integration_service_provider
+  frontend_routes:
+  - /admin/service-providers/usage
+  api_surfaces:
+  - backend
+  - worker
+  required_columns:
+  - uuid
+  - usage_fact_id
+  columns:
+    usage_fact_id: int64
+    leaf_provider_id: int64
+    root_provider_id: int64
+    chain_depth: int32
+    chain_path_snapshot: json
+    chain_hash: string(128)
+    resolved_subject_type: string(64)
+    resolved_subject_id: int64
+    occurred_at: instant
+  indexes:
+  - name: uk_ai_usage_service_provider_chain_usage
+    unique: true
+    columns:
+    - tenant_id
+    - organization_id
+    - usage_fact_id
+  - name: idx_ai_usage_service_provider_chain_leaf_time
+    columns:
+    - tenant_id
+    - organization_id
+    - leaf_provider_id
+    - occurred_at
+    - id
+  security:
+    financial: true
+    audit_required: true
+- table: ai_usage_service_provider_edge
+  domain: ai
+  profile: commercial_usage_edge_fact
+  compliance_level: L3
+  system_of_record: true
+  write_owner: gateway-runtime
+  common_columns: event_log
+  source_tables:
+  - ai_usage_fact
+  - ai_usage_service_provider_chain
+  - integration_service_provider_edge
+  frontend_routes:
+  - /admin/service-providers/dashboard
+  - /admin/service-providers/usage
+  - /admin/service-providers/statements
+  api_surfaces:
+  - backend
+  - worker
+  required_columns:
+  - uuid
+  - usage_fact_id
+  - edge_id
+  columns:
+    usage_fact_id: int64
+    chain_id: int64
+    edge_id: int64
+    edge_depth: int32
+    seller_provider_id: int64
+    buyer_provider_id: int64
+    amount_role: string(64)
+    pricing_plan_id: int64
+    pricing_rule_id: int64
+    billing_meter_code: string(64)
+    token_kind: string(64)
+    billable_quantity: decimal
+    unit_price: decimal
+    unit_size: decimal
+    charge_amount: decimal
+    currency: string(10)
+    fx_rate_snapshot: decimal
+    settlement_currency: string(10)
+    converted_charge_amount: decimal
+    seller_snapshot: json
+    buyer_snapshot: json
+    price_snapshot: json
+    occurred_at: instant
+    settlement_status: enum_int32
+  indexes:
+  - name: uk_ai_usage_service_provider_edge_usage_depth
+    unique: true
+    columns:
+    - tenant_id
+    - organization_id
+    - usage_fact_id
+    - edge_depth
+    - amount_role
+  - name: idx_ai_usage_service_provider_edge_seller_time
+    columns:
+    - tenant_id
+    - organization_id
+    - seller_provider_id
+    - occurred_at
+    - id
+  - name: idx_ai_usage_service_provider_edge_buyer_time
+    columns:
+    - tenant_id
+    - organization_id
+    - buyer_provider_id
+    - occurred_at
+    - id
+  security:
+    financial: true
+    audit_required: true

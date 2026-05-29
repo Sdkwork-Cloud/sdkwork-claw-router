@@ -8,7 +8,6 @@ data class AgentRunCreateRequest(
     val memorySpaceId: String? = null,
     val metadata: Map<String, String>? = null,
     val model: String? = null,
-    val requestId: String? = null,
     val runtime: String? = null,
     val sourceSurface: String? = null,
     val traceId: String? = null

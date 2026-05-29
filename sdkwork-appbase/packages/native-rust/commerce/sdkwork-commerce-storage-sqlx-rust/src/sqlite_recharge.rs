@@ -217,7 +217,7 @@ impl SqliteCommerceRechargeStore {
     ) -> Result<CreatePointsRechargeOrderOutcome, CommerceServiceError> {
         let mut tx = self
             .pool
-            .begin()
+            .begin_with("BEGIN IMMEDIATE")
             .await
             .map_err(|error| store_error("failed to begin recharge transaction", error))?;
         let method = load_recharge_method(&mut tx, &command).await?;

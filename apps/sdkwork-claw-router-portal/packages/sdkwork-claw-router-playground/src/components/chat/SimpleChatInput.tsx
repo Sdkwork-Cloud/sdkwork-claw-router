@@ -2,7 +2,13 @@ import { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import { ArrowUp, Square } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { PlaygroundModelPicker, createFallbackModel } from '../PlaygroundModelPicker';
-import { findCallableChatModel, findChatModel, isCallableChatModel, resolveChatInputModelSelection } from './chatModelSelection';
+import {
+  findCallableChatModel,
+  findChatModel,
+  isCallableChatModel,
+  resolveChatInputModelSelection,
+  resolveChatInputSubmitBlockReason,
+} from './chatModelSelection';
 import type { SimpleChatInputSubmit } from './chatTypes';
 import type { PlaygroundModelGroup, PlaygroundModelOption } from '../../playgroundTypes';
 
@@ -21,6 +27,8 @@ interface StoredSimpleChatModelPreference {
 
 export function SimpleChatInput({
   modelGroups,
+  loadingModels = false,
+  modelLoadError = null,
   selectedModelId,
   setSelectedModelId,
   loadingHistory = false,
@@ -30,6 +38,8 @@ export function SimpleChatInput({
   onHeightChange,
 }: {
   modelGroups: PlaygroundModelGroup[];
+  loadingModels?: boolean;
+  modelLoadError?: string | null;
   selectedModelId: string;
   setSelectedModelId: (modelId: string) => void;
   loadingHistory?: boolean;
@@ -53,8 +63,22 @@ export function SimpleChatInput({
   const submitModel = modelSelection.submitModel;
   const normalizedPrompt = prompt.trim();
   const hasSubmittableModel = Boolean(submitModel);
-  const canSubmit = Boolean(normalizedPrompt && hasSubmittableModel && !submitting && !loadingHistory);
+  const submitBlockReason = resolveChatInputSubmitBlockReason({
+    loadingHistory,
+    loadingModels,
+    modelGroups,
+    modelLoadError,
+    normalizedPrompt,
+    selectedModelId,
+    submitting,
+  });
+  const canSubmit = !submitBlockReason && hasSubmittableModel;
   const canStop = Boolean(submitting && onStop);
+  const sendButtonTooltip = submitting
+    ? t('playground.chat.input.stop')
+    : submitBlockReason
+      ? t(submitBlockReason)
+      : t('playground.chat.input.send');
 
   useEffect(() => {
     if (modelGroups.length === 0) {
@@ -187,30 +211,40 @@ export function SimpleChatInput({
               {t('playground.chat.messagesLoading')}
             </div>
           )}
+          {!submitting && submitBlockReason && submitBlockReason !== 'playground.chat.input.disabled.emptyPrompt' && (
+            <div
+              className="min-h-10 min-w-0 rounded-full bg-amber-400/10 px-3 py-2 text-[11px] leading-4 text-amber-200"
+              title={sendButtonTooltip}
+            >
+              <span className="line-clamp-2">{sendButtonTooltip}</span>
+            </div>
+          )}
         </div>
 
-        <button
-          type="button"
-          disabled={submitting ? !canStop : !canSubmit}
-          title={submitting ? t('playground.chat.input.stop') : t('playground.chat.input.send')}
-          aria-label={submitting ? t('playground.chat.input.stop') : t('playground.chat.input.send')}
-          onClick={() => {
-            if (submitting) {
-              void onStop?.();
-              return;
-            }
-            void handleSubmit();
-          }}
-          className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full transition-all ${
-            submitting && canStop
-              ? 'bg-rose-500 text-white shadow-[0_8px_24px_rgba(244,63,94,0.22)] hover:bg-rose-400 active:scale-95'
-              : canSubmit
-                ? 'bg-white text-slate-950 shadow-[0_8px_24px_rgba(255,255,255,0.18)] hover:bg-slate-200 active:scale-95'
-              : 'cursor-not-allowed bg-white/6 text-slate-600'
-          }`}
-        >
-          {submitting ? <Square className="h-3.5 w-3.5 fill-current" /> : <ArrowUp className="h-4 w-4" />}
-        </button>
+        <span className="inline-flex shrink-0" title={sendButtonTooltip}>
+          <button
+            type="button"
+            disabled={submitting ? !canStop : !canSubmit}
+            title={sendButtonTooltip}
+            aria-label={sendButtonTooltip}
+            onClick={() => {
+              if (submitting) {
+                void onStop?.();
+                return;
+              }
+              void handleSubmit();
+            }}
+            className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full transition-all ${
+              submitting && canStop
+                ? 'bg-rose-500 text-white shadow-[0_8px_24px_rgba(244,63,94,0.22)] hover:bg-rose-400 active:scale-95'
+                : canSubmit
+                  ? 'bg-white text-slate-950 shadow-[0_8px_24px_rgba(255,255,255,0.18)] hover:bg-slate-200 active:scale-95'
+                  : 'cursor-not-allowed bg-white/6 text-slate-600 disabled:pointer-events-none'
+            }`}
+          >
+            {submitting ? <Square className="h-3.5 w-3.5 fill-current" /> : <ArrowUp className="h-4 w-4" />}
+          </button>
+        </span>
       </div>
     </div>
   );

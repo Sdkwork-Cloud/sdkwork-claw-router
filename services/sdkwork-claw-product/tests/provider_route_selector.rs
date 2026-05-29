@@ -1,12 +1,12 @@
 use sdkwork_claw_product::application::{
     AuthenticatedApiKeyContext, ProviderRouteSelectionErrorKind, ProviderRouteSelector,
-    SelectProviderAccountPoolRouteQuery, SelectProviderRouteQuery,
+    SelectProviderChannelRouteQuery, SelectProviderRouteQuery,
 };
 use sdkwork_claw_product::domain::{
     AiModel, ApiKeyGroup, BillingMeter, DecimalValue, GatewayApiKey, ModelPrice,
     ModelProviderRoute, ModelVendor, ModelVendorDefinition, Money, PriceSide, PricingPlan,
-    ProviderAccountPoolRoute, RouteCandidate, RoutingCapability, RoutingFallbackMode,
-    RoutingPolicy, RoutingPolicyScope, RoutingRule,
+    ProviderChannelRoute, RouteCandidate, RoutingCapability, RoutingFallbackMode, RoutingPolicy,
+    RoutingPolicyScope, RoutingRule,
 };
 use sdkwork_claw_product::infrastructure::InMemoryPricingCatalog;
 
@@ -24,7 +24,7 @@ fn base_catalog() -> InMemoryPricingCatalog {
             "openai",
             vec!["chat", "tools"],
         )
-        .with_catalog_key("openai/global/gpt-4o-mini"),
+        .with_catalog_key("openai/gpt-4o-mini"),
     );
     catalog.add_plan(PricingPlan::new(
         "standard",
@@ -42,7 +42,7 @@ fn base_catalog() -> InMemoryPricingCatalog {
     catalog
         .add_api_key(GatewayApiKey::new(100, 10, "sk-test", "hash:sk-test").with_owner(10, 20, 30));
     catalog.add_price(ModelPrice::new_for_catalog_key(
-        "openai/global/gpt-4o-mini",
+        "openai/gpt-4o-mini",
         "gpt-4o-mini",
         PriceSide::OfficialReference,
         BillingMeter::LlmInputToken,
@@ -60,7 +60,7 @@ fn add_callable_route(
 ) {
     catalog.add_provider_route(
         ModelProviderRoute::new_for_catalog_key(
-            "openai/global/gpt-4o-mini",
+            "openai/gpt-4o-mini",
             "gpt-4o-mini",
             provider_code,
             channel_id,
@@ -73,7 +73,7 @@ fn add_callable_route(
     );
     catalog.add_price(
         ModelPrice::new_for_catalog_key(
-            "openai/global/gpt-4o-mini",
+            "openai/gpt-4o-mini",
             "gpt-4o-mini",
             PriceSide::UpstreamCost,
             BillingMeter::LlmInputToken,
@@ -83,13 +83,13 @@ fn add_callable_route(
     );
 }
 
-fn add_callable_account_pool_route(
+fn add_callable_channel_route(
     catalog: &mut InMemoryPricingCatalog,
     channel_id: i64,
     provider_code: &str,
 ) {
-    catalog.add_provider_account_pool_route(
-        ProviderAccountPoolRoute::new(provider_code, channel_id).with_provider_endpoint(
+    catalog.add_provider_channel_route(
+        ProviderChannelRoute::new(provider_code, channel_id).with_provider_endpoint(
             Some(format!("http://provider-proxy.internal/{provider_code}")),
             Some(format!("vault://providers/{provider_code}/account/main")),
         ),
@@ -147,15 +147,15 @@ fn authenticated_context() -> AuthenticatedApiKeyContext {
 fn select_query() -> SelectProviderRouteQuery {
     SelectProviderRouteQuery {
         context: authenticated_context(),
-        catalog_key: "openai/global/gpt-4o-mini".to_owned(),
+        catalog_key: "openai/gpt-4o-mini".to_owned(),
         requested_model: "gpt-4o-mini".to_owned(),
         capability: RoutingCapability::Chat,
         billing_meter: BillingMeter::LlmInputToken,
     }
 }
 
-fn select_account_pool_query(route_key: &str) -> SelectProviderAccountPoolRouteQuery {
-    SelectProviderAccountPoolRouteQuery {
+fn select_channel_route_query(route_key: &str) -> SelectProviderChannelRouteQuery {
+    SelectProviderChannelRouteQuery {
         context: authenticated_context(),
         route_key: route_key.to_owned(),
         capability: RoutingCapability::Chat,
@@ -196,8 +196,8 @@ fn selector_prefers_api_key_group_policy_over_global_policy() {
             101,
             "global-rule",
             1,
-            r#"{"catalogKey":"openai/global/gpt-4o-mini"}"#,
-            "openai/global/gpt-4o-mini",
+            r#"{"catalogKey":"openai/gpt-4o-mini"}"#,
+            "openai/gpt-4o-mini",
         )
         .with_candidate_channels(vec![RouteCandidate::new(3001, 100)]),
     );
@@ -206,8 +206,8 @@ fn selector_prefers_api_key_group_policy_over_global_policy() {
         2,
         201,
         202,
-        r#"{"catalogKey":"openai/global/gpt-4o-mini"}"#,
-        "openai/global/gpt-4o-mini",
+        r#"{"catalogKey":"openai/gpt-4o-mini"}"#,
+        "openai/gpt-4o-mini",
         vec![RouteCandidate::new(3002, 100)],
         vec![],
     );
@@ -258,8 +258,8 @@ fn selector_prefers_policy_matching_the_request_capability() {
             101,
             "embedding-rule",
             1,
-            r#"{"catalogKey":"openai/global/gpt-4o-mini"}"#,
-            "openai/global/gpt-4o-mini",
+            r#"{"catalogKey":"openai/gpt-4o-mini"}"#,
+            "openai/gpt-4o-mini",
         )
         .with_candidate_channels(vec![RouteCandidate::new(3002, 100)]),
     );
@@ -283,8 +283,8 @@ fn selector_prefers_policy_matching_the_request_capability() {
             201,
             "chat-rule",
             1,
-            r#"{"catalogKey":"openai/global/gpt-4o-mini"}"#,
-            "openai/global/gpt-4o-mini",
+            r#"{"catalogKey":"openai/gpt-4o-mini"}"#,
+            "openai/gpt-4o-mini",
         )
         .with_candidate_channels(vec![RouteCandidate::new(3001, 100)]),
     );
@@ -323,8 +323,8 @@ fn selector_prefers_capability_specific_policy_over_generic_policy_in_same_scope
         1,
         101,
         102,
-        r#"{"catalogKey":"openai/global/gpt-4o-mini"}"#,
-        "openai/global/gpt-4o-mini",
+        r#"{"catalogKey":"openai/gpt-4o-mini"}"#,
+        "openai/gpt-4o-mini",
         vec![RouteCandidate::new(3001, 100)],
         vec![],
     );
@@ -348,8 +348,8 @@ fn selector_prefers_capability_specific_policy_over_generic_policy_in_same_scope
             201,
             "chat-rule",
             1,
-            r#"{"catalogKey":"openai/global/gpt-4o-mini"}"#,
-            "openai/global/gpt-4o-mini",
+            r#"{"catalogKey":"openai/gpt-4o-mini"}"#,
+            "openai/gpt-4o-mini",
         )
         .with_candidate_channels(vec![RouteCandidate::new(3002, 100)]),
     );
@@ -400,8 +400,8 @@ fn selector_rejects_group_policy_without_requested_capability_instead_of_global_
             101,
             "global-chat-rule",
             1,
-            r#"{"catalogKey":"openai/global/gpt-4o-mini"}"#,
-            "openai/global/gpt-4o-mini",
+            r#"{"catalogKey":"openai/gpt-4o-mini"}"#,
+            "openai/gpt-4o-mini",
         )
         .with_candidate_channels(vec![RouteCandidate::new(3001, 100)]),
     );
@@ -425,8 +425,8 @@ fn selector_rejects_group_policy_without_requested_capability_instead_of_global_
             201,
             "embedding-rule",
             1,
-            r#"{"catalogKey":"openai/global/gpt-4o-mini"}"#,
-            "openai/global/gpt-4o-mini",
+            r#"{"catalogKey":"openai/gpt-4o-mini"}"#,
+            "openai/gpt-4o-mini",
         )
         .with_candidate_channels(vec![RouteCandidate::new(3002, 100)]),
     );
@@ -469,8 +469,8 @@ fn selector_uses_configured_fallback_chain_without_legacy_cross_pool_fallback() 
         2,
         201,
         202,
-        r#"{"catalogKey":"openai/global/gpt-4o-mini"}"#,
-        "openai/global/gpt-4o-mini",
+        r#"{"catalogKey":"openai/gpt-4o-mini"}"#,
+        "openai/gpt-4o-mini",
         vec![RouteCandidate::new(9999, 100)],
         vec![RouteCandidate::new(3002, 50)],
     );
@@ -505,8 +505,8 @@ fn selector_plan_includes_primary_and_enabled_fallback_candidates() {
         2,
         201,
         202,
-        r#"{"catalogKey":"openai/global/gpt-4o-mini"}"#,
-        "openai/global/gpt-4o-mini",
+        r#"{"catalogKey":"openai/gpt-4o-mini"}"#,
+        "openai/gpt-4o-mini",
         vec![RouteCandidate::new(3001, 100)],
         vec![RouteCandidate::new(3002, 50)],
     );
@@ -562,8 +562,8 @@ fn selector_plan_respects_policy_fallback_mode_none() {
             201,
             "rule-with-disabled-fallback",
             1,
-            r#"{"catalogKey":"openai/global/gpt-4o-mini"}"#,
-            "openai/global/gpt-4o-mini",
+            r#"{"catalogKey":"openai/gpt-4o-mini"}"#,
+            "openai/gpt-4o-mini",
         )
         .with_candidate_channels(vec![RouteCandidate::new(3001, 100)])
         .with_fallback_chain(vec![RouteCandidate::new(3002, 50)]),
@@ -618,8 +618,8 @@ fn selector_rejects_rule_fallback_chain_when_policy_fallback_mode_is_none() {
             201,
             "rule-with-disabled-fallback",
             1,
-            r#"{"catalogKey":"openai/global/gpt-4o-mini"}"#,
-            "openai/global/gpt-4o-mini",
+            r#"{"catalogKey":"openai/gpt-4o-mini"}"#,
+            "openai/gpt-4o-mini",
         )
         .with_candidate_channels(vec![RouteCandidate::new(9999, 100)])
         .with_fallback_chain(vec![RouteCandidate::new(3002, 50)]),
@@ -640,7 +640,7 @@ fn selector_rejects_rule_fallback_chain_when_policy_fallback_mode_is_none() {
 fn selector_rejects_matched_policy_rule_when_candidate_channel_is_not_callable() {
     let mut catalog = base_catalog();
     catalog.add_provider_route(ModelProviderRoute::new_for_catalog_key(
-        "openai/global/gpt-4o-mini",
+        "openai/gpt-4o-mini",
         "gpt-4o-mini",
         "openrouter-main",
         3001,
@@ -648,7 +648,7 @@ fn selector_rejects_matched_policy_rule_when_candidate_channel_is_not_callable()
     ));
     catalog.add_price(
         ModelPrice::new_for_catalog_key(
-            "openai/global/gpt-4o-mini",
+            "openai/gpt-4o-mini",
             "gpt-4o-mini",
             PriceSide::UpstreamCost,
             BillingMeter::LlmInputToken,
@@ -661,8 +661,8 @@ fn selector_rejects_matched_policy_rule_when_candidate_channel_is_not_callable()
         2,
         201,
         202,
-        r#"{"catalogKey":"openai/global/gpt-4o-mini"}"#,
-        "openai/global/gpt-4o-mini",
+        r#"{"catalogKey":"openai/gpt-4o-mini"}"#,
+        "openai/gpt-4o-mini",
         vec![RouteCandidate::new(3001, 100)],
         vec![],
     );
@@ -693,8 +693,8 @@ fn selector_reports_pricing_unavailable_when_callable_candidate_has_no_price() {
         2,
         201,
         202,
-        r#"{"catalogKey":"openai/global/gpt-4o-mini"}"#,
-        "openai/global/gpt-4o-mini",
+        r#"{"catalogKey":"openai/gpt-4o-mini"}"#,
+        "openai/gpt-4o-mini",
         vec![RouteCandidate::new(3001, 100)],
         vec![],
     );
@@ -714,7 +714,7 @@ fn selector_reports_pricing_unavailable_when_callable_candidate_has_no_price() {
 }
 
 #[test]
-fn selector_prices_candidate_routes_with_their_regional_catalog_key() {
+fn selector_prices_candidate_routes_with_canonical_catalog_key_and_region_context() {
     let mut catalog = InMemoryPricingCatalog::default();
     catalog.add_vendor(ModelVendorDefinition::new(
         "minimax",
@@ -742,7 +742,7 @@ fn selector_prices_candidate_routes_with_their_regional_catalog_key() {
         .add_api_key(GatewayApiKey::new(100, 10, "sk-test", "hash:sk-test").with_owner(10, 20, 30));
     catalog.add_provider_route(
         ModelProviderRoute::new_for_catalog_key(
-            "minimax/cn/MiniMax-M2.7",
+            "minimax/MiniMax-M2.7",
             "MiniMax-M2.7",
             "minimax_cn_direct",
             4001,
@@ -753,21 +753,25 @@ fn selector_prices_candidate_routes_with_their_regional_catalog_key() {
             Some("vault://providers/minimax/account/cn"),
         ),
     );
-    catalog.add_price(ModelPrice::new_for_catalog_key(
-        "minimax/global/MiniMax-M2.7",
-        "MiniMax-M2.7",
-        PriceSide::OfficialReference,
-        BillingMeter::LlmInputToken,
-        Money::cny("0.210000").unwrap(),
-    ));
     catalog.add_price(
         ModelPrice::new_for_catalog_key(
-            "minimax/cn/MiniMax-M2.7",
+            "minimax/MiniMax-M2.7",
+            "MiniMax-M2.7",
+            PriceSide::OfficialReference,
+            BillingMeter::LlmInputToken,
+            Money::cny("0.210000").unwrap(),
+        )
+        .with_region_code("global"),
+    );
+    catalog.add_price(
+        ModelPrice::new_for_catalog_key(
+            "minimax/MiniMax-M2.7",
             "MiniMax-M2.7",
             PriceSide::UpstreamCost,
             BillingMeter::LlmInputToken,
             Money::cny("0.150000").unwrap(),
         )
+        .with_region_code("cn")
         .for_provider("minimax_cn_direct", 4001),
     );
     add_group_policy_rule(
@@ -781,7 +785,7 @@ fn selector_prices_candidate_routes_with_their_regional_catalog_key() {
         vec![],
     );
 
-    let error = ProviderRouteSelector::new(&catalog)
+    let selection = ProviderRouteSelector::new(&catalog)
         .select(SelectProviderRouteQuery {
             context: authenticated_context(),
             catalog_key: "minimax/MiniMax-M2.7".to_owned(),
@@ -789,14 +793,11 @@ fn selector_prices_candidate_routes_with_their_regional_catalog_key() {
             capability: RoutingCapability::Chat,
             billing_meter: BillingMeter::LlmInputToken,
         })
-        .unwrap_err();
+        .unwrap();
 
-    assert_eq!(
-        ProviderRouteSelectionErrorKind::PricingUnavailable,
-        error.kind()
-    );
-    assert!(error.to_string().contains("minimax/cn/MiniMax-M2.7"));
-    assert!(error.to_string().contains("official reference price"));
+    assert_eq!(4001, selection.route.channel_id);
+    assert_eq!("minimax_cn_direct", selection.route.provider_code);
+    assert_eq!("MiniMax-M2.7", selection.route.provider_model);
 }
 
 #[test]
@@ -814,8 +815,8 @@ fn selector_rejects_matched_policy_without_matching_rule() {
         2,
         201,
         202,
-        r#"{"catalogKey":"openai/global/other-model"}"#,
-        "openai/global/other-model",
+        r#"{"catalogKey":"openai/other-model"}"#,
+        "openai/other-model",
         vec![RouteCandidate::new(3001, 100)],
         vec![],
     );
@@ -856,9 +857,9 @@ fn selector_requires_explicit_routing_policy_scope() {
 }
 
 #[test]
-fn selector_selects_account_pool_route_by_route_key_without_model_pricing() {
+fn selector_selects_channel_route_by_route_key_without_model_pricing() {
     let mut catalog = base_catalog();
-    add_callable_account_pool_route(&mut catalog, 3001, "openrouter-main");
+    add_callable_channel_route(&mut catalog, 3001, "openrouter-main");
     add_group_policy_rule(
         &mut catalog,
         2,
@@ -871,7 +872,7 @@ fn selector_selects_account_pool_route_by_route_key_without_model_pricing() {
     );
 
     let selection = ProviderRouteSelector::new(&catalog)
-        .select_account_pool(select_account_pool_query("openai/management/files"))
+        .select_channel_route(select_channel_route_query("openai/management/files"))
         .unwrap();
 
     assert_eq!(3001, selection.route.channel_id);
@@ -881,10 +882,52 @@ fn selector_selects_account_pool_route_by_route_key_without_model_pricing() {
 }
 
 #[test]
-fn selector_routes_group_bound_account_pool_by_route_key_without_explicit_policy_rule() {
+fn selector_synthetic_model_route_preserves_channel_route_region_context() {
     let mut catalog = base_catalog();
-    catalog.add_provider_account_pool_route(
-        ProviderAccountPoolRoute::new("openrouter-group-bound", 3002)
+    catalog.add_provider_channel_route(
+        ProviderChannelRoute::new("minimax-upstream", 4001)
+            .with_region_code("cn")
+            .with_provider_endpoint(
+                Some("http://provider-proxy.internal/minimax-upstream"),
+                Some("vault://providers/minimax-upstream/account/main"),
+            ),
+    );
+    catalog.add_price(
+        ModelPrice::new_for_catalog_key(
+            "openai/gpt-4o-mini",
+            "gpt-4o-mini",
+            PriceSide::OfficialReference,
+            BillingMeter::LlmInputToken,
+            Money::new("CNY", "0.210000").unwrap(),
+        )
+        .with_region_code("cn"),
+    );
+    add_group_policy_rule(
+        &mut catalog,
+        2,
+        201,
+        202,
+        r#"{"model":"openai/gpt-4o-mini"}"#,
+        "openai/gpt-4o-mini",
+        vec![RouteCandidate::new(4001, 100)],
+        vec![],
+    );
+
+    let plan = ProviderRouteSelector::new(&catalog)
+        .select_plan(select_query())
+        .unwrap();
+
+    assert_eq!(1, plan.routes.len());
+    assert_eq!("cn", plan.routes[0].route.region_code);
+    assert_eq!("minimax-upstream", plan.routes[0].route.provider_code);
+    assert_eq!(4001, plan.routes[0].route.channel_id);
+}
+
+#[test]
+fn selector_routes_group_bound_channel_route_by_route_key_without_explicit_policy_rule() {
+    let mut catalog = base_catalog();
+    catalog.add_provider_channel_route(
+        ProviderChannelRoute::new("openrouter-group-bound", 3002)
             .with_provider_endpoint(
                 Some("http://provider-proxy.internal/openrouter-group-bound"),
                 Some("vault://providers/openrouter-group-bound/account/main"),
@@ -893,7 +936,7 @@ fn selector_routes_group_bound_account_pool_by_route_key_without_explicit_policy
     );
 
     let selection = ProviderRouteSelector::new(&catalog)
-        .select_account_pool(select_account_pool_query("openai/management/files"))
+        .select_channel_route(select_channel_route_query("openai/management/files"))
         .unwrap();
 
     assert_eq!(3002, selection.route.channel_id);
@@ -903,10 +946,10 @@ fn selector_routes_group_bound_account_pool_by_route_key_without_explicit_policy
 }
 
 #[test]
-fn selector_prefers_api_key_group_account_pool_over_global_policy() {
+fn selector_prefers_api_key_group_channel_route_over_global_policy() {
     let mut catalog = base_catalog();
-    add_callable_account_pool_route(&mut catalog, 3001, "openrouter-global");
-    add_callable_account_pool_route(&mut catalog, 3002, "openrouter-group");
+    add_callable_channel_route(&mut catalog, 3001, "openrouter-global");
+    add_callable_channel_route(&mut catalog, 3002, "openrouter-group");
     catalog.add_routing_policy(RoutingPolicy::new(
         1,
         0,
@@ -941,7 +984,7 @@ fn selector_prefers_api_key_group_account_pool_over_global_policy() {
     );
 
     let selection = ProviderRouteSelector::new(&catalog)
-        .select_account_pool(select_account_pool_query("openai/management/files"))
+        .select_channel_route(select_channel_route_query("openai/management/files"))
         .unwrap();
 
     assert_eq!(3002, selection.route.channel_id);
@@ -950,11 +993,11 @@ fn selector_prefers_api_key_group_account_pool_over_global_policy() {
 }
 
 #[test]
-fn selector_restricts_account_pool_candidates_to_group_channel_bindings() {
+fn selector_restricts_channel_route_candidates_to_group_channel_bindings() {
     let mut catalog = base_catalog();
-    add_callable_account_pool_route(&mut catalog, 3001, "openrouter-unbound");
-    catalog.add_provider_account_pool_route(
-        ProviderAccountPoolRoute::new("openrouter-group-bound", 3002)
+    add_callable_channel_route(&mut catalog, 3001, "openrouter-unbound");
+    catalog.add_provider_channel_route(
+        ProviderChannelRoute::new("openrouter-group-bound", 3002)
             .with_provider_endpoint(
                 Some("http://provider-proxy.internal/openrouter-group-bound"),
                 Some("vault://providers/openrouter-group-bound/account/main"),
@@ -976,7 +1019,7 @@ fn selector_restricts_account_pool_candidates_to_group_channel_bindings() {
     );
 
     let selection = ProviderRouteSelector::new(&catalog)
-        .select_account_pool(select_account_pool_query("openai/management/files"))
+        .select_channel_route(select_channel_route_query("openai/management/files"))
         .unwrap();
 
     assert_eq!(3002, selection.route.channel_id);
@@ -1002,9 +1045,9 @@ fn selector_restricts_model_route_candidates_to_group_channel_bindings() {
         "gpt-4o-mini-bound",
         "0.120000",
     );
-    add_callable_account_pool_route(&mut catalog, 3001, "openrouter-unbound");
-    catalog.add_provider_account_pool_route(
-        ProviderAccountPoolRoute::new("openrouter-group-bound", 3002)
+    add_callable_channel_route(&mut catalog, 3001, "openrouter-unbound");
+    catalog.add_provider_channel_route(
+        ProviderChannelRoute::new("openrouter-group-bound", 3002)
             .with_provider_endpoint(
                 Some("http://provider-proxy.internal/openrouter-group-bound"),
                 Some("vault://providers/openrouter-group-bound/account/main"),
@@ -1016,8 +1059,8 @@ fn selector_restricts_model_route_candidates_to_group_channel_bindings() {
         2,
         201,
         202,
-        r#"{"catalogKey":"openai/global/gpt-4o-mini"}"#,
-        "openai/global/gpt-4o-mini",
+        r#"{"catalogKey":"openai/gpt-4o-mini"}"#,
+        "openai/gpt-4o-mini",
         vec![
             RouteCandidate::new(3001, 100),
             RouteCandidate::new(3002, 50),
@@ -1036,14 +1079,14 @@ fn selector_restricts_model_route_candidates_to_group_channel_bindings() {
 }
 
 #[test]
-fn selector_routes_catalog_model_through_group_bound_account_pool_without_model_route() {
+fn selector_routes_catalog_model_through_group_bound_channel_route_without_model_route() {
     let mut catalog = base_catalog();
     catalog.add_model(
         AiModel::new("gpt-5.5", "GPT-5.5", "openai", vec!["chat"])
-            .with_catalog_key("openai/global/gpt-5.5"),
+            .with_catalog_key("openai/gpt-5.5"),
     );
     catalog.add_price(ModelPrice::new_for_catalog_key(
-        "openai/global/gpt-5.5",
+        "openai/gpt-5.5",
         "gpt-5.5",
         PriceSide::OfficialReference,
         BillingMeter::LlmInputToken,
@@ -1051,7 +1094,7 @@ fn selector_routes_catalog_model_through_group_bound_account_pool_without_model_
     ));
     catalog.add_price(
         ModelPrice::new_for_catalog_key(
-            "openai/global/gpt-5.5",
+            "openai/gpt-5.5",
             "gpt-5.5",
             PriceSide::UpstreamCost,
             BillingMeter::LlmInputToken,
@@ -1059,21 +1102,21 @@ fn selector_routes_catalog_model_through_group_bound_account_pool_without_model_
         )
         .for_provider("openrouter-group-bound", 3002),
     );
-    catalog.add_provider_account_pool_route(
-        ProviderAccountPoolRoute::new("openrouter-group-bound", 3002)
+    catalog.add_provider_channel_route(
+        ProviderChannelRoute::new("openrouter-group-bound", 3002)
             .with_provider_endpoint(
                 Some("http://provider-proxy.internal/openrouter-group-bound"),
                 Some("vault://providers/openrouter-group-bound/account/main"),
             )
-            .with_scoped_group_binding(10, 1, 100, vec!["openai/global/gpt-5.5"], vec!["llm"]),
+            .with_scoped_group_binding(10, 1, 100, vec!["openai/gpt-5.5"], vec!["llm"]),
     );
     add_group_policy_rule(
         &mut catalog,
         2,
         201,
         202,
-        r#"{"catalogKey":"openai/global/gpt-5.5"}"#,
-        "openai/global/gpt-5.5",
+        r#"{"catalogKey":"openai/gpt-5.5"}"#,
+        "openai/gpt-5.5",
         vec![RouteCandidate::new(3002, 100)],
         vec![],
     );
@@ -1081,8 +1124,8 @@ fn selector_routes_catalog_model_through_group_bound_account_pool_without_model_
     let selection = ProviderRouteSelector::new(&catalog)
         .select(SelectProviderRouteQuery {
             context: authenticated_context(),
-            catalog_key: "openai/global/gpt-5.5".to_owned(),
-            requested_model: "openai/global/gpt-5.5".to_owned(),
+            catalog_key: "openai/gpt-5.5".to_owned(),
+            requested_model: "openai/gpt-5.5".to_owned(),
             capability: RoutingCapability::Chat,
             billing_meter: BillingMeter::LlmInputToken,
         })
@@ -1099,7 +1142,7 @@ fn selector_routes_catalog_model_through_group_bound_account_pool_without_model_
 }
 
 #[test]
-fn selector_routes_slash_native_catalog_model_through_native_model_scope_account_pool() {
+fn selector_routes_slash_native_catalog_model_through_native_model_scope_channel_route() {
     let mut catalog = base_catalog();
     catalog.add_vendor(ModelVendorDefinition::new(
         "openrouter",
@@ -1113,10 +1156,10 @@ fn selector_routes_slash_native_catalog_model_through_native_model_scope_account
             "openrouter",
             vec!["chat"],
         )
-        .with_catalog_key("openrouter/global/anthropic/claude-3-opus"),
+        .with_catalog_key("openrouter/anthropic/claude-3-opus"),
     );
     catalog.add_price(ModelPrice::new_for_catalog_key(
-        "openrouter/global/anthropic/claude-3-opus",
+        "openrouter/anthropic/claude-3-opus",
         "anthropic/claude-3-opus",
         PriceSide::OfficialReference,
         BillingMeter::LlmInputToken,
@@ -1124,7 +1167,7 @@ fn selector_routes_slash_native_catalog_model_through_native_model_scope_account
     ));
     catalog.add_price(
         ModelPrice::new_for_catalog_key(
-            "openrouter/global/anthropic/claude-3-opus",
+            "openrouter/anthropic/claude-3-opus",
             "anthropic/claude-3-opus",
             PriceSide::UpstreamCost,
             BillingMeter::LlmInputToken,
@@ -1132,8 +1175,8 @@ fn selector_routes_slash_native_catalog_model_through_native_model_scope_account
         )
         .for_provider("openrouter", 3101),
     );
-    catalog.add_provider_account_pool_route(
-        ProviderAccountPoolRoute::new("openrouter", 3101)
+    catalog.add_provider_channel_route(
+        ProviderChannelRoute::new("openrouter", 3101)
             .with_provider_endpoint(
                 Some("http://provider-proxy.internal/openrouter"),
                 Some("vault://providers/openrouter/account/main"),
@@ -1145,8 +1188,8 @@ fn selector_routes_slash_native_catalog_model_through_native_model_scope_account
         2,
         201,
         202,
-        r#"{"catalogKey":"openrouter/global/anthropic/claude-3-opus"}"#,
-        "openrouter/global/anthropic/claude-3-opus",
+        r#"{"catalogKey":"openrouter/anthropic/claude-3-opus"}"#,
+        "openrouter/anthropic/claude-3-opus",
         vec![RouteCandidate::new(3101, 100)],
         vec![],
     );
@@ -1154,8 +1197,8 @@ fn selector_routes_slash_native_catalog_model_through_native_model_scope_account
     let selection = ProviderRouteSelector::new(&catalog)
         .select(SelectProviderRouteQuery {
             context: authenticated_context(),
-            catalog_key: "openrouter/global/anthropic/claude-3-opus".to_owned(),
-            requested_model: "openrouter/global/anthropic/claude-3-opus".to_owned(),
+            catalog_key: "openrouter/anthropic/claude-3-opus".to_owned(),
+            requested_model: "openrouter/anthropic/claude-3-opus".to_owned(),
             capability: RoutingCapability::Chat,
             billing_meter: BillingMeter::LlmInputToken,
         })
@@ -1170,7 +1213,7 @@ fn selector_routes_slash_native_catalog_model_through_native_model_scope_account
 }
 
 #[test]
-fn selector_routes_regional_catalog_model_through_group_bound_account_pool_region_scope() {
+fn selector_routes_regional_catalog_model_through_group_bound_channel_route_region_scope() {
     let mut catalog = base_catalog();
     catalog.add_vendor(ModelVendorDefinition::new(
         "alibaba",
@@ -1184,10 +1227,10 @@ fn selector_routes_regional_catalog_model_through_group_bound_account_pool_regio
             "alibaba",
             vec!["chat"],
         )
-        .with_catalog_key("alibaba/cn/qwen3.6-max-preview"),
+        .with_catalog_key("alibaba/qwen3.6-max-preview"),
     );
     catalog.add_price(ModelPrice::new_for_catalog_key(
-        "alibaba/cn/qwen3.6-max-preview",
+        "alibaba/qwen3.6-max-preview",
         "qwen3.6-max-preview",
         PriceSide::OfficialReference,
         BillingMeter::LlmInputToken,
@@ -1195,7 +1238,7 @@ fn selector_routes_regional_catalog_model_through_group_bound_account_pool_regio
     ));
     catalog.add_price(
         ModelPrice::new_for_catalog_key(
-            "alibaba/cn/qwen3.6-max-preview",
+            "alibaba/qwen3.6-max-preview",
             "qwen3.6-max-preview",
             PriceSide::UpstreamCost,
             BillingMeter::LlmInputToken,
@@ -1203,21 +1246,21 @@ fn selector_routes_regional_catalog_model_through_group_bound_account_pool_regio
         )
         .for_provider("dashscope", 3101),
     );
-    catalog.add_provider_account_pool_route(
-        ProviderAccountPoolRoute::new("dashscope", 3101)
+    catalog.add_provider_channel_route(
+        ProviderChannelRoute::new("dashscope", 3101)
             .with_provider_endpoint(
                 Some("http://provider-proxy.internal/dashscope"),
                 Some("vault://providers/dashscope/account/main"),
             )
-            .with_scoped_group_binding(10, 1, 100, vec!["alibaba/cn"], vec!["llm"]),
+            .with_scoped_group_binding(10, 1, 100, vec!["alibaba"], vec!["llm"]),
     );
     add_group_policy_rule(
         &mut catalog,
         2,
         201,
         202,
-        r#"{"catalogKey":"alibaba/cn/qwen3.6-max-preview"}"#,
-        "alibaba/cn/qwen3.6-max-preview",
+        r#"{"catalogKey":"alibaba/qwen3.6-max-preview"}"#,
+        "alibaba/qwen3.6-max-preview",
         vec![RouteCandidate::new(3101, 100)],
         vec![],
     );
@@ -1225,8 +1268,8 @@ fn selector_routes_regional_catalog_model_through_group_bound_account_pool_regio
     let selection = ProviderRouteSelector::new(&catalog)
         .select(SelectProviderRouteQuery {
             context: authenticated_context(),
-            catalog_key: "alibaba/cn/qwen3.6-max-preview".to_owned(),
-            requested_model: "alibaba/cn/qwen3.6-max-preview".to_owned(),
+            catalog_key: "alibaba/qwen3.6-max-preview".to_owned(),
+            requested_model: "alibaba/qwen3.6-max-preview".to_owned(),
             capability: RoutingCapability::Chat,
             billing_meter: BillingMeter::LlmInputToken,
         })
@@ -1243,7 +1286,7 @@ fn selector_routes_regional_catalog_model_through_group_bound_account_pool_regio
 }
 
 #[test]
-fn selector_routes_group_bound_account_pool_without_explicit_policy_rule() {
+fn selector_routes_group_bound_channel_route_without_explicit_policy_rule() {
     let mut catalog = base_catalog();
     catalog.add_vendor(ModelVendorDefinition::new(
         "alibaba",
@@ -1257,10 +1300,10 @@ fn selector_routes_group_bound_account_pool_without_explicit_policy_rule() {
             "alibaba",
             vec!["chat"],
         )
-        .with_catalog_key("alibaba/cn/qwen3.6-max-preview"),
+        .with_catalog_key("alibaba/qwen3.6-max-preview"),
     );
     catalog.add_price(ModelPrice::new_for_catalog_key(
-        "alibaba/cn/qwen3.6-max-preview",
+        "alibaba/qwen3.6-max-preview",
         "qwen3.6-max-preview",
         PriceSide::OfficialReference,
         BillingMeter::LlmInputToken,
@@ -1268,7 +1311,7 @@ fn selector_routes_group_bound_account_pool_without_explicit_policy_rule() {
     ));
     catalog.add_price(
         ModelPrice::new_for_catalog_key(
-            "alibaba/cn/qwen3.6-max-preview",
+            "alibaba/qwen3.6-max-preview",
             "qwen3.6-max-preview",
             PriceSide::UpstreamCost,
             BillingMeter::LlmInputToken,
@@ -1276,20 +1319,20 @@ fn selector_routes_group_bound_account_pool_without_explicit_policy_rule() {
         )
         .for_provider("dashscope", 3101),
     );
-    catalog.add_provider_account_pool_route(
-        ProviderAccountPoolRoute::new("dashscope", 3101)
+    catalog.add_provider_channel_route(
+        ProviderChannelRoute::new("dashscope", 3101)
             .with_provider_endpoint(
                 Some("http://provider-proxy.internal/dashscope"),
                 Some("vault://providers/dashscope/account/main"),
             )
-            .with_scoped_group_binding(10, 1, 100, vec!["alibaba/cn"], vec!["llm"]),
+            .with_scoped_group_binding(10, 1, 100, vec!["alibaba"], vec!["llm"]),
     );
 
     let selection = ProviderRouteSelector::new(&catalog)
         .select(SelectProviderRouteQuery {
             context: authenticated_context(),
-            catalog_key: "alibaba/cn/qwen3.6-max-preview".to_owned(),
-            requested_model: "alibaba/cn/qwen3.6-max-preview".to_owned(),
+            catalog_key: "alibaba/qwen3.6-max-preview".to_owned(),
+            requested_model: "alibaba/qwen3.6-max-preview".to_owned(),
             capability: RoutingCapability::Chat,
             billing_meter: BillingMeter::LlmInputToken,
         })
@@ -1306,22 +1349,22 @@ fn selector_routes_group_bound_account_pool_without_explicit_policy_rule() {
 }
 
 #[test]
-fn selector_explains_when_account_pool_exists_but_api_key_group_has_no_matching_binding() {
+fn selector_explains_when_channel_route_exists_but_api_key_group_has_no_matching_binding() {
     let mut catalog = base_catalog();
-    catalog.add_provider_account_pool_route(
-        ProviderAccountPoolRoute::new("openrouter", 3001)
+    catalog.add_provider_channel_route(
+        ProviderChannelRoute::new("openrouter", 3001)
             .with_provider_endpoint(
                 Some("http://provider-proxy.internal/openrouter"),
                 Some("vault://providers/openrouter/account/main"),
             )
-            .with_scoped_group_binding(99, 1, 100, vec!["openai/global/gpt-4o-mini"], vec!["llm"]),
+            .with_scoped_group_binding(99, 1, 100, vec!["openai/gpt-4o-mini"], vec!["llm"]),
     );
 
     let error = ProviderRouteSelector::new(&catalog)
         .select(SelectProviderRouteQuery {
             context: authenticated_context(),
-            catalog_key: "openai/global/gpt-4o-mini".to_owned(),
-            requested_model: "openai/global/gpt-4o-mini".to_owned(),
+            catalog_key: "openai/gpt-4o-mini".to_owned(),
+            requested_model: "openai/gpt-4o-mini".to_owned(),
             capability: RoutingCapability::Chat,
             billing_meter: BillingMeter::LlmInputToken,
         })
@@ -1333,12 +1376,12 @@ fn selector_explains_when_account_pool_exists_but_api_key_group_has_no_matching_
     );
     let message = error.to_string();
     assert_eq!(
-        "provider route is not available for model: openai/global/gpt-4o-mini",
+        "provider route is not available for model: openai/gpt-4o-mini",
         message
     );
     assert!(!message.contains("api_key_id"), "{message}");
-    assert!(!message.contains("api_key_group_id"), "{message}");
-    assert!(!message.contains("account_pool_routes_loaded"), "{message}");
+    assert!(!message.contains("channel_group_id"), "{message}");
+    assert!(!message.contains("channel_routes_loaded"), "{message}");
     assert!(!message.contains("any_group_bindings"), "{message}");
     assert!(
         !message.contains("matching_group_bound_channels"),
@@ -1363,29 +1406,29 @@ fn selector_restricts_model_route_group_bindings_by_model_scope() {
         "gpt-4o-mini-bound",
         "0.120000",
     );
-    catalog.add_provider_account_pool_route(
-        ProviderAccountPoolRoute::new("openrouter-other-model", 3001)
+    catalog.add_provider_channel_route(
+        ProviderChannelRoute::new("openrouter-other-model", 3001)
             .with_provider_endpoint(
                 Some("http://provider-proxy.internal/openrouter-other-model"),
                 Some("vault://providers/openrouter-other-model/account/main"),
             )
-            .with_scoped_group_binding(10, 1, 100, vec!["openai/global/other-model"], vec!["llm"]),
+            .with_scoped_group_binding(10, 1, 100, vec!["openai/other-model"], vec!["llm"]),
     );
-    catalog.add_provider_account_pool_route(
-        ProviderAccountPoolRoute::new("openrouter-bound-model", 3002)
+    catalog.add_provider_channel_route(
+        ProviderChannelRoute::new("openrouter-bound-model", 3002)
             .with_provider_endpoint(
                 Some("http://provider-proxy.internal/openrouter-bound-model"),
                 Some("vault://providers/openrouter-bound-model/account/main"),
             )
-            .with_scoped_group_binding(10, 50, 1, vec!["openai/global/gpt-4o-mini"], vec!["llm"]),
+            .with_scoped_group_binding(10, 50, 1, vec!["openai/gpt-4o-mini"], vec!["llm"]),
     );
     add_group_policy_rule(
         &mut catalog,
         2,
         201,
         202,
-        r#"{"catalogKey":"openai/global/gpt-4o-mini"}"#,
-        "openai/global/gpt-4o-mini",
+        r#"{"catalogKey":"openai/gpt-4o-mini"}"#,
+        "openai/gpt-4o-mini",
         vec![RouteCandidate::new(3001, 100), RouteCandidate::new(3002, 1)],
         vec![],
     );
@@ -1399,18 +1442,18 @@ fn selector_restricts_model_route_group_bindings_by_model_scope() {
 }
 
 #[test]
-fn selector_restricts_account_pool_group_bindings_by_capability_scope() {
+fn selector_restricts_channel_group_bindings_by_capability_scope() {
     let mut catalog = base_catalog();
-    catalog.add_provider_account_pool_route(
-        ProviderAccountPoolRoute::new("openrouter-image-only", 3001)
+    catalog.add_provider_channel_route(
+        ProviderChannelRoute::new("openrouter-image-only", 3001)
             .with_provider_endpoint(
                 Some("http://provider-proxy.internal/openrouter-image-only"),
                 Some("vault://providers/openrouter-image-only/account/main"),
             )
             .with_scoped_group_binding(10, 1, 100, Vec::<String>::new(), vec!["image"]),
     );
-    catalog.add_provider_account_pool_route(
-        ProviderAccountPoolRoute::new("openrouter-llm", 3002)
+    catalog.add_provider_channel_route(
+        ProviderChannelRoute::new("openrouter-llm", 3002)
             .with_provider_endpoint(
                 Some("http://provider-proxy.internal/openrouter-llm"),
                 Some("vault://providers/openrouter-llm/account/main"),
@@ -1429,7 +1472,7 @@ fn selector_restricts_account_pool_group_bindings_by_capability_scope() {
     );
 
     let selection = ProviderRouteSelector::new(&catalog)
-        .select_account_pool(select_account_pool_query("openai/management/files"))
+        .select_channel_route(select_channel_route_query("openai/management/files"))
         .unwrap();
 
     assert_eq!(3002, selection.route.channel_id);
@@ -1437,18 +1480,18 @@ fn selector_restricts_account_pool_group_bindings_by_capability_scope() {
 }
 
 #[test]
-fn selector_prefers_bound_account_pool_route_priority_over_rule_candidate_weight() {
+fn selector_prefers_bound_channel_route_priority_over_rule_candidate_weight() {
     let mut catalog = base_catalog();
-    catalog.add_provider_account_pool_route(
-        ProviderAccountPoolRoute::new("openrouter-low-priority", 3001)
+    catalog.add_provider_channel_route(
+        ProviderChannelRoute::new("openrouter-low-priority", 3001)
             .with_provider_endpoint(
                 Some("http://provider-proxy.internal/openrouter-low-priority"),
                 Some("vault://providers/openrouter-low-priority/account/main"),
             )
             .with_group_binding(10, 20, 100),
     );
-    catalog.add_provider_account_pool_route(
-        ProviderAccountPoolRoute::new("openrouter-high-priority", 3002)
+    catalog.add_provider_channel_route(
+        ProviderChannelRoute::new("openrouter-high-priority", 3002)
             .with_provider_endpoint(
                 Some("http://provider-proxy.internal/openrouter-high-priority"),
                 Some("vault://providers/openrouter-high-priority/account/main"),
@@ -1467,7 +1510,7 @@ fn selector_prefers_bound_account_pool_route_priority_over_rule_candidate_weight
     );
 
     let selection = ProviderRouteSelector::new(&catalog)
-        .select_account_pool(select_account_pool_query("openai/management/files"))
+        .select_channel_route(select_channel_route_query("openai/management/files"))
         .unwrap();
 
     assert_eq!(3002, selection.route.channel_id);
@@ -1475,18 +1518,18 @@ fn selector_prefers_bound_account_pool_route_priority_over_rule_candidate_weight
 }
 
 #[test]
-fn selector_uses_bound_account_pool_weight_when_priorities_match() {
+fn selector_uses_bound_channel_route_weight_when_priorities_match() {
     let mut catalog = base_catalog();
-    catalog.add_provider_account_pool_route(
-        ProviderAccountPoolRoute::new("openrouter-lower-weight", 3001)
+    catalog.add_provider_channel_route(
+        ProviderChannelRoute::new("openrouter-lower-weight", 3001)
             .with_provider_endpoint(
                 Some("http://provider-proxy.internal/openrouter-lower-weight"),
                 Some("vault://providers/openrouter-lower-weight/account/main"),
             )
             .with_group_binding(10, 5, 10),
     );
-    catalog.add_provider_account_pool_route(
-        ProviderAccountPoolRoute::new("openrouter-higher-weight", 3002)
+    catalog.add_provider_channel_route(
+        ProviderChannelRoute::new("openrouter-higher-weight", 3002)
             .with_provider_endpoint(
                 Some("http://provider-proxy.internal/openrouter-higher-weight"),
                 Some("vault://providers/openrouter-higher-weight/account/main"),
@@ -1505,7 +1548,7 @@ fn selector_uses_bound_account_pool_weight_when_priorities_match() {
     );
 
     let selection = ProviderRouteSelector::new(&catalog)
-        .select_account_pool(select_account_pool_query("openai/management/files"))
+        .select_channel_route(select_channel_route_query("openai/management/files"))
         .unwrap();
 
     assert_eq!(3002, selection.route.channel_id);
@@ -1513,10 +1556,10 @@ fn selector_uses_bound_account_pool_weight_when_priorities_match() {
 }
 
 #[test]
-fn selector_rejects_account_pool_when_group_bindings_exist_but_not_for_api_key_group() {
+fn selector_rejects_channel_route_when_group_bindings_exist_but_not_for_api_key_group() {
     let mut catalog = base_catalog();
-    catalog.add_provider_account_pool_route(
-        ProviderAccountPoolRoute::new("openrouter-other-group", 3001)
+    catalog.add_provider_channel_route(
+        ProviderChannelRoute::new("openrouter-other-group", 3001)
             .with_provider_endpoint(
                 Some("http://provider-proxy.internal/openrouter-other-group"),
                 Some("vault://providers/openrouter-other-group/account/main"),
@@ -1535,14 +1578,14 @@ fn selector_rejects_account_pool_when_group_bindings_exist_but_not_for_api_key_g
     );
 
     let error = ProviderRouteSelector::new(&catalog)
-        .select_account_pool(select_account_pool_query("openai/management/files"))
+        .select_channel_route(select_channel_route_query("openai/management/files"))
         .unwrap_err();
 
     assert_eq!(
         ProviderRouteSelectionErrorKind::ProviderRouteUnavailable,
         error.kind()
     );
-    assert!(error.to_string().contains("configured account pool"));
+    assert!(error.to_string().contains("configured channel route"));
 }
 
 #[test]
@@ -1555,8 +1598,8 @@ fn selector_rejects_model_route_when_group_bindings_exist_but_not_for_api_key_gr
         "gpt-4o-mini-other-group",
         "0.110000",
     );
-    catalog.add_provider_account_pool_route(
-        ProviderAccountPoolRoute::new("openrouter-other-group", 3001)
+    catalog.add_provider_channel_route(
+        ProviderChannelRoute::new("openrouter-other-group", 3001)
             .with_provider_endpoint(
                 Some("http://provider-proxy.internal/openrouter-other-group"),
                 Some("vault://providers/openrouter-other-group/account/main"),
@@ -1568,8 +1611,8 @@ fn selector_rejects_model_route_when_group_bindings_exist_but_not_for_api_key_gr
         2,
         201,
         202,
-        r#"{"catalogKey":"openai/global/gpt-4o-mini"}"#,
-        "openai/global/gpt-4o-mini",
+        r#"{"catalogKey":"openai/gpt-4o-mini"}"#,
+        "openai/gpt-4o-mini",
         vec![RouteCandidate::new(3001, 100)],
         vec![],
     );
@@ -1588,10 +1631,10 @@ fn selector_rejects_model_route_when_group_bindings_exist_but_not_for_api_key_gr
 }
 
 #[test]
-fn selector_falls_back_to_global_default_account_pool_when_group_has_no_route_key_rule() {
+fn selector_falls_back_to_global_default_channel_route_when_group_has_no_route_key_rule() {
     let mut catalog = base_catalog();
-    add_callable_account_pool_route(&mut catalog, 3001, "openrouter-default");
-    add_callable_account_pool_route(&mut catalog, 3002, "openrouter-group");
+    add_callable_channel_route(&mut catalog, 3001, "openrouter-default");
+    add_callable_channel_route(&mut catalog, 3002, "openrouter-group");
     catalog.add_routing_policy(RoutingPolicy::new(
         1,
         0,
@@ -1626,7 +1669,7 @@ fn selector_falls_back_to_global_default_account_pool_when_group_has_no_route_ke
     );
 
     let selection = ProviderRouteSelector::new(&catalog)
-        .select_account_pool(select_account_pool_query("openai/management/files"))
+        .select_channel_route(select_channel_route_query("openai/management/files"))
         .unwrap();
 
     assert_eq!(3001, selection.route.channel_id);
@@ -1636,9 +1679,9 @@ fn selector_falls_back_to_global_default_account_pool_when_group_has_no_route_ke
 }
 
 #[test]
-fn selector_rejects_account_pool_candidate_without_callable_endpoint() {
+fn selector_rejects_channel_route_candidate_without_callable_endpoint() {
     let mut catalog = base_catalog();
-    catalog.add_provider_account_pool_route(ProviderAccountPoolRoute::new("openrouter-main", 3001));
+    catalog.add_provider_channel_route(ProviderChannelRoute::new("openrouter-main", 3001));
     add_group_policy_rule(
         &mut catalog,
         2,
@@ -1651,12 +1694,12 @@ fn selector_rejects_account_pool_candidate_without_callable_endpoint() {
     );
 
     let error = ProviderRouteSelector::new(&catalog)
-        .select_account_pool(select_account_pool_query("openai/management/files"))
+        .select_channel_route(select_channel_route_query("openai/management/files"))
         .unwrap_err();
 
     assert_eq!(
         ProviderRouteSelectionErrorKind::ProviderRouteUnavailable,
         error.kind()
     );
-    assert!(error.to_string().contains("callable account pool"));
+    assert!(error.to_string().contains("callable channel route"));
 }

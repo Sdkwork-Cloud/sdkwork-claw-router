@@ -6,8 +6,6 @@ namespace Sdkwork.ClawRouter.App.Models
 {
     public class AiUsageFactRecord
     {
-        public string? ApiKeyGroupId { get; set; }
-        public string? ApiKeyGroupSnapshot { get; set; }
         public string? ApiKeyId { get; set; }
         public string? ApiKeyNameSnapshot { get; set; }
         public string? AudioSeconds { get; set; }
@@ -24,6 +22,8 @@ namespace Sdkwork.ClawRouter.App.Models
         public string? CacheReadUnitPrice { get; set; }
         public string? CachedTokens { get; set; }
         public string? CatalogKey { get; set; }
+        public string? ChannelGroupId { get; set; }
+        public string? ChannelGroupSnapshot { get; set; }
         public string? ChannelId { get; set; }
         public string? CharacterCount { get; set; }
         public string? CompletionTokens { get; set; }
@@ -54,7 +54,6 @@ namespace Sdkwork.ClawRouter.App.Models
         public Dictionary<string, string>? PricingSnapshot { get; set; }
         public string? PricingTierId { get; set; }
         public string? PromptTokens { get; set; }
-        public string? ProviderAccountId { get; set; }
         public string? ProviderId { get; set; }
         public string? ProviderNativeModel { get; set; }
         public string? RateMultiplier { get; set; }

@@ -19,6 +19,7 @@ pub(crate) mod sql_admin_service_provider;
 pub(crate) mod sql_admin_storage;
 pub(crate) mod sql_hash;
 pub(crate) mod sql_model_rankings;
+pub(crate) mod sql_runtime_region_settings;
 pub(crate) mod sql_site_settings;
 pub mod sqlite;
 pub(crate) mod verification_delivery_queue;

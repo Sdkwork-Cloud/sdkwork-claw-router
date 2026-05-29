@@ -15,14 +15,8 @@ class IamApi(private val client: HttpClient) {
     }
 
     /** Create group */
-    suspend fun accessGroupsCreate(body: AdminAccessGroupCreateRequest, xRequestId: String? = null): AccessGroupsCreateResult? {
-        val requestHeaders = buildRequestHeaders(
-            mapOf(
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
-            ),
-            emptyMap()
-        )
-        val raw = client.post(ApiPaths.backendPath("/iam/access_groups"), body, null, requestHeaders, "application/json")
+    suspend fun accessGroupsCreate(body: AdminAccessGroupCreateRequest): AccessGroupsCreateResult? {
+        val raw = client.post(ApiPaths.backendPath("/iam/access_groups"), body, null, null, "application/json")
         return client.convertValue(raw, object : TypeReference<AccessGroupsCreateResult>() {})
     }
 
@@ -33,14 +27,8 @@ class IamApi(private val client: HttpClient) {
     }
 
     /** Update group */
-    suspend fun accessGroupsUpdate(groupId: String, body: AdminAccessGroupUpdateRequest, xRequestId: String? = null): AccessGroupsUpdateResult? {
-        val requestHeaders = buildRequestHeaders(
-            mapOf(
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
-            ),
-            emptyMap()
-        )
-        val raw = client.patch(ApiPaths.backendPath("/iam/access_groups/${serializePathParameter(groupId, PathParameterSpec("groupId", "simple", false))}"), body, null, requestHeaders, "application/json")
+    suspend fun accessGroupsUpdate(groupId: String, body: AdminAccessGroupUpdateRequest): AccessGroupsUpdateResult? {
+        val raw = client.patch(ApiPaths.backendPath("/iam/access_groups/${serializePathParameter(groupId, PathParameterSpec("groupId", "simple", false))}"), body, null, null, "application/json")
         return client.convertValue(raw, object : TypeReference<AccessGroupsUpdateResult>() {})
     }
 
@@ -51,14 +39,8 @@ class IamApi(private val client: HttpClient) {
     }
 
     /** Replace group channel bindings */
-    suspend fun accessGroupsChannelBindingsUpdate(groupId: String, body: AdminAccessGroupChannelBindingsReplaceRequest, xRequestId: String? = null): AccessGroupsChannelBindingsUpdateResult? {
-        val requestHeaders = buildRequestHeaders(
-            mapOf(
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
-            ),
-            emptyMap()
-        )
-        val raw = client.put(ApiPaths.backendPath("/iam/access_groups/${serializePathParameter(groupId, PathParameterSpec("groupId", "simple", false))}/channel_bindings"), body, null, requestHeaders, "application/json")
+    suspend fun accessGroupsChannelBindingsUpdate(groupId: String, body: AdminAccessGroupChannelBindingsReplaceRequest): AccessGroupsChannelBindingsUpdateResult? {
+        val raw = client.put(ApiPaths.backendPath("/iam/access_groups/${serializePathParameter(groupId, PathParameterSpec("groupId", "simple", false))}/channel_bindings"), body, null, null, "application/json")
         return client.convertValue(raw, object : TypeReference<AccessGroupsChannelBindingsUpdateResult>() {})
     }
 
@@ -69,11 +51,10 @@ class IamApi(private val client: HttpClient) {
     }
 
     /** Create API key */
-    suspend fun apiKeysCreate(body: AdminApiKeyCreateRequest, idempotencyKey: String, xRequestId: String? = null): ApiKeysCreateResult? {
+    suspend fun apiKeysCreate(body: AdminApiKeyCreateRequest, idempotencyKey: String): ApiKeysCreateResult? {
         val requestHeaders = buildRequestHeaders(
             mapOf(
                 "Idempotency-Key" to HeaderParameterSpec(idempotencyKey, "simple", false, null),
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
             ),
             emptyMap()
         )
@@ -94,26 +75,14 @@ class IamApi(private val client: HttpClient) {
     }
 
     /** Create user */
-    suspend fun usersCreate(body: AdminUserCreateRequest, xRequestId: String? = null): UsersCreateResult? {
-        val requestHeaders = buildRequestHeaders(
-            mapOf(
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
-            ),
-            emptyMap()
-        )
-        val raw = client.post(ApiPaths.backendPath("/iam/users"), body, null, requestHeaders, "application/json")
+    suspend fun usersCreate(body: AdminUserCreateRequest): UsersCreateResult? {
+        val raw = client.post(ApiPaths.backendPath("/iam/users"), body, null, null, "application/json")
         return client.convertValue(raw, object : TypeReference<UsersCreateResult>() {})
     }
 
     /** Update user */
-    suspend fun usersUpdate(body: AdminUserUpdateRequest, xRequestId: String? = null): UsersUpdateResult? {
-        val requestHeaders = buildRequestHeaders(
-            mapOf(
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
-            ),
-            emptyMap()
-        )
-        val raw = client.put(ApiPaths.backendPath("/iam/users"), body, null, requestHeaders, "application/json")
+    suspend fun usersUpdate(body: AdminUserUpdateRequest): UsersUpdateResult? {
+        val raw = client.put(ApiPaths.backendPath("/iam/users"), body, null, null, "application/json")
         return client.convertValue(raw, object : TypeReference<UsersUpdateResult>() {})
     }
 

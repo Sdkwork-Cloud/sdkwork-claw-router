@@ -1,12 +1,14 @@
 package types
 
-// Persisted channel snapshot returned after the provider health probe. Admin management responses may return the stored plaintext provider API key for channel account relay operations.
+// Persisted channel snapshot returned after the provider health probe. Admin management responses may return the stored plaintext provider API key for channel credential relay operations.
 type AdminChannelItem struct {
 	AccessType string `json:"accessType"`
 	ApiKey string `json:"apiKey"`
 	Balance string `json:"balance"`
 	BaseUrl string `json:"baseUrl"`
 	Capabilities []string `json:"capabilities"`
+	ChannelId string `json:"channelId"`
+	ChannelType string `json:"channelType"`
 	CircuitBreakerPolicy ProviderCircuitBreakerPolicy `json:"circuitBreakerPolicy"`
 	CreatedAt string `json:"createdAt"`
 	Errors int `json:"errors"`
@@ -16,6 +18,7 @@ type AdminChannelItem struct {
 	Models []string `json:"models"`
 	Name string `json:"name"`
 	Protocol string `json:"protocol"`
+	ResourceCodes []string `json:"resourceCodes"`
 	RetryPolicy ProviderRetryPolicy `json:"retryPolicy"`
 	SecretRef string `json:"secretRef"`
 	Status string `json:"status"`

@@ -107,12 +107,11 @@ impl ServiceProvidersApi {
     }
 
     /// Service Provider Downstream Create
-    pub async fn downstreams_create(&self, body: &ServiceProviderDownstreamCreateRequest, idempotency_key: &str, x_request_id: Option<&str>) -> Result<DownstreamsCreateResult, SdkworkError> {
+    pub async fn downstreams_create(&self, body: &ServiceProviderDownstreamCreateRequest, idempotency_key: &str) -> Result<DownstreamsCreateResult, SdkworkError> {
         let path = backend_path(&"/service_providers/downstreams".to_string());
         let headers = build_request_headers(
             &[
                 ("Idempotency-Key", HeaderParameterSpec::new(idempotency_key, "simple", false, None)),
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
             ],
             &[],
         );
@@ -150,12 +149,11 @@ impl ServiceProvidersApi {
     }
 
     /// Service Provider Pricing Rule Create
-    pub async fn pricing_rules_create(&self, body: &ServiceProviderPricingRuleCreateRequest, idempotency_key: &str, x_request_id: Option<&str>) -> Result<PricingRulesCreateResult, SdkworkError> {
+    pub async fn pricing_rules_create(&self, body: &ServiceProviderPricingRuleCreateRequest, idempotency_key: &str) -> Result<PricingRulesCreateResult, SdkworkError> {
         let path = backend_path(&"/service_providers/pricing/rules".to_string());
         let headers = build_request_headers(
             &[
                 ("Idempotency-Key", HeaderParameterSpec::new(idempotency_key, "simple", false, None)),
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
             ],
             &[],
         );
@@ -163,12 +161,11 @@ impl ServiceProvidersApi {
     }
 
     /// Service Provider Pricing Rule Update
-    pub async fn pricing_rules_update(&self, rule_id: &str, body: &ServiceProviderPricingRuleUpdateRequest, idempotency_key: &str, x_request_id: Option<&str>) -> Result<PricingRulesUpdateResult, SdkworkError> {
+    pub async fn pricing_rules_update(&self, rule_id: &str, body: &ServiceProviderPricingRuleUpdateRequest, idempotency_key: &str) -> Result<PricingRulesUpdateResult, SdkworkError> {
         let path = backend_path(&format!("/service_providers/pricing/rules/{}", serialize_path_parameter(rule_id, PathParameterSpec::new("ruleId", "simple", false))));
         let headers = build_request_headers(
             &[
                 ("Idempotency-Key", HeaderParameterSpec::new(idempotency_key, "simple", false, None)),
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
             ],
             &[],
         );
@@ -176,12 +173,11 @@ impl ServiceProvidersApi {
     }
 
     /// Service Provider Price Simulation Create
-    pub async fn price_simulation_create(&self, body: &ServiceProviderPriceSimulationRequest, idempotency_key: &str, x_request_id: Option<&str>) -> Result<PriceSimulationCreateResult, SdkworkError> {
+    pub async fn price_simulation_create(&self, body: &ServiceProviderPriceSimulationRequest, idempotency_key: &str) -> Result<PriceSimulationCreateResult, SdkworkError> {
         let path = backend_path(&"/service_providers/pricing/simulations".to_string());
         let headers = build_request_headers(
             &[
                 ("Idempotency-Key", HeaderParameterSpec::new(idempotency_key, "simple", false, None)),
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
             ],
             &[],
         );

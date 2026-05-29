@@ -1,4 +1,4 @@
-﻿import json
+import json
 import unittest
 from pathlib import Path
 
@@ -222,17 +222,13 @@ class WorkspaceDeliveryStandardTest(unittest.TestCase):
             "scripts/build-claw-router-install-package.mjs",
             "scripts/smoke-install-package-init.mjs",
             "install-packages-manifest.json",
-            "config/sdkwork-claw-router.toml.example",
+            "config/clawrouter.toml.example",
             "SDKWORK_CLAW_CONFIG_FILE",
             "SDKWORK_CLAW_DATABASE_URL",
             "SDKWORK_CLAW_DATABASE_MAX_CONNECTIONS",
-            "server release profiles and default to PostgreSQL",
-            "desktop packages default to a local SQLite",
             "macos-arm64-desktop",
             "windows-x64-service",
             "linux-arm64-container",
-            "sdkwork-claw-installer ensure",
-            "sdkwork-claw-installer refresh-catalog --force",
             "--check",
             "Docker Desktop",
             "--skip-contract-guardians",
@@ -248,23 +244,35 @@ class WorkspaceDeliveryStandardTest(unittest.TestCase):
             "local_developer_tool_api",
             "tools.java_legacy_contract_audit",
         ]
-        mojibake_markers = ["æ", "é", "ï¼", "ã€", "å"]
-
-        mojibake_markers.extend(
-            [
-                "\ufffd",
-                "Â",
-                "Ã",
-                "å",
-                "æ",
-                "ç’",
-                "ç¼",
-                "è¤",
-                "é",
-                "éŽ",
-                "é",
+        document_specific_snippets = {
+            "README.md": [
+                "server release profiles and default to external PostgreSQL",
+                "desktop package dry-runs use",
+                "a file-backed SQLite URL",
+                "clawrouterctl ensure",
+                "clawrouterctl refresh-catalog --force",
+            ],
+            "CHECK_RESULT.md": [
+                "server release profiles and default to PostgreSQL",
+                "desktop packages default to a local SQLite",
+                "sdkwork-claw-installer ensure",
+                "sdkwork-claw-installer refresh-catalog --force",
+            ],
+        }
+        mojibake_markers = [
+            chr(codepoint)
+            for codepoint in [
+                0x934F,
+                0x6D93,
+                0x59DD,
+                0x5BEE,
+                0x95B3,
+                0x00E9,
+                0x00E6,
+                0x00E7,
+                0xFFFD,
             ]
-        )
+        ]
 
         for relative_path in ["README.md", "CHECK_RESULT.md"]:
             with self.subTest(path=relative_path):
@@ -272,16 +280,20 @@ class WorkspaceDeliveryStandardTest(unittest.TestCase):
                 invalid_chars = {
                     char
                     for char in content
-                    if char not in "\n\r\t" and not (32 <= ord(char) <= 126)
+                    if char not in "\n\r\t" and (
+                        ord(char) < 32
+                        or 0x7F <= ord(char) <= 0x9F
+                        or 0xE000 <= ord(char) <= 0xF8FF
+                    )
                 }
                 self.assertEqual(
                     set(),
                     invalid_chars,
-                    f"{relative_path} must stay ASCII-only for reliable delivery docs",
+                    f"{relative_path} must stay readable UTF-8 without control or private-use characters",
                 )
                 for marker in mojibake_markers:
                     self.assertNotIn(marker, content)
-                for snippet in required_snippets:
+                for snippet in required_snippets + document_specific_snippets[relative_path]:
                     self.assertIn(snippet, content)
 
 

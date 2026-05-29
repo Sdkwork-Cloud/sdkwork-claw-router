@@ -76,6 +76,7 @@ pub struct UsageLogItem {
     pub path: String,
     pub reasoning_effort: String,
     pub ip: String,
+    pub user_agent: String,
 }
 
 pub trait UsageLogsReadStore {

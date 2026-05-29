@@ -9,10 +9,12 @@ if TYPE_CHECKING:
 
 @dataclass
 class AdminChannelItem:
-    """Persisted channel snapshot returned after the provider health probe. Admin management responses may return the stored plaintext provider API key for channel account relay operations."""
+    """Persisted channel snapshot returned after the provider health probe. Admin management responses may return the stored plaintext provider API key for channel credential relay operations."""
     access_type: str
     balance: str
     capabilities: List[str]
+    channel_id: str
+    channel_type: str
     created_at: str
     errors: int
     id: str
@@ -20,6 +22,7 @@ class AdminChannelItem:
     models: List[str]
     name: str
     protocol: str
+    resource_codes: List[str]
     status: str
     vendor: str
     weight: int

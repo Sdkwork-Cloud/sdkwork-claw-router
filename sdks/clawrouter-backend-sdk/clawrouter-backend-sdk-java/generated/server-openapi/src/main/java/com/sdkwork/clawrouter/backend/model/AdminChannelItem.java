@@ -8,6 +8,8 @@ public class AdminChannelItem {
     private String balance;
     private String baseUrl;
     private List<String> capabilities;
+    private String channelId;
+    private String channelType;
     private ProviderCircuitBreakerPolicy circuitBreakerPolicy;
     private String createdAt;
     private Integer errors;
@@ -17,6 +19,7 @@ public class AdminChannelItem {
     private List<String> models;
     private String name;
     private String protocol;
+    private List<String> resourceCodes;
     private ProviderRetryPolicy retryPolicy;
     private String secretRef;
     private String status;
@@ -62,6 +65,22 @@ public class AdminChannelItem {
 
     public void setCapabilities(List<String> capabilities) {
         this.capabilities = capabilities;
+    }
+
+    public String getChannelId() {
+        return this.channelId;
+    }
+
+    public void setChannelId(String channelId) {
+        this.channelId = channelId;
+    }
+
+    public String getChannelType() {
+        return this.channelType;
+    }
+
+    public void setChannelType(String channelType) {
+        this.channelType = channelType;
     }
 
     public ProviderCircuitBreakerPolicy getCircuitBreakerPolicy() {
@@ -134,6 +153,14 @@ public class AdminChannelItem {
 
     public void setProtocol(String protocol) {
         this.protocol = protocol;
+    }
+
+    public List<String> getResourceCodes() {
+        return this.resourceCodes;
+    }
+
+    public void setResourceCodes(List<String> resourceCodes) {
+        this.resourceCodes = resourceCodes;
     }
 
     public ProviderRetryPolicy getRetryPolicy() {

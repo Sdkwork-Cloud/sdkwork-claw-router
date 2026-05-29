@@ -24,11 +24,10 @@ class RuntimeApi(private val client: HttpClient) {
     }
 
     /** Create runtime invocation */
-    suspend fun invocationsCreate(body: RuntimeInvocationCreateRequest, idempotencyKey: String, xRequestId: String? = null): InvocationsCreateResult? {
+    suspend fun invocationsCreate(body: RuntimeInvocationCreateRequest, idempotencyKey: String): InvocationsCreateResult? {
         val requestHeaders = buildRequestHeaders(
             mapOf(
                 "Idempotency-Key" to HeaderParameterSpec(idempotencyKey, "simple", false, null),
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
             ),
             emptyMap()
         )
@@ -53,11 +52,10 @@ class RuntimeApi(private val client: HttpClient) {
     }
 
     /** Create runtime artifact */
-    suspend fun artifactsCreate(invocationId: String, body: RuntimeArtifactCreateRequest, idempotencyKey: String, xRequestId: String? = null): ArtifactsCreateResult? {
+    suspend fun artifactsCreate(invocationId: String, body: RuntimeArtifactCreateRequest, idempotencyKey: String): ArtifactsCreateResult? {
         val requestHeaders = buildRequestHeaders(
             mapOf(
                 "Idempotency-Key" to HeaderParameterSpec(idempotencyKey, "simple", false, null),
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
             ),
             emptyMap()
         )
@@ -66,11 +64,10 @@ class RuntimeApi(private val client: HttpClient) {
     }
 
     /** Complete runtime invocation */
-    suspend fun invocationsSubmit(invocationId: String, body: RuntimeInvocationCompleteRequest, idempotencyKey: String, xRequestId: String? = null): InvocationsSubmitResult? {
+    suspend fun invocationsSubmit(invocationId: String, body: RuntimeInvocationCompleteRequest, idempotencyKey: String): InvocationsSubmitResult? {
         val requestHeaders = buildRequestHeaders(
             mapOf(
                 "Idempotency-Key" to HeaderParameterSpec(idempotencyKey, "simple", false, null),
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
             ),
             emptyMap()
         )
@@ -89,11 +86,10 @@ class RuntimeApi(private val client: HttpClient) {
     }
 
     /** Create runtime invocation event */
-    suspend fun invocationEventsCreate(invocationId: String, body: RuntimeEventCreateRequest, idempotencyKey: String, xRequestId: String? = null): InvocationEventsCreateResult? {
+    suspend fun invocationEventsCreate(invocationId: String, body: RuntimeEventCreateRequest, idempotencyKey: String): InvocationEventsCreateResult? {
         val requestHeaders = buildRequestHeaders(
             mapOf(
                 "Idempotency-Key" to HeaderParameterSpec(idempotencyKey, "simple", false, null),
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
             ),
             emptyMap()
         )

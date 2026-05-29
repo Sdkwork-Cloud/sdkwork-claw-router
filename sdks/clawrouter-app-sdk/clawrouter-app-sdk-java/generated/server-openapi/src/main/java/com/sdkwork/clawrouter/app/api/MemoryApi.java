@@ -30,9 +30,9 @@ public class MemoryApi {
     }
 
     /** Create memory space */
-    public SpacesCreateResult spacesCreate(MemorySpaceCreateRequest body, String idempotencyKey, String xRequestId) throws Exception {
+    public SpacesCreateResult spacesCreate(MemorySpaceCreateRequest body, String idempotencyKey) throws Exception {
         Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null), "X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
+                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null)),
                 Map.of()
         );
         Object raw = client.post(ApiPaths.appPath("/memory/spaces"), body, null, requestHeaders, "application/json");
@@ -56,9 +56,9 @@ public class MemoryApi {
     }
 
     /** Create memory entry */
-    public EntriesCreateResult entriesCreate(String spaceId, MemoryEntryCreateRequest body, String idempotencyKey, String xRequestId) throws Exception {
+    public EntriesCreateResult entriesCreate(String spaceId, MemoryEntryCreateRequest body, String idempotencyKey) throws Exception {
         Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null), "X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
+                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null)),
                 Map.of()
         );
         Object raw = client.post(ApiPaths.appPath("/memory/spaces/" + serializePathParameter(spaceId, new PathParameterSpec("spaceId", "simple", false)) + "/entries"), body, null, requestHeaders, "application/json");

@@ -8,7 +8,6 @@ class AgentRunCreateRequest:
     """Agent run create request schema exposed by Claw Router."""
     agent_id: str
     agent_version_id: str
-    request_id: str
     execution_mode: Optional[str] = None
     input_message: Optional[str] = None
     memory_space_id: Optional[str] = None

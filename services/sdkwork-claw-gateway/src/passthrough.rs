@@ -8,10 +8,11 @@ use crate::provider_passthrough_transport::{
     build_provider_passthrough_client, forward_provider_passthrough_to_target, PassthroughClient,
     ProviderPassthroughTarget,
 };
+use crate::request_identity::generate_server_request_id;
 use axum::body::Body;
 use axum::extract::Request;
 use axum::extract::State;
-use axum::http::header::{HeaderName, HeaderValue};
+use axum::http::header::{HeaderName, HeaderValue, USER_AGENT};
 use axum::http::HeaderMap;
 use axum::http::{StatusCode, Uri};
 use axum::response::{IntoResponse, Response};
@@ -22,13 +23,14 @@ use sdkwork_claw_config::{
     ProviderAdapterConfig, ProviderPassthroughAuth, ProviderPassthroughAuthType,
     ProviderRelayConfig,
 };
+use sdkwork_claw_product::api::normalize_user_agent_header;
 use sdkwork_claw_product::application::{
     ApiKeySecretHasher, AuthenticatedApiKeyContext, PricingResolver, ProviderRouteSelector,
-    ResolveModelPriceQuery, SelectProviderAccountPoolRouteQuery,
+    ResolveModelPriceQuery, SelectProviderChannelRouteQuery,
 };
 use sdkwork_claw_product::domain::{
     provider_native_model_id, BillingMeter, DecimalValue, DomainError, DomainResult,
-    ProviderAccountPoolRoute, RoutingCapability,
+    ProviderChannelRoute, RoutingCapability,
 };
 use sdkwork_claw_product::ports::{
     GatewayUsageQuantity, GatewayUsageRecordCommand, GatewayUsageRecorder, PricingCatalog,
@@ -47,7 +49,6 @@ use sdkwork_claw_provider_adapter_registry::{
 use serde_json::json;
 use serde_json::Value;
 use std::sync::Arc;
-use std::time::{SystemTime, UNIX_EPOCH};
 
 type UsageRecorder = Arc<dyn GatewayUsageRecorder + Send + Sync>;
 
@@ -334,7 +335,7 @@ where
         Some(secret_resolver) => {
             state
                 .runtime
-                .forward_with_account_pool(
+                .forward_with_channel_route(
                     state.catalog.as_ref(),
                     secret_resolver.as_ref(),
                     request,
@@ -524,7 +525,7 @@ impl ProviderPassthroughRuntime {
             if let ProviderInvocationMode::InternalHttpAdapter(route) =
                 adapter.registry.resolve_standard_path(&lookup).mode
             {
-                let (_, response) = self
+                let (_, response, _) = self
                     .invoke_adapter(
                         request,
                         context,
@@ -568,7 +569,7 @@ impl ProviderPassthroughRuntime {
             if let ProviderInvocationMode::InternalHttpAdapter(route) =
                 adapter.registry.resolve_standard_path(&lookup).mode
             {
-                let (invocation, response) = self
+                let (invocation, response, user_agent) = self
                     .invoke_adapter(
                         request,
                         Some(context),
@@ -586,6 +587,7 @@ impl ProviderPassthroughRuntime {
                     context,
                     &invocation,
                     &response,
+                    user_agent.as_deref(),
                 )
                 .await?;
                 return adapter_invocation_response(response);
@@ -595,7 +597,7 @@ impl ProviderPassthroughRuntime {
         self.forward_to_target(request, target, upstream_uri).await
     }
 
-    async fn forward_with_account_pool<C>(
+    async fn forward_with_channel_route<C>(
         &self,
         catalog: &C,
         secret_resolver: &(dyn ProviderSecretResolver + Send + Sync),
@@ -622,8 +624,8 @@ impl ProviderPassthroughRuntime {
             .resolve_standard_path_metadata(request.method().as_str(), standard_path.as_str())
             .ok_or_else(|| "provider passthrough target is not configured".to_owned())?;
         let account_route =
-            select_provider_native_account_pool_route(catalog, context, &metadata_route)?;
-        let target = account_pool_route_to_passthrough_target(&account_route, secret_resolver)?;
+            select_provider_native_channel_route(catalog, context, &metadata_route)?;
+        let target = channel_route_to_passthrough_target(&account_route, secret_resolver)?;
         let final_resolution = adapter
             .registry
             .resolve_standard_path(&ProviderAdapterLookup {
@@ -635,7 +637,7 @@ impl ProviderPassthroughRuntime {
             });
         match final_resolution.mode {
             ProviderInvocationMode::InternalHttpAdapter(route) => {
-                let (invocation, response) = self
+                let (invocation, response, user_agent) = self
                     .invoke_adapter(
                         request,
                         Some(context),
@@ -653,6 +655,7 @@ impl ProviderPassthroughRuntime {
                     context,
                     &invocation,
                     &response,
+                    user_agent.as_deref(),
                 )
                 .await?;
                 adapter_invocation_response(response)
@@ -700,8 +703,17 @@ impl ProviderPassthroughRuntime {
         standard_path: String,
         channel_id: i64,
         timeout_ms: Option<u64>,
-    ) -> Result<(AdapterInvocationRequest, AdapterInvocationResponse), String> {
+    ) -> Result<
+        (
+            AdapterInvocationRequest,
+            AdapterInvocationResponse,
+            Option<String>,
+        ),
+        String,
+    > {
         let (parts, body) = request.into_parts();
+        let user_agent = request_header_value(&parts.headers, USER_AGENT.as_str())
+            .and_then(|value| normalize_user_agent_header(value.as_str()));
         let body = body
             .collect()
             .await
@@ -723,7 +735,7 @@ impl ProviderPassthroughRuntime {
             .invoke(&route, invocation.clone())
             .await
             .map_err(provider_adapter_http_error)?;
-        Ok((invocation, response))
+        Ok((invocation, response, user_agent))
     }
 
     fn target_for_path(&self, path: &str) -> Option<&ProviderPassthroughTarget> {
@@ -747,6 +759,7 @@ async fn record_adapter_usage_lines<C>(
     context: &AuthenticatedApiKeyContext,
     invocation: &AdapterInvocationRequest,
     response: &AdapterInvocationResponse,
+    user_agent: Option<&str>,
 ) -> Result<(), String>
 where
     C: PricingCatalog + Send + Sync + 'static,
@@ -764,7 +777,7 @@ where
         .enumerate()
         .map(|(line_index, usage_line)| {
             adapter_usage_line_command(
-                catalog, context, invocation, response, usage_line, line_index,
+                catalog, context, invocation, response, usage_line, line_index, user_agent,
             )
             .map_err(|error| {
                 format!(
@@ -793,6 +806,7 @@ fn adapter_usage_line_command<C>(
     response: &AdapterInvocationResponse,
     usage_line: &AdapterUsageLine,
     line_index: usize,
+    user_agent: Option<&str>,
 ) -> DomainResult<GatewayUsageRecordCommand>
 where
     C: PricingCatalog + Send + Sync + 'static,
@@ -815,6 +829,7 @@ where
         usage_line.billable_quantity.as_str(),
     )?;
     let requested_model_catalog_key = adapter_requested_model_catalog_key(invocation, usage_line);
+    let catalog_key = canonical_adapter_usage_catalog_key(&requested_model_catalog_key);
     let provider_native_model = usage_line
         .provider_native_model
         .as_deref()
@@ -822,10 +837,10 @@ where
         .filter(|value| !value.is_empty())
         .map(str::to_owned)
         .unwrap_or_else(|| provider_native_model_id(&invocation.provider.provider_model));
-    let requested_model = provider_native_model_id(&requested_model_catalog_key);
+    let requested_model = provider_native_model.clone();
     let price = PricingResolver::new(catalog).resolve(ResolveModelPriceQuery {
         api_key_id: context.api_key_id,
-        model: requested_model_catalog_key.clone(),
+        model: catalog_key.clone(),
         billing_meter: billing_meter.clone(),
         provider_code: Some(invocation.provider.provider_code.clone()),
         channel_id: Some(invocation.provider.channel_id),
@@ -853,6 +868,7 @@ where
         invocation,
         usage_line,
         line_index,
+        &catalog_key,
         &requested_model_catalog_key,
         &requested_model,
         &provider_native_model,
@@ -865,16 +881,16 @@ where
             .invocation
             .request_id
             .clone()
-            .unwrap_or_else(|| generated_adapter_request_id(context.api_key_id)),
+            .unwrap_or_else(generate_server_request_id),
         trace_id: invocation.invocation.trace_id.clone(),
         tenant_id: context.tenant_id,
         organization_id: context.organization_id,
         user_id: context.user_id,
         api_key_id: context.api_key_id,
         api_key_name_snapshot: context.api_key_name_snapshot.clone(),
-        api_key_group_id: context.group_id,
-        api_key_group_snapshot: context.group_code.clone(),
-        catalog_key: requested_model_catalog_key.clone(),
+        channel_group_id: context.group_id,
+        channel_group_snapshot: context.group_code.clone(),
+        catalog_key,
         requested_model,
         requested_model_catalog_key,
         provider_code: invocation.provider.provider_code.clone(),
@@ -883,6 +899,7 @@ where
         provider_native_model,
         request_path: invocation.invocation.standard_path.clone(),
         http_method: invocation.invocation.method.clone(),
+        user_agent: user_agent.map(str::to_owned),
         http_status: response.status_code,
         streaming: invocation.invocation.stream,
         modality: adapter_modality_for_usage_line(invocation, &billing_meter),
@@ -945,6 +962,40 @@ fn adapter_requested_model_catalog_key(
         "{}/global/{}",
         invocation.provider.provider_code.trim(),
         provider_model
+    )
+}
+
+fn canonical_adapter_usage_catalog_key(requested_model_catalog_key: &str) -> String {
+    let parts = requested_model_catalog_key
+        .trim()
+        .split('/')
+        .map(str::trim)
+        .filter(|part| !part.is_empty())
+        .collect::<Vec<_>>();
+    match parts.as_slice() {
+        [vendor, region, model @ ..] if !model.is_empty() && known_region_segment(region) => {
+            format!("{}/{}", vendor, model.join("/"))
+        }
+        _ => requested_model_catalog_key.trim().to_owned(),
+    }
+}
+
+fn known_region_segment(value: &str) -> bool {
+    matches!(
+        value.trim().to_ascii_lowercase().as_str(),
+        "global"
+            | "cn"
+            | "us"
+            | "eu"
+            | "ap"
+            | "apac"
+            | "jp"
+            | "sg"
+            | "hk"
+            | "aws"
+            | "azure"
+            | "gcp"
+            | "local"
     )
 }
 
@@ -1164,6 +1215,7 @@ fn adapter_usage_pricing_snapshot(
     invocation: &AdapterInvocationRequest,
     usage_line: &AdapterUsageLine,
     line_index: usize,
+    catalog_key: &str,
     requested_model_catalog_key: &str,
     requested_model: &str,
     provider_native_model: &str,
@@ -1179,7 +1231,7 @@ fn adapter_usage_pricing_snapshot(
             "estimated": usage_line.estimated
         },
         "model": {
-            "catalogKey": requested_model_catalog_key,
+            "catalogKey": catalog_key,
             "requestedCatalogKey": requested_model_catalog_key,
             "model": requested_model,
             "providerNativeModel": provider_native_model
@@ -1217,14 +1269,6 @@ fn adapter_usage_pricing_snapshot(
         }
     })
     .to_string()
-}
-
-fn generated_adapter_request_id(api_key_id: i64) -> String {
-    let nanos = SystemTime::now()
-        .duration_since(UNIX_EPOCH)
-        .map(|duration| duration.as_nanos())
-        .unwrap_or_default();
-    format!("adapter-{api_key_id}-{nanos}")
 }
 
 fn build_openai_passthrough_uri(
@@ -1272,11 +1316,11 @@ fn provider_adapter_request_body(body: &[u8]) -> Result<Value, String> {
         .map_err(|error| format!("provider adapter route requires a JSON request body: {error}"))
 }
 
-fn select_provider_native_account_pool_route<C>(
+fn select_provider_native_channel_route<C>(
     catalog: &C,
     context: &AuthenticatedApiKeyContext,
     adapter_route: &ProviderAdapterRouteConfig,
-) -> Result<ProviderAccountPoolRoute, String>
+) -> Result<ProviderChannelRoute, String>
 where
     C: PricingCatalog + Send + Sync + 'static,
 {
@@ -1294,7 +1338,7 @@ where
             format!("provider native adapter route {route_key} requires a known routing capability")
         })?;
     ProviderRouteSelector::new(catalog)
-        .select_account_pool(SelectProviderAccountPoolRouteQuery {
+        .select_channel_route(SelectProviderChannelRouteQuery {
             context: context.clone(),
             route_key,
             capability,
@@ -1303,26 +1347,26 @@ where
         .map_err(|error| error.to_string())
 }
 
-fn account_pool_route_to_passthrough_target(
-    route: &ProviderAccountPoolRoute,
+fn channel_route_to_passthrough_target(
+    route: &ProviderChannelRoute,
     secret_resolver: &(dyn ProviderSecretResolver + Send + Sync),
 ) -> Result<ProviderPassthroughTarget, String> {
     let base_url = route.base_url.as_deref().ok_or_else(|| {
         format!(
-            "provider route is not available for configured account pool: selected channel {} has no base URL",
+            "provider route is not available for configured channel route: selected channel {} has no base URL",
             route.channel_id
         )
     })?;
     let secret_ref = route.secret_ref.as_deref().ok_or_else(|| {
         format!(
-            "provider route is not available for configured account pool: selected channel {} has no secret_ref",
+            "provider route is not available for configured channel route: selected channel {} has no secret_ref",
             route.channel_id
         )
     })?;
     let secret_value = secret_resolver
         .resolve_secret_value(secret_ref)
         .map_err(|error| {
-            format!("provider route is not available for configured account pool: {error}")
+            format!("provider route is not available for configured channel route: {error}")
         })?;
     let rendered_auth = render_provider_account_auth(&route.auth_profile, secret_value)?;
     Ok(ProviderPassthroughTarget::new(
@@ -1370,7 +1414,7 @@ fn build_provider_native_adapter_invocation(
             standard_path,
             shape: route.invocation_shape.clone(),
             stream: adapter_invocation_shape_streams(&route.invocation_shape),
-            request_id: request_header_value(&parts.headers, "x-request-id"),
+            request_id: Some(generate_server_request_id()),
             trace_id: request_header_value(&parts.headers, "x-trace-id")
                 .or_else(|| request_header_value(&parts.headers, "traceparent")),
         },
@@ -1601,6 +1645,12 @@ fn is_standard_path_namespace(value: &str) -> bool {
 #[cfg(test)]
 mod tests {
     use super::*;
+    use sdkwork_claw_product::domain::ModelVendor;
+    use sdkwork_claw_product::domain::{
+        AiModel, ApiKeyGroup, GatewayApiKey, ModelPrice, ModelProviderRoute, ModelVendorDefinition,
+        Money, PriceSide, PricingPlan,
+    };
+    use sdkwork_claw_product::infrastructure::InMemoryPricingCatalog;
 
     #[test]
     fn adapter_meter_amount_charges_token_meters_per_million_and_duration_directly() {
@@ -1651,6 +1701,110 @@ mod tests {
             MODALITY_VIDEO,
             adapter_modality_for_usage_line(&invocation, &BillingMeter::ApiRequest)
         );
+    }
+
+    #[test]
+    fn adapter_usage_line_resolves_pricing_with_canonical_model_key_and_preserves_requested_key() {
+        let mut catalog = InMemoryPricingCatalog::default();
+        catalog.add_vendor(ModelVendorDefinition::new(
+            "tencent-cloud",
+            ModelVendor::Custom,
+            "Tencent Cloud",
+        ));
+        catalog.add_model(AiModel::new(
+            "vidu2.0",
+            "Vidu 2.0",
+            "tencent-cloud",
+            vec!["video"],
+        ));
+        catalog.add_provider_route(
+            ModelProviderRoute::new_for_catalog_key(
+                "tencent-cloud/vidu2.0",
+                "vidu2.0",
+                "tencent-cloud",
+                9301,
+                "vidu2.0",
+            )
+            .with_provider_endpoint(Some("https://example.invalid/vidu"), Some("vault://test")),
+        );
+        catalog.add_plan(PricingPlan::new(
+            "standard",
+            PriceSide::OfficialReference,
+            DecimalValue::parse("1.000000").unwrap(),
+            Money::usd("0.000000").unwrap(),
+        ));
+        catalog.add_api_key_group(ApiKeyGroup::new(
+            10,
+            "standard-group",
+            "standard",
+            DecimalValue::parse("1.000000").unwrap(),
+            DecimalValue::parse("1.000000").unwrap(),
+        ));
+        catalog.add_api_key(GatewayApiKey::new(100, 10, "sk-test", "hash-test"));
+        catalog.add_price(ModelPrice::new_for_catalog_key(
+            "tencent-cloud/vidu2.0",
+            "vidu2.0",
+            PriceSide::OfficialReference,
+            BillingMeter::ApiRequest,
+            Money::usd("0.020000").unwrap(),
+        ));
+        catalog.add_price(
+            ModelPrice::new_for_catalog_key(
+                "tencent-cloud/vidu2.0",
+                "vidu2.0",
+                PriceSide::UpstreamCost,
+                BillingMeter::ApiRequest,
+                Money::usd("0.010000").unwrap(),
+            )
+            .for_provider("tencent-cloud", 9301),
+        );
+        let context = AuthenticatedApiKeyContext {
+            tenant_id: 10,
+            organization_id: 20,
+            user_id: 30,
+            api_key_id: 100,
+            api_key_name_snapshot: "Test key".to_owned(),
+            group_id: 10,
+            group_code: "standard-group".to_owned(),
+            pricing_plan_code: "standard".to_owned(),
+        };
+        let invocation =
+            test_adapter_invocation("video.start_end2video", "/vidu/ent/v2/start-end2video");
+        let response = AdapterInvocationResponse::json_task(
+            202,
+            json!({"id": "adapter-task-usage-1", "status": "queued"}),
+        );
+        let usage_line = AdapterUsageLine::new("api_request", "1")
+            .with_request_count(1)
+            .with_provider_native_model("vidu2.0")
+            .with_requested_model_catalog_key("tencent-cloud/global/vidu2.0");
+
+        let command = adapter_usage_line_command(
+            &catalog,
+            &context,
+            &invocation,
+            &response,
+            &usage_line,
+            0,
+            Some("Mozilla/5.0"),
+        )
+        .unwrap();
+
+        assert_eq!("tencent-cloud/vidu2.0", command.catalog_key);
+        assert_eq!(
+            "tencent-cloud/global/vidu2.0",
+            command.requested_model_catalog_key
+        );
+        assert_eq!("vidu2.0", command.requested_model);
+        assert_eq!("vidu2.0", command.provider_native_model);
+        assert_eq!("0.020000000000", command.official_reference_amount);
+        assert_eq!("0.010000000000", command.upstream_cost_amount);
+        assert!(command
+            .pricing_snapshot
+            .contains(r#""catalogKey":"tencent-cloud/vidu2.0""#));
+        assert!(command
+            .pricing_snapshot
+            .contains(r#""requestedCatalogKey":"tencent-cloud/global/vidu2.0""#));
     }
 
     fn test_adapter_invocation(

@@ -178,12 +178,13 @@ async fn admin_api_manual_model_ranking_refresh_runs_worker_and_records_audit() 
         .await
         .unwrap();
 
-    assert_eq!(StatusCode::OK, response.status());
+    let status = response.status();
     let body = axum::body::to_bytes(response.into_body(), usize::MAX)
         .await
         .unwrap();
     let payload: Value = serde_json::from_slice(&body).unwrap();
 
+    assert_eq!(StatusCode::OK, status, "payload={payload}");
     assert_eq!("2000", payload["code"]);
     assert_eq!(true, payload["data"]["triggered"]);
     assert_eq!("commercial-default", payload["data"]["rankScope"]);
@@ -240,12 +241,13 @@ async fn fresh_sqlite_install_refreshes_model_rankings_from_usage_and_serves_adm
         .await
         .unwrap();
 
-    assert_eq!(StatusCode::OK, response.status());
+    let status = response.status();
     let body = axum::body::to_bytes(response.into_body(), usize::MAX)
         .await
         .unwrap();
     let refresh_payload: Value = serde_json::from_slice(&body).unwrap();
 
+    assert_eq!(StatusCode::OK, status, "refresh_payload={refresh_payload}");
     assert_eq!("2000", refresh_payload["code"]);
     assert_eq!("succeeded", refresh_payload["data"]["status"]);
     assert_eq!(true, refresh_payload["data"]["triggered"]);

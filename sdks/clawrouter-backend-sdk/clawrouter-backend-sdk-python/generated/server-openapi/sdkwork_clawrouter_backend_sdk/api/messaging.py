@@ -270,15 +270,9 @@ class MessagingDiagnosticsRouteSimulationApi:
         self._client = client
 
 
-    def create(self, body: MessagingRouteSimulationRequest, x_request_id: Optional[str] = None) -> DiagnosticsRouteSimulationCreateResult:
+    def create(self, body: MessagingRouteSimulationRequest) -> DiagnosticsRouteSimulationCreateResult:
         """Messaging route simulation"""
-        request_headers = build_request_headers(
-            {
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
-            },
-            {}
-        )
-        return self._client.post(f"/backend/v3/api/messaging/diagnostics/route_simulation", json=body, headers=request_headers)
+        return self._client.post(f"/backend/v3/api/messaging/diagnostics/route_simulation", json=body)
 
 class MessagingDiagnosticsTestSendsApi:
     """messaging messaging.diagnostics.test_sends API client."""
@@ -287,12 +281,11 @@ class MessagingDiagnosticsTestSendsApi:
         self._client = client
 
 
-    def create(self, body: MessagingTestSendRequest, idempotency_key: str, x_request_id: Optional[str] = None) -> DiagnosticsTestSendsCreateResult:
+    def create(self, body: MessagingTestSendRequest, idempotency_key: str) -> DiagnosticsTestSendsCreateResult:
         """Messaging test send"""
         request_headers = build_request_headers(
             {
                 'Idempotency-Key': {'value': idempotency_key, 'style': 'simple', 'explode': False},
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
             },
             {}
         )
@@ -317,12 +310,11 @@ class MessagingProviderAccountsApi:
         ])
         return self._client.get(_append_query_string(f"/backend/v3/api/messaging/provider_accounts", query))
 
-    def create(self, body: MessagingProviderAccountCreateRequest, idempotency_key: str, x_request_id: Optional[str] = None) -> ProviderAccountsCreateResult:
+    def create(self, body: MessagingProviderAccountCreateRequest, idempotency_key: str) -> ProviderAccountsCreateResult:
         """Messaging provider account create"""
         request_headers = build_request_headers(
             {
                 'Idempotency-Key': {'value': idempotency_key, 'style': 'simple', 'explode': False},
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
             },
             {}
         )
@@ -367,12 +359,11 @@ class MessagingRouteRulesApi:
         ])
         return self._client.get(_append_query_string(f"/backend/v3/api/messaging/route_rules", query))
 
-    def create(self, body: MessagingRouteRuleCreateRequest, idempotency_key: str, x_request_id: Optional[str] = None) -> RouteRulesCreateResult:
+    def create(self, body: MessagingRouteRuleCreateRequest, idempotency_key: str) -> RouteRulesCreateResult:
         """Messaging route rule create"""
         request_headers = build_request_headers(
             {
                 'Idempotency-Key': {'value': idempotency_key, 'style': 'simple', 'explode': False},
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
             },
             {}
         )
@@ -417,12 +408,11 @@ class MessagingSenderIdentitiesApi:
         ])
         return self._client.get(_append_query_string(f"/backend/v3/api/messaging/sender_identities", query))
 
-    def create(self, body: MessagingSenderIdentityCreateRequest, idempotency_key: str, x_request_id: Optional[str] = None) -> SenderIdentitiesCreateResult:
+    def create(self, body: MessagingSenderIdentityCreateRequest, idempotency_key: str) -> SenderIdentitiesCreateResult:
         """Messaging sender identity create"""
         request_headers = build_request_headers(
             {
                 'Idempotency-Key': {'value': idempotency_key, 'style': 'simple', 'explode': False},
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
             },
             {}
         )
@@ -447,12 +437,11 @@ class MessagingSuppressionsApi:
         ])
         return self._client.get(_append_query_string(f"/backend/v3/api/messaging/suppressions", query))
 
-    def create(self, body: MessagingSuppressionCreateRequest, idempotency_key: str, x_request_id: Optional[str] = None) -> SuppressionsCreateResult:
+    def create(self, body: MessagingSuppressionCreateRequest, idempotency_key: str) -> SuppressionsCreateResult:
         """Messaging suppression create"""
         request_headers = build_request_headers(
             {
                 'Idempotency-Key': {'value': idempotency_key, 'style': 'simple', 'explode': False},
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
             },
             {}
         )
@@ -465,12 +454,11 @@ class MessagingTemplateSendsApi:
         self._client = client
 
 
-    def create(self, body: MessagingTemplateSendRequest, idempotency_key: str, x_request_id: Optional[str] = None) -> TemplateSendsCreateResult:
+    def create(self, body: MessagingTemplateSendRequest, idempotency_key: str) -> TemplateSendsCreateResult:
         """Messaging template send"""
         request_headers = build_request_headers(
             {
                 'Idempotency-Key': {'value': idempotency_key, 'style': 'simple', 'explode': False},
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
             },
             {}
         )
@@ -496,12 +484,11 @@ class MessagingTemplatesApi:
         ])
         return self._client.get(_append_query_string(f"/backend/v3/api/messaging/templates", query))
 
-    def create(self, body: MessagingTemplateCreateRequest, idempotency_key: str, x_request_id: Optional[str] = None) -> TemplatesCreateResult:
+    def create(self, body: MessagingTemplateCreateRequest, idempotency_key: str) -> TemplatesCreateResult:
         """Messaging template create"""
         request_headers = build_request_headers(
             {
                 'Idempotency-Key': {'value': idempotency_key, 'style': 'simple', 'explode': False},
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
             },
             {}
         )
@@ -514,15 +501,9 @@ class MessagingTemplatesVersionsApi:
         self._client = client
 
 
-    def publish(self, template_id: str, version_id: str, x_request_id: Optional[str] = None) -> TemplatesVersionsPublishResult:
+    def publish(self, template_id: str, version_id: str) -> TemplatesVersionsPublishResult:
         """Messaging template version publish"""
-        request_headers = build_request_headers(
-            {
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
-            },
-            {}
-        )
-        return self._client.post(f"/backend/v3/api/messaging/templates/{serialize_path_parameter(template_id, {'name': 'templateId', 'style': 'simple', 'explode': False})}/versions/{serialize_path_parameter(version_id, {'name': 'versionId', 'style': 'simple', 'explode': False})}/publish", headers=request_headers)
+        return self._client.post(f"/backend/v3/api/messaging/templates/{serialize_path_parameter(template_id, {'name': 'templateId', 'style': 'simple', 'explode': False})}/versions/{serialize_path_parameter(version_id, {'name': 'versionId', 'style': 'simple', 'explode': False})}/publish")
 
 class MessagingVerificationPoliciesApi:
     """messaging messaging.verification_policies API client."""
@@ -543,12 +524,6 @@ class MessagingVerificationPoliciesApi:
         ])
         return self._client.get(_append_query_string(f"/backend/v3/api/messaging/verification_policies", query))
 
-    def update(self, policy_id: str, body: VerificationPolicyUpdateRequest, x_request_id: Optional[str] = None) -> VerificationPoliciesUpdateResult:
+    def update(self, policy_id: str, body: VerificationPolicyUpdateRequest) -> VerificationPoliciesUpdateResult:
         """Verification policy update"""
-        request_headers = build_request_headers(
-            {
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
-            },
-            {}
-        )
-        return self._client.put(f"/backend/v3/api/messaging/verification_policies/{serialize_path_parameter(policy_id, {'name': 'policyId', 'style': 'simple', 'explode': False})}", json=body, headers=request_headers)
+        return self._client.put(f"/backend/v3/api/messaging/verification_policies/{serialize_path_parameter(policy_id, {'name': 'policyId', 'style': 'simple', 'explode': False})}", json=body)

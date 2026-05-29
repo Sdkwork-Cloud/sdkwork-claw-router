@@ -110,6 +110,7 @@ class RepositoryDeliveryGuardian:
             "lfs",
             "migrate",
             "info",
+            "--skip-fetch",
             "HEAD",
             f"--above={self.max_normal_blob_bytes}B",
         )

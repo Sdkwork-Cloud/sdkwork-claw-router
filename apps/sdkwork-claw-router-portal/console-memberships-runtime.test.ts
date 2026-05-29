@@ -374,19 +374,25 @@ test("console membership page uses dedicated i18n keys and renders the complete 
 
   for (const marker of [
     "MembershipService.fetchMembershipOverview",
+    "MembershipService.fetchMembershipSummary",
+    "MembershipService.fetchMembershipPackages",
+    "MembershipService.purchaseMembership",
     "MembershipService.claimDailyReward",
     "MembershipService.activateSpeedUp",
-    "VipPurchaseModal",
-    "vipPurchaseModalOpen",
+    "handleMembershipPurchase",
+    "purchasePackages",
     "MembershipStatusHero",
+    "MembershipPurchasePanel",
+    "MembershipPurchaseOption",
     "EntitlementOverviewPanel",
     "EntitlementStatusSummary",
     "UsageSnapshotPanel",
     "EntitlementAccessBadge",
     "entitlementRows",
     "entitlementAccessCounts",
-    "console.memberships.actions.openVipPurchase",
+    "console.memberships.actions.purchase",
     "console.memberships.dashboard.heroEyebrow",
+    "console.memberships.packageGroups.title",
     "console.memberships.entitlements.includedTitle",
     "console.memberships.entitlements.tableHeaderBenefit",
     "console.memberships.entitlements.tableHeaderQuota",
@@ -401,11 +407,11 @@ test("console membership page uses dedicated i18n keys and renders the complete 
     assert.match(source, new RegExp(escapeRegExp(marker)));
   }
 
-  assert.equal(
-    (source.match(/console\.memberships\.actions\.openVipPurchase/g) ?? []).length,
-    1,
-    "console membership page should expose a single VIP purchase CTA",
-  );
+  assert.doesNotMatch(source, /VipPurchaseModal/);
+  assert.doesNotMatch(source, /vipPurchaseModalOpen/);
+  assert.doesNotMatch(source, /openVipPurchaseModal/);
+  assert.doesNotMatch(source, /console\.memberships\.actions\.openVipPurchase/);
+  assert.doesNotMatch(source, /sdkwork-claw-router-vip/);
 
   for (const retiredMarker of [
     "MembershipPackageCard",
@@ -417,7 +423,6 @@ test("console membership page uses dedicated i18n keys and renders the complete 
     "MembershipLifecyclePanel",
     "console.memberships.lifecycle.title",
     "mt-1 rounded-xl bg-lobster-50 p-2 text-lobster-600",
-    "console.memberships.packageGroups.title",
     "console.memberships.packages.configuredGroups",
   ]) {
     assert.doesNotMatch(source, new RegExp(escapeRegExp(retiredMarker)));
@@ -428,9 +433,11 @@ test("console membership page uses dedicated i18n keys and renders the complete 
   assert.doesNotMatch(serviceSource, /axios/);
   assert.match(serviceSource, /getClawRouterAppSdkClient\(\)\.commerce\.memberships\.packageGroups\.list/);
   assert.match(serviceSource, /getClawRouterAppSdkClient\(\)\.commerce\.memberships\.packageGroups\.packages\.list/);
+  assert.match(serviceSource, /getClawRouterAppSdkClient\(\)\.commerce\.memberships\.packages\.list/);
+  assert.match(serviceSource, /getClawRouterAppSdkClient\(\)\.commerce\.memberships\.purchases\.create/);
   assert.match(serviceSource, /getClawRouterAppSdkClient\(\)\.commerce\.memberships\.points\.dailyRewards\.create/);
   assert.match(serviceSource, /getClawRouterAppSdkClient\(\)\.commerce\.memberships\.privileges\.speedUps\.create/);
-  assert.match(packageJson, /"sdkwork-claw-router-vip": "workspace:\*"/);
+  assert.doesNotMatch(packageJson, /"sdkwork-claw-router-vip": "workspace:\*"/);
 });
 
 test("console membership page uses the available console content width", () => {
@@ -457,7 +464,6 @@ test("console membership i18n resources are registered with matching English and
     "console.memberships.points.title",
     "console.memberships.privileges.title",
     "console.memberships.history.title",
-    "console.memberships.actions.openVipPurchase",
     "console.memberships.dashboard.heroEyebrow",
     "console.memberships.entitlements.includedTitle",
     "console.memberships.entitlements.tableHeaderBenefit",

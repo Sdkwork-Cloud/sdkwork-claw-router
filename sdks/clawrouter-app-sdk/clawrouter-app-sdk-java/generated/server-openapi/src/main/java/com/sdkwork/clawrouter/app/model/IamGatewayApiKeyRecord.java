@@ -3,13 +3,13 @@ package com.sdkwork.clawrouter.app.model;
 import java.util.Map;
 
 public class IamGatewayApiKeyRecord {
+    private String channelGroupId;
     private String createdAt;
     private String dataScope;
     private String deletedAt;
     private String deletedBy;
     private String environment;
     private String expireAt;
-    private String groupId;
     private String hashAlg;
     private String id;
     private String idempotencyKey;
@@ -40,6 +40,14 @@ public class IamGatewayApiKeyRecord {
     private String userId;
     private String uuid;
     private String version;
+
+    public String getChannelGroupId() {
+        return this.channelGroupId;
+    }
+
+    public void setChannelGroupId(String channelGroupId) {
+        this.channelGroupId = channelGroupId;
+    }
 
     public String getCreatedAt() {
         return this.createdAt;
@@ -87,14 +95,6 @@ public class IamGatewayApiKeyRecord {
 
     public void setExpireAt(String expireAt) {
         this.expireAt = expireAt;
-    }
-
-    public String getGroupId() {
-        return this.groupId;
-    }
-
-    public void setGroupId(String groupId) {
-        this.groupId = groupId;
     }
 
     public String getHashAlg() {

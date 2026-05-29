@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import { ChevronRight, ChevronDown, Zap, Search, Cpu, Info, User } from 'lucide-react';
+import { AlertTriangle, CheckCircle2, ChevronRight, ChevronDown, Zap, Search, Cpu, Info, User } from 'lucide-react';
 import { AdminTableShell, BusinessStateTableRow } from 'sdkwork-claw-router-commons';
-import { formatDecimalAmount } from 'sdkwork-claw-router-commons/runtime';
+import { formatDecimalAmount, formatUserAgentDeviceLabel } from 'sdkwork-claw-router-commons/runtime';
 import { RecordService, LogRecord } from './recordService';
 
 import { useTranslation } from 'react-i18next';
 export function RecordAdmin() {
   const { t } = useTranslation();
-  const [expandedIds, setExpandedIds] = useState<string[]>(['log-1']);
+  const [expandedIds, setExpandedIds] = useState<string[]>([]);
   const [logs, setLogs] = useState<LogRecord[]>([]);
   const [total, setTotal] = useState(0);
   const [loading, setLoading] = useState(true);
@@ -159,7 +159,7 @@ export function RecordAdmin() {
               {t('admin.record.index.text.1rfm5gs', 'rows')}
             </div>
             <div className="flex items-center gap-2">
-              <span className="text-slate-500 mr-2">{t("admin.record.index.text.wtrnlj", "鎬婚〉鏁?")}{totalPages}</span>
+              <span className="text-slate-500 mr-2">{t("admin.record.index.text.wtrnlj", "Total pages:")}{totalPages}</span>
               <button
                 onClick={() => setPage((current) => Math.max(1, current - 1))}
                 disabled={page <= 1 || loading}
@@ -191,13 +191,16 @@ export function RecordAdmin() {
           </div>
         )}
       >
-          <table className="w-full text-left text-sm whitespace-nowrap min-w-[1300px]">
+          <table className="w-full text-left text-sm whitespace-nowrap min-w-[1860px]">
             <thead className="sticky top-0 z-10 bg-slate-50 dark:bg-[#121212] text-slate-500 dark:text-slate-400 border-b border-slate-200 dark:border-white/10 select-none text-xs uppercase font-semibold">
               <tr>
                 <th className="px-4 py-3.5 pl-6 font-medium">{t("admin.col.created", "时间")}</th>
                 <th className="px-4 py-3.5 font-medium">{t("admin.record.index.text.1in002o", "用户")}</th>
                 <th className="px-4 py-3.5 font-medium">{t("admin.record.index.text.16rfi2", "令牌 / 分组")}</th>
+                <th className="px-4 py-3.5 font-medium">{t('admin.record.table.status', 'Status')}</th>
+                <th className="px-4 py-3.5 font-medium">{t('admin.record.table.type', 'Type')}</th>
                 <th className="px-4 py-3.5 font-medium">{t("admin.record.index.text.1ow6qt", "模型")}</th>
+                <th className="px-4 py-3.5 font-medium">{t('admin.record.table.requestUrl', 'Request URL')}</th>
                 <th className="px-4 py-3.5 font-medium text-center">{t("admin.record.index.text.12nip4l", "用时 / 首字")}</th>
                 <th className="px-4 py-3.5 font-medium text-right relative">
                   {t("admin.record.index.text.1qtojr9", "输入")}<Info className="w-3.5 h-3.5 inline-block ml-1 opacity-50 cursor-pointer" />
@@ -208,15 +211,16 @@ export function RecordAdmin() {
                   IP
                   <Info className="w-3.5 h-3.5 inline-block ml-1 opacity-50 cursor-pointer" />
                 </th>
+                <th className="px-4 py-3.5 font-medium text-center">{t('admin.record.table.userAgent', 'User Agent')}</th>
                 <th className="px-4 py-3.5 font-medium">{t("admin.record.index.text.xc5h04", "详情")}</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-slate-100 dark:divide-white/5 text-slate-700 dark:text-slate-300 relative text-xs">
               {loading ? (
-                <BusinessStateTableRow colSpan={10} kind="loading" title="Loading request records..." />
+                <BusinessStateTableRow colSpan={14} kind="loading" title="Loading request records..." />
               ) : loadError ? (
                 <BusinessStateTableRow
-                  colSpan={10}
+                  colSpan={14}
                   kind="error"
                   title="Request records could not be loaded"
                   description={loadError}
@@ -225,13 +229,16 @@ export function RecordAdmin() {
                 />
               ) : logs.length === 0 ? (
                 <BusinessStateTableRow
-                  colSpan={10}
+                  colSpan={14}
                   kind="empty"
                   title="No request records found"
                   description="Adjust the filters or wait for gateway usage logs to be recorded."
                 />
               ) : logs.map((log) => {
                 const expanded = expandedIds.includes(log.id);
+                const displayModel = log.providerNativeModel || log.model;
+                const modelTooltip = log.requestedModelCatalogKey || displayModel;
+                const requestUrlSignature = `${log.httpMethod} ${log.path}`;
                 return (
                   <React.Fragment key={log.id}>
                     {/* Main Row */}
@@ -262,9 +269,35 @@ export function RecordAdmin() {
                           </span>
                         </div>
                       </td>
-                      <td className="px-4 py-3.5 font-medium text-indigo-600 dark:text-indigo-400 flex items-center gap-1.5 pt-[1.125rem]">
+                      <td className="px-4 py-3.5">
+                        <span
+                          className={`inline-flex items-center gap-1 text-[10px] px-2 py-0.5 rounded-full border ${
+                            log.status === 'error'
+                              ? 'bg-rose-50 dark:bg-rose-500/10 text-rose-600 dark:text-rose-400 border-rose-200 dark:border-rose-500/20'
+                              : 'bg-emerald-50 dark:bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border-emerald-200 dark:border-emerald-500/20'
+                          }`}
+                        >
+                          {log.status === 'error' ? <AlertTriangle className="w-3 h-3" /> : <CheckCircle2 className="w-3 h-3" />}
+                          {log.status === 'error' ? t('admin.record.status.error', 'Error') : t('admin.record.status.success', 'Success')}
+                          {log.httpStatus > 0 && <span className="font-mono">{log.httpStatus}</span>}
+                        </span>
+                      </td>
+                      <td className="px-4 py-3.5">
+                        <span className="text-[10px] px-2 py-0.5 rounded-full bg-emerald-50 dark:bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-500/20">
+                          {log.type}
+                        </span>
+                      </td>
+                      <td
+                        title={modelTooltip}
+                        className="px-4 py-3.5 font-medium text-indigo-600 dark:text-indigo-400 flex items-center gap-1.5 pt-[1.125rem]"
+                      >
                         <Cpu className="w-3.5 h-3.5 opacity-70" />
-                        {log.model}
+                        <span className="inline-block max-w-[220px] truncate">{displayModel}</span>
+                      </td>
+                      <td className="px-4 py-3.5 align-top pt-4">
+                        <span title={requestUrlSignature} className="inline-block max-w-[270px] truncate font-mono text-[11px] text-slate-500 dark:text-slate-400">
+                          {requestUrlSignature}
+                        </span>
                       </td>
                       <td className="px-4 py-3.5 text-center">
                         <div className="flex items-center justify-center gap-1.5">
@@ -293,6 +326,14 @@ export function RecordAdmin() {
                           {log.ip.substring(0, 7)}...
                         </span>
                       </td>
+                      <td className="px-4 py-3.5 text-center align-top pt-4">
+                        <span
+                          title={log.userAgent}
+                          className="inline-block max-w-[160px] truncate text-xs text-slate-500 border-b border-dashed border-slate-300 dark:border-white/20"
+                        >
+                          {formatUserAgentDeviceLabel(log.userAgent)}
+                        </span>
+                      </td>
                       <td className="px-4 py-2 align-top pt-3 text-[11px] leading-relaxed">
                         <div className="text-slate-500 dark:text-slate-400">
                           {t("admin.record.index.text.1rb6v97", "分组倍率")}<span className="text-slate-800 dark:text-slate-300 font-mono">{formatDecimalAmount(log.multiplier, 6)}x</span>
@@ -309,7 +350,7 @@ export function RecordAdmin() {
                     {/* Expanded Detail Panel */}
                     {expanded && (
                       <tr className="bg-slate-50 dark:bg-[#121212]">
-                        <td colSpan={10} className="p-0 border-t border-b border-slate-200 dark:border-white/5">
+                        <td colSpan={14} className="p-0 border-t border-b border-slate-200 dark:border-white/5">
                           <div className="py-5 pl-6 pr-6 flex gap-6 text-xs">
 
                             {/* Left Property Labels */}
@@ -319,7 +360,8 @@ export function RecordAdmin() {
                               <div>{t("admin.record.index.text.nk1cis", "日志详情")}</div>
                               <div className="mt-7">{t("admin.record.index.text.1d7p7jd", "计费过程")}</div>
                               <div className="mt-[72px]">Reasoning</div>
-                              <div>{t("admin.record.index.text.d2qlpz", "请求路径")}</div>
+                              <div>{t('admin.record.detail.requestUrl', 'Request URL')}</div>
+                              {log.status === 'error' && <div>{t('admin.record.detail.error', 'Error')}</div>}
                               <div>{t("admin.record.index.text.d22rf5", "来源 IP")}</div>
                             </div>
 
@@ -360,7 +402,17 @@ export function RecordAdmin() {
                               </div>
 
                               <div className="font-mono text-[11px] text-slate-500 dark:text-slate-400">{log.reasoningEffort}</div>
-                              <div className="font-mono text-[11px] text-slate-500 dark:text-slate-400">{log.path}</div>
+                              <div className="font-mono text-[11px] text-slate-500 dark:text-slate-400">{requestUrlSignature}</div>
+                              {log.status === 'error' && (
+                                <div className="max-w-[760px] rounded-lg border border-rose-200 bg-rose-50 px-3 py-2 text-rose-700 dark:border-rose-500/20 dark:bg-rose-500/10 dark:text-rose-300">
+                                  <div className="font-mono text-[11px]">
+                                    {[log.errorType, log.errorCode, log.httpStatus > 0 ? `HTTP ${log.httpStatus}` : ''].filter(Boolean).join(' / ') || t('admin.record.status.error', 'Error')}
+                                  </div>
+                                  {log.errorMessage && (
+                                    <div className="mt-1 whitespace-normal break-words leading-relaxed">{log.errorMessage}</div>
+                                  )}
+                                </div>
+                              )}
                               <div className="font-mono text-[11px] text-slate-500 dark:text-slate-400">{log.ip}</div>
                             </div>
 

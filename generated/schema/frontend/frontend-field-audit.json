@@ -546,14 +546,131 @@
     },
     {
       "data_sources": [
-        "integration_channel",
-        "integration_channel_model",
-        "integration_provider",
-        "integration_provider_account"
+        "ai_resource",
+        "ai_resource_group_item"
+      ],
+      "fields": [
+        "id",
+        "resourceCode",
+        "resourceType",
+        "displayName",
+        "vendorCode",
+        "modalityCode",
+        "apiEndpointCode",
+        "catalogKey",
+        "model",
+        "providerNativeModel",
+        "compositionMode",
+        "status",
+        "sortOrder",
+        "members",
+        "members.parentResourceCode",
+        "members.memberResourceCode",
+        "members.memberRole",
+        "members.required",
+        "members.sortOrder"
+      ],
+      "file_targets": [],
+      "interface": "AiResource",
+      "route": "/admin/channel/resources",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts"
+    },
+    {
+      "data_sources": [
+        "ai_resource",
+        "ai_resource_group_item",
+        "ops_audit_log"
+      ],
+      "fields": [
+        "resourceCode",
+        "resourceType",
+        "displayName",
+        "vendorCode",
+        "modalityCode",
+        "apiEndpointCode",
+        "catalogKey",
+        "model",
+        "providerNativeModel",
+        "compositionMode",
+        "status",
+        "sortOrder",
+        "members"
+      ],
+      "file_targets": [],
+      "interface": "AiResourceCreateInput",
+      "route": "/admin/channel/resources",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts"
+    },
+    {
+      "data_sources": [
+        "ai_resource_group_item"
+      ],
+      "fields": [
+        "parentResourceCode",
+        "memberResourceCode",
+        "memberRole",
+        "required",
+        "sortOrder"
+      ],
+      "file_targets": [],
+      "interface": "AiResourceMember",
+      "route": "/admin/channel/resources",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts"
+    },
+    {
+      "data_sources": [
+        "ai_resource_group_item"
+      ],
+      "fields": [
+        "memberResourceCode",
+        "memberRole",
+        "required",
+        "sortOrder"
+      ],
+      "file_targets": [],
+      "interface": "AiResourceMemberInput",
+      "route": "/admin/channel/resources",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts"
+    },
+    {
+      "data_sources": [
+        "ai_resource",
+        "ai_resource_group_item",
+        "ops_audit_log"
+      ],
+      "fields": [
+        "resourceCode",
+        "resourceType",
+        "displayName",
+        "vendorCode",
+        "modalityCode",
+        "apiEndpointCode",
+        "catalogKey",
+        "model",
+        "providerNativeModel",
+        "compositionMode",
+        "status",
+        "sortOrder",
+        "members"
+      ],
+      "file_targets": [],
+      "interface": "AiResourceUpdateInput",
+      "route": "/admin/channel/resources",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts"
+    },
+    {
+      "data_sources": [
+        "ai_channel",
+        "ai_channel_model",
+        "ai_provider",
+        "ai_channel",
+        "ai_channel_resource",
+        "ai_channel_resource"
       ],
       "fields": [
         "name",
         "vendor",
+        "channelType",
         "protocol",
         "accessType",
         "baseUrl",
@@ -562,6 +679,7 @@
         "expiresAt",
         "models",
         "capabilities",
+        "resourceCodes",
         "timeoutMs",
         "retryPolicy",
         "circuitBreakerPolicy",
@@ -575,16 +693,96 @@
     },
     {
       "data_sources": [
-        "integration_channel",
-        "integration_channel_model",
-        "integration_provider",
-        "integration_provider_account",
+        "ai_channel",
+        "ai_channel_endpoint",
+        "ai_model_vendor",
+        "ai_api_endpoint"
+      ],
+      "fields": [
+        "id",
+        "channelId",
+        "providerCode",
+        "channelCode",
+        "channelType",
+        "vendorCode",
+        "regionCode",
+        "apiEndpointCode",
+        "baseUrl",
+        "priority",
+        "weight",
+        "healthStatus",
+        "status",
+        "effectiveFrom",
+        "effectiveTo"
+      ],
+      "file_targets": [],
+      "interface": "ChannelEndpoint",
+      "route": "/admin/channel/endpoints",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts"
+    },
+    {
+      "data_sources": [
+        "ai_channel",
+        "ai_channel_endpoint",
+        "ai_model_vendor",
+        "ai_api_endpoint",
+        "ops_audit_log"
+      ],
+      "fields": [
+        "channelId",
+        "vendorCode",
+        "regionCode",
+        "apiEndpointCode",
+        "baseUrl",
+        "priority",
+        "weight",
+        "status",
+        "effectiveFrom",
+        "effectiveTo"
+      ],
+      "file_targets": [],
+      "interface": "ChannelEndpointCreateInput",
+      "route": "/admin/channel/endpoints",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts"
+    },
+    {
+      "data_sources": [
+        "ai_channel_endpoint",
+        "ai_model_vendor",
+        "ai_api_endpoint",
+        "ops_audit_log"
+      ],
+      "fields": [
+        "vendorCode",
+        "regionCode",
+        "apiEndpointCode",
+        "baseUrl",
+        "priority",
+        "weight",
+        "status",
+        "effectiveFrom",
+        "effectiveTo"
+      ],
+      "file_targets": [],
+      "interface": "ChannelEndpointUpdateInput",
+      "route": "/admin/channel/endpoints",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts"
+    },
+    {
+      "data_sources": [
+        "ai_channel",
+        "ai_channel_model",
+        "ai_provider",
+        "ai_channel",
+        "ai_channel_resource",
         "integration_provider_health_snapshot"
       ],
       "fields": [
         "id",
+        "channelId",
         "name",
         "vendor",
+        "channelType",
         "protocol",
         "accessType",
         "baseUrl",
@@ -594,6 +792,7 @@
         "expiresAt",
         "models",
         "capabilities",
+        "resourceCodes",
         "isMultimodal",
         "timeoutMs",
         "retryPolicy",
@@ -627,8 +826,9 @@
     },
     {
       "data_sources": [
-        "integration_channel",
-        "integration_provider_account",
+        "ai_channel",
+        "ai_channel_resource",
+        "ai_channel",
         "integration_provider_health_snapshot",
         "ops_config_snapshot",
         "ops_audit_log"
@@ -640,8 +840,10 @@
         "latency",
         "item",
         "item.id",
+        "item.channelId",
         "item.name",
         "item.vendor",
+        "item.channelType",
         "item.protocol",
         "item.accessType",
         "item.baseUrl",
@@ -651,6 +853,7 @@
         "item.expiresAt",
         "item.models",
         "item.capabilities",
+        "item.resourceCodes",
         "item.isMultimodal",
         "item.timeoutMs",
         "item.retryPolicy",
@@ -667,14 +870,17 @@
     },
     {
       "data_sources": [
-        "integration_channel",
-        "integration_channel_model",
-        "integration_provider",
-        "integration_provider_account"
+        "ai_channel",
+        "ai_channel_model",
+        "ai_provider",
+        "ai_channel",
+        "ai_channel_resource",
+        "ai_channel_resource"
       ],
       "fields": [
         "name",
         "vendor",
+        "channelType",
         "protocol",
         "accessType",
         "baseUrl",
@@ -683,6 +889,7 @@
         "expiresAt",
         "models",
         "capabilities",
+        "resourceCodes",
         "timeoutMs",
         "retryPolicy",
         "circuitBreakerPolicy",
@@ -696,7 +903,7 @@
     },
     {
       "data_sources": [
-        "integration_provider_account"
+        "ai_channel"
       ],
       "fields": [
         "providerCode",
@@ -712,7 +919,7 @@
     },
     {
       "data_sources": [
-        "integration_provider_account"
+        "ai_channel"
       ],
       "fields": [
         "id",
@@ -733,7 +940,7 @@
     },
     {
       "data_sources": [
-        "integration_provider_account"
+        "ai_channel"
       ],
       "fields": [
         "providerCode",
@@ -818,10 +1025,10 @@
     },
     {
       "data_sources": [
-        "iam_api_key_group_channel",
-        "integration_provider",
-        "integration_channel",
-        "integration_channel_model"
+        "ai_channel_group_member",
+        "ai_provider",
+        "ai_channel",
+        "ai_channel_model"
       ],
       "fields": [
         "id",
@@ -846,8 +1053,8 @@
     },
     {
       "data_sources": [
-        "iam_api_key_group_channel",
-        "integration_channel"
+        "ai_channel_group_member",
+        "ai_channel"
       ],
       "fields": [
         "channelId",
@@ -864,9 +1071,9 @@
     },
     {
       "data_sources": [
-        "integration_provider",
-        "integration_channel",
-        "integration_channel_model"
+        "ai_provider",
+        "ai_channel",
+        "ai_channel_model"
       ],
       "fields": [
         "id",
@@ -886,7 +1093,7 @@
     },
     {
       "data_sources": [
-        "iam_gateway_api_key_group",
+        "ai_channel_group",
         "ai_pricing_plan"
       ],
       "fields": [
@@ -905,8 +1112,8 @@
     },
     {
       "data_sources": [
-        "iam_gateway_api_key_group",
-        "iam_gateway_api_key_group_metric_snapshot",
+        "ai_channel_group",
+        "ai_channel_group_metric_snapshot",
         "ai_pricing_plan"
       ],
       "fields": [
@@ -928,7 +1135,7 @@
     },
     {
       "data_sources": [
-        "iam_gateway_api_key_group",
+        "ai_channel_group",
         "ai_pricing_plan"
       ],
       "fields": [
@@ -1631,7 +1838,6 @@
         "vendorId",
         "model",
         "displayName",
-        "name",
         "type",
         "priceIn",
         "priceOut",
@@ -1950,7 +2156,7 @@
     {
       "data_sources": [
         "ai_quota_policy",
-        "iam_gateway_api_key_group"
+        "ai_channel_group"
       ],
       "fields": [
         "model",
@@ -1966,7 +2172,7 @@
     {
       "data_sources": [
         "ai_quota_policy",
-        "iam_gateway_api_key_group"
+        "ai_channel_group"
       ],
       "fields": [
         "id",
@@ -2032,6 +2238,14 @@
         "group",
         "type",
         "model",
+        "providerNativeModel",
+        "requestedModelCatalogKey",
+        "status",
+        "httpStatus",
+        "httpMethod",
+        "errorCode",
+        "errorType",
+        "errorMessage",
         "totalTime",
         "ttft",
         "isStream",
@@ -2045,7 +2259,8 @@
         "cacheReadPrice",
         "path",
         "reasoningEffort",
-        "ip"
+        "ip",
+        "userAgent"
       ],
       "file_targets": [],
       "interface": "LogRecord",
@@ -3629,8 +3844,8 @@
     {
       "data_sources": [
         "iam_gateway_api_key",
-        "iam_gateway_api_key_group",
-        "iam_gateway_api_key_group_metric_snapshot",
+        "ai_channel_group",
+        "ai_channel_group_metric_snapshot",
         "iam_gateway_access_policy",
         "ai_quota_policy",
         "ai_model_pricing",
@@ -3661,8 +3876,8 @@
     },
     {
       "data_sources": [
-        "iam_gateway_api_key_group",
-        "iam_gateway_api_key_group_metric_snapshot",
+        "ai_channel_group",
+        "ai_channel_group_metric_snapshot",
         "ai_pricing_plan"
       ],
       "fields": [
@@ -3678,7 +3893,7 @@
     },
     {
       "data_sources": [
-        "iam_gateway_api_key_group",
+        "ai_channel_group",
         "iam_gateway_access_policy",
         "ai_quota_policy"
       ],
@@ -4270,7 +4485,7 @@
         "ai_request_trace",
         "ai_usage_fact",
         "ai_routing_decision_log",
-        "iam_gateway_api_key_group"
+        "ai_channel_group"
       ],
       "fields": [
         "id",
@@ -4300,7 +4515,8 @@
         "cacheReadPrice",
         "path",
         "reasoningEffort",
-        "ip"
+        "ip",
+        "userAgent"
       ],
       "file_targets": [],
       "interface": "UsageLog",
@@ -4787,7 +5003,6 @@
     {
       "data_sources": [
         "ai_model_vendor",
-        "ai_model_vendor_region",
         "ai_model",
         "ai_model_capability",
         "ai_model_pricing"
@@ -4874,7 +5089,7 @@
     },
     {
       "data_sources": [
-        "iam_gateway_api_key_group"
+        "ai_channel_group"
       ],
       "fields": [
         "key",
@@ -4889,12 +5104,11 @@
     {
       "data_sources": [
         "ai_model_vendor",
-        "ai_model_vendor_region",
         "ai_model",
         "ai_model_capability",
         "ai_model_pricing",
-        "iam_gateway_api_key_group",
-        "iam_api_key_group_channel"
+        "ai_channel_group",
+        "ai_channel_group_member"
       ],
       "fields": [
         "models",
@@ -4911,7 +5125,6 @@
     {
       "data_sources": [
         "ai_model_vendor",
-        "ai_model_vendor_region",
         "ai_model",
         "ai_model_capability",
         "ai_model_pricing"
@@ -4934,7 +5147,6 @@
     {
       "data_sources": [
         "ai_model_vendor",
-        "ai_model_vendor_region",
         "ai_model",
         "ai_model_capability",
         "ai_model_pricing"
@@ -5346,7 +5558,7 @@
     }
   ],
   "summary": {
-    "interface_count": 222,
+    "interface_count": 230,
     "source_file_count": 50
   }
 }

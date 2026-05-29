@@ -41,15 +41,9 @@ class AiApi {
   }
 
   /// Trigger model ranking refresh
-  Future<ModelRankingsRefreshResult?> modelRankingsRefresh(ModelRankingRefreshTriggerRequest body, [String? xRequestId]) async {
-    final requestHeaders = buildRequestHeaders(
-      <String, HeaderParameterSpec>{
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
-      },
-      <String, HeaderParameterSpec>{},
-    );
+  Future<ModelRankingsRefreshResult?> modelRankingsRefresh(ModelRankingRefreshTriggerRequest body) async {
     final payload = body.toJson();
-    final response = await _client.post(ApiPaths.backendPath('/ai/model_rankings/refresh'), body: payload, headers: requestHeaders, contentType: 'application/json');
+    final response = await _client.post(ApiPaths.backendPath('/ai/model_rankings/refresh'), body: payload, contentType: 'application/json');
     return (() {
       final map = sdkworkResponseAsMap(response);
       return map == null ? null : ModelRankingsRefreshResult.fromJson(map);
@@ -78,15 +72,9 @@ class AiApi {
   }
 
   /// Create vendor
-  Future<ModelVendorsCreateResult?> modelVendorsCreate(AdminModelVendorCreateRequest body, [String? xRequestId]) async {
-    final requestHeaders = buildRequestHeaders(
-      <String, HeaderParameterSpec>{
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
-      },
-      <String, HeaderParameterSpec>{},
-    );
+  Future<ModelVendorsCreateResult?> modelVendorsCreate(AdminModelVendorCreateRequest body) async {
     final payload = body.toJson();
-    final response = await _client.post(ApiPaths.backendPath('/ai/model_vendors'), body: payload, headers: requestHeaders, contentType: 'application/json');
+    final response = await _client.post(ApiPaths.backendPath('/ai/model_vendors'), body: payload, contentType: 'application/json');
     return (() {
       final map = sdkworkResponseAsMap(response);
       return map == null ? null : ModelVendorsCreateResult.fromJson(map);
@@ -103,15 +91,9 @@ class AiApi {
   }
 
   /// Create model
-  Future<ModelsCreateResult?> modelsCreate(AdminAiModelCreateRequest body, [String? xRequestId]) async {
-    final requestHeaders = buildRequestHeaders(
-      <String, HeaderParameterSpec>{
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
-      },
-      <String, HeaderParameterSpec>{},
-    );
+  Future<ModelsCreateResult?> modelsCreate(AdminAiModelCreateRequest body) async {
     final payload = body.toJson();
-    final response = await _client.post(ApiPaths.backendPath('/ai/models'), body: payload, headers: requestHeaders, contentType: 'application/json');
+    final response = await _client.post(ApiPaths.backendPath('/ai/models'), body: payload, contentType: 'application/json');
     return (() {
       final map = sdkworkResponseAsMap(response);
       return map == null ? null : ModelsCreateResult.fromJson(map);
@@ -119,15 +101,9 @@ class AiApi {
   }
 
   /// Sync vendors and models
-  Future<ModelsRefreshResult?> modelsRefresh(AdminModelCatalogSyncRequest body, [String? xRequestId]) async {
-    final requestHeaders = buildRequestHeaders(
-      <String, HeaderParameterSpec>{
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
-      },
-      <String, HeaderParameterSpec>{},
-    );
+  Future<ModelsRefreshResult?> modelsRefresh(AdminModelCatalogSyncRequest body) async {
     final payload = body.toJson();
-    final response = await _client.post(ApiPaths.backendPath('/ai/models/refresh'), body: payload, headers: requestHeaders, contentType: 'application/json');
+    final response = await _client.post(ApiPaths.backendPath('/ai/models/refresh'), body: payload, contentType: 'application/json');
     return (() {
       final map = sdkworkResponseAsMap(response);
       return map == null ? null : ModelsRefreshResult.fromJson(map);
@@ -144,18 +120,41 @@ class AiApi {
   }
 
   /// Update model
-  Future<ModelsUpdateResult?> modelsUpdate(String modelId, AdminAiModelUpdateRequest body, [String? xRequestId]) async {
-    final requestHeaders = buildRequestHeaders(
-      <String, HeaderParameterSpec>{
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
-      },
-      <String, HeaderParameterSpec>{},
-    );
+  Future<ModelsUpdateResult?> modelsUpdate(String modelId, AdminAiModelUpdateRequest body) async {
     final payload = body.toJson();
-    final response = await _client.patch(ApiPaths.backendPath('/ai/models/${serializePathParameter(modelId, const PathParameterSpec('modelId', 'simple', false))}'), body: payload, headers: requestHeaders, contentType: 'application/json');
+    final response = await _client.patch(ApiPaths.backendPath('/ai/models/${serializePathParameter(modelId, const PathParameterSpec('modelId', 'simple', false))}'), body: payload, contentType: 'application/json');
     return (() {
       final map = sdkworkResponseAsMap(response);
       return map == null ? null : ModelsUpdateResult.fromJson(map);
+    })();
+  }
+
+  /// List ai resources
+  Future<AiResourcesListResult?> resourcesList() async {
+    final response = await _client.get(ApiPaths.backendPath('/ai/resources'));
+    return (() {
+      final map = sdkworkResponseAsMap(response);
+      return map == null ? null : AiResourcesListResult.fromJson(map);
+    })();
+  }
+
+  /// Create ai resource
+  Future<AiResourcesCreateResult?> resourcesCreate(AdminAiResourceCreateRequest body) async {
+    final payload = body.toJson();
+    final response = await _client.post(ApiPaths.backendPath('/ai/resources'), body: payload, contentType: 'application/json');
+    return (() {
+      final map = sdkworkResponseAsMap(response);
+      return map == null ? null : AiResourcesCreateResult.fromJson(map);
+    })();
+  }
+
+  /// Update ai resource
+  Future<AiResourcesUpdateResult?> resourcesUpdate(String resourceId, AdminAiResourceUpdateRequest body) async {
+    final payload = body.toJson();
+    final response = await _client.put(ApiPaths.backendPath('/ai/resources/${serializePathParameter(resourceId, const PathParameterSpec('resourceId', 'simple', false))}'), body: payload, contentType: 'application/json');
+    return (() {
+      final map = sdkworkResponseAsMap(response);
+      return map == null ? null : AiResourcesUpdateResult.fromJson(map);
     })();
   }
 }
@@ -363,75 +362,3 @@ String encodeQueryValue(String value, bool allowReserved) {
 }
 
 String urlEncode(String value) => Uri.encodeQueryComponent(value);
-class HeaderParameterSpec {
-  final dynamic value;
-  final String style;
-  final bool explode;
-  final String? contentType;
-
-  HeaderParameterSpec(this.value, this.style, this.explode, this.contentType);
-}
-
-Map<String, String>? buildRequestHeaders(
-  Map<String, HeaderParameterSpec> headers, [
-  Map<String, HeaderParameterSpec> cookies = const {},
-]) {
-  final requestHeaders = <String, String>{};
-
-  headers.forEach((name, parameter) {
-    final serialized = serializeParameterValue(parameter);
-    if (serialized != null) {
-      requestHeaders[name] = serialized;
-    }
-  });
-
-  final cookieHeader = buildCookieHeader(cookies);
-  if (cookieHeader != null && cookieHeader.isNotEmpty) {
-    requestHeaders['Cookie'] = requestHeaders.containsKey('Cookie')
-        ? '${requestHeaders['Cookie']}; $cookieHeader'
-        : cookieHeader;
-  }
-
-  return requestHeaders.isEmpty ? null : requestHeaders;
-}
-
-String? buildCookieHeader(Map<String, HeaderParameterSpec> cookies) {
-  final pairs = <String>[];
-  cookies.forEach((name, parameter) {
-    final serialized = serializeParameterValue(parameter);
-    if (serialized != null) {
-      pairs.add('${Uri.encodeComponent(name)}=${Uri.encodeComponent(serialized)}');
-    }
-  });
-  return pairs.isEmpty ? null : pairs.join('; ');
-}
-
-String? serializeParameterValue(HeaderParameterSpec? parameter) {
-  final value = parameter?.value;
-  if (value == null) return null;
-  if (parameter!.contentType != null && parameter.contentType!.trim().isNotEmpty) {
-    return jsonEncode(value);
-  }
-  if (value is DateTime) return value.toIso8601String();
-  if (value is Iterable) {
-    return value
-        .where((item) => item != null)
-        .map((item) => item.toString())
-        .whereType<String>()
-        .join(',');
-  }
-  if (value is Map) {
-    final serialized = <String>[];
-    value.forEach((key, item) {
-      if (item == null) return;
-      if (parameter.explode) {
-        serialized.add('$key=$item');
-      } else {
-        serialized.add(key.toString());
-        serialized.add(item.toString());
-      }
-    });
-    return serialized.join(',');
-  }
-  return value.toString();
-}

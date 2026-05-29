@@ -801,6 +801,82 @@ components:
         published_by:
           type: string
           format: int64
+    AiApiEndpointRecord:
+      type: object
+      x-table: ai_api_endpoint
+      x-domain: ai
+      x-generated-by-this-project: true
+      properties:
+        id:
+          type: string
+          format: int64
+        uuid:
+          type: string
+          maxLength: 64
+        tenant_id:
+          type: string
+          format: int64
+        organization_id:
+          type: string
+          format: int64
+        data_scope:
+          type: string
+          x-db-type: enum_int32
+        status:
+          type: string
+          x-db-type: enum_int32
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+        version:
+          type: string
+          format: int64
+        deleted_at:
+          type: string
+          format: date-time
+        deleted_by:
+          type: string
+          format: int64
+        metadata:
+          type: object
+          additionalProperties: true
+        endpoint_code:
+          type: string
+          maxLength: 128
+        protocol_code:
+          type: string
+          maxLength: 64
+        display_name:
+          type: string
+          maxLength: 128
+        method:
+          type: string
+          maxLength: 16
+        path_template:
+          type: string
+          maxLength: 256
+        request_schema:
+          type: object
+          additionalProperties: true
+        response_schema:
+          type: object
+          additionalProperties: true
+        streaming_supported:
+          type: boolean
+        sort_order:
+          type: integer
+          format: int32
+      required:
+      - uuid
+      - tenant_id
+      - organization_id
+      - status
+      - endpoint_code
+      - protocol_code
+      - path_template
     AiBillingMeterRecord:
       type: object
       x-table: ai_billing_meter
@@ -901,6 +977,823 @@ components:
       - billing_mode
       - default_unit
       - default_unit_size
+    AiChannelEndpointRecord:
+      type: object
+      x-table: ai_channel_endpoint
+      x-domain: ai
+      x-generated-by-this-project: true
+      properties:
+        id:
+          type: string
+          format: int64
+        uuid:
+          type: string
+          maxLength: 64
+        tenant_id:
+          type: string
+          format: int64
+        organization_id:
+          type: string
+          format: int64
+        data_scope:
+          type: string
+          x-db-type: enum_int32
+        status:
+          type: string
+          x-db-type: enum_int32
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+        version:
+          type: string
+          format: int64
+        deleted_at:
+          type: string
+          format: date-time
+        deleted_by:
+          type: string
+          format: int64
+        metadata:
+          type: object
+          additionalProperties: true
+        channel_id:
+          type: string
+          format: int64
+        provider_code:
+          type: string
+          maxLength: 64
+        channel_code:
+          type: string
+          maxLength: 64
+        channel_type:
+          type: string
+          maxLength: 32
+        vendor_id:
+          type: string
+          format: int64
+        vendor_code:
+          type: string
+          maxLength: 64
+        region_code:
+          type: string
+          maxLength: 64
+        api_endpoint_id:
+          type: string
+          format: int64
+        api_code:
+          type: string
+          maxLength: 128
+        base_url:
+          type: string
+          maxLength: 512
+        path_prefix:
+          type: string
+          maxLength: 256
+        timeout_ms:
+          type: integer
+          format: int32
+        retry_policy:
+          type: object
+          additionalProperties: true
+        last_latency_ms:
+          type: integer
+          format: int32
+        consecutive_error_count:
+          type: string
+          format: int64
+        effective_from:
+          type: string
+          format: date-time
+        effective_to:
+          type: string
+          format: date-time
+      required:
+      - uuid
+      - tenant_id
+      - organization_id
+      - status
+      - channel_id
+      - channel_code
+      - channel_type
+      - vendor_code
+      - region_code
+      - api_code
+      - base_url
+    AiChannelGroupMemberRecord:
+      type: object
+      x-table: ai_channel_group_member
+      x-domain: ai
+      x-generated-by-this-project: true
+      properties:
+        id:
+          type: string
+          format: int64
+        uuid:
+          type: string
+          maxLength: 64
+        tenant_id:
+          type: string
+          format: int64
+        organization_id:
+          type: string
+          format: int64
+        data_scope:
+          type: string
+          x-db-type: enum_int32
+        status:
+          type: string
+          x-db-type: enum_int32
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+        version:
+          type: string
+          format: int64
+        deleted_at:
+          type: string
+          format: date-time
+        deleted_by:
+          type: string
+          format: int64
+        metadata:
+          type: object
+          additionalProperties: true
+        channel_group_id:
+          type: string
+          format: int64
+        channel_id:
+          type: string
+          format: int64
+        effective_from:
+          type: string
+          format: date-time
+        effective_to:
+          type: string
+          format: date-time
+      required:
+      - uuid
+      - tenant_id
+      - organization_id
+      - status
+      - channel_group_id
+      - channel_id
+    AiChannelGroupMetricSnapshotRecord:
+      type: object
+      x-table: ai_channel_group_metric_snapshot
+      x-domain: ai
+      x-generated-by-this-project: true
+      properties:
+        id:
+          type: string
+          format: int64
+        uuid:
+          type: string
+          maxLength: 64
+        tenant_id:
+          type: string
+          format: int64
+        organization_id:
+          type: string
+          format: int64
+        source_type:
+          type: string
+          maxLength: 128
+        source_id:
+          type: string
+          format: int64
+        source_version:
+          type: string
+          format: int64
+        status:
+          type: string
+          x-db-type: enum_int32
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+        rebuild_version:
+          type: string
+          format: int64
+        metadata:
+          type: object
+          additionalProperties: true
+        channel_group_id:
+          type: string
+          format: int64
+        group_code:
+          type: string
+          maxLength: 64
+        provider_code:
+          type: string
+          maxLength: 64
+        channel_available_count:
+          type: string
+          format: int64
+        channel_total_count:
+          type: string
+          format: int64
+        capacity_used:
+          type: string
+          format: decimal
+        capacity_limit:
+          type: string
+          format: decimal
+        request_count_today:
+          type: string
+          format: int64
+        request_count_total:
+          type: string
+          format: int64
+        usage_amount_today:
+          type: string
+          format: decimal
+        usage_amount_total:
+          type: string
+          format: decimal
+        health_status:
+          type: string
+          x-db-type: enum_int32
+        snapshot_at:
+          type: string
+          format: date-time
+      required:
+      - uuid
+      - tenant_id
+      - organization_id
+      - status
+    AiChannelGroupRecord:
+      type: object
+      x-table: ai_channel_group
+      x-domain: ai
+      x-generated-by-this-project: true
+      properties:
+        id:
+          type: string
+          format: int64
+        uuid:
+          type: string
+          maxLength: 64
+        tenant_id:
+          type: string
+          format: int64
+        organization_id:
+          type: string
+          format: int64
+        data_scope:
+          type: string
+          x-db-type: enum_int32
+        status:
+          type: string
+          x-db-type: enum_int32
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+        version:
+          type: string
+          format: int64
+        deleted_at:
+          type: string
+          format: date-time
+        deleted_by:
+          type: string
+          format: int64
+        metadata:
+          type: object
+          additionalProperties: true
+        group_code:
+          type: string
+          maxLength: 64
+        group_name:
+          type: string
+          maxLength: 128
+        description:
+          type: string
+          maxLength: 512
+        provider_code:
+          type: string
+          maxLength: 64
+        group_type:
+          type: string
+          maxLength: 32
+        routing_policy_id:
+          type: string
+          format: int64
+        quota_policy_id:
+          type: string
+          format: int64
+        rate_limit_policy_id:
+          type: string
+          format: int64
+        environment:
+          type: string
+          x-db-type: enum_int32
+        pricing_plan_id:
+          type: string
+          format: int64
+        pricing_plan_code:
+          type: string
+          maxLength: 64
+        rate_multiplier:
+          type: string
+          format: decimal
+        price_reference_mode:
+          type: string
+          x-db-type: enum_int32
+        official_price_multiplier:
+          type: string
+          format: decimal
+        billing_type:
+          type: string
+          x-db-type: enum_int32
+        capacity_limit:
+          type: string
+          format: int64
+        allowed_origin:
+          type: object
+          additionalProperties: true
+      required:
+      - uuid
+      - tenant_id
+      - organization_id
+      - status
+      - group_code
+      - group_name
+    AiChannelGroupResourceRecord:
+      type: object
+      x-table: ai_channel_group_resource
+      x-domain: ai
+      x-generated-by-this-project: true
+      properties:
+        id:
+          type: string
+          format: int64
+        uuid:
+          type: string
+          maxLength: 64
+        tenant_id:
+          type: string
+          format: int64
+        organization_id:
+          type: string
+          format: int64
+        data_scope:
+          type: string
+          x-db-type: enum_int32
+        status:
+          type: string
+          x-db-type: enum_int32
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+        version:
+          type: string
+          format: int64
+        deleted_at:
+          type: string
+          format: date-time
+        deleted_by:
+          type: string
+          format: int64
+        metadata:
+          type: object
+          additionalProperties: true
+        channel_group_id:
+          type: string
+          format: int64
+        resource_id:
+          type: string
+          format: int64
+        resource_code:
+          type: string
+          maxLength: 192
+        resource_group_id:
+          type: string
+          format: int64
+        resource_group_code:
+          type: string
+          maxLength: 128
+        effective_from:
+          type: string
+          format: date-time
+        effective_to:
+          type: string
+          format: date-time
+      required:
+      - uuid
+      - tenant_id
+      - organization_id
+      - status
+      - channel_group_id
+    AiChannelModelRecord:
+      type: object
+      x-table: ai_channel_model
+      x-domain: ai
+      x-generated-by-this-project: true
+      properties:
+        id:
+          type: string
+          format: int64
+        uuid:
+          type: string
+          maxLength: 64
+        tenant_id:
+          type: string
+          format: int64
+        organization_id:
+          type: string
+          format: int64
+        data_scope:
+          type: string
+          x-db-type: enum_int32
+        status:
+          type: string
+          x-db-type: enum_int32
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+        version:
+          type: string
+          format: int64
+        deleted_at:
+          type: string
+          format: date-time
+        deleted_by:
+          type: string
+          format: int64
+        metadata:
+          type: object
+          additionalProperties: true
+        channel_id:
+          type: string
+          format: int64
+        model_id:
+          type: string
+          format: int64
+        catalog_key:
+          type: string
+          maxLength: 256
+        model:
+          type: string
+          maxLength: 128
+        vendor_code:
+          type: string
+          maxLength: 64
+        provider_model:
+          type: string
+          maxLength: 128
+        provider_native_model:
+          type: string
+          maxLength: 256
+        api_code:
+          type: string
+          maxLength: 128
+        capability:
+          type: string
+          x-db-type: enum_int32
+        model_aliases:
+          type: object
+          additionalProperties: true
+        default_parameters:
+          type: object
+          additionalProperties: true
+        max_input_tokens:
+          type: string
+          format: int64
+        max_output_tokens:
+          type: string
+          format: int64
+        supports_streaming:
+          type: boolean
+        supports_tools:
+          type: boolean
+        effective_from:
+          type: string
+          format: date-time
+        effective_to:
+          type: string
+          format: date-time
+    AiChannelRecord:
+      type: object
+      x-table: ai_channel
+      x-domain: ai
+      x-generated-by-this-project: true
+      properties:
+        id:
+          type: string
+          format: int64
+        uuid:
+          type: string
+          maxLength: 64
+        tenant_id:
+          type: string
+          format: int64
+        organization_id:
+          type: string
+          format: int64
+        data_scope:
+          type: string
+          x-db-type: enum_int32
+        status:
+          type: string
+          x-db-type: enum_int32
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+        version:
+          type: string
+          format: int64
+        deleted_at:
+          type: string
+          format: date-time
+        deleted_by:
+          type: string
+          format: int64
+        metadata:
+          type: object
+          additionalProperties: true
+        provider_id:
+          type: string
+          format: int64
+        provider_code:
+          type: string
+          maxLength: 64
+        channel_code:
+          type: string
+          maxLength: 64
+        channel_name:
+          type: string
+          maxLength: 128
+        channel_type:
+          type: string
+          maxLength: 32
+        protocol_code:
+          type: string
+          maxLength: 64
+        auth_type:
+          type: string
+          x-db-type: enum_int32
+        credential_profile:
+          type: string
+          x-db-type: enum_int32
+        external_channel_id:
+          type: string
+          maxLength: 128
+        base_url:
+          type: string
+          maxLength: 512
+        auth_config:
+          type: object
+          additionalProperties: true
+        credential_ref:
+          type: string
+          maxLength: 256
+        credential_hash:
+          type: string
+          maxLength: 128
+        credential_version:
+          type: string
+          format: int64
+        credential_rotation_policy:
+          type: object
+          additionalProperties: true
+        masked_label:
+          type: string
+          maxLength: 128
+        environment:
+          type: string
+          x-db-type: enum_int32
+        region_code:
+          type: string
+          maxLength: 64
+        quota_unit:
+          type: string
+          x-db-type: enum_int32
+        quota_limit:
+          type: string
+          format: decimal
+        quota_used:
+          type: string
+          format: decimal
+        upstream_balance_amount:
+          type: string
+          format: decimal
+        upstream_balance_currency:
+          type: string
+          maxLength: 10
+        last_balance_checked_at:
+          type: string
+          format: date-time
+        last_rotated_at:
+          type: string
+          format: date-time
+        next_rotate_at:
+          type: string
+          format: date-time
+        last_verified_at:
+          type: string
+          format: date-time
+        last_used_at:
+          type: string
+          format: date-time
+        rpm_limit:
+          type: string
+          format: int64
+        timeout_ms:
+          type: integer
+          format: int32
+        retry_policy:
+          type: object
+          additionalProperties: true
+        circuit_breaker_policy:
+          type: object
+          additionalProperties: true
+        last_latency_ms:
+          type: integer
+          format: int32
+        consecutive_error_count:
+          type: string
+          format: int64
+        proxy_id:
+          type: string
+          format: int64
+        risk_level:
+          type: string
+          x-db-type: enum_int32
+      required:
+      - uuid
+      - tenant_id
+      - organization_id
+      - status
+      - channel_code
+      - channel_name
+      - channel_type
+    AiChannelResourceRecord:
+      type: object
+      x-table: ai_channel_resource
+      x-domain: ai
+      x-generated-by-this-project: true
+      properties:
+        id:
+          type: string
+          format: int64
+        uuid:
+          type: string
+          maxLength: 64
+        tenant_id:
+          type: string
+          format: int64
+        organization_id:
+          type: string
+          format: int64
+        data_scope:
+          type: string
+          x-db-type: enum_int32
+        status:
+          type: string
+          x-db-type: enum_int32
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+        version:
+          type: string
+          format: int64
+        deleted_at:
+          type: string
+          format: date-time
+        deleted_by:
+          type: string
+          format: int64
+        metadata:
+          type: object
+          additionalProperties: true
+        channel_id:
+          type: string
+          format: int64
+        provider_code:
+          type: string
+          maxLength: 64
+        channel_code:
+          type: string
+          maxLength: 64
+        resource_id:
+          type: string
+          format: int64
+        resource_code:
+          type: string
+          maxLength: 192
+        resource_group_id:
+          type: string
+          format: int64
+        resource_group_code:
+          type: string
+          maxLength: 128
+        effective_from:
+          type: string
+          format: date-time
+        effective_to:
+          type: string
+          format: date-time
+      required:
+      - uuid
+      - tenant_id
+      - organization_id
+      - status
+      - channel_id
+    AiChannelVendorRecord:
+      type: object
+      x-table: ai_channel_vendor
+      x-domain: ai
+      x-generated-by-this-project: true
+      properties:
+        id:
+          type: string
+          format: int64
+        uuid:
+          type: string
+          maxLength: 64
+        tenant_id:
+          type: string
+          format: int64
+        organization_id:
+          type: string
+          format: int64
+        data_scope:
+          type: string
+          x-db-type: enum_int32
+        status:
+          type: string
+          x-db-type: enum_int32
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+        version:
+          type: string
+          format: int64
+        deleted_at:
+          type: string
+          format: date-time
+        deleted_by:
+          type: string
+          format: int64
+        metadata:
+          type: object
+          additionalProperties: true
+        channel_id:
+          type: string
+          format: int64
+        provider_code:
+          type: string
+          maxLength: 64
+        channel_code:
+          type: string
+          maxLength: 64
+        vendor_id:
+          type: string
+          format: int64
+        vendor_code:
+          type: string
+          maxLength: 64
+        channel_type:
+          type: string
+          maxLength: 32
+        supported:
+          type: boolean
+        sort_order:
+          type: integer
+          format: int32
+      required:
+      - uuid
+      - tenant_id
+      - organization_id
+      - status
+      - channel_id
+      - vendor_code
     AiChatContextSnapshotRecord:
       type: object
       x-table: ai_chat_context_snapshot
@@ -2621,6 +3514,220 @@ components:
         entry_count:
           type: string
           format: int64
+    AiModalityApiEndpointRecord:
+      type: object
+      x-table: ai_modality_api_endpoint
+      x-domain: ai
+      x-generated-by-this-project: true
+      properties:
+        id:
+          type: string
+          format: int64
+        uuid:
+          type: string
+          maxLength: 64
+        tenant_id:
+          type: string
+          format: int64
+        organization_id:
+          type: string
+          format: int64
+        data_scope:
+          type: string
+          x-db-type: enum_int32
+        status:
+          type: string
+          x-db-type: enum_int32
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+        version:
+          type: string
+          format: int64
+        deleted_at:
+          type: string
+          format: date-time
+        deleted_by:
+          type: string
+          format: int64
+        metadata:
+          type: object
+          additionalProperties: true
+        modality_id:
+          type: string
+          format: int64
+        modality_code:
+          type: string
+          maxLength: 64
+        api_endpoint_id:
+          type: string
+          format: int64
+        endpoint_code:
+          type: string
+          maxLength: 128
+        supported:
+          type: boolean
+        sort_order:
+          type: integer
+          format: int32
+      required:
+      - uuid
+      - tenant_id
+      - organization_id
+      - status
+      - modality_code
+      - endpoint_code
+    AiModalityRecord:
+      type: object
+      x-table: ai_modality
+      x-domain: ai
+      x-generated-by-this-project: true
+      properties:
+        id:
+          type: string
+          format: int64
+        uuid:
+          type: string
+          maxLength: 64
+        tenant_id:
+          type: string
+          format: int64
+        organization_id:
+          type: string
+          format: int64
+        data_scope:
+          type: string
+          x-db-type: enum_int32
+        status:
+          type: string
+          x-db-type: enum_int32
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+        version:
+          type: string
+          format: int64
+        deleted_at:
+          type: string
+          format: date-time
+        deleted_by:
+          type: string
+          format: int64
+        metadata:
+          type: object
+          additionalProperties: true
+        modality_code:
+          type: string
+          maxLength: 64
+        display_name:
+          type: string
+          maxLength: 128
+        modality_group:
+          type: string
+          maxLength: 64
+        description:
+          type: string
+          maxLength: 512
+        input_supported:
+          type: boolean
+        output_supported:
+          type: boolean
+        sort_order:
+          type: integer
+          format: int32
+      required:
+      - uuid
+      - tenant_id
+      - organization_id
+      - status
+      - modality_code
+      - display_name
+    AiModelApiEndpointRecord:
+      type: object
+      x-table: ai_model_api_endpoint
+      x-domain: ai
+      x-generated-by-this-project: true
+      properties:
+        id:
+          type: string
+          format: int64
+        uuid:
+          type: string
+          maxLength: 64
+        tenant_id:
+          type: string
+          format: int64
+        organization_id:
+          type: string
+          format: int64
+        data_scope:
+          type: string
+          x-db-type: enum_int32
+        status:
+          type: string
+          x-db-type: enum_int32
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+        version:
+          type: string
+          format: int64
+        deleted_at:
+          type: string
+          format: date-time
+        deleted_by:
+          type: string
+          format: int64
+        metadata:
+          type: object
+          additionalProperties: true
+        model_id:
+          type: string
+          format: int64
+        catalog_key:
+          type: string
+          maxLength: 256
+        model:
+          type: string
+          maxLength: 128
+        vendor_code:
+          type: string
+          maxLength: 64
+        api_endpoint_id:
+          type: string
+          format: int64
+        endpoint_code:
+          type: string
+          maxLength: 128
+        provider_native_model:
+          type: string
+          maxLength: 256
+        default_parameters:
+          type: object
+          additionalProperties: true
+        supports_streaming:
+          type: boolean
+        supported:
+          type: boolean
+        sort_order:
+          type: integer
+          format: int32
+      required:
+      - uuid
+      - tenant_id
+      - organization_id
+      - status
+      - catalog_key
+      - endpoint_code
     AiModelCapabilityRecord:
       type: object
       x-table: ai_model_capability
@@ -2999,9 +4106,6 @@ components:
         vendor_code:
           type: string
           maxLength: 64
-        region_code:
-          type: string
-          maxLength: 64
         family_code:
           type: string
           maxLength: 64
@@ -3044,9 +4148,83 @@ components:
       - organization_id
       - status
       - vendor_code
-      - region_code
       - family_code
       - display_name
+    AiModelModalityRecord:
+      type: object
+      x-table: ai_model_modality
+      x-domain: ai
+      x-generated-by-this-project: true
+      properties:
+        id:
+          type: string
+          format: int64
+        uuid:
+          type: string
+          maxLength: 64
+        tenant_id:
+          type: string
+          format: int64
+        organization_id:
+          type: string
+          format: int64
+        data_scope:
+          type: string
+          x-db-type: enum_int32
+        status:
+          type: string
+          x-db-type: enum_int32
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+        version:
+          type: string
+          format: int64
+        deleted_at:
+          type: string
+          format: date-time
+        deleted_by:
+          type: string
+          format: int64
+        metadata:
+          type: object
+          additionalProperties: true
+        model_id:
+          type: string
+          format: int64
+        catalog_key:
+          type: string
+          maxLength: 256
+        model:
+          type: string
+          maxLength: 128
+        vendor_code:
+          type: string
+          maxLength: 64
+        modality_id:
+          type: string
+          format: int64
+        modality_code:
+          type: string
+          maxLength: 64
+        direction:
+          type: string
+          maxLength: 32
+        supported:
+          type: boolean
+        sort_order:
+          type: integer
+          format: int32
+      required:
+      - uuid
+      - tenant_id
+      - organization_id
+      - status
+      - catalog_key
+      - modality_code
     AiModelPricingRecord:
       type: object
       x-table: ai_model_pricing
@@ -3672,107 +4850,6 @@ components:
       - status
       - vendor_code
       - display_name
-    AiModelVendorRegionRecord:
-      type: object
-      x-table: ai_model_vendor_region
-      x-domain: ai
-      x-generated-by-this-project: true
-      properties:
-        id:
-          type: string
-          format: int64
-        uuid:
-          type: string
-          maxLength: 64
-        tenant_id:
-          type: string
-          format: int64
-        organization_id:
-          type: string
-          format: int64
-        data_scope:
-          type: string
-          x-db-type: enum_int32
-        status:
-          type: string
-          x-db-type: enum_int32
-        created_at:
-          type: string
-          format: date-time
-        updated_at:
-          type: string
-          format: date-time
-        version:
-          type: string
-          format: int64
-        deleted_at:
-          type: string
-          format: date-time
-        deleted_by:
-          type: string
-          format: int64
-        metadata:
-          type: object
-          additionalProperties: true
-        vendor_id:
-          type: string
-          format: int64
-        vendor_code:
-          type: string
-          maxLength: 64
-        region_code:
-          type: string
-          maxLength: 64
-        display_name:
-          type: string
-          maxLength: 128
-        legal_name:
-          type: string
-          maxLength: 256
-        description:
-          type: string
-          maxLength: 512
-        website_url:
-          type: string
-          maxLength: 512
-        docs_url:
-          type: string
-          maxLength: 512
-        country_region:
-          type: string
-          maxLength: 64
-        market_scope:
-          type: string
-          maxLength: 64
-        billing_currency:
-          type: string
-          maxLength: 10
-        billing_jurisdiction:
-          type: string
-          maxLength: 64
-        operating_regions:
-          type: object
-          additionalProperties: true
-        capabilities:
-          type: object
-          additionalProperties: true
-        open_source:
-          type: boolean
-        sort_order:
-          type: integer
-          format: int32
-      required:
-      - uuid
-      - tenant_id
-      - organization_id
-      - status
-      - vendor_code
-      - region_code
-      - display_name
-      - market_scope
-      - billing_currency
-      - billing_jurisdiction
-      - operating_regions
     AiPricingImportSnapshotRecord:
       type: object
       x-table: ai_pricing_import_snapshot
@@ -4596,6 +5673,100 @@ components:
         deprecated_at:
           type: string
           format: date-time
+    AiProviderRecord:
+      type: object
+      x-table: ai_provider
+      x-domain: ai
+      x-generated-by-this-project: true
+      properties:
+        id:
+          type: string
+          format: int64
+        uuid:
+          type: string
+          maxLength: 64
+        tenant_id:
+          type: string
+          format: int64
+        organization_id:
+          type: string
+          format: int64
+        data_scope:
+          type: string
+          x-db-type: enum_int32
+        status:
+          type: string
+          x-db-type: enum_int32
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+        version:
+          type: string
+          format: int64
+        deleted_at:
+          type: string
+          format: date-time
+        deleted_by:
+          type: string
+          format: int64
+        metadata:
+          type: object
+          additionalProperties: true
+        provider_code:
+          type: string
+          maxLength: 64
+        display_name:
+          type: string
+          maxLength: 128
+        description:
+          type: string
+          maxLength: 512
+        icon_url:
+          type: string
+          maxLength: 512
+        color_token:
+          type: string
+          maxLength: 64
+        docs_url:
+          type: string
+          maxLength: 512
+        website_url:
+          type: string
+          maxLength: 512
+        default_vendor_code:
+          type: string
+          maxLength: 64
+        provider_type:
+          type: string
+          maxLength: 32
+        protocol_code:
+          type: string
+          maxLength: 64
+        base_url:
+          type: string
+          maxLength: 512
+        auth_type:
+          type: string
+          x-db-type: enum_int32
+        resource_schema:
+          type: object
+          additionalProperties: true
+        metadata_schema_version:
+          type: string
+          maxLength: 32
+        sort_order:
+          type: integer
+          format: int32
+      required:
+      - uuid
+      - tenant_id
+      - organization_id
+      - status
+      - provider_code
+      - display_name
     AiQuotaPolicyRecord:
       type: object
       x-table: ai_quota_policy
@@ -4662,7 +5833,7 @@ components:
         scope_id:
           type: string
           format: int64
-        group_id:
+        channel_group_id:
           type: string
           format: int64
         model:
@@ -4841,10 +6012,10 @@ components:
         api_key_name_snapshot:
           type: string
           maxLength: 128
-        api_key_group_id:
+        channel_group_id:
           type: string
           format: int64
-        api_key_group_snapshot:
+        channel_group_snapshot:
           type: string
           maxLength: 128
         owner_type:
@@ -4865,9 +6036,6 @@ components:
         channel_name_snapshot:
           type: string
           maxLength: 128
-        provider_account_id:
-          type: string
-          format: int64
         requested_model:
           type: string
           maxLength: 128
@@ -4954,6 +6122,344 @@ components:
         user_agent_hash:
           type: string
           maxLength: 128
+    AiResourceGroupItemRecord:
+      type: object
+      x-table: ai_resource_group_item
+      x-domain: ai
+      x-generated-by-this-project: true
+      properties:
+        id:
+          type: string
+          format: int64
+        uuid:
+          type: string
+          maxLength: 64
+        tenant_id:
+          type: string
+          format: int64
+        organization_id:
+          type: string
+          format: int64
+        data_scope:
+          type: string
+          x-db-type: enum_int32
+        status:
+          type: string
+          x-db-type: enum_int32
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+        version:
+          type: string
+          format: int64
+        deleted_at:
+          type: string
+          format: date-time
+        deleted_by:
+          type: string
+          format: int64
+        metadata:
+          type: object
+          additionalProperties: true
+        resource_group_id:
+          type: string
+          format: int64
+        resource_group_code:
+          type: string
+          maxLength: 128
+        item_type:
+          type: string
+          maxLength: 32
+        resource_id:
+          type: string
+          format: int64
+        resource_code:
+          type: string
+          maxLength: 192
+        child_resource_group_id:
+          type: string
+          format: int64
+        child_resource_group_code:
+          type: string
+          maxLength: 128
+        item_role:
+          type: string
+          maxLength: 32
+        sort_order:
+          type: integer
+          format: int32
+      required:
+      - uuid
+      - tenant_id
+      - organization_id
+      - status
+      - resource_group_id
+      - item_type
+    AiResourceGroupRecord:
+      type: object
+      x-table: ai_resource_group
+      x-domain: ai
+      x-generated-by-this-project: true
+      properties:
+        id:
+          type: string
+          format: int64
+        uuid:
+          type: string
+          maxLength: 64
+        tenant_id:
+          type: string
+          format: int64
+        organization_id:
+          type: string
+          format: int64
+        data_scope:
+          type: string
+          x-db-type: enum_int32
+        status:
+          type: string
+          x-db-type: enum_int32
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+        version:
+          type: string
+          format: int64
+        deleted_at:
+          type: string
+          format: date-time
+        deleted_by:
+          type: string
+          format: int64
+        metadata:
+          type: object
+          additionalProperties: true
+        group_code:
+          type: string
+          maxLength: 128
+        group_name:
+          type: string
+          maxLength: 128
+        group_type:
+          type: string
+          maxLength: 64
+        selection_mode:
+          type: string
+          maxLength: 32
+        description:
+          type: string
+          maxLength: 512
+        sort_order:
+          type: integer
+          format: int32
+      required:
+      - uuid
+      - tenant_id
+      - organization_id
+      - status
+      - group_code
+      - group_name
+    AiResourceRecord:
+      type: object
+      x-table: ai_resource
+      x-domain: ai
+      x-generated-by-this-project: true
+      properties:
+        id:
+          type: string
+          format: int64
+        uuid:
+          type: string
+          maxLength: 64
+        tenant_id:
+          type: string
+          format: int64
+        organization_id:
+          type: string
+          format: int64
+        data_scope:
+          type: string
+          x-db-type: enum_int32
+        status:
+          type: string
+          x-db-type: enum_int32
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+        version:
+          type: string
+          format: int64
+        deleted_at:
+          type: string
+          format: date-time
+        deleted_by:
+          type: string
+          format: int64
+        metadata:
+          type: object
+          additionalProperties: true
+        resource_code:
+          type: string
+          maxLength: 192
+        resource_type:
+          type: string
+          maxLength: 64
+        display_name:
+          type: string
+          maxLength: 128
+        vendor_id:
+          type: string
+          format: int64
+        vendor_code:
+          type: string
+          maxLength: 64
+        modality_id:
+          type: string
+          format: int64
+        modality_code:
+          type: string
+          maxLength: 64
+        api_endpoint_id:
+          type: string
+          format: int64
+        api_code:
+          type: string
+          maxLength: 128
+        model_id:
+          type: string
+          format: int64
+        model_code:
+          type: string
+          maxLength: 128
+        catalog_key:
+          type: string
+          maxLength: 256
+        model:
+          type: string
+          maxLength: 128
+        provider_native_model:
+          type: string
+          maxLength: 256
+        resource_schema:
+          type: object
+          additionalProperties: true
+        metadata_schema:
+          type: object
+          additionalProperties: true
+        description:
+          type: string
+          maxLength: 512
+        sort_order:
+          type: integer
+          format: int32
+      required:
+      - uuid
+      - tenant_id
+      - organization_id
+      - status
+      - resource_code
+      - resource_type
+    AiRouteCandidateRecord:
+      type: object
+      x-table: ai_route_candidate
+      x-domain: ai
+      x-generated-by-this-project: true
+      properties:
+        id:
+          type: string
+          format: int64
+        uuid:
+          type: string
+          maxLength: 64
+        tenant_id:
+          type: string
+          format: int64
+        organization_id:
+          type: string
+          format: int64
+        source_type:
+          type: string
+          maxLength: 128
+        source_id:
+          type: string
+          format: int64
+        source_version:
+          type: string
+          format: int64
+        status:
+          type: string
+          x-db-type: enum_int32
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+        rebuild_version:
+          type: string
+          format: int64
+        metadata:
+          type: object
+          additionalProperties: true
+        channel_group_id:
+          type: string
+          format: int64
+        channel_id:
+          type: string
+          format: int64
+        endpoint_id:
+          type: string
+          format: int64
+        provider_code:
+          type: string
+          maxLength: 64
+        channel_type:
+          type: string
+          maxLength: 32
+        vendor_code:
+          type: string
+          maxLength: 64
+        api_code:
+          type: string
+          maxLength: 128
+        model_code:
+          type: string
+          maxLength: 128
+        catalog_key:
+          type: string
+          maxLength: 256
+        region_code:
+          type: string
+          maxLength: 64
+        priority:
+          type: integer
+          format: int32
+        weight:
+          type: integer
+          format: int32
+        health_status:
+          type: string
+          x-db-type: enum_int32
+        config_version:
+          type: string
+          format: int64
+        refreshed_at:
+          type: string
+          format: date-time
+      required:
+      - uuid
+      - tenant_id
+      - organization_id
+      - status
     AiRoutingDecisionLogRecord:
       type: object
       x-table: ai_routing_decision_log
@@ -5741,10 +7247,10 @@ components:
         api_key_name_snapshot:
           type: string
           maxLength: 128
-        api_key_group_id:
+        channel_group_id:
           type: string
           format: int64
-        api_key_group_snapshot:
+        channel_group_snapshot:
           type: string
           maxLength: 128
         owner_type:
@@ -5772,9 +7278,6 @@ components:
           type: string
           format: int64
         channel_id:
-          type: string
-          format: int64
-        provider_account_id:
           type: string
           format: int64
         modality:
@@ -6096,6 +7599,138 @@ components:
         settlement_status:
           type: string
           x-db-type: enum_int32
+    AiVendorApiEndpointRecord:
+      type: object
+      x-table: ai_vendor_api_endpoint
+      x-domain: ai
+      x-generated-by-this-project: true
+      properties:
+        id:
+          type: string
+          format: int64
+        uuid:
+          type: string
+          maxLength: 64
+        tenant_id:
+          type: string
+          format: int64
+        organization_id:
+          type: string
+          format: int64
+        data_scope:
+          type: string
+          x-db-type: enum_int32
+        status:
+          type: string
+          x-db-type: enum_int32
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+        version:
+          type: string
+          format: int64
+        deleted_at:
+          type: string
+          format: date-time
+        deleted_by:
+          type: string
+          format: int64
+        metadata:
+          type: object
+          additionalProperties: true
+        vendor_id:
+          type: string
+          format: int64
+        vendor_code:
+          type: string
+          maxLength: 64
+        api_endpoint_id:
+          type: string
+          format: int64
+        endpoint_code:
+          type: string
+          maxLength: 128
+        supported:
+          type: boolean
+        sort_order:
+          type: integer
+          format: int32
+      required:
+      - uuid
+      - tenant_id
+      - organization_id
+      - status
+      - vendor_code
+      - endpoint_code
+    AiVendorModalityRecord:
+      type: object
+      x-table: ai_vendor_modality
+      x-domain: ai
+      x-generated-by-this-project: true
+      properties:
+        id:
+          type: string
+          format: int64
+        uuid:
+          type: string
+          maxLength: 64
+        tenant_id:
+          type: string
+          format: int64
+        organization_id:
+          type: string
+          format: int64
+        data_scope:
+          type: string
+          x-db-type: enum_int32
+        status:
+          type: string
+          x-db-type: enum_int32
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+        version:
+          type: string
+          format: int64
+        deleted_at:
+          type: string
+          format: date-time
+        deleted_by:
+          type: string
+          format: int64
+        metadata:
+          type: object
+          additionalProperties: true
+        vendor_id:
+          type: string
+          format: int64
+        vendor_code:
+          type: string
+          maxLength: 64
+        modality_id:
+          type: string
+          format: int64
+        modality_code:
+          type: string
+          maxLength: 64
+        supported:
+          type: boolean
+        sort_order:
+          type: integer
+          format: int32
+      required:
+      - uuid
+      - tenant_id
+      - organization_id
+      - status
+      - vendor_code
+      - modality_code
     AnalyticsServiceProviderDailyRecord:
       type: object
       x-table: analytics_service_provider_daily
@@ -11232,72 +12867,6 @@ components:
         published_at:
           type: string
           format: date-time
-    IamApiKeyGroupChannelRecord:
-      type: object
-      x-table: iam_api_key_group_channel
-      x-domain: iam
-      x-generated-by-this-project: true
-      properties:
-        id:
-          type: string
-          format: int64
-        uuid:
-          type: string
-          maxLength: 64
-        tenant_id:
-          type: string
-          format: int64
-        organization_id:
-          type: string
-          format: int64
-        data_scope:
-          type: string
-          x-db-type: enum_int32
-        status:
-          type: string
-          x-db-type: enum_int32
-        created_at:
-          type: string
-          format: date-time
-        updated_at:
-          type: string
-          format: date-time
-        version:
-          type: string
-          format: int64
-        deleted_at:
-          type: string
-          format: date-time
-        deleted_by:
-          type: string
-          format: int64
-        metadata:
-          type: object
-          additionalProperties: true
-        group_id:
-          type: string
-          format: int64
-        channel_id:
-          type: string
-          format: int64
-        priority:
-          type: integer
-          format: int32
-        weight:
-          type: integer
-          format: int32
-        model_scope:
-          type: object
-          additionalProperties: true
-        capabilities:
-          type: object
-          additionalProperties: true
-        effective_from:
-          type: string
-          format: date-time
-        effective_to:
-          type: string
-          format: date-time
     IamApiKeyRecord:
       type: object
       x-table: iam_api_key
@@ -11540,177 +13109,6 @@ components:
         effective_to:
           type: string
           format: date-time
-    IamGatewayApiKeyGroupMetricSnapshotRecord:
-      type: object
-      x-table: iam_gateway_api_key_group_metric_snapshot
-      x-domain: iam
-      x-generated-by-this-project: true
-      properties:
-        id:
-          type: string
-          format: int64
-        uuid:
-          type: string
-          maxLength: 64
-        tenant_id:
-          type: string
-          format: int64
-        organization_id:
-          type: string
-          format: int64
-        source_type:
-          type: string
-          maxLength: 128
-        source_id:
-          type: string
-          format: int64
-        source_version:
-          type: string
-          format: int64
-        status:
-          type: string
-          x-db-type: enum_int32
-        created_at:
-          type: string
-          format: date-time
-        updated_at:
-          type: string
-          format: date-time
-        rebuild_version:
-          type: string
-          format: int64
-        metadata:
-          type: object
-          additionalProperties: true
-        group_id:
-          type: string
-          format: int64
-        group_code:
-          type: string
-          maxLength: 64
-        provider_code:
-          type: string
-          maxLength: 64
-        account_available_count:
-          type: string
-          format: int64
-        account_total_count:
-          type: string
-          format: int64
-        capacity_used:
-          type: string
-          format: decimal
-        capacity_limit:
-          type: string
-          format: decimal
-        request_count_today:
-          type: string
-          format: int64
-        request_count_total:
-          type: string
-          format: int64
-        usage_amount_today:
-          type: string
-          format: decimal
-        usage_amount_total:
-          type: string
-          format: decimal
-        health_status:
-          type: string
-          x-db-type: enum_int32
-        snapshot_at:
-          type: string
-          format: date-time
-    IamGatewayApiKeyGroupRecord:
-      type: object
-      x-table: iam_gateway_api_key_group
-      x-domain: iam
-      x-generated-by-this-project: true
-      properties:
-        id:
-          type: string
-          format: int64
-        uuid:
-          type: string
-          maxLength: 64
-        tenant_id:
-          type: string
-          format: int64
-        organization_id:
-          type: string
-          format: int64
-        data_scope:
-          type: string
-          x-db-type: enum_int32
-        status:
-          type: string
-          x-db-type: enum_int32
-        created_at:
-          type: string
-          format: date-time
-        updated_at:
-          type: string
-          format: date-time
-        version:
-          type: string
-          format: int64
-        deleted_at:
-          type: string
-          format: date-time
-        deleted_by:
-          type: string
-          format: int64
-        metadata:
-          type: object
-          additionalProperties: true
-        name:
-          type: string
-          maxLength: 128
-        code:
-          type: string
-          maxLength: 64
-        description:
-          type: string
-          maxLength: 512
-        provider_code:
-          type: string
-          maxLength: 64
-        group_type:
-          type: string
-          x-db-type: enum_int32
-        default_policy_id:
-          type: string
-          format: int64
-        default_quota_policy_id:
-          type: string
-          format: int64
-        environment:
-          type: string
-          x-db-type: enum_int32
-        pricing_plan_id:
-          type: string
-          format: int64
-        pricing_plan_code:
-          type: string
-          maxLength: 64
-        rate_multiplier:
-          type: string
-          format: decimal
-        price_reference_mode:
-          type: string
-          x-db-type: enum_int32
-        official_price_multiplier:
-          type: string
-          format: decimal
-        billing_type:
-          type: string
-          x-db-type: enum_int32
-        capacity_limit:
-          type: string
-          format: int64
-        allowed_origin:
-          type: object
-          additionalProperties: true
     IamGatewayApiKeyRecord:
       type: object
       x-table: iam_gateway_api_key
@@ -11765,7 +13163,7 @@ components:
         legacy_api_key_id:
           type: string
           format: int64
-        group_id:
+        channel_group_id:
           type: string
           format: int64
         name:
@@ -12736,323 +14134,10 @@ components:
         default_channel:
           type: string
           maxLength: 32
-    IntegrationChannelModelRecord:
-      type: object
-      x-table: integration_channel_model
-      x-domain: integration
-      x-generated-by-this-project: true
-      properties:
-        id:
-          type: string
-          format: int64
-        uuid:
-          type: string
-          maxLength: 64
-        tenant_id:
-          type: string
-          format: int64
-        organization_id:
-          type: string
-          format: int64
-        data_scope:
-          type: string
-          x-db-type: enum_int32
-        status:
-          type: string
-          x-db-type: enum_int32
-        created_at:
-          type: string
-          format: date-time
-        updated_at:
-          type: string
-          format: date-time
-        version:
-          type: string
-          format: int64
-        deleted_at:
-          type: string
-          format: date-time
-        deleted_by:
-          type: string
-          format: int64
-        metadata:
-          type: object
-          additionalProperties: true
-        channel_id:
-          type: string
-          format: int64
-        model_id:
-          type: string
-          format: int64
-        catalog_key:
-          type: string
-          maxLength: 256
-        model:
-          type: string
-          maxLength: 128
-        vendor_code:
-          type: string
-          maxLength: 64
-        provider_model:
-          type: string
-          maxLength: 128
-        capability:
-          type: string
-          x-db-type: enum_int32
-        model_aliases:
-          type: object
-          additionalProperties: true
-        default_parameters:
-          type: object
-          additionalProperties: true
-        max_input_tokens:
-          type: string
-          format: int64
-        max_output_tokens:
-          type: string
-          format: int64
-        supports_streaming:
-          type: boolean
-        supports_tools:
-          type: boolean
-        effective_from:
-          type: string
-          format: date-time
-        effective_to:
-          type: string
-          format: date-time
-    IntegrationChannelRecord:
-      type: object
-      x-table: integration_channel
-      x-domain: integration
-      x-generated-by-this-project: true
-      properties:
-        id:
-          type: string
-          format: int64
-        uuid:
-          type: string
-          maxLength: 64
-        tenant_id:
-          type: string
-          format: int64
-        organization_id:
-          type: string
-          format: int64
-        data_scope:
-          type: string
-          x-db-type: enum_int32
-        status:
-          type: string
-          x-db-type: enum_int32
-        created_at:
-          type: string
-          format: date-time
-        updated_at:
-          type: string
-          format: date-time
-        version:
-          type: string
-          format: int64
-        deleted_at:
-          type: string
-          format: date-time
-        deleted_by:
-          type: string
-          format: int64
-        metadata:
-          type: object
-          additionalProperties: true
-        provider_id:
-          type: string
-          format: int64
-        provider_code:
-          type: string
-          maxLength: 64
-        channel_code:
-          type: string
-          maxLength: 64
-        name:
-          type: string
-          maxLength: 128
-        protocol:
-          type: string
-          x-db-type: enum_int32
-        access_type:
-          type: string
-          x-db-type: enum_int32
-        base_url:
-          type: string
-          maxLength: 512
-        model_mode:
-          type: string
-          x-db-type: enum_int32
-        environment:
-          type: string
-          x-db-type: enum_int32
-        region:
-          type: string
-          maxLength: 64
-        capabilities:
-          type: object
-          additionalProperties: true
-        priority:
-          type: integer
-          format: int32
-        weight:
-          type: integer
-          format: int32
-        account_id:
-          type: string
-          format: int64
-        proxy_id:
-          type: string
-          format: int64
-        rpm_limit:
-          type: string
-          format: int64
-        timeout_ms:
-          type: integer
-          format: int32
-        retry_policy:
-          type: object
-          additionalProperties: true
-        circuit_breaker_policy:
-          type: object
-          additionalProperties: true
-        health_status:
-          type: string
-          x-db-type: enum_int32
-        last_latency_ms:
-          type: integer
-          format: int32
-        consecutive_error_count:
-          type: string
-          format: int64
-    IntegrationProviderAccountRecord:
-      type: object
-      x-table: integration_provider_account
-      x-domain: integration
-      x-generated-by-this-project: true
-      properties:
-        id:
-          type: string
-          format: int64
-        uuid:
-          type: string
-          maxLength: 64
-        tenant_id:
-          type: string
-          format: int64
-        organization_id:
-          type: string
-          format: int64
-        data_scope:
-          type: string
-          x-db-type: enum_int32
-        status:
-          type: string
-          x-db-type: enum_int32
-        created_at:
-          type: string
-          format: date-time
-        updated_at:
-          type: string
-          format: date-time
-        version:
-          type: string
-          format: int64
-        deleted_at:
-          type: string
-          format: date-time
-        deleted_by:
-          type: string
-          format: int64
-        metadata:
-          type: object
-          additionalProperties: true
-        provider_id:
-          type: string
-          format: int64
-        provider_code:
-          type: string
-          maxLength: 64
-        account_code:
-          type: string
-          maxLength: 64
-        account_name:
-          type: string
-          maxLength: 128
-        auth_type:
-          type: string
-          x-db-type: enum_int32
-        credential_profile:
-          type: string
-          x-db-type: enum_int32
-        external_account_id:
-          type: string
-          maxLength: 128
-        base_url:
-          type: string
-          maxLength: 512
-        auth_config:
-          type: object
-          additionalProperties: true
-        secret_ref:
-          type: string
-          maxLength: 256
-        secret_hash:
-          type: string
-          maxLength: 128
-        secret_version:
-          type: string
-          format: int64
-        secret_rotation_policy:
-          type: object
-          additionalProperties: true
-        masked_label:
-          type: string
-          maxLength: 128
-        quota_unit:
-          type: string
-          x-db-type: enum_int32
-        quota_limit:
-          type: string
-          format: decimal
-        quota_used:
-          type: string
-          format: decimal
-        upstream_balance_amount:
-          type: string
-          format: decimal
-        upstream_balance_currency:
-          type: string
-          maxLength: 10
-        last_balance_checked_at:
-          type: string
-          format: date-time
-        last_rotated_at:
-          type: string
-          format: date-time
-        next_rotate_at:
-          type: string
-          format: date-time
-        last_verified_at:
-          type: string
-          format: date-time
-        last_used_at:
-          type: string
-          format: date-time
-        consecutive_error_count:
-          type: string
-          format: int64
-        risk_level:
-          type: string
-          x-db-type: enum_int32
     IntegrationProviderHealthSnapshotRecord:
       type: object
       x-table: integration_provider_health_snapshot
-      x-domain: integration
+      x-domain: ai
       x-generated-by-this-project: true
       properties:
         id:
@@ -13274,99 +14359,6 @@ components:
         match_status:
           type: string
           x-db-type: enum_int32
-    IntegrationProviderRecord:
-      type: object
-      x-table: integration_provider
-      x-domain: integration
-      x-generated-by-this-project: true
-      properties:
-        id:
-          type: string
-          format: int64
-        uuid:
-          type: string
-          maxLength: 64
-        tenant_id:
-          type: string
-          format: int64
-        organization_id:
-          type: string
-          format: int64
-        data_scope:
-          type: string
-          x-db-type: enum_int32
-        status:
-          type: string
-          x-db-type: enum_int32
-        created_at:
-          type: string
-          format: date-time
-        updated_at:
-          type: string
-          format: date-time
-        version:
-          type: string
-          format: int64
-        deleted_at:
-          type: string
-          format: date-time
-        deleted_by:
-          type: string
-          format: int64
-        metadata:
-          type: object
-          additionalProperties: true
-        provider_code:
-          type: string
-          maxLength: 64
-        display_name:
-          type: string
-          maxLength: 128
-        description:
-          type: string
-          maxLength: 512
-        icon_url:
-          type: string
-          maxLength: 512
-        color_token:
-          type: string
-          maxLength: 64
-        docs_url:
-          type: string
-          maxLength: 512
-        website_url:
-          type: string
-          maxLength: 512
-        default_vendor_code:
-          type: string
-          maxLength: 64
-        integration_type:
-          type: string
-          x-db-type: enum_int32
-        upstream_vendor_code:
-          type: string
-          maxLength: 64
-        upstream_provider_code:
-          type: string
-          maxLength: 64
-        protocol:
-          type: string
-          x-db-type: enum_int32
-        base_url:
-          type: string
-          maxLength: 512
-        auth_type:
-          type: string
-          x-db-type: enum_int32
-        capabilities:
-          type: object
-          additionalProperties: true
-        metadata_schema_version:
-          type: string
-          maxLength: 32
-        sort_order:
-          type: integer
-          format: int32
     IntegrationProxyRecord:
       type: object
       x-table: integration_proxy
@@ -14428,6 +15420,83 @@ components:
         provider_message_id:
           type: string
           maxLength: 256
+    MessagingProviderAccountRecord:
+      type: object
+      x-table: messaging_provider_account
+      x-domain: messaging
+      x-generated-by-this-project: true
+      properties:
+        id:
+          type: string
+          format: int64
+        uuid:
+          type: string
+          maxLength: 64
+        tenant_id:
+          type: string
+          format: int64
+        organization_id:
+          type: string
+          format: int64
+        data_scope:
+          type: string
+          x-db-type: enum_int32
+        status:
+          type: string
+          x-db-type: enum_int32
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+        version:
+          type: string
+          format: int64
+        deleted_at:
+          type: string
+          format: date-time
+        deleted_by:
+          type: string
+          format: int64
+        metadata:
+          type: object
+          additionalProperties: true
+        provider_id:
+          type: string
+          format: int64
+        delivery_purpose:
+          type: string
+          maxLength: 64
+        base_url:
+          type: string
+          maxLength: 512
+        auth_type:
+          type: string
+          maxLength: 64
+        credential_ref:
+          type: string
+          maxLength: 256
+        credential_hash:
+          type: string
+          maxLength: 128
+        credential_version:
+          type: string
+          format: int64
+        masked_label:
+          type: string
+          maxLength: 128
+        last_verified_at:
+          type: string
+          format: date-time
+        last_used_at:
+          type: string
+          format: date-time
+      required:
+      - uuid
+      - tenant_id
+      - organization_id
+      - status
     MessagingProviderCapabilityRecord:
       type: object
       x-table: messaging_provider_capability
@@ -14473,6 +15542,71 @@ components:
         last_verified_at:
           type: string
           format: date-time
+    MessagingProviderRecord:
+      type: object
+      x-table: messaging_provider
+      x-domain: messaging
+      x-generated-by-this-project: true
+      properties:
+        id:
+          type: string
+          format: int64
+        uuid:
+          type: string
+          maxLength: 64
+        tenant_id:
+          type: string
+          format: int64
+        organization_id:
+          type: string
+          format: int64
+        data_scope:
+          type: string
+          x-db-type: enum_int32
+        status:
+          type: string
+          x-db-type: enum_int32
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+        version:
+          type: string
+          format: int64
+        deleted_at:
+          type: string
+          format: date-time
+        deleted_by:
+          type: string
+          format: int64
+        metadata:
+          type: object
+          additionalProperties: true
+        provider_type:
+          type: string
+          maxLength: 64
+        website_url:
+          type: string
+          maxLength: 512
+        docs_url:
+          type: string
+          maxLength: 512
+        icon_url:
+          type: string
+          maxLength: 512
+        metadata_schema_version:
+          type: string
+          maxLength: 32
+        sort_order:
+          type: integer
+          format: int32
+      required:
+      - uuid
+      - tenant_id
+      - organization_id
+      - status
     MessagingRateLimitBucketRecord:
       type: object
       x-table: messaging_rate_limit_bucket

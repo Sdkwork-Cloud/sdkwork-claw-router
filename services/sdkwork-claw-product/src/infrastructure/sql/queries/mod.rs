@@ -17,7 +17,7 @@ impl PricingCatalogSql {
             Self::find_provider_route(),
             Self::find_model_price(),
             Self::load_provider_routes(),
-            Self::load_provider_account_pool_routes(),
+            Self::load_provider_channel_routes(),
             Self::load_routing_policies(),
             Self::load_routing_rules(),
             Self::load_access_policies(),

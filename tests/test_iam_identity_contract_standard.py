@@ -6,6 +6,8 @@ from typing import Any
 
 import yaml
 
+from tools.schema_registry_loader import load_schema_registry
+
 
 ROOT = Path(__file__).resolve().parents[1]
 BUSINESS_ROOT = ROOT.parent.parent
@@ -116,6 +118,8 @@ JAVA_IDENTITY_TYPE_SOURCE_ROOTS = [
 
 
 def load_yaml(path: Path) -> dict[str, Any]:
+    if path == SCHEMA_REGISTRY:
+        return load_schema_registry(path)
     return yaml.safe_load(path.read_text(encoding="utf-8"))
 
 

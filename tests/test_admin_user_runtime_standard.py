@@ -1,4 +1,4 @@
-﻿import unittest
+import unittest
 from pathlib import Path
 
 from tools.api_contract_manifest import ApiContractManifestGenerator
@@ -14,7 +14,6 @@ class AdminUserRuntimeStandardTest(unittest.TestCase):
         source = "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-user/src/userService.ts"
 
         add_user = operations[f"{source}#addUser"]
-        update_balance = operations[f"{source}#updateBalance"]
         update_user = operations[f"{source}#updateUser"]
         create_api_key = operations[f"{source}#createApiKey"]
 
@@ -22,11 +21,6 @@ class AdminUserRuntimeStandardTest(unittest.TestCase):
         self.assertEqual(["email"], add_user["request_schema"]["schema"]["required"])
         self.assertEqual("AdminUserMutationResponse", add_user["response_schema"]["name"])
         self.assertFalse(add_user["request_id_header"])
-
-        self.assertEqual("AdminUserBalanceAdjustmentRequest", update_balance["request_schema"]["name"])
-        self.assertEqual(["amount", "type"], update_balance["request_schema"]["schema"]["required"])
-        self.assertEqual("AdminUserMutationResponse", update_balance["response_schema"]["name"])
-        self.assertFalse(update_balance["request_id_header"])
 
         self.assertEqual("AdminUserUpdateRequest", update_user["request_schema"]["name"])
         self.assertEqual(["id"], update_user["request_schema"]["schema"]["required"])
@@ -51,7 +45,8 @@ class AdminUserRuntimeStandardTest(unittest.TestCase):
         system_api = (ROOT / "sdks" / "clawrouter-backend-sdk" / "clawrouter-backend-sdk-typescript" / "src" / "api" / "system.ts").read_text(
             encoding="utf-8"
         )
-        billing_api = (ROOT / "sdks" / "clawrouter-backend-sdk" / "clawrouter-backend-sdk-typescript" / "src" / "api" / "billing.ts").read_text(
+        billing_api_path = ROOT / "sdks" / "clawrouter-backend-sdk" / "clawrouter-backend-sdk-typescript" / "src" / "api" / "billing.ts"
+        commerce_api = (ROOT / "sdks" / "clawrouter-backend-sdk" / "clawrouter-backend-sdk-typescript" / "src" / "api" / "commerce.ts").read_text(
             encoding="utf-8"
         )
         iam_api = (ROOT / "sdks" / "clawrouter-backend-sdk" / "clawrouter-backend-sdk-typescript" / "src" / "api" / "iam.ts").read_text(
@@ -64,16 +59,11 @@ class AdminUserRuntimeStandardTest(unittest.TestCase):
         for token in [
             "AdminUserCreateRequest",
             "AdminUserUpdateRequest",
-            "AdminUserBalanceAdjustmentRequest",
             "AdminApiKeyCreateRequest",
             "toCreateUserRequest",
             "toUpdateUserRequest",
-            "toBalanceAdjustmentRequest",
             "toCreateApiKeyRequest",
-            "createIdempotencyParams('admin-user-create')",
-            "createIdempotencyParams('admin-user-update')",
-            "createIdempotencyParams('admin-user-balance-adjust')",
-            "idempotencyTokens('admin-api-key-create')",
+            "createIdempotencyParams('admin-api-key-create')",
         ]:
             self.assertIn(token, service)
 
@@ -82,17 +72,20 @@ class AdminUserRuntimeStandardTest(unittest.TestCase):
         self.assertNotIn(".user.updateUser({ id, ...updates })", service)
         self.assertNotIn(".apikey.createApiKey({ userId, name })", service)
         self.assertNotIn("as unknown as Record<string, unknown>", service)
+        self.assertNotIn("updateBalance", service)
+        self.assertNotIn("toBalanceAdjustmentRequest", service)
+        self.assertNotIn("UserBalanceAdjustmentInput", service)
         self.assertIn("getClawRouterBackendSdkClient().iam.users.create", service)
         self.assertIn("getClawRouterBackendSdkClient().iam.users.update", service)
         self.assertNotIn("getClawRouterBackendSdkClient().system.users.create", service)
         self.assertNotIn("getClawRouterBackendSdkClient().system.users.update", service)
 
         self.assertIn(
-            "async create(body: AdminUserCreateRequest, params?: IamUsersCreateParams): Promise<UsersCreateResult>",
+            "async create(body: AdminUserCreateRequest): Promise<UsersCreateResult>",
             iam_api,
         )
         self.assertIn(
-            "async update(body: AdminUserUpdateRequest, params?: IamUsersUpdateParams): Promise<UsersUpdateResult>",
+            "async update(body: AdminUserUpdateRequest): Promise<UsersUpdateResult>",
             iam_api,
         )
         self.assertNotIn("async create(body?: OperationRequest): Promise<PlusApiResult>", system_api)
@@ -100,15 +93,12 @@ class AdminUserRuntimeStandardTest(unittest.TestCase):
         self.assertNotIn("async create(body?: OperationRequest): Promise<PlusApiResult>", iam_api)
         self.assertNotIn("async update(body?: OperationRequest): Promise<PlusApiResult>", iam_api)
 
+        self.assertFalse(billing_api_path.exists())
         self.assertIn(
-            "async create(userId: string, body: AdminUserBalanceAdjustmentRequest, params?: BillingUsersBalanceAdjustmentsCreateParams): Promise<UsersBalanceAdjustmentsCreateResult>",
-            billing_api,
+            "async create(body: CommerceStandardCommandRequest, params: CommerceWalletAdjustmentsCreateParams): Promise<WalletAdjustmentsCreateResult>",
+            commerce_api,
         )
-        self.assertNotIn(
-            "async updateBalance(userId: string | number, body?: OperationRequest): Promise<PlusApiResult>",
-            billing_api,
-        )
-        self.assertNotIn("async updateBalance(userId: string | number", billing_api)
+        self.assertNotIn("async updateBalance", commerce_api)
 
         self.assertIn(
             "async create(body: AdminApiKeyCreateRequest, params: IamApiKeysCreateParams): Promise<ApiKeysCreateResult>",
@@ -116,19 +106,17 @@ class AdminUserRuntimeStandardTest(unittest.TestCase):
         )
         self.assertNotIn("async createApiKey(body?: OperationRequest): Promise<PlusApiResult>", iam_api)
         self.assertNotIn("headers?: Record<string, string>", system_api)
-        self.assertNotIn("headers?: Record<string, string>", billing_api)
+        self.assertNotIn("headers?: Record<string, string>", commerce_api)
         self.assertNotIn("headers?: Record<string, string>", iam_api)
 
         for token in [
             "AdminUserCreateRequest",
             "AdminUserUpdateRequest",
-            "AdminUserBalanceAdjustmentRequest",
             "AdminUserMutationResponse",
             "AdminApiKeyCreateRequest",
             "AdminApiKeyCreateResponse",
             "UsersCreateResult",
             "UsersUpdateResult",
-            "UsersBalanceAdjustmentsCreateResult",
             "ApiKeysCreateResult",
         ]:
             self.assertIn(f"export type {{ {token} }}", type_exports)
@@ -154,7 +142,7 @@ class AdminUserRuntimeStandardTest(unittest.TestCase):
         self.assertIn("export type ApiKeyCreateInput", service)
         self.assertIn("static async addUser(user: UserCreateInput): Promise<UserListItem>", service)
         self.assertIn("static async updateUser(id: number, updates: UserUpdateInput): Promise<UserListItem>", service)
-        self.assertIn("readRequiredApiItem(result, 'Updated user response is missing data')", service)
+        self.assertIn("readRequiredApiItem(result, 'admin.user.errors.updateUserMissingData')", service)
         self.assertIn("static async createApiKey(input: ApiKeyCreateInput): Promise<{ key: ApiKeyItem; rawKey: string }>", service)
         self.assertIn("function toCreateUserRequest(user: UserCreateInput)", service)
         self.assertIn("function toUpdateUserRequest(id: number, updates: UserUpdateInput)", service)
@@ -188,30 +176,27 @@ class AdminUserRuntimeStandardTest(unittest.TestCase):
             ROOT / "apps" / "sdkwork-claw-router-portal" / "admin-user-runtime.test.ts"
         ).read_text(encoding="utf-8")
 
-        self.assertIn("export type UserBalanceAdjustmentInput", service)
-        self.assertIn(
-            "static async updateBalance(id: number, input: UserBalanceAdjustmentInput): Promise<UserListItem>",
-            service,
-        )
-        self.assertIn("readRequiredApiItem(result, 'Updated user balance response is missing data')", service)
-        self.assertIn("function toBalanceAdjustmentRequest(input: UserBalanceAdjustmentInput)", service)
+        self.assertNotIn("export type UserBalanceAdjustmentInput", service)
+        self.assertNotIn("static async updateBalance", service)
+        self.assertNotIn("toBalanceAdjustmentRequest", service)
 
         for token in [
-            "export function createUserBalanceAdjustmentInputFromForm",
             "export function createUserProfileUpdateInputFromForm",
             "export function createUserGroupUpdateInputFromForm",
+            "export function createUserStatusUpdateInput",
         ]:
             self.assertIn(token, form)
             self.assertIn(token.replace("export function ", ""), runtime_test)
-        self.assertIn("readPositiveCurrencyAmount", form)
+        self.assertNotIn("createUserBalanceAdjustmentInputFromForm", form)
+        self.assertNotIn("UserBalanceAdjustmentInput", form)
 
-        self.assertIn("createUserBalanceAdjustmentInputFromForm(formData, 'recharge')", view)
-        self.assertIn("createUserBalanceAdjustmentInputFromForm(formData, 'refund')", view)
         self.assertIn("UserService.updateUser(editTarget.id, createUserProfileUpdateInputFromForm(formData))", view)
         self.assertIn("UserService.updateUser(groupsTarget.id, createUserGroupUpdateInputFromForm(formData))", view)
+        self.assertIn("UserService.updateUser(target.id, createUserStatusUpdateInput(nextStatus))", view)
 
         self.assertNotIn("const amountStr = formData.get('amount') as string", view)
         self.assertNotIn("parseFloat(amountStr)", view)
+        self.assertNotIn("createUserBalanceAdjustmentInputFromForm", view)
         self.assertNotIn("UserService.updateBalance(rechargeTarget.id, amount, 'recharge')", view)
         self.assertNotIn("UserService.updateBalance(refundTarget.id, amount, 'refund')", view)
         self.assertNotIn("const username = formData.get('username')", view)
@@ -231,7 +216,6 @@ class AdminUserRuntimeStandardTest(unittest.TestCase):
         ).read_text(encoding="utf-8")
 
         for token in [
-            "const setRefundAll = (target: UserListItem)",
             ".filter((key) => key.id !== keyId)",
             ".map((key) => (",
             "setUsers((currentUsers) =>",

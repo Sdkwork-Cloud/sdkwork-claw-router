@@ -17,27 +17,15 @@ impl McpApi {
     }
 
     /// Update MCP binding
-    pub async fn servers_bindings_update(&self, binding_id: &str, body: &AdminMcpBindingUpdateRequest, x_request_id: Option<&str>) -> Result<ServersBindingsUpdateResult, SdkworkError> {
+    pub async fn servers_bindings_update(&self, binding_id: &str, body: &AdminMcpBindingUpdateRequest) -> Result<ServersBindingsUpdateResult, SdkworkError> {
         let path = backend_path(&format!("/mcp/bindings/{}", serialize_path_parameter(binding_id, PathParameterSpec::new("bindingId", "simple", false))));
-        let headers = build_request_headers(
-            &[
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
-            ],
-            &[],
-        );
-        self.client.put(&path, Some(body), None, headers.as_ref(), Some("application/json")).await
+        self.client.put(&path, Some(body), None, None, Some("application/json")).await
     }
 
     /// Publish MCP server revision
-    pub async fn revisions_publish(&self, revision_id: &str, x_request_id: Option<&str>) -> Result<RevisionsPublishResult, SdkworkError> {
+    pub async fn revisions_publish(&self, revision_id: &str) -> Result<RevisionsPublishResult, SdkworkError> {
         let path = backend_path(&format!("/mcp/revisions/{}/publish", serialize_path_parameter(revision_id, PathParameterSpec::new("revisionId", "simple", false))));
-        let headers = build_request_headers(
-            &[
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
-            ],
-            &[],
-        );
-        self.client.post(&path, Option::<&serde_json::Value>::None, None, headers.as_ref(), None).await
+        self.client.post(&path, Option::<&serde_json::Value>::None, None, None, None).await
     }
 
     /// List MCP servers
@@ -56,12 +44,11 @@ impl McpApi {
     }
 
     /// Create MCP server
-    pub async fn servers_create(&self, body: &AdminMcpServerCreateRequest, idempotency_key: &str, x_request_id: Option<&str>) -> Result<ServersCreateResult, SdkworkError> {
+    pub async fn servers_create(&self, body: &AdminMcpServerCreateRequest, idempotency_key: &str) -> Result<ServersCreateResult, SdkworkError> {
         let path = backend_path(&"/mcp/servers".to_string());
         let headers = build_request_headers(
             &[
                 ("Idempotency-Key", HeaderParameterSpec::new(idempotency_key, "simple", false, None)),
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
             ],
             &[],
         );
@@ -75,15 +62,9 @@ impl McpApi {
     }
 
     /// Update MCP server
-    pub async fn servers_update(&self, server_id: &str, body: &AdminMcpServerUpdateRequest, x_request_id: Option<&str>) -> Result<ServersUpdateResult, SdkworkError> {
+    pub async fn servers_update(&self, server_id: &str, body: &AdminMcpServerUpdateRequest) -> Result<ServersUpdateResult, SdkworkError> {
         let path = backend_path(&format!("/mcp/servers/{}", serialize_path_parameter(server_id, PathParameterSpec::new("serverId", "simple", false))));
-        let headers = build_request_headers(
-            &[
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
-            ],
-            &[],
-        );
-        self.client.put(&path, Some(body), None, headers.as_ref(), Some("application/json")).await
+        self.client.put(&path, Some(body), None, None, Some("application/json")).await
     }
 
     /// List MCP bindings
@@ -93,12 +74,11 @@ impl McpApi {
     }
 
     /// Create MCP binding
-    pub async fn servers_bindings_create(&self, server_id: &str, body: &AdminMcpBindingCreateRequest, idempotency_key: &str, x_request_id: Option<&str>) -> Result<ServersBindingsCreateResult, SdkworkError> {
+    pub async fn servers_bindings_create(&self, server_id: &str, body: &AdminMcpBindingCreateRequest, idempotency_key: &str) -> Result<ServersBindingsCreateResult, SdkworkError> {
         let path = backend_path(&format!("/mcp/servers/{}/bindings", serialize_path_parameter(server_id, PathParameterSpec::new("serverId", "simple", false))));
         let headers = build_request_headers(
             &[
                 ("Idempotency-Key", HeaderParameterSpec::new(idempotency_key, "simple", false, None)),
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
             ],
             &[],
         );
@@ -106,27 +86,15 @@ impl McpApi {
     }
 
     /// Discover MCP tools
-    pub async fn servers_tools_refresh(&self, server_id: &str, x_request_id: Option<&str>) -> Result<ServersToolsRefreshResult, SdkworkError> {
+    pub async fn servers_tools_refresh(&self, server_id: &str) -> Result<ServersToolsRefreshResult, SdkworkError> {
         let path = backend_path(&format!("/mcp/servers/{}/discover", serialize_path_parameter(server_id, PathParameterSpec::new("serverId", "simple", false))));
-        let headers = build_request_headers(
-            &[
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
-            ],
-            &[],
-        );
-        self.client.post(&path, Option::<&serde_json::Value>::None, None, headers.as_ref(), None).await
+        self.client.post(&path, Option::<&serde_json::Value>::None, None, None, None).await
     }
 
     /// Check MCP server health
-    pub async fn servers_health_checks_create(&self, server_id: &str, x_request_id: Option<&str>) -> Result<ServersHealthChecksCreateResult, SdkworkError> {
+    pub async fn servers_health_checks_create(&self, server_id: &str) -> Result<ServersHealthChecksCreateResult, SdkworkError> {
         let path = backend_path(&format!("/mcp/servers/{}/health_check", serialize_path_parameter(server_id, PathParameterSpec::new("serverId", "simple", false))));
-        let headers = build_request_headers(
-            &[
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
-            ],
-            &[],
-        );
-        self.client.post(&path, Option::<&serde_json::Value>::None, None, headers.as_ref(), None).await
+        self.client.post(&path, Option::<&serde_json::Value>::None, None, None, None).await
     }
 
     /// List MCP server revisions
@@ -136,12 +104,11 @@ impl McpApi {
     }
 
     /// Create MCP server revision
-    pub async fn servers_revisions_create(&self, server_id: &str, body: &AdminMcpServerRevisionCreateRequest, idempotency_key: &str, x_request_id: Option<&str>) -> Result<ServersRevisionsCreateResult, SdkworkError> {
+    pub async fn servers_revisions_create(&self, server_id: &str, body: &AdminMcpServerRevisionCreateRequest, idempotency_key: &str) -> Result<ServersRevisionsCreateResult, SdkworkError> {
         let path = backend_path(&format!("/mcp/servers/{}/revisions", serialize_path_parameter(server_id, PathParameterSpec::new("serverId", "simple", false))));
         let headers = build_request_headers(
             &[
                 ("Idempotency-Key", HeaderParameterSpec::new(idempotency_key, "simple", false, None)),
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
             ],
             &[],
         );
@@ -155,15 +122,9 @@ impl McpApi {
     }
 
     /// Update MCP tool
-    pub async fn tools_update(&self, tool_id: &str, body: &AdminMcpToolUpdateRequest, x_request_id: Option<&str>) -> Result<ToolsUpdateResult, SdkworkError> {
+    pub async fn tools_update(&self, tool_id: &str, body: &AdminMcpToolUpdateRequest) -> Result<ToolsUpdateResult, SdkworkError> {
         let path = backend_path(&format!("/mcp/tools/{}", serialize_path_parameter(tool_id, PathParameterSpec::new("toolId", "simple", false))));
-        let headers = build_request_headers(
-            &[
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
-            ],
-            &[],
-        );
-        self.client.put(&path, Some(body), None, headers.as_ref(), Some("application/json")).await
+        self.client.put(&path, Some(body), None, None, Some("application/json")).await
     }
 
 }

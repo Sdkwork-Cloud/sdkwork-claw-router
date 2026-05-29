@@ -21,7 +21,6 @@ class RuntimeInvocationCreateRequest:
     model: Optional[str] = None
     permission_mode: Optional[str] = None
     provider: Optional[str] = None
-    request_id: Optional[str] = None
     request_json: Optional[Dict[str, str]] = None
     sandbox_policy: Optional[str] = None
     status: Optional[str] = None

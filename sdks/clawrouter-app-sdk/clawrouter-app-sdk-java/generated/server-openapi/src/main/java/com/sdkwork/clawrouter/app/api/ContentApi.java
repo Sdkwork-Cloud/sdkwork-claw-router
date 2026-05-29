@@ -26,12 +26,8 @@ public class ContentApi {
     }
 
     /** Create forum comment */
-    public CommentsCreateResult commentsCreate(ForumCreateCommentRequest body, String xRequestId) throws Exception {
-        Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
-                Map.of()
-        );
-        Object raw = client.post(ApiPaths.appPath("/content/comments"), body, null, requestHeaders, "application/json");
+    public CommentsCreateResult commentsCreate(ForumCreateCommentRequest body) throws Exception {
+        Object raw = client.post(ApiPaths.appPath("/content/comments"), body, null, null, "application/json");
         return client.convertValue(raw, new TypeReference<CommentsCreateResult>() {});
     }
 
@@ -58,12 +54,8 @@ public class ContentApi {
     }
 
     /** Like forum comment */
-    public CommentsLikesCreateResult commentsLikesCreate(String commentId, String xRequestId) throws Exception {
-        Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
-                Map.of()
-        );
-        Object raw = client.post(ApiPaths.appPath("/content/comments/" + serializePathParameter(commentId, new PathParameterSpec("commentId", "simple", false)) + "/likes"), null, null, requestHeaders);
+    public CommentsLikesCreateResult commentsLikesCreate(String commentId) throws Exception {
+        Object raw = client.post(ApiPaths.appPath("/content/comments/" + serializePathParameter(commentId, new PathParameterSpec("commentId", "simple", false)) + "/likes"), null);
         return client.convertValue(raw, new TypeReference<CommentsLikesCreateResult>() {});
     }
 
@@ -74,12 +66,8 @@ public class ContentApi {
     }
 
     /** Pin forum comment */
-    public CommentsPinsCreateResult commentsPinsCreate(String commentId, String xRequestId) throws Exception {
-        Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
-                Map.of()
-        );
-        Object raw = client.post(ApiPaths.appPath("/content/comments/" + serializePathParameter(commentId, new PathParameterSpec("commentId", "simple", false)) + "/pins"), null, null, requestHeaders);
+    public CommentsPinsCreateResult commentsPinsCreate(String commentId) throws Exception {
+        Object raw = client.post(ApiPaths.appPath("/content/comments/" + serializePathParameter(commentId, new PathParameterSpec("commentId", "simple", false)) + "/pins"), null);
         return client.convertValue(raw, new TypeReference<CommentsPinsCreateResult>() {});
     }
 
@@ -100,12 +88,8 @@ public class ContentApi {
     }
 
     /** Reply forum comment */
-    public CommentsReplyCreateResult commentsReplyCreate(String commentId, ForumReplyCommentRequest body, String xRequestId) throws Exception {
-        Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
-                Map.of()
-        );
-        Object raw = client.post(ApiPaths.appPath("/content/comments/" + serializePathParameter(commentId, new PathParameterSpec("commentId", "simple", false)) + "/reply"), body, null, requestHeaders, "application/json");
+    public CommentsReplyCreateResult commentsReplyCreate(String commentId, ForumReplyCommentRequest body) throws Exception {
+        Object raw = client.post(ApiPaths.appPath("/content/comments/" + serializePathParameter(commentId, new PathParameterSpec("commentId", "simple", false)) + "/reply"), body, null, null, "application/json");
         return client.convertValue(raw, new TypeReference<CommentsReplyCreateResult>() {});
     }
 
@@ -124,12 +108,8 @@ public class ContentApi {
     }
 
     /** Create forum feed */
-    public FeedsCreateResult feedsCreate(ForumCreateFeedRequest body, String xRequestId) throws Exception {
-        Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
-                Map.of()
-        );
-        Object raw = client.post(ApiPaths.appPath("/content/feeds"), body, null, requestHeaders, "application/json");
+    public FeedsCreateResult feedsCreate(ForumCreateFeedRequest body) throws Exception {
+        Object raw = client.post(ApiPaths.appPath("/content/feeds"), body, null, null, "application/json");
         return client.convertValue(raw, new TypeReference<FeedsCreateResult>() {});
     }
 
@@ -207,25 +187,17 @@ public class ContentApi {
     }
 
     /** Collect forum feed */
-    public FeedsCollectionsCreateResult feedsCollectionsCreate(String id, Integer folderId, String xRequestId) throws Exception {
+    public FeedsCollectionsCreateResult feedsCollectionsCreate(String id, Integer folderId) throws Exception {
         String query = buildQueryString(List.of(
             new QueryParameterSpec("folder_id", folderId, "form", true, false, null)
         ));
-        Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
-                Map.of()
-        );
-        Object raw = client.post(ApiPaths.appendQueryString(ApiPaths.appPath("/content/feeds/" + serializePathParameter(id, new PathParameterSpec("id", "simple", false)) + "/collections"), query), null, null, requestHeaders);
+        Object raw = client.post(ApiPaths.appendQueryString(ApiPaths.appPath("/content/feeds/" + serializePathParameter(id, new PathParameterSpec("id", "simple", false)) + "/collections"), query), null);
         return client.convertValue(raw, new TypeReference<FeedsCollectionsCreateResult>() {});
     }
 
     /** Uncollect forum feed */
-    public FeedsCollectionsCurrentDeleteResult feedsCollectionsCurrentDelete(String id, String xRequestId) throws Exception {
-        Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
-                Map.of()
-        );
-        Object raw = client.delete(ApiPaths.appPath("/content/feeds/" + serializePathParameter(id, new PathParameterSpec("id", "simple", false)) + "/collections/current"), null, requestHeaders);
+    public FeedsCollectionsCurrentDeleteResult feedsCollectionsCurrentDelete(String id) throws Exception {
+        Object raw = client.delete(ApiPaths.appPath("/content/feeds/" + serializePathParameter(id, new PathParameterSpec("id", "simple", false)) + "/collections/current"));
         return client.convertValue(raw, new TypeReference<FeedsCollectionsCurrentDeleteResult>() {});
     }
 
@@ -236,32 +208,20 @@ public class ContentApi {
     }
 
     /** Like forum feed */
-    public FeedsLikesCreateResult feedsLikesCreate(String id, String xRequestId) throws Exception {
-        Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
-                Map.of()
-        );
-        Object raw = client.post(ApiPaths.appPath("/content/feeds/" + serializePathParameter(id, new PathParameterSpec("id", "simple", false)) + "/likes"), null, null, requestHeaders);
+    public FeedsLikesCreateResult feedsLikesCreate(String id) throws Exception {
+        Object raw = client.post(ApiPaths.appPath("/content/feeds/" + serializePathParameter(id, new PathParameterSpec("id", "simple", false)) + "/likes"), null);
         return client.convertValue(raw, new TypeReference<FeedsLikesCreateResult>() {});
     }
 
     /** Unlike forum feed */
-    public FeedsLikesCurrentDeleteResult feedsLikesCurrentDelete(String id, String xRequestId) throws Exception {
-        Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
-                Map.of()
-        );
-        Object raw = client.delete(ApiPaths.appPath("/content/feeds/" + serializePathParameter(id, new PathParameterSpec("id", "simple", false)) + "/likes/current"), null, requestHeaders);
+    public FeedsLikesCurrentDeleteResult feedsLikesCurrentDelete(String id) throws Exception {
+        Object raw = client.delete(ApiPaths.appPath("/content/feeds/" + serializePathParameter(id, new PathParameterSpec("id", "simple", false)) + "/likes/current"));
         return client.convertValue(raw, new TypeReference<FeedsLikesCurrentDeleteResult>() {});
     }
 
     /** Share forum feed */
-    public FeedsSharesCreateResult feedsSharesCreate(String id, String xRequestId) throws Exception {
-        Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
-                Map.of()
-        );
-        Object raw = client.post(ApiPaths.appPath("/content/feeds/" + serializePathParameter(id, new PathParameterSpec("id", "simple", false)) + "/shares"), null, null, requestHeaders);
+    public FeedsSharesCreateResult feedsSharesCreate(String id) throws Exception {
+        Object raw = client.post(ApiPaths.appPath("/content/feeds/" + serializePathParameter(id, new PathParameterSpec("id", "simple", false)) + "/shares"), null);
         return client.convertValue(raw, new TypeReference<FeedsSharesCreateResult>() {});
     }
 
@@ -507,74 +467,6 @@ public class ContentApi {
         return new com.fasterxml.jackson.databind.ObjectMapper();
     }
 
-    private record HeaderParameterSpec(Object value, String style, boolean explode, String contentType) {}
-
-    private static Map<String, String> buildRequestHeaders(Map<String, HeaderParameterSpec> headers, Map<String, HeaderParameterSpec> cookies) throws Exception {
-        Map<String, String> requestHeaders = new java.util.LinkedHashMap<>();
-        for (Map.Entry<String, HeaderParameterSpec> entry : headers.entrySet()) {
-            String serialized = serializeParameterValue(entry.getValue());
-            if (serialized != null) {
-                requestHeaders.put(entry.getKey(), serialized);
-            }
-        }
-
-        String cookieHeader = buildCookieHeader(cookies);
-        if (cookieHeader != null && !cookieHeader.isEmpty()) {
-            requestHeaders.merge("Cookie", cookieHeader, (left, right) -> left + "; " + right);
-        }
-
-        return requestHeaders.isEmpty() ? null : requestHeaders;
-    }
-
-    private static String buildCookieHeader(Map<String, HeaderParameterSpec> cookies) throws Exception {
-        java.util.List<String> pairs = new java.util.ArrayList<>();
-        for (Map.Entry<String, HeaderParameterSpec> entry : cookies.entrySet()) {
-            String serialized = serializeParameterValue(entry.getValue());
-            if (serialized != null) {
-                pairs.add(urlEncode(entry.getKey()) + "=" + urlEncode(serialized));
-            }
-        }
-        return String.join("; ", pairs);
-    }
-
-    private static String serializeParameterValue(HeaderParameterSpec parameter) throws Exception {
-        if (parameter == null || parameter.value() == null) {
-            return null;
-        }
-        Object value = parameter.value();
-        if (parameter.contentType() != null && !parameter.contentType().isBlank()) {
-            return headerObjectMapper().writeValueAsString(value);
-        }
-        if (value instanceof Iterable<?> iterable) {
-            java.util.List<String> values = new java.util.ArrayList<>();
-            for (Object item : iterable) {
-                if (item != null) {
-                    values.add(String.valueOf(item));
-                }
-            }
-            return String.join(",", values);
-        }
-        if (value instanceof Map<?, ?> map) {
-            java.util.List<String> values = new java.util.ArrayList<>();
-            map.forEach((key, item) -> {
-                if (item == null) {
-                    return;
-                }
-                if (parameter.explode()) {
-                    values.add(String.valueOf(key) + "=" + String.valueOf(item));
-                } else {
-                    values.add(String.valueOf(key));
-                    values.add(String.valueOf(item));
-                }
-            });
-            return String.join(",", values);
-        }
-        return String.valueOf(value);
-    }
-
-    private static com.fasterxml.jackson.databind.ObjectMapper headerObjectMapper() {
-        return new com.fasterxml.jackson.databind.ObjectMapper();
-    }
 
     private static String urlEncode(String value) {
         return java.net.URLEncoder.encode(value, java.nio.charset.StandardCharsets.UTF_8);

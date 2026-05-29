@@ -24,11 +24,10 @@ class PromptsApi(private val client: HttpClient) {
     }
 
     /** Create admin prompt */
-    suspend fun definitionsCreate(body: AdminPromptCreateRequest, idempotencyKey: String, xRequestId: String? = null): DefinitionsCreateResult? {
+    suspend fun definitionsCreate(body: AdminPromptCreateRequest, idempotencyKey: String): DefinitionsCreateResult? {
         val requestHeaders = buildRequestHeaders(
             mapOf(
                 "Idempotency-Key" to HeaderParameterSpec(idempotencyKey, "simple", false, null),
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
             ),
             emptyMap()
         )
@@ -37,38 +36,20 @@ class PromptsApi(private val client: HttpClient) {
     }
 
     /** Update prompt binding */
-    suspend fun definitionBindingsUpdate(bindingId: String, body: AdminPromptBindingUpdateRequest, xRequestId: String? = null): DefinitionBindingsUpdateResult? {
-        val requestHeaders = buildRequestHeaders(
-            mapOf(
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
-            ),
-            emptyMap()
-        )
-        val raw = client.put(ApiPaths.backendPath("/prompts/bindings/${serializePathParameter(bindingId, PathParameterSpec("bindingId", "simple", false))}"), body, null, requestHeaders, "application/json")
+    suspend fun definitionBindingsUpdate(bindingId: String, body: AdminPromptBindingUpdateRequest): DefinitionBindingsUpdateResult? {
+        val raw = client.put(ApiPaths.backendPath("/prompts/bindings/${serializePathParameter(bindingId, PathParameterSpec("bindingId", "simple", false))}"), body, null, null, "application/json")
         return client.convertValue(raw, object : TypeReference<DefinitionBindingsUpdateResult>() {})
     }
 
     /** Publish prompt version */
-    suspend fun versionsPublish(versionId: String, xRequestId: String? = null): VersionsPublishResult? {
-        val requestHeaders = buildRequestHeaders(
-            mapOf(
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
-            ),
-            emptyMap()
-        )
-        val raw = client.post(ApiPaths.backendPath("/prompts/versions/${serializePathParameter(versionId, PathParameterSpec("versionId", "simple", false))}/publish"), null, null, requestHeaders)
+    suspend fun versionsPublish(versionId: String): VersionsPublishResult? {
+        val raw = client.post(ApiPaths.backendPath("/prompts/versions/${serializePathParameter(versionId, PathParameterSpec("versionId", "simple", false))}/publish"), null)
         return client.convertValue(raw, object : TypeReference<VersionsPublishResult>() {})
     }
 
     /** Render prompt version */
-    suspend fun versionRendersCreate(versionId: String, body: AdminPromptRenderRequest, xRequestId: String? = null): VersionRendersCreateResult? {
-        val requestHeaders = buildRequestHeaders(
-            mapOf(
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
-            ),
-            emptyMap()
-        )
-        val raw = client.post(ApiPaths.backendPath("/prompts/versions/${serializePathParameter(versionId, PathParameterSpec("versionId", "simple", false))}/render"), body, null, requestHeaders, "application/json")
+    suspend fun versionRendersCreate(versionId: String, body: AdminPromptRenderRequest): VersionRendersCreateResult? {
+        val raw = client.post(ApiPaths.backendPath("/prompts/versions/${serializePathParameter(versionId, PathParameterSpec("versionId", "simple", false))}/render"), body, null, null, "application/json")
         return client.convertValue(raw, object : TypeReference<VersionRendersCreateResult>() {})
     }
 
@@ -79,11 +60,10 @@ class PromptsApi(private val client: HttpClient) {
     }
 
     /** Create prompt binding */
-    suspend fun definitionBindingsCreate(promptId: String, body: AdminPromptBindingCreateRequest, idempotencyKey: String, xRequestId: String? = null): DefinitionBindingsCreateResult? {
+    suspend fun definitionBindingsCreate(promptId: String, body: AdminPromptBindingCreateRequest, idempotencyKey: String): DefinitionBindingsCreateResult? {
         val requestHeaders = buildRequestHeaders(
             mapOf(
                 "Idempotency-Key" to HeaderParameterSpec(idempotencyKey, "simple", false, null),
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
             ),
             emptyMap()
         )
@@ -98,11 +78,10 @@ class PromptsApi(private val client: HttpClient) {
     }
 
     /** Create prompt version */
-    suspend fun versionsCreate(promptId: String, body: AdminPromptVersionCreateRequest, idempotencyKey: String, xRequestId: String? = null): VersionsCreateResult? {
+    suspend fun versionsCreate(promptId: String, body: AdminPromptVersionCreateRequest, idempotencyKey: String): VersionsCreateResult? {
         val requestHeaders = buildRequestHeaders(
             mapOf(
                 "Idempotency-Key" to HeaderParameterSpec(idempotencyKey, "simple", false, null),
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
             ),
             emptyMap()
         )

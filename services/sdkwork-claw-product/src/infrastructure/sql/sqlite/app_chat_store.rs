@@ -259,10 +259,11 @@ async fn create_turn(
 ) -> DomainResult<AppChatTurnOutcome> {
     let metadata = serde_json::to_string(&command.metadata)
         .map_err(|error| DomainError::new(format!("invalid chat turn metadata: {error}")))?;
-    let mut tx = pool
-        .begin()
-        .await
-        .map_err(|error| DomainError::new(format!("failed to begin chat transaction: {error}")))?;
+    let mut tx = pool.begin_with("BEGIN IMMEDIATE").await.map_err(|error| {
+        DomainError::new(format!(
+            "failed to begin immediate chat transaction: {error}"
+        ))
+    })?;
     let conversation = load_conversation_row(&mut tx, command.subject, &command.conversation_id)
         .await?
         .ok_or_else(|| DomainError::not_found("chat conversation was not found"))?;
@@ -474,10 +475,11 @@ async fn complete_turn_response(
 ) -> DomainResult<AppChatTurnOutcome> {
     let metadata = serde_json::to_string(&command.metadata)
         .map_err(|error| DomainError::new(format!("invalid chat response metadata: {error}")))?;
-    let mut tx = pool
-        .begin()
-        .await
-        .map_err(|error| DomainError::new(format!("failed to begin chat transaction: {error}")))?;
+    let mut tx = pool.begin_with("BEGIN IMMEDIATE").await.map_err(|error| {
+        DomainError::new(format!(
+            "failed to begin immediate chat transaction: {error}"
+        ))
+    })?;
     let conversation = load_conversation_row(&mut tx, command.subject, &command.conversation_id)
         .await?
         .ok_or_else(|| DomainError::not_found("chat conversation was not found"))?;

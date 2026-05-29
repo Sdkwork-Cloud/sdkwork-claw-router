@@ -17,9 +17,11 @@ class AdminChannelCreateRequest:
     access_type: Optional[str] = None
     base_url: Optional[str] = None
     capabilities: Optional[List[str]] = None
+    channel_type: Optional[str] = None
     circuit_breaker_policy: Optional[ProviderCircuitBreakerPolicy] = None
     expires_at: Optional[str] = None
     protocol: Optional[str] = None
+    resource_codes: Optional[List[str]] = None
     retry_policy: Optional[ProviderRetryPolicy] = None
     secret_ref: Optional[str] = None
     status: Optional[str] = None

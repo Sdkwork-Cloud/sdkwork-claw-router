@@ -61,6 +61,7 @@ const usageI18nKeys = [
   "console.usage.table.output",
   "console.usage.table.cost",
   "console.usage.table.ip",
+  "console.usage.table.userAgent",
   "console.usage.table.details",
   "console.usage.badge.stream",
   "console.usage.metric.cache",
@@ -236,8 +237,8 @@ test("console routed pages keep compact 5px page padding below the global header
 });
 
 test("console usage log time renders as local yyyy-MM-dd HH:mm:ss without ISO separator", async () => {
-  const usageView = await import("./packages/sdkwork-claw-router-console-usage/src/UsageView.tsx");
-  const formatUsageLogLocalTime = (usageView as {
+  const usageFormatting = await import("./packages/sdkwork-claw-router-console-usage/src/usageFormatting.ts");
+  const formatUsageLogLocalTime = (usageFormatting as {
     formatUsageLogLocalTime?: (value: string) => string;
   }).formatUsageLogLocalTime;
 
@@ -287,6 +288,19 @@ test("console usage model cell displays provider native model and exposes catalo
   assert.match(viewSource, /title=\{modelTooltip\}/);
   assert.match(viewSource, /\{displayModel\}/);
   assert.doesNotMatch(viewSource, /\{log\.model\}/);
+});
+
+test("console usage table displays compact user agent device info with the full header as tooltip", () => {
+  const viewSource = readPortalFile("./packages/sdkwork-claw-router-console-usage/src/UsageView.tsx");
+  const serviceSource = readPortalFile("./packages/sdkwork-claw-router-console-usage/src/usageService.ts");
+
+  assert.match(serviceSource, /userAgent:/);
+  assert.match(serviceSource, /readOptionalString\(item, 'userAgent'\)/);
+  assert.match(viewSource, /formatUserAgentDeviceLabel/);
+  assert.match(viewSource, /console\.usage\.table\.userAgent/);
+  assert.match(viewSource, /title=\{log\.userAgent\}/);
+  assert.match(viewSource, /formatUserAgentDeviceLabel\(log\.userAgent\)/);
+  assert.match(viewSource, /colSpan=\{13\}/);
 });
 
 test("console usage logs i18n resources include English and Chinese entries", () => {

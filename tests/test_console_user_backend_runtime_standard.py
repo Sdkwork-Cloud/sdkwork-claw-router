@@ -1,5 +1,7 @@
-﻿import unittest
+import unittest
 from pathlib import Path
+
+import yaml
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -185,27 +187,89 @@ class ConsoleUserBackendRuntimeStandardTest(unittest.TestCase):
                 self.assertNotIn(sensitive_column, store.lower())
 
     def test_console_user_contract_response_schema_is_precise(self) -> None:
-        contract = (
+        contract_text = (
             ROOT / "docs" / "schema-registry" / "frontend-field-contracts.yaml"
         ).read_text(encoding="utf-8")
-        operation_marker = "api_path: /app/v3/api/iam/users/current"
-        self.assertIn("operation_id: users.current.retrieve", contract)
-        self.assertIn("name: IamUserResponse", contract)
-        operation_index = contract.index(operation_marker)
-        schema_index = contract.index("name: IamUserResponse")
+        contract = yaml.safe_load(contract_text)
+        operation = next(
+            (
+                item
+                for item in contract["frontend_operations"]
+                if item.get("operation_id") == "users.current.retrieve"
+            ),
+            None,
+        )
+        def iter_schema_nodes(value):
+            if isinstance(value, dict):
+                yield value
+                for child in value.values():
+                    yield from iter_schema_nodes(child)
+            elif isinstance(value, list):
+                for child in value:
+                    yield from iter_schema_nodes(child)
 
-        for marker in [
-            "required: [id, username, displayName, email, avatarUrl, phone, language, isVerified, status, registeredAt, lastLogin, lastLoginIp, passwordLastChanged, twoFactorEnabled, thirdPartyBound]",
-            "displayName: { type: string, minLength: 1, maxLength: 128 }",
-            "email: { type: string, maxLength: 256 }",
-            "phone:",
-            "avatarUrl:",
-            "lastLoginIp:",
-            "thirdPartyBound:",
-            "description: Masked client IP address from the latest login event.",
-            "description: Safe OAuth provider binding summary without provider subject IDs or tokens.",
-        ]:
-            self.assertIn(marker, contract[schema_index : schema_index + 2600])
+        schema = next(
+            (
+                item
+                for item in iter_schema_nodes(contract)
+                if item.get("name") == "IamUserResponse"
+                and item.get("type") == "object"
+                and "properties" in item
+            ),
+            None,
+        )
+
+        self.assertIsNotNone(operation)
+        self.assertEqual("/app/v3/api/iam/users/current", operation["api_path"])
+        self.assertEqual("IamUserResponse", operation["response_schema"]["name"])
+        self.assertEqual(
+            {"$ref": "#/components/schemas/IamUserResponse"},
+            operation["response_schema"]["schema"],
+        )
+
+        self.assertIsNotNone(schema)
+        self.assertEqual("object", schema["type"])
+        self.assertFalse(schema["additionalProperties"])
+        self.assertEqual(
+            [
+                "id",
+                "username",
+                "displayName",
+                "email",
+                "avatarUrl",
+                "phone",
+                "language",
+                "isVerified",
+                "status",
+                "registeredAt",
+                "lastLogin",
+                "lastLoginIp",
+                "passwordLastChanged",
+                "twoFactorEnabled",
+                "thirdPartyBound",
+            ],
+            schema["required"],
+        )
+
+        properties = schema["properties"]
+        self.assertEqual(
+            {"type": "string", "minLength": 1, "maxLength": 128},
+            properties["displayName"],
+        )
+        self.assertEqual({"type": "string", "maxLength": 256}, properties["email"])
+        self.assertEqual({"type": "string", "maxLength": 2048}, properties["avatarUrl"])
+        self.assertEqual(
+            "Safe display phone value, empty when unavailable.",
+            properties["phone"]["description"],
+        )
+        self.assertEqual(
+            "Masked client IP address from the latest login event.",
+            properties["lastLoginIp"]["description"],
+        )
+        self.assertEqual(
+            "Safe OAuth provider binding summary without provider subject IDs or tokens.",
+            properties["thirdPartyBound"]["description"],
+        )
 
     def test_console_user_generated_sdk_and_frontend_use_precise_user_profile_type(self) -> None:
         package_root = (
@@ -311,7 +375,13 @@ class ConsoleUserBackendRuntimeStandardTest(unittest.TestCase):
         self.assertNotIn("manageTwoFactor", contract)
         self.assertNotIn("manageThirdPartyConnections", contract)
 
-        for unsupported_action in [
+        unsupported_action_codepoints = [
+            (0x7F02, 0x682C, 0x7DEB),
+            (0x6DC7, 0xE1BD, 0x657C, 0x7035, 0x55D9, 0x721C),
+            (0x7EE0, 0xFF04, 0x608A),
+            (0x7EE0, 0xFF04, 0x608A, 0x6769, 0x70B4, 0x5E34),
+        ]
+        unsupported_actions = [
             "<button",
             "cursor-pointer",
             "Upload",
@@ -319,11 +389,12 @@ class ConsoleUserBackendRuntimeStandardTest(unittest.TestCase):
             "Change password",
             "Manage",
             "Manage connections",
-            "缂栬緫",
-            "淇敼瀵嗙爜",
-            "绠＄悊",
-            "绠＄悊杩炴帴",
-        ]:
+            *(
+                "".join(chr(codepoint) for codepoint in action)
+                for action in unsupported_action_codepoints
+            ),
+        ]
+        for unsupported_action in unsupported_actions:
             self.assertNotIn(unsupported_action, user_view)
 
         for removed_explanatory_copy in [
@@ -384,7 +455,9 @@ class ConsoleUserBackendRuntimeStandardTest(unittest.TestCase):
             / "packages"
             / "sdkwork-claw-router-i18n"
             / "src"
-            / "index.ts"
+            / "resources"
+            / "console"
+            / "account.ts"
         ).read_text(encoding="utf-8")
 
         for marker in [

@@ -74,6 +74,7 @@ class FrontendRequestTokenStandardTest(unittest.TestCase):
         self.assertIn('assert.equal(captured[0].headers["x-request-id"], undefined)', node_test)
         self.assertIn("createClientOperationToken fails closed when secure randomness is unavailable", node_test)
         self.assertIn("createClientOperationToken rejects an all-zero random byte result", node_test)
+        self.assertIn("curl snippet conversion strips caller-owned request id headers", node_test)
 
     def test_frontend_application_code_does_not_generate_or_send_request_ids(self) -> None:
         forbidden_patterns = [

@@ -56,12 +56,8 @@ func (a *EcosystemApi) SkillsRetrieve(skillId string) (sdktypes.SkillsRetrieveRe
 }
 
 // Update skill config
-func (a *EcosystemApi) SkillsConfigUpdate(skillId string, body sdktypes.AppSkillConfigRequest, xRequestId *string) (sdktypes.SkillsConfigUpdateResult, error) {
-    headers := BuildRequestHeaders(
-        map[string]ParameterSpec{"X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},},
-        map[string]ParameterSpec{},
-    )
-    raw, err := a.client.Put(AppApiPath(fmt.Sprintf("/ecosystem/skills/%s/config", SerializePathParameter(skillId, PathParameterSpec{Name: "skillId", Style: "simple", Explode: false}))), body, nil, headers, "application/json")
+func (a *EcosystemApi) SkillsConfigUpdate(skillId string, body sdktypes.AppSkillConfigRequest) (sdktypes.SkillsConfigUpdateResult, error) {
+    raw, err := a.client.Put(AppApiPath(fmt.Sprintf("/ecosystem/skills/%s/config", SerializePathParameter(skillId, PathParameterSpec{Name: "skillId", Style: "simple", Explode: false}))), body, nil, nil, "application/json")
     if err != nil {
         var zero sdktypes.SkillsConfigUpdateResult
         return zero, err
@@ -70,12 +66,8 @@ func (a *EcosystemApi) SkillsConfigUpdate(skillId string, body sdktypes.AppSkill
 }
 
 // Disable skill
-func (a *EcosystemApi) SkillsDisable(skillId string, xRequestId *string) (sdktypes.SkillsDisableResult, error) {
-    headers := BuildRequestHeaders(
-        map[string]ParameterSpec{"X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},},
-        map[string]ParameterSpec{},
-    )
-    raw, err := a.client.Post(AppApiPath(fmt.Sprintf("/ecosystem/skills/%s/disable", SerializePathParameter(skillId, PathParameterSpec{Name: "skillId", Style: "simple", Explode: false}))), nil, nil, headers, "")
+func (a *EcosystemApi) SkillsDisable(skillId string) (sdktypes.SkillsDisableResult, error) {
+    raw, err := a.client.Post(AppApiPath(fmt.Sprintf("/ecosystem/skills/%s/disable", SerializePathParameter(skillId, PathParameterSpec{Name: "skillId", Style: "simple", Explode: false}))), nil, nil, nil, "")
     if err != nil {
         var zero sdktypes.SkillsDisableResult
         return zero, err
@@ -84,12 +76,8 @@ func (a *EcosystemApi) SkillsDisable(skillId string, xRequestId *string) (sdktyp
 }
 
 // Enable skill
-func (a *EcosystemApi) SkillsEnable(skillId string, body sdktypes.AppSkillConfigRequest, xRequestId *string) (sdktypes.SkillsEnableResult, error) {
-    headers := BuildRequestHeaders(
-        map[string]ParameterSpec{"X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},},
-        map[string]ParameterSpec{},
-    )
-    raw, err := a.client.Post(AppApiPath(fmt.Sprintf("/ecosystem/skills/%s/enable", SerializePathParameter(skillId, PathParameterSpec{Name: "skillId", Style: "simple", Explode: false}))), body, nil, headers, "application/json")
+func (a *EcosystemApi) SkillsEnable(skillId string, body sdktypes.AppSkillConfigRequest) (sdktypes.SkillsEnableResult, error) {
+    raw, err := a.client.Post(AppApiPath(fmt.Sprintf("/ecosystem/skills/%s/enable", SerializePathParameter(skillId, PathParameterSpec{Name: "skillId", Style: "simple", Explode: false}))), body, nil, nil, "application/json")
     if err != nil {
         var zero sdktypes.SkillsEnableResult
         return zero, err
@@ -333,92 +321,7 @@ func EncodeQueryValue(value string, allowReserved bool) string {
 }
 
 
-type ParameterSpec struct {
-    Value       interface{}
-    Style       string
-    Explode     bool
-    ContentType string
-}
 
-func BuildRequestHeaders(headers map[string]ParameterSpec, cookies map[string]ParameterSpec) map[string]string {
-    requestHeaders := map[string]string{}
-    for name, parameter := range headers {
-        if serialized, ok := SerializeParameterValue(parameter); ok {
-            requestHeaders[name] = serialized
-        }
-    }
-
-    if cookieHeader := BuildCookieHeader(cookies); cookieHeader != "" {
-        if existing, ok := requestHeaders["Cookie"]; ok && existing != "" {
-            requestHeaders["Cookie"] = existing + "; " + cookieHeader
-        } else {
-            requestHeaders["Cookie"] = cookieHeader
-        }
-    }
-
-    if len(requestHeaders) == 0 {
-        return nil
-    }
-    return requestHeaders
-}
-
-func BuildCookieHeader(cookies map[string]ParameterSpec) string {
-    pairs := make([]string, 0, len(cookies))
-    for name, parameter := range cookies {
-        if serialized, ok := SerializeParameterValue(parameter); ok {
-            pairs = append(pairs, url.QueryEscape(name)+"="+url.QueryEscape(serialized))
-        }
-    }
-    return strings.Join(pairs, "; ")
-}
-
-func SerializeParameterValue(parameter ParameterSpec) (string, bool) {
-    value := parameter.Value
-    if value == nil {
-        return "", false
-    }
-    if parameter.ContentType != "" {
-        encoded, _ := json.Marshal(value)
-        return string(encoded), true
-    }
-    switch typed := value.(type) {
-    case string:
-        return typed, true
-    case fmt.Stringer:
-        return typed.String(), true
-    case []string:
-        return strings.Join(typed, ","), true
-    case []int:
-        values := make([]string, 0, len(typed))
-        for _, item := range typed {
-            values = append(values, fmt.Sprint(item))
-        }
-        return strings.Join(values, ","), true
-    case map[string]string:
-        return SerializeHeaderObject(stringMapToInterface(typed), parameter.Explode), true
-    case map[string]int:
-        return SerializeHeaderObject(intMapToInterface(typed), parameter.Explode), true
-    case map[string]interface{}:
-        return SerializeHeaderObject(typed, parameter.Explode), true
-    default:
-        return fmt.Sprint(value), true
-    }
-}
-
-func SerializeHeaderObject(values map[string]interface{}, explode bool) string {
-    serialized := make([]string, 0, len(values)*2)
-    for key, value := range values {
-        if value == nil {
-            continue
-        }
-        if explode {
-            serialized = append(serialized, key+"="+fmt.Sprint(value))
-        } else {
-            serialized = append(serialized, key, fmt.Sprint(value))
-        }
-    }
-    return strings.Join(serialized, ",")
-}
 func stringSliceToInterface(values []string) []interface{} {
     result := make([]interface{}, 0, len(values))
     for _, value := range values {

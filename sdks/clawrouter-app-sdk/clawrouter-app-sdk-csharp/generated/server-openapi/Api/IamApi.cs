@@ -34,13 +34,12 @@ namespace Sdkwork.ClawRouter.App.Api
         /// <summary>
         /// Create key
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.App.Models.ApiKeysCreateResult?> ApiKeysCreateAsync(Sdkwork.ClawRouter.App.Models.CreateApiKeyRequest body, string idempotencyKey, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.App.Models.ApiKeysCreateResult?> ApiKeysCreateAsync(Sdkwork.ClawRouter.App.Models.CreateApiKeyRequest body, string idempotencyKey)
         {
             var requestHeaders = BuildRequestHeaders(
                 new Dictionary<string, HeaderParameterSpec>
                 {
                     ["Idempotency-Key"] = new HeaderParameterSpec(idempotencyKey, "simple", false, null),
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
                 },
                 new Dictionary<string, HeaderParameterSpec>()
             );
@@ -58,16 +57,9 @@ namespace Sdkwork.ClawRouter.App.Api
         /// <summary>
         /// Update key
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.App.Models.ApiKeysUpdateResult?> ApiKeysUpdateAsync(string apiKeyId, Sdkwork.ClawRouter.App.Models.UpdateApiKeyRequest body, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.App.Models.ApiKeysUpdateResult?> ApiKeysUpdateAsync(string apiKeyId, Sdkwork.ClawRouter.App.Models.UpdateApiKeyRequest body)
         {
-            var requestHeaders = BuildRequestHeaders(
-                new Dictionary<string, HeaderParameterSpec>
-                {
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
-                },
-                new Dictionary<string, HeaderParameterSpec>()
-            );
-            return await _client.PatchAsync<Sdkwork.ClawRouter.App.Models.ApiKeysUpdateResult>(ApiPaths.AppPath($"/iam/api_keys/{SerializePathParameter(apiKeyId, new PathParameterSpec("apiKeyId", "simple", false))}"), body, null, requestHeaders, "application/json");
+            return await _client.PatchAsync<Sdkwork.ClawRouter.App.Models.ApiKeysUpdateResult>(ApiPaths.AppPath($"/iam/api_keys/{SerializePathParameter(apiKeyId, new PathParameterSpec("apiKeyId", "simple", false))}"), body, null, null, "application/json");
         }
 
         /// <summary>

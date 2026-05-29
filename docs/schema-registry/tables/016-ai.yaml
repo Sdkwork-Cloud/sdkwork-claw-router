@@ -1,0 +1,724 @@
+tables:
+- table: ai_model_vendor
+  domain: ai
+  profile: dictionary_entity
+  compliance_level: L2
+  system_of_record: true
+  write_owner: model-catalog-service
+  common_columns: tenant_entity
+  frontend_routes:
+  - /models
+  - /models/:id
+  - /models/:provider/:model
+  - /rankings
+  - /playground
+  - /c/:conversationId
+  - /admin/model
+  - /admin/channel
+  - /admin/channel/endpoints
+  api_surfaces:
+  - app
+  - backend
+  - openai_v1
+  required_columns:
+  - vendor_code
+  - display_name
+  not_null_columns:
+  - uuid
+  - tenant_id
+  - organization_id
+  - status
+  - vendor_code
+  - display_name
+  unique_constraints:
+  - columns:
+    - uuid
+    source: column_unique
+  - name: uk_ai_model_vendor_tenant_code
+    columns:
+    - tenant_id
+    - organization_id
+    - vendor_code
+  columns:
+    vendor_code: string(64)
+    display_name: string(128)
+    legal_name: string(256)
+    description: string(512)
+    website_url: string(512)
+    docs_url: string(512)
+    logo_url: string(512)
+    icon_url: string(512)
+    color_token: string(64)
+    country_region: string(64)
+    vendor_type: enum_int32
+    model_families: json
+    capabilities: json
+    open_source: bool
+    sort_order: int32
+  indexes:
+  - name: idx_ai_model_vendor_tenant_status_sort
+    columns:
+    - tenant_id
+    - organization_id
+    - status
+    - sort_order
+    - id
+- table: ai_modality
+  domain: ai
+  profile: dictionary_entity
+  compliance_level: L2
+  system_of_record: true
+  write_owner: model-catalog-service
+  common_columns: tenant_entity
+  frontend_routes:
+  - /admin/channel/resources
+  - /admin/channel
+  api_surfaces:
+  - backend
+  - worker
+  required_columns:
+  - modality_code
+  - display_name
+  not_null_columns:
+  - uuid
+  - tenant_id
+  - organization_id
+  - status
+  - modality_code
+  - display_name
+  unique_constraints:
+  - columns:
+    - uuid
+    source: column_unique
+  - name: uk_ai_modality_tenant_code
+    columns:
+    - tenant_id
+    - organization_id
+    - modality_code
+  columns:
+    modality_code: string(64)
+    display_name: string(128)
+    modality_group: string(64)
+    description: string(512)
+    input_supported: bool
+    output_supported: bool
+    sort_order: int32
+  indexes:
+  - name: idx_ai_modality_status_sort
+    columns:
+    - tenant_id
+    - organization_id
+    - status
+    - sort_order
+    - id
+- table: ai_api_endpoint
+  domain: ai
+  profile: dictionary_entity
+  compliance_level: L2
+  system_of_record: true
+  write_owner: model-catalog-service
+  common_columns: tenant_entity
+  frontend_routes:
+  - /admin/channel/resources
+  - /admin/channel
+  - /admin/channel/endpoints
+  api_surfaces:
+  - backend
+  - worker
+  required_columns:
+  - endpoint_code
+  - protocol_code
+  - path_template
+  not_null_columns:
+  - uuid
+  - tenant_id
+  - organization_id
+  - status
+  - endpoint_code
+  - protocol_code
+  - path_template
+  unique_constraints:
+  - columns:
+    - uuid
+    source: column_unique
+  - name: uk_ai_api_endpoint_tenant_code
+    columns:
+    - tenant_id
+    - organization_id
+    - endpoint_code
+  columns:
+    endpoint_code: string(128)
+    protocol_code: string(64)
+    display_name: string(128)
+    method: string(16)
+    path_template: string(256)
+    request_schema: json
+    response_schema: json
+    streaming_supported: bool
+    sort_order: int32
+  indexes:
+  - name: idx_ai_api_endpoint_status_sort
+    columns:
+    - tenant_id
+    - organization_id
+    - status
+    - sort_order
+    - id
+  - name: idx_ai_api_endpoint_protocol_status
+    columns:
+    - tenant_id
+    - organization_id
+    - protocol_code
+    - status
+    - sort_order
+    - id
+- table: ai_vendor_modality
+  domain: ai
+  profile: relation_entity
+  compliance_level: L2
+  system_of_record: true
+  write_owner: model-catalog-service
+  common_columns: tenant_entity
+  source_tables:
+  - ai_model_vendor
+  - ai_modality
+  frontend_routes:
+  - /admin/channel/resources
+  api_surfaces:
+  - backend
+  - worker
+  not_null_columns:
+  - uuid
+  - tenant_id
+  - organization_id
+  - status
+  - vendor_code
+  - modality_code
+  unique_constraints:
+  - columns:
+    - uuid
+    source: column_unique
+  columns:
+    vendor_id: int64
+    vendor_code: string(64)
+    modality_id: int64
+    modality_code: string(64)
+    supported: bool
+    sort_order: int32
+  indexes:
+  - name: uk_ai_vendor_modality
+    unique: true
+    columns:
+    - tenant_id
+    - organization_id
+    - vendor_code
+    - modality_code
+  - name: idx_ai_vendor_modality_status_sort
+    columns:
+    - tenant_id
+    - organization_id
+    - status
+    - sort_order
+    - id
+- table: ai_vendor_api_endpoint
+  domain: ai
+  profile: relation_entity
+  compliance_level: L2
+  system_of_record: true
+  write_owner: model-catalog-service
+  common_columns: tenant_entity
+  source_tables:
+  - ai_model_vendor
+  - ai_api_endpoint
+  frontend_routes:
+  - /admin/channel/resources
+  api_surfaces:
+  - backend
+  - worker
+  not_null_columns:
+  - uuid
+  - tenant_id
+  - organization_id
+  - status
+  - vendor_code
+  - endpoint_code
+  unique_constraints:
+  - columns:
+    - uuid
+    source: column_unique
+  columns:
+    vendor_id: int64
+    vendor_code: string(64)
+    api_endpoint_id: int64
+    endpoint_code: string(128)
+    supported: bool
+    sort_order: int32
+  indexes:
+  - name: uk_ai_vendor_api_endpoint
+    unique: true
+    columns:
+    - tenant_id
+    - organization_id
+    - vendor_code
+    - endpoint_code
+  - name: idx_ai_vendor_api_endpoint_status_sort
+    columns:
+    - tenant_id
+    - organization_id
+    - status
+    - sort_order
+    - id
+- table: ai_modality_api_endpoint
+  domain: ai
+  profile: relation_entity
+  compliance_level: L2
+  system_of_record: true
+  write_owner: model-catalog-service
+  common_columns: tenant_entity
+  source_tables:
+  - ai_modality
+  - ai_api_endpoint
+  frontend_routes:
+  - /admin/channel/resources
+  api_surfaces:
+  - backend
+  - worker
+  not_null_columns:
+  - uuid
+  - tenant_id
+  - organization_id
+  - status
+  - modality_code
+  - endpoint_code
+  unique_constraints:
+  - columns:
+    - uuid
+    source: column_unique
+  columns:
+    modality_id: int64
+    modality_code: string(64)
+    api_endpoint_id: int64
+    endpoint_code: string(128)
+    supported: bool
+    sort_order: int32
+  indexes:
+  - name: uk_ai_modality_api_endpoint
+    unique: true
+    columns:
+    - tenant_id
+    - organization_id
+    - modality_code
+    - endpoint_code
+  - name: idx_ai_modality_api_endpoint_status_sort
+    columns:
+    - tenant_id
+    - organization_id
+    - status
+    - sort_order
+    - id
+- table: ai_model_modality
+  domain: ai
+  profile: relation_entity
+  compliance_level: L2
+  system_of_record: true
+  write_owner: model-catalog-service
+  common_columns: tenant_entity
+  source_tables:
+  - ai_model
+  - ai_modality
+  frontend_routes:
+  - /admin/channel/resources
+  - /models
+  - /playground
+  api_surfaces:
+  - app
+  - backend
+  - worker
+  not_null_columns:
+  - uuid
+  - tenant_id
+  - organization_id
+  - status
+  - catalog_key
+  - modality_code
+  unique_constraints:
+  - columns:
+    - uuid
+    source: column_unique
+  columns:
+    model_id: int64
+    catalog_key: string(256)
+    model: string(128)
+    vendor_code: string(64)
+    modality_id: int64
+    modality_code: string(64)
+    direction: string(32)
+    supported: bool
+    sort_order: int32
+  indexes:
+  - name: uk_ai_model_modality
+    unique: true
+    columns:
+    - tenant_id
+    - organization_id
+    - catalog_key
+    - modality_code
+    - direction
+  - name: idx_ai_model_modality_status_sort
+    columns:
+    - tenant_id
+    - organization_id
+    - status
+    - sort_order
+    - id
+- table: ai_model_api_endpoint
+  domain: ai
+  profile: relation_entity
+  compliance_level: L2
+  system_of_record: true
+  write_owner: model-catalog-service
+  common_columns: tenant_entity
+  source_tables:
+  - ai_model
+  - ai_api_endpoint
+  frontend_routes:
+  - /admin/channel/resources
+  - /models
+  - /playground
+  api_surfaces:
+  - app
+  - backend
+  - worker
+  not_null_columns:
+  - uuid
+  - tenant_id
+  - organization_id
+  - status
+  - catalog_key
+  - endpoint_code
+  unique_constraints:
+  - columns:
+    - uuid
+    source: column_unique
+  columns:
+    model_id: int64
+    catalog_key: string(256)
+    model: string(128)
+    vendor_code: string(64)
+    api_endpoint_id: int64
+    endpoint_code: string(128)
+    provider_native_model: string(256)
+    default_parameters: json
+    supports_streaming: bool
+    supported: bool
+    sort_order: int32
+  indexes:
+  - name: uk_ai_model_api_endpoint
+    unique: true
+    columns:
+    - tenant_id
+    - organization_id
+    - catalog_key
+    - endpoint_code
+  - name: idx_ai_model_api_endpoint_status_sort
+    columns:
+    - tenant_id
+    - organization_id
+    - status
+    - sort_order
+    - id
+- table: ai_resource
+  domain: ai
+  profile: dictionary_entity
+  compliance_level: L2
+  system_of_record: true
+  write_owner: model-catalog-service
+  common_columns: tenant_entity
+  source_tables:
+  - ai_model_vendor
+  - ai_modality
+  - ai_api_endpoint
+  - ai_model
+  frontend_routes:
+  - /admin/channel/resources
+  - /admin/channel
+  api_surfaces:
+  - backend
+  - worker
+  required_columns:
+  - resource_code
+  - resource_type
+  not_null_columns:
+  - uuid
+  - tenant_id
+  - organization_id
+  - status
+  - resource_code
+  - resource_type
+  unique_constraints:
+  - columns:
+    - uuid
+    source: column_unique
+  - name: uk_ai_resource_tenant_code
+    columns:
+    - tenant_id
+    - organization_id
+    - resource_code
+  columns:
+    resource_code: string(192)
+    resource_type: string(64)
+    display_name: string(128)
+    vendor_id: int64
+    vendor_code: string(64)
+    modality_id: int64
+    modality_code: string(64)
+    api_endpoint_id: int64
+    api_code: string(128)
+    model_id: int64
+    model_code: string(128)
+    catalog_key: string(256)
+    model: string(128)
+    provider_native_model: string(256)
+    resource_schema: json
+    metadata_schema: json
+    description: string(512)
+    sort_order: int32
+  indexes:
+  - name: idx_ai_resource_status_sort
+    columns:
+    - tenant_id
+    - organization_id
+    - status
+    - sort_order
+    - id
+  - name: idx_ai_resource_type_status
+    columns:
+    - tenant_id
+    - organization_id
+    - resource_type
+    - status
+    - id
+  - name: idx_ai_resource_vendor_model
+    columns:
+    - tenant_id
+    - organization_id
+    - vendor_code
+    - catalog_key
+    - status
+    - id
+- table: ai_resource_group
+  domain: ai
+  profile: dictionary_entity
+  compliance_level: L2
+  system_of_record: true
+  write_owner: model-catalog-service
+  common_columns: tenant_entity
+  source_tables:
+  - ai_resource
+  frontend_routes:
+  - /admin/channel/resources
+  - /admin/channel
+  api_surfaces:
+  - backend
+  - worker
+  not_null_columns:
+  - uuid
+  - tenant_id
+  - organization_id
+  - status
+  - group_code
+  - group_name
+  unique_constraints:
+  - columns:
+    - uuid
+    source: column_unique
+  - name: uk_ai_resource_group_tenant_code
+    columns:
+    - tenant_id
+    - organization_id
+    - group_code
+  columns:
+    group_code: string(128)
+    group_name: string(128)
+    group_type: string(64)
+    selection_mode: string(32)
+    description: string(512)
+    sort_order: int32
+  indexes:
+  - name: idx_ai_resource_group_status_sort
+    columns:
+    - tenant_id
+    - organization_id
+    - status
+    - sort_order
+    - id
+- table: ai_resource_group_item
+  domain: ai
+  profile: relation_entity
+  compliance_level: L2
+  system_of_record: true
+  write_owner: model-catalog-service
+  common_columns: tenant_entity
+  source_tables:
+  - ai_resource_group
+  - ai_resource
+  frontend_routes:
+  - /admin/channel/resources
+  - /admin/channel
+  api_surfaces:
+  - backend
+  - worker
+  not_null_columns:
+  - uuid
+  - tenant_id
+  - organization_id
+  - status
+  - resource_group_id
+  - item_type
+  unique_constraints:
+  - columns:
+    - uuid
+    source: column_unique
+  columns:
+    resource_group_id: int64
+    resource_group_code: string(128)
+    item_type: string(32)
+    resource_id: int64
+    resource_code: string(192)
+    child_resource_group_id: int64
+    child_resource_group_code: string(128)
+    item_role: string(32)
+    sort_order: int32
+  indexes:
+  - name: uk_ai_resource_group_item
+    unique: true
+    columns:
+    - tenant_id
+    - organization_id
+    - resource_group_id
+    - item_type
+    - resource_code
+    - child_resource_group_code
+  - name: idx_ai_resource_group_item_status_sort
+    columns:
+    - tenant_id
+    - organization_id
+    - status
+    - resource_group_id
+    - sort_order
+    - id
+- table: ai_channel_vendor
+  domain: ai
+  profile: relation_entity
+  compliance_level: L2
+  system_of_record: true
+  write_owner: ai-routing-service
+  common_columns: tenant_entity
+  source_tables:
+  - ai_channel
+  - ai_model_vendor
+  frontend_routes:
+  - /admin/channel
+  api_surfaces:
+  - backend
+  - worker
+  not_null_columns:
+  - uuid
+  - tenant_id
+  - organization_id
+  - status
+  - channel_id
+  - vendor_code
+  unique_constraints:
+  - columns:
+    - uuid
+    source: column_unique
+  columns:
+    channel_id: int64
+    provider_code: string(64)
+    channel_code: string(64)
+    vendor_id: int64
+    vendor_code: string(64)
+    channel_type: string(32)
+    supported: bool
+    sort_order: int32
+  indexes:
+  - name: uk_ai_channel_vendor
+    unique: true
+    columns:
+    - tenant_id
+    - organization_id
+    - channel_id
+    - vendor_code
+  - name: idx_ai_channel_vendor_status
+    columns:
+    - tenant_id
+    - organization_id
+    - status
+    - channel_id
+    - id
+- table: ai_channel_resource
+  domain: ai
+  profile: relation_entity
+  compliance_level: L2
+  system_of_record: true
+  write_owner: ai-routing-service
+  common_columns: tenant_entity
+  source_tables:
+  - ai_channel
+  - ai_resource
+  - ai_resource_group
+  frontend_routes:
+  - /admin/channel
+  - /admin/channel/resources
+  api_surfaces:
+  - backend
+  - worker
+  not_null_columns:
+  - uuid
+  - tenant_id
+  - organization_id
+  - status
+  - channel_id
+  - grant_type
+  unique_constraints:
+  - columns:
+    - uuid
+    source: column_unique
+  columns:
+    channel_id: int64
+    provider_code: string(64)
+    channel_code: string(64)
+    resource_id: int64
+    resource_code: string(192)
+    resource_group_id: int64
+    resource_group_code: string(128)
+    grant_type:
+      type: string(32)
+      constraints: NOT NULL DEFAULT 'allow'
+    priority:
+      type: int32
+      constraints: NOT NULL DEFAULT 100
+    weight:
+      type: int32
+      constraints: NOT NULL DEFAULT 100
+    effective_from: instant
+    effective_to: instant
+  indexes:
+  - name: uk_ai_channel_resource
+    unique: true
+    columns:
+    - tenant_id
+    - organization_id
+    - channel_id
+    - resource_code
+    - resource_group_code
+  - name: idx_ai_channel_resource_lookup
+    columns:
+    - tenant_id
+    - organization_id
+    - status
+    - channel_id
+    - grant_type
+    - priority
+    - id

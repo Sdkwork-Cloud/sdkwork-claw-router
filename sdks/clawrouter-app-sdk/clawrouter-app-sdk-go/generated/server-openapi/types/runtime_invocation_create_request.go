@@ -16,7 +16,6 @@ type RuntimeInvocationCreateRequest struct {
 	Model string `json:"model"`
 	PermissionMode string `json:"permissionMode"`
 	Provider string `json:"provider"`
-	RequestId string `json:"requestId"`
 	RequestJson map[string]JsonValue `json:"requestJson"`
 	Runtime string `json:"runtime"`
 	SandboxPolicy string `json:"sandboxPolicy"`

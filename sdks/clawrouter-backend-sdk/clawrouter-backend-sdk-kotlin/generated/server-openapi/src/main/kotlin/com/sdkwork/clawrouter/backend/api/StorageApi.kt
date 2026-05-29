@@ -20,11 +20,10 @@ class StorageApi(private val client: HttpClient) {
     }
 
     /** Create storage bucket */
-    suspend fun ossBucketsCreate(body: CreateStorageBucketRequest, idempotencyKey: String, xRequestId: String? = null): OssBucketsCreateResult? {
+    suspend fun ossBucketsCreate(body: CreateStorageBucketRequest, idempotencyKey: String): OssBucketsCreateResult? {
         val requestHeaders = buildRequestHeaders(
             mapOf(
                 "Idempotency-Key" to HeaderParameterSpec(idempotencyKey, "simple", false, null),
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
             ),
             emptyMap()
         )
@@ -33,14 +32,8 @@ class StorageApi(private val client: HttpClient) {
     }
 
     /** Update storage bucket status */
-    suspend fun ossBucketsUpdate(bucketId: String, body: UpdateStorageBucketRequest, xRequestId: String? = null): OssBucketsUpdateResult? {
-        val requestHeaders = buildRequestHeaders(
-            mapOf(
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
-            ),
-            emptyMap()
-        )
-        val raw = client.patch(ApiPaths.backendPath("/storage/buckets/${serializePathParameter(bucketId, PathParameterSpec("bucketId", "simple", false))}"), body, null, requestHeaders, "application/json")
+    suspend fun ossBucketsUpdate(bucketId: String, body: UpdateStorageBucketRequest): OssBucketsUpdateResult? {
+        val raw = client.patch(ApiPaths.backendPath("/storage/buckets/${serializePathParameter(bucketId, PathParameterSpec("bucketId", "simple", false))}"), body, null, null, "application/json")
         return client.convertValue(raw, object : TypeReference<OssBucketsUpdateResult>() {})
     }
 
@@ -54,14 +47,8 @@ class StorageApi(private val client: HttpClient) {
     }
 
     /** Set default storage bucket route */
-    suspend fun ossDefaultBucketsUpdate(logicalScope: String, body: SetStorageDefaultBucketRequest, xRequestId: String? = null): OssDefaultBucketsUpdateResult? {
-        val requestHeaders = buildRequestHeaders(
-            mapOf(
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
-            ),
-            emptyMap()
-        )
-        val raw = client.patch(ApiPaths.backendPath("/storage/default_buckets/${serializePathParameter(logicalScope, PathParameterSpec("logicalScope", "simple", false))}"), body, null, requestHeaders, "application/json")
+    suspend fun ossDefaultBucketsUpdate(logicalScope: String, body: SetStorageDefaultBucketRequest): OssDefaultBucketsUpdateResult? {
+        val raw = client.patch(ApiPaths.backendPath("/storage/default_buckets/${serializePathParameter(logicalScope, PathParameterSpec("logicalScope", "simple", false))}"), body, null, null, "application/json")
         return client.convertValue(raw, object : TypeReference<OssDefaultBucketsUpdateResult>() {})
     }
 
@@ -77,11 +64,10 @@ class StorageApi(private val client: HttpClient) {
     }
 
     /** Create storage garbage collection job */
-    suspend fun ossGcJobsCreate(body: CreateStorageGarbageCollectionJobRequest, idempotencyKey: String, xRequestId: String? = null): OssGcJobsCreateResult? {
+    suspend fun ossGcJobsCreate(body: CreateStorageGarbageCollectionJobRequest, idempotencyKey: String): OssGcJobsCreateResult? {
         val requestHeaders = buildRequestHeaders(
             mapOf(
                 "Idempotency-Key" to HeaderParameterSpec(idempotencyKey, "simple", false, null),
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
             ),
             emptyMap()
         )
@@ -96,11 +82,10 @@ class StorageApi(private val client: HttpClient) {
     }
 
     /** Create storage provider */
-    suspend fun ossProvidersCreate(body: CreateStorageProviderRequest, idempotencyKey: String, xRequestId: String? = null): OssProvidersCreateResult? {
+    suspend fun ossProvidersCreate(body: CreateStorageProviderRequest, idempotencyKey: String): OssProvidersCreateResult? {
         val requestHeaders = buildRequestHeaders(
             mapOf(
                 "Idempotency-Key" to HeaderParameterSpec(idempotencyKey, "simple", false, null),
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
             ),
             emptyMap()
         )
@@ -109,26 +94,14 @@ class StorageApi(private val client: HttpClient) {
     }
 
     /** Update storage provider status */
-    suspend fun ossProvidersUpdate(providerId: String, body: UpdateStorageProviderRequest, xRequestId: String? = null): OssProvidersUpdateResult? {
-        val requestHeaders = buildRequestHeaders(
-            mapOf(
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
-            ),
-            emptyMap()
-        )
-        val raw = client.patch(ApiPaths.backendPath("/storage/providers/${serializePathParameter(providerId, PathParameterSpec("providerId", "simple", false))}"), body, null, requestHeaders, "application/json")
+    suspend fun ossProvidersUpdate(providerId: String, body: UpdateStorageProviderRequest): OssProvidersUpdateResult? {
+        val raw = client.patch(ApiPaths.backendPath("/storage/providers/${serializePathParameter(providerId, PathParameterSpec("providerId", "simple", false))}"), body, null, null, "application/json")
         return client.convertValue(raw, object : TypeReference<OssProvidersUpdateResult>() {})
     }
 
     /** Check storage provider health */
-    suspend fun ossProvidersHealthChecksCreate(providerId: String, xRequestId: String? = null): OssProvidersHealthChecksCreateResult? {
-        val requestHeaders = buildRequestHeaders(
-            mapOf(
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
-            ),
-            emptyMap()
-        )
-        val raw = client.post(ApiPaths.backendPath("/storage/providers/${serializePathParameter(providerId, PathParameterSpec("providerId", "simple", false))}/health_check"), null, null, requestHeaders)
+    suspend fun ossProvidersHealthChecksCreate(providerId: String): OssProvidersHealthChecksCreateResult? {
+        val raw = client.post(ApiPaths.backendPath("/storage/providers/${serializePathParameter(providerId, PathParameterSpec("providerId", "simple", false))}/health_check"), null)
         return client.convertValue(raw, object : TypeReference<OssProvidersHealthChecksCreateResult>() {})
     }
 
@@ -139,11 +112,10 @@ class StorageApi(private val client: HttpClient) {
     }
 
     /** Create storage quota policy */
-    suspend fun ossQuotasCreate(body: CreateStorageQuotaPolicyRequest, idempotencyKey: String, xRequestId: String? = null): OssQuotasCreateResult? {
+    suspend fun ossQuotasCreate(body: CreateStorageQuotaPolicyRequest, idempotencyKey: String): OssQuotasCreateResult? {
         val requestHeaders = buildRequestHeaders(
             mapOf(
                 "Idempotency-Key" to HeaderParameterSpec(idempotencyKey, "simple", false, null),
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
             ),
             emptyMap()
         )
@@ -164,11 +136,10 @@ class StorageApi(private val client: HttpClient) {
     }
 
     /** Create storage reconciliation run */
-    suspend fun ossReconciliationRunsCreate(body: CreateStorageReconciliationRunRequest, idempotencyKey: String, xRequestId: String? = null): OssReconciliationRunsCreateResult? {
+    suspend fun ossReconciliationRunsCreate(body: CreateStorageReconciliationRunRequest, idempotencyKey: String): OssReconciliationRunsCreateResult? {
         val requestHeaders = buildRequestHeaders(
             mapOf(
                 "Idempotency-Key" to HeaderParameterSpec(idempotencyKey, "simple", false, null),
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
             ),
             emptyMap()
         )

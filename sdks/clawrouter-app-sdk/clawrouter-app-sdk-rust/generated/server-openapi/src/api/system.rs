@@ -17,12 +17,11 @@ impl SystemApi {
     }
 
     /// Promotion Code Redemption Create
-    pub async fn promotions_codes_redemptions_create(&self, body: &PromotionCodeRedemptionRequest, idempotency_key: &str, x_request_id: Option<&str>) -> Result<PromotionsCodesRedemptionsCreateResult, SdkworkError> {
+    pub async fn promotions_codes_redemptions_create(&self, body: &PromotionCodeRedemptionRequest, idempotency_key: &str) -> Result<PromotionsCodesRedemptionsCreateResult, SdkworkError> {
         let path = app_path(&"/promotions/codes/redemptions".to_string());
         let headers = build_request_headers(
             &[
                 ("Idempotency-Key", HeaderParameterSpec::new(idempotency_key, "simple", false, None)),
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
             ],
             &[],
         );
@@ -30,12 +29,11 @@ impl SystemApi {
     }
 
     /// Promotion Discount Application Create
-    pub async fn promotions_discount_applications_create(&self, body: &PromotionCommandRequest, idempotency_key: &str, x_request_id: Option<&str>) -> Result<PromotionsDiscountApplicationsCreateResult, SdkworkError> {
+    pub async fn promotions_discount_applications_create(&self, body: &PromotionCommandRequest, idempotency_key: &str) -> Result<PromotionsDiscountApplicationsCreateResult, SdkworkError> {
         let path = app_path(&"/promotions/discount_applications".to_string());
         let headers = build_request_headers(
             &[
                 ("Idempotency-Key", HeaderParameterSpec::new(idempotency_key, "simple", false, None)),
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
             ],
             &[],
         );
@@ -43,12 +41,11 @@ impl SystemApi {
     }
 
     /// Promotion Discount Application Reversal Create
-    pub async fn promotions_discount_applications_reversals_create(&self, body: &PromotionCommandRequest, idempotency_key: &str, x_request_id: Option<&str>) -> Result<PromotionsDiscountApplicationsReversalsCreateResult, SdkworkError> {
+    pub async fn promotions_discount_applications_reversals_create(&self, body: &PromotionCommandRequest, idempotency_key: &str) -> Result<PromotionsDiscountApplicationsReversalsCreateResult, SdkworkError> {
         let path = app_path(&"/promotions/discount_applications/reversals".to_string());
         let headers = build_request_headers(
             &[
                 ("Idempotency-Key", HeaderParameterSpec::new(idempotency_key, "simple", false, None)),
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
             ],
             &[],
         );
@@ -56,12 +53,11 @@ impl SystemApi {
     }
 
     /// Promotion Discount Application Release
-    pub async fn promotions_discount_applications_release(&self, application_id: &str, body: &PromotionCommandRequest, idempotency_key: &str, x_request_id: Option<&str>) -> Result<PromotionsDiscountApplicationsReleaseResult, SdkworkError> {
+    pub async fn promotions_discount_applications_release(&self, application_id: &str, body: &PromotionCommandRequest, idempotency_key: &str) -> Result<PromotionsDiscountApplicationsReleaseResult, SdkworkError> {
         let path = app_path(&format!("/promotions/discount_applications/{}/releases", serialize_path_parameter(application_id, PathParameterSpec::new("applicationId", "simple", false))));
         let headers = build_request_headers(
             &[
                 ("Idempotency-Key", HeaderParameterSpec::new(idempotency_key, "simple", false, None)),
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
             ],
             &[],
         );
@@ -69,12 +65,11 @@ impl SystemApi {
     }
 
     /// Promotion Discount Application Settle
-    pub async fn promotions_discount_applications_settle(&self, application_id: &str, body: &PromotionCommandRequest, idempotency_key: &str, x_request_id: Option<&str>) -> Result<PromotionsDiscountApplicationsSettleResult, SdkworkError> {
+    pub async fn promotions_discount_applications_settle(&self, application_id: &str, body: &PromotionCommandRequest, idempotency_key: &str) -> Result<PromotionsDiscountApplicationsSettleResult, SdkworkError> {
         let path = app_path(&format!("/promotions/discount_applications/{}/settlements", serialize_path_parameter(application_id, PathParameterSpec::new("applicationId", "simple", false))));
         let headers = build_request_headers(
             &[
                 ("Idempotency-Key", HeaderParameterSpec::new(idempotency_key, "simple", false, None)),
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
             ],
             &[],
         );
@@ -82,12 +77,11 @@ impl SystemApi {
     }
 
     /// Promotion User Coupon Claim Create
-    pub async fn promotions_user_coupons_claims_create(&self, body: &PromotionCommandRequest, idempotency_key: &str, x_request_id: Option<&str>) -> Result<PromotionsUserCouponsClaimsCreateResult, SdkworkError> {
+    pub async fn promotions_user_coupons_claims_create(&self, body: &PromotionCommandRequest, idempotency_key: &str) -> Result<PromotionsUserCouponsClaimsCreateResult, SdkworkError> {
         let path = app_path(&"/promotions/user_coupon_claims".to_string());
         let headers = build_request_headers(
             &[
                 ("Idempotency-Key", HeaderParameterSpec::new(idempotency_key, "simple", false, None)),
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
             ],
             &[],
         );

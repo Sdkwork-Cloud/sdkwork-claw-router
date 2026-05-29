@@ -12,11 +12,10 @@ class SystemApi {
   SystemApi(this._client);
 
   /// Promotion Code Redemption Create
-  Future<PromotionsCodesRedemptionsCreateResult?> promotionsCodesRedemptionsCreate(PromotionCodeRedemptionRequest body, String idempotencyKey, [String? xRequestId]) async {
+  Future<PromotionsCodesRedemptionsCreateResult?> promotionsCodesRedemptionsCreate(PromotionCodeRedemptionRequest body, String idempotencyKey) async {
     final requestHeaders = buildRequestHeaders(
       <String, HeaderParameterSpec>{
         'Idempotency-Key': HeaderParameterSpec(idempotencyKey, 'simple', false, null),
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
       },
       <String, HeaderParameterSpec>{},
     );
@@ -29,11 +28,10 @@ class SystemApi {
   }
 
   /// Promotion Discount Application Create
-  Future<PromotionsDiscountApplicationsCreateResult?> promotionsDiscountApplicationsCreate(PromotionCommandRequest body, String idempotencyKey, [String? xRequestId]) async {
+  Future<PromotionsDiscountApplicationsCreateResult?> promotionsDiscountApplicationsCreate(PromotionCommandRequest body, String idempotencyKey) async {
     final requestHeaders = buildRequestHeaders(
       <String, HeaderParameterSpec>{
         'Idempotency-Key': HeaderParameterSpec(idempotencyKey, 'simple', false, null),
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
       },
       <String, HeaderParameterSpec>{},
     );
@@ -46,11 +44,10 @@ class SystemApi {
   }
 
   /// Promotion Discount Application Reversal Create
-  Future<PromotionsDiscountApplicationsReversalsCreateResult?> promotionsDiscountApplicationsReversalsCreate(PromotionCommandRequest body, String idempotencyKey, [String? xRequestId]) async {
+  Future<PromotionsDiscountApplicationsReversalsCreateResult?> promotionsDiscountApplicationsReversalsCreate(PromotionCommandRequest body, String idempotencyKey) async {
     final requestHeaders = buildRequestHeaders(
       <String, HeaderParameterSpec>{
         'Idempotency-Key': HeaderParameterSpec(idempotencyKey, 'simple', false, null),
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
       },
       <String, HeaderParameterSpec>{},
     );
@@ -63,11 +60,10 @@ class SystemApi {
   }
 
   /// Promotion Discount Application Release
-  Future<PromotionsDiscountApplicationsReleaseResult?> promotionsDiscountApplicationsRelease(String applicationId, PromotionCommandRequest body, String idempotencyKey, [String? xRequestId]) async {
+  Future<PromotionsDiscountApplicationsReleaseResult?> promotionsDiscountApplicationsRelease(String applicationId, PromotionCommandRequest body, String idempotencyKey) async {
     final requestHeaders = buildRequestHeaders(
       <String, HeaderParameterSpec>{
         'Idempotency-Key': HeaderParameterSpec(idempotencyKey, 'simple', false, null),
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
       },
       <String, HeaderParameterSpec>{},
     );
@@ -80,11 +76,10 @@ class SystemApi {
   }
 
   /// Promotion Discount Application Settle
-  Future<PromotionsDiscountApplicationsSettleResult?> promotionsDiscountApplicationsSettle(String applicationId, PromotionCommandRequest body, String idempotencyKey, [String? xRequestId]) async {
+  Future<PromotionsDiscountApplicationsSettleResult?> promotionsDiscountApplicationsSettle(String applicationId, PromotionCommandRequest body, String idempotencyKey) async {
     final requestHeaders = buildRequestHeaders(
       <String, HeaderParameterSpec>{
         'Idempotency-Key': HeaderParameterSpec(idempotencyKey, 'simple', false, null),
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
       },
       <String, HeaderParameterSpec>{},
     );
@@ -97,11 +92,10 @@ class SystemApi {
   }
 
   /// Promotion User Coupon Claim Create
-  Future<PromotionsUserCouponsClaimsCreateResult?> promotionsUserCouponsClaimsCreate(PromotionCommandRequest body, String idempotencyKey, [String? xRequestId]) async {
+  Future<PromotionsUserCouponsClaimsCreateResult?> promotionsUserCouponsClaimsCreate(PromotionCommandRequest body, String idempotencyKey) async {
     final requestHeaders = buildRequestHeaders(
       <String, HeaderParameterSpec>{
         'Idempotency-Key': HeaderParameterSpec(idempotencyKey, 'simple', false, null),
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
       },
       <String, HeaderParameterSpec>{},
     );

@@ -8,7 +8,7 @@ public class PlatformApi {
     }
 
     /// List apps
-    public func appsList(q: String? = nil, status: String? = nil, marketStatus: String? = nil, appType: String? = nil, categoryId: Int? = nil, page: Int? = nil, pageSize: Int? = nil, xRequestId: String? = nil) async throws -> AppsListResult? {
+    public func appsList(q: String? = nil, status: String? = nil, marketStatus: String? = nil, appType: String? = nil, categoryId: Int? = nil, page: Int? = nil, pageSize: Int? = nil) async throws -> AppsListResult? {
         let query = buildQueryString([
             QueryParameterSpec(name: "q", value: q, style: "form", explode: true, allowReserved: false, contentType: nil),
             QueryParameterSpec(name: "status", value: status, style: "form", explode: true, allowReserved: false, contentType: nil),
@@ -18,24 +18,12 @@ public class PlatformApi {
             QueryParameterSpec(name: "page", value: page, style: "form", explode: true, allowReserved: false, contentType: nil),
             QueryParameterSpec(name: "page_size", value: pageSize, style: "form", explode: true, allowReserved: false, contentType: nil)
         ])
-        let requestHeaders = buildRequestHeaders(
-            [
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
-            ],
-            [:]
-        )
-        return try await client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/platform/apps"), query), params: nil, headers: requestHeaders, responseType: AppsListResult.self)
+        return try await client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/platform/apps"), query), responseType: AppsListResult.self)
     }
 
     /// Create app
-    public func appsCreate(body: AdminAppCreateRequest, xRequestId: String? = nil) async throws -> AppsCreateResult? {
-        let requestHeaders = buildRequestHeaders(
-            [
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
-            ],
-            [:]
-        )
-        return try await client.post(ApiPaths.backendPath("/platform/apps"), body: body, params: nil, headers: requestHeaders, contentType: "application/json", responseType: AppsCreateResult.self)
+    public func appsCreate(body: AdminAppCreateRequest) async throws -> AppsCreateResult? {
+        return try await client.post(ApiPaths.backendPath("/platform/apps"), body: body, params: nil, headers: nil, contentType: "application/json", responseType: AppsCreateResult.self)
     }
 
     /// List app categories
@@ -44,40 +32,22 @@ public class PlatformApi {
     }
 
     /// Create app category
-    public func appsCategoriesCreate(body: AdminAppCategoryCreateRequest, xRequestId: String? = nil) async throws -> AppsCategoriesCreateResult? {
-        let requestHeaders = buildRequestHeaders(
-            [
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
-            ],
-            [:]
-        )
-        return try await client.post(ApiPaths.backendPath("/platform/apps/categories"), body: body, params: nil, headers: requestHeaders, contentType: "application/json", responseType: AppsCategoriesCreateResult.self)
+    public func appsCategoriesCreate(body: AdminAppCategoryCreateRequest) async throws -> AppsCategoriesCreateResult? {
+        return try await client.post(ApiPaths.backendPath("/platform/apps/categories"), body: body, params: nil, headers: nil, contentType: "application/json", responseType: AppsCategoriesCreateResult.self)
     }
 
     /// Delete app category
-    public func appsCategoriesDelete(categoryId: String, xRequestId: String? = nil) async throws -> AppsCategoriesDeleteResult? {
-        let requestHeaders = buildRequestHeaders(
-            [
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
-            ],
-            [:]
-        )
-        return try await client.delete(ApiPaths.backendPath("/platform/apps/categories/\(serializePathParameter(categoryId, PathParameterSpec(name: "categoryId", style: "simple", explode: false)))"), params: nil, headers: requestHeaders, responseType: AppsCategoriesDeleteResult.self)
+    public func appsCategoriesDelete(categoryId: String) async throws -> AppsCategoriesDeleteResult? {
+        return try await client.delete(ApiPaths.backendPath("/platform/apps/categories/\(serializePathParameter(categoryId, PathParameterSpec(name: "categoryId", style: "simple", explode: false)))"), responseType: AppsCategoriesDeleteResult.self)
     }
 
     /// Update app category
-    public func appsCategoriesUpdate(categoryId: String, body: AdminAppCategoryUpdateRequest, xRequestId: String? = nil) async throws -> AppsCategoriesUpdateResult? {
-        let requestHeaders = buildRequestHeaders(
-            [
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
-            ],
-            [:]
-        )
-        return try await client.put(ApiPaths.backendPath("/platform/apps/categories/\(serializePathParameter(categoryId, PathParameterSpec(name: "categoryId", style: "simple", explode: false)))"), body: body, params: nil, headers: requestHeaders, contentType: "application/json", responseType: AppsCategoriesUpdateResult.self)
+    public func appsCategoriesUpdate(categoryId: String, body: AdminAppCategoryUpdateRequest) async throws -> AppsCategoriesUpdateResult? {
+        return try await client.put(ApiPaths.backendPath("/platform/apps/categories/\(serializePathParameter(categoryId, PathParameterSpec(name: "categoryId", style: "simple", explode: false)))"), body: body, params: nil, headers: nil, contentType: "application/json", responseType: AppsCategoriesUpdateResult.self)
     }
 
     /// List app templates
-    public func appsTemplatesList(q: String? = nil, publishStatus: String? = nil, templateType: String? = nil, runtime: String? = nil, categoryId: Int? = nil, page: Int? = nil, pageSize: Int? = nil, xRequestId: String? = nil) async throws -> AppsTemplatesListResult? {
+    public func appsTemplatesList(q: String? = nil, publishStatus: String? = nil, templateType: String? = nil, runtime: String? = nil, categoryId: Int? = nil, page: Int? = nil, pageSize: Int? = nil) async throws -> AppsTemplatesListResult? {
         let query = buildQueryString([
             QueryParameterSpec(name: "q", value: q, style: "form", explode: true, allowReserved: false, contentType: nil),
             QueryParameterSpec(name: "publish_status", value: publishStatus, style: "form", explode: true, allowReserved: false, contentType: nil),
@@ -87,156 +57,72 @@ public class PlatformApi {
             QueryParameterSpec(name: "page", value: page, style: "form", explode: true, allowReserved: false, contentType: nil),
             QueryParameterSpec(name: "page_size", value: pageSize, style: "form", explode: true, allowReserved: false, contentType: nil)
         ])
-        let requestHeaders = buildRequestHeaders(
-            [
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
-            ],
-            [:]
-        )
-        return try await client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/platform/apps/templates"), query), params: nil, headers: requestHeaders, responseType: AppsTemplatesListResult.self)
+        return try await client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/platform/apps/templates"), query), responseType: AppsTemplatesListResult.self)
     }
 
     /// Create app template
-    public func appsTemplatesCreate(body: AdminAppTemplateCreateRequest, xRequestId: String? = nil) async throws -> AppsTemplatesCreateResult? {
-        let requestHeaders = buildRequestHeaders(
-            [
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
-            ],
-            [:]
-        )
-        return try await client.post(ApiPaths.backendPath("/platform/apps/templates"), body: body, params: nil, headers: requestHeaders, contentType: "application/json", responseType: AppsTemplatesCreateResult.self)
+    public func appsTemplatesCreate(body: AdminAppTemplateCreateRequest) async throws -> AppsTemplatesCreateResult? {
+        return try await client.post(ApiPaths.backendPath("/platform/apps/templates"), body: body, params: nil, headers: nil, contentType: "application/json", responseType: AppsTemplatesCreateResult.self)
     }
 
     /// Delete app template
-    public func appsTemplatesDelete(templateId: String, xRequestId: String? = nil) async throws -> AppsTemplatesDeleteResult? {
-        let requestHeaders = buildRequestHeaders(
-            [
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
-            ],
-            [:]
-        )
-        return try await client.delete(ApiPaths.backendPath("/platform/apps/templates/\(serializePathParameter(templateId, PathParameterSpec(name: "templateId", style: "simple", explode: false)))"), params: nil, headers: requestHeaders, responseType: AppsTemplatesDeleteResult.self)
+    public func appsTemplatesDelete(templateId: String) async throws -> AppsTemplatesDeleteResult? {
+        return try await client.delete(ApiPaths.backendPath("/platform/apps/templates/\(serializePathParameter(templateId, PathParameterSpec(name: "templateId", style: "simple", explode: false)))"), responseType: AppsTemplatesDeleteResult.self)
     }
 
     /// List app template
-    public func appsTemplatesRetrieve(templateId: String, xRequestId: String? = nil) async throws -> AppsTemplatesRetrieveResult? {
-        let requestHeaders = buildRequestHeaders(
-            [
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
-            ],
-            [:]
-        )
-        return try await client.get(ApiPaths.backendPath("/platform/apps/templates/\(serializePathParameter(templateId, PathParameterSpec(name: "templateId", style: "simple", explode: false)))"), params: nil, headers: requestHeaders, responseType: AppsTemplatesRetrieveResult.self)
+    public func appsTemplatesRetrieve(templateId: String) async throws -> AppsTemplatesRetrieveResult? {
+        return try await client.get(ApiPaths.backendPath("/platform/apps/templates/\(serializePathParameter(templateId, PathParameterSpec(name: "templateId", style: "simple", explode: false)))"), responseType: AppsTemplatesRetrieveResult.self)
     }
 
     /// Update app template
-    public func appsTemplatesUpdate(templateId: String, body: AdminAppTemplateUpdateRequest, xRequestId: String? = nil) async throws -> AppsTemplatesUpdateResult? {
-        let requestHeaders = buildRequestHeaders(
-            [
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
-            ],
-            [:]
-        )
-        return try await client.put(ApiPaths.backendPath("/platform/apps/templates/\(serializePathParameter(templateId, PathParameterSpec(name: "templateId", style: "simple", explode: false)))"), body: body, params: nil, headers: requestHeaders, contentType: "application/json", responseType: AppsTemplatesUpdateResult.self)
+    public func appsTemplatesUpdate(templateId: String, body: AdminAppTemplateUpdateRequest) async throws -> AppsTemplatesUpdateResult? {
+        return try await client.put(ApiPaths.backendPath("/platform/apps/templates/\(serializePathParameter(templateId, PathParameterSpec(name: "templateId", style: "simple", explode: false)))"), body: body, params: nil, headers: nil, contentType: "application/json", responseType: AppsTemplatesUpdateResult.self)
     }
 
     /// Publish app template
-    public func appsTemplatesPublish(templateId: String, xRequestId: String? = nil) async throws -> AppsTemplatesPublishResult? {
-        let requestHeaders = buildRequestHeaders(
-            [
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
-            ],
-            [:]
-        )
-        return try await client.post(ApiPaths.backendPath("/platform/apps/templates/\(serializePathParameter(templateId, PathParameterSpec(name: "templateId", style: "simple", explode: false)))/publish"), body: nil, params: nil, headers: requestHeaders, responseType: AppsTemplatesPublishResult.self)
+    public func appsTemplatesPublish(templateId: String) async throws -> AppsTemplatesPublishResult? {
+        return try await client.post(ApiPaths.backendPath("/platform/apps/templates/\(serializePathParameter(templateId, PathParameterSpec(name: "templateId", style: "simple", explode: false)))/publish"), body: nil, responseType: AppsTemplatesPublishResult.self)
     }
 
     /// Offline app template
-    public func appsTemplatesUnpublish(templateId: String, xRequestId: String? = nil) async throws -> AppsTemplatesUnpublishResult? {
-        let requestHeaders = buildRequestHeaders(
-            [
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
-            ],
-            [:]
-        )
-        return try await client.post(ApiPaths.backendPath("/platform/apps/templates/\(serializePathParameter(templateId, PathParameterSpec(name: "templateId", style: "simple", explode: false)))/unpublish"), body: nil, params: nil, headers: requestHeaders, responseType: AppsTemplatesUnpublishResult.self)
+    public func appsTemplatesUnpublish(templateId: String) async throws -> AppsTemplatesUnpublishResult? {
+        return try await client.post(ApiPaths.backendPath("/platform/apps/templates/\(serializePathParameter(templateId, PathParameterSpec(name: "templateId", style: "simple", explode: false)))/unpublish"), body: nil, responseType: AppsTemplatesUnpublishResult.self)
     }
 
     /// Delete app
-    public func appsDelete(appId: String, xRequestId: String? = nil) async throws -> AppsDeleteResult? {
-        let requestHeaders = buildRequestHeaders(
-            [
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
-            ],
-            [:]
-        )
-        return try await client.delete(ApiPaths.backendPath("/platform/apps/\(serializePathParameter(appId, PathParameterSpec(name: "appId", style: "simple", explode: false)))"), params: nil, headers: requestHeaders, responseType: AppsDeleteResult.self)
+    public func appsDelete(appId: String) async throws -> AppsDeleteResult? {
+        return try await client.delete(ApiPaths.backendPath("/platform/apps/\(serializePathParameter(appId, PathParameterSpec(name: "appId", style: "simple", explode: false)))"), responseType: AppsDeleteResult.self)
     }
 
     /// List app
-    public func appsRetrieve(appId: String, xRequestId: String? = nil) async throws -> AppsRetrieveResult? {
-        let requestHeaders = buildRequestHeaders(
-            [
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
-            ],
-            [:]
-        )
-        return try await client.get(ApiPaths.backendPath("/platform/apps/\(serializePathParameter(appId, PathParameterSpec(name: "appId", style: "simple", explode: false)))"), params: nil, headers: requestHeaders, responseType: AppsRetrieveResult.self)
+    public func appsRetrieve(appId: String) async throws -> AppsRetrieveResult? {
+        return try await client.get(ApiPaths.backendPath("/platform/apps/\(serializePathParameter(appId, PathParameterSpec(name: "appId", style: "simple", explode: false)))"), responseType: AppsRetrieveResult.self)
     }
 
     /// Update app
-    public func appsUpdate(appId: String, body: AdminAppUpdateRequest, xRequestId: String? = nil) async throws -> AppsUpdateResult? {
-        let requestHeaders = buildRequestHeaders(
-            [
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
-            ],
-            [:]
-        )
-        return try await client.put(ApiPaths.backendPath("/platform/apps/\(serializePathParameter(appId, PathParameterSpec(name: "appId", style: "simple", explode: false)))"), body: body, params: nil, headers: requestHeaders, contentType: "application/json", responseType: AppsUpdateResult.self)
+    public func appsUpdate(appId: String, body: AdminAppUpdateRequest) async throws -> AppsUpdateResult? {
+        return try await client.put(ApiPaths.backendPath("/platform/apps/\(serializePathParameter(appId, PathParameterSpec(name: "appId", style: "simple", explode: false)))"), body: body, params: nil, headers: nil, contentType: "application/json", responseType: AppsUpdateResult.self)
     }
 
     /// Disable app
-    public func appsDisable(appId: String, xRequestId: String? = nil) async throws -> AppsDisableResult? {
-        let requestHeaders = buildRequestHeaders(
-            [
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
-            ],
-            [:]
-        )
-        return try await client.post(ApiPaths.backendPath("/platform/apps/\(serializePathParameter(appId, PathParameterSpec(name: "appId", style: "simple", explode: false)))/disable"), body: nil, params: nil, headers: requestHeaders, responseType: AppsDisableResult.self)
+    public func appsDisable(appId: String) async throws -> AppsDisableResult? {
+        return try await client.post(ApiPaths.backendPath("/platform/apps/\(serializePathParameter(appId, PathParameterSpec(name: "appId", style: "simple", explode: false)))/disable"), body: nil, responseType: AppsDisableResult.self)
     }
 
     /// Enable app
-    public func appsEnable(appId: String, xRequestId: String? = nil) async throws -> AppsEnableResult? {
-        let requestHeaders = buildRequestHeaders(
-            [
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
-            ],
-            [:]
-        )
-        return try await client.post(ApiPaths.backendPath("/platform/apps/\(serializePathParameter(appId, PathParameterSpec(name: "appId", style: "simple", explode: false)))/enable"), body: nil, params: nil, headers: requestHeaders, responseType: AppsEnableResult.self)
+    public func appsEnable(appId: String) async throws -> AppsEnableResult? {
+        return try await client.post(ApiPaths.backendPath("/platform/apps/\(serializePathParameter(appId, PathParameterSpec(name: "appId", style: "simple", explode: false)))/enable"), body: nil, responseType: AppsEnableResult.self)
     }
 
     /// Publish app
-    public func appsPublish(appId: String, xRequestId: String? = nil) async throws -> AppsPublishResult? {
-        let requestHeaders = buildRequestHeaders(
-            [
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
-            ],
-            [:]
-        )
-        return try await client.post(ApiPaths.backendPath("/platform/apps/\(serializePathParameter(appId, PathParameterSpec(name: "appId", style: "simple", explode: false)))/publish"), body: nil, params: nil, headers: requestHeaders, responseType: AppsPublishResult.self)
+    public func appsPublish(appId: String) async throws -> AppsPublishResult? {
+        return try await client.post(ApiPaths.backendPath("/platform/apps/\(serializePathParameter(appId, PathParameterSpec(name: "appId", style: "simple", explode: false)))/publish"), body: nil, responseType: AppsPublishResult.self)
     }
 
     /// Offline app
-    public func appsUnpublish(appId: String, xRequestId: String? = nil) async throws -> AppsUnpublishResult? {
-        let requestHeaders = buildRequestHeaders(
-            [
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
-            ],
-            [:]
-        )
-        return try await client.post(ApiPaths.backendPath("/platform/apps/\(serializePathParameter(appId, PathParameterSpec(name: "appId", style: "simple", explode: false)))/unpublish"), body: nil, params: nil, headers: requestHeaders, responseType: AppsUnpublishResult.self)
+    public func appsUnpublish(appId: String) async throws -> AppsUnpublishResult? {
+        return try await client.post(ApiPaths.backendPath("/platform/apps/\(serializePathParameter(appId, PathParameterSpec(name: "appId", style: "simple", explode: false)))/unpublish"), body: nil, responseType: AppsUnpublishResult.self)
     }
 
     private struct PathParameterSpec {
@@ -416,68 +302,4 @@ public class PlatformApi {
         value.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? value
     }
 
-    private struct HeaderParameterSpec {
-        let value: Any?
-        let style: String
-        let explode: Bool
-        let contentType: String?
-    }
-
-    private func buildRequestHeaders(_ headers: [String: HeaderParameterSpec], _ cookies: [String: HeaderParameterSpec]) -> [String: String]? {
-        var requestHeaders: [String: String] = [:]
-        for (name, parameter) in headers {
-            if let serialized = serializeParameterValue(parameter) {
-                requestHeaders[name] = serialized
-            }
-        }
-
-        if let cookieHeader = buildCookieHeader(cookies), !cookieHeader.isEmpty {
-            requestHeaders["Cookie"] = requestHeaders["Cookie"].map { "\($0); \(cookieHeader)" } ?? cookieHeader
-        }
-
-        return requestHeaders.isEmpty ? nil : requestHeaders
-    }
-
-    private func buildCookieHeader(_ cookies: [String: HeaderParameterSpec]) -> String? {
-        let pairs = cookies.compactMap { name, parameter -> String? in
-            guard let serialized = serializeParameterValue(parameter) else { return nil }
-            return "\(urlEncode(name))=\(urlEncode(serialized))"
-        }
-        return pairs.isEmpty ? nil : pairs.joined(separator: "; ")
-    }
-
-    private func serializeParameterValue(_ parameter: HeaderParameterSpec?) -> String? {
-        guard let parameter, let value = parameter.value else { return nil }
-        if let contentType = parameter.contentType, !contentType.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
-            if JSONSerialization.isValidJSONObject(value),
-               let data = try? JSONSerialization.data(withJSONObject: value, options: []),
-               let json = String(data: data, encoding: .utf8) {
-                return json
-            }
-            return String(describing: value)
-        }
-        if let array = value as? [Any?] {
-            return array.compactMap { $0.map { String(describing: $0) } }.joined(separator: ",")
-        }
-        if let object = value as? [String: Any] {
-            var values: [String] = []
-            for (key, item) in object {
-                if parameter.explode {
-                    values.append("\(key)=\(item)")
-                } else {
-                    values.append(key)
-                    values.append(String(describing: item))
-                }
-            }
-            return values.joined(separator: ",")
-        }
-        if let date = value as? Date {
-            return ISO8601DateFormatter().string(from: date)
-        }
-        return String(describing: value)
-    }
-
-    private func urlEncode(_ value: String) -> String {
-        value.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? value
-    }
 }

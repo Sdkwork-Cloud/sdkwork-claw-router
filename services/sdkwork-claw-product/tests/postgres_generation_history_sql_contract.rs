@@ -1,4 +1,4 @@
-﻿const POSTGRES_GENERATION_HISTORY_STORE: &str =
+const POSTGRES_GENERATION_HISTORY_STORE: &str =
     include_str!("../src/infrastructure/sql/postgres/app_generation_history_read_store.rs");
 
 fn compact_sql(value: &str) -> String {

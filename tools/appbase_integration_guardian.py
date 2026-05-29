@@ -17,6 +17,7 @@ from tools.frontend_contract_loader import (
     load_frontend_field_contract,
     render_frontend_field_contract,
 )
+from tools.schema_registry_loader import render_schema_registry
 
 try:
     import yaml
@@ -582,7 +583,10 @@ class AppbaseIntegrationGuardian:
             messages.extend(self._validate_commerce_required_api_operations(field_contract))
         table_registry = self.root / TABLE_REGISTRY_PATH
         if table_registry.is_file():
-            text = table_registry.read_text(encoding="utf-8", errors="ignore")
+            try:
+                text = render_schema_registry(table_registry)
+            except (OSError, RuntimeError, ValueError):
+                text = table_registry.read_text(encoding="utf-8", errors="ignore")
             messages.extend(
                 self._validate_commerce_schema_registry_text(
                     "appbase commerce table registry",

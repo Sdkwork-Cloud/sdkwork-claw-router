@@ -22,26 +22,14 @@ class OpenPlatformApi(private val client: HttpClient) {
     }
 
     /** Create open platform account */
-    suspend fun accountsCreate(body: OpenPlatformAccountCreateRequest, xRequestId: String? = null): AccountsCreateResult? {
-        val requestHeaders = buildRequestHeaders(
-            mapOf(
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
-            ),
-            emptyMap()
-        )
-        val raw = client.post(ApiPaths.backendPath("/open_platform/accounts"), body, null, requestHeaders, "application/json")
+    suspend fun accountsCreate(body: OpenPlatformAccountCreateRequest): AccountsCreateResult? {
+        val raw = client.post(ApiPaths.backendPath("/open_platform/accounts"), body, null, null, "application/json")
         return client.convertValue(raw, object : TypeReference<AccountsCreateResult>() {})
     }
 
     /** Delete open platform account */
-    suspend fun accountsDelete(accountId: String, xRequestId: String? = null): AccountsDeleteResult? {
-        val requestHeaders = buildRequestHeaders(
-            mapOf(
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
-            ),
-            emptyMap()
-        )
-        val raw = client.delete(ApiPaths.backendPath("/open_platform/accounts/${serializePathParameter(accountId, PathParameterSpec("accountId", "simple", false))}"), null, requestHeaders)
+    suspend fun accountsDelete(accountId: String): AccountsDeleteResult? {
+        val raw = client.delete(ApiPaths.backendPath("/open_platform/accounts/${serializePathParameter(accountId, PathParameterSpec("accountId", "simple", false))}"))
         return client.convertValue(raw, object : TypeReference<AccountsDeleteResult>() {})
     }
 
@@ -52,14 +40,8 @@ class OpenPlatformApi(private val client: HttpClient) {
     }
 
     /** Update open platform account */
-    suspend fun accountsUpdate(accountId: String, body: OpenPlatformAccountUpdateRequest, xRequestId: String? = null): AccountsUpdateResult? {
-        val requestHeaders = buildRequestHeaders(
-            mapOf(
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
-            ),
-            emptyMap()
-        )
-        val raw = client.patch(ApiPaths.backendPath("/open_platform/accounts/${serializePathParameter(accountId, PathParameterSpec("accountId", "simple", false))}"), body, null, requestHeaders, "application/json")
+    suspend fun accountsUpdate(accountId: String, body: OpenPlatformAccountUpdateRequest): AccountsUpdateResult? {
+        val raw = client.patch(ApiPaths.backendPath("/open_platform/accounts/${serializePathParameter(accountId, PathParameterSpec("accountId", "simple", false))}"), body, null, null, "application/json")
         return client.convertValue(raw, object : TypeReference<AccountsUpdateResult>() {})
     }
 
@@ -70,38 +52,20 @@ class OpenPlatformApi(private val client: HttpClient) {
     }
 
     /** Create open platform account entry */
-    suspend fun accountsEntriesCreate(accountId: String, body: OpenPlatformEntryCreateRequest, xRequestId: String? = null): AccountsEntriesCreateResult? {
-        val requestHeaders = buildRequestHeaders(
-            mapOf(
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
-            ),
-            emptyMap()
-        )
-        val raw = client.post(ApiPaths.backendPath("/open_platform/accounts/${serializePathParameter(accountId, PathParameterSpec("accountId", "simple", false))}/entries"), body, null, requestHeaders, "application/json")
+    suspend fun accountsEntriesCreate(accountId: String, body: OpenPlatformEntryCreateRequest): AccountsEntriesCreateResult? {
+        val raw = client.post(ApiPaths.backendPath("/open_platform/accounts/${serializePathParameter(accountId, PathParameterSpec("accountId", "simple", false))}/entries"), body, null, null, "application/json")
         return client.convertValue(raw, object : TypeReference<AccountsEntriesCreateResult>() {})
     }
 
     /** Delete open platform account entry */
-    suspend fun accountsEntriesDelete(accountId: String, entryId: String, xRequestId: String? = null): AccountsEntriesDeleteResult? {
-        val requestHeaders = buildRequestHeaders(
-            mapOf(
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
-            ),
-            emptyMap()
-        )
-        val raw = client.delete(ApiPaths.backendPath("/open_platform/accounts/${serializePathParameter(accountId, PathParameterSpec("accountId", "simple", false))}/entries/${serializePathParameter(entryId, PathParameterSpec("entryId", "simple", false))}"), null, requestHeaders)
+    suspend fun accountsEntriesDelete(accountId: String, entryId: String): AccountsEntriesDeleteResult? {
+        val raw = client.delete(ApiPaths.backendPath("/open_platform/accounts/${serializePathParameter(accountId, PathParameterSpec("accountId", "simple", false))}/entries/${serializePathParameter(entryId, PathParameterSpec("entryId", "simple", false))}"))
         return client.convertValue(raw, object : TypeReference<AccountsEntriesDeleteResult>() {})
     }
 
     /** Update open platform account entry */
-    suspend fun accountsEntriesUpdate(accountId: String, entryId: String, body: OpenPlatformEntryUpdateRequest, xRequestId: String? = null): AccountsEntriesUpdateResult? {
-        val requestHeaders = buildRequestHeaders(
-            mapOf(
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
-            ),
-            emptyMap()
-        )
-        val raw = client.patch(ApiPaths.backendPath("/open_platform/accounts/${serializePathParameter(accountId, PathParameterSpec("accountId", "simple", false))}/entries/${serializePathParameter(entryId, PathParameterSpec("entryId", "simple", false))}"), body, null, requestHeaders, "application/json")
+    suspend fun accountsEntriesUpdate(accountId: String, entryId: String, body: OpenPlatformEntryUpdateRequest): AccountsEntriesUpdateResult? {
+        val raw = client.patch(ApiPaths.backendPath("/open_platform/accounts/${serializePathParameter(accountId, PathParameterSpec("accountId", "simple", false))}/entries/${serializePathParameter(entryId, PathParameterSpec("entryId", "simple", false))}"), body, null, null, "application/json")
         return client.convertValue(raw, object : TypeReference<AccountsEntriesUpdateResult>() {})
     }
 
@@ -112,26 +76,14 @@ class OpenPlatformApi(private val client: HttpClient) {
     }
 
     /** Create open platform account pay binding */
-    suspend fun accountsPayBindingsCreate(accountId: String, body: OpenPlatformPayBindingCreateRequest, xRequestId: String? = null): AccountsPayBindingsCreateResult? {
-        val requestHeaders = buildRequestHeaders(
-            mapOf(
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
-            ),
-            emptyMap()
-        )
-        val raw = client.post(ApiPaths.backendPath("/open_platform/accounts/${serializePathParameter(accountId, PathParameterSpec("accountId", "simple", false))}/pay_bindings"), body, null, requestHeaders, "application/json")
+    suspend fun accountsPayBindingsCreate(accountId: String, body: OpenPlatformPayBindingCreateRequest): AccountsPayBindingsCreateResult? {
+        val raw = client.post(ApiPaths.backendPath("/open_platform/accounts/${serializePathParameter(accountId, PathParameterSpec("accountId", "simple", false))}/pay_bindings"), body, null, null, "application/json")
         return client.convertValue(raw, object : TypeReference<AccountsPayBindingsCreateResult>() {})
     }
 
     /** Delete open platform account pay binding */
-    suspend fun accountsPayBindingsDelete(accountId: String, bindingId: String, xRequestId: String? = null): AccountsPayBindingsDeleteResult? {
-        val requestHeaders = buildRequestHeaders(
-            mapOf(
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
-            ),
-            emptyMap()
-        )
-        val raw = client.delete(ApiPaths.backendPath("/open_platform/accounts/${serializePathParameter(accountId, PathParameterSpec("accountId", "simple", false))}/pay_bindings/${serializePathParameter(bindingId, PathParameterSpec("bindingId", "simple", false))}"), null, requestHeaders)
+    suspend fun accountsPayBindingsDelete(accountId: String, bindingId: String): AccountsPayBindingsDeleteResult? {
+        val raw = client.delete(ApiPaths.backendPath("/open_platform/accounts/${serializePathParameter(accountId, PathParameterSpec("accountId", "simple", false))}/pay_bindings/${serializePathParameter(bindingId, PathParameterSpec("bindingId", "simple", false))}"))
         return client.convertValue(raw, object : TypeReference<AccountsPayBindingsDeleteResult>() {})
     }
 
@@ -326,50 +278,4 @@ class OpenPlatformApi(private val client: HttpClient) {
         return java.net.URLEncoder.encode(value, java.nio.charset.StandardCharsets.UTF_8)
     }
 
-    private data class HeaderParameterSpec(val value: Any?, val style: String, val explode: Boolean, val contentType: String?)
-
-    private val headerObjectMapper = ObjectMapper().registerKotlinModule()
-
-    private fun buildRequestHeaders(headers: Map<String, HeaderParameterSpec>, cookies: Map<String, HeaderParameterSpec>): Map<String, String>? {
-        val requestHeaders = linkedMapOf<String, String>()
-        headers.forEach { (name, parameter) ->
-            serializeParameterValue(parameter)?.let { requestHeaders[name] = it }
-        }
-
-        val cookieHeader = buildCookieHeader(cookies)
-        if (cookieHeader.isNotEmpty()) {
-            requestHeaders["Cookie"] = requestHeaders["Cookie"]?.let { "$it; $cookieHeader" } ?: cookieHeader
-        }
-
-        return requestHeaders.takeIf { it.isNotEmpty() }
-    }
-
-    private fun buildCookieHeader(cookies: Map<String, HeaderParameterSpec>): String {
-        return cookies.mapNotNull { (name, parameter) ->
-            serializeParameterValue(parameter)?.let {
-                java.net.URLEncoder.encode(name, java.nio.charset.StandardCharsets.UTF_8) + "=" +
-                    java.net.URLEncoder.encode(it, java.nio.charset.StandardCharsets.UTF_8)
-            }
-        }.joinToString("; ")
-    }
-
-    private fun serializeParameterValue(parameter: HeaderParameterSpec?): String? {
-        val value = parameter?.value ?: return null
-        if (!parameter.contentType.isNullOrBlank()) {
-            return headerObjectMapper.writeValueAsString(value)
-        }
-        return when (value) {
-            is Iterable<*> -> value.mapNotNull { it?.toString() }.joinToString(",")
-            is Map<*, *> -> value.mapNotNull { (key, item) ->
-                if (item == null) {
-                    null
-                } else if (parameter.explode) {
-                    "$key=$item"
-                } else {
-                    listOf(key.toString(), item.toString()).joinToString(",")
-                }
-            }.joinToString(",")
-            else -> value.toString()
-        }
-    }
 }

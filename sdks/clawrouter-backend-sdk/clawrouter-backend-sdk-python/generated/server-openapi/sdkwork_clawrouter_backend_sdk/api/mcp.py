@@ -271,12 +271,11 @@ class McpServersApi:
         ])
         return self._client.get(_append_query_string(f"/backend/v3/api/mcp/servers", query))
 
-    def create(self, body: AdminMcpServerCreateRequest, idempotency_key: str, x_request_id: Optional[str] = None) -> ServersCreateResult:
+    def create(self, body: AdminMcpServerCreateRequest, idempotency_key: str) -> ServersCreateResult:
         """Create MCP server"""
         request_headers = build_request_headers(
             {
                 'Idempotency-Key': {'value': idempotency_key, 'style': 'simple', 'explode': False},
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
             },
             {}
         )
@@ -286,15 +285,9 @@ class McpServersApi:
         """Retrieve MCP server"""
         return self._client.get(f"/backend/v3/api/mcp/servers/{serialize_path_parameter(server_id, {'name': 'serverId', 'style': 'simple', 'explode': False})}")
 
-    def update(self, server_id: str, body: AdminMcpServerUpdateRequest, x_request_id: Optional[str] = None) -> ServersUpdateResult:
+    def update(self, server_id: str, body: AdminMcpServerUpdateRequest) -> ServersUpdateResult:
         """Update MCP server"""
-        request_headers = build_request_headers(
-            {
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
-            },
-            {}
-        )
-        return self._client.put(f"/backend/v3/api/mcp/servers/{serialize_path_parameter(server_id, {'name': 'serverId', 'style': 'simple', 'explode': False})}", json=body, headers=request_headers)
+        return self._client.put(f"/backend/v3/api/mcp/servers/{serialize_path_parameter(server_id, {'name': 'serverId', 'style': 'simple', 'explode': False})}", json=body)
 
 class McpServersBindingsApi:
     """mcp mcp.servers.bindings API client."""
@@ -303,26 +296,19 @@ class McpServersBindingsApi:
         self._client = client
 
 
-    def update(self, binding_id: str, body: AdminMcpBindingUpdateRequest, x_request_id: Optional[str] = None) -> ServersBindingsUpdateResult:
+    def update(self, binding_id: str, body: AdminMcpBindingUpdateRequest) -> ServersBindingsUpdateResult:
         """Update MCP binding"""
-        request_headers = build_request_headers(
-            {
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
-            },
-            {}
-        )
-        return self._client.put(f"/backend/v3/api/mcp/bindings/{serialize_path_parameter(binding_id, {'name': 'bindingId', 'style': 'simple', 'explode': False})}", json=body, headers=request_headers)
+        return self._client.put(f"/backend/v3/api/mcp/bindings/{serialize_path_parameter(binding_id, {'name': 'bindingId', 'style': 'simple', 'explode': False})}", json=body)
 
     def list(self, server_id: str) -> ServersBindingsListResult:
         """List MCP bindings"""
         return self._client.get(f"/backend/v3/api/mcp/servers/{serialize_path_parameter(server_id, {'name': 'serverId', 'style': 'simple', 'explode': False})}/bindings")
 
-    def create(self, server_id: str, body: AdminMcpBindingCreateRequest, idempotency_key: str, x_request_id: Optional[str] = None) -> ServersBindingsCreateResult:
+    def create(self, server_id: str, body: AdminMcpBindingCreateRequest, idempotency_key: str) -> ServersBindingsCreateResult:
         """Create MCP binding"""
         request_headers = build_request_headers(
             {
                 'Idempotency-Key': {'value': idempotency_key, 'style': 'simple', 'explode': False},
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
             },
             {}
         )
@@ -335,15 +321,9 @@ class McpServersToolsApi:
         self._client = client
 
 
-    def refresh(self, server_id: str, x_request_id: Optional[str] = None) -> ServersToolsRefreshResult:
+    def refresh(self, server_id: str) -> ServersToolsRefreshResult:
         """Discover MCP tools"""
-        request_headers = build_request_headers(
-            {
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
-            },
-            {}
-        )
-        return self._client.post(f"/backend/v3/api/mcp/servers/{serialize_path_parameter(server_id, {'name': 'serverId', 'style': 'simple', 'explode': False})}/discover", headers=request_headers)
+        return self._client.post(f"/backend/v3/api/mcp/servers/{serialize_path_parameter(server_id, {'name': 'serverId', 'style': 'simple', 'explode': False})}/discover")
 
     def list(self, server_id: str) -> ServersToolsListResult:
         """List MCP tools"""
@@ -356,15 +336,9 @@ class McpServersHealthChecksApi:
         self._client = client
 
 
-    def create(self, server_id: str, x_request_id: Optional[str] = None) -> ServersHealthChecksCreateResult:
+    def create(self, server_id: str) -> ServersHealthChecksCreateResult:
         """Check MCP server health"""
-        request_headers = build_request_headers(
-            {
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
-            },
-            {}
-        )
-        return self._client.post(f"/backend/v3/api/mcp/servers/{serialize_path_parameter(server_id, {'name': 'serverId', 'style': 'simple', 'explode': False})}/health_check", headers=request_headers)
+        return self._client.post(f"/backend/v3/api/mcp/servers/{serialize_path_parameter(server_id, {'name': 'serverId', 'style': 'simple', 'explode': False})}/health_check")
 
 class McpServersRevisionsApi:
     """mcp mcp.servers.revisions API client."""
@@ -377,12 +351,11 @@ class McpServersRevisionsApi:
         """List MCP server revisions"""
         return self._client.get(f"/backend/v3/api/mcp/servers/{serialize_path_parameter(server_id, {'name': 'serverId', 'style': 'simple', 'explode': False})}/revisions")
 
-    def create(self, server_id: str, body: AdminMcpServerRevisionCreateRequest, idempotency_key: str, x_request_id: Optional[str] = None) -> ServersRevisionsCreateResult:
+    def create(self, server_id: str, body: AdminMcpServerRevisionCreateRequest, idempotency_key: str) -> ServersRevisionsCreateResult:
         """Create MCP server revision"""
         request_headers = build_request_headers(
             {
                 'Idempotency-Key': {'value': idempotency_key, 'style': 'simple', 'explode': False},
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
             },
             {}
         )
@@ -395,15 +368,9 @@ class McpRevisionsApi:
         self._client = client
 
 
-    def publish(self, revision_id: str, x_request_id: Optional[str] = None) -> RevisionsPublishResult:
+    def publish(self, revision_id: str) -> RevisionsPublishResult:
         """Publish MCP server revision"""
-        request_headers = build_request_headers(
-            {
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
-            },
-            {}
-        )
-        return self._client.post(f"/backend/v3/api/mcp/revisions/{serialize_path_parameter(revision_id, {'name': 'revisionId', 'style': 'simple', 'explode': False})}/publish", headers=request_headers)
+        return self._client.post(f"/backend/v3/api/mcp/revisions/{serialize_path_parameter(revision_id, {'name': 'revisionId', 'style': 'simple', 'explode': False})}/publish")
 
 class McpToolsApi:
     """mcp mcp.tools API client."""
@@ -412,12 +379,6 @@ class McpToolsApi:
         self._client = client
 
 
-    def update(self, tool_id: str, body: AdminMcpToolUpdateRequest, x_request_id: Optional[str] = None) -> ToolsUpdateResult:
+    def update(self, tool_id: str, body: AdminMcpToolUpdateRequest) -> ToolsUpdateResult:
         """Update MCP tool"""
-        request_headers = build_request_headers(
-            {
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
-            },
-            {}
-        )
-        return self._client.put(f"/backend/v3/api/mcp/tools/{serialize_path_parameter(tool_id, {'name': 'toolId', 'style': 'simple', 'explode': False})}", json=body, headers=request_headers)
+        return self._client.put(f"/backend/v3/api/mcp/tools/{serialize_path_parameter(tool_id, {'name': 'toolId', 'style': 'simple', 'explode': False})}", json=body)

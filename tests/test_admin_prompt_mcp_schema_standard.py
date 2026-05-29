@@ -3,7 +3,7 @@ from __future__ import annotations
 import unittest
 from pathlib import Path
 
-import yaml
+from tools.schema_registry_loader import load_schema_registry
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -12,7 +12,7 @@ TABLE_REGISTRY = ROOT / "docs" / "schema-registry" / "sdkwork-claw-router.tables
 
 class AdminPromptMcpSchemaStandardTest(unittest.TestCase):
     def setUp(self) -> None:
-        self.registry = yaml.safe_load(TABLE_REGISTRY.read_text(encoding="utf-8"))
+        self.registry = load_schema_registry(TABLE_REGISTRY)
         self.tables = {
             item["table"]: item
             for item in self.registry.get("tables", [])

@@ -6,6 +6,7 @@ from pathlib import Path
 from typing import Any
 
 from tools.frontend_contract_loader import DEFAULT_CONTRACT_INDEX, DEFAULT_CONTRACT_SNAPSHOT
+from tools.schema_registry_loader import load_schema_registry, schema_registry_source_paths
 
 try:
     import yaml
@@ -201,10 +202,10 @@ REQUIRED_TABLE_COLUMNS = {
         "video_unit_price",
         "per_request_price",
     },
-    "iam_gateway_api_key": {"group_id", "key_hash", "policy_id", "quota_policy_id", "rate_limit_policy_id"},
-    "iam_gateway_api_key_group": {"pricing_plan_id", "pricing_plan_code", "official_price_multiplier", "billing_type"},
-    "integration_provider": {"provider_code", "default_vendor_code", "integration_type", "capabilities"},
-    "integration_channel_model": {"model", "vendor_code", "provider_model", "capability"},
+    "iam_gateway_api_key": {"channel_group_id", "key_hash", "policy_id", "quota_policy_id", "rate_limit_policy_id"},
+    "ai_channel_group": {"pricing_plan_id", "pricing_plan_code", "official_price_multiplier", "billing_type"},
+    "ai_provider": {"provider_code", "default_vendor_code", "provider_type", "resource_schema"},
+    "ai_channel_model": {"model", "vendor_code", "provider_model", "capability"},
 }
 
 MESSAGING_STANDARD_TABLES: tuple[str, ...] = (
@@ -233,6 +234,25 @@ MESSAGING_TABLE_NAME_TOKENS: tuple[str, ...] = (
     "template",
     "webhook",
 )
+
+MOJIBAKE_MARKER_CODEPOINTS: tuple[int, ...] = (
+    0xFFFD,
+    0x95C1,
+    0x6FDE,
+    0x5A75,
+    0x95BB,
+    0x95C2,
+    0x6FE0,
+    0x7F02,
+    0x9225,
+    0xE51B,
+    0xE5DD,
+    0x941F,
+    0x59AB,
+)
+
+# Keep bad-glyph samples as code points so this source file stays readable.
+MOJIBAKE_MARKERS: tuple[str, ...] = tuple(chr(codepoint) for codepoint in MOJIBAKE_MARKER_CODEPOINTS)
 
 @dataclass(frozen=True)
 class SchemaGuardianResult:
@@ -270,6 +290,7 @@ class SchemaGuardian:
         }
 
         messages: list[str] = []
+        messages.extend(self._check_registry_text_encoding())
         messages.extend(self._check_forbidden_synonyms(data, by_table))
         messages.extend(self._check_legacy_identity_standard(data, by_table))
         messages.extend(self._check_appbase_commerce_legacy_aliases(by_table))
@@ -286,17 +307,21 @@ class SchemaGuardian:
         return SchemaGuardianResult(ok=not messages, messages=messages)
 
     def _load_registry(self) -> dict[str, Any]:
-        if yaml is None:
-            raise RuntimeError("PyYAML is required to load schema registry YAML") from _YAML_IMPORT_ERROR
-        if not self.registry_path.exists():
-            raise FileNotFoundError(f"schema registry not found: {self.registry_path}")
-        content = self.registry_path.read_text(encoding="utf-8")
-        data = yaml.safe_load(content)
-        if data is None:
-            return {}
-        if not isinstance(data, dict):
-            raise ValueError("schema registry root must be a mapping")
-        return data
+        return load_schema_registry(self.registry_path)
+
+    def _check_registry_text_encoding(self) -> list[str]:
+        messages: list[str] = []
+        for path in schema_registry_source_paths(self.registry_path):
+            text = path.read_text(encoding="utf-8")
+            for line_number, line in enumerate(text.splitlines(), 1):
+                if any(marker in line for marker in MOJIBAKE_MARKERS):
+                    excerpt = line.strip()
+                    if len(excerpt) > 120:
+                        excerpt = excerpt[:117] + "..."
+                    messages.append(
+                        f"schema registry contains mojibake text near line {line_number}: {excerpt}"
+                    )
+        return messages
 
     def _check_forbidden_synonyms(self, data: dict[str, Any], by_table: dict[str, dict[str, Any]]) -> list[str]:
         guardrails = data.get("schema_registry", {}).get("legacy_compatibility_guardrails", {})

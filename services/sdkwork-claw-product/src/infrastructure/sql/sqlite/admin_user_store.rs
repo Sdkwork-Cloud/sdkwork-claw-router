@@ -16,7 +16,7 @@ const API_KEY_STATUS_REVOKED: i32 = 4;
 const TARGET_TYPE_USER: i32 = 61;
 const TARGET_TYPE_API_KEY: i32 = 62;
 const TARGET_TYPE_ACCOUNT: i32 = 63;
-const DEFAULT_API_KEY_GROUP_CODE: &str = "default";
+const DEFAULT_CHANNEL_GROUP_CODE: &str = "default";
 const DEFAULT_API_KEY_GROUP_NAME: &str = "Default";
 const DEFAULT_PRICING_PLAN_CODE: &str = "standard";
 const CASH_CURRENCY_CODE: &str = "USD";
@@ -816,10 +816,10 @@ async fn find_default_api_key_group(
     sqlx::query_scalar(
         r#"
         SELECT id
-        FROM iam_gateway_api_key_group
+        FROM ai_channel_group
         WHERE (tenant_id IS NULL OR tenant_id = ?)
           AND (organization_id IS NULL OR organization_id = ?)
-          AND code = ?
+          AND group_code = ?
           AND status = 1
           AND deleted_at IS NULL
         ORDER BY updated_at DESC,
@@ -829,7 +829,7 @@ async fn find_default_api_key_group(
     )
     .bind(tenant_id)
     .bind(organization_id)
-    .bind(DEFAULT_API_KEY_GROUP_CODE)
+    .bind(DEFAULT_CHANNEL_GROUP_CODE)
     .fetch_optional(&mut **tx)
     .await
     .map_err(|error| store_error("failed to load default api key group", error))
@@ -850,10 +850,10 @@ async fn ensure_default_api_key_group(
     let pricing_plan_id = find_default_pricing_plan_id(tx, tenant_id, organization_id).await?;
     let insert_result = sqlx::query(
         r#"
-        INSERT INTO iam_gateway_api_key_group
-            (uuid, tenant_id, organization_id, data_scope, status, created_at, updated_at, version, name, code, description, group_type, environment, pricing_plan_id, pricing_plan_code, rate_multiplier, official_price_multiplier, billing_type, capacity_limit, allowed_origin, metadata)
+        INSERT INTO ai_channel_group
+            (uuid, tenant_id, organization_id, data_scope, status, created_at, updated_at, version, group_name, group_code, description, group_type, environment, pricing_plan_id, pricing_plan_code, rate_multiplier, official_price_multiplier, billing_type, capacity_limit, allowed_origin, metadata)
         VALUES
-            (?, ?, ?, 1, 1, ?, ?, 0, ?, ?, '', 1, 1, ?, ?, '1.000000', '1.000000', 1, 0, '{}', '{}')
+            (?, ?, ?, 1, 1, ?, ?, 0, ?, ?, '', 'default', 1, ?, ?, '1.000000', '1.000000', 1, 0, '{}', '{}')
         "#,
     )
     .bind(&group_uuid)
@@ -862,7 +862,7 @@ async fn ensure_default_api_key_group(
     .bind(requested_at)
     .bind(requested_at)
     .bind(DEFAULT_API_KEY_GROUP_NAME)
-    .bind(DEFAULT_API_KEY_GROUP_CODE)
+    .bind(DEFAULT_CHANNEL_GROUP_CODE)
     .bind(pricing_plan_id)
     .bind(DEFAULT_PRICING_PLAN_CODE)
     .execute(&mut **tx)
@@ -896,10 +896,10 @@ async fn reactivate_default_api_key_group(
 ) -> DomainResult<()> {
     sqlx::query(
         r#"
-        UPDATE iam_gateway_api_key_group
+        UPDATE ai_channel_group
         SET status = 1,
             deleted_at = NULL,
-            name = COALESCE(NULLIF(name, ''), ?),
+            group_name = COALESCE(NULLIF(group_name, ''), ?),
             pricing_plan_id = COALESCE(pricing_plan_id, ?),
             pricing_plan_code = COALESCE(NULLIF(pricing_plan_code, ''), ?),
             rate_multiplier = COALESCE(rate_multiplier, '1.000000'),
@@ -907,7 +907,7 @@ async fn reactivate_default_api_key_group(
             updated_at = ?
         WHERE tenant_id = ?
           AND organization_id = ?
-          AND code = ?
+          AND group_code = ?
         "#,
     )
     .bind(DEFAULT_API_KEY_GROUP_NAME)
@@ -916,7 +916,7 @@ async fn reactivate_default_api_key_group(
     .bind(requested_at)
     .bind(tenant_id)
     .bind(organization_id)
-    .bind(DEFAULT_API_KEY_GROUP_CODE)
+    .bind(DEFAULT_CHANNEL_GROUP_CODE)
     .execute(&mut **tx)
     .await
     .map_err(|error| store_error("failed to reactivate default api key group", error))?;
@@ -966,7 +966,7 @@ async fn insert_api_key(
     sqlx::query(
         r#"
         INSERT INTO iam_gateway_api_key
-            (uuid, tenant_id, organization_id, user_id, group_id, name, key_prefix, key_display_masked, key_hash, hash_alg, secret_version, idempotency_key, status, created_at, updated_at, last_revealed_at)
+            (uuid, tenant_id, organization_id, user_id, channel_group_id, name, key_prefix, key_display_masked, key_hash, hash_alg, secret_version, idempotency_key, status, created_at, updated_at, last_revealed_at)
         VALUES
             (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 1, ?, ?, CURRENT_TIMESTAMP)
         "#,

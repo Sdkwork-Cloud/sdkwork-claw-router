@@ -1,8 +1,6 @@
 package com.sdkwork.clawrouter.backend
 
 data class AiUsageFactRecord(
-    val apiKeyGroupId: String? = null,
-    val apiKeyGroupSnapshot: String? = null,
     val apiKeyId: String? = null,
     val apiKeyNameSnapshot: String? = null,
     val audioSeconds: String? = null,
@@ -19,6 +17,8 @@ data class AiUsageFactRecord(
     val cacheReadUnitPrice: String? = null,
     val cachedTokens: String? = null,
     val catalogKey: String? = null,
+    val channelGroupId: String? = null,
+    val channelGroupSnapshot: String? = null,
     val channelId: String? = null,
     val characterCount: String? = null,
     val completionTokens: String? = null,
@@ -49,7 +49,6 @@ data class AiUsageFactRecord(
     val pricingSnapshot: Map<String, String>? = null,
     val pricingTierId: String? = null,
     val promptTokens: String? = null,
-    val providerAccountId: String? = null,
     val providerId: String? = null,
     val providerNativeModel: String? = null,
     val rateMultiplier: String? = null,

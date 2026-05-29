@@ -1,4 +1,4 @@
-﻿import assert from "node:assert/strict";
+import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import test from "node:test";
 
@@ -167,7 +167,7 @@ test("admin group table actions are wired to real supported workflows", () => {
   assert.match(source, /value=\{statusFilter\}/);
   assert.match(source, /value=\{typeFilter\}/);
   assert.match(source, /setSortDirection/);
-  assert.doesNotMatch(source, /涓撳睘鍊嶇巼/);
+  assert.doesNotMatch(source, /\u6d93\u64b3\u7758\u934a\u5d87\u5dfc/u);
 });
 
 test("admin group page exposes channel account binding management", () => {

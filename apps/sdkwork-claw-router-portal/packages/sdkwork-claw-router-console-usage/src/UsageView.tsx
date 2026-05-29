@@ -14,9 +14,11 @@ import {
 import { BusinessStatePanel } from 'sdkwork-claw-router-commons';
 import {
   formatDecimalAmount,
+  formatUserAgentDeviceLabel,
 } from 'sdkwork-claw-router-commons/runtime';
 import { useTranslation } from 'react-i18next';
 import { UsageService, UsageLog } from './usageService';
+import { formatUsageLogLocalTime } from './usageFormatting';
 
 const DEFAULT_PAGE_SIZE = 10;
 const SPEND_DECIMAL_DIGITS = 9;
@@ -42,35 +44,6 @@ const defaultUsageLogQuery: UsageLogQueryState = {
 };
 
 type TranslationFunction = ReturnType<typeof useTranslation>['t'];
-
-function padDateTimePart(value: number): string {
-  return String(value).padStart(2, '0');
-}
-
-export function formatUsageLogLocalTime(value: string): string {
-  const normalized = value.trim();
-  if (!normalized) {
-    return '-';
-  }
-
-  const date = new Date(normalized);
-  if (Number.isNaN(date.getTime())) {
-    return normalized;
-  }
-
-  const datePart = [
-    date.getFullYear(),
-    padDateTimePart(date.getMonth() + 1),
-    padDateTimePart(date.getDate()),
-  ].join('-');
-  const timePart = [
-    padDateTimePart(date.getHours()),
-    padDateTimePart(date.getMinutes()),
-    padDateTimePart(date.getSeconds()),
-  ].join(':');
-
-  return `${datePart} ${timePart}`;
-}
 
 function getUsageLoadErrorMessage(error: unknown, fallback: string, t: TranslationFunction): string {
   if (error instanceof Error) {
@@ -299,7 +272,7 @@ export function UsageView() {
           />
         ) : (
           <div className="flex-1 min-h-0 overflow-auto custom-scrollbar">
-            <table className="w-full text-left text-sm whitespace-nowrap min-w-[1320px]">
+            <table className="w-full text-left text-sm whitespace-nowrap min-w-[1460px]">
               <thead className="sticky top-0 z-10 bg-slate-50 dark:bg-[#1e1e1e] text-slate-500 dark:text-slate-400 border-b border-slate-200 dark:border-white/5 select-none text-xs">
                 <tr>
                   <th className="px-4 py-3.5 font-medium">{t('console.usage.table.time', 'Time')}</th>
@@ -313,6 +286,7 @@ export function UsageView() {
                   <th className="px-4 py-3.5 font-medium text-right">{t('console.usage.table.output', 'Output')}</th>
                   <th className="px-4 py-3.5 font-medium text-right">{t('console.usage.table.cost', 'Spend')}</th>
                   <th className="px-4 py-3.5 font-medium text-center">{t('console.usage.table.ip', 'IP')}</th>
+                  <th className="px-4 py-3.5 font-medium text-center">{t('console.usage.table.userAgent', 'User Agent')}</th>
                   <th className="px-4 py-3.5 font-medium">{t('console.usage.table.details', '详情')}</th>
                 </tr>
               </thead>
@@ -402,6 +376,14 @@ export function UsageView() {
                             {log.ip || '-'}
                           </span>
                         </td>
+                        <td className="px-4 py-3.5 text-center align-top pt-4">
+                          <span
+                            title={log.userAgent}
+                            className="inline-block max-w-[160px] truncate text-xs text-slate-500 border-b border-dashed border-slate-300 dark:border-white/20"
+                          >
+                            {formatUserAgentDeviceLabel(log.userAgent)}
+                          </span>
+                        </td>
                         <td className="px-4 py-2 align-top pt-3 text-[11px] leading-relaxed">
                           <div className="text-slate-500 dark:text-slate-400">
                             {t('console.usage.metric.multiplier', 'multiplier')} <span className="text-slate-800 dark:text-slate-300 font-mono">{formatDecimalAmount(log.multiplier, 6)}x</span>
@@ -417,7 +399,7 @@ export function UsageView() {
 
                       {expanded && (
                         <tr className="bg-slate-50 dark:bg-[#1e1e1e]">
-                          <td colSpan={12} className="p-0 border-t border-b border-slate-200 dark:border-white/5">
+                          <td colSpan={13} className="p-0 border-t border-b border-slate-200 dark:border-white/5">
                             <div className="py-5 px-6 flex gap-6 text-xs">
                               <div className="flex flex-col gap-3 text-slate-500 text-right font-medium min-w-[100px] shrink-0">
                                 <div>{t('console.usage.detail.requestId', 'Request ID')}</div>

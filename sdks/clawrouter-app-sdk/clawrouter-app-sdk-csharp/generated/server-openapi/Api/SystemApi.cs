@@ -18,13 +18,12 @@ namespace Sdkwork.ClawRouter.App.Api
         /// <summary>
         /// Promotion Code Redemption Create
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.App.Models.PromotionsCodesRedemptionsCreateResult?> PromotionsCodesRedemptionsCreateAsync(Sdkwork.ClawRouter.App.Models.PromotionCodeRedemptionRequest body, string idempotencyKey, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.App.Models.PromotionsCodesRedemptionsCreateResult?> PromotionsCodesRedemptionsCreateAsync(Sdkwork.ClawRouter.App.Models.PromotionCodeRedemptionRequest body, string idempotencyKey)
         {
             var requestHeaders = BuildRequestHeaders(
                 new Dictionary<string, HeaderParameterSpec>
                 {
                     ["Idempotency-Key"] = new HeaderParameterSpec(idempotencyKey, "simple", false, null),
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
                 },
                 new Dictionary<string, HeaderParameterSpec>()
             );
@@ -34,13 +33,12 @@ namespace Sdkwork.ClawRouter.App.Api
         /// <summary>
         /// Promotion Discount Application Create
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.App.Models.PromotionsDiscountApplicationsCreateResult?> PromotionsDiscountApplicationsCreateAsync(Sdkwork.ClawRouter.App.Models.PromotionCommandRequest body, string idempotencyKey, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.App.Models.PromotionsDiscountApplicationsCreateResult?> PromotionsDiscountApplicationsCreateAsync(Sdkwork.ClawRouter.App.Models.PromotionCommandRequest body, string idempotencyKey)
         {
             var requestHeaders = BuildRequestHeaders(
                 new Dictionary<string, HeaderParameterSpec>
                 {
                     ["Idempotency-Key"] = new HeaderParameterSpec(idempotencyKey, "simple", false, null),
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
                 },
                 new Dictionary<string, HeaderParameterSpec>()
             );
@@ -50,13 +48,12 @@ namespace Sdkwork.ClawRouter.App.Api
         /// <summary>
         /// Promotion Discount Application Reversal Create
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.App.Models.PromotionsDiscountApplicationsReversalsCreateResult?> PromotionsDiscountApplicationsReversalsCreateAsync(Sdkwork.ClawRouter.App.Models.PromotionCommandRequest body, string idempotencyKey, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.App.Models.PromotionsDiscountApplicationsReversalsCreateResult?> PromotionsDiscountApplicationsReversalsCreateAsync(Sdkwork.ClawRouter.App.Models.PromotionCommandRequest body, string idempotencyKey)
         {
             var requestHeaders = BuildRequestHeaders(
                 new Dictionary<string, HeaderParameterSpec>
                 {
                     ["Idempotency-Key"] = new HeaderParameterSpec(idempotencyKey, "simple", false, null),
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
                 },
                 new Dictionary<string, HeaderParameterSpec>()
             );
@@ -66,13 +63,12 @@ namespace Sdkwork.ClawRouter.App.Api
         /// <summary>
         /// Promotion Discount Application Release
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.App.Models.PromotionsDiscountApplicationsReleaseResult?> PromotionsDiscountApplicationsReleaseAsync(string applicationId, Sdkwork.ClawRouter.App.Models.PromotionCommandRequest body, string idempotencyKey, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.App.Models.PromotionsDiscountApplicationsReleaseResult?> PromotionsDiscountApplicationsReleaseAsync(string applicationId, Sdkwork.ClawRouter.App.Models.PromotionCommandRequest body, string idempotencyKey)
         {
             var requestHeaders = BuildRequestHeaders(
                 new Dictionary<string, HeaderParameterSpec>
                 {
                     ["Idempotency-Key"] = new HeaderParameterSpec(idempotencyKey, "simple", false, null),
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
                 },
                 new Dictionary<string, HeaderParameterSpec>()
             );
@@ -82,13 +78,12 @@ namespace Sdkwork.ClawRouter.App.Api
         /// <summary>
         /// Promotion Discount Application Settle
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.App.Models.PromotionsDiscountApplicationsSettleResult?> PromotionsDiscountApplicationsSettleAsync(string applicationId, Sdkwork.ClawRouter.App.Models.PromotionCommandRequest body, string idempotencyKey, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.App.Models.PromotionsDiscountApplicationsSettleResult?> PromotionsDiscountApplicationsSettleAsync(string applicationId, Sdkwork.ClawRouter.App.Models.PromotionCommandRequest body, string idempotencyKey)
         {
             var requestHeaders = BuildRequestHeaders(
                 new Dictionary<string, HeaderParameterSpec>
                 {
                     ["Idempotency-Key"] = new HeaderParameterSpec(idempotencyKey, "simple", false, null),
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
                 },
                 new Dictionary<string, HeaderParameterSpec>()
             );
@@ -98,13 +93,12 @@ namespace Sdkwork.ClawRouter.App.Api
         /// <summary>
         /// Promotion User Coupon Claim Create
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.App.Models.PromotionsUserCouponsClaimsCreateResult?> PromotionsUserCouponsClaimsCreateAsync(Sdkwork.ClawRouter.App.Models.PromotionCommandRequest body, string idempotencyKey, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.App.Models.PromotionsUserCouponsClaimsCreateResult?> PromotionsUserCouponsClaimsCreateAsync(Sdkwork.ClawRouter.App.Models.PromotionCommandRequest body, string idempotencyKey)
         {
             var requestHeaders = BuildRequestHeaders(
                 new Dictionary<string, HeaderParameterSpec>
                 {
                     ["Idempotency-Key"] = new HeaderParameterSpec(idempotencyKey, "simple", false, null),
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
                 },
                 new Dictionary<string, HeaderParameterSpec>()
             );

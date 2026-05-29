@@ -4,6 +4,7 @@ use sdkwork_claw_product::application::{
 use sdkwork_claw_product::domain::{
     AiModel, ApiKeyGroup, BillingMeter, DecimalValue, GatewayApiKey, ModelPrice,
     ModelProviderRoute, ModelVendor, ModelVendorDefinition, Money, PriceSide, PricingPlan,
+    ProviderChannelRoute,
 };
 use sdkwork_claw_product::infrastructure::InMemoryPricingCatalog;
 
@@ -14,24 +15,19 @@ fn catalog_with_openai_model() -> InMemoryPricingCatalog {
         ModelVendor::OpenAi,
         "OpenAI",
     ));
-    catalog.add_model(
-        AiModel::new(
-            "gpt-4o-mini",
-            "GPT-4o mini",
-            "openai",
-            vec!["chat", "tools"],
-        )
-        .with_catalog_key("openai/global/gpt-4o-mini"),
-    );
-    catalog.add_provider_route(
-        ModelProviderRoute::new(
-            "gpt-4o-mini",
-            "openrouter",
-            3001,
-            "openai/global/gpt-4o-mini",
-        )
-        .with_catalog_key("openai/global/gpt-4o-mini"),
-    );
+    catalog.add_model(AiModel::new(
+        "gpt-4o-mini",
+        "GPT-4o mini",
+        "openai",
+        vec!["chat", "tools"],
+    ));
+    catalog.add_provider_route(ModelProviderRoute::new_for_catalog_key(
+        "openai/gpt-4o-mini",
+        "gpt-4o-mini",
+        "openrouter",
+        3001,
+        "gpt-4o-mini",
+    ));
     catalog.add_plan(PricingPlan::new(
         "standard",
         PriceSide::OfficialReference,
@@ -53,7 +49,8 @@ fn catalog_with_openai_model() -> InMemoryPricingCatalog {
             BillingMeter::LlmInputToken,
             Money::usd("0.150000").unwrap(),
         )
-        .with_catalog_key("openai/global/gpt-4o-mini"),
+        .with_catalog_key("openai/gpt-4o-mini")
+        .with_region_code("global"),
     );
     catalog.add_price(
         ModelPrice::new(
@@ -62,7 +59,8 @@ fn catalog_with_openai_model() -> InMemoryPricingCatalog {
             BillingMeter::LlmInputToken,
             Money::usd("0.110000").unwrap(),
         )
-        .with_catalog_key("openai/global/gpt-4o-mini")
+        .with_catalog_key("openai/gpt-4o-mini")
+        .with_region_code("global")
         .for_provider("openrouter", 3001),
     );
     catalog
@@ -76,7 +74,7 @@ fn resolves_customer_price_from_api_key_group_plan_and_official_reference() {
     let resolved = resolver
         .resolve(ResolveModelPriceQuery {
             api_key_id: 100,
-            model: "openai/global/gpt-4o-mini".to_owned(),
+            model: "openai/gpt-4o-mini".to_owned(),
             billing_meter: BillingMeter::LlmInputToken,
             provider_code: Some("openrouter".to_owned()),
             channel_id: None,
@@ -125,15 +123,13 @@ fn resolves_customer_price_from_api_key_group_plan_and_official_reference() {
 #[test]
 fn resolves_upstream_cost_for_the_selected_provider_channel() {
     let mut catalog = catalog_with_openai_model();
-    catalog.add_provider_route(
-        ModelProviderRoute::new(
-            "gpt-4o-mini",
-            "openrouter",
-            3002,
-            "openai/global/gpt-4o-mini-premium",
-        )
-        .with_catalog_key("openai/global/gpt-4o-mini"),
-    );
+    catalog.add_provider_route(ModelProviderRoute::new_for_catalog_key(
+        "openai/gpt-4o-mini",
+        "gpt-4o-mini",
+        "openrouter",
+        3002,
+        "gpt-4o-mini-premium",
+    ));
     catalog.add_price(
         ModelPrice::new(
             "gpt-4o-mini",
@@ -141,7 +137,8 @@ fn resolves_upstream_cost_for_the_selected_provider_channel() {
             BillingMeter::LlmInputToken,
             Money::usd("0.125000").unwrap(),
         )
-        .with_catalog_key("openai/global/gpt-4o-mini")
+        .with_catalog_key("openai/gpt-4o-mini")
+        .with_region_code("global")
         .for_provider("openrouter", 3002),
     );
     let resolver = PricingResolver::new(&catalog);
@@ -149,7 +146,7 @@ fn resolves_upstream_cost_for_the_selected_provider_channel() {
     let resolved = resolver
         .resolve(ResolveModelPriceQuery {
             api_key_id: 100,
-            model: "openai/global/gpt-4o-mini".to_owned(),
+            model: "openai/gpt-4o-mini".to_owned(),
             billing_meter: BillingMeter::LlmInputToken,
             provider_code: Some("openrouter".to_owned()),
             channel_id: Some(3002),
@@ -167,7 +164,7 @@ fn resolves_upstream_cost_for_the_selected_provider_channel() {
 }
 
 #[test]
-fn regional_catalog_key_resolves_only_that_regions_price_stack() {
+fn base_catalog_key_resolves_selected_channel_region_price_stack() {
     let mut catalog = InMemoryPricingCatalog::default();
     catalog.add_vendor(ModelVendorDefinition::new(
         "minimax",
@@ -192,59 +189,73 @@ fn regional_catalog_key_resolves_only_that_regions_price_stack() {
         DecimalValue::parse("1.000000").unwrap(),
     ));
     catalog.add_api_key(GatewayApiKey::new(100, 10, "sk-test", "hash:sk-test"));
-    catalog.add_provider_route(ModelProviderRoute::new_for_catalog_key(
-        "minimax/cn/MiniMax-M2.7",
-        "MiniMax-M2.7",
-        "minimax_cn_direct",
-        3001,
-        "MiniMax-M2.7",
-    ));
-    catalog.add_provider_route(ModelProviderRoute::new_for_catalog_key(
-        "minimax/global/MiniMax-M2.7",
-        "MiniMax-M2.7",
-        "minimax_global_direct",
-        3002,
-        "MiniMax-M2.7",
-    ));
-    catalog.add_price(ModelPrice::new_for_catalog_key(
-        "minimax/cn/MiniMax-M2.7",
-        "MiniMax-M2.7",
-        PriceSide::OfficialReference,
-        BillingMeter::LlmInputToken,
-        Money::new("CNY", "0.210000").unwrap(),
-    ));
+    catalog.add_provider_route(
+        ModelProviderRoute::new_for_catalog_key(
+            "minimax/MiniMax-M2.7",
+            "MiniMax-M2.7",
+            "minimax_cn_direct",
+            3001,
+            "MiniMax-M2.7",
+        )
+        .with_region_code("cn"),
+    );
+    catalog.add_provider_route(
+        ModelProviderRoute::new_for_catalog_key(
+            "minimax/MiniMax-M2.7",
+            "MiniMax-M2.7",
+            "minimax_global_direct",
+            3002,
+            "MiniMax-M2.7",
+        )
+        .with_region_code("global"),
+    );
     catalog.add_price(
         ModelPrice::new_for_catalog_key(
-            "minimax/cn/MiniMax-M2.7",
+            "minimax/MiniMax-M2.7",
+            "MiniMax-M2.7",
+            PriceSide::OfficialReference,
+            BillingMeter::LlmInputToken,
+            Money::new("CNY", "0.210000").unwrap(),
+        )
+        .with_region_code("cn"),
+    );
+    catalog.add_price(
+        ModelPrice::new_for_catalog_key(
+            "minimax/MiniMax-M2.7",
             "MiniMax-M2.7",
             PriceSide::UpstreamCost,
             BillingMeter::LlmInputToken,
             Money::new("CNY", "0.150000").unwrap(),
         )
+        .with_region_code("cn")
         .for_provider("minimax_cn_direct", 3001),
     );
-    catalog.add_price(ModelPrice::new_for_catalog_key(
-        "minimax/global/MiniMax-M2.7",
-        "MiniMax-M2.7",
-        PriceSide::OfficialReference,
-        BillingMeter::LlmInputToken,
-        Money::usd("0.030000").unwrap(),
-    ));
     catalog.add_price(
         ModelPrice::new_for_catalog_key(
-            "minimax/global/MiniMax-M2.7",
+            "minimax/MiniMax-M2.7",
+            "MiniMax-M2.7",
+            PriceSide::OfficialReference,
+            BillingMeter::LlmInputToken,
+            Money::usd("0.030000").unwrap(),
+        )
+        .with_region_code("global"),
+    );
+    catalog.add_price(
+        ModelPrice::new_for_catalog_key(
+            "minimax/MiniMax-M2.7",
             "MiniMax-M2.7",
             PriceSide::UpstreamCost,
             BillingMeter::LlmInputToken,
             Money::usd("0.020000").unwrap(),
         )
+        .with_region_code("global")
         .for_provider("minimax_global_direct", 3002),
     );
 
     let resolved = PricingResolver::new(&catalog)
         .resolve(ResolveModelPriceQuery {
             api_key_id: 100,
-            model: "minimax/cn/MiniMax-M2.7".to_owned(),
+            model: "minimax/MiniMax-M2.7".to_owned(),
             billing_meter: BillingMeter::LlmInputToken,
             provider_code: Some("minimax_cn_direct".to_owned()),
             channel_id: Some(3001),
@@ -264,6 +275,30 @@ fn regional_catalog_key_resolves_only_that_regions_price_stack() {
             .unit_price
             .to_fixed_string(6)
     );
+
+    let resolved = PricingResolver::new(&catalog)
+        .resolve(ResolveModelPriceQuery {
+            api_key_id: 100,
+            model: "minimax/MiniMax-M2.7".to_owned(),
+            billing_meter: BillingMeter::LlmInputToken,
+            provider_code: Some("minimax_global_direct".to_owned()),
+            channel_id: Some(3002),
+        })
+        .unwrap();
+
+    assert_eq!("USD", resolved.official_reference.unit_price.currency);
+    assert_eq!(
+        "0.030000",
+        resolved.official_reference.unit_price.to_fixed_string(6)
+    );
+    assert_eq!(
+        "0.020000",
+        resolved
+            .upstream_cost
+            .unwrap()
+            .unit_price
+            .to_fixed_string(6)
+    );
 }
 
 #[test]
@@ -276,7 +311,8 @@ fn rejects_selected_channel_that_is_not_a_provider_route_for_the_model() {
             BillingMeter::LlmInputToken,
             Money::usd("0.125000").unwrap(),
         )
-        .with_catalog_key("openai/global/gpt-4o-mini")
+        .with_catalog_key("openai/gpt-4o-mini")
+        .with_region_code("global")
         .for_provider("openrouter", 9999),
     );
     let resolver = PricingResolver::new(&catalog);
@@ -284,7 +320,7 @@ fn rejects_selected_channel_that_is_not_a_provider_route_for_the_model() {
     let error = resolver
         .resolve(ResolveModelPriceQuery {
             api_key_id: 100,
-            model: "openai/global/gpt-4o-mini".to_owned(),
+            model: "openai/gpt-4o-mini".to_owned(),
             billing_meter: BillingMeter::LlmInputToken,
             provider_code: Some("openrouter".to_owned()),
             channel_id: Some(9999),
@@ -292,6 +328,93 @@ fn rejects_selected_channel_that_is_not_a_provider_route_for_the_model() {
         .unwrap_err();
 
     assert!(error.to_string().contains("channel 9999"));
+}
+
+#[test]
+fn channel_route_resolves_price_stack_with_its_explicit_region() {
+    let mut catalog = InMemoryPricingCatalog::default();
+    catalog.add_vendor(ModelVendorDefinition::new(
+        "minimax",
+        ModelVendor::Unknown,
+        "MiniMax",
+    ));
+    catalog.add_model(
+        AiModel::new("MiniMax-M2.7", "MiniMax M2.7", "minimax", vec!["chat"])
+            .with_catalog_key("minimax/MiniMax-M2.7"),
+    );
+    catalog.add_plan(PricingPlan::new(
+        "standard",
+        PriceSide::OfficialReference,
+        DecimalValue::parse("1.000000").unwrap(),
+        Money::usd("0.000000").unwrap(),
+    ));
+    catalog.add_api_key_group(ApiKeyGroup::new(
+        10,
+        "standard-group",
+        "standard",
+        DecimalValue::parse("1.000000").unwrap(),
+        DecimalValue::parse("1.000000").unwrap(),
+    ));
+    catalog.add_api_key(GatewayApiKey::new(100, 10, "sk-test", "hash:sk-test"));
+    catalog.add_provider_channel_route(
+        ProviderChannelRoute::new("minimax_upstream", 4001).with_region_code("cn"),
+    );
+    catalog.add_price(
+        ModelPrice::new_for_catalog_key(
+            "minimax/MiniMax-M2.7",
+            "MiniMax-M2.7",
+            PriceSide::OfficialReference,
+            BillingMeter::LlmInputToken,
+            Money::new("CNY", "0.210000").unwrap(),
+        )
+        .with_region_code("cn"),
+    );
+    catalog.add_price(
+        ModelPrice::new_for_catalog_key(
+            "minimax/MiniMax-M2.7",
+            "MiniMax-M2.7",
+            PriceSide::UpstreamCost,
+            BillingMeter::LlmInputToken,
+            Money::new("CNY", "0.150000").unwrap(),
+        )
+        .with_region_code("cn")
+        .for_provider("minimax_upstream", 4001),
+    );
+    catalog.add_price(
+        ModelPrice::new_for_catalog_key(
+            "minimax/MiniMax-M2.7",
+            "MiniMax-M2.7",
+            PriceSide::OfficialReference,
+            BillingMeter::LlmInputToken,
+            Money::usd("0.030000").unwrap(),
+        )
+        .with_region_code("global"),
+    );
+
+    let resolved = PricingResolver::new(&catalog)
+        .resolve(ResolveModelPriceQuery {
+            api_key_id: 100,
+            model: "minimax/MiniMax-M2.7".to_owned(),
+            billing_meter: BillingMeter::LlmInputToken,
+            provider_code: Some("minimax_upstream".to_owned()),
+            channel_id: Some(4001),
+        })
+        .unwrap();
+
+    assert_eq!("cn", resolved.official_reference.region_code);
+    assert_eq!("CNY", resolved.official_reference.unit_price.currency);
+    assert_eq!(
+        "0.210000",
+        resolved.official_reference.unit_price.to_fixed_string(6)
+    );
+    assert_eq!(
+        "0.150000",
+        resolved
+            .upstream_cost
+            .unwrap()
+            .unit_price
+            .to_fixed_string(6)
+    );
 }
 
 #[test]
@@ -304,7 +427,8 @@ fn explicit_plan_customer_price_overrides_official_reference_and_keeps_group_mul
             BillingMeter::LlmInputToken,
             Money::usd("0.300000").unwrap(),
         )
-        .with_catalog_key("openai/global/gpt-4o-mini")
+        .with_catalog_key("openai/gpt-4o-mini")
+        .with_region_code("global")
         .for_pricing_plan("standard"),
     );
     catalog.update_group_rate_multiplier(10, DecimalValue::parse("0.900000").unwrap());
@@ -313,7 +437,7 @@ fn explicit_plan_customer_price_overrides_official_reference_and_keeps_group_mul
     let resolved = resolver
         .resolve(ResolveModelPriceQuery {
             api_key_id: 100,
-            model: "openai/global/gpt-4o-mini".to_owned(),
+            model: "openai/gpt-4o-mini".to_owned(),
             billing_meter: BillingMeter::LlmInputToken,
             provider_code: Some("openrouter".to_owned()),
             channel_id: None,
@@ -349,14 +473,15 @@ fn supports_non_token_meter_without_new_pricing_table_shape() {
             BillingMeter::ApiResult,
             Money::usd("0.020000").unwrap(),
         )
-        .with_catalog_key("openai/global/gpt-4o-mini"),
+        .with_catalog_key("openai/gpt-4o-mini")
+        .with_region_code("global"),
     );
     let resolver = PricingResolver::new(&catalog);
 
     let resolved = resolver
         .resolve(ResolveModelPriceQuery {
             api_key_id: 100,
-            model: "openai/global/gpt-4o-mini".to_owned(),
+            model: "openai/gpt-4o-mini".to_owned(),
             billing_meter: BillingMeter::ApiResult,
             provider_code: None,
             channel_id: None,
@@ -378,7 +503,7 @@ fn missing_price_returns_a_domain_error_instead_of_fake_success() {
     let error = resolver
         .resolve(ResolveModelPriceQuery {
             api_key_id: 100,
-            model: "openai/global/gpt-4o-mini".to_owned(),
+            model: "openai/gpt-4o-mini".to_owned(),
             billing_meter: BillingMeter::VideoOutputSecond,
             provider_code: None,
             channel_id: None,
@@ -398,7 +523,8 @@ fn pricing_resolver_returns_domain_error_when_decimal_math_overflows() {
             BillingMeter::ApiResult,
             Money::usd("0.010000").unwrap(),
         )
-        .with_catalog_key("openai/global/gpt-4o-mini"),
+        .with_catalog_key("openai/gpt-4o-mini")
+        .with_region_code("global"),
     );
     catalog.add_price(
         ModelPrice::new(
@@ -407,7 +533,8 @@ fn pricing_resolver_returns_domain_error_when_decimal_math_overflows() {
             BillingMeter::ApiResult,
             Money::usd("170141183460469231731687.303715").unwrap(),
         )
-        .with_catalog_key("openai/global/gpt-4o-mini")
+        .with_catalog_key("openai/gpt-4o-mini")
+        .with_region_code("global")
         .for_pricing_plan("standard"),
     );
     catalog.update_group_rate_multiplier(10, DecimalValue::parse("2.000000").unwrap());
@@ -416,7 +543,7 @@ fn pricing_resolver_returns_domain_error_when_decimal_math_overflows() {
     let error = resolver
         .resolve(ResolveModelPriceQuery {
             api_key_id: 100,
-            model: "openai/global/gpt-4o-mini".to_owned(),
+            model: "openai/gpt-4o-mini".to_owned(),
             billing_meter: BillingMeter::ApiResult,
             provider_code: None,
             channel_id: None,

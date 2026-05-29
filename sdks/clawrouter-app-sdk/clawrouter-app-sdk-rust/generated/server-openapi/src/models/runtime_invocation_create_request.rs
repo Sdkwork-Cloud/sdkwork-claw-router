@@ -68,11 +68,6 @@ pub struct RuntimeInvocationCreateRequest {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub provider: Option<String>,
 
-    /// Request id field on runtime invocation create request.
-    #[serde(rename = "requestId")]
-    #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub request_id: Option<String>,
-
     /// Request json field on runtime invocation create request.
     #[serde(rename = "requestJson")]
     #[serde(default, skip_serializing_if = "Option::is_none")]

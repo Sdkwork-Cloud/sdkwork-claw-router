@@ -143,8 +143,8 @@ print(result)
 ### integration
 
 ```swift
-// List channels
-let result = try await client.integration.channelsList()
+// List channel endpoints
+let result = try await client.integration.channelEndpointsList()
 print(result)
 ```
 

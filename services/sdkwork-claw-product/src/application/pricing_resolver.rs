@@ -52,20 +52,33 @@ impl<'a, C: PricingCatalog> PricingResolver<'a, C> {
         let plan = self.find_plan(&group.pricing_plan_code)?;
         let model = self.find_model(&query.model)?;
         let vendor = self.find_vendor(&model.vendor_code)?;
-        let official = self.find_official_reference(&query)?;
-        let upstream = self.find_upstream_cost(&query);
+        let route = match query.provider_code.as_deref() {
+            Some(provider_code) => {
+                Some(self.find_provider_route(&query.model, provider_code, query.channel_id)?)
+            }
+            None => None,
+        };
+        let region_code = route
+            .as_ref()
+            .map(|route| normalize_region_code(&route.region_code))
+            .unwrap_or_else(|| normalize_region_code(&model.region_code));
+        let upstream = self.find_upstream_cost(&query, &region_code);
+        let price_scope = upstream
+            .as_ref()
+            .map(|price| price.catalog_key.as_str())
+            .unwrap_or(query.model.as_str());
+        let official = self.find_official_reference(&query, price_scope, &region_code)?;
 
-        if let Some(provider_code) = query.provider_code.as_deref() {
-            self.ensure_provider_route(&query.model, provider_code, query.channel_id)?;
-        }
-
-        let explicit_customer = self.catalog.find_model_price(
-            &query.model,
-            PriceSide::CustomerCharge,
-            query.billing_meter.clone(),
-            None,
-            Some(&plan.plan_code),
-        );
+        let explicit_customer = self
+            .catalog
+            .find_model_price(
+                price_scope,
+                PriceSide::CustomerCharge,
+                query.billing_meter.clone(),
+                None,
+                Some(&plan.plan_code),
+            )
+            .filter(|price| same_region(&price.region_code, &region_code));
         let reference_multiplier = plan
             .default_multiplier
             .checked_multiply(group.official_price_multiplier)?;
@@ -137,25 +150,37 @@ impl<'a, C: PricingCatalog> PricingResolver<'a, C> {
             .ok_or_else(|| DomainError::new(format!("model vendor not found: {vendor_code}")))
     }
 
-    fn find_official_reference(&self, query: &ResolveModelPriceQuery) -> DomainResult<ModelPrice> {
+    fn find_official_reference(
+        &self,
+        query: &ResolveModelPriceQuery,
+        price_scope: &str,
+        region_code: &str,
+    ) -> DomainResult<ModelPrice> {
         self.catalog
-            .find_model_price(
-                &query.model,
+            .list_model_prices(
+                price_scope,
                 PriceSide::OfficialReference,
                 query.billing_meter.clone(),
-                None,
-                None,
             )
+            .into_iter()
+            .find(|price| {
+                price.pricing_plan_code.is_none() && same_region(&price.region_code, region_code)
+            })
             .ok_or_else(|| {
                 DomainError::new(format!(
-                    "official reference price not found for model {} and meter {}",
+                    "official reference price not found for model {} meter {} and region {}",
                     query.model,
-                    query.billing_meter.code()
+                    query.billing_meter.code(),
+                    region_code
                 ))
             })
     }
 
-    fn find_upstream_cost(&self, query: &ResolveModelPriceQuery) -> Option<ModelPrice> {
+    fn find_upstream_cost(
+        &self,
+        query: &ResolveModelPriceQuery,
+        region_code: &str,
+    ) -> Option<ModelPrice> {
         let provider_code = query.provider_code.as_deref();
         if let Some(channel_id) = query.channel_id {
             return self
@@ -170,25 +195,31 @@ impl<'a, C: PricingCatalog> PricingResolver<'a, C> {
                     price.provider_code.as_deref() == provider_code
                         && price.channel_id == Some(channel_id)
                         && price.pricing_plan_code.is_none()
+                        && same_region(&price.region_code, region_code)
                 });
         }
 
-        self.catalog.find_model_price(
-            &query.model,
-            PriceSide::UpstreamCost,
-            query.billing_meter.clone(),
-            provider_code,
-            None,
-        )
+        self.catalog
+            .list_model_prices(
+                &query.model,
+                PriceSide::UpstreamCost,
+                query.billing_meter.clone(),
+            )
+            .into_iter()
+            .find(|price| {
+                price.provider_code.as_deref() == provider_code
+                    && price.pricing_plan_code.is_none()
+                    && same_region(&price.region_code, region_code)
+            })
     }
 
-    fn ensure_provider_route(
+    fn find_provider_route(
         &self,
         model: &str,
         provider_code: &str,
         channel_id: Option<i64>,
-    ) -> DomainResult<()> {
-        if self
+    ) -> DomainResult<crate::domain::ModelProviderRoute> {
+        if let Some(route) = self
             .catalog
             .list_provider_routes(model)
             .into_iter()
@@ -198,14 +229,13 @@ impl<'a, C: PricingCatalog> PricingResolver<'a, C> {
                         .map(|channel_id| route.channel_id == channel_id)
                         .unwrap_or(true)
             })
-            .is_some()
         {
-            return Ok(());
+            return Ok(route);
         }
 
-        if self
+        if let Some(route) = self
             .catalog
-            .list_provider_account_pool_routes()
+            .list_provider_channel_routes()
             .into_iter()
             .find(|route| {
                 route.provider_code == provider_code
@@ -213,9 +243,17 @@ impl<'a, C: PricingCatalog> PricingResolver<'a, C> {
                         .map(|channel_id| route.channel_id == channel_id)
                         .unwrap_or(true)
             })
-            .is_some()
         {
-            return Ok(());
+            return Ok(crate::domain::ModelProviderRoute::new_for_catalog_key(
+                model,
+                model,
+                &route.provider_code,
+                route.channel_id,
+                model,
+            )
+            .with_region_code(&route.region_code)
+            .with_provider_endpoint(route.base_url, route.secret_ref)
+            .with_auth_profile(route.auth_profile));
         }
 
         Err(if let Some(channel_id) = channel_id {
@@ -228,6 +266,19 @@ impl<'a, C: PricingCatalog> PricingResolver<'a, C> {
             ))
         })
     }
+}
+
+fn normalize_region_code(value: &str) -> String {
+    let value = value.trim();
+    if value.is_empty() {
+        "global".to_owned()
+    } else {
+        value.to_owned()
+    }
+}
+
+fn same_region(actual: &str, expected: &str) -> bool {
+    normalize_region_code(actual).eq_ignore_ascii_case(&normalize_region_code(expected))
 }
 
 fn add_default_markup(base: Money, markup: &Money) -> DomainResult<Money> {

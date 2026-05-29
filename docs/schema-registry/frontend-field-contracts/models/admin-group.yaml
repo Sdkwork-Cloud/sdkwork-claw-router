@@ -15,8 +15,8 @@ frontend_models:
   - usage
   - status
   data_sources:
-  - iam_gateway_api_key_group
-  - iam_gateway_api_key_group_metric_snapshot
+  - ai_channel_group
+  - ai_channel_group_metric_snapshot
   - ai_pricing_plan
 - route: /admin/group
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-group/src/groupService.ts
@@ -30,7 +30,7 @@ frontend_models:
   - capacity
   - status
   data_sources:
-  - iam_gateway_api_key_group
+  - ai_channel_group
   - ai_pricing_plan
 - route: /admin/group
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-group/src/groupService.ts
@@ -44,7 +44,7 @@ frontend_models:
   - capacity
   - status
   data_sources:
-  - iam_gateway_api_key_group
+  - ai_channel_group
   - ai_pricing_plan
 - route: /admin/group
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-group/src/groupService.ts
@@ -65,10 +65,10 @@ frontend_models:
   - status
   - healthStatus
   data_sources:
-  - iam_api_key_group_channel
-  - integration_provider
-  - integration_channel
-  - integration_channel_model
+  - ai_channel_group_member
+  - ai_provider
+  - ai_channel
+  - ai_channel_model
 - route: /admin/group
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-group/src/groupService.ts
   interface: GroupChannelBindingInput
@@ -80,8 +80,8 @@ frontend_models:
   - modelScope
   - capabilities
   data_sources:
-  - iam_api_key_group_channel
-  - integration_channel
+  - ai_channel_group_member
+  - ai_channel
 - route: /admin/group
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-group/src/groupService.ts
   interface: GroupChannelOption
@@ -96,6 +96,6 @@ frontend_models:
   - status
   - healthStatus
   data_sources:
-  - integration_provider
-  - integration_channel
-  - integration_channel_model
+  - ai_provider
+  - ai_channel
+  - ai_channel_model

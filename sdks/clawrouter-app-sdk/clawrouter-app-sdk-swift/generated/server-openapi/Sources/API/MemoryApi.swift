@@ -22,11 +22,10 @@ public class MemoryApi {
     }
 
     /// Create memory space
-    public func spacesCreate(body: MemorySpaceCreateRequest, idempotencyKey: String, xRequestId: String? = nil) async throws -> SpacesCreateResult? {
+    public func spacesCreate(body: MemorySpaceCreateRequest, idempotencyKey: String) async throws -> SpacesCreateResult? {
         let requestHeaders = buildRequestHeaders(
             [
                 "Idempotency-Key": HeaderParameterSpec(value: idempotencyKey, style: "simple", explode: false, contentType: nil),
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
             ],
             [:]
         )
@@ -48,11 +47,10 @@ public class MemoryApi {
     }
 
     /// Create memory entry
-    public func entriesCreate(spaceId: String, body: MemoryEntryCreateRequest, idempotencyKey: String, xRequestId: String? = nil) async throws -> EntriesCreateResult? {
+    public func entriesCreate(spaceId: String, body: MemoryEntryCreateRequest, idempotencyKey: String) async throws -> EntriesCreateResult? {
         let requestHeaders = buildRequestHeaders(
             [
                 "Idempotency-Key": HeaderParameterSpec(value: idempotencyKey, style: "simple", explode: false, contentType: nil),
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
             ],
             [:]
         )

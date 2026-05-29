@@ -6,13 +6,13 @@ namespace Sdkwork.ClawRouter.Backend.Models
 {
     public class IamGatewayApiKeyRecord
     {
+        public string? ChannelGroupId { get; set; }
         public string? CreatedAt { get; set; }
         public string? DataScope { get; set; }
         public string? DeletedAt { get; set; }
         public string? DeletedBy { get; set; }
         public string? Environment { get; set; }
         public string? ExpireAt { get; set; }
-        public string? GroupId { get; set; }
         public string? HashAlg { get; set; }
         public string? Id { get; set; }
         public string? IdempotencyKey { get; set; }

@@ -1,0 +1,4313 @@
+tables:
+- table: ai_model_family
+  domain: ai
+  profile: dictionary_entity
+  compliance_level: L2
+  system_of_record: true
+  write_owner: model-catalog-service
+  common_columns: tenant_entity
+  frontend_routes:
+  - /models
+  - /models/:id
+  - /models/:provider/:model
+  - /playground
+  - /admin/model
+  api_surfaces:
+  - app
+  - backend
+  - openai_v1
+  required_columns:
+  - vendor_code
+  - family_code
+  not_null_columns:
+  - uuid
+  - tenant_id
+  - organization_id
+  - status
+  - vendor_code
+  - family_code
+  - display_name
+  unique_constraints:
+  - columns:
+    - uuid
+    source: column_unique
+  - name: uk_ai_model_family_tenant_vendor_code
+    columns:
+    - tenant_id
+    - organization_id
+    - vendor_code
+    - family_code
+  columns:
+    vendor_id: int64
+    vendor_code: string(64)
+    family_code: string(64)
+    display_name: string(128)
+    description: string(512)
+    docs_url: string(512)
+    icon_url: string(512)
+    color_token: string(64)
+    family_type: enum_int32
+    primary_modality: enum_int32
+    model_count: int64
+    default_model_id: int64
+    default_model: string(128)
+    sort_order: int32
+  indexes:
+  - name: idx_ai_model_family_tenant_status_sort
+    columns:
+    - tenant_id
+    - organization_id
+    - status
+    - sort_order
+    - id
+  - name: idx_ai_model_family_vendor_status_sort
+    columns:
+    - tenant_id
+    - organization_id
+    - vendor_code
+    - status
+    - sort_order
+    - id
+- table: ai_model
+  domain: ai
+  profile: dictionary_entity
+  compliance_level: L2
+  system_of_record: true
+  write_owner: model-catalog-service
+  common_columns: tenant_entity
+  frontend_routes:
+  - /models
+  - /models/:id
+  - /models/:provider/:model
+  - /rankings
+  - /playground
+  - /c/:conversationId
+  - /admin/model
+  - /admin/channel
+  api_surfaces:
+  - app
+  - backend
+  - openai_v1
+  required_columns:
+  - catalog_key
+  - vendor_code
+  not_null_columns:
+  - uuid
+  - tenant_id
+  - organization_id
+  - status
+  - catalog_key
+  - model
+  - display_name
+  - vendor_code
+  - release_stage
+  - shelf_state
+  - routing_state
+  unique_constraints:
+  - columns:
+    - uuid
+    source: column_unique
+  - name: uk_ai_model_tenant_catalog_key
+    columns:
+    - tenant_id
+    - organization_id
+    - catalog_key
+  columns:
+    catalog_key: string(256)
+    model: string(128)
+    display_name: string(128)
+    vendor_id: int64
+    vendor_code: string(64)
+    vendor_name_snapshot: string(128)
+    family_id: int64
+    family_code: string(64)
+    provider_hint: string(64)
+    model_family: string(128)
+    model_version: string(64)
+    model_aliases: json
+    capability: enum_int32
+    capabilities: json
+    modalities: json
+    input_modalities: json
+    output_modalities: json
+    icon_url: string(1024)
+    color_token: string(64)
+    docs_url: string(1024)
+    license_type: enum_int32
+    api_format: string(128)
+    capability_intro: text
+    limitations: json
+    supported_languages: json
+    use_cases: json
+    training_data_cutoff: string(128)
+    context_tokens: int64
+    max_input_tokens: int64
+    max_output_tokens: int64
+    max_duration_seconds: int32
+    supports_streaming: bool
+    supports_tools: bool
+    supports_json_schema: bool
+    performance_profile: json
+    default_pricing_id: int64
+    rank_score: decimal
+    release_stage: enum_int32
+    shelf_state: enum_int32
+    routing_state: enum_int32
+    deprecated_at: instant
+    retired_at: instant
+    replacement_model: string(128)
+    description: text
+  indexes:
+  - name: idx_ai_model_tenant_status_updated
+    columns:
+    - tenant_id
+    - organization_id
+    - status
+    - updated_at
+    - id
+  - name: idx_ai_model_vendor_status
+    columns:
+    - tenant_id
+    - organization_id
+    - vendor_code
+    - status
+    - updated_at
+    - id
+  - name: idx_ai_model_model_status
+    columns:
+    - tenant_id
+    - organization_id
+    - model
+    - status
+    - id
+  - name: idx_ai_model_family_status
+    columns:
+    - tenant_id
+    - organization_id
+    - vendor_code
+    - family_code
+    - status
+    - updated_at
+    - id
+  - name: idx_ai_model_capability_status
+    columns:
+    - tenant_id
+    - organization_id
+    - capability
+    - status
+    - updated_at
+    - id
+  - name: idx_ai_model_public_listing
+    columns:
+    - tenant_id
+    - organization_id
+    - shelf_state
+    - routing_state
+    - release_stage
+    - status
+    - rank_score
+    - id
+  - name: idx_ai_model_public_rank_desc
+    columns:
+    - tenant_id
+    - organization_id
+    - status
+    - routing_state
+    - shelf_state
+    - rank_score
+    - id
+  - name: idx_ai_model_catalog_search
+    columns:
+    - tenant_id
+    - organization_id
+    - status
+    - vendor_code
+    - capability
+    - routing_state
+    - shelf_state
+    - display_name
+    - id
+- table: ai_model_capability
+  domain: ai
+  profile: relation_entity
+  compliance_level: L2
+  system_of_record: true
+  write_owner: model-catalog-service
+  common_columns: tenant_entity
+  frontend_routes:
+  - /models
+  - /models/:id
+  - /models/:provider/:model
+  - /playground
+  - /admin/model
+  api_surfaces:
+  - app
+  - backend
+  required_columns:
+  - catalog_key
+  not_null_columns:
+  - uuid
+  - tenant_id
+  - organization_id
+  - status
+  - model_id
+  - catalog_key
+  - model
+  - vendor_code
+  - capability_code
+  - supported
+  unique_constraints:
+  - columns:
+    - uuid
+    source: column_unique
+  - name: uk_ai_model_capability_model_code
+    columns:
+    - tenant_id
+    - organization_id
+    - model_id
+    - capability_code
+    - modality
+    - parameter_name
+  columns:
+    model_id: int64
+    catalog_key: string(256)
+    model: string(128)
+    vendor_code: string(64)
+    capability: enum_int32
+    capability_code: string(64)
+    modality: enum_int32
+    input_modalities: json
+    output_modalities: json
+    endpoint_formats: json
+    parameter_name: string(128)
+    parameter_schema: json
+    supported: bool
+    limit_unit: string(64)
+    limit_value: string(128)
+    schema_version: string(32)
+    sort_order: int32
+    description: string(512)
+  indexes:
+  - name: idx_ai_model_capability_tenant_status
+    columns:
+    - tenant_id
+    - organization_id
+    - status
+    - model_id
+    - sort_order
+    - id
+  - name: idx_ai_model_capability_vendor_capability
+    columns:
+    - tenant_id
+    - organization_id
+    - vendor_code
+    - capability
+    - supported
+    - id
+- table: ai_model_catalog_source
+  domain: ai
+  profile: catalog_source
+  compliance_level: L3
+  system_of_record: true
+  write_owner: model-catalog-service
+  common_columns: tenant_entity
+  frontend_routes:
+  - /admin/model
+  api_surfaces:
+  - backend
+  - worker
+  required_columns:
+  - uuid
+  - tenant_id
+  - organization_id
+  - status
+  - source_code
+  - source_name
+  - source_kind
+  - trust_level
+  - parser_kind
+  not_null_columns:
+  - uuid
+  - tenant_id
+  - organization_id
+  - status
+  - source_code
+  - source_name
+  - source_kind
+  - trust_level
+  - parser_kind
+  unique_constraints:
+  - columns:
+    - uuid
+    source: column_unique
+  - name: uk_ai_model_catalog_source_tenant_code
+    columns:
+    - tenant_id
+    - organization_id
+    - source_code
+  columns:
+    source_code: string(96)
+    vendor_code: string(64)
+    region_code: string(64)
+    provider_code: string(64)
+    source_name: string(128)
+    source_url: string(1024)
+    source_kind: enum_int32
+    trust_level: enum_int32
+    parser_kind: string(64)
+    refresh_interval_seconds: int64
+    last_observed_at: instant
+    last_success_at: instant
+    catalog_version: string(128)
+    source_hash: string(128)
+    raw_payload_ref: string(512)
+    normalized_payload_hash: string(128)
+    schema_version: string(32)
+    error_message_masked: string(1024)
+  indexes:
+  - name: idx_ai_model_catalog_source_tenant_status
+    columns:
+    - tenant_id
+    - organization_id
+    - status
+    - source_kind
+    - last_success_at
+    - id
+  - name: idx_ai_model_catalog_source_vendor_region_status
+    columns:
+    - tenant_id
+    - organization_id
+    - vendor_code
+    - region_code
+    - status
+    - last_observed_at
+    - id
+  - name: idx_ai_model_catalog_source_refresh
+    columns:
+    - tenant_id
+    - organization_id
+    - status
+    - refresh_interval_seconds
+    - last_success_at
+    - id
+  security:
+    audit_required: true
+- table: ai_model_catalog_sync_run
+  domain: ai
+  profile: event_log
+  compliance_level: L3
+  system_of_record: true
+  write_owner: model-catalog-service
+  common_columns: event_log
+  source_tables:
+  - ai_model_catalog_source
+  - ai_model_vendor
+  - ai_model
+  - ai_model_capability
+  - ai_billing_meter
+  - ai_model_pricing
+  - ai_model_rank_snapshot
+  frontend_routes:
+  - /admin/model
+  api_surfaces:
+  - backend
+  - worker
+  required_columns:
+  - uuid
+  - tenant_id
+  - organization_id
+  - status
+  - source_code
+  - run_status
+  - started_at
+  not_null_columns:
+  - uuid
+  - tenant_id
+  - organization_id
+  - status
+  - source_code
+  - run_status
+  - started_at
+  unique_constraints:
+  - columns:
+    - uuid
+    source: column_unique
+  columns:
+    source_type: string(128)
+    source_id: int64
+    source_version: int64
+    source_code: string(96)
+    vendor_code: string(64)
+    region_code: string(64)
+    provider_code: string(64)
+    run_status: enum_int32
+    started_at: instant
+    finished_at: instant
+    observed_at: instant
+    catalog_version: string(128)
+    source_hash: string(128)
+    observed_vendor_count: int64
+    observed_model_count: int64
+    observed_meter_count: int64
+    observed_price_count: int64
+    accepted_count: int64
+    rejected_count: int64
+    skipped_count: int64
+    change_summary: json
+    error_message_masked: string(1024)
+  indexes:
+  - name: idx_ai_model_catalog_sync_run_tenant_status
+    columns:
+    - tenant_id
+    - organization_id
+    - status
+    - started_at
+    - id
+  - name: idx_ai_model_catalog_sync_run_source_latest
+    columns:
+    - tenant_id
+    - organization_id
+    - source_code
+    - run_status
+    - started_at
+    - id
+  - name: idx_ai_model_catalog_sync_run_vendor_region_latest
+    columns:
+    - tenant_id
+    - organization_id
+    - vendor_code
+    - region_code
+    - run_status
+    - started_at
+    - id
+  foreign_keys:
+  - name: fk_ai_model_catalog_sync_run_source
+    columns:
+    - source_id
+    references_table: ai_model_catalog_source
+    references_columns:
+    - id
+  security:
+    audit_required: true
+- table: ai_billing_meter
+  domain: ai
+  profile: dictionary_entity
+  compliance_level: L2
+  system_of_record: true
+  write_owner: pricing-service
+  common_columns: tenant_entity
+  frontend_routes:
+  - /models
+  - /console/usage
+  - /admin/group
+  - /admin/model
+  - /admin/record
+  api_surfaces:
+  - app
+  - backend
+  - worker
+  not_null_columns:
+  - uuid
+  - tenant_id
+  - organization_id
+  - status
+  - meter_code
+  - display_name
+  - billing_mode
+  - default_unit
+  - default_unit_size
+  unique_constraints:
+  - columns:
+    - uuid
+    source: column_unique
+  - name: uk_ai_billing_meter_tenant_code
+    columns:
+    - tenant_id
+    - organization_id
+    - meter_code
+  columns:
+    meter_code: string(64)
+    display_name: string(128)
+    description: string(512)
+    modality: enum_int32
+    usage_type: enum_int32
+    billing_mode: enum_int32
+    default_unit: enum_int32
+    default_unit_size: decimal
+    quantity_precision: int32
+    quantity_source: enum_int32
+    aggregation_mode: enum_int32
+    result_selector: string(256)
+    supports_tier: bool
+    supports_expression: bool
+    allow_negative_quantity: bool
+    canonical_price_item_type: enum_int32
+    sort_order: int32
+  indexes:
+  - name: idx_ai_billing_meter_tenant_status_sort
+    columns:
+    - tenant_id
+    - organization_id
+    - status
+    - sort_order
+    - id
+  - name: idx_ai_billing_meter_modality_mode
+    columns:
+    - tenant_id
+    - organization_id
+    - modality
+    - billing_mode
+    - status
+    - sort_order
+    - id
+- table: ai_model_pricing
+  domain: ai
+  profile: pricing
+  compliance_level: L3
+  system_of_record: true
+  write_owner: pricing-service
+  common_columns: tenant_entity
+  frontend_routes:
+  - /models
+  - /models/:id
+  - /models/:provider/:model
+  - /playground
+  - /console/api-keys
+  - /admin/model
+  - /admin/service-providers/pricing
+  api_surfaces:
+  - app
+  - backend
+  - worker
+  required_columns:
+  - catalog_key
+  - region_code
+  not_null_columns:
+  - uuid
+  - tenant_id
+  - organization_id
+  - status
+  - catalog_key
+  - model
+  - vendor_code
+  - region_code
+  - price_side
+  - billing_mode
+  - billing_meter_code
+  - unit_size
+  - unit_price
+  - currency
+  - effective_from
+  unique_constraints:
+  - columns:
+    - uuid
+    source: column_unique
+  columns:
+    model_id: int64
+    catalog_key: string(256)
+    model: string(128)
+    vendor_code: string(64)
+    region_code: string(64)
+    provider_code: string(64)
+    channel_id: int64
+    provider_model: string(128)
+    platform_code: string(64)
+    service_tier: string(64)
+    price_side: enum_int32
+    pricing_scope: enum_int32
+    pricing_scope_id: int64
+    pricing_plan_id: int64
+    pricing_plan_code: string(64)
+    billing_type: enum_int32
+    billing_mode: enum_int32
+    billing_meter_id: int64
+    billing_meter_code: string(64)
+    price_item_type: enum_int32
+    unit: enum_int32
+    unit_size: decimal
+    metering_mode: enum_int32
+    quantity_source: enum_int32
+    quantity_formula: text
+    result_selector: string(256)
+    minimum_quantity: decimal
+    quantity_step: decimal
+    included_quantity: decimal
+    unit_price: decimal
+    currency: string(10)
+    rounding_mode: enum_int32
+    min_charge_amount: decimal
+    reference_price_id: int64
+    reference_price_side: enum_int32
+    reference_multiplier: decimal
+    markup_amount: decimal
+    pricing_formula_mode: enum_int32
+    price_origin: enum_int32
+    import_snapshot_id: int64
+    priority: int32
+    price_version: string(64)
+    source_url: string(512)
+    source_hash: string(128)
+    published_at: instant
+    observed_at: instant
+    effective_from: instant
+    effective_to: instant
+    source_price_id: int64
+  indexes:
+  - name: idx_ai_model_pricing_tenant_status_effective
+    columns:
+    - tenant_id
+    - organization_id
+    - status
+    - effective_from
+    - effective_to
+    - id
+  - name: idx_ai_model_pricing_lookup
+    columns:
+    - tenant_id
+    - organization_id
+    - catalog_key
+    - price_side
+    - pricing_scope
+    - pricing_scope_id
+    - billing_mode
+    - billing_meter_code
+    - status
+    - effective_from
+    - effective_to
+  - name: idx_ai_model_pricing_vendor_region_model
+    columns:
+    - tenant_id
+    - organization_id
+    - vendor_code
+    - region_code
+    - catalog_key
+    - price_side
+    - status
+    - effective_from
+    - id
+  - name: idx_ai_model_pricing_provider_channel
+    columns:
+    - tenant_id
+    - organization_id
+    - provider_code
+    - channel_id
+    - catalog_key
+    - price_side
+    - status
+    - effective_from
+    - id
+  - name: idx_ai_model_pricing_plan_effective
+    columns:
+    - tenant_id
+    - organization_id
+    - pricing_plan_id
+    - catalog_key
+    - price_side
+    - status
+    - effective_from
+    - id
+  - name: idx_ai_model_pricing_meter_effective
+    columns:
+    - tenant_id
+    - organization_id
+    - billing_meter_code
+    - price_side
+    - status
+    - effective_from
+    - id
+  security:
+    financial: true
+    decimal_only: true
+- table: ai_pricing_plan
+  domain: ai
+  profile: tenant_entity
+  compliance_level: L3
+  system_of_record: true
+  write_owner: pricing-service
+  common_columns: tenant_entity
+  frontend_routes:
+  - /console/api-keys
+  - /admin/group
+  - /admin/model
+  api_surfaces:
+  - app
+  - backend
+  - worker
+  not_null_columns:
+  - uuid
+  - tenant_id
+  - organization_id
+  - status
+  - plan_code
+  - plan_name
+  - base_price_side
+  - currency
+  - effective_from
+  unique_constraints:
+  - columns:
+    - uuid
+    source: column_unique
+  - name: uk_ai_pricing_plan_tenant_code
+    columns:
+    - tenant_id
+    - organization_id
+    - plan_code
+  columns:
+    plan_code: string(64)
+    plan_name: string(128)
+    description: string(512)
+    plan_scope: enum_int32
+    base_price_side: enum_int32
+    base_pricing_scope: enum_int32
+    default_reference_price_id: int64
+    default_multiplier: decimal
+    default_markup_amount: decimal
+    currency: string(10)
+    billing_mode: enum_int32
+    rounding_mode: enum_int32
+    min_charge_amount: decimal
+    fallback_mode: enum_int32
+    priority: int32
+    price_version: string(64)
+    effective_from: instant
+    effective_to: instant
+  indexes:
+  - name: idx_ai_pricing_plan_scope_status
+    columns:
+    - tenant_id
+    - organization_id
+    - plan_scope
+    - status
+    - priority
+    - id
+  - name: idx_ai_pricing_plan_effective
+    columns:
+    - tenant_id
+    - organization_id
+    - status
+    - effective_from
+    - effective_to
+    - id
+  security:
+    financial: true
+    decimal_only: true
+- table: ai_pricing_plan_binding
+  domain: ai
+  profile: relation_entity
+  compliance_level: L3
+  system_of_record: true
+  write_owner: pricing-service
+  common_columns: tenant_entity
+  frontend_routes:
+  - /admin/group
+  api_surfaces:
+  - app
+  - backend
+  - worker
+  not_null_columns:
+  - uuid
+  - tenant_id
+  - organization_id
+  - status
+  - pricing_plan_id
+  - subject_type
+  - priority
+  - effective_from
+  unique_constraints:
+  - columns:
+    - uuid
+    source: column_unique
+  - name: uk_ai_pricing_plan_binding_subject
+    columns:
+    - tenant_id
+    - organization_id
+    - subject_type
+    - subject_id
+    - pricing_plan_id
+  columns:
+    pricing_plan_id: int64
+    pricing_plan_code: string(64)
+    subject_type: enum_int32
+    subject_id: int64
+    subject_code: string(128)
+    binding_source: enum_int32
+    multiplier_override: decimal
+    rpm_override: int64
+    tpm_override: int64
+    quota_policy_id: int64
+    priority: int32
+    effective_from: instant
+    effective_to: instant
+  indexes:
+  - name: idx_ai_pricing_plan_binding_tenant_status_effective
+    columns:
+    - tenant_id
+    - organization_id
+    - status
+    - effective_from
+    - priority
+    - id
+  - name: idx_ai_pricing_plan_binding_subject_effective
+    columns:
+    - tenant_id
+    - organization_id
+    - subject_type
+    - subject_id
+    - status
+    - effective_from
+    - id
+  - name: idx_ai_pricing_plan_binding_plan
+    columns:
+    - tenant_id
+    - organization_id
+    - pricing_plan_id
+    - status
+    - priority
+    - id
+  security:
+    financial: true
+    decimal_only: true
+    audit_required: true
+- table: ai_pricing_rule
+  domain: ai
+  profile: tenant_entity
+  compliance_level: L3
+  system_of_record: true
+  write_owner: pricing-service
+  common_columns: tenant_entity
+  frontend_routes:
+  - /admin/group
+  - /admin/model
+  api_surfaces:
+  - app
+  - backend
+  - worker
+  not_null_columns:
+  - uuid
+  - tenant_id
+  - organization_id
+  - status
+  - pricing_plan_id
+  - rule_code
+  - billing_meter_code
+  - formula_mode
+  - priority
+  - effective_from
+  unique_constraints:
+  - columns:
+    - uuid
+    source: column_unique
+  - name: uk_ai_pricing_rule_plan_code
+    columns:
+    - tenant_id
+    - organization_id
+    - pricing_plan_id
+    - rule_code
+  columns:
+    pricing_plan_id: int64
+    pricing_plan_code: string(64)
+    rule_code: string(64)
+    rule_name: string(128)
+    match_type: enum_int32
+    vendor_code: string(64)
+    family_code: string(64)
+    model_id: int64
+    model: string(128)
+    provider_code: string(64)
+    channel_id: int64
+    provider_model: string(128)
+    capability_code: string(64)
+    platform_code: string(64)
+    service_tier: string(64)
+    region: string(64)
+    price_side: enum_int32
+    reference_price_side: enum_int32
+    reference_pricing_id: int64
+    reference_pricing_scope: enum_int32
+    price_item_type: enum_int32
+    billing_type: enum_int32
+    billing_mode: enum_int32
+    billing_meter_id: int64
+    billing_meter_code: string(64)
+    unit: enum_int32
+    unit_size: decimal
+    metering_mode: enum_int32
+    quantity_source: enum_int32
+    quantity_formula: text
+    result_selector: string(256)
+    minimum_quantity: decimal
+    quantity_step: decimal
+    included_quantity: decimal
+    formula_mode: enum_int32
+    multiplier: decimal
+    markup_amount: decimal
+    unit_price_override: decimal
+    expression: text
+    expression_hash: string(128)
+    fallback_mode: enum_int32
+    priority: int32
+    effective_from: instant
+    effective_to: instant
+  indexes:
+  - name: idx_ai_pricing_rule_tenant_status_priority
+    columns:
+    - tenant_id
+    - organization_id
+    - status
+    - priority
+    - effective_from
+    - id
+  - name: idx_ai_pricing_rule_model_lookup
+    columns:
+    - tenant_id
+    - organization_id
+    - pricing_plan_id
+    - model
+    - provider_code
+    - channel_id
+    - billing_meter_code
+    - status
+    - priority
+    - id
+  - name: idx_ai_pricing_rule_meter_lookup
+    columns:
+    - tenant_id
+    - organization_id
+    - pricing_plan_id
+    - billing_meter_code
+    - match_type
+    - status
+    - priority
+    - id
+  - name: idx_ai_pricing_rule_reference
+    columns:
+    - tenant_id
+    - organization_id
+    - reference_price_side
+    - reference_pricing_id
+    - status
+    - id
+  security:
+    financial: true
+    decimal_only: true
+- table: ai_pricing_tier
+  domain: ai
+  profile: tenant_entity
+  compliance_level: L3
+  system_of_record: true
+  write_owner: pricing-service
+  common_columns: tenant_entity
+  frontend_routes:
+  - /admin/group
+  - /admin/model
+  api_surfaces:
+  - backend
+  - worker
+  not_null_columns:
+  - uuid
+  - tenant_id
+  - organization_id
+  - status
+  - tier_code
+  - billing_meter_code
+  - sort_order
+  - effective_from
+  unique_constraints:
+  - columns:
+    - uuid
+    source: column_unique
+  - name: uk_ai_pricing_tier_rule_code
+    columns:
+    - tenant_id
+    - organization_id
+    - pricing_rule_id
+    - tier_code
+  columns:
+    pricing_rule_id: int64
+    model_pricing_id: int64
+    tier_code: string(64)
+    tier_label: string(64)
+    price_item_type: enum_int32
+    billing_mode: enum_int32
+    billing_meter_id: int64
+    billing_meter_code: string(64)
+    min_quantity: decimal
+    max_quantity: decimal
+    quantity_unit: enum_int32
+    quantity_step: decimal
+    included_quantity: decimal
+    result_selector: string(256)
+    input_unit_price: decimal
+    output_unit_price: decimal
+    cache_write_unit_price: decimal
+    cache_read_unit_price: decimal
+    image_unit_price: decimal
+    audio_unit_price: decimal
+    video_unit_price: decimal
+    per_request_price: decimal
+    multiplier: decimal
+    currency: string(10)
+    sort_order: int32
+    effective_from: instant
+    effective_to: instant
+  indexes:
+  - name: idx_ai_pricing_tier_tenant_status_effective
+    columns:
+    - tenant_id
+    - organization_id
+    - status
+    - effective_from
+    - sort_order
+    - id
+  - name: idx_ai_pricing_tier_rule_range
+    columns:
+    - tenant_id
+    - organization_id
+    - pricing_rule_id
+    - billing_meter_code
+    - min_quantity
+    - max_quantity
+    - sort_order
+    - id
+  - name: idx_ai_pricing_tier_model_pricing
+    columns:
+    - tenant_id
+    - organization_id
+    - model_pricing_id
+    - price_item_type
+    - sort_order
+    - id
+  security:
+    financial: true
+    decimal_only: true
+- table: ai_pricing_import_snapshot
+  domain: ai
+  profile: event_log
+  compliance_level: L3
+  system_of_record: true
+  write_owner: pricing-sync-worker
+  common_columns: event_log
+  frontend_routes:
+  - /admin/model
+  api_surfaces:
+  - backend
+  - worker
+  not_null_columns:
+  - uuid
+  - tenant_id
+  - organization_id
+  - status
+  - request_id
+  - import_source
+  - source_name
+  - source_hash
+  - observed_at
+  unique_constraints:
+  - columns:
+    - uuid
+    source: column_unique
+  - name: uk_ai_pricing_import_snapshot_hash
+    columns:
+    - tenant_id
+    - organization_id
+    - import_source
+    - source_hash
+  columns:
+    import_source: enum_int32
+    source_name: string(128)
+    source_url: string(1024)
+    source_version: string(128)
+    source_hash: string(128)
+    upstream_commit: string(128)
+    data_format: string(64)
+    row_count: int64
+    accepted_count: int64
+    rejected_count: int64
+    currency: string(10)
+    published_at: instant
+    observed_at: instant
+    raw_payload_ref: string(512)
+    normalized_payload_hash: string(128)
+    schema_version: string(32)
+    error_message_masked: string(1024)
+  indexes:
+  - name: idx_ai_pricing_import_snapshot_tenant_latest
+    columns:
+    - tenant_id
+    - organization_id
+    - status
+    - import_source
+    - observed_at
+    - id
+  security:
+    financial: true
+    audit_required: true
+- table: ai_model_rank_snapshot
+  domain: ai
+  profile: projection
+  compliance_level: L2
+  system_of_record: false
+  write_owner: analytics-worker
+  common_columns: projection
+  source_tables:
+  - ai_model
+  - ai_usage_fact
+  - ai_request_trace
+  - ai_model_pricing
+  frontend_routes:
+  - /rankings
+  - /console/dashboard
+  - /admin/model
+  api_surfaces:
+  - app
+  - backend
+  - worker
+  required_columns:
+  - catalog_key
+  - region_code
+  not_null_columns:
+  - uuid
+  - tenant_id
+  - organization_id
+  - status
+  - snapshot_date
+  - snapshot_period
+  - rank_scope
+  - catalog_key
+  - model
+  - vendor_code
+  - region_code
+  - rank_no
+  unique_constraints:
+  - columns:
+    - uuid
+    source: column_unique
+  - name: uk_ai_model_rank_snapshot_scope_catalog_key
+    columns:
+    - tenant_id
+    - organization_id
+    - snapshot_date
+    - snapshot_period
+    - rank_scope
+    - vendor_code
+    - region_code
+    - catalog_key
+  columns:
+    snapshot_date: date
+    snapshot_period: enum_int32
+    rank_scope: string(64)
+    model_id: int64
+    catalog_key: string(256)
+    model: string(128)
+    vendor_code: string(64)
+    region_code: string(64)
+    vendor_name_snapshot: string(128)
+    provider_code: string(64)
+    modality: enum_int32
+    rank_no: int32
+    previous_rank_no: int32
+    base_volume: int64
+    cost_indicator: int32
+    context_size_text: string(64)
+    is_new: bool
+    color_token: string(64)
+    pricing_text: string(128)
+    license_type: enum_int32
+    strengths: json
+    request_count: int64
+    token_count: int64
+    cost_amount: decimal
+    currency: string(10)
+    latency_p50_ms: int32
+    latency_p95_ms: int32
+    success_rate: decimal
+    win_rate: decimal
+    trend_score: decimal
+    rank_payload: json
+  semantic_contracts:
+    ranking_snapshot:
+      time_fields:
+        snapshot_date: calendar_date_utc
+        snapshot_period: stable_enum_int32
+      scope_fields:
+      - tenant_id
+      - organization_id
+      - rank_scope
+      - vendor_code
+      - region_code
+      - catalog_key
+      metadata_contract:
+        required_fields:
+        - snapshotDate
+        - snapshotPeriod
+        - windowStart
+        - windowEnd
+        - generatedAt
+        - refreshIntervalSeconds
+        - nextRefreshAt
+        - cacheMaxAgeSeconds
+        - sourceTables
+        source_tables:
+        - ai_usage_fact
+        - ai_model
+        - ai_model_rank_snapshot
+      rank_payload_contract:
+        required_fields:
+        - catalogKey
+        - rank
+        - previousRank
+        - sourceRows
+        - requests
+        - tokens
+        - cost
+        - currency
+        source_tables:
+        - ai_usage_fact
+        - ai_model
+        - ai_model_rank_snapshot
+  indexes:
+  - name: idx_ai_model_rank_snapshot_tenant_rank
+    columns:
+    - tenant_id
+    - organization_id
+    - status
+    - snapshot_date
+    - snapshot_period
+    - rank_scope
+    - rank_no
+  - name: idx_ai_model_rank_snapshot_vendor_region_rank
+    columns:
+    - tenant_id
+    - organization_id
+    - snapshot_date
+    - snapshot_period
+    - vendor_code
+    - region_code
+    - rank_no
+  - name: idx_ai_model_rank_snapshot_latest_scope
+    columns:
+    - tenant_id
+    - organization_id
+    - status
+    - rank_scope
+    - snapshot_date
+    - snapshot_period
+    - rank_no
+  - name: idx_ai_model_rank_snapshot_filter_rank
+    columns:
+    - tenant_id
+    - organization_id
+    - status
+    - snapshot_date
+    - snapshot_period
+    - rank_scope
+    - vendor_code
+    - region_code
+    - modality
+    - rank_no
+- table: ai_routing_policy
+  domain: ai
+  profile: tenant_entity
+  compliance_level: L2
+  system_of_record: true
+  write_owner: routing-policy-service
+  common_columns: tenant_entity
+  frontend_routes:
+  - /console/routing
+  - /admin/channel
+  api_surfaces:
+  - app
+  - backend
+  - worker
+  columns:
+    policy_code: string(64)
+    name: string(128)
+    policy_scope: enum_int32
+    subject_id: int64
+    capability: enum_int32
+    default_profile_id: int64
+    fallback_mode: enum_int32
+    slo_latency_ms: int32
+    slo_success_rate: decimal
+    cost_ceiling: decimal
+    currency: string(10)
+  indexes:
+  - name: uk_ai_routing_policy_tenant_code
+    unique: true
+    columns:
+    - tenant_id
+    - organization_id
+    - policy_code
+- table: ai_routing_profile
+  domain: ai
+  profile: tenant_entity
+  compliance_level: L2
+  system_of_record: true
+  write_owner: routing-policy-service
+  common_columns: tenant_entity
+  frontend_routes:
+  - /console/routing
+  - /admin/channel
+  api_surfaces:
+  - app
+  - backend
+  - worker
+  columns:
+    policy_id: int64
+    profile_version: int64
+    profile_name: string(128)
+    release_status: enum_int32
+    traffic_percent: decimal
+    config_hash: string(128)
+    published_at: instant
+    published_by: int64
+    rollback_from_profile_id: int64
+  indexes:
+  - name: uk_ai_routing_profile_policy_version
+    unique: true
+    columns:
+    - policy_id
+    - profile_version
+- table: ai_routing_rule
+  domain: ai
+  profile: tenant_entity
+  compliance_level: L2
+  system_of_record: true
+  write_owner: routing-policy-service
+  common_columns: tenant_entity
+  frontend_routes:
+  - /console/routing
+  - /admin/channel
+  api_surfaces:
+  - app
+  - backend
+  - worker
+  columns:
+    profile_id: int64
+    rule_code: string(64)
+    priority: int32
+    match_expression: json
+    target_model: string(128)
+    candidate_channels: json
+    fallback_chain: json
+    constraints: json
+    rate_limit_policy_id: int64
+    effective_from: instant
+    effective_to: instant
+  indexes:
+  - name: uk_ai_routing_rule_profile_code
+    unique: true
+    columns:
+    - profile_id
+    - rule_code
+  - name: idx_ai_routing_rule_tenant_profile_priority
+    columns:
+    - tenant_id
+    - organization_id
+    - profile_id
+    - priority
+    - status
+- table: ai_routing_decision_log
+  domain: ai
+  profile: event_log
+  compliance_level: L3
+  system_of_record: true
+  write_owner: gateway-runtime
+  common_columns: event_log
+  frontend_routes:
+  - /console/usage
+  - /console/routing
+  - /admin/record
+  api_surfaces:
+  - app
+  - backend
+  - openai_v1
+  - worker
+  columns:
+    api_key_id: int64
+    legacy_api_key_id: int64
+    policy_id: int64
+    profile_id: int64
+    rule_id: int64
+    requested_model: string(128)
+    resolved_model: string(128)
+    capability: enum_int32
+    selected_provider_id: int64
+    selected_channel_id: int64
+    selected_account_id: int64
+    decision_mode: enum_int32
+    decision_reason: json
+    candidate_snapshot: json
+    fallback_chain: json
+    decision_latency_ms: int32
+  indexes:
+  - name: uk_ai_routing_decision_log_request
+    unique: true
+    columns:
+    - tenant_id
+    - organization_id
+    - request_id
+  - name: idx_ai_routing_decision_tenant_model_created
+    columns:
+    - tenant_id
+    - organization_id
+    - requested_model
+    - created_at
+    - id
+  lifecycle:
+    partition_by: created_at_month
+    online_retention: 180d
+  security:
+    sensitivity: ROUTING_DECISION
+    stores_secret_plaintext: false
+    payload_redaction_required: true
+    audit_required: true
+- table: ai_request_trace
+  domain: ai
+  profile: event_log
+  compliance_level: L3
+  system_of_record: true
+  write_owner: gateway-runtime
+  common_columns: event_log
+  frontend_routes:
+  - /playground
+  - /console/dashboard
+  - /console/usage
+  - /console/gateway
+  - /console/routing
+  - /admin/dashboard
+  - /admin/analytics
+  - /admin/record
+  api_surfaces:
+  - app
+  - backend
+  - openai_v1
+  - worker
+  columns:
+    attempt_no: int32
+    decision_log_id: int64
+    api_key_id: int64
+    legacy_api_key_id: int64
+    api_key_name_snapshot: string(128)
+    channel_group_id: int64
+    channel_group_snapshot: string(128)
+    owner_type: enum_int32
+    owner_id: int64
+    owner_name_snapshot: string(128)
+    provider_id: int64
+    channel_id: int64
+    channel_name_snapshot: string(128)
+    requested_model: string(128)
+    requested_model_catalog_key: string(256)
+    provider_model: string(128)
+    provider_native_model: string(256)
+    endpoint: string(256)
+    request_path: string(256)
+    http_method: string(16)
+    http_status: int32
+    provider_error_code: string(128)
+    error_type: enum_int32
+    started_at: instant
+    ended_at: instant
+    latency_ms: int32
+    ttft_ms: int32
+    streaming: bool
+    request_bytes: int64
+    response_bytes: int64
+    prompt_tokens: int64
+    completion_tokens: int64
+    cached_tokens: int64
+    total_tokens: int64
+    request_payload_hash: string(128)
+    response_payload_hash: string(128)
+    error_message_masked: string(1024)
+    reasoning_effort: string(64)
+    client_ip_hash: string(128)
+    client_ip_masked: string(64)
+    client_ip_region: string(128)
+    user_agent_hash: string(128)
+  indexes:
+  - name: uk_ai_request_trace_request_attempt
+    unique: true
+    columns:
+    - tenant_id
+    - organization_id
+    - request_id
+    - attempt_no
+  - name: idx_ai_request_trace_tenant_trace
+    columns:
+    - tenant_id
+    - organization_id
+    - trace_id
+  - name: idx_ai_request_trace_api_key_started
+    columns:
+    - tenant_id
+    - organization_id
+    - api_key_id
+    - started_at
+    - id
+  - name: idx_ai_request_trace_model_started
+    columns:
+    - tenant_id
+    - organization_id
+    - requested_model
+    - started_at
+    - id
+  - name: idx_ai_request_trace_tenant_status_started
+    columns:
+    - tenant_id
+    - organization_id
+    - status
+    - started_at
+    - id
+  lifecycle:
+    partition_by: started_at_month
+    online_retention: 90d
+  security:
+    sensitivity: REQUEST_METADATA
+    pii: true
+    payload_stored: hash_only
+    stores_secret_plaintext: false
+    audit_required: true
+- table: ai_usage_fact
+  domain: ai
+  profile: ledger_source_fact
+  compliance_level: L3
+  system_of_record: true
+  write_owner: gateway-runtime
+  common_columns: event_log
+  frontend_routes:
+  - /playground
+  - /console/dashboard
+  - /console/usage
+  - /console/routing
+  - /admin/dashboard
+  - /admin/analytics
+  - /admin/model
+  - /admin/record
+  - /console/account
+  - /console/settlements
+  - /admin/service-providers/usage
+  api_surfaces:
+  - app
+  - backend
+  - openai_v1
+  - worker
+  required_columns:
+  - catalog_key
+  not_null_columns:
+  - uuid
+  - catalog_key
+  columns:
+    decision_log_id: int64
+    api_key_id: int64
+    legacy_api_key_id: int64
+    api_key_name_snapshot: string(128)
+    channel_group_id: int64
+    channel_group_snapshot: string(128)
+    owner_type: enum_int32
+    owner_id: int64
+    owner_name_snapshot: string(128)
+    catalog_key: string(256)
+    requested_model_catalog_key: string(256)
+    model: string(128)
+    provider_native_model: string(256)
+    provider_id: int64
+    channel_id: int64
+    modality: enum_int32
+    usage_type: enum_int32
+    billing_type: enum_int32
+    billing_mode: enum_int32
+    billing_meter_id: int64
+    billing_meter_code: string(64)
+    billing_tier: string(64)
+    billable_quantity: decimal
+    billable_unit: enum_int32
+    prompt_tokens: int64
+    completion_tokens: int64
+    cached_tokens: int64
+    total_tokens: int64
+    request_count: int64
+    result_count: int64
+    item_count: int64
+    character_count: int64
+    image_count: int64
+    audio_seconds: decimal
+    video_seconds: decimal
+    storage_byte_hours: decimal
+    bandwidth_bytes: int64
+    unit_price_snapshot: decimal
+    base_input_unit_price: decimal
+    base_output_unit_price: decimal
+    cache_read_unit_price: decimal
+    rate_multiplier: decimal
+    reference_multiplier: decimal
+    official_reference_amount: decimal
+    upstream_cost_amount: decimal
+    customer_charge_amount: decimal
+    cost_amount: decimal
+    currency: string(10)
+    pricing_id: int64
+    pricing_plan_id: int64
+    pricing_plan_code: string(64)
+    pricing_rule_id: int64
+    pricing_tier_id: int64
+    pricing_snapshot: json
+    reasoning_effort: string(64)
+    occurred_at: instant
+    settlement_status: enum_int32
+    settlement_id: int64
+  semantic_contracts:
+    ranking_refresh_source_fact:
+      time_field: occurred_at
+      window_predicate: half_open_utc
+      aggregation_grain:
+      - tenant_id
+      - organization_id
+      - catalog_key
+      metric_fields:
+      - request_count
+      - total_tokens
+      - cost_amount
+      - currency
+      pricing_snapshot_field: pricing_snapshot
+  indexes:
+  - name: uk_ai_usage_fact_request
+    unique: true
+    columns:
+    - tenant_id
+    - organization_id
+    - request_id
+    - usage_type
+  - name: idx_ai_usage_fact_tenant_owner_occurred
+    columns:
+    - tenant_id
+    - organization_id
+    - owner_type
+    - owner_id
+    - occurred_at
+    - id
+  - name: idx_ai_usage_fact_api_key_occurred
+    columns:
+    - tenant_id
+    - organization_id
+    - api_key_id
+    - occurred_at
+    - id
+  - name: idx_ai_usage_fact_model_occurred
+    columns:
+    - tenant_id
+    - organization_id
+    - catalog_key
+    - occurred_at
+    - id
+  - name: idx_ai_usage_fact_pricing_plan_occurred
+    columns:
+    - tenant_id
+    - organization_id
+    - pricing_plan_id
+    - occurred_at
+    - id
+  - name: idx_ai_usage_fact_meter_occurred
+    columns:
+    - tenant_id
+    - organization_id
+    - billing_meter_code
+    - occurred_at
+    - id
+  - name: idx_ai_usage_fact_settlement_status
+    columns:
+    - tenant_id
+    - organization_id
+    - settlement_status
+    - occurred_at
+    - id
+  lifecycle:
+    partition_by: occurred_at_month
+    online_retention: 24mo
+    archive_retention: 5y
+  security:
+    financial: true
+    decimal_only: true
+- table: ai_quota_policy
+  domain: ai
+  profile: tenant_entity
+  compliance_level: L3
+  system_of_record: true
+  write_owner: quota-service
+  common_columns: tenant_entity
+  frontend_routes:
+  - /console/api-keys
+  - /admin/ratelimit
+  api_surfaces:
+  - app
+  - backend
+  - worker
+  columns:
+    policy_code: string(64)
+    name: string(128)
+    subject_type: enum_int32
+    subject_id: int64
+    subject_ref_hash: string(128)
+    subject_ref_masked: string(128)
+    scope_type: enum_int32
+    scope_id: int64
+    channel_group_id: int64
+    model: string(128)
+    quota_period: enum_int32
+    quota_unit: enum_int32
+    quota_limit: decimal
+    requests_per_second: int64
+    requests_per_minute: int64
+    requests_per_day: int64
+    tokens_per_minute: int64
+    burst_limit: decimal
+    block_duration_seconds: int64
+    reset_mode: enum_int32
+    exhausted_at: instant
+    effective_from: instant
+    effective_to: instant
+  indexes:
+  - name: uk_ai_quota_policy_tenant_subject
+    unique: true
+    columns:
+    - tenant_id
+    - organization_id
+    - subject_type
+    - subject_id
+    - quota_period
+    - quota_unit
+  - name: idx_ai_quota_policy_subject_ref
+    columns:
+    - tenant_id
+    - organization_id
+    - subject_type
+    - subject_ref_hash
+    - status
+  - name: idx_ai_quota_policy_model_channel_group
+    columns:
+    - tenant_id
+    - organization_id
+    - model
+    - channel_group_id
+    - status
+  security:
+    sensitivity: RATE_LIMIT_POLICY
+    pii: true
+    stores_secret_plaintext: false
+    audit_required: true
+- table: ai_prompt
+  domain: ai
+  profile: tenant_entity
+  compliance_level: L3
+  system_of_record: true
+  write_owner: prompt-service
+  common_columns: tenant_entity
+  frontend_routes:
+  - /admin/prompts
+  api_surfaces:
+  - backend
+  - worker
+  required_columns:
+  - uuid
+  - tenant_id
+  - organization_id
+  - prompt_key
+  - name
+  - prompt_type
+  - visibility
+  - status
+  columns:
+    prompt_key: string(128)
+    name: string(255)
+    description: text
+    category_id: int64
+    category_code: string(128)
+    prompt_type: string(64)
+    visibility: string(64)
+    owner_user_id: int64
+    latest_version_id: int64
+    published_version_id: int64
+    tags:
+      type: json
+      constraints: NOT NULL DEFAULT '[]'::jsonb
+    published_at: instant
+    deprecated_at: instant
+  indexes:
+  - name: uk_ai_prompt_key
+    unique: true
+    columns:
+    - tenant_id
+    - organization_id
+    - prompt_key
+  - name: idx_ai_prompt_category
+    columns:
+    - tenant_id
+    - organization_id
+    - category_id
+    - status
+    - updated_at
+    - id
+  - name: idx_ai_prompt_type
+    columns:
+    - tenant_id
+    - organization_id
+    - prompt_type
+    - status
+    - updated_at
+    - id
+  security:
+    sensitivity: PROMPT_DEFINITION
+    stores_secret_plaintext: false
+    audit_required: true
+- table: ai_prompt_version
+  domain: ai
+  profile: tenant_entity
+  compliance_level: L3
+  system_of_record: true
+  write_owner: prompt-service
+  common_columns: tenant_entity
+  source_tables:
+  - ai_prompt
+  frontend_routes:
+  - /admin/prompts
+  api_surfaces:
+  - backend
+  - worker
+  required_columns:
+  - uuid
+  - tenant_id
+  - organization_id
+  - prompt_id
+  - version_no
+  - content
+  - lifecycle_status
+  - status
+  columns:
+    prompt_id: int64
+    version_no: string(64)
+    title: string(255)
+    content: text
+    variable_schema:
+      type: json
+      constraints: NOT NULL DEFAULT '{}'::jsonb
+    output_schema:
+      type: json
+      constraints: NOT NULL DEFAULT '{}'::jsonb
+    model_constraints:
+      type: json
+      constraints: NOT NULL DEFAULT '{}'::jsonb
+    safety_policy:
+      type: json
+      constraints: NOT NULL DEFAULT '{}'::jsonb
+    examples_json:
+      type: json
+      constraints: NOT NULL DEFAULT '[]'::jsonb
+    checksum_hash: string(128)
+    lifecycle_status: string(64)
+    review_status: string(64)
+    review_comment: text
+    created_by: int64
+    published_at: instant
+    deprecated_at: instant
+  indexes:
+  - name: uk_ai_prompt_version_no
+    unique: true
+    columns:
+    - tenant_id
+    - organization_id
+    - prompt_id
+    - version_no
+  - name: idx_ai_prompt_version_prompt
+    columns:
+    - tenant_id
+    - organization_id
+    - prompt_id
+    - lifecycle_status
+    - created_at
+    - id
+  security:
+    sensitivity: PROMPT_DEFINITION
+    payload_redaction_required: true
+    stores_secret_plaintext: false
+    audit_required: true
+- table: ai_prompt_binding
+  domain: ai
+  profile: tenant_entity
+  compliance_level: L3
+  system_of_record: true
+  write_owner: prompt-service
+  common_columns: tenant_entity
+  source_tables:
+  - ai_prompt
+  - ai_prompt_version
+  frontend_routes:
+  - /admin/prompts
+  - /admin/agents
+  api_surfaces:
+  - backend
+  - worker
+  required_columns:
+  - uuid
+  - tenant_id
+  - organization_id
+  - prompt_id
+  - owner_type
+  - owner_id
+  - binding_role
+  - status
+  columns:
+    prompt_id: int64
+    prompt_version_id: int64
+    owner_type: string(64)
+    owner_id: int64
+    binding_role: string(64)
+    priority:
+      type: int32
+      constraints: NOT NULL DEFAULT 0
+    enabled:
+      type: bool
+      constraints: NOT NULL DEFAULT TRUE
+    policy_json:
+      type: json
+      constraints: NOT NULL DEFAULT '{}'::jsonb
+    snapshot_json:
+      type: json
+      constraints: NOT NULL DEFAULT '{}'::jsonb
+  indexes:
+  - name: idx_ai_prompt_binding_owner
+    columns:
+    - tenant_id
+    - organization_id
+    - owner_type
+    - owner_id
+    - binding_role
+    - priority
+    - id
+  - name: idx_ai_prompt_binding_prompt
+    columns:
+    - tenant_id
+    - organization_id
+    - prompt_id
+    - prompt_version_id
+    - enabled
+    - id
+  security:
+    sensitivity: PROMPT_BINDING
+    stores_secret_plaintext: false
+    audit_required: true
+- table: ai_mcp_server
+  domain: ai
+  profile: tenant_entity
+  compliance_level: L3
+  system_of_record: true
+  write_owner: mcp-service
+  common_columns: tenant_entity
+  frontend_routes:
+  - /admin/mcp
+  api_surfaces:
+  - backend
+  - worker
+  required_columns:
+  - uuid
+  - tenant_id
+  - organization_id
+  - server_key
+  - name
+  - transport
+  - visibility
+  - status
+  columns:
+    server_key: string(128)
+    name: string(255)
+    description: text
+    category_id: int64
+    category_code: string(128)
+    transport: string(64)
+    visibility: string(64)
+    owner_user_id: int64
+    latest_revision_id: int64
+    published_revision_id: int64
+    health_status:
+      type: string(64)
+      constraints: NOT NULL DEFAULT 'unchecked'
+    last_checked_at: instant
+    last_error_masked: text
+    tags:
+      type: json
+      constraints: NOT NULL DEFAULT '[]'::jsonb
+    published_at: instant
+    deprecated_at: instant
+  indexes:
+  - name: uk_ai_mcp_server_key
+    unique: true
+    columns:
+    - tenant_id
+    - organization_id
+    - server_key
+  - name: idx_ai_mcp_server_category
+    columns:
+    - tenant_id
+    - organization_id
+    - category_id
+    - status
+    - updated_at
+    - id
+  - name: idx_ai_mcp_server_health
+    columns:
+    - tenant_id
+    - organization_id
+    - health_status
+    - status
+    - updated_at
+    - id
+  security:
+    sensitivity: MCP_SERVER
+    stores_secret_plaintext: false
+    secret_reference_only: true
+    audit_required: true
+- table: ai_mcp_server_revision
+  domain: ai
+  profile: tenant_entity
+  compliance_level: L3
+  system_of_record: true
+  write_owner: mcp-service
+  common_columns: tenant_entity
+  source_tables:
+  - ai_mcp_server
+  frontend_routes:
+  - /admin/mcp
+  api_surfaces:
+  - backend
+  - worker
+  required_columns:
+  - uuid
+  - tenant_id
+  - organization_id
+  - server_id
+  - revision_no
+  - transport
+  - lifecycle_status
+  - status
+  columns:
+    server_id: int64
+    revision_no: string(64)
+    transport: string(64)
+    endpoint_url: string(1024)
+    command: string(1024)
+    args_json:
+      type: json
+      constraints: NOT NULL DEFAULT '[]'::jsonb
+    env_schema:
+      type: json
+      constraints: NOT NULL DEFAULT '{}'::jsonb
+    auth_type:
+      type: string(64)
+      constraints: NOT NULL DEFAULT 'none'
+    secret_ref: string(512)
+    timeout_ms:
+      type: int32
+      constraints: NOT NULL DEFAULT 30000
+    retry_policy:
+      type: json
+      constraints: NOT NULL DEFAULT '{}'::jsonb
+    config_hash: string(128)
+    lifecycle_status: string(64)
+    created_by: int64
+    published_at: instant
+    deprecated_at: instant
+  indexes:
+  - name: uk_ai_mcp_server_revision_no
+    unique: true
+    columns:
+    - tenant_id
+    - organization_id
+    - server_id
+    - revision_no
+  - name: idx_ai_mcp_server_revision_server
+    columns:
+    - tenant_id
+    - organization_id
+    - server_id
+    - lifecycle_status
+    - created_at
+    - id
+  security:
+    sensitivity: MCP_SERVER_CONFIG
+    stores_secret_plaintext: false
+    secret_reference_only: true
+    audit_required: true
+- table: ai_mcp_tool
+  domain: ai
+  profile: tenant_entity
+  compliance_level: L3
+  system_of_record: true
+  write_owner: mcp-service
+  common_columns: tenant_entity
+  source_tables:
+  - ai_mcp_server
+  - ai_mcp_server_revision
+  frontend_routes:
+  - /admin/mcp
+  api_surfaces:
+  - backend
+  - worker
+  required_columns:
+  - uuid
+  - tenant_id
+  - organization_id
+  - server_id
+  - tool_key
+  - name
+  - status
+  columns:
+    server_id: int64
+    server_revision_id: int64
+    tool_key: string(128)
+    name: string(255)
+    description: text
+    input_schema:
+      type: json
+      constraints: NOT NULL DEFAULT '{}'::jsonb
+    output_schema:
+      type: json
+      constraints: NOT NULL DEFAULT '{}'::jsonb
+    risk_level:
+      type: string(64)
+      constraints: NOT NULL DEFAULT 'low'
+    requires_approval:
+      type: bool
+      constraints: NOT NULL DEFAULT FALSE
+    enabled:
+      type: bool
+      constraints: NOT NULL DEFAULT TRUE
+    rate_limit_policy:
+      type: json
+      constraints: NOT NULL DEFAULT '{}'::jsonb
+    schema_hash: string(128)
+    discovered_at: instant
+    last_invoked_at: instant
+    sort_weight:
+      type: int32
+      constraints: NOT NULL DEFAULT 0
+  indexes:
+  - name: uk_ai_mcp_tool_key
+    unique: true
+    columns:
+    - tenant_id
+    - organization_id
+    - server_id
+    - tool_key
+  - name: idx_ai_mcp_tool_server
+    columns:
+    - tenant_id
+    - organization_id
+    - server_id
+    - enabled
+    - sort_weight
+    - id
+  - name: idx_ai_mcp_tool_risk
+    columns:
+    - tenant_id
+    - organization_id
+    - risk_level
+    - requires_approval
+    - enabled
+    - id
+  security:
+    sensitivity: MCP_TOOL_SCHEMA
+    stores_secret_plaintext: false
+    audit_required: true
+- table: ai_mcp_binding
+  domain: ai
+  profile: tenant_entity
+  compliance_level: L3
+  system_of_record: true
+  write_owner: mcp-service
+  common_columns: tenant_entity
+  source_tables:
+  - ai_mcp_server
+  - ai_mcp_server_revision
+  - ai_mcp_tool
+  frontend_routes:
+  - /admin/mcp
+  - /admin/agents
+  api_surfaces:
+  - backend
+  - worker
+  required_columns:
+  - uuid
+  - tenant_id
+  - organization_id
+  - server_id
+  - owner_type
+  - owner_id
+  - status
+  columns:
+    server_id: int64
+    server_revision_id: int64
+    tool_id: int64
+    owner_type: string(64)
+    owner_id: int64
+    allowed_tools:
+      type: json
+      constraints: NOT NULL DEFAULT '[]'::jsonb
+    denied_tools:
+      type: json
+      constraints: NOT NULL DEFAULT '[]'::jsonb
+    policy_json:
+      type: json
+      constraints: NOT NULL DEFAULT '{}'::jsonb
+    priority:
+      type: int32
+      constraints: NOT NULL DEFAULT 0
+    enabled:
+      type: bool
+      constraints: NOT NULL DEFAULT TRUE
+    snapshot_json:
+      type: json
+      constraints: NOT NULL DEFAULT '{}'::jsonb
+  indexes:
+  - name: idx_ai_mcp_binding_owner
+    columns:
+    - tenant_id
+    - organization_id
+    - owner_type
+    - owner_id
+    - priority
+    - id
+  - name: idx_ai_mcp_binding_server
+    columns:
+    - tenant_id
+    - organization_id
+    - server_id
+    - server_revision_id
+    - enabled
+    - id
+  security:
+    sensitivity: MCP_BINDING
+    stores_secret_plaintext: false
+    secret_reference_only: true
+    audit_required: true
+- table: ai_agent
+  domain: ai
+  profile: tenant_entity
+  compliance_level: L3
+  system_of_record: true
+  write_owner: agent-service
+  common_columns: tenant_entity
+  frontend_routes:
+  - /playground
+  - /c/:conversationId
+  - /admin/agents
+  api_surfaces:
+  - app
+  - backend
+  - worker
+  required_columns:
+  - uuid
+  - tenant_id
+  - organization_id
+  - owner_user_id
+  - agent_code
+  - name
+  - visibility
+  - status
+  columns:
+    owner_user_id: int64
+    agent_code: string(96)
+    name: string(128)
+    description: string(1024)
+    visibility: enum_int32
+    default_version_id: int64
+    avatar_url: string(512)
+    template_source: string(128)
+    governance_status: enum_int32
+    published_at: instant
+    published_by: int64
+  indexes:
+  - name: uk_ai_agent_tenant_code
+    unique: true
+    columns:
+    - tenant_id
+    - organization_id
+    - agent_code
+  - name: idx_ai_agent_owner_status_updated
+    columns:
+    - tenant_id
+    - organization_id
+    - owner_user_id
+    - status
+    - updated_at
+    - id
+  - name: idx_ai_agent_governance_status
+    columns:
+    - tenant_id
+    - organization_id
+    - governance_status
+    - updated_at
+    - id
+  security:
+    sensitivity: AGENT_DEFINITION
+    stores_secret_plaintext: false
+    audit_required: true
+- table: ai_agent_version
+  domain: ai
+  profile: tenant_entity
+  compliance_level: L3
+  system_of_record: true
+  write_owner: agent-service
+  common_columns: tenant_entity
+  frontend_routes:
+  - /playground
+  - /c/:conversationId
+  - /admin/agents
+  api_surfaces:
+  - app
+  - backend
+  - worker
+  required_columns:
+  - uuid
+  - tenant_id
+  - organization_id
+  - agent_id
+  - version_no
+  - release_status
+  - status
+  columns:
+    agent_id: int64
+    version_no: int64
+    release_status: enum_int32
+    system_prompt: text
+    model_policy: json
+    tool_policy: json
+    memory_policy: json
+    mcp_policy: json
+    skill_policy: json
+    runtime_policy: json
+    config_hash: string(128)
+    published_at: instant
+    published_by: int64
+  indexes:
+  - name: uk_ai_agent_version_agent_no
+    unique: true
+    columns:
+    - tenant_id
+    - organization_id
+    - agent_id
+    - version_no
+  - name: idx_ai_agent_version_release_status
+    columns:
+    - tenant_id
+    - organization_id
+    - agent_id
+    - release_status
+    - version_no
+  - name: idx_ai_agent_version_config_hash
+    columns:
+    - tenant_id
+    - organization_id
+    - config_hash
+  security:
+    sensitivity: AGENT_DEFINITION
+    payload_redaction_required: true
+    stores_secret_plaintext: false
+    audit_required: true
+- table: ai_agent_run
+  domain: ai
+  profile: event_log
+  compliance_level: L3
+  system_of_record: true
+  write_owner: agent-runtime
+  common_columns: event_log
+  frontend_routes:
+  - /playground
+  - /c/:conversationId
+  - /admin/agents
+  api_surfaces:
+  - app
+  - backend
+  - worker
+  required_columns:
+  - uuid
+  - tenant_id
+  - organization_id
+  - user_id
+  - request_id
+  - agent_id
+  - agent_version_id
+  - run_uuid
+  - run_status
+  columns:
+    status:
+      type: string(64)
+      constraints: NOT NULL DEFAULT 'active'
+    agent_id: int64
+    agent_version_id: int64
+    agent_session_id: string(128)
+    memory_space_id: string(128)
+    runtime: string(128)
+    model: string(128)
+    run_uuid: string(128)
+    run_status:
+      type: string(64)
+      constraints: NOT NULL DEFAULT 'running'
+    source_surface: string(64)
+    input_message: text
+    output_message: text
+    target_modality: enum_int32
+    planner_model: string(128)
+    execution_mode: string(64)
+    started_at: instant
+    completed_at: instant
+    cancelled_at: instant
+    failed_at: instant
+    error_message_masked: string(1024)
+    metering_status: enum_int32
+    usage_fact_id: int64
+    usage_json: json
+    total_steps: int32
+    prompt_tokens: int64
+    completion_tokens: int64
+    cached_tokens: int64
+    total_tokens: int64
+    image_count: int64
+    audio_seconds: decimal
+    video_seconds: decimal
+  indexes:
+  - name: uk_ai_agent_run_request
+    unique: true
+    columns:
+    - tenant_id
+    - organization_id
+    - request_id
+  - name: idx_ai_agent_run_agent_created
+    columns:
+    - tenant_id
+    - organization_id
+    - agent_id
+    - created_at
+    - id
+  - name: idx_ai_agent_run_user_created
+    columns:
+    - tenant_id
+    - organization_id
+    - user_id
+    - created_at
+    - id
+  - name: idx_ai_agent_run_session_created
+    columns:
+    - tenant_id
+    - organization_id
+    - user_id
+    - agent_session_id
+    - created_at
+    - id
+  - name: idx_ai_agent_run_status_created
+    columns:
+    - tenant_id
+    - organization_id
+    - run_status
+    - created_at
+    - id
+  - name: idx_ai_agent_run_usage_fact
+    columns:
+    - tenant_id
+    - organization_id
+    - usage_fact_id
+  lifecycle:
+    partition_by: created_at_month
+    online_retention: 180d
+    archive_retention: 5y
+  security:
+    sensitivity: AGENT_RUN
+    payload_redaction_required: true
+    stores_secret_plaintext: false
+    audit_required: true
+- table: ai_agent_run_step
+  domain: ai
+  profile: event_log
+  compliance_level: L3
+  system_of_record: true
+  write_owner: agent-runtime
+  common_columns: event_log
+  frontend_routes:
+  - /playground
+  - /console/agents
+  - /admin/agents
+  api_surfaces:
+  - app
+  - backend
+  - worker
+  required_columns:
+  - uuid
+  - tenant_id
+  - organization_id
+  - run_id
+  - step_index
+  - step_type
+  - step_status
+  columns:
+    status:
+      type: string(64)
+      constraints: NOT NULL DEFAULT 'active'
+    run_id: int64
+    agent_id: int64
+    agent_version_id: int64
+    step_index: int32
+    step_type: enum_int32
+    step_status:
+      type: string(64)
+      constraints: NOT NULL DEFAULT 'running'
+    title: string(128)
+    tool_binding_id: int64
+    skill_id: int64
+    mcp_server_id: int64
+    tool_name: string(128)
+    model: string(128)
+    runtime_invocation_id: string(128)
+    input_snapshot: json
+    output_snapshot: json
+    usage_json: json
+    error_message_masked: string(1024)
+    started_at: instant
+    completed_at: instant
+    latency_ms: int32
+    prompt_tokens: int64
+    completion_tokens: int64
+    cached_tokens: int64
+    total_tokens: int64
+    image_count: int64
+    audio_seconds: decimal
+    video_seconds: decimal
+    usage_fact_id: int64
+  indexes:
+  - name: uk_ai_agent_run_step_index
+    unique: true
+    columns:
+    - tenant_id
+    - organization_id
+    - run_id
+    - step_index
+  - name: idx_ai_agent_run_step_run_type
+    columns:
+    - tenant_id
+    - organization_id
+    - run_id
+    - step_type
+    - step_index
+  - name: idx_ai_agent_run_step_tool
+    columns:
+    - tenant_id
+    - organization_id
+    - tool_binding_id
+    - created_at
+    - id
+  - name: idx_ai_agent_run_step_runtime_invocation
+    columns:
+    - tenant_id
+    - organization_id
+    - runtime_invocation_id
+  - name: idx_ai_agent_run_step_usage_fact
+    columns:
+    - tenant_id
+    - organization_id
+    - usage_fact_id
+  lifecycle:
+    partition_by: created_at_month
+    online_retention: 180d
+    archive_retention: 5y
+  security:
+    sensitivity: AGENT_STEP
+    payload_redaction_required: true
+    stores_secret_plaintext: false
+    audit_required: true
+- table: ai_agent_memory
+  domain: ai
+  profile: user_entity
+  compliance_level: L3
+  system_of_record: true
+  write_owner: agent-memory-service
+  common_columns: user_entity
+  frontend_routes:
+  - /playground
+  - /console/agents
+  - /admin/agents
+  api_surfaces:
+  - app
+  - backend
+  - worker
+  required_columns:
+  - uuid
+  - tenant_id
+  - organization_id
+  - owner_user_id
+  - agent_id
+  - memory_scope
+  - memory_type
+  - status
+  columns:
+    owner_user_id: int64
+    agent_id: int64
+    memory_scope: enum_int32
+    memory_type: enum_int32
+    content_ref: string(512)
+    embedding_ref: string(512)
+    memory_hash: string(128)
+    retention_policy: json
+    expires_at: instant
+    last_used_at: instant
+  indexes:
+  - name: uk_ai_agent_memory_hash
+    unique: true
+    columns:
+    - tenant_id
+    - organization_id
+    - owner_user_id
+    - agent_id
+    - memory_hash
+  - name: idx_ai_agent_memory_agent_scope
+    columns:
+    - tenant_id
+    - organization_id
+    - agent_id
+    - owner_user_id
+    - memory_scope
+    - updated_at
+    - id
+  - name: idx_ai_agent_memory_retention
+    columns:
+    - tenant_id
+    - organization_id
+    - status
+    - expires_at
+    - id
+  security:
+    sensitivity: AGENT_MEMORY
+    pii: true
+    stores_secret_plaintext: false
+    audit_required: true
+- table: ai_chat_conversation
+  domain: ai
+  profile: user_entity
+  compliance_level: L3
+  system_of_record: true
+  write_owner: chat-service
+  common_columns: user_entity
+  frontend_routes:
+  - /playground
+  - /c/:conversationId
+  - /admin/agents
+  api_surfaces:
+  - app
+  - backend
+  - worker
+  required_columns:
+  - uuid
+  - tenant_id
+  - organization_id
+  - user_id
+  - conversation_code
+  - title
+  - source_surface
+  - status
+  columns:
+    status:
+      type: string(64)
+      constraints: NOT NULL DEFAULT 'active'
+    conversation_code: string(128)
+    title: string(256)
+    summary: text
+    visibility: string(32)
+    source_surface: string(64)
+    default_provider: string(128)
+    default_model: string(128)
+    default_endpoint: string(128)
+    agent_id: string(128)
+    agent_session_id: string(128)
+    memory_space_id: string(128)
+    last_turn_id: int64
+    last_item_id: int64
+    last_message_preview: text
+    message_count: int64
+    turn_count: int64
+    item_count: int64
+    input_token_total: int64
+    output_token_total: int64
+    cached_token_total: int64
+    reasoning_token_total: int64
+    cost_amount_total: decimal
+    currency: string(16)
+  indexes:
+  - name: uk_ai_chat_conversation_code
+    unique: true
+    columns:
+    - tenant_id
+    - organization_id
+    - user_id
+    - conversation_code
+  - name: idx_ai_chat_conversation_user_updated
+    columns:
+    - tenant_id
+    - organization_id
+    - user_id
+    - updated_at
+    - id
+  - name: idx_ai_chat_conversation_agent_session
+    columns:
+    - tenant_id
+    - organization_id
+    - agent_session_id
+  - name: idx_ai_chat_conversation_memory_space
+    columns:
+    - tenant_id
+    - organization_id
+    - memory_space_id
+  security:
+    sensitivity: CHAT_CONVERSATION
+    pii: true
+    payload_redaction_required: true
+    stores_secret_plaintext: false
+    audit_required: true
+- table: ai_chat_turn
+  domain: ai
+  profile: event_log
+  compliance_level: L3
+  system_of_record: true
+  write_owner: chat-service
+  common_columns: event_log
+  frontend_routes:
+  - /playground
+  - /c/:conversationId
+  api_surfaces:
+  - app
+  - backend
+  - worker
+  required_columns:
+  - uuid
+  - tenant_id
+  - organization_id
+  - user_id
+  - conversation_id
+  - turn_no
+  - status
+  columns:
+    status:
+      type: string(64)
+      constraints: NOT NULL DEFAULT 'running'
+    updated_at:
+      type: instant
+      constraints: NOT NULL DEFAULT CURRENT_TIMESTAMP
+    conversation_id: int64
+    turn_no: int64
+    parent_turn_id: int64
+    branch_id: string(128)
+    provider: string(128)
+    model: string(128)
+    endpoint: string(128)
+    streaming: bool
+    agent_id: string(128)
+    agent_session_id: string(128)
+    input_item_id: int64
+    final_output_item_id: int64
+    context_snapshot_id: int64
+    runtime_invocation_id: string(128)
+    started_at: instant
+    completed_at: instant
+    request_snapshot: json
+    response_snapshot: json
+    usage_snapshot: json
+    input_token_total: int64
+    output_token_total: int64
+    cached_token_total: int64
+    reasoning_token_total: int64
+    cost_amount: decimal
+    currency: string(16)
+  indexes:
+  - name: uk_ai_chat_turn_no
+    unique: true
+    columns:
+    - tenant_id
+    - organization_id
+    - conversation_id
+    - turn_no
+  - name: idx_ai_chat_turn_conversation_created
+    columns:
+    - tenant_id
+    - organization_id
+    - conversation_id
+    - created_at
+    - id
+  - name: idx_ai_chat_turn_agent_session
+    columns:
+    - tenant_id
+    - organization_id
+    - agent_session_id
+    - created_at
+    - id
+  security:
+    sensitivity: CHAT_TURN
+    pii: true
+    payload_redaction_required: true
+    stores_secret_plaintext: false
+    audit_required: true
+- table: ai_chat_item
+  domain: ai
+  profile: event_log
+  compliance_level: L3
+  system_of_record: true
+  write_owner: chat-service
+  common_columns: event_log
+  frontend_routes:
+  - /playground
+  api_surfaces:
+  - app
+  - backend
+  - worker
+  required_columns:
+  - uuid
+  - tenant_id
+  - organization_id
+  - user_id
+  - conversation_id
+  - sequence_no
+  - item_type
+  - direction
+  - status
+  columns:
+    status:
+      type: string(64)
+      constraints: NOT NULL DEFAULT 'pending'
+    conversation_id: int64
+    turn_id: int64
+    parent_item_id: int64
+    sequence_no: int64
+    item_type: string(64)
+    role: string(64)
+    direction: string(32)
+    provider_item_id: string(128)
+    provider_call_id: string(128)
+    provider_response_id: string(128)
+    provider: string(128)
+    model: string(128)
+    runtime: string(128)
+    runtime_invocation_id: string(128)
+    content_text: text
+    content_json: json
+    raw_provider_json: json
+    completed_at: instant
+  indexes:
+  - name: uk_ai_chat_item_sequence
+    unique: true
+    columns:
+    - tenant_id
+    - organization_id
+    - conversation_id
+    - sequence_no
+  - name: idx_ai_chat_item_turn
+    columns:
+    - tenant_id
+    - organization_id
+    - turn_id
+    - sequence_no
+    - id
+  - name: idx_ai_chat_item_provider_response
+    columns:
+    - tenant_id
+    - organization_id
+    - provider_response_id
+  security:
+    sensitivity: CHAT_ITEM
+    pii: true
+    payload_redaction_required: true
+    stores_secret_plaintext: false
+    audit_required: true
+- table: ai_chat_message
+  domain: ai
+  profile: event_log
+  compliance_level: L3
+  system_of_record: true
+  write_owner: chat-service
+  common_columns: event_log
+  frontend_routes:
+  - /playground
+  api_surfaces:
+  - app
+  - backend
+  - worker
+  required_columns:
+  - uuid
+  - tenant_id
+  - organization_id
+  - user_id
+  - conversation_id
+  - item_id
+  - message_no
+  - role
+  - message_kind
+  - direction
+  - status
+  columns:
+    status:
+      type: string(64)
+      constraints: NOT NULL DEFAULT 'active'
+    conversation_id: int64
+    turn_id: int64
+    item_id: int64
+    message_no: int64
+    role: string(64)
+    message_kind: string(64)
+    direction: string(32)
+    content_text: text
+    content_json: json
+    raw_provider_json: json
+    model: string(128)
+    provider: string(128)
+    runtime: string(128)
+    runtime_invocation_id: string(128)
+    usage_link_id: string(128)
+    finish_reason: string(128)
+    token_count: int64
+    updated_at:
+      type: instant
+      constraints: NOT NULL DEFAULT CURRENT_TIMESTAMP
+  indexes:
+  - name: uk_ai_chat_message_no
+    unique: true
+    columns:
+    - tenant_id
+    - organization_id
+    - conversation_id
+    - message_no
+  - name: idx_ai_chat_message_turn
+    columns:
+    - tenant_id
+    - organization_id
+    - turn_id
+    - message_no
+    - id
+  security:
+    sensitivity: CHAT_MESSAGE
+    pii: true
+    payload_redaction_required: true
+    stores_secret_plaintext: false
+    audit_required: true
+- table: ai_chat_message_part
+  domain: ai
+  profile: event_log
+  compliance_level: L3
+  system_of_record: true
+  write_owner: chat-service
+  common_columns: event_log
+  frontend_routes:
+  - /playground
+  api_surfaces:
+  - app
+  - backend
+  - worker
+  required_columns:
+  - uuid
+  - tenant_id
+  - organization_id
+  - user_id
+  - message_id
+  - item_id
+  - part_no
+  - part_type
+  columns:
+    status:
+      type: string(64)
+      constraints: NOT NULL DEFAULT 'active'
+    message_id: int64
+    item_id: int64
+    part_no: int32
+    part_type: string(64)
+    text_content: text
+    json_content: json
+    mime_type: string(128)
+    asset_id: string(128)
+    storage_url: text
+    file_name: string(512)
+    file_size: int64
+    sha256: string(128)
+    provider_part_id: string(128)
+  indexes:
+  - name: uk_ai_chat_message_part_no
+    unique: true
+    columns:
+    - tenant_id
+    - organization_id
+    - message_id
+    - part_no
+  - name: idx_ai_chat_message_part_item
+    columns:
+    - tenant_id
+    - organization_id
+    - item_id
+    - part_no
+  security:
+    sensitivity: CHAT_MESSAGE_PART
+    pii: true
+    payload_redaction_required: true
+    stores_secret_plaintext: false
+    audit_required: true
+- table: ai_chat_context_snapshot
+  domain: ai
+  profile: event_log
+  compliance_level: L3
+  system_of_record: true
+  write_owner: chat-runtime
+  common_columns: event_log
+  frontend_routes:
+  - /playground
+  api_surfaces:
+  - app
+  - backend
+  - worker
+  required_columns:
+  - uuid
+  - tenant_id
+  - organization_id
+  - user_id
+  - conversation_id
+  - snapshot_no
+  - strategy
+  columns:
+    status:
+      type: string(64)
+      constraints: NOT NULL DEFAULT 'active'
+    conversation_id: int64
+    turn_id: int64
+    runtime_invocation_id: int64
+    snapshot_no: int32
+    strategy: string(64)
+    included_item_ids: json
+    excluded_item_ids: json
+    included_memory_ids: json
+    excluded_memory_ids: json
+    memory_pack: json
+    memory_token_count: int64
+    provider_conversation_id: string(128)
+    previous_response_id: string(128)
+    input_token_estimate: int64
+    truncation_reason: string(256)
+    context_json: json
+  indexes:
+  - name: idx_ai_chat_context_snapshot_turn
+    columns:
+    - tenant_id
+    - organization_id
+    - turn_id
+    - snapshot_no
+  - name: idx_ai_chat_context_snapshot_invocation
+    columns:
+    - tenant_id
+    - organization_id
+    - runtime_invocation_id
+  security:
+    sensitivity: CHAT_CONTEXT
+    pii: true
+    payload_redaction_required: true
+    stores_secret_plaintext: false
+    audit_required: true
+- table: ai_agent_session
+  domain: ai
+  profile: user_entity
+  compliance_level: L3
+  system_of_record: true
+  write_owner: agent-runtime
+  common_columns: user_entity
+  frontend_routes:
+  - /playground
+  - /c/:conversationId
+  - /admin/agents
+  api_surfaces:
+  - app
+  - backend
+  - worker
+  required_columns:
+  - uuid
+  - tenant_id
+  - organization_id
+  - user_id
+  - agent_id
+  - session_code
+  - title
+  - session_kind
+  - source_surface
+  - status
+  columns:
+    status:
+      type: string(64)
+      constraints: NOT NULL DEFAULT 'active'
+    agent_id: string(128)
+    agent_version_id: string(128)
+    session_code: string(128)
+    title: string(256)
+    summary: text
+    session_kind: string(64)
+    source_surface: string(64)
+    visibility: string(32)
+    chat_conversation_id: string(128)
+    memory_space_id: string(128)
+    parent_session_id: string(128)
+    forked_from_run_id: string(128)
+    forked_from_step_id: string(128)
+    runtime: string(128)
+    provider_session_id: string(128)
+    provider_conversation_id: string(128)
+    runtime_state_storage_key: text
+    resume_strategy: string(64)
+    cwd: text
+    workspace_id: string(128)
+    repository_id: string(128)
+    git_branch: string(256)
+    git_commit: string(128)
+    sandbox_policy: string(128)
+    approval_policy: string(128)
+    permission_mode: string(128)
+    default_model: string(128)
+    execution_mode: string(64)
+    last_run_id: string(128)
+    last_step_id: int64
+    last_active_at: instant
+    run_count: int64
+    step_count: int64
+    tool_call_count: int64
+  indexes:
+  - name: uk_ai_agent_session_code
+    unique: true
+    columns:
+    - tenant_id
+    - organization_id
+    - user_id
+    - session_code
+  - name: idx_ai_agent_session_agent_updated
+    columns:
+    - tenant_id
+    - organization_id
+    - agent_id
+    - user_id
+    - updated_at
+    - id
+  - name: idx_ai_agent_session_conversation
+    columns:
+    - tenant_id
+    - organization_id
+    - chat_conversation_id
+  - name: idx_ai_agent_session_provider
+    columns:
+    - tenant_id
+    - organization_id
+    - runtime
+    - provider_session_id
+  - name: idx_ai_agent_session_status_updated
+    columns:
+    - tenant_id
+    - organization_id
+    - status
+    - updated_at
+    - id
+  security:
+    sensitivity: AGENT_SESSION
+    pii: true
+    payload_redaction_required: true
+    stores_secret_plaintext: false
+    audit_required: true
+- table: ai_memory_space
+  domain: ai
+  profile: user_entity
+  compliance_level: L3
+  system_of_record: true
+  write_owner: memory-service
+  common_columns: user_entity
+  frontend_routes:
+  - /playground
+  - /console/agents
+  - /admin/agents
+  api_surfaces:
+  - app
+  - backend
+  - worker
+  required_columns:
+  - uuid
+  - tenant_id
+  - organization_id
+  - user_id
+  - space_type
+  - title
+  - status
+  columns:
+    status:
+      type: string(64)
+      constraints: NOT NULL DEFAULT 'active'
+    user_id: int64
+    space_type: string(64)
+    owner_type: string(64)
+    owner_id: string(128)
+    title: string(256)
+    memory_enabled: bool
+    auto_extract_enabled: bool
+    auto_recall_enabled: bool
+    review_required: bool
+    max_injected_tokens: int64
+    retention_policy: json
+    sensitivity_policy: json
+    entry_count: int64
+  indexes:
+  - name: idx_ai_memory_space_owner
+    columns:
+    - tenant_id
+    - organization_id
+    - space_type
+    - owner_id
+    - status
+  - name: idx_ai_memory_space_user_updated
+    columns:
+    - tenant_id
+    - organization_id
+    - user_id
+    - updated_at
+    - id
+  security:
+    sensitivity: AI_MEMORY
+    pii: true
+    payload_redaction_required: true
+    stores_secret_plaintext: false
+    audit_required: true
+- table: ai_memory_space_binding
+  domain: ai
+  profile: tenant_entity
+  compliance_level: L3
+  system_of_record: true
+  write_owner: memory-service
+  common_columns: tenant_entity
+  frontend_routes:
+  - /playground
+  - /console/agents
+  - /admin/agents
+  api_surfaces:
+  - app
+  - backend
+  - worker
+  required_columns:
+  - uuid
+  - tenant_id
+  - organization_id
+  - memory_space_id
+  - binding_type
+  - binding_role
+  - status
+  columns:
+    status:
+      type: string(64)
+      constraints: NOT NULL DEFAULT 'active'
+    memory_space_id: int64
+    binding_type: string(64)
+    binding_id: string(128)
+    binding_role: string(64)
+    priority: int32
+    enabled: bool
+  indexes:
+  - name: idx_ai_memory_space_binding_subject
+    columns:
+    - tenant_id
+    - organization_id
+    - binding_type
+    - binding_id
+    - enabled
+    - priority
+  security:
+    sensitivity: AI_MEMORY_BINDING
+    pii: true
+    stores_secret_plaintext: false
+    audit_required: true
+- table: ai_memory_entry
+  domain: ai
+  profile: user_entity
+  compliance_level: L3
+  system_of_record: true
+  write_owner: memory-service
+  common_columns: user_entity
+  frontend_routes:
+  - /playground
+  api_surfaces:
+  - app
+  - backend
+  - worker
+  required_columns:
+  - uuid
+  - tenant_id
+  - organization_id
+  - user_id
+  - space_id
+  - memory_code
+  - memory_type
+  - content_text
+  - source_kind
+  - sensitivity_level
+  - trust_level
+  - status
+  columns:
+    status:
+      type: string(64)
+      constraints: NOT NULL DEFAULT 'active'
+    user_id: int64
+    space_id: int64
+    memory_code: string(128)
+    memory_type: string(64)
+    subject_type: string(64)
+    subject_key: string(256)
+    content_text: text
+    content_json: json
+    source_kind: string(64)
+    source_conversation_id: string(128)
+    source_turn_id: string(128)
+    source_item_id: string(128)
+    source_invocation_id: string(128)
+    importance_score: decimal
+    confidence_score: decimal
+    sensitivity_level: string(64)
+    trust_level: string(64)
+    valid_from: instant
+    valid_until: instant
+    expires_at: instant
+    last_recalled_at: instant
+    recall_count: int64
+    version_no: int64
+    supersedes_memory_id: int64
+    created_by: string(128)
+  indexes:
+  - name: uk_ai_memory_entry_code
+    unique: true
+    columns:
+    - tenant_id
+    - organization_id
+    - space_id
+    - memory_code
+  - name: idx_ai_memory_entry_space_status
+    columns:
+    - tenant_id
+    - organization_id
+    - space_id
+    - status
+    - updated_at
+    - id
+  - name: idx_ai_memory_entry_subject
+    columns:
+    - tenant_id
+    - organization_id
+    - subject_type
+    - subject_key
+    - status
+  - name: idx_ai_memory_entry_user_status
+    columns:
+    - tenant_id
+    - organization_id
+    - user_id
+    - status
+    - updated_at
+    - id
+  security:
+    sensitivity: AI_MEMORY_ENTRY
+    pii: true
+    payload_redaction_required: true
+    stores_secret_plaintext: false
+    audit_required: true
+- table: ai_memory_embedding
+  domain: ai
+  profile: tenant_entity
+  compliance_level: L3
+  system_of_record: true
+  write_owner: memory-service
+  common_columns: tenant_entity
+  frontend_routes:
+  - /playground
+  api_surfaces:
+  - app
+  - backend
+  - worker
+  required_columns:
+  - uuid
+  - tenant_id
+  - organization_id
+  - memory_id
+  - status
+  columns:
+    status:
+      type: string(64)
+      constraints: NOT NULL DEFAULT 'active'
+    memory_id: int64
+    embedding_provider: string(128)
+    embedding_model: string(128)
+    embedding_dimensions: int32
+    content_hash: string(128)
+    vector_json: json
+    vector_storage_key: text
+    indexed_at: instant
+  indexes:
+  - name: idx_ai_memory_embedding_memory
+    columns:
+    - tenant_id
+    - organization_id
+    - memory_id
+    - status
+  security:
+    sensitivity: AI_MEMORY_EMBEDDING
+    pii: true
+    stores_secret_plaintext: false
+    audit_required: true
+- table: ai_memory_event
+  domain: ai
+  profile: event_log
+  compliance_level: L3
+  system_of_record: true
+  write_owner: memory-service
+  common_columns: event_log
+  frontend_routes:
+  - /playground
+  api_surfaces:
+  - app
+  - backend
+  - worker
+  required_columns:
+  - uuid
+  - tenant_id
+  - organization_id
+  - user_id
+  - event_type
+  - actor_type
+  - status
+  columns:
+    status:
+      type: string(64)
+      constraints: NOT NULL DEFAULT 'active'
+    user_id: int64
+    memory_id: int64
+    space_id: int64
+    event_type: string(64)
+    actor_type: string(64)
+    actor_id: string(128)
+    conversation_id: string(128)
+    turn_id: string(128)
+    invocation_id: string(128)
+    before_json: json
+    after_json: json
+    decision_reason: text
+  indexes:
+  - name: idx_ai_memory_event_memory
+    columns:
+    - tenant_id
+    - organization_id
+    - memory_id
+    - created_at
+    - id
+  - name: idx_ai_memory_event_conversation
+    columns:
+    - tenant_id
+    - organization_id
+    - conversation_id
+    - turn_id
+    - created_at
+    - id
+  - name: idx_ai_memory_event_user_created
+    columns:
+    - tenant_id
+    - organization_id
+    - user_id
+    - created_at
+    - id
+  security:
+    sensitivity: AI_MEMORY_EVENT
+    pii: true
+    payload_redaction_required: true
+    stores_secret_plaintext: false
+    audit_required: true
+- table: ai_memory_link
+  domain: ai
+  profile: event_log
+  compliance_level: L3
+  system_of_record: true
+  write_owner: memory-service
+  common_columns: event_log
+  frontend_routes:
+  - /chat
+  - /console/agents
+  - /playground
+  api_surfaces:
+  - app
+  - backend
+  - worker
+  required_columns:
+  - uuid
+  - tenant_id
+  - organization_id
+  - user_id
+  - memory_id
+  - link_type
+  - status
+  columns:
+    status:
+      type: string(64)
+      constraints: NOT NULL DEFAULT 'active'
+    user_id: int64
+    memory_id: int64
+    memory_space_id: int64
+    conversation_id: string(128)
+    chat_turn_id: string(128)
+    chat_item_id: string(128)
+    message_id: string(128)
+    agent_session_id: string(128)
+    agent_run_id: string(128)
+    agent_run_step_id: string(128)
+    runtime_invocation_id: string(128)
+    link_type: string(64)
+    recall_query: text
+    recall_score: decimal
+    recall_rank: int32
+    injected_text_snapshot: text
+    token_count: int64
+    policy_decision: string(128)
+  indexes:
+  - name: idx_ai_memory_link_memory
+    columns:
+    - tenant_id
+    - organization_id
+    - memory_id
+    - created_at
+    - id
+  - name: idx_ai_memory_link_chat
+    columns:
+    - tenant_id
+    - organization_id
+    - conversation_id
+    - chat_turn_id
+    - link_type
+  - name: idx_ai_memory_link_agent
+    columns:
+    - tenant_id
+    - organization_id
+    - agent_session_id
+    - agent_run_id
+    - link_type
+  - name: idx_ai_memory_link_user_created
+    columns:
+    - tenant_id
+    - organization_id
+    - user_id
+    - created_at
+    - id
+  security:
+    sensitivity: AI_MEMORY_LINK
+    pii: true
+    payload_redaction_required: true
+    stores_secret_plaintext: false
+    audit_required: true
+- table: ai_runtime_invocation
+  domain: ai
+  profile: event_log
+  compliance_level: L3
+  system_of_record: true
+  write_owner: ai-runtime
+  common_columns: event_log
+  frontend_routes:
+  - /playground
+  - /c/:conversationId
+  - /admin/agents
+  api_surfaces:
+  - app
+  - backend
+  - worker
+  required_columns:
+  - uuid
+  - tenant_id
+  - organization_id
+  - user_id
+  - invocation_no
+  - invocation_type
+  - runtime
+  - status
+  columns:
+    user_id: int64
+    status:
+      type: string(64)
+      constraints: NOT NULL DEFAULT 'running'
+    conversation_id: string(128)
+    chat_turn_id: string(128)
+    chat_item_id: string(128)
+    agent_session_id: string(128)
+    agent_run_id: string(128)
+    agent_run_step_id: string(128)
+    invocation_no: int64
+    invocation_type: string(64)
+    runtime: string(128)
+    endpoint: string(128)
+    attempt_no: int32
+    streaming:
+      type: bool
+      constraints: NOT NULL DEFAULT FALSE
+    started_at: instant
+    completed_at: instant
+    latency_ms: int64
+    ttft_ms: int64
+    exit_code: int64
+    finish_reason: string(128)
+    error_type: string(128)
+    error_code: string(128)
+    error_message_masked: string(1024)
+    provider_response_id: string(128)
+    provider_session_id: string(128)
+    provider_conversation_id: string(128)
+    provider_step_id: string(128)
+    model: string(128)
+    provider: string(128)
+    tool_name: string(128)
+    tool_call_id: string(128)
+    cwd: text
+    sandbox_policy: string(128)
+    approval_policy: string(128)
+    permission_mode: string(128)
+    request_json: json
+    response_json: json
+    usage_json: json
+  indexes:
+  - name: idx_ai_runtime_invocation_chat
+    columns:
+    - tenant_id
+    - organization_id
+    - conversation_id
+    - chat_turn_id
+    - invocation_no
+  - name: idx_ai_runtime_invocation_agent
+    columns:
+    - tenant_id
+    - organization_id
+    - agent_session_id
+    - agent_run_id
+    - invocation_no
+  - name: idx_ai_runtime_invocation_request
+    columns:
+    - tenant_id
+    - organization_id
+    - request_id
+    - attempt_no
+  - name: idx_ai_runtime_invocation_user_created
+    columns:
+    - tenant_id
+    - organization_id
+    - user_id
+    - created_at
+    - id
+  security:
+    sensitivity: AI_RUNTIME_INVOCATION
+    pii: true
+    payload_redaction_required: true
+    stores_secret_plaintext: false
+    audit_required: true
+- table: ai_runtime_invocation_event
+  domain: ai
+  profile: event_log
+  compliance_level: L3
+  system_of_record: true
+  write_owner: ai-runtime
+  common_columns: event_log
+  frontend_routes:
+  - /playground
+  api_surfaces:
+  - app
+  - backend
+  - worker
+  required_columns:
+  - uuid
+  - tenant_id
+  - organization_id
+  - user_id
+  - invocation_id
+  - event_no
+  - event_type
+  - event_source
+  - status
+  columns:
+    status:
+      type: string(64)
+      constraints: NOT NULL DEFAULT 'active'
+    user_id: int64
+    invocation_id: int64
+    conversation_id: string(128)
+    chat_turn_id: string(128)
+    agent_session_id: string(128)
+    agent_run_id: string(128)
+    agent_run_step_id: string(128)
+    event_no: int64
+    event_type: string(128)
+    event_source: string(64)
+    payload_json: json
+    text_delta: text
+  indexes:
+  - name: uk_ai_runtime_invocation_event_no
+    unique: true
+    columns:
+    - tenant_id
+    - organization_id
+    - invocation_id
+    - event_no
+  - name: idx_ai_runtime_invocation_event_user_created
+    columns:
+    - tenant_id
+    - organization_id
+    - user_id
+    - created_at
+    - id
+  - name: idx_ai_runtime_invocation_event_chat
+    columns:
+    - tenant_id
+    - organization_id
+    - conversation_id
+    - chat_turn_id
+    - created_at
+    - id
+  - name: idx_ai_runtime_invocation_event_agent
+    columns:
+    - tenant_id
+    - organization_id
+    - agent_session_id
+    - agent_run_id
+    - created_at
+    - id
+  security:
+    sensitivity: AI_RUNTIME_EVENT
+    pii: true
+    payload_redaction_required: true
+    stores_secret_plaintext: false
+    audit_required: true
+- table: ai_runtime_usage_link
+  domain: ai
+  profile: event_log
+  compliance_level: L3
+  system_of_record: true
+  write_owner: ai-runtime
+  common_columns: event_log
+  frontend_routes:
+  - /playground
+  api_surfaces:
+  - app
+  - backend
+  - worker
+  required_columns:
+  - uuid
+  - tenant_id
+  - organization_id
+  - user_id
+  - usage_type
+  - status
+  columns:
+    status:
+      type: string(64)
+      constraints: NOT NULL DEFAULT 'active'
+    user_id: int64
+    conversation_id: string(128)
+    chat_turn_id: string(128)
+    chat_item_id: string(128)
+    message_id: string(128)
+    agent_session_id: string(128)
+    agent_run_id: string(128)
+    agent_run_step_id: string(128)
+    agent_run_step_id_key:
+      type: string(128)
+      constraints: GENERATED ALWAYS AS (COALESCE(agent_run_step_id, '')) STORED
+    runtime_invocation_id: string(128)
+    usage_fact_id: int64
+    request_id: string(128)
+    trace_id: string(128)
+    usage_type: string(64)
+    provider: string(128)
+    model: string(128)
+    input_tokens: int64
+    output_tokens: int64
+    cached_tokens: int64
+    reasoning_tokens: int64
+    total_tokens: int64
+    cost_amount: decimal
+    currency: string(16)
+    occurred_at: instant
+  indexes:
+  - name: idx_ai_runtime_usage_link_usage_fact
+    columns:
+    - tenant_id
+    - organization_id
+    - usage_fact_id
+  - name: idx_ai_runtime_usage_link_chat
+    columns:
+    - tenant_id
+    - organization_id
+    - conversation_id
+    - chat_turn_id
+    - occurred_at
+    - id
+  - name: idx_ai_runtime_usage_link_agent
+    columns:
+    - tenant_id
+    - organization_id
+    - agent_session_id
+    - agent_run_id
+    - occurred_at
+    - id
+  - name: uk_ai_runtime_usage_link_agent_scope
+    unique: true
+    columns:
+    - tenant_id
+    - organization_id
+    - user_id
+    - agent_run_id
+    - usage_type
+    - agent_run_step_id_key
+  security:
+    sensitivity: AI_RUNTIME_USAGE
+    pii: true
+    stores_secret_plaintext: false
+    audit_required: true
+- table: ai_runtime_artifact
+  domain: ai
+  profile: event_log
+  compliance_level: L3
+  system_of_record: true
+  write_owner: ai-runtime
+  common_columns: event_log
+  frontend_routes:
+  - /playground
+  api_surfaces:
+  - app
+  - backend
+  - worker
+  required_columns:
+  - uuid
+  - tenant_id
+  - organization_id
+  - user_id
+  - artifact_type
+  - status
+  columns:
+    status:
+      type: string(64)
+      constraints: NOT NULL DEFAULT 'active'
+    user_id: int64
+    conversation_id: string(128)
+    chat_turn_id: string(128)
+    message_id: string(128)
+    chat_item_id: string(128)
+    agent_session_id: string(128)
+    agent_run_id: string(128)
+    agent_run_step_id: string(128)
+    runtime_invocation_id: string(128)
+    artifact_type: string(64)
+    name: string(512)
+    mime_type: string(128)
+    content_text: text
+    content_json: json
+    storage_key: text
+    storage_url: text
+    sha256: string(128)
+    size_bytes: int64
+  indexes:
+  - name: idx_ai_runtime_artifact_chat
+    columns:
+    - tenant_id
+    - organization_id
+    - conversation_id
+    - chat_turn_id
+    - created_at
+    - id
+  - name: idx_ai_runtime_artifact_user_created
+    columns:
+    - tenant_id
+    - organization_id
+    - user_id
+    - created_at
+    - id
+  - name: idx_ai_runtime_artifact_agent
+    columns:
+    - tenant_id
+    - organization_id
+    - agent_session_id
+    - agent_run_id
+    - created_at
+    - id
+  security:
+    sensitivity: AI_RUNTIME_ARTIFACT
+    pii: true
+    payload_redaction_required: true
+    stores_secret_plaintext: false
+    audit_required: true
+- table: ai_agent_tool_binding
+  domain: ai
+  profile: tenant_entity
+  compliance_level: L3
+  system_of_record: true
+  write_owner: agent-service
+  common_columns: tenant_entity
+  frontend_routes:
+  - /playground
+  - /console/agents
+  - /admin/agents
+  api_surfaces:
+  - app
+  - backend
+  - worker
+  required_columns:
+  - uuid
+  - tenant_id
+  - organization_id
+  - agent_id
+  - binding_key
+  - binding_type
+  - status
+  columns:
+    agent_id: int64
+    agent_version_id: int64
+    binding_key: string(128)
+    binding_type: enum_int32
+    skill_id: int64
+    mcp_server_id: int64
+    tool_name: string(128)
+    permission_policy: json
+    runtime_config: json
+    credential_ref: string(256)
+    enabled: bool
+    health_status: enum_int32
+    last_checked_at: instant
+  indexes:
+  - name: uk_ai_agent_tool_binding_key
+    unique: true
+    columns:
+    - tenant_id
+    - organization_id
+    - agent_id
+    - agent_version_id
+    - binding_key
+  - name: idx_ai_agent_tool_binding_type
+    columns:
+    - tenant_id
+    - organization_id
+    - binding_type
+    - status
+    - enabled
+  - name: idx_ai_agent_tool_binding_skill
+    columns:
+    - tenant_id
+    - organization_id
+    - skill_id
+    - status
+  - name: idx_ai_agent_tool_binding_mcp
+    columns:
+    - tenant_id
+    - organization_id
+    - mcp_server_id
+    - status
+  security:
+    sensitivity: AGENT_TOOL_BINDING
+    stores_secret_plaintext: false
+    secret_reference_only: true
+    audit_required: true
+- table: ai_agent_mcp_server
+  domain: ai
+  profile: tenant_entity
+  compliance_level: L3
+  system_of_record: true
+  write_owner: agent-service
+  common_columns: tenant_entity
+  frontend_routes:
+  - /playground
+  - /console/agents
+  - /admin/agents
+  api_surfaces:
+  - app
+  - backend
+  - worker
+  required_columns:
+  - uuid
+  - tenant_id
+  - organization_id
+  - server_code
+  - name
+  - transport_type
+  - status
+  columns:
+    server_code: string(96)
+    name: string(128)
+    description: string(1024)
+    transport_type: enum_int32
+    connection_config: json
+    credential_ref: string(256)
+    tool_catalog: json
+    prompt_catalog: json
+    resource_catalog: json
+    permission_policy: json
+    health_status: enum_int32
+    last_checked_at: instant
+    last_error_masked: string(1024)
+  indexes:
+  - name: uk_ai_agent_mcp_server_code
+    unique: true
+    columns:
+    - tenant_id
+    - organization_id
+    - server_code
+  - name: idx_ai_agent_mcp_server_status_health
+    columns:
+    - tenant_id
+    - organization_id
+    - status
+    - health_status
+    - updated_at
+    - id
+  security:
+    sensitivity: AGENT_MCP
+    stores_secret_plaintext: false
+    secret_reference_only: true
+    audit_required: true
+- table: ai_rate_limit_bucket
+  domain: ai
+  profile: projection
+  compliance_level: L2
+  system_of_record: false
+  write_owner: gateway-runtime
+  common_columns: projection
+  source_tables:
+  - ai_quota_policy
+  - iam_gateway_api_key
+  - ai_channel_group
+  - iam_gateway_risk_rule
+  frontend_routes:
+  - /admin/ratelimit
+  api_surfaces:
+  - backend
+  - worker
+  columns:
+    bucket_key: string(256)
+    subject_type: enum_int32
+    subject_id: int64
+    quota_policy_id: int64
+    window_start: instant
+    window_end: instant
+    current_count: int64
+    current_tokens: int64
+    remaining_count: int64
+    remaining_tokens: int64
+    last_request_at: instant
+  indexes:
+  - name: uk_ai_rate_limit_bucket_key
+    unique: true
+    columns:
+    - bucket_key
+    - window_start
+  - name: idx_ai_rate_limit_bucket_subject
+    columns:
+    - subject_type
+    - subject_id
+    - window_end
+- table: ai_generation_session
+  domain: ai
+  profile: user_entity
+  compliance_level: L2
+  system_of_record: true
+  write_owner: generation-service
+  common_columns: user_entity
+  frontend_routes:
+  - /playground
+  api_surfaces:
+  - app
+  columns:
+    session_code: string(64)
+    title: string(200)
+    active_modality: enum_int32
+    selected_models: json
+    filter_config: json
+    last_prompt: text
+    last_opened_at: instant
+  indexes:
+  - name: uk_ai_generation_session_user_code
+    unique: true
+    columns:
+    - tenant_id
+    - organization_id
+    - user_id
+    - session_code
+  - name: idx_ai_generation_session_user_updated
+    columns:
+    - tenant_id
+    - organization_id
+    - user_id
+    - updated_at
+    - id
+- table: ai_generation_job
+  domain: ai
+  profile: event_log
+  compliance_level: L3
+  system_of_record: true
+  write_owner: generation-service
+  common_columns: event_log
+  frontend_routes:
+  - /playground
+  api_surfaces:
+  - app
+  - worker
+  columns:
+    session_id: int64
+    job_type: enum_int32
+    modality: enum_int32
+    model: string(128)
+    provider_id: int64
+    channel_id: int64
+    prompt: text
+    negative_prompt: text
+    input_asset_ids: json
+    parameter_snapshot: json
+    progress_percent: int32
+    started_at: instant
+    completed_at: instant
+    failure_code: string(128)
+    failure_message_masked: string(1024)
+    usage_fact_id: int64
+  indexes:
+  - name: uk_ai_generation_job_request
+    unique: true
+    columns:
+    - tenant_id
+    - organization_id
+    - request_id
+  - name: idx_ai_generation_job_user_modality_created
+    columns:
+    - tenant_id
+    - organization_id
+    - user_id
+    - modality
+    - created_at
+    - id
+  - name: idx_ai_generation_job_status_created
+    columns:
+    - tenant_id
+    - organization_id
+    - status
+    - created_at
+    - id
+  lifecycle:
+    partition_by: created_at_month
+    online_retention: 90d
+    archive_retention: 1y
+  security:
+    sensitivity: USER_CONTENT
+    pii: true
+    encryption_required: true
+    prompt_redaction_required: true
+    stores_secret_plaintext: false
+    audit_required: true
+- table: ai_generation_asset
+  domain: ai
+  profile: user_entity
+  compliance_level: L3
+  system_of_record: true
+  write_owner: generation-service
+  common_columns: user_entity
+  frontend_routes:
+  - /playground
+  api_surfaces:
+  - app
+  columns:
+    job_id: int64
+    asset_type: enum_int32
+    asset_url: string(1024)
+    thumbnail_url: string(1024)
+    storage_provider: string(64)
+    storage_key: string(512)
+    mime_type: string(128)
+    file_size: int64
+    duration_seconds: decimal
+    width: int32
+    height: int32
+    prompt_snapshot: text
+    model_snapshot: string(128)
+    parameter_snapshot: json
+    active_index: int32
+    visibility: enum_int32
+    favorite: bool
+    shared: bool
+    share_token_hash: string(128)
+    download_count: int64
+    last_accessed_at: instant
+    expire_at: instant
+  indexes:
+  - name: idx_ai_generation_asset_user_type_created
+    columns:
+    - tenant_id
+    - organization_id
+    - user_id
+    - asset_type
+    - created_at
+    - id
+  - name: idx_ai_generation_asset_job
+    columns:
+    - job_id
+    - id
+  - name: idx_ai_generation_asset_favorite
+    columns:
+    - tenant_id
+    - organization_id
+    - user_id
+    - favorite
+    - updated_at
+    - id
+  lifecycle:
+    online_retention: 180d
+    archive_retention: 2y
+  security:
+    sensitivity: USER_GENERATED_MEDIA
+    pii: true
+    signed_url_not_persisted: true
+    share_token_stored_as_hash: true
+    audit_required: true
+- table: ai_generation_asset_action
+  domain: ai
+  profile: event_log
+  compliance_level: L3
+  system_of_record: true
+  write_owner: generation-service
+  common_columns: event_log
+  frontend_routes:
+  - /playground
+  api_surfaces:
+  - app
+  - worker
+  columns:
+    asset_id: int64
+    job_id: int64
+    action_type: enum_int32
+    action_params: json
+    result_asset_id: int64
+    client_ip_hash: string(128)
+    client_ip_region: string(128)
+    user_agent_hash: string(128)
+    completed_at: instant
+    failure_code: string(128)
+  indexes:
+  - name: idx_ai_generation_asset_action_asset_created
+    columns:
+    - asset_id
+    - created_at
+    - id
+  - name: idx_ai_generation_asset_action_user_type
+    columns:
+    - tenant_id
+    - organization_id
+    - user_id
+    - action_type
+    - created_at
+    - id
+  lifecycle:
+    partition_by: created_at_month
+    online_retention: 180d
+    archive_retention: 2y
+  security:
+    sensitivity: USER_ASSET_ACTION
+    pii: true
+    stores_secret_plaintext: false
+    audit_required: true

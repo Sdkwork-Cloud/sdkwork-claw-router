@@ -61,10 +61,6 @@ pub struct AdminAiModelUpdateRequest {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub model: Option<String>,
 
-    /// Deprecated compatibility alias for model.
-    #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub name: Option<String>,
-
     /// Output modalities field on admin ai model update request.
     #[serde(rename = "outputModalities")]
     #[serde(default, skip_serializing_if = "Option::is_none")]

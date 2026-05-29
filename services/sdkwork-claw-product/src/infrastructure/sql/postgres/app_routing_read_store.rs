@@ -14,15 +14,49 @@ use crate::ports::{
 const LOAD_ROUTING_CHANNELS: &str = r#"
 SELECT
     CAST(c.id AS TEXT) AS id,
-    COALESCE(NULLIF(c.name, ''), NULLIF(c.channel_code, ''), NULLIF(c.provider_code, ''), '') AS name,
+    COALESCE(NULLIF(c.channel_name, ''), NULLIF(c.channel_code, ''), NULLIF(c.provider_code, ''), '') AS name,
     COALESCE(NULLIF(c.provider_code, ''), 'custom') AS vendor,
     COALESCE(NULLIF(c.provider_code, ''), 'custom') AS provider,
     COALESCE(NULLIF(c.provider_code, ''), 'custom') AS provider_code,
-    c.protocol AS protocol,
-    c.access_type AS access_type,
+    CASE LOWER(COALESCE(NULLIF(c.protocol_code, ''), NULLIF(c.provider_code, ''), 'openai'))
+        WHEN 'openai' THEN 1
+        WHEN 'anthropic' THEN 2
+        WHEN 'gemini' THEN 3
+        WHEN 'google' THEN 3
+        WHEN 'ollama' THEN 4
+        ELSE 9
+    END AS protocol,
+    COALESCE(c.auth_type, 1) AS access_type,
     COALESCE(NULLIF(c.base_url, ''), '') AS base_url,
-    COALESCE(NULLIF(a.masked_label, ''), 'configured') AS api_key,
-    CAST(COALESCE(c.capabilities, '["llm"]'::jsonb) AS TEXT) AS capabilities_json,
+    COALESCE(NULLIF(c.masked_label, ''), 'configured') AS api_key,
+    COALESCE(
+        (
+            SELECT jsonb_agg(selected.code ORDER BY selected.code)::text
+            FROM (
+                SELECT DISTINCT COALESCE(NULLIF(cr.resource_code, ''), cr.resource_group_code) AS code
+                FROM ai_channel_resource cr
+                LEFT JOIN ai_resource r
+                  ON r.resource_code = cr.resource_code
+                 AND r.tenant_id = cr.tenant_id
+                 AND r.organization_id = cr.organization_id
+                 AND r.deleted_at IS NULL
+                LEFT JOIN ai_resource_group rg
+                  ON rg.group_code = cr.resource_group_code
+                 AND rg.tenant_id = cr.tenant_id
+                 AND rg.organization_id = cr.organization_id
+                 AND rg.deleted_at IS NULL
+                WHERE cr.channel_id = c.id
+                  AND cr.tenant_id = c.tenant_id
+                  AND cr.organization_id = c.organization_id
+                  AND cr.deleted_at IS NULL
+                  AND cr.status = 1
+                  AND cr.grant_type = 'allow'
+                  AND COALESCE(r.resource_type, rg.group_type, '') NOT IN ('model', 'model_api')
+                  AND COALESCE(NULLIF(cr.resource_code, ''), cr.resource_group_code, '') <> ''
+            ) selected
+        ),
+        '["llm"]'
+    ) AS capabilities_json,
     c.timeout_ms,
     c.retry_policy::text AS retry_policy_json,
     c.circuit_breaker_policy::text AS circuit_breaker_policy_json,
@@ -31,15 +65,10 @@ SELECT
     c.health_status AS health_status,
     COALESCE(c.last_latency_ms, 0) AS latency_ms,
     COALESCE(c.rpm_limit, 0) AS rpm_limit,
-    CAST(a.upstream_balance_amount AS TEXT) AS balance_amount,
-    COALESCE(a.upstream_balance_currency, '') AS balance_currency,
-    COALESCE(c.consecutive_error_count, 0) + COALESCE(a.consecutive_error_count, 0) AS errors
-FROM integration_channel c
-LEFT JOIN integration_provider_account a
-  ON a.id = c.account_id
- AND a.tenant_id = c.tenant_id
- AND a.organization_id = c.organization_id
- AND a.deleted_at IS NULL
+    CAST(c.upstream_balance_amount AS TEXT) AS balance_amount,
+    COALESCE(c.upstream_balance_currency, '') AS balance_currency,
+    COALESCE(c.consecutive_error_count, 0) AS errors
+FROM ai_channel c
 WHERE c.tenant_id = $1
   AND c.organization_id = $2
   AND c.deleted_at IS NULL
@@ -51,7 +80,7 @@ const LOAD_CHANNEL_MODELS: &str = r#"
 SELECT
     CAST(channel_id AS TEXT) AS channel_id,
     COALESCE(NULLIF(catalog_key, ''), '') AS model
-FROM integration_channel_model
+FROM ai_channel_model
 WHERE tenant_id = $1
   AND organization_id = $2
   AND deleted_at IS NULL

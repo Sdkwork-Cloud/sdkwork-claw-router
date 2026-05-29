@@ -431,11 +431,17 @@ async fn service_router_health_body_contains_service_identity() {
 
 #[tokio::test]
 async fn service_router_health_body_contains_safe_database_status() {
-    let database = DatabaseConfig::from_url_with_max_connections(
-        "sqlite://target/test-dbs/health-secret-database.db?mode=rwc",
-        8,
-    )
-    .unwrap();
+    let mut database_path = std::env::var_os("CARGO_TARGET_DIR")
+        .map(std::path::PathBuf::from)
+        .unwrap_or_else(std::env::temp_dir)
+        .join("test-dbs");
+    std::fs::create_dir_all(&database_path).unwrap();
+    database_path.push("health-secret-database.db");
+    let database_url = format!(
+        "sqlite://{}?mode=rwc",
+        database_path.to_string_lossy().replace('\\', "/")
+    );
+    let database = DatabaseConfig::from_url_with_max_connections(&database_url, 8).unwrap();
     let router = sdkwork_claw_http::service_router_with_database_config(
         "sdkwork-claw-admin-api",
         Some(&database),

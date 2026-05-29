@@ -37,6 +37,8 @@ export function ChatPage() {
   const [modelGroups, setModelGroups] = useState<PlaygroundModelGroup[]>([]);
   const [selectedSessionId, setSelectedSessionId] = useState(routeSessionId);
   const [selectedModelId, setSelectedModelId] = useState('');
+  const [loadingModels, setLoadingModels] = useState(false);
+  const [modelLoadError, setModelLoadError] = useState<string | null>(null);
   const [loadingSessions, setLoadingSessions] = useState(false);
   const [loadingMessages, setLoadingMessages] = useState(false);
   const [sessionError, setSessionError] = useState<string | null>(null);
@@ -129,6 +131,8 @@ export function ChatPage() {
   useEffect(() => {
     let cancelled = false;
 
+    setLoadingModels(true);
+    setModelLoadError(null);
     PlaygroundService.fetchModelGroups()
       .then((groups) => {
         if (cancelled) {
@@ -137,16 +141,22 @@ export function ChatPage() {
         setModelGroups(groups);
         setSelectedModelId((current) => findCallableChatModel(groups, current)?.id || firstCallableChatModel(groups)?.id || '');
       })
-      .catch(() => {
+      .catch((error) => {
         if (!cancelled) {
           setModelGroups([]);
+          setModelLoadError(error instanceof Error ? error.message : t('playground.chat.input.disabled.modelLoadFailed'));
+        }
+      })
+      .finally(() => {
+        if (!cancelled) {
+          setLoadingModels(false);
         }
       });
 
     return () => {
       cancelled = true;
     };
-  }, []);
+  }, [t]);
 
   const selectedSession = useMemo(
     () => sessions.find((session) => session.id === selectedSessionId) || null,
@@ -963,6 +973,8 @@ export function ChatPage() {
           <div className="pointer-events-auto w-full max-w-5xl">
             <SimpleChatInput
               modelGroups={modelGroups}
+              loadingModels={loadingModels}
+              modelLoadError={modelLoadError}
               selectedModelId={selectedModelId}
               setSelectedModelId={setSelectedModelId}
               loadingHistory={loadingSessions || loadingMessages}

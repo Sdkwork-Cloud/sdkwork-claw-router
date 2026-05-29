@@ -139,11 +139,11 @@ async fn find_access_group(
 ) -> DomainResult<GroupIdentity> {
     let row = sqlx::query(
         r#"
-        SELECT id, COALESCE(code, '') AS code, COALESCE(name, '') AS name
-        FROM iam_gateway_api_key_group
+        SELECT id, COALESCE(group_code, '') AS code, COALESCE(group_name, '') AS name
+        FROM ai_channel_group
         WHERE (tenant_id = $1 OR tenant_id = 0 OR tenant_id IS NULL)
           AND (organization_id = $2 OR organization_id = 0 OR organization_id IS NULL)
-          AND (code = $3 OR name = $4)
+          AND (group_code = $3 OR group_name = $4)
           AND status = 1
           AND deleted_at IS NULL
         ORDER BY
@@ -153,7 +153,7 @@ async fn find_access_group(
             WHEN tenant_id = 0 AND organization_id = 0 THEN 2
             ELSE 3
           END,
-          CASE WHEN code = $7 THEN 0 ELSE 1 END,
+          CASE WHEN group_code = $7 THEN 0 ELSE 1 END,
           updated_at DESC NULLS LAST,
           id DESC
         LIMIT 1
@@ -449,7 +449,7 @@ fn model_rate_limit_select_sql(predicate: &str) -> String {
             q.tenant_id,
             q.organization_id,
             COALESCE(q.model, '') AS model,
-            COALESCE(NULLIF(g.code, ''), NULLIF(g.name, ''), q.subject_ref_masked, '') AS group_name,
+            COALESCE(NULLIF(g.group_code, ''), NULLIF(g.group_name, ''), q.subject_ref_masked, '') AS group_name,
             q.group_id,
             q.requests_per_minute AS rpm,
             q.tokens_per_minute AS tpm,
@@ -457,7 +457,7 @@ fn model_rate_limit_select_sql(predicate: &str) -> String {
             q.exhausted_at::text AS exhausted_at,
             q.deleted_at::text AS deleted_at
         FROM ai_quota_policy q
-        LEFT JOIN iam_gateway_api_key_group g
+        LEFT JOIN ai_channel_group g
           ON q.group_id = g.id
         {predicate}
         "#

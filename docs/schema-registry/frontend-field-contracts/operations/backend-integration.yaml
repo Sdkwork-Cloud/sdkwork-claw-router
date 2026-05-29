@@ -8,10 +8,11 @@ frontend_operations:
   api_method: GET
   api_path: /backend/v3/api/integration/channels
   read_sources:
-  - integration_provider
-  - integration_channel
-  - integration_channel_model
-  - integration_provider_account
+  - ai_provider
+  - ai_channel
+  - ai_channel_model
+  - ai_channel
+  - ai_channel_resource
   - integration_provider_health_snapshot
   query_parameters: []
   response_schema:
@@ -27,12 +28,15 @@ frontend_operations:
           additionalProperties: false
           required: &id002
           - id
+          - channelId
           - name
           - vendor
+          - channelType
           - protocol
           - accessType
           - models
           - capabilities
+          - resourceCodes
           - isMultimodal
           - weight
           - status
@@ -44,6 +48,12 @@ frontend_operations:
               type: string
               minLength: 1
               maxLength: 128
+            channelId:
+              type: string
+              minLength: 1
+              maxLength: 128
+              pattern: ^[1-9][0-9]*$
+              description: Scoped ai_channel id used by channel endpoint configuration.
             name:
               type: string
               minLength: 1
@@ -52,6 +62,11 @@ frontend_operations:
               type: string
               minLength: 1
               maxLength: 64
+            channelType:
+              type: string
+              enum:
+              - official
+              - relay
             protocol:
               type: string
               minLength: 1
@@ -70,7 +85,7 @@ frontend_operations:
             apiKey:
               type: string
               maxLength: 4096
-              description: Full plaintext provider API key returned by authenticated admin management responses for channel account relay operations.
+              description: Full plaintext provider API key returned by authenticated admin management responses for channel credential relay operations.
             createdAt:
               type: string
               minLength: 1
@@ -79,7 +94,7 @@ frontend_operations:
               type: string
               nullable: true
               maxLength: 64
-              description: Optional channel account expiration timestamp. Null or absence means the channel account never expires.
+              description: Optional channel credential expiration timestamp. Null or absence means the channel credential never expires.
             models:
               type: array
               maxItems: 200
@@ -99,6 +114,15 @@ frontend_operations:
                 - music
                 - sfx
                 - video
+            resourceCodes:
+              type: array
+              maxItems: 256
+              uniqueItems: true
+              items:
+                type: string
+                minLength: 1
+                maxLength: 192
+                pattern: ^[A-Za-z0-9._-]+$
             isMultimodal:
               type: boolean
             timeoutMs:
@@ -174,14 +198,20 @@ frontend_operations:
   api_method: POST
   api_path: /backend/v3/api/integration/channels
   read_sources:
-  - integration_provider
-  - integration_channel
-  - integration_channel_model
-  - integration_provider_account
+  - ai_provider
+  - ai_channel
+  - ai_channel_model
+  - ai_channel
+  - ai_channel_vendor
+  - ai_channel_resource
+  - ai_channel_resource
   write_tables:
-  - integration_channel
-  - integration_channel_model
-  - integration_provider_account
+  - ai_channel
+  - ai_channel_model
+  - ai_channel
+  - ai_channel_vendor
+  - ai_channel_resource
+  - ai_channel_resource
   - ops_config_snapshot
   - ops_audit_log
   request_schema:
@@ -201,6 +231,12 @@ frontend_operations:
         minLength: 1
         maxLength: 64
         pattern: ^[A-Za-z0-9 _().-]+$
+      channelType:
+        type: string
+        enum:
+        - official
+        - relay
+        description: Channel type. official means a direct vendor account; relay means an upstream aggregator account that can expose multiple vendors.
       protocol:
         type: string
         minLength: 1
@@ -216,7 +252,7 @@ frontend_operations:
         type: string
         minLength: 1
         maxLength: 4096
-        description: Plaintext provider API key accepted only on create/update input. Backend encrypts it into integration_provider_account.auth_config and never returns it.
+        description: Plaintext provider API key accepted only on create/update input. Backend encrypts it into ai_channel.auth_config and never returns it.
       secretRef:
         type: string
         minLength: 1
@@ -227,7 +263,7 @@ frontend_operations:
         type: string
         nullable: true
         maxLength: 64
-        description: Optional channel account expiration timestamp. Omit or null to keep the channel account permanently valid.
+        description: Optional channel credential expiration timestamp. Omit or null to keep the channel credential permanently valid.
       models:
         type: array
         minItems: 1
@@ -251,6 +287,16 @@ frontend_operations:
           - music
           - sfx
           - video
+      resourceCodes:
+        type: array
+        maxItems: 256
+        uniqueItems: true
+        description: Resource bindings selected from ai_resource or ai_resource_group, such as vendor.openai, api.openai.chat_completions, model.openai.gpt-4o-mini.chat, or bundle.openrouter.openai.standard.
+        items:
+          type: string
+          minLength: 1
+          maxLength: 192
+          pattern: ^[A-Za-z0-9._-]+$
       timeoutMs:
         type: integer
         format: int64
@@ -321,14 +367,20 @@ frontend_operations:
   api_method: PUT
   api_path: /backend/v3/api/integration/channels
   read_sources:
-  - integration_provider
-  - integration_channel
-  - integration_channel_model
-  - integration_provider_account
+  - ai_provider
+  - ai_channel
+  - ai_channel_model
+  - ai_channel
+  - ai_channel_vendor
+  - ai_channel_resource
+  - ai_channel_resource
   write_tables:
-  - integration_channel
-  - integration_channel_model
-  - integration_provider_account
+  - ai_channel
+  - ai_channel_model
+  - ai_channel
+  - ai_channel_vendor
+  - ai_channel_resource
+  - ai_channel_resource
   - ops_config_snapshot
   - ops_audit_log
   request_schema:
@@ -349,6 +401,11 @@ frontend_operations:
         minLength: 1
         maxLength: 64
         pattern: ^[A-Za-z0-9 _().-]+$
+      channelType:
+        type: string
+        enum:
+        - official
+        - relay
       protocol:
         type: string
         minLength: 1
@@ -365,7 +422,7 @@ frontend_operations:
         type: string
         minLength: 1
         maxLength: 4096
-        description: Plaintext provider API key accepted only on create/update input. Backend encrypts it into integration_provider_account.auth_config and never returns it.
+        description: Plaintext provider API key accepted only on create/update input. Backend encrypts it into ai_channel.auth_config and never returns it.
       secretRef:
         type: string
         minLength: 1
@@ -376,7 +433,7 @@ frontend_operations:
         type: string
         nullable: true
         maxLength: 64
-        description: Optional channel account expiration timestamp. Null clears the expiration and makes the channel account permanently valid.
+        description: Optional channel credential expiration timestamp. Null clears the expiration and makes the channel credential permanently valid.
       models:
         type: array
         maxItems: 200
@@ -399,6 +456,15 @@ frontend_operations:
           - music
           - sfx
           - video
+      resourceCodes:
+        type: array
+        maxItems: 256
+        uniqueItems: true
+        items:
+          type: string
+          minLength: 1
+          maxLength: 192
+          pattern: ^[A-Za-z0-9._-]+$
       timeoutMs:
         type: integer
         format: int64
@@ -477,11 +543,12 @@ frontend_operations:
   api_method: DELETE
   api_path: /backend/v3/api/integration/channels/{channelId}
   read_sources:
-  - integration_channel
-  - integration_channel_model
+  - ai_channel
+  - ai_channel_model
+  - ai_channel_resource
   write_tables:
-  - integration_channel
-  - integration_channel_model
+  - ai_channel
+  - ai_channel_model
   - ops_config_snapshot
   - ops_audit_log
   response_schema: &id008
@@ -501,12 +568,13 @@ frontend_operations:
   api_method: POST
   api_path: /backend/v3/api/integration/channels/{channelId}/verify
   read_sources:
-  - integration_channel
-  - integration_channel_model
-  - integration_provider_account
+  - ai_channel
+  - ai_channel_model
+  - ai_channel
+  - ai_channel_resource
   write_tables:
-  - integration_channel
-  - integration_provider_account
+  - ai_channel
+  - ai_channel
   - integration_provider_health_snapshot
   - ops_config_snapshot
   - ops_audit_log
@@ -538,7 +606,288 @@ frontend_operations:
         additionalProperties: false
         required: *id002
         properties: *id003
-        description: Persisted channel snapshot returned after the provider health probe. Admin management responses may return the stored plaintext provider API key for channel account relay operations.
+        description: Persisted channel snapshot returned after the provider health probe. Admin management responses may return the stored plaintext provider API key for channel credential relay operations.
+- route: /admin/channel/endpoints
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts
+  operation: fetchChannelEndpoints
+  operation_id: channelEndpoints.list
+  kind: read
+  api_surface: backend
+  api_method: GET
+  api_path: /backend/v3/api/integration/channel_endpoints
+  sdk_domain: integration
+  read_sources:
+  - ai_channel
+  - ai_channel_endpoint
+  - ai_model_vendor
+  - ai_api_endpoint
+  query_parameters: []
+  response_schema:
+    name: AdminChannelEndpointsResponse
+    required:
+    - items
+    properties:
+      items:
+        type: array
+        items:
+          name: AdminChannelEndpointItem
+          type: object
+          additionalProperties: false
+          required: &id009
+          - id
+          - channelId
+          - providerCode
+          - channelCode
+          - channelType
+          - vendorCode
+          - regionCode
+          - apiEndpointCode
+          - baseUrl
+          - priority
+          - weight
+          - healthStatus
+          - status
+          properties: &id010
+            id:
+              type: string
+              minLength: 1
+              maxLength: 128
+              pattern: ^[1-9][0-9]*$
+            channelId:
+              type: string
+              minLength: 1
+              maxLength: 128
+              pattern: ^[1-9][0-9]*$
+            providerCode:
+              type: string
+              minLength: 1
+              maxLength: 64
+              pattern: ^[a-z0-9_-]+$
+            channelCode:
+              type: string
+              minLength: 1
+              maxLength: 128
+            channelType:
+              type: string
+              enum:
+              - official
+              - relay
+            vendorCode:
+              type: string
+              minLength: 1
+              maxLength: 128
+              pattern: ^[a-z0-9._*-]+$
+            regionCode:
+              type: string
+              minLength: 1
+              maxLength: 64
+              pattern: ^[a-z0-9._*-]+$
+            apiEndpointCode:
+              type: string
+              minLength: 1
+              maxLength: 128
+              pattern: ^[a-z0-9._*-]+$
+            baseUrl:
+              type: string
+              minLength: 1
+              maxLength: 512
+              pattern: ^https?://[^\\s]+$
+            priority:
+              type: integer
+              format: int64
+              minimum: 1
+              maximum: 1000000
+            weight:
+              type: integer
+              format: int64
+              minimum: 1
+              maximum: 1000000
+            healthStatus:
+              type: string
+              enum:
+              - healthy
+              - unhealthy
+              - unknown
+            status:
+              type: string
+              enum:
+              - active
+              - disabled
+              - inactive
+            effectiveFrom:
+              type: string
+              nullable: true
+              maxLength: 64
+            effectiveTo:
+              type: string
+              nullable: true
+              maxLength: 64
+- route: /admin/channel/endpoints
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts
+  operation: createChannelEndpoint
+  operation_id: channelEndpoints.create
+  kind: create
+  api_surface: backend
+  api_method: POST
+  api_path: /backend/v3/api/integration/channel_endpoints
+  sdk_domain: integration
+  read_sources:
+  - ai_channel
+  - ai_model_vendor
+  - ai_api_endpoint
+  write_tables:
+  - ai_channel_endpoint
+  - ops_audit_log
+  request_schema:
+    name: AdminChannelEndpointCreateRequest
+    additionalProperties: false
+    required:
+    - channelId
+    - vendorCode
+    - regionCode
+    - apiEndpointCode
+    - baseUrl
+    properties:
+      channelId:
+        type: string
+        minLength: 1
+        maxLength: 128
+        pattern: ^[1-9][0-9]*$
+        description: Scoped ai_channel id. Provider and channel identity are derived by the backend and are never trusted from request input.
+      vendorCode:
+        type: string
+        minLength: 1
+        maxLength: 128
+        pattern: ^[A-Za-z0-9._*-]+$
+      regionCode:
+        type: string
+        minLength: 1
+        maxLength: 64
+        pattern: ^[A-Za-z0-9._*-]+$
+      apiEndpointCode:
+        type: string
+        minLength: 1
+        maxLength: 128
+        pattern: ^[A-Za-z0-9._*-]+$
+      baseUrl:
+        type: string
+        minLength: 1
+        maxLength: 512
+        pattern: ^https?://[^\\s]+$
+      priority:
+        type: integer
+        format: int64
+        minimum: 1
+        maximum: 1000000
+      weight:
+        type: integer
+        format: int64
+        minimum: 1
+        maximum: 1000000
+      status:
+        type: string
+        enum:
+        - active
+        - disabled
+        - inactive
+      effectiveFrom:
+        type: string
+        nullable: true
+        maxLength: 64
+      effectiveTo:
+        type: string
+        nullable: true
+        maxLength: 64
+  response_schema:
+    name: AdminChannelEndpointMutationResponse
+    required:
+    - item
+    properties:
+      item:
+        name: AdminChannelEndpointItem
+        type: object
+        additionalProperties: false
+        required: *id009
+        properties: *id010
+        description: Persisted channel regional endpoint snapshot returned by the backend.
+- route: /admin/channel/endpoints
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts
+  operation: updateChannelEndpoint
+  operation_id: channelEndpoints.update
+  kind: update
+  api_surface: backend
+  api_method: PUT
+  api_path: /backend/v3/api/integration/channel_endpoints/{endpointId}
+  sdk_domain: integration
+  read_sources:
+  - ai_channel_endpoint
+  - ai_model_vendor
+  - ai_api_endpoint
+  write_tables:
+  - ai_channel_endpoint
+  - ops_audit_log
+  request_schema:
+    name: AdminChannelEndpointUpdateRequest
+    additionalProperties: false
+    properties:
+      vendorCode:
+        type: string
+        minLength: 1
+        maxLength: 128
+        pattern: ^[A-Za-z0-9._*-]+$
+      regionCode:
+        type: string
+        minLength: 1
+        maxLength: 64
+        pattern: ^[A-Za-z0-9._*-]+$
+      apiEndpointCode:
+        type: string
+        minLength: 1
+        maxLength: 128
+        pattern: ^[A-Za-z0-9._*-]+$
+      baseUrl:
+        type: string
+        minLength: 1
+        maxLength: 512
+        pattern: ^https?://[^\\s]+$
+      priority:
+        type: integer
+        format: int64
+        minimum: 1
+        maximum: 1000000
+      weight:
+        type: integer
+        format: int64
+        minimum: 1
+        maximum: 1000000
+      status:
+        type: string
+        enum:
+        - active
+        - disabled
+        - inactive
+      effectiveFrom:
+        type: string
+        nullable: true
+        maxLength: 64
+        description: Null clears the endpoint effective start time; omitted leaves it unchanged.
+      effectiveTo:
+        type: string
+        nullable: true
+        maxLength: 64
+        description: Null clears the endpoint effective end time; omitted leaves it unchanged.
+  response_schema:
+    name: AdminChannelEndpointMutationResponse
+    required:
+    - item
+    properties:
+      item:
+        name: AdminChannelEndpointItem
+        type: object
+        additionalProperties: false
+        required: *id009
+        properties: *id010
+        description: Persisted channel regional endpoint snapshot returned by the backend.
 - route: /admin/channel
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts
   operation: fetchProviderSecrets
@@ -547,7 +896,7 @@ frontend_operations:
   api_method: GET
   api_path: /backend/v3/api/integration/provider_secrets
   read_sources:
-  - integration_provider_account
+  - ai_channel
   query_parameters:
   - name: provider_code
     schema:
@@ -632,9 +981,9 @@ frontend_operations:
   api_method: POST
   api_path: /backend/v3/api/integration/provider_secrets
   read_sources:
-  - integration_provider_account
+  - ai_channel
   write_tables:
-  - integration_provider_account
+  - ai_channel
   - ops_config_snapshot
   - ops_audit_log
   request_schema:
@@ -687,9 +1036,9 @@ frontend_operations:
   api_method: PUT
   api_path: /backend/v3/api/integration/provider_secrets
   read_sources:
-  - integration_provider_account
+  - ai_channel
   write_tables:
-  - integration_provider_account
+  - ai_channel
   - ops_config_snapshot
   - ops_audit_log
   request_schema:
@@ -744,9 +1093,9 @@ frontend_operations:
   api_method: DELETE
   api_path: /backend/v3/api/integration/provider_secrets/{secretId}
   read_sources:
-  - integration_provider_account
+  - ai_channel
   write_tables:
-  - integration_provider_account
+  - ai_channel
   - ops_config_snapshot
   - ops_audit_log
   response_schema: *id008

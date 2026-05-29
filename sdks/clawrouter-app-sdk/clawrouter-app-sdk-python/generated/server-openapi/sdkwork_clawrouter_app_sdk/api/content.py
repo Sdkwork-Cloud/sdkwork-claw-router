@@ -182,59 +182,6 @@ def encode_query_value(value: str, allow_reserved: bool) -> str:
 
     return quote(value, safe=':/?#[]@!$&\'()*+,;=' if allow_reserved else '')
 
-def build_request_headers(headers: Dict[str, Dict[str, Any]], cookies: Optional[Dict[str, Dict[str, Any]]] = None) -> Optional[Dict[str, str]]:
-    request_headers: Dict[str, str] = {}
-    for name, parameter in headers.items():
-        serialized = serialize_parameter_value(parameter)
-        if serialized is not None:
-            request_headers[name] = serialized
-
-    cookie_header = build_cookie_header(cookies or {})
-    if cookie_header:
-        request_headers['Cookie'] = (
-            f"{request_headers['Cookie']}; {cookie_header}"
-            if 'Cookie' in request_headers
-            else cookie_header
-        )
-
-    return request_headers or None
-
-
-def build_cookie_header(cookies: Dict[str, Dict[str, Any]]) -> Optional[str]:
-    from urllib.parse import quote
-
-    pairs: List[str] = []
-    for name, parameter in cookies.items():
-        serialized = serialize_parameter_value(parameter)
-        if serialized is not None:
-            pairs.append(f"{quote(str(name), safe='')}={quote(serialized, safe='')}")
-    return '; '.join(pairs) if pairs else None
-
-
-def serialize_parameter_value(parameter: Optional[Dict[str, Any]]) -> Optional[str]:
-    value = None if parameter is None else parameter.get('value')
-    if value is None:
-        return None
-    if parameter and parameter.get('content_type'):
-        import json
-
-        return json.dumps(value, separators=(',', ':'))
-    if isinstance(value, (list, tuple)):
-        return ','.join(serialize_header_primitive(item) for item in value if item is not None)
-    if isinstance(value, dict):
-        return serialize_header_object(value, bool(parameter and parameter.get('explode')))
-    return serialize_header_primitive(value)
-
-
-def serialize_header_object(value: Dict[str, Any], explode: bool) -> str:
-    entries = [(key, entry_value) for key, entry_value in value.items() if entry_value is not None]
-    if explode:
-        return ','.join(f"{key}={serialize_header_primitive(entry_value)}" for key, entry_value in entries)
-    return ','.join(item for key, entry_value in entries for item in (str(key), serialize_header_primitive(entry_value)))
-
-
-def serialize_header_primitive(value: Any) -> str:
-    return str(value)
 
 
 class ContentApi:
@@ -270,15 +217,9 @@ class ContentCommentsApi:
         ])
         return self._client.get(_append_query_string(f"/app/v3/api/content/comments", query))
 
-    def create(self, body: ForumCreateCommentRequest, x_request_id: Optional[str] = None) -> CommentsCreateResult:
+    def create(self, body: ForumCreateCommentRequest) -> CommentsCreateResult:
         """Create forum comment"""
-        request_headers = build_request_headers(
-            {
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
-            },
-            {}
-        )
-        return self._client.post(f"/app/v3/api/content/comments", json=body, headers=request_headers)
+        return self._client.post(f"/app/v3/api/content/comments", json=body)
 
     def delete(self, comment_id: str) -> CommentsDeleteResult:
         """Delete forum comment"""
@@ -311,15 +252,9 @@ class ContentCommentsLikesApi:
         self.current = ContentCommentsLikesCurrentApi(client)
 
 
-    def create(self, comment_id: str, x_request_id: Optional[str] = None) -> CommentsLikesCreateResult:
+    def create(self, comment_id: str) -> CommentsLikesCreateResult:
         """Like forum comment"""
-        request_headers = build_request_headers(
-            {
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
-            },
-            {}
-        )
-        return self._client.post(f"/app/v3/api/content/comments/{serialize_path_parameter(comment_id, {'name': 'commentId', 'style': 'simple', 'explode': False})}/likes", headers=request_headers)
+        return self._client.post(f"/app/v3/api/content/comments/{serialize_path_parameter(comment_id, {'name': 'commentId', 'style': 'simple', 'explode': False})}/likes")
 
 class ContentCommentsLikesCurrentApi:
     """content content.comments.likes.current API client."""
@@ -340,15 +275,9 @@ class ContentCommentsPinsApi:
         self.current = ContentCommentsPinsCurrentApi(client)
 
 
-    def create(self, comment_id: str, x_request_id: Optional[str] = None) -> CommentsPinsCreateResult:
+    def create(self, comment_id: str) -> CommentsPinsCreateResult:
         """Pin forum comment"""
-        request_headers = build_request_headers(
-            {
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
-            },
-            {}
-        )
-        return self._client.post(f"/app/v3/api/content/comments/{serialize_path_parameter(comment_id, {'name': 'commentId', 'style': 'simple', 'explode': False})}/pins", headers=request_headers)
+        return self._client.post(f"/app/v3/api/content/comments/{serialize_path_parameter(comment_id, {'name': 'commentId', 'style': 'simple', 'explode': False})}/pins")
 
 class ContentCommentsPinsCurrentApi:
     """content content.comments.pins.current API client."""
@@ -376,15 +305,9 @@ class ContentCommentsRepliesApi:
         ])
         return self._client.get(_append_query_string(f"/app/v3/api/content/comments/{serialize_path_parameter(comment_id, {'name': 'commentId', 'style': 'simple', 'explode': False})}/replies", query))
 
-    def create(self, comment_id: str, body: ForumReplyCommentRequest, x_request_id: Optional[str] = None) -> CommentsReplyCreateResult:
+    def create(self, comment_id: str, body: ForumReplyCommentRequest) -> CommentsReplyCreateResult:
         """Reply forum comment"""
-        request_headers = build_request_headers(
-            {
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
-            },
-            {}
-        )
-        return self._client.post(f"/app/v3/api/content/comments/{serialize_path_parameter(comment_id, {'name': 'commentId', 'style': 'simple', 'explode': False})}/reply", json=body, headers=request_headers)
+        return self._client.post(f"/app/v3/api/content/comments/{serialize_path_parameter(comment_id, {'name': 'commentId', 'style': 'simple', 'explode': False})}/reply", json=body)
 
 class ContentFeedsApi:
     """content content.feeds API client."""
@@ -415,15 +338,9 @@ class ContentFeedsApi:
         ])
         return self._client.get(_append_query_string(f"/app/v3/api/content/feeds", query))
 
-    def create(self, body: ForumCreateFeedRequest, x_request_id: Optional[str] = None) -> FeedsCreateResult:
+    def create(self, body: ForumCreateFeedRequest) -> FeedsCreateResult:
         """Create forum feed"""
-        request_headers = build_request_headers(
-            {
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
-            },
-            {}
-        )
-        return self._client.post(f"/app/v3/api/content/feeds", json=body, headers=request_headers)
+        return self._client.post(f"/app/v3/api/content/feeds", json=body)
 
     def delete(self, id: str) -> FeedsDeleteResult:
         """Delete forum feed"""
@@ -537,18 +454,12 @@ class ContentFeedsCollectionsApi:
         self.current = ContentFeedsCollectionsCurrentApi(client)
 
 
-    def create(self, id: str, folder_id: Optional[int] = None, x_request_id: Optional[str] = None) -> FeedsCollectionsCreateResult:
+    def create(self, id: str, folder_id: Optional[int] = None) -> FeedsCollectionsCreateResult:
         """Collect forum feed"""
         query = build_query_string([
             {'name': 'folder_id', 'value': folder_id, 'style': 'form', 'explode': True, 'allow_reserved': False},
         ])
-        request_headers = build_request_headers(
-            {
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
-            },
-            {}
-        )
-        return self._client.post(_append_query_string(f"/app/v3/api/content/feeds/{serialize_path_parameter(id, {'name': 'id', 'style': 'simple', 'explode': False})}/collections", query), headers=request_headers)
+        return self._client.post(_append_query_string(f"/app/v3/api/content/feeds/{serialize_path_parameter(id, {'name': 'id', 'style': 'simple', 'explode': False})}/collections", query))
 
 class ContentFeedsCollectionsCurrentApi:
     """content content.feeds.collections.current API client."""
@@ -557,15 +468,9 @@ class ContentFeedsCollectionsCurrentApi:
         self._client = client
 
 
-    def delete(self, id: str, x_request_id: Optional[str] = None) -> FeedsCollectionsCurrentDeleteResult:
+    def delete(self, id: str) -> FeedsCollectionsCurrentDeleteResult:
         """Uncollect forum feed"""
-        request_headers = build_request_headers(
-            {
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
-            },
-            {}
-        )
-        return self._client.delete(f"/app/v3/api/content/feeds/{serialize_path_parameter(id, {'name': 'id', 'style': 'simple', 'explode': False})}/collections/current", headers=request_headers)
+        return self._client.delete(f"/app/v3/api/content/feeds/{serialize_path_parameter(id, {'name': 'id', 'style': 'simple', 'explode': False})}/collections/current")
 
     def retrieve(self, id: str) -> FeedsCollectionsCurrentRetrieveResult:
         """Check forum feed collected"""
@@ -579,15 +484,9 @@ class ContentFeedsLikesApi:
         self.current = ContentFeedsLikesCurrentApi(client)
 
 
-    def create(self, id: str, x_request_id: Optional[str] = None) -> FeedsLikesCreateResult:
+    def create(self, id: str) -> FeedsLikesCreateResult:
         """Like forum feed"""
-        request_headers = build_request_headers(
-            {
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
-            },
-            {}
-        )
-        return self._client.post(f"/app/v3/api/content/feeds/{serialize_path_parameter(id, {'name': 'id', 'style': 'simple', 'explode': False})}/likes", headers=request_headers)
+        return self._client.post(f"/app/v3/api/content/feeds/{serialize_path_parameter(id, {'name': 'id', 'style': 'simple', 'explode': False})}/likes")
 
 class ContentFeedsLikesCurrentApi:
     """content content.feeds.likes.current API client."""
@@ -596,15 +495,9 @@ class ContentFeedsLikesCurrentApi:
         self._client = client
 
 
-    def delete(self, id: str, x_request_id: Optional[str] = None) -> FeedsLikesCurrentDeleteResult:
+    def delete(self, id: str) -> FeedsLikesCurrentDeleteResult:
         """Unlike forum feed"""
-        request_headers = build_request_headers(
-            {
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
-            },
-            {}
-        )
-        return self._client.delete(f"/app/v3/api/content/feeds/{serialize_path_parameter(id, {'name': 'id', 'style': 'simple', 'explode': False})}/likes/current", headers=request_headers)
+        return self._client.delete(f"/app/v3/api/content/feeds/{serialize_path_parameter(id, {'name': 'id', 'style': 'simple', 'explode': False})}/likes/current")
 
 class ContentFeedsSharesApi:
     """content content.feeds.shares API client."""
@@ -613,15 +506,9 @@ class ContentFeedsSharesApi:
         self._client = client
 
 
-    def create(self, id: str, x_request_id: Optional[str] = None) -> FeedsSharesCreateResult:
+    def create(self, id: str) -> FeedsSharesCreateResult:
         """Share forum feed"""
-        request_headers = build_request_headers(
-            {
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
-            },
-            {}
-        )
-        return self._client.post(f"/app/v3/api/content/feeds/{serialize_path_parameter(id, {'name': 'id', 'style': 'simple', 'explode': False})}/shares", headers=request_headers)
+        return self._client.post(f"/app/v3/api/content/feeds/{serialize_path_parameter(id, {'name': 'id', 'style': 'simple', 'explode': False})}/shares")
 
 class ContentUsersApi:
     """content content.users API client."""

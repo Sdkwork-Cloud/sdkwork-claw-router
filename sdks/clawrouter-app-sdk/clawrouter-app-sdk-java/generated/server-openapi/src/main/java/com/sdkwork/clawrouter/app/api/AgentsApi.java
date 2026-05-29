@@ -25,9 +25,9 @@ public class AgentsApi {
     }
 
     /** Create Playground agent definition */
-    public AgentDefinitionsCreateResult agentDefinitionsCreate(AgentCreateRequest body, String idempotencyKey, String xRequestId) throws Exception {
+    public AgentDefinitionsCreateResult agentDefinitionsCreate(AgentCreateRequest body, String idempotencyKey) throws Exception {
         Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null), "X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
+                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null)),
                 Map.of()
         );
         Object raw = client.post(ApiPaths.appPath("/agents"), body, null, requestHeaders, "application/json");
@@ -41,9 +41,9 @@ public class AgentsApi {
     }
 
     /** Complete Playground agent run */
-    public AgentRunsSubmitResult agentRunsSubmit(String runId, AgentRunCompleteRequest body, String idempotencyKey, String xRequestId) throws Exception {
+    public AgentRunsSubmitResult agentRunsSubmit(String runId, AgentRunCompleteRequest body, String idempotencyKey) throws Exception {
         Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null), "X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
+                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null)),
                 Map.of()
         );
         Object raw = client.post(ApiPaths.appPath("/agents/runs/" + serializePathParameter(runId, new PathParameterSpec("runId", "simple", false)) + "/complete"), body, null, requestHeaders, "application/json");
@@ -61,9 +61,9 @@ public class AgentsApi {
     }
 
     /** Create Playground agent run step */
-    public AgentRunStepsCreateResult agentRunStepsCreate(String runId, AgentRunStepCreateRequest body, String idempotencyKey, String xRequestId) throws Exception {
+    public AgentRunStepsCreateResult agentRunStepsCreate(String runId, AgentRunStepCreateRequest body, String idempotencyKey) throws Exception {
         Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null), "X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
+                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null)),
                 Map.of()
         );
         Object raw = client.post(ApiPaths.appPath("/agents/runs/" + serializePathParameter(runId, new PathParameterSpec("runId", "simple", false)) + "/steps"), body, null, requestHeaders, "application/json");
@@ -71,9 +71,9 @@ public class AgentsApi {
     }
 
     /** Complete Playground agent run step */
-    public AgentRunStepsSubmitResult agentRunStepsSubmit(String runId, String stepId, AgentRunStepCompleteRequest body, String idempotencyKey, String xRequestId) throws Exception {
+    public AgentRunStepsSubmitResult agentRunStepsSubmit(String runId, String stepId, AgentRunStepCompleteRequest body, String idempotencyKey) throws Exception {
         Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null), "X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
+                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null)),
                 Map.of()
         );
         Object raw = client.post(ApiPaths.appPath("/agents/runs/" + serializePathParameter(runId, new PathParameterSpec("runId", "simple", false)) + "/steps/" + serializePathParameter(stepId, new PathParameterSpec("stepId", "simple", false)) + "/complete"), body, null, requestHeaders, "application/json");
@@ -97,9 +97,9 @@ public class AgentsApi {
     }
 
     /** Create Playground agent run */
-    public AgentRunsCreateResult agentRunsCreate(String sessionId, AgentRunCreateRequest body, String idempotencyKey, String xRequestId) throws Exception {
+    public AgentRunsCreateResult agentRunsCreate(String sessionId, AgentRunCreateRequest body, String idempotencyKey) throws Exception {
         Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null), "X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
+                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null)),
                 Map.of()
         );
         Object raw = client.post(ApiPaths.appPath("/agents/sessions/" + serializePathParameter(sessionId, new PathParameterSpec("sessionId", "simple", false)) + "/runs"), body, null, requestHeaders, "application/json");
@@ -123,9 +123,9 @@ public class AgentsApi {
     }
 
     /** Create Playground agent session */
-    public AgentSessionsCreateResult agentSessionsCreate(String agentId, AgentSessionCreateRequest body, String idempotencyKey, String xRequestId) throws Exception {
+    public AgentSessionsCreateResult agentSessionsCreate(String agentId, AgentSessionCreateRequest body, String idempotencyKey) throws Exception {
         Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null), "X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
+                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null)),
                 Map.of()
         );
         Object raw = client.post(ApiPaths.appPath("/agents/" + serializePathParameter(agentId, new PathParameterSpec("agentId", "simple", false)) + "/sessions"), body, null, requestHeaders, "application/json");

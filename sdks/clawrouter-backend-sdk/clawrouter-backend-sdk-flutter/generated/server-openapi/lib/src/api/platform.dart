@@ -12,7 +12,7 @@ class PlatformApi {
   PlatformApi(this._client);
 
   /// List apps
-  Future<AppsListResult?> appsList([String? q, String? status, String? marketStatus, String? appType, int? categoryId, int? page, int? pageSize, String? xRequestId]) async {
+  Future<AppsListResult?> appsList([String? q, String? status, String? marketStatus, String? appType, int? categoryId, int? page, int? pageSize]) async {
     final query = buildQueryString([
       QueryParameterSpec('q', q, 'form', true, false, null),
       QueryParameterSpec('status', status, 'form', true, false, null),
@@ -22,13 +22,7 @@ class PlatformApi {
       QueryParameterSpec('page', page, 'form', true, false, null),
       QueryParameterSpec('page_size', pageSize, 'form', true, false, null)
     ]);
-    final requestHeaders = buildRequestHeaders(
-      <String, HeaderParameterSpec>{
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
-      },
-      <String, HeaderParameterSpec>{},
-    );
-    final response = await _client.get(ApiPaths.appendQueryString(ApiPaths.backendPath('/platform/apps'), query), headers: requestHeaders);
+    final response = await _client.get(ApiPaths.appendQueryString(ApiPaths.backendPath('/platform/apps'), query));
     return (() {
       final map = sdkworkResponseAsMap(response);
       return map == null ? null : AppsListResult.fromJson(map);
@@ -36,15 +30,9 @@ class PlatformApi {
   }
 
   /// Create app
-  Future<AppsCreateResult?> appsCreate(AdminAppCreateRequest body, [String? xRequestId]) async {
-    final requestHeaders = buildRequestHeaders(
-      <String, HeaderParameterSpec>{
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
-      },
-      <String, HeaderParameterSpec>{},
-    );
+  Future<AppsCreateResult?> appsCreate(AdminAppCreateRequest body) async {
     final payload = body.toJson();
-    final response = await _client.post(ApiPaths.backendPath('/platform/apps'), body: payload, headers: requestHeaders, contentType: 'application/json');
+    final response = await _client.post(ApiPaths.backendPath('/platform/apps'), body: payload, contentType: 'application/json');
     return (() {
       final map = sdkworkResponseAsMap(response);
       return map == null ? null : AppsCreateResult.fromJson(map);
@@ -61,15 +49,9 @@ class PlatformApi {
   }
 
   /// Create app category
-  Future<AppsCategoriesCreateResult?> appsCategoriesCreate(AdminAppCategoryCreateRequest body, [String? xRequestId]) async {
-    final requestHeaders = buildRequestHeaders(
-      <String, HeaderParameterSpec>{
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
-      },
-      <String, HeaderParameterSpec>{},
-    );
+  Future<AppsCategoriesCreateResult?> appsCategoriesCreate(AdminAppCategoryCreateRequest body) async {
     final payload = body.toJson();
-    final response = await _client.post(ApiPaths.backendPath('/platform/apps/categories'), body: payload, headers: requestHeaders, contentType: 'application/json');
+    final response = await _client.post(ApiPaths.backendPath('/platform/apps/categories'), body: payload, contentType: 'application/json');
     return (() {
       final map = sdkworkResponseAsMap(response);
       return map == null ? null : AppsCategoriesCreateResult.fromJson(map);
@@ -77,14 +59,8 @@ class PlatformApi {
   }
 
   /// Delete app category
-  Future<AppsCategoriesDeleteResult?> appsCategoriesDelete(String categoryId, [String? xRequestId]) async {
-    final requestHeaders = buildRequestHeaders(
-      <String, HeaderParameterSpec>{
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
-      },
-      <String, HeaderParameterSpec>{},
-    );
-    final response = await _client.delete(ApiPaths.backendPath('/platform/apps/categories/${serializePathParameter(categoryId, const PathParameterSpec('categoryId', 'simple', false))}'), headers: requestHeaders);
+  Future<AppsCategoriesDeleteResult?> appsCategoriesDelete(String categoryId) async {
+    final response = await _client.delete(ApiPaths.backendPath('/platform/apps/categories/${serializePathParameter(categoryId, const PathParameterSpec('categoryId', 'simple', false))}'));
     return (() {
       final map = sdkworkResponseAsMap(response);
       return map == null ? null : AppsCategoriesDeleteResult.fromJson(map);
@@ -92,15 +68,9 @@ class PlatformApi {
   }
 
   /// Update app category
-  Future<AppsCategoriesUpdateResult?> appsCategoriesUpdate(String categoryId, AdminAppCategoryUpdateRequest body, [String? xRequestId]) async {
-    final requestHeaders = buildRequestHeaders(
-      <String, HeaderParameterSpec>{
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
-      },
-      <String, HeaderParameterSpec>{},
-    );
+  Future<AppsCategoriesUpdateResult?> appsCategoriesUpdate(String categoryId, AdminAppCategoryUpdateRequest body) async {
     final payload = body.toJson();
-    final response = await _client.put(ApiPaths.backendPath('/platform/apps/categories/${serializePathParameter(categoryId, const PathParameterSpec('categoryId', 'simple', false))}'), body: payload, headers: requestHeaders, contentType: 'application/json');
+    final response = await _client.put(ApiPaths.backendPath('/platform/apps/categories/${serializePathParameter(categoryId, const PathParameterSpec('categoryId', 'simple', false))}'), body: payload, contentType: 'application/json');
     return (() {
       final map = sdkworkResponseAsMap(response);
       return map == null ? null : AppsCategoriesUpdateResult.fromJson(map);
@@ -108,7 +78,7 @@ class PlatformApi {
   }
 
   /// List app templates
-  Future<AppsTemplatesListResult?> appsTemplatesList([String? q, String? publishStatus, String? templateType, String? runtime, int? categoryId, int? page, int? pageSize, String? xRequestId]) async {
+  Future<AppsTemplatesListResult?> appsTemplatesList([String? q, String? publishStatus, String? templateType, String? runtime, int? categoryId, int? page, int? pageSize]) async {
     final query = buildQueryString([
       QueryParameterSpec('q', q, 'form', true, false, null),
       QueryParameterSpec('publish_status', publishStatus, 'form', true, false, null),
@@ -118,13 +88,7 @@ class PlatformApi {
       QueryParameterSpec('page', page, 'form', true, false, null),
       QueryParameterSpec('page_size', pageSize, 'form', true, false, null)
     ]);
-    final requestHeaders = buildRequestHeaders(
-      <String, HeaderParameterSpec>{
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
-      },
-      <String, HeaderParameterSpec>{},
-    );
-    final response = await _client.get(ApiPaths.appendQueryString(ApiPaths.backendPath('/platform/apps/templates'), query), headers: requestHeaders);
+    final response = await _client.get(ApiPaths.appendQueryString(ApiPaths.backendPath('/platform/apps/templates'), query));
     return (() {
       final map = sdkworkResponseAsMap(response);
       return map == null ? null : AppsTemplatesListResult.fromJson(map);
@@ -132,15 +96,9 @@ class PlatformApi {
   }
 
   /// Create app template
-  Future<AppsTemplatesCreateResult?> appsTemplatesCreate(AdminAppTemplateCreateRequest body, [String? xRequestId]) async {
-    final requestHeaders = buildRequestHeaders(
-      <String, HeaderParameterSpec>{
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
-      },
-      <String, HeaderParameterSpec>{},
-    );
+  Future<AppsTemplatesCreateResult?> appsTemplatesCreate(AdminAppTemplateCreateRequest body) async {
     final payload = body.toJson();
-    final response = await _client.post(ApiPaths.backendPath('/platform/apps/templates'), body: payload, headers: requestHeaders, contentType: 'application/json');
+    final response = await _client.post(ApiPaths.backendPath('/platform/apps/templates'), body: payload, contentType: 'application/json');
     return (() {
       final map = sdkworkResponseAsMap(response);
       return map == null ? null : AppsTemplatesCreateResult.fromJson(map);
@@ -148,14 +106,8 @@ class PlatformApi {
   }
 
   /// Delete app template
-  Future<AppsTemplatesDeleteResult?> appsTemplatesDelete(String templateId, [String? xRequestId]) async {
-    final requestHeaders = buildRequestHeaders(
-      <String, HeaderParameterSpec>{
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
-      },
-      <String, HeaderParameterSpec>{},
-    );
-    final response = await _client.delete(ApiPaths.backendPath('/platform/apps/templates/${serializePathParameter(templateId, const PathParameterSpec('templateId', 'simple', false))}'), headers: requestHeaders);
+  Future<AppsTemplatesDeleteResult?> appsTemplatesDelete(String templateId) async {
+    final response = await _client.delete(ApiPaths.backendPath('/platform/apps/templates/${serializePathParameter(templateId, const PathParameterSpec('templateId', 'simple', false))}'));
     return (() {
       final map = sdkworkResponseAsMap(response);
       return map == null ? null : AppsTemplatesDeleteResult.fromJson(map);
@@ -163,14 +115,8 @@ class PlatformApi {
   }
 
   /// List app template
-  Future<AppsTemplatesRetrieveResult?> appsTemplatesRetrieve(String templateId, [String? xRequestId]) async {
-    final requestHeaders = buildRequestHeaders(
-      <String, HeaderParameterSpec>{
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
-      },
-      <String, HeaderParameterSpec>{},
-    );
-    final response = await _client.get(ApiPaths.backendPath('/platform/apps/templates/${serializePathParameter(templateId, const PathParameterSpec('templateId', 'simple', false))}'), headers: requestHeaders);
+  Future<AppsTemplatesRetrieveResult?> appsTemplatesRetrieve(String templateId) async {
+    final response = await _client.get(ApiPaths.backendPath('/platform/apps/templates/${serializePathParameter(templateId, const PathParameterSpec('templateId', 'simple', false))}'));
     return (() {
       final map = sdkworkResponseAsMap(response);
       return map == null ? null : AppsTemplatesRetrieveResult.fromJson(map);
@@ -178,15 +124,9 @@ class PlatformApi {
   }
 
   /// Update app template
-  Future<AppsTemplatesUpdateResult?> appsTemplatesUpdate(String templateId, AdminAppTemplateUpdateRequest body, [String? xRequestId]) async {
-    final requestHeaders = buildRequestHeaders(
-      <String, HeaderParameterSpec>{
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
-      },
-      <String, HeaderParameterSpec>{},
-    );
+  Future<AppsTemplatesUpdateResult?> appsTemplatesUpdate(String templateId, AdminAppTemplateUpdateRequest body) async {
     final payload = body.toJson();
-    final response = await _client.put(ApiPaths.backendPath('/platform/apps/templates/${serializePathParameter(templateId, const PathParameterSpec('templateId', 'simple', false))}'), body: payload, headers: requestHeaders, contentType: 'application/json');
+    final response = await _client.put(ApiPaths.backendPath('/platform/apps/templates/${serializePathParameter(templateId, const PathParameterSpec('templateId', 'simple', false))}'), body: payload, contentType: 'application/json');
     return (() {
       final map = sdkworkResponseAsMap(response);
       return map == null ? null : AppsTemplatesUpdateResult.fromJson(map);
@@ -194,14 +134,8 @@ class PlatformApi {
   }
 
   /// Publish app template
-  Future<AppsTemplatesPublishResult?> appsTemplatesPublish(String templateId, [String? xRequestId]) async {
-    final requestHeaders = buildRequestHeaders(
-      <String, HeaderParameterSpec>{
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
-      },
-      <String, HeaderParameterSpec>{},
-    );
-    final response = await _client.post(ApiPaths.backendPath('/platform/apps/templates/${serializePathParameter(templateId, const PathParameterSpec('templateId', 'simple', false))}/publish'), headers: requestHeaders);
+  Future<AppsTemplatesPublishResult?> appsTemplatesPublish(String templateId) async {
+    final response = await _client.post(ApiPaths.backendPath('/platform/apps/templates/${serializePathParameter(templateId, const PathParameterSpec('templateId', 'simple', false))}/publish'));
     return (() {
       final map = sdkworkResponseAsMap(response);
       return map == null ? null : AppsTemplatesPublishResult.fromJson(map);
@@ -209,14 +143,8 @@ class PlatformApi {
   }
 
   /// Offline app template
-  Future<AppsTemplatesUnpublishResult?> appsTemplatesUnpublish(String templateId, [String? xRequestId]) async {
-    final requestHeaders = buildRequestHeaders(
-      <String, HeaderParameterSpec>{
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
-      },
-      <String, HeaderParameterSpec>{},
-    );
-    final response = await _client.post(ApiPaths.backendPath('/platform/apps/templates/${serializePathParameter(templateId, const PathParameterSpec('templateId', 'simple', false))}/unpublish'), headers: requestHeaders);
+  Future<AppsTemplatesUnpublishResult?> appsTemplatesUnpublish(String templateId) async {
+    final response = await _client.post(ApiPaths.backendPath('/platform/apps/templates/${serializePathParameter(templateId, const PathParameterSpec('templateId', 'simple', false))}/unpublish'));
     return (() {
       final map = sdkworkResponseAsMap(response);
       return map == null ? null : AppsTemplatesUnpublishResult.fromJson(map);
@@ -224,14 +152,8 @@ class PlatformApi {
   }
 
   /// Delete app
-  Future<AppsDeleteResult?> appsDelete(String appId, [String? xRequestId]) async {
-    final requestHeaders = buildRequestHeaders(
-      <String, HeaderParameterSpec>{
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
-      },
-      <String, HeaderParameterSpec>{},
-    );
-    final response = await _client.delete(ApiPaths.backendPath('/platform/apps/${serializePathParameter(appId, const PathParameterSpec('appId', 'simple', false))}'), headers: requestHeaders);
+  Future<AppsDeleteResult?> appsDelete(String appId) async {
+    final response = await _client.delete(ApiPaths.backendPath('/platform/apps/${serializePathParameter(appId, const PathParameterSpec('appId', 'simple', false))}'));
     return (() {
       final map = sdkworkResponseAsMap(response);
       return map == null ? null : AppsDeleteResult.fromJson(map);
@@ -239,14 +161,8 @@ class PlatformApi {
   }
 
   /// List app
-  Future<AppsRetrieveResult?> appsRetrieve(String appId, [String? xRequestId]) async {
-    final requestHeaders = buildRequestHeaders(
-      <String, HeaderParameterSpec>{
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
-      },
-      <String, HeaderParameterSpec>{},
-    );
-    final response = await _client.get(ApiPaths.backendPath('/platform/apps/${serializePathParameter(appId, const PathParameterSpec('appId', 'simple', false))}'), headers: requestHeaders);
+  Future<AppsRetrieveResult?> appsRetrieve(String appId) async {
+    final response = await _client.get(ApiPaths.backendPath('/platform/apps/${serializePathParameter(appId, const PathParameterSpec('appId', 'simple', false))}'));
     return (() {
       final map = sdkworkResponseAsMap(response);
       return map == null ? null : AppsRetrieveResult.fromJson(map);
@@ -254,15 +170,9 @@ class PlatformApi {
   }
 
   /// Update app
-  Future<AppsUpdateResult?> appsUpdate(String appId, AdminAppUpdateRequest body, [String? xRequestId]) async {
-    final requestHeaders = buildRequestHeaders(
-      <String, HeaderParameterSpec>{
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
-      },
-      <String, HeaderParameterSpec>{},
-    );
+  Future<AppsUpdateResult?> appsUpdate(String appId, AdminAppUpdateRequest body) async {
     final payload = body.toJson();
-    final response = await _client.put(ApiPaths.backendPath('/platform/apps/${serializePathParameter(appId, const PathParameterSpec('appId', 'simple', false))}'), body: payload, headers: requestHeaders, contentType: 'application/json');
+    final response = await _client.put(ApiPaths.backendPath('/platform/apps/${serializePathParameter(appId, const PathParameterSpec('appId', 'simple', false))}'), body: payload, contentType: 'application/json');
     return (() {
       final map = sdkworkResponseAsMap(response);
       return map == null ? null : AppsUpdateResult.fromJson(map);
@@ -270,14 +180,8 @@ class PlatformApi {
   }
 
   /// Disable app
-  Future<AppsDisableResult?> appsDisable(String appId, [String? xRequestId]) async {
-    final requestHeaders = buildRequestHeaders(
-      <String, HeaderParameterSpec>{
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
-      },
-      <String, HeaderParameterSpec>{},
-    );
-    final response = await _client.post(ApiPaths.backendPath('/platform/apps/${serializePathParameter(appId, const PathParameterSpec('appId', 'simple', false))}/disable'), headers: requestHeaders);
+  Future<AppsDisableResult?> appsDisable(String appId) async {
+    final response = await _client.post(ApiPaths.backendPath('/platform/apps/${serializePathParameter(appId, const PathParameterSpec('appId', 'simple', false))}/disable'));
     return (() {
       final map = sdkworkResponseAsMap(response);
       return map == null ? null : AppsDisableResult.fromJson(map);
@@ -285,14 +189,8 @@ class PlatformApi {
   }
 
   /// Enable app
-  Future<AppsEnableResult?> appsEnable(String appId, [String? xRequestId]) async {
-    final requestHeaders = buildRequestHeaders(
-      <String, HeaderParameterSpec>{
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
-      },
-      <String, HeaderParameterSpec>{},
-    );
-    final response = await _client.post(ApiPaths.backendPath('/platform/apps/${serializePathParameter(appId, const PathParameterSpec('appId', 'simple', false))}/enable'), headers: requestHeaders);
+  Future<AppsEnableResult?> appsEnable(String appId) async {
+    final response = await _client.post(ApiPaths.backendPath('/platform/apps/${serializePathParameter(appId, const PathParameterSpec('appId', 'simple', false))}/enable'));
     return (() {
       final map = sdkworkResponseAsMap(response);
       return map == null ? null : AppsEnableResult.fromJson(map);
@@ -300,14 +198,8 @@ class PlatformApi {
   }
 
   /// Publish app
-  Future<AppsPublishResult?> appsPublish(String appId, [String? xRequestId]) async {
-    final requestHeaders = buildRequestHeaders(
-      <String, HeaderParameterSpec>{
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
-      },
-      <String, HeaderParameterSpec>{},
-    );
-    final response = await _client.post(ApiPaths.backendPath('/platform/apps/${serializePathParameter(appId, const PathParameterSpec('appId', 'simple', false))}/publish'), headers: requestHeaders);
+  Future<AppsPublishResult?> appsPublish(String appId) async {
+    final response = await _client.post(ApiPaths.backendPath('/platform/apps/${serializePathParameter(appId, const PathParameterSpec('appId', 'simple', false))}/publish'));
     return (() {
       final map = sdkworkResponseAsMap(response);
       return map == null ? null : AppsPublishResult.fromJson(map);
@@ -315,14 +207,8 @@ class PlatformApi {
   }
 
   /// Offline app
-  Future<AppsUnpublishResult?> appsUnpublish(String appId, [String? xRequestId]) async {
-    final requestHeaders = buildRequestHeaders(
-      <String, HeaderParameterSpec>{
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
-      },
-      <String, HeaderParameterSpec>{},
-    );
-    final response = await _client.post(ApiPaths.backendPath('/platform/apps/${serializePathParameter(appId, const PathParameterSpec('appId', 'simple', false))}/unpublish'), headers: requestHeaders);
+  Future<AppsUnpublishResult?> appsUnpublish(String appId) async {
+    final response = await _client.post(ApiPaths.backendPath('/platform/apps/${serializePathParameter(appId, const PathParameterSpec('appId', 'simple', false))}/unpublish'));
     return (() {
       final map = sdkworkResponseAsMap(response);
       return map == null ? null : AppsUnpublishResult.fromJson(map);
@@ -533,75 +419,3 @@ String encodeQueryValue(String value, bool allowReserved) {
 }
 
 String urlEncode(String value) => Uri.encodeQueryComponent(value);
-class HeaderParameterSpec {
-  final dynamic value;
-  final String style;
-  final bool explode;
-  final String? contentType;
-
-  HeaderParameterSpec(this.value, this.style, this.explode, this.contentType);
-}
-
-Map<String, String>? buildRequestHeaders(
-  Map<String, HeaderParameterSpec> headers, [
-  Map<String, HeaderParameterSpec> cookies = const {},
-]) {
-  final requestHeaders = <String, String>{};
-
-  headers.forEach((name, parameter) {
-    final serialized = serializeParameterValue(parameter);
-    if (serialized != null) {
-      requestHeaders[name] = serialized;
-    }
-  });
-
-  final cookieHeader = buildCookieHeader(cookies);
-  if (cookieHeader != null && cookieHeader.isNotEmpty) {
-    requestHeaders['Cookie'] = requestHeaders.containsKey('Cookie')
-        ? '${requestHeaders['Cookie']}; $cookieHeader'
-        : cookieHeader;
-  }
-
-  return requestHeaders.isEmpty ? null : requestHeaders;
-}
-
-String? buildCookieHeader(Map<String, HeaderParameterSpec> cookies) {
-  final pairs = <String>[];
-  cookies.forEach((name, parameter) {
-    final serialized = serializeParameterValue(parameter);
-    if (serialized != null) {
-      pairs.add('${Uri.encodeComponent(name)}=${Uri.encodeComponent(serialized)}');
-    }
-  });
-  return pairs.isEmpty ? null : pairs.join('; ');
-}
-
-String? serializeParameterValue(HeaderParameterSpec? parameter) {
-  final value = parameter?.value;
-  if (value == null) return null;
-  if (parameter!.contentType != null && parameter.contentType!.trim().isNotEmpty) {
-    return jsonEncode(value);
-  }
-  if (value is DateTime) return value.toIso8601String();
-  if (value is Iterable) {
-    return value
-        .where((item) => item != null)
-        .map((item) => item.toString())
-        .whereType<String>()
-        .join(',');
-  }
-  if (value is Map) {
-    final serialized = <String>[];
-    value.forEach((key, item) {
-      if (item == null) return;
-      if (parameter.explode) {
-        serialized.add('$key=$item');
-      } else {
-        serialized.add(key.toString());
-        serialized.add(item.toString());
-      }
-    });
-    return serialized.join(',');
-  }
-  return value.toString();
-}

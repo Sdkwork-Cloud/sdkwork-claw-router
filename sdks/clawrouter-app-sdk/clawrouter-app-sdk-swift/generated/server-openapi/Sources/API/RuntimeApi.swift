@@ -22,11 +22,10 @@ public class RuntimeApi {
     }
 
     /// Create runtime invocation
-    public func invocationsCreate(body: RuntimeInvocationCreateRequest, idempotencyKey: String, xRequestId: String? = nil) async throws -> InvocationsCreateResult? {
+    public func invocationsCreate(body: RuntimeInvocationCreateRequest, idempotencyKey: String) async throws -> InvocationsCreateResult? {
         let requestHeaders = buildRequestHeaders(
             [
                 "Idempotency-Key": HeaderParameterSpec(value: idempotencyKey, style: "simple", explode: false, contentType: nil),
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
             ],
             [:]
         )
@@ -48,11 +47,10 @@ public class RuntimeApi {
     }
 
     /// Create runtime artifact
-    public func artifactsCreate(invocationId: String, body: RuntimeArtifactCreateRequest, idempotencyKey: String, xRequestId: String? = nil) async throws -> ArtifactsCreateResult? {
+    public func artifactsCreate(invocationId: String, body: RuntimeArtifactCreateRequest, idempotencyKey: String) async throws -> ArtifactsCreateResult? {
         let requestHeaders = buildRequestHeaders(
             [
                 "Idempotency-Key": HeaderParameterSpec(value: idempotencyKey, style: "simple", explode: false, contentType: nil),
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
             ],
             [:]
         )
@@ -60,11 +58,10 @@ public class RuntimeApi {
     }
 
     /// Complete runtime invocation
-    public func invocationsSubmit(invocationId: String, body: RuntimeInvocationCompleteRequest, idempotencyKey: String, xRequestId: String? = nil) async throws -> InvocationsSubmitResult? {
+    public func invocationsSubmit(invocationId: String, body: RuntimeInvocationCompleteRequest, idempotencyKey: String) async throws -> InvocationsSubmitResult? {
         let requestHeaders = buildRequestHeaders(
             [
                 "Idempotency-Key": HeaderParameterSpec(value: idempotencyKey, style: "simple", explode: false, contentType: nil),
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
             ],
             [:]
         )
@@ -81,11 +78,10 @@ public class RuntimeApi {
     }
 
     /// Create runtime invocation event
-    public func invocationEventsCreate(invocationId: String, body: RuntimeEventCreateRequest, idempotencyKey: String, xRequestId: String? = nil) async throws -> InvocationEventsCreateResult? {
+    public func invocationEventsCreate(invocationId: String, body: RuntimeEventCreateRequest, idempotencyKey: String) async throws -> InvocationEventsCreateResult? {
         let requestHeaders = buildRequestHeaders(
             [
                 "Idempotency-Key": HeaderParameterSpec(value: idempotencyKey, style: "simple", explode: false, contentType: nil),
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
             ],
             [:]
         )

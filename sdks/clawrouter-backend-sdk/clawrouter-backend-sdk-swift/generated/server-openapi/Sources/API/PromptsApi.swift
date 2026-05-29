@@ -22,11 +22,10 @@ public class PromptsApi {
     }
 
     /// Create admin prompt
-    public func definitionsCreate(body: AdminPromptCreateRequest, idempotencyKey: String, xRequestId: String? = nil) async throws -> DefinitionsCreateResult? {
+    public func definitionsCreate(body: AdminPromptCreateRequest, idempotencyKey: String) async throws -> DefinitionsCreateResult? {
         let requestHeaders = buildRequestHeaders(
             [
                 "Idempotency-Key": HeaderParameterSpec(value: idempotencyKey, style: "simple", explode: false, contentType: nil),
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
             ],
             [:]
         )
@@ -34,36 +33,18 @@ public class PromptsApi {
     }
 
     /// Update prompt binding
-    public func definitionBindingsUpdate(bindingId: String, body: AdminPromptBindingUpdateRequest, xRequestId: String? = nil) async throws -> DefinitionBindingsUpdateResult? {
-        let requestHeaders = buildRequestHeaders(
-            [
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
-            ],
-            [:]
-        )
-        return try await client.put(ApiPaths.backendPath("/prompts/bindings/\(serializePathParameter(bindingId, PathParameterSpec(name: "bindingId", style: "simple", explode: false)))"), body: body, params: nil, headers: requestHeaders, contentType: "application/json", responseType: DefinitionBindingsUpdateResult.self)
+    public func definitionBindingsUpdate(bindingId: String, body: AdminPromptBindingUpdateRequest) async throws -> DefinitionBindingsUpdateResult? {
+        return try await client.put(ApiPaths.backendPath("/prompts/bindings/\(serializePathParameter(bindingId, PathParameterSpec(name: "bindingId", style: "simple", explode: false)))"), body: body, params: nil, headers: nil, contentType: "application/json", responseType: DefinitionBindingsUpdateResult.self)
     }
 
     /// Publish prompt version
-    public func versionsPublish(versionId: String, xRequestId: String? = nil) async throws -> VersionsPublishResult? {
-        let requestHeaders = buildRequestHeaders(
-            [
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
-            ],
-            [:]
-        )
-        return try await client.post(ApiPaths.backendPath("/prompts/versions/\(serializePathParameter(versionId, PathParameterSpec(name: "versionId", style: "simple", explode: false)))/publish"), body: nil, params: nil, headers: requestHeaders, responseType: VersionsPublishResult.self)
+    public func versionsPublish(versionId: String) async throws -> VersionsPublishResult? {
+        return try await client.post(ApiPaths.backendPath("/prompts/versions/\(serializePathParameter(versionId, PathParameterSpec(name: "versionId", style: "simple", explode: false)))/publish"), body: nil, responseType: VersionsPublishResult.self)
     }
 
     /// Render prompt version
-    public func versionRendersCreate(versionId: String, body: AdminPromptRenderRequest, xRequestId: String? = nil) async throws -> VersionRendersCreateResult? {
-        let requestHeaders = buildRequestHeaders(
-            [
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
-            ],
-            [:]
-        )
-        return try await client.post(ApiPaths.backendPath("/prompts/versions/\(serializePathParameter(versionId, PathParameterSpec(name: "versionId", style: "simple", explode: false)))/render"), body: body, params: nil, headers: requestHeaders, contentType: "application/json", responseType: VersionRendersCreateResult.self)
+    public func versionRendersCreate(versionId: String, body: AdminPromptRenderRequest) async throws -> VersionRendersCreateResult? {
+        return try await client.post(ApiPaths.backendPath("/prompts/versions/\(serializePathParameter(versionId, PathParameterSpec(name: "versionId", style: "simple", explode: false)))/render"), body: body, params: nil, headers: nil, contentType: "application/json", responseType: VersionRendersCreateResult.self)
     }
 
     /// List prompt bindings
@@ -72,11 +53,10 @@ public class PromptsApi {
     }
 
     /// Create prompt binding
-    public func definitionBindingsCreate(promptId: String, body: AdminPromptBindingCreateRequest, idempotencyKey: String, xRequestId: String? = nil) async throws -> DefinitionBindingsCreateResult? {
+    public func definitionBindingsCreate(promptId: String, body: AdminPromptBindingCreateRequest, idempotencyKey: String) async throws -> DefinitionBindingsCreateResult? {
         let requestHeaders = buildRequestHeaders(
             [
                 "Idempotency-Key": HeaderParameterSpec(value: idempotencyKey, style: "simple", explode: false, contentType: nil),
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
             ],
             [:]
         )
@@ -89,11 +69,10 @@ public class PromptsApi {
     }
 
     /// Create prompt version
-    public func versionsCreate(promptId: String, body: AdminPromptVersionCreateRequest, idempotencyKey: String, xRequestId: String? = nil) async throws -> VersionsCreateResult? {
+    public func versionsCreate(promptId: String, body: AdminPromptVersionCreateRequest, idempotencyKey: String) async throws -> VersionsCreateResult? {
         let requestHeaders = buildRequestHeaders(
             [
                 "Idempotency-Key": HeaderParameterSpec(value: idempotencyKey, style: "simple", explode: false, contentType: nil),
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
             ],
             [:]
         )

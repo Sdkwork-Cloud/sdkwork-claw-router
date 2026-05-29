@@ -3,8 +3,6 @@ package com.sdkwork.clawrouter.backend.model;
 import java.util.Map;
 
 public class AiUsageFactRecord {
-    private String apiKeyGroupId;
-    private String apiKeyGroupSnapshot;
     private String apiKeyId;
     private String apiKeyNameSnapshot;
     private String audioSeconds;
@@ -21,6 +19,8 @@ public class AiUsageFactRecord {
     private String cacheReadUnitPrice;
     private String cachedTokens;
     private String catalogKey;
+    private String channelGroupId;
+    private String channelGroupSnapshot;
     private String channelId;
     private String characterCount;
     private String completionTokens;
@@ -51,7 +51,6 @@ public class AiUsageFactRecord {
     private Map<String, String> pricingSnapshot;
     private String pricingTierId;
     private String promptTokens;
-    private String providerAccountId;
     private String providerId;
     private String providerNativeModel;
     private String rateMultiplier;
@@ -75,22 +74,6 @@ public class AiUsageFactRecord {
     private String userId;
     private String uuid;
     private String videoSeconds;
-
-    public String getApiKeyGroupId() {
-        return this.apiKeyGroupId;
-    }
-
-    public void setApiKeyGroupId(String apiKeyGroupId) {
-        this.apiKeyGroupId = apiKeyGroupId;
-    }
-
-    public String getApiKeyGroupSnapshot() {
-        return this.apiKeyGroupSnapshot;
-    }
-
-    public void setApiKeyGroupSnapshot(String apiKeyGroupSnapshot) {
-        this.apiKeyGroupSnapshot = apiKeyGroupSnapshot;
-    }
 
     public String getApiKeyId() {
         return this.apiKeyId;
@@ -218,6 +201,22 @@ public class AiUsageFactRecord {
 
     public void setCatalogKey(String catalogKey) {
         this.catalogKey = catalogKey;
+    }
+
+    public String getChannelGroupId() {
+        return this.channelGroupId;
+    }
+
+    public void setChannelGroupId(String channelGroupId) {
+        this.channelGroupId = channelGroupId;
+    }
+
+    public String getChannelGroupSnapshot() {
+        return this.channelGroupSnapshot;
+    }
+
+    public void setChannelGroupSnapshot(String channelGroupSnapshot) {
+        this.channelGroupSnapshot = channelGroupSnapshot;
     }
 
     public String getChannelId() {
@@ -458,14 +457,6 @@ public class AiUsageFactRecord {
 
     public void setPromptTokens(String promptTokens) {
         this.promptTokens = promptTokens;
-    }
-
-    public String getProviderAccountId() {
-        return this.providerAccountId;
-    }
-
-    public void setProviderAccountId(String providerAccountId) {
-        this.providerAccountId = providerAccountId;
     }
 
     public String getProviderId() {

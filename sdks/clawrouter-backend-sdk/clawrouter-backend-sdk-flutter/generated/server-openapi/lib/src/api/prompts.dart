@@ -30,11 +30,10 @@ class PromptsApi {
   }
 
   /// Create admin prompt
-  Future<DefinitionsCreateResult?> definitionsCreate(AdminPromptCreateRequest body, String idempotencyKey, [String? xRequestId]) async {
+  Future<DefinitionsCreateResult?> definitionsCreate(AdminPromptCreateRequest body, String idempotencyKey) async {
     final requestHeaders = buildRequestHeaders(
       <String, HeaderParameterSpec>{
         'Idempotency-Key': HeaderParameterSpec(idempotencyKey, 'simple', false, null),
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
       },
       <String, HeaderParameterSpec>{},
     );
@@ -47,15 +46,9 @@ class PromptsApi {
   }
 
   /// Update prompt binding
-  Future<DefinitionBindingsUpdateResult?> definitionBindingsUpdate(String bindingId, AdminPromptBindingUpdateRequest body, [String? xRequestId]) async {
-    final requestHeaders = buildRequestHeaders(
-      <String, HeaderParameterSpec>{
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
-      },
-      <String, HeaderParameterSpec>{},
-    );
+  Future<DefinitionBindingsUpdateResult?> definitionBindingsUpdate(String bindingId, AdminPromptBindingUpdateRequest body) async {
     final payload = body.toJson();
-    final response = await _client.put(ApiPaths.backendPath('/prompts/bindings/${serializePathParameter(bindingId, const PathParameterSpec('bindingId', 'simple', false))}'), body: payload, headers: requestHeaders, contentType: 'application/json');
+    final response = await _client.put(ApiPaths.backendPath('/prompts/bindings/${serializePathParameter(bindingId, const PathParameterSpec('bindingId', 'simple', false))}'), body: payload, contentType: 'application/json');
     return (() {
       final map = sdkworkResponseAsMap(response);
       return map == null ? null : DefinitionBindingsUpdateResult.fromJson(map);
@@ -63,14 +56,8 @@ class PromptsApi {
   }
 
   /// Publish prompt version
-  Future<VersionsPublishResult?> versionsPublish(String versionId, [String? xRequestId]) async {
-    final requestHeaders = buildRequestHeaders(
-      <String, HeaderParameterSpec>{
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
-      },
-      <String, HeaderParameterSpec>{},
-    );
-    final response = await _client.post(ApiPaths.backendPath('/prompts/versions/${serializePathParameter(versionId, const PathParameterSpec('versionId', 'simple', false))}/publish'), headers: requestHeaders);
+  Future<VersionsPublishResult?> versionsPublish(String versionId) async {
+    final response = await _client.post(ApiPaths.backendPath('/prompts/versions/${serializePathParameter(versionId, const PathParameterSpec('versionId', 'simple', false))}/publish'));
     return (() {
       final map = sdkworkResponseAsMap(response);
       return map == null ? null : VersionsPublishResult.fromJson(map);
@@ -78,15 +65,9 @@ class PromptsApi {
   }
 
   /// Render prompt version
-  Future<VersionRendersCreateResult?> versionRendersCreate(String versionId, AdminPromptRenderRequest body, [String? xRequestId]) async {
-    final requestHeaders = buildRequestHeaders(
-      <String, HeaderParameterSpec>{
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
-      },
-      <String, HeaderParameterSpec>{},
-    );
+  Future<VersionRendersCreateResult?> versionRendersCreate(String versionId, AdminPromptRenderRequest body) async {
     final payload = body.toJson();
-    final response = await _client.post(ApiPaths.backendPath('/prompts/versions/${serializePathParameter(versionId, const PathParameterSpec('versionId', 'simple', false))}/render'), body: payload, headers: requestHeaders, contentType: 'application/json');
+    final response = await _client.post(ApiPaths.backendPath('/prompts/versions/${serializePathParameter(versionId, const PathParameterSpec('versionId', 'simple', false))}/render'), body: payload, contentType: 'application/json');
     return (() {
       final map = sdkworkResponseAsMap(response);
       return map == null ? null : VersionRendersCreateResult.fromJson(map);
@@ -103,11 +84,10 @@ class PromptsApi {
   }
 
   /// Create prompt binding
-  Future<DefinitionBindingsCreateResult?> definitionBindingsCreate(String promptId, AdminPromptBindingCreateRequest body, String idempotencyKey, [String? xRequestId]) async {
+  Future<DefinitionBindingsCreateResult?> definitionBindingsCreate(String promptId, AdminPromptBindingCreateRequest body, String idempotencyKey) async {
     final requestHeaders = buildRequestHeaders(
       <String, HeaderParameterSpec>{
         'Idempotency-Key': HeaderParameterSpec(idempotencyKey, 'simple', false, null),
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
       },
       <String, HeaderParameterSpec>{},
     );
@@ -129,11 +109,10 @@ class PromptsApi {
   }
 
   /// Create prompt version
-  Future<VersionsCreateResult?> versionsCreate(String promptId, AdminPromptVersionCreateRequest body, String idempotencyKey, [String? xRequestId]) async {
+  Future<VersionsCreateResult?> versionsCreate(String promptId, AdminPromptVersionCreateRequest body, String idempotencyKey) async {
     final requestHeaders = buildRequestHeaders(
       <String, HeaderParameterSpec>{
         'Idempotency-Key': HeaderParameterSpec(idempotencyKey, 'simple', false, null),
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
       },
       <String, HeaderParameterSpec>{},
     );

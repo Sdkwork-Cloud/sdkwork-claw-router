@@ -36,13 +36,12 @@ namespace Sdkwork.ClawRouter.Backend.Api
         /// <summary>
         /// Create admin prompt
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.DefinitionsCreateResult?> DefinitionsCreateAsync(Sdkwork.ClawRouter.Backend.Models.AdminPromptCreateRequest body, string idempotencyKey, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.DefinitionsCreateResult?> DefinitionsCreateAsync(Sdkwork.ClawRouter.Backend.Models.AdminPromptCreateRequest body, string idempotencyKey)
         {
             var requestHeaders = BuildRequestHeaders(
                 new Dictionary<string, HeaderParameterSpec>
                 {
                     ["Idempotency-Key"] = new HeaderParameterSpec(idempotencyKey, "simple", false, null),
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
                 },
                 new Dictionary<string, HeaderParameterSpec>()
             );
@@ -52,46 +51,25 @@ namespace Sdkwork.ClawRouter.Backend.Api
         /// <summary>
         /// Update prompt binding
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.DefinitionBindingsUpdateResult?> DefinitionBindingsUpdateAsync(string bindingId, Sdkwork.ClawRouter.Backend.Models.AdminPromptBindingUpdateRequest body, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.DefinitionBindingsUpdateResult?> DefinitionBindingsUpdateAsync(string bindingId, Sdkwork.ClawRouter.Backend.Models.AdminPromptBindingUpdateRequest body)
         {
-            var requestHeaders = BuildRequestHeaders(
-                new Dictionary<string, HeaderParameterSpec>
-                {
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
-                },
-                new Dictionary<string, HeaderParameterSpec>()
-            );
-            return await _client.PutAsync<Sdkwork.ClawRouter.Backend.Models.DefinitionBindingsUpdateResult>(ApiPaths.BackendPath($"/prompts/bindings/{SerializePathParameter(bindingId, new PathParameterSpec("bindingId", "simple", false))}"), body, null, requestHeaders, "application/json");
+            return await _client.PutAsync<Sdkwork.ClawRouter.Backend.Models.DefinitionBindingsUpdateResult>(ApiPaths.BackendPath($"/prompts/bindings/{SerializePathParameter(bindingId, new PathParameterSpec("bindingId", "simple", false))}"), body, null, null, "application/json");
         }
 
         /// <summary>
         /// Publish prompt version
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.VersionsPublishResult?> VersionsPublishAsync(string versionId, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.VersionsPublishResult?> VersionsPublishAsync(string versionId)
         {
-            var requestHeaders = BuildRequestHeaders(
-                new Dictionary<string, HeaderParameterSpec>
-                {
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
-                },
-                new Dictionary<string, HeaderParameterSpec>()
-            );
-            return await _client.PostAsync<Sdkwork.ClawRouter.Backend.Models.VersionsPublishResult>(ApiPaths.BackendPath($"/prompts/versions/{SerializePathParameter(versionId, new PathParameterSpec("versionId", "simple", false))}/publish"), null, null, requestHeaders);
+            return await _client.PostAsync<Sdkwork.ClawRouter.Backend.Models.VersionsPublishResult>(ApiPaths.BackendPath($"/prompts/versions/{SerializePathParameter(versionId, new PathParameterSpec("versionId", "simple", false))}/publish"), null);
         }
 
         /// <summary>
         /// Render prompt version
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.VersionRendersCreateResult?> VersionRendersCreateAsync(string versionId, Sdkwork.ClawRouter.Backend.Models.AdminPromptRenderRequest body, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.VersionRendersCreateResult?> VersionRendersCreateAsync(string versionId, Sdkwork.ClawRouter.Backend.Models.AdminPromptRenderRequest body)
         {
-            var requestHeaders = BuildRequestHeaders(
-                new Dictionary<string, HeaderParameterSpec>
-                {
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
-                },
-                new Dictionary<string, HeaderParameterSpec>()
-            );
-            return await _client.PostAsync<Sdkwork.ClawRouter.Backend.Models.VersionRendersCreateResult>(ApiPaths.BackendPath($"/prompts/versions/{SerializePathParameter(versionId, new PathParameterSpec("versionId", "simple", false))}/render"), body, null, requestHeaders, "application/json");
+            return await _client.PostAsync<Sdkwork.ClawRouter.Backend.Models.VersionRendersCreateResult>(ApiPaths.BackendPath($"/prompts/versions/{SerializePathParameter(versionId, new PathParameterSpec("versionId", "simple", false))}/render"), body, null, null, "application/json");
         }
 
         /// <summary>
@@ -105,13 +83,12 @@ namespace Sdkwork.ClawRouter.Backend.Api
         /// <summary>
         /// Create prompt binding
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.DefinitionBindingsCreateResult?> DefinitionBindingsCreateAsync(string promptId, Sdkwork.ClawRouter.Backend.Models.AdminPromptBindingCreateRequest body, string idempotencyKey, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.DefinitionBindingsCreateResult?> DefinitionBindingsCreateAsync(string promptId, Sdkwork.ClawRouter.Backend.Models.AdminPromptBindingCreateRequest body, string idempotencyKey)
         {
             var requestHeaders = BuildRequestHeaders(
                 new Dictionary<string, HeaderParameterSpec>
                 {
                     ["Idempotency-Key"] = new HeaderParameterSpec(idempotencyKey, "simple", false, null),
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
                 },
                 new Dictionary<string, HeaderParameterSpec>()
             );
@@ -129,13 +106,12 @@ namespace Sdkwork.ClawRouter.Backend.Api
         /// <summary>
         /// Create prompt version
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.VersionsCreateResult?> VersionsCreateAsync(string promptId, Sdkwork.ClawRouter.Backend.Models.AdminPromptVersionCreateRequest body, string idempotencyKey, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.VersionsCreateResult?> VersionsCreateAsync(string promptId, Sdkwork.ClawRouter.Backend.Models.AdminPromptVersionCreateRequest body, string idempotencyKey)
         {
             var requestHeaders = BuildRequestHeaders(
                 new Dictionary<string, HeaderParameterSpec>
                 {
                     ["Idempotency-Key"] = new HeaderParameterSpec(idempotencyKey, "simple", false, null),
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
                 },
                 new Dictionary<string, HeaderParameterSpec>()
             );

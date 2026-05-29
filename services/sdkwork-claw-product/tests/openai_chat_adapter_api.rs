@@ -11,13 +11,16 @@ use sdkwork_claw_product::application::ApiKeySecretHasher;
 use sdkwork_claw_product::domain::{
     AiModel, ApiKeyGroup, BillingMeter, DecimalValue, GatewayApiKey, ModelPrice,
     ModelProviderRoute, ModelVendor, ModelVendorDefinition, Money, PriceSide, PricingPlan,
-    ProviderAccountPoolRoute, RouteCandidate, RoutingCapability, RoutingPolicy, RoutingPolicyScope,
+    ProviderChannelRoute, RouteCandidate, RoutingCapability, RoutingPolicy, RoutingPolicyScope,
     RoutingRule,
 };
 use sdkwork_claw_product::infrastructure::crypto::HmacSha256ApiKeySecretHasher;
 use sdkwork_claw_product::infrastructure::provider::ProviderSecretMapResolver;
 use sdkwork_claw_product::infrastructure::InMemoryPricingCatalog;
-use sdkwork_claw_product::ports::{ChatCompletionRelay, ChatCompletionRelayRequest};
+use sdkwork_claw_product::ports::{
+    ChatCompletionRelay, ChatCompletionRelayRequest, ChatCompletionStreamRelay,
+    ChatCompletionStreamRelayResponse,
+};
 use sdkwork_claw_provider_adapter_contract::{
     AdapterInvocationRequest, AdapterInvocationResponse, AdapterInvocationShape, AdapterKind,
     AdapterRouteStatus, AdapterSecret,
@@ -48,6 +51,29 @@ impl ChatCompletionRelay for RecordingRelay {
                     }),
                 ),
             )
+        })
+    }
+}
+
+#[derive(Debug)]
+struct RecordingStreamRelay {
+    captured: Arc<Mutex<Vec<ChatCompletionRelayRequest>>>,
+}
+
+impl ChatCompletionStreamRelay for RecordingStreamRelay {
+    fn create_chat_completion_stream<'a>(
+        &'a self,
+        request: ChatCompletionRelayRequest,
+    ) -> sdkwork_claw_product::ports::ChatCompletionStreamRelayFuture<'a> {
+        self.captured.lock().unwrap().push(request);
+        Box::pin(async {
+            Ok(ChatCompletionStreamRelayResponse::new(
+                200,
+                Some("text/event-stream".to_owned()),
+                Body::from(
+                    "data: {\"id\":\"chatcmpl-direct-stream\",\"choices\":[{\"delta\":{\"content\":\"direct\"}}]}\n\ndata: [DONE]\n\n",
+                ),
+            ))
         })
     }
 }
@@ -150,6 +176,84 @@ async fn openai_chat_registry_hit_calls_internal_adapter_without_direct_relay() 
     drop(adapter_calls);
     let payload = response_json(response).await;
     assert_eq!("chatcmpl-adapter", payload["id"]);
+}
+
+#[tokio::test]
+async fn openai_chat_stream_registry_hit_calls_internal_adapter_without_direct_stream_relay() {
+    let fake_adapter = spawn_fake_adapter_server().await;
+    let direct_chat_calls = Arc::new(Mutex::new(Vec::new()));
+    let direct_stream_calls = Arc::new(Mutex::new(Vec::new()));
+    let relay = Arc::new(RecordingRelay {
+        captured: Arc::clone(&direct_chat_calls),
+    });
+    let stream_relay = Arc::new(RecordingStreamRelay {
+        captured: Arc::clone(&direct_stream_calls),
+    });
+    let adapter_stream_relay =
+        sdkwork_claw_product::infrastructure::provider::AdapterAwareChatCompletionStreamRelay::new(
+            stream_relay,
+            Arc::new(ProviderAdapterRegistry::new(vec![adapter_stream_route(
+                fake_adapter.base_url.as_str(),
+            )])),
+            sdkwork_claw_provider_adapter_http::ProviderAdapterHttpClient::new("test-token"),
+        )
+        .with_secret_resolver(provider_secret_resolver(
+            "vault://providers/openrouter/account/main",
+            "sk-openrouter-main",
+        ));
+    let hasher =
+        Arc::new(HmacSha256ApiKeySecretHasher::new("0123456789abcdef0123456789abcdef").unwrap());
+    let key_hash = hasher.hash_secret("sk-standard-secret").unwrap();
+    let router = sdkwork_claw_product::api::openai_chat_completions_router_with_relays(
+        Arc::new(catalog_with_hashed_api_key(key_hash)),
+        hasher,
+        relay,
+        Arc::new(adapter_stream_relay),
+    );
+
+    let response = router
+        .oneshot(
+            Request::builder()
+                .method("POST")
+                .uri("/v1/chat/completions")
+                .header("authorization", "Bearer sk-standard-secret")
+                .header("content-type", "application/json")
+                .body(Body::from(
+                    r#"{"model":"gpt-4o-mini","messages":[{"role":"user","content":"ping"}],"stream":true,"stream_options":{"include_usage":true}}"#,
+                ))
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+
+    assert_eq!(StatusCode::OK, response.status());
+    assert!(direct_chat_calls.lock().unwrap().is_empty());
+    assert!(direct_stream_calls.lock().unwrap().is_empty());
+    let adapter_calls = fake_adapter.calls.lock().unwrap();
+    assert_eq!(1, adapter_calls.len());
+    let adapter_call = &adapter_calls[0];
+    assert_eq!(
+        "openai.chat_completions",
+        adapter_call.invocation.endpoint_key
+    );
+    assert_eq!(
+        "/v1/chat/completions",
+        adapter_call.invocation.standard_path
+    );
+    assert_eq!(
+        AdapterInvocationShape::SseStream,
+        adapter_call.invocation.shape
+    );
+    assert!(adapter_call.invocation.stream);
+    assert_eq!("openrouter", adapter_call.provider.provider_code);
+    assert_eq!(3001, adapter_call.provider.channel_id);
+    assert_eq!("gpt-4o-mini", adapter_call.provider.provider_model);
+    assert_eq!(true, adapter_call.body["stream"]);
+    assert_gateway_resolved_secret(&adapter_call.secret, "sk-openrouter-main");
+    drop(adapter_calls);
+    let body = response_text(response).await;
+    assert!(body.contains("chatcmpl-adapter"));
+    assert!(body.contains("data: [DONE]"));
 }
 
 #[tokio::test]
@@ -260,6 +364,12 @@ fn adapter_route(base_url: &str) -> ProviderAdapterRouteConfig {
     }
 }
 
+fn adapter_stream_route(base_url: &str) -> ProviderAdapterRouteConfig {
+    let mut route = adapter_route(base_url);
+    route.invocation_shape = AdapterInvocationShape::SseStream;
+    route
+}
+
 async fn spawn_fake_adapter_server() -> FakeAdapterServer {
     let calls = Arc::new(Mutex::new(Vec::new()));
     let app = Router::new()
@@ -308,6 +418,13 @@ async fn response_json(response: axum::response::Response) -> serde_json::Value 
     serde_json::from_slice(&bytes).unwrap()
 }
 
+async fn response_text(response: axum::response::Response) -> String {
+    let bytes = axum::body::to_bytes(response.into_body(), usize::MAX)
+        .await
+        .unwrap();
+    String::from_utf8(bytes.to_vec()).unwrap()
+}
+
 fn catalog_with_hashed_api_key(key_hash: String) -> InMemoryPricingCatalog {
     let mut catalog = InMemoryPricingCatalog::default();
     catalog.add_vendor(ModelVendorDefinition::new(
@@ -323,19 +440,19 @@ fn catalog_with_hashed_api_key(key_hash: String) -> InMemoryPricingCatalog {
     ));
     catalog.add_provider_route(
         ModelProviderRoute::new_for_catalog_key(
-            "openai/global/gpt-4o-mini",
+            "openai/gpt-4o-mini",
             "gpt-4o-mini",
             "openrouter",
             3001,
-            "openai/global/gpt-4o-mini",
+            "gpt-4o-mini",
         )
         .with_provider_endpoint(
             Some("http://provider-proxy.internal/openrouter"),
             Some("vault://providers/openrouter/account/main"),
         ),
     );
-    catalog.add_provider_account_pool_route(
-        ProviderAccountPoolRoute::new("openrouter", 3001).with_provider_endpoint(
+    catalog.add_provider_channel_route(
+        ProviderChannelRoute::new("openrouter", 3001).with_provider_endpoint(
             Some("http://provider-proxy.internal/openrouter"),
             Some("vault://providers/openrouter/account/main"),
         ),
@@ -355,7 +472,7 @@ fn catalog_with_hashed_api_key(key_hash: String) -> InMemoryPricingCatalog {
     ));
     catalog.add_api_key(GatewayApiKey::new(101, 10, "sk-live", &key_hash).with_owner(10, 20, 30));
     catalog.add_price(ModelPrice::new_for_catalog_key(
-        "openai/global/gpt-4o-mini",
+        "openai/gpt-4o-mini",
         "gpt-4o-mini",
         PriceSide::OfficialReference,
         BillingMeter::LlmInputToken,
@@ -363,7 +480,7 @@ fn catalog_with_hashed_api_key(key_hash: String) -> InMemoryPricingCatalog {
     ));
     catalog.add_price(
         ModelPrice::new_for_catalog_key(
-            "openai/global/gpt-4o-mini",
+            "openai/gpt-4o-mini",
             "gpt-4o-mini",
             PriceSide::UpstreamCost,
             BillingMeter::LlmInputToken,
@@ -391,8 +508,8 @@ fn catalog_with_hashed_api_key(key_hash: String) -> InMemoryPricingCatalog {
             9101,
             "standard-group-gpt-4o-mini",
             1,
-            r#"{"catalogKey":"openai/global/gpt-4o-mini"}"#,
-            "openai/global/gpt-4o-mini",
+            r#"{"catalogKey":"openai/gpt-4o-mini"}"#,
+            "openai/gpt-4o-mini",
         )
         .with_candidate_channels(vec![RouteCandidate::new(3001, 100)]),
     );

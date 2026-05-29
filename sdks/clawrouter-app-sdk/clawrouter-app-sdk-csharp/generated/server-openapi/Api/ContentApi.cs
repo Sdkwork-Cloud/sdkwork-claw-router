@@ -33,16 +33,9 @@ namespace Sdkwork.ClawRouter.App.Api
         /// <summary>
         /// Create forum comment
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.App.Models.CommentsCreateResult?> CommentsCreateAsync(Sdkwork.ClawRouter.App.Models.ForumCreateCommentRequest body, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.App.Models.CommentsCreateResult?> CommentsCreateAsync(Sdkwork.ClawRouter.App.Models.ForumCreateCommentRequest body)
         {
-            var requestHeaders = BuildRequestHeaders(
-                new Dictionary<string, HeaderParameterSpec>
-                {
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
-                },
-                new Dictionary<string, HeaderParameterSpec>()
-            );
-            return await _client.PostAsync<Sdkwork.ClawRouter.App.Models.CommentsCreateResult>(ApiPaths.AppPath("/content/comments"), body, null, requestHeaders, "application/json");
+            return await _client.PostAsync<Sdkwork.ClawRouter.App.Models.CommentsCreateResult>(ApiPaths.AppPath("/content/comments"), body, null, null, "application/json");
         }
 
         /// <summary>
@@ -77,16 +70,9 @@ namespace Sdkwork.ClawRouter.App.Api
         /// <summary>
         /// Like forum comment
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.App.Models.CommentsLikesCreateResult?> CommentsLikesCreateAsync(string commentId, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.App.Models.CommentsLikesCreateResult?> CommentsLikesCreateAsync(string commentId)
         {
-            var requestHeaders = BuildRequestHeaders(
-                new Dictionary<string, HeaderParameterSpec>
-                {
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
-                },
-                new Dictionary<string, HeaderParameterSpec>()
-            );
-            return await _client.PostAsync<Sdkwork.ClawRouter.App.Models.CommentsLikesCreateResult>(ApiPaths.AppPath($"/content/comments/{SerializePathParameter(commentId, new PathParameterSpec("commentId", "simple", false))}/likes"), null, null, requestHeaders);
+            return await _client.PostAsync<Sdkwork.ClawRouter.App.Models.CommentsLikesCreateResult>(ApiPaths.AppPath($"/content/comments/{SerializePathParameter(commentId, new PathParameterSpec("commentId", "simple", false))}/likes"), null);
         }
 
         /// <summary>
@@ -100,16 +86,9 @@ namespace Sdkwork.ClawRouter.App.Api
         /// <summary>
         /// Pin forum comment
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.App.Models.CommentsPinsCreateResult?> CommentsPinsCreateAsync(string commentId, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.App.Models.CommentsPinsCreateResult?> CommentsPinsCreateAsync(string commentId)
         {
-            var requestHeaders = BuildRequestHeaders(
-                new Dictionary<string, HeaderParameterSpec>
-                {
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
-                },
-                new Dictionary<string, HeaderParameterSpec>()
-            );
-            return await _client.PostAsync<Sdkwork.ClawRouter.App.Models.CommentsPinsCreateResult>(ApiPaths.AppPath($"/content/comments/{SerializePathParameter(commentId, new PathParameterSpec("commentId", "simple", false))}/pins"), null, null, requestHeaders);
+            return await _client.PostAsync<Sdkwork.ClawRouter.App.Models.CommentsPinsCreateResult>(ApiPaths.AppPath($"/content/comments/{SerializePathParameter(commentId, new PathParameterSpec("commentId", "simple", false))}/pins"), null);
         }
 
         /// <summary>
@@ -136,16 +115,9 @@ namespace Sdkwork.ClawRouter.App.Api
         /// <summary>
         /// Reply forum comment
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.App.Models.CommentsReplyCreateResult?> CommentsReplyCreateAsync(string commentId, Sdkwork.ClawRouter.App.Models.ForumReplyCommentRequest body, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.App.Models.CommentsReplyCreateResult?> CommentsReplyCreateAsync(string commentId, Sdkwork.ClawRouter.App.Models.ForumReplyCommentRequest body)
         {
-            var requestHeaders = BuildRequestHeaders(
-                new Dictionary<string, HeaderParameterSpec>
-                {
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
-                },
-                new Dictionary<string, HeaderParameterSpec>()
-            );
-            return await _client.PostAsync<Sdkwork.ClawRouter.App.Models.CommentsReplyCreateResult>(ApiPaths.AppPath($"/content/comments/{SerializePathParameter(commentId, new PathParameterSpec("commentId", "simple", false))}/reply"), body, null, requestHeaders, "application/json");
+            return await _client.PostAsync<Sdkwork.ClawRouter.App.Models.CommentsReplyCreateResult>(ApiPaths.AppPath($"/content/comments/{SerializePathParameter(commentId, new PathParameterSpec("commentId", "simple", false))}/reply"), body, null, null, "application/json");
         }
 
         /// <summary>
@@ -168,16 +140,9 @@ namespace Sdkwork.ClawRouter.App.Api
         /// <summary>
         /// Create forum feed
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.App.Models.FeedsCreateResult?> FeedsCreateAsync(Sdkwork.ClawRouter.App.Models.ForumCreateFeedRequest body, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.App.Models.FeedsCreateResult?> FeedsCreateAsync(Sdkwork.ClawRouter.App.Models.ForumCreateFeedRequest body)
         {
-            var requestHeaders = BuildRequestHeaders(
-                new Dictionary<string, HeaderParameterSpec>
-                {
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
-                },
-                new Dictionary<string, HeaderParameterSpec>()
-            );
-            return await _client.PostAsync<Sdkwork.ClawRouter.App.Models.FeedsCreateResult>(ApiPaths.AppPath("/content/feeds"), body, null, requestHeaders, "application/json");
+            return await _client.PostAsync<Sdkwork.ClawRouter.App.Models.FeedsCreateResult>(ApiPaths.AppPath("/content/feeds"), body, null, null, "application/json");
         }
 
         /// <summary>
@@ -280,35 +245,21 @@ namespace Sdkwork.ClawRouter.App.Api
         /// <summary>
         /// Collect forum feed
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.App.Models.FeedsCollectionsCreateResult?> FeedsCollectionsCreateAsync(string id, int? folderId = null, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.App.Models.FeedsCollectionsCreateResult?> FeedsCollectionsCreateAsync(string id, int? folderId = null)
         {
             var queryString = BuildQueryString(new[]
             {
                 new QueryParameterSpec("folder_id", folderId, "form", true, false, null),
             });
-            var requestHeaders = BuildRequestHeaders(
-                new Dictionary<string, HeaderParameterSpec>
-                {
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
-                },
-                new Dictionary<string, HeaderParameterSpec>()
-            );
-            return await _client.PostAsync<Sdkwork.ClawRouter.App.Models.FeedsCollectionsCreateResult>(ApiPaths.AppendQueryString(ApiPaths.AppPath($"/content/feeds/{SerializePathParameter(id, new PathParameterSpec("id", "simple", false))}/collections"), queryString), null, null, requestHeaders);
+            return await _client.PostAsync<Sdkwork.ClawRouter.App.Models.FeedsCollectionsCreateResult>(ApiPaths.AppendQueryString(ApiPaths.AppPath($"/content/feeds/{SerializePathParameter(id, new PathParameterSpec("id", "simple", false))}/collections"), queryString), null);
         }
 
         /// <summary>
         /// Uncollect forum feed
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.App.Models.FeedsCollectionsCurrentDeleteResult?> FeedsCollectionsCurrentDeleteAsync(string id, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.App.Models.FeedsCollectionsCurrentDeleteResult?> FeedsCollectionsCurrentDeleteAsync(string id)
         {
-            var requestHeaders = BuildRequestHeaders(
-                new Dictionary<string, HeaderParameterSpec>
-                {
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
-                },
-                new Dictionary<string, HeaderParameterSpec>()
-            );
-            return await _client.DeleteAsync<Sdkwork.ClawRouter.App.Models.FeedsCollectionsCurrentDeleteResult>(ApiPaths.AppPath($"/content/feeds/{SerializePathParameter(id, new PathParameterSpec("id", "simple", false))}/collections/current"), null, requestHeaders);
+            return await _client.DeleteAsync<Sdkwork.ClawRouter.App.Models.FeedsCollectionsCurrentDeleteResult>(ApiPaths.AppPath($"/content/feeds/{SerializePathParameter(id, new PathParameterSpec("id", "simple", false))}/collections/current"));
         }
 
         /// <summary>
@@ -322,46 +273,25 @@ namespace Sdkwork.ClawRouter.App.Api
         /// <summary>
         /// Like forum feed
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.App.Models.FeedsLikesCreateResult?> FeedsLikesCreateAsync(string id, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.App.Models.FeedsLikesCreateResult?> FeedsLikesCreateAsync(string id)
         {
-            var requestHeaders = BuildRequestHeaders(
-                new Dictionary<string, HeaderParameterSpec>
-                {
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
-                },
-                new Dictionary<string, HeaderParameterSpec>()
-            );
-            return await _client.PostAsync<Sdkwork.ClawRouter.App.Models.FeedsLikesCreateResult>(ApiPaths.AppPath($"/content/feeds/{SerializePathParameter(id, new PathParameterSpec("id", "simple", false))}/likes"), null, null, requestHeaders);
+            return await _client.PostAsync<Sdkwork.ClawRouter.App.Models.FeedsLikesCreateResult>(ApiPaths.AppPath($"/content/feeds/{SerializePathParameter(id, new PathParameterSpec("id", "simple", false))}/likes"), null);
         }
 
         /// <summary>
         /// Unlike forum feed
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.App.Models.FeedsLikesCurrentDeleteResult?> FeedsLikesCurrentDeleteAsync(string id, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.App.Models.FeedsLikesCurrentDeleteResult?> FeedsLikesCurrentDeleteAsync(string id)
         {
-            var requestHeaders = BuildRequestHeaders(
-                new Dictionary<string, HeaderParameterSpec>
-                {
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
-                },
-                new Dictionary<string, HeaderParameterSpec>()
-            );
-            return await _client.DeleteAsync<Sdkwork.ClawRouter.App.Models.FeedsLikesCurrentDeleteResult>(ApiPaths.AppPath($"/content/feeds/{SerializePathParameter(id, new PathParameterSpec("id", "simple", false))}/likes/current"), null, requestHeaders);
+            return await _client.DeleteAsync<Sdkwork.ClawRouter.App.Models.FeedsLikesCurrentDeleteResult>(ApiPaths.AppPath($"/content/feeds/{SerializePathParameter(id, new PathParameterSpec("id", "simple", false))}/likes/current"));
         }
 
         /// <summary>
         /// Share forum feed
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.App.Models.FeedsSharesCreateResult?> FeedsSharesCreateAsync(string id, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.App.Models.FeedsSharesCreateResult?> FeedsSharesCreateAsync(string id)
         {
-            var requestHeaders = BuildRequestHeaders(
-                new Dictionary<string, HeaderParameterSpec>
-                {
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
-                },
-                new Dictionary<string, HeaderParameterSpec>()
-            );
-            return await _client.PostAsync<Sdkwork.ClawRouter.App.Models.FeedsSharesCreateResult>(ApiPaths.AppPath($"/content/feeds/{SerializePathParameter(id, new PathParameterSpec("id", "simple", false))}/shares"), null, null, requestHeaders);
+            return await _client.PostAsync<Sdkwork.ClawRouter.App.Models.FeedsSharesCreateResult>(ApiPaths.AppPath($"/content/feeds/{SerializePathParameter(id, new PathParameterSpec("id", "simple", false))}/shares"), null);
         }
 
         /// <summary>
@@ -660,92 +590,5 @@ namespace Sdkwork.ClawRouter.App.Api
                 .Replace("%3B", ";").Replace("%3D", "=");
         }
 
-        private sealed record HeaderParameterSpec(object? Value, string Style, bool Explode, string? ContentType);
-
-        private static Dictionary<string, string>? BuildRequestHeaders(
-            Dictionary<string, HeaderParameterSpec> headers,
-            Dictionary<string, HeaderParameterSpec> cookies)
-        {
-            var requestHeaders = new Dictionary<string, string>();
-            foreach (var item in headers)
-            {
-                var serialized = SerializeParameterValue(item.Value);
-                if (serialized is not null)
-                {
-                    requestHeaders[item.Key] = serialized;
-                }
-            }
-
-            var cookieHeader = BuildCookieHeader(cookies);
-            if (!string.IsNullOrEmpty(cookieHeader))
-            {
-                requestHeaders["Cookie"] = requestHeaders.TryGetValue("Cookie", out var existing) && !string.IsNullOrEmpty(existing)
-                    ? existing + "; " + cookieHeader
-                    : cookieHeader;
-            }
-
-            return requestHeaders.Count == 0 ? null : requestHeaders;
-        }
-
-        private static string BuildCookieHeader(Dictionary<string, HeaderParameterSpec> cookies)
-        {
-            var pairs = new List<string>();
-            foreach (var item in cookies)
-            {
-                var serialized = SerializeParameterValue(item.Value);
-                if (serialized is not null)
-                {
-                    pairs.Add(Uri.EscapeDataString(item.Key) + "=" + Uri.EscapeDataString(serialized));
-                }
-            }
-            return string.Join("; ", pairs);
-        }
-
-        private static string? SerializeParameterValue(HeaderParameterSpec? parameter)
-        {
-            var value = parameter?.Value;
-            if (value is null)
-            {
-                return null;
-            }
-            if (!string.IsNullOrWhiteSpace(parameter!.ContentType))
-            {
-                return System.Text.Json.JsonSerializer.Serialize(value);
-            }
-            if (value is System.Collections.IEnumerable enumerable && value is not string)
-            {
-                var values = new List<string>();
-                foreach (var item in enumerable)
-                {
-                    if (item is not null)
-                    {
-                        values.Add(item.ToString() ?? string.Empty);
-                    }
-                }
-                return string.Join(",", values);
-            }
-            if (value is System.Collections.IDictionary dictionary)
-            {
-                var values = new List<string>();
-                foreach (System.Collections.DictionaryEntry item in dictionary)
-                {
-                    if (item.Value is null)
-                    {
-                        continue;
-                    }
-                    if (parameter.Explode)
-                    {
-                        values.Add((item.Key.ToString() ?? string.Empty) + "=" + (item.Value.ToString() ?? string.Empty));
-                    }
-                    else
-                    {
-                        values.Add(item.Key.ToString() ?? string.Empty);
-                        values.Add(item.Value.ToString() ?? string.Empty);
-                    }
-                }
-                return string.Join(",", values);
-            }
-            return value.ToString();
-        }
     }
 }

@@ -1,4 +1,4 @@
-import assert from "node:assert/strict";
+﻿import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import { resolve } from "node:path";
 import test from "node:test";
@@ -910,6 +910,21 @@ test("admin model service calls generated backend SDK paths and normalizes model
   );
 });
 
+test("admin model service does not own AI channel resource operations", () => {
+  const source = readFileSync(
+    resolve(PORTAL_ROOT, "packages/sdkwork-claw-router-admin-model/src/modelService.ts"),
+    "utf8",
+  );
+  const indexSource = readFileSync(
+    resolve(PORTAL_ROOT, "packages/sdkwork-claw-router-admin-model/src/index.tsx"),
+    "utf8",
+  );
+
+  assert.doesNotMatch(source, /fetchAiResources/);
+  assert.doesNotMatch(source, /AdminAiResourceItem/);
+  assert.doesNotMatch(indexSource, /AiResource/);
+});
+
 test("admin model service initializes empty catalog through generated backend SDK refresh", async () => {
   await withBackendSdkFetch(
     (url, init) => {
@@ -1459,7 +1474,7 @@ test("admin model service rejects invalid commands before calling generated back
         () =>
           ModelService.addModel({
             vendorId: "vendor-1",
-            name: "gpt-4o-mini",
+            model: "gpt-4o-mini",
             type: "Chat",
             priceIn: "0",
             priceOut: "0.2",
@@ -1471,7 +1486,7 @@ test("admin model service rejects invalid commands before calling generated back
         () =>
           ModelService.addModel({
             vendorId: "vendor-1",
-            name: "gpt-4o-mini",
+            model: "gpt-4o-mini",
             type: "Vision" as never,
             priceIn: "0.1",
             priceOut: "0.2",
@@ -1483,7 +1498,7 @@ test("admin model service rejects invalid commands before calling generated back
         () =>
           ModelService.addModel({
             vendorId: "vendor-1",
-            name: "gpt-4o-mini",
+            model: "gpt-4o-mini",
             type: "Chat",
             priceIn: "0.1",
             priceOut: "0.2",

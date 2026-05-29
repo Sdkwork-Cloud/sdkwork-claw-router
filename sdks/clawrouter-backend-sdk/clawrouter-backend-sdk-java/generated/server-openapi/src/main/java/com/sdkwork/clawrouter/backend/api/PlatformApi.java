@@ -14,7 +14,7 @@ public class PlatformApi {
     }
 
     /** List apps */
-    public AppsListResult appsList(String q, String status, String marketStatus, String appType, Integer categoryId, Integer page, Integer pageSize, String xRequestId) throws Exception {
+    public AppsListResult appsList(String q, String status, String marketStatus, String appType, Integer categoryId, Integer page, Integer pageSize) throws Exception {
         String query = buildQueryString(List.of(
             new QueryParameterSpec("q", q, "form", true, false, null),
             new QueryParameterSpec("status", status, "form", true, false, null),
@@ -24,21 +24,13 @@ public class PlatformApi {
             new QueryParameterSpec("page", page, "form", true, false, null),
             new QueryParameterSpec("page_size", pageSize, "form", true, false, null)
         ));
-        Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
-                Map.of()
-        );
-        Object raw = client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/platform/apps"), query), null, requestHeaders);
+        Object raw = client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/platform/apps"), query));
         return client.convertValue(raw, new TypeReference<AppsListResult>() {});
     }
 
     /** Create app */
-    public AppsCreateResult appsCreate(AdminAppCreateRequest body, String xRequestId) throws Exception {
-        Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
-                Map.of()
-        );
-        Object raw = client.post(ApiPaths.backendPath("/platform/apps"), body, null, requestHeaders, "application/json");
+    public AppsCreateResult appsCreate(AdminAppCreateRequest body) throws Exception {
+        Object raw = client.post(ApiPaths.backendPath("/platform/apps"), body, null, null, "application/json");
         return client.convertValue(raw, new TypeReference<AppsCreateResult>() {});
     }
 
@@ -49,37 +41,25 @@ public class PlatformApi {
     }
 
     /** Create app category */
-    public AppsCategoriesCreateResult appsCategoriesCreate(AdminAppCategoryCreateRequest body, String xRequestId) throws Exception {
-        Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
-                Map.of()
-        );
-        Object raw = client.post(ApiPaths.backendPath("/platform/apps/categories"), body, null, requestHeaders, "application/json");
+    public AppsCategoriesCreateResult appsCategoriesCreate(AdminAppCategoryCreateRequest body) throws Exception {
+        Object raw = client.post(ApiPaths.backendPath("/platform/apps/categories"), body, null, null, "application/json");
         return client.convertValue(raw, new TypeReference<AppsCategoriesCreateResult>() {});
     }
 
     /** Delete app category */
-    public AppsCategoriesDeleteResult appsCategoriesDelete(String categoryId, String xRequestId) throws Exception {
-        Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
-                Map.of()
-        );
-        Object raw = client.delete(ApiPaths.backendPath("/platform/apps/categories/" + serializePathParameter(categoryId, new PathParameterSpec("categoryId", "simple", false)) + ""), null, requestHeaders);
+    public AppsCategoriesDeleteResult appsCategoriesDelete(String categoryId) throws Exception {
+        Object raw = client.delete(ApiPaths.backendPath("/platform/apps/categories/" + serializePathParameter(categoryId, new PathParameterSpec("categoryId", "simple", false)) + ""));
         return client.convertValue(raw, new TypeReference<AppsCategoriesDeleteResult>() {});
     }
 
     /** Update app category */
-    public AppsCategoriesUpdateResult appsCategoriesUpdate(String categoryId, AdminAppCategoryUpdateRequest body, String xRequestId) throws Exception {
-        Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
-                Map.of()
-        );
-        Object raw = client.put(ApiPaths.backendPath("/platform/apps/categories/" + serializePathParameter(categoryId, new PathParameterSpec("categoryId", "simple", false)) + ""), body, null, requestHeaders, "application/json");
+    public AppsCategoriesUpdateResult appsCategoriesUpdate(String categoryId, AdminAppCategoryUpdateRequest body) throws Exception {
+        Object raw = client.put(ApiPaths.backendPath("/platform/apps/categories/" + serializePathParameter(categoryId, new PathParameterSpec("categoryId", "simple", false)) + ""), body, null, null, "application/json");
         return client.convertValue(raw, new TypeReference<AppsCategoriesUpdateResult>() {});
     }
 
     /** List app templates */
-    public AppsTemplatesListResult appsTemplatesList(String q, String publishStatus, String templateType, String runtime, Integer categoryId, Integer page, Integer pageSize, String xRequestId) throws Exception {
+    public AppsTemplatesListResult appsTemplatesList(String q, String publishStatus, String templateType, String runtime, Integer categoryId, Integer page, Integer pageSize) throws Exception {
         String query = buildQueryString(List.of(
             new QueryParameterSpec("q", q, "form", true, false, null),
             new QueryParameterSpec("publish_status", publishStatus, "form", true, false, null),
@@ -89,141 +69,85 @@ public class PlatformApi {
             new QueryParameterSpec("page", page, "form", true, false, null),
             new QueryParameterSpec("page_size", pageSize, "form", true, false, null)
         ));
-        Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
-                Map.of()
-        );
-        Object raw = client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/platform/apps/templates"), query), null, requestHeaders);
+        Object raw = client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/platform/apps/templates"), query));
         return client.convertValue(raw, new TypeReference<AppsTemplatesListResult>() {});
     }
 
     /** Create app template */
-    public AppsTemplatesCreateResult appsTemplatesCreate(AdminAppTemplateCreateRequest body, String xRequestId) throws Exception {
-        Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
-                Map.of()
-        );
-        Object raw = client.post(ApiPaths.backendPath("/platform/apps/templates"), body, null, requestHeaders, "application/json");
+    public AppsTemplatesCreateResult appsTemplatesCreate(AdminAppTemplateCreateRequest body) throws Exception {
+        Object raw = client.post(ApiPaths.backendPath("/platform/apps/templates"), body, null, null, "application/json");
         return client.convertValue(raw, new TypeReference<AppsTemplatesCreateResult>() {});
     }
 
     /** Delete app template */
-    public AppsTemplatesDeleteResult appsTemplatesDelete(String templateId, String xRequestId) throws Exception {
-        Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
-                Map.of()
-        );
-        Object raw = client.delete(ApiPaths.backendPath("/platform/apps/templates/" + serializePathParameter(templateId, new PathParameterSpec("templateId", "simple", false)) + ""), null, requestHeaders);
+    public AppsTemplatesDeleteResult appsTemplatesDelete(String templateId) throws Exception {
+        Object raw = client.delete(ApiPaths.backendPath("/platform/apps/templates/" + serializePathParameter(templateId, new PathParameterSpec("templateId", "simple", false)) + ""));
         return client.convertValue(raw, new TypeReference<AppsTemplatesDeleteResult>() {});
     }
 
     /** List app template */
-    public AppsTemplatesRetrieveResult appsTemplatesRetrieve(String templateId, String xRequestId) throws Exception {
-        Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
-                Map.of()
-        );
-        Object raw = client.get(ApiPaths.backendPath("/platform/apps/templates/" + serializePathParameter(templateId, new PathParameterSpec("templateId", "simple", false)) + ""), null, requestHeaders);
+    public AppsTemplatesRetrieveResult appsTemplatesRetrieve(String templateId) throws Exception {
+        Object raw = client.get(ApiPaths.backendPath("/platform/apps/templates/" + serializePathParameter(templateId, new PathParameterSpec("templateId", "simple", false)) + ""));
         return client.convertValue(raw, new TypeReference<AppsTemplatesRetrieveResult>() {});
     }
 
     /** Update app template */
-    public AppsTemplatesUpdateResult appsTemplatesUpdate(String templateId, AdminAppTemplateUpdateRequest body, String xRequestId) throws Exception {
-        Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
-                Map.of()
-        );
-        Object raw = client.put(ApiPaths.backendPath("/platform/apps/templates/" + serializePathParameter(templateId, new PathParameterSpec("templateId", "simple", false)) + ""), body, null, requestHeaders, "application/json");
+    public AppsTemplatesUpdateResult appsTemplatesUpdate(String templateId, AdminAppTemplateUpdateRequest body) throws Exception {
+        Object raw = client.put(ApiPaths.backendPath("/platform/apps/templates/" + serializePathParameter(templateId, new PathParameterSpec("templateId", "simple", false)) + ""), body, null, null, "application/json");
         return client.convertValue(raw, new TypeReference<AppsTemplatesUpdateResult>() {});
     }
 
     /** Publish app template */
-    public AppsTemplatesPublishResult appsTemplatesPublish(String templateId, String xRequestId) throws Exception {
-        Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
-                Map.of()
-        );
-        Object raw = client.post(ApiPaths.backendPath("/platform/apps/templates/" + serializePathParameter(templateId, new PathParameterSpec("templateId", "simple", false)) + "/publish"), null, null, requestHeaders);
+    public AppsTemplatesPublishResult appsTemplatesPublish(String templateId) throws Exception {
+        Object raw = client.post(ApiPaths.backendPath("/platform/apps/templates/" + serializePathParameter(templateId, new PathParameterSpec("templateId", "simple", false)) + "/publish"), null);
         return client.convertValue(raw, new TypeReference<AppsTemplatesPublishResult>() {});
     }
 
     /** Offline app template */
-    public AppsTemplatesUnpublishResult appsTemplatesUnpublish(String templateId, String xRequestId) throws Exception {
-        Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
-                Map.of()
-        );
-        Object raw = client.post(ApiPaths.backendPath("/platform/apps/templates/" + serializePathParameter(templateId, new PathParameterSpec("templateId", "simple", false)) + "/unpublish"), null, null, requestHeaders);
+    public AppsTemplatesUnpublishResult appsTemplatesUnpublish(String templateId) throws Exception {
+        Object raw = client.post(ApiPaths.backendPath("/platform/apps/templates/" + serializePathParameter(templateId, new PathParameterSpec("templateId", "simple", false)) + "/unpublish"), null);
         return client.convertValue(raw, new TypeReference<AppsTemplatesUnpublishResult>() {});
     }
 
     /** Delete app */
-    public AppsDeleteResult appsDelete(String appId, String xRequestId) throws Exception {
-        Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
-                Map.of()
-        );
-        Object raw = client.delete(ApiPaths.backendPath("/platform/apps/" + serializePathParameter(appId, new PathParameterSpec("appId", "simple", false)) + ""), null, requestHeaders);
+    public AppsDeleteResult appsDelete(String appId) throws Exception {
+        Object raw = client.delete(ApiPaths.backendPath("/platform/apps/" + serializePathParameter(appId, new PathParameterSpec("appId", "simple", false)) + ""));
         return client.convertValue(raw, new TypeReference<AppsDeleteResult>() {});
     }
 
     /** List app */
-    public AppsRetrieveResult appsRetrieve(String appId, String xRequestId) throws Exception {
-        Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
-                Map.of()
-        );
-        Object raw = client.get(ApiPaths.backendPath("/platform/apps/" + serializePathParameter(appId, new PathParameterSpec("appId", "simple", false)) + ""), null, requestHeaders);
+    public AppsRetrieveResult appsRetrieve(String appId) throws Exception {
+        Object raw = client.get(ApiPaths.backendPath("/platform/apps/" + serializePathParameter(appId, new PathParameterSpec("appId", "simple", false)) + ""));
         return client.convertValue(raw, new TypeReference<AppsRetrieveResult>() {});
     }
 
     /** Update app */
-    public AppsUpdateResult appsUpdate(String appId, AdminAppUpdateRequest body, String xRequestId) throws Exception {
-        Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
-                Map.of()
-        );
-        Object raw = client.put(ApiPaths.backendPath("/platform/apps/" + serializePathParameter(appId, new PathParameterSpec("appId", "simple", false)) + ""), body, null, requestHeaders, "application/json");
+    public AppsUpdateResult appsUpdate(String appId, AdminAppUpdateRequest body) throws Exception {
+        Object raw = client.put(ApiPaths.backendPath("/platform/apps/" + serializePathParameter(appId, new PathParameterSpec("appId", "simple", false)) + ""), body, null, null, "application/json");
         return client.convertValue(raw, new TypeReference<AppsUpdateResult>() {});
     }
 
     /** Disable app */
-    public AppsDisableResult appsDisable(String appId, String xRequestId) throws Exception {
-        Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
-                Map.of()
-        );
-        Object raw = client.post(ApiPaths.backendPath("/platform/apps/" + serializePathParameter(appId, new PathParameterSpec("appId", "simple", false)) + "/disable"), null, null, requestHeaders);
+    public AppsDisableResult appsDisable(String appId) throws Exception {
+        Object raw = client.post(ApiPaths.backendPath("/platform/apps/" + serializePathParameter(appId, new PathParameterSpec("appId", "simple", false)) + "/disable"), null);
         return client.convertValue(raw, new TypeReference<AppsDisableResult>() {});
     }
 
     /** Enable app */
-    public AppsEnableResult appsEnable(String appId, String xRequestId) throws Exception {
-        Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
-                Map.of()
-        );
-        Object raw = client.post(ApiPaths.backendPath("/platform/apps/" + serializePathParameter(appId, new PathParameterSpec("appId", "simple", false)) + "/enable"), null, null, requestHeaders);
+    public AppsEnableResult appsEnable(String appId) throws Exception {
+        Object raw = client.post(ApiPaths.backendPath("/platform/apps/" + serializePathParameter(appId, new PathParameterSpec("appId", "simple", false)) + "/enable"), null);
         return client.convertValue(raw, new TypeReference<AppsEnableResult>() {});
     }
 
     /** Publish app */
-    public AppsPublishResult appsPublish(String appId, String xRequestId) throws Exception {
-        Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
-                Map.of()
-        );
-        Object raw = client.post(ApiPaths.backendPath("/platform/apps/" + serializePathParameter(appId, new PathParameterSpec("appId", "simple", false)) + "/publish"), null, null, requestHeaders);
+    public AppsPublishResult appsPublish(String appId) throws Exception {
+        Object raw = client.post(ApiPaths.backendPath("/platform/apps/" + serializePathParameter(appId, new PathParameterSpec("appId", "simple", false)) + "/publish"), null);
         return client.convertValue(raw, new TypeReference<AppsPublishResult>() {});
     }
 
     /** Offline app */
-    public AppsUnpublishResult appsUnpublish(String appId, String xRequestId) throws Exception {
-        Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
-                Map.of()
-        );
-        Object raw = client.post(ApiPaths.backendPath("/platform/apps/" + serializePathParameter(appId, new PathParameterSpec("appId", "simple", false)) + "/unpublish"), null, null, requestHeaders);
+    public AppsUnpublishResult appsUnpublish(String appId) throws Exception {
+        Object raw = client.post(ApiPaths.backendPath("/platform/apps/" + serializePathParameter(appId, new PathParameterSpec("appId", "simple", false)) + "/unpublish"), null);
         return client.convertValue(raw, new TypeReference<AppsUnpublishResult>() {});
     }
 
@@ -416,74 +340,6 @@ public class PlatformApi {
         return new com.fasterxml.jackson.databind.ObjectMapper();
     }
 
-    private record HeaderParameterSpec(Object value, String style, boolean explode, String contentType) {}
-
-    private static Map<String, String> buildRequestHeaders(Map<String, HeaderParameterSpec> headers, Map<String, HeaderParameterSpec> cookies) throws Exception {
-        Map<String, String> requestHeaders = new java.util.LinkedHashMap<>();
-        for (Map.Entry<String, HeaderParameterSpec> entry : headers.entrySet()) {
-            String serialized = serializeParameterValue(entry.getValue());
-            if (serialized != null) {
-                requestHeaders.put(entry.getKey(), serialized);
-            }
-        }
-
-        String cookieHeader = buildCookieHeader(cookies);
-        if (cookieHeader != null && !cookieHeader.isEmpty()) {
-            requestHeaders.merge("Cookie", cookieHeader, (left, right) -> left + "; " + right);
-        }
-
-        return requestHeaders.isEmpty() ? null : requestHeaders;
-    }
-
-    private static String buildCookieHeader(Map<String, HeaderParameterSpec> cookies) throws Exception {
-        java.util.List<String> pairs = new java.util.ArrayList<>();
-        for (Map.Entry<String, HeaderParameterSpec> entry : cookies.entrySet()) {
-            String serialized = serializeParameterValue(entry.getValue());
-            if (serialized != null) {
-                pairs.add(urlEncode(entry.getKey()) + "=" + urlEncode(serialized));
-            }
-        }
-        return String.join("; ", pairs);
-    }
-
-    private static String serializeParameterValue(HeaderParameterSpec parameter) throws Exception {
-        if (parameter == null || parameter.value() == null) {
-            return null;
-        }
-        Object value = parameter.value();
-        if (parameter.contentType() != null && !parameter.contentType().isBlank()) {
-            return headerObjectMapper().writeValueAsString(value);
-        }
-        if (value instanceof Iterable<?> iterable) {
-            java.util.List<String> values = new java.util.ArrayList<>();
-            for (Object item : iterable) {
-                if (item != null) {
-                    values.add(String.valueOf(item));
-                }
-            }
-            return String.join(",", values);
-        }
-        if (value instanceof Map<?, ?> map) {
-            java.util.List<String> values = new java.util.ArrayList<>();
-            map.forEach((key, item) -> {
-                if (item == null) {
-                    return;
-                }
-                if (parameter.explode()) {
-                    values.add(String.valueOf(key) + "=" + String.valueOf(item));
-                } else {
-                    values.add(String.valueOf(key));
-                    values.add(String.valueOf(item));
-                }
-            });
-            return String.join(",", values);
-        }
-        return String.valueOf(value);
-    }
-
-    private static com.fasterxml.jackson.databind.ObjectMapper headerObjectMapper() {
-        return new com.fasterxml.jackson.databind.ObjectMapper();
-    }
 
     private static String urlEncode(String value) {
         return java.net.URLEncoder.encode(value, java.nio.charset.StandardCharsets.UTF_8);

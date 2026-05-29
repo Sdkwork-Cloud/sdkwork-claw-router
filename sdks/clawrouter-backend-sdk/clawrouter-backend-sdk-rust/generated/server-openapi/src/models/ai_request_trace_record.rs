@@ -3,14 +3,6 @@ use serde::{Deserialize, Serialize};
 /// Ai request trace record schema exposed by Claw Router.
 #[derive(Serialize, Deserialize, Debug, Clone, Default)]
 pub struct AiRequestTraceRecord {
-    /// Api key group id field on ai request trace record.
-    #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub api_key_group_id: Option<String>,
-
-    /// Api key group snapshot field on ai request trace record.
-    #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub api_key_group_snapshot: Option<String>,
-
     /// Api key id field on ai request trace record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub api_key_id: Option<String>,
@@ -26,6 +18,14 @@ pub struct AiRequestTraceRecord {
     /// Cached tokens field on ai request trace record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub cached_tokens: Option<String>,
+
+    /// Channel group id field on ai request trace record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub channel_group_id: Option<String>,
+
+    /// Channel group snapshot field on ai request trace record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub channel_group_snapshot: Option<String>,
 
     /// Channel id field on ai request trace record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
@@ -126,10 +126,6 @@ pub struct AiRequestTraceRecord {
     /// Prompt tokens field on ai request trace record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub prompt_tokens: Option<String>,
-
-    /// Provider account id field on ai request trace record.
-    #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub provider_account_id: Option<String>,
 
     /// Provider error code field on ai request trace record.
     #[serde(default, skip_serializing_if = "Option::is_none")]

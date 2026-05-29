@@ -23,11 +23,10 @@ public class CommerceApi {
     }
 
     /// Addresses Create
-    public func addressesCreate(body: CommerceStandardCommandRequest, idempotencyKey: String, xRequestId: String? = nil) async throws -> AddressesCreateResult? {
+    public func addressesCreate(body: CommerceStandardCommandRequest, idempotencyKey: String) async throws -> AddressesCreateResult? {
         let requestHeaders = buildRequestHeaders(
             [
                 "Idempotency-Key": HeaderParameterSpec(value: idempotencyKey, style: "simple", explode: false, contentType: nil),
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
             ],
             [:]
         )
@@ -35,11 +34,10 @@ public class CommerceApi {
     }
 
     /// Addresses Delete
-    public func addressesDelete(addressId: String, idempotencyKey: String, xRequestId: String? = nil) async throws -> AddressesDeleteResult? {
+    public func addressesDelete(addressId: String, idempotencyKey: String) async throws -> AddressesDeleteResult? {
         let requestHeaders = buildRequestHeaders(
             [
                 "Idempotency-Key": HeaderParameterSpec(value: idempotencyKey, style: "simple", explode: false, contentType: nil),
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
             ],
             [:]
         )
@@ -47,11 +45,10 @@ public class CommerceApi {
     }
 
     /// Addresses Update
-    public func addressesUpdate(addressId: String, body: CommerceStandardCommandRequest, idempotencyKey: String, xRequestId: String? = nil) async throws -> AddressesUpdateResult? {
+    public func addressesUpdate(addressId: String, body: CommerceStandardCommandRequest, idempotencyKey: String) async throws -> AddressesUpdateResult? {
         let requestHeaders = buildRequestHeaders(
             [
                 "Idempotency-Key": HeaderParameterSpec(value: idempotencyKey, style: "simple", explode: false, contentType: nil),
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
             ],
             [:]
         )
@@ -59,11 +56,10 @@ public class CommerceApi {
     }
 
     /// Addresses Default Selection Create
-    public func addressesDefaultSelectionCreate(addressId: String, body: CommerceStandardCommandRequest, idempotencyKey: String, xRequestId: String? = nil) async throws -> AddressesDefaultSelectionCreateResult? {
+    public func addressesDefaultSelectionCreate(addressId: String, body: CommerceStandardCommandRequest, idempotencyKey: String) async throws -> AddressesDefaultSelectionCreateResult? {
         let requestHeaders = buildRequestHeaders(
             [
                 "Idempotency-Key": HeaderParameterSpec(value: idempotencyKey, style: "simple", explode: false, contentType: nil),
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
             ],
             [:]
         )
@@ -87,11 +83,10 @@ public class CommerceApi {
     }
 
     /// Cart Items Create
-    public func cartItemsCreate(body: CommerceStandardCommandRequest, idempotencyKey: String, xRequestId: String? = nil) async throws -> CartItemsCreateResult? {
+    public func cartItemsCreate(body: CommerceStandardCommandRequest, idempotencyKey: String) async throws -> CartItemsCreateResult? {
         let requestHeaders = buildRequestHeaders(
             [
                 "Idempotency-Key": HeaderParameterSpec(value: idempotencyKey, style: "simple", explode: false, contentType: nil),
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
             ],
             [:]
         )
@@ -99,11 +94,10 @@ public class CommerceApi {
     }
 
     /// Cart Items Delete
-    public func cartItemsDelete(cartItemId: String, idempotencyKey: String, xRequestId: String? = nil) async throws -> CartItemsDeleteResult? {
+    public func cartItemsDelete(cartItemId: String, idempotencyKey: String) async throws -> CartItemsDeleteResult? {
         let requestHeaders = buildRequestHeaders(
             [
                 "Idempotency-Key": HeaderParameterSpec(value: idempotencyKey, style: "simple", explode: false, contentType: nil),
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
             ],
             [:]
         )
@@ -111,11 +105,10 @@ public class CommerceApi {
     }
 
     /// Cart Items Update
-    public func cartItemsUpdate(cartItemId: String, body: CommerceStandardCommandRequest, idempotencyKey: String, xRequestId: String? = nil) async throws -> CartItemsUpdateResult? {
+    public func cartItemsUpdate(cartItemId: String, body: CommerceStandardCommandRequest, idempotencyKey: String) async throws -> CartItemsUpdateResult? {
         let requestHeaders = buildRequestHeaders(
             [
                 "Idempotency-Key": HeaderParameterSpec(value: idempotencyKey, style: "simple", explode: false, contentType: nil),
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
             ],
             [:]
         )
@@ -158,11 +151,10 @@ public class CommerceApi {
     }
 
     /// Checkout Sessions Create
-    public func checkoutSessionsCreate(body: CommerceStandardCommandRequest, idempotencyKey: String, xRequestId: String? = nil) async throws -> CheckoutSessionsCreateResult? {
+    public func checkoutSessionsCreate(body: CommerceStandardCommandRequest, idempotencyKey: String) async throws -> CheckoutSessionsCreateResult? {
         let requestHeaders = buildRequestHeaders(
             [
                 "Idempotency-Key": HeaderParameterSpec(value: idempotencyKey, style: "simple", explode: false, contentType: nil),
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
             ],
             [:]
         )
@@ -175,11 +167,10 @@ public class CommerceApi {
     }
 
     /// Checkout Sessions Orders Create
-    public func checkoutSessionsOrdersCreate(checkoutSessionId: String, body: CommerceStandardCommandRequest, idempotencyKey: String, xRequestId: String? = nil) async throws -> CheckoutSessionsOrdersCreateResult? {
+    public func checkoutSessionsOrdersCreate(checkoutSessionId: String, body: CommerceStandardCommandRequest, idempotencyKey: String) async throws -> CheckoutSessionsOrdersCreateResult? {
         let requestHeaders = buildRequestHeaders(
             [
                 "Idempotency-Key": HeaderParameterSpec(value: idempotencyKey, style: "simple", explode: false, contentType: nil),
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
             ],
             [:]
         )
@@ -187,11 +178,10 @@ public class CommerceApi {
     }
 
     /// Checkout Sessions Quotes Create
-    public func checkoutSessionsQuotesCreate(checkoutSessionId: String, body: CommerceStandardCommandRequest, idempotencyKey: String, xRequestId: String? = nil) async throws -> CheckoutSessionsQuotesCreateResult? {
+    public func checkoutSessionsQuotesCreate(checkoutSessionId: String, body: CommerceStandardCommandRequest, idempotencyKey: String) async throws -> CheckoutSessionsQuotesCreateResult? {
         let requestHeaders = buildRequestHeaders(
             [
                 "Idempotency-Key": HeaderParameterSpec(value: idempotencyKey, style: "simple", explode: false, contentType: nil),
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
             ],
             [:]
         )
@@ -224,11 +214,10 @@ public class CommerceApi {
     }
 
     /// Invoices Create
-    public func invoicesCreate(body: CommerceStandardCommandRequest, idempotencyKey: String, xRequestId: String? = nil) async throws -> InvoicesCreateResult? {
+    public func invoicesCreate(body: CommerceStandardCommandRequest, idempotencyKey: String) async throws -> InvoicesCreateResult? {
         let requestHeaders = buildRequestHeaders(
             [
                 "Idempotency-Key": HeaderParameterSpec(value: idempotencyKey, style: "simple", explode: false, contentType: nil),
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
             ],
             [:]
         )
@@ -306,14 +295,8 @@ public class CommerceApi {
     }
 
     /// Memberships Points Daily Rewards Create
-    public func membershipsPointsDailyRewardsCreate(body: MembershipsPointsDailyRewardsCreateRequest? = nil, xRequestId: String? = nil) async throws -> MembershipsPointsDailyRewardsCreateResult? {
-        let requestHeaders = buildRequestHeaders(
-            [
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
-            ],
-            [:]
-        )
-        return try await client.post(ApiPaths.appPath("/memberships/points/daily_rewards"), body: body, params: nil, headers: requestHeaders, contentType: "application/json", responseType: MembershipsPointsDailyRewardsCreateResult.self)
+    public func membershipsPointsDailyRewardsCreate(body: MembershipsPointsDailyRewardsCreateRequest? = nil) async throws -> MembershipsPointsDailyRewardsCreateResult? {
+        return try await client.post(ApiPaths.appPath("/memberships/points/daily_rewards"), body: body, params: nil, headers: nil, contentType: "application/json", responseType: MembershipsPointsDailyRewardsCreateResult.self)
     }
 
     /// Memberships Points Daily Rewards Status Retrieve
@@ -332,14 +315,8 @@ public class CommerceApi {
     }
 
     /// Memberships Privileges Speed Ups Create
-    public func membershipsPrivilegesSpeedUpsCreate(body: MembershipsPrivilegesSpeedUpsCreateRequest? = nil, xRequestId: String? = nil) async throws -> MembershipsPrivilegesSpeedUpsCreateResult? {
-        let requestHeaders = buildRequestHeaders(
-            [
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
-            ],
-            [:]
-        )
-        return try await client.post(ApiPaths.appPath("/memberships/privileges/speed_ups"), body: body, params: nil, headers: requestHeaders, contentType: "application/json", responseType: MembershipsPrivilegesSpeedUpsCreateResult.self)
+    public func membershipsPrivilegesSpeedUpsCreate(body: MembershipsPrivilegesSpeedUpsCreateRequest? = nil) async throws -> MembershipsPrivilegesSpeedUpsCreateResult? {
+        return try await client.post(ApiPaths.appPath("/memberships/privileges/speed_ups"), body: body, params: nil, headers: nil, contentType: "application/json", responseType: MembershipsPrivilegesSpeedUpsCreateResult.self)
     }
 
     /// Memberships Privileges Usage Retrieve
@@ -348,11 +325,10 @@ public class CommerceApi {
     }
 
     /// Memberships Purchases Create
-    public func membershipsPurchasesCreate(body: CommerceMembershipPurchaseRequest, idempotencyKey: String, xRequestId: String? = nil) async throws -> MembershipsPurchasesCreateResult? {
+    public func membershipsPurchasesCreate(body: CommerceMembershipPurchaseRequest, idempotencyKey: String) async throws -> MembershipsPurchasesCreateResult? {
         let requestHeaders = buildRequestHeaders(
             [
                 "Idempotency-Key": HeaderParameterSpec(value: idempotencyKey, style: "simple", explode: false, contentType: nil),
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
             ],
             [:]
         )
@@ -360,11 +336,10 @@ public class CommerceApi {
     }
 
     /// Memberships Purchases Renew
-    public func membershipsPurchasesRenew(body: CommerceMembershipPurchaseRequest, idempotencyKey: String, xRequestId: String? = nil) async throws -> MembershipsPurchasesRenewResult? {
+    public func membershipsPurchasesRenew(body: CommerceMembershipPurchaseRequest, idempotencyKey: String) async throws -> MembershipsPurchasesRenewResult? {
         let requestHeaders = buildRequestHeaders(
             [
                 "Idempotency-Key": HeaderParameterSpec(value: idempotencyKey, style: "simple", explode: false, contentType: nil),
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
             ],
             [:]
         )
@@ -372,11 +347,10 @@ public class CommerceApi {
     }
 
     /// Memberships Purchases Upgrade
-    public func membershipsPurchasesUpgrade(body: CommerceMembershipPurchaseRequest, idempotencyKey: String, xRequestId: String? = nil) async throws -> MembershipsPurchasesUpgradeResult? {
+    public func membershipsPurchasesUpgrade(body: CommerceMembershipPurchaseRequest, idempotencyKey: String) async throws -> MembershipsPurchasesUpgradeResult? {
         let requestHeaders = buildRequestHeaders(
             [
                 "Idempotency-Key": HeaderParameterSpec(value: idempotencyKey, style: "simple", explode: false, contentType: nil),
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
             ],
             [:]
         )
@@ -399,11 +373,10 @@ public class CommerceApi {
     }
 
     /// Orders Cancellations Create
-    public func ordersCancellationsCreate(orderId: String, body: CommerceStandardCommandRequest, idempotencyKey: String, xRequestId: String? = nil) async throws -> OrdersCancellationsCreateResult? {
+    public func ordersCancellationsCreate(orderId: String, body: CommerceStandardCommandRequest, idempotencyKey: String) async throws -> OrdersCancellationsCreateResult? {
         let requestHeaders = buildRequestHeaders(
             [
                 "Idempotency-Key": HeaderParameterSpec(value: idempotencyKey, style: "simple", explode: false, contentType: nil),
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
             ],
             [:]
         )
@@ -426,11 +399,10 @@ public class CommerceApi {
     }
 
     /// Payments Intents Create
-    public func paymentsIntentsCreate(body: CommercePaymentIntentCreateRequest, idempotencyKey: String, xRequestId: String? = nil) async throws -> PaymentsIntentsCreateResult? {
+    public func paymentsIntentsCreate(body: CommercePaymentIntentCreateRequest, idempotencyKey: String) async throws -> PaymentsIntentsCreateResult? {
         let requestHeaders = buildRequestHeaders(
             [
                 "Idempotency-Key": HeaderParameterSpec(value: idempotencyKey, style: "simple", explode: false, contentType: nil),
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
             ],
             [:]
         )
@@ -443,11 +415,10 @@ public class CommerceApi {
     }
 
     /// Payments Intents Attempts Create
-    public func paymentsIntentsAttemptsCreate(paymentIntentId: String, body: CommercePaymentAttemptCreateRequest, idempotencyKey: String, xRequestId: String? = nil) async throws -> PaymentsIntentsAttemptsCreateResult? {
+    public func paymentsIntentsAttemptsCreate(paymentIntentId: String, body: CommercePaymentAttemptCreateRequest, idempotencyKey: String) async throws -> PaymentsIntentsAttemptsCreateResult? {
         let requestHeaders = buildRequestHeaders(
             [
                 "Idempotency-Key": HeaderParameterSpec(value: idempotencyKey, style: "simple", explode: false, contentType: nil),
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
             ],
             [:]
         )
@@ -465,11 +436,10 @@ public class CommerceApi {
     }
 
     /// Recharges Orders Create
-    public func rechargesOrdersCreate(body: CommerceStandardCommandRequest, idempotencyKey: String, xRequestId: String? = nil) async throws -> RechargesOrdersCreateResult? {
+    public func rechargesOrdersCreate(body: CommerceStandardCommandRequest, idempotencyKey: String) async throws -> RechargesOrdersCreateResult? {
         let requestHeaders = buildRequestHeaders(
             [
                 "Idempotency-Key": HeaderParameterSpec(value: idempotencyKey, style: "simple", explode: false, contentType: nil),
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
             ],
             [:]
         )
@@ -502,11 +472,10 @@ public class CommerceApi {
     }
 
     /// Refunds Create
-    public func refundsCreate(body: CommerceStandardCommandRequest, idempotencyKey: String, xRequestId: String? = nil) async throws -> RefundsCreateResult? {
+    public func refundsCreate(body: CommerceStandardCommandRequest, idempotencyKey: String) async throws -> RefundsCreateResult? {
         let requestHeaders = buildRequestHeaders(
             [
                 "Idempotency-Key": HeaderParameterSpec(value: idempotencyKey, style: "simple", explode: false, contentType: nil),
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
             ],
             [:]
         )

@@ -182,59 +182,6 @@ def encode_query_value(value: str, allow_reserved: bool) -> str:
 
     return quote(value, safe=':/?#[]@!$&\'()*+,;=' if allow_reserved else '')
 
-def build_request_headers(headers: Dict[str, Dict[str, Any]], cookies: Optional[Dict[str, Dict[str, Any]]] = None) -> Optional[Dict[str, str]]:
-    request_headers: Dict[str, str] = {}
-    for name, parameter in headers.items():
-        serialized = serialize_parameter_value(parameter)
-        if serialized is not None:
-            request_headers[name] = serialized
-
-    cookie_header = build_cookie_header(cookies or {})
-    if cookie_header:
-        request_headers['Cookie'] = (
-            f"{request_headers['Cookie']}; {cookie_header}"
-            if 'Cookie' in request_headers
-            else cookie_header
-        )
-
-    return request_headers or None
-
-
-def build_cookie_header(cookies: Dict[str, Dict[str, Any]]) -> Optional[str]:
-    from urllib.parse import quote
-
-    pairs: List[str] = []
-    for name, parameter in cookies.items():
-        serialized = serialize_parameter_value(parameter)
-        if serialized is not None:
-            pairs.append(f"{quote(str(name), safe='')}={quote(serialized, safe='')}")
-    return '; '.join(pairs) if pairs else None
-
-
-def serialize_parameter_value(parameter: Optional[Dict[str, Any]]) -> Optional[str]:
-    value = None if parameter is None else parameter.get('value')
-    if value is None:
-        return None
-    if parameter and parameter.get('content_type'):
-        import json
-
-        return json.dumps(value, separators=(',', ':'))
-    if isinstance(value, (list, tuple)):
-        return ','.join(serialize_header_primitive(item) for item in value if item is not None)
-    if isinstance(value, dict):
-        return serialize_header_object(value, bool(parameter and parameter.get('explode')))
-    return serialize_header_primitive(value)
-
-
-def serialize_header_object(value: Dict[str, Any], explode: bool) -> str:
-    entries = [(key, entry_value) for key, entry_value in value.items() if entry_value is not None]
-    if explode:
-        return ','.join(f"{key}={serialize_header_primitive(entry_value)}" for key, entry_value in entries)
-    return ','.join(item for key, entry_value in entries for item in (str(key), serialize_header_primitive(entry_value)))
-
-
-def serialize_header_primitive(value: Any) -> str:
-    return str(value)
 
 
 class ContentApi:
@@ -262,29 +209,17 @@ class ContentAnnouncementsApi:
         """List announcements"""
         return self._client.get(f"/backend/v3/api/content/announcements")
 
-    def create(self, body: AdminAnnouncementCreateRequest, x_request_id: Optional[str] = None) -> AnnouncementsCreateResult:
+    def create(self, body: AdminAnnouncementCreateRequest) -> AnnouncementsCreateResult:
         """Create announcement"""
-        request_headers = build_request_headers(
-            {
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
-            },
-            {}
-        )
-        return self._client.post(f"/backend/v3/api/content/announcements", json=body, headers=request_headers)
+        return self._client.post(f"/backend/v3/api/content/announcements", json=body)
 
     def delete(self, announcement_id: str) -> AnnouncementsDeleteResult:
         """Delete announcement"""
         return self._client.delete(f"/backend/v3/api/content/announcements/{serialize_path_parameter(announcement_id, {'name': 'announcementId', 'style': 'simple', 'explode': False})}")
 
-    def update(self, announcement_id: str, body: AdminAnnouncementUpdateRequest, x_request_id: Optional[str] = None) -> AnnouncementsUpdateResult:
+    def update(self, announcement_id: str, body: AdminAnnouncementUpdateRequest) -> AnnouncementsUpdateResult:
         """Update announcement"""
-        request_headers = build_request_headers(
-            {
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
-            },
-            {}
-        )
-        return self._client.patch(f"/backend/v3/api/content/announcements/{serialize_path_parameter(announcement_id, {'name': 'announcementId', 'style': 'simple', 'explode': False})}", json=body, headers=request_headers)
+        return self._client.patch(f"/backend/v3/api/content/announcements/{serialize_path_parameter(announcement_id, {'name': 'announcementId', 'style': 'simple', 'explode': False})}", json=body)
 
 class ContentCourseApplicationsApi:
     """content content.course_applications API client."""
@@ -303,15 +238,9 @@ class ContentCourseApplicationsApi:
         ])
         return self._client.get(_append_query_string(f"/backend/v3/api/content/course-applications", query))
 
-    def review(self, application_id: str, body: AdminCourseApplicationReviewRequest, x_request_id: Optional[str] = None) -> CourseApplicationsReviewResult:
+    def review(self, application_id: str, body: AdminCourseApplicationReviewRequest) -> CourseApplicationsReviewResult:
         """Admin Course Application Review"""
-        request_headers = build_request_headers(
-            {
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
-            },
-            {}
-        )
-        return self._client.patch(f"/backend/v3/api/content/course-applications/{serialize_path_parameter(application_id, {'name': 'applicationId', 'style': 'simple', 'explode': False})}/review", json=body, headers=request_headers)
+        return self._client.patch(f"/backend/v3/api/content/course-applications/{serialize_path_parameter(application_id, {'name': 'applicationId', 'style': 'simple', 'explode': False})}/review", json=body)
 
 class ContentCourseLessonsApi:
     """content content.course_lessons API client."""
@@ -320,25 +249,13 @@ class ContentCourseLessonsApi:
         self._client = client
 
 
-    def delete(self, lesson_id: str, x_request_id: Optional[str] = None) -> CourseLessonsDeleteResult:
+    def delete(self, lesson_id: str) -> CourseLessonsDeleteResult:
         """Admin Course Lesson Delete"""
-        request_headers = build_request_headers(
-            {
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
-            },
-            {}
-        )
-        return self._client.delete(f"/backend/v3/api/content/course-lessons/{serialize_path_parameter(lesson_id, {'name': 'lessonId', 'style': 'simple', 'explode': False})}", headers=request_headers)
+        return self._client.delete(f"/backend/v3/api/content/course-lessons/{serialize_path_parameter(lesson_id, {'name': 'lessonId', 'style': 'simple', 'explode': False})}")
 
-    def update(self, lesson_id: str, body: AdminCourseLessonMutationRequest, x_request_id: Optional[str] = None) -> CourseLessonsUpdateResult:
+    def update(self, lesson_id: str, body: AdminCourseLessonMutationRequest) -> CourseLessonsUpdateResult:
         """Admin Course Lesson Update"""
-        request_headers = build_request_headers(
-            {
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
-            },
-            {}
-        )
-        return self._client.patch(f"/backend/v3/api/content/course-lessons/{serialize_path_parameter(lesson_id, {'name': 'lessonId', 'style': 'simple', 'explode': False})}", json=body, headers=request_headers)
+        return self._client.patch(f"/backend/v3/api/content/course-lessons/{serialize_path_parameter(lesson_id, {'name': 'lessonId', 'style': 'simple', 'explode': False})}", json=body)
 
 class ContentCourseSectionsApi:
     """content content.course_sections API client."""
@@ -347,25 +264,13 @@ class ContentCourseSectionsApi:
         self._client = client
 
 
-    def delete(self, section_id: str, x_request_id: Optional[str] = None) -> CourseSectionsDeleteResult:
+    def delete(self, section_id: str) -> CourseSectionsDeleteResult:
         """Admin Course Section Delete"""
-        request_headers = build_request_headers(
-            {
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
-            },
-            {}
-        )
-        return self._client.delete(f"/backend/v3/api/content/course-sections/{serialize_path_parameter(section_id, {'name': 'sectionId', 'style': 'simple', 'explode': False})}", headers=request_headers)
+        return self._client.delete(f"/backend/v3/api/content/course-sections/{serialize_path_parameter(section_id, {'name': 'sectionId', 'style': 'simple', 'explode': False})}")
 
-    def update(self, section_id: str, body: AdminCourseSectionMutationRequest, x_request_id: Optional[str] = None) -> CourseSectionsUpdateResult:
+    def update(self, section_id: str, body: AdminCourseSectionMutationRequest) -> CourseSectionsUpdateResult:
         """Admin Course Section Update"""
-        request_headers = build_request_headers(
-            {
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
-            },
-            {}
-        )
-        return self._client.patch(f"/backend/v3/api/content/course-sections/{serialize_path_parameter(section_id, {'name': 'sectionId', 'style': 'simple', 'explode': False})}", json=body, headers=request_headers)
+        return self._client.patch(f"/backend/v3/api/content/course-sections/{serialize_path_parameter(section_id, {'name': 'sectionId', 'style': 'simple', 'explode': False})}", json=body)
 
 class ContentCoursesApi:
     """content content.courses API client."""
@@ -388,35 +293,17 @@ class ContentCoursesApi:
         ])
         return self._client.get(_append_query_string(f"/backend/v3/api/content/courses", query))
 
-    def create(self, body: AdminCourseMutationRequest, x_request_id: Optional[str] = None) -> CoursesCreateResult:
+    def create(self, body: AdminCourseMutationRequest) -> CoursesCreateResult:
         """Admin Course Create"""
-        request_headers = build_request_headers(
-            {
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
-            },
-            {}
-        )
-        return self._client.post(f"/backend/v3/api/content/courses", json=body, headers=request_headers)
+        return self._client.post(f"/backend/v3/api/content/courses", json=body)
 
-    def delete(self, course_id: str, x_request_id: Optional[str] = None) -> CoursesDeleteResult:
+    def delete(self, course_id: str) -> CoursesDeleteResult:
         """Admin Course Delete"""
-        request_headers = build_request_headers(
-            {
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
-            },
-            {}
-        )
-        return self._client.delete(f"/backend/v3/api/content/courses/{serialize_path_parameter(course_id, {'name': 'courseId', 'style': 'simple', 'explode': False})}", headers=request_headers)
+        return self._client.delete(f"/backend/v3/api/content/courses/{serialize_path_parameter(course_id, {'name': 'courseId', 'style': 'simple', 'explode': False})}")
 
-    def update(self, course_id: str, body: AdminCourseMutationRequest, x_request_id: Optional[str] = None) -> CoursesUpdateResult:
+    def update(self, course_id: str, body: AdminCourseMutationRequest) -> CoursesUpdateResult:
         """Admin Course Update"""
-        request_headers = build_request_headers(
-            {
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
-            },
-            {}
-        )
-        return self._client.patch(f"/backend/v3/api/content/courses/{serialize_path_parameter(course_id, {'name': 'courseId', 'style': 'simple', 'explode': False})}", json=body, headers=request_headers)
+        return self._client.patch(f"/backend/v3/api/content/courses/{serialize_path_parameter(course_id, {'name': 'courseId', 'style': 'simple', 'explode': False})}", json=body)
 
 class ContentCoursesDashboardApi:
     """content content.courses.dashboard API client."""
@@ -446,15 +333,9 @@ class ContentCoursesLessonsApi:
         ])
         return self._client.get(_append_query_string(f"/backend/v3/api/content/courses/{serialize_path_parameter(course_id, {'name': 'courseId', 'style': 'simple', 'explode': False})}/lessons", query))
 
-    def create(self, course_id: str, body: AdminCourseLessonMutationRequest, x_request_id: Optional[str] = None) -> CoursesLessonsCreateResult:
+    def create(self, course_id: str, body: AdminCourseLessonMutationRequest) -> CoursesLessonsCreateResult:
         """Admin Course Lesson Create"""
-        request_headers = build_request_headers(
-            {
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
-            },
-            {}
-        )
-        return self._client.post(f"/backend/v3/api/content/courses/{serialize_path_parameter(course_id, {'name': 'courseId', 'style': 'simple', 'explode': False})}/lessons", json=body, headers=request_headers)
+        return self._client.post(f"/backend/v3/api/content/courses/{serialize_path_parameter(course_id, {'name': 'courseId', 'style': 'simple', 'explode': False})}/lessons", json=body)
 
 class ContentCoursesRelationsApi:
     """content content.courses.relations API client."""
@@ -473,15 +354,9 @@ class ContentCoursesRelationsApi:
         ])
         return self._client.get(_append_query_string(f"/backend/v3/api/content/courses/{serialize_path_parameter(course_id, {'name': 'courseId', 'style': 'simple', 'explode': False})}/relations", query))
 
-    def replace(self, course_id: str, body: AdminCourseRelationsReplaceRequest, x_request_id: Optional[str] = None) -> CoursesRelationsReplaceResult:
+    def replace(self, course_id: str, body: AdminCourseRelationsReplaceRequest) -> CoursesRelationsReplaceResult:
         """Admin Course Relations Replace"""
-        request_headers = build_request_headers(
-            {
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
-            },
-            {}
-        )
-        return self._client.put(f"/backend/v3/api/content/courses/{serialize_path_parameter(course_id, {'name': 'courseId', 'style': 'simple', 'explode': False})}/relations", json=body, headers=request_headers)
+        return self._client.put(f"/backend/v3/api/content/courses/{serialize_path_parameter(course_id, {'name': 'courseId', 'style': 'simple', 'explode': False})}/relations", json=body)
 
 class ContentCoursesSectionsApi:
     """content content.courses.sections API client."""
@@ -500,15 +375,9 @@ class ContentCoursesSectionsApi:
         ])
         return self._client.get(_append_query_string(f"/backend/v3/api/content/courses/{serialize_path_parameter(course_id, {'name': 'courseId', 'style': 'simple', 'explode': False})}/sections", query))
 
-    def create(self, course_id: str, body: AdminCourseSectionMutationRequest, x_request_id: Optional[str] = None) -> CoursesSectionsCreateResult:
+    def create(self, course_id: str, body: AdminCourseSectionMutationRequest) -> CoursesSectionsCreateResult:
         """Admin Course Section Create"""
-        request_headers = build_request_headers(
-            {
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
-            },
-            {}
-        )
-        return self._client.post(f"/backend/v3/api/content/courses/{serialize_path_parameter(course_id, {'name': 'courseId', 'style': 'simple', 'explode': False})}/sections", json=body, headers=request_headers)
+        return self._client.post(f"/backend/v3/api/content/courses/{serialize_path_parameter(course_id, {'name': 'courseId', 'style': 'simple', 'explode': False})}/sections", json=body)
 
 class ContentCourseCommentsApi:
     """content content.course_comments API client."""
@@ -527,15 +396,9 @@ class ContentCourseCommentsApi:
         ])
         return self._client.get(_append_query_string(f"/backend/v3/api/content/courses/comments", query))
 
-    def moderate(self, comment_id: str, body: AdminCourseCommentModerationRequest, x_request_id: Optional[str] = None) -> CourseCommentsModerateResult:
+    def moderate(self, comment_id: str, body: AdminCourseCommentModerationRequest) -> CourseCommentsModerateResult:
         """Admin Course Comment Moderate"""
-        request_headers = build_request_headers(
-            {
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
-            },
-            {}
-        )
-        return self._client.patch(f"/backend/v3/api/content/courses/comments/{serialize_path_parameter(comment_id, {'name': 'commentId', 'style': 'simple', 'explode': False})}/moderation", json=body, headers=request_headers)
+        return self._client.patch(f"/backend/v3/api/content/courses/comments/{serialize_path_parameter(comment_id, {'name': 'commentId', 'style': 'simple', 'explode': False})}/moderation", json=body)
 
 class ContentCourseEngagementApi:
     """content content.course_engagement API client."""

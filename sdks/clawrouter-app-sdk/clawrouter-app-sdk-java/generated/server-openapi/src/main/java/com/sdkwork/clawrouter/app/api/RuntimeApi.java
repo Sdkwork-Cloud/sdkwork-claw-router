@@ -29,9 +29,9 @@ public class RuntimeApi {
     }
 
     /** Create runtime invocation */
-    public InvocationsCreateResult invocationsCreate(RuntimeInvocationCreateRequest body, String idempotencyKey, String xRequestId) throws Exception {
+    public InvocationsCreateResult invocationsCreate(RuntimeInvocationCreateRequest body, String idempotencyKey) throws Exception {
         Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null), "X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
+                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null)),
                 Map.of()
         );
         Object raw = client.post(ApiPaths.appPath("/runtime/invocations"), body, null, requestHeaders, "application/json");
@@ -55,9 +55,9 @@ public class RuntimeApi {
     }
 
     /** Create runtime artifact */
-    public ArtifactsCreateResult artifactsCreate(String invocationId, RuntimeArtifactCreateRequest body, String idempotencyKey, String xRequestId) throws Exception {
+    public ArtifactsCreateResult artifactsCreate(String invocationId, RuntimeArtifactCreateRequest body, String idempotencyKey) throws Exception {
         Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null), "X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
+                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null)),
                 Map.of()
         );
         Object raw = client.post(ApiPaths.appPath("/runtime/invocations/" + serializePathParameter(invocationId, new PathParameterSpec("invocationId", "simple", false)) + "/artifacts"), body, null, requestHeaders, "application/json");
@@ -65,9 +65,9 @@ public class RuntimeApi {
     }
 
     /** Complete runtime invocation */
-    public InvocationsSubmitResult invocationsSubmit(String invocationId, RuntimeInvocationCompleteRequest body, String idempotencyKey, String xRequestId) throws Exception {
+    public InvocationsSubmitResult invocationsSubmit(String invocationId, RuntimeInvocationCompleteRequest body, String idempotencyKey) throws Exception {
         Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null), "X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
+                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null)),
                 Map.of()
         );
         Object raw = client.post(ApiPaths.appPath("/runtime/invocations/" + serializePathParameter(invocationId, new PathParameterSpec("invocationId", "simple", false)) + "/complete"), body, null, requestHeaders, "application/json");
@@ -85,9 +85,9 @@ public class RuntimeApi {
     }
 
     /** Create runtime invocation event */
-    public InvocationEventsCreateResult invocationEventsCreate(String invocationId, RuntimeEventCreateRequest body, String idempotencyKey, String xRequestId) throws Exception {
+    public InvocationEventsCreateResult invocationEventsCreate(String invocationId, RuntimeEventCreateRequest body, String idempotencyKey) throws Exception {
         Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null), "X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
+                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null)),
                 Map.of()
         );
         Object raw = client.post(ApiPaths.appPath("/runtime/invocations/" + serializePathParameter(invocationId, new PathParameterSpec("invocationId", "simple", false)) + "/events"), body, null, requestHeaders, "application/json");

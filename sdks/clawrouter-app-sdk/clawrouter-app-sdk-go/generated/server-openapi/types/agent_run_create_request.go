@@ -9,7 +9,6 @@ type AgentRunCreateRequest struct {
 	MemorySpaceId string `json:"memorySpaceId"`
 	Metadata map[string]JsonValue `json:"metadata"`
 	Model string `json:"model"`
-	RequestId string `json:"requestId"`
 	Runtime string `json:"runtime"`
 	SourceSurface string `json:"sourceSurface"`
 	TraceId string `json:"traceId"`

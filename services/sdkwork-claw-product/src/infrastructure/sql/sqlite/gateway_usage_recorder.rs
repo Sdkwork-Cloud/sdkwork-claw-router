@@ -1,6 +1,8 @@
 use std::collections::hash_map::DefaultHasher;
 use std::hash::{Hash, Hasher};
 
+use serde_json::json;
+use sha2::{Digest, Sha256};
 use sqlx::SqlitePool;
 
 use crate::domain::DomainError;
@@ -50,26 +52,28 @@ async fn upsert_trace(
     pool: &SqlitePool,
     command: &GatewayRequestTraceCommand,
 ) -> Result<(), DomainError> {
+    let metadata = trace_metadata_json(command);
+    let user_agent_hash = user_agent_hash(command);
     sqlx::query(
         r#"
         INSERT INTO ai_request_trace
             (uuid, tenant_id, organization_id, user_id, request_id, trace_id, status, attempt_no,
-             api_key_id, api_key_name_snapshot, api_key_group_id, api_key_group_snapshot,
+             api_key_id, api_key_name_snapshot, channel_group_id, channel_group_snapshot,
              owner_type, owner_id, channel_id, channel_name_snapshot, requested_model,
              requested_model_catalog_key, provider_model, provider_native_model,
              endpoint, request_path, http_method, http_status, started_at, ended_at, streaming,
              prompt_tokens, cached_tokens, completion_tokens, total_tokens, latency_ms, ttft_ms,
-             provider_error_code, error_type, error_message_masked)
+             provider_error_code, error_type, error_message_masked, metadata, user_agent_hash)
         VALUES
             (?, ?, ?, ?, ?, ?, 1, 1, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,
              strftime('%Y-%m-%dT%H:%M:%SZ', 'now'), strftime('%Y-%m-%dT%H:%M:%SZ', 'now'), ?, ?, ?, ?, ?,
-             ?, ?, ?, ?, ?)
+             ?, ?, ?, ?, ?, ?, ?)
         ON CONFLICT (tenant_id, organization_id, request_id, attempt_no) DO UPDATE SET
             trace_id = excluded.trace_id,
             api_key_id = excluded.api_key_id,
             api_key_name_snapshot = excluded.api_key_name_snapshot,
-            api_key_group_id = excluded.api_key_group_id,
-            api_key_group_snapshot = excluded.api_key_group_snapshot,
+            channel_group_id = excluded.channel_group_id,
+            channel_group_snapshot = excluded.channel_group_snapshot,
             owner_type = excluded.owner_type,
             owner_id = excluded.owner_id,
             channel_id = excluded.channel_id,
@@ -92,7 +96,9 @@ async fn upsert_trace(
             ttft_ms = excluded.ttft_ms,
             provider_error_code = excluded.provider_error_code,
             error_type = excluded.error_type,
-            error_message_masked = excluded.error_message_masked
+            error_message_masked = excluded.error_message_masked,
+            metadata = excluded.metadata,
+            user_agent_hash = excluded.user_agent_hash
         WHERE NOT EXISTS (
             SELECT 1
             FROM ai_usage_fact settled_usage
@@ -111,8 +117,8 @@ async fn upsert_trace(
     .bind(command.trace_id.as_deref())
     .bind(command.api_key_id)
     .bind(&command.api_key_name_snapshot)
-    .bind(command.api_key_group_id)
-    .bind(&command.api_key_group_snapshot)
+    .bind(command.channel_group_id)
+    .bind(&command.channel_group_snapshot)
     .bind(OWNER_TYPE_USER)
     .bind(command.user_id)
     .bind(command.channel_id)
@@ -135,6 +141,8 @@ async fn upsert_trace(
     .bind(command.provider_error_code.as_deref())
     .bind(command.error_type.as_deref())
     .bind(command.error_message_masked.as_deref())
+    .bind(&metadata)
+    .bind(user_agent_hash.as_deref())
     .execute(pool)
     .await
     .map_err(|error| store_error("failed to upsert gateway request trace", error))?;
@@ -149,7 +157,7 @@ async fn upsert_usage_fact(
         r#"
         INSERT INTO ai_usage_fact
             (uuid, tenant_id, organization_id, user_id, request_id, trace_id, status,
-             api_key_id, api_key_name_snapshot, api_key_group_id, api_key_group_snapshot,
+             api_key_id, api_key_name_snapshot, channel_group_id, channel_group_snapshot,
              owner_type, owner_id, catalog_key, requested_model_catalog_key, model,
              provider_native_model, channel_id, modality, usage_type, billing_meter_code,
              billable_quantity, prompt_tokens, cached_tokens, completion_tokens, total_tokens,
@@ -169,8 +177,8 @@ async fn upsert_usage_fact(
             trace_id = excluded.trace_id,
             api_key_id = excluded.api_key_id,
             api_key_name_snapshot = excluded.api_key_name_snapshot,
-            api_key_group_id = excluded.api_key_group_id,
-            api_key_group_snapshot = excluded.api_key_group_snapshot,
+            channel_group_id = excluded.channel_group_id,
+            channel_group_snapshot = excluded.channel_group_snapshot,
             owner_type = excluded.owner_type,
             owner_id = excluded.owner_id,
             catalog_key = excluded.catalog_key,
@@ -218,8 +226,8 @@ async fn upsert_usage_fact(
     .bind(command.trace_id.as_deref())
     .bind(command.api_key_id)
     .bind(&command.api_key_name_snapshot)
-    .bind(command.api_key_group_id)
-    .bind(&command.api_key_group_snapshot)
+    .bind(command.channel_group_id)
+    .bind(&command.channel_group_snapshot)
     .bind(OWNER_TYPE_USER)
     .bind(command.user_id)
     .bind(&command.catalog_key)
@@ -274,6 +282,24 @@ fn usage_uuid(command: &GatewayUsageRecordCommand) -> String {
     command.usage_type.hash(&mut hasher);
     "usage".hash(&mut hasher);
     format!("usage-{:016x}", hasher.finish())
+}
+
+fn trace_metadata_json(command: &GatewayRequestTraceCommand) -> String {
+    command
+        .user_agent
+        .as_deref()
+        .map(|user_agent| json!({ "userAgent": user_agent }).to_string())
+        .unwrap_or_else(|| "{}".to_owned())
+}
+
+fn user_agent_hash(command: &GatewayRequestTraceCommand) -> Option<String> {
+    command.user_agent.as_deref().map(sha256_hex)
+}
+
+fn sha256_hex(value: &str) -> String {
+    let mut hasher = Sha256::new();
+    hasher.update(value.as_bytes());
+    hex::encode(hasher.finalize())
 }
 
 fn stable_uuid(prefix: &str, command: &impl GatewayStableUuidCommand) -> String {

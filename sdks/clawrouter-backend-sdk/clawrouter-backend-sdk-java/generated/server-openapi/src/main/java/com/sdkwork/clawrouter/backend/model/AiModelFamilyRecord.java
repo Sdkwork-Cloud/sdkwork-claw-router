@@ -21,7 +21,6 @@ public class AiModelFamilyRecord {
     private String modelCount;
     private String organizationId;
     private String primaryModality;
-    private String regionCode;
     private Integer sortOrder;
     private String status;
     private String tenantId;
@@ -173,14 +172,6 @@ public class AiModelFamilyRecord {
 
     public void setPrimaryModality(String primaryModality) {
         this.primaryModality = primaryModality;
-    }
-
-    public String getRegionCode() {
-        return this.regionCode;
-    }
-
-    public void setRegionCode(String regionCode) {
-        this.regionCode = regionCode;
     }
 
     public Integer getSortOrder() {

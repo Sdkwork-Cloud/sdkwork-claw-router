@@ -1,4 +1,4 @@
-# Frontend Contract Guardian
+﻿# Frontend Contract Guardian
 
 `tools.frontend_contract_guardian` keeps the database design aligned with the actual
 `apps/sdkwork-claw-router-portal` application instead of relying on a manual checklist.
@@ -20,7 +20,7 @@
 ## Current Gaps Closed
 
 - `/console/account` now depends on `ai_usage_fact` for monthly consumption and service consumption breakdowns.
-- `/admin/ratelimit` now depends on `iam_gateway_api_key` and `iam_gateway_api_key_group` for token limit and group rule displays.
+- `/admin/ratelimit` now depends on `iam_gateway_api_key` and `ai_channel_group` for token limit and group rule displays.
 - `/admin/marketing` now depends on `plus_user` for inviter/user display, `ops_coupon_issue_batch` for promo-code batch generation metadata, and `ops_referral_stat_snapshot` for high-performance referral statistics.
 - AppCenter and SkillsHub now share `studio_catalog_asset` and `studio_catalog_artifact` for screenshots, release artifacts, package sizes, frameworks, and image/artifact references while preserving `plus_app`, `plus_agent_skill`, `plus_agent_skill_package`, and `plus_category` as the source-of-truth domain tables.
 - Frontend field audit now covers 54 data interfaces from 31 portal service/data/type files and records the `route` plus `data_sources` in `generated/schema/frontend/frontend-field-audit.json`.

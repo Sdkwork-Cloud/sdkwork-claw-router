@@ -5,7 +5,6 @@ from pathlib import Path
 
 from tools.schema_manifest import SchemaManifestGenerator
 
-
 class SchemaManifestGeneratorTest(unittest.TestCase):
     def write_registry(self, root: Path, content: str) -> Path:
         registry = root / "docs" / "schema-registry" / "sdkwork-claw-router.tables.yaml"
@@ -57,6 +56,78 @@ class SchemaManifestGeneratorTest(unittest.TestCase):
             self.assertEqual("admin", manifest["routes"]["/admin/model"]["route_scope"])
             self.assertEqual("app", manifest["routes"]["/models"]["required_api_surface"])
             self.assertEqual("public", manifest["routes"]["/models"]["route_scope"])
+
+    def test_generates_manifest_from_registry_fragments(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            registry = self.write_registry(
+                root,
+                """
+                schema_registry:
+                  name: sdkwork-claw-router
+                table_fragments:
+                  - tables/system.yaml
+                  - tables/ai.yaml
+                """,
+            )
+            fragments_root = registry.parent / "tables"
+            fragments_root.mkdir(parents=True, exist_ok=True)
+            (fragments_root / "system.yaml").write_text(
+                textwrap.dedent(
+                    """
+                    tables:
+                      - table: system_installation_state
+                        domain: system
+                    """
+                ).strip()
+                + "\n",
+                encoding="utf-8",
+            )
+            (fragments_root / "ai.yaml").write_text(
+                textwrap.dedent(
+                    """
+                    tables:
+                      - table: ai_model_vendor
+                        domain: ai
+                    """
+                ).strip()
+                + "\n",
+                encoding="utf-8",
+            )
+
+            manifest = SchemaManifestGenerator(root=root, registry_path=registry).generate()
+
+            self.assertEqual(
+                ["ai_model_vendor", "system_installation_state"],
+                [table["table"] for table in manifest["tables"]],
+            )
+            self.assertEqual(
+                ["ai_model_vendor", "system_installation_state"],
+                manifest["generated_tables"],
+            )
+
+    def test_checks_effective_schema_registry_snapshot(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            registry = self.write_registry(
+                root,
+                """
+                schema_registry:
+                  name: sdkwork-claw-router
+                tables:
+                  - table: ai_model_vendor
+                    domain: ai
+                """,
+            )
+            generator = SchemaManifestGenerator(root=root, registry_path=registry)
+            generator.write()
+            snapshot = root / "generated" / "schema" / "registry" / "sdkwork-claw-router.tables.effective.yaml"
+            snapshot.write_text(snapshot.read_text(encoding="utf-8").replace("ai_model_vendor", "stale_table"), encoding="utf-8")
+
+            result = generator.check()
+
+            self.assertFalse(result.ok)
+            self.assertIn(f"effective schema registry is stale: {snapshot}", result.messages)
 
     def test_resolves_common_columns_and_explicit_columns(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:

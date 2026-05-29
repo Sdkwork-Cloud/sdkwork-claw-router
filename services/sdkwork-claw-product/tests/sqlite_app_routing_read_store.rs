@@ -26,7 +26,7 @@ async fn sqlite_routing_usage_ignores_missing_latency_when_averaging() {
     assert_eq!(100, snapshot.chart_data[0].latency);
 
     assert_eq!(1, snapshot.model_stats.len());
-    assert_eq!("openai/global/gpt-4o-mini", snapshot.model_stats[0].m);
+    assert_eq!("openai/gpt-4o-mini", snapshot.model_stats[0].m);
     assert_eq!("2", snapshot.model_stats[0].req);
     assert_eq!("100.0%", snapshot.model_stats[0].sr);
     assert_eq!("100ms", snapshot.model_stats[0].lat);
@@ -39,7 +39,7 @@ async fn sqlite_routing_channels_include_rfc3339_effective_channel_models() {
     seed_routing_channel(&pool).await;
     sqlx::query(
         r#"
-        UPDATE integration_channel_model
+        UPDATE ai_channel_model
         SET effective_from = strftime('%Y-%m-%dT00:00:00Z', 'now')
         WHERE id = 3001
         "#,
@@ -55,23 +55,20 @@ async fn sqlite_routing_channels_include_rfc3339_effective_channel_models() {
         .unwrap();
 
     assert_eq!(1, channels.len());
-    assert_eq!(
-        vec!["openai/global/gpt-4o-mini".to_owned()],
-        channels[0].models
-    );
+    assert_eq!(vec!["openai/gpt-4o-mini".to_owned()], channels[0].models);
     assert_eq!("active", channels[0].status);
     assert_eq!(Some(60_000), channels[0].timeout_ms);
     let retry_policy = channels[0]
         .retry_policy
         .as_ref()
-        .expect("retry policy should be projected from integration_channel");
+        .expect("retry policy should be projected from ai_channel");
     assert_eq!(3, retry_policy.max_attempts);
     assert_eq!(vec![429, 503], retry_policy.retryable_status_codes);
     assert_eq!(25, retry_policy.backoff_ms);
     let circuit_breaker_policy = channels[0]
         .circuit_breaker_policy
         .as_ref()
-        .expect("circuit breaker policy should be projected from integration_channel");
+        .expect("circuit breaker policy should be projected from ai_channel");
     assert_eq!(2, circuit_breaker_policy.failure_threshold);
 }
 
@@ -356,17 +353,17 @@ async fn create_routing_usage_tables(pool: &SqlitePool) {
 async fn create_routing_channel_tables(pool: &SqlitePool) {
     for statement in [
         r#"
-        CREATE TABLE integration_channel (
+        CREATE TABLE ai_channel (
             id INTEGER PRIMARY KEY,
             tenant_id INTEGER NOT NULL,
             organization_id INTEGER NOT NULL,
-            name TEXT,
+            channel_name TEXT,
             channel_code TEXT,
             provider_code TEXT,
-            protocol INTEGER NOT NULL,
-            access_type INTEGER NOT NULL,
+            protocol_code TEXT,
+            auth_type INTEGER NOT NULL,
             base_url TEXT,
-            capabilities TEXT,
+            masked_label TEXT,
             timeout_ms INTEGER,
             retry_policy TEXT,
             circuit_breaker_policy TEXT,
@@ -378,25 +375,47 @@ async fn create_routing_channel_tables(pool: &SqlitePool) {
             upstream_balance_amount TEXT,
             upstream_balance_currency TEXT,
             consecutive_error_count INTEGER,
-            account_id INTEGER,
             priority INTEGER NOT NULL,
             deleted_at TEXT
         )
         "#,
         r#"
-        CREATE TABLE integration_provider_account (
+        CREATE TABLE ai_channel_resource (
             id INTEGER PRIMARY KEY,
             tenant_id INTEGER NOT NULL,
             organization_id INTEGER NOT NULL,
-            masked_label TEXT,
-            upstream_balance_amount TEXT,
-            upstream_balance_currency TEXT,
-            consecutive_error_count INTEGER,
+            channel_id INTEGER NOT NULL,
+            resource_code TEXT,
+            resource_group_code TEXT,
+            grant_type TEXT NOT NULL DEFAULT 'allow',
+            status INTEGER NOT NULL,
             deleted_at TEXT
         )
         "#,
         r#"
-        CREATE TABLE integration_channel_model (
+        CREATE TABLE ai_resource (
+            id INTEGER PRIMARY KEY,
+            tenant_id INTEGER NOT NULL,
+            organization_id INTEGER NOT NULL,
+            resource_code TEXT NOT NULL,
+            resource_type TEXT NOT NULL,
+            status INTEGER NOT NULL,
+            deleted_at TEXT
+        )
+        "#,
+        r#"
+        CREATE TABLE ai_resource_group (
+            id INTEGER PRIMARY KEY,
+            tenant_id INTEGER NOT NULL,
+            organization_id INTEGER NOT NULL,
+            group_code TEXT NOT NULL,
+            group_type TEXT,
+            status INTEGER NOT NULL,
+            deleted_at TEXT
+        )
+        "#,
+        r#"
+        CREATE TABLE ai_channel_model (
             id INTEGER PRIMARY KEY,
             tenant_id INTEGER NOT NULL,
             organization_id INTEGER NOT NULL,
@@ -417,10 +436,10 @@ async fn create_routing_channel_tables(pool: &SqlitePool) {
 async fn seed_routing_channel(pool: &SqlitePool) {
     sqlx::query(
         r#"
-        INSERT INTO integration_provider_account (
-            id, tenant_id, organization_id, masked_label, consecutive_error_count
+        INSERT INTO ai_resource (
+            id, tenant_id, organization_id, resource_code, resource_type, status
         )
-        VALUES (9001, 10, 20, 'sk-***test', 0)
+        VALUES (5001, 10, 20, 'llm', 'modality', 1)
         "#,
     )
     .execute(pool)
@@ -429,18 +448,18 @@ async fn seed_routing_channel(pool: &SqlitePool) {
 
     sqlx::query(
         r#"
-        INSERT INTO integration_channel (
-            id, tenant_id, organization_id, name, provider_code, protocol, access_type,
-            base_url, capabilities, timeout_ms, retry_policy, circuit_breaker_policy, weight, status, health_status, last_latency_ms,
-            rpm_limit, consecutive_error_count, account_id, priority
+        INSERT INTO ai_channel (
+            id, tenant_id, organization_id, channel_name, provider_code, protocol_code, auth_type,
+            base_url, masked_label, timeout_ms, retry_policy, circuit_breaker_policy, weight, status, health_status, last_latency_ms,
+            rpm_limit, consecutive_error_count, priority
         )
         VALUES (
-            2001, 10, 20, 'OpenAI primary', 'openai', 1, 1,
-            'https://api.openai.test/v1', '["llm"]', 60000,
+            2001, 10, 20, 'OpenAI primary', 'openai', 'openai', 1,
+            'https://api.openai.test/v1', 'sk-***test', 60000,
             '{"max_attempts":3,"retryable_status_codes":[429,503],"backoff_ms":25}',
             '{"failure_threshold":2}',
             100, 1, 1, 120,
-            600, 0, 9001, 1
+            600, 0, 1
         )
         "#,
     )
@@ -450,10 +469,22 @@ async fn seed_routing_channel(pool: &SqlitePool) {
 
     sqlx::query(
         r#"
-        INSERT INTO integration_channel_model (
+        INSERT INTO ai_channel_resource (
+            id, tenant_id, organization_id, channel_id, resource_code, grant_type, status
+        )
+        VALUES (6001, 10, 20, 2001, 'llm', 'allow', 1)
+        "#,
+    )
+    .execute(pool)
+    .await
+    .unwrap();
+
+    sqlx::query(
+        r#"
+        INSERT INTO ai_channel_model (
             id, tenant_id, organization_id, channel_id, catalog_key, model, status
         )
-        VALUES (3001, 10, 20, 2001, 'openai/global/gpt-4o-mini', 'gpt-4o-mini', 1)
+        VALUES (3001, 10, 20, 2001, 'openai/gpt-4o-mini', 'gpt-4o-mini', 1)
         "#,
     )
     .execute(pool)
@@ -474,7 +505,7 @@ async fn insert_trace(
             channel_name_snapshot, requested_model, provider_model, http_status, error_type, provider_error_code,
             latency_ms, total_tokens
         )
-        VALUES (10, 20, 30, ?, 1, ?, ?, 'OpenAI primary', 'openai/global/gpt-4o-mini', '', 200, NULL, NULL, ?, 9)
+        VALUES (10, 20, 30, ?, 1, ?, ?, 'OpenAI primary', 'openai/gpt-4o-mini', '', 200, NULL, NULL, ?, 9)
         "#,
     )
     .bind(request_id)
@@ -490,7 +521,7 @@ async fn insert_trace(
         INSERT INTO ai_usage_fact (
             tenant_id, organization_id, user_id, status, request_id, catalog_key, model, total_tokens
         )
-        VALUES (10, 20, 30, 1, ?, 'openai/global/gpt-4o-mini', 'gpt-4o-mini', 9)
+        VALUES (10, 20, 30, 1, ?, 'openai/gpt-4o-mini', 'gpt-4o-mini', 9)
         "#,
     )
     .bind(request_id)

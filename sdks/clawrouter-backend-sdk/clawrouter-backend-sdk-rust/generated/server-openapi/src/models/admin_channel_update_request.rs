@@ -10,7 +10,7 @@ pub struct AdminChannelUpdateRequest {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub access_type: Option<String>,
 
-    /// Plaintext provider API key accepted only on create/update input. Backend encrypts it into integration_provider_account.auth_config and never returns it.
+    /// Plaintext provider API key accepted only on create/update input. Backend encrypts it into ai_channel.auth_config and never returns it.
     #[serde(rename = "apiKey")]
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub api_key: Option<String>,
@@ -23,6 +23,11 @@ pub struct AdminChannelUpdateRequest {
     /// Capabilities field on admin channel update request.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub capabilities: Option<Vec<String>>,
+
+    /// Channel type field on admin channel update request.
+    #[serde(rename = "channelType")]
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub channel_type: Option<String>,
 
     /// Circuit breaker policy field on admin channel update request.
     #[serde(rename = "circuitBreakerPolicy")]
@@ -48,6 +53,11 @@ pub struct AdminChannelUpdateRequest {
     /// Protocol field on admin channel update request.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub protocol: Option<String>,
+
+    /// Resource codes field on admin channel update request.
+    #[serde(rename = "resourceCodes")]
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub resource_codes: Option<Vec<String>>,
 
     /// Retry policy field on admin channel update request.
     #[serde(rename = "retryPolicy")]

@@ -76,7 +76,6 @@ async fn record_fault(
         OpenAiInvocationFaultKind::RelayHttpStatus if !fault.is_retryable() => HEALTHY,
         _ => {
             let outcome = record_channel_fault(pool, context, route, fault.latency_ms).await?;
-            update_account(pool, context, route, UNHEALTHY).await?;
             outcome.health_status
         }
     };
@@ -100,7 +99,6 @@ async fn record_success(
     outcome: &OpenAiInvocationRelayOutcome,
 ) -> DomainResult<()> {
     record_channel_success(pool, context, route, outcome.latency_ms).await?;
-    update_account(pool, context, route, HEALTHY).await?;
     insert_snapshot(
         pool,
         context,
@@ -127,7 +125,7 @@ async fn record_channel_fault(
     let state = load_channel_fault_state(pool, context, route).await?;
     let row = sqlx::query(
         r#"
-        UPDATE integration_channel
+        UPDATE ai_channel
         SET updated_at = CURRENT_TIMESTAMP,
             last_latency_ms = COALESCE($1, last_latency_ms),
             consecutive_error_count = COALESCE(consecutive_error_count, 0) + 1,
@@ -174,7 +172,7 @@ async fn record_channel_success(
 ) -> DomainResult<()> {
     sqlx::query(
         r#"
-        UPDATE integration_channel
+        UPDATE ai_channel
         SET updated_at = CURRENT_TIMESTAMP,
             health_status = $1,
             last_latency_ms = COALESCE($2, last_latency_ms),
@@ -215,7 +213,7 @@ async fn load_channel_fault_state(
         r#"
         SELECT
             circuit_breaker_policy::text AS circuit_breaker_policy_json
-        FROM integration_channel
+        FROM ai_channel
         WHERE id = $1
           AND tenant_id = $2
           AND organization_id = $3
@@ -261,52 +259,6 @@ fn parse_channel_failure_threshold(value: Option<&str>, channel_id: i64) -> usiz
     }
 }
 
-async fn update_account(
-    pool: &PgPool,
-    context: &OpenAiInvocationContext,
-    route: &OpenAiProviderRoute,
-    health_status: i64,
-) -> DomainResult<()> {
-    sqlx::query(
-        r#"
-        UPDATE integration_provider_account
-        SET updated_at = CURRENT_TIMESTAMP,
-            last_used_at = CASE WHEN $1 = 1 THEN CURRENT_TIMESTAMP ELSE last_used_at END,
-            consecutive_error_count = CASE
-                WHEN $2 = 1 THEN 0
-                ELSE COALESCE(consecutive_error_count, 0) + 1
-            END,
-            version = COALESCE(version, 0) + 1
-        WHERE id = (
-            SELECT account_id
-            FROM integration_channel
-            WHERE id = $3
-              AND tenant_id = $4
-              AND organization_id = $5
-        )
-          AND tenant_id = $6
-          AND organization_id = $7
-          AND deleted_at IS NULL
-        "#,
-    )
-    .bind(health_status)
-    .bind(health_status)
-    .bind(route.channel_id)
-    .bind(context.api_key_context.tenant_id)
-    .bind(context.api_key_context.organization_id)
-    .bind(context.api_key_context.tenant_id)
-    .bind(context.api_key_context.organization_id)
-    .execute(pool)
-    .await
-    .map_err(|error| {
-        store_error(
-            "failed to update OpenAI invocation account telemetry",
-            error,
-        )
-    })?;
-    Ok(())
-}
-
 #[allow(clippy::too_many_arguments)]
 async fn insert_snapshot(
     pool: &PgPool,
@@ -333,8 +285,8 @@ async fn insert_snapshot(
         INSERT INTO integration_provider_health_snapshot
             (uuid, tenant_id, organization_id, user_id, request_id, trace_id, status, created_at, metadata, provider_id, channel_id, provider_account_id, check_type, health_status, latency_ms, http_status, error_code, error_message_masked, checked_at)
         SELECT
-            $1, c.tenant_id, c.organization_id, $2, $3, $4, 1, CURRENT_TIMESTAMP, $5::jsonb, c.provider_id, c.id, c.account_id, $6, $7, $8, $9, $10, $11, CURRENT_TIMESTAMP
-        FROM integration_channel c
+            $1, c.tenant_id, c.organization_id, $2, $3, $4, 1, CURRENT_TIMESTAMP, $5::jsonb, c.provider_id, c.id, c.id, $6, $7, $8, $9, $10, $11, CURRENT_TIMESTAMP
+        FROM ai_channel c
         WHERE c.id = $12
           AND c.tenant_id = $13
           AND c.organization_id = $14

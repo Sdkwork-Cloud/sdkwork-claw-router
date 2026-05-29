@@ -345,7 +345,7 @@ async fn app_runtime_stream_executes_openai_compatible_invocation_and_persists_d
                 status: "streaming".to_owned(),
                 runtime: "openai_compatible".to_owned(),
                 endpoint: Some("chat.stream".to_owned()),
-                model: Some("openai/global/gpt-4o-mini".to_owned()),
+                model: Some("openai/gpt-4o-mini".to_owned()),
                 provider: Some("openai".to_owned()),
                 ..sample_invocation()
             },
@@ -395,7 +395,7 @@ async fn app_runtime_stream_executes_openai_compatible_invocation_and_persists_d
     assert_eq!(10, relay_requests[0].tenant_id);
     assert_eq!(20, relay_requests[0].organization_id);
     assert_eq!(30, relay_requests[0].user_id);
-    assert_eq!("openai/global/gpt-4o-mini", relay_requests[0].model);
+    assert_eq!("openai/gpt-4o-mini", relay_requests[0].model);
     assert_eq!("provider-gpt-4o-mini", relay_requests[0].provider_model);
     assert_eq!(true, relay_requests[0].request_body["stream"]);
     assert_eq!(
@@ -425,7 +425,7 @@ async fn app_runtime_stream_persists_usage_only_provider_chunks_for_chat_billing
                 status: "streaming".to_owned(),
                 runtime: "openai_compatible".to_owned(),
                 endpoint: Some("chat.stream".to_owned()),
-                model: Some("openai/global/gpt-4o-mini".to_owned()),
+                model: Some("openai/gpt-4o-mini".to_owned()),
                 provider: Some("openai".to_owned()),
                 ..sample_invocation()
             },
@@ -489,14 +489,14 @@ async fn app_runtime_stream_persists_usage_only_provider_chunks_for_chat_billing
 }
 
 #[tokio::test]
-async fn app_runtime_stream_routes_catalog_model_through_account_pool_without_model_route() {
+async fn app_runtime_stream_routes_catalog_model_through_channel_route_without_model_route() {
     let store = Arc::new(TestAppRuntimeStore::with_invocation(
         AppRuntimeInvocationRecord {
             item: AppRuntimeInvocationItem {
                 status: "streaming".to_owned(),
                 runtime: "openai_compatible".to_owned(),
                 endpoint: Some("chat.stream".to_owned()),
-                model: Some("openai/global/gpt-5.5".to_owned()),
+                model: Some("openai/gpt-5.5".to_owned()),
                 provider: Some("openai".to_owned()),
                 ..sample_invocation()
             },
@@ -516,7 +516,7 @@ async fn app_runtime_stream_routes_catalog_model_through_account_pool_without_mo
             "runtime-event-uuid-2",
         ])),
         Arc::new(TestRuntimeCatalog::without_model_provider_route(
-            "openai/global/gpt-5.5",
+            "openai/gpt-5.5",
         )),
         Arc::new(RecordingStreamRelay::new(Arc::clone(&relay_requests))),
     );
@@ -540,7 +540,7 @@ async fn app_runtime_stream_routes_catalog_model_through_account_pool_without_mo
 
     let relay_requests = relay_requests.lock().unwrap();
     assert_eq!(1, relay_requests.len());
-    assert_eq!("openai/global/gpt-5.5", relay_requests[0].model);
+    assert_eq!("openai/gpt-5.5", relay_requests[0].model);
     assert_eq!("gpt-5.5", relay_requests[0].provider_model);
     assert_eq!(
         Some("https://provider.example/v1"),
@@ -560,7 +560,7 @@ async fn app_runtime_stream_flushes_runtime_events_before_provider_stream_finish
                 status: "streaming".to_owned(),
                 runtime: "openai_compatible".to_owned(),
                 endpoint: Some("agent.stream".to_owned()),
-                model: Some("openai/global/gpt-4o-mini".to_owned()),
+                model: Some("openai/gpt-4o-mini".to_owned()),
                 provider: Some("openai".to_owned()),
                 ..sample_invocation()
             },
@@ -626,7 +626,7 @@ async fn app_runtime_stream_execution_continues_after_client_disconnect_and_reco
                 status: "streaming".to_owned(),
                 runtime: "openai_compatible".to_owned(),
                 endpoint: Some("agent.stream".to_owned()),
-                model: Some("openai/global/gpt-4o-mini".to_owned()),
+                model: Some("openai/gpt-4o-mini".to_owned()),
                 provider: Some("openai".to_owned()),
                 ..sample_invocation()
             },
@@ -714,7 +714,7 @@ async fn app_runtime_stream_reconnect_on_another_node_uses_shared_stream_bus_wit
                 status: "streaming".to_owned(),
                 runtime: "openai_compatible".to_owned(),
                 endpoint: Some("agent.stream".to_owned()),
-                model: Some("openai/global/gpt-4o-mini".to_owned()),
+                model: Some("openai/gpt-4o-mini".to_owned()),
                 provider: Some("openai".to_owned()),
                 ..sample_invocation()
             },
@@ -813,7 +813,7 @@ async fn app_runtime_stream_parallel_subscribers_on_different_nodes_receive_comp
                 status: "streaming".to_owned(),
                 runtime: "openai_compatible".to_owned(),
                 endpoint: Some("agent.stream".to_owned()),
-                model: Some("openai/global/gpt-4o-mini".to_owned()),
+                model: Some("openai/gpt-4o-mini".to_owned()),
                 provider: Some("openai".to_owned()),
                 ..sample_invocation()
             },
@@ -902,7 +902,7 @@ async fn app_runtime_stream_cancel_on_another_node_stops_provider_execution() {
                 status: "streaming".to_owned(),
                 runtime: "openai_compatible".to_owned(),
                 endpoint: Some("agent.stream".to_owned()),
-                model: Some("openai/global/gpt-4o-mini".to_owned()),
+                model: Some("openai/gpt-4o-mini".to_owned()),
                 provider: Some("openai".to_owned()),
                 ..sample_invocation()
             },
@@ -1034,7 +1034,7 @@ async fn app_runtime_stream_completion_preserves_existing_cancelled_terminal_eve
                 status: "streaming".to_owned(),
                 runtime: "openai_compatible".to_owned(),
                 endpoint: Some("chat.stream".to_owned()),
-                model: Some("openai/global/gpt-4o-mini".to_owned()),
+                model: Some("openai/gpt-4o-mini".to_owned()),
                 provider: Some("openai".to_owned()),
                 ..sample_invocation()
             },
@@ -1110,7 +1110,7 @@ async fn app_runtime_stream_reconnect_after_terminal_event_does_not_restart_prov
                 status: "streaming".to_owned(),
                 runtime: "openai_compatible".to_owned(),
                 endpoint: Some("agent.stream".to_owned()),
-                model: Some("openai/global/gpt-4o-mini".to_owned()),
+                model: Some("openai/gpt-4o-mini".to_owned()),
                 provider: Some("openai".to_owned()),
                 ..sample_invocation()
             },
@@ -1178,7 +1178,7 @@ async fn app_runtime_stream_rechecks_terminal_event_after_execution_claim() {
                 status: "streaming".to_owned(),
                 runtime: "openai_compatible".to_owned(),
                 endpoint: Some("agent.stream".to_owned()),
-                model: Some("openai/global/gpt-4o-mini".to_owned()),
+                model: Some("openai/gpt-4o-mini".to_owned()),
                 provider: Some("openai".to_owned()),
                 ..sample_invocation()
             },
@@ -1233,7 +1233,7 @@ async fn app_runtime_stream_completed_invocation_without_events_does_not_restart
                 streaming: true,
                 runtime: "openai_compatible".to_owned(),
                 endpoint: Some("agent.stream".to_owned()),
-                model: Some("openai/global/gpt-4o-mini".to_owned()),
+                model: Some("openai/gpt-4o-mini".to_owned()),
                 provider: Some("openai".to_owned()),
                 ..sample_invocation()
             },
@@ -1286,7 +1286,7 @@ async fn app_runtime_stream_failed_terminal_event_is_serialized_before_done() {
                 streaming: true,
                 runtime: "openai_compatible".to_owned(),
                 endpoint: Some("agent.stream".to_owned()),
-                model: Some("openai/global/gpt-4o-mini".to_owned()),
+                model: Some("openai/gpt-4o-mini".to_owned()),
                 provider: Some("openai".to_owned()),
                 ..sample_invocation()
             },
@@ -1344,7 +1344,7 @@ async fn app_runtime_stream_start_failure_returns_failed_sse_event_without_http_
                 streaming: true,
                 runtime: "openai_compatible".to_owned(),
                 endpoint: Some("agent.stream".to_owned()),
-                model: Some("openai/global/gpt-4o-mini".to_owned()),
+                model: Some("openai/gpt-4o-mini".to_owned()),
                 provider: Some("openai".to_owned()),
                 ..sample_invocation()
             },
@@ -1514,13 +1514,13 @@ async fn app_runtime_gateway_executor_routes_openai_chat_invocations_to_gateway_
                 status: "streaming".to_owned(),
                 runtime: "openai_compatible".to_owned(),
                 endpoint: Some("chat.stream".to_owned()),
-                model: Some("openai/global/gpt-4o-mini".to_owned()),
+                model: Some("openai/gpt-4o-mini".to_owned()),
                 provider: Some("openai".to_owned()),
                 ..sample_invocation()
             },
             request_json: json!({
                 "messages": [{"role": "user", "content": "ping"}],
-                "selectedModel": "openai/global/gpt-4o-mini"
+                "selectedModel": "openai/gpt-4o-mini"
             }),
             metadata: json!({"surface": "playground"}),
         },
@@ -1531,7 +1531,7 @@ async fn app_runtime_gateway_executor_routes_openai_chat_invocations_to_gateway_
         store.clone(),
         Arc::new(SequentialUuidGenerator::new(vec!["runtime-event-uuid-1"])),
         Arc::new(TestRuntimeCatalog::with_model_format(
-            "openai/global/gpt-4o-mini",
+            "openai/gpt-4o-mini",
             Some("openai_chat"),
         )),
         Arc::new(RecordingGatewayRuntimeClient::new(Arc::clone(
@@ -1564,10 +1564,7 @@ async fn app_runtime_gateway_executor_routes_openai_chat_invocations_to_gateway_
     assert_eq!("Bearer sk-copyable-101", gateway_requests[0].authorization);
     assert_eq!(Some("req-1"), gateway_requests[0].request_id.as_deref());
     assert_eq!(Some("trace-1"), gateway_requests[0].trace_id.as_deref());
-    assert_eq!(
-        "openai/global/gpt-4o-mini",
-        gateway_requests[0].body["model"]
-    );
+    assert_eq!("gpt-4o-mini", gateway_requests[0].body["model"]);
     assert_eq!(Some(true), gateway_requests[0].body["stream"].as_bool());
     assert_eq!("ping", gateway_requests[0].body["messages"][0]["content"]);
 }
@@ -1580,13 +1577,13 @@ async fn app_runtime_prefers_gateway_chat_completions_over_local_relay_when_both
                 status: "streaming".to_owned(),
                 runtime: "openai_compatible".to_owned(),
                 endpoint: Some("chat.stream".to_owned()),
-                model: Some("openai/global/gpt-5.5".to_owned()),
+                model: Some("openai/gpt-5.5".to_owned()),
                 provider: Some("openai".to_owned()),
                 ..sample_invocation()
             },
             request_json: json!({
                 "messages": [{"role": "user", "content": "ping"}],
-                "selectedModel": "openai/global/gpt-5.5"
+                "selectedModel": "openai/gpt-5.5"
             }),
             metadata: json!({"surface": "playground"}),
         },
@@ -1599,7 +1596,7 @@ async fn app_runtime_prefers_gateway_chat_completions_over_local_relay_when_both
             store.clone(),
             Arc::new(SequentialUuidGenerator::new(vec!["runtime-event-uuid-1"])),
             Arc::new(TestRuntimeCatalog::without_model_provider_route(
-                "openai/global/gpt-5.5",
+                "openai/gpt-5.5",
             )),
             Arc::new(RecordingGatewayRuntimeClient::new(Arc::clone(
                 &gateway_requests,
@@ -1617,7 +1614,7 @@ async fn app_runtime_prefers_gateway_chat_completions_over_local_relay_when_both
     assert_eq!(1, gateway_requests.len());
     assert_eq!(Method::POST, gateway_requests[0].method);
     assert_eq!("/v1/chat/completions", gateway_requests[0].path);
-    assert_eq!("openai/global/gpt-5.5", gateway_requests[0].body["model"]);
+    assert_eq!("gpt-5.5", gateway_requests[0].body["model"]);
     assert_eq!(Some(true), gateway_requests[0].body["stream"].as_bool());
     drop(gateway_requests);
     let relay_requests = relay_requests.lock().unwrap();
@@ -1652,7 +1649,7 @@ async fn app_runtime_gateway_executor_accepts_native_slash_chat_model_for_route_
         store,
         Arc::new(SequentialUuidGenerator::new(vec!["runtime-event-uuid-1"])),
         Arc::new(TestRuntimeCatalog::with_model_format(
-            "openrouter/global/anthropic/claude-3-opus",
+            "openrouter/anthropic/claude-3-opus",
             Some("openai_chat"),
         )),
         Arc::new(RecordingGatewayRuntimeClient::new(Arc::clone(
@@ -1678,13 +1675,13 @@ async fn app_runtime_gateway_executor_prefers_console_default_api_key_without_fr
                 status: "streaming".to_owned(),
                 runtime: "openai_compatible".to_owned(),
                 endpoint: Some("chat.stream".to_owned()),
-                model: Some("openai/global/gpt-4o-mini".to_owned()),
+                model: Some("openai/gpt-4o-mini".to_owned()),
                 provider: Some("openai".to_owned()),
                 ..sample_invocation()
             },
             request_json: json!({
                 "messages": [{"role": "user", "content": "ping"}],
-                "selectedModel": "openai/global/gpt-4o-mini"
+                "selectedModel": "openai/gpt-4o-mini"
             }),
             metadata: json!({"surface": "playground"}),
         },
@@ -1732,13 +1729,13 @@ async fn app_runtime_gateway_executor_selects_lowest_route_capable_api_key_when_
                     status: "streaming".to_owned(),
                     runtime: "openai_compatible".to_owned(),
                     endpoint: Some("chat.stream".to_owned()),
-                    model: Some("openai/global/gpt-4o-mini".to_owned()),
+                    model: Some("openai/gpt-4o-mini".to_owned()),
                     provider: Some("openai".to_owned()),
                     ..sample_invocation()
                 },
                 request_json: json!({
                     "messages": [{"role": "user", "content": "ping"}],
-                    "selectedModel": "openai/global/gpt-4o-mini"
+                    "selectedModel": "openai/gpt-4o-mini"
                 }),
                 metadata: json!({"surface": "playground"}),
             },
@@ -1784,14 +1781,14 @@ async fn app_runtime_gateway_executor_prefers_request_route_key_over_console_def
                 status: "streaming".to_owned(),
                 runtime: "openai_compatible".to_owned(),
                 endpoint: Some("chat.stream".to_owned()),
-                model: Some("openai/global/gpt-4o-mini".to_owned()),
+                model: Some("openai/gpt-4o-mini".to_owned()),
                 provider: Some("openai".to_owned()),
                 ..sample_invocation()
             },
             request_json: json!({
                 "messages": [{"role": "user", "content": "ping"}],
                 "routeKeyId": 101,
-                "selectedModel": "openai/global/gpt-4o-mini"
+                "selectedModel": "openai/gpt-4o-mini"
             }),
             metadata: json!({"surface": "playground"}),
         },
@@ -1837,14 +1834,14 @@ async fn app_runtime_gateway_executor_rejects_request_route_key_outside_trusted_
                 status: "streaming".to_owned(),
                 runtime: "openai_compatible".to_owned(),
                 endpoint: Some("chat.stream".to_owned()),
-                model: Some("openai/global/gpt-4o-mini".to_owned()),
+                model: Some("openai/gpt-4o-mini".to_owned()),
                 provider: Some("openai".to_owned()),
                 ..sample_invocation()
             },
             request_json: json!({
                 "messages": [{"role": "user", "content": "ping"}],
                 "routeKeyId": 909,
-                "selectedModel": "openai/global/gpt-4o-mini"
+                "selectedModel": "openai/gpt-4o-mini"
             }),
             metadata: json!({"surface": "playground"}),
         },
@@ -1878,13 +1875,13 @@ async fn app_runtime_gateway_executor_prefers_route_capable_api_key_over_unrouta
                 status: "streaming".to_owned(),
                 runtime: "openai_compatible".to_owned(),
                 endpoint: Some("chat.stream".to_owned()),
-                model: Some("openai/global/gpt-4o-mini".to_owned()),
+                model: Some("openai/gpt-4o-mini".to_owned()),
                 provider: Some("openai".to_owned()),
                 ..sample_invocation()
             },
             request_json: json!({
                 "messages": [{"role": "user", "content": "ping"}],
-                "selectedModel": "openai/global/gpt-4o-mini"
+                "selectedModel": "openai/gpt-4o-mini"
             }),
             metadata: json!({"surface": "playground"}),
         },
@@ -1929,13 +1926,13 @@ async fn app_runtime_gateway_executor_does_not_call_gateway_when_no_api_key_can_
                 status: "streaming".to_owned(),
                 runtime: "openai_compatible".to_owned(),
                 endpoint: Some("chat.stream".to_owned()),
-                model: Some("openai/global/gpt-4o-mini".to_owned()),
+                model: Some("openai/gpt-4o-mini".to_owned()),
                 provider: Some("openai".to_owned()),
                 ..sample_invocation()
             },
             request_json: json!({
                 "messages": [{"role": "user", "content": "ping"}],
-                "selectedModel": "openai/global/gpt-4o-mini"
+                "selectedModel": "openai/gpt-4o-mini"
             }),
             metadata: json!({"surface": "playground"}),
         },
@@ -1976,13 +1973,13 @@ async fn app_runtime_gateway_executor_defers_empty_route_snapshot_probe_to_gatew
                 status: "streaming".to_owned(),
                 runtime: "openai_compatible".to_owned(),
                 endpoint: Some("chat.stream".to_owned()),
-                model: Some("openai/global/gpt-5.5".to_owned()),
+                model: Some("openai/gpt-5.5".to_owned()),
                 provider: Some("openai".to_owned()),
                 ..sample_invocation()
             },
             request_json: json!({
                 "messages": [{"role": "user", "content": "ping"}],
-                "selectedModel": "openai/global/gpt-5.5"
+                "selectedModel": "openai/gpt-5.5"
             }),
             metadata: json!({"surface": "playground"}),
         },
@@ -1992,9 +1989,7 @@ async fn app_runtime_gateway_executor_defers_empty_route_snapshot_probe_to_gatew
     let router = sdkwork_claw_product::api::app_runtime_router_with_store_and_gateway_client(
         store,
         Arc::new(SequentialUuidGenerator::new(vec!["runtime-event-uuid-1"])),
-        Arc::new(TestRuntimeCatalog::without_runtime_routes(
-            "openai/global/gpt-5.5",
-        )),
+        Arc::new(TestRuntimeCatalog::without_runtime_routes("openai/gpt-5.5")),
         Arc::new(RecordingGatewayRuntimeClient::new(Arc::clone(
             &gateway_requests,
         ))),
@@ -2007,7 +2002,7 @@ async fn app_runtime_gateway_executor_defers_empty_route_snapshot_probe_to_gatew
     assert_eq!(1, gateway_requests.len());
     assert_eq!("/v1/chat/completions", gateway_requests[0].path);
     assert_eq!("Bearer sk-copyable-101", gateway_requests[0].authorization);
-    assert_eq!("openai/global/gpt-5.5", gateway_requests[0].body["model"]);
+    assert_eq!("gpt-5.5", gateway_requests[0].body["model"]);
 }
 
 #[tokio::test]
@@ -2018,13 +2013,13 @@ async fn app_runtime_gateway_executor_retries_transient_empty_gateway_route_snap
                 status: "streaming".to_owned(),
                 runtime: "openai_compatible".to_owned(),
                 endpoint: Some("chat.stream".to_owned()),
-                model: Some("openai/global/gpt-5.5".to_owned()),
+                model: Some("openai/gpt-5.5".to_owned()),
                 provider: Some("openai".to_owned()),
                 ..sample_invocation()
             },
             request_json: json!({
                 "messages": [{"role": "user", "content": "ping"}],
-                "selectedModel": "openai/global/gpt-5.5"
+                "selectedModel": "openai/gpt-5.5"
             }),
             metadata: json!({"surface": "playground"}),
         },
@@ -2034,9 +2029,7 @@ async fn app_runtime_gateway_executor_retries_transient_empty_gateway_route_snap
     let router = sdkwork_claw_product::api::app_runtime_router_with_store_and_gateway_client(
         store,
         Arc::new(SequentialUuidGenerator::new(vec!["runtime-event-uuid-1"])),
-        Arc::new(TestRuntimeCatalog::without_runtime_routes(
-            "openai/global/gpt-5.5",
-        )),
+        Arc::new(TestRuntimeCatalog::without_runtime_routes("openai/gpt-5.5")),
         Arc::new(
             RecordingGatewayRuntimeClient::with_transient_empty_route_snapshot(Arc::clone(
                 &gateway_requests,
@@ -2052,8 +2045,8 @@ async fn app_runtime_gateway_executor_retries_transient_empty_gateway_route_snap
     assert!(body.ends_with("data: [DONE]\n\n"), "{body}");
     let gateway_requests = gateway_requests.lock().unwrap();
     assert_eq!(2, gateway_requests.len());
-    assert_eq!("openai/global/gpt-5.5", gateway_requests[0].body["model"]);
-    assert_eq!("openai/global/gpt-5.5", gateway_requests[1].body["model"]);
+    assert_eq!("gpt-5.5", gateway_requests[0].body["model"]);
+    assert_eq!("gpt-5.5", gateway_requests[1].body["model"]);
 }
 
 #[tokio::test]
@@ -2064,13 +2057,13 @@ async fn app_runtime_gateway_executor_does_not_retry_configured_route_mismatch()
                 status: "streaming".to_owned(),
                 runtime: "openai_compatible".to_owned(),
                 endpoint: Some("chat.stream".to_owned()),
-                model: Some("openai/global/gpt-5.5".to_owned()),
+                model: Some("openai/gpt-5.5".to_owned()),
                 provider: Some("openai".to_owned()),
                 ..sample_invocation()
             },
             request_json: json!({
                 "messages": [{"role": "user", "content": "ping"}],
-                "selectedModel": "openai/global/gpt-5.5"
+                "selectedModel": "openai/gpt-5.5"
             }),
             metadata: json!({"surface": "playground"}),
         },
@@ -2080,9 +2073,7 @@ async fn app_runtime_gateway_executor_does_not_retry_configured_route_mismatch()
     let router = sdkwork_claw_product::api::app_runtime_router_with_store_and_gateway_client(
         store,
         Arc::new(SequentialUuidGenerator::new(vec!["runtime-event-uuid-1"])),
-        Arc::new(TestRuntimeCatalog::without_runtime_routes(
-            "openai/global/gpt-5.5",
-        )),
+        Arc::new(TestRuntimeCatalog::without_runtime_routes("openai/gpt-5.5")),
         Arc::new(
             RecordingGatewayRuntimeClient::with_configured_route_mismatch(Arc::clone(
                 &gateway_requests,
@@ -2109,13 +2100,13 @@ async fn app_runtime_gateway_executor_includes_model_when_gateway_returns_model_
                 status: "streaming".to_owned(),
                 runtime: "openai_compatible".to_owned(),
                 endpoint: Some("chat.stream".to_owned()),
-                model: Some("alibaba/cn/qwen3.6-max-preview".to_owned()),
+                model: Some("alibaba/qwen3.6-max-preview".to_owned()),
                 provider: Some("alibaba".to_owned()),
                 ..sample_invocation()
             },
             request_json: json!({
                 "messages": [{"role": "user", "content": "ping"}],
-                "selectedModel": "alibaba/cn/qwen3.6-max-preview"
+                "selectedModel": "alibaba/qwen3.6-max-preview"
             }),
             metadata: json!({"surface": "playground"}),
         },
@@ -2126,7 +2117,7 @@ async fn app_runtime_gateway_executor_includes_model_when_gateway_returns_model_
         store,
         Arc::new(SequentialUuidGenerator::new(Vec::new())),
         Arc::new(TestRuntimeCatalog::with_model_format(
-            "alibaba/cn/qwen3.6-max-preview",
+            "alibaba/qwen3.6-max-preview",
             Some("openai_compatible"),
         )),
         Arc::new(
@@ -2140,14 +2131,11 @@ async fn app_runtime_gateway_executor_includes_model_when_gateway_returns_model_
 
     let body = runtime_failed_sse_text(response).await;
     assert!(body.contains("group:model_route_miss"), "{body}");
-    assert!(
-        body.contains("model=alibaba/cn/qwen3.6-max-preview"),
-        "{body}"
-    );
+    assert!(body.contains("model=alibaba/qwen3.6-max-preview"), "{body}");
     let gateway_requests = gateway_requests.lock().unwrap();
     assert_eq!(1, gateway_requests.len());
     assert_eq!(
-        "alibaba/cn/qwen3.6-max-preview",
+        "alibaba/qwen3.6-max-preview",
         gateway_requests[0].body["model"]
     );
     assert!(gateway_requests[0].body.get("selectedModel").is_none());
@@ -2161,13 +2149,13 @@ async fn app_runtime_gateway_executor_explains_pricing_plan_route_probe_failures
                 status: "streaming".to_owned(),
                 runtime: "openai_compatible".to_owned(),
                 endpoint: Some("chat.stream".to_owned()),
-                model: Some("openai/global/gpt-4o-mini".to_owned()),
+                model: Some("openai/gpt-4o-mini".to_owned()),
                 provider: Some("openai".to_owned()),
                 ..sample_invocation()
             },
             request_json: json!({
                 "messages": [{"role": "user", "content": "ping"}],
-                "selectedModel": "openai/global/gpt-4o-mini"
+                "selectedModel": "openai/gpt-4o-mini"
             }),
             metadata: json!({"surface": "playground"}),
         },
@@ -2198,7 +2186,7 @@ async fn app_runtime_gateway_executor_routes_codex_responses_invocations_to_gate
                 status: "streaming".to_owned(),
                 runtime: "codex".to_owned(),
                 endpoint: Some("responses.stream".to_owned()),
-                model: Some("openai/global/codex-mini-latest".to_owned()),
+                model: Some("openai/codex-mini-latest".to_owned()),
                 provider: Some("openai".to_owned()),
                 ..sample_invocation()
             },
@@ -2214,7 +2202,7 @@ async fn app_runtime_gateway_executor_routes_codex_responses_invocations_to_gate
         store,
         Arc::new(SequentialUuidGenerator::new(vec!["runtime-event-uuid-1"])),
         Arc::new(TestRuntimeCatalog::with_model_format(
-            "openai/global/codex-mini-latest",
+            "openai/codex-mini-latest",
             Some("openai_responses"),
         )),
         Arc::new(RecordingGatewayRuntimeClient::new(Arc::clone(
@@ -2232,7 +2220,7 @@ async fn app_runtime_gateway_executor_routes_codex_responses_invocations_to_gate
     assert_eq!("/v1/responses", gateway_requests[0].path);
     assert_eq!(Some(false), gateway_requests[0].body["stream"].as_bool());
     assert_eq!(
-        "openai/global/codex-mini-latest",
+        "openai/codex-mini-latest",
         gateway_requests[0].body["model"]
     );
     assert_eq!(
@@ -2405,14 +2393,14 @@ async fn app_runtime_gateway_executor_routes_frontend_chat_responses_model_to_ga
                 status: "streaming".to_owned(),
                 runtime: "openai_compatible".to_owned(),
                 endpoint: Some("chat.stream".to_owned()),
-                model: Some("openai/global/codex-mini-latest".to_owned()),
+                model: Some("openai/codex-mini-latest".to_owned()),
                 provider: Some("openai".to_owned()),
                 ..sample_invocation()
             },
             request_json: json!({
                 "messages": [{"role": "user", "content": "inspect repo"}],
                 "prompt": "inspect repo",
-                "selectedModel": "openai/global/codex-mini-latest"
+                "selectedModel": "openai/codex-mini-latest"
             }),
             metadata: json!({"surface": "playground"}),
         },
@@ -2423,7 +2411,7 @@ async fn app_runtime_gateway_executor_routes_frontend_chat_responses_model_to_ga
         store,
         Arc::new(SequentialUuidGenerator::new(vec!["runtime-event-uuid-1"])),
         Arc::new(TestRuntimeCatalog::with_model_format(
-            "openai/global/codex-mini-latest",
+            "openai/codex-mini-latest",
             Some("openai_responses"),
         )),
         Arc::new(RecordingGatewayRuntimeClient::new(Arc::clone(
@@ -2439,7 +2427,7 @@ async fn app_runtime_gateway_executor_routes_frontend_chat_responses_model_to_ga
     assert_eq!("/v1/chat/completions", gateway_requests[0].path);
     assert_eq!(Some(true), gateway_requests[0].body["stream"].as_bool());
     assert_eq!(
-        "openai/global/codex-mini-latest",
+        "openai/codex-mini-latest",
         gateway_requests[0].body["model"]
     );
     assert_eq!(
@@ -2614,13 +2602,13 @@ async fn app_runtime_gateway_executor_routes_image_generation_to_gateway_images_
                 status: "streaming".to_owned(),
                 runtime: "openai_compatible".to_owned(),
                 endpoint: Some("agent.stream".to_owned()),
-                model: Some("openai/global/gpt-image-2".to_owned()),
+                model: Some("openai/gpt-image-2".to_owned()),
                 provider: Some("openai".to_owned()),
                 ..sample_invocation()
             },
             request_json: json!({
                 "prompt": "brand launch poster",
-                "selectedModel": "openai/global/gpt-image-2",
+                "selectedModel": "openai/gpt-image-2",
                 "targetType": "image",
                 "generationConfig": {
                     "aspectRatio": "16:9",
@@ -2638,7 +2626,7 @@ async fn app_runtime_gateway_executor_routes_image_generation_to_gateway_images_
         store.clone(),
         Arc::new(SequentialUuidGenerator::new(vec!["runtime-event-uuid-1"])),
         Arc::new(TestRuntimeCatalog::with_model_format(
-            "openai/global/gpt-image-2",
+            "openai/gpt-image-2",
             Some("openai_compatible"),
         )),
         Arc::new(RecordingGatewayRuntimeClient::new(Arc::clone(
@@ -2662,10 +2650,7 @@ async fn app_runtime_gateway_executor_routes_image_generation_to_gateway_images_
     assert_eq!(Method::POST, gateway_requests[0].method);
     assert_eq!("/v1/images/generations", gateway_requests[0].path);
     assert_eq!("Bearer sk-copyable-101", gateway_requests[0].authorization);
-    assert_eq!(
-        "openai/global/gpt-image-2",
-        gateway_requests[0].body["model"]
-    );
+    assert_eq!("openai/gpt-image-2", gateway_requests[0].body["model"]);
     assert_eq!("brand launch poster", gateway_requests[0].body["prompt"]);
     assert_eq!(2, gateway_requests[0].body["n"]);
     assert_eq!("1536x1024", gateway_requests[0].body["size"]);
@@ -2695,13 +2680,13 @@ async fn app_runtime_gateway_executor_routes_reference_image_generation_to_gatew
                 status: "streaming".to_owned(),
                 runtime: "openai_compatible".to_owned(),
                 endpoint: Some("agent.stream".to_owned()),
-                model: Some("openai/global/gpt-image-2".to_owned()),
+                model: Some("openai/gpt-image-2".to_owned()),
                 provider: Some("openai".to_owned()),
                 ..sample_invocation()
             },
             request_json: json!({
                 "prompt": "turn this sketch into a campaign poster",
-                "selectedModel": "openai/global/gpt-image-2",
+                "selectedModel": "openai/gpt-image-2",
                 "targetType": "image",
                 "generationConfig": {
                     "aspectRatio": "1:1",
@@ -2723,7 +2708,7 @@ async fn app_runtime_gateway_executor_routes_reference_image_generation_to_gatew
         store,
         Arc::new(SequentialUuidGenerator::new(vec!["runtime-event-uuid-1"])),
         Arc::new(TestRuntimeCatalog::with_model_format(
-            "openai/global/gpt-image-2",
+            "openai/gpt-image-2",
             Some("openai_compatible"),
         )),
         Arc::new(RecordingGatewayRuntimeClient::new(Arc::clone(
@@ -2746,7 +2731,7 @@ async fn app_runtime_gateway_executor_routes_reference_image_generation_to_gatew
         .starts_with("multipart/form-data; boundary="));
     assert!(gateway_requests[0]
         .body_text
-        .contains("name=\"model\"\r\n\r\nopenai/global/gpt-image-2\r\n"));
+        .contains("name=\"model\"\r\n\r\nopenai/gpt-image-2\r\n"));
     assert!(gateway_requests[0]
         .body_text
         .contains("name=\"prompt\"\r\n\r\nturn this sketch into a campaign poster\r\n"));
@@ -2920,13 +2905,13 @@ async fn app_runtime_gateway_executor_routes_openai_audio_generation_to_audio_sp
                 status: "streaming".to_owned(),
                 runtime: "openai_compatible".to_owned(),
                 endpoint: Some("agent.stream".to_owned()),
-                model: Some("openai/global/gpt-realtime-1.5".to_owned()),
+                model: Some("openai/gpt-realtime-1.5".to_owned()),
                 provider: Some("openai".to_owned()),
                 ..sample_invocation()
             },
             request_json: json!({
                 "prompt": "announce the product launch in a warm voice",
-                "selectedModel": "openai/global/gpt-realtime-1.5",
+                "selectedModel": "openai/gpt-realtime-1.5",
                 "targetType": "audio",
                 "generationConfig": {
                     "durationSeconds": 10,
@@ -2942,7 +2927,7 @@ async fn app_runtime_gateway_executor_routes_openai_audio_generation_to_audio_sp
         store.clone(),
         Arc::new(SequentialUuidGenerator::new(vec!["runtime-event-uuid-1"])),
         Arc::new(TestRuntimeCatalog::with_model_format(
-            "openai/global/gpt-realtime-1.5",
+            "openai/gpt-realtime-1.5",
             Some("openai_compatible"),
         )),
         Arc::new(RecordingGatewayRuntimeClient::new(Arc::clone(
@@ -2964,10 +2949,7 @@ async fn app_runtime_gateway_executor_routes_openai_audio_generation_to_audio_sp
     assert_eq!(1, gateway_requests.len());
     assert_eq!(Method::POST, gateway_requests[0].method);
     assert_eq!("/v1/audio/speech", gateway_requests[0].path);
-    assert_eq!(
-        "openai/global/gpt-realtime-1.5",
-        gateway_requests[0].body["model"]
-    );
+    assert_eq!("openai/gpt-realtime-1.5", gateway_requests[0].body["model"]);
     assert_eq!(
         "announce the product launch in a warm voice",
         gateway_requests[0].body["input"]
@@ -2993,13 +2975,13 @@ async fn app_runtime_gateway_executor_applies_speech_mode_config_to_openai_audio
                 status: "streaming".to_owned(),
                 runtime: "openai_compatible".to_owned(),
                 endpoint: Some("agent.stream".to_owned()),
-                model: Some("openai/global/gpt-4o-mini-tts".to_owned()),
+                model: Some("openai/gpt-4o-mini-tts".to_owned()),
                 provider: Some("openai".to_owned()),
                 ..sample_invocation()
             },
             request_json: json!({
                 "prompt": "read the release note with calm confidence",
-                "selectedModel": "openai/global/gpt-4o-mini-tts",
+                "selectedModel": "openai/gpt-4o-mini-tts",
                 "targetType": "audio",
                 "generationConfig": {
                     "durationSeconds": 10,
@@ -3019,7 +3001,7 @@ async fn app_runtime_gateway_executor_applies_speech_mode_config_to_openai_audio
         store.clone(),
         Arc::new(SequentialUuidGenerator::new(vec!["runtime-event-uuid-1"])),
         Arc::new(TestRuntimeCatalog::with_model_format(
-            "openai/global/gpt-4o-mini-tts",
+            "openai/gpt-4o-mini-tts",
             Some("openai_compatible"),
         )),
         Arc::new(RecordingGatewayRuntimeClient::new(Arc::clone(
@@ -3298,7 +3280,7 @@ async fn app_runtime_gateway_executor_requires_copyable_gateway_api_key_secret()
                 status: "streaming".to_owned(),
                 runtime: "openai_compatible".to_owned(),
                 endpoint: Some("chat.stream".to_owned()),
-                model: Some("openai/global/gpt-4o-mini".to_owned()),
+                model: Some("openai/gpt-4o-mini".to_owned()),
                 provider: Some("openai".to_owned()),
                 ..sample_invocation()
             },
@@ -3764,7 +3746,7 @@ struct TestRuntimeCatalog {
     vendor_code: String,
     api_format: Option<String>,
     include_model_route: bool,
-    include_account_pool_route: bool,
+    include_channel_route: bool,
     include_copyable_key: bool,
     include_pricing_plan: bool,
     api_keys: Option<Vec<TestRuntimeApiKeyFixture>>,
@@ -3790,7 +3772,7 @@ impl TestRuntimeCatalog {
             vendor_code,
             api_format: api_format.map(str::to_owned),
             include_model_route: true,
-            include_account_pool_route: true,
+            include_channel_route: true,
             include_copyable_key: true,
             include_pricing_plan: true,
             api_keys: None,
@@ -3808,7 +3790,7 @@ impl TestRuntimeCatalog {
     fn without_runtime_routes(catalog_key: &str) -> Self {
         Self {
             include_model_route: false,
-            include_account_pool_route: false,
+            include_channel_route: false,
             ..Self::with_model_format(catalog_key, None)
         }
     }
@@ -3844,7 +3826,7 @@ impl TestRuntimeCatalog {
 
 impl Default for TestRuntimeCatalog {
     fn default() -> Self {
-        Self::with_model_format("openai/global/gpt-4o-mini", None)
+        Self::with_model_format("openai/gpt-4o-mini", None)
     }
 }
 
@@ -3884,14 +3866,14 @@ impl sdkwork_claw_product::ports::PricingCatalog for TestRuntimeCatalog {
         ]
     }
 
-    fn list_provider_account_pool_routes(
+    fn list_provider_channel_routes(
         &self,
-    ) -> Vec<sdkwork_claw_product::domain::ProviderAccountPoolRoute> {
-        if !self.include_account_pool_route {
+    ) -> Vec<sdkwork_claw_product::domain::ProviderChannelRoute> {
+        if !self.include_channel_route {
             return Vec::new();
         }
         vec![
-            sdkwork_claw_product::domain::ProviderAccountPoolRoute::new("openai", 3001)
+            sdkwork_claw_product::domain::ProviderChannelRoute::new("openai", 3001)
                 .with_provider_endpoint(Some("https://provider.example/v1"), Some("secret-ref")),
         ]
     }
@@ -4365,11 +4347,11 @@ impl AppRuntimeGatewayClient for RecordingGatewayRuntimeClient {
                 )
             } else if transient_empty_route_snapshot {
                 Body::from(
-                    "{\"error\":{\"message\":\"provider route snapshot is empty for model: openai/global/gpt-5.5\",\"type\":\"server_error\",\"code\":\"provider_route_snapshot_empty\"}}",
+                    "{\"error\":{\"message\":\"provider route snapshot is empty for model: openai/gpt-5.5\",\"type\":\"server_error\",\"code\":\"provider_route_snapshot_empty\"}}",
                 )
             } else if response_kind == GatewayResponseKind::ConfiguredRouteMismatch {
                 Body::from(
-                    "{\"error\":{\"message\":\"provider route is not available for model: openai/global/gpt-5.5; route diagnostics: requested_model=openai/global/gpt-5.5; api_key_id=1; tenant_id=10; organization_id=20; user_id=2; api_key_group_id=1; api_key_group_code=grp; capability=Chat; model_routes_loaded=1; account_pool_routes_loaded=1; any_group_bindings=true; matching_group_bound_channels=0; scoped_model_routes=0; scoped_account_pool_routes=0\",\"type\":\"server_error\",\"code\":\"provider_route_not_available\"}}",
+                    "{\"error\":{\"message\":\"provider route is not available for model: openai/gpt-5.5; route diagnostics: requested_model=openai/gpt-5.5; api_key_id=1; tenant_id=10; organization_id=20; user_id=2; channel_group_id=1; channel_group_code=grp; capability=Chat; model_routes_loaded=1; channel_routes_loaded=1; any_group_bindings=true; matching_group_bound_channels=0; scoped_model_routes=0; scoped_channel_routes=0\",\"type\":\"server_error\",\"code\":\"provider_route_not_available\"}}",
                 )
             } else if request.path == "/v1/images/generations" || request.path == "/v1/images/edits"
             {

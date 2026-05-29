@@ -53,6 +53,7 @@ export interface UsageLog {
   path: SdkUsageLogsResponse['logs'][number]['path'];
   reasoningEffort: SdkUsageLogsResponse['logs'][number]['reasoningEffort'];
   ip: SdkUsageLogsResponse['logs'][number]['ip'];
+  userAgent: SdkUsageLogsResponse['logs'][number]['userAgent'];
 }
 
 type UsageLogPage = {
@@ -180,6 +181,7 @@ function normalizeUsageLog(value: unknown): UsageLog {
     path: readRequiredString(item, 'path', 'Usage log path is required'),
     reasoningEffort: readRequiredString(item, 'reasoningEffort', 'Usage log reasoning effort is required'),
     ip: readRequiredString(item, 'ip', 'Usage log ip is required'),
+    userAgent: readOptionalString(item, 'userAgent'),
   };
 }
 

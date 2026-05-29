@@ -13,7 +13,6 @@ namespace Sdkwork.ClawRouter.App.Models
         public string? MemorySpaceId { get; set; }
         public Dictionary<string, string>? Metadata { get; set; }
         public string? Model { get; set; }
-        public string? RequestId { get; set; }
         public string? Runtime { get; set; }
         public string? SourceSurface { get; set; }
         public string? TraceId { get; set; }

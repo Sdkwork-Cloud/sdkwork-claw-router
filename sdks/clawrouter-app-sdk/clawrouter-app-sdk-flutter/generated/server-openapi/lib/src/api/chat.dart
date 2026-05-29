@@ -25,11 +25,10 @@ class ChatApi {
   }
 
   /// Create product chat conversation
-  Future<ConversationsCreateResult?> conversationsCreate(ChatConversationCreateRequest body, String idempotencyKey, [String? xRequestId]) async {
+  Future<ConversationsCreateResult?> conversationsCreate(ChatConversationCreateRequest body, String idempotencyKey) async {
     final requestHeaders = buildRequestHeaders(
       <String, HeaderParameterSpec>{
         'Idempotency-Key': HeaderParameterSpec(idempotencyKey, 'simple', false, null),
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
       },
       <String, HeaderParameterSpec>{},
     );
@@ -64,11 +63,10 @@ class ChatApi {
   }
 
   /// Create product chat turn
-  Future<TurnsCreateResult?> turnsCreate(String conversationId, ChatTurnCreateRequest body, String idempotencyKey, [String? xRequestId]) async {
+  Future<TurnsCreateResult?> turnsCreate(String conversationId, ChatTurnCreateRequest body, String idempotencyKey) async {
     final requestHeaders = buildRequestHeaders(
       <String, HeaderParameterSpec>{
         'Idempotency-Key': HeaderParameterSpec(idempotencyKey, 'simple', false, null),
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
       },
       <String, HeaderParameterSpec>{},
     );
@@ -81,11 +79,10 @@ class ChatApi {
   }
 
   /// Complete product chat turn response
-  Future<TurnResponsesCreateResult?> turnResponsesCreate(String conversationId, String turnId, ChatTurnResponseRequest body, String idempotencyKey, [String? xRequestId]) async {
+  Future<TurnResponsesCreateResult?> turnResponsesCreate(String conversationId, String turnId, ChatTurnResponseRequest body, String idempotencyKey) async {
     final requestHeaders = buildRequestHeaders(
       <String, HeaderParameterSpec>{
         'Idempotency-Key': HeaderParameterSpec(idempotencyKey, 'simple', false, null),
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
       },
       <String, HeaderParameterSpec>{},
     );

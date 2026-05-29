@@ -50,6 +50,9 @@ export interface AdminResourceCenterProps<TSectionId extends string = string, TG
   reloadLabel?: string;
   tableViewportDataAttribute?: string;
   refreshKey?: unknown;
+  onRecordOpen?: (record: AdminResourceRecord, section: AdminResourceSection<TSectionId, TGroup>) => void;
+  recordActionColumnLabel?: string;
+  recordOpenLabel?: string;
 }
 
 const INITIAL_STATE: AdminResourceState = {
@@ -65,6 +68,9 @@ export function AdminResourceCenter<TSectionId extends string = string, TGroup e
   errorTitle = 'Data could not be loaded',
   initialSectionId,
   loadingTitle = 'Loading records...',
+  onRecordOpen,
+  recordActionColumnLabel = 'Action',
+  recordOpenLabel = 'Details',
   reloadLabel = 'Reload',
   refreshKey,
   searchPlaceholder = 'Search records',
@@ -84,6 +90,7 @@ export function AdminResourceCenter<TSectionId extends string = string, TGroup e
   const activeTab = activeSection.id;
   const activeState = stateByTab[activeTab] ?? INITIAL_STATE;
   const activeActions = activeSection.actions ?? (activeSection.action ? [activeSection.action] : []);
+  const tableColumnCount = activeSection.columns.length + (onRecordOpen ? 1 : 0);
 
   const loadSection = useCallback(async (section: AdminResourceSection<TSectionId, TGroup>, isActive: () => boolean = () => true) => {
     setStateByTab((current) => ({
@@ -232,14 +239,19 @@ export function AdminResourceCenter<TSectionId extends string = string, TGroup e
                       {column.label}
                     </th>
                   ))}
+                  {onRecordOpen ? (
+                    <th className="px-6 py-4 text-right font-semibold">
+                      {recordActionColumnLabel}
+                    </th>
+                  ) : null}
                 </tr>
               </thead>
               <tbody className="divide-y divide-slate-200 dark:divide-white/5">
                 {activeState.loading ? (
-                  <BusinessStateTableRow colSpan={activeSection.columns.length} kind="loading" title={loadingTitle} />
+                  <BusinessStateTableRow colSpan={tableColumnCount} kind="loading" title={loadingTitle} />
                 ) : visibleRecords.length === 0 ? (
                   <BusinessStateTableRow
-                    colSpan={activeSection.columns.length}
+                    colSpan={tableColumnCount}
                     description={emptyDescription}
                     kind="empty"
                     title={emptyTitle}
@@ -258,6 +270,17 @@ export function AdminResourceCenter<TSectionId extends string = string, TGroup e
                         </td>
                       );
                     })}
+                    {onRecordOpen ? (
+                      <td className="px-6 py-4 text-right">
+                        <button
+                          className="inline-flex items-center justify-center rounded-md border border-slate-200 bg-white px-2.5 py-1.5 text-xs font-semibold text-slate-700 transition-colors hover:bg-slate-50 dark:border-white/10 dark:bg-white/5 dark:text-slate-200 dark:hover:bg-white/10"
+                          onClick={() => onRecordOpen(record, activeSection)}
+                          type="button"
+                        >
+                          {recordOpenLabel}
+                        </button>
+                      </td>
+                    ) : null}
                   </tr>
                 ))}
               </tbody>

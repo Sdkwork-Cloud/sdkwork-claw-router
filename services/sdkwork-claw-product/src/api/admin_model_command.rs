@@ -86,7 +86,6 @@ struct AdminModelVendorCreateRequest {
 struct AdminAiModelCreateRequest {
     vendor_id: Option<Value>,
     model: Option<String>,
-    name: Option<String>,
     display_name: Option<String>,
     #[serde(rename = "type")]
     model_type: Option<String>,
@@ -121,7 +120,6 @@ struct AdminAiModelCreateRequest {
 struct AdminAiModelUpdateRequest {
     vendor_id: Option<Value>,
     model: Option<String>,
-    name: Option<String>,
     display_name: Option<String>,
     #[serde(rename = "type")]
     model_type: Option<String>,
@@ -821,7 +819,7 @@ fn normalize_model_create_request(
         cache_write_price.as_deref(),
     )?;
     let region_code = primary_region_code(&region_prices);
-    let model = normalize_model_name(request.model.as_deref().or(request.name.as_deref()))?;
+    let model = normalize_model_name(request.model.as_deref())?;
     let display_name = normalize_model_display_name(request.display_name.as_deref(), &model)?;
     Ok(NormalizedModelCreateRequest {
         vendor_id: normalize_value_text(request.vendor_id.as_ref(), "vendorId", MAX_NAME_LEN)?,
@@ -982,7 +980,6 @@ fn normalize_model_update_request(
         model: request
             .model
             .as_deref()
-            .or(request.name.as_deref())
             .map(|value| normalize_model_name(Some(value)))
             .transpose()?,
         display_name: match request.display_name {

@@ -3,7 +3,7 @@ use std::collections::{BTreeMap, BTreeSet};
 use crate::application::{PricingResolver, ResolveModelPriceQuery};
 use crate::domain::{
     AiModel, ApiKeyGroup, BillingMeter, DomainResult, ModelPrice, ModelVendor, PriceSide,
-    ProviderAccountPoolGroupBinding,
+    ProviderChannelGroupBinding,
 };
 use crate::ports::PricingCatalog;
 
@@ -366,15 +366,15 @@ fn configured_model_groups<C: PricingCatalog>(catalog: &C, model: &AiModel) -> V
         return Vec::new();
     }
 
-    let account_pool_routes = catalog.list_provider_account_pool_routes();
-    let any_group_bindings = account_pool_routes
+    let channel_routes = catalog.list_provider_channel_routes();
+    let any_group_bindings = channel_routes
         .iter()
         .any(|route| !route.group_bindings.is_empty());
     let mut selected_group_ids = BTreeSet::new();
     if any_group_bindings {
         let model_scope_keys = [model.catalog_key.as_str(), model.model.as_str()];
         let model_capability_codes = model_group_capability_codes(model);
-        for route in account_pool_routes {
+        for route in channel_routes {
             for binding in route.group_bindings {
                 if groups_by_id.contains_key(&binding.group_id)
                     && binding_matches_model_scope(&binding, &model_scope_keys)
@@ -416,7 +416,7 @@ fn configured_group_code(group: &ApiKeyGroup) -> Option<String> {
 }
 
 fn binding_matches_model_scope(
-    binding: &ProviderAccountPoolGroupBinding,
+    binding: &ProviderChannelGroupBinding,
     model_scope_keys: &[&str],
 ) -> bool {
     if binding.model_scope.is_empty() {
@@ -493,7 +493,7 @@ fn normalize_model_scope_value(value: &str) -> String {
 }
 
 fn binding_matches_model_capability(
-    binding: &ProviderAccountPoolGroupBinding,
+    binding: &ProviderChannelGroupBinding,
     model_capability_codes: &BTreeSet<String>,
 ) -> bool {
     if binding.capabilities.is_empty() {

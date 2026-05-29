@@ -18,11 +18,10 @@ public class IamApi {
     }
 
     /// Create key
-    public func apiKeysCreate(body: CreateApiKeyRequest, idempotencyKey: String, xRequestId: String? = nil) async throws -> ApiKeysCreateResult? {
+    public func apiKeysCreate(body: CreateApiKeyRequest, idempotencyKey: String) async throws -> ApiKeysCreateResult? {
         let requestHeaders = buildRequestHeaders(
             [
                 "Idempotency-Key": HeaderParameterSpec(value: idempotencyKey, style: "simple", explode: false, contentType: nil),
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
             ],
             [:]
         )
@@ -35,14 +34,8 @@ public class IamApi {
     }
 
     /// Update key
-    public func apiKeysUpdate(apiKeyId: String, body: UpdateApiKeyRequest, xRequestId: String? = nil) async throws -> ApiKeysUpdateResult? {
-        let requestHeaders = buildRequestHeaders(
-            [
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
-            ],
-            [:]
-        )
-        return try await client.patch(ApiPaths.appPath("/iam/api_keys/\(serializePathParameter(apiKeyId, PathParameterSpec(name: "apiKeyId", style: "simple", explode: false)))"), body: body, params: nil, headers: requestHeaders, contentType: "application/json", responseType: ApiKeysUpdateResult.self)
+    public func apiKeysUpdate(apiKeyId: String, body: UpdateApiKeyRequest) async throws -> ApiKeysUpdateResult? {
+        return try await client.patch(ApiPaths.appPath("/iam/api_keys/\(serializePathParameter(apiKeyId, PathParameterSpec(name: "apiKeyId", style: "simple", explode: false)))"), body: body, params: nil, headers: nil, contentType: "application/json", responseType: ApiKeysUpdateResult.self)
     }
 
     /// Retrieve current IAM user

@@ -380,12 +380,11 @@ class ServiceProvidersDownstreamsApi:
         ])
         return self._client.get(_append_query_string(f"/backend/v3/api/service_providers/downstreams", query))
 
-    def create(self, body: ServiceProviderDownstreamCreateRequest, idempotency_key: str, x_request_id: Optional[str] = None) -> DownstreamsCreateResult:
+    def create(self, body: ServiceProviderDownstreamCreateRequest, idempotency_key: str) -> DownstreamsCreateResult:
         """Service Provider Downstream Create"""
         request_headers = build_request_headers(
             {
                 'Idempotency-Key': {'value': idempotency_key, 'style': 'simple', 'explode': False},
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
             },
             {}
         )
@@ -431,23 +430,21 @@ class ServiceProvidersPricingRulesApi:
         ])
         return self._client.get(_append_query_string(f"/backend/v3/api/service_providers/pricing/rules", query))
 
-    def create(self, body: ServiceProviderPricingRuleCreateRequest, idempotency_key: str, x_request_id: Optional[str] = None) -> PricingRulesCreateResult:
+    def create(self, body: ServiceProviderPricingRuleCreateRequest, idempotency_key: str) -> PricingRulesCreateResult:
         """Service Provider Pricing Rule Create"""
         request_headers = build_request_headers(
             {
                 'Idempotency-Key': {'value': idempotency_key, 'style': 'simple', 'explode': False},
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
             },
             {}
         )
         return self._client.post(f"/backend/v3/api/service_providers/pricing/rules", json=body, headers=request_headers)
 
-    def update(self, rule_id: str, body: ServiceProviderPricingRuleUpdateRequest, idempotency_key: str, x_request_id: Optional[str] = None) -> PricingRulesUpdateResult:
+    def update(self, rule_id: str, body: ServiceProviderPricingRuleUpdateRequest, idempotency_key: str) -> PricingRulesUpdateResult:
         """Service Provider Pricing Rule Update"""
         request_headers = build_request_headers(
             {
                 'Idempotency-Key': {'value': idempotency_key, 'style': 'simple', 'explode': False},
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
             },
             {}
         )
@@ -460,12 +457,11 @@ class ServiceProvidersPriceSimulationApi:
         self._client = client
 
 
-    def create(self, body: ServiceProviderPriceSimulationRequest, idempotency_key: str, x_request_id: Optional[str] = None) -> PriceSimulationCreateResult:
+    def create(self, body: ServiceProviderPriceSimulationRequest, idempotency_key: str) -> PriceSimulationCreateResult:
         """Service Provider Price Simulation Create"""
         request_headers = build_request_headers(
             {
                 'Idempotency-Key': {'value': idempotency_key, 'style': 'simple', 'explode': False},
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
             },
             {}
         )

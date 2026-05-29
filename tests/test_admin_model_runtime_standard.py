@@ -1,4 +1,4 @@
-﻿import json
+import json
 import unittest
 from pathlib import Path
 
@@ -41,7 +41,7 @@ class AdminModelRuntimeStandardTest(unittest.TestCase):
 
         self.assertEqual("AdminAiModelCreateRequest", add_model["request_schema"]["name"])
         self.assertEqual(
-            ["vendorId", "name", "type", "priceIn", "priceOut", "contextTokens"],
+            ["vendorId", "model", "type", "priceIn", "priceOut", "contextTokens"],
             add_model["request_schema"]["schema"]["required"],
         )
         self.assertEqual("AdminAiModelMutationResponse", add_model["response_schema"]["name"])
@@ -83,11 +83,16 @@ class AdminModelRuntimeStandardTest(unittest.TestCase):
             "toSyncCatalogRequest",
             "toCreateVendorRequest",
             "toCreateModelRequest",
+        ]:
+            self.assertIn(token, service)
+        for token in [
             "createIdempotencyParams('admin-model-catalog-sync')",
             "createIdempotencyParams('admin-model-vendor-create')",
             "createIdempotencyParams('admin-ai-model-create')",
         ]:
-            self.assertIn(token, service)
+            self.assertNotIn(token, service)
+        self.assertNotIn("name?: string;", service)
+        self.assertNotIn("Pick<ModelCreateInput, 'model' | 'name'>", service)
 
         self.assertIn("source: 'sdkwork_models'", service)
         self.assertIn("mode: 'official_refresh'", service)
@@ -146,7 +151,7 @@ class AdminModelRuntimeStandardTest(unittest.TestCase):
         self.assertIn("Model catalog sync response meter count must be a non-negative integer", (ROOT / "apps" / "sdkwork-claw-router-portal" / "admin-model-runtime.test.ts").read_text(encoding="utf-8"))
 
         self.assertIn(
-            "async refresh(body: AdminModelCatalogSyncRequest, params?: AiModelsRefreshParams): Promise<ModelsRefreshResult>",
+            "async refresh(body: AdminModelCatalogSyncRequest): Promise<ModelsRefreshResult>",
             ai_api,
         )
         for token in [
@@ -158,6 +163,7 @@ class AdminModelRuntimeStandardTest(unittest.TestCase):
             "catalogVersion?: string;",
         ]:
             self.assertIn(token, sync_request_type)
+        self.assertNotIn("Deprecated compatibility alias for model", ai_api)
         self.assertNotIn("defaults to local_catalog", sync_request_type)
         self.assertEqual(
             {"source", "mode", "vendorCodes", "force", "catalogRoot", "catalogVersion"},
@@ -165,14 +171,14 @@ class AdminModelRuntimeStandardTest(unittest.TestCase):
         )
         self.assertIn("sdkwork_models", openapi_sync_request["properties"]["source"]["description"])
         self.assertIn(
-            "async create(body: AdminModelVendorCreateRequest, params?: AiModelVendorsCreateParams): Promise<ModelVendorsCreateResult>",
+            "async create(body: AdminModelVendorCreateRequest): Promise<ModelVendorsCreateResult>",
             ai_api,
         )
         self.assertNotIn("async syncVendorsAndModels(body?: OperationRequest): Promise<PlusApiResult>", ai_api)
         self.assertNotIn("async addVendor(body?: OperationRequest): Promise<PlusApiResult>", ai_api)
 
         self.assertIn(
-            "async create(body: AdminAiModelCreateRequest, params?: AiModelsCreateParams): Promise<ModelsCreateResult>",
+            "async create(body: AdminAiModelCreateRequest): Promise<ModelsCreateResult>",
             ai_api,
         )
         self.assertNotIn("async add(body?: OperationRequest): Promise<PlusApiResult>", ai_api)

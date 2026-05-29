@@ -14,22 +14,14 @@ public class McpApi {
     }
 
     /** Update MCP binding */
-    public ServersBindingsUpdateResult serversBindingsUpdate(String bindingId, AdminMcpBindingUpdateRequest body, String xRequestId) throws Exception {
-        Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
-                Map.of()
-        );
-        Object raw = client.put(ApiPaths.backendPath("/mcp/bindings/" + serializePathParameter(bindingId, new PathParameterSpec("bindingId", "simple", false)) + ""), body, null, requestHeaders, "application/json");
+    public ServersBindingsUpdateResult serversBindingsUpdate(String bindingId, AdminMcpBindingUpdateRequest body) throws Exception {
+        Object raw = client.put(ApiPaths.backendPath("/mcp/bindings/" + serializePathParameter(bindingId, new PathParameterSpec("bindingId", "simple", false)) + ""), body, null, null, "application/json");
         return client.convertValue(raw, new TypeReference<ServersBindingsUpdateResult>() {});
     }
 
     /** Publish MCP server revision */
-    public RevisionsPublishResult revisionsPublish(String revisionId, String xRequestId) throws Exception {
-        Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
-                Map.of()
-        );
-        Object raw = client.post(ApiPaths.backendPath("/mcp/revisions/" + serializePathParameter(revisionId, new PathParameterSpec("revisionId", "simple", false)) + "/publish"), null, null, requestHeaders);
+    public RevisionsPublishResult revisionsPublish(String revisionId) throws Exception {
+        Object raw = client.post(ApiPaths.backendPath("/mcp/revisions/" + serializePathParameter(revisionId, new PathParameterSpec("revisionId", "simple", false)) + "/publish"), null);
         return client.convertValue(raw, new TypeReference<RevisionsPublishResult>() {});
     }
 
@@ -49,9 +41,9 @@ public class McpApi {
     }
 
     /** Create MCP server */
-    public ServersCreateResult serversCreate(AdminMcpServerCreateRequest body, String idempotencyKey, String xRequestId) throws Exception {
+    public ServersCreateResult serversCreate(AdminMcpServerCreateRequest body, String idempotencyKey) throws Exception {
         Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null), "X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
+                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null)),
                 Map.of()
         );
         Object raw = client.post(ApiPaths.backendPath("/mcp/servers"), body, null, requestHeaders, "application/json");
@@ -65,12 +57,8 @@ public class McpApi {
     }
 
     /** Update MCP server */
-    public ServersUpdateResult serversUpdate(String serverId, AdminMcpServerUpdateRequest body, String xRequestId) throws Exception {
-        Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
-                Map.of()
-        );
-        Object raw = client.put(ApiPaths.backendPath("/mcp/servers/" + serializePathParameter(serverId, new PathParameterSpec("serverId", "simple", false)) + ""), body, null, requestHeaders, "application/json");
+    public ServersUpdateResult serversUpdate(String serverId, AdminMcpServerUpdateRequest body) throws Exception {
+        Object raw = client.put(ApiPaths.backendPath("/mcp/servers/" + serializePathParameter(serverId, new PathParameterSpec("serverId", "simple", false)) + ""), body, null, null, "application/json");
         return client.convertValue(raw, new TypeReference<ServersUpdateResult>() {});
     }
 
@@ -81,9 +69,9 @@ public class McpApi {
     }
 
     /** Create MCP binding */
-    public ServersBindingsCreateResult serversBindingsCreate(String serverId, AdminMcpBindingCreateRequest body, String idempotencyKey, String xRequestId) throws Exception {
+    public ServersBindingsCreateResult serversBindingsCreate(String serverId, AdminMcpBindingCreateRequest body, String idempotencyKey) throws Exception {
         Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null), "X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
+                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null)),
                 Map.of()
         );
         Object raw = client.post(ApiPaths.backendPath("/mcp/servers/" + serializePathParameter(serverId, new PathParameterSpec("serverId", "simple", false)) + "/bindings"), body, null, requestHeaders, "application/json");
@@ -91,22 +79,14 @@ public class McpApi {
     }
 
     /** Discover MCP tools */
-    public ServersToolsRefreshResult serversToolsRefresh(String serverId, String xRequestId) throws Exception {
-        Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
-                Map.of()
-        );
-        Object raw = client.post(ApiPaths.backendPath("/mcp/servers/" + serializePathParameter(serverId, new PathParameterSpec("serverId", "simple", false)) + "/discover"), null, null, requestHeaders);
+    public ServersToolsRefreshResult serversToolsRefresh(String serverId) throws Exception {
+        Object raw = client.post(ApiPaths.backendPath("/mcp/servers/" + serializePathParameter(serverId, new PathParameterSpec("serverId", "simple", false)) + "/discover"), null);
         return client.convertValue(raw, new TypeReference<ServersToolsRefreshResult>() {});
     }
 
     /** Check MCP server health */
-    public ServersHealthChecksCreateResult serversHealthChecksCreate(String serverId, String xRequestId) throws Exception {
-        Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
-                Map.of()
-        );
-        Object raw = client.post(ApiPaths.backendPath("/mcp/servers/" + serializePathParameter(serverId, new PathParameterSpec("serverId", "simple", false)) + "/health_check"), null, null, requestHeaders);
+    public ServersHealthChecksCreateResult serversHealthChecksCreate(String serverId) throws Exception {
+        Object raw = client.post(ApiPaths.backendPath("/mcp/servers/" + serializePathParameter(serverId, new PathParameterSpec("serverId", "simple", false)) + "/health_check"), null);
         return client.convertValue(raw, new TypeReference<ServersHealthChecksCreateResult>() {});
     }
 
@@ -117,9 +97,9 @@ public class McpApi {
     }
 
     /** Create MCP server revision */
-    public ServersRevisionsCreateResult serversRevisionsCreate(String serverId, AdminMcpServerRevisionCreateRequest body, String idempotencyKey, String xRequestId) throws Exception {
+    public ServersRevisionsCreateResult serversRevisionsCreate(String serverId, AdminMcpServerRevisionCreateRequest body, String idempotencyKey) throws Exception {
         Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null), "X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
+                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null)),
                 Map.of()
         );
         Object raw = client.post(ApiPaths.backendPath("/mcp/servers/" + serializePathParameter(serverId, new PathParameterSpec("serverId", "simple", false)) + "/revisions"), body, null, requestHeaders, "application/json");
@@ -133,12 +113,8 @@ public class McpApi {
     }
 
     /** Update MCP tool */
-    public ToolsUpdateResult toolsUpdate(String toolId, AdminMcpToolUpdateRequest body, String xRequestId) throws Exception {
-        Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
-                Map.of()
-        );
-        Object raw = client.put(ApiPaths.backendPath("/mcp/tools/" + serializePathParameter(toolId, new PathParameterSpec("toolId", "simple", false)) + ""), body, null, requestHeaders, "application/json");
+    public ToolsUpdateResult toolsUpdate(String toolId, AdminMcpToolUpdateRequest body) throws Exception {
+        Object raw = client.put(ApiPaths.backendPath("/mcp/tools/" + serializePathParameter(toolId, new PathParameterSpec("toolId", "simple", false)) + ""), body, null, null, "application/json");
         return client.convertValue(raw, new TypeReference<ToolsUpdateResult>() {});
     }
 

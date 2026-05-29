@@ -17,6 +17,36 @@ func NewIntegrationApi(client *sdkhttp.Client) *IntegrationApi {
     return &IntegrationApi{client: client}
 }
 
+// List channel endpoints
+func (a *IntegrationApi) ChannelEndpointsList() (sdktypes.ChannelEndpointsListResult, error) {
+    raw, err := a.client.Get(BackendApiPath("/integration/channel_endpoints"), nil, nil)
+    if err != nil {
+        var zero sdktypes.ChannelEndpointsListResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.ChannelEndpointsListResult](raw)
+}
+
+// Create channel endpoint
+func (a *IntegrationApi) ChannelEndpointsCreate(body sdktypes.AdminChannelEndpointCreateRequest) (sdktypes.ChannelEndpointsCreateResult, error) {
+    raw, err := a.client.Post(BackendApiPath("/integration/channel_endpoints"), body, nil, nil, "application/json")
+    if err != nil {
+        var zero sdktypes.ChannelEndpointsCreateResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.ChannelEndpointsCreateResult](raw)
+}
+
+// Update channel endpoint
+func (a *IntegrationApi) ChannelEndpointsUpdate(endpointId string, body sdktypes.AdminChannelEndpointUpdateRequest) (sdktypes.ChannelEndpointsUpdateResult, error) {
+    raw, err := a.client.Put(BackendApiPath(fmt.Sprintf("/integration/channel_endpoints/%s", SerializePathParameter(endpointId, PathParameterSpec{Name: "endpointId", Style: "simple", Explode: false}))), body, nil, nil, "application/json")
+    if err != nil {
+        var zero sdktypes.ChannelEndpointsUpdateResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.ChannelEndpointsUpdateResult](raw)
+}
+
 // List channels
 func (a *IntegrationApi) ChannelsList() (sdktypes.ChannelsListResult, error) {
     raw, err := a.client.Get(BackendApiPath("/integration/channels"), nil, nil)
@@ -28,12 +58,8 @@ func (a *IntegrationApi) ChannelsList() (sdktypes.ChannelsListResult, error) {
 }
 
 // Create channel
-func (a *IntegrationApi) ChannelsCreate(body sdktypes.AdminChannelCreateRequest, xRequestId *string) (sdktypes.ChannelsCreateResult, error) {
-    headers := BuildRequestHeaders(
-        map[string]ParameterSpec{"X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},},
-        map[string]ParameterSpec{},
-    )
-    raw, err := a.client.Post(BackendApiPath("/integration/channels"), body, nil, headers, "application/json")
+func (a *IntegrationApi) ChannelsCreate(body sdktypes.AdminChannelCreateRequest) (sdktypes.ChannelsCreateResult, error) {
+    raw, err := a.client.Post(BackendApiPath("/integration/channels"), body, nil, nil, "application/json")
     if err != nil {
         var zero sdktypes.ChannelsCreateResult
         return zero, err
@@ -42,12 +68,8 @@ func (a *IntegrationApi) ChannelsCreate(body sdktypes.AdminChannelCreateRequest,
 }
 
 // Update channel
-func (a *IntegrationApi) ChannelsUpdate(body sdktypes.AdminChannelUpdateRequest, xRequestId *string) (sdktypes.ChannelsUpdateResult, error) {
-    headers := BuildRequestHeaders(
-        map[string]ParameterSpec{"X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},},
-        map[string]ParameterSpec{},
-    )
-    raw, err := a.client.Put(BackendApiPath("/integration/channels"), body, nil, headers, "application/json")
+func (a *IntegrationApi) ChannelsUpdate(body sdktypes.AdminChannelUpdateRequest) (sdktypes.ChannelsUpdateResult, error) {
+    raw, err := a.client.Put(BackendApiPath("/integration/channels"), body, nil, nil, "application/json")
     if err != nil {
         var zero sdktypes.ChannelsUpdateResult
         return zero, err
@@ -66,12 +88,8 @@ func (a *IntegrationApi) ChannelsDelete(channelId string) (sdktypes.ChannelsDele
 }
 
 // Test channel
-func (a *IntegrationApi) ChannelsVerify(channelId string, xRequestId *string) (sdktypes.ChannelsVerifyResult, error) {
-    headers := BuildRequestHeaders(
-        map[string]ParameterSpec{"X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},},
-        map[string]ParameterSpec{},
-    )
-    raw, err := a.client.Post(BackendApiPath(fmt.Sprintf("/integration/channels/%s/verify", SerializePathParameter(channelId, PathParameterSpec{Name: "channelId", Style: "simple", Explode: false}))), nil, nil, headers, "")
+func (a *IntegrationApi) ChannelsVerify(channelId string) (sdktypes.ChannelsVerifyResult, error) {
+    raw, err := a.client.Post(BackendApiPath(fmt.Sprintf("/integration/channels/%s/verify", SerializePathParameter(channelId, PathParameterSpec{Name: "channelId", Style: "simple", Explode: false}))), nil, nil, nil, "")
     if err != nil {
         var zero sdktypes.ChannelsVerifyResult
         return zero, err
@@ -94,12 +112,8 @@ func (a *IntegrationApi) ProviderSecretsList(providerCode *string, status *strin
 }
 
 // Create provider secret
-func (a *IntegrationApi) ProviderSecretsCreate(body sdktypes.AdminProviderSecretCreateRequest, xRequestId *string) (sdktypes.ProviderSecretsCreateResult, error) {
-    headers := BuildRequestHeaders(
-        map[string]ParameterSpec{"X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},},
-        map[string]ParameterSpec{},
-    )
-    raw, err := a.client.Post(BackendApiPath("/integration/provider_secrets"), body, nil, headers, "application/json")
+func (a *IntegrationApi) ProviderSecretsCreate(body sdktypes.AdminProviderSecretCreateRequest) (sdktypes.ProviderSecretsCreateResult, error) {
+    raw, err := a.client.Post(BackendApiPath("/integration/provider_secrets"), body, nil, nil, "application/json")
     if err != nil {
         var zero sdktypes.ProviderSecretsCreateResult
         return zero, err
@@ -108,12 +122,8 @@ func (a *IntegrationApi) ProviderSecretsCreate(body sdktypes.AdminProviderSecret
 }
 
 // Update provider secret
-func (a *IntegrationApi) ProviderSecretsUpdate(body sdktypes.AdminProviderSecretUpdateRequest, xRequestId *string) (sdktypes.ProviderSecretsUpdateResult, error) {
-    headers := BuildRequestHeaders(
-        map[string]ParameterSpec{"X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},},
-        map[string]ParameterSpec{},
-    )
-    raw, err := a.client.Put(BackendApiPath("/integration/provider_secrets"), body, nil, headers, "application/json")
+func (a *IntegrationApi) ProviderSecretsUpdate(body sdktypes.AdminProviderSecretUpdateRequest) (sdktypes.ProviderSecretsUpdateResult, error) {
+    raw, err := a.client.Put(BackendApiPath("/integration/provider_secrets"), body, nil, nil, "application/json")
     if err != nil {
         var zero sdktypes.ProviderSecretsUpdateResult
         return zero, err
@@ -357,92 +367,7 @@ func EncodeQueryValue(value string, allowReserved bool) string {
 }
 
 
-type ParameterSpec struct {
-    Value       interface{}
-    Style       string
-    Explode     bool
-    ContentType string
-}
 
-func BuildRequestHeaders(headers map[string]ParameterSpec, cookies map[string]ParameterSpec) map[string]string {
-    requestHeaders := map[string]string{}
-    for name, parameter := range headers {
-        if serialized, ok := SerializeParameterValue(parameter); ok {
-            requestHeaders[name] = serialized
-        }
-    }
-
-    if cookieHeader := BuildCookieHeader(cookies); cookieHeader != "" {
-        if existing, ok := requestHeaders["Cookie"]; ok && existing != "" {
-            requestHeaders["Cookie"] = existing + "; " + cookieHeader
-        } else {
-            requestHeaders["Cookie"] = cookieHeader
-        }
-    }
-
-    if len(requestHeaders) == 0 {
-        return nil
-    }
-    return requestHeaders
-}
-
-func BuildCookieHeader(cookies map[string]ParameterSpec) string {
-    pairs := make([]string, 0, len(cookies))
-    for name, parameter := range cookies {
-        if serialized, ok := SerializeParameterValue(parameter); ok {
-            pairs = append(pairs, url.QueryEscape(name)+"="+url.QueryEscape(serialized))
-        }
-    }
-    return strings.Join(pairs, "; ")
-}
-
-func SerializeParameterValue(parameter ParameterSpec) (string, bool) {
-    value := parameter.Value
-    if value == nil {
-        return "", false
-    }
-    if parameter.ContentType != "" {
-        encoded, _ := json.Marshal(value)
-        return string(encoded), true
-    }
-    switch typed := value.(type) {
-    case string:
-        return typed, true
-    case fmt.Stringer:
-        return typed.String(), true
-    case []string:
-        return strings.Join(typed, ","), true
-    case []int:
-        values := make([]string, 0, len(typed))
-        for _, item := range typed {
-            values = append(values, fmt.Sprint(item))
-        }
-        return strings.Join(values, ","), true
-    case map[string]string:
-        return SerializeHeaderObject(stringMapToInterface(typed), parameter.Explode), true
-    case map[string]int:
-        return SerializeHeaderObject(intMapToInterface(typed), parameter.Explode), true
-    case map[string]interface{}:
-        return SerializeHeaderObject(typed, parameter.Explode), true
-    default:
-        return fmt.Sprint(value), true
-    }
-}
-
-func SerializeHeaderObject(values map[string]interface{}, explode bool) string {
-    serialized := make([]string, 0, len(values)*2)
-    for key, value := range values {
-        if value == nil {
-            continue
-        }
-        if explode {
-            serialized = append(serialized, key+"="+fmt.Sprint(value))
-        } else {
-            serialized = append(serialized, key, fmt.Sprint(value))
-        }
-    }
-    return strings.Join(serialized, ",")
-}
 func stringSliceToInterface(values []string) []interface{} {
     result := make([]interface{}, 0, len(values))
     for _, value := range values {

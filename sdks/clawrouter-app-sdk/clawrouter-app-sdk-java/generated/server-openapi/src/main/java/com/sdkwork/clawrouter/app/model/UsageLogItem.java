@@ -30,6 +30,7 @@ public class UsageLogItem {
     private String totalTime;
     private String ttft;
     private String type;
+    private String userAgent;
 
     public String getBaseInputPrice() {
         return this.baseInputPrice;
@@ -253,5 +254,13 @@ public class UsageLogItem {
 
     public void setType(String type) {
         this.type = type;
+    }
+
+    public String getUserAgent() {
+        return this.userAgent;
+    }
+
+    public void setUserAgent(String userAgent) {
+        this.userAgent = userAgent;
     }
 }

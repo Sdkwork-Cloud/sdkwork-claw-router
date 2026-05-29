@@ -159,12 +159,11 @@ class IamApiKeysApi:
         """List keys"""
         return self._client.get(f"/app/v3/api/iam/api_keys")
 
-    def create(self, body: CreateApiKeyRequest, idempotency_key: str, x_request_id: Optional[str] = None) -> ApiKeysCreateResult:
+    def create(self, body: CreateApiKeyRequest, idempotency_key: str) -> ApiKeysCreateResult:
         """Create key"""
         request_headers = build_request_headers(
             {
                 'Idempotency-Key': {'value': idempotency_key, 'style': 'simple', 'explode': False},
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
             },
             {}
         )
@@ -174,15 +173,9 @@ class IamApiKeysApi:
         """Delete key"""
         return self._client.delete(f"/app/v3/api/iam/api_keys/{serialize_path_parameter(api_key_id, {'name': 'apiKeyId', 'style': 'simple', 'explode': False})}")
 
-    def update(self, api_key_id: str, body: UpdateApiKeyRequest, x_request_id: Optional[str] = None) -> ApiKeysUpdateResult:
+    def update(self, api_key_id: str, body: UpdateApiKeyRequest) -> ApiKeysUpdateResult:
         """Update key"""
-        request_headers = build_request_headers(
-            {
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
-            },
-            {}
-        )
-        return self._client.patch(f"/app/v3/api/iam/api_keys/{serialize_path_parameter(api_key_id, {'name': 'apiKeyId', 'style': 'simple', 'explode': False})}", json=body, headers=request_headers)
+        return self._client.patch(f"/app/v3/api/iam/api_keys/{serialize_path_parameter(api_key_id, {'name': 'apiKeyId', 'style': 'simple', 'explode': False})}", json=body)
 
 class IamUsersApi:
     """iam iam.users API client."""

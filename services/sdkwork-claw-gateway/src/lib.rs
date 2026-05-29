@@ -7,10 +7,9 @@ mod passthrough;
 mod provider_account_auth;
 pub mod provider_adapter_transport;
 mod provider_passthrough_transport;
+mod request_identity;
 mod route_scoped_openai_passthrough;
 pub mod runtime;
-
-use axum::Router;
 
 pub use edge_server::{edge_server_router, EdgeServerConfig};
 #[rustfmt::skip]
@@ -33,14 +32,14 @@ pub use runtime::{
 
 pub const SERVICE_NAME: &str = "sdkwork-claw-gateway";
 
-pub fn router() -> Router {
+pub fn router() -> axum::Router {
     router_with_database_status_and_passthrough_placeholder(None, true)
 }
 
 pub(crate) fn router_with_database_status_and_passthrough_placeholder(
     config: Option<&sdkwork_claw_config::DatabaseConfig>,
     include_passthrough_placeholder: bool,
-) -> Router {
+) -> axum::Router {
     let router = sdkwork_claw_http::service_router_with_database_config(SERVICE_NAME, config);
     if include_passthrough_placeholder {
         router.merge(passthrough::gateway_passthrough_router())

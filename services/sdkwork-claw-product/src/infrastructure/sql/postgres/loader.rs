@@ -61,9 +61,9 @@ impl PostgresPricingCatalogLoader {
                 self.circuit_breaker_recovery_window_seconds,
             )
             .await?,
-            provider_account_pool_routes: row_mapping::load_provider_account_pool_routes(
+            provider_channel_routes: row_mapping::load_provider_channel_routes(
                 &self.pool,
-                PricingCatalogSql::load_provider_account_pool_routes(),
+                PricingCatalogSql::load_provider_channel_routes(),
                 self.circuit_breaker_recovery_window_seconds,
             )
             .await?,
@@ -107,7 +107,7 @@ impl PostgresPricingCatalogLoader {
         };
         let managed_provider_secrets = managed_provider_secrets_from_rows(
             &rows.provider_routes,
-            &rows.provider_account_pool_routes,
+            &rows.provider_channel_routes,
             self.api_key_secret_codec.as_deref(),
         )?;
         Ok(
@@ -134,7 +134,7 @@ fn default_circuit_breaker_recovery_window_seconds() -> i64 {
 
 fn managed_provider_secrets_from_rows(
     provider_routes: &[crate::infrastructure::sql::rows::ModelProviderRouteRow],
-    provider_account_pool_routes: &[crate::infrastructure::sql::rows::ProviderAccountPoolRouteRow],
+    provider_channel_routes: &[crate::infrastructure::sql::rows::ProviderChannelRouteRow],
     api_key_secret_codec: Option<&(dyn ApiKeySecretCodec + Send + Sync)>,
 ) -> DomainResult<BTreeMap<String, String>> {
     let mut secrets = BTreeMap::new();
@@ -145,7 +145,7 @@ fn managed_provider_secrets_from_rows(
                 .as_deref()
                 .zip(row.auth_config_json.as_deref())
         })
-        .chain(provider_account_pool_routes.iter().filter_map(|row| {
+        .chain(provider_channel_routes.iter().filter_map(|row| {
             row.secret_ref
                 .as_deref()
                 .zip(row.auth_config_json.as_deref())

@@ -1,0 +1,484 @@
+tables:
+- table: content_announcement
+  domain: content
+  profile: content_entity
+  compliance_level: L2
+  system_of_record: true
+  write_owner: content-service
+  common_columns: tenant_entity
+  frontend_routes:
+  - /console/dashboard
+  - /admin/announcement
+  api_surfaces:
+  - app
+  - backend
+  columns:
+    title: string(200)
+    content: text
+    target_scope: enum_int32
+    audience_filter: json
+    announcement_type: enum_int32
+    pinned: bool
+    published_at: instant
+    effective_from: instant
+    effective_to: instant
+  indexes:
+  - name: idx_content_announcement_target_status
+    columns:
+    - tenant_id
+    - organization_id
+    - target_scope
+    - status
+    - published_at
+    - id
+- table: content_doc_page
+  domain: content
+  profile: content_entity
+  compliance_level: L2
+  system_of_record: true
+  write_owner: docs-service
+  common_columns: tenant_entity
+  frontend_routes:
+  - /
+  - /product-docs
+  - /docs
+  - /api-reference
+  - /sdk-reference
+  api_surfaces:
+  - app
+  - backend
+  columns:
+    doc_code: string(64)
+    doc_type: enum_int32
+    title: string(200)
+    slug: string(256)
+    path: string(512)
+    summary: string(512)
+    content_source: enum_int32
+    source_ref: string(512)
+    content_hash: string(128)
+    sort_order: int32
+    published_at: instant
+  indexes:
+  - name: uk_content_doc_page_type_slug
+    unique: true
+    columns:
+    - doc_type
+    - slug
+- table: content_openapi_snapshot
+  domain: content
+  profile: projection
+  compliance_level: L2
+  system_of_record: false
+  write_owner: api-docs-pipeline
+  common_columns: projection
+  source_refs:
+  - spring-ai-plus-open-api
+  - spring-ai-plus-app-api
+  - spring-ai-plus-backend-api
+  - generated-openapi-json
+  frontend_routes:
+  - /product-docs
+  - /docs
+  - /api-reference
+  - /sdk-reference
+  api_surfaces:
+  - app
+  - backend
+  - worker
+  columns:
+    api_system: enum_int32
+    api_surface: enum_int32
+    version: string(64)
+    title: string(200)
+    source_ref: string(512)
+    openapi_hash: string(128)
+    endpoint_count: int32
+    category_tree: json
+    example_manifest: json
+    published_at: instant
+  indexes:
+  - name: uk_content_openapi_snapshot_system_version
+    unique: true
+    columns:
+    - api_system
+    - version
+  - name: idx_content_openapi_snapshot_system_published
+    columns:
+    - api_system
+    - published_at
+    - id
+- table: content_sdk_release
+  domain: content
+  profile: content_entity
+  compliance_level: L2
+  system_of_record: false
+  write_owner: sdk-release-pipeline
+  common_columns: tenant_entity
+  frontend_routes:
+  - /docs
+  - /sdk-reference
+  api_surfaces:
+  - app
+  - backend
+  - worker
+  columns:
+    api_system: enum_int32
+    language: string(64)
+    language_icon: string(128)
+    language_description: string(512)
+    package_name: string(128)
+    package_manager: string(64)
+    version: string(64)
+    install_command: string(512)
+    import_code: text
+    init_code: text
+    example_code: text
+    github_url: string(1024)
+    source_repo: string(512)
+    docs_url: string(1024)
+    openapi_snapshot_id: int64
+    default_base_url: string(512)
+    artifact_manifest: json
+    example_manifest: json
+    published_at: instant
+  indexes:
+  - name: uk_content_sdk_release_system_lang_version
+    unique: true
+    columns:
+    - api_system
+    - language
+    - version
+  - name: idx_content_sdk_release_system_lang_published
+    columns:
+    - api_system
+    - language
+    - published_at
+    - id
+- table: content_forum_post
+  domain: content
+  profile: retired_projection
+  compliance_level: L2
+  system_of_record: false
+  write_owner: legacy-static-fixture
+  common_columns: user_entity
+  generated_by_this_project: false
+  frontend_routes: []
+  api_surfaces: []
+  superseded_by: plus_feeds
+  retirement_reason: Forum writes and app APIs align to Java PlusFeeds. Keep this historical contract documented only; do not generate a physical table for the new Rust application.
+  columns:
+    title: string(200)
+    body: text
+    content_snippet: string(512)
+    category: string(64)
+    tags: json
+    author_id: int64
+    author_snapshot: json
+    like_count: int64
+    comment_count: int64
+    view_count: int64
+    pinned: bool
+    last_replied_at: instant
+  indexes:
+  - name: idx_content_forum_post_category_status
+    columns:
+    - category
+    - status
+    - pinned
+    - updated_at
+    - id
+  - name: idx_content_forum_post_author
+    columns:
+    - author_id
+    - created_at
+    - id
+- table: content_forum_comment
+  domain: content
+  profile: retired_projection
+  compliance_level: L2
+  system_of_record: false
+  write_owner: legacy-static-fixture
+  common_columns: user_entity
+  generated_by_this_project: false
+  frontend_routes:
+  - /admin/courses
+  - /admin/courses/dashboard
+  - /admin/courses/comments
+  api_surfaces:
+  - backend
+  superseded_by: plus_comments
+  retirement_reason: Forum and course comments align to Java PlusComments. Keep this historical contract documented only; do not generate a physical table for the new Rust application.
+  columns:
+    target_type: enum_int32
+    target_id: int64
+    post_id: int64
+    course_id: int64
+    parent_id: int64
+    root_id: int64
+    body: text
+    author_id: int64
+    author_snapshot: json
+    like_count: int64
+  indexes:
+  - name: idx_content_forum_comment_post
+    columns:
+    - post_id
+    - parent_id
+    - created_at
+    - id
+  - name: idx_content_forum_comment_target
+    columns:
+    - target_type
+    - target_id
+    - parent_id
+    - created_at
+    - id
+- table: content_reaction
+  domain: content
+  profile: event_log
+  compliance_level: L2
+  system_of_record: true
+  write_owner: content-engagement-service
+  common_columns: event_log
+  frontend_routes:
+  - /courses
+  - /courses/:id
+  - /admin/courses
+  - /admin/courses/dashboard
+  - /admin/courses/engagement
+  api_surfaces:
+  - app
+  - backend
+  - worker
+  columns:
+    target_type: enum_int32
+    target_id: int64
+    reaction_type: enum_int32
+    reaction_value: string(64)
+    client_ip_hash: string(128)
+    user_agent_hash: string(128)
+    cancelled_at: instant
+  indexes:
+  - name: uk_content_reaction_user_target_type
+    unique: true
+    columns:
+    - tenant_id
+    - organization_id
+    - user_id
+    - target_type
+    - target_id
+    - reaction_type
+  - name: idx_content_reaction_target_type
+    columns:
+    - target_type
+    - target_id
+    - reaction_type
+    - created_at
+    - id
+- table: content_course
+  domain: content
+  profile: content_entity
+  compliance_level: L2
+  system_of_record: true
+  write_owner: course-service
+  common_columns: tenant_entity
+  frontend_routes:
+  - /courses
+  - /courses/:id
+  - /admin/courses
+  - /admin/courses/dashboard
+  - /admin/courses/catalog
+  - /admin/courses/sections
+  - /admin/courses/lessons
+  - /admin/courses/relations
+  - /admin/courses/applications
+  - /admin/courses/comments
+  - /admin/courses/engagement
+  api_surfaces:
+  - app
+  - backend
+  columns:
+    course_code: string(64)
+    title: string(200)
+    description: text
+    thumbnail_url: string(1024)
+    instructor_snapshot: json
+    duration_text: string(64)
+    lessons_count: int32
+    rating_score: decimal
+    students_count: int64
+    level: enum_int32
+    category: string(64)
+    tags: json
+    external_bvid: string(64)
+    content: text
+    price_amount: decimal
+    currency: string(10)
+    is_collection: bool
+    published_at: instant
+  indexes:
+  - name: uk_content_course_code
+    unique: true
+    columns:
+    - course_code
+  - name: idx_content_course_category_status
+    columns:
+    - category
+    - status
+    - published_at
+    - id
+- table: content_course_section
+  domain: content
+  profile: content_entity
+  compliance_level: L2
+  system_of_record: true
+  write_owner: course-service
+  common_columns: tenant_entity
+  frontend_routes:
+  - /courses/:id
+  - /admin/courses
+  - /admin/courses/dashboard
+  - /admin/courses/sections
+  api_surfaces:
+  - app
+  - backend
+  columns:
+    course_id: int64
+    section_no: int32
+    title: string(200)
+    description: text
+    sort_order: int32
+    lesson_count: int32
+    duration_seconds: int64
+  indexes:
+  - name: uk_content_course_section_no
+    unique: true
+    columns:
+    - course_id
+    - section_no
+  - name: idx_content_course_section_course
+    columns:
+    - course_id
+    - sort_order
+    - id
+- table: content_course_lesson
+  domain: content
+  profile: content_entity
+  compliance_level: L2
+  system_of_record: true
+  write_owner: course-service
+  common_columns: tenant_entity
+  frontend_routes:
+  - /courses/:id
+  - /admin/courses
+  - /admin/courses/dashboard
+  - /admin/courses/lessons
+  api_surfaces:
+  - app
+  - backend
+  columns:
+    course_id: int64
+    section_id: int64
+    lesson_no: int32
+    title: string(200)
+    description: text
+    video_url: string(1024)
+    external_bvid: string(64)
+    source_provider: string(64)
+    duration_seconds: int64
+    duration_text: string(64)
+    content: text
+    sort_order: int32
+    free_preview: bool
+  indexes:
+  - name: uk_content_course_lesson_no
+    unique: true
+    columns:
+    - course_id
+    - lesson_no
+  - name: idx_content_course_lesson_section
+    columns:
+    - section_id
+    - sort_order
+    - id
+- table: content_course_relation
+  domain: content
+  profile: relation_entity
+  compliance_level: L2
+  system_of_record: true
+  write_owner: course-service
+  common_columns: tenant_entity
+  frontend_routes:
+  - /courses
+  - /courses/:id
+  - /admin/courses
+  - /admin/courses/dashboard
+  - /admin/courses/relations
+  - /admin/courses/engagement
+  api_surfaces:
+  - app
+  - backend
+  columns:
+    course_id: int64
+    related_course_id: int64
+    relation_type: enum_int32
+    sort_order: int32
+  indexes:
+  - name: uk_content_course_relation
+    unique: true
+    columns:
+    - course_id
+    - related_course_id
+    - relation_type
+- table: content_course_application
+  domain: content
+  profile: user_content_application
+  compliance_level: L2
+  system_of_record: true
+  write_owner: course-service
+  common_columns: user_entity
+  frontend_routes:
+  - /courses
+  - /admin/courses
+  - /admin/courses/dashboard
+  - /admin/courses/applications
+  api_surfaces:
+  - app
+  - backend
+  columns:
+    title: string(200)
+    category: string(64)
+    description: text
+    source_provider: string(64)
+    external_bvid: string(64)
+    video_url: string(1024)
+    contact_name: string(128)
+    contact_email: string(254)
+    submitted_at: instant
+    reviewed_by: int64
+    reviewed_at: instant
+    review_comment: string(1000)
+  required_columns:
+  - tenant_id
+  - organization_id
+  - user_id
+  - title
+  - category
+  - description
+  - source_provider
+  indexes:
+  - name: idx_content_course_application_status
+    columns:
+    - tenant_id
+    - organization_id
+    - status
+    - created_at
+    - id
+  - name: idx_content_course_application_user
+    columns:
+    - tenant_id
+    - organization_id
+    - user_id
+    - created_at
+    - id

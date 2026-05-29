@@ -16,8 +16,8 @@ const modelTranslationsEn = `
 `;
 
 const updatedContent = insertMissingTranslations(
-  insertMissingTranslations(content, '"api.category.compat": "Agent & IDE Compat",', modelTranslationsEn),
-  '"api.category.compat": "Agent éç…Žî†",',
+  content,
+  '"api.category.compat": "Agent & IDE Compat",',
   modelTranslationsEn,
 );
 

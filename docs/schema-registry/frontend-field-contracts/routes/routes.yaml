@@ -1,4 +1,4 @@
-﻿fragment: routes/routes
+fragment: routes/routes
 routes:
 - route: /
   required_tables:
@@ -32,25 +32,17 @@ routes:
 - route: /models
   required_tables:
   - ai_model_vendor
-  - ai_model_vendor_region
   - ai_model
   - ai_model_capability
   - ai_model_pricing
   - ai_billing_meter
-  - iam_gateway_api_key_group
-  - iam_api_key_group_channel
+  - ai_channel_group
+  - ai_channel_group_member
   required_columns:
     ai_model_vendor:
     - vendor_code
     - display_name
     - color_token
-    ai_model_vendor_region:
-    - vendor_code
-    - region_code
-    - display_name
-    - market_scope
-    - billing_currency
-    - billing_jurisdiction
     ai_model:
     - model
     - display_name
@@ -69,6 +61,7 @@ routes:
     - parameter_schema
     ai_model_pricing:
     - model
+    - region_code
     - price_side
     - billing_mode
     - billing_meter_code
@@ -77,18 +70,10 @@ routes:
 - route: /models/:id
   required_tables:
   - ai_model_vendor
-  - ai_model_vendor_region
   - ai_model
   - ai_model_capability
   - ai_model_pricing
   required_columns:
-    ai_model_vendor_region:
-    - vendor_code
-    - region_code
-    - display_name
-    - market_scope
-    - billing_currency
-    - billing_jurisdiction
     ai_model:
     - model
     - display_name
@@ -100,6 +85,7 @@ routes:
     - performance_profile
     ai_model_pricing:
     - model
+    - region_code
     - price_side
     - unit_price
     - currency
@@ -108,18 +94,10 @@ routes:
 - route: /models/:provider/:model
   required_tables:
   - ai_model_vendor
-  - ai_model_vendor_region
   - ai_model
   - ai_model_capability
   - ai_model_pricing
   required_columns:
-    ai_model_vendor_region:
-    - vendor_code
-    - region_code
-    - display_name
-    - market_scope
-    - billing_currency
-    - billing_jurisdiction
     ai_model:
     - model
     - display_name
@@ -128,6 +106,7 @@ routes:
     - model_aliases
     - docs_url
     ai_model_pricing:
+    - region_code
     - provider_code
     - provider_model
     - price_side
@@ -566,7 +545,7 @@ routes:
   - ai_generation_asset_action
   - ai_request_trace
   - ai_usage_fact
-  - integration_provider
+  - ai_provider
   - ai_agent
   - ai_agent_version
   - ai_agent_tool_binding
@@ -847,13 +826,13 @@ routes:
   - ai_usage_fact
   - ai_routing_decision_log
   - ai_billing_meter
-  - iam_gateway_api_key_group
+  - ai_channel_group
   required_columns:
     ai_request_trace:
     - request_id
-    - api_key_group_id
+    - channel_group_id
     - api_key_name_snapshot
-    - api_key_group_snapshot
+    - channel_group_snapshot
     - requested_model
     - request_path
     - latency_ms
@@ -872,8 +851,8 @@ routes:
     - base_input_unit_price
     - base_output_unit_price
     - cache_read_unit_price
-    iam_gateway_api_key_group:
-    - name
+    ai_channel_group:
+    - group_name
 - route: /console/gateway
   required_tables:
   - ai_request_trace
@@ -895,8 +874,8 @@ routes:
 - route: /console/api-keys
   required_tables:
   - iam_gateway_api_key
-  - iam_gateway_api_key_group
-  - iam_gateway_api_key_group_metric_snapshot
+  - ai_channel_group
+  - ai_channel_group_metric_snapshot
   - iam_gateway_access_policy
   - ai_quota_policy
   - ai_model_pricing
@@ -907,13 +886,13 @@ routes:
     - name
     - key_prefix
     - key_display_masked
-    - group_id
+    - channel_group_id
     - quota_policy_id
     - rate_limit_policy_id
     - expire_at
-    iam_gateway_api_key_group:
-    - name
-    - code
+    ai_channel_group:
+    - group_name
+    - group_code
     - pricing_plan_id
     - rate_multiplier
     - official_price_multiplier
@@ -1319,6 +1298,25 @@ routes:
   required_tables:
   - ops_config_snapshot
   - ops_audit_log
+- route: /admin/runtime-region
+  required_tables:
+  - ops_config_snapshot
+  - ops_audit_log
+  required_columns:
+    ops_config_snapshot:
+    - tenant_id
+    - organization_id
+    - status
+    - source_table
+    - config_payload
+    - published_at
+    ops_audit_log:
+    - tenant_id
+    - organization_id
+    - operator_id
+    - action
+    - request_id
+    - change_summary
 - route: /admin/site
   required_tables:
   - ops_config_snapshot
@@ -1342,18 +1340,17 @@ routes:
     - request_id
 - route: /admin/group
   required_tables:
-  - iam_gateway_api_key_group
-  - iam_gateway_api_key_group_metric_snapshot
+  - ai_channel_group
+  - ai_channel_group_metric_snapshot
   - ai_pricing_plan
   - ai_pricing_plan_binding
   - ai_pricing_rule
   - ai_pricing_tier
   - ai_billing_meter
-  - iam_api_key_group_channel
-  - integration_provider
-  - integration_channel
-  - integration_channel_model
-  - integration_provider_account
+  - ai_channel_group_member
+  - ai_provider
+  - ai_channel
+  - ai_channel_model
   - ops_audit_log
   - ops_config_snapshot
 - route: /admin/model
@@ -1689,18 +1686,62 @@ routes:
     - updated_at
 - route: /admin/channel
   required_tables:
-  - integration_provider
-  - integration_channel
-  - integration_channel_model
-  - integration_provider_account
+  - ai_provider
+  - ai_channel
+  - ai_channel_model
+  - ai_channel_vendor
+  - ai_channel_resource
+  - ai_channel_endpoint
   - integration_provider_health_snapshot
   - ai_model_vendor
   - ai_model
+  - ai_api_endpoint
   - ai_routing_policy
   - ai_routing_profile
   - ai_routing_rule
   - ops_config_snapshot
   - ops_audit_log
+- route: /admin/channel/resources
+  required_tables:
+  - ai_resource
+  - ai_resource_group_item
+  - ops_audit_log
+  required_columns:
+    ops_audit_log:
+    - tenant_id
+    - organization_id
+    - operator_id
+    - action
+    - target_type
+    - target_id
+    - request_id
+- route: /admin/channel/endpoints
+  required_tables:
+  - ai_channel
+  - ai_channel_endpoint
+  - ai_model_vendor
+  - ai_api_endpoint
+  - ops_audit_log
+  required_columns:
+    ai_channel_endpoint:
+    - channel_id
+    - channel_code
+    - vendor_code
+    - region_code
+    - api_code
+    - base_url
+    - priority
+    - weight
+    - health_status
+    - status
+    ops_audit_log:
+    - tenant_id
+    - organization_id
+    - operator_id
+    - action
+    - target_type
+    - target_id
+    - request_id
 - route: /admin/announcement
   required_tables:
   - content_announcement
@@ -1778,7 +1819,7 @@ routes:
 - route: /admin/ratelimit
   required_tables:
   - iam_gateway_api_key
-  - iam_gateway_api_key_group
+  - ai_channel_group
   - ai_quota_policy
   - ai_rate_limit_bucket
   - iam_gateway_risk_rule
@@ -1788,14 +1829,14 @@ routes:
     - name
     - key_prefix
     - key_display_masked
-    - group_id
-    iam_gateway_api_key_group:
-    - name
-    - code
+    - channel_group_id
+    ai_channel_group:
+    - group_name
+    - group_code
     ai_quota_policy:
     - subject_type
     - subject_id
-    - group_id
+    - channel_group_id
     - model
     - requests_per_second
     - requests_per_day
@@ -2552,7 +2593,7 @@ routes:
   - integration_service_provider
   - integration_service_provider_subject_binding
   - iam_gateway_api_key
-  - iam_gateway_api_key_group
+  - ai_channel_group
   - ops_audit_log
 - route: /admin/service-providers/contracts
   required_tables:
@@ -2617,13 +2658,13 @@ routes:
   - messaging_rate_limit_bucket
 - route: /admin/messaging/providers
   required_tables:
-  - integration_provider
-  - integration_provider_account
+  - messaging_provider
+  - messaging_provider_account
   - messaging_provider_capability
   - ops_audit_log
 - route: /admin/messaging/sender-identities
   required_tables:
-  - integration_provider_account
+  - messaging_provider_account
   - messaging_sender_identity
   - ops_audit_log
 - route: /admin/messaging/templates
@@ -2636,7 +2677,7 @@ routes:
 - route: /admin/messaging/route-rules
   required_tables:
   - messaging_template
-  - integration_provider_account
+  - messaging_provider_account
   - messaging_sender_identity
   - messaging_template_binding
   - messaging_route_rule

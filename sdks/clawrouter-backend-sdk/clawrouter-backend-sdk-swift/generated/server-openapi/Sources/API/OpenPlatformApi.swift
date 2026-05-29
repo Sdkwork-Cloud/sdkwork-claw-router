@@ -20,25 +20,13 @@ public class OpenPlatformApi {
     }
 
     /// Create open platform account
-    public func accountsCreate(body: OpenPlatformAccountCreateRequest, xRequestId: String? = nil) async throws -> AccountsCreateResult? {
-        let requestHeaders = buildRequestHeaders(
-            [
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
-            ],
-            [:]
-        )
-        return try await client.post(ApiPaths.backendPath("/open_platform/accounts"), body: body, params: nil, headers: requestHeaders, contentType: "application/json", responseType: AccountsCreateResult.self)
+    public func accountsCreate(body: OpenPlatformAccountCreateRequest) async throws -> AccountsCreateResult? {
+        return try await client.post(ApiPaths.backendPath("/open_platform/accounts"), body: body, params: nil, headers: nil, contentType: "application/json", responseType: AccountsCreateResult.self)
     }
 
     /// Delete open platform account
-    public func accountsDelete(accountId: String, xRequestId: String? = nil) async throws -> AccountsDeleteResult? {
-        let requestHeaders = buildRequestHeaders(
-            [
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
-            ],
-            [:]
-        )
-        return try await client.delete(ApiPaths.backendPath("/open_platform/accounts/\(serializePathParameter(accountId, PathParameterSpec(name: "accountId", style: "simple", explode: false)))"), params: nil, headers: requestHeaders, responseType: AccountsDeleteResult.self)
+    public func accountsDelete(accountId: String) async throws -> AccountsDeleteResult? {
+        return try await client.delete(ApiPaths.backendPath("/open_platform/accounts/\(serializePathParameter(accountId, PathParameterSpec(name: "accountId", style: "simple", explode: false)))"), responseType: AccountsDeleteResult.self)
     }
 
     /// Retrieve open platform account
@@ -47,14 +35,8 @@ public class OpenPlatformApi {
     }
 
     /// Update open platform account
-    public func accountsUpdate(accountId: String, body: OpenPlatformAccountUpdateRequest, xRequestId: String? = nil) async throws -> AccountsUpdateResult? {
-        let requestHeaders = buildRequestHeaders(
-            [
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
-            ],
-            [:]
-        )
-        return try await client.patch(ApiPaths.backendPath("/open_platform/accounts/\(serializePathParameter(accountId, PathParameterSpec(name: "accountId", style: "simple", explode: false)))"), body: body, params: nil, headers: requestHeaders, contentType: "application/json", responseType: AccountsUpdateResult.self)
+    public func accountsUpdate(accountId: String, body: OpenPlatformAccountUpdateRequest) async throws -> AccountsUpdateResult? {
+        return try await client.patch(ApiPaths.backendPath("/open_platform/accounts/\(serializePathParameter(accountId, PathParameterSpec(name: "accountId", style: "simple", explode: false)))"), body: body, params: nil, headers: nil, contentType: "application/json", responseType: AccountsUpdateResult.self)
     }
 
     /// List open platform account entries
@@ -63,36 +45,18 @@ public class OpenPlatformApi {
     }
 
     /// Create open platform account entry
-    public func accountsEntriesCreate(accountId: String, body: OpenPlatformEntryCreateRequest, xRequestId: String? = nil) async throws -> AccountsEntriesCreateResult? {
-        let requestHeaders = buildRequestHeaders(
-            [
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
-            ],
-            [:]
-        )
-        return try await client.post(ApiPaths.backendPath("/open_platform/accounts/\(serializePathParameter(accountId, PathParameterSpec(name: "accountId", style: "simple", explode: false)))/entries"), body: body, params: nil, headers: requestHeaders, contentType: "application/json", responseType: AccountsEntriesCreateResult.self)
+    public func accountsEntriesCreate(accountId: String, body: OpenPlatformEntryCreateRequest) async throws -> AccountsEntriesCreateResult? {
+        return try await client.post(ApiPaths.backendPath("/open_platform/accounts/\(serializePathParameter(accountId, PathParameterSpec(name: "accountId", style: "simple", explode: false)))/entries"), body: body, params: nil, headers: nil, contentType: "application/json", responseType: AccountsEntriesCreateResult.self)
     }
 
     /// Delete open platform account entry
-    public func accountsEntriesDelete(accountId: String, entryId: String, xRequestId: String? = nil) async throws -> AccountsEntriesDeleteResult? {
-        let requestHeaders = buildRequestHeaders(
-            [
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
-            ],
-            [:]
-        )
-        return try await client.delete(ApiPaths.backendPath("/open_platform/accounts/\(serializePathParameter(accountId, PathParameterSpec(name: "accountId", style: "simple", explode: false)))/entries/\(serializePathParameter(entryId, PathParameterSpec(name: "entryId", style: "simple", explode: false)))"), params: nil, headers: requestHeaders, responseType: AccountsEntriesDeleteResult.self)
+    public func accountsEntriesDelete(accountId: String, entryId: String) async throws -> AccountsEntriesDeleteResult? {
+        return try await client.delete(ApiPaths.backendPath("/open_platform/accounts/\(serializePathParameter(accountId, PathParameterSpec(name: "accountId", style: "simple", explode: false)))/entries/\(serializePathParameter(entryId, PathParameterSpec(name: "entryId", style: "simple", explode: false)))"), responseType: AccountsEntriesDeleteResult.self)
     }
 
     /// Update open platform account entry
-    public func accountsEntriesUpdate(accountId: String, entryId: String, body: OpenPlatformEntryUpdateRequest, xRequestId: String? = nil) async throws -> AccountsEntriesUpdateResult? {
-        let requestHeaders = buildRequestHeaders(
-            [
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
-            ],
-            [:]
-        )
-        return try await client.patch(ApiPaths.backendPath("/open_platform/accounts/\(serializePathParameter(accountId, PathParameterSpec(name: "accountId", style: "simple", explode: false)))/entries/\(serializePathParameter(entryId, PathParameterSpec(name: "entryId", style: "simple", explode: false)))"), body: body, params: nil, headers: requestHeaders, contentType: "application/json", responseType: AccountsEntriesUpdateResult.self)
+    public func accountsEntriesUpdate(accountId: String, entryId: String, body: OpenPlatformEntryUpdateRequest) async throws -> AccountsEntriesUpdateResult? {
+        return try await client.patch(ApiPaths.backendPath("/open_platform/accounts/\(serializePathParameter(accountId, PathParameterSpec(name: "accountId", style: "simple", explode: false)))/entries/\(serializePathParameter(entryId, PathParameterSpec(name: "entryId", style: "simple", explode: false)))"), body: body, params: nil, headers: nil, contentType: "application/json", responseType: AccountsEntriesUpdateResult.self)
     }
 
     /// List open platform account pay bindings
@@ -101,25 +65,13 @@ public class OpenPlatformApi {
     }
 
     /// Create open platform account pay binding
-    public func accountsPayBindingsCreate(accountId: String, body: OpenPlatformPayBindingCreateRequest, xRequestId: String? = nil) async throws -> AccountsPayBindingsCreateResult? {
-        let requestHeaders = buildRequestHeaders(
-            [
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
-            ],
-            [:]
-        )
-        return try await client.post(ApiPaths.backendPath("/open_platform/accounts/\(serializePathParameter(accountId, PathParameterSpec(name: "accountId", style: "simple", explode: false)))/pay_bindings"), body: body, params: nil, headers: requestHeaders, contentType: "application/json", responseType: AccountsPayBindingsCreateResult.self)
+    public func accountsPayBindingsCreate(accountId: String, body: OpenPlatformPayBindingCreateRequest) async throws -> AccountsPayBindingsCreateResult? {
+        return try await client.post(ApiPaths.backendPath("/open_platform/accounts/\(serializePathParameter(accountId, PathParameterSpec(name: "accountId", style: "simple", explode: false)))/pay_bindings"), body: body, params: nil, headers: nil, contentType: "application/json", responseType: AccountsPayBindingsCreateResult.self)
     }
 
     /// Delete open platform account pay binding
-    public func accountsPayBindingsDelete(accountId: String, bindingId: String, xRequestId: String? = nil) async throws -> AccountsPayBindingsDeleteResult? {
-        let requestHeaders = buildRequestHeaders(
-            [
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
-            ],
-            [:]
-        )
-        return try await client.delete(ApiPaths.backendPath("/open_platform/accounts/\(serializePathParameter(accountId, PathParameterSpec(name: "accountId", style: "simple", explode: false)))/pay_bindings/\(serializePathParameter(bindingId, PathParameterSpec(name: "bindingId", style: "simple", explode: false)))"), params: nil, headers: requestHeaders, responseType: AccountsPayBindingsDeleteResult.self)
+    public func accountsPayBindingsDelete(accountId: String, bindingId: String) async throws -> AccountsPayBindingsDeleteResult? {
+        return try await client.delete(ApiPaths.backendPath("/open_platform/accounts/\(serializePathParameter(accountId, PathParameterSpec(name: "accountId", style: "simple", explode: false)))/pay_bindings/\(serializePathParameter(bindingId, PathParameterSpec(name: "bindingId", style: "simple", explode: false)))"), responseType: AccountsPayBindingsDeleteResult.self)
     }
 
     /// List open platform manifests
@@ -316,68 +268,4 @@ public class OpenPlatformApi {
         value.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? value
     }
 
-    private struct HeaderParameterSpec {
-        let value: Any?
-        let style: String
-        let explode: Bool
-        let contentType: String?
-    }
-
-    private func buildRequestHeaders(_ headers: [String: HeaderParameterSpec], _ cookies: [String: HeaderParameterSpec]) -> [String: String]? {
-        var requestHeaders: [String: String] = [:]
-        for (name, parameter) in headers {
-            if let serialized = serializeParameterValue(parameter) {
-                requestHeaders[name] = serialized
-            }
-        }
-
-        if let cookieHeader = buildCookieHeader(cookies), !cookieHeader.isEmpty {
-            requestHeaders["Cookie"] = requestHeaders["Cookie"].map { "\($0); \(cookieHeader)" } ?? cookieHeader
-        }
-
-        return requestHeaders.isEmpty ? nil : requestHeaders
-    }
-
-    private func buildCookieHeader(_ cookies: [String: HeaderParameterSpec]) -> String? {
-        let pairs = cookies.compactMap { name, parameter -> String? in
-            guard let serialized = serializeParameterValue(parameter) else { return nil }
-            return "\(urlEncode(name))=\(urlEncode(serialized))"
-        }
-        return pairs.isEmpty ? nil : pairs.joined(separator: "; ")
-    }
-
-    private func serializeParameterValue(_ parameter: HeaderParameterSpec?) -> String? {
-        guard let parameter, let value = parameter.value else { return nil }
-        if let contentType = parameter.contentType, !contentType.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
-            if JSONSerialization.isValidJSONObject(value),
-               let data = try? JSONSerialization.data(withJSONObject: value, options: []),
-               let json = String(data: data, encoding: .utf8) {
-                return json
-            }
-            return String(describing: value)
-        }
-        if let array = value as? [Any?] {
-            return array.compactMap { $0.map { String(describing: $0) } }.joined(separator: ",")
-        }
-        if let object = value as? [String: Any] {
-            var values: [String] = []
-            for (key, item) in object {
-                if parameter.explode {
-                    values.append("\(key)=\(item)")
-                } else {
-                    values.append(key)
-                    values.append(String(describing: item))
-                }
-            }
-            return values.joined(separator: ",")
-        }
-        if let date = value as? Date {
-            return ISO8601DateFormatter().string(from: date)
-        }
-        return String(describing: value)
-    }
-
-    private func urlEncode(_ value: String) -> String {
-        value.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? value
-    }
 }

@@ -10,8 +10,18 @@ export interface AdminRecordLogItem {
   cacheReadTokens: number;
   /** Cost field on admin record log item. */
   cost: string;
+  /** Error code field on admin record log item. */
+  errorCode: string;
+  /** Error message field on admin record log item. */
+  errorMessage: string;
+  /** Error type field on admin record log item. */
+  errorType: string;
   /** Group field on admin record log item. */
   group: string;
+  /** Http method field on admin record log item. */
+  httpMethod: 'GET' | 'POST' | 'PUT' | 'PATCH' | 'DELETE' | 'OPTIONS' | 'HEAD';
+  /** Http status field on admin record log item. */
+  httpStatus: number;
   /** Id field on admin record log item. */
   id: string;
   /** Input tokens field on admin record log item. */
@@ -28,10 +38,16 @@ export interface AdminRecordLogItem {
   outputTokens: number;
   /** Path field on admin record log item. */
   path: string;
+  /** Provider native model field on admin record log item. */
+  providerNativeModel: string;
   /** Reasoning effort field on admin record log item. */
   reasoningEffort: string;
   /** Request id field on admin record log item. */
   requestId: string;
+  /** Requested model catalog key field on admin record log item. */
+  requestedModelCatalogKey: string;
+  /** Status field on admin record log item. */
+  status: 'success' | 'error';
   /** Time field on admin record log item. */
   time: string;
   /** Token name field on admin record log item. */
@@ -44,4 +60,6 @@ export interface AdminRecordLogItem {
   type: string;
   /** User field on admin record log item. */
   user: string;
+  /** Full HTTP User-Agent header captured from the gateway request. Empty when the client omitted the header. */
+  userAgent: string;
 }

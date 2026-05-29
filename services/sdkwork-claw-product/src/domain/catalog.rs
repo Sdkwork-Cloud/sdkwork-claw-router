@@ -22,11 +22,66 @@ pub fn provider_native_model_id(model_key: &str) -> String {
         .map(str::trim)
         .filter(|part| !part.is_empty())
         .collect::<Vec<_>>();
-    if parts.len() >= 3 {
-        parts[2..].join("/")
-    } else {
-        value.to_owned()
+    match parts.as_slice() {
+        [vendor, model] if unambiguous_catalog_namespace_prefix(vendor) => (*model).to_owned(),
+        [provider, provider_native @ ..]
+            if relay_provider_namespace_prefix(provider)
+                && !provider_native.is_empty()
+                && !known_region_segment(provider_native[0]) =>
+        {
+            provider_native.join("/")
+        }
+        _ => value.to_owned(),
     }
+}
+
+fn unambiguous_catalog_namespace_prefix(prefix: &str) -> bool {
+    matches!(
+        prefix.trim().to_ascii_lowercase().as_str(),
+        "openai"
+            | "google"
+            | "google_gemini"
+            | "alibaba"
+            | "baidu"
+            | "black_forest_labs"
+            | "bytedance"
+            | "deepseek"
+            | "elevenlabs"
+            | "kuaishou"
+            | "minimax"
+            | "moonshot"
+            | "xai"
+            | "stability_ai"
+            | "suno"
+            | "tencent"
+            | "zhipu"
+    )
+}
+
+fn relay_provider_namespace_prefix(prefix: &str) -> bool {
+    matches!(
+        prefix.trim().to_ascii_lowercase().as_str(),
+        "openrouter" | "siliconflow" | "together" | "fireworks" | "groq"
+    )
+}
+
+fn known_region_segment(value: &str) -> bool {
+    matches!(
+        value.trim().to_ascii_lowercase().as_str(),
+        "global"
+            | "cn"
+            | "us"
+            | "eu"
+            | "ap"
+            | "apac"
+            | "jp"
+            | "sg"
+            | "hk"
+            | "aws"
+            | "azure"
+            | "gcp"
+            | "local"
+    )
 }
 
 #[derive(Debug, Clone, PartialEq, Eq)]
@@ -83,7 +138,7 @@ impl AiModel {
         capabilities: Vec<&str>,
     ) -> Self {
         Self {
-            catalog_key: format!("{vendor_code}/global/{model}"),
+            catalog_key: format!("{vendor_code}/{model}"),
             model: model.to_owned(),
             display_name: display_name.to_owned(),
             vendor_code: vendor_code.to_owned(),
@@ -183,17 +238,17 @@ impl ProviderRetryPolicy {
     ) -> DomainResult<Self> {
         if max_attempts == 0 || max_attempts > MAX_PROVIDER_RETRY_ATTEMPTS {
             return Err(DomainError::new(format!(
-                "integration_channel.retry_policy max_attempts must be between 1 and {MAX_PROVIDER_RETRY_ATTEMPTS}: {max_attempts}"
+                "ai_channel.retry_policy max_attempts must be between 1 and {MAX_PROVIDER_RETRY_ATTEMPTS}: {max_attempts}"
             )));
         }
         if backoff_ms > MAX_PROVIDER_RETRY_BACKOFF_MS {
             return Err(DomainError::new(format!(
-                "integration_channel.retry_policy backoff_ms must be <= {MAX_PROVIDER_RETRY_BACKOFF_MS}: {backoff_ms}"
+                "ai_channel.retry_policy backoff_ms must be <= {MAX_PROVIDER_RETRY_BACKOFF_MS}: {backoff_ms}"
             )));
         }
         if max_attempts > 1 && retryable_status_codes.is_empty() {
             return Err(DomainError::new(
-                "integration_channel.retry_policy retryable_status_codes is required when max_attempts is greater than 1",
+                "ai_channel.retry_policy retryable_status_codes is required when max_attempts is greater than 1",
             ));
         }
 
@@ -202,12 +257,12 @@ impl ProviderRetryPolicy {
         for status_code in retryable_status_codes {
             if !is_allowed_retryable_provider_status(status_code) {
                 return Err(DomainError::new(format!(
-                    "integration_channel.retry_policy retryable_status_codes contains unsupported status: {status_code}"
+                    "ai_channel.retry_policy retryable_status_codes contains unsupported status: {status_code}"
                 )));
             }
             if !seen.insert(status_code) {
                 return Err(DomainError::new(format!(
-                    "integration_channel.retry_policy retryable_status_codes contains duplicate status: {status_code}"
+                    "ai_channel.retry_policy retryable_status_codes contains duplicate status: {status_code}"
                 )));
             }
             normalized.push(status_code);
@@ -223,19 +278,19 @@ impl ProviderRetryPolicy {
     pub fn from_json_str(value: &str) -> DomainResult<Self> {
         let value: Value = serde_json::from_str(value).map_err(|error| {
             DomainError::new(format!(
-                "integration_channel.retry_policy must be valid JSON: {error}"
+                "ai_channel.retry_policy must be valid JSON: {error}"
             ))
         })?;
-        let object = value.as_object().ok_or_else(|| {
-            DomainError::new("integration_channel.retry_policy must be a JSON object")
-        })?;
+        let object = value
+            .as_object()
+            .ok_or_else(|| DomainError::new("ai_channel.retry_policy must be a JSON object"))?;
         for key in object.keys() {
             if !matches!(
                 key.as_str(),
                 "max_attempts" | "retryable_status_codes" | "backoff_ms"
             ) {
                 return Err(DomainError::new(format!(
-                    "integration_channel.retry_policy contains unsupported field: {key}"
+                    "ai_channel.retry_policy contains unsupported field: {key}"
                 )));
             }
         }
@@ -245,16 +300,14 @@ impl ProviderRetryPolicy {
             .and_then(Value::as_u64)
             .and_then(|value| usize::try_from(value).ok())
             .ok_or_else(|| {
-                DomainError::new(
-                    "integration_channel.retry_policy max_attempts must be a positive integer",
-                )
+                DomainError::new("ai_channel.retry_policy max_attempts must be a positive integer")
             })?;
         let retryable_status_codes = object
             .get("retryable_status_codes")
             .and_then(Value::as_array)
             .ok_or_else(|| {
                 DomainError::new(
-                    "integration_channel.retry_policy retryable_status_codes must be an array",
+                    "ai_channel.retry_policy retryable_status_codes must be an array",
                 )
             })?
             .iter()
@@ -264,7 +317,7 @@ impl ProviderRetryPolicy {
                     .and_then(|value| u16::try_from(value).ok())
                     .ok_or_else(|| {
                         DomainError::new(
-                            "integration_channel.retry_policy retryable_status_codes must contain integer HTTP statuses",
+                            "ai_channel.retry_policy retryable_status_codes must contain integer HTTP statuses",
                         )
                     })
             })
@@ -274,7 +327,7 @@ impl ProviderRetryPolicy {
             .map(|value| {
                 value.as_u64().ok_or_else(|| {
                     DomainError::new(
-                        "integration_channel.retry_policy backoff_ms must be a non-negative integer",
+                        "ai_channel.retry_policy backoff_ms must be a non-negative integer",
                     )
                 })
             })
@@ -314,7 +367,7 @@ impl ProviderCircuitBreakerPolicy {
             || failure_threshold > MAX_PROVIDER_CIRCUIT_BREAKER_FAILURE_THRESHOLD
         {
             return Err(DomainError::new(format!(
-                "integration_channel.circuit_breaker_policy failure_threshold must be between 1 and {MAX_PROVIDER_CIRCUIT_BREAKER_FAILURE_THRESHOLD}: {failure_threshold}"
+                "ai_channel.circuit_breaker_policy failure_threshold must be between 1 and {MAX_PROVIDER_CIRCUIT_BREAKER_FAILURE_THRESHOLD}: {failure_threshold}"
             )));
         }
         Ok(Self { failure_threshold })
@@ -323,16 +376,16 @@ impl ProviderCircuitBreakerPolicy {
     pub fn from_json_str(value: &str) -> DomainResult<Self> {
         let value: Value = serde_json::from_str(value).map_err(|error| {
             DomainError::new(format!(
-                "integration_channel.circuit_breaker_policy must be valid JSON: {error}"
+                "ai_channel.circuit_breaker_policy must be valid JSON: {error}"
             ))
         })?;
         let object = value.as_object().ok_or_else(|| {
-            DomainError::new("integration_channel.circuit_breaker_policy must be a JSON object")
+            DomainError::new("ai_channel.circuit_breaker_policy must be a JSON object")
         })?;
         for key in object.keys() {
             if key != "failure_threshold" {
                 return Err(DomainError::new(format!(
-                    "integration_channel.circuit_breaker_policy contains unsupported field: {key}"
+                    "ai_channel.circuit_breaker_policy contains unsupported field: {key}"
                 )));
             }
         }
@@ -343,7 +396,7 @@ impl ProviderCircuitBreakerPolicy {
             .and_then(|value| usize::try_from(value).ok())
             .ok_or_else(|| {
                 DomainError::new(
-                    "integration_channel.circuit_breaker_policy failure_threshold must be a positive integer",
+                    "ai_channel.circuit_breaker_policy failure_threshold must be a positive integer",
                 )
             })?;
         Self::new(failure_threshold)
@@ -692,6 +745,7 @@ fn default_query_auth_name(provider_code: &str) -> Option<String> {
 pub struct ModelProviderRoute {
     pub catalog_key: String,
     pub model: String,
+    pub region_code: String,
     pub provider_code: String,
     pub channel_id: i64,
     pub provider_model: String,
@@ -703,7 +757,7 @@ pub struct ModelProviderRoute {
 }
 
 #[derive(Debug, Clone, PartialEq, Eq)]
-pub struct ProviderAccountPoolGroupBinding {
+pub struct ProviderChannelGroupBinding {
     pub group_id: i64,
     pub priority: i32,
     pub weight: i32,
@@ -711,7 +765,7 @@ pub struct ProviderAccountPoolGroupBinding {
     pub capabilities: Vec<String>,
 }
 
-impl ProviderAccountPoolGroupBinding {
+impl ProviderChannelGroupBinding {
     pub fn new(group_id: i64, priority: i32, weight: i32) -> Self {
         Self {
             group_id,
@@ -746,22 +800,24 @@ impl ProviderAccountPoolGroupBinding {
 }
 
 #[derive(Debug, Clone, PartialEq, Eq)]
-pub struct ProviderAccountPoolRoute {
+pub struct ProviderChannelRoute {
     pub provider_code: String,
     pub channel_id: i64,
+    pub region_code: String,
     pub base_url: Option<String>,
     pub secret_ref: Option<String>,
     pub auth_profile: ProviderAuthProfile,
     pub timeout_ms: Option<u64>,
     pub retry_policy: Option<ProviderRetryPolicy>,
-    pub group_bindings: Vec<ProviderAccountPoolGroupBinding>,
+    pub group_bindings: Vec<ProviderChannelGroupBinding>,
 }
 
-impl ProviderAccountPoolRoute {
+impl ProviderChannelRoute {
     pub fn new(provider_code: &str, channel_id: i64) -> Self {
         Self {
             provider_code: provider_code.to_owned(),
             channel_id,
+            region_code: "global".to_owned(),
             base_url: None,
             secret_ref: None,
             auth_profile: ProviderAuthProfile::default(),
@@ -769,6 +825,11 @@ impl ProviderAccountPoolRoute {
             retry_policy: None,
             group_bindings: Vec::new(),
         }
+    }
+
+    pub fn with_region_code(mut self, region_code: &str) -> Self {
+        self.region_code = normalized_model_region_code(region_code);
+        self
     }
 
     pub fn with_provider_endpoint(
@@ -798,9 +859,7 @@ impl ProviderAccountPoolRoute {
 
     pub fn with_group_binding(mut self, group_id: i64, priority: i32, weight: i32) -> Self {
         self.group_bindings
-            .push(ProviderAccountPoolGroupBinding::new(
-                group_id, priority, weight,
-            ));
+            .push(ProviderChannelGroupBinding::new(group_id, priority, weight));
         self
     }
 
@@ -819,7 +878,7 @@ impl ProviderAccountPoolRoute {
         CS: IntoIterator<Item = C>,
     {
         self.group_bindings
-            .push(ProviderAccountPoolGroupBinding::new_scoped(
+            .push(ProviderChannelGroupBinding::new_scoped(
                 group_id,
                 priority,
                 weight,
@@ -829,10 +888,7 @@ impl ProviderAccountPoolRoute {
         self
     }
 
-    pub fn with_group_bindings(
-        mut self,
-        group_bindings: Vec<ProviderAccountPoolGroupBinding>,
-    ) -> Self {
+    pub fn with_group_bindings(mut self, group_bindings: Vec<ProviderChannelGroupBinding>) -> Self {
         self.group_bindings = group_bindings;
         self
     }
@@ -843,6 +899,7 @@ impl ModelProviderRoute {
         Self {
             catalog_key: model.to_owned(),
             model: model.to_owned(),
+            region_code: "global".to_owned(),
             provider_code: provider_code.to_owned(),
             channel_id,
             provider_model: provider_model.to_owned(),
@@ -864,6 +921,7 @@ impl ModelProviderRoute {
         Self {
             catalog_key: catalog_key.to_owned(),
             model: model.to_owned(),
+            region_code: "global".to_owned(),
             provider_code: provider_code.to_owned(),
             channel_id,
             provider_model: provider_model.to_owned(),
@@ -877,6 +935,11 @@ impl ModelProviderRoute {
 
     pub fn with_catalog_key(mut self, catalog_key: &str) -> Self {
         self.catalog_key = catalog_key.to_owned();
+        self
+    }
+
+    pub fn with_region_code(mut self, region_code: &str) -> Self {
+        self.region_code = normalized_model_region_code(region_code);
         self
     }
 
@@ -903,5 +966,14 @@ impl ModelProviderRoute {
     pub fn with_retry_policy(mut self, retry_policy: ProviderRetryPolicy) -> Self {
         self.retry_policy = Some(retry_policy);
         self
+    }
+}
+
+fn normalized_model_region_code(value: &str) -> String {
+    let value = value.trim();
+    if value.is_empty() {
+        "global".to_owned()
+    } else {
+        value.to_owned()
     }
 }

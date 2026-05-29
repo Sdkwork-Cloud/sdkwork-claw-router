@@ -1,13 +1,13 @@
 package com.sdkwork.clawrouter.backend
 
 data class IamGatewayApiKeyRecord(
+    val channelGroupId: String? = null,
     val createdAt: String? = null,
     val dataScope: String? = null,
     val deletedAt: String? = null,
     val deletedBy: String? = null,
     val environment: String? = null,
     val expireAt: String? = null,
-    val groupId: String? = null,
     val hashAlg: String? = null,
     val id: String? = null,
     val idempotencyKey: String? = null,

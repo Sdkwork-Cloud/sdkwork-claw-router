@@ -34,6 +34,32 @@ class SchemaGuardianTest(unittest.TestCase):
             self.assertFalse(result.ok)
             self.assertIn("forbidden synonym table present: commerce_order_shadow", result.messages)
 
+    def test_rejects_mojibake_in_registry_text(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            mojibake = "\u95c2\u4f5d"
+            registry = self.write_registry(
+                root,
+                f"""
+                schema_registry:
+                  legacy_compatibility_guardrails:
+                    forbidden_synonym_tables: []
+                domain_names:
+                  price_side:
+                    canonical_name: PriceSide
+                    zh_name: {mojibake}
+                tables: []
+                """,
+            )
+
+            result = SchemaGuardian(root=root, registry_path=registry).run()
+
+            self.assertFalse(result.ok)
+            self.assertIn(
+                f"schema registry contains mojibake text near line 7: zh_name: {mojibake}",
+                result.messages,
+            )
+
     def test_rejects_legacy_identity_tables_and_user_foreign_keys(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
@@ -426,8 +452,8 @@ class SchemaGuardianTest(unittest.TestCase):
                   - table: iam_gateway_api_key
                     domain: iam
                     columns: {}
-                  - table: iam_gateway_api_key_group
-                    domain: iam
+                  - table: ai_channel_group
+                    domain: ai
                     columns: {}
                   - table: ai_pricing_plan_binding
                     domain: ai
@@ -439,8 +465,8 @@ class SchemaGuardianTest(unittest.TestCase):
 
             self.assertFalse(result.ok)
             self.assertIn("forbidden pricing table present: ai_pricing_group", result.messages)
-            self.assertIn("iam_gateway_api_key must include column group_id", result.messages)
-            self.assertIn("iam_gateway_api_key_group must include column pricing_plan_id", result.messages)
+            self.assertIn("iam_gateway_api_key must include column channel_group_id", result.messages)
+            self.assertIn("ai_channel_group must include column pricing_plan_id", result.messages)
             self.assertIn("ai_pricing_plan_binding must include column subject_type", result.messages)
 
     def test_requires_multi_modal_billing_and_pricing_columns(self) -> None:

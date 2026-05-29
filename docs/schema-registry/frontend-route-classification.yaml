@@ -1,4 +1,4 @@
-﻿schema: sdkwork-claw-router-frontend-route-classification
+schema: sdkwork-claw-router-frontend-route-classification
 version: 0.1.0
 source: apps/sdkwork-claw-router-portal/src/App.tsx
 rule: every actual portal route declares whether it is SDK-backed runtime, schema-provenanced content, or a gated local developer tool surface.
@@ -296,6 +296,42 @@ routes:
   evidence:
   - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts
   - docs/schema-registry/frontend-field-contracts.yaml
+- route: /admin/channel/resources
+  package: sdkwork-claw-router-admin-channel
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: backend
+  operation_routes:
+  - /admin/channel/resources
+  required_tables:
+  - ai_resource
+  - ai_resource_group_item
+  evidence:
+  - apps/sdkwork-claw-router-portal/src/App.tsx
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/index.tsx
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /admin/channel/endpoints
+  package: sdkwork-claw-router-admin-channel
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: backend
+  operation_routes:
+  - /admin/channel/endpoints
+  required_tables:
+  - ai_channel
+  - ai_channel
+  - ai_channel_endpoint
+  - ai_model_vendor
+  - ai_api_endpoint
+  - ops_audit_log
+  evidence:
+  - apps/sdkwork-claw-router-portal/src/App.tsx
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/index.tsx
+  - docs/schema-registry/frontend-field-contracts.yaml
 - route: /admin/app
   package: sdkwork-claw-router-app-center
   owner: admin-control-plane
@@ -386,6 +422,19 @@ routes:
   evidence:
   - apps/sdkwork-claw-router-portal/src/auth/ClawRouterAuthSettingsPage.tsx
   - apps/sdkwork-claw-router-portal/src/auth/clawRouterAuthSettingsService.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /admin/runtime-region
+  package: sdkwork-claw-router-admin-runtime-region
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: backend
+  required_tables:
+  - ops_config_snapshot
+  - ops_audit_log
+  evidence:
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-runtime-region/src/index.tsx
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-runtime-region/src/runtimeRegionService.ts
   - docs/schema-registry/frontend-field-contracts.yaml
 - route: /admin/site
   package: sdkwork-claw-router-admin-site
@@ -660,13 +709,12 @@ routes:
   api_surface: app
   required_tables:
   - ai_model_vendor
-  - ai_model_vendor_region
   - ai_model
   - ai_model_capability
   - ai_model_pricing
   - ai_billing_meter
-  - iam_gateway_api_key_group
-  - iam_api_key_group_channel
+  - ai_channel_group
+  - ai_channel_group_member
   evidence:
   - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-models/src/modelService.ts
   - docs/schema-registry/frontend-field-contracts.yaml
@@ -1895,7 +1943,7 @@ routes:
   - integration_service_provider
   - integration_service_provider_subject_binding
   - iam_gateway_api_key
-  - iam_gateway_api_key_group
+  - ai_channel_group
   - ops_audit_log
   evidence:
   - apps/sdkwork-claw-router-portal/src/App.tsx
@@ -1999,8 +2047,8 @@ routes:
   operation_routes:
   - /admin/service-providers/reconciliation
   required_tables:
-  - integration_provider_invoice_import
-  - integration_provider_invoice_item
+  - ai_provider_invoice_import
+  - ai_provider_invoice_item
   - commerce_usage_service_provider_reconciliation_run
   - commerce_usage_service_provider_reconciliation_item
   - ops_audit_log
@@ -2089,8 +2137,8 @@ routes:
   operation_routes:
   - /admin/messaging/providers
   required_tables:
-  - integration_provider
-  - integration_provider_account
+  - ai_provider
+  - ai_channel
   - messaging_provider_capability
   - ops_audit_log
   evidence: *adminMessagingEvidence
@@ -2103,7 +2151,7 @@ routes:
   operation_routes:
   - /admin/messaging/sender-identities
   required_tables:
-  - integration_provider_account
+  - ai_channel
   - messaging_sender_identity
   - ops_audit_log
   evidence: *adminMessagingEvidence
@@ -2132,7 +2180,7 @@ routes:
   - /admin/messaging/route-rules
   required_tables:
   - messaging_template
-  - integration_provider_account
+  - ai_channel
   - messaging_sender_identity
   - messaging_template_binding
   - messaging_route_rule

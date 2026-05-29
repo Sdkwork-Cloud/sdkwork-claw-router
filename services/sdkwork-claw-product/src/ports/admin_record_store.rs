@@ -48,6 +48,14 @@ pub struct AdminRecordLogItem {
     #[serde(rename = "type")]
     pub log_type: String,
     pub model: String,
+    pub provider_native_model: String,
+    pub requested_model_catalog_key: String,
+    pub status: String,
+    pub http_status: i64,
+    pub http_method: String,
+    pub error_code: String,
+    pub error_type: String,
+    pub error_message: String,
     pub total_time: String,
     pub ttft: String,
     pub is_stream: bool,
@@ -62,6 +70,7 @@ pub struct AdminRecordLogItem {
     pub path: String,
     pub reasoning_effort: String,
     pub ip: String,
+    pub user_agent: String,
 }
 
 pub trait AdminRecordStore {

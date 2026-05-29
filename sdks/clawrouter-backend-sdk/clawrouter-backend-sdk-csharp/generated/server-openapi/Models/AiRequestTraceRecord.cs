@@ -6,12 +6,12 @@ namespace Sdkwork.ClawRouter.Backend.Models
 {
     public class AiRequestTraceRecord
     {
-        public string? ApiKeyGroupId { get; set; }
-        public string? ApiKeyGroupSnapshot { get; set; }
         public string? ApiKeyId { get; set; }
         public string? ApiKeyNameSnapshot { get; set; }
         public int? AttemptNo { get; set; }
         public string? CachedTokens { get; set; }
+        public string? ChannelGroupId { get; set; }
+        public string? ChannelGroupSnapshot { get; set; }
         public string? ChannelId { get; set; }
         public string? ChannelNameSnapshot { get; set; }
         public string? ClientIpHash { get; set; }
@@ -37,7 +37,6 @@ namespace Sdkwork.ClawRouter.Backend.Models
         public string? OwnerType { get; set; }
         public string? PayloadHash { get; set; }
         public string? PromptTokens { get; set; }
-        public string? ProviderAccountId { get; set; }
         public string? ProviderErrorCode { get; set; }
         public string? ProviderId { get; set; }
         public string? ProviderModel { get; set; }

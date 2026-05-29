@@ -65,7 +65,7 @@ tenant_id
 organization_id
 user_id
 api_key_id
-api_key_group_id
+channel_group_id
 data_scope
 permission_scope
 rate_limit_policy_id
@@ -175,7 +175,7 @@ organization_id
 user_id
 operator_id
 api_key_id
-api_key_group_id
+channel_group_id
 data_scope
 ```
 

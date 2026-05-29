@@ -18,11 +18,10 @@ public class AgentsApi {
     }
 
     /// Create Playground agent definition
-    public func agentDefinitionsCreate(body: AgentCreateRequest, idempotencyKey: String, xRequestId: String? = nil) async throws -> AgentDefinitionsCreateResult? {
+    public func agentDefinitionsCreate(body: AgentCreateRequest, idempotencyKey: String) async throws -> AgentDefinitionsCreateResult? {
         let requestHeaders = buildRequestHeaders(
             [
                 "Idempotency-Key": HeaderParameterSpec(value: idempotencyKey, style: "simple", explode: false, contentType: nil),
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
             ],
             [:]
         )
@@ -35,11 +34,10 @@ public class AgentsApi {
     }
 
     /// Complete Playground agent run
-    public func agentRunsSubmit(runId: String, body: AgentRunCompleteRequest, idempotencyKey: String, xRequestId: String? = nil) async throws -> AgentRunsSubmitResult? {
+    public func agentRunsSubmit(runId: String, body: AgentRunCompleteRequest, idempotencyKey: String) async throws -> AgentRunsSubmitResult? {
         let requestHeaders = buildRequestHeaders(
             [
                 "Idempotency-Key": HeaderParameterSpec(value: idempotencyKey, style: "simple", explode: false, contentType: nil),
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
             ],
             [:]
         )
@@ -56,11 +54,10 @@ public class AgentsApi {
     }
 
     /// Create Playground agent run step
-    public func agentRunStepsCreate(runId: String, body: AgentRunStepCreateRequest, idempotencyKey: String, xRequestId: String? = nil) async throws -> AgentRunStepsCreateResult? {
+    public func agentRunStepsCreate(runId: String, body: AgentRunStepCreateRequest, idempotencyKey: String) async throws -> AgentRunStepsCreateResult? {
         let requestHeaders = buildRequestHeaders(
             [
                 "Idempotency-Key": HeaderParameterSpec(value: idempotencyKey, style: "simple", explode: false, contentType: nil),
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
             ],
             [:]
         )
@@ -68,11 +65,10 @@ public class AgentsApi {
     }
 
     /// Complete Playground agent run step
-    public func agentRunStepsSubmit(runId: String, stepId: String, body: AgentRunStepCompleteRequest, idempotencyKey: String, xRequestId: String? = nil) async throws -> AgentRunStepsSubmitResult? {
+    public func agentRunStepsSubmit(runId: String, stepId: String, body: AgentRunStepCompleteRequest, idempotencyKey: String) async throws -> AgentRunStepsSubmitResult? {
         let requestHeaders = buildRequestHeaders(
             [
                 "Idempotency-Key": HeaderParameterSpec(value: idempotencyKey, style: "simple", explode: false, contentType: nil),
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
             ],
             [:]
         )
@@ -94,11 +90,10 @@ public class AgentsApi {
     }
 
     /// Create Playground agent run
-    public func agentRunsCreate(sessionId: String, body: AgentRunCreateRequest, idempotencyKey: String, xRequestId: String? = nil) async throws -> AgentRunsCreateResult? {
+    public func agentRunsCreate(sessionId: String, body: AgentRunCreateRequest, idempotencyKey: String) async throws -> AgentRunsCreateResult? {
         let requestHeaders = buildRequestHeaders(
             [
                 "Idempotency-Key": HeaderParameterSpec(value: idempotencyKey, style: "simple", explode: false, contentType: nil),
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
             ],
             [:]
         )
@@ -120,11 +115,10 @@ public class AgentsApi {
     }
 
     /// Create Playground agent session
-    public func agentSessionsCreate(agentId: String, body: AgentSessionCreateRequest, idempotencyKey: String, xRequestId: String? = nil) async throws -> AgentSessionsCreateResult? {
+    public func agentSessionsCreate(agentId: String, body: AgentSessionCreateRequest, idempotencyKey: String) async throws -> AgentSessionsCreateResult? {
         let requestHeaders = buildRequestHeaders(
             [
                 "Idempotency-Key": HeaderParameterSpec(value: idempotencyKey, style: "simple", explode: false, contentType: nil),
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
             ],
             [:]
         )

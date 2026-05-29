@@ -5,8 +5,10 @@ frontend_models:
   interface: ChannelItem
   fields:
   - id
+  - channelId
   - name
   - vendor
+  - channelType
   - protocol
   - accessType
   - baseUrl
@@ -16,6 +18,7 @@ frontend_models:
   - expiresAt
   - models
   - capabilities
+  - resourceCodes
   - isMultimodal
   - timeoutMs
   - retryPolicy
@@ -25,10 +28,11 @@ frontend_models:
   - balance
   - errors
   data_sources:
-  - integration_channel
-  - integration_channel_model
-  - integration_provider
-  - integration_provider_account
+  - ai_channel
+  - ai_channel_model
+  - ai_provider
+  - ai_channel
+  - ai_channel_resource
   - integration_provider_health_snapshot
 - route: /admin/channel
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts
@@ -48,6 +52,7 @@ frontend_models:
   fields:
   - name
   - vendor
+  - channelType
   - protocol
   - accessType
   - baseUrl
@@ -56,22 +61,26 @@ frontend_models:
   - expiresAt
   - models
   - capabilities
+  - resourceCodes
   - timeoutMs
   - retryPolicy
   - circuitBreakerPolicy
   - weight
   - status
   data_sources:
-  - integration_channel
-  - integration_channel_model
-  - integration_provider
-  - integration_provider_account
+  - ai_channel
+  - ai_channel_model
+  - ai_provider
+  - ai_channel
+  - ai_channel_resource
+  - ai_channel_resource
 - route: /admin/channel
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts
   interface: ChannelUpdateInput
   fields:
   - name
   - vendor
+  - channelType
   - protocol
   - accessType
   - baseUrl
@@ -80,16 +89,19 @@ frontend_models:
   - expiresAt
   - models
   - capabilities
+  - resourceCodes
   - timeoutMs
   - retryPolicy
   - circuitBreakerPolicy
   - weight
   - status
   data_sources:
-  - integration_channel
-  - integration_channel_model
-  - integration_provider
-  - integration_provider_account
+  - ai_channel
+  - ai_channel_model
+  - ai_provider
+  - ai_channel
+  - ai_channel_resource
+  - ai_channel_resource
 - route: /admin/channel
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts
   interface: ChannelTestResult
@@ -100,8 +112,10 @@ frontend_models:
   - latency
   - item
   - item.id
+  - item.channelId
   - item.name
   - item.vendor
+  - item.channelType
   - item.protocol
   - item.accessType
   - item.baseUrl
@@ -111,6 +125,7 @@ frontend_models:
   - item.expiresAt
   - item.models
   - item.capabilities
+  - item.resourceCodes
   - item.isMultimodal
   - item.timeoutMs
   - item.retryPolicy
@@ -120,8 +135,9 @@ frontend_models:
   - item.balance
   - item.errors
   data_sources:
-  - integration_channel
-  - integration_provider_account
+  - ai_channel
+  - ai_channel_resource
+  - ai_channel
   - integration_provider_health_snapshot
   - ops_config_snapshot
   - ops_audit_log
@@ -140,7 +156,7 @@ frontend_models:
   - createdAt
   - updatedAt
   data_sources:
-  - integration_provider_account
+  - ai_channel
 - route: /admin/channel
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts
   interface: ProviderSecretInput
@@ -151,7 +167,7 @@ frontend_models:
   - secretRef
   - status
   data_sources:
-  - integration_provider_account
+  - ai_channel
 - route: /admin/channel
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts
   interface: ProviderSecretUpdateInput
@@ -162,4 +178,155 @@ frontend_models:
   - secretRef
   - status
   data_sources:
-  - integration_provider_account
+  - ai_channel
+- route: /admin/channel/endpoints
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts
+  interface: ChannelEndpoint
+  fields:
+  - id
+  - channelId
+  - providerCode
+  - channelCode
+  - channelType
+  - vendorCode
+  - regionCode
+  - apiEndpointCode
+  - baseUrl
+  - priority
+  - weight
+  - healthStatus
+  - status
+  - effectiveFrom
+  - effectiveTo
+  data_sources:
+  - ai_channel
+  - ai_channel_endpoint
+  - ai_model_vendor
+  - ai_api_endpoint
+- route: /admin/channel/endpoints
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts
+  interface: ChannelEndpointCreateInput
+  fields:
+  - channelId
+  - vendorCode
+  - regionCode
+  - apiEndpointCode
+  - baseUrl
+  - priority
+  - weight
+  - status
+  - effectiveFrom
+  - effectiveTo
+  data_sources:
+  - ai_channel
+  - ai_channel_endpoint
+  - ai_model_vendor
+  - ai_api_endpoint
+  - ops_audit_log
+- route: /admin/channel/endpoints
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts
+  interface: ChannelEndpointUpdateInput
+  fields:
+  - vendorCode
+  - regionCode
+  - apiEndpointCode
+  - baseUrl
+  - priority
+  - weight
+  - status
+  - effectiveFrom
+  - effectiveTo
+  data_sources:
+  - ai_channel_endpoint
+  - ai_model_vendor
+  - ai_api_endpoint
+  - ops_audit_log
+- route: /admin/channel/resources
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts
+  interface: AiResource
+  fields:
+  - id
+  - resourceCode
+  - resourceType
+  - displayName
+  - vendorCode
+  - modalityCode
+  - apiEndpointCode
+  - catalogKey
+  - model
+  - providerNativeModel
+  - compositionMode
+  - status
+  - sortOrder
+  - members
+  - members.parentResourceCode
+  - members.memberResourceCode
+  - members.memberRole
+  - members.required
+  - members.sortOrder
+  data_sources:
+  - ai_resource
+  - ai_resource_group_item
+- route: /admin/channel/resources
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts
+  interface: AiResourceMember
+  fields:
+  - parentResourceCode
+  - memberResourceCode
+  - memberRole
+  - required
+  - sortOrder
+  data_sources:
+  - ai_resource_group_item
+- route: /admin/channel/resources
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts
+  interface: AiResourceMemberInput
+  fields:
+  - memberResourceCode
+  - memberRole
+  - required
+  - sortOrder
+  data_sources:
+  - ai_resource_group_item
+- route: /admin/channel/resources
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts
+  interface: AiResourceCreateInput
+  fields:
+  - resourceCode
+  - resourceType
+  - displayName
+  - vendorCode
+  - modalityCode
+  - apiEndpointCode
+  - catalogKey
+  - model
+  - providerNativeModel
+  - compositionMode
+  - status
+  - sortOrder
+  - members
+  data_sources:
+  - ai_resource
+  - ai_resource_group_item
+  - ops_audit_log
+- route: /admin/channel/resources
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts
+  interface: AiResourceUpdateInput
+  fields:
+  - resourceCode
+  - resourceType
+  - displayName
+  - vendorCode
+  - modalityCode
+  - apiEndpointCode
+  - catalogKey
+  - model
+  - providerNativeModel
+  - compositionMode
+  - status
+  - sortOrder
+  - members
+  data_sources:
+  - ai_resource
+  - ai_resource_group_item
+  - ops_audit_log

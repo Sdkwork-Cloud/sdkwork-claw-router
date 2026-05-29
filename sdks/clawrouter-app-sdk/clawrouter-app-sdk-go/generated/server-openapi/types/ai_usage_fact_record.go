@@ -2,8 +2,6 @@ package types
 
 // Ai usage fact record schema exposed by Claw Router.
 type AiUsageFactRecord struct {
-	ApiKeyGroupId string `json:"api_key_group_id"`
-	ApiKeyGroupSnapshot string `json:"api_key_group_snapshot"`
 	ApiKeyId string `json:"api_key_id"`
 	ApiKeyNameSnapshot string `json:"api_key_name_snapshot"`
 	AudioSeconds string `json:"audio_seconds"`
@@ -20,6 +18,8 @@ type AiUsageFactRecord struct {
 	CacheReadUnitPrice string `json:"cache_read_unit_price"`
 	CachedTokens string `json:"cached_tokens"`
 	CatalogKey string `json:"catalog_key"`
+	ChannelGroupId string `json:"channel_group_id"`
+	ChannelGroupSnapshot string `json:"channel_group_snapshot"`
 	ChannelId string `json:"channel_id"`
 	CharacterCount string `json:"character_count"`
 	CompletionTokens string `json:"completion_tokens"`
@@ -50,7 +50,6 @@ type AiUsageFactRecord struct {
 	PricingSnapshot map[string]JsonValue `json:"pricing_snapshot"`
 	PricingTierId string `json:"pricing_tier_id"`
 	PromptTokens string `json:"prompt_tokens"`
-	ProviderAccountId string `json:"provider_account_id"`
 	ProviderId string `json:"provider_id"`
 	ProviderNativeModel string `json:"provider_native_model"`
 	RateMultiplier string `json:"rate_multiplier"`

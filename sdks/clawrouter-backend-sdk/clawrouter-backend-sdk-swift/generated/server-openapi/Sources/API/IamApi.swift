@@ -13,14 +13,8 @@ public class IamApi {
     }
 
     /// Create group
-    public func accessGroupsCreate(body: AdminAccessGroupCreateRequest, xRequestId: String? = nil) async throws -> AccessGroupsCreateResult? {
-        let requestHeaders = buildRequestHeaders(
-            [
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
-            ],
-            [:]
-        )
-        return try await client.post(ApiPaths.backendPath("/iam/access_groups"), body: body, params: nil, headers: requestHeaders, contentType: "application/json", responseType: AccessGroupsCreateResult.self)
+    public func accessGroupsCreate(body: AdminAccessGroupCreateRequest) async throws -> AccessGroupsCreateResult? {
+        return try await client.post(ApiPaths.backendPath("/iam/access_groups"), body: body, params: nil, headers: nil, contentType: "application/json", responseType: AccessGroupsCreateResult.self)
     }
 
     /// Delete group
@@ -29,14 +23,8 @@ public class IamApi {
     }
 
     /// Update group
-    public func accessGroupsUpdate(groupId: String, body: AdminAccessGroupUpdateRequest, xRequestId: String? = nil) async throws -> AccessGroupsUpdateResult? {
-        let requestHeaders = buildRequestHeaders(
-            [
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
-            ],
-            [:]
-        )
-        return try await client.patch(ApiPaths.backendPath("/iam/access_groups/\(serializePathParameter(groupId, PathParameterSpec(name: "groupId", style: "simple", explode: false)))"), body: body, params: nil, headers: requestHeaders, contentType: "application/json", responseType: AccessGroupsUpdateResult.self)
+    public func accessGroupsUpdate(groupId: String, body: AdminAccessGroupUpdateRequest) async throws -> AccessGroupsUpdateResult? {
+        return try await client.patch(ApiPaths.backendPath("/iam/access_groups/\(serializePathParameter(groupId, PathParameterSpec(name: "groupId", style: "simple", explode: false)))"), body: body, params: nil, headers: nil, contentType: "application/json", responseType: AccessGroupsUpdateResult.self)
     }
 
     /// List group channel bindings
@@ -45,14 +33,8 @@ public class IamApi {
     }
 
     /// Replace group channel bindings
-    public func accessGroupsChannelBindingsUpdate(groupId: String, body: AdminAccessGroupChannelBindingsReplaceRequest, xRequestId: String? = nil) async throws -> AccessGroupsChannelBindingsUpdateResult? {
-        let requestHeaders = buildRequestHeaders(
-            [
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
-            ],
-            [:]
-        )
-        return try await client.put(ApiPaths.backendPath("/iam/access_groups/\(serializePathParameter(groupId, PathParameterSpec(name: "groupId", style: "simple", explode: false)))/channel_bindings"), body: body, params: nil, headers: requestHeaders, contentType: "application/json", responseType: AccessGroupsChannelBindingsUpdateResult.self)
+    public func accessGroupsChannelBindingsUpdate(groupId: String, body: AdminAccessGroupChannelBindingsReplaceRequest) async throws -> AccessGroupsChannelBindingsUpdateResult? {
+        return try await client.put(ApiPaths.backendPath("/iam/access_groups/\(serializePathParameter(groupId, PathParameterSpec(name: "groupId", style: "simple", explode: false)))/channel_bindings"), body: body, params: nil, headers: nil, contentType: "application/json", responseType: AccessGroupsChannelBindingsUpdateResult.self)
     }
 
     /// List API key map
@@ -61,11 +43,10 @@ public class IamApi {
     }
 
     /// Create API key
-    public func apiKeysCreate(body: AdminApiKeyCreateRequest, idempotencyKey: String, xRequestId: String? = nil) async throws -> ApiKeysCreateResult? {
+    public func apiKeysCreate(body: AdminApiKeyCreateRequest, idempotencyKey: String) async throws -> ApiKeysCreateResult? {
         let requestHeaders = buildRequestHeaders(
             [
                 "Idempotency-Key": HeaderParameterSpec(value: idempotencyKey, style: "simple", explode: false, contentType: nil),
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
             ],
             [:]
         )
@@ -83,25 +64,13 @@ public class IamApi {
     }
 
     /// Create user
-    public func usersCreate(body: AdminUserCreateRequest, xRequestId: String? = nil) async throws -> UsersCreateResult? {
-        let requestHeaders = buildRequestHeaders(
-            [
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
-            ],
-            [:]
-        )
-        return try await client.post(ApiPaths.backendPath("/iam/users"), body: body, params: nil, headers: requestHeaders, contentType: "application/json", responseType: UsersCreateResult.self)
+    public func usersCreate(body: AdminUserCreateRequest) async throws -> UsersCreateResult? {
+        return try await client.post(ApiPaths.backendPath("/iam/users"), body: body, params: nil, headers: nil, contentType: "application/json", responseType: UsersCreateResult.self)
     }
 
     /// Update user
-    public func usersUpdate(body: AdminUserUpdateRequest, xRequestId: String? = nil) async throws -> UsersUpdateResult? {
-        let requestHeaders = buildRequestHeaders(
-            [
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
-            ],
-            [:]
-        )
-        return try await client.put(ApiPaths.backendPath("/iam/users"), body: body, params: nil, headers: requestHeaders, contentType: "application/json", responseType: UsersUpdateResult.self)
+    public func usersUpdate(body: AdminUserUpdateRequest) async throws -> UsersUpdateResult? {
+        return try await client.put(ApiPaths.backendPath("/iam/users"), body: body, params: nil, headers: nil, contentType: "application/json", responseType: UsersUpdateResult.self)
     }
 
     private struct PathParameterSpec {

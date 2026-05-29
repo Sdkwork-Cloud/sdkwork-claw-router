@@ -2,14 +2,14 @@ use serde::{Deserialize, Serialize};
 
 use crate::models::{ProviderCircuitBreakerPolicy, ProviderRetryPolicy};
 
-/// Persisted channel snapshot returned after the provider health probe. Admin management responses may return the stored plaintext provider API key for channel account relay operations.
+/// Persisted channel snapshot returned after the provider health probe. Admin management responses may return the stored plaintext provider API key for channel credential relay operations.
 #[derive(Serialize, Deserialize, Debug, Clone, Default)]
 pub struct AdminChannelItem {
     /// Access type field on admin channel item.
     #[serde(rename = "accessType")]
     pub access_type: String,
 
-    /// Full plaintext provider API key returned by authenticated admin management responses for channel account relay operations.
+    /// Full plaintext provider API key returned by authenticated admin management responses for channel credential relay operations.
     #[serde(rename = "apiKey")]
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub api_key: Option<String>,
@@ -24,6 +24,14 @@ pub struct AdminChannelItem {
 
     /// Capabilities field on admin channel item.
     pub capabilities: Vec<String>,
+
+    /// Scoped ai_channel id used by channel endpoint configuration.
+    #[serde(rename = "channelId")]
+    pub channel_id: String,
+
+    /// Channel type field on admin channel item.
+    #[serde(rename = "channelType")]
+    pub channel_type: String,
 
     /// Circuit breaker policy field on admin channel item.
     #[serde(rename = "circuitBreakerPolicy")]
@@ -57,6 +65,10 @@ pub struct AdminChannelItem {
 
     /// Protocol field on admin channel item.
     pub protocol: String,
+
+    /// Resource codes field on admin channel item.
+    #[serde(rename = "resourceCodes")]
+    pub resource_codes: Vec<String>,
 
     /// Retry policy field on admin channel item.
     #[serde(rename = "retryPolicy")]

@@ -15,7 +15,6 @@ data class RuntimeInvocationCreateRequest(
     val model: String? = null,
     val permissionMode: String? = null,
     val provider: String? = null,
-    val requestId: String? = null,
     val requestJson: Map<String, String>? = null,
     val runtime: String? = null,
     val sandboxPolicy: String? = null,

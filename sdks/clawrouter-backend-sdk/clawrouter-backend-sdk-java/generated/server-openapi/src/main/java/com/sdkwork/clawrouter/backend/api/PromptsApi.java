@@ -29,9 +29,9 @@ public class PromptsApi {
     }
 
     /** Create admin prompt */
-    public DefinitionsCreateResult definitionsCreate(AdminPromptCreateRequest body, String idempotencyKey, String xRequestId) throws Exception {
+    public DefinitionsCreateResult definitionsCreate(AdminPromptCreateRequest body, String idempotencyKey) throws Exception {
         Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null), "X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
+                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null)),
                 Map.of()
         );
         Object raw = client.post(ApiPaths.backendPath("/prompts"), body, null, requestHeaders, "application/json");
@@ -39,32 +39,20 @@ public class PromptsApi {
     }
 
     /** Update prompt binding */
-    public DefinitionBindingsUpdateResult definitionBindingsUpdate(String bindingId, AdminPromptBindingUpdateRequest body, String xRequestId) throws Exception {
-        Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
-                Map.of()
-        );
-        Object raw = client.put(ApiPaths.backendPath("/prompts/bindings/" + serializePathParameter(bindingId, new PathParameterSpec("bindingId", "simple", false)) + ""), body, null, requestHeaders, "application/json");
+    public DefinitionBindingsUpdateResult definitionBindingsUpdate(String bindingId, AdminPromptBindingUpdateRequest body) throws Exception {
+        Object raw = client.put(ApiPaths.backendPath("/prompts/bindings/" + serializePathParameter(bindingId, new PathParameterSpec("bindingId", "simple", false)) + ""), body, null, null, "application/json");
         return client.convertValue(raw, new TypeReference<DefinitionBindingsUpdateResult>() {});
     }
 
     /** Publish prompt version */
-    public VersionsPublishResult versionsPublish(String versionId, String xRequestId) throws Exception {
-        Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
-                Map.of()
-        );
-        Object raw = client.post(ApiPaths.backendPath("/prompts/versions/" + serializePathParameter(versionId, new PathParameterSpec("versionId", "simple", false)) + "/publish"), null, null, requestHeaders);
+    public VersionsPublishResult versionsPublish(String versionId) throws Exception {
+        Object raw = client.post(ApiPaths.backendPath("/prompts/versions/" + serializePathParameter(versionId, new PathParameterSpec("versionId", "simple", false)) + "/publish"), null);
         return client.convertValue(raw, new TypeReference<VersionsPublishResult>() {});
     }
 
     /** Render prompt version */
-    public VersionRendersCreateResult versionRendersCreate(String versionId, AdminPromptRenderRequest body, String xRequestId) throws Exception {
-        Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
-                Map.of()
-        );
-        Object raw = client.post(ApiPaths.backendPath("/prompts/versions/" + serializePathParameter(versionId, new PathParameterSpec("versionId", "simple", false)) + "/render"), body, null, requestHeaders, "application/json");
+    public VersionRendersCreateResult versionRendersCreate(String versionId, AdminPromptRenderRequest body) throws Exception {
+        Object raw = client.post(ApiPaths.backendPath("/prompts/versions/" + serializePathParameter(versionId, new PathParameterSpec("versionId", "simple", false)) + "/render"), body, null, null, "application/json");
         return client.convertValue(raw, new TypeReference<VersionRendersCreateResult>() {});
     }
 
@@ -75,9 +63,9 @@ public class PromptsApi {
     }
 
     /** Create prompt binding */
-    public DefinitionBindingsCreateResult definitionBindingsCreate(String promptId, AdminPromptBindingCreateRequest body, String idempotencyKey, String xRequestId) throws Exception {
+    public DefinitionBindingsCreateResult definitionBindingsCreate(String promptId, AdminPromptBindingCreateRequest body, String idempotencyKey) throws Exception {
         Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null), "X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
+                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null)),
                 Map.of()
         );
         Object raw = client.post(ApiPaths.backendPath("/prompts/" + serializePathParameter(promptId, new PathParameterSpec("promptId", "simple", false)) + "/bindings"), body, null, requestHeaders, "application/json");
@@ -91,9 +79,9 @@ public class PromptsApi {
     }
 
     /** Create prompt version */
-    public VersionsCreateResult versionsCreate(String promptId, AdminPromptVersionCreateRequest body, String idempotencyKey, String xRequestId) throws Exception {
+    public VersionsCreateResult versionsCreate(String promptId, AdminPromptVersionCreateRequest body, String idempotencyKey) throws Exception {
         Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null), "X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
+                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null)),
                 Map.of()
         );
         Object raw = client.post(ApiPaths.backendPath("/prompts/" + serializePathParameter(promptId, new PathParameterSpec("promptId", "simple", false)) + "/versions"), body, null, requestHeaders, "application/json");

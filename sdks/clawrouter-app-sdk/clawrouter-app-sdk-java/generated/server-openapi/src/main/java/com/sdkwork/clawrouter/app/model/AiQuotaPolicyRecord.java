@@ -5,6 +5,7 @@ import java.util.Map;
 public class AiQuotaPolicyRecord {
     private String blockDurationSeconds;
     private String burstLimit;
+    private String channelGroupId;
     private String createdAt;
     private String dataScope;
     private String deletedAt;
@@ -12,7 +13,6 @@ public class AiQuotaPolicyRecord {
     private String effectiveFrom;
     private String effectiveTo;
     private String exhaustedAt;
-    private String groupId;
     private String id;
     private Map<String, String> metadata;
     private String model;
@@ -53,6 +53,14 @@ public class AiQuotaPolicyRecord {
 
     public void setBurstLimit(String burstLimit) {
         this.burstLimit = burstLimit;
+    }
+
+    public String getChannelGroupId() {
+        return this.channelGroupId;
+    }
+
+    public void setChannelGroupId(String channelGroupId) {
+        this.channelGroupId = channelGroupId;
     }
 
     public String getCreatedAt() {
@@ -109,14 +117,6 @@ public class AiQuotaPolicyRecord {
 
     public void setExhaustedAt(String exhaustedAt) {
         this.exhaustedAt = exhaustedAt;
-    }
-
-    public String getGroupId() {
-        return this.groupId;
-    }
-
-    public void setGroupId(String groupId) {
-        this.groupId = groupId;
     }
 
     public String getId() {

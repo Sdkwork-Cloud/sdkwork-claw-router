@@ -34,31 +34,17 @@ namespace Sdkwork.ClawRouter.Backend.Api
         /// <summary>
         /// Create open platform account
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.AccountsCreateResult?> AccountsCreateAsync(Sdkwork.ClawRouter.Backend.Models.OpenPlatformAccountCreateRequest body, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.AccountsCreateResult?> AccountsCreateAsync(Sdkwork.ClawRouter.Backend.Models.OpenPlatformAccountCreateRequest body)
         {
-            var requestHeaders = BuildRequestHeaders(
-                new Dictionary<string, HeaderParameterSpec>
-                {
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
-                },
-                new Dictionary<string, HeaderParameterSpec>()
-            );
-            return await _client.PostAsync<Sdkwork.ClawRouter.Backend.Models.AccountsCreateResult>(ApiPaths.BackendPath("/open_platform/accounts"), body, null, requestHeaders, "application/json");
+            return await _client.PostAsync<Sdkwork.ClawRouter.Backend.Models.AccountsCreateResult>(ApiPaths.BackendPath("/open_platform/accounts"), body, null, null, "application/json");
         }
 
         /// <summary>
         /// Delete open platform account
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.AccountsDeleteResult?> AccountsDeleteAsync(string accountId, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.AccountsDeleteResult?> AccountsDeleteAsync(string accountId)
         {
-            var requestHeaders = BuildRequestHeaders(
-                new Dictionary<string, HeaderParameterSpec>
-                {
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
-                },
-                new Dictionary<string, HeaderParameterSpec>()
-            );
-            return await _client.DeleteAsync<Sdkwork.ClawRouter.Backend.Models.AccountsDeleteResult>(ApiPaths.BackendPath($"/open_platform/accounts/{SerializePathParameter(accountId, new PathParameterSpec("accountId", "simple", false))}"), null, requestHeaders);
+            return await _client.DeleteAsync<Sdkwork.ClawRouter.Backend.Models.AccountsDeleteResult>(ApiPaths.BackendPath($"/open_platform/accounts/{SerializePathParameter(accountId, new PathParameterSpec("accountId", "simple", false))}"));
         }
 
         /// <summary>
@@ -72,16 +58,9 @@ namespace Sdkwork.ClawRouter.Backend.Api
         /// <summary>
         /// Update open platform account
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.AccountsUpdateResult?> AccountsUpdateAsync(string accountId, Sdkwork.ClawRouter.Backend.Models.OpenPlatformAccountUpdateRequest body, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.AccountsUpdateResult?> AccountsUpdateAsync(string accountId, Sdkwork.ClawRouter.Backend.Models.OpenPlatformAccountUpdateRequest body)
         {
-            var requestHeaders = BuildRequestHeaders(
-                new Dictionary<string, HeaderParameterSpec>
-                {
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
-                },
-                new Dictionary<string, HeaderParameterSpec>()
-            );
-            return await _client.PatchAsync<Sdkwork.ClawRouter.Backend.Models.AccountsUpdateResult>(ApiPaths.BackendPath($"/open_platform/accounts/{SerializePathParameter(accountId, new PathParameterSpec("accountId", "simple", false))}"), body, null, requestHeaders, "application/json");
+            return await _client.PatchAsync<Sdkwork.ClawRouter.Backend.Models.AccountsUpdateResult>(ApiPaths.BackendPath($"/open_platform/accounts/{SerializePathParameter(accountId, new PathParameterSpec("accountId", "simple", false))}"), body, null, null, "application/json");
         }
 
         /// <summary>
@@ -95,46 +74,25 @@ namespace Sdkwork.ClawRouter.Backend.Api
         /// <summary>
         /// Create open platform account entry
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.AccountsEntriesCreateResult?> AccountsEntriesCreateAsync(string accountId, Sdkwork.ClawRouter.Backend.Models.OpenPlatformEntryCreateRequest body, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.AccountsEntriesCreateResult?> AccountsEntriesCreateAsync(string accountId, Sdkwork.ClawRouter.Backend.Models.OpenPlatformEntryCreateRequest body)
         {
-            var requestHeaders = BuildRequestHeaders(
-                new Dictionary<string, HeaderParameterSpec>
-                {
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
-                },
-                new Dictionary<string, HeaderParameterSpec>()
-            );
-            return await _client.PostAsync<Sdkwork.ClawRouter.Backend.Models.AccountsEntriesCreateResult>(ApiPaths.BackendPath($"/open_platform/accounts/{SerializePathParameter(accountId, new PathParameterSpec("accountId", "simple", false))}/entries"), body, null, requestHeaders, "application/json");
+            return await _client.PostAsync<Sdkwork.ClawRouter.Backend.Models.AccountsEntriesCreateResult>(ApiPaths.BackendPath($"/open_platform/accounts/{SerializePathParameter(accountId, new PathParameterSpec("accountId", "simple", false))}/entries"), body, null, null, "application/json");
         }
 
         /// <summary>
         /// Delete open platform account entry
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.AccountsEntriesDeleteResult?> AccountsEntriesDeleteAsync(string accountId, string entryId, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.AccountsEntriesDeleteResult?> AccountsEntriesDeleteAsync(string accountId, string entryId)
         {
-            var requestHeaders = BuildRequestHeaders(
-                new Dictionary<string, HeaderParameterSpec>
-                {
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
-                },
-                new Dictionary<string, HeaderParameterSpec>()
-            );
-            return await _client.DeleteAsync<Sdkwork.ClawRouter.Backend.Models.AccountsEntriesDeleteResult>(ApiPaths.BackendPath($"/open_platform/accounts/{SerializePathParameter(accountId, new PathParameterSpec("accountId", "simple", false))}/entries/{SerializePathParameter(entryId, new PathParameterSpec("entryId", "simple", false))}"), null, requestHeaders);
+            return await _client.DeleteAsync<Sdkwork.ClawRouter.Backend.Models.AccountsEntriesDeleteResult>(ApiPaths.BackendPath($"/open_platform/accounts/{SerializePathParameter(accountId, new PathParameterSpec("accountId", "simple", false))}/entries/{SerializePathParameter(entryId, new PathParameterSpec("entryId", "simple", false))}"));
         }
 
         /// <summary>
         /// Update open platform account entry
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.AccountsEntriesUpdateResult?> AccountsEntriesUpdateAsync(string accountId, string entryId, Sdkwork.ClawRouter.Backend.Models.OpenPlatformEntryUpdateRequest body, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.AccountsEntriesUpdateResult?> AccountsEntriesUpdateAsync(string accountId, string entryId, Sdkwork.ClawRouter.Backend.Models.OpenPlatformEntryUpdateRequest body)
         {
-            var requestHeaders = BuildRequestHeaders(
-                new Dictionary<string, HeaderParameterSpec>
-                {
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
-                },
-                new Dictionary<string, HeaderParameterSpec>()
-            );
-            return await _client.PatchAsync<Sdkwork.ClawRouter.Backend.Models.AccountsEntriesUpdateResult>(ApiPaths.BackendPath($"/open_platform/accounts/{SerializePathParameter(accountId, new PathParameterSpec("accountId", "simple", false))}/entries/{SerializePathParameter(entryId, new PathParameterSpec("entryId", "simple", false))}"), body, null, requestHeaders, "application/json");
+            return await _client.PatchAsync<Sdkwork.ClawRouter.Backend.Models.AccountsEntriesUpdateResult>(ApiPaths.BackendPath($"/open_platform/accounts/{SerializePathParameter(accountId, new PathParameterSpec("accountId", "simple", false))}/entries/{SerializePathParameter(entryId, new PathParameterSpec("entryId", "simple", false))}"), body, null, null, "application/json");
         }
 
         /// <summary>
@@ -148,31 +106,17 @@ namespace Sdkwork.ClawRouter.Backend.Api
         /// <summary>
         /// Create open platform account pay binding
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.AccountsPayBindingsCreateResult?> AccountsPayBindingsCreateAsync(string accountId, Sdkwork.ClawRouter.Backend.Models.OpenPlatformPayBindingCreateRequest body, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.AccountsPayBindingsCreateResult?> AccountsPayBindingsCreateAsync(string accountId, Sdkwork.ClawRouter.Backend.Models.OpenPlatformPayBindingCreateRequest body)
         {
-            var requestHeaders = BuildRequestHeaders(
-                new Dictionary<string, HeaderParameterSpec>
-                {
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
-                },
-                new Dictionary<string, HeaderParameterSpec>()
-            );
-            return await _client.PostAsync<Sdkwork.ClawRouter.Backend.Models.AccountsPayBindingsCreateResult>(ApiPaths.BackendPath($"/open_platform/accounts/{SerializePathParameter(accountId, new PathParameterSpec("accountId", "simple", false))}/pay_bindings"), body, null, requestHeaders, "application/json");
+            return await _client.PostAsync<Sdkwork.ClawRouter.Backend.Models.AccountsPayBindingsCreateResult>(ApiPaths.BackendPath($"/open_platform/accounts/{SerializePathParameter(accountId, new PathParameterSpec("accountId", "simple", false))}/pay_bindings"), body, null, null, "application/json");
         }
 
         /// <summary>
         /// Delete open platform account pay binding
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.AccountsPayBindingsDeleteResult?> AccountsPayBindingsDeleteAsync(string accountId, string bindingId, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.AccountsPayBindingsDeleteResult?> AccountsPayBindingsDeleteAsync(string accountId, string bindingId)
         {
-            var requestHeaders = BuildRequestHeaders(
-                new Dictionary<string, HeaderParameterSpec>
-                {
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
-                },
-                new Dictionary<string, HeaderParameterSpec>()
-            );
-            return await _client.DeleteAsync<Sdkwork.ClawRouter.Backend.Models.AccountsPayBindingsDeleteResult>(ApiPaths.BackendPath($"/open_platform/accounts/{SerializePathParameter(accountId, new PathParameterSpec("accountId", "simple", false))}/pay_bindings/{SerializePathParameter(bindingId, new PathParameterSpec("bindingId", "simple", false))}"), null, requestHeaders);
+            return await _client.DeleteAsync<Sdkwork.ClawRouter.Backend.Models.AccountsPayBindingsDeleteResult>(ApiPaths.BackendPath($"/open_platform/accounts/{SerializePathParameter(accountId, new PathParameterSpec("accountId", "simple", false))}/pay_bindings/{SerializePathParameter(bindingId, new PathParameterSpec("bindingId", "simple", false))}"));
         }
 
         /// <summary>
@@ -427,92 +371,5 @@ namespace Sdkwork.ClawRouter.Backend.Api
                 .Replace("%3B", ";").Replace("%3D", "=");
         }
 
-        private sealed record HeaderParameterSpec(object? Value, string Style, bool Explode, string? ContentType);
-
-        private static Dictionary<string, string>? BuildRequestHeaders(
-            Dictionary<string, HeaderParameterSpec> headers,
-            Dictionary<string, HeaderParameterSpec> cookies)
-        {
-            var requestHeaders = new Dictionary<string, string>();
-            foreach (var item in headers)
-            {
-                var serialized = SerializeParameterValue(item.Value);
-                if (serialized is not null)
-                {
-                    requestHeaders[item.Key] = serialized;
-                }
-            }
-
-            var cookieHeader = BuildCookieHeader(cookies);
-            if (!string.IsNullOrEmpty(cookieHeader))
-            {
-                requestHeaders["Cookie"] = requestHeaders.TryGetValue("Cookie", out var existing) && !string.IsNullOrEmpty(existing)
-                    ? existing + "; " + cookieHeader
-                    : cookieHeader;
-            }
-
-            return requestHeaders.Count == 0 ? null : requestHeaders;
-        }
-
-        private static string BuildCookieHeader(Dictionary<string, HeaderParameterSpec> cookies)
-        {
-            var pairs = new List<string>();
-            foreach (var item in cookies)
-            {
-                var serialized = SerializeParameterValue(item.Value);
-                if (serialized is not null)
-                {
-                    pairs.Add(Uri.EscapeDataString(item.Key) + "=" + Uri.EscapeDataString(serialized));
-                }
-            }
-            return string.Join("; ", pairs);
-        }
-
-        private static string? SerializeParameterValue(HeaderParameterSpec? parameter)
-        {
-            var value = parameter?.Value;
-            if (value is null)
-            {
-                return null;
-            }
-            if (!string.IsNullOrWhiteSpace(parameter!.ContentType))
-            {
-                return System.Text.Json.JsonSerializer.Serialize(value);
-            }
-            if (value is System.Collections.IEnumerable enumerable && value is not string)
-            {
-                var values = new List<string>();
-                foreach (var item in enumerable)
-                {
-                    if (item is not null)
-                    {
-                        values.Add(item.ToString() ?? string.Empty);
-                    }
-                }
-                return string.Join(",", values);
-            }
-            if (value is System.Collections.IDictionary dictionary)
-            {
-                var values = new List<string>();
-                foreach (System.Collections.DictionaryEntry item in dictionary)
-                {
-                    if (item.Value is null)
-                    {
-                        continue;
-                    }
-                    if (parameter.Explode)
-                    {
-                        values.Add((item.Key.ToString() ?? string.Empty) + "=" + (item.Value.ToString() ?? string.Empty));
-                    }
-                    else
-                    {
-                        values.Add(item.Key.ToString() ?? string.Empty);
-                        values.Add(item.Value.ToString() ?? string.Empty);
-                    }
-                }
-                return string.Join(",", values);
-            }
-            return value.ToString();
-        }
     }
 }

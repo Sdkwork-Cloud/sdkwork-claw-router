@@ -18,7 +18,7 @@ func NewPlatformApi(client *sdkhttp.Client) *PlatformApi {
 }
 
 // List apps
-func (a *PlatformApi) AppsList(q *string, status *string, marketStatus *string, appType *string, categoryId *int, page *int, pageSize *int, xRequestId *string) (sdktypes.AppsListResult, error) {
+func (a *PlatformApi) AppsList(q *string, status *string, marketStatus *string, appType *string, categoryId *int, page *int, pageSize *int) (sdktypes.AppsListResult, error) {
     query := BuildQueryString([]QueryParameterSpec{
         {Name: "q", Value: func() interface{} { if q == nil { return nil }; return *q }(), Style: "form", Explode: true, AllowReserved: false},
         {Name: "status", Value: func() interface{} { if status == nil { return nil }; return *status }(), Style: "form", Explode: true, AllowReserved: false},
@@ -28,11 +28,7 @@ func (a *PlatformApi) AppsList(q *string, status *string, marketStatus *string, 
         {Name: "page", Value: func() interface{} { if page == nil { return nil }; return *page }(), Style: "form", Explode: true, AllowReserved: false},
         {Name: "page_size", Value: func() interface{} { if pageSize == nil { return nil }; return *pageSize }(), Style: "form", Explode: true, AllowReserved: false},
     })
-    headers := BuildRequestHeaders(
-        map[string]ParameterSpec{"X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},},
-        map[string]ParameterSpec{},
-    )
-    raw, err := a.client.Get(AppendQueryString(BackendApiPath("/platform/apps"), query), nil, headers)
+    raw, err := a.client.Get(AppendQueryString(BackendApiPath("/platform/apps"), query), nil, nil)
     if err != nil {
         var zero sdktypes.AppsListResult
         return zero, err
@@ -41,12 +37,8 @@ func (a *PlatformApi) AppsList(q *string, status *string, marketStatus *string, 
 }
 
 // Create app
-func (a *PlatformApi) AppsCreate(body sdktypes.AdminAppCreateRequest, xRequestId *string) (sdktypes.AppsCreateResult, error) {
-    headers := BuildRequestHeaders(
-        map[string]ParameterSpec{"X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},},
-        map[string]ParameterSpec{},
-    )
-    raw, err := a.client.Post(BackendApiPath("/platform/apps"), body, nil, headers, "application/json")
+func (a *PlatformApi) AppsCreate(body sdktypes.AdminAppCreateRequest) (sdktypes.AppsCreateResult, error) {
+    raw, err := a.client.Post(BackendApiPath("/platform/apps"), body, nil, nil, "application/json")
     if err != nil {
         var zero sdktypes.AppsCreateResult
         return zero, err
@@ -65,12 +57,8 @@ func (a *PlatformApi) AppsCategoriesList() (sdktypes.AppsCategoriesListResult, e
 }
 
 // Create app category
-func (a *PlatformApi) AppsCategoriesCreate(body sdktypes.AdminAppCategoryCreateRequest, xRequestId *string) (sdktypes.AppsCategoriesCreateResult, error) {
-    headers := BuildRequestHeaders(
-        map[string]ParameterSpec{"X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},},
-        map[string]ParameterSpec{},
-    )
-    raw, err := a.client.Post(BackendApiPath("/platform/apps/categories"), body, nil, headers, "application/json")
+func (a *PlatformApi) AppsCategoriesCreate(body sdktypes.AdminAppCategoryCreateRequest) (sdktypes.AppsCategoriesCreateResult, error) {
+    raw, err := a.client.Post(BackendApiPath("/platform/apps/categories"), body, nil, nil, "application/json")
     if err != nil {
         var zero sdktypes.AppsCategoriesCreateResult
         return zero, err
@@ -79,12 +67,8 @@ func (a *PlatformApi) AppsCategoriesCreate(body sdktypes.AdminAppCategoryCreateR
 }
 
 // Delete app category
-func (a *PlatformApi) AppsCategoriesDelete(categoryId string, xRequestId *string) (sdktypes.AppsCategoriesDeleteResult, error) {
-    headers := BuildRequestHeaders(
-        map[string]ParameterSpec{"X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},},
-        map[string]ParameterSpec{},
-    )
-    raw, err := a.client.Delete(BackendApiPath(fmt.Sprintf("/platform/apps/categories/%s", SerializePathParameter(categoryId, PathParameterSpec{Name: "categoryId", Style: "simple", Explode: false}))), nil, headers)
+func (a *PlatformApi) AppsCategoriesDelete(categoryId string) (sdktypes.AppsCategoriesDeleteResult, error) {
+    raw, err := a.client.Delete(BackendApiPath(fmt.Sprintf("/platform/apps/categories/%s", SerializePathParameter(categoryId, PathParameterSpec{Name: "categoryId", Style: "simple", Explode: false}))), nil, nil)
     if err != nil {
         var zero sdktypes.AppsCategoriesDeleteResult
         return zero, err
@@ -93,12 +77,8 @@ func (a *PlatformApi) AppsCategoriesDelete(categoryId string, xRequestId *string
 }
 
 // Update app category
-func (a *PlatformApi) AppsCategoriesUpdate(categoryId string, body sdktypes.AdminAppCategoryUpdateRequest, xRequestId *string) (sdktypes.AppsCategoriesUpdateResult, error) {
-    headers := BuildRequestHeaders(
-        map[string]ParameterSpec{"X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},},
-        map[string]ParameterSpec{},
-    )
-    raw, err := a.client.Put(BackendApiPath(fmt.Sprintf("/platform/apps/categories/%s", SerializePathParameter(categoryId, PathParameterSpec{Name: "categoryId", Style: "simple", Explode: false}))), body, nil, headers, "application/json")
+func (a *PlatformApi) AppsCategoriesUpdate(categoryId string, body sdktypes.AdminAppCategoryUpdateRequest) (sdktypes.AppsCategoriesUpdateResult, error) {
+    raw, err := a.client.Put(BackendApiPath(fmt.Sprintf("/platform/apps/categories/%s", SerializePathParameter(categoryId, PathParameterSpec{Name: "categoryId", Style: "simple", Explode: false}))), body, nil, nil, "application/json")
     if err != nil {
         var zero sdktypes.AppsCategoriesUpdateResult
         return zero, err
@@ -107,7 +87,7 @@ func (a *PlatformApi) AppsCategoriesUpdate(categoryId string, body sdktypes.Admi
 }
 
 // List app templates
-func (a *PlatformApi) AppsTemplatesList(q *string, publishStatus *string, templateType *string, runtime *string, categoryId *int, page *int, pageSize *int, xRequestId *string) (sdktypes.AppsTemplatesListResult, error) {
+func (a *PlatformApi) AppsTemplatesList(q *string, publishStatus *string, templateType *string, runtime *string, categoryId *int, page *int, pageSize *int) (sdktypes.AppsTemplatesListResult, error) {
     query := BuildQueryString([]QueryParameterSpec{
         {Name: "q", Value: func() interface{} { if q == nil { return nil }; return *q }(), Style: "form", Explode: true, AllowReserved: false},
         {Name: "publish_status", Value: func() interface{} { if publishStatus == nil { return nil }; return *publishStatus }(), Style: "form", Explode: true, AllowReserved: false},
@@ -117,11 +97,7 @@ func (a *PlatformApi) AppsTemplatesList(q *string, publishStatus *string, templa
         {Name: "page", Value: func() interface{} { if page == nil { return nil }; return *page }(), Style: "form", Explode: true, AllowReserved: false},
         {Name: "page_size", Value: func() interface{} { if pageSize == nil { return nil }; return *pageSize }(), Style: "form", Explode: true, AllowReserved: false},
     })
-    headers := BuildRequestHeaders(
-        map[string]ParameterSpec{"X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},},
-        map[string]ParameterSpec{},
-    )
-    raw, err := a.client.Get(AppendQueryString(BackendApiPath("/platform/apps/templates"), query), nil, headers)
+    raw, err := a.client.Get(AppendQueryString(BackendApiPath("/platform/apps/templates"), query), nil, nil)
     if err != nil {
         var zero sdktypes.AppsTemplatesListResult
         return zero, err
@@ -130,12 +106,8 @@ func (a *PlatformApi) AppsTemplatesList(q *string, publishStatus *string, templa
 }
 
 // Create app template
-func (a *PlatformApi) AppsTemplatesCreate(body sdktypes.AdminAppTemplateCreateRequest, xRequestId *string) (sdktypes.AppsTemplatesCreateResult, error) {
-    headers := BuildRequestHeaders(
-        map[string]ParameterSpec{"X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},},
-        map[string]ParameterSpec{},
-    )
-    raw, err := a.client.Post(BackendApiPath("/platform/apps/templates"), body, nil, headers, "application/json")
+func (a *PlatformApi) AppsTemplatesCreate(body sdktypes.AdminAppTemplateCreateRequest) (sdktypes.AppsTemplatesCreateResult, error) {
+    raw, err := a.client.Post(BackendApiPath("/platform/apps/templates"), body, nil, nil, "application/json")
     if err != nil {
         var zero sdktypes.AppsTemplatesCreateResult
         return zero, err
@@ -144,12 +116,8 @@ func (a *PlatformApi) AppsTemplatesCreate(body sdktypes.AdminAppTemplateCreateRe
 }
 
 // Delete app template
-func (a *PlatformApi) AppsTemplatesDelete(templateId string, xRequestId *string) (sdktypes.AppsTemplatesDeleteResult, error) {
-    headers := BuildRequestHeaders(
-        map[string]ParameterSpec{"X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},},
-        map[string]ParameterSpec{},
-    )
-    raw, err := a.client.Delete(BackendApiPath(fmt.Sprintf("/platform/apps/templates/%s", SerializePathParameter(templateId, PathParameterSpec{Name: "templateId", Style: "simple", Explode: false}))), nil, headers)
+func (a *PlatformApi) AppsTemplatesDelete(templateId string) (sdktypes.AppsTemplatesDeleteResult, error) {
+    raw, err := a.client.Delete(BackendApiPath(fmt.Sprintf("/platform/apps/templates/%s", SerializePathParameter(templateId, PathParameterSpec{Name: "templateId", Style: "simple", Explode: false}))), nil, nil)
     if err != nil {
         var zero sdktypes.AppsTemplatesDeleteResult
         return zero, err
@@ -158,12 +126,8 @@ func (a *PlatformApi) AppsTemplatesDelete(templateId string, xRequestId *string)
 }
 
 // List app template
-func (a *PlatformApi) AppsTemplatesRetrieve(templateId string, xRequestId *string) (sdktypes.AppsTemplatesRetrieveResult, error) {
-    headers := BuildRequestHeaders(
-        map[string]ParameterSpec{"X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},},
-        map[string]ParameterSpec{},
-    )
-    raw, err := a.client.Get(BackendApiPath(fmt.Sprintf("/platform/apps/templates/%s", SerializePathParameter(templateId, PathParameterSpec{Name: "templateId", Style: "simple", Explode: false}))), nil, headers)
+func (a *PlatformApi) AppsTemplatesRetrieve(templateId string) (sdktypes.AppsTemplatesRetrieveResult, error) {
+    raw, err := a.client.Get(BackendApiPath(fmt.Sprintf("/platform/apps/templates/%s", SerializePathParameter(templateId, PathParameterSpec{Name: "templateId", Style: "simple", Explode: false}))), nil, nil)
     if err != nil {
         var zero sdktypes.AppsTemplatesRetrieveResult
         return zero, err
@@ -172,12 +136,8 @@ func (a *PlatformApi) AppsTemplatesRetrieve(templateId string, xRequestId *strin
 }
 
 // Update app template
-func (a *PlatformApi) AppsTemplatesUpdate(templateId string, body sdktypes.AdminAppTemplateUpdateRequest, xRequestId *string) (sdktypes.AppsTemplatesUpdateResult, error) {
-    headers := BuildRequestHeaders(
-        map[string]ParameterSpec{"X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},},
-        map[string]ParameterSpec{},
-    )
-    raw, err := a.client.Put(BackendApiPath(fmt.Sprintf("/platform/apps/templates/%s", SerializePathParameter(templateId, PathParameterSpec{Name: "templateId", Style: "simple", Explode: false}))), body, nil, headers, "application/json")
+func (a *PlatformApi) AppsTemplatesUpdate(templateId string, body sdktypes.AdminAppTemplateUpdateRequest) (sdktypes.AppsTemplatesUpdateResult, error) {
+    raw, err := a.client.Put(BackendApiPath(fmt.Sprintf("/platform/apps/templates/%s", SerializePathParameter(templateId, PathParameterSpec{Name: "templateId", Style: "simple", Explode: false}))), body, nil, nil, "application/json")
     if err != nil {
         var zero sdktypes.AppsTemplatesUpdateResult
         return zero, err
@@ -186,12 +146,8 @@ func (a *PlatformApi) AppsTemplatesUpdate(templateId string, body sdktypes.Admin
 }
 
 // Publish app template
-func (a *PlatformApi) AppsTemplatesPublish(templateId string, xRequestId *string) (sdktypes.AppsTemplatesPublishResult, error) {
-    headers := BuildRequestHeaders(
-        map[string]ParameterSpec{"X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},},
-        map[string]ParameterSpec{},
-    )
-    raw, err := a.client.Post(BackendApiPath(fmt.Sprintf("/platform/apps/templates/%s/publish", SerializePathParameter(templateId, PathParameterSpec{Name: "templateId", Style: "simple", Explode: false}))), nil, nil, headers, "")
+func (a *PlatformApi) AppsTemplatesPublish(templateId string) (sdktypes.AppsTemplatesPublishResult, error) {
+    raw, err := a.client.Post(BackendApiPath(fmt.Sprintf("/platform/apps/templates/%s/publish", SerializePathParameter(templateId, PathParameterSpec{Name: "templateId", Style: "simple", Explode: false}))), nil, nil, nil, "")
     if err != nil {
         var zero sdktypes.AppsTemplatesPublishResult
         return zero, err
@@ -200,12 +156,8 @@ func (a *PlatformApi) AppsTemplatesPublish(templateId string, xRequestId *string
 }
 
 // Offline app template
-func (a *PlatformApi) AppsTemplatesUnpublish(templateId string, xRequestId *string) (sdktypes.AppsTemplatesUnpublishResult, error) {
-    headers := BuildRequestHeaders(
-        map[string]ParameterSpec{"X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},},
-        map[string]ParameterSpec{},
-    )
-    raw, err := a.client.Post(BackendApiPath(fmt.Sprintf("/platform/apps/templates/%s/unpublish", SerializePathParameter(templateId, PathParameterSpec{Name: "templateId", Style: "simple", Explode: false}))), nil, nil, headers, "")
+func (a *PlatformApi) AppsTemplatesUnpublish(templateId string) (sdktypes.AppsTemplatesUnpublishResult, error) {
+    raw, err := a.client.Post(BackendApiPath(fmt.Sprintf("/platform/apps/templates/%s/unpublish", SerializePathParameter(templateId, PathParameterSpec{Name: "templateId", Style: "simple", Explode: false}))), nil, nil, nil, "")
     if err != nil {
         var zero sdktypes.AppsTemplatesUnpublishResult
         return zero, err
@@ -214,12 +166,8 @@ func (a *PlatformApi) AppsTemplatesUnpublish(templateId string, xRequestId *stri
 }
 
 // Delete app
-func (a *PlatformApi) AppsDelete(appId string, xRequestId *string) (sdktypes.AppsDeleteResult, error) {
-    headers := BuildRequestHeaders(
-        map[string]ParameterSpec{"X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},},
-        map[string]ParameterSpec{},
-    )
-    raw, err := a.client.Delete(BackendApiPath(fmt.Sprintf("/platform/apps/%s", SerializePathParameter(appId, PathParameterSpec{Name: "appId", Style: "simple", Explode: false}))), nil, headers)
+func (a *PlatformApi) AppsDelete(appId string) (sdktypes.AppsDeleteResult, error) {
+    raw, err := a.client.Delete(BackendApiPath(fmt.Sprintf("/platform/apps/%s", SerializePathParameter(appId, PathParameterSpec{Name: "appId", Style: "simple", Explode: false}))), nil, nil)
     if err != nil {
         var zero sdktypes.AppsDeleteResult
         return zero, err
@@ -228,12 +176,8 @@ func (a *PlatformApi) AppsDelete(appId string, xRequestId *string) (sdktypes.App
 }
 
 // List app
-func (a *PlatformApi) AppsRetrieve(appId string, xRequestId *string) (sdktypes.AppsRetrieveResult, error) {
-    headers := BuildRequestHeaders(
-        map[string]ParameterSpec{"X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},},
-        map[string]ParameterSpec{},
-    )
-    raw, err := a.client.Get(BackendApiPath(fmt.Sprintf("/platform/apps/%s", SerializePathParameter(appId, PathParameterSpec{Name: "appId", Style: "simple", Explode: false}))), nil, headers)
+func (a *PlatformApi) AppsRetrieve(appId string) (sdktypes.AppsRetrieveResult, error) {
+    raw, err := a.client.Get(BackendApiPath(fmt.Sprintf("/platform/apps/%s", SerializePathParameter(appId, PathParameterSpec{Name: "appId", Style: "simple", Explode: false}))), nil, nil)
     if err != nil {
         var zero sdktypes.AppsRetrieveResult
         return zero, err
@@ -242,12 +186,8 @@ func (a *PlatformApi) AppsRetrieve(appId string, xRequestId *string) (sdktypes.A
 }
 
 // Update app
-func (a *PlatformApi) AppsUpdate(appId string, body sdktypes.AdminAppUpdateRequest, xRequestId *string) (sdktypes.AppsUpdateResult, error) {
-    headers := BuildRequestHeaders(
-        map[string]ParameterSpec{"X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},},
-        map[string]ParameterSpec{},
-    )
-    raw, err := a.client.Put(BackendApiPath(fmt.Sprintf("/platform/apps/%s", SerializePathParameter(appId, PathParameterSpec{Name: "appId", Style: "simple", Explode: false}))), body, nil, headers, "application/json")
+func (a *PlatformApi) AppsUpdate(appId string, body sdktypes.AdminAppUpdateRequest) (sdktypes.AppsUpdateResult, error) {
+    raw, err := a.client.Put(BackendApiPath(fmt.Sprintf("/platform/apps/%s", SerializePathParameter(appId, PathParameterSpec{Name: "appId", Style: "simple", Explode: false}))), body, nil, nil, "application/json")
     if err != nil {
         var zero sdktypes.AppsUpdateResult
         return zero, err
@@ -256,12 +196,8 @@ func (a *PlatformApi) AppsUpdate(appId string, body sdktypes.AdminAppUpdateReque
 }
 
 // Disable app
-func (a *PlatformApi) AppsDisable(appId string, xRequestId *string) (sdktypes.AppsDisableResult, error) {
-    headers := BuildRequestHeaders(
-        map[string]ParameterSpec{"X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},},
-        map[string]ParameterSpec{},
-    )
-    raw, err := a.client.Post(BackendApiPath(fmt.Sprintf("/platform/apps/%s/disable", SerializePathParameter(appId, PathParameterSpec{Name: "appId", Style: "simple", Explode: false}))), nil, nil, headers, "")
+func (a *PlatformApi) AppsDisable(appId string) (sdktypes.AppsDisableResult, error) {
+    raw, err := a.client.Post(BackendApiPath(fmt.Sprintf("/platform/apps/%s/disable", SerializePathParameter(appId, PathParameterSpec{Name: "appId", Style: "simple", Explode: false}))), nil, nil, nil, "")
     if err != nil {
         var zero sdktypes.AppsDisableResult
         return zero, err
@@ -270,12 +206,8 @@ func (a *PlatformApi) AppsDisable(appId string, xRequestId *string) (sdktypes.Ap
 }
 
 // Enable app
-func (a *PlatformApi) AppsEnable(appId string, xRequestId *string) (sdktypes.AppsEnableResult, error) {
-    headers := BuildRequestHeaders(
-        map[string]ParameterSpec{"X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},},
-        map[string]ParameterSpec{},
-    )
-    raw, err := a.client.Post(BackendApiPath(fmt.Sprintf("/platform/apps/%s/enable", SerializePathParameter(appId, PathParameterSpec{Name: "appId", Style: "simple", Explode: false}))), nil, nil, headers, "")
+func (a *PlatformApi) AppsEnable(appId string) (sdktypes.AppsEnableResult, error) {
+    raw, err := a.client.Post(BackendApiPath(fmt.Sprintf("/platform/apps/%s/enable", SerializePathParameter(appId, PathParameterSpec{Name: "appId", Style: "simple", Explode: false}))), nil, nil, nil, "")
     if err != nil {
         var zero sdktypes.AppsEnableResult
         return zero, err
@@ -284,12 +216,8 @@ func (a *PlatformApi) AppsEnable(appId string, xRequestId *string) (sdktypes.App
 }
 
 // Publish app
-func (a *PlatformApi) AppsPublish(appId string, xRequestId *string) (sdktypes.AppsPublishResult, error) {
-    headers := BuildRequestHeaders(
-        map[string]ParameterSpec{"X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},},
-        map[string]ParameterSpec{},
-    )
-    raw, err := a.client.Post(BackendApiPath(fmt.Sprintf("/platform/apps/%s/publish", SerializePathParameter(appId, PathParameterSpec{Name: "appId", Style: "simple", Explode: false}))), nil, nil, headers, "")
+func (a *PlatformApi) AppsPublish(appId string) (sdktypes.AppsPublishResult, error) {
+    raw, err := a.client.Post(BackendApiPath(fmt.Sprintf("/platform/apps/%s/publish", SerializePathParameter(appId, PathParameterSpec{Name: "appId", Style: "simple", Explode: false}))), nil, nil, nil, "")
     if err != nil {
         var zero sdktypes.AppsPublishResult
         return zero, err
@@ -298,12 +226,8 @@ func (a *PlatformApi) AppsPublish(appId string, xRequestId *string) (sdktypes.Ap
 }
 
 // Offline app
-func (a *PlatformApi) AppsUnpublish(appId string, xRequestId *string) (sdktypes.AppsUnpublishResult, error) {
-    headers := BuildRequestHeaders(
-        map[string]ParameterSpec{"X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},},
-        map[string]ParameterSpec{},
-    )
-    raw, err := a.client.Post(BackendApiPath(fmt.Sprintf("/platform/apps/%s/unpublish", SerializePathParameter(appId, PathParameterSpec{Name: "appId", Style: "simple", Explode: false}))), nil, nil, headers, "")
+func (a *PlatformApi) AppsUnpublish(appId string) (sdktypes.AppsUnpublishResult, error) {
+    raw, err := a.client.Post(BackendApiPath(fmt.Sprintf("/platform/apps/%s/unpublish", SerializePathParameter(appId, PathParameterSpec{Name: "appId", Style: "simple", Explode: false}))), nil, nil, nil, "")
     if err != nil {
         var zero sdktypes.AppsUnpublishResult
         return zero, err
@@ -537,92 +461,7 @@ func EncodeQueryValue(value string, allowReserved bool) string {
 }
 
 
-type ParameterSpec struct {
-    Value       interface{}
-    Style       string
-    Explode     bool
-    ContentType string
-}
 
-func BuildRequestHeaders(headers map[string]ParameterSpec, cookies map[string]ParameterSpec) map[string]string {
-    requestHeaders := map[string]string{}
-    for name, parameter := range headers {
-        if serialized, ok := SerializeParameterValue(parameter); ok {
-            requestHeaders[name] = serialized
-        }
-    }
-
-    if cookieHeader := BuildCookieHeader(cookies); cookieHeader != "" {
-        if existing, ok := requestHeaders["Cookie"]; ok && existing != "" {
-            requestHeaders["Cookie"] = existing + "; " + cookieHeader
-        } else {
-            requestHeaders["Cookie"] = cookieHeader
-        }
-    }
-
-    if len(requestHeaders) == 0 {
-        return nil
-    }
-    return requestHeaders
-}
-
-func BuildCookieHeader(cookies map[string]ParameterSpec) string {
-    pairs := make([]string, 0, len(cookies))
-    for name, parameter := range cookies {
-        if serialized, ok := SerializeParameterValue(parameter); ok {
-            pairs = append(pairs, url.QueryEscape(name)+"="+url.QueryEscape(serialized))
-        }
-    }
-    return strings.Join(pairs, "; ")
-}
-
-func SerializeParameterValue(parameter ParameterSpec) (string, bool) {
-    value := parameter.Value
-    if value == nil {
-        return "", false
-    }
-    if parameter.ContentType != "" {
-        encoded, _ := json.Marshal(value)
-        return string(encoded), true
-    }
-    switch typed := value.(type) {
-    case string:
-        return typed, true
-    case fmt.Stringer:
-        return typed.String(), true
-    case []string:
-        return strings.Join(typed, ","), true
-    case []int:
-        values := make([]string, 0, len(typed))
-        for _, item := range typed {
-            values = append(values, fmt.Sprint(item))
-        }
-        return strings.Join(values, ","), true
-    case map[string]string:
-        return SerializeHeaderObject(stringMapToInterface(typed), parameter.Explode), true
-    case map[string]int:
-        return SerializeHeaderObject(intMapToInterface(typed), parameter.Explode), true
-    case map[string]interface{}:
-        return SerializeHeaderObject(typed, parameter.Explode), true
-    default:
-        return fmt.Sprint(value), true
-    }
-}
-
-func SerializeHeaderObject(values map[string]interface{}, explode bool) string {
-    serialized := make([]string, 0, len(values)*2)
-    for key, value := range values {
-        if value == nil {
-            continue
-        }
-        if explode {
-            serialized = append(serialized, key+"="+fmt.Sprint(value))
-        } else {
-            serialized = append(serialized, key, fmt.Sprint(value))
-        }
-    }
-    return strings.Join(serialized, ",")
-}
 func stringSliceToInterface(values []string) []interface{} {
     result := make([]interface{}, 0, len(values))
     for _, value := range values {

@@ -38,7 +38,7 @@ async fn sqlite_app_providers_counts_rfc3339_effective_channel_models_as_active(
     seed_provider_with_type(&pool, 2).await;
     sqlx::query(
         r#"
-        UPDATE integration_channel_model
+        UPDATE ai_channel_model
         SET effective_from = strftime('%Y-%m-%dT00:00:00Z', 'now')
         WHERE id = 3001
         "#,
@@ -103,28 +103,19 @@ async fn create_provider_tables(pool: &SqlitePool) {
         )
         "#,
         r#"
-        CREATE TABLE integration_provider (
+        CREATE TABLE ai_provider (
             id INTEGER PRIMARY KEY,
             tenant_id INTEGER NOT NULL,
             organization_id INTEGER NOT NULL,
             provider_code TEXT NOT NULL,
             default_vendor_code TEXT,
-            integration_type INTEGER,
+            provider_type TEXT,
+            auth_type INTEGER,
             display_name TEXT,
             description TEXT,
             base_url TEXT,
             status INTEGER NOT NULL,
             sort_order INTEGER,
-            deleted_at TEXT
-        )
-        "#,
-        r#"
-        CREATE TABLE integration_provider_account (
-            id INTEGER PRIMARY KEY,
-            tenant_id INTEGER NOT NULL,
-            organization_id INTEGER NOT NULL,
-            provider_code TEXT NOT NULL,
-            status INTEGER NOT NULL,
             deleted_at TEXT
         )
         "#,
@@ -140,13 +131,13 @@ async fn create_provider_tables(pool: &SqlitePool) {
         )
         "#,
         r#"
-        CREATE TABLE integration_channel (
+        CREATE TABLE ai_channel (
             id INTEGER PRIMARY KEY,
             tenant_id INTEGER NOT NULL,
             organization_id INTEGER NOT NULL,
             provider_id INTEGER,
             provider_code TEXT NOT NULL,
-            account_id INTEGER,
+            channel_code TEXT,
             proxy_id INTEGER,
             base_url TEXT,
             status INTEGER NOT NULL,
@@ -157,7 +148,7 @@ async fn create_provider_tables(pool: &SqlitePool) {
         )
         "#,
         r#"
-        CREATE TABLE integration_channel_model (
+        CREATE TABLE ai_channel_model (
             id INTEGER PRIMARY KEY,
             tenant_id INTEGER NOT NULL,
             organization_id INTEGER NOT NULL,
@@ -181,7 +172,7 @@ async fn seed_providers(pool: &SqlitePool) {
 }
 
 async fn seed_provider_with_type(pool: &SqlitePool, integration_type: i64) {
-    let (id, code, vendor, name, url, sort_order) = if integration_type == 2 {
+    let (id, code, vendor, name, url, sort_order, provider_type) = if integration_type == 2 {
         (
             1,
             "azure_openai",
@@ -189,6 +180,7 @@ async fn seed_provider_with_type(pool: &SqlitePool, integration_type: i64) {
             "Azure OpenAI",
             "https://azure.example.test/openai",
             1,
+            "cloud_platform",
         )
     } else {
         (
@@ -198,21 +190,27 @@ async fn seed_provider_with_type(pool: &SqlitePool, integration_type: i64) {
             "OpenRouter",
             "https://relay.example.test/openrouter",
             2,
+            if integration_type == 3 {
+                "relay_aggregator"
+            } else {
+                "unsupported"
+            },
         )
     };
 
     sqlx::query(
         r#"
-        INSERT INTO integration_provider (
-            id, tenant_id, organization_id, provider_code, default_vendor_code, integration_type,
+        INSERT INTO ai_provider (
+            id, tenant_id, organization_id, provider_code, default_vendor_code, provider_type, auth_type,
             display_name, description, base_url, status, sort_order
         )
-        VALUES (?, 10, 20, ?, ?, ?, ?, 'Provider integration', ?, 1, ?)
+        VALUES (?, 10, 20, ?, ?, ?, ?, ?, 'Provider integration', ?, 1, ?)
         "#,
     )
     .bind(id)
     .bind(code)
     .bind(vendor)
+    .bind(provider_type)
     .bind(integration_type)
     .bind(name)
     .bind(url)
@@ -223,22 +221,8 @@ async fn seed_provider_with_type(pool: &SqlitePool, integration_type: i64) {
 
     sqlx::query(
         r#"
-        INSERT INTO integration_provider_account (
-            id, tenant_id, organization_id, provider_code, status
-        )
-        VALUES (?, 10, 20, ?, 1)
-        "#,
-    )
-    .bind(9000 + id)
-    .bind(code)
-    .execute(pool)
-    .await
-    .unwrap();
-
-    sqlx::query(
-        r#"
-        INSERT INTO integration_channel (
-            id, tenant_id, organization_id, provider_id, provider_code, account_id,
+        INSERT INTO ai_channel (
+            id, tenant_id, organization_id, provider_id, provider_code, channel_code,
             base_url, status, health_status, priority, weight
         )
         VALUES (?, 10, 20, ?, ?, ?, ?, 1, 1, 10, 100)
@@ -247,7 +231,7 @@ async fn seed_provider_with_type(pool: &SqlitePool, integration_type: i64) {
     .bind(2000 + id)
     .bind(id)
     .bind(code)
-    .bind(9000 + id)
+    .bind(format!("chn-{id}"))
     .bind(url)
     .execute(pool)
     .await
@@ -255,7 +239,7 @@ async fn seed_provider_with_type(pool: &SqlitePool, integration_type: i64) {
 
     sqlx::query(
         r#"
-        INSERT INTO integration_channel_model (
+        INSERT INTO ai_channel_model (
             id, tenant_id, organization_id, channel_id, model, status
         )
         VALUES (?, 10, 20, ?, 'gpt-4o-mini', 1)

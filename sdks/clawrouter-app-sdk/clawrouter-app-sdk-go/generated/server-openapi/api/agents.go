@@ -33,12 +33,9 @@ func (a *AgentsApi) AgentDefinitionsList(page *int, pageSize *int, q *string) (s
 }
 
 // Create Playground agent definition
-func (a *AgentsApi) AgentDefinitionsCreate(body sdktypes.AgentCreateRequest, idempotencyKey string, xRequestId *string) (sdktypes.AgentDefinitionsCreateResult, error) {
+func (a *AgentsApi) AgentDefinitionsCreate(body sdktypes.AgentCreateRequest, idempotencyKey string) (sdktypes.AgentDefinitionsCreateResult, error) {
     headers := BuildRequestHeaders(
-        map[string]ParameterSpec{
-            "Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},
-            "X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},
-        },
+        map[string]ParameterSpec{"Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},},
         map[string]ParameterSpec{},
     )
     raw, err := a.client.Post(AppApiPath("/agents"), body, nil, headers, "application/json")
@@ -60,12 +57,9 @@ func (a *AgentsApi) AgentRunsRetrieve(runId string) (sdktypes.AgentRunsRetrieveR
 }
 
 // Complete Playground agent run
-func (a *AgentsApi) AgentRunsSubmit(runId string, body sdktypes.AgentRunCompleteRequest, idempotencyKey string, xRequestId *string) (sdktypes.AgentRunsSubmitResult, error) {
+func (a *AgentsApi) AgentRunsSubmit(runId string, body sdktypes.AgentRunCompleteRequest, idempotencyKey string) (sdktypes.AgentRunsSubmitResult, error) {
     headers := BuildRequestHeaders(
-        map[string]ParameterSpec{
-            "Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},
-            "X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},
-        },
+        map[string]ParameterSpec{"Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},},
         map[string]ParameterSpec{},
     )
     raw, err := a.client.Post(AppApiPath(fmt.Sprintf("/agents/runs/%s/complete", SerializePathParameter(runId, PathParameterSpec{Name: "runId", Style: "simple", Explode: false}))), body, nil, headers, "application/json")
@@ -91,12 +85,9 @@ func (a *AgentsApi) AgentRunStepsList(runId string, page *int, pageSize *int) (s
 }
 
 // Create Playground agent run step
-func (a *AgentsApi) AgentRunStepsCreate(runId string, body sdktypes.AgentRunStepCreateRequest, idempotencyKey string, xRequestId *string) (sdktypes.AgentRunStepsCreateResult, error) {
+func (a *AgentsApi) AgentRunStepsCreate(runId string, body sdktypes.AgentRunStepCreateRequest, idempotencyKey string) (sdktypes.AgentRunStepsCreateResult, error) {
     headers := BuildRequestHeaders(
-        map[string]ParameterSpec{
-            "Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},
-            "X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},
-        },
+        map[string]ParameterSpec{"Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},},
         map[string]ParameterSpec{},
     )
     raw, err := a.client.Post(AppApiPath(fmt.Sprintf("/agents/runs/%s/steps", SerializePathParameter(runId, PathParameterSpec{Name: "runId", Style: "simple", Explode: false}))), body, nil, headers, "application/json")
@@ -108,12 +99,9 @@ func (a *AgentsApi) AgentRunStepsCreate(runId string, body sdktypes.AgentRunStep
 }
 
 // Complete Playground agent run step
-func (a *AgentsApi) AgentRunStepsSubmit(runId string, stepId string, body sdktypes.AgentRunStepCompleteRequest, idempotencyKey string, xRequestId *string) (sdktypes.AgentRunStepsSubmitResult, error) {
+func (a *AgentsApi) AgentRunStepsSubmit(runId string, stepId string, body sdktypes.AgentRunStepCompleteRequest, idempotencyKey string) (sdktypes.AgentRunStepsSubmitResult, error) {
     headers := BuildRequestHeaders(
-        map[string]ParameterSpec{
-            "Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},
-            "X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},
-        },
+        map[string]ParameterSpec{"Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},},
         map[string]ParameterSpec{},
     )
     raw, err := a.client.Post(AppApiPath(fmt.Sprintf("/agents/runs/%s/steps/%s/complete", SerializePathParameter(runId, PathParameterSpec{Name: "runId", Style: "simple", Explode: false}), SerializePathParameter(stepId, PathParameterSpec{Name: "stepId", Style: "simple", Explode: false}))), body, nil, headers, "application/json")
@@ -149,12 +137,9 @@ func (a *AgentsApi) AgentRunsList(sessionId string, page *int, pageSize *int) (s
 }
 
 // Create Playground agent run
-func (a *AgentsApi) AgentRunsCreate(sessionId string, body sdktypes.AgentRunCreateRequest, idempotencyKey string, xRequestId *string) (sdktypes.AgentRunsCreateResult, error) {
+func (a *AgentsApi) AgentRunsCreate(sessionId string, body sdktypes.AgentRunCreateRequest, idempotencyKey string) (sdktypes.AgentRunsCreateResult, error) {
     headers := BuildRequestHeaders(
-        map[string]ParameterSpec{
-            "Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},
-            "X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},
-        },
+        map[string]ParameterSpec{"Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},},
         map[string]ParameterSpec{},
     )
     raw, err := a.client.Post(AppApiPath(fmt.Sprintf("/agents/sessions/%s/runs", SerializePathParameter(sessionId, PathParameterSpec{Name: "sessionId", Style: "simple", Explode: false}))), body, nil, headers, "application/json")
@@ -190,12 +175,9 @@ func (a *AgentsApi) AgentSessionsList(agentId string, page *int, pageSize *int) 
 }
 
 // Create Playground agent session
-func (a *AgentsApi) AgentSessionsCreate(agentId string, body sdktypes.AgentSessionCreateRequest, idempotencyKey string, xRequestId *string) (sdktypes.AgentSessionsCreateResult, error) {
+func (a *AgentsApi) AgentSessionsCreate(agentId string, body sdktypes.AgentSessionCreateRequest, idempotencyKey string) (sdktypes.AgentSessionsCreateResult, error) {
     headers := BuildRequestHeaders(
-        map[string]ParameterSpec{
-            "Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},
-            "X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},
-        },
+        map[string]ParameterSpec{"Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},},
         map[string]ParameterSpec{},
     )
     raw, err := a.client.Post(AppApiPath(fmt.Sprintf("/agents/%s/sessions", SerializePathParameter(agentId, PathParameterSpec{Name: "agentId", Style: "simple", Explode: false}))), body, nil, headers, "application/json")

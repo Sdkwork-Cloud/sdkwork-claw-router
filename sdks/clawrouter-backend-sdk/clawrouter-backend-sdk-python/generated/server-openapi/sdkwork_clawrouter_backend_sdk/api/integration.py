@@ -1,6 +1,6 @@
 from typing import Any, Dict, List, Optional
 from ..http_client import HttpClient
-from ..models import AdminChannelCreateRequest, AdminChannelUpdateRequest, AdminProviderSecretCreateRequest, AdminProviderSecretUpdateRequest, ChannelsCreateResult, ChannelsDeleteResult, ChannelsListResult, ChannelsUpdateResult, ChannelsVerifyResult, ProviderSecretsCreateResult, ProviderSecretsDeleteResult, ProviderSecretsListResult, ProviderSecretsUpdateResult
+from ..models import AdminChannelCreateRequest, AdminChannelEndpointCreateRequest, AdminChannelEndpointUpdateRequest, AdminChannelUpdateRequest, AdminProviderSecretCreateRequest, AdminProviderSecretUpdateRequest, ChannelEndpointsCreateResult, ChannelEndpointsListResult, ChannelEndpointsUpdateResult, ChannelsCreateResult, ChannelsDeleteResult, ChannelsListResult, ChannelsUpdateResult, ChannelsVerifyResult, ProviderSecretsCreateResult, ProviderSecretsDeleteResult, ProviderSecretsListResult, ProviderSecretsUpdateResult
 
 def _append_query_string(path: str, raw_query_string: str) -> str:
     query = raw_query_string.lstrip('?')
@@ -182,59 +182,6 @@ def encode_query_value(value: str, allow_reserved: bool) -> str:
 
     return quote(value, safe=':/?#[]@!$&\'()*+,;=' if allow_reserved else '')
 
-def build_request_headers(headers: Dict[str, Dict[str, Any]], cookies: Optional[Dict[str, Dict[str, Any]]] = None) -> Optional[Dict[str, str]]:
-    request_headers: Dict[str, str] = {}
-    for name, parameter in headers.items():
-        serialized = serialize_parameter_value(parameter)
-        if serialized is not None:
-            request_headers[name] = serialized
-
-    cookie_header = build_cookie_header(cookies or {})
-    if cookie_header:
-        request_headers['Cookie'] = (
-            f"{request_headers['Cookie']}; {cookie_header}"
-            if 'Cookie' in request_headers
-            else cookie_header
-        )
-
-    return request_headers or None
-
-
-def build_cookie_header(cookies: Dict[str, Dict[str, Any]]) -> Optional[str]:
-    from urllib.parse import quote
-
-    pairs: List[str] = []
-    for name, parameter in cookies.items():
-        serialized = serialize_parameter_value(parameter)
-        if serialized is not None:
-            pairs.append(f"{quote(str(name), safe='')}={quote(serialized, safe='')}")
-    return '; '.join(pairs) if pairs else None
-
-
-def serialize_parameter_value(parameter: Optional[Dict[str, Any]]) -> Optional[str]:
-    value = None if parameter is None else parameter.get('value')
-    if value is None:
-        return None
-    if parameter and parameter.get('content_type'):
-        import json
-
-        return json.dumps(value, separators=(',', ':'))
-    if isinstance(value, (list, tuple)):
-        return ','.join(serialize_header_primitive(item) for item in value if item is not None)
-    if isinstance(value, dict):
-        return serialize_header_object(value, bool(parameter and parameter.get('explode')))
-    return serialize_header_primitive(value)
-
-
-def serialize_header_object(value: Dict[str, Any], explode: bool) -> str:
-    entries = [(key, entry_value) for key, entry_value in value.items() if entry_value is not None]
-    if explode:
-        return ','.join(f"{key}={serialize_header_primitive(entry_value)}" for key, entry_value in entries)
-    return ','.join(item for key, entry_value in entries for item in (str(key), serialize_header_primitive(entry_value)))
-
-
-def serialize_header_primitive(value: Any) -> str:
-    return str(value)
 
 
 class IntegrationApi:
@@ -242,9 +189,29 @@ class IntegrationApi:
 
     def __init__(self, client: HttpClient):
         self._client = client
+        self.channel_endpoints = IntegrationChannelEndpointsApi(client)
         self.channels = IntegrationChannelsApi(client)
         self.provider_secrets = IntegrationProviderSecretsApi(client)
 
+
+class IntegrationChannelEndpointsApi:
+    """integration integration.channel_endpoints API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+
+
+    def list(self) -> ChannelEndpointsListResult:
+        """List channel endpoints"""
+        return self._client.get(f"/backend/v3/api/integration/channel_endpoints")
+
+    def create(self, body: AdminChannelEndpointCreateRequest) -> ChannelEndpointsCreateResult:
+        """Create channel endpoint"""
+        return self._client.post(f"/backend/v3/api/integration/channel_endpoints", json=body)
+
+    def update(self, endpoint_id: str, body: AdminChannelEndpointUpdateRequest) -> ChannelEndpointsUpdateResult:
+        """Update channel endpoint"""
+        return self._client.put(f"/backend/v3/api/integration/channel_endpoints/{serialize_path_parameter(endpoint_id, {'name': 'endpointId', 'style': 'simple', 'explode': False})}", json=body)
 
 class IntegrationChannelsApi:
     """integration integration.channels API client."""
@@ -257,39 +224,21 @@ class IntegrationChannelsApi:
         """List channels"""
         return self._client.get(f"/backend/v3/api/integration/channels")
 
-    def create(self, body: AdminChannelCreateRequest, x_request_id: Optional[str] = None) -> ChannelsCreateResult:
+    def create(self, body: AdminChannelCreateRequest) -> ChannelsCreateResult:
         """Create channel"""
-        request_headers = build_request_headers(
-            {
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
-            },
-            {}
-        )
-        return self._client.post(f"/backend/v3/api/integration/channels", json=body, headers=request_headers)
+        return self._client.post(f"/backend/v3/api/integration/channels", json=body)
 
-    def update(self, body: AdminChannelUpdateRequest, x_request_id: Optional[str] = None) -> ChannelsUpdateResult:
+    def update(self, body: AdminChannelUpdateRequest) -> ChannelsUpdateResult:
         """Update channel"""
-        request_headers = build_request_headers(
-            {
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
-            },
-            {}
-        )
-        return self._client.put(f"/backend/v3/api/integration/channels", json=body, headers=request_headers)
+        return self._client.put(f"/backend/v3/api/integration/channels", json=body)
 
     def delete(self, channel_id: str) -> ChannelsDeleteResult:
         """Delete channel"""
         return self._client.delete(f"/backend/v3/api/integration/channels/{serialize_path_parameter(channel_id, {'name': 'channelId', 'style': 'simple', 'explode': False})}")
 
-    def verify(self, channel_id: str, x_request_id: Optional[str] = None) -> ChannelsVerifyResult:
+    def verify(self, channel_id: str) -> ChannelsVerifyResult:
         """Test channel"""
-        request_headers = build_request_headers(
-            {
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
-            },
-            {}
-        )
-        return self._client.post(f"/backend/v3/api/integration/channels/{serialize_path_parameter(channel_id, {'name': 'channelId', 'style': 'simple', 'explode': False})}/verify", headers=request_headers)
+        return self._client.post(f"/backend/v3/api/integration/channels/{serialize_path_parameter(channel_id, {'name': 'channelId', 'style': 'simple', 'explode': False})}/verify")
 
 class IntegrationProviderSecretsApi:
     """integration integration.provider_secrets API client."""
@@ -306,25 +255,13 @@ class IntegrationProviderSecretsApi:
         ])
         return self._client.get(_append_query_string(f"/backend/v3/api/integration/provider_secrets", query))
 
-    def create(self, body: AdminProviderSecretCreateRequest, x_request_id: Optional[str] = None) -> ProviderSecretsCreateResult:
+    def create(self, body: AdminProviderSecretCreateRequest) -> ProviderSecretsCreateResult:
         """Create provider secret"""
-        request_headers = build_request_headers(
-            {
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
-            },
-            {}
-        )
-        return self._client.post(f"/backend/v3/api/integration/provider_secrets", json=body, headers=request_headers)
+        return self._client.post(f"/backend/v3/api/integration/provider_secrets", json=body)
 
-    def update(self, body: AdminProviderSecretUpdateRequest, x_request_id: Optional[str] = None) -> ProviderSecretsUpdateResult:
+    def update(self, body: AdminProviderSecretUpdateRequest) -> ProviderSecretsUpdateResult:
         """Update provider secret"""
-        request_headers = build_request_headers(
-            {
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
-            },
-            {}
-        )
-        return self._client.put(f"/backend/v3/api/integration/provider_secrets", json=body, headers=request_headers)
+        return self._client.put(f"/backend/v3/api/integration/provider_secrets", json=body)
 
     def delete(self, secret_id: str) -> ProviderSecretsDeleteResult:
         """Delete provider secret"""

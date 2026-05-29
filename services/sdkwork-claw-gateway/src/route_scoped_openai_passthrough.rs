@@ -9,10 +9,11 @@ use crate::provider_passthrough_transport::{
     build_provider_passthrough_client, forward_provider_passthrough_to_target, PassthroughClient,
     ProviderPassthroughTarget,
 };
+use crate::request_identity::generate_server_request_id;
 use axum::body::{to_bytes, Body};
 use axum::extract::{Request, State};
 use axum::http::request::Parts as RequestParts;
-use axum::http::{HeaderMap, Method, StatusCode, Uri};
+use axum::http::{header::USER_AGENT, HeaderMap, Method, StatusCode, Uri};
 use axum::response::{IntoResponse, Response};
 use axum::routing::{delete, MethodRouter};
 use axum::{Json, Router};
@@ -20,17 +21,17 @@ use http_body_util::BodyExt;
 #[cfg(test)]
 use sdkwork_claw_config::ProviderPassthroughAuth;
 use sdkwork_claw_product::api::{
-    OpenAiInvocationContext, OpenAiInvocationEndpoint, OpenAiInvocationRelayOutcome,
-    OpenAiProviderRoute, OpenAiUsageRecorder,
+    normalize_user_agent_header, OpenAiInvocationContext, OpenAiInvocationEndpoint,
+    OpenAiInvocationRelayOutcome, OpenAiProviderRoute, OpenAiUsageRecorder,
 };
 use sdkwork_claw_product::application::{
     ApiKeySecretHasher, AuthenticatedApiKeyContext, PricingResolver, ProviderRouteSelectionError,
     ProviderRouteSelectionErrorKind, ProviderRouteSelector, ResolveModelPriceQuery,
-    SelectProviderAccountPoolRouteQuery, SelectProviderRouteQuery, SelectedProviderRoute,
+    SelectProviderChannelRouteQuery, SelectProviderRouteQuery, SelectedProviderRoute,
 };
 use sdkwork_claw_product::domain::{
     provider_native_model_id, AiModel, BillingMeter, DecimalValue, DomainError, DomainResult,
-    ProviderAccountPoolRoute, ProviderAuthProfile, RoutingCapability,
+    ProviderAuthProfile, ProviderChannelRoute, RoutingCapability,
 };
 use sdkwork_claw_product::ports::{
     GatewayUsageQuantity, GatewayUsageRecordCommand, GatewayUsageRecorder, PricingCatalog,
@@ -38,7 +39,7 @@ use sdkwork_claw_product::ports::{
 };
 use serde_json::{json, Value};
 use std::sync::Arc;
-use std::time::{Instant, SystemTime, UNIX_EPOCH};
+use std::time::Instant;
 
 type UsageRecorder = Arc<dyn GatewayUsageRecorder + Send + Sync>;
 
@@ -172,6 +173,7 @@ struct RouteScopedMeteredUsageContext {
     request_body: Value,
     request_path: String,
     http_method: String,
+    user_agent: Option<String>,
     billing_meter: BillingMeter,
 }
 
@@ -325,13 +327,13 @@ impl RouteScopedOpenAiPassthroughRuntime {
         let usage_route = route.usage_route.clone();
         let base_url = route.base_url.ok_or_else(|| {
             RouteScopedOpenAiPassthroughError::provider_route_unavailable(format!(
-                "provider route is not available for configured account pool: selected channel {} has no base URL",
+                "provider route is not available for configured channel route: selected channel {} has no base URL",
                 route.channel_id
             ))
         })?;
         let secret_ref = route.secret_ref.ok_or_else(|| {
             RouteScopedOpenAiPassthroughError::provider_route_unavailable(format!(
-                "provider route is not available for configured account pool: selected channel {} has no secret_ref",
+                "provider route is not available for configured channel route: selected channel {} has no secret_ref",
                 route.channel_id
             ))
         })?;
@@ -340,7 +342,7 @@ impl RouteScopedOpenAiPassthroughRuntime {
             .resolve_secret_value(&secret_ref)
             .map_err(|error| {
                 RouteScopedOpenAiPassthroughError::provider_route_unavailable(format!(
-                    "provider route is not available for configured account pool: {error}"
+                    "provider route is not available for configured channel route: {error}"
                 ))
             })?;
         let rendered_auth = render_provider_account_auth(&route.auth_profile, secret_value)
@@ -462,12 +464,14 @@ fn build_route_scoped_metered_usage_context(
     })?;
     Ok(Some(RouteScopedMeteredUsageContext {
         api_key_context: api_key_context.clone(),
-        request_id: header_value(&parts.headers, "x-request-id"),
+        request_id: Some(generate_server_request_id()),
         trace_id: header_value(&parts.headers, "x-trace-id"),
         requested_model,
         request_body,
         request_path: parts.uri.path().to_owned(),
         http_method: parts.method.to_string(),
+        user_agent: header_value(&parts.headers, USER_AGENT.as_str())
+            .and_then(|value| normalize_user_agent_header(value.as_str())),
         billing_meter,
     }))
 }
@@ -601,15 +605,15 @@ where
         request_id: context
             .request_id
             .clone()
-            .unwrap_or_else(|| generated_route_scoped_request_id(route.channel_id)),
+            .unwrap_or_else(generate_server_request_id),
         trace_id: context.trace_id.clone(),
         tenant_id: context.api_key_context.tenant_id,
         organization_id: context.api_key_context.organization_id,
         user_id: context.api_key_context.user_id,
         api_key_id: context.api_key_context.api_key_id,
         api_key_name_snapshot: context.api_key_context.api_key_name_snapshot.clone(),
-        api_key_group_id: context.api_key_context.group_id,
-        api_key_group_snapshot: context.api_key_context.group_code.clone(),
+        channel_group_id: context.api_key_context.group_id,
+        channel_group_snapshot: context.api_key_context.group_code.clone(),
         catalog_key: route.catalog_key.clone(),
         requested_model: context.requested_model.clone(),
         requested_model_catalog_key: route.catalog_key.clone(),
@@ -619,6 +623,7 @@ where
         provider_native_model,
         request_path: context.request_path.clone(),
         http_method: context.http_method.clone(),
+        user_agent: context.user_agent.clone(),
         http_status: status_code,
         streaming: false,
         modality: route_scoped_modality_for_meter(&context.billing_meter),
@@ -770,14 +775,6 @@ fn route_scoped_metered_pricing_snapshot(
     .to_string()
 }
 
-fn generated_route_scoped_request_id(channel_id: i64) -> String {
-    let nanos = SystemTime::now()
-        .duration_since(UNIX_EPOCH)
-        .map(|duration| duration.as_nanos())
-        .unwrap_or_default();
-    format!("route-scoped-usage-{channel_id}-{nanos}")
-}
-
 fn header_value(headers: &HeaderMap, name: &str) -> Option<String> {
     headers
         .get(name)
@@ -904,14 +901,14 @@ where
             Ok(model_route_to_passthrough_target(selection))
         }
         _ => {
-            let selection = ProviderRouteSelector::new(catalog).select_account_pool(
-                SelectProviderAccountPoolRouteQuery {
+            let selection = ProviderRouteSelector::new(catalog).select_channel_route(
+                SelectProviderChannelRouteQuery {
                     context,
                     route_key: intent.route_key.clone(),
                     capability: intent.capability,
                 },
             )?;
-            Ok(account_pool_route_to_passthrough_target(selection.route))
+            Ok(channel_route_to_passthrough_target(selection.route))
         }
     }
 }
@@ -944,8 +941,8 @@ fn model_route_to_passthrough_target(
     }
 }
 
-fn account_pool_route_to_passthrough_target(
-    route: ProviderAccountPoolRoute,
+fn channel_route_to_passthrough_target(
+    route: ProviderChannelRoute,
 ) -> RouteScopedOpenAiPassthroughTarget {
     RouteScopedOpenAiPassthroughTarget {
         provider_code: route.provider_code,

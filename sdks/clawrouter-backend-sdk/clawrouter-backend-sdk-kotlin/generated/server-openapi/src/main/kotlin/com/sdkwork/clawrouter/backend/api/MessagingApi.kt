@@ -9,23 +9,16 @@ import com.sdkwork.clawrouter.backend.http.HttpClient
 class MessagingApi(private val client: HttpClient) {
 
     /** Messaging route simulation */
-    suspend fun diagnosticsRouteSimulationCreate(body: MessagingRouteSimulationRequest, xRequestId: String? = null): DiagnosticsRouteSimulationCreateResult? {
-        val requestHeaders = buildRequestHeaders(
-            mapOf(
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
-            ),
-            emptyMap()
-        )
-        val raw = client.post(ApiPaths.backendPath("/messaging/diagnostics/route_simulation"), body, null, requestHeaders, "application/json")
+    suspend fun diagnosticsRouteSimulationCreate(body: MessagingRouteSimulationRequest): DiagnosticsRouteSimulationCreateResult? {
+        val raw = client.post(ApiPaths.backendPath("/messaging/diagnostics/route_simulation"), body, null, null, "application/json")
         return client.convertValue(raw, object : TypeReference<DiagnosticsRouteSimulationCreateResult>() {})
     }
 
     /** Messaging test send */
-    suspend fun diagnosticsTestSendsCreate(body: MessagingTestSendRequest, idempotencyKey: String, xRequestId: String? = null): DiagnosticsTestSendsCreateResult? {
+    suspend fun diagnosticsTestSendsCreate(body: MessagingTestSendRequest, idempotencyKey: String): DiagnosticsTestSendsCreateResult? {
         val requestHeaders = buildRequestHeaders(
             mapOf(
                 "Idempotency-Key" to HeaderParameterSpec(idempotencyKey, "simple", false, null),
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
             ),
             emptyMap()
         )
@@ -48,11 +41,10 @@ class MessagingApi(private val client: HttpClient) {
     }
 
     /** Messaging provider account create */
-    suspend fun providerAccountsCreate(body: MessagingProviderAccountCreateRequest, idempotencyKey: String, xRequestId: String? = null): ProviderAccountsCreateResult? {
+    suspend fun providerAccountsCreate(body: MessagingProviderAccountCreateRequest, idempotencyKey: String): ProviderAccountsCreateResult? {
         val requestHeaders = buildRequestHeaders(
             mapOf(
                 "Idempotency-Key" to HeaderParameterSpec(idempotencyKey, "simple", false, null),
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
             ),
             emptyMap()
         )
@@ -90,11 +82,10 @@ class MessagingApi(private val client: HttpClient) {
     }
 
     /** Messaging route rule create */
-    suspend fun routeRulesCreate(body: MessagingRouteRuleCreateRequest, idempotencyKey: String, xRequestId: String? = null): RouteRulesCreateResult? {
+    suspend fun routeRulesCreate(body: MessagingRouteRuleCreateRequest, idempotencyKey: String): RouteRulesCreateResult? {
         val requestHeaders = buildRequestHeaders(
             mapOf(
                 "Idempotency-Key" to HeaderParameterSpec(idempotencyKey, "simple", false, null),
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
             ),
             emptyMap()
         )
@@ -132,11 +123,10 @@ class MessagingApi(private val client: HttpClient) {
     }
 
     /** Messaging sender identity create */
-    suspend fun senderIdentitiesCreate(body: MessagingSenderIdentityCreateRequest, idempotencyKey: String, xRequestId: String? = null): SenderIdentitiesCreateResult? {
+    suspend fun senderIdentitiesCreate(body: MessagingSenderIdentityCreateRequest, idempotencyKey: String): SenderIdentitiesCreateResult? {
         val requestHeaders = buildRequestHeaders(
             mapOf(
                 "Idempotency-Key" to HeaderParameterSpec(idempotencyKey, "simple", false, null),
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
             ),
             emptyMap()
         )
@@ -159,11 +149,10 @@ class MessagingApi(private val client: HttpClient) {
     }
 
     /** Messaging suppression create */
-    suspend fun suppressionsCreate(body: MessagingSuppressionCreateRequest, idempotencyKey: String, xRequestId: String? = null): SuppressionsCreateResult? {
+    suspend fun suppressionsCreate(body: MessagingSuppressionCreateRequest, idempotencyKey: String): SuppressionsCreateResult? {
         val requestHeaders = buildRequestHeaders(
             mapOf(
                 "Idempotency-Key" to HeaderParameterSpec(idempotencyKey, "simple", false, null),
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
             ),
             emptyMap()
         )
@@ -172,11 +161,10 @@ class MessagingApi(private val client: HttpClient) {
     }
 
     /** Messaging template send */
-    suspend fun templateSendsCreate(body: MessagingTemplateSendRequest, idempotencyKey: String, xRequestId: String? = null): TemplateSendsCreateResult? {
+    suspend fun templateSendsCreate(body: MessagingTemplateSendRequest, idempotencyKey: String): TemplateSendsCreateResult? {
         val requestHeaders = buildRequestHeaders(
             mapOf(
                 "Idempotency-Key" to HeaderParameterSpec(idempotencyKey, "simple", false, null),
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
             ),
             emptyMap()
         )
@@ -199,11 +187,10 @@ class MessagingApi(private val client: HttpClient) {
     }
 
     /** Messaging template create */
-    suspend fun templatesCreate(body: MessagingTemplateCreateRequest, idempotencyKey: String, xRequestId: String? = null): TemplatesCreateResult? {
+    suspend fun templatesCreate(body: MessagingTemplateCreateRequest, idempotencyKey: String): TemplatesCreateResult? {
         val requestHeaders = buildRequestHeaders(
             mapOf(
                 "Idempotency-Key" to HeaderParameterSpec(idempotencyKey, "simple", false, null),
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
             ),
             emptyMap()
         )
@@ -212,14 +199,8 @@ class MessagingApi(private val client: HttpClient) {
     }
 
     /** Messaging template version publish */
-    suspend fun templatesVersionsPublish(templateId: String, versionId: String, xRequestId: String? = null): TemplatesVersionsPublishResult? {
-        val requestHeaders = buildRequestHeaders(
-            mapOf(
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
-            ),
-            emptyMap()
-        )
-        val raw = client.post(ApiPaths.backendPath("/messaging/templates/${serializePathParameter(templateId, PathParameterSpec("templateId", "simple", false))}/versions/${serializePathParameter(versionId, PathParameterSpec("versionId", "simple", false))}/publish"), null, null, requestHeaders)
+    suspend fun templatesVersionsPublish(templateId: String, versionId: String): TemplatesVersionsPublishResult? {
+        val raw = client.post(ApiPaths.backendPath("/messaging/templates/${serializePathParameter(templateId, PathParameterSpec("templateId", "simple", false))}/versions/${serializePathParameter(versionId, PathParameterSpec("versionId", "simple", false))}/publish"), null)
         return client.convertValue(raw, object : TypeReference<TemplatesVersionsPublishResult>() {})
     }
 
@@ -238,14 +219,8 @@ class MessagingApi(private val client: HttpClient) {
     }
 
     /** Verification policy update */
-    suspend fun verificationPoliciesUpdate(policyId: String, body: VerificationPolicyUpdateRequest, xRequestId: String? = null): VerificationPoliciesUpdateResult? {
-        val requestHeaders = buildRequestHeaders(
-            mapOf(
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
-            ),
-            emptyMap()
-        )
-        val raw = client.put(ApiPaths.backendPath("/messaging/verification_policies/${serializePathParameter(policyId, PathParameterSpec("policyId", "simple", false))}"), body, null, requestHeaders, "application/json")
+    suspend fun verificationPoliciesUpdate(policyId: String, body: VerificationPolicyUpdateRequest): VerificationPoliciesUpdateResult? {
+        val raw = client.put(ApiPaths.backendPath("/messaging/verification_policies/${serializePathParameter(policyId, PathParameterSpec("policyId", "simple", false))}"), body, null, null, "application/json")
         return client.convertValue(raw, object : TypeReference<VerificationPoliciesUpdateResult>() {})
     }
 

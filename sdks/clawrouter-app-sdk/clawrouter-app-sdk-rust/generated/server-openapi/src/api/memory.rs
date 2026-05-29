@@ -33,12 +33,11 @@ impl MemoryApi {
     }
 
     /// Create memory space
-    pub async fn spaces_create(&self, body: &MemorySpaceCreateRequest, idempotency_key: &str, x_request_id: Option<&str>) -> Result<SpacesCreateResult, SdkworkError> {
+    pub async fn spaces_create(&self, body: &MemorySpaceCreateRequest, idempotency_key: &str) -> Result<SpacesCreateResult, SdkworkError> {
         let path = app_path(&"/memory/spaces".to_string());
         let headers = build_request_headers(
             &[
                 ("Idempotency-Key", HeaderParameterSpec::new(idempotency_key, "simple", false, None)),
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
             ],
             &[],
         );
@@ -62,12 +61,11 @@ impl MemoryApi {
     }
 
     /// Create memory entry
-    pub async fn entries_create(&self, space_id: &str, body: &MemoryEntryCreateRequest, idempotency_key: &str, x_request_id: Option<&str>) -> Result<EntriesCreateResult, SdkworkError> {
+    pub async fn entries_create(&self, space_id: &str, body: &MemoryEntryCreateRequest, idempotency_key: &str) -> Result<EntriesCreateResult, SdkworkError> {
         let path = app_path(&format!("/memory/spaces/{}/entries", serialize_path_parameter(space_id, PathParameterSpec::new("spaceId", "simple", false))));
         let headers = build_request_headers(
             &[
                 ("Idempotency-Key", HeaderParameterSpec::new(idempotency_key, "simple", false, None)),
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
             ],
             &[],
         );

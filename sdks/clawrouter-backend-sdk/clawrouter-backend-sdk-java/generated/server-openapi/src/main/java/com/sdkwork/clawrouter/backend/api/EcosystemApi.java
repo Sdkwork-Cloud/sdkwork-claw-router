@@ -30,12 +30,8 @@ public class EcosystemApi {
     }
 
     /** Create skill */
-    public SkillsCreateResult skillsCreate(AdminSkillCreateRequest body, String xRequestId) throws Exception {
-        Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
-                Map.of()
-        );
-        Object raw = client.post(ApiPaths.backendPath("/ecosystem/skills"), body, null, requestHeaders, "application/json");
+    public SkillsCreateResult skillsCreate(AdminSkillCreateRequest body) throws Exception {
+        Object raw = client.post(ApiPaths.backendPath("/ecosystem/skills"), body, null, null, "application/json");
         return client.convertValue(raw, new TypeReference<SkillsCreateResult>() {});
     }
 
@@ -46,32 +42,20 @@ public class EcosystemApi {
     }
 
     /** Create skill category */
-    public SkillsCategoriesCreateResult skillsCategoriesCreate(AdminSkillCategoryCreateRequest body, String xRequestId) throws Exception {
-        Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
-                Map.of()
-        );
-        Object raw = client.post(ApiPaths.backendPath("/ecosystem/skills/categories"), body, null, requestHeaders, "application/json");
+    public SkillsCategoriesCreateResult skillsCategoriesCreate(AdminSkillCategoryCreateRequest body) throws Exception {
+        Object raw = client.post(ApiPaths.backendPath("/ecosystem/skills/categories"), body, null, null, "application/json");
         return client.convertValue(raw, new TypeReference<SkillsCategoriesCreateResult>() {});
     }
 
     /** Delete skill category */
-    public SkillsCategoriesDeleteResult skillsCategoriesDelete(String categoryId, String xRequestId) throws Exception {
-        Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
-                Map.of()
-        );
-        Object raw = client.delete(ApiPaths.backendPath("/ecosystem/skills/categories/" + serializePathParameter(categoryId, new PathParameterSpec("categoryId", "simple", false)) + ""), null, requestHeaders);
+    public SkillsCategoriesDeleteResult skillsCategoriesDelete(String categoryId) throws Exception {
+        Object raw = client.delete(ApiPaths.backendPath("/ecosystem/skills/categories/" + serializePathParameter(categoryId, new PathParameterSpec("categoryId", "simple", false)) + ""));
         return client.convertValue(raw, new TypeReference<SkillsCategoriesDeleteResult>() {});
     }
 
     /** Update skill category */
-    public SkillsCategoriesUpdateResult skillsCategoriesUpdate(String categoryId, AdminSkillCategoryUpdateRequest body, String xRequestId) throws Exception {
-        Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
-                Map.of()
-        );
-        Object raw = client.put(ApiPaths.backendPath("/ecosystem/skills/categories/" + serializePathParameter(categoryId, new PathParameterSpec("categoryId", "simple", false)) + ""), body, null, requestHeaders, "application/json");
+    public SkillsCategoriesUpdateResult skillsCategoriesUpdate(String categoryId, AdminSkillCategoryUpdateRequest body) throws Exception {
+        Object raw = client.put(ApiPaths.backendPath("/ecosystem/skills/categories/" + serializePathParameter(categoryId, new PathParameterSpec("categoryId", "simple", false)) + ""), body, null, null, "application/json");
         return client.convertValue(raw, new TypeReference<SkillsCategoriesUpdateResult>() {});
     }
 
@@ -89,12 +73,8 @@ public class EcosystemApi {
     }
 
     /** Create skill package */
-    public SkillsPackageCreateResult skillsPackageCreate(AdminSkillPackageCreateRequest body, String xRequestId) throws Exception {
-        Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
-                Map.of()
-        );
-        Object raw = client.post(ApiPaths.backendPath("/ecosystem/skills/package"), body, null, requestHeaders, "application/json");
+    public SkillsPackageCreateResult skillsPackageCreate(AdminSkillPackageCreateRequest body) throws Exception {
+        Object raw = client.post(ApiPaths.backendPath("/ecosystem/skills/package"), body, null, null, "application/json");
         return client.convertValue(raw, new TypeReference<SkillsPackageCreateResult>() {});
     }
 
@@ -111,32 +91,20 @@ public class EcosystemApi {
     }
 
     /** Update skill package */
-    public SkillsPackageUpdateResult skillsPackageUpdate(String packageId, AdminSkillPackageUpdateRequest body, String xRequestId) throws Exception {
-        Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
-                Map.of()
-        );
-        Object raw = client.put(ApiPaths.backendPath("/ecosystem/skills/package/" + serializePathParameter(packageId, new PathParameterSpec("packageId", "simple", false)) + ""), body, null, requestHeaders, "application/json");
+    public SkillsPackageUpdateResult skillsPackageUpdate(String packageId, AdminSkillPackageUpdateRequest body) throws Exception {
+        Object raw = client.put(ApiPaths.backendPath("/ecosystem/skills/package/" + serializePathParameter(packageId, new PathParameterSpec("packageId", "simple", false)) + ""), body, null, null, "application/json");
         return client.convertValue(raw, new TypeReference<SkillsPackageUpdateResult>() {});
     }
 
     /** Disable skill package */
-    public SkillsPackageDisableResult skillsPackageDisable(String packageId, String xRequestId) throws Exception {
-        Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
-                Map.of()
-        );
-        Object raw = client.post(ApiPaths.backendPath("/ecosystem/skills/package/" + serializePathParameter(packageId, new PathParameterSpec("packageId", "simple", false)) + "/disable"), null, null, requestHeaders);
+    public SkillsPackageDisableResult skillsPackageDisable(String packageId) throws Exception {
+        Object raw = client.post(ApiPaths.backendPath("/ecosystem/skills/package/" + serializePathParameter(packageId, new PathParameterSpec("packageId", "simple", false)) + "/disable"), null);
         return client.convertValue(raw, new TypeReference<SkillsPackageDisableResult>() {});
     }
 
     /** Enable skill package */
-    public SkillsPackageEnableResult skillsPackageEnable(String packageId, String xRequestId) throws Exception {
-        Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
-                Map.of()
-        );
-        Object raw = client.post(ApiPaths.backendPath("/ecosystem/skills/package/" + serializePathParameter(packageId, new PathParameterSpec("packageId", "simple", false)) + "/enable"), null, null, requestHeaders);
+    public SkillsPackageEnableResult skillsPackageEnable(String packageId) throws Exception {
+        Object raw = client.post(ApiPaths.backendPath("/ecosystem/skills/package/" + serializePathParameter(packageId, new PathParameterSpec("packageId", "simple", false)) + "/enable"), null);
         return client.convertValue(raw, new TypeReference<SkillsPackageEnableResult>() {});
     }
 
@@ -153,12 +121,8 @@ public class EcosystemApi {
     }
 
     /** Update skill */
-    public SkillsUpdateResult skillsUpdate(String skillId, AdminSkillUpdateRequest body, String xRequestId) throws Exception {
-        Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
-                Map.of()
-        );
-        Object raw = client.put(ApiPaths.backendPath("/ecosystem/skills/" + serializePathParameter(skillId, new PathParameterSpec("skillId", "simple", false)) + ""), body, null, requestHeaders, "application/json");
+    public SkillsUpdateResult skillsUpdate(String skillId, AdminSkillUpdateRequest body) throws Exception {
+        Object raw = client.put(ApiPaths.backendPath("/ecosystem/skills/" + serializePathParameter(skillId, new PathParameterSpec("skillId", "simple", false)) + ""), body, null, null, "application/json");
         return client.convertValue(raw, new TypeReference<SkillsUpdateResult>() {});
     }
 
@@ -169,22 +133,14 @@ public class EcosystemApi {
     }
 
     /** Create skill artifact */
-    public SkillsArtifactsCreateResult skillsArtifactsCreate(String skillId, AdminSkillArtifactCreateRequest body, String xRequestId) throws Exception {
-        Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
-                Map.of()
-        );
-        Object raw = client.post(ApiPaths.backendPath("/ecosystem/skills/" + serializePathParameter(skillId, new PathParameterSpec("skillId", "simple", false)) + "/artifacts"), body, null, requestHeaders, "application/json");
+    public SkillsArtifactsCreateResult skillsArtifactsCreate(String skillId, AdminSkillArtifactCreateRequest body) throws Exception {
+        Object raw = client.post(ApiPaths.backendPath("/ecosystem/skills/" + serializePathParameter(skillId, new PathParameterSpec("skillId", "simple", false)) + "/artifacts"), body, null, null, "application/json");
         return client.convertValue(raw, new TypeReference<SkillsArtifactsCreateResult>() {});
     }
 
     /** Delete skill artifact */
-    public SkillsArtifactsDeleteResult skillsArtifactsDelete(String skillId, String artifactId, String xRequestId) throws Exception {
-        Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
-                Map.of()
-        );
-        Object raw = client.delete(ApiPaths.backendPath("/ecosystem/skills/" + serializePathParameter(skillId, new PathParameterSpec("skillId", "simple", false)) + "/artifacts/" + serializePathParameter(artifactId, new PathParameterSpec("artifactId", "simple", false)) + ""), null, requestHeaders);
+    public SkillsArtifactsDeleteResult skillsArtifactsDelete(String skillId, String artifactId) throws Exception {
+        Object raw = client.delete(ApiPaths.backendPath("/ecosystem/skills/" + serializePathParameter(skillId, new PathParameterSpec("skillId", "simple", false)) + "/artifacts/" + serializePathParameter(artifactId, new PathParameterSpec("artifactId", "simple", false)) + ""));
         return client.convertValue(raw, new TypeReference<SkillsArtifactsDeleteResult>() {});
     }
 
@@ -195,12 +151,8 @@ public class EcosystemApi {
     }
 
     /** Update skill artifact */
-    public SkillsArtifactsUpdateResult skillsArtifactsUpdate(String skillId, String artifactId, AdminSkillArtifactUpdateRequest body, String xRequestId) throws Exception {
-        Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
-                Map.of()
-        );
-        Object raw = client.put(ApiPaths.backendPath("/ecosystem/skills/" + serializePathParameter(skillId, new PathParameterSpec("skillId", "simple", false)) + "/artifacts/" + serializePathParameter(artifactId, new PathParameterSpec("artifactId", "simple", false)) + ""), body, null, requestHeaders, "application/json");
+    public SkillsArtifactsUpdateResult skillsArtifactsUpdate(String skillId, String artifactId, AdminSkillArtifactUpdateRequest body) throws Exception {
+        Object raw = client.put(ApiPaths.backendPath("/ecosystem/skills/" + serializePathParameter(skillId, new PathParameterSpec("skillId", "simple", false)) + "/artifacts/" + serializePathParameter(artifactId, new PathParameterSpec("artifactId", "simple", false)) + ""), body, null, null, "application/json");
         return client.convertValue(raw, new TypeReference<SkillsArtifactsUpdateResult>() {});
     }
 
@@ -211,22 +163,14 @@ public class EcosystemApi {
     }
 
     /** Create skill asset */
-    public SkillsAssetsCreateResult skillsAssetsCreate(String skillId, AdminSkillAssetCreateRequest body, String xRequestId) throws Exception {
-        Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
-                Map.of()
-        );
-        Object raw = client.post(ApiPaths.backendPath("/ecosystem/skills/" + serializePathParameter(skillId, new PathParameterSpec("skillId", "simple", false)) + "/assets"), body, null, requestHeaders, "application/json");
+    public SkillsAssetsCreateResult skillsAssetsCreate(String skillId, AdminSkillAssetCreateRequest body) throws Exception {
+        Object raw = client.post(ApiPaths.backendPath("/ecosystem/skills/" + serializePathParameter(skillId, new PathParameterSpec("skillId", "simple", false)) + "/assets"), body, null, null, "application/json");
         return client.convertValue(raw, new TypeReference<SkillsAssetsCreateResult>() {});
     }
 
     /** Delete skill asset */
-    public SkillsAssetsDeleteResult skillsAssetsDelete(String skillId, String assetId, String xRequestId) throws Exception {
-        Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
-                Map.of()
-        );
-        Object raw = client.delete(ApiPaths.backendPath("/ecosystem/skills/" + serializePathParameter(skillId, new PathParameterSpec("skillId", "simple", false)) + "/assets/" + serializePathParameter(assetId, new PathParameterSpec("assetId", "simple", false)) + ""), null, requestHeaders);
+    public SkillsAssetsDeleteResult skillsAssetsDelete(String skillId, String assetId) throws Exception {
+        Object raw = client.delete(ApiPaths.backendPath("/ecosystem/skills/" + serializePathParameter(skillId, new PathParameterSpec("skillId", "simple", false)) + "/assets/" + serializePathParameter(assetId, new PathParameterSpec("assetId", "simple", false)) + ""));
         return client.convertValue(raw, new TypeReference<SkillsAssetsDeleteResult>() {});
     }
 
@@ -237,72 +181,44 @@ public class EcosystemApi {
     }
 
     /** Update skill asset */
-    public SkillsAssetsUpdateResult skillsAssetsUpdate(String skillId, String assetId, AdminSkillAssetUpdateRequest body, String xRequestId) throws Exception {
-        Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
-                Map.of()
-        );
-        Object raw = client.put(ApiPaths.backendPath("/ecosystem/skills/" + serializePathParameter(skillId, new PathParameterSpec("skillId", "simple", false)) + "/assets/" + serializePathParameter(assetId, new PathParameterSpec("assetId", "simple", false)) + ""), body, null, requestHeaders, "application/json");
+    public SkillsAssetsUpdateResult skillsAssetsUpdate(String skillId, String assetId, AdminSkillAssetUpdateRequest body) throws Exception {
+        Object raw = client.put(ApiPaths.backendPath("/ecosystem/skills/" + serializePathParameter(skillId, new PathParameterSpec("skillId", "simple", false)) + "/assets/" + serializePathParameter(assetId, new PathParameterSpec("assetId", "simple", false)) + ""), body, null, null, "application/json");
         return client.convertValue(raw, new TypeReference<SkillsAssetsUpdateResult>() {});
     }
 
     /** Disable skill */
-    public SkillsDisableResult skillsDisable(String skillId, String xRequestId) throws Exception {
-        Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
-                Map.of()
-        );
-        Object raw = client.post(ApiPaths.backendPath("/ecosystem/skills/" + serializePathParameter(skillId, new PathParameterSpec("skillId", "simple", false)) + "/disable"), null, null, requestHeaders);
+    public SkillsDisableResult skillsDisable(String skillId) throws Exception {
+        Object raw = client.post(ApiPaths.backendPath("/ecosystem/skills/" + serializePathParameter(skillId, new PathParameterSpec("skillId", "simple", false)) + "/disable"), null);
         return client.convertValue(raw, new TypeReference<SkillsDisableResult>() {});
     }
 
     /** Enable skill */
-    public SkillsEnableResult skillsEnable(String skillId, String xRequestId) throws Exception {
-        Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
-                Map.of()
-        );
-        Object raw = client.post(ApiPaths.backendPath("/ecosystem/skills/" + serializePathParameter(skillId, new PathParameterSpec("skillId", "simple", false)) + "/enable"), null, null, requestHeaders);
+    public SkillsEnableResult skillsEnable(String skillId) throws Exception {
+        Object raw = client.post(ApiPaths.backendPath("/ecosystem/skills/" + serializePathParameter(skillId, new PathParameterSpec("skillId", "simple", false)) + "/enable"), null);
         return client.convertValue(raw, new TypeReference<SkillsEnableResult>() {});
     }
 
     /** Publish skill */
-    public SkillsPublishResult skillsPublish(String skillId, String xRequestId) throws Exception {
-        Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
-                Map.of()
-        );
-        Object raw = client.post(ApiPaths.backendPath("/ecosystem/skills/" + serializePathParameter(skillId, new PathParameterSpec("skillId", "simple", false)) + "/publish"), null, null, requestHeaders);
+    public SkillsPublishResult skillsPublish(String skillId) throws Exception {
+        Object raw = client.post(ApiPaths.backendPath("/ecosystem/skills/" + serializePathParameter(skillId, new PathParameterSpec("skillId", "simple", false)) + "/publish"), null);
         return client.convertValue(raw, new TypeReference<SkillsPublishResult>() {});
     }
 
     /** Approve skill */
-    public SkillsReviewApproveResult skillsReviewApprove(String skillId, AdminSkillReviewRequest body, String xRequestId) throws Exception {
-        Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
-                Map.of()
-        );
-        Object raw = client.post(ApiPaths.backendPath("/ecosystem/skills/" + serializePathParameter(skillId, new PathParameterSpec("skillId", "simple", false)) + "/review/approve"), body, null, requestHeaders, "application/json");
+    public SkillsReviewApproveResult skillsReviewApprove(String skillId, AdminSkillReviewRequest body) throws Exception {
+        Object raw = client.post(ApiPaths.backendPath("/ecosystem/skills/" + serializePathParameter(skillId, new PathParameterSpec("skillId", "simple", false)) + "/review/approve"), body, null, null, "application/json");
         return client.convertValue(raw, new TypeReference<SkillsReviewApproveResult>() {});
     }
 
     /** Reject skill */
-    public SkillsReviewRejectResult skillsReviewReject(String skillId, AdminSkillReviewRequest body, String xRequestId) throws Exception {
-        Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
-                Map.of()
-        );
-        Object raw = client.post(ApiPaths.backendPath("/ecosystem/skills/" + serializePathParameter(skillId, new PathParameterSpec("skillId", "simple", false)) + "/review/reject"), body, null, requestHeaders, "application/json");
+    public SkillsReviewRejectResult skillsReviewReject(String skillId, AdminSkillReviewRequest body) throws Exception {
+        Object raw = client.post(ApiPaths.backendPath("/ecosystem/skills/" + serializePathParameter(skillId, new PathParameterSpec("skillId", "simple", false)) + "/review/reject"), body, null, null, "application/json");
         return client.convertValue(raw, new TypeReference<SkillsReviewRejectResult>() {});
     }
 
     /** Offline skill */
-    public SkillsUnpublishResult skillsUnpublish(String skillId, String xRequestId) throws Exception {
-        Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
-                Map.of()
-        );
-        Object raw = client.post(ApiPaths.backendPath("/ecosystem/skills/" + serializePathParameter(skillId, new PathParameterSpec("skillId", "simple", false)) + "/unpublish"), null, null, requestHeaders);
+    public SkillsUnpublishResult skillsUnpublish(String skillId) throws Exception {
+        Object raw = client.post(ApiPaths.backendPath("/ecosystem/skills/" + serializePathParameter(skillId, new PathParameterSpec("skillId", "simple", false)) + "/unpublish"), null);
         return client.convertValue(raw, new TypeReference<SkillsUnpublishResult>() {});
     }
 
@@ -495,74 +411,6 @@ public class EcosystemApi {
         return new com.fasterxml.jackson.databind.ObjectMapper();
     }
 
-    private record HeaderParameterSpec(Object value, String style, boolean explode, String contentType) {}
-
-    private static Map<String, String> buildRequestHeaders(Map<String, HeaderParameterSpec> headers, Map<String, HeaderParameterSpec> cookies) throws Exception {
-        Map<String, String> requestHeaders = new java.util.LinkedHashMap<>();
-        for (Map.Entry<String, HeaderParameterSpec> entry : headers.entrySet()) {
-            String serialized = serializeParameterValue(entry.getValue());
-            if (serialized != null) {
-                requestHeaders.put(entry.getKey(), serialized);
-            }
-        }
-
-        String cookieHeader = buildCookieHeader(cookies);
-        if (cookieHeader != null && !cookieHeader.isEmpty()) {
-            requestHeaders.merge("Cookie", cookieHeader, (left, right) -> left + "; " + right);
-        }
-
-        return requestHeaders.isEmpty() ? null : requestHeaders;
-    }
-
-    private static String buildCookieHeader(Map<String, HeaderParameterSpec> cookies) throws Exception {
-        java.util.List<String> pairs = new java.util.ArrayList<>();
-        for (Map.Entry<String, HeaderParameterSpec> entry : cookies.entrySet()) {
-            String serialized = serializeParameterValue(entry.getValue());
-            if (serialized != null) {
-                pairs.add(urlEncode(entry.getKey()) + "=" + urlEncode(serialized));
-            }
-        }
-        return String.join("; ", pairs);
-    }
-
-    private static String serializeParameterValue(HeaderParameterSpec parameter) throws Exception {
-        if (parameter == null || parameter.value() == null) {
-            return null;
-        }
-        Object value = parameter.value();
-        if (parameter.contentType() != null && !parameter.contentType().isBlank()) {
-            return headerObjectMapper().writeValueAsString(value);
-        }
-        if (value instanceof Iterable<?> iterable) {
-            java.util.List<String> values = new java.util.ArrayList<>();
-            for (Object item : iterable) {
-                if (item != null) {
-                    values.add(String.valueOf(item));
-                }
-            }
-            return String.join(",", values);
-        }
-        if (value instanceof Map<?, ?> map) {
-            java.util.List<String> values = new java.util.ArrayList<>();
-            map.forEach((key, item) -> {
-                if (item == null) {
-                    return;
-                }
-                if (parameter.explode()) {
-                    values.add(String.valueOf(key) + "=" + String.valueOf(item));
-                } else {
-                    values.add(String.valueOf(key));
-                    values.add(String.valueOf(item));
-                }
-            });
-            return String.join(",", values);
-        }
-        return String.valueOf(value);
-    }
-
-    private static com.fasterxml.jackson.databind.ObjectMapper headerObjectMapper() {
-        return new com.fasterxml.jackson.databind.ObjectMapper();
-    }
 
     private static String urlEncode(String value) {
         return java.net.URLEncoder.encode(value, java.nio.charset.StandardCharsets.UTF_8);

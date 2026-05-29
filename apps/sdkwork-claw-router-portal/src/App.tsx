@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useLayoutEffect, Suspense, lazy } from 'react';
+﻿import React, { useState, useEffect, useLayoutEffect, Suspense, lazy } from 'react';
 import { BrowserRouter, Routes, Route, useLocation, Navigate } from 'react-router-dom';
 import { Navbar, Footer } from 'sdkwork-claw-router-commons';
 import {
@@ -104,6 +104,8 @@ const SkillAdmin = lazyRoute(() => import('sdkwork-claw-router-admin-skill'), 'S
 const PromptsAdmin = lazyRoute(() => import('sdkwork-claw-router-admin-prompts'), 'PromptsAdmin');
 const McpAdmin = lazyRoute(() => import('sdkwork-claw-router-admin-mcp'), 'McpAdmin');
 const ChannelAdmin = lazyRoute(() => import('sdkwork-claw-router-admin-channel'), 'ChannelAdmin');
+const AiResourceAdmin = lazyRoute(() => import('sdkwork-claw-router-admin-channel'), 'AiResourceAdmin');
+const ChannelEndpointAdmin = lazyRoute(() => import('sdkwork-claw-router-admin-channel'), 'ChannelEndpointAdmin');
 const WechatOfficialAccountAdmin = lazyRoute<AdminSectionRouteProps>(() => import('sdkwork-claw-router-admin-wechat-official-account'), 'WechatOfficialAccountAdmin');
 const WechatMiniProgramAdmin = lazyRoute<AdminSectionRouteProps>(() => import('sdkwork-claw-router-admin-wechat-mini-program'), 'WechatMiniProgramAdmin');
 const AnnouncementAdmin = lazyRoute(() => import('sdkwork-claw-router-admin-announcement'), 'AnnouncementAdmin');
@@ -124,6 +126,7 @@ const RecordAdmin = lazyRoute(() => import('sdkwork-claw-router-admin-record'), 
 const MonitorAdmin = lazyRoute(() => import('sdkwork-claw-router-admin-monitor'), 'MonitorAdmin');
 const RateLimitAdmin = lazyRoute(() => import('sdkwork-claw-router-admin-ratelimit'), 'RateLimitAdmin');
 const ServiceNodesAdmin = lazyRoute(() => import('sdkwork-claw-router-admin-service-nodes'), 'ServiceNodesAdmin');
+const RuntimeRegionAdmin = lazyRoute(() => import('sdkwork-claw-router-admin-runtime-region'), 'RuntimeRegionAdmin');
 const ClawRouterSiteSettingsPage = lazyRoute(() => import('sdkwork-claw-router-admin-site'), 'ClawRouterSiteSettingsPage');
 
 function lazyRoute<TProps extends object>(
@@ -287,6 +290,8 @@ export default function App() {
               <Route path="prompts" element={<PromptsAdmin />} />
               <Route path="mcp" element={<McpAdmin />} />
               <Route path="channel" element={<ChannelAdmin />} />
+              <Route path="channel/resources" element={<AiResourceAdmin />} />
+              <Route path="channel/endpoints" element={<ChannelEndpointAdmin />} />
               <Route path="open-platform" element={<Navigate to="/admin/open-platform/official-accounts/accounts" replace />} />
               <Route path="open-platform/official-accounts" element={<Navigate to="/admin/open-platform/official-accounts/accounts" replace />} />
               <Route path="open-platform/official-accounts/accounts" element={<WechatOfficialAccountAdmin sectionId="accounts" />} />
@@ -407,6 +412,7 @@ export default function App() {
               <Route path="ratelimit" element={<RateLimitAdmin />} />
               <Route path="service-nodes" element={<ServiceNodesAdmin />} />
               <Route path="settings" element={<ClawRouterAuthSettingsPage />} />
+              <Route path="runtime-region" element={<RuntimeRegionAdmin />} />
               <Route path="site" element={<ClawRouterSiteSettingsPage />} />
               <Route path="*" element={<Navigate to="/admin/dashboard" replace />} />
             </Route>

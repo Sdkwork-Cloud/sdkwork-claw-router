@@ -47,15 +47,9 @@ class EcosystemApi {
   }
 
   /// Update skill config
-  Future<SkillsConfigUpdateResult?> skillsConfigUpdate(String skillId, AppSkillConfigRequest body, [String? xRequestId]) async {
-    final requestHeaders = buildRequestHeaders(
-      <String, HeaderParameterSpec>{
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
-      },
-      <String, HeaderParameterSpec>{},
-    );
+  Future<SkillsConfigUpdateResult?> skillsConfigUpdate(String skillId, AppSkillConfigRequest body) async {
     final payload = body.toJson();
-    final response = await _client.put(ApiPaths.appPath('/ecosystem/skills/${serializePathParameter(skillId, const PathParameterSpec('skillId', 'simple', false))}/config'), body: payload, headers: requestHeaders, contentType: 'application/json');
+    final response = await _client.put(ApiPaths.appPath('/ecosystem/skills/${serializePathParameter(skillId, const PathParameterSpec('skillId', 'simple', false))}/config'), body: payload, contentType: 'application/json');
     return (() {
       final map = sdkworkResponseAsMap(response);
       return map == null ? null : SkillsConfigUpdateResult.fromJson(map);
@@ -63,14 +57,8 @@ class EcosystemApi {
   }
 
   /// Disable skill
-  Future<SkillsDisableResult?> skillsDisable(String skillId, [String? xRequestId]) async {
-    final requestHeaders = buildRequestHeaders(
-      <String, HeaderParameterSpec>{
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
-      },
-      <String, HeaderParameterSpec>{},
-    );
-    final response = await _client.post(ApiPaths.appPath('/ecosystem/skills/${serializePathParameter(skillId, const PathParameterSpec('skillId', 'simple', false))}/disable'), headers: requestHeaders);
+  Future<SkillsDisableResult?> skillsDisable(String skillId) async {
+    final response = await _client.post(ApiPaths.appPath('/ecosystem/skills/${serializePathParameter(skillId, const PathParameterSpec('skillId', 'simple', false))}/disable'));
     return (() {
       final map = sdkworkResponseAsMap(response);
       return map == null ? null : SkillsDisableResult.fromJson(map);
@@ -78,15 +66,9 @@ class EcosystemApi {
   }
 
   /// Enable skill
-  Future<SkillsEnableResult?> skillsEnable(String skillId, AppSkillConfigRequest body, [String? xRequestId]) async {
-    final requestHeaders = buildRequestHeaders(
-      <String, HeaderParameterSpec>{
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
-      },
-      <String, HeaderParameterSpec>{},
-    );
+  Future<SkillsEnableResult?> skillsEnable(String skillId, AppSkillConfigRequest body) async {
     final payload = body.toJson();
-    final response = await _client.post(ApiPaths.appPath('/ecosystem/skills/${serializePathParameter(skillId, const PathParameterSpec('skillId', 'simple', false))}/enable'), body: payload, headers: requestHeaders, contentType: 'application/json');
+    final response = await _client.post(ApiPaths.appPath('/ecosystem/skills/${serializePathParameter(skillId, const PathParameterSpec('skillId', 'simple', false))}/enable'), body: payload, contentType: 'application/json');
     return (() {
       final map = sdkworkResponseAsMap(response);
       return map == null ? null : SkillsEnableResult.fromJson(map);
@@ -306,75 +288,3 @@ String encodeQueryValue(String value, bool allowReserved) {
 }
 
 String urlEncode(String value) => Uri.encodeQueryComponent(value);
-class HeaderParameterSpec {
-  final dynamic value;
-  final String style;
-  final bool explode;
-  final String? contentType;
-
-  HeaderParameterSpec(this.value, this.style, this.explode, this.contentType);
-}
-
-Map<String, String>? buildRequestHeaders(
-  Map<String, HeaderParameterSpec> headers, [
-  Map<String, HeaderParameterSpec> cookies = const {},
-]) {
-  final requestHeaders = <String, String>{};
-
-  headers.forEach((name, parameter) {
-    final serialized = serializeParameterValue(parameter);
-    if (serialized != null) {
-      requestHeaders[name] = serialized;
-    }
-  });
-
-  final cookieHeader = buildCookieHeader(cookies);
-  if (cookieHeader != null && cookieHeader.isNotEmpty) {
-    requestHeaders['Cookie'] = requestHeaders.containsKey('Cookie')
-        ? '${requestHeaders['Cookie']}; $cookieHeader'
-        : cookieHeader;
-  }
-
-  return requestHeaders.isEmpty ? null : requestHeaders;
-}
-
-String? buildCookieHeader(Map<String, HeaderParameterSpec> cookies) {
-  final pairs = <String>[];
-  cookies.forEach((name, parameter) {
-    final serialized = serializeParameterValue(parameter);
-    if (serialized != null) {
-      pairs.add('${Uri.encodeComponent(name)}=${Uri.encodeComponent(serialized)}');
-    }
-  });
-  return pairs.isEmpty ? null : pairs.join('; ');
-}
-
-String? serializeParameterValue(HeaderParameterSpec? parameter) {
-  final value = parameter?.value;
-  if (value == null) return null;
-  if (parameter!.contentType != null && parameter.contentType!.trim().isNotEmpty) {
-    return jsonEncode(value);
-  }
-  if (value is DateTime) return value.toIso8601String();
-  if (value is Iterable) {
-    return value
-        .where((item) => item != null)
-        .map((item) => item.toString())
-        .whereType<String>()
-        .join(',');
-  }
-  if (value is Map) {
-    final serialized = <String>[];
-    value.forEach((key, item) {
-      if (item == null) return;
-      if (parameter.explode) {
-        serialized.add('$key=$item');
-      } else {
-        serialized.add(key.toString());
-        serialized.add(item.toString());
-      }
-    });
-    return serialized.join(',');
-  }
-  return value.toString();
-}

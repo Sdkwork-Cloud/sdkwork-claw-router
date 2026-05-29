@@ -310,12 +310,11 @@ class CommerceCatalogAttributesApi:
         ])
         return self._client.get(_append_query_string(f"/backend/v3/api/catalog/attributes", query))
 
-    def create(self, body: CommerceProductAttributeMutationRequest, idempotency_key: str, x_request_id: Optional[str] = None) -> CatalogAttributesCreateResult:
+    def create(self, body: CommerceProductAttributeMutationRequest, idempotency_key: str) -> CatalogAttributesCreateResult:
         """Create product attribute"""
         request_headers = build_request_headers(
             {
                 'Idempotency-Key': {'value': idempotency_key, 'style': 'simple', 'explode': False},
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
             },
             {}
         )
@@ -338,33 +337,25 @@ class CommerceCatalogCategoriesApi:
         ])
         return self._client.get(_append_query_string(f"/backend/v3/api/catalog/categories", query))
 
-    def create(self, body: CommerceProductCategoryMutationRequest, idempotency_key: str, x_request_id: Optional[str] = None) -> CatalogCategoriesCreateResult:
+    def create(self, body: CommerceProductCategoryMutationRequest, idempotency_key: str) -> CatalogCategoriesCreateResult:
         """Create product category"""
         request_headers = build_request_headers(
             {
                 'Idempotency-Key': {'value': idempotency_key, 'style': 'simple', 'explode': False},
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
             },
             {}
         )
         return self._client.post(f"/backend/v3/api/catalog/categories", json=body, headers=request_headers)
 
-    def delete(self, category_id: str, x_request_id: Optional[str] = None) -> CatalogCategoriesDeleteResult:
+    def delete(self, category_id: str) -> CatalogCategoriesDeleteResult:
         """Delete product category"""
-        request_headers = build_request_headers(
-            {
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
-            },
-            {}
-        )
-        return self._client.delete(f"/backend/v3/api/catalog/categories/{serialize_path_parameter(category_id, {'name': 'categoryId', 'style': 'simple', 'explode': False})}", headers=request_headers)
+        return self._client.delete(f"/backend/v3/api/catalog/categories/{serialize_path_parameter(category_id, {'name': 'categoryId', 'style': 'simple', 'explode': False})}")
 
-    def update(self, category_id: str, body: CommerceProductCategoryMutationRequest, idempotency_key: str, x_request_id: Optional[str] = None) -> CatalogCategoriesUpdateResult:
+    def update(self, category_id: str, body: CommerceProductCategoryMutationRequest, idempotency_key: str) -> CatalogCategoriesUpdateResult:
         """Update product category"""
         request_headers = build_request_headers(
             {
                 'Idempotency-Key': {'value': idempotency_key, 'style': 'simple', 'explode': False},
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
             },
             {}
         )
@@ -388,12 +379,11 @@ class CommerceCatalogPriceListsApi:
         ])
         return self._client.get(_append_query_string(f"/backend/v3/api/catalog/price_lists", query))
 
-    def create(self, body: CommercePriceListMutationRequest, idempotency_key: str, x_request_id: Optional[str] = None) -> CatalogPriceListsCreateResult:
+    def create(self, body: CommercePriceListMutationRequest, idempotency_key: str) -> CatalogPriceListsCreateResult:
         """Create product price list"""
         request_headers = build_request_headers(
             {
                 'Idempotency-Key': {'value': idempotency_key, 'style': 'simple', 'explode': False},
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
             },
             {}
         )
@@ -419,23 +409,21 @@ class CommerceCatalogProductsApi:
         ])
         return self._client.get(_append_query_string(f"/backend/v3/api/catalog/products", query))
 
-    def create(self, body: CommerceProductSpuMutationRequest, idempotency_key: str, x_request_id: Optional[str] = None) -> CatalogProductsCreateResult:
+    def create(self, body: CommerceProductSpuMutationRequest, idempotency_key: str) -> CatalogProductsCreateResult:
         """Create product SPU"""
         request_headers = build_request_headers(
             {
                 'Idempotency-Key': {'value': idempotency_key, 'style': 'simple', 'explode': False},
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
             },
             {}
         )
         return self._client.post(f"/backend/v3/api/catalog/products", json=body, headers=request_headers)
 
-    def update(self, product_id: str, body: CommerceProductSpuMutationRequest, idempotency_key: str, x_request_id: Optional[str] = None) -> CatalogProductsUpdateResult:
+    def update(self, product_id: str, body: CommerceProductSpuMutationRequest, idempotency_key: str) -> CatalogProductsUpdateResult:
         """Update product SPU"""
         request_headers = build_request_headers(
             {
                 'Idempotency-Key': {'value': idempotency_key, 'style': 'simple', 'explode': False},
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
             },
             {}
         )
@@ -459,23 +447,21 @@ class CommerceCatalogSkusApi:
         ])
         return self._client.get(_append_query_string(f"/backend/v3/api/catalog/skus", query))
 
-    def create(self, body: CommerceProductSkuMutationRequest, idempotency_key: str, x_request_id: Optional[str] = None) -> CatalogSkusCreateResult:
+    def create(self, body: CommerceProductSkuMutationRequest, idempotency_key: str) -> CatalogSkusCreateResult:
         """Create product SKU"""
         request_headers = build_request_headers(
             {
                 'Idempotency-Key': {'value': idempotency_key, 'style': 'simple', 'explode': False},
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
             },
             {}
         )
         return self._client.post(f"/backend/v3/api/catalog/skus", json=body, headers=request_headers)
 
-    def update(self, sku_id: str, body: CommerceProductSkuMutationRequest, idempotency_key: str, x_request_id: Optional[str] = None) -> CatalogSkusUpdateResult:
+    def update(self, sku_id: str, body: CommerceProductSkuMutationRequest, idempotency_key: str) -> CatalogSkusUpdateResult:
         """Update product SKU"""
         request_headers = build_request_headers(
             {
                 'Idempotency-Key': {'value': idempotency_key, 'style': 'simple', 'explode': False},
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
             },
             {}
         )
@@ -616,12 +602,11 @@ class CommerceInventoryStocksApi:
         ])
         return self._client.get(_append_query_string(f"/backend/v3/api/inventory/stocks", query))
 
-    def update(self, stock_id: str, body: CommerceInventoryStockUpdateRequest, idempotency_key: str, x_request_id: Optional[str] = None) -> InventoryStocksUpdateResult:
+    def update(self, stock_id: str, body: CommerceInventoryStockUpdateRequest, idempotency_key: str) -> InventoryStocksUpdateResult:
         """Update inventory stock"""
         request_headers = build_request_headers(
             {
                 'Idempotency-Key': {'value': idempotency_key, 'style': 'simple', 'explode': False},
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
             },
             {}
         )
@@ -721,12 +706,11 @@ class CommerceMembershipsMembersStatusApi:
         self._client = client
 
 
-    def update(self, membership_id: str, body: CommerceMembershipMemberStatusRequest, idempotency_key: str, x_request_id: Optional[str] = None) -> MembershipsMembersStatusUpdateResult:
+    def update(self, membership_id: str, body: CommerceMembershipMemberStatusRequest, idempotency_key: str) -> MembershipsMembersStatusUpdateResult:
         """Memberships Members Status Update"""
         request_headers = build_request_headers(
             {
                 'Idempotency-Key': {'value': idempotency_key, 'style': 'simple', 'explode': False},
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
             },
             {}
         )
@@ -748,33 +732,25 @@ class CommerceMembershipsPackageGroupsApi:
         ])
         return self._client.get(_append_query_string(f"/backend/v3/api/memberships/package_groups", query))
 
-    def create(self, body: CommerceMembershipPackageGroupMutationRequest, idempotency_key: str, x_request_id: Optional[str] = None) -> MembershipsPackageGroupsCreateResult:
+    def create(self, body: CommerceMembershipPackageGroupMutationRequest, idempotency_key: str) -> MembershipsPackageGroupsCreateResult:
         """Memberships Package Groups Create"""
         request_headers = build_request_headers(
             {
                 'Idempotency-Key': {'value': idempotency_key, 'style': 'simple', 'explode': False},
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
             },
             {}
         )
         return self._client.post(f"/backend/v3/api/memberships/package_groups", json=body, headers=request_headers)
 
-    def delete(self, package_group_id: str, x_request_id: Optional[str] = None) -> MembershipsPackageGroupsDeleteResult:
+    def delete(self, package_group_id: str) -> MembershipsPackageGroupsDeleteResult:
         """Memberships Package Groups Delete"""
-        request_headers = build_request_headers(
-            {
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
-            },
-            {}
-        )
-        return self._client.delete(f"/backend/v3/api/memberships/package_groups/{serialize_path_parameter(package_group_id, {'name': 'packageGroupId', 'style': 'simple', 'explode': False})}", headers=request_headers)
+        return self._client.delete(f"/backend/v3/api/memberships/package_groups/{serialize_path_parameter(package_group_id, {'name': 'packageGroupId', 'style': 'simple', 'explode': False})}")
 
-    def update(self, package_group_id: str, body: CommerceMembershipPackageGroupMutationRequest, idempotency_key: str, x_request_id: Optional[str] = None) -> MembershipsPackageGroupsUpdateResult:
+    def update(self, package_group_id: str, body: CommerceMembershipPackageGroupMutationRequest, idempotency_key: str) -> MembershipsPackageGroupsUpdateResult:
         """Memberships Package Groups Update"""
         request_headers = build_request_headers(
             {
                 'Idempotency-Key': {'value': idempotency_key, 'style': 'simple', 'explode': False},
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
             },
             {}
         )
@@ -798,33 +774,25 @@ class CommerceMembershipsPackagesApi:
         ])
         return self._client.get(_append_query_string(f"/backend/v3/api/memberships/packages", query))
 
-    def create(self, body: CommerceMembershipPackageMutationRequest, idempotency_key: str, x_request_id: Optional[str] = None) -> MembershipsPackagesCreateResult:
+    def create(self, body: CommerceMembershipPackageMutationRequest, idempotency_key: str) -> MembershipsPackagesCreateResult:
         """Memberships Packages Create"""
         request_headers = build_request_headers(
             {
                 'Idempotency-Key': {'value': idempotency_key, 'style': 'simple', 'explode': False},
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
             },
             {}
         )
         return self._client.post(f"/backend/v3/api/memberships/packages", json=body, headers=request_headers)
 
-    def delete(self, package_id: str, x_request_id: Optional[str] = None) -> MembershipsPackagesDeleteResult:
+    def delete(self, package_id: str) -> MembershipsPackagesDeleteResult:
         """Memberships Packages Delete"""
-        request_headers = build_request_headers(
-            {
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
-            },
-            {}
-        )
-        return self._client.delete(f"/backend/v3/api/memberships/packages/{serialize_path_parameter(package_id, {'name': 'packageId', 'style': 'simple', 'explode': False})}", headers=request_headers)
+        return self._client.delete(f"/backend/v3/api/memberships/packages/{serialize_path_parameter(package_id, {'name': 'packageId', 'style': 'simple', 'explode': False})}")
 
-    def update(self, package_id: str, body: CommerceMembershipPackageMutationRequest, idempotency_key: str, x_request_id: Optional[str] = None) -> MembershipsPackagesUpdateResult:
+    def update(self, package_id: str, body: CommerceMembershipPackageMutationRequest, idempotency_key: str) -> MembershipsPackagesUpdateResult:
         """Memberships Packages Update"""
         request_headers = build_request_headers(
             {
                 'Idempotency-Key': {'value': idempotency_key, 'style': 'simple', 'explode': False},
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
             },
             {}
         )
@@ -846,33 +814,25 @@ class CommerceMembershipsPlansApi:
         ])
         return self._client.get(_append_query_string(f"/backend/v3/api/memberships/plans", query))
 
-    def create(self, body: CommerceMembershipPlanMutationRequest, idempotency_key: str, x_request_id: Optional[str] = None) -> MembershipsPlansCreateResult:
+    def create(self, body: CommerceMembershipPlanMutationRequest, idempotency_key: str) -> MembershipsPlansCreateResult:
         """Memberships Plans Create"""
         request_headers = build_request_headers(
             {
                 'Idempotency-Key': {'value': idempotency_key, 'style': 'simple', 'explode': False},
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
             },
             {}
         )
         return self._client.post(f"/backend/v3/api/memberships/plans", json=body, headers=request_headers)
 
-    def delete(self, plan_id: str, x_request_id: Optional[str] = None) -> MembershipsPlansDeleteResult:
+    def delete(self, plan_id: str) -> MembershipsPlansDeleteResult:
         """Memberships Plans Delete"""
-        request_headers = build_request_headers(
-            {
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
-            },
-            {}
-        )
-        return self._client.delete(f"/backend/v3/api/memberships/plans/{serialize_path_parameter(plan_id, {'name': 'planId', 'style': 'simple', 'explode': False})}", headers=request_headers)
+        return self._client.delete(f"/backend/v3/api/memberships/plans/{serialize_path_parameter(plan_id, {'name': 'planId', 'style': 'simple', 'explode': False})}")
 
-    def update(self, plan_id: str, body: CommerceMembershipPlanMutationRequest, idempotency_key: str, x_request_id: Optional[str] = None) -> MembershipsPlansUpdateResult:
+    def update(self, plan_id: str, body: CommerceMembershipPlanMutationRequest, idempotency_key: str) -> MembershipsPlansUpdateResult:
         """Memberships Plans Update"""
         request_headers = build_request_headers(
             {
                 'Idempotency-Key': {'value': idempotency_key, 'style': 'simple', 'explode': False},
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
             },
             {}
         )
@@ -1018,12 +978,11 @@ class CommercePaymentsProviderAccountsApi:
         ])
         return self._client.get(_append_query_string(f"/backend/v3/api/payments/provider_accounts", query))
 
-    def create(self, body: CommercePaymentProviderAccountMutationRequest, idempotency_key: str, x_request_id: Optional[str] = None) -> PaymentsProviderAccountsCreateResult:
+    def create(self, body: CommercePaymentProviderAccountMutationRequest, idempotency_key: str) -> PaymentsProviderAccountsCreateResult:
         """Payments Provider Accounts Create"""
         request_headers = build_request_headers(
             {
                 'Idempotency-Key': {'value': idempotency_key, 'style': 'simple', 'explode': False},
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
             },
             {}
         )
@@ -1140,33 +1099,25 @@ class CommerceRechargesPackagesApi:
         ])
         return self._client.get(_append_query_string(f"/backend/v3/api/recharges/packages", query))
 
-    def create(self, body: CommerceRechargePackageMutationRequest, idempotency_key: str, x_request_id: Optional[str] = None) -> RechargesPackagesCreateResult:
+    def create(self, body: CommerceRechargePackageMutationRequest, idempotency_key: str) -> RechargesPackagesCreateResult:
         """Recharges Packages Create"""
         request_headers = build_request_headers(
             {
                 'Idempotency-Key': {'value': idempotency_key, 'style': 'simple', 'explode': False},
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
             },
             {}
         )
         return self._client.post(f"/backend/v3/api/recharges/packages", json=body, headers=request_headers)
 
-    def delete(self, package_id: str, x_request_id: Optional[str] = None) -> RechargesPackagesDeleteResult:
+    def delete(self, package_id: str) -> RechargesPackagesDeleteResult:
         """Recharges Packages Delete"""
-        request_headers = build_request_headers(
-            {
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
-            },
-            {}
-        )
-        return self._client.delete(f"/backend/v3/api/recharges/packages/{serialize_path_parameter(package_id, {'name': 'packageId', 'style': 'simple', 'explode': False})}", headers=request_headers)
+        return self._client.delete(f"/backend/v3/api/recharges/packages/{serialize_path_parameter(package_id, {'name': 'packageId', 'style': 'simple', 'explode': False})}")
 
-    def update(self, package_id: str, body: CommerceRechargePackageMutationRequest, idempotency_key: str, x_request_id: Optional[str] = None) -> RechargesPackagesUpdateResult:
+    def update(self, package_id: str, body: CommerceRechargePackageMutationRequest, idempotency_key: str) -> RechargesPackagesUpdateResult:
         """Recharges Packages Update"""
         request_headers = build_request_headers(
             {
                 'Idempotency-Key': {'value': idempotency_key, 'style': 'simple', 'explode': False},
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
             },
             {}
         )
@@ -1259,12 +1210,11 @@ class CommerceWalletAdjustmentsApi:
         self._client = client
 
 
-    def create(self, body: CommerceStandardCommandRequest, idempotency_key: str, x_request_id: Optional[str] = None) -> WalletAdjustmentsCreateResult:
+    def create(self, body: CommerceStandardCommandRequest, idempotency_key: str) -> WalletAdjustmentsCreateResult:
         """Wallet Adjustments Create"""
         request_headers = build_request_headers(
             {
                 'Idempotency-Key': {'value': idempotency_key, 'style': 'simple', 'explode': False},
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
             },
             {}
         )

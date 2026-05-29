@@ -28,15 +28,9 @@ class OpenPlatformApi {
   }
 
   /// Create open platform account
-  Future<AccountsCreateResult?> accountsCreate(OpenPlatformAccountCreateRequest body, [String? xRequestId]) async {
-    final requestHeaders = buildRequestHeaders(
-      <String, HeaderParameterSpec>{
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
-      },
-      <String, HeaderParameterSpec>{},
-    );
+  Future<AccountsCreateResult?> accountsCreate(OpenPlatformAccountCreateRequest body) async {
     final payload = body.toJson();
-    final response = await _client.post(ApiPaths.backendPath('/open_platform/accounts'), body: payload, headers: requestHeaders, contentType: 'application/json');
+    final response = await _client.post(ApiPaths.backendPath('/open_platform/accounts'), body: payload, contentType: 'application/json');
     return (() {
       final map = sdkworkResponseAsMap(response);
       return map == null ? null : AccountsCreateResult.fromJson(map);
@@ -44,14 +38,8 @@ class OpenPlatformApi {
   }
 
   /// Delete open platform account
-  Future<AccountsDeleteResult?> accountsDelete(String accountId, [String? xRequestId]) async {
-    final requestHeaders = buildRequestHeaders(
-      <String, HeaderParameterSpec>{
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
-      },
-      <String, HeaderParameterSpec>{},
-    );
-    final response = await _client.delete(ApiPaths.backendPath('/open_platform/accounts/${serializePathParameter(accountId, const PathParameterSpec('accountId', 'simple', false))}'), headers: requestHeaders);
+  Future<AccountsDeleteResult?> accountsDelete(String accountId) async {
+    final response = await _client.delete(ApiPaths.backendPath('/open_platform/accounts/${serializePathParameter(accountId, const PathParameterSpec('accountId', 'simple', false))}'));
     return (() {
       final map = sdkworkResponseAsMap(response);
       return map == null ? null : AccountsDeleteResult.fromJson(map);
@@ -68,15 +56,9 @@ class OpenPlatformApi {
   }
 
   /// Update open platform account
-  Future<AccountsUpdateResult?> accountsUpdate(String accountId, OpenPlatformAccountUpdateRequest body, [String? xRequestId]) async {
-    final requestHeaders = buildRequestHeaders(
-      <String, HeaderParameterSpec>{
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
-      },
-      <String, HeaderParameterSpec>{},
-    );
+  Future<AccountsUpdateResult?> accountsUpdate(String accountId, OpenPlatformAccountUpdateRequest body) async {
     final payload = body.toJson();
-    final response = await _client.patch(ApiPaths.backendPath('/open_platform/accounts/${serializePathParameter(accountId, const PathParameterSpec('accountId', 'simple', false))}'), body: payload, headers: requestHeaders, contentType: 'application/json');
+    final response = await _client.patch(ApiPaths.backendPath('/open_platform/accounts/${serializePathParameter(accountId, const PathParameterSpec('accountId', 'simple', false))}'), body: payload, contentType: 'application/json');
     return (() {
       final map = sdkworkResponseAsMap(response);
       return map == null ? null : AccountsUpdateResult.fromJson(map);
@@ -93,15 +75,9 @@ class OpenPlatformApi {
   }
 
   /// Create open platform account entry
-  Future<AccountsEntriesCreateResult?> accountsEntriesCreate(String accountId, OpenPlatformEntryCreateRequest body, [String? xRequestId]) async {
-    final requestHeaders = buildRequestHeaders(
-      <String, HeaderParameterSpec>{
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
-      },
-      <String, HeaderParameterSpec>{},
-    );
+  Future<AccountsEntriesCreateResult?> accountsEntriesCreate(String accountId, OpenPlatformEntryCreateRequest body) async {
     final payload = body.toJson();
-    final response = await _client.post(ApiPaths.backendPath('/open_platform/accounts/${serializePathParameter(accountId, const PathParameterSpec('accountId', 'simple', false))}/entries'), body: payload, headers: requestHeaders, contentType: 'application/json');
+    final response = await _client.post(ApiPaths.backendPath('/open_platform/accounts/${serializePathParameter(accountId, const PathParameterSpec('accountId', 'simple', false))}/entries'), body: payload, contentType: 'application/json');
     return (() {
       final map = sdkworkResponseAsMap(response);
       return map == null ? null : AccountsEntriesCreateResult.fromJson(map);
@@ -109,14 +85,8 @@ class OpenPlatformApi {
   }
 
   /// Delete open platform account entry
-  Future<AccountsEntriesDeleteResult?> accountsEntriesDelete(String accountId, String entryId, [String? xRequestId]) async {
-    final requestHeaders = buildRequestHeaders(
-      <String, HeaderParameterSpec>{
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
-      },
-      <String, HeaderParameterSpec>{},
-    );
-    final response = await _client.delete(ApiPaths.backendPath('/open_platform/accounts/${serializePathParameter(accountId, const PathParameterSpec('accountId', 'simple', false))}/entries/${serializePathParameter(entryId, const PathParameterSpec('entryId', 'simple', false))}'), headers: requestHeaders);
+  Future<AccountsEntriesDeleteResult?> accountsEntriesDelete(String accountId, String entryId) async {
+    final response = await _client.delete(ApiPaths.backendPath('/open_platform/accounts/${serializePathParameter(accountId, const PathParameterSpec('accountId', 'simple', false))}/entries/${serializePathParameter(entryId, const PathParameterSpec('entryId', 'simple', false))}'));
     return (() {
       final map = sdkworkResponseAsMap(response);
       return map == null ? null : AccountsEntriesDeleteResult.fromJson(map);
@@ -124,15 +94,9 @@ class OpenPlatformApi {
   }
 
   /// Update open platform account entry
-  Future<AccountsEntriesUpdateResult?> accountsEntriesUpdate(String accountId, String entryId, OpenPlatformEntryUpdateRequest body, [String? xRequestId]) async {
-    final requestHeaders = buildRequestHeaders(
-      <String, HeaderParameterSpec>{
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
-      },
-      <String, HeaderParameterSpec>{},
-    );
+  Future<AccountsEntriesUpdateResult?> accountsEntriesUpdate(String accountId, String entryId, OpenPlatformEntryUpdateRequest body) async {
     final payload = body.toJson();
-    final response = await _client.patch(ApiPaths.backendPath('/open_platform/accounts/${serializePathParameter(accountId, const PathParameterSpec('accountId', 'simple', false))}/entries/${serializePathParameter(entryId, const PathParameterSpec('entryId', 'simple', false))}'), body: payload, headers: requestHeaders, contentType: 'application/json');
+    final response = await _client.patch(ApiPaths.backendPath('/open_platform/accounts/${serializePathParameter(accountId, const PathParameterSpec('accountId', 'simple', false))}/entries/${serializePathParameter(entryId, const PathParameterSpec('entryId', 'simple', false))}'), body: payload, contentType: 'application/json');
     return (() {
       final map = sdkworkResponseAsMap(response);
       return map == null ? null : AccountsEntriesUpdateResult.fromJson(map);
@@ -149,15 +113,9 @@ class OpenPlatformApi {
   }
 
   /// Create open platform account pay binding
-  Future<AccountsPayBindingsCreateResult?> accountsPayBindingsCreate(String accountId, OpenPlatformPayBindingCreateRequest body, [String? xRequestId]) async {
-    final requestHeaders = buildRequestHeaders(
-      <String, HeaderParameterSpec>{
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
-      },
-      <String, HeaderParameterSpec>{},
-    );
+  Future<AccountsPayBindingsCreateResult?> accountsPayBindingsCreate(String accountId, OpenPlatformPayBindingCreateRequest body) async {
     final payload = body.toJson();
-    final response = await _client.post(ApiPaths.backendPath('/open_platform/accounts/${serializePathParameter(accountId, const PathParameterSpec('accountId', 'simple', false))}/pay_bindings'), body: payload, headers: requestHeaders, contentType: 'application/json');
+    final response = await _client.post(ApiPaths.backendPath('/open_platform/accounts/${serializePathParameter(accountId, const PathParameterSpec('accountId', 'simple', false))}/pay_bindings'), body: payload, contentType: 'application/json');
     return (() {
       final map = sdkworkResponseAsMap(response);
       return map == null ? null : AccountsPayBindingsCreateResult.fromJson(map);
@@ -165,14 +123,8 @@ class OpenPlatformApi {
   }
 
   /// Delete open platform account pay binding
-  Future<AccountsPayBindingsDeleteResult?> accountsPayBindingsDelete(String accountId, String bindingId, [String? xRequestId]) async {
-    final requestHeaders = buildRequestHeaders(
-      <String, HeaderParameterSpec>{
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
-      },
-      <String, HeaderParameterSpec>{},
-    );
-    final response = await _client.delete(ApiPaths.backendPath('/open_platform/accounts/${serializePathParameter(accountId, const PathParameterSpec('accountId', 'simple', false))}/pay_bindings/${serializePathParameter(bindingId, const PathParameterSpec('bindingId', 'simple', false))}'), headers: requestHeaders);
+  Future<AccountsPayBindingsDeleteResult?> accountsPayBindingsDelete(String accountId, String bindingId) async {
+    final response = await _client.delete(ApiPaths.backendPath('/open_platform/accounts/${serializePathParameter(accountId, const PathParameterSpec('accountId', 'simple', false))}/pay_bindings/${serializePathParameter(bindingId, const PathParameterSpec('bindingId', 'simple', false))}'));
     return (() {
       final map = sdkworkResponseAsMap(response);
       return map == null ? null : AccountsPayBindingsDeleteResult.fromJson(map);
@@ -408,75 +360,3 @@ String encodeQueryValue(String value, bool allowReserved) {
 }
 
 String urlEncode(String value) => Uri.encodeQueryComponent(value);
-class HeaderParameterSpec {
-  final dynamic value;
-  final String style;
-  final bool explode;
-  final String? contentType;
-
-  HeaderParameterSpec(this.value, this.style, this.explode, this.contentType);
-}
-
-Map<String, String>? buildRequestHeaders(
-  Map<String, HeaderParameterSpec> headers, [
-  Map<String, HeaderParameterSpec> cookies = const {},
-]) {
-  final requestHeaders = <String, String>{};
-
-  headers.forEach((name, parameter) {
-    final serialized = serializeParameterValue(parameter);
-    if (serialized != null) {
-      requestHeaders[name] = serialized;
-    }
-  });
-
-  final cookieHeader = buildCookieHeader(cookies);
-  if (cookieHeader != null && cookieHeader.isNotEmpty) {
-    requestHeaders['Cookie'] = requestHeaders.containsKey('Cookie')
-        ? '${requestHeaders['Cookie']}; $cookieHeader'
-        : cookieHeader;
-  }
-
-  return requestHeaders.isEmpty ? null : requestHeaders;
-}
-
-String? buildCookieHeader(Map<String, HeaderParameterSpec> cookies) {
-  final pairs = <String>[];
-  cookies.forEach((name, parameter) {
-    final serialized = serializeParameterValue(parameter);
-    if (serialized != null) {
-      pairs.add('${Uri.encodeComponent(name)}=${Uri.encodeComponent(serialized)}');
-    }
-  });
-  return pairs.isEmpty ? null : pairs.join('; ');
-}
-
-String? serializeParameterValue(HeaderParameterSpec? parameter) {
-  final value = parameter?.value;
-  if (value == null) return null;
-  if (parameter!.contentType != null && parameter.contentType!.trim().isNotEmpty) {
-    return jsonEncode(value);
-  }
-  if (value is DateTime) return value.toIso8601String();
-  if (value is Iterable) {
-    return value
-        .where((item) => item != null)
-        .map((item) => item.toString())
-        .whereType<String>()
-        .join(',');
-  }
-  if (value is Map) {
-    final serialized = <String>[];
-    value.forEach((key, item) {
-      if (item == null) return;
-      if (parameter.explode) {
-        serialized.add('$key=$item');
-      } else {
-        serialized.add(key.toString());
-        serialized.add(item.toString());
-      }
-    });
-    return serialized.join(',');
-  }
-  return value.toString();
-}

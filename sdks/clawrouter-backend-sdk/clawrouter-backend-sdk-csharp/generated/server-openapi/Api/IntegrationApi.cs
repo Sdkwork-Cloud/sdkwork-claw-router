@@ -16,6 +16,30 @@ namespace Sdkwork.ClawRouter.Backend.Api
         }
 
         /// <summary>
+        /// List channel endpoints
+        /// </summary>
+        public async Task<Sdkwork.ClawRouter.Backend.Models.ChannelEndpointsListResult?> ChannelEndpointsListAsync()
+        {
+            return await _client.GetAsync<Sdkwork.ClawRouter.Backend.Models.ChannelEndpointsListResult>(ApiPaths.BackendPath("/integration/channel_endpoints"));
+        }
+
+        /// <summary>
+        /// Create channel endpoint
+        /// </summary>
+        public async Task<Sdkwork.ClawRouter.Backend.Models.ChannelEndpointsCreateResult?> ChannelEndpointsCreateAsync(Sdkwork.ClawRouter.Backend.Models.AdminChannelEndpointCreateRequest body)
+        {
+            return await _client.PostAsync<Sdkwork.ClawRouter.Backend.Models.ChannelEndpointsCreateResult>(ApiPaths.BackendPath("/integration/channel_endpoints"), body, null, null, "application/json");
+        }
+
+        /// <summary>
+        /// Update channel endpoint
+        /// </summary>
+        public async Task<Sdkwork.ClawRouter.Backend.Models.ChannelEndpointsUpdateResult?> ChannelEndpointsUpdateAsync(string endpointId, Sdkwork.ClawRouter.Backend.Models.AdminChannelEndpointUpdateRequest body)
+        {
+            return await _client.PutAsync<Sdkwork.ClawRouter.Backend.Models.ChannelEndpointsUpdateResult>(ApiPaths.BackendPath($"/integration/channel_endpoints/{SerializePathParameter(endpointId, new PathParameterSpec("endpointId", "simple", false))}"), body, null, null, "application/json");
+        }
+
+        /// <summary>
         /// List channels
         /// </summary>
         public async Task<Sdkwork.ClawRouter.Backend.Models.ChannelsListResult?> ChannelsListAsync()
@@ -26,31 +50,17 @@ namespace Sdkwork.ClawRouter.Backend.Api
         /// <summary>
         /// Create channel
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.ChannelsCreateResult?> ChannelsCreateAsync(Sdkwork.ClawRouter.Backend.Models.AdminChannelCreateRequest body, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.ChannelsCreateResult?> ChannelsCreateAsync(Sdkwork.ClawRouter.Backend.Models.AdminChannelCreateRequest body)
         {
-            var requestHeaders = BuildRequestHeaders(
-                new Dictionary<string, HeaderParameterSpec>
-                {
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
-                },
-                new Dictionary<string, HeaderParameterSpec>()
-            );
-            return await _client.PostAsync<Sdkwork.ClawRouter.Backend.Models.ChannelsCreateResult>(ApiPaths.BackendPath("/integration/channels"), body, null, requestHeaders, "application/json");
+            return await _client.PostAsync<Sdkwork.ClawRouter.Backend.Models.ChannelsCreateResult>(ApiPaths.BackendPath("/integration/channels"), body, null, null, "application/json");
         }
 
         /// <summary>
         /// Update channel
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.ChannelsUpdateResult?> ChannelsUpdateAsync(Sdkwork.ClawRouter.Backend.Models.AdminChannelUpdateRequest body, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.ChannelsUpdateResult?> ChannelsUpdateAsync(Sdkwork.ClawRouter.Backend.Models.AdminChannelUpdateRequest body)
         {
-            var requestHeaders = BuildRequestHeaders(
-                new Dictionary<string, HeaderParameterSpec>
-                {
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
-                },
-                new Dictionary<string, HeaderParameterSpec>()
-            );
-            return await _client.PutAsync<Sdkwork.ClawRouter.Backend.Models.ChannelsUpdateResult>(ApiPaths.BackendPath("/integration/channels"), body, null, requestHeaders, "application/json");
+            return await _client.PutAsync<Sdkwork.ClawRouter.Backend.Models.ChannelsUpdateResult>(ApiPaths.BackendPath("/integration/channels"), body, null, null, "application/json");
         }
 
         /// <summary>
@@ -64,16 +74,9 @@ namespace Sdkwork.ClawRouter.Backend.Api
         /// <summary>
         /// Test channel
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.ChannelsVerifyResult?> ChannelsVerifyAsync(string channelId, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.ChannelsVerifyResult?> ChannelsVerifyAsync(string channelId)
         {
-            var requestHeaders = BuildRequestHeaders(
-                new Dictionary<string, HeaderParameterSpec>
-                {
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
-                },
-                new Dictionary<string, HeaderParameterSpec>()
-            );
-            return await _client.PostAsync<Sdkwork.ClawRouter.Backend.Models.ChannelsVerifyResult>(ApiPaths.BackendPath($"/integration/channels/{SerializePathParameter(channelId, new PathParameterSpec("channelId", "simple", false))}/verify"), null, null, requestHeaders);
+            return await _client.PostAsync<Sdkwork.ClawRouter.Backend.Models.ChannelsVerifyResult>(ApiPaths.BackendPath($"/integration/channels/{SerializePathParameter(channelId, new PathParameterSpec("channelId", "simple", false))}/verify"), null);
         }
 
         /// <summary>
@@ -92,31 +95,17 @@ namespace Sdkwork.ClawRouter.Backend.Api
         /// <summary>
         /// Create provider secret
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.ProviderSecretsCreateResult?> ProviderSecretsCreateAsync(Sdkwork.ClawRouter.Backend.Models.AdminProviderSecretCreateRequest body, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.ProviderSecretsCreateResult?> ProviderSecretsCreateAsync(Sdkwork.ClawRouter.Backend.Models.AdminProviderSecretCreateRequest body)
         {
-            var requestHeaders = BuildRequestHeaders(
-                new Dictionary<string, HeaderParameterSpec>
-                {
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
-                },
-                new Dictionary<string, HeaderParameterSpec>()
-            );
-            return await _client.PostAsync<Sdkwork.ClawRouter.Backend.Models.ProviderSecretsCreateResult>(ApiPaths.BackendPath("/integration/provider_secrets"), body, null, requestHeaders, "application/json");
+            return await _client.PostAsync<Sdkwork.ClawRouter.Backend.Models.ProviderSecretsCreateResult>(ApiPaths.BackendPath("/integration/provider_secrets"), body, null, null, "application/json");
         }
 
         /// <summary>
         /// Update provider secret
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.ProviderSecretsUpdateResult?> ProviderSecretsUpdateAsync(Sdkwork.ClawRouter.Backend.Models.AdminProviderSecretUpdateRequest body, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.ProviderSecretsUpdateResult?> ProviderSecretsUpdateAsync(Sdkwork.ClawRouter.Backend.Models.AdminProviderSecretUpdateRequest body)
         {
-            var requestHeaders = BuildRequestHeaders(
-                new Dictionary<string, HeaderParameterSpec>
-                {
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
-                },
-                new Dictionary<string, HeaderParameterSpec>()
-            );
-            return await _client.PutAsync<Sdkwork.ClawRouter.Backend.Models.ProviderSecretsUpdateResult>(ApiPaths.BackendPath("/integration/provider_secrets"), body, null, requestHeaders, "application/json");
+            return await _client.PutAsync<Sdkwork.ClawRouter.Backend.Models.ProviderSecretsUpdateResult>(ApiPaths.BackendPath("/integration/provider_secrets"), body, null, null, "application/json");
         }
 
         /// <summary>
@@ -354,92 +343,5 @@ namespace Sdkwork.ClawRouter.Backend.Api
                 .Replace("%3B", ";").Replace("%3D", "=");
         }
 
-        private sealed record HeaderParameterSpec(object? Value, string Style, bool Explode, string? ContentType);
-
-        private static Dictionary<string, string>? BuildRequestHeaders(
-            Dictionary<string, HeaderParameterSpec> headers,
-            Dictionary<string, HeaderParameterSpec> cookies)
-        {
-            var requestHeaders = new Dictionary<string, string>();
-            foreach (var item in headers)
-            {
-                var serialized = SerializeParameterValue(item.Value);
-                if (serialized is not null)
-                {
-                    requestHeaders[item.Key] = serialized;
-                }
-            }
-
-            var cookieHeader = BuildCookieHeader(cookies);
-            if (!string.IsNullOrEmpty(cookieHeader))
-            {
-                requestHeaders["Cookie"] = requestHeaders.TryGetValue("Cookie", out var existing) && !string.IsNullOrEmpty(existing)
-                    ? existing + "; " + cookieHeader
-                    : cookieHeader;
-            }
-
-            return requestHeaders.Count == 0 ? null : requestHeaders;
-        }
-
-        private static string BuildCookieHeader(Dictionary<string, HeaderParameterSpec> cookies)
-        {
-            var pairs = new List<string>();
-            foreach (var item in cookies)
-            {
-                var serialized = SerializeParameterValue(item.Value);
-                if (serialized is not null)
-                {
-                    pairs.Add(Uri.EscapeDataString(item.Key) + "=" + Uri.EscapeDataString(serialized));
-                }
-            }
-            return string.Join("; ", pairs);
-        }
-
-        private static string? SerializeParameterValue(HeaderParameterSpec? parameter)
-        {
-            var value = parameter?.Value;
-            if (value is null)
-            {
-                return null;
-            }
-            if (!string.IsNullOrWhiteSpace(parameter!.ContentType))
-            {
-                return System.Text.Json.JsonSerializer.Serialize(value);
-            }
-            if (value is System.Collections.IEnumerable enumerable && value is not string)
-            {
-                var values = new List<string>();
-                foreach (var item in enumerable)
-                {
-                    if (item is not null)
-                    {
-                        values.Add(item.ToString() ?? string.Empty);
-                    }
-                }
-                return string.Join(",", values);
-            }
-            if (value is System.Collections.IDictionary dictionary)
-            {
-                var values = new List<string>();
-                foreach (System.Collections.DictionaryEntry item in dictionary)
-                {
-                    if (item.Value is null)
-                    {
-                        continue;
-                    }
-                    if (parameter.Explode)
-                    {
-                        values.Add((item.Key.ToString() ?? string.Empty) + "=" + (item.Value.ToString() ?? string.Empty));
-                    }
-                    else
-                    {
-                        values.Add(item.Key.ToString() ?? string.Empty);
-                        values.Add(item.Value.ToString() ?? string.Empty);
-                    }
-                }
-                return string.Join(",", values);
-            }
-            return value.ToString();
-        }
     }
 }

@@ -25,9 +25,9 @@ public class StorageApi {
     }
 
     /** Create storage bucket */
-    public OssBucketsCreateResult ossBucketsCreate(CreateStorageBucketRequest body, String idempotencyKey, String xRequestId) throws Exception {
+    public OssBucketsCreateResult ossBucketsCreate(CreateStorageBucketRequest body, String idempotencyKey) throws Exception {
         Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null), "X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
+                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null)),
                 Map.of()
         );
         Object raw = client.post(ApiPaths.backendPath("/storage/buckets"), body, null, requestHeaders, "application/json");
@@ -35,12 +35,8 @@ public class StorageApi {
     }
 
     /** Update storage bucket status */
-    public OssBucketsUpdateResult ossBucketsUpdate(String bucketId, UpdateStorageBucketRequest body, String xRequestId) throws Exception {
-        Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
-                Map.of()
-        );
-        Object raw = client.patch(ApiPaths.backendPath("/storage/buckets/" + serializePathParameter(bucketId, new PathParameterSpec("bucketId", "simple", false)) + ""), body, null, requestHeaders, "application/json");
+    public OssBucketsUpdateResult ossBucketsUpdate(String bucketId, UpdateStorageBucketRequest body) throws Exception {
+        Object raw = client.patch(ApiPaths.backendPath("/storage/buckets/" + serializePathParameter(bucketId, new PathParameterSpec("bucketId", "simple", false)) + ""), body, null, null, "application/json");
         return client.convertValue(raw, new TypeReference<OssBucketsUpdateResult>() {});
     }
 
@@ -54,12 +50,8 @@ public class StorageApi {
     }
 
     /** Set default storage bucket route */
-    public OssDefaultBucketsUpdateResult ossDefaultBucketsUpdate(String logicalScope, SetStorageDefaultBucketRequest body, String xRequestId) throws Exception {
-        Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
-                Map.of()
-        );
-        Object raw = client.patch(ApiPaths.backendPath("/storage/default_buckets/" + serializePathParameter(logicalScope, new PathParameterSpec("logicalScope", "simple", false)) + ""), body, null, requestHeaders, "application/json");
+    public OssDefaultBucketsUpdateResult ossDefaultBucketsUpdate(String logicalScope, SetStorageDefaultBucketRequest body) throws Exception {
+        Object raw = client.patch(ApiPaths.backendPath("/storage/default_buckets/" + serializePathParameter(logicalScope, new PathParameterSpec("logicalScope", "simple", false)) + ""), body, null, null, "application/json");
         return client.convertValue(raw, new TypeReference<OssDefaultBucketsUpdateResult>() {});
     }
 
@@ -75,9 +67,9 @@ public class StorageApi {
     }
 
     /** Create storage garbage collection job */
-    public OssGcJobsCreateResult ossGcJobsCreate(CreateStorageGarbageCollectionJobRequest body, String idempotencyKey, String xRequestId) throws Exception {
+    public OssGcJobsCreateResult ossGcJobsCreate(CreateStorageGarbageCollectionJobRequest body, String idempotencyKey) throws Exception {
         Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null), "X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
+                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null)),
                 Map.of()
         );
         Object raw = client.post(ApiPaths.backendPath("/storage/gc_jobs"), body, null, requestHeaders, "application/json");
@@ -91,9 +83,9 @@ public class StorageApi {
     }
 
     /** Create storage provider */
-    public OssProvidersCreateResult ossProvidersCreate(CreateStorageProviderRequest body, String idempotencyKey, String xRequestId) throws Exception {
+    public OssProvidersCreateResult ossProvidersCreate(CreateStorageProviderRequest body, String idempotencyKey) throws Exception {
         Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null), "X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
+                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null)),
                 Map.of()
         );
         Object raw = client.post(ApiPaths.backendPath("/storage/providers"), body, null, requestHeaders, "application/json");
@@ -101,22 +93,14 @@ public class StorageApi {
     }
 
     /** Update storage provider status */
-    public OssProvidersUpdateResult ossProvidersUpdate(String providerId, UpdateStorageProviderRequest body, String xRequestId) throws Exception {
-        Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
-                Map.of()
-        );
-        Object raw = client.patch(ApiPaths.backendPath("/storage/providers/" + serializePathParameter(providerId, new PathParameterSpec("providerId", "simple", false)) + ""), body, null, requestHeaders, "application/json");
+    public OssProvidersUpdateResult ossProvidersUpdate(String providerId, UpdateStorageProviderRequest body) throws Exception {
+        Object raw = client.patch(ApiPaths.backendPath("/storage/providers/" + serializePathParameter(providerId, new PathParameterSpec("providerId", "simple", false)) + ""), body, null, null, "application/json");
         return client.convertValue(raw, new TypeReference<OssProvidersUpdateResult>() {});
     }
 
     /** Check storage provider health */
-    public OssProvidersHealthChecksCreateResult ossProvidersHealthChecksCreate(String providerId, String xRequestId) throws Exception {
-        Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
-                Map.of()
-        );
-        Object raw = client.post(ApiPaths.backendPath("/storage/providers/" + serializePathParameter(providerId, new PathParameterSpec("providerId", "simple", false)) + "/health_check"), null, null, requestHeaders);
+    public OssProvidersHealthChecksCreateResult ossProvidersHealthChecksCreate(String providerId) throws Exception {
+        Object raw = client.post(ApiPaths.backendPath("/storage/providers/" + serializePathParameter(providerId, new PathParameterSpec("providerId", "simple", false)) + "/health_check"), null);
         return client.convertValue(raw, new TypeReference<OssProvidersHealthChecksCreateResult>() {});
     }
 
@@ -127,9 +111,9 @@ public class StorageApi {
     }
 
     /** Create storage quota policy */
-    public OssQuotasCreateResult ossQuotasCreate(CreateStorageQuotaPolicyRequest body, String idempotencyKey, String xRequestId) throws Exception {
+    public OssQuotasCreateResult ossQuotasCreate(CreateStorageQuotaPolicyRequest body, String idempotencyKey) throws Exception {
         Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null), "X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
+                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null)),
                 Map.of()
         );
         Object raw = client.post(ApiPaths.backendPath("/storage/quotas"), body, null, requestHeaders, "application/json");
@@ -149,9 +133,9 @@ public class StorageApi {
     }
 
     /** Create storage reconciliation run */
-    public OssReconciliationRunsCreateResult ossReconciliationRunsCreate(CreateStorageReconciliationRunRequest body, String idempotencyKey, String xRequestId) throws Exception {
+    public OssReconciliationRunsCreateResult ossReconciliationRunsCreate(CreateStorageReconciliationRunRequest body, String idempotencyKey) throws Exception {
         Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null), "X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
+                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null)),
                 Map.of()
         );
         Object raw = client.post(ApiPaths.backendPath("/storage/reconciliation_runs"), body, null, requestHeaders, "application/json");

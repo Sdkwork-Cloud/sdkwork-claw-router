@@ -81,26 +81,32 @@ fn catalog() -> InMemoryPricingCatalog {
         "openai",
         vec!["chat", "tools"],
     ));
-    catalog.add_provider_route(ModelProviderRoute::new_for_catalog_key(
-        "openai/global/gpt-4o-mini",
-        "gpt-4o-mini",
-        "openrouter",
-        3001,
-        "openai/global/gpt-4o-mini",
-    ));
+    catalog.add_provider_route(
+        ModelProviderRoute::new_for_catalog_key(
+            "openai/gpt-4o-mini",
+            "gpt-4o-mini",
+            "openrouter",
+            3001,
+            "openai/global/gpt-4o-mini",
+        )
+        .with_region_code("global"),
+    );
     catalog.add_plan(PricingPlan::new(
         "standard",
         PriceSide::OfficialReference,
         DecimalValue::parse("1.200000").unwrap(),
         Money::usd("0.000000").unwrap(),
     ));
-    catalog.add_price(ModelPrice::new_for_catalog_key(
-        "openai/global/gpt-4o-mini",
-        "gpt-4o-mini",
-        PriceSide::OfficialReference,
-        BillingMeter::LlmInputToken,
-        Money::usd("0.150000").unwrap(),
-    ));
+    catalog.add_price(
+        ModelPrice::new_for_catalog_key(
+            "openai/gpt-4o-mini",
+            "gpt-4o-mini",
+            PriceSide::OfficialReference,
+            BillingMeter::LlmInputToken,
+            Money::usd("0.150000").unwrap(),
+        )
+        .with_region_code("global"),
+    );
     catalog
 }
 

@@ -23,8 +23,8 @@ frontend_models:
   - groupName
   data_sources:
   - iam_gateway_api_key
-  - iam_gateway_api_key_group
-  - iam_gateway_api_key_group_metric_snapshot
+  - ai_channel_group
+  - ai_channel_group_metric_snapshot
   - iam_gateway_access_policy
   - ai_quota_policy
   - ai_model_pricing
@@ -38,8 +38,8 @@ frontend_models:
   - name
   - rate
   data_sources:
-  - iam_gateway_api_key_group
-  - iam_gateway_api_key_group_metric_snapshot
+  - ai_channel_group
+  - ai_channel_group_metric_snapshot
   - ai_pricing_plan
 - route: /console/api-keys
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-api-keys/src/apiKeyService.ts
@@ -79,6 +79,6 @@ frontend_models:
   - expires
   - defaultForRuntime
   data_sources:
-  - iam_gateway_api_key_group
+  - ai_channel_group
   - iam_gateway_access_policy
   - ai_quota_policy

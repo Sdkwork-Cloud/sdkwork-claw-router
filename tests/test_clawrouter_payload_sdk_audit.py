@@ -1,4 +1,4 @@
-import json
+﻿import json
 import tempfile
 import unittest
 from pathlib import Path
@@ -34,7 +34,7 @@ class ClawRouterPayloadSdkAuditTest(unittest.TestCase):
                             "kind": "create",
                             "path_params": [],
                             "source": "apps/portal/apiKeyService.ts",
-                            "read_sources": ["iam_gateway_api_key_group"],
+                            "read_sources": ["ai_channel_group"],
                             "write_tables": ["iam_gateway_api_key", "ops_audit_log"],
                             "request_schema": {
                                 "name": "CreateApiKeyRequest",
@@ -776,8 +776,8 @@ class ClawRouterPayloadSdkAuditTest(unittest.TestCase):
                                 "kind": "create",
                                 "path_params": [],
                                 "source": "apps/portal/channelService.tsx",
-                                "read_sources": ["integration_channel"],
-                                "write_tables": ["integration_channel"],
+                                "read_sources": ["ai_channel"],
+                                "write_tables": ["ai_channel"],
                                 "request_schema": {
                                     "name": "AdminChannelCreateRequest",
                                     "schema": {
@@ -1861,8 +1861,8 @@ class ClawRouterPayloadSdkAuditTest(unittest.TestCase):
                                 "kind": "create",
                                 "path_params": [],
                                 "source": "apps/portal/channelService.ts",
-                                "read_sources": ["integration_channel"],
-                                "write_tables": ["integration_channel"],
+                                "read_sources": ["ai_channel"],
+                                "write_tables": ["ai_channel"],
                                 "request_schema": {
                                     "name": "AdminChannelCreateRequest",
                                     "schema": {
@@ -1975,8 +1975,8 @@ class ClawRouterPayloadSdkAuditTest(unittest.TestCase):
                                 "kind": "create",
                                 "path_params": [],
                                 "source": "apps/portal/channelService.ts",
-                                "read_sources": ["integration_channel"],
-                                "write_tables": ["integration_channel"],
+                                "read_sources": ["ai_channel"],
+                                "write_tables": ["ai_channel"],
                                 "request_schema": {
                                     "name": "AdminChannelCreateRequest",
                                     "schema": {

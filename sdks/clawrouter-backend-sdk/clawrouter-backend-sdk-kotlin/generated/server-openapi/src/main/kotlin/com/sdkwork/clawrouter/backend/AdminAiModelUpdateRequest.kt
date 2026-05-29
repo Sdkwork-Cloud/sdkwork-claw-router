@@ -13,7 +13,6 @@ data class AdminAiModelUpdateRequest(
     val maxOutputTokens: Int? = null,
     val modalities: List<String>? = null,
     val model: String? = null,
-    val name: String? = null,
     val outputModalities: List<String>? = null,
     val priceIn: String? = null,
     val priceOut: String? = null,

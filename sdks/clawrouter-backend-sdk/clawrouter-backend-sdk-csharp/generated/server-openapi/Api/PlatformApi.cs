@@ -18,7 +18,7 @@ namespace Sdkwork.ClawRouter.Backend.Api
         /// <summary>
         /// List apps
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.AppsListResult?> AppsListAsync(string? q = null, string? status = null, string? marketStatus = null, string? appType = null, int? categoryId = null, int? page = null, int? pageSize = null, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.AppsListResult?> AppsListAsync(string? q = null, string? status = null, string? marketStatus = null, string? appType = null, int? categoryId = null, int? page = null, int? pageSize = null)
         {
             var queryString = BuildQueryString(new[]
             {
@@ -30,29 +30,15 @@ namespace Sdkwork.ClawRouter.Backend.Api
                 new QueryParameterSpec("page", page, "form", true, false, null),
                 new QueryParameterSpec("page_size", pageSize, "form", true, false, null),
             });
-            var requestHeaders = BuildRequestHeaders(
-                new Dictionary<string, HeaderParameterSpec>
-                {
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
-                },
-                new Dictionary<string, HeaderParameterSpec>()
-            );
-            return await _client.GetAsync<Sdkwork.ClawRouter.Backend.Models.AppsListResult>(ApiPaths.AppendQueryString(ApiPaths.BackendPath("/platform/apps"), queryString), null, requestHeaders);
+            return await _client.GetAsync<Sdkwork.ClawRouter.Backend.Models.AppsListResult>(ApiPaths.AppendQueryString(ApiPaths.BackendPath("/platform/apps"), queryString));
         }
 
         /// <summary>
         /// Create app
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.AppsCreateResult?> AppsCreateAsync(Sdkwork.ClawRouter.Backend.Models.AdminAppCreateRequest body, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.AppsCreateResult?> AppsCreateAsync(Sdkwork.ClawRouter.Backend.Models.AdminAppCreateRequest body)
         {
-            var requestHeaders = BuildRequestHeaders(
-                new Dictionary<string, HeaderParameterSpec>
-                {
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
-                },
-                new Dictionary<string, HeaderParameterSpec>()
-            );
-            return await _client.PostAsync<Sdkwork.ClawRouter.Backend.Models.AppsCreateResult>(ApiPaths.BackendPath("/platform/apps"), body, null, requestHeaders, "application/json");
+            return await _client.PostAsync<Sdkwork.ClawRouter.Backend.Models.AppsCreateResult>(ApiPaths.BackendPath("/platform/apps"), body, null, null, "application/json");
         }
 
         /// <summary>
@@ -66,52 +52,31 @@ namespace Sdkwork.ClawRouter.Backend.Api
         /// <summary>
         /// Create app category
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.AppsCategoriesCreateResult?> AppsCategoriesCreateAsync(Sdkwork.ClawRouter.Backend.Models.AdminAppCategoryCreateRequest body, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.AppsCategoriesCreateResult?> AppsCategoriesCreateAsync(Sdkwork.ClawRouter.Backend.Models.AdminAppCategoryCreateRequest body)
         {
-            var requestHeaders = BuildRequestHeaders(
-                new Dictionary<string, HeaderParameterSpec>
-                {
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
-                },
-                new Dictionary<string, HeaderParameterSpec>()
-            );
-            return await _client.PostAsync<Sdkwork.ClawRouter.Backend.Models.AppsCategoriesCreateResult>(ApiPaths.BackendPath("/platform/apps/categories"), body, null, requestHeaders, "application/json");
+            return await _client.PostAsync<Sdkwork.ClawRouter.Backend.Models.AppsCategoriesCreateResult>(ApiPaths.BackendPath("/platform/apps/categories"), body, null, null, "application/json");
         }
 
         /// <summary>
         /// Delete app category
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.AppsCategoriesDeleteResult?> AppsCategoriesDeleteAsync(string categoryId, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.AppsCategoriesDeleteResult?> AppsCategoriesDeleteAsync(string categoryId)
         {
-            var requestHeaders = BuildRequestHeaders(
-                new Dictionary<string, HeaderParameterSpec>
-                {
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
-                },
-                new Dictionary<string, HeaderParameterSpec>()
-            );
-            return await _client.DeleteAsync<Sdkwork.ClawRouter.Backend.Models.AppsCategoriesDeleteResult>(ApiPaths.BackendPath($"/platform/apps/categories/{SerializePathParameter(categoryId, new PathParameterSpec("categoryId", "simple", false))}"), null, requestHeaders);
+            return await _client.DeleteAsync<Sdkwork.ClawRouter.Backend.Models.AppsCategoriesDeleteResult>(ApiPaths.BackendPath($"/platform/apps/categories/{SerializePathParameter(categoryId, new PathParameterSpec("categoryId", "simple", false))}"));
         }
 
         /// <summary>
         /// Update app category
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.AppsCategoriesUpdateResult?> AppsCategoriesUpdateAsync(string categoryId, Sdkwork.ClawRouter.Backend.Models.AdminAppCategoryUpdateRequest body, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.AppsCategoriesUpdateResult?> AppsCategoriesUpdateAsync(string categoryId, Sdkwork.ClawRouter.Backend.Models.AdminAppCategoryUpdateRequest body)
         {
-            var requestHeaders = BuildRequestHeaders(
-                new Dictionary<string, HeaderParameterSpec>
-                {
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
-                },
-                new Dictionary<string, HeaderParameterSpec>()
-            );
-            return await _client.PutAsync<Sdkwork.ClawRouter.Backend.Models.AppsCategoriesUpdateResult>(ApiPaths.BackendPath($"/platform/apps/categories/{SerializePathParameter(categoryId, new PathParameterSpec("categoryId", "simple", false))}"), body, null, requestHeaders, "application/json");
+            return await _client.PutAsync<Sdkwork.ClawRouter.Backend.Models.AppsCategoriesUpdateResult>(ApiPaths.BackendPath($"/platform/apps/categories/{SerializePathParameter(categoryId, new PathParameterSpec("categoryId", "simple", false))}"), body, null, null, "application/json");
         }
 
         /// <summary>
         /// List app templates
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.AppsTemplatesListResult?> AppsTemplatesListAsync(string? q = null, string? publishStatus = null, string? templateType = null, string? runtime = null, int? categoryId = null, int? page = null, int? pageSize = null, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.AppsTemplatesListResult?> AppsTemplatesListAsync(string? q = null, string? publishStatus = null, string? templateType = null, string? runtime = null, int? categoryId = null, int? page = null, int? pageSize = null)
         {
             var queryString = BuildQueryString(new[]
             {
@@ -123,209 +88,111 @@ namespace Sdkwork.ClawRouter.Backend.Api
                 new QueryParameterSpec("page", page, "form", true, false, null),
                 new QueryParameterSpec("page_size", pageSize, "form", true, false, null),
             });
-            var requestHeaders = BuildRequestHeaders(
-                new Dictionary<string, HeaderParameterSpec>
-                {
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
-                },
-                new Dictionary<string, HeaderParameterSpec>()
-            );
-            return await _client.GetAsync<Sdkwork.ClawRouter.Backend.Models.AppsTemplatesListResult>(ApiPaths.AppendQueryString(ApiPaths.BackendPath("/platform/apps/templates"), queryString), null, requestHeaders);
+            return await _client.GetAsync<Sdkwork.ClawRouter.Backend.Models.AppsTemplatesListResult>(ApiPaths.AppendQueryString(ApiPaths.BackendPath("/platform/apps/templates"), queryString));
         }
 
         /// <summary>
         /// Create app template
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.AppsTemplatesCreateResult?> AppsTemplatesCreateAsync(Sdkwork.ClawRouter.Backend.Models.AdminAppTemplateCreateRequest body, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.AppsTemplatesCreateResult?> AppsTemplatesCreateAsync(Sdkwork.ClawRouter.Backend.Models.AdminAppTemplateCreateRequest body)
         {
-            var requestHeaders = BuildRequestHeaders(
-                new Dictionary<string, HeaderParameterSpec>
-                {
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
-                },
-                new Dictionary<string, HeaderParameterSpec>()
-            );
-            return await _client.PostAsync<Sdkwork.ClawRouter.Backend.Models.AppsTemplatesCreateResult>(ApiPaths.BackendPath("/platform/apps/templates"), body, null, requestHeaders, "application/json");
+            return await _client.PostAsync<Sdkwork.ClawRouter.Backend.Models.AppsTemplatesCreateResult>(ApiPaths.BackendPath("/platform/apps/templates"), body, null, null, "application/json");
         }
 
         /// <summary>
         /// Delete app template
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.AppsTemplatesDeleteResult?> AppsTemplatesDeleteAsync(string templateId, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.AppsTemplatesDeleteResult?> AppsTemplatesDeleteAsync(string templateId)
         {
-            var requestHeaders = BuildRequestHeaders(
-                new Dictionary<string, HeaderParameterSpec>
-                {
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
-                },
-                new Dictionary<string, HeaderParameterSpec>()
-            );
-            return await _client.DeleteAsync<Sdkwork.ClawRouter.Backend.Models.AppsTemplatesDeleteResult>(ApiPaths.BackendPath($"/platform/apps/templates/{SerializePathParameter(templateId, new PathParameterSpec("templateId", "simple", false))}"), null, requestHeaders);
+            return await _client.DeleteAsync<Sdkwork.ClawRouter.Backend.Models.AppsTemplatesDeleteResult>(ApiPaths.BackendPath($"/platform/apps/templates/{SerializePathParameter(templateId, new PathParameterSpec("templateId", "simple", false))}"));
         }
 
         /// <summary>
         /// List app template
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.AppsTemplatesRetrieveResult?> AppsTemplatesRetrieveAsync(string templateId, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.AppsTemplatesRetrieveResult?> AppsTemplatesRetrieveAsync(string templateId)
         {
-            var requestHeaders = BuildRequestHeaders(
-                new Dictionary<string, HeaderParameterSpec>
-                {
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
-                },
-                new Dictionary<string, HeaderParameterSpec>()
-            );
-            return await _client.GetAsync<Sdkwork.ClawRouter.Backend.Models.AppsTemplatesRetrieveResult>(ApiPaths.BackendPath($"/platform/apps/templates/{SerializePathParameter(templateId, new PathParameterSpec("templateId", "simple", false))}"), null, requestHeaders);
+            return await _client.GetAsync<Sdkwork.ClawRouter.Backend.Models.AppsTemplatesRetrieveResult>(ApiPaths.BackendPath($"/platform/apps/templates/{SerializePathParameter(templateId, new PathParameterSpec("templateId", "simple", false))}"));
         }
 
         /// <summary>
         /// Update app template
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.AppsTemplatesUpdateResult?> AppsTemplatesUpdateAsync(string templateId, Sdkwork.ClawRouter.Backend.Models.AdminAppTemplateUpdateRequest body, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.AppsTemplatesUpdateResult?> AppsTemplatesUpdateAsync(string templateId, Sdkwork.ClawRouter.Backend.Models.AdminAppTemplateUpdateRequest body)
         {
-            var requestHeaders = BuildRequestHeaders(
-                new Dictionary<string, HeaderParameterSpec>
-                {
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
-                },
-                new Dictionary<string, HeaderParameterSpec>()
-            );
-            return await _client.PutAsync<Sdkwork.ClawRouter.Backend.Models.AppsTemplatesUpdateResult>(ApiPaths.BackendPath($"/platform/apps/templates/{SerializePathParameter(templateId, new PathParameterSpec("templateId", "simple", false))}"), body, null, requestHeaders, "application/json");
+            return await _client.PutAsync<Sdkwork.ClawRouter.Backend.Models.AppsTemplatesUpdateResult>(ApiPaths.BackendPath($"/platform/apps/templates/{SerializePathParameter(templateId, new PathParameterSpec("templateId", "simple", false))}"), body, null, null, "application/json");
         }
 
         /// <summary>
         /// Publish app template
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.AppsTemplatesPublishResult?> AppsTemplatesPublishAsync(string templateId, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.AppsTemplatesPublishResult?> AppsTemplatesPublishAsync(string templateId)
         {
-            var requestHeaders = BuildRequestHeaders(
-                new Dictionary<string, HeaderParameterSpec>
-                {
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
-                },
-                new Dictionary<string, HeaderParameterSpec>()
-            );
-            return await _client.PostAsync<Sdkwork.ClawRouter.Backend.Models.AppsTemplatesPublishResult>(ApiPaths.BackendPath($"/platform/apps/templates/{SerializePathParameter(templateId, new PathParameterSpec("templateId", "simple", false))}/publish"), null, null, requestHeaders);
+            return await _client.PostAsync<Sdkwork.ClawRouter.Backend.Models.AppsTemplatesPublishResult>(ApiPaths.BackendPath($"/platform/apps/templates/{SerializePathParameter(templateId, new PathParameterSpec("templateId", "simple", false))}/publish"), null);
         }
 
         /// <summary>
         /// Offline app template
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.AppsTemplatesUnpublishResult?> AppsTemplatesUnpublishAsync(string templateId, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.AppsTemplatesUnpublishResult?> AppsTemplatesUnpublishAsync(string templateId)
         {
-            var requestHeaders = BuildRequestHeaders(
-                new Dictionary<string, HeaderParameterSpec>
-                {
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
-                },
-                new Dictionary<string, HeaderParameterSpec>()
-            );
-            return await _client.PostAsync<Sdkwork.ClawRouter.Backend.Models.AppsTemplatesUnpublishResult>(ApiPaths.BackendPath($"/platform/apps/templates/{SerializePathParameter(templateId, new PathParameterSpec("templateId", "simple", false))}/unpublish"), null, null, requestHeaders);
+            return await _client.PostAsync<Sdkwork.ClawRouter.Backend.Models.AppsTemplatesUnpublishResult>(ApiPaths.BackendPath($"/platform/apps/templates/{SerializePathParameter(templateId, new PathParameterSpec("templateId", "simple", false))}/unpublish"), null);
         }
 
         /// <summary>
         /// Delete app
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.AppsDeleteResult?> AppsDeleteAsync(string appId, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.AppsDeleteResult?> AppsDeleteAsync(string appId)
         {
-            var requestHeaders = BuildRequestHeaders(
-                new Dictionary<string, HeaderParameterSpec>
-                {
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
-                },
-                new Dictionary<string, HeaderParameterSpec>()
-            );
-            return await _client.DeleteAsync<Sdkwork.ClawRouter.Backend.Models.AppsDeleteResult>(ApiPaths.BackendPath($"/platform/apps/{SerializePathParameter(appId, new PathParameterSpec("appId", "simple", false))}"), null, requestHeaders);
+            return await _client.DeleteAsync<Sdkwork.ClawRouter.Backend.Models.AppsDeleteResult>(ApiPaths.BackendPath($"/platform/apps/{SerializePathParameter(appId, new PathParameterSpec("appId", "simple", false))}"));
         }
 
         /// <summary>
         /// List app
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.AppsRetrieveResult?> AppsRetrieveAsync(string appId, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.AppsRetrieveResult?> AppsRetrieveAsync(string appId)
         {
-            var requestHeaders = BuildRequestHeaders(
-                new Dictionary<string, HeaderParameterSpec>
-                {
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
-                },
-                new Dictionary<string, HeaderParameterSpec>()
-            );
-            return await _client.GetAsync<Sdkwork.ClawRouter.Backend.Models.AppsRetrieveResult>(ApiPaths.BackendPath($"/platform/apps/{SerializePathParameter(appId, new PathParameterSpec("appId", "simple", false))}"), null, requestHeaders);
+            return await _client.GetAsync<Sdkwork.ClawRouter.Backend.Models.AppsRetrieveResult>(ApiPaths.BackendPath($"/platform/apps/{SerializePathParameter(appId, new PathParameterSpec("appId", "simple", false))}"));
         }
 
         /// <summary>
         /// Update app
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.AppsUpdateResult?> AppsUpdateAsync(string appId, Sdkwork.ClawRouter.Backend.Models.AdminAppUpdateRequest body, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.AppsUpdateResult?> AppsUpdateAsync(string appId, Sdkwork.ClawRouter.Backend.Models.AdminAppUpdateRequest body)
         {
-            var requestHeaders = BuildRequestHeaders(
-                new Dictionary<string, HeaderParameterSpec>
-                {
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
-                },
-                new Dictionary<string, HeaderParameterSpec>()
-            );
-            return await _client.PutAsync<Sdkwork.ClawRouter.Backend.Models.AppsUpdateResult>(ApiPaths.BackendPath($"/platform/apps/{SerializePathParameter(appId, new PathParameterSpec("appId", "simple", false))}"), body, null, requestHeaders, "application/json");
+            return await _client.PutAsync<Sdkwork.ClawRouter.Backend.Models.AppsUpdateResult>(ApiPaths.BackendPath($"/platform/apps/{SerializePathParameter(appId, new PathParameterSpec("appId", "simple", false))}"), body, null, null, "application/json");
         }
 
         /// <summary>
         /// Disable app
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.AppsDisableResult?> AppsDisableAsync(string appId, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.AppsDisableResult?> AppsDisableAsync(string appId)
         {
-            var requestHeaders = BuildRequestHeaders(
-                new Dictionary<string, HeaderParameterSpec>
-                {
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
-                },
-                new Dictionary<string, HeaderParameterSpec>()
-            );
-            return await _client.PostAsync<Sdkwork.ClawRouter.Backend.Models.AppsDisableResult>(ApiPaths.BackendPath($"/platform/apps/{SerializePathParameter(appId, new PathParameterSpec("appId", "simple", false))}/disable"), null, null, requestHeaders);
+            return await _client.PostAsync<Sdkwork.ClawRouter.Backend.Models.AppsDisableResult>(ApiPaths.BackendPath($"/platform/apps/{SerializePathParameter(appId, new PathParameterSpec("appId", "simple", false))}/disable"), null);
         }
 
         /// <summary>
         /// Enable app
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.AppsEnableResult?> AppsEnableAsync(string appId, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.AppsEnableResult?> AppsEnableAsync(string appId)
         {
-            var requestHeaders = BuildRequestHeaders(
-                new Dictionary<string, HeaderParameterSpec>
-                {
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
-                },
-                new Dictionary<string, HeaderParameterSpec>()
-            );
-            return await _client.PostAsync<Sdkwork.ClawRouter.Backend.Models.AppsEnableResult>(ApiPaths.BackendPath($"/platform/apps/{SerializePathParameter(appId, new PathParameterSpec("appId", "simple", false))}/enable"), null, null, requestHeaders);
+            return await _client.PostAsync<Sdkwork.ClawRouter.Backend.Models.AppsEnableResult>(ApiPaths.BackendPath($"/platform/apps/{SerializePathParameter(appId, new PathParameterSpec("appId", "simple", false))}/enable"), null);
         }
 
         /// <summary>
         /// Publish app
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.AppsPublishResult?> AppsPublishAsync(string appId, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.AppsPublishResult?> AppsPublishAsync(string appId)
         {
-            var requestHeaders = BuildRequestHeaders(
-                new Dictionary<string, HeaderParameterSpec>
-                {
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
-                },
-                new Dictionary<string, HeaderParameterSpec>()
-            );
-            return await _client.PostAsync<Sdkwork.ClawRouter.Backend.Models.AppsPublishResult>(ApiPaths.BackendPath($"/platform/apps/{SerializePathParameter(appId, new PathParameterSpec("appId", "simple", false))}/publish"), null, null, requestHeaders);
+            return await _client.PostAsync<Sdkwork.ClawRouter.Backend.Models.AppsPublishResult>(ApiPaths.BackendPath($"/platform/apps/{SerializePathParameter(appId, new PathParameterSpec("appId", "simple", false))}/publish"), null);
         }
 
         /// <summary>
         /// Offline app
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.AppsUnpublishResult?> AppsUnpublishAsync(string appId, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.AppsUnpublishResult?> AppsUnpublishAsync(string appId)
         {
-            var requestHeaders = BuildRequestHeaders(
-                new Dictionary<string, HeaderParameterSpec>
-                {
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
-                },
-                new Dictionary<string, HeaderParameterSpec>()
-            );
-            return await _client.PostAsync<Sdkwork.ClawRouter.Backend.Models.AppsUnpublishResult>(ApiPaths.BackendPath($"/platform/apps/{SerializePathParameter(appId, new PathParameterSpec("appId", "simple", false))}/unpublish"), null, null, requestHeaders);
+            return await _client.PostAsync<Sdkwork.ClawRouter.Backend.Models.AppsUnpublishResult>(ApiPaths.BackendPath($"/platform/apps/{SerializePathParameter(appId, new PathParameterSpec("appId", "simple", false))}/unpublish"), null);
         }
 
         private sealed record PathParameterSpec(string Name, string Style, bool Explode);
@@ -555,92 +422,5 @@ namespace Sdkwork.ClawRouter.Backend.Api
                 .Replace("%3B", ";").Replace("%3D", "=");
         }
 
-        private sealed record HeaderParameterSpec(object? Value, string Style, bool Explode, string? ContentType);
-
-        private static Dictionary<string, string>? BuildRequestHeaders(
-            Dictionary<string, HeaderParameterSpec> headers,
-            Dictionary<string, HeaderParameterSpec> cookies)
-        {
-            var requestHeaders = new Dictionary<string, string>();
-            foreach (var item in headers)
-            {
-                var serialized = SerializeParameterValue(item.Value);
-                if (serialized is not null)
-                {
-                    requestHeaders[item.Key] = serialized;
-                }
-            }
-
-            var cookieHeader = BuildCookieHeader(cookies);
-            if (!string.IsNullOrEmpty(cookieHeader))
-            {
-                requestHeaders["Cookie"] = requestHeaders.TryGetValue("Cookie", out var existing) && !string.IsNullOrEmpty(existing)
-                    ? existing + "; " + cookieHeader
-                    : cookieHeader;
-            }
-
-            return requestHeaders.Count == 0 ? null : requestHeaders;
-        }
-
-        private static string BuildCookieHeader(Dictionary<string, HeaderParameterSpec> cookies)
-        {
-            var pairs = new List<string>();
-            foreach (var item in cookies)
-            {
-                var serialized = SerializeParameterValue(item.Value);
-                if (serialized is not null)
-                {
-                    pairs.Add(Uri.EscapeDataString(item.Key) + "=" + Uri.EscapeDataString(serialized));
-                }
-            }
-            return string.Join("; ", pairs);
-        }
-
-        private static string? SerializeParameterValue(HeaderParameterSpec? parameter)
-        {
-            var value = parameter?.Value;
-            if (value is null)
-            {
-                return null;
-            }
-            if (!string.IsNullOrWhiteSpace(parameter!.ContentType))
-            {
-                return System.Text.Json.JsonSerializer.Serialize(value);
-            }
-            if (value is System.Collections.IEnumerable enumerable && value is not string)
-            {
-                var values = new List<string>();
-                foreach (var item in enumerable)
-                {
-                    if (item is not null)
-                    {
-                        values.Add(item.ToString() ?? string.Empty);
-                    }
-                }
-                return string.Join(",", values);
-            }
-            if (value is System.Collections.IDictionary dictionary)
-            {
-                var values = new List<string>();
-                foreach (System.Collections.DictionaryEntry item in dictionary)
-                {
-                    if (item.Value is null)
-                    {
-                        continue;
-                    }
-                    if (parameter.Explode)
-                    {
-                        values.Add((item.Key.ToString() ?? string.Empty) + "=" + (item.Value.ToString() ?? string.Empty));
-                    }
-                    else
-                    {
-                        values.Add(item.Key.ToString() ?? string.Empty);
-                        values.Add(item.Value.ToString() ?? string.Empty);
-                    }
-                }
-                return string.Join(",", values);
-            }
-            return value.ToString();
-        }
     }
 }

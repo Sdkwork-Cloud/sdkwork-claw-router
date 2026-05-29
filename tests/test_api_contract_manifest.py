@@ -1,4 +1,4 @@
-import tempfile
+﻿import tempfile
 import textwrap
 import unittest
 from pathlib import Path
@@ -481,7 +481,7 @@ class ApiContractManifestGeneratorTest(unittest.TestCase):
                     api_surface: app
                     api_method: POST
                     api_path: /app/v3/api/iam/api_keys
-                    read_sources: [iam_gateway_api_key_group]
+                    read_sources: [ai_channel_group]
                     write_tables: [iam_gateway_api_key, ops_audit_log]
                     request_schema:
                       name: CreateApiKeyRequest
@@ -641,7 +641,7 @@ class ApiContractManifestGeneratorTest(unittest.TestCase):
                     api_surface: backend
                     api_method: GET
                     api_path: /backend/v3/api/channel/list
-                    read_sources: [integration_channel]
+                    read_sources: [ai_channel]
                     query_parameters: []
                     response_schema:
                       name: AdminChannelsResponse
@@ -655,8 +655,8 @@ class ApiContractManifestGeneratorTest(unittest.TestCase):
                     api_surface: backend
                     api_method: POST
                     api_path: /backend/v3/api/channel
-                    read_sources: [integration_channel]
-                    write_tables: [integration_channel]
+                    read_sources: [ai_channel]
+                    write_tables: [ai_channel]
                     request_schema:
                       name: AdminChannelCreateRequest
                       type: object
@@ -900,7 +900,7 @@ class ApiContractManifestGeneratorTest(unittest.TestCase):
                     api_surface: app
                     api_method: POST
                     api_path: /app/v3/api/router/api-keys
-                    read_sources: [iam_gateway_api_key_group]
+                    read_sources: [ai_channel_group]
                     write_tables: [iam_gateway_api_key, ops_audit_log]
                     request_schema:
                       name: CreateApiKeyRequest
@@ -1220,7 +1220,7 @@ class ApiContractManifestGeneratorTest(unittest.TestCase):
                     api_surface: app
                     api_method: POST
                     api_path: /app/v3/api/router/api-keys
-                    read_sources: [iam_gateway_api_key_group]
+                    read_sources: [ai_channel_group]
                     write_tables: [iam_gateway_api_key]
                     request_schema:
                       name: create-api-key
@@ -1262,7 +1262,7 @@ class ApiContractManifestGeneratorTest(unittest.TestCase):
                     api_surface: app
                     api_method: POST
                     api_path: /app/v3/api/router/api-keys
-                    read_sources: [iam_gateway_api_key_group]
+                    read_sources: [ai_channel_group]
                     write_tables: [iam_gateway_api_key]
                     request_schema:
                       name: CreateApiKeyRequest

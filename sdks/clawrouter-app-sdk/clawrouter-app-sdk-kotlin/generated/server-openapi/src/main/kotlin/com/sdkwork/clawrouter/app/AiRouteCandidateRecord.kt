@@ -1,0 +1,31 @@
+package com.sdkwork.clawrouter.app
+
+data class AiRouteCandidateRecord(
+    val apiCode: String? = null,
+    val catalogKey: String? = null,
+    val channelGroupId: String? = null,
+    val channelId: String? = null,
+    val channelType: String? = null,
+    val configVersion: String? = null,
+    val createdAt: String? = null,
+    val endpointId: String? = null,
+    val healthStatus: String? = null,
+    val id: String? = null,
+    val metadata: Map<String, String>? = null,
+    val modelCode: String? = null,
+    val organizationId: String? = null,
+    val priority: Int? = null,
+    val providerCode: String? = null,
+    val rebuildVersion: String? = null,
+    val refreshedAt: String? = null,
+    val regionCode: String? = null,
+    val sourceId: String? = null,
+    val sourceType: String? = null,
+    val sourceVersion: String? = null,
+    val status: String? = null,
+    val tenantId: String? = null,
+    val updatedAt: String? = null,
+    val uuid: String? = null,
+    val vendorCode: String? = null,
+    val weight: Int? = null
+)

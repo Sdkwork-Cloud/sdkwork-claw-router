@@ -1,4 +1,4 @@
-import unittest
+﻿import unittest
 from pathlib import Path
 
 
@@ -111,8 +111,8 @@ class ConsoleRoutingBackendRuntimeStandardTest(unittest.TestCase):
 
             self.assertIn(store_name, store)
             for table in [
-                "integration_channel",
-                "integration_channel_model",
+                "ai_channel",
+                "ai_channel_model",
                 "integration_provider_account",
                 "iam_gateway_api_key",
                 "ai_request_trace",
@@ -328,8 +328,8 @@ class ConsoleRoutingBackendRuntimeStandardTest(unittest.TestCase):
             for table in [
                 "integration_provider",
                 "integration_provider_account",
-                "integration_channel",
-                "integration_channel_model",
+                "ai_channel",
+                "ai_channel_model",
                 "ops_config_snapshot",
                 "ops_audit_log",
             ]:

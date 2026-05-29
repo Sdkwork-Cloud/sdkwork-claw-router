@@ -18,7 +18,6 @@ namespace Sdkwork.ClawRouter.Backend.Models
         public int? MaxOutputTokens { get; set; }
         public List<string>? Modalities { get; set; }
         public string? Model { get; set; }
-        public string? Name { get; set; }
         public List<string>? OutputModalities { get; set; }
         public string? PriceIn { get; set; }
         public string? PriceOut { get; set; }

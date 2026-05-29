@@ -22,15 +22,9 @@ impl IamApi {
     }
 
     /// Create group
-    pub async fn access_groups_create(&self, body: &AdminAccessGroupCreateRequest, x_request_id: Option<&str>) -> Result<AccessGroupsCreateResult, SdkworkError> {
+    pub async fn access_groups_create(&self, body: &AdminAccessGroupCreateRequest) -> Result<AccessGroupsCreateResult, SdkworkError> {
         let path = backend_path(&"/iam/access_groups".to_string());
-        let headers = build_request_headers(
-            &[
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
-            ],
-            &[],
-        );
-        self.client.post(&path, Some(body), None, headers.as_ref(), Some("application/json")).await
+        self.client.post(&path, Some(body), None, None, Some("application/json")).await
     }
 
     /// Delete group
@@ -40,15 +34,9 @@ impl IamApi {
     }
 
     /// Update group
-    pub async fn access_groups_update(&self, group_id: &str, body: &AdminAccessGroupUpdateRequest, x_request_id: Option<&str>) -> Result<AccessGroupsUpdateResult, SdkworkError> {
+    pub async fn access_groups_update(&self, group_id: &str, body: &AdminAccessGroupUpdateRequest) -> Result<AccessGroupsUpdateResult, SdkworkError> {
         let path = backend_path(&format!("/iam/access_groups/{}", serialize_path_parameter(group_id, PathParameterSpec::new("groupId", "simple", false))));
-        let headers = build_request_headers(
-            &[
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
-            ],
-            &[],
-        );
-        self.client.patch(&path, Some(body), None, headers.as_ref(), Some("application/json")).await
+        self.client.patch(&path, Some(body), None, None, Some("application/json")).await
     }
 
     /// List group channel bindings
@@ -58,15 +46,9 @@ impl IamApi {
     }
 
     /// Replace group channel bindings
-    pub async fn access_groups_channel_bindings_update(&self, group_id: &str, body: &AdminAccessGroupChannelBindingsReplaceRequest, x_request_id: Option<&str>) -> Result<AccessGroupsChannelBindingsUpdateResult, SdkworkError> {
+    pub async fn access_groups_channel_bindings_update(&self, group_id: &str, body: &AdminAccessGroupChannelBindingsReplaceRequest) -> Result<AccessGroupsChannelBindingsUpdateResult, SdkworkError> {
         let path = backend_path(&format!("/iam/access_groups/{}/channel_bindings", serialize_path_parameter(group_id, PathParameterSpec::new("groupId", "simple", false))));
-        let headers = build_request_headers(
-            &[
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
-            ],
-            &[],
-        );
-        self.client.put(&path, Some(body), None, headers.as_ref(), Some("application/json")).await
+        self.client.put(&path, Some(body), None, None, Some("application/json")).await
     }
 
     /// List API key map
@@ -76,12 +58,11 @@ impl IamApi {
     }
 
     /// Create API key
-    pub async fn api_keys_create(&self, body: &AdminApiKeyCreateRequest, idempotency_key: &str, x_request_id: Option<&str>) -> Result<ApiKeysCreateResult, SdkworkError> {
+    pub async fn api_keys_create(&self, body: &AdminApiKeyCreateRequest, idempotency_key: &str) -> Result<ApiKeysCreateResult, SdkworkError> {
         let path = backend_path(&"/iam/api_keys".to_string());
         let headers = build_request_headers(
             &[
                 ("Idempotency-Key", HeaderParameterSpec::new(idempotency_key, "simple", false, None)),
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
             ],
             &[],
         );
@@ -101,27 +82,15 @@ impl IamApi {
     }
 
     /// Create user
-    pub async fn users_create(&self, body: &AdminUserCreateRequest, x_request_id: Option<&str>) -> Result<UsersCreateResult, SdkworkError> {
+    pub async fn users_create(&self, body: &AdminUserCreateRequest) -> Result<UsersCreateResult, SdkworkError> {
         let path = backend_path(&"/iam/users".to_string());
-        let headers = build_request_headers(
-            &[
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
-            ],
-            &[],
-        );
-        self.client.post(&path, Some(body), None, headers.as_ref(), Some("application/json")).await
+        self.client.post(&path, Some(body), None, None, Some("application/json")).await
     }
 
     /// Update user
-    pub async fn users_update(&self, body: &AdminUserUpdateRequest, x_request_id: Option<&str>) -> Result<UsersUpdateResult, SdkworkError> {
+    pub async fn users_update(&self, body: &AdminUserUpdateRequest) -> Result<UsersUpdateResult, SdkworkError> {
         let path = backend_path(&"/iam/users".to_string());
-        let headers = build_request_headers(
-            &[
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
-            ],
-            &[],
-        );
-        self.client.put(&path, Some(body), None, headers.as_ref(), Some("application/json")).await
+        self.client.put(&path, Some(body), None, None, Some("application/json")).await
     }
 
 }

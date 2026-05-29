@@ -14,6 +14,10 @@ async fn sqlite_admin_record_logs_show_user_display_name_or_email_instead_of_num
 
     assert_eq!(2, page.total);
     assert_eq!("email-only@example.com", page.logs[0].user);
+    assert_eq!(
+        "Mozilla/5.0 (iPhone; CPU iPhone OS 17_5 like Mac OS X) Version/17.5 Mobile/15E148 Safari/604.1",
+        page.logs[0].user_agent
+    );
     assert_eq!("Ada Lovelace", page.logs[1].user);
 
     let email_search_page = store
@@ -58,11 +62,19 @@ async fn create_tables(pool: &SqlitePool) {
             started_at TEXT,
             owner_name_snapshot TEXT,
             api_key_name_snapshot TEXT,
-            api_key_group_snapshot TEXT,
+            channel_group_snapshot TEXT,
             requested_model TEXT,
+            requested_model_catalog_key TEXT,
             provider_model TEXT,
+            provider_native_model TEXT,
             endpoint TEXT,
             request_path TEXT,
+            http_status INTEGER,
+            http_method TEXT,
+            provider_error_code TEXT,
+            error_type INTEGER,
+            error_message_masked TEXT,
+            metadata TEXT NOT NULL DEFAULT '{}',
             latency_ms INTEGER,
             ttft_ms INTEGER,
             streaming INTEGER,
@@ -82,9 +94,11 @@ async fn create_tables(pool: &SqlitePool) {
             status INTEGER NOT NULL,
             owner_name_snapshot TEXT,
             api_key_name_snapshot TEXT,
-            api_key_group_snapshot TEXT,
+            channel_group_snapshot TEXT,
             catalog_key TEXT,
+            requested_model_catalog_key TEXT,
             model TEXT,
+            provider_native_model TEXT,
             modality INTEGER,
             prompt_tokens INTEGER,
             cached_tokens INTEGER,
@@ -131,21 +145,29 @@ async fn seed_users_and_traces(pool: &SqlitePool) {
         INSERT INTO ai_request_trace (
             id, uuid, tenant_id, organization_id, user_id, request_id, status,
             created_at, started_at, owner_name_snapshot, api_key_name_snapshot,
-            api_key_group_snapshot, requested_model, provider_model, endpoint, request_path,
-            latency_ms, ttft_ms, streaming, prompt_tokens, cached_tokens, completion_tokens,
+            channel_group_snapshot, requested_model, requested_model_catalog_key,
+            provider_model, provider_native_model, endpoint, request_path,
+            http_status, http_method, provider_error_code, error_type, error_message_masked,
+            metadata, latency_ms, ttft_ms, streaming, prompt_tokens, cached_tokens, completion_tokens,
             reasoning_effort, client_ip_masked
         )
         VALUES
             (
                 1, 'trace-1', 10, 20, 42, 'req-1', 1,
                 '2026-05-27T10:00:00Z', '2026-05-27T10:00:00Z', '42', 'Production',
-                'default', 'gpt-4o-mini', '', '/v1/chat/completions', '/v1/chat/completions',
+                'default', 'gpt-4o-mini', 'openai/gpt-4o-mini',
+                '', 'gpt-4o-mini', '/v1/chat/completions', '/v1/chat/completions',
+                200, 'POST', NULL, NULL, NULL,
+                '{"userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/126.0.0.0"}',
                 125, 40, 1, 10, 2, 20, 'medium', '203.0.113.***'
             ),
             (
                 2, 'trace-2', 10, 20, 43, 'req-2', 1,
                 '2026-05-27T11:00:00Z', '2026-05-27T11:00:00Z', '', 'Production',
-                'default', 'gpt-4o-mini', '', '/v1/chat/completions', '/v1/chat/completions',
+                'default', 'gpt-4o-mini', 'openai/gpt-4o-mini',
+                '', 'gpt-4o-mini', '/v1/chat/completions', '/v1/chat/completions',
+                200, 'POST', NULL, NULL, NULL,
+                '{"userAgent":"Mozilla/5.0 (iPhone; CPU iPhone OS 17_5 like Mac OS X) Version/17.5 Mobile/15E148 Safari/604.1"}',
                 150, 55, 0, 12, 3, 24, 'low', '203.0.113.***'
             )
         "#,

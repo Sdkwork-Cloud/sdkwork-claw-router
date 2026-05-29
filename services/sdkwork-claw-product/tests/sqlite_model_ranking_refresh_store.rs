@@ -17,8 +17,8 @@ async fn sqlite_model_ranking_refresh_store_generates_rank_snapshot_from_usage_f
         INSERT INTO ai_model
             (id, tenant_id, organization_id, status, catalog_key, model, display_name, vendor_code, region_code, vendor_name_snapshot, capability, color_token, license_type, context_tokens, rank_score)
         VALUES
-            (1, 0, 0, 1, 'openai/global/alpha', 'alpha', 'Alpha', 'openai', 'global', 'OpenAI', 1, '#111111', 2, 128000, '100'),
-            (2, 0, 0, 1, 'anthropic/global/beta', 'beta', 'Beta', 'anthropic', 'global', 'Anthropic', 1, '#222222', 2, 200000, '90')
+            (1, 0, 0, 1, 'openai/alpha', 'alpha', 'Alpha', 'openai', 'global', 'OpenAI', 1, '#111111', 2, 128000, '100'),
+            (2, 0, 0, 1, 'anthropic/beta', 'beta', 'Beta', 'anthropic', 'global', 'Anthropic', 1, '#222222', 2, 200000, '90')
         "#,
     )
     .execute(&pool)
@@ -29,10 +29,10 @@ async fn sqlite_model_ranking_refresh_store_generates_rank_snapshot_from_usage_f
         INSERT INTO ai_usage_fact
             (id, tenant_id, organization_id, status, catalog_key, model, modality, request_count, total_tokens, cost_amount, currency, occurred_at)
         VALUES
-            (1, 0, 0, 1, 'openai/global/alpha', 'alpha', 1, 5, 5000, '2.500000', 'USD', '2026-05-07T10:00:00Z'),
-            (2, 0, 0, 1, 'openai/global/alpha', 'alpha', 1, 7, 9000, '3.000000', 'USD', '2026-05-07T11:00:00Z'),
-            (3, 0, 0, 1, 'anthropic/global/beta', 'beta', 1, 4, 2000, '1.000000', 'USD', '2026-05-07T12:00:00Z'),
-            (4, 0, 0, 1, 'openai/global/alpha', 'alpha', 1, 99, 99000, '9.900000', 'USD', '2026-04-01T00:00:00Z')
+            (1, 0, 0, 1, 'openai/alpha', 'alpha', 1, 5, 5000, '2.500000', 'USD', '2026-05-07T10:00:00Z'),
+            (2, 0, 0, 1, 'openai/alpha', 'alpha', 1, 7, 9000, '3.000000', 'USD', '2026-05-07T11:00:00Z'),
+            (3, 0, 0, 1, 'anthropic/beta', 'beta', 1, 4, 2000, '1.000000', 'USD', '2026-05-07T12:00:00Z'),
+            (4, 0, 0, 1, 'openai/alpha', 'alpha', 1, 99, 99000, '9.900000', 'USD', '2026-04-01T00:00:00Z')
         "#,
     )
     .execute(&pool)
@@ -43,7 +43,7 @@ async fn sqlite_model_ranking_refresh_store_generates_rank_snapshot_from_usage_f
         INSERT INTO ai_model_rank_snapshot
             (id, uuid, tenant_id, organization_id, status, snapshot_date, snapshot_period, rank_scope, catalog_key, model, vendor_code, region_code, rank_no)
         VALUES
-            (1, 'previous-alpha', 0, 0, 1, '2026-05-06', 1, 'commercial-default', 'openai/global/alpha', 'alpha', 'openai', 'global', 3)
+            (1, 'previous-alpha', 0, 0, 1, '2026-05-06', 1, 'commercial-default', 'openai/alpha', 'alpha', 'openai', 'global', 3)
         "#,
     )
     .execute(&pool)
@@ -85,10 +85,7 @@ async fn sqlite_model_ranking_refresh_store_generates_rank_snapshot_from_usage_f
     .unwrap();
 
     assert_eq!(2, rows.len());
-    assert_eq!(
-        "openai/global/alpha",
-        rows[0].get::<String, _>("catalog_key")
-    );
+    assert_eq!("openai/alpha", rows[0].get::<String, _>("catalog_key"));
     assert_eq!(1, rows[0].get::<i64, _>("rank_no"));
     assert_eq!(3, rows[0].get::<i64, _>("previous_rank_no"));
     assert_eq!(12, rows[0].get::<i64, _>("request_count"));
@@ -97,6 +94,73 @@ async fn sqlite_model_ranking_refresh_store_generates_rank_snapshot_from_usage_f
     let metadata = rows[0].get::<String, _>("metadata");
     assert!(metadata.contains("\"windowStart\":\"2026-05-07T00:00:00Z\""));
     assert!(metadata.contains("\"refreshIntervalSeconds\":3600"));
+}
+
+#[tokio::test]
+async fn sqlite_model_ranking_refresh_store_rejects_regional_catalog_key_compatibility() {
+    let pool = SqlitePoolOptions::new()
+        .max_connections(1)
+        .connect("sqlite::memory:")
+        .await
+        .unwrap();
+    create_tables(&pool).await;
+
+    sqlx::query(
+        r#"
+        INSERT INTO ai_model
+            (id, tenant_id, organization_id, status, catalog_key, model, display_name, vendor_code, region_code, vendor_name_snapshot, capability, color_token, license_type, context_tokens, rank_score)
+        VALUES
+            (1, 0, 0, 1, 'openai/alpha', 'alpha', 'Alpha', 'openai', 'global', 'OpenAI', 1, '#111111', 2, 128000, '100')
+        "#,
+    )
+    .execute(&pool)
+    .await
+    .unwrap();
+    sqlx::query(
+        r#"
+        INSERT INTO ai_usage_fact
+            (id, tenant_id, organization_id, status, catalog_key, model, modality, request_count, total_tokens, cost_amount, currency, occurred_at)
+        VALUES
+            (1, 0, 0, 1, 'openai/global/alpha', 'alpha', 1, 5, 5000, '2.500000', 'USD', '2026-05-07T10:00:00Z')
+        "#,
+    )
+    .execute(&pool)
+    .await
+    .unwrap();
+
+    let outcome = SqliteModelRankingRefreshStore::new(pool.clone())
+        .refresh_model_rankings(ModelRankingRefreshCommand {
+            tenant_id: 0,
+            organization_id: 0,
+            rank_scope: "commercial-default".to_owned(),
+            snapshot_date: "2026-05-08".to_owned(),
+            snapshot_period: "daily".to_owned(),
+            window_start: "2026-05-07T00:00:00Z".to_owned(),
+            window_end: "2026-05-08T00:00:00Z".to_owned(),
+            requested_at: "2026-05-08 00:05:00".to_owned(),
+            limit: 200,
+            refresh_interval_seconds: 3600,
+            cache_max_age_seconds: 60,
+            trigger_type: 1,
+        })
+        .await
+        .unwrap();
+
+    assert_eq!(0, outcome.generated_count);
+    assert_eq!(0, outcome.source_count);
+
+    let snapshot_count: i64 = sqlx::query_scalar(
+        r#"
+        SELECT COUNT(*)
+        FROM ai_model_rank_snapshot
+        WHERE snapshot_date = '2026-05-08'
+        "#,
+    )
+    .fetch_one(&pool)
+    .await
+    .unwrap();
+
+    assert_eq!(0, snapshot_count);
 }
 
 #[tokio::test]
@@ -113,7 +177,7 @@ async fn sqlite_model_ranking_refresh_store_keeps_existing_snapshot_when_window_
         INSERT INTO ai_model
             (id, tenant_id, organization_id, status, catalog_key, model, display_name, vendor_code, region_code, vendor_name_snapshot, capability, color_token, license_type, context_tokens, rank_score)
         VALUES
-            (1, 0, 0, 1, 'openai/global/alpha', 'alpha', 'Alpha', 'openai', 'global', 'OpenAI', 1, '#111111', 2, 128000, '100')
+            (1, 0, 0, 1, 'openai/alpha', 'alpha', 'Alpha', 'openai', 'global', 'OpenAI', 1, '#111111', 2, 128000, '100')
         "#,
     )
     .execute(&pool)
@@ -124,7 +188,7 @@ async fn sqlite_model_ranking_refresh_store_keeps_existing_snapshot_when_window_
         INSERT INTO ai_model_rank_snapshot
             (id, uuid, tenant_id, organization_id, status, snapshot_date, snapshot_period, rank_scope, catalog_key, model, vendor_code, region_code, rank_no)
         VALUES
-            (1, 'existing-alpha', 0, 0, 1, '2026-05-08', 1, 'commercial-default', 'openai/global/alpha', 'alpha', 'openai', 'global', 1)
+            (1, 'existing-alpha', 0, 0, 1, '2026-05-08', 1, 'commercial-default', 'openai/alpha', 'alpha', 'openai', 'global', 1)
         "#,
     )
     .execute(&pool)
@@ -182,7 +246,7 @@ async fn sqlite_model_ranking_refresh_store_normalizes_invalid_global_organizati
         INSERT INTO ai_model
             (id, tenant_id, organization_id, status, catalog_key, model, display_name, vendor_code, region_code, vendor_name_snapshot, capability, color_token, license_type, context_tokens, rank_score)
         VALUES
-            (1, 0, 0, 1, 'openai/global/alpha', 'alpha', 'Alpha', 'openai', 'global', 'OpenAI', 1, '#111111', 2, 128000, '100')
+            (1, 0, 0, 1, 'openai/alpha', 'alpha', 'Alpha', 'openai', 'global', 'OpenAI', 1, '#111111', 2, 128000, '100')
         "#,
     )
     .execute(&pool)
@@ -193,7 +257,7 @@ async fn sqlite_model_ranking_refresh_store_normalizes_invalid_global_organizati
         INSERT INTO ai_usage_fact
             (id, tenant_id, organization_id, status, catalog_key, model, modality, request_count, total_tokens, cost_amount, currency, occurred_at)
         VALUES
-            (1, 0, 0, 1, 'openai/global/alpha', 'alpha', 1, 5, 5000, '2.500000', 'USD', '2026-05-07T10:00:00Z')
+            (1, 0, 0, 1, 'openai/alpha', 'alpha', 1, 5, 5000, '2.500000', 'USD', '2026-05-07T10:00:00Z')
         "#,
     )
     .execute(&pool)
@@ -250,7 +314,7 @@ async fn sqlite_model_ranking_refresh_store_normalizes_snapshot_scope_and_period
         INSERT INTO ai_model
             (id, tenant_id, organization_id, status, catalog_key, model, display_name, vendor_code, region_code, vendor_name_snapshot, capability, color_token, license_type, context_tokens, rank_score)
         VALUES
-            (1, 0, 0, 1, 'openai/global/alpha', 'alpha', 'Alpha', 'openai', 'global', 'OpenAI', 1, '#111111', 2, 128000, '100')
+            (1, 0, 0, 1, 'openai/alpha', 'alpha', 'Alpha', 'openai', 'global', 'OpenAI', 1, '#111111', 2, 128000, '100')
         "#,
     )
     .execute(&pool)
@@ -261,7 +325,7 @@ async fn sqlite_model_ranking_refresh_store_normalizes_snapshot_scope_and_period
         INSERT INTO ai_usage_fact
             (id, tenant_id, organization_id, status, catalog_key, model, modality, request_count, total_tokens, cost_amount, currency, occurred_at)
         VALUES
-            (1, 0, 0, 1, 'openai/global/alpha', 'alpha', 1, 5, 5000, '2.500000', 'USD', '2026-05-07T10:00:00Z')
+            (1, 0, 0, 1, 'openai/alpha', 'alpha', 1, 5, 5000, '2.500000', 'USD', '2026-05-07T10:00:00Z')
         "#,
     )
     .execute(&pool)
@@ -397,7 +461,7 @@ async fn create_tables(pool: &SqlitePool) {
             win_rate TEXT,
             trend_score TEXT,
             rank_payload TEXT,
-            UNIQUE (tenant_id, organization_id, snapshot_date, snapshot_period, rank_scope, catalog_key)
+            UNIQUE (tenant_id, organization_id, snapshot_date, snapshot_period, rank_scope, vendor_code, region_code, catalog_key)
         )
         "#,
     )

@@ -1,4 +1,4 @@
-﻿import {
+import {
   createClientOperationToken,
   getClawRouterAppSdkClient,
   streamRuntimeInvocationEvents,

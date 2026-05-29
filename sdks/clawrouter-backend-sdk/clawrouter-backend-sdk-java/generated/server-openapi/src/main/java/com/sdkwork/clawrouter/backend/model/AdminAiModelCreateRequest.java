@@ -15,7 +15,6 @@ public class AdminAiModelCreateRequest {
     private Integer maxOutputTokens;
     private List<String> modalities;
     private String model;
-    private String name;
     private List<String> outputModalities;
     private String priceIn;
     private String priceOut;
@@ -127,14 +126,6 @@ public class AdminAiModelCreateRequest {
 
     public void setModel(String model) {
         this.model = model;
-    }
-
-    public String getName() {
-        return this.name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public List<String> getOutputModalities() {

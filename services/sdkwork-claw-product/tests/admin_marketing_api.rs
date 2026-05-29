@@ -1,4 +1,4 @@
-﻿mod common;
+mod common;
 use common::InternalTrustedSubjectHeaders;
 use std::sync::{Arc, Mutex};
 

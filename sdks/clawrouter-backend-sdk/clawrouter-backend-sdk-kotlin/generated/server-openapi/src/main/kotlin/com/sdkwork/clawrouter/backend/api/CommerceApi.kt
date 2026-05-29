@@ -32,11 +32,10 @@ class CommerceApi(private val client: HttpClient) {
     }
 
     /** Create product attribute */
-    suspend fun catalogAttributesCreate(body: CommerceProductAttributeMutationRequest, idempotencyKey: String, xRequestId: String? = null): CatalogAttributesCreateResult? {
+    suspend fun catalogAttributesCreate(body: CommerceProductAttributeMutationRequest, idempotencyKey: String): CatalogAttributesCreateResult? {
         val requestHeaders = buildRequestHeaders(
             mapOf(
                 "Idempotency-Key" to HeaderParameterSpec(idempotencyKey, "simple", false, null),
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
             ),
             emptyMap()
         )
@@ -57,11 +56,10 @@ class CommerceApi(private val client: HttpClient) {
     }
 
     /** Create product category */
-    suspend fun catalogCategoriesCreate(body: CommerceProductCategoryMutationRequest, idempotencyKey: String, xRequestId: String? = null): CatalogCategoriesCreateResult? {
+    suspend fun catalogCategoriesCreate(body: CommerceProductCategoryMutationRequest, idempotencyKey: String): CatalogCategoriesCreateResult? {
         val requestHeaders = buildRequestHeaders(
             mapOf(
                 "Idempotency-Key" to HeaderParameterSpec(idempotencyKey, "simple", false, null),
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
             ),
             emptyMap()
         )
@@ -70,23 +68,16 @@ class CommerceApi(private val client: HttpClient) {
     }
 
     /** Delete product category */
-    suspend fun catalogCategoriesDelete(categoryId: String, xRequestId: String? = null): CatalogCategoriesDeleteResult? {
-        val requestHeaders = buildRequestHeaders(
-            mapOf(
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
-            ),
-            emptyMap()
-        )
-        val raw = client.delete(ApiPaths.backendPath("/catalog/categories/${serializePathParameter(categoryId, PathParameterSpec("categoryId", "simple", false))}"), null, requestHeaders)
+    suspend fun catalogCategoriesDelete(categoryId: String): CatalogCategoriesDeleteResult? {
+        val raw = client.delete(ApiPaths.backendPath("/catalog/categories/${serializePathParameter(categoryId, PathParameterSpec("categoryId", "simple", false))}"))
         return client.convertValue(raw, object : TypeReference<CatalogCategoriesDeleteResult>() {})
     }
 
     /** Update product category */
-    suspend fun catalogCategoriesUpdate(categoryId: String, body: CommerceProductCategoryMutationRequest, idempotencyKey: String, xRequestId: String? = null): CatalogCategoriesUpdateResult? {
+    suspend fun catalogCategoriesUpdate(categoryId: String, body: CommerceProductCategoryMutationRequest, idempotencyKey: String): CatalogCategoriesUpdateResult? {
         val requestHeaders = buildRequestHeaders(
             mapOf(
                 "Idempotency-Key" to HeaderParameterSpec(idempotencyKey, "simple", false, null),
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
             ),
             emptyMap()
         )
@@ -108,11 +99,10 @@ class CommerceApi(private val client: HttpClient) {
     }
 
     /** Create product price list */
-    suspend fun catalogPriceListsCreate(body: CommercePriceListMutationRequest, idempotencyKey: String, xRequestId: String? = null): CatalogPriceListsCreateResult? {
+    suspend fun catalogPriceListsCreate(body: CommercePriceListMutationRequest, idempotencyKey: String): CatalogPriceListsCreateResult? {
         val requestHeaders = buildRequestHeaders(
             mapOf(
                 "Idempotency-Key" to HeaderParameterSpec(idempotencyKey, "simple", false, null),
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
             ),
             emptyMap()
         )
@@ -136,11 +126,10 @@ class CommerceApi(private val client: HttpClient) {
     }
 
     /** Create product SPU */
-    suspend fun catalogProductsCreate(body: CommerceProductSpuMutationRequest, idempotencyKey: String, xRequestId: String? = null): CatalogProductsCreateResult? {
+    suspend fun catalogProductsCreate(body: CommerceProductSpuMutationRequest, idempotencyKey: String): CatalogProductsCreateResult? {
         val requestHeaders = buildRequestHeaders(
             mapOf(
                 "Idempotency-Key" to HeaderParameterSpec(idempotencyKey, "simple", false, null),
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
             ),
             emptyMap()
         )
@@ -149,11 +138,10 @@ class CommerceApi(private val client: HttpClient) {
     }
 
     /** Update product SPU */
-    suspend fun catalogProductsUpdate(productId: String, body: CommerceProductSpuMutationRequest, idempotencyKey: String, xRequestId: String? = null): CatalogProductsUpdateResult? {
+    suspend fun catalogProductsUpdate(productId: String, body: CommerceProductSpuMutationRequest, idempotencyKey: String): CatalogProductsUpdateResult? {
         val requestHeaders = buildRequestHeaders(
             mapOf(
                 "Idempotency-Key" to HeaderParameterSpec(idempotencyKey, "simple", false, null),
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
             ),
             emptyMap()
         )
@@ -175,11 +163,10 @@ class CommerceApi(private val client: HttpClient) {
     }
 
     /** Create product SKU */
-    suspend fun catalogSkusCreate(body: CommerceProductSkuMutationRequest, idempotencyKey: String, xRequestId: String? = null): CatalogSkusCreateResult? {
+    suspend fun catalogSkusCreate(body: CommerceProductSkuMutationRequest, idempotencyKey: String): CatalogSkusCreateResult? {
         val requestHeaders = buildRequestHeaders(
             mapOf(
                 "Idempotency-Key" to HeaderParameterSpec(idempotencyKey, "simple", false, null),
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
             ),
             emptyMap()
         )
@@ -188,11 +175,10 @@ class CommerceApi(private val client: HttpClient) {
     }
 
     /** Update product SKU */
-    suspend fun catalogSkusUpdate(skuId: String, body: CommerceProductSkuMutationRequest, idempotencyKey: String, xRequestId: String? = null): CatalogSkusUpdateResult? {
+    suspend fun catalogSkusUpdate(skuId: String, body: CommerceProductSkuMutationRequest, idempotencyKey: String): CatalogSkusUpdateResult? {
         val requestHeaders = buildRequestHeaders(
             mapOf(
                 "Idempotency-Key" to HeaderParameterSpec(idempotencyKey, "simple", false, null),
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
             ),
             emptyMap()
         )
@@ -281,11 +267,10 @@ class CommerceApi(private val client: HttpClient) {
     }
 
     /** Update inventory stock */
-    suspend fun inventoryStocksUpdate(stockId: String, body: CommerceInventoryStockUpdateRequest, idempotencyKey: String, xRequestId: String? = null): InventoryStocksUpdateResult? {
+    suspend fun inventoryStocksUpdate(stockId: String, body: CommerceInventoryStockUpdateRequest, idempotencyKey: String): InventoryStocksUpdateResult? {
         val requestHeaders = buildRequestHeaders(
             mapOf(
                 "Idempotency-Key" to HeaderParameterSpec(idempotencyKey, "simple", false, null),
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
             ),
             emptyMap()
         )
@@ -349,11 +334,10 @@ class CommerceApi(private val client: HttpClient) {
     }
 
     /** Memberships Members Status Update */
-    suspend fun membershipsMembersStatusUpdate(membershipId: String, body: CommerceMembershipMemberStatusRequest, idempotencyKey: String, xRequestId: String? = null): MembershipsMembersStatusUpdateResult? {
+    suspend fun membershipsMembersStatusUpdate(membershipId: String, body: CommerceMembershipMemberStatusRequest, idempotencyKey: String): MembershipsMembersStatusUpdateResult? {
         val requestHeaders = buildRequestHeaders(
             mapOf(
                 "Idempotency-Key" to HeaderParameterSpec(idempotencyKey, "simple", false, null),
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
             ),
             emptyMap()
         )
@@ -373,11 +357,10 @@ class CommerceApi(private val client: HttpClient) {
     }
 
     /** Memberships Package Groups Create */
-    suspend fun membershipsPackageGroupsCreate(body: CommerceMembershipPackageGroupMutationRequest, idempotencyKey: String, xRequestId: String? = null): MembershipsPackageGroupsCreateResult? {
+    suspend fun membershipsPackageGroupsCreate(body: CommerceMembershipPackageGroupMutationRequest, idempotencyKey: String): MembershipsPackageGroupsCreateResult? {
         val requestHeaders = buildRequestHeaders(
             mapOf(
                 "Idempotency-Key" to HeaderParameterSpec(idempotencyKey, "simple", false, null),
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
             ),
             emptyMap()
         )
@@ -386,23 +369,16 @@ class CommerceApi(private val client: HttpClient) {
     }
 
     /** Memberships Package Groups Delete */
-    suspend fun membershipsPackageGroupsDelete(packageGroupId: String, xRequestId: String? = null): MembershipsPackageGroupsDeleteResult? {
-        val requestHeaders = buildRequestHeaders(
-            mapOf(
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
-            ),
-            emptyMap()
-        )
-        val raw = client.delete(ApiPaths.backendPath("/memberships/package_groups/${serializePathParameter(packageGroupId, PathParameterSpec("packageGroupId", "simple", false))}"), null, requestHeaders)
+    suspend fun membershipsPackageGroupsDelete(packageGroupId: String): MembershipsPackageGroupsDeleteResult? {
+        val raw = client.delete(ApiPaths.backendPath("/memberships/package_groups/${serializePathParameter(packageGroupId, PathParameterSpec("packageGroupId", "simple", false))}"))
         return client.convertValue(raw, object : TypeReference<MembershipsPackageGroupsDeleteResult>() {})
     }
 
     /** Memberships Package Groups Update */
-    suspend fun membershipsPackageGroupsUpdate(packageGroupId: String, body: CommerceMembershipPackageGroupMutationRequest, idempotencyKey: String, xRequestId: String? = null): MembershipsPackageGroupsUpdateResult? {
+    suspend fun membershipsPackageGroupsUpdate(packageGroupId: String, body: CommerceMembershipPackageGroupMutationRequest, idempotencyKey: String): MembershipsPackageGroupsUpdateResult? {
         val requestHeaders = buildRequestHeaders(
             mapOf(
                 "Idempotency-Key" to HeaderParameterSpec(idempotencyKey, "simple", false, null),
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
             ),
             emptyMap()
         )
@@ -424,11 +400,10 @@ class CommerceApi(private val client: HttpClient) {
     }
 
     /** Memberships Packages Create */
-    suspend fun membershipsPackagesCreate(body: CommerceMembershipPackageMutationRequest, idempotencyKey: String, xRequestId: String? = null): MembershipsPackagesCreateResult? {
+    suspend fun membershipsPackagesCreate(body: CommerceMembershipPackageMutationRequest, idempotencyKey: String): MembershipsPackagesCreateResult? {
         val requestHeaders = buildRequestHeaders(
             mapOf(
                 "Idempotency-Key" to HeaderParameterSpec(idempotencyKey, "simple", false, null),
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
             ),
             emptyMap()
         )
@@ -437,23 +412,16 @@ class CommerceApi(private val client: HttpClient) {
     }
 
     /** Memberships Packages Delete */
-    suspend fun membershipsPackagesDelete(packageId: String, xRequestId: String? = null): MembershipsPackagesDeleteResult? {
-        val requestHeaders = buildRequestHeaders(
-            mapOf(
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
-            ),
-            emptyMap()
-        )
-        val raw = client.delete(ApiPaths.backendPath("/memberships/packages/${serializePathParameter(packageId, PathParameterSpec("packageId", "simple", false))}"), null, requestHeaders)
+    suspend fun membershipsPackagesDelete(packageId: String): MembershipsPackagesDeleteResult? {
+        val raw = client.delete(ApiPaths.backendPath("/memberships/packages/${serializePathParameter(packageId, PathParameterSpec("packageId", "simple", false))}"))
         return client.convertValue(raw, object : TypeReference<MembershipsPackagesDeleteResult>() {})
     }
 
     /** Memberships Packages Update */
-    suspend fun membershipsPackagesUpdate(packageId: String, body: CommerceMembershipPackageMutationRequest, idempotencyKey: String, xRequestId: String? = null): MembershipsPackagesUpdateResult? {
+    suspend fun membershipsPackagesUpdate(packageId: String, body: CommerceMembershipPackageMutationRequest, idempotencyKey: String): MembershipsPackagesUpdateResult? {
         val requestHeaders = buildRequestHeaders(
             mapOf(
                 "Idempotency-Key" to HeaderParameterSpec(idempotencyKey, "simple", false, null),
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
             ),
             emptyMap()
         )
@@ -473,11 +441,10 @@ class CommerceApi(private val client: HttpClient) {
     }
 
     /** Memberships Plans Create */
-    suspend fun membershipsPlansCreate(body: CommerceMembershipPlanMutationRequest, idempotencyKey: String, xRequestId: String? = null): MembershipsPlansCreateResult? {
+    suspend fun membershipsPlansCreate(body: CommerceMembershipPlanMutationRequest, idempotencyKey: String): MembershipsPlansCreateResult? {
         val requestHeaders = buildRequestHeaders(
             mapOf(
                 "Idempotency-Key" to HeaderParameterSpec(idempotencyKey, "simple", false, null),
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
             ),
             emptyMap()
         )
@@ -486,23 +453,16 @@ class CommerceApi(private val client: HttpClient) {
     }
 
     /** Memberships Plans Delete */
-    suspend fun membershipsPlansDelete(planId: String, xRequestId: String? = null): MembershipsPlansDeleteResult? {
-        val requestHeaders = buildRequestHeaders(
-            mapOf(
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
-            ),
-            emptyMap()
-        )
-        val raw = client.delete(ApiPaths.backendPath("/memberships/plans/${serializePathParameter(planId, PathParameterSpec("planId", "simple", false))}"), null, requestHeaders)
+    suspend fun membershipsPlansDelete(planId: String): MembershipsPlansDeleteResult? {
+        val raw = client.delete(ApiPaths.backendPath("/memberships/plans/${serializePathParameter(planId, PathParameterSpec("planId", "simple", false))}"))
         return client.convertValue(raw, object : TypeReference<MembershipsPlansDeleteResult>() {})
     }
 
     /** Memberships Plans Update */
-    suspend fun membershipsPlansUpdate(planId: String, body: CommerceMembershipPlanMutationRequest, idempotencyKey: String, xRequestId: String? = null): MembershipsPlansUpdateResult? {
+    suspend fun membershipsPlansUpdate(planId: String, body: CommerceMembershipPlanMutationRequest, idempotencyKey: String): MembershipsPlansUpdateResult? {
         val requestHeaders = buildRequestHeaders(
             mapOf(
                 "Idempotency-Key" to HeaderParameterSpec(idempotencyKey, "simple", false, null),
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
             ),
             emptyMap()
         )
@@ -601,11 +561,10 @@ class CommerceApi(private val client: HttpClient) {
     }
 
     /** Payments Provider Accounts Create */
-    suspend fun paymentsProviderAccountsCreate(body: CommercePaymentProviderAccountMutationRequest, idempotencyKey: String, xRequestId: String? = null): PaymentsProviderAccountsCreateResult? {
+    suspend fun paymentsProviderAccountsCreate(body: CommercePaymentProviderAccountMutationRequest, idempotencyKey: String): PaymentsProviderAccountsCreateResult? {
         val requestHeaders = buildRequestHeaders(
             mapOf(
                 "Idempotency-Key" to HeaderParameterSpec(idempotencyKey, "simple", false, null),
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
             ),
             emptyMap()
         )
@@ -686,11 +645,10 @@ class CommerceApi(private val client: HttpClient) {
     }
 
     /** Recharges Packages Create */
-    suspend fun rechargesPackagesCreate(body: CommerceRechargePackageMutationRequest, idempotencyKey: String, xRequestId: String? = null): RechargesPackagesCreateResult? {
+    suspend fun rechargesPackagesCreate(body: CommerceRechargePackageMutationRequest, idempotencyKey: String): RechargesPackagesCreateResult? {
         val requestHeaders = buildRequestHeaders(
             mapOf(
                 "Idempotency-Key" to HeaderParameterSpec(idempotencyKey, "simple", false, null),
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
             ),
             emptyMap()
         )
@@ -699,23 +657,16 @@ class CommerceApi(private val client: HttpClient) {
     }
 
     /** Recharges Packages Delete */
-    suspend fun rechargesPackagesDelete(packageId: String, xRequestId: String? = null): RechargesPackagesDeleteResult? {
-        val requestHeaders = buildRequestHeaders(
-            mapOf(
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
-            ),
-            emptyMap()
-        )
-        val raw = client.delete(ApiPaths.backendPath("/recharges/packages/${serializePathParameter(packageId, PathParameterSpec("packageId", "simple", false))}"), null, requestHeaders)
+    suspend fun rechargesPackagesDelete(packageId: String): RechargesPackagesDeleteResult? {
+        val raw = client.delete(ApiPaths.backendPath("/recharges/packages/${serializePathParameter(packageId, PathParameterSpec("packageId", "simple", false))}"))
         return client.convertValue(raw, object : TypeReference<RechargesPackagesDeleteResult>() {})
     }
 
     /** Recharges Packages Update */
-    suspend fun rechargesPackagesUpdate(packageId: String, body: CommerceRechargePackageMutationRequest, idempotencyKey: String, xRequestId: String? = null): RechargesPackagesUpdateResult? {
+    suspend fun rechargesPackagesUpdate(packageId: String, body: CommerceRechargePackageMutationRequest, idempotencyKey: String): RechargesPackagesUpdateResult? {
         val requestHeaders = buildRequestHeaders(
             mapOf(
                 "Idempotency-Key" to HeaderParameterSpec(idempotencyKey, "simple", false, null),
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
             ),
             emptyMap()
         )
@@ -774,11 +725,10 @@ class CommerceApi(private val client: HttpClient) {
     }
 
     /** Wallet Adjustments Create */
-    suspend fun walletAdjustmentsCreate(body: CommerceStandardCommandRequest, idempotencyKey: String, xRequestId: String? = null): WalletAdjustmentsCreateResult? {
+    suspend fun walletAdjustmentsCreate(body: CommerceStandardCommandRequest, idempotencyKey: String): WalletAdjustmentsCreateResult? {
         val requestHeaders = buildRequestHeaders(
             mapOf(
                 "Idempotency-Key" to HeaderParameterSpec(idempotencyKey, "simple", false, null),
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
             ),
             emptyMap()
         )

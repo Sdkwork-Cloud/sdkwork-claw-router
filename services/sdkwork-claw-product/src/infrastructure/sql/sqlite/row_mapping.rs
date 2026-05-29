@@ -4,7 +4,7 @@ use sqlx::{Row, SqlitePool};
 use crate::infrastructure::sql::rows::{
     AiModelRow, ApiKeyGroupMetricSnapshotRow, ApiKeyGroupRow, GatewayAccessPolicyRow,
     GatewayApiKeyRow, ModelPriceRow, ModelProviderRouteRow, ModelVendorRow, PricingPlanRow,
-    ProviderAccountPoolRouteRow, QuotaPolicyRow, RoutingPolicyRow, RoutingRuleRow,
+    ProviderChannelRouteRow, QuotaPolicyRow, RoutingPolicyRow, RoutingRuleRow,
 };
 
 pub async fn load_vendors(
@@ -67,6 +67,7 @@ pub async fn load_provider_routes(
         Ok(ModelProviderRouteRow {
             catalog_key: row.try_get("catalog_key")?,
             model: row.try_get("model")?,
+            region_code: row.try_get("region_code")?,
             provider_code: row.try_get("provider_code")?,
             channel_id: row.try_get("channel_id")?,
             provider_model: row.try_get("provider_model")?,
@@ -80,6 +81,8 @@ pub async fn load_provider_routes(
     });
     sqlx::query(mapper.sql)
         .bind(circuit_breaker_recovery_window_seconds)
+        .bind(circuit_breaker_recovery_window_seconds)
+        .bind(circuit_breaker_recovery_window_seconds)
         .fetch_all(pool)
         .await?
         .into_iter()
@@ -87,15 +90,16 @@ pub async fn load_provider_routes(
         .collect()
 }
 
-pub async fn load_provider_account_pool_routes(
+pub async fn load_provider_channel_routes(
     pool: &SqlitePool,
     sql: &'static str,
     circuit_breaker_recovery_window_seconds: i64,
-) -> Result<Vec<ProviderAccountPoolRouteRow>, sqlx::Error> {
+) -> Result<Vec<ProviderChannelRouteRow>, sqlx::Error> {
     let mapper = map_query(sql, |row| {
-        Ok(ProviderAccountPoolRouteRow {
+        Ok(ProviderChannelRouteRow {
             provider_code: row.try_get("provider_code")?,
             channel_id: row.try_get("channel_id")?,
+            region_code: row.try_get("region_code")?,
             base_url: row.try_get("base_url")?,
             secret_ref: row.try_get("secret_ref")?,
             auth_type: row.try_get("auth_type")?,
@@ -106,6 +110,8 @@ pub async fn load_provider_account_pool_routes(
         })
     });
     sqlx::query(mapper.sql)
+        .bind(circuit_breaker_recovery_window_seconds)
+        .bind(circuit_breaker_recovery_window_seconds)
         .bind(circuit_breaker_recovery_window_seconds)
         .fetch_all(pool)
         .await?
@@ -277,6 +283,7 @@ pub async fn load_prices(
         Ok(ModelPriceRow {
             catalog_key: row.try_get("catalog_key")?,
             model: row.try_get("model")?,
+            region_code: row.try_get("region_code")?,
             price_side_code: row.try_get("price_side_code")?,
             billing_meter_code: row.try_get("billing_meter_code")?,
             unit_price: row.try_get("unit_price")?,

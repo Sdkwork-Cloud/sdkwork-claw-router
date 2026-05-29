@@ -7,11 +7,13 @@ public class AdminChannelCreateRequest {
     private String apiKey;
     private String baseUrl;
     private List<String> capabilities;
+    private String channelType;
     private ProviderCircuitBreakerPolicy circuitBreakerPolicy;
     private String expiresAt;
     private List<String> models;
     private String name;
     private String protocol;
+    private List<String> resourceCodes;
     private ProviderRetryPolicy retryPolicy;
     private String secretRef;
     private String status;
@@ -49,6 +51,14 @@ public class AdminChannelCreateRequest {
 
     public void setCapabilities(List<String> capabilities) {
         this.capabilities = capabilities;
+    }
+
+    public String getChannelType() {
+        return this.channelType;
+    }
+
+    public void setChannelType(String channelType) {
+        this.channelType = channelType;
     }
 
     public ProviderCircuitBreakerPolicy getCircuitBreakerPolicy() {
@@ -89,6 +99,14 @@ public class AdminChannelCreateRequest {
 
     public void setProtocol(String protocol) {
         this.protocol = protocol;
+    }
+
+    public List<String> getResourceCodes() {
+        return this.resourceCodes;
+    }
+
+    public void setResourceCodes(List<String> resourceCodes) {
+        this.resourceCodes = resourceCodes;
     }
 
     public ProviderRetryPolicy getRetryPolicy() {

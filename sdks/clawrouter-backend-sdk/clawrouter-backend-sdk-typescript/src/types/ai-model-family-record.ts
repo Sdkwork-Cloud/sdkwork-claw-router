@@ -38,8 +38,6 @@ export interface AiModelFamilyRecord {
   organization_id: string;
   /** Primary modality field on ai model family record. */
   primary_modality?: string;
-  /** Region code field on ai model family record. */
-  region_code: string;
   /** Sort order field on ai model family record. */
   sort_order?: number;
   /** Status field on ai model family record. */

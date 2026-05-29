@@ -22,8 +22,28 @@ pub struct AdminRecordLogItem {
     /// Cost field on admin record log item.
     pub cost: String,
 
+    /// Error code field on admin record log item.
+    #[serde(rename = "errorCode")]
+    pub error_code: String,
+
+    /// Error message field on admin record log item.
+    #[serde(rename = "errorMessage")]
+    pub error_message: String,
+
+    /// Error type field on admin record log item.
+    #[serde(rename = "errorType")]
+    pub error_type: String,
+
     /// Group field on admin record log item.
     pub group: String,
+
+    /// Http method field on admin record log item.
+    #[serde(rename = "httpMethod")]
+    pub http_method: String,
+
+    /// Http status field on admin record log item.
+    #[serde(rename = "httpStatus")]
+    pub http_status: i64,
 
     /// Id field on admin record log item.
     pub id: String,
@@ -52,6 +72,10 @@ pub struct AdminRecordLogItem {
     /// Path field on admin record log item.
     pub path: String,
 
+    /// Provider native model field on admin record log item.
+    #[serde(rename = "providerNativeModel")]
+    pub provider_native_model: String,
+
     /// Reasoning effort field on admin record log item.
     #[serde(rename = "reasoningEffort")]
     pub reasoning_effort: String,
@@ -59,6 +83,13 @@ pub struct AdminRecordLogItem {
     /// Request id field on admin record log item.
     #[serde(rename = "requestId")]
     pub request_id: String,
+
+    /// Requested model catalog key field on admin record log item.
+    #[serde(rename = "requestedModelCatalogKey")]
+    pub requested_model_catalog_key: String,
+
+    /// Status field on admin record log item.
+    pub status: String,
 
     /// Time field on admin record log item.
     pub time: String,
@@ -79,4 +110,8 @@ pub struct AdminRecordLogItem {
 
     /// User field on admin record log item.
     pub user: String,
+
+    /// Full HTTP User-Agent header captured from the gateway request. Empty when the client omitted the header.
+    #[serde(rename = "userAgent")]
+    pub user_agent: String,
 }

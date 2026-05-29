@@ -30,11 +30,10 @@ class RuntimeApi {
   }
 
   /// Create runtime invocation
-  Future<InvocationsCreateResult?> invocationsCreate(RuntimeInvocationCreateRequest body, String idempotencyKey, [String? xRequestId]) async {
+  Future<InvocationsCreateResult?> invocationsCreate(RuntimeInvocationCreateRequest body, String idempotencyKey) async {
     final requestHeaders = buildRequestHeaders(
       <String, HeaderParameterSpec>{
         'Idempotency-Key': HeaderParameterSpec(idempotencyKey, 'simple', false, null),
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
       },
       <String, HeaderParameterSpec>{},
     );
@@ -69,11 +68,10 @@ class RuntimeApi {
   }
 
   /// Create runtime artifact
-  Future<ArtifactsCreateResult?> artifactsCreate(String invocationId, RuntimeArtifactCreateRequest body, String idempotencyKey, [String? xRequestId]) async {
+  Future<ArtifactsCreateResult?> artifactsCreate(String invocationId, RuntimeArtifactCreateRequest body, String idempotencyKey) async {
     final requestHeaders = buildRequestHeaders(
       <String, HeaderParameterSpec>{
         'Idempotency-Key': HeaderParameterSpec(idempotencyKey, 'simple', false, null),
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
       },
       <String, HeaderParameterSpec>{},
     );
@@ -86,11 +84,10 @@ class RuntimeApi {
   }
 
   /// Complete runtime invocation
-  Future<InvocationsSubmitResult?> invocationsSubmit(String invocationId, RuntimeInvocationCompleteRequest body, String idempotencyKey, [String? xRequestId]) async {
+  Future<InvocationsSubmitResult?> invocationsSubmit(String invocationId, RuntimeInvocationCompleteRequest body, String idempotencyKey) async {
     final requestHeaders = buildRequestHeaders(
       <String, HeaderParameterSpec>{
         'Idempotency-Key': HeaderParameterSpec(idempotencyKey, 'simple', false, null),
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
       },
       <String, HeaderParameterSpec>{},
     );
@@ -116,11 +113,10 @@ class RuntimeApi {
   }
 
   /// Create runtime invocation event
-  Future<InvocationEventsCreateResult?> invocationEventsCreate(String invocationId, RuntimeEventCreateRequest body, String idempotencyKey, [String? xRequestId]) async {
+  Future<InvocationEventsCreateResult?> invocationEventsCreate(String invocationId, RuntimeEventCreateRequest body, String idempotencyKey) async {
     final requestHeaders = buildRequestHeaders(
       <String, HeaderParameterSpec>{
         'Idempotency-Key': HeaderParameterSpec(idempotencyKey, 'simple', false, null),
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
       },
       <String, HeaderParameterSpec>{},
     );

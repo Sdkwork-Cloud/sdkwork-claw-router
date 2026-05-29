@@ -39,13 +39,12 @@ namespace Sdkwork.ClawRouter.App.Api
         /// <summary>
         /// Create memory space
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.App.Models.SpacesCreateResult?> SpacesCreateAsync(Sdkwork.ClawRouter.App.Models.MemorySpaceCreateRequest body, string idempotencyKey, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.App.Models.SpacesCreateResult?> SpacesCreateAsync(Sdkwork.ClawRouter.App.Models.MemorySpaceCreateRequest body, string idempotencyKey)
         {
             var requestHeaders = BuildRequestHeaders(
                 new Dictionary<string, HeaderParameterSpec>
                 {
                     ["Idempotency-Key"] = new HeaderParameterSpec(idempotencyKey, "simple", false, null),
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
                 },
                 new Dictionary<string, HeaderParameterSpec>()
             );
@@ -76,13 +75,12 @@ namespace Sdkwork.ClawRouter.App.Api
         /// <summary>
         /// Create memory entry
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.App.Models.EntriesCreateResult?> EntriesCreateAsync(string spaceId, Sdkwork.ClawRouter.App.Models.MemoryEntryCreateRequest body, string idempotencyKey, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.App.Models.EntriesCreateResult?> EntriesCreateAsync(string spaceId, Sdkwork.ClawRouter.App.Models.MemoryEntryCreateRequest body, string idempotencyKey)
         {
             var requestHeaders = BuildRequestHeaders(
                 new Dictionary<string, HeaderParameterSpec>
                 {
                     ["Idempotency-Key"] = new HeaderParameterSpec(idempotencyKey, "simple", false, null),
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
                 },
                 new Dictionary<string, HeaderParameterSpec>()
             );

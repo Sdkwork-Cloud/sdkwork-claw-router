@@ -32,7 +32,7 @@ async fn admin_channel_route_creates_lists_updates_and_soft_deletes_items() {
                 .header("content-type", "application/json")
                 .internal_trusted_subject(10, 20, 30)
                 .body(Body::from(
-                    r#"{"name":"OpenAI primary","vendor":"OpenAI","protocol":"OpenAI","accessType":"api-key","baseUrl":"https://api.openai.com/v1","secretRef":"vault://providers/openai/account/main","models":["openai/global/gpt-4o-mini"],"capabilities":["llm"],"timeoutMs":60000,"retryPolicy":{"maxAttempts":3,"retryableStatusCodes":[429,503],"backoffMs":25},"circuitBreakerPolicy":{"failureThreshold":2},"expiresAt":"2026-06-30T08:00:00Z","weight":80,"status":"active"}"#,
+                    r#"{"name":"OpenAI primary","vendor":"OpenAI","channelType":"official","protocol":"OpenAI","accessType":"api-key","baseUrl":"https://api.openai.com/v1","secretRef":"vault://providers/openai/account/main","models":["openai/gpt-4o-mini"],"capabilities":["llm"],"resourceCodes":["vendor.openai","model.openai.gpt-4o-mini.chat"],"timeoutMs":60000,"retryPolicy":{"maxAttempts":3,"retryableStatusCodes":[429,503],"backoffMs":25},"circuitBreakerPolicy":{"failureThreshold":2},"expiresAt":"2026-06-30T08:00:00Z","weight":80,"status":"active"}"#,
                 ))
                 .unwrap(),
         )
@@ -43,12 +43,22 @@ async fn admin_channel_route_creates_lists_updates_and_soft_deletes_items() {
     let create_payload = json_payload(create_response).await;
     assert_eq!("2000", create_payload["code"]);
     assert_eq!("OpenAI primary", create_payload["data"]["item"]["name"]);
+    assert_eq!("101", create_payload["data"]["item"]["channelId"]);
     assert_eq!("OpenAI", create_payload["data"]["item"]["vendor"]);
+    assert_eq!("official", create_payload["data"]["item"]["channelType"]);
     assert_eq!("active", create_payload["data"]["item"]["status"]);
     assert_eq!(80, create_payload["data"]["item"]["weight"]);
     assert_eq!(
-        "openai/global/gpt-4o-mini",
+        "openai/gpt-4o-mini",
         create_payload["data"]["item"]["models"][0]
+    );
+    assert_eq!(
+        "vendor.openai",
+        create_payload["data"]["item"]["resourceCodes"][0]
+    );
+    assert_eq!(
+        "model.openai.gpt-4o-mini.chat",
+        create_payload["data"]["item"]["resourceCodes"][1]
     );
     assert_eq!(
         3,
@@ -85,7 +95,7 @@ async fn admin_channel_route_creates_lists_updates_and_soft_deletes_items() {
                 .header("content-type", "application/json")
                 .internal_trusted_subject(10, 20, 30)
                 .body(Body::from(
-                    r#"{"id":"1","status":"disabled","weight":15,"models":["openai/global/gpt-4o-mini"],"capabilities":["llm","image"],"timeoutMs":120000,"retryPolicy":null,"circuitBreakerPolicy":{"failureThreshold":3},"expiresAt":null}"#,
+                    r#"{"id":"1","channelType":"relay","status":"disabled","weight":15,"models":["openai/gpt-4o-mini"],"capabilities":["llm","image"],"resourceCodes":["bundle.openrouter.openai.standard"],"timeoutMs":120000,"retryPolicy":null,"circuitBreakerPolicy":{"failureThreshold":3},"expiresAt":null}"#,
                 ))
                 .unwrap(),
         )
@@ -95,8 +105,13 @@ async fn admin_channel_route_creates_lists_updates_and_soft_deletes_items() {
     assert_eq!(StatusCode::OK, update_response.status());
     let update_payload = json_payload(update_response).await;
     assert_eq!("disabled", update_payload["data"]["item"]["status"]);
+    assert_eq!("relay", update_payload["data"]["item"]["channelType"]);
     assert_eq!(15, update_payload["data"]["item"]["weight"]);
     assert_eq!("image", update_payload["data"]["item"]["capabilities"][1]);
+    assert_eq!(
+        "bundle.openrouter.openai.standard",
+        update_payload["data"]["item"]["resourceCodes"][0]
+    );
     assert_eq!(120_000, update_payload["data"]["item"]["timeoutMs"]);
     assert!(update_payload["data"]["item"].get("retryPolicy").is_none());
     assert_eq!(
@@ -134,7 +149,13 @@ async fn admin_channel_route_creates_lists_updates_and_soft_deletes_items() {
     assert_eq!("2000", list_payload["code"]);
     assert_eq!(1, list_payload["data"]["items"].as_array().unwrap().len());
     assert_eq!("1", list_payload["data"]["items"][0]["id"]);
+    assert_eq!("101", list_payload["data"]["items"][0]["channelId"]);
     assert_eq!("disabled", list_payload["data"]["items"][0]["status"]);
+    assert_eq!("relay", list_payload["data"]["items"][0]["channelType"]);
+    assert_eq!(
+        "bundle.openrouter.openai.standard",
+        list_payload["data"]["items"][0]["resourceCodes"][0]
+    );
     assert_eq!(120_000, list_payload["data"]["items"][0]["timeoutMs"]);
     assert!(list_payload["data"]["items"][0]["createdAt"]
         .as_str()
@@ -171,6 +192,8 @@ async fn admin_channel_route_creates_lists_updates_and_soft_deletes_items() {
     assert_eq!("active", test_payload["data"]["status"]);
     assert_eq!("37ms", test_payload["data"]["latency"]);
     assert_eq!("active", test_payload["data"]["item"]["status"]);
+    assert_eq!("101", test_payload["data"]["item"]["channelId"]);
+    assert_eq!("relay", test_payload["data"]["item"]["channelType"]);
     assert!(test_payload["data"]["item"]["createdAt"]
         .as_str()
         .is_some_and(|value| !value.trim().is_empty()));
@@ -213,7 +236,7 @@ async fn admin_channel_route_creates_lists_updates_and_soft_deletes_items() {
 }
 
 #[tokio::test]
-async fn admin_channel_route_returns_manageable_plaintext_api_key_for_channel_accounts() {
+async fn admin_channel_route_returns_manageable_plaintext_api_key_for_channels() {
     let store = Arc::new(TestChannelStore::default());
     let router = sdkwork_claw_product::api::admin_channel_router_with_store(
         store.clone(),
@@ -228,7 +251,7 @@ async fn admin_channel_route_returns_manageable_plaintext_api_key_for_channel_ac
                 .header("content-type", "application/json")
                 .internal_trusted_subject(10, 20, 30)
                 .body(Body::from(
-                    r#"{"name":"OpenAI primary","vendor":"OpenAI","protocol":"OpenAI","accessType":"api-key","baseUrl":"https://api.openai.com/v1","apiKey":"sk-live-secret","models":["openai/global/gpt-4o-mini"],"capabilities":["llm"],"weight":80,"status":"active"}"#,
+                    r#"{"name":"OpenAI primary","vendor":"OpenAI","protocol":"OpenAI","accessType":"api-key","baseUrl":"https://api.openai.com/v1","apiKey":"sk-live-secret","models":["openai/gpt-4o-mini"],"capabilities":["llm"],"weight":80,"status":"active"}"#,
                 ))
                 .unwrap(),
         )
@@ -248,7 +271,7 @@ async fn admin_channel_route_returns_manageable_plaintext_api_key_for_channel_ac
         .secret_ref
         .as_deref()
         .expect("apiKey input should be converted into an internal secret reference");
-    assert!(secret_ref.starts_with("secret://provider-accounts/openai/"));
+    assert!(secret_ref.starts_with("secret://ai-channels/openai/"));
     assert!(!secret_ref.contains("sk-live-secret"));
 }
 
@@ -295,7 +318,7 @@ async fn admin_channel_route_rejects_invalid_payload_without_calling_store() {
                 .header("content-type", "application/json")
                 .internal_trusted_subject(10, 20, 30)
                 .body(Body::from(
-                    r#"{"name":"","vendor":"OpenAI","secretRef":"vault://providers/openai/account/main","models":["openai/global/gpt-4o-mini"],"capabilities":["llm"]}"#,
+                    r#"{"name":"","vendor":"OpenAI","secretRef":"vault://providers/openai/account/main","models":["openai/gpt-4o-mini"],"capabilities":["llm"]}"#,
                 ))
                 .unwrap(),
         )
@@ -309,6 +332,39 @@ async fn admin_channel_route_rejects_invalid_payload_without_calling_store() {
         .as_str()
         .unwrap()
         .contains("channel name is required"));
+    assert!(store.commands.lock().unwrap().is_empty());
+}
+
+#[tokio::test]
+async fn admin_channel_route_rejects_invalid_channel_type_without_calling_store() {
+    let store = Arc::new(TestChannelStore::default());
+    let router = sdkwork_claw_product::api::admin_channel_router_with_store(
+        store.clone(),
+        Arc::new(TestUuidGenerator),
+    );
+
+    let response = router
+        .oneshot(
+            Request::builder()
+                .method("POST")
+                .uri("/backend/v3/api/channel")
+                .header("content-type", "application/json")
+                .internal_trusted_subject(10, 20, 30)
+                .body(Body::from(
+                    r#"{"name":"OpenAI primary","vendor":"OpenAI","channelType":"proxy","secretRef":"vault://providers/openai/account/main","models":["openai/gpt-4o-mini"],"capabilities":["llm"]}"#,
+                ))
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+
+    assert_eq!(StatusCode::BAD_REQUEST, response.status());
+    let payload = json_payload(response).await;
+    assert_eq!("4001", payload["code"]);
+    assert!(payload["msg"]
+        .as_str()
+        .unwrap()
+        .contains("channelType must be one of official, relay"));
     assert!(store.commands.lock().unwrap().is_empty());
 }
 
@@ -328,7 +384,7 @@ async fn admin_channel_route_rejects_plaintext_auth_key_without_calling_store() 
                 .header("content-type", "application/json")
                 .internal_trusted_subject(10, 20, 30)
                 .body(Body::from(
-                    r#"{"name":"OpenAI primary","vendor":"OpenAI","authKey":"sk-live-secret","models":["openai/global/gpt-4o-mini"],"capabilities":["llm"]}"#,
+                    r#"{"name":"OpenAI primary","vendor":"OpenAI","authKey":"sk-live-secret","models":["openai/gpt-4o-mini"],"capabilities":["llm"]}"#,
                 ))
                 .unwrap(),
         )
@@ -361,7 +417,7 @@ async fn admin_channel_route_rejects_invalid_base_url_without_calling_store() {
                 .header("content-type", "application/json")
                 .internal_trusted_subject(10, 20, 30)
                 .body(Body::from(
-                    r#"{"name":"OpenAI primary","vendor":"OpenAI","baseUrl":"javascript:alert(1)","secretRef":"vault://providers/openai/account/main","models":["openai/global/gpt-4o-mini"],"capabilities":["llm"]}"#,
+                    r#"{"name":"OpenAI primary","vendor":"OpenAI","baseUrl":"javascript:alert(1)","secretRef":"vault://providers/openai/account/main","models":["openai/gpt-4o-mini"],"capabilities":["llm"]}"#,
                 ))
                 .unwrap(),
         )
@@ -395,7 +451,7 @@ async fn admin_channel_route_rejects_unsafe_secret_ref_without_calling_store() {
                 .header("content-type", "application/json")
                 .internal_trusted_subject(10, 20, 30)
                 .body(Body::from(
-                    r#"{"name":"OpenAI primary","vendor":"OpenAI","secretRef":"vault://","models":["openai/global/gpt-4o-mini"],"capabilities":["llm"]}"#,
+                    r#"{"name":"OpenAI primary","vendor":"OpenAI","secretRef":"vault://","models":["openai/gpt-4o-mini"],"capabilities":["llm"]}"#,
                 ))
                 .unwrap(),
         )
@@ -418,7 +474,7 @@ async fn admin_channel_route_rejects_unsafe_secret_ref_without_calling_store() {
                 .header("content-type", "application/json")
                 .internal_trusted_subject(10, 20, 30)
                 .body(Body::from(
-                    r#"{"name":"OpenAI primary","vendor":"OpenAI","secretRef":"vault://providers/openai/account/main","api_key":"sk-live-secret","models":["openai/global/gpt-4o-mini"],"capabilities":["llm"]}"#,
+                    r#"{"name":"OpenAI primary","vendor":"OpenAI","secretRef":"vault://providers/openai/account/main","api_key":"sk-live-secret","models":["openai/gpt-4o-mini"],"capabilities":["llm"]}"#,
                 ))
                 .unwrap(),
         )
@@ -451,7 +507,7 @@ async fn admin_channel_route_rejects_invalid_retry_policy_without_calling_store(
                 .header("content-type", "application/json")
                 .internal_trusted_subject(10, 20, 30)
                 .body(Body::from(
-                    r#"{"name":"OpenAI primary","vendor":"OpenAI","secretRef":"vault://providers/openai/account/main","models":["openai/global/gpt-4o-mini"],"retryPolicy":{"maxAttempts":6,"retryableStatusCodes":[503]}}"#,
+                    r#"{"name":"OpenAI primary","vendor":"OpenAI","secretRef":"vault://providers/openai/account/main","models":["openai/gpt-4o-mini"],"retryPolicy":{"maxAttempts":6,"retryableStatusCodes":[503]}}"#,
                 ))
                 .unwrap(),
         )
@@ -484,7 +540,7 @@ async fn admin_channel_route_rejects_invalid_circuit_breaker_policy_without_call
                 .header("content-type", "application/json")
                 .internal_trusted_subject(10, 20, 30)
                 .body(Body::from(
-                    r#"{"name":"OpenAI primary","vendor":"OpenAI","secretRef":"vault://providers/openai/account/main","models":["openai/global/gpt-4o-mini"],"circuitBreakerPolicy":{"failureThreshold":0}}"#,
+                    r#"{"name":"OpenAI primary","vendor":"OpenAI","secretRef":"vault://providers/openai/account/main","models":["openai/gpt-4o-mini"],"circuitBreakerPolicy":{"failureThreshold":0}}"#,
                 ))
                 .unwrap(),
         )
@@ -518,7 +574,7 @@ async fn admin_channel_route_rejects_null_create_runtime_policy_fields_without_c
                 .header("content-type", "application/json")
                 .internal_trusted_subject(10, 20, 30)
                 .body(Body::from(
-                    r#"{"name":"OpenAI primary","vendor":"OpenAI","secretRef":"vault://providers/openai/account/main","models":["openai/global/gpt-4o-mini"],"timeoutMs":null}"#,
+                    r#"{"name":"OpenAI primary","vendor":"OpenAI","secretRef":"vault://providers/openai/account/main","models":["openai/gpt-4o-mini"],"timeoutMs":null}"#,
                 ))
                 .unwrap(),
         )
@@ -542,7 +598,7 @@ async fn admin_channel_route_rejects_null_create_runtime_policy_fields_without_c
                 .header("content-type", "application/json")
                 .internal_trusted_subject(10, 20, 30)
                 .body(Body::from(
-                    r#"{"name":"OpenAI primary","vendor":"OpenAI","secretRef":"vault://providers/openai/account/main","models":["openai/global/gpt-4o-mini"],"retryPolicy":null}"#,
+                    r#"{"name":"OpenAI primary","vendor":"OpenAI","secretRef":"vault://providers/openai/account/main","models":["openai/gpt-4o-mini"],"retryPolicy":null}"#,
                 ))
                 .unwrap(),
         )
@@ -565,7 +621,7 @@ async fn admin_channel_route_rejects_null_create_runtime_policy_fields_without_c
                 .header("content-type", "application/json")
                 .internal_trusted_subject(10, 20, 30)
                 .body(Body::from(
-                    r#"{"name":"OpenAI primary","vendor":"OpenAI","secretRef":"vault://providers/openai/account/main","models":["openai/global/gpt-4o-mini"],"circuitBreakerPolicy":null}"#,
+                    r#"{"name":"OpenAI primary","vendor":"OpenAI","secretRef":"vault://providers/openai/account/main","models":["openai/gpt-4o-mini"],"circuitBreakerPolicy":null}"#,
                 ))
                 .unwrap(),
         )
@@ -628,12 +684,14 @@ impl AdminChannelStore for TestChannelStore {
             self.commands.lock().unwrap().push("create");
             let item = AdminChannelItem {
                 id: 1,
+                channel_id: 101,
                 uuid: command.channel_uuid,
                 tenant_id: command.subject.tenant_id,
                 organization_id: command.subject.organization_id,
                 name: command.name,
                 vendor: command.vendor,
                 provider_code: command.provider_code,
+                channel_type: command.channel_type,
                 protocol: command.protocol,
                 access_type: command.access_type,
                 base_url: command.base_url,
@@ -641,6 +699,7 @@ impl AdminChannelStore for TestChannelStore {
                 api_key: command.credential_material,
                 models: command.models,
                 capabilities: command.capabilities,
+                resource_codes: command.resource_codes,
                 is_multimodal: command.is_multimodal,
                 timeout_ms: command.timeout_ms,
                 retry_policy_json: command.retry_policy_json,
@@ -682,6 +741,9 @@ impl AdminChannelStore for TestChannelStore {
             if let Some(provider_code) = command.provider_code {
                 item.provider_code = provider_code;
             }
+            if let Some(channel_type) = command.channel_type {
+                item.channel_type = channel_type;
+            }
             if let Some(protocol) = command.protocol {
                 item.protocol = protocol;
             }
@@ -703,6 +765,9 @@ impl AdminChannelStore for TestChannelStore {
             if let Some(capabilities) = command.capabilities {
                 item.is_multimodal = capabilities.iter().any(|capability| capability != "llm");
                 item.capabilities = capabilities;
+            }
+            if let Some(resource_codes) = command.resource_codes {
+                item.resource_codes = resource_codes;
             }
             if let Some(retry_policy_json) = command.retry_policy_json {
                 item.retry_policy_json = retry_policy_json;

@@ -18,11 +18,10 @@ public class StorageApi {
     }
 
     /// Create storage bucket
-    public func ossBucketsCreate(body: CreateStorageBucketRequest, idempotencyKey: String, xRequestId: String? = nil) async throws -> OssBucketsCreateResult? {
+    public func ossBucketsCreate(body: CreateStorageBucketRequest, idempotencyKey: String) async throws -> OssBucketsCreateResult? {
         let requestHeaders = buildRequestHeaders(
             [
                 "Idempotency-Key": HeaderParameterSpec(value: idempotencyKey, style: "simple", explode: false, contentType: nil),
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
             ],
             [:]
         )
@@ -30,14 +29,8 @@ public class StorageApi {
     }
 
     /// Update storage bucket status
-    public func ossBucketsUpdate(bucketId: String, body: UpdateStorageBucketRequest, xRequestId: String? = nil) async throws -> OssBucketsUpdateResult? {
-        let requestHeaders = buildRequestHeaders(
-            [
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
-            ],
-            [:]
-        )
-        return try await client.patch(ApiPaths.backendPath("/storage/buckets/\(serializePathParameter(bucketId, PathParameterSpec(name: "bucketId", style: "simple", explode: false)))"), body: body, params: nil, headers: requestHeaders, contentType: "application/json", responseType: OssBucketsUpdateResult.self)
+    public func ossBucketsUpdate(bucketId: String, body: UpdateStorageBucketRequest) async throws -> OssBucketsUpdateResult? {
+        return try await client.patch(ApiPaths.backendPath("/storage/buckets/\(serializePathParameter(bucketId, PathParameterSpec(name: "bucketId", style: "simple", explode: false)))"), body: body, params: nil, headers: nil, contentType: "application/json", responseType: OssBucketsUpdateResult.self)
     }
 
     /// List default storage bucket routes
@@ -49,14 +42,8 @@ public class StorageApi {
     }
 
     /// Set default storage bucket route
-    public func ossDefaultBucketsUpdate(logicalScope: String, body: SetStorageDefaultBucketRequest, xRequestId: String? = nil) async throws -> OssDefaultBucketsUpdateResult? {
-        let requestHeaders = buildRequestHeaders(
-            [
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
-            ],
-            [:]
-        )
-        return try await client.patch(ApiPaths.backendPath("/storage/default_buckets/\(serializePathParameter(logicalScope, PathParameterSpec(name: "logicalScope", style: "simple", explode: false)))"), body: body, params: nil, headers: requestHeaders, contentType: "application/json", responseType: OssDefaultBucketsUpdateResult.self)
+    public func ossDefaultBucketsUpdate(logicalScope: String, body: SetStorageDefaultBucketRequest) async throws -> OssDefaultBucketsUpdateResult? {
+        return try await client.patch(ApiPaths.backendPath("/storage/default_buckets/\(serializePathParameter(logicalScope, PathParameterSpec(name: "logicalScope", style: "simple", explode: false)))"), body: body, params: nil, headers: nil, contentType: "application/json", responseType: OssDefaultBucketsUpdateResult.self)
     }
 
     /// List storage garbage collection jobs
@@ -70,11 +57,10 @@ public class StorageApi {
     }
 
     /// Create storage garbage collection job
-    public func ossGcJobsCreate(body: CreateStorageGarbageCollectionJobRequest, idempotencyKey: String, xRequestId: String? = nil) async throws -> OssGcJobsCreateResult? {
+    public func ossGcJobsCreate(body: CreateStorageGarbageCollectionJobRequest, idempotencyKey: String) async throws -> OssGcJobsCreateResult? {
         let requestHeaders = buildRequestHeaders(
             [
                 "Idempotency-Key": HeaderParameterSpec(value: idempotencyKey, style: "simple", explode: false, contentType: nil),
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
             ],
             [:]
         )
@@ -87,11 +73,10 @@ public class StorageApi {
     }
 
     /// Create storage provider
-    public func ossProvidersCreate(body: CreateStorageProviderRequest, idempotencyKey: String, xRequestId: String? = nil) async throws -> OssProvidersCreateResult? {
+    public func ossProvidersCreate(body: CreateStorageProviderRequest, idempotencyKey: String) async throws -> OssProvidersCreateResult? {
         let requestHeaders = buildRequestHeaders(
             [
                 "Idempotency-Key": HeaderParameterSpec(value: idempotencyKey, style: "simple", explode: false, contentType: nil),
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
             ],
             [:]
         )
@@ -99,25 +84,13 @@ public class StorageApi {
     }
 
     /// Update storage provider status
-    public func ossProvidersUpdate(providerId: String, body: UpdateStorageProviderRequest, xRequestId: String? = nil) async throws -> OssProvidersUpdateResult? {
-        let requestHeaders = buildRequestHeaders(
-            [
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
-            ],
-            [:]
-        )
-        return try await client.patch(ApiPaths.backendPath("/storage/providers/\(serializePathParameter(providerId, PathParameterSpec(name: "providerId", style: "simple", explode: false)))"), body: body, params: nil, headers: requestHeaders, contentType: "application/json", responseType: OssProvidersUpdateResult.self)
+    public func ossProvidersUpdate(providerId: String, body: UpdateStorageProviderRequest) async throws -> OssProvidersUpdateResult? {
+        return try await client.patch(ApiPaths.backendPath("/storage/providers/\(serializePathParameter(providerId, PathParameterSpec(name: "providerId", style: "simple", explode: false)))"), body: body, params: nil, headers: nil, contentType: "application/json", responseType: OssProvidersUpdateResult.self)
     }
 
     /// Check storage provider health
-    public func ossProvidersHealthChecksCreate(providerId: String, xRequestId: String? = nil) async throws -> OssProvidersHealthChecksCreateResult? {
-        let requestHeaders = buildRequestHeaders(
-            [
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
-            ],
-            [:]
-        )
-        return try await client.post(ApiPaths.backendPath("/storage/providers/\(serializePathParameter(providerId, PathParameterSpec(name: "providerId", style: "simple", explode: false)))/health_check"), body: nil, params: nil, headers: requestHeaders, responseType: OssProvidersHealthChecksCreateResult.self)
+    public func ossProvidersHealthChecksCreate(providerId: String) async throws -> OssProvidersHealthChecksCreateResult? {
+        return try await client.post(ApiPaths.backendPath("/storage/providers/\(serializePathParameter(providerId, PathParameterSpec(name: "providerId", style: "simple", explode: false)))/health_check"), body: nil, responseType: OssProvidersHealthChecksCreateResult.self)
     }
 
     /// List storage quota policies
@@ -126,11 +99,10 @@ public class StorageApi {
     }
 
     /// Create storage quota policy
-    public func ossQuotasCreate(body: CreateStorageQuotaPolicyRequest, idempotencyKey: String, xRequestId: String? = nil) async throws -> OssQuotasCreateResult? {
+    public func ossQuotasCreate(body: CreateStorageQuotaPolicyRequest, idempotencyKey: String) async throws -> OssQuotasCreateResult? {
         let requestHeaders = buildRequestHeaders(
             [
                 "Idempotency-Key": HeaderParameterSpec(value: idempotencyKey, style: "simple", explode: false, contentType: nil),
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
             ],
             [:]
         )
@@ -149,11 +121,10 @@ public class StorageApi {
     }
 
     /// Create storage reconciliation run
-    public func ossReconciliationRunsCreate(body: CreateStorageReconciliationRunRequest, idempotencyKey: String, xRequestId: String? = nil) async throws -> OssReconciliationRunsCreateResult? {
+    public func ossReconciliationRunsCreate(body: CreateStorageReconciliationRunRequest, idempotencyKey: String) async throws -> OssReconciliationRunsCreateResult? {
         let requestHeaders = buildRequestHeaders(
             [
                 "Idempotency-Key": HeaderParameterSpec(value: idempotencyKey, style: "simple", explode: false, contentType: nil),
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
             ],
             [:]
         )

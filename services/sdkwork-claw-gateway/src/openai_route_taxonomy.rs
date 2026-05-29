@@ -501,7 +501,7 @@ mod tests {
     }
 
     #[test]
-    fn classifies_optional_model_routes_as_account_pool_routes_when_model_is_absent() {
+    fn classifies_optional_model_routes_as_channel_routes_when_model_is_absent() {
         for (method, path, route_key, capability, billing_meter) in [
             (
                 Method::POST,
@@ -573,7 +573,7 @@ mod tests {
             assert_eq!(billing_meter, classification.billing_meter, "{path}");
             assert!(
                 classification.permits_missing_model(),
-                "{path} should route by account pool when the request omits a model"
+                "{path} should route by channel route when the request omits a model"
             );
             assert!(
                 classification.routes_model_when_present(),
@@ -583,7 +583,7 @@ mod tests {
     }
 
     #[test]
-    fn classifies_management_routes_as_account_pool_routes() {
+    fn classifies_management_routes_as_channel_routes() {
         for (method, path, route_key, capability) in [
             (
                 Method::GET,

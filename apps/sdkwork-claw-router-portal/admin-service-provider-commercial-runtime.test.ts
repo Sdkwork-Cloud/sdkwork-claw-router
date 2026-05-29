@@ -13,7 +13,7 @@ function readWorkspaceFile(path: string): string {
 test("admin service provider center is a commercial provider management surface", () => {
   const appSource = readPortalFile("./src/App.tsx");
   const adminRegistrySource = readPortalFile("./src/adminModuleRegistry.ts");
-  const i18nSource = readPortalFile("./packages/sdkwork-claw-router-i18n/src/index.ts");
+  const i18nSource = readPortalFile("./packages/sdkwork-claw-router-i18n/src/resources/admin/core-navigation.ts");
   const serviceProviderSource = readPortalFile("./packages/sdkwork-claw-router-admin-service-provider/src/index.tsx");
   const serviceProviderServiceSource = readPortalFile("./packages/sdkwork-claw-router-admin-service-provider/src/serviceProviderService.ts");
 
@@ -108,7 +108,7 @@ test("admin service provider center is a commercial provider management surface"
 });
 
 test("service provider commercial schema, contract, OpenAPI, and SDK are registered", () => {
-  const schemaSource = readWorkspaceFile("docs/schema-registry/sdkwork-claw-router.tables.yaml");
+  const schemaSource = readWorkspaceFile("generated/schema/registry/sdkwork-claw-router.tables.effective.yaml");
   const manifest = JSON.parse(readWorkspaceFile("generated/api/api-contract-manifest.json")) as {
     operations: Array<{
       api_surface: string;
@@ -150,7 +150,7 @@ test("service provider commercial schema, contract, OpenAPI, and SDK are registe
     "analytics_service_provider_daily",
     "analytics_service_provider_edge_daily",
   ]) {
-    assert.match(schemaSource, new RegExp(`- table: ${table}\\n`), `missing schema table ${table}`);
+    assert.match(schemaSource, new RegExp(`- table: ${table}\\r?\\n`), `missing schema table ${table}`);
   }
 
   const serviceProviderOperationIds = new Set(

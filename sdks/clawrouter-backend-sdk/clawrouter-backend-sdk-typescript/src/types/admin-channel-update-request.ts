@@ -6,12 +6,14 @@ import type { ProviderRetryPolicy } from './provider-retry-policy';
 export interface AdminChannelUpdateRequest {
   /** Access type field on admin channel update request. */
   accessType?: string;
-  /** Plaintext provider API key accepted only on create/update input. Backend encrypts it into integration_provider_account.auth_config and never returns it. */
+  /** Plaintext provider API key accepted only on create/update input. Backend encrypts it into ai_channel.auth_config and never returns it. */
   apiKey?: string;
   /** Base url field on admin channel update request. */
   baseUrl?: string | null;
   /** Capabilities field on admin channel update request. */
   capabilities?: ('llm' | 'image' | 'audio' | 'music' | 'sfx' | 'video')[];
+  /** Channel type field on admin channel update request. */
+  channelType?: 'official' | 'relay';
   /** Circuit breaker policy field on admin channel update request. */
   circuitBreakerPolicy?: ProviderCircuitBreakerPolicy | JsonNull;
   /** Expires at field on admin channel update request. */
@@ -24,6 +26,8 @@ export interface AdminChannelUpdateRequest {
   name?: string;
   /** Protocol field on admin channel update request. */
   protocol?: string;
+  /** Resource codes field on admin channel update request. */
+  resourceCodes?: string[];
   /** Retry policy field on admin channel update request. */
   retryPolicy?: ProviderRetryPolicy | JsonNull;
   /** Optional compatibility path for existing Vault/KMS secret references. New admin UI submits apiKey instead. */

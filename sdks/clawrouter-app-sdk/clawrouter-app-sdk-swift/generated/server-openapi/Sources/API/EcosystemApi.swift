@@ -31,36 +31,18 @@ public class EcosystemApi {
     }
 
     /// Update skill config
-    public func skillsConfigUpdate(skillId: String, body: AppSkillConfigRequest, xRequestId: String? = nil) async throws -> SkillsConfigUpdateResult? {
-        let requestHeaders = buildRequestHeaders(
-            [
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
-            ],
-            [:]
-        )
-        return try await client.put(ApiPaths.appPath("/ecosystem/skills/\(serializePathParameter(skillId, PathParameterSpec(name: "skillId", style: "simple", explode: false)))/config"), body: body, params: nil, headers: requestHeaders, contentType: "application/json", responseType: SkillsConfigUpdateResult.self)
+    public func skillsConfigUpdate(skillId: String, body: AppSkillConfigRequest) async throws -> SkillsConfigUpdateResult? {
+        return try await client.put(ApiPaths.appPath("/ecosystem/skills/\(serializePathParameter(skillId, PathParameterSpec(name: "skillId", style: "simple", explode: false)))/config"), body: body, params: nil, headers: nil, contentType: "application/json", responseType: SkillsConfigUpdateResult.self)
     }
 
     /// Disable skill
-    public func skillsDisable(skillId: String, xRequestId: String? = nil) async throws -> SkillsDisableResult? {
-        let requestHeaders = buildRequestHeaders(
-            [
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
-            ],
-            [:]
-        )
-        return try await client.post(ApiPaths.appPath("/ecosystem/skills/\(serializePathParameter(skillId, PathParameterSpec(name: "skillId", style: "simple", explode: false)))/disable"), body: nil, params: nil, headers: requestHeaders, responseType: SkillsDisableResult.self)
+    public func skillsDisable(skillId: String) async throws -> SkillsDisableResult? {
+        return try await client.post(ApiPaths.appPath("/ecosystem/skills/\(serializePathParameter(skillId, PathParameterSpec(name: "skillId", style: "simple", explode: false)))/disable"), body: nil, responseType: SkillsDisableResult.self)
     }
 
     /// Enable skill
-    public func skillsEnable(skillId: String, body: AppSkillConfigRequest, xRequestId: String? = nil) async throws -> SkillsEnableResult? {
-        let requestHeaders = buildRequestHeaders(
-            [
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
-            ],
-            [:]
-        )
-        return try await client.post(ApiPaths.appPath("/ecosystem/skills/\(serializePathParameter(skillId, PathParameterSpec(name: "skillId", style: "simple", explode: false)))/enable"), body: body, params: nil, headers: requestHeaders, contentType: "application/json", responseType: SkillsEnableResult.self)
+    public func skillsEnable(skillId: String, body: AppSkillConfigRequest) async throws -> SkillsEnableResult? {
+        return try await client.post(ApiPaths.appPath("/ecosystem/skills/\(serializePathParameter(skillId, PathParameterSpec(name: "skillId", style: "simple", explode: false)))/enable"), body: body, params: nil, headers: nil, contentType: "application/json", responseType: SkillsEnableResult.self)
     }
 
     /// Get my skills
@@ -245,68 +227,4 @@ public class EcosystemApi {
         value.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? value
     }
 
-    private struct HeaderParameterSpec {
-        let value: Any?
-        let style: String
-        let explode: Bool
-        let contentType: String?
-    }
-
-    private func buildRequestHeaders(_ headers: [String: HeaderParameterSpec], _ cookies: [String: HeaderParameterSpec]) -> [String: String]? {
-        var requestHeaders: [String: String] = [:]
-        for (name, parameter) in headers {
-            if let serialized = serializeParameterValue(parameter) {
-                requestHeaders[name] = serialized
-            }
-        }
-
-        if let cookieHeader = buildCookieHeader(cookies), !cookieHeader.isEmpty {
-            requestHeaders["Cookie"] = requestHeaders["Cookie"].map { "\($0); \(cookieHeader)" } ?? cookieHeader
-        }
-
-        return requestHeaders.isEmpty ? nil : requestHeaders
-    }
-
-    private func buildCookieHeader(_ cookies: [String: HeaderParameterSpec]) -> String? {
-        let pairs = cookies.compactMap { name, parameter -> String? in
-            guard let serialized = serializeParameterValue(parameter) else { return nil }
-            return "\(urlEncode(name))=\(urlEncode(serialized))"
-        }
-        return pairs.isEmpty ? nil : pairs.joined(separator: "; ")
-    }
-
-    private func serializeParameterValue(_ parameter: HeaderParameterSpec?) -> String? {
-        guard let parameter, let value = parameter.value else { return nil }
-        if let contentType = parameter.contentType, !contentType.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
-            if JSONSerialization.isValidJSONObject(value),
-               let data = try? JSONSerialization.data(withJSONObject: value, options: []),
-               let json = String(data: data, encoding: .utf8) {
-                return json
-            }
-            return String(describing: value)
-        }
-        if let array = value as? [Any?] {
-            return array.compactMap { $0.map { String(describing: $0) } }.joined(separator: ",")
-        }
-        if let object = value as? [String: Any] {
-            var values: [String] = []
-            for (key, item) in object {
-                if parameter.explode {
-                    values.append("\(key)=\(item)")
-                } else {
-                    values.append(key)
-                    values.append(String(describing: item))
-                }
-            }
-            return values.joined(separator: ",")
-        }
-        if let date = value as? Date {
-            return ISO8601DateFormatter().string(from: date)
-        }
-        return String(describing: value)
-    }
-
-    private func urlEncode(_ value: String) -> String {
-        value.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? value
-    }
 }

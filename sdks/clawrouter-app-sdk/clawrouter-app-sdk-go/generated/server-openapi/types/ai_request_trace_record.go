@@ -2,12 +2,12 @@ package types
 
 // Ai request trace record schema exposed by Claw Router.
 type AiRequestTraceRecord struct {
-	ApiKeyGroupId string `json:"api_key_group_id"`
-	ApiKeyGroupSnapshot string `json:"api_key_group_snapshot"`
 	ApiKeyId string `json:"api_key_id"`
 	ApiKeyNameSnapshot string `json:"api_key_name_snapshot"`
 	AttemptNo int `json:"attempt_no"`
 	CachedTokens string `json:"cached_tokens"`
+	ChannelGroupId string `json:"channel_group_id"`
+	ChannelGroupSnapshot string `json:"channel_group_snapshot"`
 	ChannelId string `json:"channel_id"`
 	ChannelNameSnapshot string `json:"channel_name_snapshot"`
 	ClientIpHash string `json:"client_ip_hash"`
@@ -33,7 +33,6 @@ type AiRequestTraceRecord struct {
 	OwnerType string `json:"owner_type"`
 	PayloadHash string `json:"payload_hash"`
 	PromptTokens string `json:"prompt_tokens"`
-	ProviderAccountId string `json:"provider_account_id"`
 	ProviderErrorCode string `json:"provider_error_code"`
 	ProviderId string `json:"provider_id"`
 	ProviderModel string `json:"provider_model"`

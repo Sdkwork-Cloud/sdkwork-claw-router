@@ -21,15 +21,9 @@ class IamApi {
   }
 
   /// Create group
-  Future<AccessGroupsCreateResult?> accessGroupsCreate(AdminAccessGroupCreateRequest body, [String? xRequestId]) async {
-    final requestHeaders = buildRequestHeaders(
-      <String, HeaderParameterSpec>{
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
-      },
-      <String, HeaderParameterSpec>{},
-    );
+  Future<AccessGroupsCreateResult?> accessGroupsCreate(AdminAccessGroupCreateRequest body) async {
     final payload = body.toJson();
-    final response = await _client.post(ApiPaths.backendPath('/iam/access_groups'), body: payload, headers: requestHeaders, contentType: 'application/json');
+    final response = await _client.post(ApiPaths.backendPath('/iam/access_groups'), body: payload, contentType: 'application/json');
     return (() {
       final map = sdkworkResponseAsMap(response);
       return map == null ? null : AccessGroupsCreateResult.fromJson(map);
@@ -46,15 +40,9 @@ class IamApi {
   }
 
   /// Update group
-  Future<AccessGroupsUpdateResult?> accessGroupsUpdate(String groupId, AdminAccessGroupUpdateRequest body, [String? xRequestId]) async {
-    final requestHeaders = buildRequestHeaders(
-      <String, HeaderParameterSpec>{
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
-      },
-      <String, HeaderParameterSpec>{},
-    );
+  Future<AccessGroupsUpdateResult?> accessGroupsUpdate(String groupId, AdminAccessGroupUpdateRequest body) async {
     final payload = body.toJson();
-    final response = await _client.patch(ApiPaths.backendPath('/iam/access_groups/${serializePathParameter(groupId, const PathParameterSpec('groupId', 'simple', false))}'), body: payload, headers: requestHeaders, contentType: 'application/json');
+    final response = await _client.patch(ApiPaths.backendPath('/iam/access_groups/${serializePathParameter(groupId, const PathParameterSpec('groupId', 'simple', false))}'), body: payload, contentType: 'application/json');
     return (() {
       final map = sdkworkResponseAsMap(response);
       return map == null ? null : AccessGroupsUpdateResult.fromJson(map);
@@ -71,15 +59,9 @@ class IamApi {
   }
 
   /// Replace group channel bindings
-  Future<AccessGroupsChannelBindingsUpdateResult?> accessGroupsChannelBindingsUpdate(String groupId, AdminAccessGroupChannelBindingsReplaceRequest body, [String? xRequestId]) async {
-    final requestHeaders = buildRequestHeaders(
-      <String, HeaderParameterSpec>{
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
-      },
-      <String, HeaderParameterSpec>{},
-    );
+  Future<AccessGroupsChannelBindingsUpdateResult?> accessGroupsChannelBindingsUpdate(String groupId, AdminAccessGroupChannelBindingsReplaceRequest body) async {
     final payload = body.toJson();
-    final response = await _client.put(ApiPaths.backendPath('/iam/access_groups/${serializePathParameter(groupId, const PathParameterSpec('groupId', 'simple', false))}/channel_bindings'), body: payload, headers: requestHeaders, contentType: 'application/json');
+    final response = await _client.put(ApiPaths.backendPath('/iam/access_groups/${serializePathParameter(groupId, const PathParameterSpec('groupId', 'simple', false))}/channel_bindings'), body: payload, contentType: 'application/json');
     return (() {
       final map = sdkworkResponseAsMap(response);
       return map == null ? null : AccessGroupsChannelBindingsUpdateResult.fromJson(map);
@@ -96,11 +78,10 @@ class IamApi {
   }
 
   /// Create API key
-  Future<ApiKeysCreateResult?> apiKeysCreate(AdminApiKeyCreateRequest body, String idempotencyKey, [String? xRequestId]) async {
+  Future<ApiKeysCreateResult?> apiKeysCreate(AdminApiKeyCreateRequest body, String idempotencyKey) async {
     final requestHeaders = buildRequestHeaders(
       <String, HeaderParameterSpec>{
         'Idempotency-Key': HeaderParameterSpec(idempotencyKey, 'simple', false, null),
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
       },
       <String, HeaderParameterSpec>{},
     );
@@ -131,15 +112,9 @@ class IamApi {
   }
 
   /// Create user
-  Future<UsersCreateResult?> usersCreate(AdminUserCreateRequest body, [String? xRequestId]) async {
-    final requestHeaders = buildRequestHeaders(
-      <String, HeaderParameterSpec>{
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
-      },
-      <String, HeaderParameterSpec>{},
-    );
+  Future<UsersCreateResult?> usersCreate(AdminUserCreateRequest body) async {
     final payload = body.toJson();
-    final response = await _client.post(ApiPaths.backendPath('/iam/users'), body: payload, headers: requestHeaders, contentType: 'application/json');
+    final response = await _client.post(ApiPaths.backendPath('/iam/users'), body: payload, contentType: 'application/json');
     return (() {
       final map = sdkworkResponseAsMap(response);
       return map == null ? null : UsersCreateResult.fromJson(map);
@@ -147,15 +122,9 @@ class IamApi {
   }
 
   /// Update user
-  Future<UsersUpdateResult?> usersUpdate(AdminUserUpdateRequest body, [String? xRequestId]) async {
-    final requestHeaders = buildRequestHeaders(
-      <String, HeaderParameterSpec>{
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
-      },
-      <String, HeaderParameterSpec>{},
-    );
+  Future<UsersUpdateResult?> usersUpdate(AdminUserUpdateRequest body) async {
     final payload = body.toJson();
-    final response = await _client.put(ApiPaths.backendPath('/iam/users'), body: payload, headers: requestHeaders, contentType: 'application/json');
+    final response = await _client.put(ApiPaths.backendPath('/iam/users'), body: payload, contentType: 'application/json');
     return (() {
       final map = sdkworkResponseAsMap(response);
       return map == null ? null : UsersUpdateResult.fromJson(map);

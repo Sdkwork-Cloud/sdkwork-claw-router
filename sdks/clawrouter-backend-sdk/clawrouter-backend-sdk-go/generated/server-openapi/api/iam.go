@@ -28,12 +28,8 @@ func (a *IamApi) AccessGroupsList() (sdktypes.AccessGroupsListResult, error) {
 }
 
 // Create group
-func (a *IamApi) AccessGroupsCreate(body sdktypes.AdminAccessGroupCreateRequest, xRequestId *string) (sdktypes.AccessGroupsCreateResult, error) {
-    headers := BuildRequestHeaders(
-        map[string]ParameterSpec{"X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},},
-        map[string]ParameterSpec{},
-    )
-    raw, err := a.client.Post(BackendApiPath("/iam/access_groups"), body, nil, headers, "application/json")
+func (a *IamApi) AccessGroupsCreate(body sdktypes.AdminAccessGroupCreateRequest) (sdktypes.AccessGroupsCreateResult, error) {
+    raw, err := a.client.Post(BackendApiPath("/iam/access_groups"), body, nil, nil, "application/json")
     if err != nil {
         var zero sdktypes.AccessGroupsCreateResult
         return zero, err
@@ -52,12 +48,8 @@ func (a *IamApi) AccessGroupsDelete(groupId string) (sdktypes.AccessGroupsDelete
 }
 
 // Update group
-func (a *IamApi) AccessGroupsUpdate(groupId string, body sdktypes.AdminAccessGroupUpdateRequest, xRequestId *string) (sdktypes.AccessGroupsUpdateResult, error) {
-    headers := BuildRequestHeaders(
-        map[string]ParameterSpec{"X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},},
-        map[string]ParameterSpec{},
-    )
-    raw, err := a.client.Patch(BackendApiPath(fmt.Sprintf("/iam/access_groups/%s", SerializePathParameter(groupId, PathParameterSpec{Name: "groupId", Style: "simple", Explode: false}))), body, nil, headers, "application/json")
+func (a *IamApi) AccessGroupsUpdate(groupId string, body sdktypes.AdminAccessGroupUpdateRequest) (sdktypes.AccessGroupsUpdateResult, error) {
+    raw, err := a.client.Patch(BackendApiPath(fmt.Sprintf("/iam/access_groups/%s", SerializePathParameter(groupId, PathParameterSpec{Name: "groupId", Style: "simple", Explode: false}))), body, nil, nil, "application/json")
     if err != nil {
         var zero sdktypes.AccessGroupsUpdateResult
         return zero, err
@@ -76,12 +68,8 @@ func (a *IamApi) AccessGroupsChannelBindingsList(groupId string) (sdktypes.Acces
 }
 
 // Replace group channel bindings
-func (a *IamApi) AccessGroupsChannelBindingsUpdate(groupId string, body sdktypes.AdminAccessGroupChannelBindingsReplaceRequest, xRequestId *string) (sdktypes.AccessGroupsChannelBindingsUpdateResult, error) {
-    headers := BuildRequestHeaders(
-        map[string]ParameterSpec{"X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},},
-        map[string]ParameterSpec{},
-    )
-    raw, err := a.client.Put(BackendApiPath(fmt.Sprintf("/iam/access_groups/%s/channel_bindings", SerializePathParameter(groupId, PathParameterSpec{Name: "groupId", Style: "simple", Explode: false}))), body, nil, headers, "application/json")
+func (a *IamApi) AccessGroupsChannelBindingsUpdate(groupId string, body sdktypes.AdminAccessGroupChannelBindingsReplaceRequest) (sdktypes.AccessGroupsChannelBindingsUpdateResult, error) {
+    raw, err := a.client.Put(BackendApiPath(fmt.Sprintf("/iam/access_groups/%s/channel_bindings", SerializePathParameter(groupId, PathParameterSpec{Name: "groupId", Style: "simple", Explode: false}))), body, nil, nil, "application/json")
     if err != nil {
         var zero sdktypes.AccessGroupsChannelBindingsUpdateResult
         return zero, err
@@ -100,12 +88,9 @@ func (a *IamApi) ApiKeysList() (sdktypes.ApiKeysListResult, error) {
 }
 
 // Create API key
-func (a *IamApi) ApiKeysCreate(body sdktypes.AdminApiKeyCreateRequest, idempotencyKey string, xRequestId *string) (sdktypes.ApiKeysCreateResult, error) {
+func (a *IamApi) ApiKeysCreate(body sdktypes.AdminApiKeyCreateRequest, idempotencyKey string) (sdktypes.ApiKeysCreateResult, error) {
     headers := BuildRequestHeaders(
-        map[string]ParameterSpec{
-            "Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},
-            "X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},
-        },
+        map[string]ParameterSpec{"Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},},
         map[string]ParameterSpec{},
     )
     raw, err := a.client.Post(BackendApiPath("/iam/api_keys"), body, nil, headers, "application/json")
@@ -137,12 +122,8 @@ func (a *IamApi) UsersList() (sdktypes.UsersListResult, error) {
 }
 
 // Create user
-func (a *IamApi) UsersCreate(body sdktypes.AdminUserCreateRequest, xRequestId *string) (sdktypes.UsersCreateResult, error) {
-    headers := BuildRequestHeaders(
-        map[string]ParameterSpec{"X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},},
-        map[string]ParameterSpec{},
-    )
-    raw, err := a.client.Post(BackendApiPath("/iam/users"), body, nil, headers, "application/json")
+func (a *IamApi) UsersCreate(body sdktypes.AdminUserCreateRequest) (sdktypes.UsersCreateResult, error) {
+    raw, err := a.client.Post(BackendApiPath("/iam/users"), body, nil, nil, "application/json")
     if err != nil {
         var zero sdktypes.UsersCreateResult
         return zero, err
@@ -151,12 +132,8 @@ func (a *IamApi) UsersCreate(body sdktypes.AdminUserCreateRequest, xRequestId *s
 }
 
 // Update user
-func (a *IamApi) UsersUpdate(body sdktypes.AdminUserUpdateRequest, xRequestId *string) (sdktypes.UsersUpdateResult, error) {
-    headers := BuildRequestHeaders(
-        map[string]ParameterSpec{"X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},},
-        map[string]ParameterSpec{},
-    )
-    raw, err := a.client.Put(BackendApiPath("/iam/users"), body, nil, headers, "application/json")
+func (a *IamApi) UsersUpdate(body sdktypes.AdminUserUpdateRequest) (sdktypes.UsersUpdateResult, error) {
+    raw, err := a.client.Put(BackendApiPath("/iam/users"), body, nil, nil, "application/json")
     if err != nil {
         var zero sdktypes.UsersUpdateResult
         return zero, err

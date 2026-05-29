@@ -3,6 +3,10 @@ use serde::{Deserialize, Serialize};
 /// Iam gateway api key record schema exposed by Claw Router.
 #[derive(Serialize, Deserialize, Debug, Clone, Default)]
 pub struct IamGatewayApiKeyRecord {
+    /// Channel group id field on iam gateway api key record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub channel_group_id: Option<String>,
+
     /// Created at field on iam gateway api key record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub created_at: Option<String>,
@@ -26,10 +30,6 @@ pub struct IamGatewayApiKeyRecord {
     /// Expire at field on iam gateway api key record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub expire_at: Option<String>,
-
-    /// Group id field on iam gateway api key record.
-    #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub group_id: Option<String>,
 
     /// Hash alg field on iam gateway api key record.
     #[serde(default, skip_serializing_if = "Option::is_none")]

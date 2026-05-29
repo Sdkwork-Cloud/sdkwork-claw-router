@@ -72,9 +72,6 @@ pub struct AiModelFamilyRecord {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub primary_modality: Option<String>,
 
-    /// Region code field on ai model family record.
-    pub region_code: String,
-
     /// Sort order field on ai model family record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub sort_order: Option<i64>,

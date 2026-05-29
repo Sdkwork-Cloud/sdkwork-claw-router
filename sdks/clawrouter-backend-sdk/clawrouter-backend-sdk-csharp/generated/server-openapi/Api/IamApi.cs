@@ -26,16 +26,9 @@ namespace Sdkwork.ClawRouter.Backend.Api
         /// <summary>
         /// Create group
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.AccessGroupsCreateResult?> AccessGroupsCreateAsync(Sdkwork.ClawRouter.Backend.Models.AdminAccessGroupCreateRequest body, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.AccessGroupsCreateResult?> AccessGroupsCreateAsync(Sdkwork.ClawRouter.Backend.Models.AdminAccessGroupCreateRequest body)
         {
-            var requestHeaders = BuildRequestHeaders(
-                new Dictionary<string, HeaderParameterSpec>
-                {
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
-                },
-                new Dictionary<string, HeaderParameterSpec>()
-            );
-            return await _client.PostAsync<Sdkwork.ClawRouter.Backend.Models.AccessGroupsCreateResult>(ApiPaths.BackendPath("/iam/access_groups"), body, null, requestHeaders, "application/json");
+            return await _client.PostAsync<Sdkwork.ClawRouter.Backend.Models.AccessGroupsCreateResult>(ApiPaths.BackendPath("/iam/access_groups"), body, null, null, "application/json");
         }
 
         /// <summary>
@@ -49,16 +42,9 @@ namespace Sdkwork.ClawRouter.Backend.Api
         /// <summary>
         /// Update group
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.AccessGroupsUpdateResult?> AccessGroupsUpdateAsync(string groupId, Sdkwork.ClawRouter.Backend.Models.AdminAccessGroupUpdateRequest body, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.AccessGroupsUpdateResult?> AccessGroupsUpdateAsync(string groupId, Sdkwork.ClawRouter.Backend.Models.AdminAccessGroupUpdateRequest body)
         {
-            var requestHeaders = BuildRequestHeaders(
-                new Dictionary<string, HeaderParameterSpec>
-                {
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
-                },
-                new Dictionary<string, HeaderParameterSpec>()
-            );
-            return await _client.PatchAsync<Sdkwork.ClawRouter.Backend.Models.AccessGroupsUpdateResult>(ApiPaths.BackendPath($"/iam/access_groups/{SerializePathParameter(groupId, new PathParameterSpec("groupId", "simple", false))}"), body, null, requestHeaders, "application/json");
+            return await _client.PatchAsync<Sdkwork.ClawRouter.Backend.Models.AccessGroupsUpdateResult>(ApiPaths.BackendPath($"/iam/access_groups/{SerializePathParameter(groupId, new PathParameterSpec("groupId", "simple", false))}"), body, null, null, "application/json");
         }
 
         /// <summary>
@@ -72,16 +58,9 @@ namespace Sdkwork.ClawRouter.Backend.Api
         /// <summary>
         /// Replace group channel bindings
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.AccessGroupsChannelBindingsUpdateResult?> AccessGroupsChannelBindingsUpdateAsync(string groupId, Sdkwork.ClawRouter.Backend.Models.AdminAccessGroupChannelBindingsReplaceRequest body, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.AccessGroupsChannelBindingsUpdateResult?> AccessGroupsChannelBindingsUpdateAsync(string groupId, Sdkwork.ClawRouter.Backend.Models.AdminAccessGroupChannelBindingsReplaceRequest body)
         {
-            var requestHeaders = BuildRequestHeaders(
-                new Dictionary<string, HeaderParameterSpec>
-                {
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
-                },
-                new Dictionary<string, HeaderParameterSpec>()
-            );
-            return await _client.PutAsync<Sdkwork.ClawRouter.Backend.Models.AccessGroupsChannelBindingsUpdateResult>(ApiPaths.BackendPath($"/iam/access_groups/{SerializePathParameter(groupId, new PathParameterSpec("groupId", "simple", false))}/channel_bindings"), body, null, requestHeaders, "application/json");
+            return await _client.PutAsync<Sdkwork.ClawRouter.Backend.Models.AccessGroupsChannelBindingsUpdateResult>(ApiPaths.BackendPath($"/iam/access_groups/{SerializePathParameter(groupId, new PathParameterSpec("groupId", "simple", false))}/channel_bindings"), body, null, null, "application/json");
         }
 
         /// <summary>
@@ -95,13 +74,12 @@ namespace Sdkwork.ClawRouter.Backend.Api
         /// <summary>
         /// Create API key
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.ApiKeysCreateResult?> ApiKeysCreateAsync(Sdkwork.ClawRouter.Backend.Models.AdminApiKeyCreateRequest body, string idempotencyKey, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.ApiKeysCreateResult?> ApiKeysCreateAsync(Sdkwork.ClawRouter.Backend.Models.AdminApiKeyCreateRequest body, string idempotencyKey)
         {
             var requestHeaders = BuildRequestHeaders(
                 new Dictionary<string, HeaderParameterSpec>
                 {
                     ["Idempotency-Key"] = new HeaderParameterSpec(idempotencyKey, "simple", false, null),
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
                 },
                 new Dictionary<string, HeaderParameterSpec>()
             );
@@ -127,31 +105,17 @@ namespace Sdkwork.ClawRouter.Backend.Api
         /// <summary>
         /// Create user
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.UsersCreateResult?> UsersCreateAsync(Sdkwork.ClawRouter.Backend.Models.AdminUserCreateRequest body, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.UsersCreateResult?> UsersCreateAsync(Sdkwork.ClawRouter.Backend.Models.AdminUserCreateRequest body)
         {
-            var requestHeaders = BuildRequestHeaders(
-                new Dictionary<string, HeaderParameterSpec>
-                {
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
-                },
-                new Dictionary<string, HeaderParameterSpec>()
-            );
-            return await _client.PostAsync<Sdkwork.ClawRouter.Backend.Models.UsersCreateResult>(ApiPaths.BackendPath("/iam/users"), body, null, requestHeaders, "application/json");
+            return await _client.PostAsync<Sdkwork.ClawRouter.Backend.Models.UsersCreateResult>(ApiPaths.BackendPath("/iam/users"), body, null, null, "application/json");
         }
 
         /// <summary>
         /// Update user
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.UsersUpdateResult?> UsersUpdateAsync(Sdkwork.ClawRouter.Backend.Models.AdminUserUpdateRequest body, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.UsersUpdateResult?> UsersUpdateAsync(Sdkwork.ClawRouter.Backend.Models.AdminUserUpdateRequest body)
         {
-            var requestHeaders = BuildRequestHeaders(
-                new Dictionary<string, HeaderParameterSpec>
-                {
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
-                },
-                new Dictionary<string, HeaderParameterSpec>()
-            );
-            return await _client.PutAsync<Sdkwork.ClawRouter.Backend.Models.UsersUpdateResult>(ApiPaths.BackendPath("/iam/users"), body, null, requestHeaders, "application/json");
+            return await _client.PutAsync<Sdkwork.ClawRouter.Backend.Models.UsersUpdateResult>(ApiPaths.BackendPath("/iam/users"), body, null, null, "application/json");
         }
 
         private sealed record PathParameterSpec(string Name, string Style, bool Explode);

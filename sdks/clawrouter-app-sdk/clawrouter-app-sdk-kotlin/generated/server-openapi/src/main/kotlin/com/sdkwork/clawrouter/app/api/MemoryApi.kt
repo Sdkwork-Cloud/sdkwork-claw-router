@@ -25,11 +25,10 @@ class MemoryApi(private val client: HttpClient) {
     }
 
     /** Create memory space */
-    suspend fun spacesCreate(body: MemorySpaceCreateRequest, idempotencyKey: String, xRequestId: String? = null): SpacesCreateResult? {
+    suspend fun spacesCreate(body: MemorySpaceCreateRequest, idempotencyKey: String): SpacesCreateResult? {
         val requestHeaders = buildRequestHeaders(
             mapOf(
                 "Idempotency-Key" to HeaderParameterSpec(idempotencyKey, "simple", false, null),
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
             ),
             emptyMap()
         )
@@ -54,11 +53,10 @@ class MemoryApi(private val client: HttpClient) {
     }
 
     /** Create memory entry */
-    suspend fun entriesCreate(spaceId: String, body: MemoryEntryCreateRequest, idempotencyKey: String, xRequestId: String? = null): EntriesCreateResult? {
+    suspend fun entriesCreate(spaceId: String, body: MemoryEntryCreateRequest, idempotencyKey: String): EntriesCreateResult? {
         val requestHeaders = buildRequestHeaders(
             mapOf(
                 "Idempotency-Key" to HeaderParameterSpec(idempotencyKey, "simple", false, null),
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
             ),
             emptyMap()
         )

@@ -1,3 +1,5 @@
+use std::collections::BTreeSet;
+
 use sha2::{Digest, Sha256};
 use sqlx::{Row, Sqlite, SqlitePool, Transaction};
 
@@ -353,7 +355,7 @@ async fn list_channel_bindings(
         r#"
         WHERE b.tenant_id = ?
           AND b.organization_id = ?
-          AND b.group_id = ?
+          AND b.channel_group_id = ?
           AND b.deleted_at IS NULL
         ORDER BY b.priority ASC, b.weight DESC, b.id ASC
         "#,
@@ -399,7 +401,7 @@ async fn replace_channel_bindings(
     if channel_ids.is_empty() {
         sqlx::query(
             r#"
-            UPDATE iam_api_key_group_channel
+            UPDATE ai_channel_group_member
             SET status = 0,
                 deleted_at = ?,
                 deleted_by = ?,
@@ -407,7 +409,7 @@ async fn replace_channel_bindings(
                 version = COALESCE(version, 0) + 1
             WHERE tenant_id = ?
               AND organization_id = ?
-              AND group_id = ?
+              AND channel_group_id = ?
               AND deleted_at IS NULL
             "#,
         )
@@ -427,7 +429,7 @@ async fn replace_channel_bindings(
             .join(", ");
         let sql = format!(
             r#"
-            UPDATE iam_api_key_group_channel
+            UPDATE ai_channel_group_member
             SET status = 0,
                 deleted_at = ?,
                 deleted_by = ?,
@@ -435,7 +437,7 @@ async fn replace_channel_bindings(
                 version = COALESCE(version, 0) + 1
             WHERE tenant_id = ?
               AND organization_id = ?
-              AND group_id = ?
+              AND channel_group_id = ?
               AND deleted_at IS NULL
               AND channel_id NOT IN ({placeholders})
             "#,
@@ -466,21 +468,19 @@ async fn replace_channel_bindings(
             .unwrap_or_else(|| format!("group-channel-{}-{}", command.group_id, item.channel_id));
         sqlx::query(
             r#"
-            INSERT INTO iam_api_key_group_channel
-                (uuid, tenant_id, organization_id, data_scope, status, created_at, updated_at, version, group_id, channel_id, priority, weight, model_scope, capabilities, metadata)
+            INSERT INTO ai_channel_group_member
+                (uuid, tenant_id, organization_id, data_scope, status, created_at, updated_at, version, channel_group_id, channel_id, priority, weight, metadata)
             VALUES
-                (?, ?, ?, 1, ?, ?, ?, 0, ?, ?, ?, ?, ?, ?, '{}')
-            ON CONFLICT(tenant_id, organization_id, group_id, channel_id)
+                (?, ?, ?, 1, ?, ?, ?, 0, ?, ?, ?, ?, '{}')
+            ON CONFLICT(tenant_id, organization_id, channel_group_id, channel_id)
             DO UPDATE SET
                 status = excluded.status,
                 updated_at = excluded.updated_at,
                 deleted_at = NULL,
                 deleted_by = NULL,
-                version = COALESCE(iam_api_key_group_channel.version, 0) + 1,
+                version = COALESCE(ai_channel_group_member.version, 0) + 1,
                 priority = excluded.priority,
-                weight = excluded.weight,
-                model_scope = excluded.model_scope,
-                capabilities = excluded.capabilities
+                weight = excluded.weight
             "#,
         )
         .bind(binding_uuid)
@@ -493,14 +493,14 @@ async fn replace_channel_bindings(
         .bind(item.channel_id)
         .bind(item.priority)
         .bind(item.weight)
-        .bind(serde_json::to_string(&item.model_scope).unwrap_or_else(|_| "[]".to_owned()))
-        .bind(serde_json::to_string(&item.capabilities).unwrap_or_else(|_| "[]".to_owned()))
         .execute(&mut **tx)
         .await
         .map_err(|error| {
             store_error("failed to upsert access group channel binding", error)
         })?;
     }
+
+    replace_group_resources(tx, command).await?;
 
     list_channel_bindings_for_tx(tx, command).await
 }
@@ -513,7 +513,7 @@ async fn list_channel_bindings_for_tx(
         r#"
         WHERE b.tenant_id = ?
           AND b.organization_id = ?
-          AND b.group_id = ?
+          AND b.channel_group_id = ?
           AND b.deleted_at IS NULL
         ORDER BY b.priority ASC, b.weight DESC, b.id ASC
         "#,
@@ -538,7 +538,7 @@ async fn ensure_group_exists(
     let exists: i64 = sqlx::query_scalar(
         r#"
         SELECT COUNT(1)
-        FROM iam_gateway_api_key_group
+        FROM ai_channel_group
         WHERE id = ?
           AND tenant_id = ?
           AND organization_id = ?
@@ -566,7 +566,7 @@ async fn ensure_channel_exists(
     let exists: i64 = sqlx::query_scalar(
         r#"
         SELECT COUNT(1)
-        FROM integration_channel
+        FROM ai_channel
         WHERE id = ?
           AND tenant_id = ?
           AND organization_id = ?
@@ -578,17 +578,147 @@ async fn ensure_channel_exists(
     .bind(organization_id)
     .fetch_one(&mut **tx)
     .await
-    .map_err(|error| {
-        store_error(
-            "failed to load integration channel for access group binding",
-            error,
-        )
-    })?;
+    .map_err(|error| store_error("failed to load AI channel for access group binding", error))?;
     if exists == 0 {
         return Err(DomainError::not_found(format!(
-            "integration channel was not found: {channel_id}"
+            "AI channel was not found: {channel_id}"
         )));
     }
+    Ok(())
+}
+
+async fn replace_group_resources(
+    tx: &mut Transaction<'_, Sqlite>,
+    command: &ReplaceAdminAccessGroupChannelBindingsCommand,
+) -> DomainResult<()> {
+    sqlx::query(
+        r#"
+        UPDATE ai_channel_group_resource
+        SET status = 0,
+            deleted_at = ?,
+            deleted_by = ?,
+            updated_at = ?,
+            version = COALESCE(version, 0) + 1
+        WHERE tenant_id = ?
+          AND organization_id = ?
+          AND channel_group_id = ?
+          AND deleted_at IS NULL
+        "#,
+    )
+    .bind(&command.requested_at)
+    .bind(command.subject.operator_id)
+    .bind(&command.requested_at)
+    .bind(command.subject.tenant_id)
+    .bind(command.subject.organization_id)
+    .bind(command.group_id)
+    .execute(&mut **tx)
+    .await
+    .map_err(|error| store_error("failed to clear access group resources", error))?;
+
+    let resource_codes = command
+        .items
+        .iter()
+        .flat_map(|item| item.model_scope.iter().chain(item.capabilities.iter()))
+        .map(|value| value.trim())
+        .filter(|value| !value.is_empty())
+        .map(str::to_owned)
+        .collect::<BTreeSet<_>>();
+
+    for (index, requested_resource_code) in resource_codes.iter().enumerate() {
+        let resource_row = sqlx::query(
+            r#"
+            SELECT id
+            FROM ai_resource
+            WHERE tenant_id = ?
+              AND organization_id = ?
+              AND resource_code = ?
+              AND deleted_at IS NULL
+            LIMIT 1
+            "#,
+        )
+        .bind(command.subject.tenant_id)
+        .bind(command.subject.organization_id)
+        .bind(requested_resource_code)
+        .fetch_optional(&mut **tx)
+        .await
+        .map_err(|error| store_error("failed to resolve access group resource", error))?;
+        let resource_id = resource_row
+            .as_ref()
+            .and_then(|row| optional_integer_cell(row, "id"));
+
+        let resource_group_row = if resource_id.is_none() {
+            sqlx::query(
+                r#"
+                SELECT id
+                FROM ai_resource_group
+                WHERE tenant_id = ?
+                  AND organization_id = ?
+                  AND group_code = ?
+                  AND deleted_at IS NULL
+                LIMIT 1
+                "#,
+            )
+            .bind(command.subject.tenant_id)
+            .bind(command.subject.organization_id)
+            .bind(requested_resource_code)
+            .fetch_optional(&mut **tx)
+            .await
+            .map_err(|error| store_error("failed to resolve access group resource group", error))?
+        } else {
+            None
+        };
+        let resource_group_id = resource_group_row
+            .as_ref()
+            .and_then(|row| optional_integer_cell(row, "id"));
+        let resource_code = if resource_group_id.is_some() {
+            ""
+        } else {
+            requested_resource_code.as_str()
+        };
+        let resource_group_code = if resource_group_id.is_some() {
+            requested_resource_code.as_str()
+        } else {
+            ""
+        };
+        let resource_hash = digest_hex(requested_resource_code);
+        sqlx::query(
+            r#"
+            INSERT INTO ai_channel_group_resource
+                (uuid, tenant_id, organization_id, data_scope, status, created_at, updated_at, version, metadata, channel_group_id, resource_id, resource_code, resource_group_id, resource_group_code, grant_type, priority)
+            VALUES
+                (?, ?, ?, 1, 1, ?, ?, 0, '{}', ?, ?, ?, ?, ?, 'allow', ?)
+            ON CONFLICT(tenant_id, organization_id, channel_group_id, resource_code, resource_group_code)
+            DO UPDATE SET
+                status = 1,
+                deleted_at = NULL,
+                deleted_by = NULL,
+                updated_at = excluded.updated_at,
+                resource_id = excluded.resource_id,
+                resource_group_id = excluded.resource_group_id,
+                grant_type = excluded.grant_type,
+                priority = excluded.priority,
+                version = COALESCE(ai_channel_group_resource.version, 0) + 1
+            "#,
+        )
+        .bind(format!(
+            "ai-channel-group-resource-{}-{resource_hash}",
+            command.group_id
+        ))
+        .bind(command.subject.tenant_id)
+        .bind(command.subject.organization_id)
+        .bind(&command.requested_at)
+        .bind(&command.requested_at)
+        .bind(command.group_id)
+        .bind(resource_id)
+        .bind(resource_code)
+        .bind(resource_group_id)
+        .bind(resource_group_code)
+        .bind((index as i64) + 1)
+        .execute(&mut **tx)
+        .await
+        .map_err(|error| store_error("failed to upsert access group resource", error))?;
+    }
+
     Ok(())
 }
 
@@ -664,7 +794,7 @@ async fn find_group_pricing_plan(
     let row = sqlx::query(
         r#"
         SELECT pricing_plan_id, COALESCE(pricing_plan_code, '') AS pricing_plan_code
-        FROM iam_gateway_api_key_group
+        FROM ai_channel_group
         WHERE id = ?
           AND tenant_id = ?
           AND organization_id = ?
@@ -700,8 +830,8 @@ async fn load_group_code(
 ) -> DomainResult<Option<String>> {
     sqlx::query_scalar(
         r#"
-        SELECT code
-        FROM iam_gateway_api_key_group
+        SELECT group_code
+        FROM ai_channel_group
         WHERE id = ?
           AND tenant_id = ?
           AND organization_id = ?
@@ -727,8 +857,8 @@ async fn insert_access_group(
         .unwrap_or((None, None));
     sqlx::query(
         r#"
-        INSERT INTO iam_gateway_api_key_group
-            (uuid, tenant_id, organization_id, data_scope, status, created_at, updated_at, version, name, code, description, provider_code, group_type, environment, pricing_plan_id, pricing_plan_code, rate_multiplier, official_price_multiplier, billing_type, capacity_limit, allowed_origin, metadata)
+        INSERT INTO ai_channel_group
+            (uuid, tenant_id, organization_id, data_scope, status, created_at, updated_at, version, group_name, group_code, description, provider_code, group_type, environment, pricing_plan_id, pricing_plan_code, rate_multiplier, official_price_multiplier, billing_type, capacity_limit, allowed_origin, metadata)
         VALUES
             (?, ?, ?, 1, ?, ?, ?, 0, ?, ?, '', ?, ?, 1, ?, ?, ?, ?, ?, ?, '{}', '{}')
         "#,
@@ -765,8 +895,8 @@ async fn update_access_group(
 ) -> DomainResult<bool> {
     let result = sqlx::query(
         r#"
-        UPDATE iam_gateway_api_key_group
-        SET name = COALESCE(?, name),
+        UPDATE ai_channel_group
+        SET group_name = COALESCE(?, group_name),
             provider_code = COALESCE(?, provider_code),
             billing_type = COALESCE(?, billing_type),
             rate_multiplier = COALESCE(?, rate_multiplier),
@@ -817,7 +947,7 @@ async fn soft_delete_access_group(
 ) -> DomainResult<bool> {
     let result = sqlx::query(
         r#"
-        UPDATE iam_gateway_api_key_group
+        UPDATE ai_channel_group
         SET status = -1,
             deleted_at = ?,
             deleted_by = ?,
@@ -1026,7 +1156,7 @@ async fn insert_config_snapshot(
         INSERT INTO ops_config_snapshot
             (uuid, tenant_id, organization_id, user_id, request_id, status, snapshot_no, config_scope, config_type, source_table, source_ids, config_payload, config_hash, published_at, published_by)
         VALUES
-            (?, ?, ?, ?, ?, 1, ?, ?, ?, 'iam_gateway_api_key_group', ?, ?, ?, ?, ?)
+            (?, ?, ?, ?, ?, 1, ?, ?, ?, 'ai_channel_group', ?, ?, ?, ?, ?)
         "#,
     )
     .bind(snapshot_uuid)
@@ -1056,27 +1186,27 @@ fn access_group_select_sql(predicate: &str) -> String {
             g.uuid,
             g.tenant_id,
             g.organization_id,
-            COALESCE(g.name, g.code, '') AS name,
+            COALESCE(g.group_name, g.group_code, '') AS name,
             COALESCE(g.provider_code, '') AS platform,
             g.billing_type,
             CAST(COALESCE(g.rate_multiplier, g.official_price_multiplier, 1) AS TEXT) AS rate_multiplier,
             g.group_type,
-            COALESCE(m.account_available_count, 0) AS account_available,
-            COALESCE(m.account_total_count, 0) AS account_total,
+            COALESCE(m.channel_available_count, 0) AS account_available,
+            COALESCE(m.channel_total_count, 0) AS account_total,
             CAST(COALESCE(m.capacity_used, 0) AS TEXT) AS capacity_used,
             CAST(COALESCE(m.capacity_limit, g.capacity_limit, 0) AS TEXT) AS capacity_total,
             CAST(COALESCE(m.usage_amount_today, 0) AS TEXT) AS usage_today,
             CAST(COALESCE(m.usage_amount_total, 0) AS TEXT) AS usage_total,
             g.status,
             CAST(g.deleted_at AS TEXT) AS deleted_at
-        FROM iam_gateway_api_key_group g
-        LEFT JOIN iam_gateway_api_key_group_metric_snapshot m
+        FROM ai_channel_group g
+        LEFT JOIN ai_channel_group_metric_snapshot m
           ON m.id = (
               SELECT latest.id
-              FROM iam_gateway_api_key_group_metric_snapshot latest
+              FROM ai_channel_group_metric_snapshot latest
               WHERE latest.tenant_id = g.tenant_id
                 AND latest.organization_id = g.organization_id
-                AND latest.group_id = g.id
+                AND latest.channel_group_id = g.id
                 AND latest.status = 1
               ORDER BY latest.snapshot_at DESC, latest.id DESC
               LIMIT 1
@@ -1120,16 +1250,16 @@ fn channel_binding_select_sql(predicate: &str) -> &'static str {
             b.uuid,
             b.tenant_id,
             b.organization_id,
-            b.group_id,
+            b.channel_group_id AS group_id,
             b.channel_id,
-            COALESCE(c.name, c.channel_code, '') AS channel_name,
+            COALESCE(c.channel_name, c.channel_code, '') AS channel_name,
             COALESCE(c.provider_code, '') AS provider_code,
             COALESCE(p.display_name, p.provider_code, c.provider_code, '') AS provider_name,
             COALESCE(c.channel_code, '') AS channel_code,
             COALESCE(
                 (
                     SELECT json_group_array(cm.catalog_key)
-                    FROM integration_channel_model cm
+                    FROM ai_channel_model cm
                     WHERE cm.channel_id = c.id
                       AND cm.tenant_id = c.tenant_id
                       AND cm.organization_id = c.organization_id
@@ -1138,20 +1268,77 @@ fn channel_binding_select_sql(predicate: &str) -> &'static str {
                 ),
                 '[]'
             ) AS models_json,
-            COALESCE(b.capabilities, '[]') AS capabilities_json,
-            COALESCE(b.model_scope, '[]') AS model_scope_json,
+            COALESCE(
+                (
+                    SELECT json_group_array(selected.code)
+                    FROM (
+                        SELECT DISTINCT COALESCE(NULLIF(gr.resource_code, ''), gr.resource_group_code) AS code
+                        FROM ai_channel_group_resource gr
+                        LEFT JOIN ai_resource r
+                          ON r.resource_code = gr.resource_code
+                         AND r.tenant_id = gr.tenant_id
+                         AND r.organization_id = gr.organization_id
+                         AND r.deleted_at IS NULL
+                        LEFT JOIN ai_resource_group rg
+                          ON rg.group_code = gr.resource_group_code
+                         AND rg.tenant_id = gr.tenant_id
+                         AND rg.organization_id = gr.organization_id
+                         AND rg.deleted_at IS NULL
+                        WHERE gr.channel_group_id = b.channel_group_id
+                          AND gr.tenant_id = b.tenant_id
+                          AND gr.organization_id = b.organization_id
+                          AND gr.deleted_at IS NULL
+                          AND gr.status = 1
+                          AND COALESCE(r.resource_type, rg.group_type, '') NOT IN ('model', 'model_api')
+                          AND COALESCE(NULLIF(gr.resource_code, ''), gr.resource_group_code, '') <> ''
+                        ORDER BY code
+                    ) selected
+                ),
+                '[]'
+            ) AS capabilities_json,
+            COALESCE(
+                (
+                    SELECT json_group_array(selected.code)
+                    FROM (
+                        SELECT DISTINCT COALESCE(NULLIF(gr.resource_code, ''), gr.resource_group_code) AS code
+                        FROM ai_channel_group_resource gr
+                        LEFT JOIN ai_resource r
+                          ON r.resource_code = gr.resource_code
+                         AND r.tenant_id = gr.tenant_id
+                         AND r.organization_id = gr.organization_id
+                         AND r.deleted_at IS NULL
+                        LEFT JOIN ai_resource_group rg
+                          ON rg.group_code = gr.resource_group_code
+                         AND rg.tenant_id = gr.tenant_id
+                         AND rg.organization_id = gr.organization_id
+                         AND rg.deleted_at IS NULL
+                        WHERE gr.channel_group_id = b.channel_group_id
+                          AND gr.tenant_id = b.tenant_id
+                          AND gr.organization_id = b.organization_id
+                          AND gr.deleted_at IS NULL
+                          AND gr.status = 1
+                          AND COALESCE(NULLIF(gr.resource_code, ''), gr.resource_group_code, '') <> ''
+                          AND (
+                              COALESCE(r.resource_type, rg.group_type, '') IN ('model', 'model_api')
+                              OR gr.resource_code LIKE '%/%'
+                          )
+                        ORDER BY code
+                    ) selected
+                ),
+                '[]'
+            ) AS model_scope_json,
             COALESCE(b.priority, c.priority, 100) AS priority,
             COALESCE(b.weight, c.weight, 100) AS weight,
             b.status,
             COALESCE(c.health_status, 1) AS health_status,
             CAST(b.deleted_at AS TEXT) AS deleted_at
-        FROM iam_api_key_group_channel b
-        JOIN integration_channel c
+        FROM ai_channel_group_member b
+        JOIN ai_channel c
           ON c.id = b.channel_id
          AND c.tenant_id = b.tenant_id
          AND c.organization_id = b.organization_id
          AND c.deleted_at IS NULL
-        LEFT JOIN integration_provider p
+        LEFT JOIN ai_provider p
           ON p.provider_code = c.provider_code
          AND p.deleted_at IS NULL
          AND (
@@ -1161,7 +1348,7 @@ fn channel_binding_select_sql(predicate: &str) -> &'static str {
          )
         WHERE b.tenant_id = ?
           AND b.organization_id = ?
-          AND b.group_id = ?
+          AND b.channel_group_id = ?
           AND b.deleted_at IS NULL
         ORDER BY b.priority ASC, b.weight DESC, b.id ASC
         "#

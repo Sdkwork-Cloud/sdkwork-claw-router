@@ -34,12 +34,11 @@ impl CommerceApi {
     }
 
     /// Addresses Create
-    pub async fn addresses_create(&self, body: &CommerceStandardCommandRequest, idempotency_key: &str, x_request_id: Option<&str>) -> Result<AddressesCreateResult, SdkworkError> {
+    pub async fn addresses_create(&self, body: &CommerceStandardCommandRequest, idempotency_key: &str) -> Result<AddressesCreateResult, SdkworkError> {
         let path = app_path(&"/addresses".to_string());
         let headers = build_request_headers(
             &[
                 ("Idempotency-Key", HeaderParameterSpec::new(idempotency_key, "simple", false, None)),
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
             ],
             &[],
         );
@@ -47,12 +46,11 @@ impl CommerceApi {
     }
 
     /// Addresses Delete
-    pub async fn addresses_delete(&self, address_id: &str, idempotency_key: &str, x_request_id: Option<&str>) -> Result<AddressesDeleteResult, SdkworkError> {
+    pub async fn addresses_delete(&self, address_id: &str, idempotency_key: &str) -> Result<AddressesDeleteResult, SdkworkError> {
         let path = app_path(&format!("/addresses/{}", serialize_path_parameter(address_id, PathParameterSpec::new("addressId", "simple", false))));
         let headers = build_request_headers(
             &[
                 ("Idempotency-Key", HeaderParameterSpec::new(idempotency_key, "simple", false, None)),
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
             ],
             &[],
         );
@@ -60,12 +58,11 @@ impl CommerceApi {
     }
 
     /// Addresses Update
-    pub async fn addresses_update(&self, address_id: &str, body: &CommerceStandardCommandRequest, idempotency_key: &str, x_request_id: Option<&str>) -> Result<AddressesUpdateResult, SdkworkError> {
+    pub async fn addresses_update(&self, address_id: &str, body: &CommerceStandardCommandRequest, idempotency_key: &str) -> Result<AddressesUpdateResult, SdkworkError> {
         let path = app_path(&format!("/addresses/{}", serialize_path_parameter(address_id, PathParameterSpec::new("addressId", "simple", false))));
         let headers = build_request_headers(
             &[
                 ("Idempotency-Key", HeaderParameterSpec::new(idempotency_key, "simple", false, None)),
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
             ],
             &[],
         );
@@ -73,12 +70,11 @@ impl CommerceApi {
     }
 
     /// Addresses Default Selection Create
-    pub async fn addresses_default_selection_create(&self, address_id: &str, body: &CommerceStandardCommandRequest, idempotency_key: &str, x_request_id: Option<&str>) -> Result<AddressesDefaultSelectionCreateResult, SdkworkError> {
+    pub async fn addresses_default_selection_create(&self, address_id: &str, body: &CommerceStandardCommandRequest, idempotency_key: &str) -> Result<AddressesDefaultSelectionCreateResult, SdkworkError> {
         let path = app_path(&format!("/addresses/{}/default_selection", serialize_path_parameter(address_id, PathParameterSpec::new("addressId", "simple", false))));
         let headers = build_request_headers(
             &[
                 ("Idempotency-Key", HeaderParameterSpec::new(idempotency_key, "simple", false, None)),
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
             ],
             &[],
         );
@@ -104,12 +100,11 @@ impl CommerceApi {
     }
 
     /// Cart Items Create
-    pub async fn cart_items_create(&self, body: &CommerceStandardCommandRequest, idempotency_key: &str, x_request_id: Option<&str>) -> Result<CartItemsCreateResult, SdkworkError> {
+    pub async fn cart_items_create(&self, body: &CommerceStandardCommandRequest, idempotency_key: &str) -> Result<CartItemsCreateResult, SdkworkError> {
         let path = app_path(&"/cart/items".to_string());
         let headers = build_request_headers(
             &[
                 ("Idempotency-Key", HeaderParameterSpec::new(idempotency_key, "simple", false, None)),
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
             ],
             &[],
         );
@@ -117,12 +112,11 @@ impl CommerceApi {
     }
 
     /// Cart Items Delete
-    pub async fn cart_items_delete(&self, cart_item_id: &str, idempotency_key: &str, x_request_id: Option<&str>) -> Result<CartItemsDeleteResult, SdkworkError> {
+    pub async fn cart_items_delete(&self, cart_item_id: &str, idempotency_key: &str) -> Result<CartItemsDeleteResult, SdkworkError> {
         let path = app_path(&format!("/cart/items/{}", serialize_path_parameter(cart_item_id, PathParameterSpec::new("cartItemId", "simple", false))));
         let headers = build_request_headers(
             &[
                 ("Idempotency-Key", HeaderParameterSpec::new(idempotency_key, "simple", false, None)),
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
             ],
             &[],
         );
@@ -130,12 +124,11 @@ impl CommerceApi {
     }
 
     /// Cart Items Update
-    pub async fn cart_items_update(&self, cart_item_id: &str, body: &CommerceStandardCommandRequest, idempotency_key: &str, x_request_id: Option<&str>) -> Result<CartItemsUpdateResult, SdkworkError> {
+    pub async fn cart_items_update(&self, cart_item_id: &str, body: &CommerceStandardCommandRequest, idempotency_key: &str) -> Result<CartItemsUpdateResult, SdkworkError> {
         let path = app_path(&format!("/cart/items/{}", serialize_path_parameter(cart_item_id, PathParameterSpec::new("cartItemId", "simple", false))));
         let headers = build_request_headers(
             &[
                 ("Idempotency-Key", HeaderParameterSpec::new(idempotency_key, "simple", false, None)),
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
             ],
             &[],
         );
@@ -182,12 +175,11 @@ impl CommerceApi {
     }
 
     /// Checkout Sessions Create
-    pub async fn checkout_sessions_create(&self, body: &CommerceStandardCommandRequest, idempotency_key: &str, x_request_id: Option<&str>) -> Result<CheckoutSessionsCreateResult, SdkworkError> {
+    pub async fn checkout_sessions_create(&self, body: &CommerceStandardCommandRequest, idempotency_key: &str) -> Result<CheckoutSessionsCreateResult, SdkworkError> {
         let path = app_path(&"/checkout/sessions".to_string());
         let headers = build_request_headers(
             &[
                 ("Idempotency-Key", HeaderParameterSpec::new(idempotency_key, "simple", false, None)),
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
             ],
             &[],
         );
@@ -201,12 +193,11 @@ impl CommerceApi {
     }
 
     /// Checkout Sessions Orders Create
-    pub async fn checkout_sessions_orders_create(&self, checkout_session_id: &str, body: &CommerceStandardCommandRequest, idempotency_key: &str, x_request_id: Option<&str>) -> Result<CheckoutSessionsOrdersCreateResult, SdkworkError> {
+    pub async fn checkout_sessions_orders_create(&self, checkout_session_id: &str, body: &CommerceStandardCommandRequest, idempotency_key: &str) -> Result<CheckoutSessionsOrdersCreateResult, SdkworkError> {
         let path = app_path(&format!("/checkout/sessions/{}/orders", serialize_path_parameter(checkout_session_id, PathParameterSpec::new("checkoutSessionId", "simple", false))));
         let headers = build_request_headers(
             &[
                 ("Idempotency-Key", HeaderParameterSpec::new(idempotency_key, "simple", false, None)),
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
             ],
             &[],
         );
@@ -214,12 +205,11 @@ impl CommerceApi {
     }
 
     /// Checkout Sessions Quotes Create
-    pub async fn checkout_sessions_quotes_create(&self, checkout_session_id: &str, body: &CommerceStandardCommandRequest, idempotency_key: &str, x_request_id: Option<&str>) -> Result<CheckoutSessionsQuotesCreateResult, SdkworkError> {
+    pub async fn checkout_sessions_quotes_create(&self, checkout_session_id: &str, body: &CommerceStandardCommandRequest, idempotency_key: &str) -> Result<CheckoutSessionsQuotesCreateResult, SdkworkError> {
         let path = app_path(&format!("/checkout/sessions/{}/quotes", serialize_path_parameter(checkout_session_id, PathParameterSpec::new("checkoutSessionId", "simple", false))));
         let headers = build_request_headers(
             &[
                 ("Idempotency-Key", HeaderParameterSpec::new(idempotency_key, "simple", false, None)),
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
             ],
             &[],
         );
@@ -255,12 +245,11 @@ impl CommerceApi {
     }
 
     /// Invoices Create
-    pub async fn invoices_create(&self, body: &CommerceStandardCommandRequest, idempotency_key: &str, x_request_id: Option<&str>) -> Result<InvoicesCreateResult, SdkworkError> {
+    pub async fn invoices_create(&self, body: &CommerceStandardCommandRequest, idempotency_key: &str) -> Result<InvoicesCreateResult, SdkworkError> {
         let path = app_path(&"/invoices".to_string());
         let headers = build_request_headers(
             &[
                 ("Idempotency-Key", HeaderParameterSpec::new(idempotency_key, "simple", false, None)),
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
             ],
             &[],
         );
@@ -349,15 +338,9 @@ impl CommerceApi {
     }
 
     /// Memberships Points Daily Rewards Create
-    pub async fn memberships_points_daily_rewards_create(&self, body: &MembershipsPointsDailyRewardsCreateRequest, x_request_id: Option<&str>) -> Result<MembershipsPointsDailyRewardsCreateResult, SdkworkError> {
+    pub async fn memberships_points_daily_rewards_create(&self, body: &MembershipsPointsDailyRewardsCreateRequest) -> Result<MembershipsPointsDailyRewardsCreateResult, SdkworkError> {
         let path = app_path(&"/memberships/points/daily_rewards".to_string());
-        let headers = build_request_headers(
-            &[
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
-            ],
-            &[],
-        );
-        self.client.post(&path, Some(body), None, headers.as_ref(), Some("application/json")).await
+        self.client.post(&path, Some(body), None, None, Some("application/json")).await
     }
 
     /// Memberships Points Daily Rewards Status Retrieve
@@ -378,15 +361,9 @@ impl CommerceApi {
     }
 
     /// Memberships Privileges Speed Ups Create
-    pub async fn memberships_privileges_speed_ups_create(&self, body: &MembershipsPrivilegesSpeedUpsCreateRequest, x_request_id: Option<&str>) -> Result<MembershipsPrivilegesSpeedUpsCreateResult, SdkworkError> {
+    pub async fn memberships_privileges_speed_ups_create(&self, body: &MembershipsPrivilegesSpeedUpsCreateRequest) -> Result<MembershipsPrivilegesSpeedUpsCreateResult, SdkworkError> {
         let path = app_path(&"/memberships/privileges/speed_ups".to_string());
-        let headers = build_request_headers(
-            &[
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
-            ],
-            &[],
-        );
-        self.client.post(&path, Some(body), None, headers.as_ref(), Some("application/json")).await
+        self.client.post(&path, Some(body), None, None, Some("application/json")).await
     }
 
     /// Memberships Privileges Usage Retrieve
@@ -396,12 +373,11 @@ impl CommerceApi {
     }
 
     /// Memberships Purchases Create
-    pub async fn memberships_purchases_create(&self, body: &CommerceMembershipPurchaseRequest, idempotency_key: &str, x_request_id: Option<&str>) -> Result<MembershipsPurchasesCreateResult, SdkworkError> {
+    pub async fn memberships_purchases_create(&self, body: &CommerceMembershipPurchaseRequest, idempotency_key: &str) -> Result<MembershipsPurchasesCreateResult, SdkworkError> {
         let path = app_path(&"/memberships/purchases".to_string());
         let headers = build_request_headers(
             &[
                 ("Idempotency-Key", HeaderParameterSpec::new(idempotency_key, "simple", false, None)),
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
             ],
             &[],
         );
@@ -409,12 +385,11 @@ impl CommerceApi {
     }
 
     /// Memberships Purchases Renew
-    pub async fn memberships_purchases_renew(&self, body: &CommerceMembershipPurchaseRequest, idempotency_key: &str, x_request_id: Option<&str>) -> Result<MembershipsPurchasesRenewResult, SdkworkError> {
+    pub async fn memberships_purchases_renew(&self, body: &CommerceMembershipPurchaseRequest, idempotency_key: &str) -> Result<MembershipsPurchasesRenewResult, SdkworkError> {
         let path = app_path(&"/memberships/purchases/renew".to_string());
         let headers = build_request_headers(
             &[
                 ("Idempotency-Key", HeaderParameterSpec::new(idempotency_key, "simple", false, None)),
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
             ],
             &[],
         );
@@ -422,12 +397,11 @@ impl CommerceApi {
     }
 
     /// Memberships Purchases Upgrade
-    pub async fn memberships_purchases_upgrade(&self, body: &CommerceMembershipPurchaseRequest, idempotency_key: &str, x_request_id: Option<&str>) -> Result<MembershipsPurchasesUpgradeResult, SdkworkError> {
+    pub async fn memberships_purchases_upgrade(&self, body: &CommerceMembershipPurchaseRequest, idempotency_key: &str) -> Result<MembershipsPurchasesUpgradeResult, SdkworkError> {
         let path = app_path(&"/memberships/purchases/upgrade".to_string());
         let headers = build_request_headers(
             &[
                 ("Idempotency-Key", HeaderParameterSpec::new(idempotency_key, "simple", false, None)),
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
             ],
             &[],
         );
@@ -452,12 +426,11 @@ impl CommerceApi {
     }
 
     /// Orders Cancellations Create
-    pub async fn orders_cancellations_create(&self, order_id: &str, body: &CommerceStandardCommandRequest, idempotency_key: &str, x_request_id: Option<&str>) -> Result<OrdersCancellationsCreateResult, SdkworkError> {
+    pub async fn orders_cancellations_create(&self, order_id: &str, body: &CommerceStandardCommandRequest, idempotency_key: &str) -> Result<OrdersCancellationsCreateResult, SdkworkError> {
         let path = app_path(&format!("/orders/{}/cancellations", serialize_path_parameter(order_id, PathParameterSpec::new("orderId", "simple", false))));
         let headers = build_request_headers(
             &[
                 ("Idempotency-Key", HeaderParameterSpec::new(idempotency_key, "simple", false, None)),
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
             ],
             &[],
         );
@@ -482,12 +455,11 @@ impl CommerceApi {
     }
 
     /// Payments Intents Create
-    pub async fn payments_intents_create(&self, body: &CommercePaymentIntentCreateRequest, idempotency_key: &str, x_request_id: Option<&str>) -> Result<PaymentsIntentsCreateResult, SdkworkError> {
+    pub async fn payments_intents_create(&self, body: &CommercePaymentIntentCreateRequest, idempotency_key: &str) -> Result<PaymentsIntentsCreateResult, SdkworkError> {
         let path = app_path(&"/payments/intents".to_string());
         let headers = build_request_headers(
             &[
                 ("Idempotency-Key", HeaderParameterSpec::new(idempotency_key, "simple", false, None)),
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
             ],
             &[],
         );
@@ -501,12 +473,11 @@ impl CommerceApi {
     }
 
     /// Payments Intents Attempts Create
-    pub async fn payments_intents_attempts_create(&self, payment_intent_id: &str, body: &CommercePaymentAttemptCreateRequest, idempotency_key: &str, x_request_id: Option<&str>) -> Result<PaymentsIntentsAttemptsCreateResult, SdkworkError> {
+    pub async fn payments_intents_attempts_create(&self, payment_intent_id: &str, body: &CommercePaymentAttemptCreateRequest, idempotency_key: &str) -> Result<PaymentsIntentsAttemptsCreateResult, SdkworkError> {
         let path = app_path(&format!("/payments/intents/{}/attempts", serialize_path_parameter(payment_intent_id, PathParameterSpec::new("paymentIntentId", "simple", false))));
         let headers = build_request_headers(
             &[
                 ("Idempotency-Key", HeaderParameterSpec::new(idempotency_key, "simple", false, None)),
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
             ],
             &[],
         );
@@ -525,12 +496,11 @@ impl CommerceApi {
     }
 
     /// Recharges Orders Create
-    pub async fn recharges_orders_create(&self, body: &CommerceStandardCommandRequest, idempotency_key: &str, x_request_id: Option<&str>) -> Result<RechargesOrdersCreateResult, SdkworkError> {
+    pub async fn recharges_orders_create(&self, body: &CommerceStandardCommandRequest, idempotency_key: &str) -> Result<RechargesOrdersCreateResult, SdkworkError> {
         let path = app_path(&"/recharges/orders".to_string());
         let headers = build_request_headers(
             &[
                 ("Idempotency-Key", HeaderParameterSpec::new(idempotency_key, "simple", false, None)),
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
             ],
             &[],
         );
@@ -566,12 +536,11 @@ impl CommerceApi {
     }
 
     /// Refunds Create
-    pub async fn refunds_create(&self, body: &CommerceStandardCommandRequest, idempotency_key: &str, x_request_id: Option<&str>) -> Result<RefundsCreateResult, SdkworkError> {
+    pub async fn refunds_create(&self, body: &CommerceStandardCommandRequest, idempotency_key: &str) -> Result<RefundsCreateResult, SdkworkError> {
         let path = app_path(&"/refunds".to_string());
         let headers = build_request_headers(
             &[
                 ("Idempotency-Key", HeaderParameterSpec::new(idempotency_key, "simple", false, None)),
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
             ],
             &[],
         );

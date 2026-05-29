@@ -18,24 +18,19 @@ fn catalog() -> InMemoryPricingCatalog {
         ModelVendor::OpenAi,
         "OpenAI",
     ));
-    catalog.add_model(
-        AiModel::new(
-            "gpt-4o-mini",
-            "GPT-4o mini",
-            "openai",
-            vec!["chat", "tools"],
-        )
-        .with_catalog_key("openai/global/gpt-4o-mini"),
-    );
-    catalog.add_provider_route(
-        ModelProviderRoute::new(
-            "gpt-4o-mini",
-            "openrouter",
-            3001,
-            "openai/global/gpt-4o-mini",
-        )
-        .with_catalog_key("openai/global/gpt-4o-mini"),
-    );
+    catalog.add_model(AiModel::new(
+        "gpt-4o-mini",
+        "GPT-4o mini",
+        "openai",
+        vec!["chat", "tools"],
+    ));
+    catalog.add_provider_route(ModelProviderRoute::new_for_catalog_key(
+        "openai/gpt-4o-mini",
+        "gpt-4o-mini",
+        "openrouter",
+        3001,
+        "gpt-4o-mini",
+    ));
     catalog.add_plan(PricingPlan::new(
         "standard",
         PriceSide::OfficialReference,
@@ -57,7 +52,7 @@ fn catalog() -> InMemoryPricingCatalog {
             BillingMeter::LlmInputToken,
             Money::usd("0.150000").unwrap(),
         )
-        .with_catalog_key("openai/global/gpt-4o-mini"),
+        .with_catalog_key("openai/gpt-4o-mini"),
     );
     catalog.add_price(
         ModelPrice::new(
@@ -66,7 +61,7 @@ fn catalog() -> InMemoryPricingCatalog {
             BillingMeter::LlmInputToken,
             Money::usd("0.110000").unwrap(),
         )
-        .with_catalog_key("openai/global/gpt-4o-mini")
+        .with_catalog_key("openai/gpt-4o-mini")
         .for_provider("openrouter", 3001),
     );
     catalog

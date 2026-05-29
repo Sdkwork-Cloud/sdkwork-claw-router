@@ -1,0 +1,3442 @@
+tables:
+- table: commerce_product_category
+  domain: commerce
+  profile: appbase_standard
+  compliance_level: L3
+  system_of_record: true
+  write_owner: sdkwork-appbase-commerce
+  generated_by_this_project: false
+  frontend_routes:
+  - /console/recharge
+  - /admin/catalog
+  - /admin/catalog/categories
+  - /admin/catalog/products
+  - /admin/catalog/skus
+  - /admin/catalog/attributes
+  - /admin/catalog/prices
+  api_surfaces:
+  - app
+  - backend
+  - worker
+  columns:
+    id:
+      type: string(512)
+      constraints: PRIMARY KEY
+    tenant_id: string(512)
+    organization_id: string(512)
+    category_no: string(128)
+    parent_id: string(512)
+    path: string(1024)
+    level_no: int32
+    name: string(256)
+    description: string(1024)
+    icon_url: string(1024)
+    sort_order:
+      type: int64
+      constraints: DEFAULT 0
+    status: string(512)
+    created_at: string(512)
+    updated_at: string(512)
+  not_null_columns:
+  - tenant_id
+  - category_no
+  - path
+  - level_no
+  - name
+  - sort_order
+  - status
+  - created_at
+  - updated_at
+  unique_constraints:
+  - columns:
+    - tenant_id
+    - organization_id
+    - category_no
+  indexes:
+  - name: idx_commerce_product_category_parent
+    columns:
+    - tenant_id
+    - organization_id
+    - parent_id
+    - sort_order
+  - name: idx_commerce_product_category_status
+    columns:
+    - tenant_id
+    - organization_id
+    - status
+- table: commerce_product_spu
+  domain: commerce
+  profile: appbase_standard
+  compliance_level: L3
+  system_of_record: true
+  write_owner: sdkwork-appbase-commerce
+  generated_by_this_project: false
+  frontend_routes:
+  - /admin/marketing
+  - /console/recharge
+  - /console/checkout
+  - /console/memberships
+  - /vip
+  - /admin/catalog
+  - /admin/memberships
+  - /admin/wallet
+  - /admin/catalog/categories
+  - /admin/catalog/products
+  - /admin/catalog/skus
+  - /admin/catalog/attributes
+  - /admin/catalog/prices
+  - /admin/memberships/packages
+  - /admin/memberships/plans
+  - /admin/memberships/members
+  - /admin/memberships/entitlements
+  - /admin/memberships/recharge-packages
+  - /admin/wallet/recharge-orders
+  - /admin/wallet/wallet-accounts
+  - /admin/wallet/wallet-ledger
+  - /admin/wallet/exchange-rules
+  - /admin/marketing/referrals
+  api_surfaces:
+  - app
+  - backend
+  - worker
+  columns:
+    id:
+      type: string(512)
+      constraints: PRIMARY KEY
+    tenant_id: string(512)
+    organization_id: string(512)
+    spu_no: string(128)
+    product_type: string(64)
+    category_id: string(512)
+    title: string(512)
+    subtitle: string(512)
+    description: text
+    brand: string(256)
+    status: string(512)
+    published_at: string(512)
+    created_at: string(512)
+    updated_at: string(512)
+  not_null_columns:
+  - tenant_id
+  - spu_no
+  - product_type
+  - title
+  - status
+  - created_at
+  - updated_at
+  unique_constraints:
+  - columns:
+    - tenant_id
+    - organization_id
+    - spu_no
+  indexes:
+  - name: idx_commerce_product_spu_category_status
+    columns:
+    - tenant_id
+    - organization_id
+    - category_id
+    - status
+  - name: idx_commerce_product_spu_type_status
+    columns:
+    - tenant_id
+    - organization_id
+    - product_type
+    - status
+- table: commerce_product_sku
+  domain: commerce
+  profile: appbase_standard
+  compliance_level: L3
+  system_of_record: true
+  write_owner: sdkwork-appbase-commerce
+  generated_by_this_project: false
+  frontend_routes:
+  - /admin/marketing
+  - /console/recharge
+  - /console/checkout
+  - /console/memberships
+  - /vip
+  - /admin/catalog
+  - /admin/inventory
+  - /admin/memberships
+  - /admin/wallet
+  - /admin/catalog/categories
+  - /admin/catalog/products
+  - /admin/catalog/skus
+  - /admin/catalog/attributes
+  - /admin/catalog/prices
+  - /admin/inventory/stocks
+  - /admin/inventory/reservations
+  - /admin/inventory/ledger
+  - /admin/memberships/packages
+  - /admin/memberships/plans
+  - /admin/memberships/members
+  - /admin/memberships/entitlements
+  - /admin/memberships/recharge-packages
+  - /admin/wallet/recharge-orders
+  - /admin/wallet/wallet-accounts
+  - /admin/wallet/wallet-ledger
+  - /admin/wallet/exchange-rules
+  - /admin/marketing/referrals
+  api_surfaces:
+  - app
+  - backend
+  - worker
+  columns:
+    id:
+      type: string(512)
+      constraints: PRIMARY KEY
+    tenant_id: string(512)
+    organization_id: string(512)
+    spu_id: string(512)
+    sku_no: string(512)
+    title: string(512)
+    fulfillment_type: string(64)
+    tax_category: string(128)
+    sales_unit: string(64)
+    default_price_amount: string(512)
+    default_currency_code: string(16)
+    status: string(512)
+    published_at: string(512)
+    created_at: string(512)
+    updated_at: string(512)
+  not_null_columns:
+  - tenant_id
+  - spu_id
+  - sku_no
+  - title
+  - fulfillment_type
+  - status
+  - created_at
+  - updated_at
+  unique_constraints:
+  - columns:
+    - tenant_id
+    - organization_id
+    - sku_no
+  indexes:
+  - name: idx_commerce_product_sku_spu_status
+    columns:
+    - tenant_id
+    - organization_id
+    - spu_id
+    - status
+  - name: idx_commerce_product_sku_fulfillment_status
+    columns:
+    - tenant_id
+    - organization_id
+    - fulfillment_type
+    - status
+- table: commerce_product_attribute
+  domain: commerce
+  profile: appbase_standard
+  compliance_level: L3
+  system_of_record: true
+  write_owner: sdkwork-appbase-commerce
+  generated_by_this_project: false
+  frontend_routes:
+  - /console/recharge
+  - /admin/catalog
+  - /admin/catalog/categories
+  - /admin/catalog/products
+  - /admin/catalog/skus
+  - /admin/catalog/attributes
+  - /admin/catalog/prices
+  api_surfaces:
+  - app
+  - backend
+  - worker
+  columns:
+    id:
+      type: string(512)
+      constraints: PRIMARY KEY
+    tenant_id: string(512)
+    organization_id: string(512)
+    attribute_no: string(128)
+    name: string(256)
+    value_type: string(64)
+    scope: string(64)
+    required: bool
+    searchable: bool
+    filterable: bool
+    status: string(512)
+    created_at: string(512)
+    updated_at: string(512)
+  not_null_columns:
+  - tenant_id
+  - attribute_no
+  - name
+  - value_type
+  - scope
+  - required
+  - searchable
+  - filterable
+  - status
+  - created_at
+  - updated_at
+  unique_constraints:
+  - columns:
+    - tenant_id
+    - organization_id
+    - attribute_no
+  indexes:
+  - name: idx_commerce_product_attribute_scope_status
+    columns:
+    - tenant_id
+    - organization_id
+    - scope
+    - status
+- table: commerce_product_attribute_value
+  domain: commerce
+  profile: appbase_standard
+  compliance_level: L3
+  system_of_record: true
+  write_owner: sdkwork-appbase-commerce
+  generated_by_this_project: false
+  frontend_routes:
+  - /console/recharge
+  - /admin/catalog
+  - /admin/catalog/categories
+  - /admin/catalog/products
+  - /admin/catalog/skus
+  - /admin/catalog/attributes
+  - /admin/catalog/prices
+  api_surfaces:
+  - app
+  - backend
+  - worker
+  columns:
+    id:
+      type: string(512)
+      constraints: PRIMARY KEY
+    tenant_id: string(512)
+    organization_id: string(512)
+    attribute_id: string(512)
+    value_code: string(128)
+    display_value: string(512)
+    sort_order:
+      type: int64
+      constraints: DEFAULT 0
+    status: string(512)
+    created_at: string(512)
+    updated_at: string(512)
+  not_null_columns:
+  - tenant_id
+  - attribute_id
+  - value_code
+  - display_value
+  - sort_order
+  - status
+  - created_at
+  - updated_at
+  unique_constraints:
+  - columns:
+    - tenant_id
+    - attribute_id
+    - value_code
+  indexes:
+  - name: idx_commerce_product_attribute_value_attribute
+    columns:
+    - tenant_id
+    - attribute_id
+    - sort_order
+- table: commerce_product_sku_attribute
+  domain: commerce
+  profile: appbase_standard
+  compliance_level: L3
+  system_of_record: true
+  write_owner: sdkwork-appbase-commerce
+  generated_by_this_project: false
+  frontend_routes:
+  - /console/recharge
+  - /admin/catalog
+  - /admin/catalog/categories
+  - /admin/catalog/products
+  - /admin/catalog/skus
+  - /admin/catalog/attributes
+  - /admin/catalog/prices
+  api_surfaces:
+  - app
+  - backend
+  - worker
+  columns:
+    id:
+      type: string(512)
+      constraints: PRIMARY KEY
+    tenant_id: string(512)
+    organization_id: string(512)
+    sku_id: string(512)
+    attribute_id: string(512)
+    attribute_value_id: string(512)
+    custom_value: string(512)
+    created_at: string(512)
+    updated_at: string(512)
+  not_null_columns:
+  - tenant_id
+  - sku_id
+  - attribute_id
+  - created_at
+  - updated_at
+  unique_constraints:
+  - columns:
+    - tenant_id
+    - sku_id
+    - attribute_id
+  indexes:
+  - name: idx_commerce_product_sku_attribute_value
+    columns:
+    - tenant_id
+    - attribute_id
+    - attribute_value_id
+- table: commerce_product_media
+  domain: commerce
+  profile: appbase_standard
+  compliance_level: L3
+  system_of_record: true
+  write_owner: sdkwork-appbase-commerce
+  generated_by_this_project: false
+  frontend_routes:
+  - /console/recharge
+  - /admin/catalog
+  - /admin/catalog/categories
+  - /admin/catalog/products
+  - /admin/catalog/skus
+  - /admin/catalog/attributes
+  - /admin/catalog/prices
+  api_surfaces:
+  - app
+  - backend
+  - worker
+  columns:
+    id:
+      type: string(512)
+      constraints: PRIMARY KEY
+    tenant_id: string(512)
+    organization_id: string(512)
+    owner_type: string(64)
+    owner_id: string(512)
+    media_type: string(64)
+    url: string(2048)
+    alt_text: string(512)
+    sort_order:
+      type: int64
+      constraints: DEFAULT 0
+    status: string(512)
+    created_at: string(512)
+    updated_at: string(512)
+  not_null_columns:
+  - tenant_id
+  - owner_type
+  - owner_id
+  - media_type
+  - url
+  - sort_order
+  - status
+  - created_at
+  - updated_at
+  indexes:
+  - name: idx_commerce_product_media_owner
+    columns:
+    - tenant_id
+    - owner_type
+    - owner_id
+    - sort_order
+- table: commerce_price_list
+  domain: commerce
+  profile: appbase_standard
+  compliance_level: L3
+  system_of_record: true
+  write_owner: sdkwork-appbase-commerce
+  generated_by_this_project: false
+  frontend_routes:
+  - /console/recharge
+  - /admin/catalog
+  - /admin/catalog/categories
+  - /admin/catalog/products
+  - /admin/catalog/skus
+  - /admin/catalog/attributes
+  - /admin/catalog/prices
+  api_surfaces:
+  - app
+  - backend
+  - worker
+  columns:
+    id:
+      type: string(512)
+      constraints: PRIMARY KEY
+    tenant_id: string(512)
+    organization_id: string(512)
+    price_list_no: string(128)
+    currency_code: string(16)
+    market_code: string(64)
+    customer_segment: string(128)
+    starts_at: string(512)
+    ends_at: string(512)
+    status: string(512)
+    created_at: string(512)
+    updated_at: string(512)
+  not_null_columns:
+  - tenant_id
+  - price_list_no
+  - currency_code
+  - status
+  - created_at
+  - updated_at
+  unique_constraints:
+  - columns:
+    - tenant_id
+    - organization_id
+    - price_list_no
+  indexes:
+  - name: idx_commerce_price_list_market_status
+    columns:
+    - tenant_id
+    - organization_id
+    - market_code
+    - currency_code
+    - status
+- table: commerce_price_list_item
+  domain: commerce
+  profile: appbase_standard
+  compliance_level: L3
+  system_of_record: true
+  write_owner: sdkwork-appbase-commerce
+  generated_by_this_project: false
+  frontend_routes:
+  - /console/recharge
+  - /console/checkout
+  - /admin/catalog
+  - /admin/catalog/categories
+  - /admin/catalog/products
+  - /admin/catalog/skus
+  - /admin/catalog/attributes
+  - /admin/catalog/prices
+  api_surfaces:
+  - app
+  - backend
+  - worker
+  columns:
+    id:
+      type: string(512)
+      constraints: PRIMARY KEY
+    tenant_id: string(512)
+    organization_id: string(512)
+    price_list_id: string(512)
+    sku_id: string(512)
+    price_amount: string(512)
+    compare_at_amount: string(512)
+    min_quantity:
+      type: int64
+      constraints: DEFAULT 1
+    max_quantity: int64
+    created_at: string(512)
+    updated_at: string(512)
+  not_null_columns:
+  - tenant_id
+  - price_list_id
+  - sku_id
+  - price_amount
+  - min_quantity
+  - created_at
+  - updated_at
+  unique_constraints:
+  - columns:
+    - tenant_id
+    - price_list_id
+    - sku_id
+    - min_quantity
+  indexes:
+  - name: idx_commerce_price_list_item_sku
+    columns:
+    - tenant_id
+    - sku_id
+    - price_list_id
+- table: commerce_inventory_stock
+  domain: commerce
+  profile: appbase_standard
+  compliance_level: L3
+  system_of_record: true
+  write_owner: sdkwork-appbase-commerce
+  generated_by_this_project: false
+  frontend_routes:
+  - /console/checkout
+  - /admin/inventory
+  - /admin/inventory/stocks
+  - /admin/inventory/reservations
+  - /admin/inventory/ledger
+  api_surfaces:
+  - app
+  - backend
+  - worker
+  columns:
+    id:
+      type: string(512)
+      constraints: PRIMARY KEY
+    tenant_id: string(512)
+    organization_id: string(512)
+    sku_id: string(512)
+    warehouse_id: string(512)
+    available_quantity:
+      type: int64
+      constraints: DEFAULT 0
+    reserved_quantity:
+      type: int64
+      constraints: DEFAULT 0
+    sold_quantity:
+      type: int64
+      constraints: DEFAULT 0
+    version:
+      type: int64
+      constraints: DEFAULT 0
+    status: string(512)
+    created_at: string(512)
+    updated_at: string(512)
+  not_null_columns:
+  - tenant_id
+  - sku_id
+  - available_quantity
+  - reserved_quantity
+  - sold_quantity
+  - version
+  - status
+  - created_at
+  - updated_at
+  unique_constraints:
+  - columns:
+    - tenant_id
+    - organization_id
+    - sku_id
+    - warehouse_id
+  indexes:
+  - name: idx_commerce_inventory_stock_sku_status
+    columns:
+    - tenant_id
+    - organization_id
+    - sku_id
+    - status
+- table: commerce_inventory_reservation
+  domain: commerce
+  profile: appbase_standard
+  compliance_level: L3
+  system_of_record: true
+  write_owner: sdkwork-appbase-commerce
+  generated_by_this_project: false
+  frontend_routes:
+  - /console/checkout
+  - /admin/inventory
+  - /admin/inventory/stocks
+  - /admin/inventory/reservations
+  - /admin/inventory/ledger
+  api_surfaces:
+  - app
+  - backend
+  - worker
+  columns:
+    id:
+      type: string(512)
+      constraints: PRIMARY KEY
+    tenant_id: string(512)
+    organization_id: string(512)
+    reservation_no: string(128)
+    checkout_session_id: string(512)
+    order_id: string(512)
+    sku_id: string(512)
+    warehouse_id: string(512)
+    quantity:
+      type: int64
+      constraints: DEFAULT 1
+    status: string(64)
+    expires_at: string(512)
+    idempotency_key: string(512)
+    created_at: string(512)
+    updated_at: string(512)
+  not_null_columns:
+  - tenant_id
+  - reservation_no
+  - sku_id
+  - quantity
+  - status
+  - expires_at
+  - idempotency_key
+  - created_at
+  - updated_at
+  unique_constraints:
+  - columns:
+    - tenant_id
+    - organization_id
+    - reservation_no
+  indexes:
+  - name: idx_commerce_inventory_reservation_checkout
+    columns:
+    - tenant_id
+    - organization_id
+    - checkout_session_id
+    - status
+  - name: idx_commerce_inventory_reservation_order
+    columns:
+    - tenant_id
+    - organization_id
+    - order_id
+    - status
+  - name: idx_commerce_inventory_reservation_expiry
+    columns:
+    - tenant_id
+    - organization_id
+    - status
+    - expires_at
+- table: commerce_inventory_ledger
+  domain: commerce
+  profile: appbase_standard
+  compliance_level: L3
+  system_of_record: true
+  write_owner: sdkwork-appbase-commerce
+  generated_by_this_project: false
+  frontend_routes:
+  - /admin/inventory
+  - /admin/inventory/stocks
+  - /admin/inventory/reservations
+  - /admin/inventory/ledger
+  api_surfaces:
+  - app
+  - backend
+  - worker
+  columns:
+    id:
+      type: string(512)
+      constraints: PRIMARY KEY
+    tenant_id: string(512)
+    organization_id: string(512)
+    movement_no: string(128)
+    sku_id: string(512)
+    warehouse_id: string(512)
+    direction: string(64)
+    quantity:
+      type: int64
+      constraints: DEFAULT 1
+    balance_after:
+      type: int64
+      constraints: DEFAULT 0
+    business_type: string(128)
+    source_type: string(128)
+    source_id: string(512)
+    idempotency_key: string(512)
+    created_at: string(512)
+  not_null_columns:
+  - tenant_id
+  - movement_no
+  - sku_id
+  - direction
+  - quantity
+  - balance_after
+  - business_type
+  - source_type
+  - source_id
+  - idempotency_key
+  - created_at
+  unique_constraints:
+  - columns:
+    - tenant_id
+    - organization_id
+    - movement_no
+  indexes:
+  - name: idx_commerce_inventory_ledger_sku_created
+    columns:
+    - tenant_id
+    - organization_id
+    - sku_id
+    - created_at
+  - name: idx_commerce_inventory_ledger_source
+    columns:
+    - tenant_id
+    - organization_id
+    - source_type
+    - source_id
+- table: commerce_cart
+  domain: commerce
+  profile: appbase_standard
+  compliance_level: L3
+  system_of_record: true
+  write_owner: sdkwork-appbase-commerce
+  generated_by_this_project: false
+  frontend_routes:
+  - /console/checkout
+  api_surfaces:
+  - app
+  - backend
+  - worker
+  columns:
+    id:
+      type: string(512)
+      constraints: PRIMARY KEY
+    tenant_id: string(512)
+    organization_id: string(512)
+    owner_user_id: string(512)
+    cart_no: string(128)
+    currency_code: string(16)
+    status: string(64)
+    version:
+      type: int64
+      constraints: DEFAULT 0
+    created_at: string(512)
+    updated_at: string(512)
+  not_null_columns:
+  - tenant_id
+  - owner_user_id
+  - cart_no
+  - currency_code
+  - status
+  - version
+  - created_at
+  - updated_at
+  unique_constraints:
+  - columns:
+    - tenant_id
+    - organization_id
+    - owner_user_id
+    - status
+  indexes:
+  - name: idx_commerce_cart_owner_status
+    columns:
+    - tenant_id
+    - organization_id
+    - owner_user_id
+    - status
+- table: commerce_cart_item
+  domain: commerce
+  profile: appbase_standard
+  compliance_level: L3
+  system_of_record: true
+  write_owner: sdkwork-appbase-commerce
+  generated_by_this_project: false
+  frontend_routes:
+  - /console/checkout
+  api_surfaces:
+  - app
+  - backend
+  - worker
+  columns:
+    id:
+      type: string(512)
+      constraints: PRIMARY KEY
+    tenant_id: string(512)
+    organization_id: string(512)
+    cart_id: string(512)
+    sku_id: string(512)
+    quantity:
+      type: int64
+      constraints: DEFAULT 1
+    selected:
+      type: bool
+      constraints: DEFAULT TRUE
+    price_snapshot_json: json
+    metadata_json: json
+    created_at: string(512)
+    updated_at: string(512)
+  not_null_columns:
+  - tenant_id
+  - cart_id
+  - sku_id
+  - quantity
+  - selected
+  - created_at
+  - updated_at
+  unique_constraints:
+  - columns:
+    - tenant_id
+    - cart_id
+    - sku_id
+  indexes:
+  - name: idx_commerce_cart_item_cart_selected
+    columns:
+    - tenant_id
+    - cart_id
+    - selected
+    - created_at
+- table: commerce_user_address
+  domain: commerce
+  profile: appbase_standard
+  compliance_level: L3
+  system_of_record: true
+  write_owner: sdkwork-appbase-commerce
+  generated_by_this_project: false
+  frontend_routes:
+  - /console/checkout
+  api_surfaces:
+  - app
+  - backend
+  - worker
+  columns:
+    id:
+      type: string(512)
+      constraints: PRIMARY KEY
+    tenant_id: string(512)
+    organization_id: string(512)
+    owner_user_id: string(512)
+    recipient_name: string(128)
+    phone_country_code: string(16)
+    phone_number_encrypted: string(512)
+    phone_masked: string(64)
+    country_code: string(16)
+    region_code: string(64)
+    city: string(128)
+    district: string(128)
+    address_line1_encrypted: string(1024)
+    address_line2_encrypted: string(1024)
+    postal_code: string(64)
+    is_default:
+      type: bool
+      constraints: DEFAULT FALSE
+    status: string(64)
+    created_at: string(512)
+    updated_at: string(512)
+  not_null_columns:
+  - tenant_id
+  - owner_user_id
+  - recipient_name
+  - phone_country_code
+  - phone_number_encrypted
+  - country_code
+  - city
+  - address_line1_encrypted
+  - is_default
+  - status
+  - created_at
+  - updated_at
+  indexes:
+  - name: idx_commerce_user_address_owner_default
+    columns:
+    - tenant_id
+    - organization_id
+    - owner_user_id
+    - is_default
+    - status
+- table: commerce_checkout_session
+  domain: commerce
+  profile: appbase_standard
+  compliance_level: L3
+  system_of_record: true
+  write_owner: sdkwork-appbase-commerce
+  generated_by_this_project: false
+  frontend_routes:
+  - /console/checkout
+  - /admin/inventory
+  - /admin/inventory/stocks
+  - /admin/inventory/reservations
+  - /admin/inventory/ledger
+  api_surfaces:
+  - app
+  - backend
+  - worker
+  columns:
+    id:
+      type: string(512)
+      constraints: PRIMARY KEY
+    tenant_id: string(512)
+    organization_id: string(512)
+    checkout_session_no: string(128)
+    owner_user_id: string(512)
+    source_type: string(64)
+    source_id: string(512)
+    status: string(64)
+    currency_code: string(16)
+    idempotency_key: string(512)
+    request_hash: string(512)
+    expires_at: string(512)
+    created_at: string(512)
+    updated_at: string(512)
+  not_null_columns:
+  - tenant_id
+  - checkout_session_no
+  - owner_user_id
+  - source_type
+  - status
+  - currency_code
+  - idempotency_key
+  - request_hash
+  - expires_at
+  - created_at
+  - updated_at
+  unique_constraints:
+  - columns:
+    - tenant_id
+    - checkout_session_no
+  indexes:
+  - name: idx_commerce_checkout_session_owner_status
+    columns:
+    - tenant_id
+    - organization_id
+    - owner_user_id
+    - status
+    - created_at
+  - name: idx_commerce_checkout_session_expires
+    columns:
+    - tenant_id
+    - status
+    - expires_at
+- table: commerce_checkout_line
+  domain: commerce
+  profile: appbase_standard
+  compliance_level: L3
+  system_of_record: true
+  write_owner: sdkwork-appbase-commerce
+  generated_by_this_project: false
+  frontend_routes:
+  - /console/checkout
+  api_surfaces:
+  - app
+  - backend
+  - worker
+  columns:
+    id:
+      type: string(512)
+      constraints: PRIMARY KEY
+    tenant_id: string(512)
+    organization_id: string(512)
+    checkout_session_id: string(512)
+    sku_id: string(512)
+    quantity:
+      type: int64
+      constraints: DEFAULT 1
+    purchase_type: string(64)
+    fulfillment_type: string(64)
+    price_snapshot_json: json
+    promotion_snapshot_json: json
+    inventory_reservation_id: string(512)
+    created_at: string(512)
+  not_null_columns:
+  - tenant_id
+  - checkout_session_id
+  - sku_id
+  - quantity
+  - purchase_type
+  - fulfillment_type
+  - created_at
+  indexes:
+  - name: idx_commerce_checkout_line_session
+    columns:
+    - tenant_id
+    - checkout_session_id
+    - sku_id
+- table: commerce_checkout_quote
+  domain: commerce
+  profile: appbase_standard
+  compliance_level: L3
+  system_of_record: true
+  write_owner: sdkwork-appbase-commerce
+  generated_by_this_project: false
+  frontend_routes:
+  - /console/checkout
+  api_surfaces:
+  - app
+  - backend
+  - worker
+  columns:
+    id:
+      type: string(512)
+      constraints: PRIMARY KEY
+    tenant_id: string(512)
+    organization_id: string(512)
+    checkout_session_id: string(512)
+    quote_no: string(128)
+    original_amount: string(64)
+    discount_amount:
+      type: string(64)
+      constraints: DEFAULT '0'
+    shipping_amount:
+      type: string(64)
+      constraints: DEFAULT '0'
+    tax_amount:
+      type: string(64)
+      constraints: DEFAULT '0'
+    payable_amount: string(64)
+    currency_code: string(16)
+    expires_at: string(512)
+    created_at: string(512)
+  not_null_columns:
+  - tenant_id
+  - checkout_session_id
+  - quote_no
+  - original_amount
+  - discount_amount
+  - shipping_amount
+  - tax_amount
+  - payable_amount
+  - currency_code
+  - expires_at
+  - created_at
+  unique_constraints:
+  - columns:
+    - tenant_id
+    - quote_no
+  indexes:
+  - name: idx_commerce_checkout_quote_session
+    columns:
+    - tenant_id
+    - checkout_session_id
+    - expires_at
+- table: commerce_membership_plan
+  domain: commerce
+  profile: appbase_standard
+  compliance_level: L3
+  system_of_record: true
+  write_owner: sdkwork-appbase-commerce
+  generated_by_this_project: false
+  frontend_routes:
+  - /console/memberships
+  - /vip
+  - /admin/memberships
+  - /admin/memberships/packages
+  - /admin/memberships/plans
+  - /admin/memberships/members
+  - /admin/memberships/entitlements
+  api_surfaces:
+  - app
+  - backend
+  - worker
+  columns:
+    id:
+      type: string(512)
+      constraints: PRIMARY KEY
+    tenant_id: string(512)
+    organization_id: string(512)
+    plan_no: string(128)
+    name: string(256)
+    level_code: string(128)
+    benefits_json: json
+    status: string(64)
+    sort_order:
+      type: int64
+      constraints: DEFAULT 0
+    created_at: string(512)
+    updated_at: string(512)
+  not_null_columns:
+  - tenant_id
+  - plan_no
+  - name
+  - level_code
+  - status
+  - sort_order
+  - created_at
+  - updated_at
+  unique_constraints:
+  - columns:
+    - tenant_id
+    - plan_no
+  indexes:
+  - name: idx_commerce_membership_plan_status_sort
+    columns:
+    - tenant_id
+    - organization_id
+    - status
+    - sort_order
+- table: commerce_membership_package_group
+  domain: commerce
+  profile: appbase_standard
+  compliance_level: L3
+  system_of_record: true
+  write_owner: sdkwork-appbase-commerce
+  generated_by_this_project: false
+  frontend_routes:
+  - /console/memberships
+  - /vip
+  - /admin/memberships
+  - /admin/memberships/packages
+  - /admin/memberships/plans
+  - /admin/memberships/members
+  - /admin/memberships/entitlements
+  api_surfaces:
+  - app
+  - backend
+  - worker
+  columns:
+    id:
+      type: string(512)
+      constraints: PRIMARY KEY
+    tenant_id: string(512)
+    organization_id: string(512)
+    group_no: string(128)
+    plan_id: string(512)
+    name: string(256)
+    description: string(1024)
+    status: string(64)
+    sort_order:
+      type: int64
+      constraints: DEFAULT 0
+    created_at: string(512)
+    updated_at: string(512)
+  not_null_columns:
+  - tenant_id
+  - group_no
+  - name
+  - status
+  - sort_order
+  - created_at
+  - updated_at
+  unique_constraints:
+  - columns:
+    - tenant_id
+    - group_no
+  indexes:
+  - name: idx_commerce_membership_package_group_plan
+    columns:
+    - tenant_id
+    - organization_id
+    - plan_id
+    - status
+    - sort_order
+- table: commerce_membership_package
+  domain: commerce
+  profile: appbase_standard
+  compliance_level: L3
+  system_of_record: true
+  write_owner: sdkwork-appbase-commerce
+  generated_by_this_project: false
+  frontend_routes:
+  - /console/memberships
+  - /vip
+  - /admin/memberships
+  - /admin/memberships/packages
+  - /admin/memberships/plans
+  - /admin/memberships/members
+  - /admin/memberships/entitlements
+  api_surfaces:
+  - app
+  - backend
+  - worker
+  columns:
+    id:
+      type: string(512)
+      constraints: PRIMARY KEY
+    tenant_id: string(512)
+    organization_id: string(512)
+    package_no: string(128)
+    plan_id: string(512)
+    package_group_id: string(512)
+    sku_id: string(512)
+    duration_days: int64
+    recurrence_cycle: string(64)
+    price_amount: string(64)
+    currency_code: string(16)
+    status: string(64)
+    starts_at: string(512)
+    ends_at: string(512)
+    sort_order:
+      type: int64
+      constraints: DEFAULT 0
+    created_at: string(512)
+    updated_at: string(512)
+  not_null_columns:
+  - tenant_id
+  - package_no
+  - plan_id
+  - sku_id
+  - duration_days
+  - price_amount
+  - currency_code
+  - status
+  - sort_order
+  - created_at
+  - updated_at
+  unique_constraints:
+  - columns:
+    - tenant_id
+    - package_no
+  indexes:
+  - name: idx_commerce_membership_package_plan_status
+    columns:
+    - tenant_id
+    - organization_id
+    - plan_id
+    - status
+    - sort_order
+- table: commerce_membership
+  domain: commerce
+  profile: appbase_standard
+  compliance_level: L3
+  system_of_record: true
+  write_owner: sdkwork-appbase-commerce
+  generated_by_this_project: false
+  frontend_routes:
+  - /console/account
+  - /console/memberships
+  - /vip
+  - /admin/memberships
+  - /admin/memberships/packages
+  - /admin/memberships/plans
+  - /admin/memberships/members
+  - /admin/memberships/entitlements
+  api_surfaces:
+  - app
+  - backend
+  - worker
+  columns:
+    id:
+      type: string(512)
+      constraints: PRIMARY KEY
+    tenant_id: string(512)
+    organization_id: string(512)
+    membership_no: string(128)
+    owner_user_id: string(512)
+    plan_id: string(512)
+    source_order_id: string(512)
+    source_payment_intent_id: string(512)
+    status: string(64)
+    starts_at: string(512)
+    expires_at: string(512)
+    grace_until: string(512)
+    auto_renew:
+      type: bool
+      constraints: DEFAULT FALSE
+    created_at: string(512)
+    updated_at: string(512)
+  not_null_columns:
+  - tenant_id
+  - membership_no
+  - owner_user_id
+  - plan_id
+  - status
+  - starts_at
+  - expires_at
+  - auto_renew
+  - created_at
+  - updated_at
+  unique_constraints:
+  - columns:
+    - tenant_id
+    - membership_no
+  indexes:
+  - name: idx_commerce_membership_owner_status
+    columns:
+    - tenant_id
+    - organization_id
+    - owner_user_id
+    - status
+    - expires_at
+- table: commerce_membership_entitlement
+  domain: commerce
+  profile: appbase_standard
+  compliance_level: L3
+  system_of_record: true
+  write_owner: sdkwork-appbase-commerce
+  generated_by_this_project: false
+  frontend_routes:
+  - /console/memberships
+  - /vip
+  - /admin/memberships
+  - /admin/memberships/packages
+  - /admin/memberships/plans
+  - /admin/memberships/members
+  - /admin/memberships/entitlements
+  api_surfaces:
+  - app
+  - backend
+  - worker
+  columns:
+    id:
+      type: string(512)
+      constraints: PRIMARY KEY
+    tenant_id: string(512)
+    organization_id: string(512)
+    entitlement_code: string(128)
+    plan_id: string(512)
+    name: string(256)
+    quota_amount: string(64)
+    quota_period: string(64)
+    reset_policy: string(64)
+    status: string(64)
+    created_at: string(512)
+    updated_at: string(512)
+  not_null_columns:
+  - tenant_id
+  - entitlement_code
+  - name
+  - quota_amount
+  - status
+  - created_at
+  - updated_at
+  unique_constraints:
+  - columns:
+    - tenant_id
+    - entitlement_code
+  indexes:
+  - name: idx_commerce_membership_entitlement_plan
+    columns:
+    - tenant_id
+    - organization_id
+    - plan_id
+    - status
+- table: commerce_membership_entitlement_usage
+  domain: commerce
+  profile: appbase_standard
+  compliance_level: L3
+  system_of_record: true
+  write_owner: sdkwork-appbase-commerce
+  generated_by_this_project: false
+  frontend_routes:
+  - /console/memberships
+  - /admin/memberships
+  - /admin/memberships/packages
+  - /admin/memberships/plans
+  - /admin/memberships/members
+  - /admin/memberships/entitlements
+  api_surfaces:
+  - app
+  - backend
+  - worker
+  columns:
+    id:
+      type: string(512)
+      constraints: PRIMARY KEY
+    tenant_id: string(512)
+    organization_id: string(512)
+    membership_id: string(512)
+    entitlement_id: string(512)
+    owner_user_id: string(512)
+    usage_no: string(128)
+    used_amount: string(64)
+    balance_after: string(64)
+    source_type: string(128)
+    source_id: string(512)
+    idempotency_key: string(512)
+    occurred_at: string(512)
+    created_at: string(512)
+  not_null_columns:
+  - tenant_id
+  - membership_id
+  - entitlement_id
+  - owner_user_id
+  - usage_no
+  - used_amount
+  - source_type
+  - source_id
+  - idempotency_key
+  - occurred_at
+  - created_at
+  unique_constraints:
+  - columns:
+    - tenant_id
+    - usage_no
+  indexes:
+  - name: idx_commerce_membership_entitlement_usage_owner
+    columns:
+    - tenant_id
+    - organization_id
+    - owner_user_id
+    - entitlement_id
+    - occurred_at
+- table: commerce_recharge_package
+  domain: commerce
+  profile: appbase_standard
+  compliance_level: L3
+  system_of_record: true
+  write_owner: sdkwork-appbase-commerce
+  generated_by_this_project: false
+  frontend_routes:
+  - /admin/marketing
+  - /console/recharge
+  - /console/checkout
+  - /admin/wallet
+  - /admin/memberships/recharge-packages
+  - /admin/wallet/recharge-orders
+  - /admin/wallet/wallet-accounts
+  - /admin/wallet/wallet-ledger
+  - /admin/wallet/exchange-rules
+  - /admin/marketing/referrals
+  api_surfaces:
+  - app
+  - backend
+  - worker
+  columns:
+    id:
+      type: string(512)
+      constraints: PRIMARY KEY
+    tenant_id: string(512)
+    organization_id: string(512)
+    external_id: int64
+    package_no: string(512)
+    sku_id: string(512)
+    name: string(512)
+    price_amount: string(512)
+    currency_code: string(512)
+    bonus_points:
+      type: int64
+      constraints: DEFAULT 0
+    status: string(512)
+    valid_from: string(512)
+    valid_to: string(512)
+    sort_weight:
+      type: int64
+      constraints: DEFAULT 0
+    request_no: string(512)
+    idempotency_key: string(512)
+    created_at: string(512)
+    updated_at: string(512)
+  not_null_columns:
+  - tenant_id
+  - external_id
+  - package_no
+  - sku_id
+  - name
+  - price_amount
+  - currency_code
+  - bonus_points
+  - status
+  - sort_weight
+  - request_no
+  - idempotency_key
+  - created_at
+  - updated_at
+  unique_constraints:
+  - columns:
+    - tenant_id
+    - organization_id
+    - external_id
+  - columns:
+    - tenant_id
+    - package_no
+  indexes:
+  - name: idx_commerce_recharge_package_amount_status
+    columns:
+    - tenant_id
+    - organization_id
+    - price_amount
+    - currency_code
+    - status
+- table: commerce_order
+  domain: commerce
+  profile: appbase_standard
+  compliance_level: L3
+  system_of_record: true
+  write_owner: sdkwork-appbase-commerce
+  generated_by_this_project: false
+  frontend_routes:
+  - /admin/marketing
+  - /console/account
+  - /console/wallet
+  - /console/recharge
+  - /console/checkout
+  - /console/memberships
+  - /vip
+  - /console/settlements
+  - /admin/inventory
+  - /admin/orders
+  - /admin/memberships
+  - /admin/wallet
+  - /admin/finance
+  - /admin/inventory/stocks
+  - /admin/inventory/reservations
+  - /admin/inventory/ledger
+  - /admin/orders/orders
+  - /admin/orders/refunds
+  - /admin/orders/fulfillments
+  - /admin/orders/shipments
+  - /admin/memberships/packages
+  - /admin/memberships/plans
+  - /admin/memberships/members
+  - /admin/memberships/entitlements
+  - /admin/memberships/recharge-packages
+  - /admin/wallet/recharge-orders
+  - /admin/wallet/wallet-accounts
+  - /admin/wallet/wallet-ledger
+  - /admin/wallet/exchange-rules
+  - /admin/finance/invoice-titles
+  - /admin/finance/invoices
+  - /admin/marketing/offers
+  - /admin/marketing/promotion-coupon-stocks
+  - /admin/marketing/promotion-codes
+  - /admin/marketing/discount-applications
+  - /admin/marketing/offers
+  - /admin/marketing/promotion-coupon-stocks
+  - /admin/marketing/promotion-codes
+  - /admin/marketing/discount-applications
+  - /admin/marketing/promotion-code-redemptions
+  - /admin/marketing/user-coupons
+  - /admin/marketing/discount-allocations
+  - /admin/marketing/promotion-coupon-ledger
+  - /admin/marketing/budget-ledger
+  - /admin/marketing/external-bindings
+  - /admin/marketing/events
+  - /admin/finance/payment-reconciliation
+  - /admin/finance/order-revenue
+  - /admin/finance/refunds-report
+  - /admin/finance/audit-events
+  - /admin/marketing/referrals
+  api_surfaces:
+  - app
+  - backend
+  - worker
+  columns:
+    id:
+      type: string(512)
+      constraints: PRIMARY KEY
+    tenant_id: string(512)
+    organization_id: string(512)
+    owner_user_id: string(512)
+    order_no: string(512)
+    status: string(512)
+    subject: string(512)
+    currency_code: string(512)
+    request_no: string(512)
+    idempotency_key: string(512)
+    created_at: string(512)
+    paid_at: string(512)
+    cancelled_at: string(512)
+    expired_at: string(512)
+    updated_at: string(512)
+  not_null_columns:
+  - tenant_id
+  - owner_user_id
+  - order_no
+  - status
+  - subject
+  - currency_code
+  - request_no
+  - idempotency_key
+  - created_at
+  - updated_at
+  unique_constraints:
+  - columns:
+    - tenant_id
+    - order_no
+  indexes:
+  - name: idx_commerce_order_owner_status_created_at
+    columns:
+    - tenant_id
+    - owner_user_id
+    - status
+    - created_at
+  - name: idx_commerce_order_no
+    columns:
+    - tenant_id
+    - order_no
+- table: commerce_order_item
+  domain: commerce
+  profile: appbase_standard
+  compliance_level: L3
+  system_of_record: true
+  write_owner: sdkwork-appbase-commerce
+  generated_by_this_project: false
+  frontend_routes:
+  - /admin/marketing
+  - /console/wallet
+  - /console/recharge
+  - /console/checkout
+  - /console/memberships
+  - /vip
+  - /admin/orders
+  - /admin/memberships
+  - /admin/wallet
+  - /admin/finance
+  - /admin/orders/orders
+  - /admin/orders/refunds
+  - /admin/orders/fulfillments
+  - /admin/orders/shipments
+  - /admin/memberships/packages
+  - /admin/memberships/plans
+  - /admin/memberships/members
+  - /admin/memberships/entitlements
+  - /admin/memberships/recharge-packages
+  - /admin/wallet/recharge-orders
+  - /admin/wallet/wallet-accounts
+  - /admin/wallet/wallet-ledger
+  - /admin/wallet/exchange-rules
+  - /admin/finance/invoice-titles
+  - /admin/finance/invoices
+  - /admin/marketing/offers
+  - /admin/marketing/promotion-coupon-stocks
+  - /admin/marketing/promotion-codes
+  - /admin/marketing/discount-applications
+  - /admin/marketing/offers
+  - /admin/marketing/promotion-coupon-stocks
+  - /admin/marketing/promotion-codes
+  - /admin/marketing/discount-applications
+  - /admin/marketing/promotion-code-redemptions
+  - /admin/marketing/user-coupons
+  - /admin/marketing/discount-allocations
+  - /admin/marketing/promotion-coupon-ledger
+  - /admin/marketing/budget-ledger
+  - /admin/marketing/external-bindings
+  - /admin/marketing/events
+  - /admin/finance/payment-reconciliation
+  - /admin/finance/order-revenue
+  - /admin/finance/refunds-report
+  - /admin/finance/audit-events
+  api_surfaces:
+  - app
+  - backend
+  - worker
+  columns:
+    id:
+      type: string(512)
+      constraints: PRIMARY KEY
+    tenant_id: string(512)
+    order_id: string(512)
+    sku_id: string(512)
+    title: string(512)
+    quantity: int64
+    unit_price_amount: string(512)
+    total_amount: string(512)
+    created_at: string(512)
+  not_null_columns:
+  - tenant_id
+  - order_id
+  - sku_id
+  - title
+  - quantity
+  - unit_price_amount
+  - total_amount
+  - created_at
+- table: commerce_order_amount_breakdown
+  domain: commerce
+  profile: appbase_standard
+  compliance_level: L3
+  system_of_record: true
+  write_owner: sdkwork-appbase-commerce
+  generated_by_this_project: false
+  frontend_routes:
+  - /console/recharge
+  - /console/checkout
+  - /console/memberships
+  - /admin/orders
+  - /admin/orders/orders
+  - /admin/orders/refunds
+  - /admin/orders/fulfillments
+  - /admin/orders/shipments
+  api_surfaces:
+  - app
+  - backend
+  - worker
+  columns:
+    id:
+      type: string(512)
+      constraints: PRIMARY KEY
+    tenant_id: string(512)
+    order_id: string(512)
+    original_amount: string(512)
+    discount_amount: string(512)
+    payable_amount: string(512)
+    currency_code: string(512)
+    created_at: string(512)
+  not_null_columns:
+  - tenant_id
+  - order_id
+  - original_amount
+  - discount_amount
+  - payable_amount
+  - currency_code
+  - created_at
+  unique_constraints:
+  - columns:
+    - tenant_id
+    - order_id
+- table: commerce_order_address_snapshot
+  domain: commerce
+  profile: appbase_standard
+  compliance_level: L3
+  system_of_record: true
+  write_owner: sdkwork-appbase-commerce
+  generated_by_this_project: false
+  frontend_routes:
+  - /console/checkout
+  - /admin/orders
+  - /admin/orders/orders
+  - /admin/orders/refunds
+  - /admin/orders/fulfillments
+  - /admin/orders/shipments
+  api_surfaces:
+  - app
+  - backend
+  - worker
+  columns:
+    id:
+      type: string(512)
+      constraints: PRIMARY KEY
+    tenant_id: string(512)
+    organization_id: string(512)
+    order_id: string(512)
+    source_address_id: string(512)
+    snapshot_version:
+      type: int64
+      constraints: DEFAULT 1
+    recipient_name_snapshot: string(128)
+    phone_masked: string(64)
+    country_code: string(16)
+    region_code: string(64)
+    city: string(128)
+    district: string(128)
+    address_line1_encrypted: string(1024)
+    postal_code: string(64)
+    captured_at: string(512)
+  not_null_columns:
+  - tenant_id
+  - order_id
+  - snapshot_version
+  - recipient_name_snapshot
+  - phone_masked
+  - country_code
+  - city
+  - address_line1_encrypted
+  - captured_at
+  unique_constraints:
+  - columns:
+    - tenant_id
+    - order_id
+    - snapshot_version
+  indexes:
+  - name: idx_commerce_order_address_snapshot_order
+    columns:
+    - tenant_id
+    - order_id
+    - captured_at
+- table: commerce_order_event
+  domain: commerce
+  profile: appbase_standard
+  compliance_level: L3
+  system_of_record: true
+  write_owner: sdkwork-appbase-commerce
+  generated_by_this_project: false
+  frontend_routes:
+  - /console/checkout
+  - /admin/orders
+  - /admin/orders/orders
+  - /admin/orders/refunds
+  - /admin/orders/fulfillments
+  - /admin/orders/shipments
+  api_surfaces:
+  - app
+  - backend
+  - worker
+  columns:
+    id:
+      type: string(512)
+      constraints: PRIMARY KEY
+    tenant_id: string(512)
+    organization_id: string(512)
+    event_no: string(128)
+    order_id: string(512)
+    event_type: string(128)
+    from_status: string(64)
+    to_status: string(64)
+    actor_type: string(64)
+    actor_id: string(512)
+    reason_code: string(128)
+    message: string(1024)
+    payload_json: json
+    request_id: string(512)
+    idempotency_key: string(512)
+    created_at: string(512)
+  not_null_columns:
+  - tenant_id
+  - event_no
+  - order_id
+  - event_type
+  - to_status
+  - actor_type
+  - idempotency_key
+  - created_at
+  unique_constraints:
+  - columns:
+    - tenant_id
+    - event_no
+  indexes:
+  - name: idx_commerce_order_event_order_created
+    columns:
+    - tenant_id
+    - order_id
+    - created_at
+- table: commerce_order_cancellation
+  domain: commerce
+  profile: appbase_standard
+  compliance_level: L3
+  system_of_record: true
+  write_owner: sdkwork-appbase-commerce
+  generated_by_this_project: false
+  frontend_routes:
+  - /console/checkout
+  - /admin/orders
+  - /admin/orders/orders
+  - /admin/orders/refunds
+  - /admin/orders/fulfillments
+  - /admin/orders/shipments
+  api_surfaces:
+  - app
+  - backend
+  - worker
+  columns:
+    id:
+      type: string(512)
+      constraints: PRIMARY KEY
+    tenant_id: string(512)
+    organization_id: string(512)
+    cancellation_no: string(128)
+    order_id: string(512)
+    status: string(64)
+    reason_code: string(128)
+    reason_message: string(1024)
+    requested_by: string(512)
+    approved_by: string(512)
+    idempotency_key: string(512)
+    created_at: string(512)
+    completed_at: string(512)
+  not_null_columns:
+  - tenant_id
+  - cancellation_no
+  - order_id
+  - status
+  - reason_code
+  - requested_by
+  - idempotency_key
+  - created_at
+  unique_constraints:
+  - columns:
+    - tenant_id
+    - cancellation_no
+  indexes:
+  - name: idx_commerce_order_cancellation_order_status
+    columns:
+    - tenant_id
+    - order_id
+    - status
+- table: commerce_payment_provider
+  domain: commerce
+  profile: appbase_standard
+  compliance_level: L3
+  system_of_record: true
+  write_owner: sdkwork-appbase-commerce
+  generated_by_this_project: false
+  frontend_routes:
+  - /console/checkout
+  - /admin/payments
+  - /admin/payments/providers
+  - /admin/payments/provider-accounts
+  - /admin/payments/methods
+  - /admin/payments/channels
+  - /admin/payments/route-rules
+  - /admin/payments/intents
+  - /admin/payments/attempts
+  - /admin/payments/webhook-events
+  - /admin/payments/reconciliation-runs
+  api_surfaces:
+  - app
+  - backend
+  - worker
+  columns:
+    id:
+      type: string(512)
+      constraints: PRIMARY KEY
+    tenant_id: string(512)
+    organization_id: string(512)
+    provider_code: string(128)
+    display_name: string(256)
+    provider_type: string(64)
+    supported_countries: json
+    supported_currencies: json
+    supported_methods: json
+    status: string(64)
+    sort_order:
+      type: int64
+      constraints: DEFAULT 0
+    created_at: string(512)
+    updated_at: string(512)
+  not_null_columns:
+  - tenant_id
+  - provider_code
+  - display_name
+  - provider_type
+  - status
+  - sort_order
+  - created_at
+  - updated_at
+  unique_constraints:
+  - columns:
+    - tenant_id
+    - organization_id
+    - provider_code
+  indexes:
+  - name: idx_commerce_payment_provider_status
+    columns:
+    - tenant_id
+    - organization_id
+    - status
+    - sort_order
+- table: commerce_payment_provider_account
+  domain: commerce
+  profile: appbase_standard
+  compliance_level: L3
+  system_of_record: true
+  write_owner: sdkwork-appbase-commerce
+  generated_by_this_project: false
+  frontend_routes:
+  - /admin/payments
+  - /admin/payments/providers
+  - /admin/payments/provider-accounts
+  - /admin/payments/methods
+  - /admin/payments/channels
+  - /admin/payments/route-rules
+  - /admin/payments/intents
+  - /admin/payments/attempts
+  - /admin/payments/webhook-events
+  - /admin/payments/reconciliation-runs
+  api_surfaces:
+  - backend
+  - worker
+  columns:
+    id:
+      type: string(512)
+      constraints: PRIMARY KEY
+    tenant_id: string(512)
+    organization_id: string(512)
+    account_no: string(128)
+    provider_code: string(128)
+    merchant_id: string(256)
+    environment: string(64)
+    country_code: string(16)
+    settlement_currency: string(16)
+    secret_ref: string(512)
+    webhook_secret_ref: string(512)
+    certificate_ref: string(512)
+    status: string(64)
+    rotated_at: string(512)
+    created_at: string(512)
+    updated_at: string(512)
+  not_null_columns:
+  - tenant_id
+  - account_no
+  - provider_code
+  - merchant_id
+  - environment
+  - country_code
+  - settlement_currency
+  - secret_ref
+  - status
+  - created_at
+  - updated_at
+  unique_constraints:
+  - columns:
+    - tenant_id
+    - account_no
+  indexes:
+  - name: idx_commerce_payment_provider_account_provider
+    columns:
+    - tenant_id
+    - organization_id
+    - provider_code
+    - status
+- table: commerce_payment_channel
+  domain: commerce
+  profile: appbase_standard
+  compliance_level: L3
+  system_of_record: true
+  write_owner: sdkwork-appbase-commerce
+  generated_by_this_project: false
+  frontend_routes:
+  - /admin/payments
+  - /admin/payments/providers
+  - /admin/payments/provider-accounts
+  - /admin/payments/methods
+  - /admin/payments/channels
+  - /admin/payments/route-rules
+  - /admin/payments/intents
+  - /admin/payments/attempts
+  - /admin/payments/webhook-events
+  - /admin/payments/reconciliation-runs
+  api_surfaces:
+  - backend
+  - worker
+  columns:
+    id:
+      type: string(512)
+      constraints: PRIMARY KEY
+    tenant_id: string(512)
+    organization_id: string(512)
+    channel_no: string(128)
+    provider_account_id: string(512)
+    method_id: string(512)
+    scene_code: string(128)
+    currency_code: string(16)
+    country_code: string(16)
+    status: string(64)
+    priority:
+      type: int64
+      constraints: DEFAULT 0
+    created_at: string(512)
+    updated_at: string(512)
+  not_null_columns:
+  - tenant_id
+  - channel_no
+  - provider_account_id
+  - method_id
+  - scene_code
+  - currency_code
+  - country_code
+  - status
+  - priority
+  - created_at
+  - updated_at
+  unique_constraints:
+  - columns:
+    - tenant_id
+    - channel_no
+  indexes:
+  - name: idx_commerce_payment_channel_route
+    columns:
+    - tenant_id
+    - organization_id
+    - method_id
+    - scene_code
+    - currency_code
+    - country_code
+    - status
+- table: commerce_payment_route_rule
+  domain: commerce
+  profile: appbase_standard
+  compliance_level: L3
+  system_of_record: true
+  write_owner: sdkwork-appbase-commerce
+  generated_by_this_project: false
+  frontend_routes:
+  - /admin/payments
+  - /admin/payments/providers
+  - /admin/payments/provider-accounts
+  - /admin/payments/methods
+  - /admin/payments/channels
+  - /admin/payments/route-rules
+  - /admin/payments/intents
+  - /admin/payments/attempts
+  - /admin/payments/webhook-events
+  - /admin/payments/reconciliation-runs
+  api_surfaces:
+  - backend
+  - worker
+  columns:
+    id:
+      type: string(512)
+      constraints: PRIMARY KEY
+    tenant_id: string(512)
+    organization_id: string(512)
+    rule_no: string(128)
+    priority:
+      type: int64
+      constraints: DEFAULT 0
+    purchase_type: string(64)
+    country_code: string(16)
+    currency_code: string(16)
+    client_platform: string(64)
+    amount_min: string(64)
+    amount_max: string(64)
+    user_segment: string(128)
+    risk_level: string(64)
+    channel_id: string(512)
+    status: string(64)
+    starts_at: string(512)
+    ends_at: string(512)
+    created_at: string(512)
+    updated_at: string(512)
+  not_null_columns:
+  - tenant_id
+  - rule_no
+  - priority
+  - channel_id
+  - status
+  - created_at
+  - updated_at
+  unique_constraints:
+  - columns:
+    - tenant_id
+    - rule_no
+  indexes:
+  - name: idx_commerce_payment_route_rule_match
+    columns:
+    - tenant_id
+    - organization_id
+    - status
+    - purchase_type
+    - country_code
+    - currency_code
+    - client_platform
+    - priority
+- table: commerce_payment_intent
+  domain: commerce
+  profile: appbase_standard
+  compliance_level: L3
+  system_of_record: true
+  write_owner: sdkwork-appbase-commerce
+  generated_by_this_project: false
+  frontend_routes:
+  - /admin/marketing
+  - /console/recharge
+  - /console/checkout
+  - /console/memberships
+  - /vip
+  - /admin/orders
+  - /admin/payments
+  - /admin/wallet
+  - /admin/orders/orders
+  - /admin/orders/refunds
+  - /admin/orders/fulfillments
+  - /admin/orders/shipments
+  - /admin/payments/providers
+  - /admin/payments/provider-accounts
+  - /admin/payments/methods
+  - /admin/payments/channels
+  - /admin/payments/route-rules
+  - /admin/payments/intents
+  - /admin/payments/attempts
+  - /admin/payments/webhook-events
+  - /admin/payments/reconciliation-runs
+  - /admin/memberships/recharge-packages
+  - /admin/wallet/recharge-orders
+  - /admin/wallet/wallet-accounts
+  - /admin/wallet/wallet-ledger
+  - /admin/wallet/exchange-rules
+  - /admin/marketing/referrals
+  api_surfaces:
+  - app
+  - backend
+  - worker
+  columns:
+    id:
+      type: string(512)
+      constraints: PRIMARY KEY
+    tenant_id: string(512)
+    organization_id: string(512)
+    owner_user_id: string(512)
+    order_id: string(512)
+    provider: string(512)
+    amount: string(512)
+    currency_code: string(512)
+    status: string(512)
+    request_no: string(512)
+    idempotency_key: string(512)
+    created_at: string(512)
+    updated_at: string(512)
+  not_null_columns:
+  - tenant_id
+  - owner_user_id
+  - order_id
+  - provider
+  - amount
+  - currency_code
+  - status
+  - request_no
+  - idempotency_key
+  - created_at
+  - updated_at
+  indexes:
+  - name: idx_commerce_payment_intent_order
+    columns:
+    - tenant_id
+    - order_id
+- table: commerce_payment_attempt
+  domain: commerce
+  profile: appbase_standard
+  compliance_level: L3
+  system_of_record: true
+  write_owner: sdkwork-appbase-commerce
+  generated_by_this_project: false
+  frontend_routes:
+  - /admin/marketing
+  - /console/account
+  - /console/wallet
+  - /console/recharge
+  - /console/checkout
+  - /console/memberships
+  - /vip
+  - /console/settlements
+  - /admin/orders
+  - /admin/payments
+  - /admin/memberships
+  - /admin/wallet
+  - /admin/finance
+  - /admin/orders/orders
+  - /admin/orders/refunds
+  - /admin/orders/fulfillments
+  - /admin/orders/shipments
+  - /admin/payments/providers
+  - /admin/payments/provider-accounts
+  - /admin/payments/methods
+  - /admin/payments/channels
+  - /admin/payments/route-rules
+  - /admin/payments/intents
+  - /admin/payments/attempts
+  - /admin/payments/webhook-events
+  - /admin/payments/reconciliation-runs
+  - /admin/memberships/packages
+  - /admin/memberships/plans
+  - /admin/memberships/members
+  - /admin/memberships/entitlements
+  - /admin/memberships/recharge-packages
+  - /admin/wallet/recharge-orders
+  - /admin/wallet/wallet-accounts
+  - /admin/wallet/wallet-ledger
+  - /admin/wallet/exchange-rules
+  - /admin/finance/invoice-titles
+  - /admin/finance/invoices
+  - /admin/marketing/offers
+  - /admin/marketing/promotion-coupon-stocks
+  - /admin/marketing/promotion-codes
+  - /admin/marketing/discount-applications
+  - /admin/marketing/offers
+  - /admin/marketing/promotion-coupon-stocks
+  - /admin/marketing/promotion-codes
+  - /admin/marketing/discount-applications
+  - /admin/finance/payment-reconciliation
+  - /admin/finance/order-revenue
+  - /admin/finance/refunds-report
+  - /admin/finance/audit-events
+  - /admin/marketing/referrals
+  api_surfaces:
+  - app
+  - backend
+  - worker
+  columns:
+    id:
+      type: string(512)
+      constraints: PRIMARY KEY
+    tenant_id: string(512)
+    organization_id: string(512)
+    owner_user_id: string(512)
+    payment_intent_id: string(512)
+    order_id: string(512)
+    provider: string(512)
+    out_trade_no: string(512)
+    amount: string(512)
+    currency_code: string(512)
+    status: string(512)
+    callback_payload: string(512)
+    created_at: string(512)
+    paid_at: string(512)
+    updated_at: string(512)
+  not_null_columns:
+  - tenant_id
+  - owner_user_id
+  - payment_intent_id
+  - order_id
+  - provider
+  - out_trade_no
+  - amount
+  - currency_code
+  - status
+  - created_at
+  - updated_at
+  unique_constraints:
+  - columns:
+    - tenant_id
+    - provider
+    - out_trade_no
+  indexes:
+  - name: idx_commerce_payment_attempt_provider_trade_no
+    columns:
+    - tenant_id
+    - provider
+    - out_trade_no
+- table: commerce_payment_webhook_event
+  domain: commerce
+  profile: appbase_standard
+  compliance_level: L3
+  system_of_record: true
+  write_owner: sdkwork-appbase-commerce
+  generated_by_this_project: false
+  frontend_routes:
+  - /admin/payments
+  - /admin/payments/providers
+  - /admin/payments/provider-accounts
+  - /admin/payments/methods
+  - /admin/payments/channels
+  - /admin/payments/route-rules
+  - /admin/payments/intents
+  - /admin/payments/attempts
+  - /admin/payments/webhook-events
+  - /admin/payments/reconciliation-runs
+  api_surfaces:
+  - backend
+  - worker
+  columns:
+    id:
+      type: string(512)
+      constraints: PRIMARY KEY
+    tenant_id: string(512)
+    organization_id: string(512)
+    provider: string(512)
+    event_id: string(512)
+    nonce: string(512)
+    signature: string(512)
+    request_timestamp: int64
+    out_trade_no: string(512)
+    transaction_id: string(512)
+    payload_digest: string(512)
+    status: string(512)
+    message: string(512)
+    request_no: string(512)
+    idempotency_key: string(512)
+    created_at: string(512)
+    processed_at: string(512)
+    updated_at: string(512)
+  not_null_columns:
+  - tenant_id
+  - provider
+  - event_id
+  - nonce
+  - out_trade_no
+  - payload_digest
+  - status
+  - request_no
+  - idempotency_key
+  - created_at
+  - updated_at
+  unique_constraints:
+  - columns:
+    - tenant_id
+    - provider
+    - event_id
+  - columns:
+    - tenant_id
+    - provider
+    - nonce
+  indexes:
+  - name: idx_commerce_payment_webhook_event_provider_event
+    columns:
+    - tenant_id
+    - provider
+    - event_id
+  - name: idx_commerce_payment_webhook_event_provider_nonce
+    columns:
+    - tenant_id
+    - provider
+    - nonce
+  - name: idx_commerce_payment_webhook_event_status_processed_at
+    columns:
+    - tenant_id
+    - status
+    - processed_at
+- table: commerce_payment_reconciliation_run
+  domain: commerce
+  profile: appbase_standard
+  compliance_level: L3
+  system_of_record: true
+  write_owner: sdkwork-appbase-commerce
+  generated_by_this_project: false
+  frontend_routes:
+  - /admin/payments
+  - /admin/payments/providers
+  - /admin/payments/provider-accounts
+  - /admin/payments/methods
+  - /admin/payments/channels
+  - /admin/payments/route-rules
+  - /admin/payments/intents
+  - /admin/payments/attempts
+  - /admin/payments/webhook-events
+  - /admin/payments/reconciliation-runs
+  api_surfaces:
+  - backend
+  - worker
+  columns:
+    id:
+      type: string(512)
+      constraints: PRIMARY KEY
+    tenant_id: string(512)
+    organization_id: string(512)
+    run_no: string(128)
+    provider_code: string(128)
+    provider_account_id: string(512)
+    settlement_currency: string(16)
+    period_start: string(512)
+    period_end: string(512)
+    status: string(64)
+    total_provider_amount: string(64)
+    total_internal_amount: string(64)
+    difference_amount: string(64)
+    matched_count: int64
+    mismatched_count: int64
+    missing_provider_count: int64
+    missing_internal_count: int64
+    report_file_ref: string(512)
+    started_at: string(512)
+    completed_at: string(512)
+    request_no: string(512)
+    idempotency_key: string(512)
+    created_at: string(512)
+    updated_at: string(512)
+  not_null_columns:
+  - tenant_id
+  - run_no
+  - provider_code
+  - settlement_currency
+  - period_start
+  - period_end
+  - status
+  - total_provider_amount
+  - total_internal_amount
+  - difference_amount
+  - matched_count
+  - mismatched_count
+  - missing_provider_count
+  - missing_internal_count
+  - request_no
+  - idempotency_key
+  - created_at
+  - updated_at
+  unique_constraints:
+  - columns:
+    - tenant_id
+    - run_no
+  indexes:
+  - name: idx_commerce_payment_reconciliation_run_provider_period
+    columns:
+    - tenant_id
+    - organization_id
+    - provider_code
+    - period_start
+    - period_end
+  - name: idx_commerce_payment_reconciliation_run_status_created
+    columns:
+    - tenant_id
+    - organization_id
+    - status
+    - created_at
+- table: commerce_payment_method
+  domain: commerce
+  profile: appbase_standard
+  compliance_level: L3
+  system_of_record: true
+  write_owner: sdkwork-appbase-commerce
+  generated_by_this_project: false
+  frontend_routes:
+  - /admin/marketing
+  - /console/recharge
+  - /console/checkout
+  - /admin/payments
+  - /admin/payments/providers
+  - /admin/payments/provider-accounts
+  - /admin/payments/methods
+  - /admin/payments/channels
+  - /admin/payments/route-rules
+  - /admin/payments/intents
+  - /admin/payments/attempts
+  - /admin/payments/webhook-events
+  - /admin/payments/reconciliation-runs
+  - /admin/marketing/referrals
+  api_surfaces:
+  - app
+  - backend
+  - worker
+  columns:
+    id:
+      type: string(512)
+      constraints: PRIMARY KEY
+    tenant_id: string(512)
+    organization_id: string(512)
+    method_key: string(512)
+    display_name: string(512)
+    provider: string(512)
+    status: string(512)
+    sort_weight:
+      type: int64
+      constraints: DEFAULT 0
+    request_no: string(512)
+    idempotency_key: string(512)
+    created_at: string(512)
+    updated_at: string(512)
+  not_null_columns:
+  - tenant_id
+  - method_key
+  - display_name
+  - provider
+  - status
+  - sort_weight
+  - request_no
+  - idempotency_key
+  - created_at
+  - updated_at
+  unique_constraints:
+  - columns:
+    - tenant_id
+    - organization_id
+    - method_key
+  indexes:
+  - name: idx_commerce_payment_method_status
+    columns:
+    - tenant_id
+    - organization_id
+    - status
+    - sort_weight
+- table: commerce_refund
+  domain: commerce
+  profile: appbase_standard
+  compliance_level: L3
+  system_of_record: true
+  write_owner: sdkwork-appbase-commerce
+  generated_by_this_project: false
+  frontend_routes:
+  - /admin/user
+  - /console/checkout
+  - /admin/orders
+  - /admin/finance
+  - /admin/orders/orders
+  - /admin/orders/refunds
+  - /admin/orders/fulfillments
+  - /admin/orders/shipments
+  - /admin/finance/invoice-titles
+  - /admin/finance/invoices
+  - /admin/marketing/offers
+  - /admin/marketing/promotion-coupon-stocks
+  - /admin/marketing/promotion-codes
+  - /admin/marketing/discount-applications
+  - /admin/marketing/offers
+  - /admin/marketing/promotion-coupon-stocks
+  - /admin/marketing/promotion-codes
+  - /admin/marketing/discount-applications
+  - /admin/finance/payment-reconciliation
+  - /admin/finance/order-revenue
+  - /admin/finance/refunds-report
+  - /admin/finance/audit-events
+  api_surfaces:
+  - app
+  - backend
+  - worker
+  columns:
+    id:
+      type: string(512)
+      constraints: PRIMARY KEY
+    tenant_id: string(512)
+    payment_attempt_id: string(512)
+    refund_no: string(512)
+    amount: string(512)
+    status: string(512)
+    request_no: string(512)
+    idempotency_key: string(512)
+    created_at: string(512)
+    updated_at: string(512)
+  not_null_columns:
+  - tenant_id
+  - payment_attempt_id
+  - refund_no
+  - amount
+  - status
+  - request_no
+  - idempotency_key
+  - created_at
+  - updated_at
+  unique_constraints:
+  - columns:
+    - tenant_id
+    - refund_no
+  indexes:
+  - name: idx_commerce_refund_payment
+    columns:
+    - tenant_id
+    - payment_attempt_id
+- table: commerce_refund_item
+  domain: commerce
+  profile: appbase_standard
+  compliance_level: L3
+  system_of_record: true
+  write_owner: sdkwork-appbase-commerce
+  generated_by_this_project: false
+  frontend_routes:
+  - /console/checkout
+  - /admin/orders
+  - /admin/finance
+  - /admin/orders/orders
+  - /admin/orders/refunds
+  - /admin/orders/fulfillments
+  - /admin/orders/shipments
+  - /admin/finance/invoice-titles
+  - /admin/finance/invoices
+  - /admin/marketing/offers
+  - /admin/marketing/promotion-coupon-stocks
+  - /admin/marketing/promotion-codes
+  - /admin/marketing/discount-applications
+  - /admin/marketing/offers
+  - /admin/marketing/promotion-coupon-stocks
+  - /admin/marketing/promotion-codes
+  - /admin/marketing/discount-applications
+  - /admin/finance/payment-reconciliation
+  - /admin/finance/order-revenue
+  - /admin/finance/refunds-report
+  - /admin/finance/audit-events
+  api_surfaces:
+  - app
+  - backend
+  - worker
+  columns:
+    id:
+      type: string(512)
+      constraints: PRIMARY KEY
+    tenant_id: string(512)
+    organization_id: string(512)
+    refund_id: string(512)
+    order_item_id: string(512)
+    quantity:
+      type: int64
+      constraints: DEFAULT 1
+    refund_amount: string(64)
+    tax_refund_amount:
+      type: string(64)
+      constraints: DEFAULT '0'
+    shipping_refund_amount:
+      type: string(64)
+      constraints: DEFAULT '0'
+    created_at: string(512)
+  not_null_columns:
+  - tenant_id
+  - refund_id
+  - order_item_id
+  - quantity
+  - refund_amount
+  - tax_refund_amount
+  - shipping_refund_amount
+  - created_at
+  indexes:
+  - name: idx_commerce_refund_item_refund
+    columns:
+    - tenant_id
+    - refund_id
+    - order_item_id
+- table: commerce_refund_attempt
+  domain: commerce
+  profile: appbase_standard
+  compliance_level: L3
+  system_of_record: true
+  write_owner: sdkwork-appbase-commerce
+  generated_by_this_project: false
+  frontend_routes:
+  - /console/checkout
+  - /admin/orders
+  - /admin/finance
+  - /admin/orders/orders
+  - /admin/orders/refunds
+  - /admin/orders/fulfillments
+  - /admin/orders/shipments
+  - /admin/finance/invoice-titles
+  - /admin/finance/invoices
+  - /admin/marketing/offers
+  - /admin/marketing/promotion-coupon-stocks
+  - /admin/marketing/promotion-codes
+  - /admin/marketing/discount-applications
+  - /admin/marketing/offers
+  - /admin/marketing/promotion-coupon-stocks
+  - /admin/marketing/promotion-codes
+  - /admin/marketing/discount-applications
+  - /admin/finance/payment-reconciliation
+  - /admin/finance/order-revenue
+  - /admin/finance/refunds-report
+  - /admin/finance/audit-events
+  api_surfaces:
+  - app
+  - backend
+  - worker
+  columns:
+    id:
+      type: string(512)
+      constraints: PRIMARY KEY
+    tenant_id: string(512)
+    organization_id: string(512)
+    refund_attempt_no: string(128)
+    refund_id: string(512)
+    provider_code: string(128)
+    provider_account_id: string(512)
+    out_refund_no: string(128)
+    provider_refund_id: string(256)
+    amount: string(64)
+    currency_code: string(16)
+    status: string(64)
+    failure_code: string(128)
+    failure_message: string(1024)
+    submitted_at: string(512)
+    succeeded_at: string(512)
+    failed_at: string(512)
+    created_at: string(512)
+    updated_at: string(512)
+  not_null_columns:
+  - tenant_id
+  - refund_attempt_no
+  - refund_id
+  - provider_code
+  - out_refund_no
+  - amount
+  - currency_code
+  - status
+  - created_at
+  - updated_at
+  unique_constraints:
+  - columns:
+    - tenant_id
+    - provider_code
+    - out_refund_no
+  indexes:
+  - name: idx_commerce_refund_attempt_refund_status
+    columns:
+    - tenant_id
+    - refund_id
+    - status
+- table: commerce_refund_event
+  domain: commerce
+  profile: appbase_standard
+  compliance_level: L3
+  system_of_record: true
+  write_owner: sdkwork-appbase-commerce
+  generated_by_this_project: false
+  frontend_routes:
+  - /admin/orders
+  - /admin/finance
+  - /admin/orders/orders
+  - /admin/orders/refunds
+  - /admin/orders/fulfillments
+  - /admin/orders/shipments
+  - /admin/finance/invoice-titles
+  - /admin/finance/invoices
+  - /admin/marketing/offers
+  - /admin/marketing/promotion-coupon-stocks
+  - /admin/marketing/promotion-codes
+  - /admin/marketing/discount-applications
+  - /admin/marketing/offers
+  - /admin/marketing/promotion-coupon-stocks
+  - /admin/marketing/promotion-codes
+  - /admin/marketing/discount-applications
+  - /admin/finance/payment-reconciliation
+  - /admin/finance/order-revenue
+  - /admin/finance/refunds-report
+  - /admin/finance/audit-events
+  api_surfaces:
+  - app
+  - backend
+  - worker
+  columns:
+    id:
+      type: string(512)
+      constraints: PRIMARY KEY
+    tenant_id: string(512)
+    organization_id: string(512)
+    event_no: string(128)
+    refund_id: string(512)
+    event_type: string(128)
+    from_status: string(64)
+    to_status: string(64)
+    actor_type: string(64)
+    actor_id: string(512)
+    reason_code: string(128)
+    message: string(1024)
+    payload_json: json
+    request_id: string(512)
+    idempotency_key: string(512)
+    created_at: string(512)
+  not_null_columns:
+  - tenant_id
+  - event_no
+  - refund_id
+  - event_type
+  - to_status
+  - actor_type
+  - idempotency_key
+  - created_at
+  unique_constraints:
+  - columns:
+    - tenant_id
+    - event_no
+  indexes:
+  - name: idx_commerce_refund_event_refund_created
+    columns:
+    - tenant_id
+    - refund_id
+    - created_at
+- table: commerce_fulfillment_order
+  domain: commerce
+  profile: appbase_standard
+  compliance_level: L3
+  system_of_record: true
+  write_owner: sdkwork-appbase-commerce
+  generated_by_this_project: false
+  frontend_routes:
+  - /console/checkout
+  - /admin/orders
+  - /admin/orders/orders
+  - /admin/orders/refunds
+  - /admin/orders/fulfillments
+  - /admin/orders/shipments
+  api_surfaces:
+  - app
+  - backend
+  - worker
+  columns:
+    id:
+      type: string(512)
+      constraints: PRIMARY KEY
+    tenant_id: string(512)
+    organization_id: string(512)
+    fulfillment_no: string(128)
+    order_id: string(512)
+    fulfillment_type: string(64)
+    status: string(64)
+    warehouse_id: string(512)
+    address_snapshot_id: string(512)
+    provider_code: string(128)
+    created_at: string(512)
+    completed_at: string(512)
+    updated_at: string(512)
+  not_null_columns:
+  - tenant_id
+  - fulfillment_no
+  - order_id
+  - fulfillment_type
+  - status
+  - created_at
+  - updated_at
+  unique_constraints:
+  - columns:
+    - tenant_id
+    - fulfillment_no
+  indexes:
+  - name: idx_commerce_fulfillment_order_order_status
+    columns:
+    - tenant_id
+    - order_id
+    - status
+- table: commerce_fulfillment_item
+  domain: commerce
+  profile: appbase_standard
+  compliance_level: L3
+  system_of_record: true
+  write_owner: sdkwork-appbase-commerce
+  generated_by_this_project: false
+  frontend_routes:
+  - /console/checkout
+  - /admin/orders
+  - /admin/orders/orders
+  - /admin/orders/refunds
+  - /admin/orders/fulfillments
+  - /admin/orders/shipments
+  api_surfaces:
+  - app
+  - backend
+  - worker
+  columns:
+    id:
+      type: string(512)
+      constraints: PRIMARY KEY
+    tenant_id: string(512)
+    organization_id: string(512)
+    fulfillment_id: string(512)
+    order_item_id: string(512)
+    sku_id: string(512)
+    quantity:
+      type: int64
+      constraints: DEFAULT 1
+    status: string(64)
+    created_at: string(512)
+    updated_at: string(512)
+  not_null_columns:
+  - tenant_id
+  - fulfillment_id
+  - order_item_id
+  - sku_id
+  - quantity
+  - status
+  - created_at
+  - updated_at
+  indexes:
+  - name: idx_commerce_fulfillment_item_fulfillment
+    columns:
+    - tenant_id
+    - fulfillment_id
+    - order_item_id
+- table: commerce_shipment
+  domain: commerce
+  profile: appbase_standard
+  compliance_level: L3
+  system_of_record: true
+  write_owner: sdkwork-appbase-commerce
+  generated_by_this_project: false
+  frontend_routes:
+  - /console/checkout
+  - /admin/orders
+  - /admin/orders/orders
+  - /admin/orders/refunds
+  - /admin/orders/fulfillments
+  - /admin/orders/shipments
+  api_surfaces:
+  - app
+  - backend
+  - worker
+  columns:
+    id:
+      type: string(512)
+      constraints: PRIMARY KEY
+    tenant_id: string(512)
+    organization_id: string(512)
+    shipment_no: string(128)
+    fulfillment_id: string(512)
+    carrier_code: string(128)
+    tracking_no: string(256)
+    status: string(64)
+    shipped_at: string(512)
+    delivered_at: string(512)
+    created_at: string(512)
+    updated_at: string(512)
+  not_null_columns:
+  - tenant_id
+  - shipment_no
+  - fulfillment_id
+  - carrier_code
+  - tracking_no
+  - status
+  - created_at
+  - updated_at
+  unique_constraints:
+  - columns:
+    - tenant_id
+    - shipment_no
+  indexes:
+  - name: idx_commerce_shipment_tracking
+    columns:
+    - tenant_id
+    - carrier_code
+    - tracking_no
+- table: commerce_shipment_tracking_event
+  domain: commerce
+  profile: appbase_standard
+  compliance_level: L3
+  system_of_record: true
+  write_owner: sdkwork-appbase-commerce
+  generated_by_this_project: false
+  frontend_routes:
+  - /console/checkout
+  - /admin/orders
+  - /admin/orders/orders
+  - /admin/orders/refunds
+  - /admin/orders/fulfillments
+  - /admin/orders/shipments
+  api_surfaces:
+  - app
+  - backend
+  - worker
+  columns:
+    id:
+      type: string(512)
+      constraints: PRIMARY KEY
+    tenant_id: string(512)
+    organization_id: string(512)
+    shipment_id: string(512)
+    event_time: string(512)
+    event_code: string(128)
+    location: string(256)
+    description: string(1024)
+    raw_payload_json: json
+    created_at: string(512)
+  not_null_columns:
+  - tenant_id
+  - shipment_id
+  - event_time
+  - event_code
+  - created_at
+  indexes:
+  - name: idx_commerce_shipment_tracking_event_shipment_time
+    columns:
+    - tenant_id
+    - shipment_id
+    - event_time
+- table: commerce_digital_delivery
+  domain: commerce
+  profile: appbase_standard
+  compliance_level: L3
+  system_of_record: true
+  write_owner: sdkwork-appbase-commerce
+  generated_by_this_project: false
+  frontend_routes:
+  - /console/checkout
+  - /admin/orders
+  - /admin/orders/orders
+  - /admin/orders/refunds
+  - /admin/orders/fulfillments
+  - /admin/orders/shipments
+  api_surfaces:
+  - app
+  - backend
+  - worker
+  columns:
+    id:
+      type: string(512)
+      constraints: PRIMARY KEY
+    tenant_id: string(512)
+    organization_id: string(512)
+    delivery_no: string(128)
+    fulfillment_id: string(512)
+    order_item_id: string(512)
+    delivery_type: string(64)
+    delivery_ref: string(512)
+    status: string(64)
+    delivered_at: string(512)
+    created_at: string(512)
+    updated_at: string(512)
+  not_null_columns:
+  - tenant_id
+  - delivery_no
+  - fulfillment_id
+  - order_item_id
+  - delivery_type
+  - delivery_ref
+  - status
+  - created_at
+  - updated_at
+  unique_constraints:
+  - columns:
+    - tenant_id
+    - delivery_no
+  indexes:
+  - name: idx_commerce_digital_delivery_order_item
+    columns:
+    - tenant_id
+    - order_item_id
+    - status
+- table: commerce_exchange_rule
+  domain: commerce
+  profile: appbase_standard
+  compliance_level: L3
+  system_of_record: true
+  write_owner: sdkwork-appbase-commerce
+  generated_by_this_project: false
+  frontend_routes:
+  - /admin/marketing
+  - /console/wallet
+  - /admin/wallet
+  - /admin/memberships/recharge-packages
+  - /admin/wallet/recharge-orders
+  - /admin/wallet/wallet-accounts
+  - /admin/wallet/wallet-ledger
+  - /admin/wallet/exchange-rules
+  - /admin/marketing/referrals
+  api_surfaces:
+  - app
+  - backend
+  - worker
+  columns:
+    id:
+      type: string(512)
+      constraints: PRIMARY KEY
+    tenant_id: string(512)
+    organization_id: string(512)
+    rule_no: string(512)
+    source_asset_type: string(512)
+    target_asset_type: string(512)
+    rate: string(512)
+    status: string(512)
+    remark: string(512)
+    request_no: string(512)
+    idempotency_key: string(512)
+    created_at: string(512)
+    updated_at: string(512)
+  not_null_columns:
+  - tenant_id
+  - rule_no
+  - source_asset_type
+  - target_asset_type
+  - rate
+  - status
+  - request_no
+  - idempotency_key
+  - created_at
+  - updated_at
+  unique_constraints:
+  - columns:
+    - tenant_id
+    - organization_id
+    - source_asset_type
+    - target_asset_type
+  indexes:
+  - name: idx_commerce_exchange_rule_pair_status
+    columns:
+    - tenant_id
+    - organization_id
+    - source_asset_type
+    - target_asset_type
+    - status
+- table: commerce_invoice_title
+  domain: commerce
+  profile: appbase_standard
+  compliance_level: L3
+  system_of_record: true
+  write_owner: sdkwork-appbase-commerce
+  generated_by_this_project: false
+  frontend_routes:
+  - /console/settlements
+  - /admin/finance
+  - /console/account
+  - /admin/finance/invoice-titles
+  - /admin/finance/invoices
+  - /admin/marketing/offers
+  - /admin/marketing/promotion-coupon-stocks
+  - /admin/marketing/promotion-codes
+  - /admin/marketing/discount-applications
+  - /admin/marketing/offers
+  - /admin/marketing/promotion-coupon-stocks
+  - /admin/marketing/promotion-codes
+  - /admin/marketing/discount-applications
+  - /admin/finance/payment-reconciliation
+  - /admin/finance/order-revenue
+  - /admin/finance/refunds-report
+  - /admin/finance/audit-events
+  api_surfaces:
+  - app
+  - backend
+  - worker
+  columns:
+    id:
+      type: string(512)
+      constraints: PRIMARY KEY
+    tenant_id: string(512)
+    owner_user_id: string(512)
+    title_type: string(512)
+    name: string(512)
+    tax_no: string(512)
+    created_at: string(512)
+    updated_at: string(512)
+  not_null_columns:
+  - tenant_id
+  - owner_user_id
+  - title_type
+  - name
+  - created_at
+  - updated_at
+- table: commerce_invoice
+  domain: commerce
+  profile: appbase_standard
+  compliance_level: L3
+  system_of_record: true
+  write_owner: sdkwork-appbase-commerce
+  generated_by_this_project: false
+  frontend_routes:
+  - /console/account
+  - /console/settlements
+  - /admin/finance
+  - /admin/finance/invoice-titles
+  - /admin/finance/invoices
+  - /admin/marketing/offers
+  - /admin/marketing/promotion-coupon-stocks
+  - /admin/marketing/promotion-codes
+  - /admin/marketing/discount-applications
+  - /admin/marketing/offers
+  - /admin/marketing/promotion-coupon-stocks
+  - /admin/marketing/promotion-codes
+  - /admin/marketing/discount-applications
+  - /admin/finance/payment-reconciliation
+  - /admin/finance/order-revenue
+  - /admin/finance/refunds-report
+  - /admin/finance/audit-events
+  api_surfaces:
+  - app
+  - backend
+  - worker
+  columns:
+    id:
+      type: string(512)
+      constraints: PRIMARY KEY
+    tenant_id: string(512)
+    organization_id: string(512)
+    owner_user_id: string(512)
+    order_id: string(512)
+    payment_id: string(512)
+    title_id: string(512)
+    status: string(512)
+    invoice_no: string(512)
+    invoice_code: string(512)
+    document_url: string(512)
+    created_at: string(512)
+    issued_at: string(512)
+    updated_at: string(512)
+  not_null_columns:
+  - tenant_id
+  - owner_user_id
+  - order_id
+  - payment_id
+  - title_id
+  - status
+  - created_at
+  - updated_at
+  indexes:
+  - name: idx_commerce_invoice_order_payment
+    columns:
+    - tenant_id
+    - order_id
+    - payment_id
+  - name: idx_commerce_invoice_owner_status
+    columns:
+    - tenant_id
+    - owner_user_id
+    - status
+- table: commerce_invoice_item
+  domain: commerce
+  profile: appbase_standard
+  compliance_level: L3
+  system_of_record: true
+  write_owner: sdkwork-appbase-commerce
+  generated_by_this_project: false
+  frontend_routes:
+  - /console/settlements
+  - /admin/finance
+  - /admin/finance/invoice-titles
+  - /admin/finance/invoices
+  - /admin/marketing/offers
+  - /admin/marketing/promotion-coupon-stocks
+  - /admin/marketing/promotion-codes
+  - /admin/marketing/discount-applications
+  - /admin/marketing/offers
+  - /admin/marketing/promotion-coupon-stocks
+  - /admin/marketing/promotion-codes
+  - /admin/marketing/discount-applications
+  - /admin/finance/payment-reconciliation
+  - /admin/finance/order-revenue
+  - /admin/finance/refunds-report
+  - /admin/finance/audit-events
+  api_surfaces:
+  - app
+  - backend
+  - worker
+  columns:
+    id:
+      type: string(512)
+      constraints: PRIMARY KEY
+    tenant_id: string(512)
+    invoice_id: string(512)
+    order_item_id: string(512)
+    title: string(512)
+    amount: string(512)
+    tax_amount:
+      type: string(512)
+      constraints: DEFAULT '0'
+    created_at: string(512)
+  not_null_columns:
+  - tenant_id
+  - invoice_id
+  - title
+  - amount
+  - tax_amount
+  - created_at
+- table: commerce_invoice_event
+  domain: commerce
+  profile: appbase_standard
+  compliance_level: L3
+  system_of_record: true
+  write_owner: sdkwork-appbase-commerce
+  generated_by_this_project: false
+  frontend_routes:
+  - /console/settlements
+  - /admin/finance
+  - /admin/finance/invoice-titles
+  - /admin/finance/invoices
+  - /admin/marketing/offers
+  - /admin/marketing/promotion-coupon-stocks
+  - /admin/marketing/promotion-codes
+  - /admin/marketing/discount-applications
+  - /admin/marketing/offers
+  - /admin/marketing/promotion-coupon-stocks
+  - /admin/marketing/promotion-codes
+  - /admin/marketing/discount-applications
+  - /admin/finance/payment-reconciliation
+  - /admin/finance/order-revenue
+  - /admin/finance/refunds-report
+  - /admin/finance/audit-events
+  api_surfaces:
+  - app
+  - backend
+  - worker
+  columns:
+    id:
+      type: string(512)
+      constraints: PRIMARY KEY
+    tenant_id: string(512)
+    organization_id: string(512)
+    event_no: string(128)
+    invoice_id: string(512)
+    event_type: string(128)
+    from_status: string(64)
+    to_status: string(64)
+    actor_type: string(64)
+    actor_id: string(512)
+    reason_code: string(128)
+    message: string(1024)
+    payload_json: json
+    request_id: string(512)
+    idempotency_key: string(512)
+    created_at: string(512)
+  not_null_columns:
+  - tenant_id
+  - event_no
+  - invoice_id
+  - event_type
+  - to_status
+  - actor_type
+  - idempotency_key
+  - created_at
+  unique_constraints:
+  - columns:
+    - tenant_id
+    - event_no
+  indexes:
+  - name: idx_commerce_invoice_event_invoice_created
+    columns:
+    - tenant_id
+    - invoice_id
+    - created_at
+- table: commerce_invoice_provider_attempt
+  domain: commerce
+  profile: appbase_standard
+  compliance_level: L3
+  system_of_record: true
+  write_owner: sdkwork-appbase-commerce
+  generated_by_this_project: false
+  frontend_routes:
+  - /admin/finance
+  - /admin/finance/invoice-titles
+  - /admin/finance/invoices
+  - /admin/marketing/offers
+  - /admin/marketing/promotion-coupon-stocks
+  - /admin/marketing/promotion-codes
+  - /admin/marketing/discount-applications
+  - /admin/marketing/offers
+  - /admin/marketing/promotion-coupon-stocks
+  - /admin/marketing/promotion-codes
+  - /admin/marketing/discount-applications
+  - /admin/finance/payment-reconciliation
+  - /admin/finance/order-revenue
+  - /admin/finance/refunds-report
+  - /admin/finance/audit-events
+  api_surfaces:
+  - app
+  - backend
+  - worker
+  columns:
+    id:
+      type: string(512)
+      constraints: PRIMARY KEY
+    tenant_id: string(512)
+    organization_id: string(512)
+    attempt_no: string(128)
+    invoice_id: string(512)
+    provider_code: string(128)
+    provider_account_id: string(512)
+    provider_invoice_id: string(256)
+    status: string(64)
+    failure_code: string(128)
+    failure_message: string(1024)
+    submitted_at: string(512)
+    succeeded_at: string(512)
+    failed_at: string(512)
+    created_at: string(512)
+    updated_at: string(512)
+  not_null_columns:
+  - tenant_id
+  - attempt_no
+  - invoice_id
+  - provider_code
+  - status
+  - created_at
+  - updated_at
+  unique_constraints:
+  - columns:
+    - tenant_id
+    - attempt_no
+  indexes:
+  - name: idx_commerce_invoice_provider_attempt_invoice
+    columns:
+    - tenant_id
+    - invoice_id
+    - status

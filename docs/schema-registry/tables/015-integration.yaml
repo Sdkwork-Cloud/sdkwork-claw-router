@@ -1,0 +1,498 @@
+tables:
+- table: open_platform_provider
+  domain: integration
+  profile: dictionary_entity
+  compliance_level: L2
+  system_of_record: true
+  write_owner: open-platform-service
+  common_columns: tenant_entity
+  frontend_routes:
+  - /admin/open-platform
+  - /admin/open-platform/official-accounts
+  - /admin/open-platform/official-accounts/accounts
+  - /admin/open-platform/official-accounts/menus
+  - /admin/open-platform/official-accounts/messages
+  - /admin/open-platform/mini-programs
+  - /admin/open-platform/mini-programs/accounts
+  - /admin/open-platform/mini-programs/urls
+  - /admin/service-providers
+  - /admin/service-providers/accounts
+  api_surfaces:
+  - backend
+  required_columns:
+  - uuid
+  - tenant_id
+  - organization_id
+  - status
+  - provider
+  - name
+  columns:
+    provider: string(64)
+    name: string(128)
+    icon_url: string(512)
+    docs_url: string(512)
+    website_url: string(512)
+    capabilities: json
+    sort_order: int32
+  indexes:
+  - name: uk_open_platform_provider_tenant_provider
+    unique: true
+    columns:
+    - tenant_id
+    - organization_id
+    - provider
+  - name: idx_open_platform_provider_status_sort
+    columns:
+    - tenant_id
+    - organization_id
+    - status
+    - sort_order
+    - id
+- table: open_platform_manifest
+  domain: integration
+  profile: dictionary_entity
+  compliance_level: L2
+  system_of_record: true
+  write_owner: open-platform-service
+  common_columns: tenant_entity
+  source_tables:
+  - open_platform_provider
+  frontend_routes:
+  - /admin/open-platform
+  - /auth/login
+  - /admin/open-platform/official-accounts
+  - /admin/open-platform/official-accounts/accounts
+  - /admin/open-platform/official-accounts/menus
+  - /admin/open-platform/official-accounts/messages
+  - /admin/open-platform/mini-programs
+  - /admin/open-platform/mini-programs/accounts
+  - /admin/open-platform/mini-programs/urls
+  - /admin/service-providers
+  - /admin/service-providers/accounts
+  api_surfaces:
+  - app
+  - backend
+  required_columns:
+  - uuid
+  - tenant_id
+  - organization_id
+  - status
+  - manifest_key
+  - provider
+  - account_type
+  - version
+  columns:
+    manifest_key: string(128)
+    provider: string(64)
+    account_type: string(64)
+    version: string(32)
+    capability_schema: json
+    callback_schema: json
+    entry_schema: json
+    sort_order: int32
+  indexes:
+  - name: uk_open_platform_manifest_tenant_key
+    unique: true
+    columns:
+    - tenant_id
+    - organization_id
+    - manifest_key
+  - name: idx_open_platform_manifest_provider_type
+    columns:
+    - tenant_id
+    - organization_id
+    - provider
+    - account_type
+    - status
+    - sort_order
+    - id
+- table: open_platform_account
+  domain: integration
+  profile: credential_ref
+  compliance_level: L3
+  system_of_record: true
+  write_owner: open-platform-service
+  common_columns: tenant_entity
+  source_tables:
+  - open_platform_provider
+  frontend_routes:
+  - /admin/open-platform
+  - /auth/login
+  - /admin/open-platform/official-accounts
+  - /admin/open-platform/official-accounts/accounts
+  - /admin/open-platform/official-accounts/menus
+  - /admin/open-platform/official-accounts/messages
+  - /admin/open-platform/mini-programs
+  - /admin/open-platform/mini-programs/accounts
+  - /admin/open-platform/mini-programs/urls
+  - /admin/service-providers
+  - /admin/service-providers/accounts
+  api_surfaces:
+  - app
+  - backend
+  required_columns:
+  - uuid
+  - tenant_id
+  - organization_id
+  - status
+  - account_key
+  - name
+  - provider
+  - account_type
+  columns:
+    account_key: string(128)
+    name: string(128)
+    provider: string(64)
+    account_type: string(64)
+    app_id: string(128)
+    secret_ref: string(256)
+    token_ref: string(256)
+    aes_key_ref: string(256)
+    default_entry_id: int64
+    qr_default: bool
+  indexes:
+  - name: uk_open_platform_account_tenant_key
+    unique: true
+    columns:
+    - tenant_id
+    - organization_id
+    - account_key
+  - name: idx_open_platform_account_provider_type_status
+    columns:
+    - tenant_id
+    - organization_id
+    - provider
+    - account_type
+    - status
+    - id
+  security:
+    sensitivity: SECRET_REF
+    stores_secret_plaintext: false
+    audit_required: true
+- table: open_platform_entry
+  domain: integration
+  profile: tenant_entity
+  compliance_level: L2
+  system_of_record: true
+  write_owner: open-platform-service
+  common_columns: tenant_entity
+  source_tables:
+  - open_platform_account
+  frontend_routes:
+  - /admin/open-platform
+  - /auth/login
+  - /admin/open-platform/official-accounts
+  - /admin/open-platform/official-accounts/accounts
+  - /admin/open-platform/official-accounts/menus
+  - /admin/open-platform/official-accounts/messages
+  - /admin/open-platform/mini-programs
+  - /admin/open-platform/mini-programs/accounts
+  - /admin/open-platform/mini-programs/urls
+  - /admin/service-providers
+  - /admin/service-providers/accounts
+  api_surfaces:
+  - app
+  - backend
+  required_columns:
+  - uuid
+  - tenant_id
+  - organization_id
+  - status
+  - account_id
+  - entry_key
+  - entry_type
+  - entry_url
+  columns:
+    account_id: int64
+    entry_key: string(128)
+    entry_type: string(64)
+    entry_url: string(1024)
+  indexes:
+  - name: uk_open_platform_entry_account_key
+    unique: true
+    columns:
+    - tenant_id
+    - organization_id
+    - account_id
+    - entry_key
+  - name: idx_open_platform_entry_account_status
+    columns:
+    - tenant_id
+    - organization_id
+    - account_id
+    - status
+    - id
+  foreign_keys:
+  - name: fk_open_platform_entry_account
+    columns:
+    - account_id
+    references_table: open_platform_account
+    references_columns:
+    - id
+- table: open_platform_pay_binding
+  domain: integration
+  profile: relation_entity
+  compliance_level: L2
+  system_of_record: true
+  write_owner: open-platform-service
+  common_columns: tenant_entity
+  source_tables:
+  - open_platform_account
+  frontend_routes:
+  - /admin/open-platform
+  - /admin/payments
+  - /admin/payments/providers
+  - /admin/payments/provider-accounts
+  - /admin/payments/methods
+  - /admin/payments/channels
+  - /admin/payments/route-rules
+  - /admin/payments/intents
+  - /admin/payments/attempts
+  - /admin/payments/webhook-events
+  - /admin/payments/reconciliation-runs
+  - /admin/open-platform/official-accounts
+  - /admin/open-platform/official-accounts/accounts
+  - /admin/open-platform/official-accounts/menus
+  - /admin/open-platform/official-accounts/messages
+  - /admin/open-platform/mini-programs
+  - /admin/open-platform/mini-programs/accounts
+  - /admin/open-platform/mini-programs/urls
+  - /admin/service-providers
+  - /admin/service-providers/accounts
+  api_surfaces:
+  - backend
+  required_columns:
+  - uuid
+  - tenant_id
+  - organization_id
+  - status
+  - account_id
+  - payment_account_id
+  - scene
+  - mode
+  columns:
+    account_id: int64
+    payment_account_id: string(128)
+    payment_channel_id: string(128)
+    scene: string(64)
+    mode: string(64)
+  indexes:
+  - name: uk_open_platform_pay_binding_account_scene
+    unique: true
+    columns:
+    - tenant_id
+    - organization_id
+    - account_id
+    - payment_account_id
+    - scene
+  - name: idx_open_platform_pay_binding_account_status
+    columns:
+    - tenant_id
+    - organization_id
+    - account_id
+    - status
+    - id
+  foreign_keys:
+  - name: fk_open_platform_pay_binding_account
+    columns:
+    - account_id
+    references_table: open_platform_account
+    references_columns:
+    - id
+- table: ai_channel_model
+  domain: ai
+  profile: relation_entity
+  compliance_level: L2
+  system_of_record: true
+  write_owner: ai-routing-service
+  common_columns: tenant_entity
+  source_tables:
+  - ai_channel
+  - ai_model
+  - ai_api_endpoint
+  frontend_routes:
+  - /console/routing
+  - /console/providers
+  - /admin/group
+  - /admin/channel
+  api_surfaces:
+  - app
+  - backend
+  columns:
+    channel_id: int64
+    model_id: int64
+    catalog_key: string(256)
+    model: string(128)
+    vendor_code: string(64)
+    provider_model: string(128)
+    provider_native_model: string(256)
+    api_code: string(128)
+    capability: enum_int32
+    model_aliases: json
+    default_parameters: json
+    max_input_tokens: int64
+    max_output_tokens: int64
+    supports_streaming: bool
+    supports_tools: bool
+    effective_from: instant
+    effective_to: instant
+  indexes:
+  - name: uk_ai_channel_model_active
+    unique: true
+    columns:
+    - tenant_id
+    - organization_id
+    - channel_id
+    - catalog_key
+    - provider_model
+    - capability
+    - effective_from
+  - name: idx_ai_channel_model_model_status
+    columns:
+    - tenant_id
+    - organization_id
+    - catalog_key
+    - status
+    - effective_from
+    - id
+  - name: idx_ai_channel_model_model_id_status
+    columns:
+    - tenant_id
+    - organization_id
+    - model
+    - status
+    - effective_from
+    - id
+  - name: idx_ai_channel_model_vendor_status
+    columns:
+    - tenant_id
+    - organization_id
+    - vendor_code
+    - status
+    - effective_from
+    - id
+  foreign_keys:
+  - name: fk_ai_channel_model_channel
+    columns:
+    - channel_id
+    references_table: ai_channel
+    references_columns:
+    - id
+  - name: fk_ai_channel_model_model
+    columns:
+    - model_id
+    references_table: ai_model
+    references_columns:
+    - id
+- table: integration_proxy
+  domain: integration
+  profile: credential_ref
+  compliance_level: L3
+  system_of_record: true
+  write_owner: provider-service
+  common_columns: tenant_entity
+  frontend_routes:
+  - /console/providers
+  api_surfaces:
+  - app
+  - backend
+  columns:
+    proxy_code: string(64)
+    proxy_type: enum_int32
+    endpoint: string(512)
+    secret_ref: string(256)
+    secret_hash: string(128)
+    region: string(64)
+    health_status: enum_int32
+    last_checked_at: instant
+    description: string(512)
+  indexes:
+  - name: uk_integration_proxy_tenant_code
+    unique: true
+    columns:
+    - tenant_id
+    - organization_id
+    - proxy_code
+  security:
+    stores_secret_plaintext: false
+    audit_required: true
+- table: integration_webhook_endpoint
+  domain: integration
+  profile: webhook
+  compliance_level: L3
+  system_of_record: true
+  write_owner: webhook-service
+  common_columns: user_entity
+  frontend_routes:
+  - /console/settings
+  api_surfaces:
+  - app
+  - backend
+  columns:
+    endpoint_code: string(64)
+    name: string(128)
+    target_url: string(1024)
+    secret_ref: string(256)
+    secret_hash: string(128)
+    event_types: json
+    signing_alg: string(64)
+    retry_policy: json
+    last_success_at: instant
+    last_failure_at: instant
+    failure_count: int64
+  indexes:
+  - name: uk_integration_webhook_endpoint_tenant_code
+    unique: true
+    columns:
+    - tenant_id
+    - organization_id
+    - endpoint_code
+  - name: idx_integration_webhook_endpoint_tenant_status
+    columns:
+    - tenant_id
+    - organization_id
+    - status
+    - updated_at
+    - id
+  security:
+    stores_secret_plaintext: false
+    audit_required: true
+- table: integration_provider_health_snapshot
+  domain: ai
+  profile: projection
+  compliance_level: L2
+  system_of_record: false
+  write_owner: ops-worker
+  common_columns: event_log
+  source_tables:
+  - ai_provider
+  - ai_channel
+  frontend_routes:
+  - /admin/channel
+  - /admin/monitor
+  api_surfaces:
+  - backend
+  - worker
+  columns:
+    provider_id: int64
+    channel_id: int64
+    provider_account_id: int64
+    check_type: enum_int32
+    health_status: enum_int32
+    latency_ms: int32
+    http_status: int32
+    error_code: string(128)
+    error_message_masked: string(1024)
+    quota_snapshot: json
+    checked_at: instant
+  indexes:
+  - name: idx_integration_provider_health_provider_time
+    columns:
+    - provider_id
+    - checked_at
+    - id
+  - name: idx_integration_provider_health_channel_time
+    columns:
+    - channel_id
+    - checked_at
+    - id

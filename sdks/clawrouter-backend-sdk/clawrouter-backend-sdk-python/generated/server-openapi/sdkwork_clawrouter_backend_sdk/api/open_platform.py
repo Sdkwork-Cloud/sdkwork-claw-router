@@ -182,59 +182,6 @@ def encode_query_value(value: str, allow_reserved: bool) -> str:
 
     return quote(value, safe=':/?#[]@!$&\'()*+,;=' if allow_reserved else '')
 
-def build_request_headers(headers: Dict[str, Dict[str, Any]], cookies: Optional[Dict[str, Dict[str, Any]]] = None) -> Optional[Dict[str, str]]:
-    request_headers: Dict[str, str] = {}
-    for name, parameter in headers.items():
-        serialized = serialize_parameter_value(parameter)
-        if serialized is not None:
-            request_headers[name] = serialized
-
-    cookie_header = build_cookie_header(cookies or {})
-    if cookie_header:
-        request_headers['Cookie'] = (
-            f"{request_headers['Cookie']}; {cookie_header}"
-            if 'Cookie' in request_headers
-            else cookie_header
-        )
-
-    return request_headers or None
-
-
-def build_cookie_header(cookies: Dict[str, Dict[str, Any]]) -> Optional[str]:
-    from urllib.parse import quote
-
-    pairs: List[str] = []
-    for name, parameter in cookies.items():
-        serialized = serialize_parameter_value(parameter)
-        if serialized is not None:
-            pairs.append(f"{quote(str(name), safe='')}={quote(serialized, safe='')}")
-    return '; '.join(pairs) if pairs else None
-
-
-def serialize_parameter_value(parameter: Optional[Dict[str, Any]]) -> Optional[str]:
-    value = None if parameter is None else parameter.get('value')
-    if value is None:
-        return None
-    if parameter and parameter.get('content_type'):
-        import json
-
-        return json.dumps(value, separators=(',', ':'))
-    if isinstance(value, (list, tuple)):
-        return ','.join(serialize_header_primitive(item) for item in value if item is not None)
-    if isinstance(value, dict):
-        return serialize_header_object(value, bool(parameter and parameter.get('explode')))
-    return serialize_header_primitive(value)
-
-
-def serialize_header_object(value: Dict[str, Any], explode: bool) -> str:
-    entries = [(key, entry_value) for key, entry_value in value.items() if entry_value is not None]
-    if explode:
-        return ','.join(f"{key}={serialize_header_primitive(entry_value)}" for key, entry_value in entries)
-    return ','.join(item for key, entry_value in entries for item in (str(key), serialize_header_primitive(entry_value)))
-
-
-def serialize_header_primitive(value: Any) -> str:
-    return str(value)
 
 
 class OpenPlatformApi:
@@ -267,39 +214,21 @@ class OpenPlatformAccountsApi:
         ])
         return self._client.get(_append_query_string(f"/backend/v3/api/open_platform/accounts", query))
 
-    def create(self, body: OpenPlatformAccountCreateRequest, x_request_id: Optional[str] = None) -> AccountsCreateResult:
+    def create(self, body: OpenPlatformAccountCreateRequest) -> AccountsCreateResult:
         """Create open platform account"""
-        request_headers = build_request_headers(
-            {
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
-            },
-            {}
-        )
-        return self._client.post(f"/backend/v3/api/open_platform/accounts", json=body, headers=request_headers)
+        return self._client.post(f"/backend/v3/api/open_platform/accounts", json=body)
 
-    def delete(self, account_id: str, x_request_id: Optional[str] = None) -> AccountsDeleteResult:
+    def delete(self, account_id: str) -> AccountsDeleteResult:
         """Delete open platform account"""
-        request_headers = build_request_headers(
-            {
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
-            },
-            {}
-        )
-        return self._client.delete(f"/backend/v3/api/open_platform/accounts/{serialize_path_parameter(account_id, {'name': 'accountId', 'style': 'simple', 'explode': False})}", headers=request_headers)
+        return self._client.delete(f"/backend/v3/api/open_platform/accounts/{serialize_path_parameter(account_id, {'name': 'accountId', 'style': 'simple', 'explode': False})}")
 
     def retrieve(self, account_id: str) -> AccountsRetrieveResult:
         """Retrieve open platform account"""
         return self._client.get(f"/backend/v3/api/open_platform/accounts/{serialize_path_parameter(account_id, {'name': 'accountId', 'style': 'simple', 'explode': False})}")
 
-    def update(self, account_id: str, body: OpenPlatformAccountUpdateRequest, x_request_id: Optional[str] = None) -> AccountsUpdateResult:
+    def update(self, account_id: str, body: OpenPlatformAccountUpdateRequest) -> AccountsUpdateResult:
         """Update open platform account"""
-        request_headers = build_request_headers(
-            {
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
-            },
-            {}
-        )
-        return self._client.patch(f"/backend/v3/api/open_platform/accounts/{serialize_path_parameter(account_id, {'name': 'accountId', 'style': 'simple', 'explode': False})}", json=body, headers=request_headers)
+        return self._client.patch(f"/backend/v3/api/open_platform/accounts/{serialize_path_parameter(account_id, {'name': 'accountId', 'style': 'simple', 'explode': False})}", json=body)
 
 class OpenPlatformAccountsEntriesApi:
     """open_platform open_platform.accounts.entries API client."""
@@ -312,35 +241,17 @@ class OpenPlatformAccountsEntriesApi:
         """List open platform account entries"""
         return self._client.get(f"/backend/v3/api/open_platform/accounts/{serialize_path_parameter(account_id, {'name': 'accountId', 'style': 'simple', 'explode': False})}/entries")
 
-    def create(self, account_id: str, body: OpenPlatformEntryCreateRequest, x_request_id: Optional[str] = None) -> AccountsEntriesCreateResult:
+    def create(self, account_id: str, body: OpenPlatformEntryCreateRequest) -> AccountsEntriesCreateResult:
         """Create open platform account entry"""
-        request_headers = build_request_headers(
-            {
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
-            },
-            {}
-        )
-        return self._client.post(f"/backend/v3/api/open_platform/accounts/{serialize_path_parameter(account_id, {'name': 'accountId', 'style': 'simple', 'explode': False})}/entries", json=body, headers=request_headers)
+        return self._client.post(f"/backend/v3/api/open_platform/accounts/{serialize_path_parameter(account_id, {'name': 'accountId', 'style': 'simple', 'explode': False})}/entries", json=body)
 
-    def delete(self, account_id: str, entry_id: str, x_request_id: Optional[str] = None) -> AccountsEntriesDeleteResult:
+    def delete(self, account_id: str, entry_id: str) -> AccountsEntriesDeleteResult:
         """Delete open platform account entry"""
-        request_headers = build_request_headers(
-            {
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
-            },
-            {}
-        )
-        return self._client.delete(f"/backend/v3/api/open_platform/accounts/{serialize_path_parameter(account_id, {'name': 'accountId', 'style': 'simple', 'explode': False})}/entries/{serialize_path_parameter(entry_id, {'name': 'entryId', 'style': 'simple', 'explode': False})}", headers=request_headers)
+        return self._client.delete(f"/backend/v3/api/open_platform/accounts/{serialize_path_parameter(account_id, {'name': 'accountId', 'style': 'simple', 'explode': False})}/entries/{serialize_path_parameter(entry_id, {'name': 'entryId', 'style': 'simple', 'explode': False})}")
 
-    def update(self, account_id: str, entry_id: str, body: OpenPlatformEntryUpdateRequest, x_request_id: Optional[str] = None) -> AccountsEntriesUpdateResult:
+    def update(self, account_id: str, entry_id: str, body: OpenPlatformEntryUpdateRequest) -> AccountsEntriesUpdateResult:
         """Update open platform account entry"""
-        request_headers = build_request_headers(
-            {
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
-            },
-            {}
-        )
-        return self._client.patch(f"/backend/v3/api/open_platform/accounts/{serialize_path_parameter(account_id, {'name': 'accountId', 'style': 'simple', 'explode': False})}/entries/{serialize_path_parameter(entry_id, {'name': 'entryId', 'style': 'simple', 'explode': False})}", json=body, headers=request_headers)
+        return self._client.patch(f"/backend/v3/api/open_platform/accounts/{serialize_path_parameter(account_id, {'name': 'accountId', 'style': 'simple', 'explode': False})}/entries/{serialize_path_parameter(entry_id, {'name': 'entryId', 'style': 'simple', 'explode': False})}", json=body)
 
 class OpenPlatformAccountsPayBindingsApi:
     """open_platform open_platform.accounts.pay_bindings API client."""
@@ -353,25 +264,13 @@ class OpenPlatformAccountsPayBindingsApi:
         """List open platform account pay bindings"""
         return self._client.get(f"/backend/v3/api/open_platform/accounts/{serialize_path_parameter(account_id, {'name': 'accountId', 'style': 'simple', 'explode': False})}/pay_bindings")
 
-    def create(self, account_id: str, body: OpenPlatformPayBindingCreateRequest, x_request_id: Optional[str] = None) -> AccountsPayBindingsCreateResult:
+    def create(self, account_id: str, body: OpenPlatformPayBindingCreateRequest) -> AccountsPayBindingsCreateResult:
         """Create open platform account pay binding"""
-        request_headers = build_request_headers(
-            {
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
-            },
-            {}
-        )
-        return self._client.post(f"/backend/v3/api/open_platform/accounts/{serialize_path_parameter(account_id, {'name': 'accountId', 'style': 'simple', 'explode': False})}/pay_bindings", json=body, headers=request_headers)
+        return self._client.post(f"/backend/v3/api/open_platform/accounts/{serialize_path_parameter(account_id, {'name': 'accountId', 'style': 'simple', 'explode': False})}/pay_bindings", json=body)
 
-    def delete(self, account_id: str, binding_id: str, x_request_id: Optional[str] = None) -> AccountsPayBindingsDeleteResult:
+    def delete(self, account_id: str, binding_id: str) -> AccountsPayBindingsDeleteResult:
         """Delete open platform account pay binding"""
-        request_headers = build_request_headers(
-            {
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
-            },
-            {}
-        )
-        return self._client.delete(f"/backend/v3/api/open_platform/accounts/{serialize_path_parameter(account_id, {'name': 'accountId', 'style': 'simple', 'explode': False})}/pay_bindings/{serialize_path_parameter(binding_id, {'name': 'bindingId', 'style': 'simple', 'explode': False})}", headers=request_headers)
+        return self._client.delete(f"/backend/v3/api/open_platform/accounts/{serialize_path_parameter(account_id, {'name': 'accountId', 'style': 'simple', 'explode': False})}/pay_bindings/{serialize_path_parameter(binding_id, {'name': 'bindingId', 'style': 'simple', 'explode': False})}")
 
 class OpenPlatformManifestsApi:
     """open_platform open_platform.manifests API client."""

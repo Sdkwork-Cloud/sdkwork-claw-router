@@ -13,14 +13,8 @@ public class ContentApi {
     }
 
     /// Create announcement
-    public func announcementsCreate(body: AdminAnnouncementCreateRequest, xRequestId: String? = nil) async throws -> AnnouncementsCreateResult? {
-        let requestHeaders = buildRequestHeaders(
-            [
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
-            ],
-            [:]
-        )
-        return try await client.post(ApiPaths.backendPath("/content/announcements"), body: body, params: nil, headers: requestHeaders, contentType: "application/json", responseType: AnnouncementsCreateResult.self)
+    public func announcementsCreate(body: AdminAnnouncementCreateRequest) async throws -> AnnouncementsCreateResult? {
+        return try await client.post(ApiPaths.backendPath("/content/announcements"), body: body, params: nil, headers: nil, contentType: "application/json", responseType: AnnouncementsCreateResult.self)
     }
 
     /// Delete announcement
@@ -29,14 +23,8 @@ public class ContentApi {
     }
 
     /// Update announcement
-    public func announcementsUpdate(announcementId: String, body: AdminAnnouncementUpdateRequest, xRequestId: String? = nil) async throws -> AnnouncementsUpdateResult? {
-        let requestHeaders = buildRequestHeaders(
-            [
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
-            ],
-            [:]
-        )
-        return try await client.patch(ApiPaths.backendPath("/content/announcements/\(serializePathParameter(announcementId, PathParameterSpec(name: "announcementId", style: "simple", explode: false)))"), body: body, params: nil, headers: requestHeaders, contentType: "application/json", responseType: AnnouncementsUpdateResult.self)
+    public func announcementsUpdate(announcementId: String, body: AdminAnnouncementUpdateRequest) async throws -> AnnouncementsUpdateResult? {
+        return try await client.patch(ApiPaths.backendPath("/content/announcements/\(serializePathParameter(announcementId, PathParameterSpec(name: "announcementId", style: "simple", explode: false)))"), body: body, params: nil, headers: nil, contentType: "application/json", responseType: AnnouncementsUpdateResult.self)
     }
 
     /// Admin Course Applications List
@@ -51,58 +39,28 @@ public class ContentApi {
     }
 
     /// Admin Course Application Review
-    public func courseApplicationsReview(applicationId: String, body: AdminCourseApplicationReviewRequest, xRequestId: String? = nil) async throws -> CourseApplicationsReviewResult? {
-        let requestHeaders = buildRequestHeaders(
-            [
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
-            ],
-            [:]
-        )
-        return try await client.patch(ApiPaths.backendPath("/content/course-applications/\(serializePathParameter(applicationId, PathParameterSpec(name: "applicationId", style: "simple", explode: false)))/review"), body: body, params: nil, headers: requestHeaders, contentType: "application/json", responseType: CourseApplicationsReviewResult.self)
+    public func courseApplicationsReview(applicationId: String, body: AdminCourseApplicationReviewRequest) async throws -> CourseApplicationsReviewResult? {
+        return try await client.patch(ApiPaths.backendPath("/content/course-applications/\(serializePathParameter(applicationId, PathParameterSpec(name: "applicationId", style: "simple", explode: false)))/review"), body: body, params: nil, headers: nil, contentType: "application/json", responseType: CourseApplicationsReviewResult.self)
     }
 
     /// Admin Course Lesson Delete
-    public func courseLessonsDelete(lessonId: String, xRequestId: String? = nil) async throws -> CourseLessonsDeleteResult? {
-        let requestHeaders = buildRequestHeaders(
-            [
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
-            ],
-            [:]
-        )
-        return try await client.delete(ApiPaths.backendPath("/content/course-lessons/\(serializePathParameter(lessonId, PathParameterSpec(name: "lessonId", style: "simple", explode: false)))"), params: nil, headers: requestHeaders, responseType: CourseLessonsDeleteResult.self)
+    public func courseLessonsDelete(lessonId: String) async throws -> CourseLessonsDeleteResult? {
+        return try await client.delete(ApiPaths.backendPath("/content/course-lessons/\(serializePathParameter(lessonId, PathParameterSpec(name: "lessonId", style: "simple", explode: false)))"), responseType: CourseLessonsDeleteResult.self)
     }
 
     /// Admin Course Lesson Update
-    public func courseLessonsUpdate(lessonId: String, body: AdminCourseLessonMutationRequest, xRequestId: String? = nil) async throws -> CourseLessonsUpdateResult? {
-        let requestHeaders = buildRequestHeaders(
-            [
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
-            ],
-            [:]
-        )
-        return try await client.patch(ApiPaths.backendPath("/content/course-lessons/\(serializePathParameter(lessonId, PathParameterSpec(name: "lessonId", style: "simple", explode: false)))"), body: body, params: nil, headers: requestHeaders, contentType: "application/json", responseType: CourseLessonsUpdateResult.self)
+    public func courseLessonsUpdate(lessonId: String, body: AdminCourseLessonMutationRequest) async throws -> CourseLessonsUpdateResult? {
+        return try await client.patch(ApiPaths.backendPath("/content/course-lessons/\(serializePathParameter(lessonId, PathParameterSpec(name: "lessonId", style: "simple", explode: false)))"), body: body, params: nil, headers: nil, contentType: "application/json", responseType: CourseLessonsUpdateResult.self)
     }
 
     /// Admin Course Section Delete
-    public func courseSectionsDelete(sectionId: String, xRequestId: String? = nil) async throws -> CourseSectionsDeleteResult? {
-        let requestHeaders = buildRequestHeaders(
-            [
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
-            ],
-            [:]
-        )
-        return try await client.delete(ApiPaths.backendPath("/content/course-sections/\(serializePathParameter(sectionId, PathParameterSpec(name: "sectionId", style: "simple", explode: false)))"), params: nil, headers: requestHeaders, responseType: CourseSectionsDeleteResult.self)
+    public func courseSectionsDelete(sectionId: String) async throws -> CourseSectionsDeleteResult? {
+        return try await client.delete(ApiPaths.backendPath("/content/course-sections/\(serializePathParameter(sectionId, PathParameterSpec(name: "sectionId", style: "simple", explode: false)))"), responseType: CourseSectionsDeleteResult.self)
     }
 
     /// Admin Course Section Update
-    public func courseSectionsUpdate(sectionId: String, body: AdminCourseSectionMutationRequest, xRequestId: String? = nil) async throws -> CourseSectionsUpdateResult? {
-        let requestHeaders = buildRequestHeaders(
-            [
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
-            ],
-            [:]
-        )
-        return try await client.patch(ApiPaths.backendPath("/content/course-sections/\(serializePathParameter(sectionId, PathParameterSpec(name: "sectionId", style: "simple", explode: false)))"), body: body, params: nil, headers: requestHeaders, contentType: "application/json", responseType: CourseSectionsUpdateResult.self)
+    public func courseSectionsUpdate(sectionId: String, body: AdminCourseSectionMutationRequest) async throws -> CourseSectionsUpdateResult? {
+        return try await client.patch(ApiPaths.backendPath("/content/course-sections/\(serializePathParameter(sectionId, PathParameterSpec(name: "sectionId", style: "simple", explode: false)))"), body: body, params: nil, headers: nil, contentType: "application/json", responseType: CourseSectionsUpdateResult.self)
     }
 
     /// Admin Courses List
@@ -117,14 +75,8 @@ public class ContentApi {
     }
 
     /// Admin Course Create
-    public func coursesCreate(body: AdminCourseMutationRequest, xRequestId: String? = nil) async throws -> CoursesCreateResult? {
-        let requestHeaders = buildRequestHeaders(
-            [
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
-            ],
-            [:]
-        )
-        return try await client.post(ApiPaths.backendPath("/content/courses"), body: body, params: nil, headers: requestHeaders, contentType: "application/json", responseType: CoursesCreateResult.self)
+    public func coursesCreate(body: AdminCourseMutationRequest) async throws -> CoursesCreateResult? {
+        return try await client.post(ApiPaths.backendPath("/content/courses"), body: body, params: nil, headers: nil, contentType: "application/json", responseType: CoursesCreateResult.self)
     }
 
     /// Admin Course Comments List
@@ -139,14 +91,8 @@ public class ContentApi {
     }
 
     /// Admin Course Comment Moderate
-    public func courseCommentsModerate(commentId: String, body: AdminCourseCommentModerationRequest, xRequestId: String? = nil) async throws -> CourseCommentsModerateResult? {
-        let requestHeaders = buildRequestHeaders(
-            [
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
-            ],
-            [:]
-        )
-        return try await client.patch(ApiPaths.backendPath("/content/courses/comments/\(serializePathParameter(commentId, PathParameterSpec(name: "commentId", style: "simple", explode: false)))/moderation"), body: body, params: nil, headers: requestHeaders, contentType: "application/json", responseType: CourseCommentsModerateResult.self)
+    public func courseCommentsModerate(commentId: String, body: AdminCourseCommentModerationRequest) async throws -> CourseCommentsModerateResult? {
+        return try await client.patch(ApiPaths.backendPath("/content/courses/comments/\(serializePathParameter(commentId, PathParameterSpec(name: "commentId", style: "simple", explode: false)))/moderation"), body: body, params: nil, headers: nil, contentType: "application/json", responseType: CourseCommentsModerateResult.self)
     }
 
     /// Course Dashboard Retrieve
@@ -166,25 +112,13 @@ public class ContentApi {
     }
 
     /// Admin Course Delete
-    public func coursesDelete(courseId: String, xRequestId: String? = nil) async throws -> CoursesDeleteResult? {
-        let requestHeaders = buildRequestHeaders(
-            [
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
-            ],
-            [:]
-        )
-        return try await client.delete(ApiPaths.backendPath("/content/courses/\(serializePathParameter(courseId, PathParameterSpec(name: "courseId", style: "simple", explode: false)))"), params: nil, headers: requestHeaders, responseType: CoursesDeleteResult.self)
+    public func coursesDelete(courseId: String) async throws -> CoursesDeleteResult? {
+        return try await client.delete(ApiPaths.backendPath("/content/courses/\(serializePathParameter(courseId, PathParameterSpec(name: "courseId", style: "simple", explode: false)))"), responseType: CoursesDeleteResult.self)
     }
 
     /// Admin Course Update
-    public func coursesUpdate(courseId: String, body: AdminCourseMutationRequest, xRequestId: String? = nil) async throws -> CoursesUpdateResult? {
-        let requestHeaders = buildRequestHeaders(
-            [
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
-            ],
-            [:]
-        )
-        return try await client.patch(ApiPaths.backendPath("/content/courses/\(serializePathParameter(courseId, PathParameterSpec(name: "courseId", style: "simple", explode: false)))"), body: body, params: nil, headers: requestHeaders, contentType: "application/json", responseType: CoursesUpdateResult.self)
+    public func coursesUpdate(courseId: String, body: AdminCourseMutationRequest) async throws -> CoursesUpdateResult? {
+        return try await client.patch(ApiPaths.backendPath("/content/courses/\(serializePathParameter(courseId, PathParameterSpec(name: "courseId", style: "simple", explode: false)))"), body: body, params: nil, headers: nil, contentType: "application/json", responseType: CoursesUpdateResult.self)
     }
 
     /// Admin Course Lessons List
@@ -199,14 +133,8 @@ public class ContentApi {
     }
 
     /// Admin Course Lesson Create
-    public func coursesLessonsCreate(courseId: String, body: AdminCourseLessonMutationRequest, xRequestId: String? = nil) async throws -> CoursesLessonsCreateResult? {
-        let requestHeaders = buildRequestHeaders(
-            [
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
-            ],
-            [:]
-        )
-        return try await client.post(ApiPaths.backendPath("/content/courses/\(serializePathParameter(courseId, PathParameterSpec(name: "courseId", style: "simple", explode: false)))/lessons"), body: body, params: nil, headers: requestHeaders, contentType: "application/json", responseType: CoursesLessonsCreateResult.self)
+    public func coursesLessonsCreate(courseId: String, body: AdminCourseLessonMutationRequest) async throws -> CoursesLessonsCreateResult? {
+        return try await client.post(ApiPaths.backendPath("/content/courses/\(serializePathParameter(courseId, PathParameterSpec(name: "courseId", style: "simple", explode: false)))/lessons"), body: body, params: nil, headers: nil, contentType: "application/json", responseType: CoursesLessonsCreateResult.self)
     }
 
     /// Admin Course Relations List
@@ -221,14 +149,8 @@ public class ContentApi {
     }
 
     /// Admin Course Relations Replace
-    public func coursesRelationsReplace(courseId: String, body: AdminCourseRelationsReplaceRequest, xRequestId: String? = nil) async throws -> CoursesRelationsReplaceResult? {
-        let requestHeaders = buildRequestHeaders(
-            [
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
-            ],
-            [:]
-        )
-        return try await client.put(ApiPaths.backendPath("/content/courses/\(serializePathParameter(courseId, PathParameterSpec(name: "courseId", style: "simple", explode: false)))/relations"), body: body, params: nil, headers: requestHeaders, contentType: "application/json", responseType: CoursesRelationsReplaceResult.self)
+    public func coursesRelationsReplace(courseId: String, body: AdminCourseRelationsReplaceRequest) async throws -> CoursesRelationsReplaceResult? {
+        return try await client.put(ApiPaths.backendPath("/content/courses/\(serializePathParameter(courseId, PathParameterSpec(name: "courseId", style: "simple", explode: false)))/relations"), body: body, params: nil, headers: nil, contentType: "application/json", responseType: CoursesRelationsReplaceResult.self)
     }
 
     /// Admin Course Sections List
@@ -243,14 +165,8 @@ public class ContentApi {
     }
 
     /// Admin Course Section Create
-    public func coursesSectionsCreate(courseId: String, body: AdminCourseSectionMutationRequest, xRequestId: String? = nil) async throws -> CoursesSectionsCreateResult? {
-        let requestHeaders = buildRequestHeaders(
-            [
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
-            ],
-            [:]
-        )
-        return try await client.post(ApiPaths.backendPath("/content/courses/\(serializePathParameter(courseId, PathParameterSpec(name: "courseId", style: "simple", explode: false)))/sections"), body: body, params: nil, headers: requestHeaders, contentType: "application/json", responseType: CoursesSectionsCreateResult.self)
+    public func coursesSectionsCreate(courseId: String, body: AdminCourseSectionMutationRequest) async throws -> CoursesSectionsCreateResult? {
+        return try await client.post(ApiPaths.backendPath("/content/courses/\(serializePathParameter(courseId, PathParameterSpec(name: "courseId", style: "simple", explode: false)))/sections"), body: body, params: nil, headers: nil, contentType: "application/json", responseType: CoursesSectionsCreateResult.self)
     }
 
     private struct PathParameterSpec {
@@ -430,68 +346,4 @@ public class ContentApi {
         value.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? value
     }
 
-    private struct HeaderParameterSpec {
-        let value: Any?
-        let style: String
-        let explode: Bool
-        let contentType: String?
-    }
-
-    private func buildRequestHeaders(_ headers: [String: HeaderParameterSpec], _ cookies: [String: HeaderParameterSpec]) -> [String: String]? {
-        var requestHeaders: [String: String] = [:]
-        for (name, parameter) in headers {
-            if let serialized = serializeParameterValue(parameter) {
-                requestHeaders[name] = serialized
-            }
-        }
-
-        if let cookieHeader = buildCookieHeader(cookies), !cookieHeader.isEmpty {
-            requestHeaders["Cookie"] = requestHeaders["Cookie"].map { "\($0); \(cookieHeader)" } ?? cookieHeader
-        }
-
-        return requestHeaders.isEmpty ? nil : requestHeaders
-    }
-
-    private func buildCookieHeader(_ cookies: [String: HeaderParameterSpec]) -> String? {
-        let pairs = cookies.compactMap { name, parameter -> String? in
-            guard let serialized = serializeParameterValue(parameter) else { return nil }
-            return "\(urlEncode(name))=\(urlEncode(serialized))"
-        }
-        return pairs.isEmpty ? nil : pairs.joined(separator: "; ")
-    }
-
-    private func serializeParameterValue(_ parameter: HeaderParameterSpec?) -> String? {
-        guard let parameter, let value = parameter.value else { return nil }
-        if let contentType = parameter.contentType, !contentType.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
-            if JSONSerialization.isValidJSONObject(value),
-               let data = try? JSONSerialization.data(withJSONObject: value, options: []),
-               let json = String(data: data, encoding: .utf8) {
-                return json
-            }
-            return String(describing: value)
-        }
-        if let array = value as? [Any?] {
-            return array.compactMap { $0.map { String(describing: $0) } }.joined(separator: ",")
-        }
-        if let object = value as? [String: Any] {
-            var values: [String] = []
-            for (key, item) in object {
-                if parameter.explode {
-                    values.append("\(key)=\(item)")
-                } else {
-                    values.append(key)
-                    values.append(String(describing: item))
-                }
-            }
-            return values.joined(separator: ",")
-        }
-        if let date = value as? Date {
-            return ISO8601DateFormatter().string(from: date)
-        }
-        return String(describing: value)
-    }
-
-    private func urlEncode(_ value: String) -> String {
-        value.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? value
-    }
 }

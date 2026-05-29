@@ -8,8 +8,6 @@ class AiUsageFactRecord:
     """Ai usage fact record schema exposed by Claw Router."""
     catalog_key: str
     uuid: str
-    api_key_group_id: Optional[str] = None
-    api_key_group_snapshot: Optional[str] = None
     api_key_id: Optional[str] = None
     api_key_name_snapshot: Optional[str] = None
     audio_seconds: Optional[str] = None
@@ -25,6 +23,8 @@ class AiUsageFactRecord:
     billing_type: Optional[str] = None
     cache_read_unit_price: Optional[str] = None
     cached_tokens: Optional[str] = None
+    channel_group_id: Optional[str] = None
+    channel_group_snapshot: Optional[str] = None
     channel_id: Optional[str] = None
     character_count: Optional[str] = None
     completion_tokens: Optional[str] = None
@@ -55,7 +55,6 @@ class AiUsageFactRecord:
     pricing_snapshot: Optional[Dict[str, str]] = None
     pricing_tier_id: Optional[str] = None
     prompt_tokens: Optional[str] = None
-    provider_account_id: Optional[str] = None
     provider_id: Optional[str] = None
     provider_native_model: Optional[str] = None
     rate_multiplier: Optional[str] = None

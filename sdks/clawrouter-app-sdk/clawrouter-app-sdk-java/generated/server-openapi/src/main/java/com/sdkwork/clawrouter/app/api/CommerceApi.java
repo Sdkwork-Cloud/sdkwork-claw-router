@@ -31,9 +31,9 @@ public class CommerceApi {
     }
 
     /** Addresses Create */
-    public AddressesCreateResult addressesCreate(CommerceStandardCommandRequest body, String idempotencyKey, String xRequestId) throws Exception {
+    public AddressesCreateResult addressesCreate(CommerceStandardCommandRequest body, String idempotencyKey) throws Exception {
         Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null), "X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
+                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null)),
                 Map.of()
         );
         Object raw = client.post(ApiPaths.appPath("/addresses"), body, null, requestHeaders, "application/json");
@@ -41,9 +41,9 @@ public class CommerceApi {
     }
 
     /** Addresses Delete */
-    public AddressesDeleteResult addressesDelete(String addressId, String idempotencyKey, String xRequestId) throws Exception {
+    public AddressesDeleteResult addressesDelete(String addressId, String idempotencyKey) throws Exception {
         Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null), "X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
+                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null)),
                 Map.of()
         );
         Object raw = client.delete(ApiPaths.appPath("/addresses/" + serializePathParameter(addressId, new PathParameterSpec("addressId", "simple", false)) + ""), null, requestHeaders);
@@ -51,9 +51,9 @@ public class CommerceApi {
     }
 
     /** Addresses Update */
-    public AddressesUpdateResult addressesUpdate(String addressId, CommerceStandardCommandRequest body, String idempotencyKey, String xRequestId) throws Exception {
+    public AddressesUpdateResult addressesUpdate(String addressId, CommerceStandardCommandRequest body, String idempotencyKey) throws Exception {
         Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null), "X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
+                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null)),
                 Map.of()
         );
         Object raw = client.patch(ApiPaths.appPath("/addresses/" + serializePathParameter(addressId, new PathParameterSpec("addressId", "simple", false)) + ""), body, null, requestHeaders, "application/json");
@@ -61,9 +61,9 @@ public class CommerceApi {
     }
 
     /** Addresses Default Selection Create */
-    public AddressesDefaultSelectionCreateResult addressesDefaultSelectionCreate(String addressId, CommerceStandardCommandRequest body, String idempotencyKey, String xRequestId) throws Exception {
+    public AddressesDefaultSelectionCreateResult addressesDefaultSelectionCreate(String addressId, CommerceStandardCommandRequest body, String idempotencyKey) throws Exception {
         Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null), "X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
+                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null)),
                 Map.of()
         );
         Object raw = client.post(ApiPaths.appPath("/addresses/" + serializePathParameter(addressId, new PathParameterSpec("addressId", "simple", false)) + "/default_selection"), body, null, requestHeaders, "application/json");
@@ -89,9 +89,9 @@ public class CommerceApi {
     }
 
     /** Cart Items Create */
-    public CartItemsCreateResult cartItemsCreate(CommerceStandardCommandRequest body, String idempotencyKey, String xRequestId) throws Exception {
+    public CartItemsCreateResult cartItemsCreate(CommerceStandardCommandRequest body, String idempotencyKey) throws Exception {
         Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null), "X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
+                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null)),
                 Map.of()
         );
         Object raw = client.post(ApiPaths.appPath("/cart/items"), body, null, requestHeaders, "application/json");
@@ -99,9 +99,9 @@ public class CommerceApi {
     }
 
     /** Cart Items Delete */
-    public CartItemsDeleteResult cartItemsDelete(String cartItemId, String idempotencyKey, String xRequestId) throws Exception {
+    public CartItemsDeleteResult cartItemsDelete(String cartItemId, String idempotencyKey) throws Exception {
         Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null), "X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
+                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null)),
                 Map.of()
         );
         Object raw = client.delete(ApiPaths.appPath("/cart/items/" + serializePathParameter(cartItemId, new PathParameterSpec("cartItemId", "simple", false)) + ""), null, requestHeaders);
@@ -109,9 +109,9 @@ public class CommerceApi {
     }
 
     /** Cart Items Update */
-    public CartItemsUpdateResult cartItemsUpdate(String cartItemId, CommerceStandardCommandRequest body, String idempotencyKey, String xRequestId) throws Exception {
+    public CartItemsUpdateResult cartItemsUpdate(String cartItemId, CommerceStandardCommandRequest body, String idempotencyKey) throws Exception {
         Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null), "X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
+                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null)),
                 Map.of()
         );
         Object raw = client.patch(ApiPaths.appPath("/cart/items/" + serializePathParameter(cartItemId, new PathParameterSpec("cartItemId", "simple", false)) + ""), body, null, requestHeaders, "application/json");
@@ -158,9 +158,9 @@ public class CommerceApi {
     }
 
     /** Checkout Sessions Create */
-    public CheckoutSessionsCreateResult checkoutSessionsCreate(CommerceStandardCommandRequest body, String idempotencyKey, String xRequestId) throws Exception {
+    public CheckoutSessionsCreateResult checkoutSessionsCreate(CommerceStandardCommandRequest body, String idempotencyKey) throws Exception {
         Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null), "X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
+                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null)),
                 Map.of()
         );
         Object raw = client.post(ApiPaths.appPath("/checkout/sessions"), body, null, requestHeaders, "application/json");
@@ -174,9 +174,9 @@ public class CommerceApi {
     }
 
     /** Checkout Sessions Orders Create */
-    public CheckoutSessionsOrdersCreateResult checkoutSessionsOrdersCreate(String checkoutSessionId, CommerceStandardCommandRequest body, String idempotencyKey, String xRequestId) throws Exception {
+    public CheckoutSessionsOrdersCreateResult checkoutSessionsOrdersCreate(String checkoutSessionId, CommerceStandardCommandRequest body, String idempotencyKey) throws Exception {
         Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null), "X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
+                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null)),
                 Map.of()
         );
         Object raw = client.post(ApiPaths.appPath("/checkout/sessions/" + serializePathParameter(checkoutSessionId, new PathParameterSpec("checkoutSessionId", "simple", false)) + "/orders"), body, null, requestHeaders, "application/json");
@@ -184,9 +184,9 @@ public class CommerceApi {
     }
 
     /** Checkout Sessions Quotes Create */
-    public CheckoutSessionsQuotesCreateResult checkoutSessionsQuotesCreate(String checkoutSessionId, CommerceStandardCommandRequest body, String idempotencyKey, String xRequestId) throws Exception {
+    public CheckoutSessionsQuotesCreateResult checkoutSessionsQuotesCreate(String checkoutSessionId, CommerceStandardCommandRequest body, String idempotencyKey) throws Exception {
         Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null), "X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
+                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null)),
                 Map.of()
         );
         Object raw = client.post(ApiPaths.appPath("/checkout/sessions/" + serializePathParameter(checkoutSessionId, new PathParameterSpec("checkoutSessionId", "simple", false)) + "/quotes"), body, null, requestHeaders, "application/json");
@@ -222,9 +222,9 @@ public class CommerceApi {
     }
 
     /** Invoices Create */
-    public InvoicesCreateResult invoicesCreate(CommerceStandardCommandRequest body, String idempotencyKey, String xRequestId) throws Exception {
+    public InvoicesCreateResult invoicesCreate(CommerceStandardCommandRequest body, String idempotencyKey) throws Exception {
         Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null), "X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
+                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null)),
                 Map.of()
         );
         Object raw = client.post(ApiPaths.appPath("/invoices"), body, null, requestHeaders, "application/json");
@@ -313,12 +313,8 @@ public class CommerceApi {
     }
 
     /** Memberships Points Daily Rewards Create */
-    public MembershipsPointsDailyRewardsCreateResult membershipsPointsDailyRewardsCreate(MembershipsPointsDailyRewardsCreateRequest body, String xRequestId) throws Exception {
-        Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
-                Map.of()
-        );
-        Object raw = client.post(ApiPaths.appPath("/memberships/points/daily_rewards"), body, null, requestHeaders, "application/json");
+    public MembershipsPointsDailyRewardsCreateResult membershipsPointsDailyRewardsCreate(MembershipsPointsDailyRewardsCreateRequest body) throws Exception {
+        Object raw = client.post(ApiPaths.appPath("/memberships/points/daily_rewards"), body, null, null, "application/json");
         return client.convertValue(raw, new TypeReference<MembershipsPointsDailyRewardsCreateResult>() {});
     }
 
@@ -340,12 +336,8 @@ public class CommerceApi {
     }
 
     /** Memberships Privileges Speed Ups Create */
-    public MembershipsPrivilegesSpeedUpsCreateResult membershipsPrivilegesSpeedUpsCreate(MembershipsPrivilegesSpeedUpsCreateRequest body, String xRequestId) throws Exception {
-        Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
-                Map.of()
-        );
-        Object raw = client.post(ApiPaths.appPath("/memberships/privileges/speed_ups"), body, null, requestHeaders, "application/json");
+    public MembershipsPrivilegesSpeedUpsCreateResult membershipsPrivilegesSpeedUpsCreate(MembershipsPrivilegesSpeedUpsCreateRequest body) throws Exception {
+        Object raw = client.post(ApiPaths.appPath("/memberships/privileges/speed_ups"), body, null, null, "application/json");
         return client.convertValue(raw, new TypeReference<MembershipsPrivilegesSpeedUpsCreateResult>() {});
     }
 
@@ -356,9 +348,9 @@ public class CommerceApi {
     }
 
     /** Memberships Purchases Create */
-    public MembershipsPurchasesCreateResult membershipsPurchasesCreate(CommerceMembershipPurchaseRequest body, String idempotencyKey, String xRequestId) throws Exception {
+    public MembershipsPurchasesCreateResult membershipsPurchasesCreate(CommerceMembershipPurchaseRequest body, String idempotencyKey) throws Exception {
         Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null), "X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
+                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null)),
                 Map.of()
         );
         Object raw = client.post(ApiPaths.appPath("/memberships/purchases"), body, null, requestHeaders, "application/json");
@@ -366,9 +358,9 @@ public class CommerceApi {
     }
 
     /** Memberships Purchases Renew */
-    public MembershipsPurchasesRenewResult membershipsPurchasesRenew(CommerceMembershipPurchaseRequest body, String idempotencyKey, String xRequestId) throws Exception {
+    public MembershipsPurchasesRenewResult membershipsPurchasesRenew(CommerceMembershipPurchaseRequest body, String idempotencyKey) throws Exception {
         Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null), "X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
+                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null)),
                 Map.of()
         );
         Object raw = client.post(ApiPaths.appPath("/memberships/purchases/renew"), body, null, requestHeaders, "application/json");
@@ -376,9 +368,9 @@ public class CommerceApi {
     }
 
     /** Memberships Purchases Upgrade */
-    public MembershipsPurchasesUpgradeResult membershipsPurchasesUpgrade(CommerceMembershipPurchaseRequest body, String idempotencyKey, String xRequestId) throws Exception {
+    public MembershipsPurchasesUpgradeResult membershipsPurchasesUpgrade(CommerceMembershipPurchaseRequest body, String idempotencyKey) throws Exception {
         Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null), "X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
+                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null)),
                 Map.of()
         );
         Object raw = client.post(ApiPaths.appPath("/memberships/purchases/upgrade"), body, null, requestHeaders, "application/json");
@@ -403,9 +395,9 @@ public class CommerceApi {
     }
 
     /** Orders Cancellations Create */
-    public OrdersCancellationsCreateResult ordersCancellationsCreate(String orderId, CommerceStandardCommandRequest body, String idempotencyKey, String xRequestId) throws Exception {
+    public OrdersCancellationsCreateResult ordersCancellationsCreate(String orderId, CommerceStandardCommandRequest body, String idempotencyKey) throws Exception {
         Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null), "X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
+                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null)),
                 Map.of()
         );
         Object raw = client.post(ApiPaths.appPath("/orders/" + serializePathParameter(orderId, new PathParameterSpec("orderId", "simple", false)) + "/cancellations"), body, null, requestHeaders, "application/json");
@@ -430,9 +422,9 @@ public class CommerceApi {
     }
 
     /** Payments Intents Create */
-    public PaymentsIntentsCreateResult paymentsIntentsCreate(CommercePaymentIntentCreateRequest body, String idempotencyKey, String xRequestId) throws Exception {
+    public PaymentsIntentsCreateResult paymentsIntentsCreate(CommercePaymentIntentCreateRequest body, String idempotencyKey) throws Exception {
         Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null), "X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
+                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null)),
                 Map.of()
         );
         Object raw = client.post(ApiPaths.appPath("/payments/intents"), body, null, requestHeaders, "application/json");
@@ -446,9 +438,9 @@ public class CommerceApi {
     }
 
     /** Payments Intents Attempts Create */
-    public PaymentsIntentsAttemptsCreateResult paymentsIntentsAttemptsCreate(String paymentIntentId, CommercePaymentAttemptCreateRequest body, String idempotencyKey, String xRequestId) throws Exception {
+    public PaymentsIntentsAttemptsCreateResult paymentsIntentsAttemptsCreate(String paymentIntentId, CommercePaymentAttemptCreateRequest body, String idempotencyKey) throws Exception {
         Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null), "X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
+                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null)),
                 Map.of()
         );
         Object raw = client.post(ApiPaths.appPath("/payments/intents/" + serializePathParameter(paymentIntentId, new PathParameterSpec("paymentIntentId", "simple", false)) + "/attempts"), body, null, requestHeaders, "application/json");
@@ -467,9 +459,9 @@ public class CommerceApi {
     }
 
     /** Recharges Orders Create */
-    public RechargesOrdersCreateResult rechargesOrdersCreate(CommerceStandardCommandRequest body, String idempotencyKey, String xRequestId) throws Exception {
+    public RechargesOrdersCreateResult rechargesOrdersCreate(CommerceStandardCommandRequest body, String idempotencyKey) throws Exception {
         Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null), "X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
+                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null)),
                 Map.of()
         );
         Object raw = client.post(ApiPaths.appPath("/recharges/orders"), body, null, requestHeaders, "application/json");
@@ -505,9 +497,9 @@ public class CommerceApi {
     }
 
     /** Refunds Create */
-    public RefundsCreateResult refundsCreate(CommerceStandardCommandRequest body, String idempotencyKey, String xRequestId) throws Exception {
+    public RefundsCreateResult refundsCreate(CommerceStandardCommandRequest body, String idempotencyKey) throws Exception {
         Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null), "X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
+                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null)),
                 Map.of()
         );
         Object raw = client.post(ApiPaths.appPath("/refunds"), body, null, requestHeaders, "application/json");

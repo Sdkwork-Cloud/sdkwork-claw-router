@@ -1,5 +1,267 @@
 fragment: operations/backend-ai
 frontend_operations:
+- route: /admin/channel/resources
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts
+  operation: fetchAiResources
+  operation_id: aiResources.list
+  kind: read
+  api_surface: backend
+  api_method: GET
+  api_path: /backend/v3/api/ai/resources
+  read_sources:
+  - ai_resource
+  - ai_resource_group_item
+  query_parameters: []
+  response_schema:
+    name: AdminAiResourcesResponse
+    required:
+    - items
+    properties:
+      items:
+        type: array
+        items:
+          name: AdminAiResourceItem
+          type: object
+          additionalProperties: false
+          required: &adminAiResourceItemRequired
+          - id
+          - resourceCode
+          - resourceType
+          - displayName
+          - compositionMode
+          - status
+          - members
+          properties: &adminAiResourceItemProperties
+            id:
+              type: string
+              minLength: 1
+              maxLength: 128
+            resourceCode:
+              type: string
+              minLength: 1
+              maxLength: 192
+              pattern: ^[A-Za-z0-9._-]+$
+            resourceType:
+              type: string
+              enum:
+              - vendor
+              - modality
+              - api_endpoint
+              - model_api
+              - bundle
+            displayName:
+              type: string
+              minLength: 1
+              maxLength: 128
+            vendorCode:
+              type: string
+              maxLength: 64
+            modalityCode:
+              type: string
+              maxLength: 64
+            apiEndpointCode:
+              type: string
+              maxLength: 128
+            catalogKey:
+              type: string
+              maxLength: 256
+            model:
+              type: string
+              maxLength: 128
+            providerNativeModel:
+              type: string
+              maxLength: 256
+            compositionMode:
+              type: string
+              enum:
+              - single
+              - any
+              - all
+            status:
+              type: string
+              enum:
+              - active
+              - disabled
+              - inactive
+            sortOrder:
+              type: integer
+              format: int64
+            members:
+              type: array
+              maxItems: 512
+              items:
+                name: AdminAiResourceMemberItem
+                type: object
+                additionalProperties: false
+                required:
+                - parentResourceCode
+                - memberResourceCode
+                - memberRole
+                - required
+                properties:
+                  parentResourceCode:
+                    type: string
+                    minLength: 1
+                    maxLength: 192
+                  memberResourceCode:
+                    type: string
+                    minLength: 1
+                    maxLength: 192
+                  memberRole:
+                    type: string
+                    enum:
+                    - included
+                    - optional
+                    - fallback
+                  required:
+                    type: boolean
+                  sortOrder:
+                    type: integer
+                    format: int64
+- route: /admin/channel/resources
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts
+  operation: createAiResource
+  operation_id: aiResources.create
+  kind: create
+  api_surface: backend
+  api_method: POST
+  api_path: /backend/v3/api/ai/resources
+  read_sources:
+  - ai_resource
+  - ai_resource_group_item
+  write_tables:
+  - ai_resource
+  - ai_resource_group_item
+  - ops_audit_log
+  request_schema:
+    name: AdminAiResourceCreateRequest
+    required:
+    - resourceCode
+    - resourceType
+    - displayName
+    properties: &adminAiResourceMutationRequestProperties
+      resourceCode:
+        type: string
+        minLength: 1
+        maxLength: 192
+        pattern: ^[A-Za-z0-9._-]+$
+        description: Stable normalized AI resource code.
+      resourceType:
+        type: string
+        enum:
+        - vendor
+        - modality
+        - api_endpoint
+        - model_api
+        - bundle
+      displayName:
+        type: string
+        minLength: 1
+        maxLength: 128
+      vendorCode:
+        type: string
+        nullable: true
+        maxLength: 64
+        pattern: ^[A-Za-z0-9._-]+$
+      modalityCode:
+        type: string
+        nullable: true
+        maxLength: 64
+        pattern: ^[A-Za-z0-9._-]+$
+      apiEndpointCode:
+        type: string
+        nullable: true
+        maxLength: 128
+        pattern: ^[A-Za-z0-9._-]+$
+      catalogKey:
+        type: string
+        nullable: true
+        maxLength: 256
+      model:
+        type: string
+        nullable: true
+        maxLength: 128
+      providerNativeModel:
+        type: string
+        nullable: true
+        maxLength: 256
+      compositionMode:
+        type: string
+        enum:
+        - single
+        - any
+        - all
+      status:
+        type: string
+        enum:
+        - active
+        - disabled
+        - inactive
+      sortOrder:
+        type: integer
+        format: int64
+        nullable: true
+        minimum: 0
+      members:
+        type: array
+        maxItems: 512
+        items:
+          name: AdminAiResourceMemberInput
+          type: object
+          additionalProperties: false
+          required:
+          - memberResourceCode
+          properties:
+            memberResourceCode:
+              type: string
+              minLength: 1
+              maxLength: 192
+              pattern: ^[A-Za-z0-9._-]+$
+            memberRole:
+              type: string
+              enum:
+              - included
+              - optional
+              - fallback
+            required:
+              type: boolean
+            sortOrder:
+              type: integer
+              format: int64
+              nullable: true
+              minimum: 0
+  response_schema: &adminAiResourceMutationResponse
+    name: AdminAiResourceMutationResponse
+    required:
+    - item
+    properties:
+      item:
+        name: AdminAiResourceItem
+        type: object
+        additionalProperties: false
+        required: *adminAiResourceItemRequired
+        properties: *adminAiResourceItemProperties
+- route: /admin/channel/resources
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts
+  operation: updateAiResource
+  operation_id: aiResources.update
+  kind: update
+  api_surface: backend
+  api_method: PUT
+  api_path: /backend/v3/api/ai/resources/{resourceId}
+  path_params:
+  - resourceId
+  read_sources:
+  - ai_resource
+  - ai_resource_group_item
+  write_tables:
+  - ai_resource
+  - ai_resource_group_item
+  - ops_audit_log
+  request_schema:
+    name: AdminAiResourceUpdateRequest
+    properties: *adminAiResourceMutationRequestProperties
+  response_schema: *adminAiResourceMutationResponse
 - route: /admin/channel
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts
   operation: fetchModels
@@ -1429,12 +1691,6 @@ frontend_operations:
         nullable: true
         maxLength: 128
         description: Optional product display name. Empty or null falls back to model.
-      name:
-        type: string
-        minLength: 1
-        maxLength: 128
-        pattern: ^[A-Za-z0-9._:/-]+$
-        description: Deprecated compatibility alias for model.
       type:
         type: string
         enum:
@@ -1638,12 +1894,6 @@ frontend_operations:
         nullable: true
         maxLength: 128
         description: Optional product display name update. Empty or null falls back to model.
-      name:
-        type: string
-        minLength: 1
-        maxLength: 128
-        pattern: ^[A-Za-z0-9._:/-]+$
-        description: Deprecated compatibility alias for model.
       type:
         type: string
         enum:

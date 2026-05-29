@@ -186,7 +186,7 @@ async fn admin_access_group_route_lists_and_replaces_channel_bindings() {
                 .header("content-type", "application/json")
                 .internal_trusted_subject(10, 20, 30)
                 .body(Body::from(
-                    r#"{"items":[{"channelId":"3001","priority":5,"weight":100,"status":"active","modelScope":["openai/global/gpt-4o-mini"],"capabilities":["llm"]},{"channelId":"3003","priority":30,"weight":20,"status":"disabled"}]}"#,
+                    r#"{"items":[{"channelId":"3001","priority":5,"weight":100,"status":"active","modelScope":["openai/gpt-4o-mini"],"capabilities":["llm"]},{"channelId":"3003","priority":30,"weight":20,"status":"disabled"}]}"#,
                 ))
                 .unwrap(),
         )
@@ -204,7 +204,7 @@ async fn admin_access_group_route_lists_and_replaces_channel_bindings() {
     assert_eq!(5, replace_payload["data"]["items"][0]["priority"]);
     assert_eq!(100, replace_payload["data"]["items"][0]["weight"]);
     assert_eq!(
-        "openai/global/gpt-4o-mini",
+        "openai/gpt-4o-mini",
         replace_payload["data"]["items"][0]["modelScope"][0]
     );
     assert_eq!(

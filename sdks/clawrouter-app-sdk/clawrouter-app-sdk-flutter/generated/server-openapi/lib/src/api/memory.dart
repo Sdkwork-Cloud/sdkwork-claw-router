@@ -34,11 +34,10 @@ class MemoryApi {
   }
 
   /// Create memory space
-  Future<SpacesCreateResult?> spacesCreate(MemorySpaceCreateRequest body, String idempotencyKey, [String? xRequestId]) async {
+  Future<SpacesCreateResult?> spacesCreate(MemorySpaceCreateRequest body, String idempotencyKey) async {
     final requestHeaders = buildRequestHeaders(
       <String, HeaderParameterSpec>{
         'Idempotency-Key': HeaderParameterSpec(idempotencyKey, 'simple', false, null),
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
       },
       <String, HeaderParameterSpec>{},
     );
@@ -73,11 +72,10 @@ class MemoryApi {
   }
 
   /// Create memory entry
-  Future<EntriesCreateResult?> entriesCreate(String spaceId, MemoryEntryCreateRequest body, String idempotencyKey, [String? xRequestId]) async {
+  Future<EntriesCreateResult?> entriesCreate(String spaceId, MemoryEntryCreateRequest body, String idempotencyKey) async {
     final requestHeaders = buildRequestHeaders(
       <String, HeaderParameterSpec>{
         'Idempotency-Key': HeaderParameterSpec(idempotencyKey, 'simple', false, null),
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
       },
       <String, HeaderParameterSpec>{},
     );

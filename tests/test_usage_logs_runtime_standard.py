@@ -1,4 +1,4 @@
-﻿import unittest
+import unittest
 from pathlib import Path
 
 
@@ -90,7 +90,7 @@ class UsageLogsRuntimeStandardTest(unittest.TestCase):
             self.assertIn("OFFSET", store)
             self.assertIn("request_id", store)
             self.assertIn("api_key_name_snapshot", store)
-            self.assertIn("api_key_group_snapshot", store)
+            self.assertIn("channel_group_snapshot", store)
             self.assertIn("requested_model", store)
             self.assertIn("client_ip_masked", store)
             self.assertIn("rate_multiplier", store)

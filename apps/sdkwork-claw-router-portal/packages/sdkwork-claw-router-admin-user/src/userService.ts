@@ -1,4 +1,4 @@
-﻿import {
+import {
   createIdempotencyParams,
   ensureSdkworkApiSuccess,
   getClawRouterBackendSdkClient,
@@ -19,10 +19,6 @@ import type {
   AdminUserCreateRequest,
   AdminUserUpdateRequest,
 } from '@sdkwork/clawrouter-backend-sdk';
-
-export const USER_ADMIN_ERROR_KEYS = {
-  updateBalanceFallback: 'admin.user.errors.updateBalanceFallback',
-} as const;
 
 export interface UserListItem {
   id: number;

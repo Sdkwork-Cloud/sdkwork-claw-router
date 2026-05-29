@@ -1092,7 +1092,7 @@ fn parse_positive_id(value: &str, field_name: &str) -> Result<i64, String> {
 
 fn retry_policy_error_message(message: &str) -> String {
     message
-        .replace("integration_channel.retry_policy", "retryPolicy")
+        .replace("ai_channel.retry_policy", "retryPolicy")
         .replace("retryPolicy max_attempts", "retryPolicy.maxAttempts")
         .replace(
             "retryPolicy retryable_status_codes",
@@ -1103,10 +1103,7 @@ fn retry_policy_error_message(message: &str) -> String {
 
 fn circuit_breaker_policy_error_message(message: &str) -> String {
     message
-        .replace(
-            "integration_channel.circuit_breaker_policy",
-            "circuitBreakerPolicy",
-        )
+        .replace("ai_channel.circuit_breaker_policy", "circuitBreakerPolicy")
         .replace(
             "circuitBreakerPolicy failure_threshold",
             "circuitBreakerPolicy.failureThreshold",
@@ -1347,7 +1344,7 @@ mod tests {
             "accessType": "api-key",
             "baseUrl": "https://api.openai.test/v1",
             "secretRef": "vault://providers/openai/account/main",
-            "models": ["openai/global/gpt-4o-mini"],
+            "models": ["openai/gpt-4o-mini"],
             "capabilities": ["llm"],
             "timeoutMs": 60000,
             "retryPolicy": {

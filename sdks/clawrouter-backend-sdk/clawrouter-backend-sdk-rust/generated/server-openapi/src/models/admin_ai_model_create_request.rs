@@ -59,10 +59,6 @@ pub struct AdminAiModelCreateRequest {
     /// Runtime model identifier used for provider calls, routing, and pricing keys.
     pub model: String,
 
-    /// Deprecated compatibility alias for model.
-    #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub name: Option<String>,
-
     /// Output modalities field on admin ai model create request.
     #[serde(rename = "outputModalities")]
     #[serde(default, skip_serializing_if = "Option::is_none")]

@@ -40,32 +40,20 @@ public class EcosystemApi {
     }
 
     /** Update skill config */
-    public SkillsConfigUpdateResult skillsConfigUpdate(String skillId, AppSkillConfigRequest body, String xRequestId) throws Exception {
-        Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
-                Map.of()
-        );
-        Object raw = client.put(ApiPaths.appPath("/ecosystem/skills/" + serializePathParameter(skillId, new PathParameterSpec("skillId", "simple", false)) + "/config"), body, null, requestHeaders, "application/json");
+    public SkillsConfigUpdateResult skillsConfigUpdate(String skillId, AppSkillConfigRequest body) throws Exception {
+        Object raw = client.put(ApiPaths.appPath("/ecosystem/skills/" + serializePathParameter(skillId, new PathParameterSpec("skillId", "simple", false)) + "/config"), body, null, null, "application/json");
         return client.convertValue(raw, new TypeReference<SkillsConfigUpdateResult>() {});
     }
 
     /** Disable skill */
-    public SkillsDisableResult skillsDisable(String skillId, String xRequestId) throws Exception {
-        Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
-                Map.of()
-        );
-        Object raw = client.post(ApiPaths.appPath("/ecosystem/skills/" + serializePathParameter(skillId, new PathParameterSpec("skillId", "simple", false)) + "/disable"), null, null, requestHeaders);
+    public SkillsDisableResult skillsDisable(String skillId) throws Exception {
+        Object raw = client.post(ApiPaths.appPath("/ecosystem/skills/" + serializePathParameter(skillId, new PathParameterSpec("skillId", "simple", false)) + "/disable"), null);
         return client.convertValue(raw, new TypeReference<SkillsDisableResult>() {});
     }
 
     /** Enable skill */
-    public SkillsEnableResult skillsEnable(String skillId, AppSkillConfigRequest body, String xRequestId) throws Exception {
-        Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
-                Map.of()
-        );
-        Object raw = client.post(ApiPaths.appPath("/ecosystem/skills/" + serializePathParameter(skillId, new PathParameterSpec("skillId", "simple", false)) + "/enable"), body, null, requestHeaders, "application/json");
+    public SkillsEnableResult skillsEnable(String skillId, AppSkillConfigRequest body) throws Exception {
+        Object raw = client.post(ApiPaths.appPath("/ecosystem/skills/" + serializePathParameter(skillId, new PathParameterSpec("skillId", "simple", false)) + "/enable"), body, null, null, "application/json");
         return client.convertValue(raw, new TypeReference<SkillsEnableResult>() {});
     }
 
@@ -264,74 +252,6 @@ public class EcosystemApi {
         return new com.fasterxml.jackson.databind.ObjectMapper();
     }
 
-    private record HeaderParameterSpec(Object value, String style, boolean explode, String contentType) {}
-
-    private static Map<String, String> buildRequestHeaders(Map<String, HeaderParameterSpec> headers, Map<String, HeaderParameterSpec> cookies) throws Exception {
-        Map<String, String> requestHeaders = new java.util.LinkedHashMap<>();
-        for (Map.Entry<String, HeaderParameterSpec> entry : headers.entrySet()) {
-            String serialized = serializeParameterValue(entry.getValue());
-            if (serialized != null) {
-                requestHeaders.put(entry.getKey(), serialized);
-            }
-        }
-
-        String cookieHeader = buildCookieHeader(cookies);
-        if (cookieHeader != null && !cookieHeader.isEmpty()) {
-            requestHeaders.merge("Cookie", cookieHeader, (left, right) -> left + "; " + right);
-        }
-
-        return requestHeaders.isEmpty() ? null : requestHeaders;
-    }
-
-    private static String buildCookieHeader(Map<String, HeaderParameterSpec> cookies) throws Exception {
-        java.util.List<String> pairs = new java.util.ArrayList<>();
-        for (Map.Entry<String, HeaderParameterSpec> entry : cookies.entrySet()) {
-            String serialized = serializeParameterValue(entry.getValue());
-            if (serialized != null) {
-                pairs.add(urlEncode(entry.getKey()) + "=" + urlEncode(serialized));
-            }
-        }
-        return String.join("; ", pairs);
-    }
-
-    private static String serializeParameterValue(HeaderParameterSpec parameter) throws Exception {
-        if (parameter == null || parameter.value() == null) {
-            return null;
-        }
-        Object value = parameter.value();
-        if (parameter.contentType() != null && !parameter.contentType().isBlank()) {
-            return headerObjectMapper().writeValueAsString(value);
-        }
-        if (value instanceof Iterable<?> iterable) {
-            java.util.List<String> values = new java.util.ArrayList<>();
-            for (Object item : iterable) {
-                if (item != null) {
-                    values.add(String.valueOf(item));
-                }
-            }
-            return String.join(",", values);
-        }
-        if (value instanceof Map<?, ?> map) {
-            java.util.List<String> values = new java.util.ArrayList<>();
-            map.forEach((key, item) -> {
-                if (item == null) {
-                    return;
-                }
-                if (parameter.explode()) {
-                    values.add(String.valueOf(key) + "=" + String.valueOf(item));
-                } else {
-                    values.add(String.valueOf(key));
-                    values.add(String.valueOf(item));
-                }
-            });
-            return String.join(",", values);
-        }
-        return String.valueOf(value);
-    }
-
-    private static com.fasterxml.jackson.databind.ObjectMapper headerObjectMapper() {
-        return new com.fasterxml.jackson.databind.ObjectMapper();
-    }
 
     private static String urlEncode(String value) {
         return java.net.URLEncoder.encode(value, java.nio.charset.StandardCharsets.UTF_8);

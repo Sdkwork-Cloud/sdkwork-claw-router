@@ -6,6 +6,8 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
 
+from tools.schema_registry_loader import load_schema_registry
+
 try:
     import yaml
 except ImportError as exc:  # pragma: no cover - exercised only on missing tooling
@@ -96,14 +98,7 @@ class OpenApiComponentGenerator:
         return OpenApiComponentCheckResult(ok=True, messages=[])
 
     def _load_registry(self) -> dict[str, Any]:
-        if yaml is None:
-            raise RuntimeError("PyYAML is required to load schema registry YAML") from _YAML_IMPORT_ERROR
-        if not self.registry_path.exists():
-            raise FileNotFoundError(f"schema registry not found: {self.registry_path}")
-        registry = yaml.safe_load(self.registry_path.read_text(encoding="utf-8")) or {}
-        if not isinstance(registry, dict):
-            raise ValueError("schema registry root must be a mapping")
-        return registry
+        return load_schema_registry(self.registry_path)
 
     def _components(self, registry: dict[str, Any]) -> dict[str, Any]:
         tables = registry.get("tables", [])

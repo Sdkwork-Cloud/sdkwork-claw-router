@@ -30,7 +30,7 @@ async fn sqlite_openai_invocation_telemetry_records_faults_and_recovers_on_succe
         .unwrap();
 
     let channel = sqlx::query(
-        "SELECT health_status, consecutive_error_count FROM integration_channel WHERE id = 3001",
+        "SELECT health_status, consecutive_error_count FROM ai_channel WHERE id = 3001",
     )
     .fetch_one(&pool)
     .await
@@ -38,17 +38,8 @@ async fn sqlite_openai_invocation_telemetry_records_faults_and_recovers_on_succe
     assert_eq!(2_i64, channel.get::<i64, _>("health_status"));
     assert_eq!(1_i64, channel.get::<i64, _>("consecutive_error_count"));
 
-    let account_errors: i64 = sqlx::query(
-        "SELECT consecutive_error_count FROM integration_provider_account WHERE id = 9001",
-    )
-    .fetch_one(&pool)
-    .await
-    .unwrap()
-    .get("consecutive_error_count");
-    assert_eq!(1, account_errors);
-
     let fault_snapshot = sqlx::query(
-        "SELECT health_status, error_code FROM integration_provider_health_snapshot WHERE channel_id = 3001 ORDER BY id DESC LIMIT 1",
+        "SELECT health_status, error_code, provider_account_id FROM integration_provider_health_snapshot WHERE channel_id = 3001 ORDER BY id DESC LIMIT 1",
     )
     .fetch_one(&pool)
     .await
@@ -57,6 +48,10 @@ async fn sqlite_openai_invocation_telemetry_records_faults_and_recovers_on_succe
     assert_eq!(
         "provider_relay_failed",
         fault_snapshot.get::<String, _>("error_code")
+    );
+    assert_eq!(
+        3001_i64,
+        fault_snapshot.get::<i64, _>("provider_account_id")
     );
 
     plugin
@@ -69,22 +64,13 @@ async fn sqlite_openai_invocation_telemetry_records_faults_and_recovers_on_succe
         .unwrap();
 
     let channel = sqlx::query(
-        "SELECT health_status, consecutive_error_count FROM integration_channel WHERE id = 3001",
+        "SELECT health_status, consecutive_error_count FROM ai_channel WHERE id = 3001",
     )
     .fetch_one(&pool)
     .await
     .unwrap();
     assert_eq!(1_i64, channel.get::<i64, _>("health_status"));
     assert_eq!(0_i64, channel.get::<i64, _>("consecutive_error_count"));
-
-    let account_errors: i64 = sqlx::query(
-        "SELECT consecutive_error_count FROM integration_provider_account WHERE id = 9001",
-    )
-    .fetch_one(&pool)
-    .await
-    .unwrap()
-    .get("consecutive_error_count");
-    assert_eq!(0, account_errors);
 
     let snapshot_count: i64 =
         sqlx::query("SELECT COUNT(*) AS count FROM integration_provider_health_snapshot")
@@ -115,7 +101,7 @@ async fn sqlite_openai_invocation_telemetry_honors_channel_circuit_breaker_thres
         .unwrap();
 
     let channel = sqlx::query(
-        "SELECT health_status, consecutive_error_count FROM integration_channel WHERE id = 3001",
+        "SELECT health_status, consecutive_error_count FROM ai_channel WHERE id = 3001",
     )
     .fetch_one(&pool)
     .await
@@ -145,7 +131,7 @@ async fn sqlite_openai_invocation_telemetry_honors_channel_circuit_breaker_thres
         .unwrap();
 
     let channel = sqlx::query(
-        "SELECT health_status, consecutive_error_count FROM integration_channel WHERE id = 3001",
+        "SELECT health_status, consecutive_error_count FROM ai_channel WHERE id = 3001",
     )
     .fetch_one(&pool)
     .await
@@ -188,7 +174,7 @@ async fn sqlite_openai_invocation_telemetry_counts_concurrent_faults_atomically(
     join_all(faults).await;
 
     let channel = sqlx::query(
-        "SELECT health_status, consecutive_error_count FROM integration_channel WHERE id = 3001",
+        "SELECT health_status, consecutive_error_count FROM ai_channel WHERE id = 3001",
     )
     .fetch_one(&pool)
     .await
@@ -225,7 +211,7 @@ async fn sqlite_openai_invocation_telemetry_uses_default_threshold_when_policy_i
         .unwrap();
 
     let channel = sqlx::query(
-        "SELECT health_status, consecutive_error_count FROM integration_channel WHERE id = 3001",
+        "SELECT health_status, consecutive_error_count FROM ai_channel WHERE id = 3001",
     )
     .fetch_one(&pool)
     .await
@@ -271,22 +257,13 @@ async fn sqlite_openai_invocation_telemetry_does_not_trip_provider_health_for_no
         .unwrap();
 
     let channel = sqlx::query(
-        "SELECT health_status, consecutive_error_count FROM integration_channel WHERE id = 3001",
+        "SELECT health_status, consecutive_error_count FROM ai_channel WHERE id = 3001",
     )
     .fetch_one(&pool)
     .await
     .unwrap();
     assert_eq!(1_i64, channel.get::<i64, _>("health_status"));
     assert_eq!(0_i64, channel.get::<i64, _>("consecutive_error_count"));
-
-    let account_errors: i64 = sqlx::query(
-        "SELECT consecutive_error_count FROM integration_provider_account WHERE id = 9001",
-    )
-    .fetch_one(&pool)
-    .await
-    .unwrap()
-    .get("consecutive_error_count");
-    assert_eq!(0, account_errors);
 
     let fault_snapshot = sqlx::query(
         "SELECT health_status, http_status, error_code FROM integration_provider_health_snapshot WHERE channel_id = 3001 ORDER BY id DESC LIMIT 1",
@@ -322,22 +299,13 @@ async fn sqlite_openai_invocation_telemetry_does_not_trip_provider_health_for_us
         .unwrap();
 
     let channel = sqlx::query(
-        "SELECT health_status, consecutive_error_count FROM integration_channel WHERE id = 3001",
+        "SELECT health_status, consecutive_error_count FROM ai_channel WHERE id = 3001",
     )
     .fetch_one(&pool)
     .await
     .unwrap();
     assert_eq!(1_i64, channel.get::<i64, _>("health_status"));
     assert_eq!(0_i64, channel.get::<i64, _>("consecutive_error_count"));
-
-    let account_errors: i64 = sqlx::query(
-        "SELECT consecutive_error_count FROM integration_provider_account WHERE id = 9001",
-    )
-    .fetch_one(&pool)
-    .await
-    .unwrap()
-    .get("consecutive_error_count");
-    assert_eq!(0, account_errors);
 
     let usage_fault_snapshot = sqlx::query(
         "SELECT health_status, error_code FROM integration_provider_health_snapshot WHERE channel_id = 3001 ORDER BY id DESC LIMIT 1",
@@ -381,7 +349,7 @@ async fn sqlite_openai_invocation_telemetry_records_route_latency_on_fault_and_s
     assert_eq!(37_i64, fault_snapshot.get::<i64, _>("latency_ms"));
 
     let channel_latency: i64 =
-        sqlx::query("SELECT last_latency_ms FROM integration_channel WHERE id = 3001")
+        sqlx::query("SELECT last_latency_ms FROM ai_channel WHERE id = 3001")
             .fetch_one(&pool)
             .await
             .unwrap()
@@ -410,7 +378,7 @@ async fn sqlite_openai_invocation_telemetry_records_route_latency_on_fault_and_s
     assert_eq!(19_i64, success_snapshot.get::<i64, _>("latency_ms"));
 
     let channel_latency: i64 =
-        sqlx::query("SELECT last_latency_ms FROM integration_channel WHERE id = 3001")
+        sqlx::query("SELECT last_latency_ms FROM ai_channel WHERE id = 3001")
             .fetch_one(&pool)
             .await
             .unwrap()
@@ -421,7 +389,7 @@ async fn sqlite_openai_invocation_telemetry_records_route_latency_on_fault_and_s
 async fn install_schema(pool: &SqlitePool) {
     sqlx::query(
         r#"
-        CREATE TABLE integration_channel (
+        CREATE TABLE ai_channel (
             id INTEGER PRIMARY KEY,
             uuid TEXT NOT NULL,
             tenant_id INTEGER NOT NULL,
@@ -432,28 +400,10 @@ async fn install_schema(pool: &SqlitePool) {
             deleted_at TEXT,
             provider_id INTEGER,
             provider_code TEXT,
-            account_id INTEGER,
             health_status INTEGER,
             last_latency_ms INTEGER,
             circuit_breaker_policy TEXT,
             consecutive_error_count INTEGER
-        )
-        "#,
-    )
-    .execute(pool)
-    .await
-    .unwrap();
-    sqlx::query(
-        r#"
-        CREATE TABLE integration_provider_account (
-            id INTEGER PRIMARY KEY,
-            tenant_id INTEGER NOT NULL,
-            organization_id INTEGER NOT NULL,
-            updated_at TEXT,
-            version INTEGER,
-            deleted_at TEXT,
-            consecutive_error_count INTEGER,
-            last_used_at TEXT
         )
         "#,
     )
@@ -505,21 +455,10 @@ async fn seed_channel_with_optional_circuit_breaker_policy(
 ) {
     sqlx::query(
         r#"
-        INSERT INTO integration_provider_account
-            (id, tenant_id, organization_id, consecutive_error_count)
+        INSERT INTO ai_channel
+            (id, uuid, tenant_id, organization_id, status, provider_id, provider_code, health_status, circuit_breaker_policy, consecutive_error_count)
         VALUES
-            (9001, 10, 20, 0)
-        "#,
-    )
-    .execute(pool)
-    .await
-    .unwrap();
-    sqlx::query(
-        r#"
-        INSERT INTO integration_channel
-            (id, uuid, tenant_id, organization_id, status, provider_id, provider_code, account_id, health_status, circuit_breaker_policy, consecutive_error_count)
-        VALUES
-            (3001, 'channel-3001', 10, 20, 1, 7001, 'openrouter', 9001, 1, ?, 0)
+            (3001, 'channel-3001', 10, 20, 1, 7001, 'openrouter', 1, ?, 0)
         "#,
     )
     .bind(policy_json)
@@ -553,12 +492,12 @@ fn invocation_context() -> OpenAiInvocationContext {
 
 fn provider_route() -> OpenAiProviderRoute {
     OpenAiProviderRoute {
-        catalog_key: "openai/global/gpt-4o-mini".to_owned(),
+        catalog_key: "openai/gpt-4o-mini".to_owned(),
         policy_id: Some(9001),
         rule_id: Some(9102),
         provider_code: "openrouter".to_owned(),
         channel_id: 3001,
-        provider_model: "openai/global/gpt-4o-mini".to_owned(),
+        provider_model: "gpt-4o-mini".to_owned(),
         provider_base_url: Some("http://provider-proxy.internal/openrouter".to_owned()),
         provider_secret_ref: Some("vault://providers/openrouter/account/main".to_owned()),
         provider_auth_profile: ProviderAuthProfile::default(),

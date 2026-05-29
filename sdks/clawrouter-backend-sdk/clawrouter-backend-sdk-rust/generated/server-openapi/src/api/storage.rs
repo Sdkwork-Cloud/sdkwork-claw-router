@@ -28,12 +28,11 @@ impl StorageApi {
     }
 
     /// Create storage bucket
-    pub async fn oss_buckets_create(&self, body: &CreateStorageBucketRequest, idempotency_key: &str, x_request_id: Option<&str>) -> Result<OssBucketsCreateResult, SdkworkError> {
+    pub async fn oss_buckets_create(&self, body: &CreateStorageBucketRequest, idempotency_key: &str) -> Result<OssBucketsCreateResult, SdkworkError> {
         let path = backend_path(&"/storage/buckets".to_string());
         let headers = build_request_headers(
             &[
                 ("Idempotency-Key", HeaderParameterSpec::new(idempotency_key, "simple", false, None)),
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
             ],
             &[],
         );
@@ -41,15 +40,9 @@ impl StorageApi {
     }
 
     /// Update storage bucket status
-    pub async fn oss_buckets_update(&self, bucket_id: &str, body: &UpdateStorageBucketRequest, x_request_id: Option<&str>) -> Result<OssBucketsUpdateResult, SdkworkError> {
+    pub async fn oss_buckets_update(&self, bucket_id: &str, body: &UpdateStorageBucketRequest) -> Result<OssBucketsUpdateResult, SdkworkError> {
         let path = backend_path(&format!("/storage/buckets/{}", serialize_path_parameter(bucket_id, PathParameterSpec::new("bucketId", "simple", false))));
-        let headers = build_request_headers(
-            &[
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
-            ],
-            &[],
-        );
-        self.client.patch(&path, Some(body), None, headers.as_ref(), Some("application/json")).await
+        self.client.patch(&path, Some(body), None, None, Some("application/json")).await
     }
 
     /// List default storage bucket routes
@@ -62,15 +55,9 @@ impl StorageApi {
     }
 
     /// Set default storage bucket route
-    pub async fn oss_default_buckets_update(&self, logical_scope: &str, body: &SetStorageDefaultBucketRequest, x_request_id: Option<&str>) -> Result<OssDefaultBucketsUpdateResult, SdkworkError> {
+    pub async fn oss_default_buckets_update(&self, logical_scope: &str, body: &SetStorageDefaultBucketRequest) -> Result<OssDefaultBucketsUpdateResult, SdkworkError> {
         let path = backend_path(&format!("/storage/default_buckets/{}", serialize_path_parameter(logical_scope, PathParameterSpec::new("logicalScope", "simple", false))));
-        let headers = build_request_headers(
-            &[
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
-            ],
-            &[],
-        );
-        self.client.patch(&path, Some(body), None, headers.as_ref(), Some("application/json")).await
+        self.client.patch(&path, Some(body), None, None, Some("application/json")).await
     }
 
     /// List storage garbage collection jobs
@@ -85,12 +72,11 @@ impl StorageApi {
     }
 
     /// Create storage garbage collection job
-    pub async fn oss_gc_jobs_create(&self, body: &CreateStorageGarbageCollectionJobRequest, idempotency_key: &str, x_request_id: Option<&str>) -> Result<OssGcJobsCreateResult, SdkworkError> {
+    pub async fn oss_gc_jobs_create(&self, body: &CreateStorageGarbageCollectionJobRequest, idempotency_key: &str) -> Result<OssGcJobsCreateResult, SdkworkError> {
         let path = backend_path(&"/storage/gc_jobs".to_string());
         let headers = build_request_headers(
             &[
                 ("Idempotency-Key", HeaderParameterSpec::new(idempotency_key, "simple", false, None)),
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
             ],
             &[],
         );
@@ -104,12 +90,11 @@ impl StorageApi {
     }
 
     /// Create storage provider
-    pub async fn oss_providers_create(&self, body: &CreateStorageProviderRequest, idempotency_key: &str, x_request_id: Option<&str>) -> Result<OssProvidersCreateResult, SdkworkError> {
+    pub async fn oss_providers_create(&self, body: &CreateStorageProviderRequest, idempotency_key: &str) -> Result<OssProvidersCreateResult, SdkworkError> {
         let path = backend_path(&"/storage/providers".to_string());
         let headers = build_request_headers(
             &[
                 ("Idempotency-Key", HeaderParameterSpec::new(idempotency_key, "simple", false, None)),
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
             ],
             &[],
         );
@@ -117,27 +102,15 @@ impl StorageApi {
     }
 
     /// Update storage provider status
-    pub async fn oss_providers_update(&self, provider_id: &str, body: &UpdateStorageProviderRequest, x_request_id: Option<&str>) -> Result<OssProvidersUpdateResult, SdkworkError> {
+    pub async fn oss_providers_update(&self, provider_id: &str, body: &UpdateStorageProviderRequest) -> Result<OssProvidersUpdateResult, SdkworkError> {
         let path = backend_path(&format!("/storage/providers/{}", serialize_path_parameter(provider_id, PathParameterSpec::new("providerId", "simple", false))));
-        let headers = build_request_headers(
-            &[
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
-            ],
-            &[],
-        );
-        self.client.patch(&path, Some(body), None, headers.as_ref(), Some("application/json")).await
+        self.client.patch(&path, Some(body), None, None, Some("application/json")).await
     }
 
     /// Check storage provider health
-    pub async fn oss_providers_health_checks_create(&self, provider_id: &str, x_request_id: Option<&str>) -> Result<OssProvidersHealthChecksCreateResult, SdkworkError> {
+    pub async fn oss_providers_health_checks_create(&self, provider_id: &str) -> Result<OssProvidersHealthChecksCreateResult, SdkworkError> {
         let path = backend_path(&format!("/storage/providers/{}/health_check", serialize_path_parameter(provider_id, PathParameterSpec::new("providerId", "simple", false))));
-        let headers = build_request_headers(
-            &[
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
-            ],
-            &[],
-        );
-        self.client.post(&path, Option::<&serde_json::Value>::None, None, headers.as_ref(), None).await
+        self.client.post(&path, Option::<&serde_json::Value>::None, None, None, None).await
     }
 
     /// List storage quota policies
@@ -147,12 +120,11 @@ impl StorageApi {
     }
 
     /// Create storage quota policy
-    pub async fn oss_quotas_create(&self, body: &CreateStorageQuotaPolicyRequest, idempotency_key: &str, x_request_id: Option<&str>) -> Result<OssQuotasCreateResult, SdkworkError> {
+    pub async fn oss_quotas_create(&self, body: &CreateStorageQuotaPolicyRequest, idempotency_key: &str) -> Result<OssQuotasCreateResult, SdkworkError> {
         let path = backend_path(&"/storage/quotas".to_string());
         let headers = build_request_headers(
             &[
                 ("Idempotency-Key", HeaderParameterSpec::new(idempotency_key, "simple", false, None)),
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
             ],
             &[],
         );
@@ -172,12 +144,11 @@ impl StorageApi {
     }
 
     /// Create storage reconciliation run
-    pub async fn oss_reconciliation_runs_create(&self, body: &CreateStorageReconciliationRunRequest, idempotency_key: &str, x_request_id: Option<&str>) -> Result<OssReconciliationRunsCreateResult, SdkworkError> {
+    pub async fn oss_reconciliation_runs_create(&self, body: &CreateStorageReconciliationRunRequest, idempotency_key: &str) -> Result<OssReconciliationRunsCreateResult, SdkworkError> {
         let path = backend_path(&"/storage/reconciliation_runs".to_string());
         let headers = build_request_headers(
             &[
                 ("Idempotency-Key", HeaderParameterSpec::new(idempotency_key, "simple", false, None)),
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
             ],
             &[],
         );

@@ -180,15 +180,9 @@ class SystemApi {
   }
 
   /// Update IAM auth runtime settings
-  Future<AuthSettingsUpdateResult?> authSettingsUpdate(AdminAuthSettingsUpdateRequest body, [String? xRequestId]) async {
-    final requestHeaders = buildRequestHeaders(
-      <String, HeaderParameterSpec>{
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
-      },
-      <String, HeaderParameterSpec>{},
-    );
+  Future<AuthSettingsUpdateResult?> authSettingsUpdate(AdminAuthSettingsUpdateRequest body) async {
     final payload = body.toJson();
-    final response = await _client.patch(ApiPaths.backendPath('/system/auth/settings'), body: payload, headers: requestHeaders, contentType: 'application/json');
+    final response = await _client.patch(ApiPaths.backendPath('/system/auth/settings'), body: payload, contentType: 'application/json');
     return (() {
       final map = sdkworkResponseAsMap(response);
       return map == null ? null : AuthSettingsUpdateResult.fromJson(map);
@@ -290,15 +284,9 @@ class SystemApi {
   }
 
   /// Create firewall
-  Future<FirewallsRulesCreateResult?> firewallsRulesCreate(AdminFirewallRuleCreateRequest body, [String? xRequestId]) async {
-    final requestHeaders = buildRequestHeaders(
-      <String, HeaderParameterSpec>{
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
-      },
-      <String, HeaderParameterSpec>{},
-    );
+  Future<FirewallsRulesCreateResult?> firewallsRulesCreate(AdminFirewallRuleCreateRequest body) async {
     final payload = body.toJson();
-    final response = await _client.post(ApiPaths.backendPath('/system/firewalls/rules'), body: payload, headers: requestHeaders, contentType: 'application/json');
+    final response = await _client.post(ApiPaths.backendPath('/system/firewalls/rules'), body: payload, contentType: 'application/json');
     return (() {
       final map = sdkworkResponseAsMap(response);
       return map == null ? null : FirewallsRulesCreateResult.fromJson(map);
@@ -369,15 +357,9 @@ class SystemApi {
   }
 
   /// Create token limit
-  Future<RateLimitsApiKeysCreateResult?> rateLimitsApiKeysCreate(AdminTokenLimitCreateRequest body, [String? xRequestId]) async {
-    final requestHeaders = buildRequestHeaders(
-      <String, HeaderParameterSpec>{
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
-      },
-      <String, HeaderParameterSpec>{},
-    );
+  Future<RateLimitsApiKeysCreateResult?> rateLimitsApiKeysCreate(AdminTokenLimitCreateRequest body) async {
     final payload = body.toJson();
-    final response = await _client.post(ApiPaths.backendPath('/system/rate_limits/api_keys'), body: payload, headers: requestHeaders, contentType: 'application/json');
+    final response = await _client.post(ApiPaths.backendPath('/system/rate_limits/api_keys'), body: payload, contentType: 'application/json');
     return (() {
       final map = sdkworkResponseAsMap(response);
       return map == null ? null : RateLimitsApiKeysCreateResult.fromJson(map);
@@ -394,15 +376,9 @@ class SystemApi {
   }
 
   /// Create IP limit
-  Future<RateLimitsIpCreateResult?> rateLimitsIpCreate(AdminIpLimitCreateRequest body, [String? xRequestId]) async {
-    final requestHeaders = buildRequestHeaders(
-      <String, HeaderParameterSpec>{
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
-      },
-      <String, HeaderParameterSpec>{},
-    );
+  Future<RateLimitsIpCreateResult?> rateLimitsIpCreate(AdminIpLimitCreateRequest body) async {
     final payload = body.toJson();
-    final response = await _client.post(ApiPaths.backendPath('/system/rate_limits/ip'), body: payload, headers: requestHeaders, contentType: 'application/json');
+    final response = await _client.post(ApiPaths.backendPath('/system/rate_limits/ip'), body: payload, contentType: 'application/json');
     return (() {
       final map = sdkworkResponseAsMap(response);
       return map == null ? null : RateLimitsIpCreateResult.fromJson(map);
@@ -419,15 +395,9 @@ class SystemApi {
   }
 
   /// Create model limit
-  Future<RateLimitsModelsCreateResult?> rateLimitsModelsCreate(AdminModelLimitCreateRequest body, [String? xRequestId]) async {
-    final requestHeaders = buildRequestHeaders(
-      <String, HeaderParameterSpec>{
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
-      },
-      <String, HeaderParameterSpec>{},
-    );
+  Future<RateLimitsModelsCreateResult?> rateLimitsModelsCreate(AdminModelLimitCreateRequest body) async {
     final payload = body.toJson();
-    final response = await _client.post(ApiPaths.backendPath('/system/rate_limits/models'), body: payload, headers: requestHeaders, contentType: 'application/json');
+    final response = await _client.post(ApiPaths.backendPath('/system/rate_limits/models'), body: payload, contentType: 'application/json');
     return (() {
       final map = sdkworkResponseAsMap(response);
       return map == null ? null : RateLimitsModelsCreateResult.fromJson(map);
@@ -447,6 +417,25 @@ class SystemApi {
     return (() {
       final map = sdkworkResponseAsMap(response);
       return map == null ? null : RecordsListResult.fromJson(map);
+    })();
+  }
+
+  /// Retrieve runtime region settings
+  Future<RuntimeRegionSettingsRetrieveResult?> runtimeRegionSettingsRetrieve() async {
+    final response = await _client.get(ApiPaths.backendPath('/system/runtime_region/settings'));
+    return (() {
+      final map = sdkworkResponseAsMap(response);
+      return map == null ? null : RuntimeRegionSettingsRetrieveResult.fromJson(map);
+    })();
+  }
+
+  /// Update runtime region settings
+  Future<RuntimeRegionSettingsUpdateResult?> runtimeRegionSettingsUpdate(AdminRuntimeRegionSettingsUpdateRequest body) async {
+    final payload = body.toJson();
+    final response = await _client.patch(ApiPaths.backendPath('/system/runtime_region/settings'), body: payload, contentType: 'application/json');
+    return (() {
+      final map = sdkworkResponseAsMap(response);
+      return map == null ? null : RuntimeRegionSettingsUpdateResult.fromJson(map);
     })();
   }
 
@@ -512,15 +501,9 @@ class SystemApi {
   }
 
   /// Update site branding and deployment personalization settings
-  Future<SiteSettingsUpdateResult?> siteSettingsUpdate(AdminSiteSettingsUpdateRequest body, [String? xRequestId]) async {
-    final requestHeaders = buildRequestHeaders(
-      <String, HeaderParameterSpec>{
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
-      },
-      <String, HeaderParameterSpec>{},
-    );
+  Future<SiteSettingsUpdateResult?> siteSettingsUpdate(AdminSiteSettingsUpdateRequest body) async {
     final payload = body.toJson();
-    final response = await _client.patch(ApiPaths.backendPath('/system/site/settings'), body: payload, headers: requestHeaders, contentType: 'application/json');
+    final response = await _client.patch(ApiPaths.backendPath('/system/site/settings'), body: payload, contentType: 'application/json');
     return (() {
       final map = sdkworkResponseAsMap(response);
       return map == null ? null : SiteSettingsUpdateResult.fromJson(map);
@@ -731,75 +714,3 @@ String encodeQueryValue(String value, bool allowReserved) {
 }
 
 String urlEncode(String value) => Uri.encodeQueryComponent(value);
-class HeaderParameterSpec {
-  final dynamic value;
-  final String style;
-  final bool explode;
-  final String? contentType;
-
-  HeaderParameterSpec(this.value, this.style, this.explode, this.contentType);
-}
-
-Map<String, String>? buildRequestHeaders(
-  Map<String, HeaderParameterSpec> headers, [
-  Map<String, HeaderParameterSpec> cookies = const {},
-]) {
-  final requestHeaders = <String, String>{};
-
-  headers.forEach((name, parameter) {
-    final serialized = serializeParameterValue(parameter);
-    if (serialized != null) {
-      requestHeaders[name] = serialized;
-    }
-  });
-
-  final cookieHeader = buildCookieHeader(cookies);
-  if (cookieHeader != null && cookieHeader.isNotEmpty) {
-    requestHeaders['Cookie'] = requestHeaders.containsKey('Cookie')
-        ? '${requestHeaders['Cookie']}; $cookieHeader'
-        : cookieHeader;
-  }
-
-  return requestHeaders.isEmpty ? null : requestHeaders;
-}
-
-String? buildCookieHeader(Map<String, HeaderParameterSpec> cookies) {
-  final pairs = <String>[];
-  cookies.forEach((name, parameter) {
-    final serialized = serializeParameterValue(parameter);
-    if (serialized != null) {
-      pairs.add('${Uri.encodeComponent(name)}=${Uri.encodeComponent(serialized)}');
-    }
-  });
-  return pairs.isEmpty ? null : pairs.join('; ');
-}
-
-String? serializeParameterValue(HeaderParameterSpec? parameter) {
-  final value = parameter?.value;
-  if (value == null) return null;
-  if (parameter!.contentType != null && parameter.contentType!.trim().isNotEmpty) {
-    return jsonEncode(value);
-  }
-  if (value is DateTime) return value.toIso8601String();
-  if (value is Iterable) {
-    return value
-        .where((item) => item != null)
-        .map((item) => item.toString())
-        .whereType<String>()
-        .join(',');
-  }
-  if (value is Map) {
-    final serialized = <String>[];
-    value.forEach((key, item) {
-      if (item == null) return;
-      if (parameter.explode) {
-        serialized.add('$key=$item');
-      } else {
-        serialized.add(key.toString());
-        serialized.add(item.toString());
-      }
-    });
-    return serialized.join(',');
-  }
-  return value.toString();
-}

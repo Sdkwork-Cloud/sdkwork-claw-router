@@ -364,25 +364,29 @@ test("VIP points purchase modal uses current user avatar with localized fallback
   }
 });
 
-test("membership console package uses VIP modal purchase and a professional entitlement dashboard", () => {
+test("membership console package owns direct membership purchase and a professional entitlement dashboard", () => {
   const source = readPortalFile("./packages/sdkwork-claw-router-console-memberships/src/MembershipsView.tsx");
   const serviceSource = readPortalFile("./packages/sdkwork-claw-router-console-memberships/src/membershipService.ts");
   const packageJson = readPortalFile("./packages/sdkwork-claw-router-console-memberships/package.json");
 
   for (const marker of [
     "MembershipsView",
-    "VipPurchaseModal",
-    "vipPurchaseModalOpen",
-    "openVipPurchaseModal",
+    "MembershipService.fetchMembershipPackages",
+    "MembershipService.purchaseMembership",
+    "handleMembershipPurchase",
+    "purchasePackages",
     "MembershipStatusHero",
+    "MembershipPurchasePanel",
+    "MembershipPurchaseOption",
     "EntitlementOverviewPanel",
     "EntitlementStatusSummary",
     "UsageSnapshotPanel",
     "EntitlementAccessBadge",
     "entitlementRows",
     "entitlementAccessCounts",
-    "console.memberships.actions.openVipPurchase",
+    "console.memberships.actions.purchase",
     "console.memberships.dashboard.heroEyebrow",
+    "console.memberships.packageGroups.title",
     "console.memberships.entitlements.includedTitle",
     "console.memberships.entitlements.tableHeaderBenefit",
     "console.memberships.entitlements.tableHeaderQuota",
@@ -395,24 +399,22 @@ test("membership console package uses VIP modal purchase and a professional enti
     assert.match(source, new RegExp(escapeRegExp(marker)));
   }
 
-  assert.equal(
-    (source.match(/console\.memberships\.actions\.openVipPurchase/g) ?? []).length,
-    1,
-    "console membership page should expose a single VIP purchase CTA",
-  );
+  assert.doesNotMatch(source, /VipPurchaseModal/);
+  assert.doesNotMatch(source, /vipPurchaseModalOpen/);
+  assert.doesNotMatch(source, /openVipPurchaseModal/);
+  assert.doesNotMatch(source, /console\.memberships\.actions\.openVipPurchase/);
+  assert.doesNotMatch(source, /sdkwork-claw-router-vip/);
 
   for (const retiredMarker of [
     "MembershipPackageCard",
     "runPackageAction",
     "handleMembershipPackageAction",
-    "MembershipService.purchaseMembership",
     "selectedMembershipPackageId",
     "PackageConfigurationPanel",
     "PackageSummaryRow",
     "MembershipLifecyclePanel",
     "console.memberships.lifecycle.title",
     "mt-1 rounded-xl bg-lobster-50 p-2 text-lobster-600",
-    "console.memberships.packageGroups.title",
     "console.memberships.packages.configuredGroups",
   ]) {
     assert.doesNotMatch(source, new RegExp(escapeRegExp(retiredMarker)));
@@ -421,11 +423,12 @@ test("membership console package uses VIP modal purchase and a professional enti
   assert.match(serviceSource, /getClawRouterAppSdkClient\(\)\.commerce\.memberships\.current\.retrieve\(\)/);
   assert.match(serviceSource, /getClawRouterAppSdkClient\(\)\.commerce\.memberships\.packageGroups\.list/);
   assert.match(serviceSource, /getClawRouterAppSdkClient\(\)\.commerce\.memberships\.benefits\.list/);
+  assert.match(serviceSource, /getClawRouterAppSdkClient\(\)\.commerce\.memberships\.packages\.list/);
   assert.match(serviceSource, /getClawRouterAppSdkClient\(\)\.commerce\.memberships\.purchases\.create/);
   assert.doesNotMatch(serviceSource, /fetch\(/);
   assert.doesNotMatch(serviceSource, /axios/);
   assert.doesNotMatch(serviceSource, /billing\(\)\.vip|\/billing\/vip|\/vip/);
-  assert.match(packageJson, /"sdkwork-claw-router-vip": "workspace:\*"/);
+  assert.doesNotMatch(packageJson, /"sdkwork-claw-router-vip": "workspace:\*"/);
 });
 
 test("VIP catalog uses the generated app SDK standard membership package group path", async () => {

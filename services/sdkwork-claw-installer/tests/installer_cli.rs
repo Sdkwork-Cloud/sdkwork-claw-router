@@ -157,6 +157,68 @@ fn installer_cli_reports_status_and_ensures_sqlite_database_once() {
 }
 
 #[tokio::test]
+async fn installer_cli_repairs_drifted_sqlite_unique_index_definition_on_ensure() {
+    let database_url = unique_sqlite_url();
+    let binary = env!("CARGO_BIN_EXE_clawrouterctl");
+
+    let ensure = run_installer(binary, &database_url, "ensure");
+    assert!(
+        ensure.status.success(),
+        "initial ensure failed: {}",
+        stderr_trim(&ensure)
+    );
+
+    let pool = SqlitePoolOptions::new()
+        .max_connections(1)
+        .connect(&database_url)
+        .await
+        .unwrap();
+    sqlx::query("DROP INDEX IF EXISTS uk_ai_model_rank_snapshot_scope_catalog_key")
+        .execute(&pool)
+        .await
+        .unwrap();
+    sqlx::query(
+        r#"
+        CREATE UNIQUE INDEX uk_ai_model_rank_snapshot_scope_catalog_key
+        ON ai_model_rank_snapshot (tenant_id, organization_id, snapshot_date, snapshot_period, rank_scope, catalog_key)
+        "#,
+    )
+    .execute(&pool)
+    .await
+    .unwrap();
+    pool.close().await;
+
+    let repaired = run_installer(binary, &database_url, "ensure");
+    assert!(
+        repaired.status.success(),
+        "ensure must repair drifted SQLite indexes without reinstalling manually: {}",
+        stderr_trim(&repaired)
+    );
+
+    let pool = SqlitePoolOptions::new()
+        .max_connections(1)
+        .connect(&database_url)
+        .await
+        .unwrap();
+    let index_sql: String = sqlx::query_scalar(
+        r#"
+        SELECT sql
+        FROM sqlite_master
+        WHERE type = 'index'
+          AND name = 'uk_ai_model_rank_snapshot_scope_catalog_key'
+        "#,
+    )
+    .fetch_one(&pool)
+    .await
+    .unwrap();
+    assert!(
+        index_sql.contains("vendor_code") && index_sql.contains("region_code"),
+        "ensure must rebuild the model ranking unique index with the current upsert conflict target; got {index_sql}"
+    );
+    pool.close().await;
+}
+
+#[tokio::test]
 async fn installer_cli_resets_admin_password_without_printing_secret() {
     let database_url = unique_sqlite_url();
     let binary = env!("CARGO_BIN_EXE_clawrouterctl");

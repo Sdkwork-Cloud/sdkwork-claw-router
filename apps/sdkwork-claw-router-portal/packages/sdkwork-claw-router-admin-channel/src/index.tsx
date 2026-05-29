@@ -1,7 +1,8 @@
-import React, { useCallback, useEffect, useMemo, useState } from 'react';
+﻿import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import {
   AlertCircle,
   Ban,
+  Boxes,
   Check,
   CheckCircle,
   ChevronLeft,
@@ -30,12 +31,20 @@ import {
 } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import {
+  ChannelAiResourceService,
   ChannelService,
+  ChannelEndpointService,
   ProviderSecretService,
   ChannelModelCatalogService,
+  type AiResource,
+  type AiResourceCreateInput,
+  type AiResourceUpdateInput,
   type ChannelItem,
   type ChannelModelCatalogItem,
   type ChannelUpdateInput,
+  type ChannelEndpoint,
+  type ChannelEndpointCreateInput,
+  type ChannelEndpointUpdateInput,
   type ProviderSecretItem,
   isCatalogModelKey,
   normalizeModelCatalogKey,
@@ -43,22 +52,35 @@ import {
 } from './channelService';
 import { authTypesList, knownModelVendors, prefillModels, protocolsList } from './channelOptions';
 import {
+  createAiResourceEditDraft,
+  createAiResourceInputFromForm,
+  createAiResourceUpdateInputFromForm,
   createChannelCopyDraft,
   createChannelEditDraft,
   createChannelInputFromForm,
   createChannelStatusUpdateInput,
   createChannelUpdateInputFromForm,
+  createChannelEndpointEditDraft,
+  createChannelEndpointInputFromForm,
+  createChannelEndpointUpdateInputFromForm,
   resolveAuthTypeFormValue,
   resolveAuthTypeSubmitValue,
   resolveChannelSelectFormValue,
   resolveChannelSelectSubmitValue,
+  type AiResourceFormValues,
   type ChannelFormValues,
+  type ChannelEndpointFormValues,
 } from './channelForm';
 import { AdminTableShell, BusinessStateTableRow, ConfirmDialog } from 'sdkwork-claw-router-commons';
 
 type ToastState = { message: string; type: 'success' | 'info' | 'error' } | null;
 type ModalMode = 'create' | 'copy' | 'edit';
 type PendingChannelAction = 'test' | 'update' | 'delete';
+type AiResourceModalMode = 'create' | 'edit';
+type PendingAiResourceAction = 'status';
+type ChannelEndpointModalMode = 'create' | 'edit';
+type PendingChannelEndpointAction = 'status';
+type ChannelType = 'official' | 'relay';
 type DeleteConfirmation = {
   id: string;
   title: string;
@@ -84,6 +106,43 @@ const channelTabs = [
   { id: 'Zhipu', label: 'Zhipu' },
   { id: 'Ollama', label: 'Ollama' },
   { id: 'OpenRouter', label: 'OpenRouter' },
+];
+
+const channelTypeOptions: Array<{
+  id: ChannelType;
+  titleKey: string;
+  descKey: string;
+}> = [
+  {
+    id: 'official',
+    titleKey: 'admin.channel.channelType.official',
+    descKey: 'admin.channel.channelType.officialDesc',
+  },
+  {
+    id: 'relay',
+    titleKey: 'admin.channel.channelType.relay',
+    descKey: 'admin.channel.channelType.relayDesc',
+  },
+];
+
+const aiResourceTypeOptions: Array<AiResource['resourceType']> = [
+  'vendor',
+  'modality',
+  'api_endpoint',
+  'model_api',
+  'bundle',
+];
+
+const aiResourceCompositionOptions: Array<AiResource['compositionMode']> = [
+  'single',
+  'any',
+  'all',
+];
+
+const aiResourceStatusOptions: Array<AiResource['status']> = [
+  'active',
+  'disabled',
+  'inactive',
 ];
 
 function getLoadErrorMessage(error: unknown, fallback: string): string {
@@ -154,12 +213,87 @@ function optionalTranslatedLabel(
   return item.label ?? item.name ?? '';
 }
 
+function resolveChannelType(value: string | undefined): ChannelType {
+  return value === 'relay' ? 'relay' : 'official';
+}
+
+function normalizeAiResourceCode(value: string): string {
+  return value.trim().toLowerCase();
+}
+
+function aiResourceFormValuesFromFormData(formData: FormData): AiResourceFormValues {
+  return {
+    resourceCode: String(formData.get('resourceCode') ?? ''),
+    resourceType: String(formData.get('resourceType') ?? ''),
+    displayName: String(formData.get('displayName') ?? ''),
+    vendorCode: String(formData.get('vendorCode') ?? ''),
+    modalityCode: String(formData.get('modalityCode') ?? ''),
+    apiEndpointCode: String(formData.get('apiEndpointCode') ?? ''),
+    catalogKey: String(formData.get('catalogKey') ?? ''),
+    model: String(formData.get('model') ?? ''),
+    providerNativeModel: String(formData.get('providerNativeModel') ?? ''),
+    compositionMode: String(formData.get('compositionMode') ?? ''),
+    status: String(formData.get('status') ?? ''),
+    sortOrder: String(formData.get('sortOrder') ?? ''),
+    membersText: String(formData.get('membersText') ?? ''),
+  };
+}
+
+function channelEndpointFormValuesFromFormData(formData: FormData): ChannelEndpointFormValues {
+  return {
+    channelId: String(formData.get('channelId') ?? ''),
+    vendorCode: String(formData.get('vendorCode') ?? ''),
+    regionCode: String(formData.get('regionCode') ?? ''),
+    apiEndpointCode: String(formData.get('apiEndpointCode') ?? ''),
+    baseUrl: String(formData.get('baseUrl') ?? ''),
+    priority: String(formData.get('priority') ?? ''),
+    weight: String(formData.get('weight') ?? ''),
+    status: String(formData.get('status') ?? ''),
+    effectiveFrom: String(formData.get('effectiveFrom') ?? ''),
+    effectiveTo: String(formData.get('effectiveTo') ?? ''),
+  };
+}
+
+function isAiResourceVisibleForAccount(
+  resource: AiResource,
+  channelType: ChannelType,
+  selectedVendorCode: string,
+  selectedCodes: readonly string[],
+): boolean {
+  if (channelType === 'relay' || selectedCodes.includes(normalizeAiResourceCode(resource.resourceCode))) {
+    return true;
+  }
+  const vendorCode = resource.vendorCode ? providerCodeForVendor(resource.vendorCode) : '';
+  return !vendorCode || vendorCode === selectedVendorCode;
+}
+
+function compareAiResources(
+  left: AiResource,
+  right: AiResource,
+  selectedVendorCode: string,
+): number {
+  const leftVendorMatch = left.vendorCode && providerCodeForVendor(left.vendorCode) === selectedVendorCode ? 0 : 1;
+  const rightVendorMatch = right.vendorCode && providerCodeForVendor(right.vendorCode) === selectedVendorCode ? 0 : 1;
+  if (leftVendorMatch !== rightVendorMatch) {
+    return leftVendorMatch - rightVendorMatch;
+  }
+  const leftOrder = left.sortOrder ?? Number.MAX_SAFE_INTEGER;
+  const rightOrder = right.sortOrder ?? Number.MAX_SAFE_INTEGER;
+  if (leftOrder !== rightOrder) {
+    return leftOrder - rightOrder;
+  }
+  return left.resourceCode.localeCompare(right.resourceCode);
+}
+
 function AddAccountModal({
   mode,
   initialValues,
   availableModels,
+  aiResources,
   modelCatalogLoading,
   modelCatalogError,
+  aiResourcesLoading,
+  aiResourcesError,
   isSaving,
   onClose,
   onSubmit,
@@ -167,18 +301,25 @@ function AddAccountModal({
   mode: ModalMode;
   initialValues?: ChannelFormValues | null;
   availableModels: ChannelModelCatalogItem[];
+  aiResources: AiResource[];
   modelCatalogLoading: boolean;
   modelCatalogError: string | null;
+  aiResourcesLoading: boolean;
+  aiResourcesError: string | null;
   isSaving: boolean;
   onClose: () => void;
   onSubmit: (channel: ChannelFormValues) => Promise<void>;
 }) {
   const { t } = useTranslation();
+  const [channelType, setChannelType] = useState<ChannelType>(resolveChannelType(initialValues?.channelType));
   const [selectedProtocol, setSelectedProtocol] = useState(resolveChannelSelectFormValue(initialValues?.protocol, protocolsList, 'OpenAI'));
   const [activeAuthType, setActiveAuthType] = useState(resolveAuthTypeFormValue(initialValues?.accessType, authTypesList));
   const [showMoreAuth, setShowMoreAuth] = useState(false);
   const [modelVendor, setModelVendor] = useState(resolveChannelSelectFormValue(initialValues?.vendor, knownModelVendors, 'OpenAI'));
   const [whitelist, setWhitelist] = useState<string[]>(initialValues?.models?.length ? initialValues.models : []);
+  const [selectedResourceCodes, setSelectedResourceCodes] = useState<string[]>(
+    initialValues?.resourceCodes?.map(normalizeAiResourceCode).filter(Boolean) ?? [],
+  );
   const [capabilities, setCapabilities] = useState<string[]>(
     initialValues?.capabilities?.length ? initialValues.capabilities : ['llm'],
   );
@@ -191,6 +332,18 @@ function AddAccountModal({
   const vendorCatalogModels = useMemo(
     () => availableModels.filter((model) => model.vendorCode === selectedVendorCode),
     [availableModels, selectedVendorCode],
+  );
+  const visibleAiResources = useMemo(
+    () => aiResources
+      .filter((resource) => resource.status === 'active')
+      .filter((resource) => isAiResourceVisibleForAccount(
+        resource,
+        channelType,
+        selectedVendorCode,
+        selectedResourceCodes,
+      ))
+      .sort((left, right) => compareAiResources(left, right, selectedVendorCode)),
+    [channelType, aiResources, selectedResourceCodes, selectedVendorCode],
   );
   const defaultModelKeys = useMemo(() => {
     const catalogKeys = vendorCatalogModels.map((model) => model.catalogKey);
@@ -210,6 +363,16 @@ function AddAccountModal({
         : [...current, capability];
       return next.length > 0 ? next : ['llm'];
     });
+  };
+
+  const toggleAiResource = (resourceCode: string) => {
+    const normalizedCode = normalizeAiResourceCode(resourceCode);
+    if (!normalizedCode) {
+      return;
+    }
+    setSelectedResourceCodes((current) => current.includes(normalizedCode)
+      ? current.filter((code) => code !== normalizedCode)
+      : [...current, normalizedCode]);
   };
 
   const fillRelatedModels = () => {
@@ -274,12 +437,14 @@ function AddAccountModal({
       await onSubmit({
         name,
         vendor: modelVendor,
+        channelType,
         protocol: resolveChannelSelectSubmitValue(selectedProtocol, protocolsList, 'protocol'),
         accessType: resolveAuthTypeSubmitValue(activeAuthType, authTypesList),
         baseUrl,
         apiKey,
         expiresAt,
         capabilities,
+        resourceCodes: selectedResourceCodes,
         models,
         circuitBreakerEnabled,
         circuitBreakerFailureThreshold: String(formData.get('circuitBreakerFailureThreshold') ?? '').trim(),
@@ -355,6 +520,39 @@ function AddAccountModal({
                     </select>
                     <ChevronRight className="w-4 h-4 absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none rotate-90" />
                   </div>
+                </div>
+              </div>
+
+              <div>
+                <label className="block text-sm text-slate-700 dark:text-slate-300 mb-2 font-medium">{t('admin.channel.fields.channelType')}</label>
+                <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
+                  {channelTypeOptions.map((option) => {
+                    const isSelected = channelType === option.id;
+                    return (
+                      <button
+                        key={option.id}
+                        type="button"
+                        onClick={() => setChannelType(option.id)}
+                        className={`rounded-lg border p-3 text-left transition-colors ${
+                          isSelected
+                            ? 'border-emerald-500 bg-emerald-50 text-emerald-800 ring-1 ring-emerald-500/40 dark:bg-emerald-500/10 dark:text-emerald-300'
+                            : 'border-slate-200 bg-white text-slate-700 hover:border-slate-300 dark:border-white/10 dark:bg-black dark:text-slate-300 dark:hover:border-white/20'
+                        }`}
+                      >
+                        <span className="flex items-center gap-2 text-sm font-semibold">
+                          <span
+                            className={`flex h-4 w-4 items-center justify-center rounded border ${
+                              isSelected ? 'border-emerald-500 bg-emerald-500' : 'border-slate-300 dark:border-slate-500'
+                            }`}
+                          >
+                            {isSelected && <Check className="h-3 w-3 text-white" />}
+                          </span>
+                          {t(option.titleKey)}
+                        </span>
+                        <span className="mt-1 block text-xs text-slate-500 dark:text-slate-400">{t(option.descKey)}</span>
+                      </button>
+                    );
+                  })}
                 </div>
               </div>
 
@@ -581,6 +779,84 @@ function AddAccountModal({
             </div>
 
             <div className="flex-1 px-6 py-4 bg-slate-50 dark:bg-transparent overflow-y-auto custom-scrollbar flex flex-col h-[70vh] lg:h-auto">
+              <div className="mb-5 shrink-0 rounded-xl border border-slate-200 bg-white p-4 dark:border-white/10 dark:bg-black">
+                <div className="mb-3 flex items-start justify-between gap-3">
+                  <div>
+                    <h4 className="text-sm font-semibold text-slate-900 dark:text-white">{t('admin.channel.fields.aiResources')}</h4>
+                    <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">
+                      {t('admin.channel.help.aiResources')}
+                    </p>
+                  </div>
+                  <span className="shrink-0 rounded-md bg-slate-100 px-2 py-1 text-xs text-slate-500 dark:bg-white/10 dark:text-slate-400">
+                    {t('admin.channel.aiResources.selectedCount', { count: selectedResourceCodes.length })}
+                  </span>
+                </div>
+                {aiResourcesLoading ? (
+                  <div className="flex items-center gap-2 py-3 text-xs text-slate-500">
+                    <Loader2 className="h-3.5 w-3.5 animate-spin" />
+                    {t('admin.channel.aiResources.loading')}
+                  </div>
+                ) : aiResourcesError ? (
+                  <div className="rounded-lg border border-amber-200 bg-amber-50 px-3 py-2 text-xs text-amber-700 dark:border-amber-500/20 dark:bg-amber-500/10 dark:text-amber-300">
+                    {aiResourcesError}
+                  </div>
+                ) : visibleAiResources.length > 0 ? (
+                  <div className="grid max-h-56 grid-cols-1 gap-2 overflow-y-auto pr-1">
+                    {visibleAiResources.map((resource) => {
+                      const resourceCode = normalizeAiResourceCode(resource.resourceCode);
+                      const isSelected = selectedResourceCodes.includes(resourceCode);
+                      return (
+                        <button
+                          key={resource.resourceCode}
+                          type="button"
+                          onClick={() => toggleAiResource(resource.resourceCode)}
+                          className={`rounded-lg border p-3 text-left transition-colors ${
+                            isSelected
+                              ? 'border-emerald-400 bg-emerald-50 dark:border-emerald-500/40 dark:bg-emerald-500/10'
+                              : 'border-slate-200 bg-slate-50 hover:border-slate-300 dark:border-white/10 dark:bg-[#1e1e1e] dark:hover:border-white/20'
+                          }`}
+                        >
+                          <span className="flex items-start justify-between gap-3">
+                            <span className="min-w-0">
+                              <span className="block truncate text-sm font-semibold text-slate-800 dark:text-slate-200">
+                                {resource.displayName}
+                              </span>
+                              <span className="mt-1 block truncate font-mono text-[11px] text-slate-500 dark:text-slate-400">
+                                {resource.resourceCode}
+                              </span>
+                            </span>
+                            <span className="shrink-0 rounded bg-slate-100 px-1.5 py-0.5 text-[10px] font-medium text-slate-500 dark:bg-white/10 dark:text-slate-400">
+                              {t(`admin.channel.aiResourceType.${resource.resourceType}`)}
+                            </span>
+                          </span>
+                          <span className="mt-2 flex flex-wrap gap-1.5">
+                            {resource.vendorCode && (
+                              <span className="rounded bg-blue-50 px-1.5 py-0.5 font-mono text-[10px] text-blue-700 dark:bg-blue-500/10 dark:text-blue-300">
+                                {resource.vendorCode}
+                              </span>
+                            )}
+                            {resource.modalityCode && (
+                              <span className="rounded bg-indigo-50 px-1.5 py-0.5 font-mono text-[10px] text-indigo-700 dark:bg-indigo-500/10 dark:text-indigo-300">
+                                {resource.modalityCode}
+                              </span>
+                            )}
+                            {resource.apiEndpointCode && (
+                              <span className="rounded bg-cyan-50 px-1.5 py-0.5 font-mono text-[10px] text-cyan-700 dark:bg-cyan-500/10 dark:text-cyan-300">
+                                {resource.apiEndpointCode}
+                              </span>
+                            )}
+                          </span>
+                        </button>
+                      );
+                    })}
+                  </div>
+                ) : (
+                  <div className="py-4 text-center text-xs text-slate-500 dark:text-slate-400">
+                    {t('admin.channel.aiResources.empty')}
+                  </div>
+                )}
+              </div>
+
               <div className="mb-4 shrink-0">
                 <h4 className="text-sm font-semibold text-slate-900 dark:text-white">{t('admin.channel.fields.modelAllowlist')}</h4>
                 <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">
@@ -787,6 +1063,7 @@ function CredentialDetailsModal({
             <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
               <CredentialDetailField label={t('admin.channel.fields.channelName')} value={channel.name} />
               <CredentialDetailField label={t('admin.channel.fields.vendor')} value={channel.vendor} />
+              <CredentialDetailField label={t('admin.channel.fields.channelType')} value={t(`admin.channel.channelType.${channel.channelType}`)} />
               <CredentialDetailField label={t('admin.channel.fields.protocol')} value={channel.protocol} />
               <CredentialDetailField label={t('admin.channel.fields.authType')} value={channel.accessType} />
               <CredentialDetailField label={t('admin.channel.fields.createdAt')} value={displayChannelTime(channel.createdAt)} />
@@ -959,6 +1236,1222 @@ function CredentialDetailField({
   );
 }
 
+function AiResourceFormModal({
+  mode,
+  resource,
+  availableModels,
+  availableResources,
+  isSaving,
+  onClose,
+  onCreateSubmit,
+  onUpdateSubmit,
+}: {
+  mode: AiResourceModalMode;
+  resource: AiResource | null;
+  availableModels: ChannelModelCatalogItem[];
+  availableResources: AiResource[];
+  isSaving: boolean;
+  onClose: () => void;
+  onCreateSubmit: (input: AiResourceCreateInput) => Promise<void>;
+  onUpdateSubmit: (input: AiResourceUpdateInput) => Promise<void>;
+}) {
+  const { t } = useTranslation();
+  const [localError, setLocalError] = useState<string | null>(null);
+  const isEdit = mode === 'edit';
+  const draft = useMemo(
+    () => (resource ? createAiResourceEditDraft(resource) : null),
+    [resource],
+  );
+
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setLocalError(null);
+    const formData = new FormData(event.currentTarget);
+    try {
+      const values = aiResourceFormValuesFromFormData(formData);
+      if (isEdit) {
+        await onUpdateSubmit(createAiResourceUpdateInputFromForm(values));
+      } else {
+        await onCreateSubmit(createAiResourceInputFromForm(values));
+      }
+    } catch (err) {
+      setLocalError(err instanceof Error ? err.message : t('admin.channel.aiResources.errors.saveFailed'));
+    }
+  };
+
+  return (
+    <div className="fixed inset-0 z-50 flex items-center justify-center overflow-y-auto bg-slate-900/50 p-4 backdrop-blur-sm">
+      <div className="absolute inset-0" onClick={onClose} />
+      <div className="relative z-10 flex max-h-[92vh] w-full max-w-4xl flex-col overflow-hidden rounded-xl border border-slate-200 bg-white shadow-xl dark:border-white/10 dark:bg-[#1a1a1a]">
+        <div className="flex shrink-0 items-center justify-between border-b border-slate-200 bg-slate-50 p-5 dark:border-white/10 dark:bg-[#121212]">
+          <h3 className="flex items-center gap-2 text-lg font-bold text-slate-900 dark:text-white">
+            <Boxes className="h-5 w-5 text-emerald-500" />
+            {isEdit
+              ? t('admin.channel.aiResources.modals.editTitle')
+              : t('admin.channel.aiResources.modals.createTitle')}
+          </h3>
+          <button
+            type="button"
+            onClick={onClose}
+            disabled={isSaving}
+            aria-label={t('common.actions.close')}
+            className="text-slate-400 transition-colors hover:text-slate-600 disabled:cursor-not-allowed disabled:opacity-50 dark:hover:text-slate-200"
+          >
+            <X className="h-5 w-5" />
+          </button>
+        </div>
+
+        <form onSubmit={handleSubmit} className="flex min-h-0 flex-1 flex-col">
+          <div className="min-h-0 flex-1 overflow-y-auto p-5">
+            {localError && (
+              <div className="mb-4 rounded-lg border border-red-200 bg-red-50 p-3 text-sm text-red-700 dark:border-red-500/20 dark:bg-red-500/10 dark:text-red-300">
+                {localError}
+              </div>
+            )}
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+              <AiResourceField label={t('admin.channel.aiResources.fields.resourceCode')}>
+                <input
+                  name="resourceCode"
+                  required
+                  defaultValue={draft?.resourceCode ?? ''}
+                  className="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-900 focus:border-emerald-500 focus:outline-none dark:border-white/10 dark:bg-black dark:text-white"
+                  placeholder="bundle.openrouter.openai.chat"
+                />
+              </AiResourceField>
+              <AiResourceField label={t('admin.channel.aiResources.fields.displayName')}>
+                <input
+                  name="displayName"
+                  required
+                  defaultValue={draft?.displayName ?? ''}
+                  className="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-900 focus:border-emerald-500 focus:outline-none dark:border-white/10 dark:bg-black dark:text-white"
+                  placeholder="OpenRouter OpenAI Chat"
+                />
+              </AiResourceField>
+              <AiResourceField label={t('admin.channel.aiResources.fields.resourceType')}>
+                <select
+                  name="resourceType"
+                  defaultValue={draft?.resourceType ?? 'bundle'}
+                  className="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-900 focus:border-emerald-500 focus:outline-none dark:border-white/10 dark:bg-black dark:text-white"
+                >
+                  {aiResourceTypeOptions.map((kind) => (
+                    <option key={kind} value={kind}>{t(`admin.channel.aiResourceType.${kind}`)}</option>
+                  ))}
+                </select>
+              </AiResourceField>
+              <AiResourceField label={t('admin.channel.aiResources.fields.status')}>
+                <select
+                  name="status"
+                  defaultValue={draft?.status ?? 'active'}
+                  className="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-900 focus:border-emerald-500 focus:outline-none dark:border-white/10 dark:bg-black dark:text-white"
+                >
+                  {aiResourceStatusOptions.map((status) => (
+                    <option key={status} value={status}>{t(`admin.channel.aiResources.status.${status}`)}</option>
+                  ))}
+                </select>
+              </AiResourceField>
+              <AiResourceField label={t('admin.channel.aiResources.fields.vendorCode')}>
+                <input
+                  name="vendorCode"
+                  defaultValue={draft?.vendorCode ?? ''}
+                  className="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-900 focus:border-emerald-500 focus:outline-none dark:border-white/10 dark:bg-black dark:text-white"
+                  placeholder="openai"
+                />
+              </AiResourceField>
+              <AiResourceField label={t('admin.channel.aiResources.fields.modalityCode')}>
+                <input
+                  name="modalityCode"
+                  defaultValue={draft?.modalityCode ?? ''}
+                  className="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-900 focus:border-emerald-500 focus:outline-none dark:border-white/10 dark:bg-black dark:text-white"
+                  placeholder="chat"
+                />
+              </AiResourceField>
+              <AiResourceField label={t('admin.channel.aiResources.fields.apiEndpointCode')}>
+                <input
+                  name="apiEndpointCode"
+                  defaultValue={draft?.apiEndpointCode ?? ''}
+                  className="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-900 focus:border-emerald-500 focus:outline-none dark:border-white/10 dark:bg-black dark:text-white"
+                  placeholder="chat_completions"
+                />
+              </AiResourceField>
+              <AiResourceField label={t('admin.channel.aiResources.fields.catalogKey')}>
+                <AiResourceModelSelector
+                  defaultCatalogKey={draft?.catalogKey ?? ''}
+                  availableModels={availableModels}
+                />
+              </AiResourceField>
+              <AiResourceField label={t('admin.channel.aiResources.fields.model')}>
+                <input
+                  name="model"
+                  defaultValue={draft?.model ?? ''}
+                  className="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-900 focus:border-emerald-500 focus:outline-none dark:border-white/10 dark:bg-black dark:text-white"
+                  placeholder="gpt-5.5"
+                />
+              </AiResourceField>
+              <AiResourceField label={t('admin.channel.aiResources.fields.providerNativeModel')}>
+                <input
+                  name="providerNativeModel"
+                  readOnly
+                  defaultValue={draft?.providerNativeModel ?? ''}
+                  className="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-900 focus:border-emerald-500 focus:outline-none dark:border-white/10 dark:bg-black dark:text-white"
+                  placeholder="gpt-5.5"
+                />
+              </AiResourceField>
+              <AiResourceField label={t('admin.channel.aiResources.fields.compositionMode')}>
+                <select
+                  name="compositionMode"
+                  defaultValue={draft?.compositionMode ?? 'single'}
+                  className="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-900 focus:border-emerald-500 focus:outline-none dark:border-white/10 dark:bg-black dark:text-white"
+                >
+                  {aiResourceCompositionOptions.map((modeOption) => (
+                    <option key={modeOption} value={modeOption}>{t(`admin.channel.aiResources.composition.${modeOption}`)}</option>
+                  ))}
+                </select>
+              </AiResourceField>
+              <AiResourceField label={t('admin.channel.aiResources.fields.sortOrder')}>
+                <input
+                  name="sortOrder"
+                  type="number"
+                  min={0}
+                  step={1}
+                  defaultValue={draft?.sortOrder ?? ''}
+                  className="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-900 focus:border-emerald-500 focus:outline-none dark:border-white/10 dark:bg-black dark:text-white"
+                />
+              </AiResourceField>
+              <AiResourceField label={t('admin.channel.aiResources.fields.members')} wide>
+                <AiResourceMemberSelector
+                  currentResourceCode={draft?.resourceCode ?? ''}
+                  defaultMembersText={draft?.membersText ?? ''}
+                  availableResources={availableResources}
+                />
+                <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">
+                  {t('admin.channel.aiResources.help.members')}
+                </p>
+              </AiResourceField>
+            </div>
+          </div>
+
+          <div className="flex shrink-0 justify-end gap-3 border-t border-slate-200 bg-slate-50 p-4 dark:border-white/10 dark:bg-[#121212]">
+            <button
+              type="button"
+              onClick={onClose}
+              disabled={isSaving}
+              className="rounded-lg border border-slate-300 px-5 py-2.5 text-sm font-medium text-slate-600 transition-colors hover:bg-white disabled:cursor-not-allowed disabled:opacity-50 dark:border-white/10 dark:text-slate-300 dark:hover:bg-white/5"
+            >
+              {t('common.actions.cancel')}
+            </button>
+            <button
+              type="submit"
+              disabled={isSaving}
+              className="flex items-center gap-2 rounded-lg bg-emerald-600 px-6 py-2.5 text-sm font-bold text-white shadow-lg shadow-emerald-500/20 transition-colors hover:bg-emerald-700 disabled:cursor-not-allowed disabled:opacity-60"
+            >
+              {isSaving && <Loader2 className="h-4 w-4 animate-spin" />}
+              {isEdit ? t('common.actions.saveChanges') : t('common.actions.create')}
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  );
+}
+
+function AiResourceField({
+  label,
+  children,
+  wide = false,
+}: {
+  label: string;
+  children: React.ReactNode;
+  wide?: boolean;
+}) {
+  return (
+    <label className={wide ? 'sm:col-span-2' : undefined}>
+      <span className="mb-1 block text-sm font-medium text-slate-700 dark:text-slate-300">{label}</span>
+      {children}
+    </label>
+  );
+}
+
+function AiResourceModelSelector({
+  defaultCatalogKey,
+  availableModels,
+}: {
+  defaultCatalogKey: string;
+  availableModels: ChannelModelCatalogItem[];
+}) {
+  const normalizedDefault = defaultCatalogKey.trim();
+  return (
+    <select
+      data-ai-resource-model-selector
+      name="catalogKey"
+      defaultValue={normalizedDefault}
+      className="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-900 focus:border-emerald-500 focus:outline-none dark:border-white/10 dark:bg-black dark:text-white"
+    >
+      <option value="" />
+      {normalizedDefault && !availableModels.some((model) => model.catalogKey === normalizedDefault) && (
+        <option value={normalizedDefault}>{normalizedDefault}</option>
+      )}
+      {availableModels.map((model) => (
+        <option key={model.catalogKey} value={model.catalogKey}>
+          {model.displayName} ({model.catalogKey})
+        </option>
+      ))}
+    </select>
+  );
+}
+
+function AiResourceMemberSelector({
+  currentResourceCode,
+  defaultMembersText,
+  availableResources,
+}: {
+  currentResourceCode: string;
+  defaultMembersText: string;
+  availableResources: AiResource[];
+}) {
+  const [memberLines, setMemberLines] = useState<string[]>(() => parseAiResourceMemberLines(defaultMembersText));
+  useEffect(() => {
+    setMemberLines(parseAiResourceMemberLines(defaultMembersText));
+  }, [defaultMembersText]);
+  const selectedCodes = useMemo(
+    () => new Set(memberLines.map((line) => normalizeAiResourceCode(line.split('|')[0] ?? '')).filter(Boolean)),
+    [memberLines],
+  );
+  const currentCode = normalizeAiResourceCode(currentResourceCode);
+  const toggleMember = (resourceCode: string) => {
+    const normalizedCode = normalizeAiResourceCode(resourceCode);
+    if (!normalizedCode) {
+      return;
+    }
+    setMemberLines((current) => {
+      const exists = current.some((line) => normalizeAiResourceCode(line.split('|')[0] ?? '') === normalizedCode);
+      if (exists) {
+        return current.filter((line) => normalizeAiResourceCode(line.split('|')[0] ?? '') !== normalizedCode);
+      }
+      return [...current, `${normalizedCode} | included | true | ${current.length + 1}`];
+    });
+  };
+  return (
+    <div data-ai-resource-member-selector className="space-y-2">
+      <textarea
+        name="membersText"
+        readOnly
+        value={memberLines.join('\n')}
+        className="sr-only"
+      />
+      <div className="grid max-h-52 grid-cols-1 gap-2 overflow-y-auto rounded-lg border border-slate-200 bg-slate-50 p-2 dark:border-white/10 dark:bg-black">
+        {availableResources
+          .filter((resource) => normalizeAiResourceCode(resource.resourceCode) !== currentCode)
+          .map((resource) => {
+            const isSelected = selectedCodes.has(normalizeAiResourceCode(resource.resourceCode));
+            return (
+              <label
+                key={resource.resourceCode}
+                className={`flex items-start gap-2 rounded-md border p-2 text-xs ${
+                  isSelected
+                    ? 'border-emerald-300 bg-emerald-50 text-emerald-900 dark:border-emerald-500/40 dark:bg-emerald-500/10 dark:text-emerald-200'
+                    : 'border-slate-200 bg-white text-slate-600 dark:border-white/10 dark:bg-[#1e1e1e] dark:text-slate-300'
+                }`}
+              >
+                <input
+                  type="checkbox"
+                  checked={isSelected}
+                  onChange={() => toggleMember(resource.resourceCode)}
+                  className="mt-0.5 h-3.5 w-3.5 rounded border-slate-300 text-emerald-600"
+                />
+                <span className="min-w-0">
+                  <span className="block truncate font-medium">{resource.displayName}</span>
+                  <span className="mt-0.5 block truncate font-mono text-[11px] text-slate-500 dark:text-slate-400">
+                    {resource.resourceCode}
+                  </span>
+                </span>
+              </label>
+            );
+          })}
+      </div>
+    </div>
+  );
+}
+
+function parseAiResourceMemberLines(value: string): string[] {
+  return value
+    .split(/\r?\n/)
+    .map((line) => line.trim())
+    .filter(Boolean);
+}
+
+function ChannelEndpointFormModal({
+  mode,
+  endpoint,
+  channels,
+  isSaving,
+  onClose,
+  onCreateSubmit,
+  onUpdateSubmit,
+}: {
+  mode: ChannelEndpointModalMode;
+  endpoint: ChannelEndpoint | null;
+  channels: ChannelItem[];
+  isSaving: boolean;
+  onClose: () => void;
+  onCreateSubmit: (input: ChannelEndpointCreateInput) => Promise<void>;
+  onUpdateSubmit: (input: ChannelEndpointUpdateInput) => Promise<void>;
+}) {
+  const { t } = useTranslation();
+  const [localError, setLocalError] = useState<string | null>(null);
+  const draft = endpoint ? createChannelEndpointEditDraft(endpoint) : null;
+  const isEdit = mode === 'edit';
+
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setLocalError(null);
+    const values = channelEndpointFormValuesFromFormData(new FormData(event.currentTarget));
+    try {
+      if (isEdit) {
+        await onUpdateSubmit(createChannelEndpointUpdateInputFromForm(values));
+      } else {
+        await onCreateSubmit(createChannelEndpointInputFromForm(values));
+      }
+    } catch (err) {
+      setLocalError(err instanceof Error ? err.message : t('admin.channel.channelEndpoints.errors.saveFailed'));
+    }
+  };
+
+  return (
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/50 p-4 backdrop-blur-sm">
+      <div className="absolute inset-0" onClick={isSaving ? undefined : onClose} />
+      <div className="relative z-10 w-full max-w-3xl overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-xl dark:border-white/10 dark:bg-[#1a1a1a]">
+        <div className="flex items-center justify-between border-b border-slate-200 bg-slate-50 p-5 dark:border-white/10 dark:bg-[#121212]">
+          <h3 className="flex items-center gap-2 text-lg font-bold text-slate-900 dark:text-white">
+            <Server className="h-5 w-5 text-emerald-500" />
+            {isEdit
+              ? t('admin.channel.channelEndpoints.modals.editTitle')
+              : t('admin.channel.channelEndpoints.modals.createTitle')}
+          </h3>
+          <button
+            type="button"
+            onClick={onClose}
+            disabled={isSaving}
+            aria-label={t('common.actions.close')}
+            className="text-slate-400 transition-colors hover:text-slate-600 disabled:opacity-50 dark:hover:text-slate-200"
+          >
+            <X className="h-5 w-5" />
+          </button>
+        </div>
+
+        <form onSubmit={handleSubmit}>
+          <div className="space-y-5 p-5">
+            {localError && (
+              <div className="flex items-center gap-2 rounded-lg border border-red-200 bg-red-50 px-3 py-2 text-sm text-red-700 dark:border-red-500/20 dark:bg-red-500/10 dark:text-red-300">
+                <AlertCircle className="h-4 w-4" />
+                {localError}
+              </div>
+            )}
+
+            <div>
+              <label className="mb-2 block text-sm font-medium text-slate-700 dark:text-slate-300">
+                {t('admin.channel.channelEndpoints.fields.channel')}
+              </label>
+              <select
+                name="channelId"
+                required={!isEdit}
+                disabled={isEdit}
+                defaultValue={draft?.channelId ?? channels[0]?.channelId ?? ''}
+                className="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-900 transition-colors focus:border-emerald-500 focus:outline-none disabled:bg-slate-100 disabled:text-slate-500 dark:border-white/10 dark:bg-black dark:text-white dark:disabled:bg-white/5"
+              >
+                {!isEdit && channels.length === 0 && (
+                  <option value="">{t('admin.channel.channelEndpoints.emptyChannels')}</option>
+                )}
+                {channels.map((channel) => (
+                  <option key={channel.channelId} value={channel.channelId}>
+                    {channel.name} / {providerCodeForVendor(channel.vendor)} / {channel.channelId}
+                  </option>
+                ))}
+                {isEdit && draft?.channelId && !channels.some((channel) => channel.channelId === draft.channelId) && (
+                  <option value={draft.channelId}>{draft.channelId}</option>
+                )}
+              </select>
+            </div>
+
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
+              <div>
+                <label className="mb-2 block text-sm font-medium text-slate-700 dark:text-slate-300">
+                  {t('admin.channel.channelEndpoints.fields.vendorCode')}
+                </label>
+                <input
+                  required
+                  name="vendorCode"
+                  defaultValue={draft?.vendorCode ?? ''}
+                  placeholder="openai"
+                  className="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 font-mono text-sm text-slate-900 transition-colors focus:border-emerald-500 focus:outline-none dark:border-white/10 dark:bg-black dark:text-white"
+                />
+              </div>
+              <div>
+                <label className="mb-2 block text-sm font-medium text-slate-700 dark:text-slate-300">
+                  {t('admin.channel.channelEndpoints.fields.regionCode')}
+                </label>
+                <input
+                  required
+                  name="regionCode"
+                  defaultValue={draft?.regionCode ?? 'global'}
+                  placeholder="global"
+                  className="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 font-mono text-sm text-slate-900 transition-colors focus:border-emerald-500 focus:outline-none dark:border-white/10 dark:bg-black dark:text-white"
+                />
+              </div>
+              <div>
+                <label className="mb-2 block text-sm font-medium text-slate-700 dark:text-slate-300">
+                  {t('admin.channel.channelEndpoints.fields.apiEndpointCode')}
+                </label>
+                <input
+                  required
+                  name="apiEndpointCode"
+                  defaultValue={draft?.apiEndpointCode ?? 'chat_completions'}
+                  placeholder="chat_completions"
+                  className="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 font-mono text-sm text-slate-900 transition-colors focus:border-emerald-500 focus:outline-none dark:border-white/10 dark:bg-black dark:text-white"
+                />
+              </div>
+            </div>
+
+            <div>
+              <label className="mb-2 block text-sm font-medium text-slate-700 dark:text-slate-300">
+                {t('admin.channel.channelEndpoints.fields.baseUrl')}
+              </label>
+              <input
+                required
+                type="url"
+                name="baseUrl"
+                defaultValue={draft?.baseUrl ?? ''}
+                placeholder="https://api.openai.com/v1"
+                className="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 font-mono text-sm text-slate-900 transition-colors focus:border-emerald-500 focus:outline-none dark:border-white/10 dark:bg-black dark:text-white"
+              />
+            </div>
+
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-4">
+              <div>
+                <label className="mb-2 block text-sm font-medium text-slate-700 dark:text-slate-300">
+                  {t('admin.channel.channelEndpoints.fields.priority')}
+                </label>
+                <input
+                  name="priority"
+                  type="number"
+                  min="1"
+                  defaultValue={draft?.priority ?? 100}
+                  className="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-900 transition-colors focus:border-emerald-500 focus:outline-none dark:border-white/10 dark:bg-black dark:text-white"
+                />
+              </div>
+              <div>
+                <label className="mb-2 block text-sm font-medium text-slate-700 dark:text-slate-300">
+                  {t('admin.channel.channelEndpoints.fields.weight')}
+                </label>
+                <input
+                  name="weight"
+                  type="number"
+                  min="1"
+                  defaultValue={draft?.weight ?? 100}
+                  className="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-900 transition-colors focus:border-emerald-500 focus:outline-none dark:border-white/10 dark:bg-black dark:text-white"
+                />
+              </div>
+              <div>
+                <label className="mb-2 block text-sm font-medium text-slate-700 dark:text-slate-300">
+                  {t('admin.channel.channelEndpoints.fields.effectiveFrom')}
+                </label>
+                <input
+                  name="effectiveFrom"
+                  type="datetime-local"
+                  defaultValue={toDateTimeLocalValue(draft?.effectiveFrom)}
+                  className="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-900 transition-colors focus:border-emerald-500 focus:outline-none dark:border-white/10 dark:bg-black dark:text-white"
+                />
+              </div>
+              <div>
+                <label className="mb-2 block text-sm font-medium text-slate-700 dark:text-slate-300">
+                  {t('admin.channel.channelEndpoints.fields.effectiveTo')}
+                </label>
+                <input
+                  name="effectiveTo"
+                  type="datetime-local"
+                  defaultValue={toDateTimeLocalValue(draft?.effectiveTo)}
+                  className="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-900 transition-colors focus:border-emerald-500 focus:outline-none dark:border-white/10 dark:bg-black dark:text-white"
+                />
+              </div>
+            </div>
+
+            <div>
+              <label className="mb-2 block text-sm font-medium text-slate-700 dark:text-slate-300">
+                {t('admin.channel.channelEndpoints.fields.status')}
+              </label>
+              <select
+                name="status"
+                defaultValue={draft?.status ?? 'active'}
+                className="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-900 transition-colors focus:border-emerald-500 focus:outline-none dark:border-white/10 dark:bg-black dark:text-white"
+              >
+                <option value="active">{t('admin.channel.channelEndpoints.status.active')}</option>
+                <option value="disabled">{t('admin.channel.channelEndpoints.status.disabled')}</option>
+                <option value="inactive">{t('admin.channel.channelEndpoints.status.inactive')}</option>
+              </select>
+            </div>
+          </div>
+
+          <div className="flex justify-end gap-3 border-t border-slate-200 bg-slate-50 p-4 dark:border-white/10 dark:bg-[#121212]">
+            <button
+              type="button"
+              onClick={onClose}
+              disabled={isSaving}
+              className="rounded-lg border border-slate-300 px-5 py-2.5 text-sm font-medium text-slate-600 transition-colors hover:bg-white disabled:opacity-50 dark:border-white/10 dark:text-slate-300 dark:hover:bg-white/5"
+            >
+              {t('common.actions.cancel')}
+            </button>
+            <button
+              type="submit"
+              disabled={isSaving || (!isEdit && channels.length === 0)}
+              className="flex items-center gap-2 rounded-lg bg-emerald-600 px-6 py-2.5 text-sm font-bold text-white shadow-lg shadow-emerald-500/20 transition-colors hover:bg-emerald-700 disabled:cursor-not-allowed disabled:opacity-60"
+            >
+              {isSaving && <Loader2 className="h-4 w-4 animate-spin" />}
+              {isEdit ? t('common.actions.saveChanges') : t('admin.channel.channelEndpoints.actions.add')}
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  );
+}
+
+export function AiResourceAdmin() {
+  const { t } = useTranslation();
+  const [resources, setResources] = useState<AiResource[]>([]);
+  const [modelCatalog, setModelCatalog] = useState<ChannelModelCatalogItem[]>([]);
+  const [search, setSearch] = useState('');
+  const [loading, setLoading] = useState(true);
+  const [loadError, setLoadError] = useState<string | null>(null);
+  const [modalMode, setModalMode] = useState<AiResourceModalMode | null>(null);
+  const [editingResource, setEditingResource] = useState<AiResource | null>(null);
+  const [saving, setSaving] = useState(false);
+  const [pendingResourceId, setPendingResourceId] = useState<string | null>(null);
+  const [pendingAction, setPendingAction] = useState<PendingAiResourceAction | null>(null);
+  const [toast, setToast] = useState<ToastState>(null);
+
+  const loadResources = useCallback(async (isActive: () => boolean = () => true) => {
+    setLoading(true);
+    setLoadError(null);
+    try {
+      const items = await ChannelAiResourceService.fetchAiResources();
+      if (isActive()) {
+        setResources(items);
+      }
+    } catch (err) {
+      if (isActive()) {
+        setLoadError(getLoadErrorMessage(err, t('admin.channel.aiResources.loadError')));
+      }
+    } finally {
+      if (isActive()) {
+        setLoading(false);
+      }
+    }
+  }, [t]);
+
+  const loadModelCatalog = useCallback(async (isActive: () => boolean = () => true) => {
+    try {
+      const items = await ChannelModelCatalogService.fetchModels();
+      if (isActive()) {
+        setModelCatalog(items);
+      }
+    } catch {
+      if (isActive()) {
+        setModelCatalog([]);
+      }
+    }
+  }, []);
+
+  useEffect(() => {
+    let active = true;
+    void Promise.all([loadResources(() => active), loadModelCatalog(() => active)]);
+    return () => {
+      active = false;
+    };
+  }, [loadModelCatalog, loadResources]);
+
+  const filteredResources = useMemo(() => {
+    const keyword = search.trim().toLowerCase();
+    if (!keyword) {
+      return resources;
+    }
+    return resources.filter((resource) => [
+      resource.resourceCode,
+      resource.displayName,
+      resource.resourceType,
+      resource.vendorCode,
+      resource.modalityCode,
+      resource.apiEndpointCode,
+      resource.catalogKey,
+      resource.model,
+      resource.providerNativeModel,
+    ].filter(Boolean).join(' ').toLowerCase().includes(keyword));
+  }, [resources, search]);
+
+  const showToast = useCallback((message: string, type: 'success' | 'info' | 'error' = 'success') => {
+    setToast({ message, type });
+    window.setTimeout(() => setToast(null), 3000);
+  }, []);
+
+  const openCreateModal = () => {
+    setEditingResource(null);
+    setModalMode('create');
+  };
+
+  const openEditModal = (resource: AiResource) => {
+    setEditingResource(resource);
+    setModalMode('edit');
+  };
+
+  const closeModal = () => {
+    if (saving) {
+      return;
+    }
+    setModalMode(null);
+    setEditingResource(null);
+  };
+
+  const handleCreateResource = async (input: AiResourceCreateInput) => {
+    setSaving(true);
+    try {
+      const created = await ChannelAiResourceService.createAiResource(input);
+      setResources((current) => [created, ...current]);
+      showToast(t('admin.channel.aiResources.messages.created'));
+      setLoadError(null);
+      setModalMode(null);
+      setEditingResource(null);
+    } catch (err) {
+      const message = err instanceof Error ? err.message : t('admin.channel.aiResources.errors.saveFailed');
+      showToast(message, 'error');
+      throw err;
+    } finally {
+      setSaving(false);
+    }
+  };
+
+  const handleUpdateResource = async (input: AiResourceUpdateInput) => {
+    if (!editingResource) {
+      return;
+    }
+    setSaving(true);
+    try {
+      const updated = await ChannelAiResourceService.updateAiResource(editingResource.id, input);
+      setResources((current) => current.map((item) => (item.id === updated.id ? updated : item)));
+      showToast(t('admin.channel.aiResources.messages.updated'));
+      setLoadError(null);
+      setModalMode(null);
+      setEditingResource(null);
+    } catch (err) {
+      const message = err instanceof Error ? err.message : t('admin.channel.aiResources.errors.saveFailed');
+      showToast(message, 'error');
+      throw err;
+    } finally {
+      setSaving(false);
+    }
+  };
+
+  const handleUpdateResourceStatus = async (resource: AiResource) => {
+    const nextStatus: AiResource['status'] = resource.status === 'active' ? 'disabled' : 'active';
+    setPendingResourceId(resource.id);
+    setPendingAction('status');
+    try {
+      const updated = await ChannelAiResourceService.updateAiResource(resource.id, { status: nextStatus });
+      setResources((current) => current.map((item) => (item.id === updated.id ? updated : item)));
+      showToast(
+        nextStatus === 'active'
+          ? t('admin.channel.aiResources.messages.enabled')
+          : t('admin.channel.aiResources.messages.disabled'),
+        'info',
+      );
+    } catch (err) {
+      showToast(err instanceof Error ? err.message : t('admin.channel.aiResources.errors.updateFailed'), 'error');
+    } finally {
+      setPendingResourceId(null);
+      setPendingAction(null);
+    }
+  };
+
+  return (
+    <div className="flex h-full min-h-0 w-full flex-col gap-4 overflow-hidden">
+      {toast && (
+        <div
+          className={`fixed right-6 top-6 z-40 rounded-lg border px-4 py-3 text-sm shadow-lg ${
+            toast.type === 'error'
+              ? 'border-red-200 bg-red-50 text-red-700 dark:border-red-500/20 dark:bg-red-500/10 dark:text-red-300'
+              : 'border-emerald-200 bg-emerald-50 text-emerald-700 dark:border-emerald-500/20 dark:bg-emerald-500/10 dark:text-emerald-300'
+          }`}
+        >
+          {toast.message}
+        </div>
+      )}
+      <div className="flex shrink-0 flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+        <div>
+          <h2 className="text-xl font-bold text-slate-900 dark:text-white">{t('admin.channel.aiResources.title')}</h2>
+          <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">{t('admin.channel.aiResources.subtitle')}</p>
+        </div>
+        <div className="flex w-full flex-col gap-2 sm:w-auto sm:flex-row sm:items-center">
+          <div className="relative w-full sm:w-80">
+            <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" />
+            <input
+              type="text"
+              placeholder={t('admin.channel.aiResources.searchPlaceholder')}
+              value={search}
+              onChange={(event) => setSearch(event.target.value)}
+              className="w-full rounded-lg border border-slate-200 bg-white py-2 pl-9 pr-4 text-sm text-slate-900 shadow-sm transition-colors placeholder-slate-500 focus:border-emerald-500 focus:outline-none dark:border-white/10 dark:bg-[#1e1e1e] dark:text-white"
+            />
+          </div>
+          <button
+            type="button"
+            onClick={openCreateModal}
+            className="flex w-full items-center justify-center gap-2 rounded-lg bg-emerald-600 px-4 py-2 text-sm font-medium text-white shadow-lg shadow-emerald-500/20 transition-colors hover:bg-emerald-700 sm:w-auto"
+          >
+            <Plus className="h-4 w-4" />
+            {t('admin.channel.aiResources.actions.add')}
+          </button>
+        </div>
+      </div>
+
+      <AdminTableShell
+        className="rounded-xl dark:bg-[#1a1a1a]"
+        footer={(
+          <div className="flex items-center justify-between border-t border-slate-200 bg-slate-50 p-4 text-sm text-slate-500 dark:border-white/10 dark:bg-[#121212] dark:text-slate-400">
+            {t('admin.channel.aiResources.total', { count: filteredResources.length })}
+          </div>
+        )}
+      >
+        <div className="contents">
+          <table className="w-full text-left text-sm text-slate-600 dark:text-slate-400">
+            <thead className="sticky top-0 z-10 border-b border-slate-200 bg-slate-50 text-xs font-semibold uppercase text-slate-500 dark:border-white/10 dark:bg-[#121212] dark:text-slate-400">
+              <tr>
+                <th className="px-6 py-4">{t('admin.channel.aiResources.table.resource')}</th>
+                <th className="px-6 py-4">{t('admin.channel.aiResources.table.kind')}</th>
+                <th className="px-6 py-4">{t('admin.channel.aiResources.table.vendor')}</th>
+                <th className="px-6 py-4">{t('admin.channel.aiResources.table.modality')}</th>
+                <th className="px-6 py-4">{t('admin.channel.aiResources.table.apiEndpoint')}</th>
+                <th className="px-6 py-4">{t('admin.channel.aiResources.table.composition')}</th>
+                <th className="px-6 py-4">{t('admin.channel.aiResources.table.status')}</th>
+                <th className="px-6 py-4 text-right">{t('admin.channel.table.actions')}</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-slate-200 dark:divide-white/5">
+              {loading ? (
+                <BusinessStateTableRow colSpan={8} kind="loading" title={t('admin.channel.aiResources.loading')} />
+              ) : loadError ? (
+                <BusinessStateTableRow
+                  colSpan={8}
+                  kind="error"
+                  title={t('admin.channel.aiResources.loadError')}
+                  description={loadError}
+                  onRetry={() => void loadResources()}
+                />
+              ) : filteredResources.length === 0 ? (
+                <BusinessStateTableRow
+                  colSpan={8}
+                  kind="empty"
+                  title={t('admin.channel.aiResources.empty')}
+                  description={resources.length === 0
+                    ? t('admin.channel.aiResources.emptyDescription')
+                    : t('admin.channel.aiResources.emptySearchDescription')}
+                  action={resources.length === 0 ? { label: t('admin.channel.aiResources.actions.add'), onClick: openCreateModal } : undefined}
+                />
+              ) : (
+                filteredResources.map((resource) => (
+                  <tr key={resource.resourceCode} className="transition-colors hover:bg-slate-50 dark:hover:bg-white/5">
+                    <td className="px-6 py-4 align-top">
+                      <div className="max-w-md">
+                        <div className="truncate font-semibold text-slate-900 dark:text-white">{resource.displayName}</div>
+                        <div className="mt-1 truncate font-mono text-xs text-slate-500 dark:text-slate-400">{resource.resourceCode}</div>
+                        {resource.providerNativeModel && (
+                          <div className="mt-1 truncate font-mono text-[11px] text-slate-400">{resource.providerNativeModel}</div>
+                        )}
+                      </div>
+                    </td>
+                    <td className="px-6 py-4 align-top">
+                      <span className="rounded-md bg-slate-100 px-2 py-1 text-xs font-medium text-slate-600 dark:bg-white/10 dark:text-slate-300">
+                        {t(`admin.channel.aiResourceType.${resource.resourceType}`)}
+                      </span>
+                    </td>
+                    <td className="px-6 py-4 align-top font-mono text-xs">{resource.vendorCode ?? '-'}</td>
+                    <td className="px-6 py-4 align-top font-mono text-xs">{resource.modalityCode ?? '-'}</td>
+                    <td className="px-6 py-4 align-top font-mono text-xs">{resource.apiEndpointCode ?? '-'}</td>
+                    <td className="px-6 py-4 align-top text-xs">
+                      {t(`admin.channel.aiResources.composition.${resource.compositionMode}`)}
+                      {resource.members.length > 0 && (
+                        <span className="ml-2 text-slate-400">
+                          {t('admin.channel.aiResources.memberCount', { count: resource.members.length })}
+                        </span>
+                      )}
+                    </td>
+                    <td className="px-6 py-4 align-top text-xs">
+                      {t(`admin.channel.aiResources.status.${resource.status}`)}
+                    </td>
+                    <td className="px-6 py-4 text-right align-top">
+                      <div className="flex items-center justify-end gap-1">
+                        <IconButton
+                          title={t('admin.channel.aiResources.actions.edit')}
+                          onClick={() => openEditModal(resource)}
+                          disabled={pendingResourceId === resource.id}
+                        >
+                          <Edit2 className="h-4 w-4" />
+                        </IconButton>
+                        <IconButton
+                          title={resource.status === 'active'
+                            ? t('admin.channel.aiResources.actions.disable')
+                            : t('admin.channel.aiResources.actions.enable')}
+                          onClick={() => void handleUpdateResourceStatus(resource)}
+                          disabled={pendingResourceId === resource.id}
+                          tone="warning"
+                        >
+                          {pendingResourceId === resource.id && pendingAction === 'status' ? (
+                            <Loader2 className="h-4 w-4 animate-spin" />
+                          ) : resource.status === 'active' ? (
+                            <Ban className="h-4 w-4" />
+                          ) : (
+                            <CheckCircle className="h-4 w-4" />
+                          )}
+                        </IconButton>
+                      </div>
+                    </td>
+                  </tr>
+                ))
+              )}
+            </tbody>
+          </table>
+        </div>
+      </AdminTableShell>
+
+      {modalMode && (
+        <AiResourceFormModal
+          mode={modalMode}
+          resource={editingResource}
+          availableModels={modelCatalog}
+          availableResources={resources}
+          isSaving={saving}
+          onClose={closeModal}
+          onCreateSubmit={handleCreateResource}
+          onUpdateSubmit={handleUpdateResource}
+        />
+      )}
+    </div>
+  );
+}
+
+export function ChannelEndpointAdmin() {
+  const { t } = useTranslation();
+  const [endpoints, setEndpoints] = useState<ChannelEndpoint[]>([]);
+  const [channels, setChannels] = useState<ChannelItem[]>([]);
+  const [search, setSearch] = useState('');
+  const [loading, setLoading] = useState(true);
+  const [loadError, setLoadError] = useState<string | null>(null);
+  const [modalMode, setModalMode] = useState<ChannelEndpointModalMode | null>(null);
+  const [editingEndpoint, setEditingEndpoint] = useState<ChannelEndpoint | null>(null);
+  const [saving, setSaving] = useState(false);
+  const [pendingEndpointId, setPendingEndpointId] = useState<string | null>(null);
+  const [pendingAction, setPendingAction] = useState<PendingChannelEndpointAction | null>(null);
+  const [toast, setToast] = useState<ToastState>(null);
+
+  const loadData = useCallback(async (isActive: () => boolean = () => true) => {
+    setLoading(true);
+    setLoadError(null);
+    try {
+      const [endpointItems, channelItems] = await Promise.all([
+        ChannelEndpointService.fetchChannelEndpoints(),
+        ChannelService.fetchChannels(),
+      ]);
+      if (isActive()) {
+        setEndpoints(endpointItems);
+        setChannels(channelItems);
+      }
+    } catch (err) {
+      if (isActive()) {
+        setLoadError(getLoadErrorMessage(err, t('admin.channel.channelEndpoints.loadError')));
+      }
+    } finally {
+      if (isActive()) {
+        setLoading(false);
+      }
+    }
+  }, [t]);
+
+  useEffect(() => {
+    let active = true;
+    void loadData(() => active);
+    return () => {
+      active = false;
+    };
+  }, [loadData]);
+
+  const filteredEndpoints = useMemo(() => {
+    const keyword = search.trim().toLowerCase();
+    if (!keyword) {
+      return endpoints;
+    }
+    return endpoints.filter((endpoint) => [
+      endpoint.channelId,
+      endpoint.providerCode,
+      endpoint.channelCode,
+      endpoint.channelType,
+      endpoint.vendorCode,
+      endpoint.regionCode,
+      endpoint.apiEndpointCode,
+      endpoint.baseUrl,
+      endpoint.healthStatus,
+      endpoint.status,
+    ].join(' ').toLowerCase().includes(keyword));
+  }, [endpoints, search]);
+
+  const showToast = useCallback((message: string, type: 'success' | 'info' | 'error' = 'success') => {
+    setToast({ message, type });
+    window.setTimeout(() => setToast(null), 3000);
+  }, []);
+
+  const openCreateModal = () => {
+    setEditingEndpoint(null);
+    setModalMode('create');
+  };
+
+  const openEditModal = (endpoint: ChannelEndpoint) => {
+    setEditingEndpoint(endpoint);
+    setModalMode('edit');
+  };
+
+  const closeModal = () => {
+    if (saving) {
+      return;
+    }
+    setModalMode(null);
+    setEditingEndpoint(null);
+  };
+
+  const handleCreateEndpoint = async (input: ChannelEndpointCreateInput) => {
+    setSaving(true);
+    try {
+      const created = await ChannelEndpointService.createChannelEndpoint(input);
+      setEndpoints((current) => [created, ...current]);
+      showToast(t('admin.channel.channelEndpoints.messages.created'));
+      setLoadError(null);
+      setModalMode(null);
+      setEditingEndpoint(null);
+    } catch (err) {
+      const message = err instanceof Error ? err.message : t('admin.channel.channelEndpoints.errors.saveFailed');
+      showToast(message, 'error');
+      throw err;
+    } finally {
+      setSaving(false);
+    }
+  };
+
+  const handleUpdateEndpoint = async (input: ChannelEndpointUpdateInput) => {
+    if (!editingEndpoint) {
+      return;
+    }
+    setSaving(true);
+    try {
+      const updated = await ChannelEndpointService.updateChannelEndpoint(editingEndpoint.id, input);
+      setEndpoints((current) => current.map((item) => (item.id === updated.id ? updated : item)));
+      showToast(t('admin.channel.channelEndpoints.messages.updated'));
+      setLoadError(null);
+      setModalMode(null);
+      setEditingEndpoint(null);
+    } catch (err) {
+      const message = err instanceof Error ? err.message : t('admin.channel.channelEndpoints.errors.saveFailed');
+      showToast(message, 'error');
+      throw err;
+    } finally {
+      setSaving(false);
+    }
+  };
+
+  const handleUpdateEndpointStatus = async (endpoint: ChannelEndpoint) => {
+    const nextStatus: ChannelEndpoint['status'] = endpoint.status === 'active' ? 'disabled' : 'active';
+    setPendingEndpointId(endpoint.id);
+    setPendingAction('status');
+    try {
+      const updated = await ChannelEndpointService.updateChannelEndpoint(endpoint.id, { status: nextStatus });
+      setEndpoints((current) => current.map((item) => (item.id === updated.id ? updated : item)));
+      showToast(
+        nextStatus === 'active'
+          ? t('admin.channel.channelEndpoints.messages.enabled')
+          : t('admin.channel.channelEndpoints.messages.disabled'),
+        'info',
+      );
+    } catch (err) {
+      showToast(err instanceof Error ? err.message : t('admin.channel.channelEndpoints.errors.updateFailed'), 'error');
+    } finally {
+      setPendingEndpointId(null);
+      setPendingAction(null);
+    }
+  };
+
+  return (
+    <div className="flex h-full min-h-0 w-full flex-col gap-4 overflow-hidden">
+      {toast && (
+        <div
+          className={`fixed right-6 top-6 z-40 rounded-lg border px-4 py-3 text-sm shadow-lg ${
+            toast.type === 'error'
+              ? 'border-red-200 bg-red-50 text-red-700 dark:border-red-500/20 dark:bg-red-500/10 dark:text-red-300'
+              : 'border-emerald-200 bg-emerald-50 text-emerald-700 dark:border-emerald-500/20 dark:bg-emerald-500/10 dark:text-emerald-300'
+          }`}
+        >
+          {toast.message}
+        </div>
+      )}
+
+      <div className="flex shrink-0 flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+        <div>
+          <h2 className="text-xl font-bold text-slate-900 dark:text-white">{t('admin.channel.channelEndpoints.title')}</h2>
+          <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">{t('admin.channel.channelEndpoints.subtitle')}</p>
+        </div>
+        <div className="flex w-full flex-col gap-2 sm:w-auto sm:flex-row sm:items-center">
+          <div className="relative w-full sm:w-80">
+            <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" />
+            <input
+              type="text"
+              placeholder={t('admin.channel.channelEndpoints.searchPlaceholder')}
+              value={search}
+              onChange={(event) => setSearch(event.target.value)}
+              className="w-full rounded-lg border border-slate-200 bg-white py-2 pl-9 pr-4 text-sm text-slate-900 shadow-sm transition-colors placeholder-slate-500 focus:border-emerald-500 focus:outline-none dark:border-white/10 dark:bg-[#1e1e1e] dark:text-white"
+            />
+          </div>
+          <button
+            type="button"
+            onClick={openCreateModal}
+            className="flex w-full items-center justify-center gap-2 rounded-lg bg-emerald-600 px-4 py-2 text-sm font-medium text-white shadow-lg shadow-emerald-500/20 transition-colors hover:bg-emerald-700 sm:w-auto"
+          >
+            <Plus className="h-4 w-4" />
+            {t('admin.channel.channelEndpoints.actions.add')}
+          </button>
+        </div>
+      </div>
+
+      <AdminTableShell
+        className="rounded-xl dark:bg-[#1a1a1a]"
+        footer={(
+          <div className="flex items-center justify-between border-t border-slate-200 bg-slate-50 p-4 text-sm text-slate-500 dark:border-white/10 dark:bg-[#121212] dark:text-slate-400">
+            {t('admin.channel.channelEndpoints.total', { count: filteredEndpoints.length })}
+          </div>
+        )}
+      >
+        <div className="contents">
+          <table className="w-full text-left text-sm text-slate-600 dark:text-slate-400">
+            <thead className="sticky top-0 z-10 border-b border-slate-200 bg-slate-50 text-xs font-semibold uppercase text-slate-500 dark:border-white/10 dark:bg-[#121212] dark:text-slate-400">
+              <tr>
+                <th className="px-6 py-4">{t('admin.channel.channelEndpoints.table.channel')}</th>
+                <th className="px-6 py-4">{t('admin.channel.channelEndpoints.table.scope')}</th>
+                <th className="px-6 py-4">{t('admin.channel.channelEndpoints.table.baseUrl')}</th>
+                <th className="px-6 py-4">{t('admin.channel.channelEndpoints.table.routing')}</th>
+                <th className="px-6 py-4">{t('admin.channel.channelEndpoints.table.health')}</th>
+                <th className="px-6 py-4">{t('admin.channel.channelEndpoints.table.status')}</th>
+                <th className="px-6 py-4 text-right">{t('admin.channel.table.actions')}</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-slate-200 dark:divide-white/5">
+              {loading ? (
+                <BusinessStateTableRow colSpan={7} kind="loading" title={t('admin.channel.channelEndpoints.loading')} />
+              ) : loadError ? (
+                <BusinessStateTableRow
+                  colSpan={7}
+                  kind="error"
+                  title={t('admin.channel.channelEndpoints.loadError')}
+                  description={loadError}
+                  onRetry={() => void loadData()}
+                />
+              ) : filteredEndpoints.length === 0 ? (
+                <BusinessStateTableRow
+                  colSpan={7}
+                  kind="empty"
+                  title={t('admin.channel.channelEndpoints.empty')}
+                  description={endpoints.length === 0
+                    ? t('admin.channel.channelEndpoints.emptyDescription')
+                    : t('admin.channel.channelEndpoints.emptySearchDescription')}
+                  action={endpoints.length === 0 ? { label: t('admin.channel.channelEndpoints.actions.add'), onClick: openCreateModal } : undefined}
+                />
+              ) : (
+                filteredEndpoints.map((endpoint) => (
+                  <tr key={endpoint.id} className="transition-colors hover:bg-slate-50 dark:hover:bg-white/5">
+                    <td className="px-6 py-4 align-top">
+                      <div className="space-y-1">
+                        <div className="font-medium text-slate-900 dark:text-white">{endpoint.providerCode}</div>
+                        <div className="font-mono text-xs text-slate-500 dark:text-slate-400">{endpoint.channelCode}</div>
+                        <div className="text-xs text-slate-500 dark:text-slate-400">
+                          {t(`admin.channel.channelType.${endpoint.channelType}`)} / {endpoint.channelId}
+                        </div>
+                      </div>
+                    </td>
+                    <td className="px-6 py-4 align-top">
+                      <div className="space-y-1 font-mono text-xs">
+                        <div>{endpoint.vendorCode}</div>
+                        <div className="text-slate-500 dark:text-slate-400">{endpoint.regionCode}</div>
+                        <div className="text-cyan-700 dark:text-cyan-300">{endpoint.apiEndpointCode}</div>
+                      </div>
+                    </td>
+                    <td className="max-w-md px-6 py-4 align-top">
+                      <div className="truncate font-mono text-xs text-slate-700 dark:text-slate-300" title={endpoint.baseUrl}>
+                        {endpoint.baseUrl}
+                      </div>
+                      {(endpoint.effectiveFrom || endpoint.effectiveTo) && (
+                        <div className="mt-1 text-[11px] text-slate-400">
+                          {displayChannelTime(endpoint.effectiveFrom, '-')}&nbsp;-&nbsp;{displayChannelTime(endpoint.effectiveTo, '-')}
+                        </div>
+                      )}
+                    </td>
+                    <td className="px-6 py-4 align-top font-mono text-xs">
+                      P{endpoint.priority} / W{endpoint.weight}
+                    </td>
+                    <td className="px-6 py-4 align-top text-xs">
+                      {t(`admin.channel.channelEndpoints.health.${endpoint.healthStatus}`)}
+                    </td>
+                    <td className="px-6 py-4 align-top text-xs">
+                      {t(`admin.channel.channelEndpoints.status.${endpoint.status}`)}
+                    </td>
+                    <td className="px-6 py-4 text-right align-top">
+                      <div className="flex items-center justify-end gap-1">
+                        <IconButton
+                          title={t('admin.channel.channelEndpoints.actions.edit')}
+                          onClick={() => openEditModal(endpoint)}
+                          disabled={pendingEndpointId === endpoint.id}
+                        >
+                          <Edit2 className="h-4 w-4" />
+                        </IconButton>
+                        <IconButton
+                          title={endpoint.status === 'active'
+                            ? t('admin.channel.channelEndpoints.actions.disable')
+                            : t('admin.channel.channelEndpoints.actions.enable')}
+                          onClick={() => void handleUpdateEndpointStatus(endpoint)}
+                          disabled={pendingEndpointId === endpoint.id}
+                          tone="warning"
+                        >
+                          {pendingEndpointId === endpoint.id && pendingAction === 'status' ? (
+                            <Loader2 className="h-4 w-4 animate-spin" />
+                          ) : endpoint.status === 'active' ? (
+                            <Ban className="h-4 w-4" />
+                          ) : (
+                            <CheckCircle className="h-4 w-4" />
+                          )}
+                        </IconButton>
+                      </div>
+                    </td>
+                  </tr>
+                ))
+              )}
+            </tbody>
+          </table>
+        </div>
+      </AdminTableShell>
+
+      {modalMode && (
+        <ChannelEndpointFormModal
+          mode={modalMode}
+          endpoint={editingEndpoint}
+          channels={channels}
+          isSaving={saving}
+          onClose={closeModal}
+          onCreateSubmit={handleCreateEndpoint}
+          onUpdateSubmit={handleUpdateEndpoint}
+        />
+      )}
+    </div>
+  );
+}
+
 export function ChannelAdmin() {
   const { t } = useTranslation();
   const [search, setSearch] = useState('');
@@ -981,8 +2474,11 @@ export function ChannelAdmin() {
   const [channels, setChannels] = useState<ChannelItem[]>([]);
   const [providerSecrets, setProviderSecrets] = useState<ProviderSecretItem[]>([]);
   const [modelCatalog, setModelCatalog] = useState<ChannelModelCatalogItem[]>([]);
+  const [aiResources, setAiResources] = useState<AiResource[]>([]);
   const [modelCatalogLoading, setModelCatalogLoading] = useState(true);
   const [modelCatalogError, setModelCatalogError] = useState<string | null>(null);
+  const [aiResourcesLoading, setAiResourcesLoading] = useState(true);
+  const [aiResourcesError, setAiResourcesError] = useState<string | null>(null);
   const pageSize = 8;
 
   const showToast = useCallback((message: string, type: 'success' | 'info' | 'error' = 'success') => {
@@ -1062,9 +2558,33 @@ export function ChannelAdmin() {
     }
   }, [t]);
 
+  const loadAiResources = useCallback(async (isActive: () => boolean = () => true) => {
+    setAiResourcesLoading(true);
+    setAiResourcesError(null);
+    try {
+      const resources = await ChannelAiResourceService.fetchAiResources();
+      if (isActive()) {
+        setAiResources(resources);
+      }
+    } catch (err) {
+      if (isActive()) {
+        setAiResourcesError(getLoadErrorMessage(err, t('admin.channel.aiResources.loadError')));
+      }
+    } finally {
+      if (isActive()) {
+        setAiResourcesLoading(false);
+      }
+    }
+  }, [t]);
+
   const loadData = useCallback(async (isActive: () => boolean = () => true) => {
-    await Promise.all([loadChannels(isActive), loadProviderSecrets(isActive), loadModelCatalog(isActive)]);
-  }, [loadChannels, loadModelCatalog, loadProviderSecrets]);
+    await Promise.all([
+      loadChannels(isActive),
+      loadProviderSecrets(isActive),
+      loadModelCatalog(isActive),
+      loadAiResources(isActive),
+    ]);
+  }, [loadAiResources, loadChannels, loadModelCatalog, loadProviderSecrets]);
 
   useEffect(() => {
     let active = true;
@@ -1393,6 +2913,20 @@ export function ChannelAdmin() {
                           <Key className="w-3.5 h-3.5 shrink-0" />
                           <span className="min-w-0 truncate">{channel.accessType}</span>
                         </span>
+                        <span className="flex items-center gap-1.5 text-xs text-slate-500 min-w-0 whitespace-nowrap">
+                          <Boxes className="w-3.5 h-3.5 shrink-0" />
+                          <span className="min-w-0 truncate">{t(`admin.channel.channelType.${channel.channelType}`)}</span>
+                        </span>
+                        {channel.resourceCodes.length > 0 && (
+                          <span className="flex items-center gap-1.5 text-xs text-slate-500 min-w-0 whitespace-nowrap">
+                            <Layers className="w-3.5 h-3.5 shrink-0" />
+                            <span className="min-w-0 truncate">
+                              {t('admin.channel.aiResources.selectedCount', {
+                                count: channel.resourceCodes.length,
+                              })}
+                            </span>
+                          </span>
+                        )}
                         {channel.circuitBreakerPolicy && (
                           <span className="flex items-center gap-1.5 text-xs text-slate-500 min-w-0 whitespace-nowrap">
                             <Network className="w-3.5 h-3.5 shrink-0" />
@@ -1503,8 +3037,11 @@ export function ChannelAdmin() {
           mode={modalMode}
           initialValues={channelFormDraft}
           availableModels={modelCatalog}
+          aiResources={aiResources}
           modelCatalogLoading={modelCatalogLoading}
           modelCatalogError={modelCatalogError}
+          aiResourcesLoading={aiResourcesLoading}
+          aiResourcesError={aiResourcesError}
           isSaving={saving}
           onClose={closeModal}
           onSubmit={handleSubmitChannel}

@@ -1,5 +1,7 @@
-﻿import unittest
+import unittest
 from pathlib import Path
+
+from tools.schema_registry_loader import render_schema_registry
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -529,9 +531,9 @@ class AppApiKeyRuntimeStandardTest(unittest.TestCase):
         self.assertNotIn("self.key_prefix.clone()", access_domain.split("pub fn display_name(&self)", 1)[1].split("pub fn masked_key(&self)", 1)[0])
 
     def test_app_api_key_creation_persists_idempotency_and_audit_request_id(self) -> None:
-        schema = (
+        schema = render_schema_registry(
             ROOT / "docs" / "schema-registry" / "sdkwork-claw-router.tables.yaml"
-        ).read_text(encoding="utf-8")
+        )
         postgres_schema = (
             ROOT / "generated" / "schema" / "postgres" / "schema.sql"
         ).read_text(encoding="utf-8")

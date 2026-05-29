@@ -69,9 +69,34 @@ fn postgres_model_ranking_refresh_reads_previous_rank_from_same_scope_period_and
         "AND r.snapshot_period = $4",
         "AND r.snapshot_date < $5::date",
         "LEFT JOIN previous_rank p",
-        "ON p.catalog_key = a.catalog_key",
+        "ON p.vendor_code = a.vendor_code",
+        "AND p.region_code = a.region_code",
+        "AND p.catalog_key = a.catalog_key",
     ] {
         assert_sql_contains(POSTGRES_MODEL_RANKING_REFRESH_STORE, expected);
+    }
+}
+
+#[test]
+fn postgres_model_ranking_refresh_uses_canonical_catalog_key_and_model_region_context() {
+    for expected in [
+        "COALESCE(NULLIF(m.region_code, ''), 'global') AS region_code",
+        "m.catalog_key,",
+        "m.region_code,",
+        "ON m.catalog_key = u.catalog_key",
+        "PARTITION BY r.vendor_code, r.region_code, r.catalog_key",
+    ] {
+        assert_sql_contains(POSTGRES_MODEL_RANKING_REFRESH_STORE, expected);
+    }
+
+    for forbidden in [
+        "split_part(u.catalog_key",
+        "substr(u.catalog_key",
+        "length(COALESCE(u.catalog_key",
+        "m.catalog_key = split_part",
+        "m.catalog_key = substr",
+    ] {
+        assert_sql_not_contains(POSTGRES_MODEL_RANKING_REFRESH_STORE, forbidden);
     }
 }
 
@@ -81,7 +106,7 @@ fn postgres_model_ranking_refresh_upserts_one_active_row_per_snapshot_scope_and_
         "UPDATE ai_model_rank_snapshot",
         "SET status = 0",
         "INSERT INTO ai_model_rank_snapshot",
-        "ON CONFLICT (tenant_id, organization_id, snapshot_date, snapshot_period, rank_scope, catalog_key) DO UPDATE SET",
+        "ON CONFLICT (tenant_id, organization_id, snapshot_date, snapshot_period, rank_scope, vendor_code, region_code, catalog_key) DO UPDATE SET",
         "status = excluded.status",
         "rank_payload = excluded.rank_payload",
     ] {

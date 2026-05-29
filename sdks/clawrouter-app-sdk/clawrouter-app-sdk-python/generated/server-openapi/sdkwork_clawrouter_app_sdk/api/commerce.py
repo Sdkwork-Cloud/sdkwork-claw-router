@@ -303,34 +303,31 @@ class CommerceAddressesApi:
         ])
         return self._client.get(_append_query_string(f"/app/v3/api/addresses", query))
 
-    def create(self, body: CommerceStandardCommandRequest, idempotency_key: str, x_request_id: Optional[str] = None) -> AddressesCreateResult:
+    def create(self, body: CommerceStandardCommandRequest, idempotency_key: str) -> AddressesCreateResult:
         """Addresses Create"""
         request_headers = build_request_headers(
             {
                 'Idempotency-Key': {'value': idempotency_key, 'style': 'simple', 'explode': False},
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
             },
             {}
         )
         return self._client.post(f"/app/v3/api/addresses", json=body, headers=request_headers)
 
-    def delete(self, address_id: str, idempotency_key: str, x_request_id: Optional[str] = None) -> AddressesDeleteResult:
+    def delete(self, address_id: str, idempotency_key: str) -> AddressesDeleteResult:
         """Addresses Delete"""
         request_headers = build_request_headers(
             {
                 'Idempotency-Key': {'value': idempotency_key, 'style': 'simple', 'explode': False},
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
             },
             {}
         )
         return self._client.delete(f"/app/v3/api/addresses/{serialize_path_parameter(address_id, {'name': 'addressId', 'style': 'simple', 'explode': False})}", headers=request_headers)
 
-    def update(self, address_id: str, body: CommerceStandardCommandRequest, idempotency_key: str, x_request_id: Optional[str] = None) -> AddressesUpdateResult:
+    def update(self, address_id: str, body: CommerceStandardCommandRequest, idempotency_key: str) -> AddressesUpdateResult:
         """Addresses Update"""
         request_headers = build_request_headers(
             {
                 'Idempotency-Key': {'value': idempotency_key, 'style': 'simple', 'explode': False},
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
             },
             {}
         )
@@ -343,12 +340,11 @@ class CommerceAddressesDefaultSelectionApi:
         self._client = client
 
 
-    def create(self, address_id: str, body: CommerceStandardCommandRequest, idempotency_key: str, x_request_id: Optional[str] = None) -> AddressesDefaultSelectionCreateResult:
+    def create(self, address_id: str, body: CommerceStandardCommandRequest, idempotency_key: str) -> AddressesDefaultSelectionCreateResult:
         """Addresses Default Selection Create"""
         request_headers = build_request_headers(
             {
                 'Idempotency-Key': {'value': idempotency_key, 'style': 'simple', 'explode': False},
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
             },
             {}
         )
@@ -406,34 +402,31 @@ class CommerceCartItemsApi:
         self._client = client
 
 
-    def create(self, body: CommerceStandardCommandRequest, idempotency_key: str, x_request_id: Optional[str] = None) -> CartItemsCreateResult:
+    def create(self, body: CommerceStandardCommandRequest, idempotency_key: str) -> CartItemsCreateResult:
         """Cart Items Create"""
         request_headers = build_request_headers(
             {
                 'Idempotency-Key': {'value': idempotency_key, 'style': 'simple', 'explode': False},
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
             },
             {}
         )
         return self._client.post(f"/app/v3/api/cart/items", json=body, headers=request_headers)
 
-    def delete(self, cart_item_id: str, idempotency_key: str, x_request_id: Optional[str] = None) -> CartItemsDeleteResult:
+    def delete(self, cart_item_id: str, idempotency_key: str) -> CartItemsDeleteResult:
         """Cart Items Delete"""
         request_headers = build_request_headers(
             {
                 'Idempotency-Key': {'value': idempotency_key, 'style': 'simple', 'explode': False},
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
             },
             {}
         )
         return self._client.delete(f"/app/v3/api/cart/items/{serialize_path_parameter(cart_item_id, {'name': 'cartItemId', 'style': 'simple', 'explode': False})}", headers=request_headers)
 
-    def update(self, cart_item_id: str, body: CommerceStandardCommandRequest, idempotency_key: str, x_request_id: Optional[str] = None) -> CartItemsUpdateResult:
+    def update(self, cart_item_id: str, body: CommerceStandardCommandRequest, idempotency_key: str) -> CartItemsUpdateResult:
         """Cart Items Update"""
         request_headers = build_request_headers(
             {
                 'Idempotency-Key': {'value': idempotency_key, 'style': 'simple', 'explode': False},
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
             },
             {}
         )
@@ -518,12 +511,11 @@ class CommerceCheckoutSessionsApi:
         self.quotes = CommerceCheckoutSessionsQuotesApi(client)
 
 
-    def create(self, body: CommerceStandardCommandRequest, idempotency_key: str, x_request_id: Optional[str] = None) -> CheckoutSessionsCreateResult:
+    def create(self, body: CommerceStandardCommandRequest, idempotency_key: str) -> CheckoutSessionsCreateResult:
         """Checkout Sessions Create"""
         request_headers = build_request_headers(
             {
                 'Idempotency-Key': {'value': idempotency_key, 'style': 'simple', 'explode': False},
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
             },
             {}
         )
@@ -540,12 +532,11 @@ class CommerceCheckoutSessionsOrdersApi:
         self._client = client
 
 
-    def create(self, checkout_session_id: str, body: CommerceStandardCommandRequest, idempotency_key: str, x_request_id: Optional[str] = None) -> CheckoutSessionsOrdersCreateResult:
+    def create(self, checkout_session_id: str, body: CommerceStandardCommandRequest, idempotency_key: str) -> CheckoutSessionsOrdersCreateResult:
         """Checkout Sessions Orders Create"""
         request_headers = build_request_headers(
             {
                 'Idempotency-Key': {'value': idempotency_key, 'style': 'simple', 'explode': False},
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
             },
             {}
         )
@@ -558,12 +549,11 @@ class CommerceCheckoutSessionsQuotesApi:
         self._client = client
 
 
-    def create(self, checkout_session_id: str, body: CommerceStandardCommandRequest, idempotency_key: str, x_request_id: Optional[str] = None) -> CheckoutSessionsQuotesCreateResult:
+    def create(self, checkout_session_id: str, body: CommerceStandardCommandRequest, idempotency_key: str) -> CheckoutSessionsQuotesCreateResult:
         """Checkout Sessions Quotes Create"""
         request_headers = build_request_headers(
             {
                 'Idempotency-Key': {'value': idempotency_key, 'style': 'simple', 'explode': False},
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
             },
             {}
         )
@@ -605,12 +595,11 @@ class CommerceInvoicesApi:
         ])
         return self._client.get(_append_query_string(f"/app/v3/api/invoices", query))
 
-    def create(self, body: CommerceStandardCommandRequest, idempotency_key: str, x_request_id: Optional[str] = None) -> InvoicesCreateResult:
+    def create(self, body: CommerceStandardCommandRequest, idempotency_key: str) -> InvoicesCreateResult:
         """Invoices Create"""
         request_headers = build_request_headers(
             {
                 'Idempotency-Key': {'value': idempotency_key, 'style': 'simple', 'explode': False},
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
             },
             {}
         )
@@ -766,15 +755,9 @@ class CommerceMembershipsPointsDailyRewardsApi:
         self.status = CommerceMembershipsPointsDailyRewardsStatusApi(client)
 
 
-    def create(self, body: Optional[MembershipsPointsDailyRewardsCreateRequest] = None, x_request_id: Optional[str] = None) -> MembershipsPointsDailyRewardsCreateResult:
+    def create(self, body: Optional[MembershipsPointsDailyRewardsCreateRequest] = None) -> MembershipsPointsDailyRewardsCreateResult:
         """Memberships Points Daily Rewards Create"""
-        request_headers = build_request_headers(
-            {
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
-            },
-            {}
-        )
-        return self._client.post(f"/app/v3/api/memberships/points/daily_rewards", json=body, headers=request_headers)
+        return self._client.post(f"/app/v3/api/memberships/points/daily_rewards", json=body)
 
 class CommerceMembershipsPointsDailyRewardsStatusApi:
     """commerce commerce.memberships.points.daily_rewards.status API client."""
@@ -819,15 +802,9 @@ class CommerceMembershipsPrivilegesSpeedUpsApi:
         self._client = client
 
 
-    def create(self, body: Optional[MembershipsPrivilegesSpeedUpsCreateRequest] = None, x_request_id: Optional[str] = None) -> MembershipsPrivilegesSpeedUpsCreateResult:
+    def create(self, body: Optional[MembershipsPrivilegesSpeedUpsCreateRequest] = None) -> MembershipsPrivilegesSpeedUpsCreateResult:
         """Memberships Privileges Speed Ups Create"""
-        request_headers = build_request_headers(
-            {
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
-            },
-            {}
-        )
-        return self._client.post(f"/app/v3/api/memberships/privileges/speed_ups", json=body, headers=request_headers)
+        return self._client.post(f"/app/v3/api/memberships/privileges/speed_ups", json=body)
 
 class CommerceMembershipsPrivilegesUsageApi:
     """commerce commerce.memberships.privileges.usage API client."""
@@ -847,34 +824,31 @@ class CommerceMembershipsPurchasesApi:
         self._client = client
 
 
-    def create(self, body: CommerceMembershipPurchaseRequest, idempotency_key: str, x_request_id: Optional[str] = None) -> MembershipsPurchasesCreateResult:
+    def create(self, body: CommerceMembershipPurchaseRequest, idempotency_key: str) -> MembershipsPurchasesCreateResult:
         """Memberships Purchases Create"""
         request_headers = build_request_headers(
             {
                 'Idempotency-Key': {'value': idempotency_key, 'style': 'simple', 'explode': False},
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
             },
             {}
         )
         return self._client.post(f"/app/v3/api/memberships/purchases", json=body, headers=request_headers)
 
-    def renew(self, body: CommerceMembershipPurchaseRequest, idempotency_key: str, x_request_id: Optional[str] = None) -> MembershipsPurchasesRenewResult:
+    def renew(self, body: CommerceMembershipPurchaseRequest, idempotency_key: str) -> MembershipsPurchasesRenewResult:
         """Memberships Purchases Renew"""
         request_headers = build_request_headers(
             {
                 'Idempotency-Key': {'value': idempotency_key, 'style': 'simple', 'explode': False},
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
             },
             {}
         )
         return self._client.post(f"/app/v3/api/memberships/purchases/renew", json=body, headers=request_headers)
 
-    def upgrade(self, body: CommerceMembershipPurchaseRequest, idempotency_key: str, x_request_id: Optional[str] = None) -> MembershipsPurchasesUpgradeResult:
+    def upgrade(self, body: CommerceMembershipPurchaseRequest, idempotency_key: str) -> MembershipsPurchasesUpgradeResult:
         """Memberships Purchases Upgrade"""
         request_headers = build_request_headers(
             {
                 'Idempotency-Key': {'value': idempotency_key, 'style': 'simple', 'explode': False},
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
             },
             {}
         )
@@ -909,12 +883,11 @@ class CommerceOrdersCancellationsApi:
         self._client = client
 
 
-    def create(self, order_id: str, body: CommerceStandardCommandRequest, idempotency_key: str, x_request_id: Optional[str] = None) -> OrdersCancellationsCreateResult:
+    def create(self, order_id: str, body: CommerceStandardCommandRequest, idempotency_key: str) -> OrdersCancellationsCreateResult:
         """Orders Cancellations Create"""
         request_headers = build_request_headers(
             {
                 'Idempotency-Key': {'value': idempotency_key, 'style': 'simple', 'explode': False},
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
             },
             {}
         )
@@ -965,12 +938,11 @@ class CommercePaymentsIntentsApi:
         self.attempts = CommercePaymentsIntentsAttemptsApi(client)
 
 
-    def create(self, body: CommercePaymentIntentCreateRequest, idempotency_key: str, x_request_id: Optional[str] = None) -> PaymentsIntentsCreateResult:
+    def create(self, body: CommercePaymentIntentCreateRequest, idempotency_key: str) -> PaymentsIntentsCreateResult:
         """Payments Intents Create"""
         request_headers = build_request_headers(
             {
                 'Idempotency-Key': {'value': idempotency_key, 'style': 'simple', 'explode': False},
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
             },
             {}
         )
@@ -987,12 +959,11 @@ class CommercePaymentsIntentsAttemptsApi:
         self._client = client
 
 
-    def create(self, payment_intent_id: str, body: CommercePaymentAttemptCreateRequest, idempotency_key: str, x_request_id: Optional[str] = None) -> PaymentsIntentsAttemptsCreateResult:
+    def create(self, payment_intent_id: str, body: CommercePaymentAttemptCreateRequest, idempotency_key: str) -> PaymentsIntentsAttemptsCreateResult:
         """Payments Intents Attempts Create"""
         request_headers = build_request_headers(
             {
                 'Idempotency-Key': {'value': idempotency_key, 'style': 'simple', 'explode': False},
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
             },
             {}
         )
@@ -1030,12 +1001,11 @@ class CommerceRechargesOrdersApi:
         self._client = client
 
 
-    def create(self, body: CommerceStandardCommandRequest, idempotency_key: str, x_request_id: Optional[str] = None) -> RechargesOrdersCreateResult:
+    def create(self, body: CommerceStandardCommandRequest, idempotency_key: str) -> RechargesOrdersCreateResult:
         """Recharges Orders Create"""
         request_headers = build_request_headers(
             {
                 'Idempotency-Key': {'value': idempotency_key, 'style': 'simple', 'explode': False},
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
             },
             {}
         )
@@ -1077,12 +1047,11 @@ class CommerceRefundsApi:
         ])
         return self._client.get(_append_query_string(f"/app/v3/api/refunds", query))
 
-    def create(self, body: CommerceStandardCommandRequest, idempotency_key: str, x_request_id: Optional[str] = None) -> RefundsCreateResult:
+    def create(self, body: CommerceStandardCommandRequest, idempotency_key: str) -> RefundsCreateResult:
         """Refunds Create"""
         request_headers = build_request_headers(
             {
                 'Idempotency-Key': {'value': idempotency_key, 'style': 'simple', 'explode': False},
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
             },
             {}
         )

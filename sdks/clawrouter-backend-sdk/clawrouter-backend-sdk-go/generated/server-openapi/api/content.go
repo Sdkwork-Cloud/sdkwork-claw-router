@@ -28,12 +28,8 @@ func (a *ContentApi) AnnouncementsList() (sdktypes.AnnouncementsListResult, erro
 }
 
 // Create announcement
-func (a *ContentApi) AnnouncementsCreate(body sdktypes.AdminAnnouncementCreateRequest, xRequestId *string) (sdktypes.AnnouncementsCreateResult, error) {
-    headers := BuildRequestHeaders(
-        map[string]ParameterSpec{"X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},},
-        map[string]ParameterSpec{},
-    )
-    raw, err := a.client.Post(BackendApiPath("/content/announcements"), body, nil, headers, "application/json")
+func (a *ContentApi) AnnouncementsCreate(body sdktypes.AdminAnnouncementCreateRequest) (sdktypes.AnnouncementsCreateResult, error) {
+    raw, err := a.client.Post(BackendApiPath("/content/announcements"), body, nil, nil, "application/json")
     if err != nil {
         var zero sdktypes.AnnouncementsCreateResult
         return zero, err
@@ -52,12 +48,8 @@ func (a *ContentApi) AnnouncementsDelete(announcementId string) (sdktypes.Announ
 }
 
 // Update announcement
-func (a *ContentApi) AnnouncementsUpdate(announcementId string, body sdktypes.AdminAnnouncementUpdateRequest, xRequestId *string) (sdktypes.AnnouncementsUpdateResult, error) {
-    headers := BuildRequestHeaders(
-        map[string]ParameterSpec{"X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},},
-        map[string]ParameterSpec{},
-    )
-    raw, err := a.client.Patch(BackendApiPath(fmt.Sprintf("/content/announcements/%s", SerializePathParameter(announcementId, PathParameterSpec{Name: "announcementId", Style: "simple", Explode: false}))), body, nil, headers, "application/json")
+func (a *ContentApi) AnnouncementsUpdate(announcementId string, body sdktypes.AdminAnnouncementUpdateRequest) (sdktypes.AnnouncementsUpdateResult, error) {
+    raw, err := a.client.Patch(BackendApiPath(fmt.Sprintf("/content/announcements/%s", SerializePathParameter(announcementId, PathParameterSpec{Name: "announcementId", Style: "simple", Explode: false}))), body, nil, nil, "application/json")
     if err != nil {
         var zero sdktypes.AnnouncementsUpdateResult
         return zero, err
@@ -82,12 +74,8 @@ func (a *ContentApi) CourseApplicationsList(page *int, pageSize *int, q *string,
 }
 
 // Admin Course Application Review
-func (a *ContentApi) CourseApplicationsReview(applicationId string, body sdktypes.AdminCourseApplicationReviewRequest, xRequestId *string) (sdktypes.CourseApplicationsReviewResult, error) {
-    headers := BuildRequestHeaders(
-        map[string]ParameterSpec{"X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},},
-        map[string]ParameterSpec{},
-    )
-    raw, err := a.client.Patch(BackendApiPath(fmt.Sprintf("/content/course-applications/%s/review", SerializePathParameter(applicationId, PathParameterSpec{Name: "applicationId", Style: "simple", Explode: false}))), body, nil, headers, "application/json")
+func (a *ContentApi) CourseApplicationsReview(applicationId string, body sdktypes.AdminCourseApplicationReviewRequest) (sdktypes.CourseApplicationsReviewResult, error) {
+    raw, err := a.client.Patch(BackendApiPath(fmt.Sprintf("/content/course-applications/%s/review", SerializePathParameter(applicationId, PathParameterSpec{Name: "applicationId", Style: "simple", Explode: false}))), body, nil, nil, "application/json")
     if err != nil {
         var zero sdktypes.CourseApplicationsReviewResult
         return zero, err
@@ -96,12 +84,8 @@ func (a *ContentApi) CourseApplicationsReview(applicationId string, body sdktype
 }
 
 // Admin Course Lesson Delete
-func (a *ContentApi) CourseLessonsDelete(lessonId string, xRequestId *string) (sdktypes.CourseLessonsDeleteResult, error) {
-    headers := BuildRequestHeaders(
-        map[string]ParameterSpec{"X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},},
-        map[string]ParameterSpec{},
-    )
-    raw, err := a.client.Delete(BackendApiPath(fmt.Sprintf("/content/course-lessons/%s", SerializePathParameter(lessonId, PathParameterSpec{Name: "lessonId", Style: "simple", Explode: false}))), nil, headers)
+func (a *ContentApi) CourseLessonsDelete(lessonId string) (sdktypes.CourseLessonsDeleteResult, error) {
+    raw, err := a.client.Delete(BackendApiPath(fmt.Sprintf("/content/course-lessons/%s", SerializePathParameter(lessonId, PathParameterSpec{Name: "lessonId", Style: "simple", Explode: false}))), nil, nil)
     if err != nil {
         var zero sdktypes.CourseLessonsDeleteResult
         return zero, err
@@ -110,12 +94,8 @@ func (a *ContentApi) CourseLessonsDelete(lessonId string, xRequestId *string) (s
 }
 
 // Admin Course Lesson Update
-func (a *ContentApi) CourseLessonsUpdate(lessonId string, body sdktypes.AdminCourseLessonMutationRequest, xRequestId *string) (sdktypes.CourseLessonsUpdateResult, error) {
-    headers := BuildRequestHeaders(
-        map[string]ParameterSpec{"X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},},
-        map[string]ParameterSpec{},
-    )
-    raw, err := a.client.Patch(BackendApiPath(fmt.Sprintf("/content/course-lessons/%s", SerializePathParameter(lessonId, PathParameterSpec{Name: "lessonId", Style: "simple", Explode: false}))), body, nil, headers, "application/json")
+func (a *ContentApi) CourseLessonsUpdate(lessonId string, body sdktypes.AdminCourseLessonMutationRequest) (sdktypes.CourseLessonsUpdateResult, error) {
+    raw, err := a.client.Patch(BackendApiPath(fmt.Sprintf("/content/course-lessons/%s", SerializePathParameter(lessonId, PathParameterSpec{Name: "lessonId", Style: "simple", Explode: false}))), body, nil, nil, "application/json")
     if err != nil {
         var zero sdktypes.CourseLessonsUpdateResult
         return zero, err
@@ -124,12 +104,8 @@ func (a *ContentApi) CourseLessonsUpdate(lessonId string, body sdktypes.AdminCou
 }
 
 // Admin Course Section Delete
-func (a *ContentApi) CourseSectionsDelete(sectionId string, xRequestId *string) (sdktypes.CourseSectionsDeleteResult, error) {
-    headers := BuildRequestHeaders(
-        map[string]ParameterSpec{"X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},},
-        map[string]ParameterSpec{},
-    )
-    raw, err := a.client.Delete(BackendApiPath(fmt.Sprintf("/content/course-sections/%s", SerializePathParameter(sectionId, PathParameterSpec{Name: "sectionId", Style: "simple", Explode: false}))), nil, headers)
+func (a *ContentApi) CourseSectionsDelete(sectionId string) (sdktypes.CourseSectionsDeleteResult, error) {
+    raw, err := a.client.Delete(BackendApiPath(fmt.Sprintf("/content/course-sections/%s", SerializePathParameter(sectionId, PathParameterSpec{Name: "sectionId", Style: "simple", Explode: false}))), nil, nil)
     if err != nil {
         var zero sdktypes.CourseSectionsDeleteResult
         return zero, err
@@ -138,12 +114,8 @@ func (a *ContentApi) CourseSectionsDelete(sectionId string, xRequestId *string) 
 }
 
 // Admin Course Section Update
-func (a *ContentApi) CourseSectionsUpdate(sectionId string, body sdktypes.AdminCourseSectionMutationRequest, xRequestId *string) (sdktypes.CourseSectionsUpdateResult, error) {
-    headers := BuildRequestHeaders(
-        map[string]ParameterSpec{"X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},},
-        map[string]ParameterSpec{},
-    )
-    raw, err := a.client.Patch(BackendApiPath(fmt.Sprintf("/content/course-sections/%s", SerializePathParameter(sectionId, PathParameterSpec{Name: "sectionId", Style: "simple", Explode: false}))), body, nil, headers, "application/json")
+func (a *ContentApi) CourseSectionsUpdate(sectionId string, body sdktypes.AdminCourseSectionMutationRequest) (sdktypes.CourseSectionsUpdateResult, error) {
+    raw, err := a.client.Patch(BackendApiPath(fmt.Sprintf("/content/course-sections/%s", SerializePathParameter(sectionId, PathParameterSpec{Name: "sectionId", Style: "simple", Explode: false}))), body, nil, nil, "application/json")
     if err != nil {
         var zero sdktypes.CourseSectionsUpdateResult
         return zero, err
@@ -168,12 +140,8 @@ func (a *ContentApi) CoursesList(page *int, pageSize *int, q *string, status *st
 }
 
 // Admin Course Create
-func (a *ContentApi) CoursesCreate(body sdktypes.AdminCourseMutationRequest, xRequestId *string) (sdktypes.CoursesCreateResult, error) {
-    headers := BuildRequestHeaders(
-        map[string]ParameterSpec{"X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},},
-        map[string]ParameterSpec{},
-    )
-    raw, err := a.client.Post(BackendApiPath("/content/courses"), body, nil, headers, "application/json")
+func (a *ContentApi) CoursesCreate(body sdktypes.AdminCourseMutationRequest) (sdktypes.CoursesCreateResult, error) {
+    raw, err := a.client.Post(BackendApiPath("/content/courses"), body, nil, nil, "application/json")
     if err != nil {
         var zero sdktypes.CoursesCreateResult
         return zero, err
@@ -198,12 +166,8 @@ func (a *ContentApi) CourseCommentsList(page *int, pageSize *int, q *string, sta
 }
 
 // Admin Course Comment Moderate
-func (a *ContentApi) CourseCommentsModerate(commentId string, body sdktypes.AdminCourseCommentModerationRequest, xRequestId *string) (sdktypes.CourseCommentsModerateResult, error) {
-    headers := BuildRequestHeaders(
-        map[string]ParameterSpec{"X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},},
-        map[string]ParameterSpec{},
-    )
-    raw, err := a.client.Patch(BackendApiPath(fmt.Sprintf("/content/courses/comments/%s/moderation", SerializePathParameter(commentId, PathParameterSpec{Name: "commentId", Style: "simple", Explode: false}))), body, nil, headers, "application/json")
+func (a *ContentApi) CourseCommentsModerate(commentId string, body sdktypes.AdminCourseCommentModerationRequest) (sdktypes.CourseCommentsModerateResult, error) {
+    raw, err := a.client.Patch(BackendApiPath(fmt.Sprintf("/content/courses/comments/%s/moderation", SerializePathParameter(commentId, PathParameterSpec{Name: "commentId", Style: "simple", Explode: false}))), body, nil, nil, "application/json")
     if err != nil {
         var zero sdktypes.CourseCommentsModerateResult
         return zero, err
@@ -238,12 +202,8 @@ func (a *ContentApi) CourseEngagementList(page *int, pageSize *int, q *string, s
 }
 
 // Admin Course Delete
-func (a *ContentApi) CoursesDelete(courseId string, xRequestId *string) (sdktypes.CoursesDeleteResult, error) {
-    headers := BuildRequestHeaders(
-        map[string]ParameterSpec{"X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},},
-        map[string]ParameterSpec{},
-    )
-    raw, err := a.client.Delete(BackendApiPath(fmt.Sprintf("/content/courses/%s", SerializePathParameter(courseId, PathParameterSpec{Name: "courseId", Style: "simple", Explode: false}))), nil, headers)
+func (a *ContentApi) CoursesDelete(courseId string) (sdktypes.CoursesDeleteResult, error) {
+    raw, err := a.client.Delete(BackendApiPath(fmt.Sprintf("/content/courses/%s", SerializePathParameter(courseId, PathParameterSpec{Name: "courseId", Style: "simple", Explode: false}))), nil, nil)
     if err != nil {
         var zero sdktypes.CoursesDeleteResult
         return zero, err
@@ -252,12 +212,8 @@ func (a *ContentApi) CoursesDelete(courseId string, xRequestId *string) (sdktype
 }
 
 // Admin Course Update
-func (a *ContentApi) CoursesUpdate(courseId string, body sdktypes.AdminCourseMutationRequest, xRequestId *string) (sdktypes.CoursesUpdateResult, error) {
-    headers := BuildRequestHeaders(
-        map[string]ParameterSpec{"X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},},
-        map[string]ParameterSpec{},
-    )
-    raw, err := a.client.Patch(BackendApiPath(fmt.Sprintf("/content/courses/%s", SerializePathParameter(courseId, PathParameterSpec{Name: "courseId", Style: "simple", Explode: false}))), body, nil, headers, "application/json")
+func (a *ContentApi) CoursesUpdate(courseId string, body sdktypes.AdminCourseMutationRequest) (sdktypes.CoursesUpdateResult, error) {
+    raw, err := a.client.Patch(BackendApiPath(fmt.Sprintf("/content/courses/%s", SerializePathParameter(courseId, PathParameterSpec{Name: "courseId", Style: "simple", Explode: false}))), body, nil, nil, "application/json")
     if err != nil {
         var zero sdktypes.CoursesUpdateResult
         return zero, err
@@ -282,12 +238,8 @@ func (a *ContentApi) CoursesLessonsList(courseId string, page *int, pageSize *in
 }
 
 // Admin Course Lesson Create
-func (a *ContentApi) CoursesLessonsCreate(courseId string, body sdktypes.AdminCourseLessonMutationRequest, xRequestId *string) (sdktypes.CoursesLessonsCreateResult, error) {
-    headers := BuildRequestHeaders(
-        map[string]ParameterSpec{"X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},},
-        map[string]ParameterSpec{},
-    )
-    raw, err := a.client.Post(BackendApiPath(fmt.Sprintf("/content/courses/%s/lessons", SerializePathParameter(courseId, PathParameterSpec{Name: "courseId", Style: "simple", Explode: false}))), body, nil, headers, "application/json")
+func (a *ContentApi) CoursesLessonsCreate(courseId string, body sdktypes.AdminCourseLessonMutationRequest) (sdktypes.CoursesLessonsCreateResult, error) {
+    raw, err := a.client.Post(BackendApiPath(fmt.Sprintf("/content/courses/%s/lessons", SerializePathParameter(courseId, PathParameterSpec{Name: "courseId", Style: "simple", Explode: false}))), body, nil, nil, "application/json")
     if err != nil {
         var zero sdktypes.CoursesLessonsCreateResult
         return zero, err
@@ -312,12 +264,8 @@ func (a *ContentApi) CoursesRelationsList(courseId string, page *int, pageSize *
 }
 
 // Admin Course Relations Replace
-func (a *ContentApi) CoursesRelationsReplace(courseId string, body sdktypes.AdminCourseRelationsReplaceRequest, xRequestId *string) (sdktypes.CoursesRelationsReplaceResult, error) {
-    headers := BuildRequestHeaders(
-        map[string]ParameterSpec{"X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},},
-        map[string]ParameterSpec{},
-    )
-    raw, err := a.client.Put(BackendApiPath(fmt.Sprintf("/content/courses/%s/relations", SerializePathParameter(courseId, PathParameterSpec{Name: "courseId", Style: "simple", Explode: false}))), body, nil, headers, "application/json")
+func (a *ContentApi) CoursesRelationsReplace(courseId string, body sdktypes.AdminCourseRelationsReplaceRequest) (sdktypes.CoursesRelationsReplaceResult, error) {
+    raw, err := a.client.Put(BackendApiPath(fmt.Sprintf("/content/courses/%s/relations", SerializePathParameter(courseId, PathParameterSpec{Name: "courseId", Style: "simple", Explode: false}))), body, nil, nil, "application/json")
     if err != nil {
         var zero sdktypes.CoursesRelationsReplaceResult
         return zero, err
@@ -342,12 +290,8 @@ func (a *ContentApi) CoursesSectionsList(courseId string, page *int, pageSize *i
 }
 
 // Admin Course Section Create
-func (a *ContentApi) CoursesSectionsCreate(courseId string, body sdktypes.AdminCourseSectionMutationRequest, xRequestId *string) (sdktypes.CoursesSectionsCreateResult, error) {
-    headers := BuildRequestHeaders(
-        map[string]ParameterSpec{"X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},},
-        map[string]ParameterSpec{},
-    )
-    raw, err := a.client.Post(BackendApiPath(fmt.Sprintf("/content/courses/%s/sections", SerializePathParameter(courseId, PathParameterSpec{Name: "courseId", Style: "simple", Explode: false}))), body, nil, headers, "application/json")
+func (a *ContentApi) CoursesSectionsCreate(courseId string, body sdktypes.AdminCourseSectionMutationRequest) (sdktypes.CoursesSectionsCreateResult, error) {
+    raw, err := a.client.Post(BackendApiPath(fmt.Sprintf("/content/courses/%s/sections", SerializePathParameter(courseId, PathParameterSpec{Name: "courseId", Style: "simple", Explode: false}))), body, nil, nil, "application/json")
     if err != nil {
         var zero sdktypes.CoursesSectionsCreateResult
         return zero, err
@@ -581,92 +525,7 @@ func EncodeQueryValue(value string, allowReserved bool) string {
 }
 
 
-type ParameterSpec struct {
-    Value       interface{}
-    Style       string
-    Explode     bool
-    ContentType string
-}
 
-func BuildRequestHeaders(headers map[string]ParameterSpec, cookies map[string]ParameterSpec) map[string]string {
-    requestHeaders := map[string]string{}
-    for name, parameter := range headers {
-        if serialized, ok := SerializeParameterValue(parameter); ok {
-            requestHeaders[name] = serialized
-        }
-    }
-
-    if cookieHeader := BuildCookieHeader(cookies); cookieHeader != "" {
-        if existing, ok := requestHeaders["Cookie"]; ok && existing != "" {
-            requestHeaders["Cookie"] = existing + "; " + cookieHeader
-        } else {
-            requestHeaders["Cookie"] = cookieHeader
-        }
-    }
-
-    if len(requestHeaders) == 0 {
-        return nil
-    }
-    return requestHeaders
-}
-
-func BuildCookieHeader(cookies map[string]ParameterSpec) string {
-    pairs := make([]string, 0, len(cookies))
-    for name, parameter := range cookies {
-        if serialized, ok := SerializeParameterValue(parameter); ok {
-            pairs = append(pairs, url.QueryEscape(name)+"="+url.QueryEscape(serialized))
-        }
-    }
-    return strings.Join(pairs, "; ")
-}
-
-func SerializeParameterValue(parameter ParameterSpec) (string, bool) {
-    value := parameter.Value
-    if value == nil {
-        return "", false
-    }
-    if parameter.ContentType != "" {
-        encoded, _ := json.Marshal(value)
-        return string(encoded), true
-    }
-    switch typed := value.(type) {
-    case string:
-        return typed, true
-    case fmt.Stringer:
-        return typed.String(), true
-    case []string:
-        return strings.Join(typed, ","), true
-    case []int:
-        values := make([]string, 0, len(typed))
-        for _, item := range typed {
-            values = append(values, fmt.Sprint(item))
-        }
-        return strings.Join(values, ","), true
-    case map[string]string:
-        return SerializeHeaderObject(stringMapToInterface(typed), parameter.Explode), true
-    case map[string]int:
-        return SerializeHeaderObject(intMapToInterface(typed), parameter.Explode), true
-    case map[string]interface{}:
-        return SerializeHeaderObject(typed, parameter.Explode), true
-    default:
-        return fmt.Sprint(value), true
-    }
-}
-
-func SerializeHeaderObject(values map[string]interface{}, explode bool) string {
-    serialized := make([]string, 0, len(values)*2)
-    for key, value := range values {
-        if value == nil {
-            continue
-        }
-        if explode {
-            serialized = append(serialized, key+"="+fmt.Sprint(value))
-        } else {
-            serialized = append(serialized, key, fmt.Sprint(value))
-        }
-    }
-    return strings.Join(serialized, ",")
-}
 func stringSliceToInterface(values []string) []interface{} {
     result := make([]interface{}, 0, len(values))
     for _, value := range values {

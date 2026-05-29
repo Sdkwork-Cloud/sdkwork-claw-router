@@ -1,4 +1,4 @@
-﻿use sqlx::{PgPool, Row};
+use sqlx::{PgPool, Row};
 
 use crate::domain::{DomainError, DomainResult};
 use crate::ports::{

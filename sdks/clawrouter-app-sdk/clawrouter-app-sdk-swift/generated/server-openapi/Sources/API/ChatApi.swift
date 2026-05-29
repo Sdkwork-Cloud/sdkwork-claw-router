@@ -17,11 +17,10 @@ public class ChatApi {
     }
 
     /// Create product chat conversation
-    public func conversationsCreate(body: ChatConversationCreateRequest, idempotencyKey: String, xRequestId: String? = nil) async throws -> ConversationsCreateResult? {
+    public func conversationsCreate(body: ChatConversationCreateRequest, idempotencyKey: String) async throws -> ConversationsCreateResult? {
         let requestHeaders = buildRequestHeaders(
             [
                 "Idempotency-Key": HeaderParameterSpec(value: idempotencyKey, style: "simple", explode: false, contentType: nil),
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
             ],
             [:]
         )
@@ -43,11 +42,10 @@ public class ChatApi {
     }
 
     /// Create product chat turn
-    public func turnsCreate(conversationId: String, body: ChatTurnCreateRequest, idempotencyKey: String, xRequestId: String? = nil) async throws -> TurnsCreateResult? {
+    public func turnsCreate(conversationId: String, body: ChatTurnCreateRequest, idempotencyKey: String) async throws -> TurnsCreateResult? {
         let requestHeaders = buildRequestHeaders(
             [
                 "Idempotency-Key": HeaderParameterSpec(value: idempotencyKey, style: "simple", explode: false, contentType: nil),
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
             ],
             [:]
         )
@@ -55,11 +53,10 @@ public class ChatApi {
     }
 
     /// Complete product chat turn response
-    public func turnResponsesCreate(conversationId: String, turnId: String, body: ChatTurnResponseRequest, idempotencyKey: String, xRequestId: String? = nil) async throws -> TurnResponsesCreateResult? {
+    public func turnResponsesCreate(conversationId: String, turnId: String, body: ChatTurnResponseRequest, idempotencyKey: String) async throws -> TurnResponsesCreateResult? {
         let requestHeaders = buildRequestHeaders(
             [
                 "Idempotency-Key": HeaderParameterSpec(value: idempotencyKey, style: "simple", explode: false, contentType: nil),
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
             ],
             [:]
         )

@@ -26,11 +26,10 @@ class StorageApi {
   }
 
   /// Create storage bucket
-  Future<OssBucketsCreateResult?> ossBucketsCreate(CreateStorageBucketRequest body, String idempotencyKey, [String? xRequestId]) async {
+  Future<OssBucketsCreateResult?> ossBucketsCreate(CreateStorageBucketRequest body, String idempotencyKey) async {
     final requestHeaders = buildRequestHeaders(
       <String, HeaderParameterSpec>{
         'Idempotency-Key': HeaderParameterSpec(idempotencyKey, 'simple', false, null),
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
       },
       <String, HeaderParameterSpec>{},
     );
@@ -43,15 +42,9 @@ class StorageApi {
   }
 
   /// Update storage bucket status
-  Future<OssBucketsUpdateResult?> ossBucketsUpdate(String bucketId, UpdateStorageBucketRequest body, [String? xRequestId]) async {
-    final requestHeaders = buildRequestHeaders(
-      <String, HeaderParameterSpec>{
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
-      },
-      <String, HeaderParameterSpec>{},
-    );
+  Future<OssBucketsUpdateResult?> ossBucketsUpdate(String bucketId, UpdateStorageBucketRequest body) async {
     final payload = body.toJson();
-    final response = await _client.patch(ApiPaths.backendPath('/storage/buckets/${serializePathParameter(bucketId, const PathParameterSpec('bucketId', 'simple', false))}'), body: payload, headers: requestHeaders, contentType: 'application/json');
+    final response = await _client.patch(ApiPaths.backendPath('/storage/buckets/${serializePathParameter(bucketId, const PathParameterSpec('bucketId', 'simple', false))}'), body: payload, contentType: 'application/json');
     return (() {
       final map = sdkworkResponseAsMap(response);
       return map == null ? null : OssBucketsUpdateResult.fromJson(map);
@@ -71,15 +64,9 @@ class StorageApi {
   }
 
   /// Set default storage bucket route
-  Future<OssDefaultBucketsUpdateResult?> ossDefaultBucketsUpdate(String logicalScope, SetStorageDefaultBucketRequest body, [String? xRequestId]) async {
-    final requestHeaders = buildRequestHeaders(
-      <String, HeaderParameterSpec>{
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
-      },
-      <String, HeaderParameterSpec>{},
-    );
+  Future<OssDefaultBucketsUpdateResult?> ossDefaultBucketsUpdate(String logicalScope, SetStorageDefaultBucketRequest body) async {
     final payload = body.toJson();
-    final response = await _client.patch(ApiPaths.backendPath('/storage/default_buckets/${serializePathParameter(logicalScope, const PathParameterSpec('logicalScope', 'simple', false))}'), body: payload, headers: requestHeaders, contentType: 'application/json');
+    final response = await _client.patch(ApiPaths.backendPath('/storage/default_buckets/${serializePathParameter(logicalScope, const PathParameterSpec('logicalScope', 'simple', false))}'), body: payload, contentType: 'application/json');
     return (() {
       final map = sdkworkResponseAsMap(response);
       return map == null ? null : OssDefaultBucketsUpdateResult.fromJson(map);
@@ -101,11 +88,10 @@ class StorageApi {
   }
 
   /// Create storage garbage collection job
-  Future<OssGcJobsCreateResult?> ossGcJobsCreate(CreateStorageGarbageCollectionJobRequest body, String idempotencyKey, [String? xRequestId]) async {
+  Future<OssGcJobsCreateResult?> ossGcJobsCreate(CreateStorageGarbageCollectionJobRequest body, String idempotencyKey) async {
     final requestHeaders = buildRequestHeaders(
       <String, HeaderParameterSpec>{
         'Idempotency-Key': HeaderParameterSpec(idempotencyKey, 'simple', false, null),
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
       },
       <String, HeaderParameterSpec>{},
     );
@@ -127,11 +113,10 @@ class StorageApi {
   }
 
   /// Create storage provider
-  Future<OssProvidersCreateResult?> ossProvidersCreate(CreateStorageProviderRequest body, String idempotencyKey, [String? xRequestId]) async {
+  Future<OssProvidersCreateResult?> ossProvidersCreate(CreateStorageProviderRequest body, String idempotencyKey) async {
     final requestHeaders = buildRequestHeaders(
       <String, HeaderParameterSpec>{
         'Idempotency-Key': HeaderParameterSpec(idempotencyKey, 'simple', false, null),
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
       },
       <String, HeaderParameterSpec>{},
     );
@@ -144,15 +129,9 @@ class StorageApi {
   }
 
   /// Update storage provider status
-  Future<OssProvidersUpdateResult?> ossProvidersUpdate(String providerId, UpdateStorageProviderRequest body, [String? xRequestId]) async {
-    final requestHeaders = buildRequestHeaders(
-      <String, HeaderParameterSpec>{
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
-      },
-      <String, HeaderParameterSpec>{},
-    );
+  Future<OssProvidersUpdateResult?> ossProvidersUpdate(String providerId, UpdateStorageProviderRequest body) async {
     final payload = body.toJson();
-    final response = await _client.patch(ApiPaths.backendPath('/storage/providers/${serializePathParameter(providerId, const PathParameterSpec('providerId', 'simple', false))}'), body: payload, headers: requestHeaders, contentType: 'application/json');
+    final response = await _client.patch(ApiPaths.backendPath('/storage/providers/${serializePathParameter(providerId, const PathParameterSpec('providerId', 'simple', false))}'), body: payload, contentType: 'application/json');
     return (() {
       final map = sdkworkResponseAsMap(response);
       return map == null ? null : OssProvidersUpdateResult.fromJson(map);
@@ -160,14 +139,8 @@ class StorageApi {
   }
 
   /// Check storage provider health
-  Future<OssProvidersHealthChecksCreateResult?> ossProvidersHealthChecksCreate(String providerId, [String? xRequestId]) async {
-    final requestHeaders = buildRequestHeaders(
-      <String, HeaderParameterSpec>{
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
-      },
-      <String, HeaderParameterSpec>{},
-    );
-    final response = await _client.post(ApiPaths.backendPath('/storage/providers/${serializePathParameter(providerId, const PathParameterSpec('providerId', 'simple', false))}/health_check'), headers: requestHeaders);
+  Future<OssProvidersHealthChecksCreateResult?> ossProvidersHealthChecksCreate(String providerId) async {
+    final response = await _client.post(ApiPaths.backendPath('/storage/providers/${serializePathParameter(providerId, const PathParameterSpec('providerId', 'simple', false))}/health_check'));
     return (() {
       final map = sdkworkResponseAsMap(response);
       return map == null ? null : OssProvidersHealthChecksCreateResult.fromJson(map);
@@ -184,11 +157,10 @@ class StorageApi {
   }
 
   /// Create storage quota policy
-  Future<OssQuotasCreateResult?> ossQuotasCreate(CreateStorageQuotaPolicyRequest body, String idempotencyKey, [String? xRequestId]) async {
+  Future<OssQuotasCreateResult?> ossQuotasCreate(CreateStorageQuotaPolicyRequest body, String idempotencyKey) async {
     final requestHeaders = buildRequestHeaders(
       <String, HeaderParameterSpec>{
         'Idempotency-Key': HeaderParameterSpec(idempotencyKey, 'simple', false, null),
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
       },
       <String, HeaderParameterSpec>{},
     );
@@ -216,11 +188,10 @@ class StorageApi {
   }
 
   /// Create storage reconciliation run
-  Future<OssReconciliationRunsCreateResult?> ossReconciliationRunsCreate(CreateStorageReconciliationRunRequest body, String idempotencyKey, [String? xRequestId]) async {
+  Future<OssReconciliationRunsCreateResult?> ossReconciliationRunsCreate(CreateStorageReconciliationRunRequest body, String idempotencyKey) async {
     final requestHeaders = buildRequestHeaders(
       <String, HeaderParameterSpec>{
         'Idempotency-Key': HeaderParameterSpec(idempotencyKey, 'simple', false, null),
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
       },
       <String, HeaderParameterSpec>{},
     );

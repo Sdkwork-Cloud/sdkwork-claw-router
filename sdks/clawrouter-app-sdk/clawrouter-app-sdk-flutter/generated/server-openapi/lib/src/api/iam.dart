@@ -30,11 +30,10 @@ class IamApi {
   }
 
   /// Create key
-  Future<ApiKeysCreateResult?> apiKeysCreate(CreateApiKeyRequest body, String idempotencyKey, [String? xRequestId]) async {
+  Future<ApiKeysCreateResult?> apiKeysCreate(CreateApiKeyRequest body, String idempotencyKey) async {
     final requestHeaders = buildRequestHeaders(
       <String, HeaderParameterSpec>{
         'Idempotency-Key': HeaderParameterSpec(idempotencyKey, 'simple', false, null),
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
       },
       <String, HeaderParameterSpec>{},
     );
@@ -56,15 +55,9 @@ class IamApi {
   }
 
   /// Update key
-  Future<ApiKeysUpdateResult?> apiKeysUpdate(String apiKeyId, UpdateApiKeyRequest body, [String? xRequestId]) async {
-    final requestHeaders = buildRequestHeaders(
-      <String, HeaderParameterSpec>{
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
-      },
-      <String, HeaderParameterSpec>{},
-    );
+  Future<ApiKeysUpdateResult?> apiKeysUpdate(String apiKeyId, UpdateApiKeyRequest body) async {
     final payload = body.toJson();
-    final response = await _client.patch(ApiPaths.appPath('/iam/api_keys/${serializePathParameter(apiKeyId, const PathParameterSpec('apiKeyId', 'simple', false))}'), body: payload, headers: requestHeaders, contentType: 'application/json');
+    final response = await _client.patch(ApiPaths.appPath('/iam/api_keys/${serializePathParameter(apiKeyId, const PathParameterSpec('apiKeyId', 'simple', false))}'), body: payload, contentType: 'application/json');
     return (() {
       final map = sdkworkResponseAsMap(response);
       return map == null ? null : ApiKeysUpdateResult.fromJson(map);

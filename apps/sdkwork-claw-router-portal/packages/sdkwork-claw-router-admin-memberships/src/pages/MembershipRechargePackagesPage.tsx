@@ -80,8 +80,6 @@ export function MembershipRechargePackagesPage() {
         isLoading={isLoading}
         error={error}
         onRefresh={loadPackages}
-        title={t('admin.commerce.memberships.rechargePackages.title', 'Recharge Packages')}
-        description={t('admin.commerce.memberships.rechargePackages.desc', 'Manage wallet recharge packages and bonus balances.')}
         actions={(
           <button type="button" onClick={openCreateDrawer} className="inline-flex items-center gap-1 rounded-md bg-lobster-600 px-3 py-1.5 text-xs font-medium text-white hover:bg-lobster-700">
             <Plus className="h-3.5 w-3.5" />

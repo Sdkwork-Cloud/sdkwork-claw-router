@@ -3,14 +3,6 @@ use serde::{Deserialize, Serialize};
 /// Ai usage fact record schema exposed by Claw Router.
 #[derive(Serialize, Deserialize, Debug, Clone, Default)]
 pub struct AiUsageFactRecord {
-    /// Api key group id field on ai usage fact record.
-    #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub api_key_group_id: Option<String>,
-
-    /// Api key group snapshot field on ai usage fact record.
-    #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub api_key_group_snapshot: Option<String>,
-
     /// Api key id field on ai usage fact record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub api_key_id: Option<String>,
@@ -73,6 +65,14 @@ pub struct AiUsageFactRecord {
 
     /// Catalog key field on ai usage fact record.
     pub catalog_key: String,
+
+    /// Channel group id field on ai usage fact record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub channel_group_id: Option<String>,
+
+    /// Channel group snapshot field on ai usage fact record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub channel_group_snapshot: Option<String>,
 
     /// Channel id field on ai usage fact record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
@@ -193,10 +193,6 @@ pub struct AiUsageFactRecord {
     /// Prompt tokens field on ai usage fact record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub prompt_tokens: Option<String>,
-
-    /// Provider account id field on ai usage fact record.
-    #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub provider_account_id: Option<String>,
 
     /// Provider id field on ai usage fact record.
     #[serde(default, skip_serializing_if = "Option::is_none")]

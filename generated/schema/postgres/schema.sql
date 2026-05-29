@@ -635,7 +635,7 @@ CREATE TABLE IF NOT EXISTS iam_gateway_api_key (
     deleted_by BIGINT,
     metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
     legacy_api_key_id BIGINT,
-    group_id BIGINT,
+    channel_group_id BIGINT,
     name VARCHAR(128),
     key_prefix VARCHAR(32),
     key_display_masked VARCHAR(64),
@@ -662,9 +662,9 @@ CREATE UNIQUE INDEX IF NOT EXISTS uk_iam_gateway_api_key_hash ON iam_gateway_api
 CREATE UNIQUE INDEX IF NOT EXISTS uk_iam_gateway_api_key_legacy ON iam_gateway_api_key (legacy_api_key_id);
 CREATE UNIQUE INDEX IF NOT EXISTS uk_iam_gateway_api_key_idempotency ON iam_gateway_api_key (tenant_id, idempotency_key);
 CREATE INDEX IF NOT EXISTS idx_iam_gateway_api_key_tenant_user_status ON iam_gateway_api_key (tenant_id, organization_id, user_id, status, updated_at, id);
-CREATE INDEX IF NOT EXISTS idx_iam_gateway_api_key_group_status ON iam_gateway_api_key (tenant_id, organization_id, group_id, status, updated_at, id);
+CREATE INDEX IF NOT EXISTS idx_iam_gateway_api_key_ai_channel_group_status ON iam_gateway_api_key (tenant_id, organization_id, channel_group_id, status, updated_at, id);
 
-CREATE TABLE IF NOT EXISTS iam_gateway_api_key_group (
+CREATE TABLE IF NOT EXISTS ai_channel_group (
     id BIGSERIAL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
@@ -677,13 +677,14 @@ CREATE TABLE IF NOT EXISTS iam_gateway_api_key_group (
     deleted_at TIMESTAMPTZ,
     deleted_by BIGINT,
     metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
-    name VARCHAR(128),
-    code VARCHAR(64),
+    group_code VARCHAR(64) NOT NULL,
+    group_name VARCHAR(128) NOT NULL,
     description VARCHAR(512),
     provider_code VARCHAR(64),
-    group_type INTEGER,
-    default_policy_id BIGINT,
-    default_quota_policy_id BIGINT,
+    group_type VARCHAR(32),
+    routing_policy_id BIGINT,
+    quota_policy_id BIGINT,
+    rate_limit_policy_id BIGINT,
     environment INTEGER,
     pricing_plan_id BIGINT,
     pricing_plan_code VARCHAR(64),
@@ -695,12 +696,13 @@ CREATE TABLE IF NOT EXISTS iam_gateway_api_key_group (
     allowed_origin JSONB
 );
 
-CREATE UNIQUE INDEX IF NOT EXISTS uk_iam_gateway_api_key_group_tenant_code ON iam_gateway_api_key_group (tenant_id, organization_id, code);
-CREATE INDEX IF NOT EXISTS idx_iam_gateway_api_key_group_provider_status ON iam_gateway_api_key_group (tenant_id, organization_id, provider_code, status, updated_at, id);
-CREATE INDEX IF NOT EXISTS idx_iam_gateway_api_key_group_tenant_status_updated ON iam_gateway_api_key_group (tenant_id, organization_id, status, updated_at, id);
-CREATE INDEX IF NOT EXISTS idx_iam_gateway_api_key_group_pricing ON iam_gateway_api_key_group (tenant_id, organization_id, pricing_plan_id, status, updated_at, id);
+CREATE UNIQUE INDEX IF NOT EXISTS uk_ai_channel_group_uuid ON ai_channel_group (uuid);
+CREATE UNIQUE INDEX IF NOT EXISTS uk_ai_channel_group_tenant_code ON ai_channel_group (tenant_id, organization_id, group_code);
+CREATE INDEX IF NOT EXISTS idx_ai_channel_group_provider_status ON ai_channel_group (tenant_id, organization_id, provider_code, status, updated_at, id);
+CREATE INDEX IF NOT EXISTS idx_ai_channel_group_tenant_status_updated ON ai_channel_group (tenant_id, organization_id, status, updated_at, id);
+CREATE INDEX IF NOT EXISTS idx_ai_channel_group_pricing ON ai_channel_group (tenant_id, organization_id, pricing_plan_id, status, updated_at, id);
 
-CREATE TABLE IF NOT EXISTS iam_api_key_group_channel (
+CREATE TABLE IF NOT EXISTS ai_channel_group_member (
     id BIGSERIAL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
@@ -713,21 +715,51 @@ CREATE TABLE IF NOT EXISTS iam_api_key_group_channel (
     deleted_at TIMESTAMPTZ,
     deleted_by BIGINT,
     metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
-    group_id BIGINT NOT NULL,
+    channel_group_id BIGINT NOT NULL,
     channel_id BIGINT NOT NULL,
-    priority INTEGER,
-    weight INTEGER,
-    model_scope JSONB,
-    capabilities JSONB,
+    priority INTEGER NOT NULL DEFAULT 100,
+    weight INTEGER NOT NULL DEFAULT 100,
+    enabled BOOLEAN NOT NULL DEFAULT TRUE,
     effective_from TIMESTAMPTZ,
     effective_to TIMESTAMPTZ
 );
 
-CREATE UNIQUE INDEX IF NOT EXISTS uk_iam_api_key_group_channel ON iam_api_key_group_channel (tenant_id, organization_id, group_id, channel_id);
-CREATE INDEX IF NOT EXISTS idx_iam_api_key_group_channel_group ON iam_api_key_group_channel (tenant_id, organization_id, group_id, status, priority, weight, id);
-CREATE INDEX IF NOT EXISTS idx_iam_api_key_group_channel_channel ON iam_api_key_group_channel (tenant_id, organization_id, channel_id, status, id);
+CREATE UNIQUE INDEX IF NOT EXISTS uk_ai_channel_group_member_uuid ON ai_channel_group_member (uuid);
+CREATE INDEX IF NOT EXISTS idx_ai_channel_group_member_status ON ai_channel_group_member (tenant_id, organization_id, status, channel_group_id, priority, id);
+CREATE UNIQUE INDEX IF NOT EXISTS uk_ai_channel_group_member ON ai_channel_group_member (tenant_id, organization_id, channel_group_id, channel_id);
+CREATE INDEX IF NOT EXISTS idx_ai_channel_group_member_group ON ai_channel_group_member (tenant_id, organization_id, channel_group_id, status, priority, weight, id);
+CREATE INDEX IF NOT EXISTS idx_ai_channel_group_member_channel ON ai_channel_group_member (tenant_id, organization_id, channel_id, status, id);
 
-CREATE TABLE IF NOT EXISTS iam_gateway_api_key_group_metric_snapshot (
+CREATE TABLE IF NOT EXISTS ai_channel_group_resource (
+    id BIGSERIAL PRIMARY KEY,
+    uuid VARCHAR(64) NOT NULL,
+    tenant_id BIGINT NOT NULL DEFAULT 0,
+    organization_id BIGINT NOT NULL DEFAULT 0,
+    data_scope INTEGER NOT NULL DEFAULT 0,
+    status INTEGER NOT NULL DEFAULT 1,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    version BIGINT NOT NULL DEFAULT 0,
+    deleted_at TIMESTAMPTZ,
+    deleted_by BIGINT,
+    metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
+    channel_group_id BIGINT NOT NULL,
+    resource_id BIGINT,
+    resource_code VARCHAR(192),
+    resource_group_id BIGINT,
+    resource_group_code VARCHAR(128),
+    grant_type VARCHAR(32) NOT NULL DEFAULT 'allow',
+    priority INTEGER NOT NULL DEFAULT 100,
+    effective_from TIMESTAMPTZ,
+    effective_to TIMESTAMPTZ
+);
+
+CREATE UNIQUE INDEX IF NOT EXISTS uk_ai_channel_group_resource_uuid ON ai_channel_group_resource (uuid);
+CREATE INDEX IF NOT EXISTS idx_ai_channel_group_resource_status ON ai_channel_group_resource (tenant_id, organization_id, status, channel_group_id, grant_type, priority, id);
+CREATE UNIQUE INDEX IF NOT EXISTS uk_ai_channel_group_resource ON ai_channel_group_resource (tenant_id, organization_id, channel_group_id, resource_code, resource_group_code);
+CREATE INDEX IF NOT EXISTS idx_ai_channel_group_resource_lookup ON ai_channel_group_resource (tenant_id, organization_id, channel_group_id, status, grant_type, priority, id);
+
+CREATE TABLE IF NOT EXISTS ai_channel_group_metric_snapshot (
     id BIGSERIAL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
@@ -740,11 +772,11 @@ CREATE TABLE IF NOT EXISTS iam_gateway_api_key_group_metric_snapshot (
     updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
     rebuild_version BIGINT NOT NULL DEFAULT 0,
     metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
-    group_id BIGINT,
+    channel_group_id BIGINT,
     group_code VARCHAR(64),
     provider_code VARCHAR(64),
-    account_available_count BIGINT,
-    account_total_count BIGINT,
+    channel_available_count BIGINT,
+    channel_total_count BIGINT,
     capacity_used NUMERIC(38, 12),
     capacity_limit NUMERIC(38, 12),
     request_count_today BIGINT,
@@ -755,8 +787,10 @@ CREATE TABLE IF NOT EXISTS iam_gateway_api_key_group_metric_snapshot (
     snapshot_at TIMESTAMPTZ
 );
 
-CREATE UNIQUE INDEX IF NOT EXISTS uk_iam_gateway_api_key_group_metric_snapshot ON iam_gateway_api_key_group_metric_snapshot (tenant_id, organization_id, group_id, snapshot_at);
-CREATE INDEX IF NOT EXISTS idx_iam_gateway_api_key_group_metric_status ON iam_gateway_api_key_group_metric_snapshot (tenant_id, organization_id, provider_code, health_status, snapshot_at, id);
+CREATE UNIQUE INDEX IF NOT EXISTS uk_ai_channel_group_metric_snapshot_uuid ON ai_channel_group_metric_snapshot (uuid);
+CREATE INDEX IF NOT EXISTS idx_ai_channel_group_metric_tenant_status ON ai_channel_group_metric_snapshot (tenant_id, organization_id, status, snapshot_at, id);
+CREATE UNIQUE INDEX IF NOT EXISTS uk_ai_channel_group_metric_snapshot ON ai_channel_group_metric_snapshot (tenant_id, organization_id, channel_group_id, snapshot_at);
+CREATE INDEX IF NOT EXISTS idx_ai_channel_group_metric_status ON ai_channel_group_metric_snapshot (tenant_id, organization_id, provider_code, health_status, snapshot_at, id);
 
 CREATE TABLE IF NOT EXISTS iam_gateway_access_policy (
     id BIGSERIAL PRIMARY KEY,
@@ -1024,7 +1058,7 @@ CREATE TABLE IF NOT EXISTS iam_verification_attempt (
 CREATE INDEX IF NOT EXISTS idx_iam_verification_attempt_challenge ON iam_verification_attempt (tenant_id, organization_id, challenge_id, occurred_at);
 CREATE INDEX IF NOT EXISTS idx_iam_verification_attempt_target ON iam_verification_attempt (tenant_id, organization_id, target_type, target_hash, occurred_at);
 
-CREATE TABLE IF NOT EXISTS integration_provider (
+CREATE TABLE IF NOT EXISTS ai_provider (
     id BIGSERIAL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
@@ -1037,29 +1071,28 @@ CREATE TABLE IF NOT EXISTS integration_provider (
     deleted_at TIMESTAMPTZ,
     deleted_by BIGINT,
     metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
-    provider_code VARCHAR(64),
-    display_name VARCHAR(128),
+    provider_code VARCHAR(64) NOT NULL,
+    display_name VARCHAR(128) NOT NULL,
     description VARCHAR(512),
     icon_url VARCHAR(512),
     color_token VARCHAR(64),
     docs_url VARCHAR(512),
     website_url VARCHAR(512),
     default_vendor_code VARCHAR(64),
-    integration_type INTEGER,
-    upstream_vendor_code VARCHAR(64),
-    upstream_provider_code VARCHAR(64),
-    protocol INTEGER,
+    provider_type VARCHAR(32),
+    protocol_code VARCHAR(64),
     base_url VARCHAR(512),
     auth_type INTEGER,
-    capabilities JSONB,
+    resource_schema JSONB,
     metadata_schema_version VARCHAR(32),
     sort_order INTEGER
 );
 
-CREATE UNIQUE INDEX IF NOT EXISTS uk_integration_provider_code ON integration_provider (provider_code);
-CREATE INDEX IF NOT EXISTS idx_integration_provider_status_updated ON integration_provider (status, updated_at, id);
+CREATE UNIQUE INDEX IF NOT EXISTS uk_ai_provider_uuid ON ai_provider (uuid);
+CREATE UNIQUE INDEX IF NOT EXISTS uk_ai_provider_tenant_code ON ai_provider (tenant_id, organization_id, provider_code);
+CREATE INDEX IF NOT EXISTS idx_ai_provider_status_sort ON ai_provider (tenant_id, organization_id, status, sort_order, id);
 
-CREATE TABLE IF NOT EXISTS integration_channel (
+CREATE TABLE IF NOT EXISTS ai_channel (
     id BIGSERIAL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
@@ -1074,58 +1107,22 @@ CREATE TABLE IF NOT EXISTS integration_channel (
     metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
     provider_id BIGINT,
     provider_code VARCHAR(64),
-    channel_code VARCHAR(64),
-    name VARCHAR(128),
-    protocol INTEGER,
-    access_type INTEGER,
-    base_url VARCHAR(512),
-    model_mode INTEGER,
-    environment INTEGER,
-    region VARCHAR(64),
-    capabilities JSONB,
-    priority INTEGER,
-    weight INTEGER,
-    account_id BIGINT,
-    proxy_id BIGINT,
-    rpm_limit BIGINT,
-    timeout_ms INTEGER,
-    retry_policy JSONB,
-    circuit_breaker_policy JSONB,
-    health_status INTEGER,
-    last_latency_ms INTEGER,
-    consecutive_error_count BIGINT
-);
-
-CREATE UNIQUE INDEX IF NOT EXISTS uk_integration_channel_tenant_code ON integration_channel (tenant_id, organization_id, channel_code);
-CREATE INDEX IF NOT EXISTS idx_integration_channel_tenant_provider_status ON integration_channel (tenant_id, organization_id, provider_code, status);
-
-CREATE TABLE IF NOT EXISTS integration_provider_account (
-    id BIGSERIAL PRIMARY KEY,
-    uuid VARCHAR(64) NOT NULL,
-    tenant_id BIGINT NOT NULL DEFAULT 0,
-    organization_id BIGINT NOT NULL DEFAULT 0,
-    data_scope INTEGER NOT NULL DEFAULT 0,
-    status INTEGER NOT NULL DEFAULT 1,
-    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    version BIGINT NOT NULL DEFAULT 0,
-    deleted_at TIMESTAMPTZ,
-    deleted_by BIGINT,
-    metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
-    provider_id BIGINT,
-    provider_code VARCHAR(64),
-    account_code VARCHAR(64),
-    account_name VARCHAR(128),
+    channel_code VARCHAR(64) NOT NULL,
+    channel_name VARCHAR(128) NOT NULL,
+    channel_type VARCHAR(32) NOT NULL,
+    protocol_code VARCHAR(64),
     auth_type INTEGER,
     credential_profile INTEGER,
-    external_account_id VARCHAR(128),
+    external_channel_id VARCHAR(128),
     base_url VARCHAR(512),
     auth_config JSONB,
-    secret_ref VARCHAR(256),
-    secret_hash VARCHAR(128),
-    secret_version BIGINT,
-    secret_rotation_policy JSONB,
+    credential_ref VARCHAR(256),
+    credential_hash VARCHAR(128),
+    credential_version BIGINT,
+    credential_rotation_policy JSONB,
     masked_label VARCHAR(128),
+    environment INTEGER,
+    region_code VARCHAR(64),
     quota_unit INTEGER,
     quota_limit NUMERIC(38, 12),
     quota_used NUMERIC(38, 12),
@@ -1136,11 +1133,83 @@ CREATE TABLE IF NOT EXISTS integration_provider_account (
     next_rotate_at TIMESTAMPTZ,
     last_verified_at TIMESTAMPTZ,
     last_used_at TIMESTAMPTZ,
+    priority INTEGER NOT NULL DEFAULT 100,
+    weight INTEGER NOT NULL DEFAULT 100,
+    rpm_limit BIGINT,
+    timeout_ms INTEGER,
+    retry_policy JSONB,
+    circuit_breaker_policy JSONB,
+    health_status INTEGER NOT NULL DEFAULT 1,
+    last_latency_ms INTEGER,
     consecutive_error_count BIGINT,
+    proxy_id BIGINT,
     risk_level INTEGER
 );
 
-CREATE UNIQUE INDEX IF NOT EXISTS uk_integration_provider_account_tenant_code ON integration_provider_account (tenant_id, organization_id, provider_code, account_code);
+CREATE UNIQUE INDEX IF NOT EXISTS uk_ai_channel_uuid ON ai_channel (uuid);
+CREATE UNIQUE INDEX IF NOT EXISTS uk_ai_channel_tenant_code ON ai_channel (tenant_id, organization_id, channel_code);
+CREATE INDEX IF NOT EXISTS idx_ai_channel_provider_type_status ON ai_channel (tenant_id, organization_id, provider_code, channel_type, status, id);
+CREATE INDEX IF NOT EXISTS idx_ai_channel_health_status ON ai_channel (tenant_id, organization_id, status, health_status, priority, weight, id);
+
+CREATE TABLE IF NOT EXISTS messaging_provider (
+    id BIGSERIAL PRIMARY KEY,
+    uuid VARCHAR(64) NOT NULL,
+    tenant_id BIGINT NOT NULL DEFAULT 0,
+    organization_id BIGINT NOT NULL DEFAULT 0,
+    data_scope INTEGER NOT NULL DEFAULT 0,
+    status INTEGER NOT NULL DEFAULT 1,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    version BIGINT NOT NULL DEFAULT 0,
+    deleted_at TIMESTAMPTZ,
+    deleted_by BIGINT,
+    metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
+    provider_code VARCHAR(64) NOT NULL,
+    display_name VARCHAR(128) NOT NULL,
+    channel VARCHAR(32) NOT NULL DEFAULT 'multi',
+    provider_type VARCHAR(64),
+    website_url VARCHAR(512),
+    docs_url VARCHAR(512),
+    icon_url VARCHAR(512),
+    metadata_schema_version VARCHAR(32),
+    sort_order INTEGER
+);
+
+CREATE UNIQUE INDEX IF NOT EXISTS uk_messaging_provider_code ON messaging_provider (tenant_id, organization_id, provider_code);
+CREATE INDEX IF NOT EXISTS idx_messaging_provider_status_sort ON messaging_provider (tenant_id, organization_id, status, sort_order, id);
+
+CREATE TABLE IF NOT EXISTS messaging_provider_account (
+    id BIGSERIAL PRIMARY KEY,
+    uuid VARCHAR(64) NOT NULL,
+    tenant_id BIGINT NOT NULL DEFAULT 0,
+    organization_id BIGINT NOT NULL DEFAULT 0,
+    data_scope INTEGER NOT NULL DEFAULT 0,
+    status INTEGER NOT NULL DEFAULT 1,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    version BIGINT NOT NULL DEFAULT 0,
+    deleted_at TIMESTAMPTZ,
+    deleted_by BIGINT,
+    metadata JSONB,
+    provider_id BIGINT,
+    provider_code VARCHAR(64) NOT NULL,
+    account_code VARCHAR(64) NOT NULL,
+    account_name VARCHAR(128) NOT NULL,
+    channel VARCHAR(32) NOT NULL,
+    delivery_purpose VARCHAR(64),
+    base_url VARCHAR(512),
+    auth_type VARCHAR(64),
+    credential_ref VARCHAR(256),
+    credential_hash VARCHAR(128),
+    credential_version BIGINT,
+    masked_label VARCHAR(128),
+    health_status VARCHAR(32) NOT NULL DEFAULT 'unknown',
+    last_verified_at TIMESTAMPTZ,
+    last_used_at TIMESTAMPTZ
+);
+
+CREATE UNIQUE INDEX IF NOT EXISTS uk_messaging_provider_account_code ON messaging_provider_account (tenant_id, organization_id, account_code);
+CREATE INDEX IF NOT EXISTS idx_messaging_provider_account_provider ON messaging_provider_account (tenant_id, organization_id, provider_code, channel, status, id);
 
 CREATE TABLE IF NOT EXISTS messaging_provider_capability (
     id BIGSERIAL PRIMARY KEY,
@@ -1665,7 +1734,7 @@ CREATE TABLE IF NOT EXISTS open_platform_pay_binding (
 CREATE UNIQUE INDEX IF NOT EXISTS uk_open_platform_pay_binding_account_scene ON open_platform_pay_binding (tenant_id, organization_id, account_id, payment_account_id, scene);
 CREATE INDEX IF NOT EXISTS idx_open_platform_pay_binding_account_status ON open_platform_pay_binding (tenant_id, organization_id, account_id, status, id);
 
-CREATE TABLE IF NOT EXISTS integration_channel_model (
+CREATE TABLE IF NOT EXISTS ai_channel_model (
     id BIGSERIAL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
@@ -1684,6 +1753,8 @@ CREATE TABLE IF NOT EXISTS integration_channel_model (
     model VARCHAR(128),
     vendor_code VARCHAR(64),
     provider_model VARCHAR(128),
+    provider_native_model VARCHAR(256),
+    api_code VARCHAR(128),
     capability INTEGER,
     model_aliases JSONB,
     default_parameters JSONB,
@@ -1695,10 +1766,10 @@ CREATE TABLE IF NOT EXISTS integration_channel_model (
     effective_to TIMESTAMPTZ
 );
 
-CREATE UNIQUE INDEX IF NOT EXISTS uk_integration_channel_model_active ON integration_channel_model (tenant_id, organization_id, channel_id, catalog_key, provider_model, capability, effective_from);
-CREATE INDEX IF NOT EXISTS idx_integration_channel_model_model_status ON integration_channel_model (tenant_id, organization_id, catalog_key, status, effective_from, id);
-CREATE INDEX IF NOT EXISTS idx_integration_channel_model_model_id_status ON integration_channel_model (tenant_id, organization_id, model, status, effective_from, id);
-CREATE INDEX IF NOT EXISTS idx_integration_channel_model_vendor_status ON integration_channel_model (tenant_id, organization_id, vendor_code, status, effective_from, id);
+CREATE UNIQUE INDEX IF NOT EXISTS uk_ai_channel_model_active ON ai_channel_model (tenant_id, organization_id, channel_id, catalog_key, provider_model, capability, effective_from);
+CREATE INDEX IF NOT EXISTS idx_ai_channel_model_model_status ON ai_channel_model (tenant_id, organization_id, catalog_key, status, effective_from, id);
+CREATE INDEX IF NOT EXISTS idx_ai_channel_model_model_id_status ON ai_channel_model (tenant_id, organization_id, model, status, effective_from, id);
+CREATE INDEX IF NOT EXISTS idx_ai_channel_model_vendor_status ON ai_channel_model (tenant_id, organization_id, vendor_code, status, effective_from, id);
 
 CREATE TABLE IF NOT EXISTS integration_proxy (
     id BIGSERIAL PRIMARY KEY,
@@ -1822,7 +1893,62 @@ CREATE UNIQUE INDEX IF NOT EXISTS uk_ai_model_vendor_uuid ON ai_model_vendor (uu
 CREATE UNIQUE INDEX IF NOT EXISTS uk_ai_model_vendor_tenant_code ON ai_model_vendor (tenant_id, organization_id, vendor_code);
 CREATE INDEX IF NOT EXISTS idx_ai_model_vendor_tenant_status_sort ON ai_model_vendor (tenant_id, organization_id, status, sort_order, id);
 
-CREATE TABLE IF NOT EXISTS ai_model_vendor_region (
+CREATE TABLE IF NOT EXISTS ai_modality (
+    id BIGSERIAL PRIMARY KEY,
+    uuid VARCHAR(64) NOT NULL,
+    tenant_id BIGINT NOT NULL DEFAULT 0,
+    organization_id BIGINT NOT NULL DEFAULT 0,
+    data_scope INTEGER NOT NULL DEFAULT 0,
+    status INTEGER NOT NULL DEFAULT 1,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    version BIGINT NOT NULL DEFAULT 0,
+    deleted_at TIMESTAMPTZ,
+    deleted_by BIGINT,
+    metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
+    modality_code VARCHAR(64) NOT NULL,
+    display_name VARCHAR(128) NOT NULL,
+    modality_group VARCHAR(64),
+    description VARCHAR(512),
+    input_supported BOOLEAN,
+    output_supported BOOLEAN,
+    sort_order INTEGER
+);
+
+CREATE UNIQUE INDEX IF NOT EXISTS uk_ai_modality_uuid ON ai_modality (uuid);
+CREATE UNIQUE INDEX IF NOT EXISTS uk_ai_modality_tenant_code ON ai_modality (tenant_id, organization_id, modality_code);
+CREATE INDEX IF NOT EXISTS idx_ai_modality_status_sort ON ai_modality (tenant_id, organization_id, status, sort_order, id);
+
+CREATE TABLE IF NOT EXISTS ai_api_endpoint (
+    id BIGSERIAL PRIMARY KEY,
+    uuid VARCHAR(64) NOT NULL,
+    tenant_id BIGINT NOT NULL DEFAULT 0,
+    organization_id BIGINT NOT NULL DEFAULT 0,
+    data_scope INTEGER NOT NULL DEFAULT 0,
+    status INTEGER NOT NULL DEFAULT 1,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    version BIGINT NOT NULL DEFAULT 0,
+    deleted_at TIMESTAMPTZ,
+    deleted_by BIGINT,
+    metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
+    endpoint_code VARCHAR(128) NOT NULL,
+    protocol_code VARCHAR(64) NOT NULL,
+    display_name VARCHAR(128),
+    method VARCHAR(16),
+    path_template VARCHAR(256) NOT NULL,
+    request_schema JSONB,
+    response_schema JSONB,
+    streaming_supported BOOLEAN,
+    sort_order INTEGER
+);
+
+CREATE UNIQUE INDEX IF NOT EXISTS uk_ai_api_endpoint_uuid ON ai_api_endpoint (uuid);
+CREATE UNIQUE INDEX IF NOT EXISTS uk_ai_api_endpoint_tenant_code ON ai_api_endpoint (tenant_id, organization_id, endpoint_code);
+CREATE INDEX IF NOT EXISTS idx_ai_api_endpoint_status_sort ON ai_api_endpoint (tenant_id, organization_id, status, sort_order, id);
+CREATE INDEX IF NOT EXISTS idx_ai_api_endpoint_protocol_status ON ai_api_endpoint (tenant_id, organization_id, protocol_code, status, sort_order, id);
+
+CREATE TABLE IF NOT EXISTS ai_vendor_modality (
     id BIGSERIAL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
@@ -1837,27 +1963,349 @@ CREATE TABLE IF NOT EXISTS ai_model_vendor_region (
     metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
     vendor_id BIGINT,
     vendor_code VARCHAR(64) NOT NULL,
-    region_code VARCHAR(64) NOT NULL,
-    display_name VARCHAR(128) NOT NULL,
-    legal_name VARCHAR(256),
-    description VARCHAR(512),
-    website_url VARCHAR(512),
-    docs_url VARCHAR(512),
-    country_region VARCHAR(64),
-    market_scope VARCHAR(64) NOT NULL,
-    billing_currency VARCHAR(10) NOT NULL,
-    billing_jurisdiction VARCHAR(64) NOT NULL,
-    operating_regions JSONB NOT NULL,
-    capabilities JSONB,
-    open_source BOOLEAN,
+    modality_id BIGINT,
+    modality_code VARCHAR(64) NOT NULL,
+    supported BOOLEAN,
     sort_order INTEGER
 );
 
-CREATE UNIQUE INDEX IF NOT EXISTS uk_ai_model_vendor_region_uuid ON ai_model_vendor_region (uuid);
-CREATE UNIQUE INDEX IF NOT EXISTS uk_ai_model_vendor_region_tenant_code ON ai_model_vendor_region (tenant_id, organization_id, vendor_code, region_code);
-CREATE INDEX IF NOT EXISTS idx_ai_model_vendor_region_tenant_status ON ai_model_vendor_region (tenant_id, organization_id, status, vendor_code, region_code, id);
-CREATE INDEX IF NOT EXISTS idx_ai_model_vendor_region_vendor_status_sort ON ai_model_vendor_region (tenant_id, organization_id, vendor_code, status, sort_order, id);
-CREATE INDEX IF NOT EXISTS idx_ai_model_vendor_region_market_currency ON ai_model_vendor_region (tenant_id, organization_id, market_scope, billing_currency, status, id);
+CREATE UNIQUE INDEX IF NOT EXISTS uk_ai_vendor_modality_uuid ON ai_vendor_modality (uuid);
+CREATE UNIQUE INDEX IF NOT EXISTS uk_ai_vendor_modality ON ai_vendor_modality (tenant_id, organization_id, vendor_code, modality_code);
+CREATE INDEX IF NOT EXISTS idx_ai_vendor_modality_status_sort ON ai_vendor_modality (tenant_id, organization_id, status, sort_order, id);
+
+CREATE TABLE IF NOT EXISTS ai_vendor_api_endpoint (
+    id BIGSERIAL PRIMARY KEY,
+    uuid VARCHAR(64) NOT NULL,
+    tenant_id BIGINT NOT NULL DEFAULT 0,
+    organization_id BIGINT NOT NULL DEFAULT 0,
+    data_scope INTEGER NOT NULL DEFAULT 0,
+    status INTEGER NOT NULL DEFAULT 1,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    version BIGINT NOT NULL DEFAULT 0,
+    deleted_at TIMESTAMPTZ,
+    deleted_by BIGINT,
+    metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
+    vendor_id BIGINT,
+    vendor_code VARCHAR(64) NOT NULL,
+    api_endpoint_id BIGINT,
+    endpoint_code VARCHAR(128) NOT NULL,
+    supported BOOLEAN,
+    sort_order INTEGER
+);
+
+CREATE UNIQUE INDEX IF NOT EXISTS uk_ai_vendor_api_endpoint_uuid ON ai_vendor_api_endpoint (uuid);
+CREATE UNIQUE INDEX IF NOT EXISTS uk_ai_vendor_api_endpoint ON ai_vendor_api_endpoint (tenant_id, organization_id, vendor_code, endpoint_code);
+CREATE INDEX IF NOT EXISTS idx_ai_vendor_api_endpoint_status_sort ON ai_vendor_api_endpoint (tenant_id, organization_id, status, sort_order, id);
+
+CREATE TABLE IF NOT EXISTS ai_modality_api_endpoint (
+    id BIGSERIAL PRIMARY KEY,
+    uuid VARCHAR(64) NOT NULL,
+    tenant_id BIGINT NOT NULL DEFAULT 0,
+    organization_id BIGINT NOT NULL DEFAULT 0,
+    data_scope INTEGER NOT NULL DEFAULT 0,
+    status INTEGER NOT NULL DEFAULT 1,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    version BIGINT NOT NULL DEFAULT 0,
+    deleted_at TIMESTAMPTZ,
+    deleted_by BIGINT,
+    metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
+    modality_id BIGINT,
+    modality_code VARCHAR(64) NOT NULL,
+    api_endpoint_id BIGINT,
+    endpoint_code VARCHAR(128) NOT NULL,
+    supported BOOLEAN,
+    sort_order INTEGER
+);
+
+CREATE UNIQUE INDEX IF NOT EXISTS uk_ai_modality_api_endpoint_uuid ON ai_modality_api_endpoint (uuid);
+CREATE UNIQUE INDEX IF NOT EXISTS uk_ai_modality_api_endpoint ON ai_modality_api_endpoint (tenant_id, organization_id, modality_code, endpoint_code);
+CREATE INDEX IF NOT EXISTS idx_ai_modality_api_endpoint_status_sort ON ai_modality_api_endpoint (tenant_id, organization_id, status, sort_order, id);
+
+CREATE TABLE IF NOT EXISTS ai_model_modality (
+    id BIGSERIAL PRIMARY KEY,
+    uuid VARCHAR(64) NOT NULL,
+    tenant_id BIGINT NOT NULL DEFAULT 0,
+    organization_id BIGINT NOT NULL DEFAULT 0,
+    data_scope INTEGER NOT NULL DEFAULT 0,
+    status INTEGER NOT NULL DEFAULT 1,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    version BIGINT NOT NULL DEFAULT 0,
+    deleted_at TIMESTAMPTZ,
+    deleted_by BIGINT,
+    metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
+    model_id BIGINT,
+    catalog_key VARCHAR(256) NOT NULL,
+    model VARCHAR(128),
+    vendor_code VARCHAR(64),
+    modality_id BIGINT,
+    modality_code VARCHAR(64) NOT NULL,
+    direction VARCHAR(32),
+    supported BOOLEAN,
+    sort_order INTEGER
+);
+
+CREATE UNIQUE INDEX IF NOT EXISTS uk_ai_model_modality_uuid ON ai_model_modality (uuid);
+CREATE UNIQUE INDEX IF NOT EXISTS uk_ai_model_modality ON ai_model_modality (tenant_id, organization_id, catalog_key, modality_code, direction);
+CREATE INDEX IF NOT EXISTS idx_ai_model_modality_status_sort ON ai_model_modality (tenant_id, organization_id, status, sort_order, id);
+
+CREATE TABLE IF NOT EXISTS ai_model_api_endpoint (
+    id BIGSERIAL PRIMARY KEY,
+    uuid VARCHAR(64) NOT NULL,
+    tenant_id BIGINT NOT NULL DEFAULT 0,
+    organization_id BIGINT NOT NULL DEFAULT 0,
+    data_scope INTEGER NOT NULL DEFAULT 0,
+    status INTEGER NOT NULL DEFAULT 1,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    version BIGINT NOT NULL DEFAULT 0,
+    deleted_at TIMESTAMPTZ,
+    deleted_by BIGINT,
+    metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
+    model_id BIGINT,
+    catalog_key VARCHAR(256) NOT NULL,
+    model VARCHAR(128),
+    vendor_code VARCHAR(64),
+    api_endpoint_id BIGINT,
+    endpoint_code VARCHAR(128) NOT NULL,
+    provider_native_model VARCHAR(256),
+    default_parameters JSONB,
+    supports_streaming BOOLEAN,
+    supported BOOLEAN,
+    sort_order INTEGER
+);
+
+CREATE UNIQUE INDEX IF NOT EXISTS uk_ai_model_api_endpoint_uuid ON ai_model_api_endpoint (uuid);
+CREATE UNIQUE INDEX IF NOT EXISTS uk_ai_model_api_endpoint ON ai_model_api_endpoint (tenant_id, organization_id, catalog_key, endpoint_code);
+CREATE INDEX IF NOT EXISTS idx_ai_model_api_endpoint_status_sort ON ai_model_api_endpoint (tenant_id, organization_id, status, sort_order, id);
+
+CREATE TABLE IF NOT EXISTS ai_resource (
+    id BIGSERIAL PRIMARY KEY,
+    uuid VARCHAR(64) NOT NULL,
+    tenant_id BIGINT NOT NULL DEFAULT 0,
+    organization_id BIGINT NOT NULL DEFAULT 0,
+    data_scope INTEGER NOT NULL DEFAULT 0,
+    status INTEGER NOT NULL DEFAULT 1,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    version BIGINT NOT NULL DEFAULT 0,
+    deleted_at TIMESTAMPTZ,
+    deleted_by BIGINT,
+    metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
+    resource_code VARCHAR(192) NOT NULL,
+    resource_type VARCHAR(64) NOT NULL,
+    display_name VARCHAR(128),
+    vendor_id BIGINT,
+    vendor_code VARCHAR(64),
+    modality_id BIGINT,
+    modality_code VARCHAR(64),
+    api_endpoint_id BIGINT,
+    api_code VARCHAR(128),
+    model_id BIGINT,
+    model_code VARCHAR(128),
+    catalog_key VARCHAR(256),
+    model VARCHAR(128),
+    provider_native_model VARCHAR(256),
+    resource_schema JSONB,
+    metadata_schema JSONB,
+    description VARCHAR(512),
+    sort_order INTEGER
+);
+
+CREATE UNIQUE INDEX IF NOT EXISTS uk_ai_resource_uuid ON ai_resource (uuid);
+CREATE UNIQUE INDEX IF NOT EXISTS uk_ai_resource_tenant_code ON ai_resource (tenant_id, organization_id, resource_code);
+CREATE INDEX IF NOT EXISTS idx_ai_resource_status_sort ON ai_resource (tenant_id, organization_id, status, sort_order, id);
+CREATE INDEX IF NOT EXISTS idx_ai_resource_type_status ON ai_resource (tenant_id, organization_id, resource_type, status, id);
+CREATE INDEX IF NOT EXISTS idx_ai_resource_vendor_model ON ai_resource (tenant_id, organization_id, vendor_code, catalog_key, status, id);
+
+CREATE TABLE IF NOT EXISTS ai_resource_group (
+    id BIGSERIAL PRIMARY KEY,
+    uuid VARCHAR(64) NOT NULL,
+    tenant_id BIGINT NOT NULL DEFAULT 0,
+    organization_id BIGINT NOT NULL DEFAULT 0,
+    data_scope INTEGER NOT NULL DEFAULT 0,
+    status INTEGER NOT NULL DEFAULT 1,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    version BIGINT NOT NULL DEFAULT 0,
+    deleted_at TIMESTAMPTZ,
+    deleted_by BIGINT,
+    metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
+    group_code VARCHAR(128) NOT NULL,
+    group_name VARCHAR(128) NOT NULL,
+    group_type VARCHAR(64),
+    selection_mode VARCHAR(32),
+    description VARCHAR(512),
+    sort_order INTEGER
+);
+
+CREATE UNIQUE INDEX IF NOT EXISTS uk_ai_resource_group_uuid ON ai_resource_group (uuid);
+CREATE UNIQUE INDEX IF NOT EXISTS uk_ai_resource_group_tenant_code ON ai_resource_group (tenant_id, organization_id, group_code);
+CREATE INDEX IF NOT EXISTS idx_ai_resource_group_status_sort ON ai_resource_group (tenant_id, organization_id, status, sort_order, id);
+
+CREATE TABLE IF NOT EXISTS ai_resource_group_item (
+    id BIGSERIAL PRIMARY KEY,
+    uuid VARCHAR(64) NOT NULL,
+    tenant_id BIGINT NOT NULL DEFAULT 0,
+    organization_id BIGINT NOT NULL DEFAULT 0,
+    data_scope INTEGER NOT NULL DEFAULT 0,
+    status INTEGER NOT NULL DEFAULT 1,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    version BIGINT NOT NULL DEFAULT 0,
+    deleted_at TIMESTAMPTZ,
+    deleted_by BIGINT,
+    metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
+    resource_group_id BIGINT NOT NULL,
+    resource_group_code VARCHAR(128),
+    item_type VARCHAR(32) NOT NULL,
+    resource_id BIGINT,
+    resource_code VARCHAR(192),
+    child_resource_group_id BIGINT,
+    child_resource_group_code VARCHAR(128),
+    item_role VARCHAR(32),
+    sort_order INTEGER
+);
+
+CREATE UNIQUE INDEX IF NOT EXISTS uk_ai_resource_group_item_uuid ON ai_resource_group_item (uuid);
+CREATE UNIQUE INDEX IF NOT EXISTS uk_ai_resource_group_item ON ai_resource_group_item (tenant_id, organization_id, resource_group_id, item_type, resource_code, child_resource_group_code);
+CREATE INDEX IF NOT EXISTS idx_ai_resource_group_item_status_sort ON ai_resource_group_item (tenant_id, organization_id, status, resource_group_id, sort_order, id);
+
+CREATE TABLE IF NOT EXISTS ai_channel_vendor (
+    id BIGSERIAL PRIMARY KEY,
+    uuid VARCHAR(64) NOT NULL,
+    tenant_id BIGINT NOT NULL DEFAULT 0,
+    organization_id BIGINT NOT NULL DEFAULT 0,
+    data_scope INTEGER NOT NULL DEFAULT 0,
+    status INTEGER NOT NULL DEFAULT 1,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    version BIGINT NOT NULL DEFAULT 0,
+    deleted_at TIMESTAMPTZ,
+    deleted_by BIGINT,
+    metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
+    channel_id BIGINT NOT NULL,
+    provider_code VARCHAR(64),
+    channel_code VARCHAR(64),
+    vendor_id BIGINT,
+    vendor_code VARCHAR(64) NOT NULL,
+    channel_type VARCHAR(32),
+    supported BOOLEAN,
+    sort_order INTEGER
+);
+
+CREATE UNIQUE INDEX IF NOT EXISTS uk_ai_channel_vendor_uuid ON ai_channel_vendor (uuid);
+CREATE UNIQUE INDEX IF NOT EXISTS uk_ai_channel_vendor ON ai_channel_vendor (tenant_id, organization_id, channel_id, vendor_code);
+CREATE INDEX IF NOT EXISTS idx_ai_channel_vendor_status ON ai_channel_vendor (tenant_id, organization_id, status, channel_id, id);
+
+CREATE TABLE IF NOT EXISTS ai_channel_resource (
+    id BIGSERIAL PRIMARY KEY,
+    uuid VARCHAR(64) NOT NULL,
+    tenant_id BIGINT NOT NULL DEFAULT 0,
+    organization_id BIGINT NOT NULL DEFAULT 0,
+    data_scope INTEGER NOT NULL DEFAULT 0,
+    status INTEGER NOT NULL DEFAULT 1,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    version BIGINT NOT NULL DEFAULT 0,
+    deleted_at TIMESTAMPTZ,
+    deleted_by BIGINT,
+    metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
+    channel_id BIGINT NOT NULL,
+    provider_code VARCHAR(64),
+    channel_code VARCHAR(64),
+    resource_id BIGINT,
+    resource_code VARCHAR(192),
+    resource_group_id BIGINT,
+    resource_group_code VARCHAR(128),
+    grant_type VARCHAR(32) NOT NULL DEFAULT 'allow',
+    priority INTEGER NOT NULL DEFAULT 100,
+    weight INTEGER NOT NULL DEFAULT 100,
+    effective_from TIMESTAMPTZ,
+    effective_to TIMESTAMPTZ
+);
+
+CREATE UNIQUE INDEX IF NOT EXISTS uk_ai_channel_resource_uuid ON ai_channel_resource (uuid);
+CREATE UNIQUE INDEX IF NOT EXISTS uk_ai_channel_resource ON ai_channel_resource (tenant_id, organization_id, channel_id, resource_code, resource_group_code);
+CREATE INDEX IF NOT EXISTS idx_ai_channel_resource_lookup ON ai_channel_resource (tenant_id, organization_id, status, channel_id, grant_type, priority, id);
+
+CREATE TABLE IF NOT EXISTS ai_channel_endpoint (
+    id BIGSERIAL PRIMARY KEY,
+    uuid VARCHAR(64) NOT NULL,
+    tenant_id BIGINT NOT NULL DEFAULT 0,
+    organization_id BIGINT NOT NULL DEFAULT 0,
+    data_scope INTEGER NOT NULL DEFAULT 0,
+    status INTEGER NOT NULL DEFAULT 1,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    version BIGINT NOT NULL DEFAULT 0,
+    deleted_at TIMESTAMPTZ,
+    deleted_by BIGINT,
+    metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
+    channel_id BIGINT NOT NULL,
+    provider_code VARCHAR(64),
+    channel_code VARCHAR(64) NOT NULL,
+    channel_type VARCHAR(32) NOT NULL,
+    vendor_id BIGINT,
+    vendor_code VARCHAR(64) NOT NULL,
+    region_code VARCHAR(64) NOT NULL,
+    api_endpoint_id BIGINT,
+    api_code VARCHAR(128) NOT NULL,
+    base_url VARCHAR(512) NOT NULL,
+    path_prefix VARCHAR(256),
+    priority INTEGER NOT NULL DEFAULT 100,
+    weight INTEGER NOT NULL DEFAULT 100,
+    timeout_ms INTEGER,
+    retry_policy JSONB,
+    health_status INTEGER NOT NULL DEFAULT 1,
+    last_latency_ms INTEGER,
+    consecutive_error_count BIGINT,
+    effective_from TIMESTAMPTZ,
+    effective_to TIMESTAMPTZ
+);
+
+CREATE UNIQUE INDEX IF NOT EXISTS uk_ai_channel_endpoint_uuid ON ai_channel_endpoint (uuid);
+CREATE UNIQUE INDEX IF NOT EXISTS uk_ai_channel_endpoint_scope ON ai_channel_endpoint (tenant_id, organization_id, channel_id, vendor_code, region_code, api_code);
+CREATE INDEX IF NOT EXISTS idx_ai_channel_endpoint_lookup ON ai_channel_endpoint (tenant_id, organization_id, status, channel_id, vendor_code, region_code, api_code, priority, weight, id);
+CREATE INDEX IF NOT EXISTS idx_ai_channel_endpoint_channel ON ai_channel_endpoint (tenant_id, organization_id, channel_id, status, channel_type, id);
+
+CREATE TABLE IF NOT EXISTS ai_route_candidate (
+    id BIGSERIAL PRIMARY KEY,
+    uuid VARCHAR(64) NOT NULL,
+    tenant_id BIGINT NOT NULL DEFAULT 0,
+    organization_id BIGINT NOT NULL DEFAULT 0,
+    source_type VARCHAR(128),
+    source_id BIGINT,
+    source_version BIGINT,
+    status INTEGER NOT NULL DEFAULT 1,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    rebuild_version BIGINT NOT NULL DEFAULT 0,
+    metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
+    channel_group_id BIGINT,
+    channel_id BIGINT,
+    endpoint_id BIGINT,
+    provider_code VARCHAR(64),
+    channel_type VARCHAR(32),
+    vendor_code VARCHAR(64),
+    api_code VARCHAR(128),
+    model_code VARCHAR(128),
+    catalog_key VARCHAR(256),
+    region_code VARCHAR(64),
+    priority INTEGER,
+    weight INTEGER,
+    health_status INTEGER,
+    config_version BIGINT,
+    refreshed_at TIMESTAMPTZ
+);
+
+CREATE UNIQUE INDEX IF NOT EXISTS uk_ai_route_candidate_uuid ON ai_route_candidate (uuid);
+CREATE INDEX IF NOT EXISTS idx_ai_route_candidate_status ON ai_route_candidate (tenant_id, organization_id, status, channel_group_id, api_code, catalog_key, id);
+CREATE UNIQUE INDEX IF NOT EXISTS uk_ai_route_candidate_scope ON ai_route_candidate (tenant_id, organization_id, channel_group_id, channel_id, endpoint_id, api_code, catalog_key);
+CREATE INDEX IF NOT EXISTS idx_ai_route_candidate_model ON ai_route_candidate (tenant_id, organization_id, channel_group_id, api_code, catalog_key, status, health_status, priority, weight, id);
+CREATE INDEX IF NOT EXISTS idx_ai_route_candidate_api ON ai_route_candidate (tenant_id, organization_id, channel_group_id, api_code, status, health_status, priority, weight, id);
 
 CREATE TABLE IF NOT EXISTS ai_model_family (
     id BIGSERIAL PRIMARY KEY,
@@ -1874,7 +2322,6 @@ CREATE TABLE IF NOT EXISTS ai_model_family (
     metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
     vendor_id BIGINT,
     vendor_code VARCHAR(64) NOT NULL,
-    region_code VARCHAR(64) NOT NULL,
     family_code VARCHAR(64) NOT NULL,
     display_name VARCHAR(128),
     description VARCHAR(512),
@@ -1890,9 +2337,9 @@ CREATE TABLE IF NOT EXISTS ai_model_family (
 );
 
 CREATE UNIQUE INDEX IF NOT EXISTS uk_ai_model_family_uuid ON ai_model_family (uuid);
-CREATE UNIQUE INDEX IF NOT EXISTS uk_ai_model_family_tenant_vendor_region_code ON ai_model_family (tenant_id, organization_id, vendor_code, region_code, family_code);
+CREATE UNIQUE INDEX IF NOT EXISTS uk_ai_model_family_tenant_vendor_code ON ai_model_family (tenant_id, organization_id, vendor_code, family_code);
 CREATE INDEX IF NOT EXISTS idx_ai_model_family_tenant_status_sort ON ai_model_family (tenant_id, organization_id, status, sort_order, id);
-CREATE INDEX IF NOT EXISTS idx_ai_model_family_vendor_region_status_sort ON ai_model_family (tenant_id, organization_id, vendor_code, region_code, status, sort_order, id);
+CREATE INDEX IF NOT EXISTS idx_ai_model_family_vendor_status_sort ON ai_model_family (tenant_id, organization_id, vendor_code, status, sort_order, id);
 
 CREATE TABLE IF NOT EXISTS ai_model (
     id BIGSERIAL PRIMARY KEY,
@@ -2463,7 +2910,7 @@ CREATE TABLE IF NOT EXISTS ai_model_rank_snapshot (
 );
 
 CREATE UNIQUE INDEX IF NOT EXISTS uk_ai_model_rank_snapshot_uuid ON ai_model_rank_snapshot (uuid);
-CREATE UNIQUE INDEX IF NOT EXISTS uk_ai_model_rank_snapshot_scope_catalog_key ON ai_model_rank_snapshot (tenant_id, organization_id, snapshot_date, snapshot_period, rank_scope, catalog_key);
+CREATE UNIQUE INDEX IF NOT EXISTS uk_ai_model_rank_snapshot_scope_catalog_key ON ai_model_rank_snapshot (tenant_id, organization_id, snapshot_date, snapshot_period, rank_scope, vendor_code, region_code, catalog_key);
 CREATE INDEX IF NOT EXISTS idx_ai_model_rank_snapshot_tenant_rank ON ai_model_rank_snapshot (tenant_id, organization_id, status, snapshot_date, snapshot_period, rank_scope, rank_no);
 CREATE INDEX IF NOT EXISTS idx_ai_model_rank_snapshot_vendor_region_rank ON ai_model_rank_snapshot (tenant_id, organization_id, snapshot_date, snapshot_period, vendor_code, region_code, rank_no);
 CREATE INDEX IF NOT EXISTS idx_ai_model_rank_snapshot_latest_scope ON ai_model_rank_snapshot (tenant_id, organization_id, status, rank_scope, snapshot_date, snapshot_period, rank_no);
@@ -2606,15 +3053,14 @@ CREATE TABLE IF NOT EXISTS ai_request_trace (
     api_key_id BIGINT,
     legacy_api_key_id BIGINT,
     api_key_name_snapshot VARCHAR(128),
-    api_key_group_id BIGINT,
-    api_key_group_snapshot VARCHAR(128),
+    channel_group_id BIGINT,
+    channel_group_snapshot VARCHAR(128),
     owner_type INTEGER,
     owner_id BIGINT,
     owner_name_snapshot VARCHAR(128),
     provider_id BIGINT,
     channel_id BIGINT,
     channel_name_snapshot VARCHAR(128),
-    provider_account_id BIGINT,
     requested_model VARCHAR(128),
     requested_model_catalog_key VARCHAR(256),
     provider_model VARCHAR(128),
@@ -2670,8 +3116,8 @@ CREATE TABLE IF NOT EXISTS ai_usage_fact (
     api_key_id BIGINT,
     legacy_api_key_id BIGINT,
     api_key_name_snapshot VARCHAR(128),
-    api_key_group_id BIGINT,
-    api_key_group_snapshot VARCHAR(128),
+    channel_group_id BIGINT,
+    channel_group_snapshot VARCHAR(128),
     owner_type INTEGER,
     owner_id BIGINT,
     owner_name_snapshot VARCHAR(128),
@@ -2681,7 +3127,6 @@ CREATE TABLE IF NOT EXISTS ai_usage_fact (
     provider_native_model VARCHAR(256),
     provider_id BIGINT,
     channel_id BIGINT,
-    provider_account_id BIGINT,
     modality INTEGER,
     usage_type INTEGER,
     billing_type INTEGER,
@@ -2756,7 +3201,7 @@ CREATE TABLE IF NOT EXISTS ai_quota_policy (
     subject_ref_masked VARCHAR(128),
     scope_type INTEGER,
     scope_id BIGINT,
-    group_id BIGINT,
+    channel_group_id BIGINT,
     model VARCHAR(128),
     quota_period INTEGER,
     quota_unit INTEGER,
@@ -2775,7 +3220,7 @@ CREATE TABLE IF NOT EXISTS ai_quota_policy (
 
 CREATE UNIQUE INDEX IF NOT EXISTS uk_ai_quota_policy_tenant_subject ON ai_quota_policy (tenant_id, organization_id, subject_type, subject_id, quota_period, quota_unit);
 CREATE INDEX IF NOT EXISTS idx_ai_quota_policy_subject_ref ON ai_quota_policy (tenant_id, organization_id, subject_type, subject_ref_hash, status);
-CREATE INDEX IF NOT EXISTS idx_ai_quota_policy_model_group ON ai_quota_policy (tenant_id, organization_id, model, group_id, status);
+CREATE INDEX IF NOT EXISTS idx_ai_quota_policy_model_channel_group ON ai_quota_policy (tenant_id, organization_id, model, channel_group_id, status);
 
 CREATE TABLE IF NOT EXISTS ai_prompt (
     id BIGSERIAL PRIMARY KEY,

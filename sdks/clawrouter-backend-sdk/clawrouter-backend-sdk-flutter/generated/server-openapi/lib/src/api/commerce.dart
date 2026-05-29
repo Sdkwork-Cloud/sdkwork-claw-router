@@ -41,11 +41,10 @@ class CommerceApi {
   }
 
   /// Create product attribute
-  Future<CatalogAttributesCreateResult?> catalogAttributesCreate(CommerceProductAttributeMutationRequest body, String idempotencyKey, [String? xRequestId]) async {
+  Future<CatalogAttributesCreateResult?> catalogAttributesCreate(CommerceProductAttributeMutationRequest body, String idempotencyKey) async {
     final requestHeaders = buildRequestHeaders(
       <String, HeaderParameterSpec>{
         'Idempotency-Key': HeaderParameterSpec(idempotencyKey, 'simple', false, null),
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
       },
       <String, HeaderParameterSpec>{},
     );
@@ -73,11 +72,10 @@ class CommerceApi {
   }
 
   /// Create product category
-  Future<CatalogCategoriesCreateResult?> catalogCategoriesCreate(CommerceProductCategoryMutationRequest body, String idempotencyKey, [String? xRequestId]) async {
+  Future<CatalogCategoriesCreateResult?> catalogCategoriesCreate(CommerceProductCategoryMutationRequest body, String idempotencyKey) async {
     final requestHeaders = buildRequestHeaders(
       <String, HeaderParameterSpec>{
         'Idempotency-Key': HeaderParameterSpec(idempotencyKey, 'simple', false, null),
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
       },
       <String, HeaderParameterSpec>{},
     );
@@ -90,14 +88,8 @@ class CommerceApi {
   }
 
   /// Delete product category
-  Future<CatalogCategoriesDeleteResult?> catalogCategoriesDelete(String categoryId, [String? xRequestId]) async {
-    final requestHeaders = buildRequestHeaders(
-      <String, HeaderParameterSpec>{
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
-      },
-      <String, HeaderParameterSpec>{},
-    );
-    final response = await _client.delete(ApiPaths.backendPath('/catalog/categories/${serializePathParameter(categoryId, const PathParameterSpec('categoryId', 'simple', false))}'), headers: requestHeaders);
+  Future<CatalogCategoriesDeleteResult?> catalogCategoriesDelete(String categoryId) async {
+    final response = await _client.delete(ApiPaths.backendPath('/catalog/categories/${serializePathParameter(categoryId, const PathParameterSpec('categoryId', 'simple', false))}'));
     return (() {
       final map = sdkworkResponseAsMap(response);
       return map == null ? null : CatalogCategoriesDeleteResult.fromJson(map);
@@ -105,11 +97,10 @@ class CommerceApi {
   }
 
   /// Update product category
-  Future<CatalogCategoriesUpdateResult?> catalogCategoriesUpdate(String categoryId, CommerceProductCategoryMutationRequest body, String idempotencyKey, [String? xRequestId]) async {
+  Future<CatalogCategoriesUpdateResult?> catalogCategoriesUpdate(String categoryId, CommerceProductCategoryMutationRequest body, String idempotencyKey) async {
     final requestHeaders = buildRequestHeaders(
       <String, HeaderParameterSpec>{
         'Idempotency-Key': HeaderParameterSpec(idempotencyKey, 'simple', false, null),
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
       },
       <String, HeaderParameterSpec>{},
     );
@@ -138,11 +129,10 @@ class CommerceApi {
   }
 
   /// Create product price list
-  Future<CatalogPriceListsCreateResult?> catalogPriceListsCreate(CommercePriceListMutationRequest body, String idempotencyKey, [String? xRequestId]) async {
+  Future<CatalogPriceListsCreateResult?> catalogPriceListsCreate(CommercePriceListMutationRequest body, String idempotencyKey) async {
     final requestHeaders = buildRequestHeaders(
       <String, HeaderParameterSpec>{
         'Idempotency-Key': HeaderParameterSpec(idempotencyKey, 'simple', false, null),
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
       },
       <String, HeaderParameterSpec>{},
     );
@@ -173,11 +163,10 @@ class CommerceApi {
   }
 
   /// Create product SPU
-  Future<CatalogProductsCreateResult?> catalogProductsCreate(CommerceProductSpuMutationRequest body, String idempotencyKey, [String? xRequestId]) async {
+  Future<CatalogProductsCreateResult?> catalogProductsCreate(CommerceProductSpuMutationRequest body, String idempotencyKey) async {
     final requestHeaders = buildRequestHeaders(
       <String, HeaderParameterSpec>{
         'Idempotency-Key': HeaderParameterSpec(idempotencyKey, 'simple', false, null),
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
       },
       <String, HeaderParameterSpec>{},
     );
@@ -190,11 +179,10 @@ class CommerceApi {
   }
 
   /// Update product SPU
-  Future<CatalogProductsUpdateResult?> catalogProductsUpdate(String productId, CommerceProductSpuMutationRequest body, String idempotencyKey, [String? xRequestId]) async {
+  Future<CatalogProductsUpdateResult?> catalogProductsUpdate(String productId, CommerceProductSpuMutationRequest body, String idempotencyKey) async {
     final requestHeaders = buildRequestHeaders(
       <String, HeaderParameterSpec>{
         'Idempotency-Key': HeaderParameterSpec(idempotencyKey, 'simple', false, null),
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
       },
       <String, HeaderParameterSpec>{},
     );
@@ -223,11 +211,10 @@ class CommerceApi {
   }
 
   /// Create product SKU
-  Future<CatalogSkusCreateResult?> catalogSkusCreate(CommerceProductSkuMutationRequest body, String idempotencyKey, [String? xRequestId]) async {
+  Future<CatalogSkusCreateResult?> catalogSkusCreate(CommerceProductSkuMutationRequest body, String idempotencyKey) async {
     final requestHeaders = buildRequestHeaders(
       <String, HeaderParameterSpec>{
         'Idempotency-Key': HeaderParameterSpec(idempotencyKey, 'simple', false, null),
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
       },
       <String, HeaderParameterSpec>{},
     );
@@ -240,11 +227,10 @@ class CommerceApi {
   }
 
   /// Update product SKU
-  Future<CatalogSkusUpdateResult?> catalogSkusUpdate(String skuId, CommerceProductSkuMutationRequest body, String idempotencyKey, [String? xRequestId]) async {
+  Future<CatalogSkusUpdateResult?> catalogSkusUpdate(String skuId, CommerceProductSkuMutationRequest body, String idempotencyKey) async {
     final requestHeaders = buildRequestHeaders(
       <String, HeaderParameterSpec>{
         'Idempotency-Key': HeaderParameterSpec(idempotencyKey, 'simple', false, null),
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
       },
       <String, HeaderParameterSpec>{},
     );
@@ -358,11 +344,10 @@ class CommerceApi {
   }
 
   /// Update inventory stock
-  Future<InventoryStocksUpdateResult?> inventoryStocksUpdate(String stockId, CommerceInventoryStockUpdateRequest body, String idempotencyKey, [String? xRequestId]) async {
+  Future<InventoryStocksUpdateResult?> inventoryStocksUpdate(String stockId, CommerceInventoryStockUpdateRequest body, String idempotencyKey) async {
     final requestHeaders = buildRequestHeaders(
       <String, HeaderParameterSpec>{
         'Idempotency-Key': HeaderParameterSpec(idempotencyKey, 'simple', false, null),
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
       },
       <String, HeaderParameterSpec>{},
     );
@@ -445,11 +430,10 @@ class CommerceApi {
   }
 
   /// Memberships Members Status Update
-  Future<MembershipsMembersStatusUpdateResult?> membershipsMembersStatusUpdate(String membershipId, CommerceMembershipMemberStatusRequest body, String idempotencyKey, [String? xRequestId]) async {
+  Future<MembershipsMembersStatusUpdateResult?> membershipsMembersStatusUpdate(String membershipId, CommerceMembershipMemberStatusRequest body, String idempotencyKey) async {
     final requestHeaders = buildRequestHeaders(
       <String, HeaderParameterSpec>{
         'Idempotency-Key': HeaderParameterSpec(idempotencyKey, 'simple', false, null),
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
       },
       <String, HeaderParameterSpec>{},
     );
@@ -476,11 +460,10 @@ class CommerceApi {
   }
 
   /// Memberships Package Groups Create
-  Future<MembershipsPackageGroupsCreateResult?> membershipsPackageGroupsCreate(CommerceMembershipPackageGroupMutationRequest body, String idempotencyKey, [String? xRequestId]) async {
+  Future<MembershipsPackageGroupsCreateResult?> membershipsPackageGroupsCreate(CommerceMembershipPackageGroupMutationRequest body, String idempotencyKey) async {
     final requestHeaders = buildRequestHeaders(
       <String, HeaderParameterSpec>{
         'Idempotency-Key': HeaderParameterSpec(idempotencyKey, 'simple', false, null),
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
       },
       <String, HeaderParameterSpec>{},
     );
@@ -493,14 +476,8 @@ class CommerceApi {
   }
 
   /// Memberships Package Groups Delete
-  Future<MembershipsPackageGroupsDeleteResult?> membershipsPackageGroupsDelete(String packageGroupId, [String? xRequestId]) async {
-    final requestHeaders = buildRequestHeaders(
-      <String, HeaderParameterSpec>{
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
-      },
-      <String, HeaderParameterSpec>{},
-    );
-    final response = await _client.delete(ApiPaths.backendPath('/memberships/package_groups/${serializePathParameter(packageGroupId, const PathParameterSpec('packageGroupId', 'simple', false))}'), headers: requestHeaders);
+  Future<MembershipsPackageGroupsDeleteResult?> membershipsPackageGroupsDelete(String packageGroupId) async {
+    final response = await _client.delete(ApiPaths.backendPath('/memberships/package_groups/${serializePathParameter(packageGroupId, const PathParameterSpec('packageGroupId', 'simple', false))}'));
     return (() {
       final map = sdkworkResponseAsMap(response);
       return map == null ? null : MembershipsPackageGroupsDeleteResult.fromJson(map);
@@ -508,11 +485,10 @@ class CommerceApi {
   }
 
   /// Memberships Package Groups Update
-  Future<MembershipsPackageGroupsUpdateResult?> membershipsPackageGroupsUpdate(String packageGroupId, CommerceMembershipPackageGroupMutationRequest body, String idempotencyKey, [String? xRequestId]) async {
+  Future<MembershipsPackageGroupsUpdateResult?> membershipsPackageGroupsUpdate(String packageGroupId, CommerceMembershipPackageGroupMutationRequest body, String idempotencyKey) async {
     final requestHeaders = buildRequestHeaders(
       <String, HeaderParameterSpec>{
         'Idempotency-Key': HeaderParameterSpec(idempotencyKey, 'simple', false, null),
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
       },
       <String, HeaderParameterSpec>{},
     );
@@ -541,11 +517,10 @@ class CommerceApi {
   }
 
   /// Memberships Packages Create
-  Future<MembershipsPackagesCreateResult?> membershipsPackagesCreate(CommerceMembershipPackageMutationRequest body, String idempotencyKey, [String? xRequestId]) async {
+  Future<MembershipsPackagesCreateResult?> membershipsPackagesCreate(CommerceMembershipPackageMutationRequest body, String idempotencyKey) async {
     final requestHeaders = buildRequestHeaders(
       <String, HeaderParameterSpec>{
         'Idempotency-Key': HeaderParameterSpec(idempotencyKey, 'simple', false, null),
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
       },
       <String, HeaderParameterSpec>{},
     );
@@ -558,14 +533,8 @@ class CommerceApi {
   }
 
   /// Memberships Packages Delete
-  Future<MembershipsPackagesDeleteResult?> membershipsPackagesDelete(String packageId, [String? xRequestId]) async {
-    final requestHeaders = buildRequestHeaders(
-      <String, HeaderParameterSpec>{
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
-      },
-      <String, HeaderParameterSpec>{},
-    );
-    final response = await _client.delete(ApiPaths.backendPath('/memberships/packages/${serializePathParameter(packageId, const PathParameterSpec('packageId', 'simple', false))}'), headers: requestHeaders);
+  Future<MembershipsPackagesDeleteResult?> membershipsPackagesDelete(String packageId) async {
+    final response = await _client.delete(ApiPaths.backendPath('/memberships/packages/${serializePathParameter(packageId, const PathParameterSpec('packageId', 'simple', false))}'));
     return (() {
       final map = sdkworkResponseAsMap(response);
       return map == null ? null : MembershipsPackagesDeleteResult.fromJson(map);
@@ -573,11 +542,10 @@ class CommerceApi {
   }
 
   /// Memberships Packages Update
-  Future<MembershipsPackagesUpdateResult?> membershipsPackagesUpdate(String packageId, CommerceMembershipPackageMutationRequest body, String idempotencyKey, [String? xRequestId]) async {
+  Future<MembershipsPackagesUpdateResult?> membershipsPackagesUpdate(String packageId, CommerceMembershipPackageMutationRequest body, String idempotencyKey) async {
     final requestHeaders = buildRequestHeaders(
       <String, HeaderParameterSpec>{
         'Idempotency-Key': HeaderParameterSpec(idempotencyKey, 'simple', false, null),
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
       },
       <String, HeaderParameterSpec>{},
     );
@@ -604,11 +572,10 @@ class CommerceApi {
   }
 
   /// Memberships Plans Create
-  Future<MembershipsPlansCreateResult?> membershipsPlansCreate(CommerceMembershipPlanMutationRequest body, String idempotencyKey, [String? xRequestId]) async {
+  Future<MembershipsPlansCreateResult?> membershipsPlansCreate(CommerceMembershipPlanMutationRequest body, String idempotencyKey) async {
     final requestHeaders = buildRequestHeaders(
       <String, HeaderParameterSpec>{
         'Idempotency-Key': HeaderParameterSpec(idempotencyKey, 'simple', false, null),
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
       },
       <String, HeaderParameterSpec>{},
     );
@@ -621,14 +588,8 @@ class CommerceApi {
   }
 
   /// Memberships Plans Delete
-  Future<MembershipsPlansDeleteResult?> membershipsPlansDelete(String planId, [String? xRequestId]) async {
-    final requestHeaders = buildRequestHeaders(
-      <String, HeaderParameterSpec>{
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
-      },
-      <String, HeaderParameterSpec>{},
-    );
-    final response = await _client.delete(ApiPaths.backendPath('/memberships/plans/${serializePathParameter(planId, const PathParameterSpec('planId', 'simple', false))}'), headers: requestHeaders);
+  Future<MembershipsPlansDeleteResult?> membershipsPlansDelete(String planId) async {
+    final response = await _client.delete(ApiPaths.backendPath('/memberships/plans/${serializePathParameter(planId, const PathParameterSpec('planId', 'simple', false))}'));
     return (() {
       final map = sdkworkResponseAsMap(response);
       return map == null ? null : MembershipsPlansDeleteResult.fromJson(map);
@@ -636,11 +597,10 @@ class CommerceApi {
   }
 
   /// Memberships Plans Update
-  Future<MembershipsPlansUpdateResult?> membershipsPlansUpdate(String planId, CommerceMembershipPlanMutationRequest body, String idempotencyKey, [String? xRequestId]) async {
+  Future<MembershipsPlansUpdateResult?> membershipsPlansUpdate(String planId, CommerceMembershipPlanMutationRequest body, String idempotencyKey) async {
     final requestHeaders = buildRequestHeaders(
       <String, HeaderParameterSpec>{
         'Idempotency-Key': HeaderParameterSpec(idempotencyKey, 'simple', false, null),
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
       },
       <String, HeaderParameterSpec>{},
     );
@@ -767,11 +727,10 @@ class CommerceApi {
   }
 
   /// Payments Provider Accounts Create
-  Future<PaymentsProviderAccountsCreateResult?> paymentsProviderAccountsCreate(CommercePaymentProviderAccountMutationRequest body, String idempotencyKey, [String? xRequestId]) async {
+  Future<PaymentsProviderAccountsCreateResult?> paymentsProviderAccountsCreate(CommercePaymentProviderAccountMutationRequest body, String idempotencyKey) async {
     final requestHeaders = buildRequestHeaders(
       <String, HeaderParameterSpec>{
         'Idempotency-Key': HeaderParameterSpec(idempotencyKey, 'simple', false, null),
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
       },
       <String, HeaderParameterSpec>{},
     );
@@ -874,11 +833,10 @@ class CommerceApi {
   }
 
   /// Recharges Packages Create
-  Future<RechargesPackagesCreateResult?> rechargesPackagesCreate(CommerceRechargePackageMutationRequest body, String idempotencyKey, [String? xRequestId]) async {
+  Future<RechargesPackagesCreateResult?> rechargesPackagesCreate(CommerceRechargePackageMutationRequest body, String idempotencyKey) async {
     final requestHeaders = buildRequestHeaders(
       <String, HeaderParameterSpec>{
         'Idempotency-Key': HeaderParameterSpec(idempotencyKey, 'simple', false, null),
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
       },
       <String, HeaderParameterSpec>{},
     );
@@ -891,14 +849,8 @@ class CommerceApi {
   }
 
   /// Recharges Packages Delete
-  Future<RechargesPackagesDeleteResult?> rechargesPackagesDelete(String packageId, [String? xRequestId]) async {
-    final requestHeaders = buildRequestHeaders(
-      <String, HeaderParameterSpec>{
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
-      },
-      <String, HeaderParameterSpec>{},
-    );
-    final response = await _client.delete(ApiPaths.backendPath('/recharges/packages/${serializePathParameter(packageId, const PathParameterSpec('packageId', 'simple', false))}'), headers: requestHeaders);
+  Future<RechargesPackagesDeleteResult?> rechargesPackagesDelete(String packageId) async {
+    final response = await _client.delete(ApiPaths.backendPath('/recharges/packages/${serializePathParameter(packageId, const PathParameterSpec('packageId', 'simple', false))}'));
     return (() {
       final map = sdkworkResponseAsMap(response);
       return map == null ? null : RechargesPackagesDeleteResult.fromJson(map);
@@ -906,11 +858,10 @@ class CommerceApi {
   }
 
   /// Recharges Packages Update
-  Future<RechargesPackagesUpdateResult?> rechargesPackagesUpdate(String packageId, CommerceRechargePackageMutationRequest body, String idempotencyKey, [String? xRequestId]) async {
+  Future<RechargesPackagesUpdateResult?> rechargesPackagesUpdate(String packageId, CommerceRechargePackageMutationRequest body, String idempotencyKey) async {
     final requestHeaders = buildRequestHeaders(
       <String, HeaderParameterSpec>{
         'Idempotency-Key': HeaderParameterSpec(idempotencyKey, 'simple', false, null),
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
       },
       <String, HeaderParameterSpec>{},
     );
@@ -988,11 +939,10 @@ class CommerceApi {
   }
 
   /// Wallet Adjustments Create
-  Future<WalletAdjustmentsCreateResult?> walletAdjustmentsCreate(CommerceStandardCommandRequest body, String idempotencyKey, [String? xRequestId]) async {
+  Future<WalletAdjustmentsCreateResult?> walletAdjustmentsCreate(CommerceStandardCommandRequest body, String idempotencyKey) async {
     final requestHeaders = buildRequestHeaders(
       <String, HeaderParameterSpec>{
         'Idempotency-Key': HeaderParameterSpec(idempotencyKey, 'simple', false, null),
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
       },
       <String, HeaderParameterSpec>{},
     );

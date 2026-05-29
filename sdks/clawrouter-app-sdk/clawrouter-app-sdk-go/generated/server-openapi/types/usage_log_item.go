@@ -30,4 +30,5 @@ type UsageLogItem struct {
 	TotalTime string `json:"totalTime"`
 	Ttft string `json:"ttft"`
 	Type string `json:"type"`
+	UserAgent string `json:"userAgent"`
 }

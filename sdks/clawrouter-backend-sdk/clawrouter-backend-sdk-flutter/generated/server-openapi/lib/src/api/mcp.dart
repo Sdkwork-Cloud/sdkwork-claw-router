@@ -12,15 +12,9 @@ class McpApi {
   McpApi(this._client);
 
   /// Update MCP binding
-  Future<ServersBindingsUpdateResult?> serversBindingsUpdate(String bindingId, AdminMcpBindingUpdateRequest body, [String? xRequestId]) async {
-    final requestHeaders = buildRequestHeaders(
-      <String, HeaderParameterSpec>{
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
-      },
-      <String, HeaderParameterSpec>{},
-    );
+  Future<ServersBindingsUpdateResult?> serversBindingsUpdate(String bindingId, AdminMcpBindingUpdateRequest body) async {
     final payload = body.toJson();
-    final response = await _client.put(ApiPaths.backendPath('/mcp/bindings/${serializePathParameter(bindingId, const PathParameterSpec('bindingId', 'simple', false))}'), body: payload, headers: requestHeaders, contentType: 'application/json');
+    final response = await _client.put(ApiPaths.backendPath('/mcp/bindings/${serializePathParameter(bindingId, const PathParameterSpec('bindingId', 'simple', false))}'), body: payload, contentType: 'application/json');
     return (() {
       final map = sdkworkResponseAsMap(response);
       return map == null ? null : ServersBindingsUpdateResult.fromJson(map);
@@ -28,14 +22,8 @@ class McpApi {
   }
 
   /// Publish MCP server revision
-  Future<RevisionsPublishResult?> revisionsPublish(String revisionId, [String? xRequestId]) async {
-    final requestHeaders = buildRequestHeaders(
-      <String, HeaderParameterSpec>{
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
-      },
-      <String, HeaderParameterSpec>{},
-    );
-    final response = await _client.post(ApiPaths.backendPath('/mcp/revisions/${serializePathParameter(revisionId, const PathParameterSpec('revisionId', 'simple', false))}/publish'), headers: requestHeaders);
+  Future<RevisionsPublishResult?> revisionsPublish(String revisionId) async {
+    final response = await _client.post(ApiPaths.backendPath('/mcp/revisions/${serializePathParameter(revisionId, const PathParameterSpec('revisionId', 'simple', false))}/publish'));
     return (() {
       final map = sdkworkResponseAsMap(response);
       return map == null ? null : RevisionsPublishResult.fromJson(map);
@@ -61,11 +49,10 @@ class McpApi {
   }
 
   /// Create MCP server
-  Future<ServersCreateResult?> serversCreate(AdminMcpServerCreateRequest body, String idempotencyKey, [String? xRequestId]) async {
+  Future<ServersCreateResult?> serversCreate(AdminMcpServerCreateRequest body, String idempotencyKey) async {
     final requestHeaders = buildRequestHeaders(
       <String, HeaderParameterSpec>{
         'Idempotency-Key': HeaderParameterSpec(idempotencyKey, 'simple', false, null),
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
       },
       <String, HeaderParameterSpec>{},
     );
@@ -87,15 +74,9 @@ class McpApi {
   }
 
   /// Update MCP server
-  Future<ServersUpdateResult?> serversUpdate(String serverId, AdminMcpServerUpdateRequest body, [String? xRequestId]) async {
-    final requestHeaders = buildRequestHeaders(
-      <String, HeaderParameterSpec>{
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
-      },
-      <String, HeaderParameterSpec>{},
-    );
+  Future<ServersUpdateResult?> serversUpdate(String serverId, AdminMcpServerUpdateRequest body) async {
     final payload = body.toJson();
-    final response = await _client.put(ApiPaths.backendPath('/mcp/servers/${serializePathParameter(serverId, const PathParameterSpec('serverId', 'simple', false))}'), body: payload, headers: requestHeaders, contentType: 'application/json');
+    final response = await _client.put(ApiPaths.backendPath('/mcp/servers/${serializePathParameter(serverId, const PathParameterSpec('serverId', 'simple', false))}'), body: payload, contentType: 'application/json');
     return (() {
       final map = sdkworkResponseAsMap(response);
       return map == null ? null : ServersUpdateResult.fromJson(map);
@@ -112,11 +93,10 @@ class McpApi {
   }
 
   /// Create MCP binding
-  Future<ServersBindingsCreateResult?> serversBindingsCreate(String serverId, AdminMcpBindingCreateRequest body, String idempotencyKey, [String? xRequestId]) async {
+  Future<ServersBindingsCreateResult?> serversBindingsCreate(String serverId, AdminMcpBindingCreateRequest body, String idempotencyKey) async {
     final requestHeaders = buildRequestHeaders(
       <String, HeaderParameterSpec>{
         'Idempotency-Key': HeaderParameterSpec(idempotencyKey, 'simple', false, null),
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
       },
       <String, HeaderParameterSpec>{},
     );
@@ -129,14 +109,8 @@ class McpApi {
   }
 
   /// Discover MCP tools
-  Future<ServersToolsRefreshResult?> serversToolsRefresh(String serverId, [String? xRequestId]) async {
-    final requestHeaders = buildRequestHeaders(
-      <String, HeaderParameterSpec>{
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
-      },
-      <String, HeaderParameterSpec>{},
-    );
-    final response = await _client.post(ApiPaths.backendPath('/mcp/servers/${serializePathParameter(serverId, const PathParameterSpec('serverId', 'simple', false))}/discover'), headers: requestHeaders);
+  Future<ServersToolsRefreshResult?> serversToolsRefresh(String serverId) async {
+    final response = await _client.post(ApiPaths.backendPath('/mcp/servers/${serializePathParameter(serverId, const PathParameterSpec('serverId', 'simple', false))}/discover'));
     return (() {
       final map = sdkworkResponseAsMap(response);
       return map == null ? null : ServersToolsRefreshResult.fromJson(map);
@@ -144,14 +118,8 @@ class McpApi {
   }
 
   /// Check MCP server health
-  Future<ServersHealthChecksCreateResult?> serversHealthChecksCreate(String serverId, [String? xRequestId]) async {
-    final requestHeaders = buildRequestHeaders(
-      <String, HeaderParameterSpec>{
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
-      },
-      <String, HeaderParameterSpec>{},
-    );
-    final response = await _client.post(ApiPaths.backendPath('/mcp/servers/${serializePathParameter(serverId, const PathParameterSpec('serverId', 'simple', false))}/health_check'), headers: requestHeaders);
+  Future<ServersHealthChecksCreateResult?> serversHealthChecksCreate(String serverId) async {
+    final response = await _client.post(ApiPaths.backendPath('/mcp/servers/${serializePathParameter(serverId, const PathParameterSpec('serverId', 'simple', false))}/health_check'));
     return (() {
       final map = sdkworkResponseAsMap(response);
       return map == null ? null : ServersHealthChecksCreateResult.fromJson(map);
@@ -168,11 +136,10 @@ class McpApi {
   }
 
   /// Create MCP server revision
-  Future<ServersRevisionsCreateResult?> serversRevisionsCreate(String serverId, AdminMcpServerRevisionCreateRequest body, String idempotencyKey, [String? xRequestId]) async {
+  Future<ServersRevisionsCreateResult?> serversRevisionsCreate(String serverId, AdminMcpServerRevisionCreateRequest body, String idempotencyKey) async {
     final requestHeaders = buildRequestHeaders(
       <String, HeaderParameterSpec>{
         'Idempotency-Key': HeaderParameterSpec(idempotencyKey, 'simple', false, null),
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
       },
       <String, HeaderParameterSpec>{},
     );
@@ -194,15 +161,9 @@ class McpApi {
   }
 
   /// Update MCP tool
-  Future<ToolsUpdateResult?> toolsUpdate(String toolId, AdminMcpToolUpdateRequest body, [String? xRequestId]) async {
-    final requestHeaders = buildRequestHeaders(
-      <String, HeaderParameterSpec>{
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
-      },
-      <String, HeaderParameterSpec>{},
-    );
+  Future<ToolsUpdateResult?> toolsUpdate(String toolId, AdminMcpToolUpdateRequest body) async {
     final payload = body.toJson();
-    final response = await _client.put(ApiPaths.backendPath('/mcp/tools/${serializePathParameter(toolId, const PathParameterSpec('toolId', 'simple', false))}'), body: payload, headers: requestHeaders, contentType: 'application/json');
+    final response = await _client.put(ApiPaths.backendPath('/mcp/tools/${serializePathParameter(toolId, const PathParameterSpec('toolId', 'simple', false))}'), body: payload, contentType: 'application/json');
     return (() {
       final map = sdkworkResponseAsMap(response);
       return map == null ? null : ToolsUpdateResult.fromJson(map);

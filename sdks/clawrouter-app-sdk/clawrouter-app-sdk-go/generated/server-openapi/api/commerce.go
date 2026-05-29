@@ -43,12 +43,9 @@ func (a *CommerceApi) AddressesList(page *int, pageSize *int, status *string) (s
 }
 
 // Addresses Create
-func (a *CommerceApi) AddressesCreate(body sdktypes.CommerceStandardCommandRequest, idempotencyKey string, xRequestId *string) (sdktypes.AddressesCreateResult, error) {
+func (a *CommerceApi) AddressesCreate(body sdktypes.CommerceStandardCommandRequest, idempotencyKey string) (sdktypes.AddressesCreateResult, error) {
     headers := BuildRequestHeaders(
-        map[string]ParameterSpec{
-            "Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},
-            "X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},
-        },
+        map[string]ParameterSpec{"Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},},
         map[string]ParameterSpec{},
     )
     raw, err := a.client.Post(AppApiPath("/addresses"), body, nil, headers, "application/json")
@@ -60,12 +57,9 @@ func (a *CommerceApi) AddressesCreate(body sdktypes.CommerceStandardCommandReque
 }
 
 // Addresses Delete
-func (a *CommerceApi) AddressesDelete(addressId string, idempotencyKey string, xRequestId *string) (sdktypes.AddressesDeleteResult, error) {
+func (a *CommerceApi) AddressesDelete(addressId string, idempotencyKey string) (sdktypes.AddressesDeleteResult, error) {
     headers := BuildRequestHeaders(
-        map[string]ParameterSpec{
-            "Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},
-            "X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},
-        },
+        map[string]ParameterSpec{"Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},},
         map[string]ParameterSpec{},
     )
     raw, err := a.client.Delete(AppApiPath(fmt.Sprintf("/addresses/%s", SerializePathParameter(addressId, PathParameterSpec{Name: "addressId", Style: "simple", Explode: false}))), nil, headers)
@@ -77,12 +71,9 @@ func (a *CommerceApi) AddressesDelete(addressId string, idempotencyKey string, x
 }
 
 // Addresses Update
-func (a *CommerceApi) AddressesUpdate(addressId string, body sdktypes.CommerceStandardCommandRequest, idempotencyKey string, xRequestId *string) (sdktypes.AddressesUpdateResult, error) {
+func (a *CommerceApi) AddressesUpdate(addressId string, body sdktypes.CommerceStandardCommandRequest, idempotencyKey string) (sdktypes.AddressesUpdateResult, error) {
     headers := BuildRequestHeaders(
-        map[string]ParameterSpec{
-            "Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},
-            "X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},
-        },
+        map[string]ParameterSpec{"Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},},
         map[string]ParameterSpec{},
     )
     raw, err := a.client.Patch(AppApiPath(fmt.Sprintf("/addresses/%s", SerializePathParameter(addressId, PathParameterSpec{Name: "addressId", Style: "simple", Explode: false}))), body, nil, headers, "application/json")
@@ -94,12 +85,9 @@ func (a *CommerceApi) AddressesUpdate(addressId string, body sdktypes.CommerceSt
 }
 
 // Addresses Default Selection Create
-func (a *CommerceApi) AddressesDefaultSelectionCreate(addressId string, body sdktypes.CommerceStandardCommandRequest, idempotencyKey string, xRequestId *string) (sdktypes.AddressesDefaultSelectionCreateResult, error) {
+func (a *CommerceApi) AddressesDefaultSelectionCreate(addressId string, body sdktypes.CommerceStandardCommandRequest, idempotencyKey string) (sdktypes.AddressesDefaultSelectionCreateResult, error) {
     headers := BuildRequestHeaders(
-        map[string]ParameterSpec{
-            "Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},
-            "X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},
-        },
+        map[string]ParameterSpec{"Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},},
         map[string]ParameterSpec{},
     )
     raw, err := a.client.Post(AppApiPath(fmt.Sprintf("/addresses/%s/default_selection", SerializePathParameter(addressId, PathParameterSpec{Name: "addressId", Style: "simple", Explode: false}))), body, nil, headers, "application/json")
@@ -137,12 +125,9 @@ func (a *CommerceApi) CartCurrentRetrieve() (sdktypes.CartCurrentRetrieveResult,
 }
 
 // Cart Items Create
-func (a *CommerceApi) CartItemsCreate(body sdktypes.CommerceStandardCommandRequest, idempotencyKey string, xRequestId *string) (sdktypes.CartItemsCreateResult, error) {
+func (a *CommerceApi) CartItemsCreate(body sdktypes.CommerceStandardCommandRequest, idempotencyKey string) (sdktypes.CartItemsCreateResult, error) {
     headers := BuildRequestHeaders(
-        map[string]ParameterSpec{
-            "Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},
-            "X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},
-        },
+        map[string]ParameterSpec{"Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},},
         map[string]ParameterSpec{},
     )
     raw, err := a.client.Post(AppApiPath("/cart/items"), body, nil, headers, "application/json")
@@ -154,12 +139,9 @@ func (a *CommerceApi) CartItemsCreate(body sdktypes.CommerceStandardCommandReque
 }
 
 // Cart Items Delete
-func (a *CommerceApi) CartItemsDelete(cartItemId string, idempotencyKey string, xRequestId *string) (sdktypes.CartItemsDeleteResult, error) {
+func (a *CommerceApi) CartItemsDelete(cartItemId string, idempotencyKey string) (sdktypes.CartItemsDeleteResult, error) {
     headers := BuildRequestHeaders(
-        map[string]ParameterSpec{
-            "Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},
-            "X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},
-        },
+        map[string]ParameterSpec{"Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},},
         map[string]ParameterSpec{},
     )
     raw, err := a.client.Delete(AppApiPath(fmt.Sprintf("/cart/items/%s", SerializePathParameter(cartItemId, PathParameterSpec{Name: "cartItemId", Style: "simple", Explode: false}))), nil, headers)
@@ -171,12 +153,9 @@ func (a *CommerceApi) CartItemsDelete(cartItemId string, idempotencyKey string, 
 }
 
 // Cart Items Update
-func (a *CommerceApi) CartItemsUpdate(cartItemId string, body sdktypes.CommerceStandardCommandRequest, idempotencyKey string, xRequestId *string) (sdktypes.CartItemsUpdateResult, error) {
+func (a *CommerceApi) CartItemsUpdate(cartItemId string, body sdktypes.CommerceStandardCommandRequest, idempotencyKey string) (sdktypes.CartItemsUpdateResult, error) {
     headers := BuildRequestHeaders(
-        map[string]ParameterSpec{
-            "Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},
-            "X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},
-        },
+        map[string]ParameterSpec{"Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},},
         map[string]ParameterSpec{},
     )
     raw, err := a.client.Patch(AppApiPath(fmt.Sprintf("/cart/items/%s", SerializePathParameter(cartItemId, PathParameterSpec{Name: "cartItemId", Style: "simple", Explode: false}))), body, nil, headers, "application/json")
@@ -243,12 +222,9 @@ func (a *CommerceApi) CatalogSkusRetrieve(skuId string) (sdktypes.CatalogSkusRet
 }
 
 // Checkout Sessions Create
-func (a *CommerceApi) CheckoutSessionsCreate(body sdktypes.CommerceStandardCommandRequest, idempotencyKey string, xRequestId *string) (sdktypes.CheckoutSessionsCreateResult, error) {
+func (a *CommerceApi) CheckoutSessionsCreate(body sdktypes.CommerceStandardCommandRequest, idempotencyKey string) (sdktypes.CheckoutSessionsCreateResult, error) {
     headers := BuildRequestHeaders(
-        map[string]ParameterSpec{
-            "Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},
-            "X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},
-        },
+        map[string]ParameterSpec{"Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},},
         map[string]ParameterSpec{},
     )
     raw, err := a.client.Post(AppApiPath("/checkout/sessions"), body, nil, headers, "application/json")
@@ -270,12 +246,9 @@ func (a *CommerceApi) CheckoutSessionsRetrieve(checkoutSessionId string) (sdktyp
 }
 
 // Checkout Sessions Orders Create
-func (a *CommerceApi) CheckoutSessionsOrdersCreate(checkoutSessionId string, body sdktypes.CommerceStandardCommandRequest, idempotencyKey string, xRequestId *string) (sdktypes.CheckoutSessionsOrdersCreateResult, error) {
+func (a *CommerceApi) CheckoutSessionsOrdersCreate(checkoutSessionId string, body sdktypes.CommerceStandardCommandRequest, idempotencyKey string) (sdktypes.CheckoutSessionsOrdersCreateResult, error) {
     headers := BuildRequestHeaders(
-        map[string]ParameterSpec{
-            "Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},
-            "X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},
-        },
+        map[string]ParameterSpec{"Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},},
         map[string]ParameterSpec{},
     )
     raw, err := a.client.Post(AppApiPath(fmt.Sprintf("/checkout/sessions/%s/orders", SerializePathParameter(checkoutSessionId, PathParameterSpec{Name: "checkoutSessionId", Style: "simple", Explode: false}))), body, nil, headers, "application/json")
@@ -287,12 +260,9 @@ func (a *CommerceApi) CheckoutSessionsOrdersCreate(checkoutSessionId string, bod
 }
 
 // Checkout Sessions Quotes Create
-func (a *CommerceApi) CheckoutSessionsQuotesCreate(checkoutSessionId string, body sdktypes.CommerceStandardCommandRequest, idempotencyKey string, xRequestId *string) (sdktypes.CheckoutSessionsQuotesCreateResult, error) {
+func (a *CommerceApi) CheckoutSessionsQuotesCreate(checkoutSessionId string, body sdktypes.CommerceStandardCommandRequest, idempotencyKey string) (sdktypes.CheckoutSessionsQuotesCreateResult, error) {
     headers := BuildRequestHeaders(
-        map[string]ParameterSpec{
-            "Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},
-            "X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},
-        },
+        map[string]ParameterSpec{"Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},},
         map[string]ParameterSpec{},
     )
     raw, err := a.client.Post(AppApiPath(fmt.Sprintf("/checkout/sessions/%s/quotes", SerializePathParameter(checkoutSessionId, PathParameterSpec{Name: "checkoutSessionId", Style: "simple", Explode: false}))), body, nil, headers, "application/json")
@@ -344,12 +314,9 @@ func (a *CommerceApi) InvoicesList(page *int, pageSize *int, status *string) (sd
 }
 
 // Invoices Create
-func (a *CommerceApi) InvoicesCreate(body sdktypes.CommerceStandardCommandRequest, idempotencyKey string, xRequestId *string) (sdktypes.InvoicesCreateResult, error) {
+func (a *CommerceApi) InvoicesCreate(body sdktypes.CommerceStandardCommandRequest, idempotencyKey string) (sdktypes.InvoicesCreateResult, error) {
     headers := BuildRequestHeaders(
-        map[string]ParameterSpec{
-            "Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},
-            "X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},
-        },
+        map[string]ParameterSpec{"Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},},
         map[string]ParameterSpec{},
     )
     raw, err := a.client.Post(AppApiPath("/invoices"), body, nil, headers, "application/json")
@@ -486,12 +453,8 @@ func (a *CommerceApi) MembershipsPointsBalanceRetrieve() (sdktypes.MembershipsPo
 }
 
 // Memberships Points Daily Rewards Create
-func (a *CommerceApi) MembershipsPointsDailyRewardsCreate(body *sdktypes.MembershipsPointsDailyRewardsCreateRequest, xRequestId *string) (sdktypes.MembershipsPointsDailyRewardsCreateResult, error) {
-    headers := BuildRequestHeaders(
-        map[string]ParameterSpec{"X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},},
-        map[string]ParameterSpec{},
-    )
-    raw, err := a.client.Post(AppApiPath("/memberships/points/daily_rewards"), body, nil, headers, "application/json")
+func (a *CommerceApi) MembershipsPointsDailyRewardsCreate(body *sdktypes.MembershipsPointsDailyRewardsCreateRequest) (sdktypes.MembershipsPointsDailyRewardsCreateResult, error) {
+    raw, err := a.client.Post(AppApiPath("/memberships/points/daily_rewards"), body, nil, nil, "application/json")
     if err != nil {
         var zero sdktypes.MembershipsPointsDailyRewardsCreateResult
         return zero, err
@@ -525,12 +488,8 @@ func (a *CommerceApi) MembershipsPointsHistoryList(page *int, pageSize *int, cur
 }
 
 // Memberships Privileges Speed Ups Create
-func (a *CommerceApi) MembershipsPrivilegesSpeedUpsCreate(body *sdktypes.MembershipsPrivilegesSpeedUpsCreateRequest, xRequestId *string) (sdktypes.MembershipsPrivilegesSpeedUpsCreateResult, error) {
-    headers := BuildRequestHeaders(
-        map[string]ParameterSpec{"X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},},
-        map[string]ParameterSpec{},
-    )
-    raw, err := a.client.Post(AppApiPath("/memberships/privileges/speed_ups"), body, nil, headers, "application/json")
+func (a *CommerceApi) MembershipsPrivilegesSpeedUpsCreate(body *sdktypes.MembershipsPrivilegesSpeedUpsCreateRequest) (sdktypes.MembershipsPrivilegesSpeedUpsCreateResult, error) {
+    raw, err := a.client.Post(AppApiPath("/memberships/privileges/speed_ups"), body, nil, nil, "application/json")
     if err != nil {
         var zero sdktypes.MembershipsPrivilegesSpeedUpsCreateResult
         return zero, err
@@ -549,12 +508,9 @@ func (a *CommerceApi) MembershipsPrivilegesUsageRetrieve() (sdktypes.Memberships
 }
 
 // Memberships Purchases Create
-func (a *CommerceApi) MembershipsPurchasesCreate(body sdktypes.CommerceMembershipPurchaseRequest, idempotencyKey string, xRequestId *string) (sdktypes.MembershipsPurchasesCreateResult, error) {
+func (a *CommerceApi) MembershipsPurchasesCreate(body sdktypes.CommerceMembershipPurchaseRequest, idempotencyKey string) (sdktypes.MembershipsPurchasesCreateResult, error) {
     headers := BuildRequestHeaders(
-        map[string]ParameterSpec{
-            "Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},
-            "X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},
-        },
+        map[string]ParameterSpec{"Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},},
         map[string]ParameterSpec{},
     )
     raw, err := a.client.Post(AppApiPath("/memberships/purchases"), body, nil, headers, "application/json")
@@ -566,12 +522,9 @@ func (a *CommerceApi) MembershipsPurchasesCreate(body sdktypes.CommerceMembershi
 }
 
 // Memberships Purchases Renew
-func (a *CommerceApi) MembershipsPurchasesRenew(body sdktypes.CommerceMembershipPurchaseRequest, idempotencyKey string, xRequestId *string) (sdktypes.MembershipsPurchasesRenewResult, error) {
+func (a *CommerceApi) MembershipsPurchasesRenew(body sdktypes.CommerceMembershipPurchaseRequest, idempotencyKey string) (sdktypes.MembershipsPurchasesRenewResult, error) {
     headers := BuildRequestHeaders(
-        map[string]ParameterSpec{
-            "Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},
-            "X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},
-        },
+        map[string]ParameterSpec{"Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},},
         map[string]ParameterSpec{},
     )
     raw, err := a.client.Post(AppApiPath("/memberships/purchases/renew"), body, nil, headers, "application/json")
@@ -583,12 +536,9 @@ func (a *CommerceApi) MembershipsPurchasesRenew(body sdktypes.CommerceMembership
 }
 
 // Memberships Purchases Upgrade
-func (a *CommerceApi) MembershipsPurchasesUpgrade(body sdktypes.CommerceMembershipPurchaseRequest, idempotencyKey string, xRequestId *string) (sdktypes.MembershipsPurchasesUpgradeResult, error) {
+func (a *CommerceApi) MembershipsPurchasesUpgrade(body sdktypes.CommerceMembershipPurchaseRequest, idempotencyKey string) (sdktypes.MembershipsPurchasesUpgradeResult, error) {
     headers := BuildRequestHeaders(
-        map[string]ParameterSpec{
-            "Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},
-            "X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},
-        },
+        map[string]ParameterSpec{"Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},},
         map[string]ParameterSpec{},
     )
     raw, err := a.client.Post(AppApiPath("/memberships/purchases/upgrade"), body, nil, headers, "application/json")
@@ -625,12 +575,9 @@ func (a *CommerceApi) OrdersRetrieve(orderId string) (sdktypes.OrdersRetrieveRes
 }
 
 // Orders Cancellations Create
-func (a *CommerceApi) OrdersCancellationsCreate(orderId string, body sdktypes.CommerceStandardCommandRequest, idempotencyKey string, xRequestId *string) (sdktypes.OrdersCancellationsCreateResult, error) {
+func (a *CommerceApi) OrdersCancellationsCreate(orderId string, body sdktypes.CommerceStandardCommandRequest, idempotencyKey string) (sdktypes.OrdersCancellationsCreateResult, error) {
     headers := BuildRequestHeaders(
-        map[string]ParameterSpec{
-            "Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},
-            "X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},
-        },
+        map[string]ParameterSpec{"Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},},
         map[string]ParameterSpec{},
     )
     raw, err := a.client.Post(AppApiPath(fmt.Sprintf("/orders/%s/cancellations", SerializePathParameter(orderId, PathParameterSpec{Name: "orderId", Style: "simple", Explode: false}))), body, nil, headers, "application/json")
@@ -667,12 +614,9 @@ func (a *CommerceApi) PaymentsAttemptsRetrieve(paymentAttemptId string) (sdktype
 }
 
 // Payments Intents Create
-func (a *CommerceApi) PaymentsIntentsCreate(body sdktypes.CommercePaymentIntentCreateRequest, idempotencyKey string, xRequestId *string) (sdktypes.PaymentsIntentsCreateResult, error) {
+func (a *CommerceApi) PaymentsIntentsCreate(body sdktypes.CommercePaymentIntentCreateRequest, idempotencyKey string) (sdktypes.PaymentsIntentsCreateResult, error) {
     headers := BuildRequestHeaders(
-        map[string]ParameterSpec{
-            "Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},
-            "X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},
-        },
+        map[string]ParameterSpec{"Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},},
         map[string]ParameterSpec{},
     )
     raw, err := a.client.Post(AppApiPath("/payments/intents"), body, nil, headers, "application/json")
@@ -694,12 +638,9 @@ func (a *CommerceApi) PaymentsIntentsRetrieve(paymentIntentId string) (sdktypes.
 }
 
 // Payments Intents Attempts Create
-func (a *CommerceApi) PaymentsIntentsAttemptsCreate(paymentIntentId string, body sdktypes.CommercePaymentAttemptCreateRequest, idempotencyKey string, xRequestId *string) (sdktypes.PaymentsIntentsAttemptsCreateResult, error) {
+func (a *CommerceApi) PaymentsIntentsAttemptsCreate(paymentIntentId string, body sdktypes.CommercePaymentAttemptCreateRequest, idempotencyKey string) (sdktypes.PaymentsIntentsAttemptsCreateResult, error) {
     headers := BuildRequestHeaders(
-        map[string]ParameterSpec{
-            "Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},
-            "X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},
-        },
+        map[string]ParameterSpec{"Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},},
         map[string]ParameterSpec{},
     )
     raw, err := a.client.Post(AppApiPath(fmt.Sprintf("/payments/intents/%s/attempts", SerializePathParameter(paymentIntentId, PathParameterSpec{Name: "paymentIntentId", Style: "simple", Explode: false}))), body, nil, headers, "application/json")
@@ -726,12 +667,9 @@ func (a *CommerceApi) PaymentsMethodsList(page *int, pageSize *int, status *stri
 }
 
 // Recharges Orders Create
-func (a *CommerceApi) RechargesOrdersCreate(body sdktypes.CommerceStandardCommandRequest, idempotencyKey string, xRequestId *string) (sdktypes.RechargesOrdersCreateResult, error) {
+func (a *CommerceApi) RechargesOrdersCreate(body sdktypes.CommerceStandardCommandRequest, idempotencyKey string) (sdktypes.RechargesOrdersCreateResult, error) {
     headers := BuildRequestHeaders(
-        map[string]ParameterSpec{
-            "Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},
-            "X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},
-        },
+        map[string]ParameterSpec{"Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},},
         map[string]ParameterSpec{},
     )
     raw, err := a.client.Post(AppApiPath("/recharges/orders"), body, nil, headers, "application/json")
@@ -783,12 +721,9 @@ func (a *CommerceApi) RefundsList(page *int, pageSize *int, status *string) (sdk
 }
 
 // Refunds Create
-func (a *CommerceApi) RefundsCreate(body sdktypes.CommerceStandardCommandRequest, idempotencyKey string, xRequestId *string) (sdktypes.RefundsCreateResult, error) {
+func (a *CommerceApi) RefundsCreate(body sdktypes.CommerceStandardCommandRequest, idempotencyKey string) (sdktypes.RefundsCreateResult, error) {
     headers := BuildRequestHeaders(
-        map[string]ParameterSpec{
-            "Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},
-            "X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},
-        },
+        map[string]ParameterSpec{"Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},},
         map[string]ParameterSpec{},
     )
     raw, err := a.client.Post(AppApiPath("/refunds"), body, nil, headers, "application/json")

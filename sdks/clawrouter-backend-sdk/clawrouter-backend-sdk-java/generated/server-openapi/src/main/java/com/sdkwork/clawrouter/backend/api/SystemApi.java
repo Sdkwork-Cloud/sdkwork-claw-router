@@ -143,12 +143,8 @@ public class SystemApi {
     }
 
     /** Update IAM auth runtime settings */
-    public AuthSettingsUpdateResult authSettingsUpdate(AdminAuthSettingsUpdateRequest body, String xRequestId) throws Exception {
-        Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
-                Map.of()
-        );
-        Object raw = client.patch(ApiPaths.backendPath("/system/auth/settings"), body, null, requestHeaders, "application/json");
+    public AuthSettingsUpdateResult authSettingsUpdate(AdminAuthSettingsUpdateRequest body) throws Exception {
+        Object raw = client.patch(ApiPaths.backendPath("/system/auth/settings"), body, null, null, "application/json");
         return client.convertValue(raw, new TypeReference<AuthSettingsUpdateResult>() {});
     }
 
@@ -217,12 +213,8 @@ public class SystemApi {
     }
 
     /** Create firewall */
-    public FirewallsRulesCreateResult firewallsRulesCreate(AdminFirewallRuleCreateRequest body, String xRequestId) throws Exception {
-        Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
-                Map.of()
-        );
-        Object raw = client.post(ApiPaths.backendPath("/system/firewalls/rules"), body, null, requestHeaders, "application/json");
+    public FirewallsRulesCreateResult firewallsRulesCreate(AdminFirewallRuleCreateRequest body) throws Exception {
+        Object raw = client.post(ApiPaths.backendPath("/system/firewalls/rules"), body, null, null, "application/json");
         return client.convertValue(raw, new TypeReference<FirewallsRulesCreateResult>() {});
     }
 
@@ -269,12 +261,8 @@ public class SystemApi {
     }
 
     /** Create token limit */
-    public RateLimitsApiKeysCreateResult rateLimitsApiKeysCreate(AdminTokenLimitCreateRequest body, String xRequestId) throws Exception {
-        Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
-                Map.of()
-        );
-        Object raw = client.post(ApiPaths.backendPath("/system/rate_limits/api_keys"), body, null, requestHeaders, "application/json");
+    public RateLimitsApiKeysCreateResult rateLimitsApiKeysCreate(AdminTokenLimitCreateRequest body) throws Exception {
+        Object raw = client.post(ApiPaths.backendPath("/system/rate_limits/api_keys"), body, null, null, "application/json");
         return client.convertValue(raw, new TypeReference<RateLimitsApiKeysCreateResult>() {});
     }
 
@@ -285,12 +273,8 @@ public class SystemApi {
     }
 
     /** Create IP limit */
-    public RateLimitsIpCreateResult rateLimitsIpCreate(AdminIpLimitCreateRequest body, String xRequestId) throws Exception {
-        Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
-                Map.of()
-        );
-        Object raw = client.post(ApiPaths.backendPath("/system/rate_limits/ip"), body, null, requestHeaders, "application/json");
+    public RateLimitsIpCreateResult rateLimitsIpCreate(AdminIpLimitCreateRequest body) throws Exception {
+        Object raw = client.post(ApiPaths.backendPath("/system/rate_limits/ip"), body, null, null, "application/json");
         return client.convertValue(raw, new TypeReference<RateLimitsIpCreateResult>() {});
     }
 
@@ -301,12 +285,8 @@ public class SystemApi {
     }
 
     /** Create model limit */
-    public RateLimitsModelsCreateResult rateLimitsModelsCreate(AdminModelLimitCreateRequest body, String xRequestId) throws Exception {
-        Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
-                Map.of()
-        );
-        Object raw = client.post(ApiPaths.backendPath("/system/rate_limits/models"), body, null, requestHeaders, "application/json");
+    public RateLimitsModelsCreateResult rateLimitsModelsCreate(AdminModelLimitCreateRequest body) throws Exception {
+        Object raw = client.post(ApiPaths.backendPath("/system/rate_limits/models"), body, null, null, "application/json");
         return client.convertValue(raw, new TypeReference<RateLimitsModelsCreateResult>() {});
     }
 
@@ -321,6 +301,18 @@ public class SystemApi {
         ));
         Object raw = client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/system/records"), query));
         return client.convertValue(raw, new TypeReference<RecordsListResult>() {});
+    }
+
+    /** Retrieve runtime region settings */
+    public RuntimeRegionSettingsRetrieveResult runtimeRegionSettingsRetrieve() throws Exception {
+        Object raw = client.get(ApiPaths.backendPath("/system/runtime_region/settings"));
+        return client.convertValue(raw, new TypeReference<RuntimeRegionSettingsRetrieveResult>() {});
+    }
+
+    /** Update runtime region settings */
+    public RuntimeRegionSettingsUpdateResult runtimeRegionSettingsUpdate(AdminRuntimeRegionSettingsUpdateRequest body) throws Exception {
+        Object raw = client.patch(ApiPaths.backendPath("/system/runtime_region/settings"), body, null, null, "application/json");
+        return client.convertValue(raw, new TypeReference<RuntimeRegionSettingsUpdateResult>() {});
     }
 
     /** List service nodes */
@@ -364,12 +356,8 @@ public class SystemApi {
     }
 
     /** Update site branding and deployment personalization settings */
-    public SiteSettingsUpdateResult siteSettingsUpdate(AdminSiteSettingsUpdateRequest body, String xRequestId) throws Exception {
-        Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
-                Map.of()
-        );
-        Object raw = client.patch(ApiPaths.backendPath("/system/site/settings"), body, null, requestHeaders, "application/json");
+    public SiteSettingsUpdateResult siteSettingsUpdate(AdminSiteSettingsUpdateRequest body) throws Exception {
+        Object raw = client.patch(ApiPaths.backendPath("/system/site/settings"), body, null, null, "application/json");
         return client.convertValue(raw, new TypeReference<SiteSettingsUpdateResult>() {});
     }
 
@@ -562,74 +550,6 @@ public class SystemApi {
         return new com.fasterxml.jackson.databind.ObjectMapper();
     }
 
-    private record HeaderParameterSpec(Object value, String style, boolean explode, String contentType) {}
-
-    private static Map<String, String> buildRequestHeaders(Map<String, HeaderParameterSpec> headers, Map<String, HeaderParameterSpec> cookies) throws Exception {
-        Map<String, String> requestHeaders = new java.util.LinkedHashMap<>();
-        for (Map.Entry<String, HeaderParameterSpec> entry : headers.entrySet()) {
-            String serialized = serializeParameterValue(entry.getValue());
-            if (serialized != null) {
-                requestHeaders.put(entry.getKey(), serialized);
-            }
-        }
-
-        String cookieHeader = buildCookieHeader(cookies);
-        if (cookieHeader != null && !cookieHeader.isEmpty()) {
-            requestHeaders.merge("Cookie", cookieHeader, (left, right) -> left + "; " + right);
-        }
-
-        return requestHeaders.isEmpty() ? null : requestHeaders;
-    }
-
-    private static String buildCookieHeader(Map<String, HeaderParameterSpec> cookies) throws Exception {
-        java.util.List<String> pairs = new java.util.ArrayList<>();
-        for (Map.Entry<String, HeaderParameterSpec> entry : cookies.entrySet()) {
-            String serialized = serializeParameterValue(entry.getValue());
-            if (serialized != null) {
-                pairs.add(urlEncode(entry.getKey()) + "=" + urlEncode(serialized));
-            }
-        }
-        return String.join("; ", pairs);
-    }
-
-    private static String serializeParameterValue(HeaderParameterSpec parameter) throws Exception {
-        if (parameter == null || parameter.value() == null) {
-            return null;
-        }
-        Object value = parameter.value();
-        if (parameter.contentType() != null && !parameter.contentType().isBlank()) {
-            return headerObjectMapper().writeValueAsString(value);
-        }
-        if (value instanceof Iterable<?> iterable) {
-            java.util.List<String> values = new java.util.ArrayList<>();
-            for (Object item : iterable) {
-                if (item != null) {
-                    values.add(String.valueOf(item));
-                }
-            }
-            return String.join(",", values);
-        }
-        if (value instanceof Map<?, ?> map) {
-            java.util.List<String> values = new java.util.ArrayList<>();
-            map.forEach((key, item) -> {
-                if (item == null) {
-                    return;
-                }
-                if (parameter.explode()) {
-                    values.add(String.valueOf(key) + "=" + String.valueOf(item));
-                } else {
-                    values.add(String.valueOf(key));
-                    values.add(String.valueOf(item));
-                }
-            });
-            return String.join(",", values);
-        }
-        return String.valueOf(value);
-    }
-
-    private static com.fasterxml.jackson.databind.ObjectMapper headerObjectMapper() {
-        return new com.fasterxml.jackson.databind.ObjectMapper();
-    }
 
     private static String urlEncode(String value) {
         return java.net.URLEncoder.encode(value, java.nio.charset.StandardCharsets.UTF_8);

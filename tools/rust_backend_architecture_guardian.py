@@ -1,4 +1,4 @@
-from __future__ import annotations
+﻿from __future__ import annotations
 
 import argparse
 import tomllib
@@ -223,8 +223,8 @@ class RustBackendArchitectureGuardian:
         "normalize the /v1 prefix",
         "never send /v1/v1/...",
         "provider response timeout",
-        "integration_channel.timeout_ms",
-        "integration_channel.retry_policy",
+        "ai_channel.timeout_ms",
+        "ai_channel.retry_policy",
         "request-context provider timeout",
         "request-context provider retry policy",
         "ProviderRetryPolicy",

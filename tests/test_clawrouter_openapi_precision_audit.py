@@ -1,4 +1,4 @@
-import json
+﻿import json
 import tempfile
 import textwrap
 import unittest
@@ -105,7 +105,7 @@ class ClawRouterOpenApiPrecisionAuditTest(unittest.TestCase):
                             "kind": "create",
                             "path_params": [],
                             "source": "apps/portal/apiKeyService.ts",
-                            "read_sources": ["iam_gateway_api_key_group"],
+                            "read_sources": ["ai_channel_group"],
                             "write_tables": ["iam_gateway_api_key", "ops_audit_log"],
                             "response_schema": {
                                 "name": "CreateApiKeyResponse",
@@ -150,7 +150,7 @@ class ClawRouterOpenApiPrecisionAuditTest(unittest.TestCase):
                           type: string
                     IamGatewayApiKeyGroupRecord:
                       type: object
-                      x-table: iam_gateway_api_key_group
+                      x-table: ai_channel_group
                       properties:
                         code:
                           type: string

@@ -37,12 +37,9 @@ func (a *PromptsApi) DefinitionsList(page *int, pageSize *int, q *string, prompt
 }
 
 // Create admin prompt
-func (a *PromptsApi) DefinitionsCreate(body sdktypes.AdminPromptCreateRequest, idempotencyKey string, xRequestId *string) (sdktypes.DefinitionsCreateResult, error) {
+func (a *PromptsApi) DefinitionsCreate(body sdktypes.AdminPromptCreateRequest, idempotencyKey string) (sdktypes.DefinitionsCreateResult, error) {
     headers := BuildRequestHeaders(
-        map[string]ParameterSpec{
-            "Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},
-            "X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},
-        },
+        map[string]ParameterSpec{"Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},},
         map[string]ParameterSpec{},
     )
     raw, err := a.client.Post(BackendApiPath("/prompts"), body, nil, headers, "application/json")
@@ -54,12 +51,8 @@ func (a *PromptsApi) DefinitionsCreate(body sdktypes.AdminPromptCreateRequest, i
 }
 
 // Update prompt binding
-func (a *PromptsApi) DefinitionBindingsUpdate(bindingId string, body sdktypes.AdminPromptBindingUpdateRequest, xRequestId *string) (sdktypes.DefinitionBindingsUpdateResult, error) {
-    headers := BuildRequestHeaders(
-        map[string]ParameterSpec{"X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},},
-        map[string]ParameterSpec{},
-    )
-    raw, err := a.client.Put(BackendApiPath(fmt.Sprintf("/prompts/bindings/%s", SerializePathParameter(bindingId, PathParameterSpec{Name: "bindingId", Style: "simple", Explode: false}))), body, nil, headers, "application/json")
+func (a *PromptsApi) DefinitionBindingsUpdate(bindingId string, body sdktypes.AdminPromptBindingUpdateRequest) (sdktypes.DefinitionBindingsUpdateResult, error) {
+    raw, err := a.client.Put(BackendApiPath(fmt.Sprintf("/prompts/bindings/%s", SerializePathParameter(bindingId, PathParameterSpec{Name: "bindingId", Style: "simple", Explode: false}))), body, nil, nil, "application/json")
     if err != nil {
         var zero sdktypes.DefinitionBindingsUpdateResult
         return zero, err
@@ -68,12 +61,8 @@ func (a *PromptsApi) DefinitionBindingsUpdate(bindingId string, body sdktypes.Ad
 }
 
 // Publish prompt version
-func (a *PromptsApi) VersionsPublish(versionId string, xRequestId *string) (sdktypes.VersionsPublishResult, error) {
-    headers := BuildRequestHeaders(
-        map[string]ParameterSpec{"X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},},
-        map[string]ParameterSpec{},
-    )
-    raw, err := a.client.Post(BackendApiPath(fmt.Sprintf("/prompts/versions/%s/publish", SerializePathParameter(versionId, PathParameterSpec{Name: "versionId", Style: "simple", Explode: false}))), nil, nil, headers, "")
+func (a *PromptsApi) VersionsPublish(versionId string) (sdktypes.VersionsPublishResult, error) {
+    raw, err := a.client.Post(BackendApiPath(fmt.Sprintf("/prompts/versions/%s/publish", SerializePathParameter(versionId, PathParameterSpec{Name: "versionId", Style: "simple", Explode: false}))), nil, nil, nil, "")
     if err != nil {
         var zero sdktypes.VersionsPublishResult
         return zero, err
@@ -82,12 +71,8 @@ func (a *PromptsApi) VersionsPublish(versionId string, xRequestId *string) (sdkt
 }
 
 // Render prompt version
-func (a *PromptsApi) VersionRendersCreate(versionId string, body sdktypes.AdminPromptRenderRequest, xRequestId *string) (sdktypes.VersionRendersCreateResult, error) {
-    headers := BuildRequestHeaders(
-        map[string]ParameterSpec{"X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},},
-        map[string]ParameterSpec{},
-    )
-    raw, err := a.client.Post(BackendApiPath(fmt.Sprintf("/prompts/versions/%s/render", SerializePathParameter(versionId, PathParameterSpec{Name: "versionId", Style: "simple", Explode: false}))), body, nil, headers, "application/json")
+func (a *PromptsApi) VersionRendersCreate(versionId string, body sdktypes.AdminPromptRenderRequest) (sdktypes.VersionRendersCreateResult, error) {
+    raw, err := a.client.Post(BackendApiPath(fmt.Sprintf("/prompts/versions/%s/render", SerializePathParameter(versionId, PathParameterSpec{Name: "versionId", Style: "simple", Explode: false}))), body, nil, nil, "application/json")
     if err != nil {
         var zero sdktypes.VersionRendersCreateResult
         return zero, err
@@ -106,12 +91,9 @@ func (a *PromptsApi) DefinitionBindingsList(promptId string) (sdktypes.Definitio
 }
 
 // Create prompt binding
-func (a *PromptsApi) DefinitionBindingsCreate(promptId string, body sdktypes.AdminPromptBindingCreateRequest, idempotencyKey string, xRequestId *string) (sdktypes.DefinitionBindingsCreateResult, error) {
+func (a *PromptsApi) DefinitionBindingsCreate(promptId string, body sdktypes.AdminPromptBindingCreateRequest, idempotencyKey string) (sdktypes.DefinitionBindingsCreateResult, error) {
     headers := BuildRequestHeaders(
-        map[string]ParameterSpec{
-            "Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},
-            "X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},
-        },
+        map[string]ParameterSpec{"Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},},
         map[string]ParameterSpec{},
     )
     raw, err := a.client.Post(BackendApiPath(fmt.Sprintf("/prompts/%s/bindings", SerializePathParameter(promptId, PathParameterSpec{Name: "promptId", Style: "simple", Explode: false}))), body, nil, headers, "application/json")
@@ -133,12 +115,9 @@ func (a *PromptsApi) VersionsList(promptId string) (sdktypes.VersionsListResult,
 }
 
 // Create prompt version
-func (a *PromptsApi) VersionsCreate(promptId string, body sdktypes.AdminPromptVersionCreateRequest, idempotencyKey string, xRequestId *string) (sdktypes.VersionsCreateResult, error) {
+func (a *PromptsApi) VersionsCreate(promptId string, body sdktypes.AdminPromptVersionCreateRequest, idempotencyKey string) (sdktypes.VersionsCreateResult, error) {
     headers := BuildRequestHeaders(
-        map[string]ParameterSpec{
-            "Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},
-            "X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},
-        },
+        map[string]ParameterSpec{"Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},},
         map[string]ParameterSpec{},
     )
     raw, err := a.client.Post(BackendApiPath(fmt.Sprintf("/prompts/%s/versions", SerializePathParameter(promptId, PathParameterSpec{Name: "promptId", Style: "simple", Explode: false}))), body, nil, headers, "application/json")

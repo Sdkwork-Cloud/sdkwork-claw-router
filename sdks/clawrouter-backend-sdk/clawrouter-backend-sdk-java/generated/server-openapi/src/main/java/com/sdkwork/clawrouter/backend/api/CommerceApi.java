@@ -37,9 +37,9 @@ public class CommerceApi {
     }
 
     /** Create product attribute */
-    public CatalogAttributesCreateResult catalogAttributesCreate(CommerceProductAttributeMutationRequest body, String idempotencyKey, String xRequestId) throws Exception {
+    public CatalogAttributesCreateResult catalogAttributesCreate(CommerceProductAttributeMutationRequest body, String idempotencyKey) throws Exception {
         Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null), "X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
+                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null)),
                 Map.of()
         );
         Object raw = client.post(ApiPaths.backendPath("/catalog/attributes"), body, null, requestHeaders, "application/json");
@@ -59,9 +59,9 @@ public class CommerceApi {
     }
 
     /** Create product category */
-    public CatalogCategoriesCreateResult catalogCategoriesCreate(CommerceProductCategoryMutationRequest body, String idempotencyKey, String xRequestId) throws Exception {
+    public CatalogCategoriesCreateResult catalogCategoriesCreate(CommerceProductCategoryMutationRequest body, String idempotencyKey) throws Exception {
         Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null), "X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
+                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null)),
                 Map.of()
         );
         Object raw = client.post(ApiPaths.backendPath("/catalog/categories"), body, null, requestHeaders, "application/json");
@@ -69,19 +69,15 @@ public class CommerceApi {
     }
 
     /** Delete product category */
-    public CatalogCategoriesDeleteResult catalogCategoriesDelete(String categoryId, String xRequestId) throws Exception {
-        Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
-                Map.of()
-        );
-        Object raw = client.delete(ApiPaths.backendPath("/catalog/categories/" + serializePathParameter(categoryId, new PathParameterSpec("categoryId", "simple", false)) + ""), null, requestHeaders);
+    public CatalogCategoriesDeleteResult catalogCategoriesDelete(String categoryId) throws Exception {
+        Object raw = client.delete(ApiPaths.backendPath("/catalog/categories/" + serializePathParameter(categoryId, new PathParameterSpec("categoryId", "simple", false)) + ""));
         return client.convertValue(raw, new TypeReference<CatalogCategoriesDeleteResult>() {});
     }
 
     /** Update product category */
-    public CatalogCategoriesUpdateResult catalogCategoriesUpdate(String categoryId, CommerceProductCategoryMutationRequest body, String idempotencyKey, String xRequestId) throws Exception {
+    public CatalogCategoriesUpdateResult catalogCategoriesUpdate(String categoryId, CommerceProductCategoryMutationRequest body, String idempotencyKey) throws Exception {
         Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null), "X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
+                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null)),
                 Map.of()
         );
         Object raw = client.patch(ApiPaths.backendPath("/catalog/categories/" + serializePathParameter(categoryId, new PathParameterSpec("categoryId", "simple", false)) + ""), body, null, requestHeaders, "application/json");
@@ -102,9 +98,9 @@ public class CommerceApi {
     }
 
     /** Create product price list */
-    public CatalogPriceListsCreateResult catalogPriceListsCreate(CommercePriceListMutationRequest body, String idempotencyKey, String xRequestId) throws Exception {
+    public CatalogPriceListsCreateResult catalogPriceListsCreate(CommercePriceListMutationRequest body, String idempotencyKey) throws Exception {
         Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null), "X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
+                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null)),
                 Map.of()
         );
         Object raw = client.post(ApiPaths.backendPath("/catalog/price_lists"), body, null, requestHeaders, "application/json");
@@ -127,9 +123,9 @@ public class CommerceApi {
     }
 
     /** Create product SPU */
-    public CatalogProductsCreateResult catalogProductsCreate(CommerceProductSpuMutationRequest body, String idempotencyKey, String xRequestId) throws Exception {
+    public CatalogProductsCreateResult catalogProductsCreate(CommerceProductSpuMutationRequest body, String idempotencyKey) throws Exception {
         Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null), "X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
+                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null)),
                 Map.of()
         );
         Object raw = client.post(ApiPaths.backendPath("/catalog/products"), body, null, requestHeaders, "application/json");
@@ -137,9 +133,9 @@ public class CommerceApi {
     }
 
     /** Update product SPU */
-    public CatalogProductsUpdateResult catalogProductsUpdate(String productId, CommerceProductSpuMutationRequest body, String idempotencyKey, String xRequestId) throws Exception {
+    public CatalogProductsUpdateResult catalogProductsUpdate(String productId, CommerceProductSpuMutationRequest body, String idempotencyKey) throws Exception {
         Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null), "X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
+                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null)),
                 Map.of()
         );
         Object raw = client.patch(ApiPaths.backendPath("/catalog/products/" + serializePathParameter(productId, new PathParameterSpec("productId", "simple", false)) + ""), body, null, requestHeaders, "application/json");
@@ -160,9 +156,9 @@ public class CommerceApi {
     }
 
     /** Create product SKU */
-    public CatalogSkusCreateResult catalogSkusCreate(CommerceProductSkuMutationRequest body, String idempotencyKey, String xRequestId) throws Exception {
+    public CatalogSkusCreateResult catalogSkusCreate(CommerceProductSkuMutationRequest body, String idempotencyKey) throws Exception {
         Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null), "X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
+                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null)),
                 Map.of()
         );
         Object raw = client.post(ApiPaths.backendPath("/catalog/skus"), body, null, requestHeaders, "application/json");
@@ -170,9 +166,9 @@ public class CommerceApi {
     }
 
     /** Update product SKU */
-    public CatalogSkusUpdateResult catalogSkusUpdate(String skuId, CommerceProductSkuMutationRequest body, String idempotencyKey, String xRequestId) throws Exception {
+    public CatalogSkusUpdateResult catalogSkusUpdate(String skuId, CommerceProductSkuMutationRequest body, String idempotencyKey) throws Exception {
         Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null), "X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
+                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null)),
                 Map.of()
         );
         Object raw = client.patch(ApiPaths.backendPath("/catalog/skus/" + serializePathParameter(skuId, new PathParameterSpec("skuId", "simple", false)) + ""), body, null, requestHeaders, "application/json");
@@ -260,9 +256,9 @@ public class CommerceApi {
     }
 
     /** Update inventory stock */
-    public InventoryStocksUpdateResult inventoryStocksUpdate(String stockId, CommerceInventoryStockUpdateRequest body, String idempotencyKey, String xRequestId) throws Exception {
+    public InventoryStocksUpdateResult inventoryStocksUpdate(String stockId, CommerceInventoryStockUpdateRequest body, String idempotencyKey) throws Exception {
         Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null), "X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
+                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null)),
                 Map.of()
         );
         Object raw = client.patch(ApiPaths.backendPath("/inventory/stocks/" + serializePathParameter(stockId, new PathParameterSpec("stockId", "simple", false)) + ""), body, null, requestHeaders, "application/json");
@@ -325,9 +321,9 @@ public class CommerceApi {
     }
 
     /** Memberships Members Status Update */
-    public MembershipsMembersStatusUpdateResult membershipsMembersStatusUpdate(String membershipId, CommerceMembershipMemberStatusRequest body, String idempotencyKey, String xRequestId) throws Exception {
+    public MembershipsMembersStatusUpdateResult membershipsMembersStatusUpdate(String membershipId, CommerceMembershipMemberStatusRequest body, String idempotencyKey) throws Exception {
         Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null), "X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
+                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null)),
                 Map.of()
         );
         Object raw = client.patch(ApiPaths.backendPath("/memberships/members/" + serializePathParameter(membershipId, new PathParameterSpec("membershipId", "simple", false)) + "/status"), body, null, requestHeaders, "application/json");
@@ -346,9 +342,9 @@ public class CommerceApi {
     }
 
     /** Memberships Package Groups Create */
-    public MembershipsPackageGroupsCreateResult membershipsPackageGroupsCreate(CommerceMembershipPackageGroupMutationRequest body, String idempotencyKey, String xRequestId) throws Exception {
+    public MembershipsPackageGroupsCreateResult membershipsPackageGroupsCreate(CommerceMembershipPackageGroupMutationRequest body, String idempotencyKey) throws Exception {
         Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null), "X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
+                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null)),
                 Map.of()
         );
         Object raw = client.post(ApiPaths.backendPath("/memberships/package_groups"), body, null, requestHeaders, "application/json");
@@ -356,19 +352,15 @@ public class CommerceApi {
     }
 
     /** Memberships Package Groups Delete */
-    public MembershipsPackageGroupsDeleteResult membershipsPackageGroupsDelete(String packageGroupId, String xRequestId) throws Exception {
-        Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
-                Map.of()
-        );
-        Object raw = client.delete(ApiPaths.backendPath("/memberships/package_groups/" + serializePathParameter(packageGroupId, new PathParameterSpec("packageGroupId", "simple", false)) + ""), null, requestHeaders);
+    public MembershipsPackageGroupsDeleteResult membershipsPackageGroupsDelete(String packageGroupId) throws Exception {
+        Object raw = client.delete(ApiPaths.backendPath("/memberships/package_groups/" + serializePathParameter(packageGroupId, new PathParameterSpec("packageGroupId", "simple", false)) + ""));
         return client.convertValue(raw, new TypeReference<MembershipsPackageGroupsDeleteResult>() {});
     }
 
     /** Memberships Package Groups Update */
-    public MembershipsPackageGroupsUpdateResult membershipsPackageGroupsUpdate(String packageGroupId, CommerceMembershipPackageGroupMutationRequest body, String idempotencyKey, String xRequestId) throws Exception {
+    public MembershipsPackageGroupsUpdateResult membershipsPackageGroupsUpdate(String packageGroupId, CommerceMembershipPackageGroupMutationRequest body, String idempotencyKey) throws Exception {
         Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null), "X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
+                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null)),
                 Map.of()
         );
         Object raw = client.put(ApiPaths.backendPath("/memberships/package_groups/" + serializePathParameter(packageGroupId, new PathParameterSpec("packageGroupId", "simple", false)) + ""), body, null, requestHeaders, "application/json");
@@ -389,9 +381,9 @@ public class CommerceApi {
     }
 
     /** Memberships Packages Create */
-    public MembershipsPackagesCreateResult membershipsPackagesCreate(CommerceMembershipPackageMutationRequest body, String idempotencyKey, String xRequestId) throws Exception {
+    public MembershipsPackagesCreateResult membershipsPackagesCreate(CommerceMembershipPackageMutationRequest body, String idempotencyKey) throws Exception {
         Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null), "X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
+                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null)),
                 Map.of()
         );
         Object raw = client.post(ApiPaths.backendPath("/memberships/packages"), body, null, requestHeaders, "application/json");
@@ -399,19 +391,15 @@ public class CommerceApi {
     }
 
     /** Memberships Packages Delete */
-    public MembershipsPackagesDeleteResult membershipsPackagesDelete(String packageId, String xRequestId) throws Exception {
-        Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
-                Map.of()
-        );
-        Object raw = client.delete(ApiPaths.backendPath("/memberships/packages/" + serializePathParameter(packageId, new PathParameterSpec("packageId", "simple", false)) + ""), null, requestHeaders);
+    public MembershipsPackagesDeleteResult membershipsPackagesDelete(String packageId) throws Exception {
+        Object raw = client.delete(ApiPaths.backendPath("/memberships/packages/" + serializePathParameter(packageId, new PathParameterSpec("packageId", "simple", false)) + ""));
         return client.convertValue(raw, new TypeReference<MembershipsPackagesDeleteResult>() {});
     }
 
     /** Memberships Packages Update */
-    public MembershipsPackagesUpdateResult membershipsPackagesUpdate(String packageId, CommerceMembershipPackageMutationRequest body, String idempotencyKey, String xRequestId) throws Exception {
+    public MembershipsPackagesUpdateResult membershipsPackagesUpdate(String packageId, CommerceMembershipPackageMutationRequest body, String idempotencyKey) throws Exception {
         Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null), "X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
+                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null)),
                 Map.of()
         );
         Object raw = client.put(ApiPaths.backendPath("/memberships/packages/" + serializePathParameter(packageId, new PathParameterSpec("packageId", "simple", false)) + ""), body, null, requestHeaders, "application/json");
@@ -430,9 +418,9 @@ public class CommerceApi {
     }
 
     /** Memberships Plans Create */
-    public MembershipsPlansCreateResult membershipsPlansCreate(CommerceMembershipPlanMutationRequest body, String idempotencyKey, String xRequestId) throws Exception {
+    public MembershipsPlansCreateResult membershipsPlansCreate(CommerceMembershipPlanMutationRequest body, String idempotencyKey) throws Exception {
         Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null), "X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
+                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null)),
                 Map.of()
         );
         Object raw = client.post(ApiPaths.backendPath("/memberships/plans"), body, null, requestHeaders, "application/json");
@@ -440,19 +428,15 @@ public class CommerceApi {
     }
 
     /** Memberships Plans Delete */
-    public MembershipsPlansDeleteResult membershipsPlansDelete(String planId, String xRequestId) throws Exception {
-        Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
-                Map.of()
-        );
-        Object raw = client.delete(ApiPaths.backendPath("/memberships/plans/" + serializePathParameter(planId, new PathParameterSpec("planId", "simple", false)) + ""), null, requestHeaders);
+    public MembershipsPlansDeleteResult membershipsPlansDelete(String planId) throws Exception {
+        Object raw = client.delete(ApiPaths.backendPath("/memberships/plans/" + serializePathParameter(planId, new PathParameterSpec("planId", "simple", false)) + ""));
         return client.convertValue(raw, new TypeReference<MembershipsPlansDeleteResult>() {});
     }
 
     /** Memberships Plans Update */
-    public MembershipsPlansUpdateResult membershipsPlansUpdate(String planId, CommerceMembershipPlanMutationRequest body, String idempotencyKey, String xRequestId) throws Exception {
+    public MembershipsPlansUpdateResult membershipsPlansUpdate(String planId, CommerceMembershipPlanMutationRequest body, String idempotencyKey) throws Exception {
         Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null), "X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
+                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null)),
                 Map.of()
         );
         Object raw = client.put(ApiPaths.backendPath("/memberships/plans/" + serializePathParameter(planId, new PathParameterSpec("planId", "simple", false)) + ""), body, null, requestHeaders, "application/json");
@@ -550,9 +534,9 @@ public class CommerceApi {
     }
 
     /** Payments Provider Accounts Create */
-    public PaymentsProviderAccountsCreateResult paymentsProviderAccountsCreate(CommercePaymentProviderAccountMutationRequest body, String idempotencyKey, String xRequestId) throws Exception {
+    public PaymentsProviderAccountsCreateResult paymentsProviderAccountsCreate(CommercePaymentProviderAccountMutationRequest body, String idempotencyKey) throws Exception {
         Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null), "X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
+                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null)),
                 Map.of()
         );
         Object raw = client.post(ApiPaths.backendPath("/payments/provider_accounts"), body, null, requestHeaders, "application/json");
@@ -632,9 +616,9 @@ public class CommerceApi {
     }
 
     /** Recharges Packages Create */
-    public RechargesPackagesCreateResult rechargesPackagesCreate(CommerceRechargePackageMutationRequest body, String idempotencyKey, String xRequestId) throws Exception {
+    public RechargesPackagesCreateResult rechargesPackagesCreate(CommerceRechargePackageMutationRequest body, String idempotencyKey) throws Exception {
         Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null), "X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
+                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null)),
                 Map.of()
         );
         Object raw = client.post(ApiPaths.backendPath("/recharges/packages"), body, null, requestHeaders, "application/json");
@@ -642,19 +626,15 @@ public class CommerceApi {
     }
 
     /** Recharges Packages Delete */
-    public RechargesPackagesDeleteResult rechargesPackagesDelete(String packageId, String xRequestId) throws Exception {
-        Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
-                Map.of()
-        );
-        Object raw = client.delete(ApiPaths.backendPath("/recharges/packages/" + serializePathParameter(packageId, new PathParameterSpec("packageId", "simple", false)) + ""), null, requestHeaders);
+    public RechargesPackagesDeleteResult rechargesPackagesDelete(String packageId) throws Exception {
+        Object raw = client.delete(ApiPaths.backendPath("/recharges/packages/" + serializePathParameter(packageId, new PathParameterSpec("packageId", "simple", false)) + ""));
         return client.convertValue(raw, new TypeReference<RechargesPackagesDeleteResult>() {});
     }
 
     /** Recharges Packages Update */
-    public RechargesPackagesUpdateResult rechargesPackagesUpdate(String packageId, CommerceRechargePackageMutationRequest body, String idempotencyKey, String xRequestId) throws Exception {
+    public RechargesPackagesUpdateResult rechargesPackagesUpdate(String packageId, CommerceRechargePackageMutationRequest body, String idempotencyKey) throws Exception {
         Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null), "X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
+                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null)),
                 Map.of()
         );
         Object raw = client.patch(ApiPaths.backendPath("/recharges/packages/" + serializePathParameter(packageId, new PathParameterSpec("packageId", "simple", false)) + ""), body, null, requestHeaders, "application/json");
@@ -712,9 +692,9 @@ public class CommerceApi {
     }
 
     /** Wallet Adjustments Create */
-    public WalletAdjustmentsCreateResult walletAdjustmentsCreate(CommerceStandardCommandRequest body, String idempotencyKey, String xRequestId) throws Exception {
+    public WalletAdjustmentsCreateResult walletAdjustmentsCreate(CommerceStandardCommandRequest body, String idempotencyKey) throws Exception {
         Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null), "X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
+                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null)),
                 Map.of()
         );
         Object raw = client.post(ApiPaths.backendPath("/wallet/adjustments"), body, null, requestHeaders, "application/json");

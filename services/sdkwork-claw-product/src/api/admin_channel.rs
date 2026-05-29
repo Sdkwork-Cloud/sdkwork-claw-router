@@ -33,6 +33,8 @@ const MAX_EXPIRES_AT_LEN: usize = 64;
 const MAX_MODEL_LEN: usize = 128;
 const MAX_MODELS: usize = 200;
 const MAX_CAPABILITIES: usize = 16;
+const MAX_RESOURCE_CODE_LEN: usize = 192;
+const MAX_RESOURCE_CODES: usize = 256;
 const MIN_TIMEOUT_MS: i64 = 1;
 const MAX_TIMEOUT_MS: i64 = 600_000;
 const MIN_WEIGHT: i64 = 1;
@@ -49,6 +51,7 @@ struct NormalizedCreateRequest {
     name: String,
     vendor: String,
     provider_code: String,
+    channel_type: String,
     protocol: String,
     access_type: String,
     base_url: Option<String>,
@@ -58,6 +61,7 @@ struct NormalizedCreateRequest {
     credential_material: Option<String>,
     models: Vec<String>,
     capabilities: Vec<String>,
+    resource_codes: Vec<String>,
     is_multimodal: bool,
     timeout_ms: Option<i64>,
     retry_policy_json: Option<String>,
@@ -73,6 +77,7 @@ struct NormalizedUpdateRequest {
     name: Option<String>,
     vendor: Option<String>,
     provider_code: Option<String>,
+    channel_type: Option<String>,
     protocol: Option<String>,
     access_type: Option<String>,
     base_url: Option<Option<String>>,
@@ -82,6 +87,7 @@ struct NormalizedUpdateRequest {
     credential_material: Option<String>,
     models: Option<Vec<String>>,
     capabilities: Option<Vec<String>>,
+    resource_codes: Option<Vec<String>>,
     timeout_ms: Option<Option<i64>>,
     retry_policy_json: Option<Option<String>>,
     circuit_breaker_policy_json: Option<Option<String>>,
@@ -127,8 +133,10 @@ struct AdminChannelTestResponse {
 #[serde(rename_all = "camelCase")]
 struct AdminChannelItemResponse {
     id: String,
+    channel_id: String,
     name: String,
     vendor: String,
+    channel_type: String,
     protocol: String,
     access_type: String,
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -142,6 +150,7 @@ struct AdminChannelItemResponse {
     expires_at: Option<String>,
     models: Vec<String>,
     capabilities: Vec<String>,
+    resource_codes: Vec<String>,
     is_multimodal: bool,
     #[serde(skip_serializing_if = "Option::is_none")]
     timeout_ms: Option<i64>,
@@ -159,8 +168,10 @@ struct AdminChannelItemResponse {
 #[serde(rename_all = "camelCase")]
 struct AdminChannelSafeItemResponse {
     id: String,
+    channel_id: String,
     name: String,
     vendor: String,
+    channel_type: String,
     protocol: String,
     access_type: String,
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -172,6 +183,7 @@ struct AdminChannelSafeItemResponse {
     expires_at: Option<String>,
     models: Vec<String>,
     capabilities: Vec<String>,
+    resource_codes: Vec<String>,
     is_multimodal: bool,
     #[serde(skip_serializing_if = "Option::is_none")]
     timeout_ms: Option<i64>,
@@ -424,6 +436,10 @@ fn normalize_create_request(
     let name = required_text(&request, "name", "channel name", MAX_NAME_LEN)?;
     let vendor = required_text(&request, "vendor", "channel vendor", MAX_VENDOR_LEN)?;
     let provider_code = normalize_provider_code(&vendor)?;
+    let channel_type = optional_text(&request, "channelType", "channelType", 32)?
+        .map(|value| normalize_channel_type(&value))
+        .transpose()?
+        .unwrap_or_else(|| "official".to_owned());
     let protocol = optional_text(&request, "protocol", "channel protocol", MAX_PROTOCOL_LEN)?
         .unwrap_or_else(|| "OpenAI".to_owned());
     let protocol = normalize_protocol(&protocol);
@@ -449,6 +465,16 @@ fn normalize_create_request(
     )?
     .unwrap_or_else(|| vec!["llm".to_owned()]);
     let capabilities = normalize_capabilities(capabilities)?;
+    let resource_codes = optional_string_array(
+        &request,
+        "resourceCodes",
+        "resourceCodes",
+        MAX_RESOURCE_CODES,
+        MAX_RESOURCE_CODE_LEN,
+    )?
+    .map(normalize_resource_codes)
+    .transpose()?
+    .unwrap_or_default();
     let timeout_ms = optional_non_null_integer(&request, "timeoutMs")?
         .map(normalize_timeout_ms)
         .transpose()?;
@@ -469,6 +495,7 @@ fn normalize_create_request(
         name,
         vendor: display_vendor(&vendor),
         provider_code,
+        channel_type,
         protocol,
         access_type,
         base_url,
@@ -478,6 +505,7 @@ fn normalize_create_request(
         credential_material: credential.credential_material,
         models,
         capabilities,
+        resource_codes,
         is_multimodal,
         timeout_ms,
         retry_policy_json,
@@ -503,6 +531,9 @@ fn normalize_update_request(
         .map(|vendor| normalize_provider_code(vendor))
         .transpose()?;
     let vendor = vendor.map(|vendor| display_vendor(&vendor));
+    let channel_type = optional_text(&request, "channelType", "channelType", 32)?
+        .map(|value| normalize_channel_type(&value))
+        .transpose()?;
     let protocol = optional_text(&request, "protocol", "channel protocol", MAX_PROTOCOL_LEN)?
         .map(|protocol| normalize_protocol(&protocol));
     let access_type = optional_text(
@@ -527,6 +558,15 @@ fn normalize_update_request(
     )?
     .map(normalize_capabilities)
     .transpose()?;
+    let resource_codes = optional_string_array(
+        &request,
+        "resourceCodes",
+        "resourceCodes",
+        MAX_RESOURCE_CODES,
+        MAX_RESOURCE_CODE_LEN,
+    )?
+    .map(normalize_resource_codes)
+    .transpose()?;
     let timeout_ms = optional_nullable_integer(&request, "timeoutMs")?
         .map(|value| value.map(normalize_timeout_ms).transpose())
         .transpose()?;
@@ -546,12 +586,14 @@ fn normalize_update_request(
 
     if name.is_none()
         && vendor.is_none()
+        && channel_type.is_none()
         && protocol.is_none()
         && access_type.is_none()
         && base_url.is_none()
         && credential.secret_ref.is_none()
         && models.is_none()
         && capabilities.is_none()
+        && resource_codes.is_none()
         && timeout_ms.is_none()
         && retry_policy_json.is_none()
         && circuit_breaker_policy_json.is_none()
@@ -567,6 +609,7 @@ fn normalize_update_request(
         name,
         vendor,
         provider_code,
+        channel_type,
         protocol,
         access_type,
         base_url,
@@ -576,6 +619,7 @@ fn normalize_update_request(
         credential_material: credential.credential_material,
         models,
         capabilities,
+        resource_codes,
         timeout_ms,
         retry_policy_json,
         circuit_breaker_policy_json,
@@ -621,7 +665,7 @@ fn normalize_create_credential(
                 credential_material: None,
             })
         }
-        (None, None) => Err("apiKey is required for new channel accounts".to_owned()),
+        (None, None) => Err("apiKey is required for new channels".to_owned()),
     }
 }
 
@@ -671,7 +715,7 @@ fn credential_from_api_key(
     let suffix = secret_hash.chars().take(16).collect::<String>();
     let provider_code = normalize_secret_provider_code(provider_code);
     Ok(NormalizedCredentialInput {
-        secret_ref: format!("secret://provider-accounts/{provider_code}/{suffix}"),
+        secret_ref: format!("secret://ai-channels/{provider_code}/{suffix}"),
         secret_hash,
         masked_label: mask_api_key(api_key),
         credential_material: Some(api_key.to_owned()),
@@ -1141,6 +1185,34 @@ fn normalize_capabilities(capabilities: Vec<String>) -> Result<Vec<String>, Stri
     Ok(normalized)
 }
 
+fn normalize_channel_type(value: &str) -> Result<String, String> {
+    match value.trim().to_ascii_lowercase().as_str() {
+        "official" => Ok("official".to_owned()),
+        "relay" => Ok("relay".to_owned()),
+        _ => Err("channelType must be one of official, relay".to_owned()),
+    }
+}
+
+fn normalize_resource_codes(values: Vec<String>) -> Result<Vec<String>, String> {
+    let mut normalized = Vec::new();
+    for value in values {
+        let code = value.trim().to_ascii_lowercase();
+        if code.is_empty() {
+            continue;
+        }
+        if !code
+            .bytes()
+            .all(|byte| byte.is_ascii_alphanumeric() || matches!(byte, b'.' | b'-' | b'_'))
+        {
+            return Err("resourceCodes may only contain letters, numbers, ., -, and _".to_owned());
+        }
+        if !normalized.iter().any(|existing| existing == &code) {
+            normalized.push(code);
+        }
+    }
+    Ok(normalized)
+}
+
 fn normalize_weight(weight: i64) -> Result<i64, String> {
     if !(MIN_WEIGHT..=MAX_WEIGHT).contains(&weight) {
         return Err(format!(
@@ -1295,13 +1367,13 @@ fn build_create_command(
     Ok(CreateAdminChannelCommand {
         subject,
         channel_uuid: generate_entity_uuid(&state)?,
-        account_uuid: generate_entity_uuid(&state)?,
         model_uuids,
         audit_log_uuid: generate_entity_uuid(&state)?,
         config_snapshot_uuid: generate_entity_uuid(&state)?,
         name: request.name,
         vendor: request.vendor,
         provider_code: request.provider_code,
+        channel_type: request.channel_type,
         protocol: request.protocol,
         access_type: request.access_type,
         base_url: request.base_url,
@@ -1311,6 +1383,7 @@ fn build_create_command(
         credential_material: request.credential_material,
         models: request.models,
         capabilities: request.capabilities,
+        resource_codes: request.resource_codes,
         is_multimodal: request.is_multimodal,
         timeout_ms: request.timeout_ms,
         retry_policy_json: request.retry_policy_json,
@@ -1346,6 +1419,7 @@ fn build_update_command(
         name: request.name,
         vendor: request.vendor,
         provider_code: request.provider_code,
+        channel_type: request.channel_type,
         protocol: request.protocol,
         access_type: request.access_type,
         base_url: request.base_url,
@@ -1355,6 +1429,7 @@ fn build_update_command(
         credential_material: request.credential_material,
         models: request.models,
         capabilities: request.capabilities,
+        resource_codes: request.resource_codes,
         timeout_ms: request.timeout_ms,
         retry_policy_json: request.retry_policy_json,
         circuit_breaker_policy_json: request.circuit_breaker_policy_json,
@@ -1424,8 +1499,10 @@ fn request_id_error(error: RequestIdError) -> ChannelCommandBuildError {
 fn to_item_response(item: AdminChannelItem) -> AdminChannelItemResponse {
     AdminChannelItemResponse {
         id: item.id.to_string(),
+        channel_id: item.channel_id.to_string(),
         name: item.name,
         vendor: item.vendor,
+        channel_type: item.channel_type,
         protocol: item.protocol,
         access_type: item.access_type,
         base_url: item.base_url,
@@ -1435,6 +1512,7 @@ fn to_item_response(item: AdminChannelItem) -> AdminChannelItemResponse {
         expires_at: item.expires_at,
         models: item.models,
         capabilities: item.capabilities,
+        resource_codes: item.resource_codes,
         is_multimodal: item.is_multimodal,
         timeout_ms: item.timeout_ms,
         retry_policy: item
@@ -1455,8 +1533,10 @@ fn to_item_response(item: AdminChannelItem) -> AdminChannelItemResponse {
 fn to_safe_item_response(item: AdminChannelItem) -> AdminChannelSafeItemResponse {
     AdminChannelSafeItemResponse {
         id: item.id.to_string(),
+        channel_id: item.channel_id.to_string(),
         name: item.name,
         vendor: item.vendor,
+        channel_type: item.channel_type,
         protocol: item.protocol,
         access_type: item.access_type,
         base_url: item.base_url,
@@ -1467,6 +1547,7 @@ fn to_safe_item_response(item: AdminChannelItem) -> AdminChannelSafeItemResponse
         expires_at: item.expires_at,
         models: item.models,
         capabilities: item.capabilities,
+        resource_codes: item.resource_codes,
         is_multimodal: item.is_multimodal,
         timeout_ms: item.timeout_ms,
         retry_policy: item
@@ -1506,7 +1587,7 @@ fn circuit_breaker_policy_response_from_json(
 
 fn retry_policy_error_message(message: &str) -> String {
     message
-        .replace("integration_channel.retry_policy", "retryPolicy")
+        .replace("ai_channel.retry_policy", "retryPolicy")
         .replace("retryPolicy max_attempts", "retryPolicy.maxAttempts")
         .replace(
             "retryPolicy retryable_status_codes",
@@ -1517,10 +1598,7 @@ fn retry_policy_error_message(message: &str) -> String {
 
 fn circuit_breaker_policy_error_message(message: &str) -> String {
     message
-        .replace(
-            "integration_channel.circuit_breaker_policy",
-            "circuitBreakerPolicy",
-        )
+        .replace("ai_channel.circuit_breaker_policy", "circuitBreakerPolicy")
         .replace(
             "circuitBreakerPolicy failure_threshold",
             "circuitBreakerPolicy.failureThreshold",

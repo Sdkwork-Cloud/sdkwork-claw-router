@@ -124,14 +124,8 @@ public class SystemApi {
     }
 
     /// Update IAM auth runtime settings
-    public func authSettingsUpdate(body: AdminAuthSettingsUpdateRequest, xRequestId: String? = nil) async throws -> AuthSettingsUpdateResult? {
-        let requestHeaders = buildRequestHeaders(
-            [
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
-            ],
-            [:]
-        )
-        return try await client.patch(ApiPaths.backendPath("/system/auth/settings"), body: body, params: nil, headers: requestHeaders, contentType: "application/json", responseType: AuthSettingsUpdateResult.self)
+    public func authSettingsUpdate(body: AdminAuthSettingsUpdateRequest) async throws -> AuthSettingsUpdateResult? {
+        return try await client.patch(ApiPaths.backendPath("/system/auth/settings"), body: body, params: nil, headers: nil, contentType: "application/json", responseType: AuthSettingsUpdateResult.self)
     }
 
     /// Delete one runtime cache instance
@@ -189,14 +183,8 @@ public class SystemApi {
     }
 
     /// Create firewall
-    public func firewallsRulesCreate(body: AdminFirewallRuleCreateRequest, xRequestId: String? = nil) async throws -> FirewallsRulesCreateResult? {
-        let requestHeaders = buildRequestHeaders(
-            [
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
-            ],
-            [:]
-        )
-        return try await client.post(ApiPaths.backendPath("/system/firewalls/rules"), body: body, params: nil, headers: requestHeaders, contentType: "application/json", responseType: FirewallsRulesCreateResult.self)
+    public func firewallsRulesCreate(body: AdminFirewallRuleCreateRequest) async throws -> FirewallsRulesCreateResult? {
+        return try await client.post(ApiPaths.backendPath("/system/firewalls/rules"), body: body, params: nil, headers: nil, contentType: "application/json", responseType: FirewallsRulesCreateResult.self)
     }
 
     /// Delete firewall
@@ -235,14 +223,8 @@ public class SystemApi {
     }
 
     /// Create token limit
-    public func rateLimitsApiKeysCreate(body: AdminTokenLimitCreateRequest, xRequestId: String? = nil) async throws -> RateLimitsApiKeysCreateResult? {
-        let requestHeaders = buildRequestHeaders(
-            [
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
-            ],
-            [:]
-        )
-        return try await client.post(ApiPaths.backendPath("/system/rate_limits/api_keys"), body: body, params: nil, headers: requestHeaders, contentType: "application/json", responseType: RateLimitsApiKeysCreateResult.self)
+    public func rateLimitsApiKeysCreate(body: AdminTokenLimitCreateRequest) async throws -> RateLimitsApiKeysCreateResult? {
+        return try await client.post(ApiPaths.backendPath("/system/rate_limits/api_keys"), body: body, params: nil, headers: nil, contentType: "application/json", responseType: RateLimitsApiKeysCreateResult.self)
     }
 
     /// List IP limits
@@ -251,14 +233,8 @@ public class SystemApi {
     }
 
     /// Create IP limit
-    public func rateLimitsIpCreate(body: AdminIpLimitCreateRequest, xRequestId: String? = nil) async throws -> RateLimitsIpCreateResult? {
-        let requestHeaders = buildRequestHeaders(
-            [
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
-            ],
-            [:]
-        )
-        return try await client.post(ApiPaths.backendPath("/system/rate_limits/ip"), body: body, params: nil, headers: requestHeaders, contentType: "application/json", responseType: RateLimitsIpCreateResult.self)
+    public func rateLimitsIpCreate(body: AdminIpLimitCreateRequest) async throws -> RateLimitsIpCreateResult? {
+        return try await client.post(ApiPaths.backendPath("/system/rate_limits/ip"), body: body, params: nil, headers: nil, contentType: "application/json", responseType: RateLimitsIpCreateResult.self)
     }
 
     /// List model limits
@@ -267,14 +243,8 @@ public class SystemApi {
     }
 
     /// Create model limit
-    public func rateLimitsModelsCreate(body: AdminModelLimitCreateRequest, xRequestId: String? = nil) async throws -> RateLimitsModelsCreateResult? {
-        let requestHeaders = buildRequestHeaders(
-            [
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
-            ],
-            [:]
-        )
-        return try await client.post(ApiPaths.backendPath("/system/rate_limits/models"), body: body, params: nil, headers: requestHeaders, contentType: "application/json", responseType: RateLimitsModelsCreateResult.self)
+    public func rateLimitsModelsCreate(body: AdminModelLimitCreateRequest) async throws -> RateLimitsModelsCreateResult? {
+        return try await client.post(ApiPaths.backendPath("/system/rate_limits/models"), body: body, params: nil, headers: nil, contentType: "application/json", responseType: RateLimitsModelsCreateResult.self)
     }
 
     /// List logs
@@ -287,6 +257,16 @@ public class SystemApi {
             QueryParameterSpec(name: "model", value: model, style: "form", explode: true, allowReserved: false, contentType: nil)
         ])
         return try await client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/system/records"), query), responseType: RecordsListResult.self)
+    }
+
+    /// Retrieve runtime region settings
+    public func runtimeRegionSettingsRetrieve() async throws -> RuntimeRegionSettingsRetrieveResult? {
+        return try await client.get(ApiPaths.backendPath("/system/runtime_region/settings"), responseType: RuntimeRegionSettingsRetrieveResult.self)
+    }
+
+    /// Update runtime region settings
+    public func runtimeRegionSettingsUpdate(body: AdminRuntimeRegionSettingsUpdateRequest) async throws -> RuntimeRegionSettingsUpdateResult? {
+        return try await client.patch(ApiPaths.backendPath("/system/runtime_region/settings"), body: body, params: nil, headers: nil, contentType: "application/json", responseType: RuntimeRegionSettingsUpdateResult.self)
     }
 
     /// List service nodes
@@ -324,14 +304,8 @@ public class SystemApi {
     }
 
     /// Update site branding and deployment personalization settings
-    public func siteSettingsUpdate(body: AdminSiteSettingsUpdateRequest, xRequestId: String? = nil) async throws -> SiteSettingsUpdateResult? {
-        let requestHeaders = buildRequestHeaders(
-            [
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
-            ],
-            [:]
-        )
-        return try await client.patch(ApiPaths.backendPath("/system/site/settings"), body: body, params: nil, headers: requestHeaders, contentType: "application/json", responseType: SiteSettingsUpdateResult.self)
+    public func siteSettingsUpdate(body: AdminSiteSettingsUpdateRequest) async throws -> SiteSettingsUpdateResult? {
+        return try await client.patch(ApiPaths.backendPath("/system/site/settings"), body: body, params: nil, headers: nil, contentType: "application/json", responseType: SiteSettingsUpdateResult.self)
     }
 
     private struct PathParameterSpec {
@@ -511,68 +485,4 @@ public class SystemApi {
         value.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? value
     }
 
-    private struct HeaderParameterSpec {
-        let value: Any?
-        let style: String
-        let explode: Bool
-        let contentType: String?
-    }
-
-    private func buildRequestHeaders(_ headers: [String: HeaderParameterSpec], _ cookies: [String: HeaderParameterSpec]) -> [String: String]? {
-        var requestHeaders: [String: String] = [:]
-        for (name, parameter) in headers {
-            if let serialized = serializeParameterValue(parameter) {
-                requestHeaders[name] = serialized
-            }
-        }
-
-        if let cookieHeader = buildCookieHeader(cookies), !cookieHeader.isEmpty {
-            requestHeaders["Cookie"] = requestHeaders["Cookie"].map { "\($0); \(cookieHeader)" } ?? cookieHeader
-        }
-
-        return requestHeaders.isEmpty ? nil : requestHeaders
-    }
-
-    private func buildCookieHeader(_ cookies: [String: HeaderParameterSpec]) -> String? {
-        let pairs = cookies.compactMap { name, parameter -> String? in
-            guard let serialized = serializeParameterValue(parameter) else { return nil }
-            return "\(urlEncode(name))=\(urlEncode(serialized))"
-        }
-        return pairs.isEmpty ? nil : pairs.joined(separator: "; ")
-    }
-
-    private func serializeParameterValue(_ parameter: HeaderParameterSpec?) -> String? {
-        guard let parameter, let value = parameter.value else { return nil }
-        if let contentType = parameter.contentType, !contentType.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
-            if JSONSerialization.isValidJSONObject(value),
-               let data = try? JSONSerialization.data(withJSONObject: value, options: []),
-               let json = String(data: data, encoding: .utf8) {
-                return json
-            }
-            return String(describing: value)
-        }
-        if let array = value as? [Any?] {
-            return array.compactMap { $0.map { String(describing: $0) } }.joined(separator: ",")
-        }
-        if let object = value as? [String: Any] {
-            var values: [String] = []
-            for (key, item) in object {
-                if parameter.explode {
-                    values.append("\(key)=\(item)")
-                } else {
-                    values.append(key)
-                    values.append(String(describing: item))
-                }
-            }
-            return values.joined(separator: ",")
-        }
-        if let date = value as? Date {
-            return ISO8601DateFormatter().string(from: date)
-        }
-        return String(describing: value)
-    }
-
-    private func urlEncode(_ value: String) -> String {
-        value.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? value
-    }
 }

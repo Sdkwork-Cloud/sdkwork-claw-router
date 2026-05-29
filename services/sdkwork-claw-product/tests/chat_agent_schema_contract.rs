@@ -37,7 +37,8 @@ fn postgres_schema_contains_chat_agent_memory_runtime_standard_tables() {
 
 #[test]
 fn schema_registry_contains_chat_agent_memory_runtime_standard_tables() {
-    let registry = read_workspace_file("docs/schema-registry/sdkwork-claw-router.tables.yaml");
+    let registry =
+        read_workspace_file("generated/schema/registry/sdkwork-claw-router.tables.effective.yaml");
 
     for table in STANDARD_TABLES {
         assert!(
@@ -106,7 +107,8 @@ fn frontend_contract_uses_chat_and_agents_product_paths_not_playground_paths() {
 #[test]
 fn runtime_invocation_schema_is_user_scoped_for_product_chat_and_agent_runs() {
     let schema = read_workspace_file("generated/schema/postgres/schema.sql");
-    let registry = read_workspace_file("docs/schema-registry/sdkwork-claw-router.tables.yaml");
+    let registry =
+        read_workspace_file("generated/schema/registry/sdkwork-claw-router.tables.effective.yaml");
     let invocation_table = postgres_table(&schema, "ai_runtime_invocation");
 
     assert!(
@@ -149,7 +151,8 @@ fn runtime_invocation_schema_is_user_scoped_for_product_chat_and_agent_runs() {
 #[test]
 fn runtime_invocation_schema_matches_runtime_store_lifecycle_contract() {
     let schema = read_workspace_file("generated/schema/postgres/schema.sql");
-    let registry = read_workspace_file("docs/schema-registry/sdkwork-claw-router.tables.yaml");
+    let registry =
+        read_workspace_file("generated/schema/registry/sdkwork-claw-router.tables.effective.yaml");
     let invocation_table = postgres_table(&schema, "ai_runtime_invocation");
 
     for expected in [
@@ -217,7 +220,8 @@ fn runtime_invocation_schema_matches_runtime_store_lifecycle_contract() {
 #[test]
 fn chat_and_agent_standard_tables_use_string_lifecycle_statuses() {
     let schema = read_workspace_file("generated/schema/postgres/schema.sql");
-    let registry = read_workspace_file("docs/schema-registry/sdkwork-claw-router.tables.yaml");
+    let registry =
+        read_workspace_file("generated/schema/registry/sdkwork-claw-router.tables.effective.yaml");
 
     for (table_name, expected_default, expected_registry_fragment) in [
         (
@@ -317,7 +321,8 @@ fn chat_and_agent_standard_tables_use_string_lifecycle_statuses() {
 #[test]
 fn chat_context_snapshot_schema_matches_turn_context_contract() {
     let schema = read_workspace_file("generated/schema/postgres/schema.sql");
-    let registry = read_workspace_file("docs/schema-registry/sdkwork-claw-router.tables.yaml");
+    let registry =
+        read_workspace_file("generated/schema/registry/sdkwork-claw-router.tables.effective.yaml");
     let turn_table = postgres_table(&schema, "ai_chat_turn");
     let snapshot_table = postgres_table(&schema, "ai_chat_context_snapshot");
     let snapshot_registry = registry_table(&registry, "ai_chat_context_snapshot");
@@ -381,7 +386,8 @@ fn chat_context_snapshot_schema_matches_turn_context_contract() {
 #[test]
 fn runtime_events_and_artifacts_are_user_scoped_fact_tables() {
     let schema = read_workspace_file("generated/schema/postgres/schema.sql");
-    let registry = read_workspace_file("docs/schema-registry/sdkwork-claw-router.tables.yaml");
+    let registry =
+        read_workspace_file("generated/schema/registry/sdkwork-claw-router.tables.effective.yaml");
     let event_table = postgres_table(&schema, "ai_runtime_invocation_event");
     let artifact_table = postgres_table(&schema, "ai_runtime_artifact");
 
@@ -458,7 +464,8 @@ fn runtime_events_and_artifacts_are_user_scoped_fact_tables() {
 #[test]
 fn memory_spaces_entries_and_memory_events_are_user_scoped_product_records() {
     let schema = read_workspace_file("generated/schema/postgres/schema.sql");
-    let registry = read_workspace_file("docs/schema-registry/sdkwork-claw-router.tables.yaml");
+    let registry =
+        read_workspace_file("generated/schema/registry/sdkwork-claw-router.tables.effective.yaml");
     let space_table = postgres_table(&schema, "ai_memory_space");
     let entry_table = postgres_table(&schema, "ai_memory_entry");
     let event_table = postgres_table(&schema, "ai_memory_event");
@@ -577,7 +584,8 @@ fn memory_spaces_entries_and_memory_events_are_user_scoped_product_records() {
 #[test]
 fn runtime_usage_links_are_user_scoped_and_agent_idempotent() {
     let schema = read_workspace_file("generated/schema/postgres/schema.sql");
-    let registry = read_workspace_file("docs/schema-registry/sdkwork-claw-router.tables.yaml");
+    let registry =
+        read_workspace_file("generated/schema/registry/sdkwork-claw-router.tables.effective.yaml");
     let usage_link_table = postgres_table(&schema, "ai_runtime_usage_link");
 
     assert!(

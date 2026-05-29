@@ -31,13 +31,12 @@ namespace Sdkwork.ClawRouter.App.Api
         /// <summary>
         /// Create product chat conversation
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.App.Models.ConversationsCreateResult?> ConversationsCreateAsync(Sdkwork.ClawRouter.App.Models.ChatConversationCreateRequest body, string idempotencyKey, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.App.Models.ConversationsCreateResult?> ConversationsCreateAsync(Sdkwork.ClawRouter.App.Models.ChatConversationCreateRequest body, string idempotencyKey)
         {
             var requestHeaders = BuildRequestHeaders(
                 new Dictionary<string, HeaderParameterSpec>
                 {
                     ["Idempotency-Key"] = new HeaderParameterSpec(idempotencyKey, "simple", false, null),
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
                 },
                 new Dictionary<string, HeaderParameterSpec>()
             );
@@ -68,13 +67,12 @@ namespace Sdkwork.ClawRouter.App.Api
         /// <summary>
         /// Create product chat turn
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.App.Models.TurnsCreateResult?> TurnsCreateAsync(string conversationId, Sdkwork.ClawRouter.App.Models.ChatTurnCreateRequest body, string idempotencyKey, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.App.Models.TurnsCreateResult?> TurnsCreateAsync(string conversationId, Sdkwork.ClawRouter.App.Models.ChatTurnCreateRequest body, string idempotencyKey)
         {
             var requestHeaders = BuildRequestHeaders(
                 new Dictionary<string, HeaderParameterSpec>
                 {
                     ["Idempotency-Key"] = new HeaderParameterSpec(idempotencyKey, "simple", false, null),
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
                 },
                 new Dictionary<string, HeaderParameterSpec>()
             );
@@ -84,13 +82,12 @@ namespace Sdkwork.ClawRouter.App.Api
         /// <summary>
         /// Complete product chat turn response
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.App.Models.TurnResponsesCreateResult?> TurnResponsesCreateAsync(string conversationId, string turnId, Sdkwork.ClawRouter.App.Models.ChatTurnResponseRequest body, string idempotencyKey, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.App.Models.TurnResponsesCreateResult?> TurnResponsesCreateAsync(string conversationId, string turnId, Sdkwork.ClawRouter.App.Models.ChatTurnResponseRequest body, string idempotencyKey)
         {
             var requestHeaders = BuildRequestHeaders(
                 new Dictionary<string, HeaderParameterSpec>
                 {
                     ["Idempotency-Key"] = new HeaderParameterSpec(idempotencyKey, "simple", false, null),
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
                 },
                 new Dictionary<string, HeaderParameterSpec>()
             );

@@ -19,7 +19,6 @@ data class AiModelFamilyRecord(
     val modelCount: String? = null,
     val organizationId: String? = null,
     val primaryModality: String? = null,
-    val regionCode: String? = null,
     val sortOrder: Int? = null,
     val status: String? = null,
     val tenantId: String? = null,

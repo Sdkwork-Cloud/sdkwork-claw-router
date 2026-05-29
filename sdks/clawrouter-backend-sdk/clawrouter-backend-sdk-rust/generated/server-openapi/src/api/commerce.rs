@@ -40,12 +40,11 @@ impl CommerceApi {
     }
 
     /// Create product attribute
-    pub async fn catalog_attributes_create(&self, body: &CommerceProductAttributeMutationRequest, idempotency_key: &str, x_request_id: Option<&str>) -> Result<CatalogAttributesCreateResult, SdkworkError> {
+    pub async fn catalog_attributes_create(&self, body: &CommerceProductAttributeMutationRequest, idempotency_key: &str) -> Result<CatalogAttributesCreateResult, SdkworkError> {
         let path = backend_path(&"/catalog/attributes".to_string());
         let headers = build_request_headers(
             &[
                 ("Idempotency-Key", HeaderParameterSpec::new(idempotency_key, "simple", false, None)),
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
             ],
             &[],
         );
@@ -65,12 +64,11 @@ impl CommerceApi {
     }
 
     /// Create product category
-    pub async fn catalog_categories_create(&self, body: &CommerceProductCategoryMutationRequest, idempotency_key: &str, x_request_id: Option<&str>) -> Result<CatalogCategoriesCreateResult, SdkworkError> {
+    pub async fn catalog_categories_create(&self, body: &CommerceProductCategoryMutationRequest, idempotency_key: &str) -> Result<CatalogCategoriesCreateResult, SdkworkError> {
         let path = backend_path(&"/catalog/categories".to_string());
         let headers = build_request_headers(
             &[
                 ("Idempotency-Key", HeaderParameterSpec::new(idempotency_key, "simple", false, None)),
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
             ],
             &[],
         );
@@ -78,24 +76,17 @@ impl CommerceApi {
     }
 
     /// Delete product category
-    pub async fn catalog_categories_delete(&self, category_id: &str, x_request_id: Option<&str>) -> Result<CatalogCategoriesDeleteResult, SdkworkError> {
+    pub async fn catalog_categories_delete(&self, category_id: &str) -> Result<CatalogCategoriesDeleteResult, SdkworkError> {
         let path = backend_path(&format!("/catalog/categories/{}", serialize_path_parameter(category_id, PathParameterSpec::new("categoryId", "simple", false))));
-        let headers = build_request_headers(
-            &[
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
-            ],
-            &[],
-        );
-        self.client.delete(&path, None, headers.as_ref()).await
+        self.client.delete(&path, None, None).await
     }
 
     /// Update product category
-    pub async fn catalog_categories_update(&self, category_id: &str, body: &CommerceProductCategoryMutationRequest, idempotency_key: &str, x_request_id: Option<&str>) -> Result<CatalogCategoriesUpdateResult, SdkworkError> {
+    pub async fn catalog_categories_update(&self, category_id: &str, body: &CommerceProductCategoryMutationRequest, idempotency_key: &str) -> Result<CatalogCategoriesUpdateResult, SdkworkError> {
         let path = backend_path(&format!("/catalog/categories/{}", serialize_path_parameter(category_id, PathParameterSpec::new("categoryId", "simple", false))));
         let headers = build_request_headers(
             &[
                 ("Idempotency-Key", HeaderParameterSpec::new(idempotency_key, "simple", false, None)),
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
             ],
             &[],
         );
@@ -116,12 +107,11 @@ impl CommerceApi {
     }
 
     /// Create product price list
-    pub async fn catalog_price_lists_create(&self, body: &CommercePriceListMutationRequest, idempotency_key: &str, x_request_id: Option<&str>) -> Result<CatalogPriceListsCreateResult, SdkworkError> {
+    pub async fn catalog_price_lists_create(&self, body: &CommercePriceListMutationRequest, idempotency_key: &str) -> Result<CatalogPriceListsCreateResult, SdkworkError> {
         let path = backend_path(&"/catalog/price_lists".to_string());
         let headers = build_request_headers(
             &[
                 ("Idempotency-Key", HeaderParameterSpec::new(idempotency_key, "simple", false, None)),
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
             ],
             &[],
         );
@@ -144,12 +134,11 @@ impl CommerceApi {
     }
 
     /// Create product SPU
-    pub async fn catalog_products_create(&self, body: &CommerceProductSpuMutationRequest, idempotency_key: &str, x_request_id: Option<&str>) -> Result<CatalogProductsCreateResult, SdkworkError> {
+    pub async fn catalog_products_create(&self, body: &CommerceProductSpuMutationRequest, idempotency_key: &str) -> Result<CatalogProductsCreateResult, SdkworkError> {
         let path = backend_path(&"/catalog/products".to_string());
         let headers = build_request_headers(
             &[
                 ("Idempotency-Key", HeaderParameterSpec::new(idempotency_key, "simple", false, None)),
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
             ],
             &[],
         );
@@ -157,12 +146,11 @@ impl CommerceApi {
     }
 
     /// Update product SPU
-    pub async fn catalog_products_update(&self, product_id: &str, body: &CommerceProductSpuMutationRequest, idempotency_key: &str, x_request_id: Option<&str>) -> Result<CatalogProductsUpdateResult, SdkworkError> {
+    pub async fn catalog_products_update(&self, product_id: &str, body: &CommerceProductSpuMutationRequest, idempotency_key: &str) -> Result<CatalogProductsUpdateResult, SdkworkError> {
         let path = backend_path(&format!("/catalog/products/{}", serialize_path_parameter(product_id, PathParameterSpec::new("productId", "simple", false))));
         let headers = build_request_headers(
             &[
                 ("Idempotency-Key", HeaderParameterSpec::new(idempotency_key, "simple", false, None)),
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
             ],
             &[],
         );
@@ -183,12 +171,11 @@ impl CommerceApi {
     }
 
     /// Create product SKU
-    pub async fn catalog_skus_create(&self, body: &CommerceProductSkuMutationRequest, idempotency_key: &str, x_request_id: Option<&str>) -> Result<CatalogSkusCreateResult, SdkworkError> {
+    pub async fn catalog_skus_create(&self, body: &CommerceProductSkuMutationRequest, idempotency_key: &str) -> Result<CatalogSkusCreateResult, SdkworkError> {
         let path = backend_path(&"/catalog/skus".to_string());
         let headers = build_request_headers(
             &[
                 ("Idempotency-Key", HeaderParameterSpec::new(idempotency_key, "simple", false, None)),
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
             ],
             &[],
         );
@@ -196,12 +183,11 @@ impl CommerceApi {
     }
 
     /// Update product SKU
-    pub async fn catalog_skus_update(&self, sku_id: &str, body: &CommerceProductSkuMutationRequest, idempotency_key: &str, x_request_id: Option<&str>) -> Result<CatalogSkusUpdateResult, SdkworkError> {
+    pub async fn catalog_skus_update(&self, sku_id: &str, body: &CommerceProductSkuMutationRequest, idempotency_key: &str) -> Result<CatalogSkusUpdateResult, SdkworkError> {
         let path = backend_path(&format!("/catalog/skus/{}", serialize_path_parameter(sku_id, PathParameterSpec::new("skuId", "simple", false))));
         let headers = build_request_headers(
             &[
                 ("Idempotency-Key", HeaderParameterSpec::new(idempotency_key, "simple", false, None)),
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
             ],
             &[],
         );
@@ -289,12 +275,11 @@ impl CommerceApi {
     }
 
     /// Update inventory stock
-    pub async fn inventory_stocks_update(&self, stock_id: &str, body: &CommerceInventoryStockUpdateRequest, idempotency_key: &str, x_request_id: Option<&str>) -> Result<InventoryStocksUpdateResult, SdkworkError> {
+    pub async fn inventory_stocks_update(&self, stock_id: &str, body: &CommerceInventoryStockUpdateRequest, idempotency_key: &str) -> Result<InventoryStocksUpdateResult, SdkworkError> {
         let path = backend_path(&format!("/inventory/stocks/{}", serialize_path_parameter(stock_id, PathParameterSpec::new("stockId", "simple", false))));
         let headers = build_request_headers(
             &[
                 ("Idempotency-Key", HeaderParameterSpec::new(idempotency_key, "simple", false, None)),
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
             ],
             &[],
         );
@@ -357,12 +342,11 @@ impl CommerceApi {
     }
 
     /// Memberships Members Status Update
-    pub async fn memberships_members_status_update(&self, membership_id: &str, body: &CommerceMembershipMemberStatusRequest, idempotency_key: &str, x_request_id: Option<&str>) -> Result<MembershipsMembersStatusUpdateResult, SdkworkError> {
+    pub async fn memberships_members_status_update(&self, membership_id: &str, body: &CommerceMembershipMemberStatusRequest, idempotency_key: &str) -> Result<MembershipsMembersStatusUpdateResult, SdkworkError> {
         let path = backend_path(&format!("/memberships/members/{}/status", serialize_path_parameter(membership_id, PathParameterSpec::new("membershipId", "simple", false))));
         let headers = build_request_headers(
             &[
                 ("Idempotency-Key", HeaderParameterSpec::new(idempotency_key, "simple", false, None)),
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
             ],
             &[],
         );
@@ -381,12 +365,11 @@ impl CommerceApi {
     }
 
     /// Memberships Package Groups Create
-    pub async fn memberships_package_groups_create(&self, body: &CommerceMembershipPackageGroupMutationRequest, idempotency_key: &str, x_request_id: Option<&str>) -> Result<MembershipsPackageGroupsCreateResult, SdkworkError> {
+    pub async fn memberships_package_groups_create(&self, body: &CommerceMembershipPackageGroupMutationRequest, idempotency_key: &str) -> Result<MembershipsPackageGroupsCreateResult, SdkworkError> {
         let path = backend_path(&"/memberships/package_groups".to_string());
         let headers = build_request_headers(
             &[
                 ("Idempotency-Key", HeaderParameterSpec::new(idempotency_key, "simple", false, None)),
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
             ],
             &[],
         );
@@ -394,24 +377,17 @@ impl CommerceApi {
     }
 
     /// Memberships Package Groups Delete
-    pub async fn memberships_package_groups_delete(&self, package_group_id: &str, x_request_id: Option<&str>) -> Result<MembershipsPackageGroupsDeleteResult, SdkworkError> {
+    pub async fn memberships_package_groups_delete(&self, package_group_id: &str) -> Result<MembershipsPackageGroupsDeleteResult, SdkworkError> {
         let path = backend_path(&format!("/memberships/package_groups/{}", serialize_path_parameter(package_group_id, PathParameterSpec::new("packageGroupId", "simple", false))));
-        let headers = build_request_headers(
-            &[
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
-            ],
-            &[],
-        );
-        self.client.delete(&path, None, headers.as_ref()).await
+        self.client.delete(&path, None, None).await
     }
 
     /// Memberships Package Groups Update
-    pub async fn memberships_package_groups_update(&self, package_group_id: &str, body: &CommerceMembershipPackageGroupMutationRequest, idempotency_key: &str, x_request_id: Option<&str>) -> Result<MembershipsPackageGroupsUpdateResult, SdkworkError> {
+    pub async fn memberships_package_groups_update(&self, package_group_id: &str, body: &CommerceMembershipPackageGroupMutationRequest, idempotency_key: &str) -> Result<MembershipsPackageGroupsUpdateResult, SdkworkError> {
         let path = backend_path(&format!("/memberships/package_groups/{}", serialize_path_parameter(package_group_id, PathParameterSpec::new("packageGroupId", "simple", false))));
         let headers = build_request_headers(
             &[
                 ("Idempotency-Key", HeaderParameterSpec::new(idempotency_key, "simple", false, None)),
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
             ],
             &[],
         );
@@ -432,12 +408,11 @@ impl CommerceApi {
     }
 
     /// Memberships Packages Create
-    pub async fn memberships_packages_create(&self, body: &CommerceMembershipPackageMutationRequest, idempotency_key: &str, x_request_id: Option<&str>) -> Result<MembershipsPackagesCreateResult, SdkworkError> {
+    pub async fn memberships_packages_create(&self, body: &CommerceMembershipPackageMutationRequest, idempotency_key: &str) -> Result<MembershipsPackagesCreateResult, SdkworkError> {
         let path = backend_path(&"/memberships/packages".to_string());
         let headers = build_request_headers(
             &[
                 ("Idempotency-Key", HeaderParameterSpec::new(idempotency_key, "simple", false, None)),
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
             ],
             &[],
         );
@@ -445,24 +420,17 @@ impl CommerceApi {
     }
 
     /// Memberships Packages Delete
-    pub async fn memberships_packages_delete(&self, package_id: &str, x_request_id: Option<&str>) -> Result<MembershipsPackagesDeleteResult, SdkworkError> {
+    pub async fn memberships_packages_delete(&self, package_id: &str) -> Result<MembershipsPackagesDeleteResult, SdkworkError> {
         let path = backend_path(&format!("/memberships/packages/{}", serialize_path_parameter(package_id, PathParameterSpec::new("packageId", "simple", false))));
-        let headers = build_request_headers(
-            &[
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
-            ],
-            &[],
-        );
-        self.client.delete(&path, None, headers.as_ref()).await
+        self.client.delete(&path, None, None).await
     }
 
     /// Memberships Packages Update
-    pub async fn memberships_packages_update(&self, package_id: &str, body: &CommerceMembershipPackageMutationRequest, idempotency_key: &str, x_request_id: Option<&str>) -> Result<MembershipsPackagesUpdateResult, SdkworkError> {
+    pub async fn memberships_packages_update(&self, package_id: &str, body: &CommerceMembershipPackageMutationRequest, idempotency_key: &str) -> Result<MembershipsPackagesUpdateResult, SdkworkError> {
         let path = backend_path(&format!("/memberships/packages/{}", serialize_path_parameter(package_id, PathParameterSpec::new("packageId", "simple", false))));
         let headers = build_request_headers(
             &[
                 ("Idempotency-Key", HeaderParameterSpec::new(idempotency_key, "simple", false, None)),
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
             ],
             &[],
         );
@@ -481,12 +449,11 @@ impl CommerceApi {
     }
 
     /// Memberships Plans Create
-    pub async fn memberships_plans_create(&self, body: &CommerceMembershipPlanMutationRequest, idempotency_key: &str, x_request_id: Option<&str>) -> Result<MembershipsPlansCreateResult, SdkworkError> {
+    pub async fn memberships_plans_create(&self, body: &CommerceMembershipPlanMutationRequest, idempotency_key: &str) -> Result<MembershipsPlansCreateResult, SdkworkError> {
         let path = backend_path(&"/memberships/plans".to_string());
         let headers = build_request_headers(
             &[
                 ("Idempotency-Key", HeaderParameterSpec::new(idempotency_key, "simple", false, None)),
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
             ],
             &[],
         );
@@ -494,24 +461,17 @@ impl CommerceApi {
     }
 
     /// Memberships Plans Delete
-    pub async fn memberships_plans_delete(&self, plan_id: &str, x_request_id: Option<&str>) -> Result<MembershipsPlansDeleteResult, SdkworkError> {
+    pub async fn memberships_plans_delete(&self, plan_id: &str) -> Result<MembershipsPlansDeleteResult, SdkworkError> {
         let path = backend_path(&format!("/memberships/plans/{}", serialize_path_parameter(plan_id, PathParameterSpec::new("planId", "simple", false))));
-        let headers = build_request_headers(
-            &[
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
-            ],
-            &[],
-        );
-        self.client.delete(&path, None, headers.as_ref()).await
+        self.client.delete(&path, None, None).await
     }
 
     /// Memberships Plans Update
-    pub async fn memberships_plans_update(&self, plan_id: &str, body: &CommerceMembershipPlanMutationRequest, idempotency_key: &str, x_request_id: Option<&str>) -> Result<MembershipsPlansUpdateResult, SdkworkError> {
+    pub async fn memberships_plans_update(&self, plan_id: &str, body: &CommerceMembershipPlanMutationRequest, idempotency_key: &str) -> Result<MembershipsPlansUpdateResult, SdkworkError> {
         let path = backend_path(&format!("/memberships/plans/{}", serialize_path_parameter(plan_id, PathParameterSpec::new("planId", "simple", false))));
         let headers = build_request_headers(
             &[
                 ("Idempotency-Key", HeaderParameterSpec::new(idempotency_key, "simple", false, None)),
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
             ],
             &[],
         );
@@ -609,12 +569,11 @@ impl CommerceApi {
     }
 
     /// Payments Provider Accounts Create
-    pub async fn payments_provider_accounts_create(&self, body: &CommercePaymentProviderAccountMutationRequest, idempotency_key: &str, x_request_id: Option<&str>) -> Result<PaymentsProviderAccountsCreateResult, SdkworkError> {
+    pub async fn payments_provider_accounts_create(&self, body: &CommercePaymentProviderAccountMutationRequest, idempotency_key: &str) -> Result<PaymentsProviderAccountsCreateResult, SdkworkError> {
         let path = backend_path(&"/payments/provider_accounts".to_string());
         let headers = build_request_headers(
             &[
                 ("Idempotency-Key", HeaderParameterSpec::new(idempotency_key, "simple", false, None)),
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
             ],
             &[],
         );
@@ -694,12 +653,11 @@ impl CommerceApi {
     }
 
     /// Recharges Packages Create
-    pub async fn recharges_packages_create(&self, body: &CommerceRechargePackageMutationRequest, idempotency_key: &str, x_request_id: Option<&str>) -> Result<RechargesPackagesCreateResult, SdkworkError> {
+    pub async fn recharges_packages_create(&self, body: &CommerceRechargePackageMutationRequest, idempotency_key: &str) -> Result<RechargesPackagesCreateResult, SdkworkError> {
         let path = backend_path(&"/recharges/packages".to_string());
         let headers = build_request_headers(
             &[
                 ("Idempotency-Key", HeaderParameterSpec::new(idempotency_key, "simple", false, None)),
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
             ],
             &[],
         );
@@ -707,24 +665,17 @@ impl CommerceApi {
     }
 
     /// Recharges Packages Delete
-    pub async fn recharges_packages_delete(&self, package_id: &str, x_request_id: Option<&str>) -> Result<RechargesPackagesDeleteResult, SdkworkError> {
+    pub async fn recharges_packages_delete(&self, package_id: &str) -> Result<RechargesPackagesDeleteResult, SdkworkError> {
         let path = backend_path(&format!("/recharges/packages/{}", serialize_path_parameter(package_id, PathParameterSpec::new("packageId", "simple", false))));
-        let headers = build_request_headers(
-            &[
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
-            ],
-            &[],
-        );
-        self.client.delete(&path, None, headers.as_ref()).await
+        self.client.delete(&path, None, None).await
     }
 
     /// Recharges Packages Update
-    pub async fn recharges_packages_update(&self, package_id: &str, body: &CommerceRechargePackageMutationRequest, idempotency_key: &str, x_request_id: Option<&str>) -> Result<RechargesPackagesUpdateResult, SdkworkError> {
+    pub async fn recharges_packages_update(&self, package_id: &str, body: &CommerceRechargePackageMutationRequest, idempotency_key: &str) -> Result<RechargesPackagesUpdateResult, SdkworkError> {
         let path = backend_path(&format!("/recharges/packages/{}", serialize_path_parameter(package_id, PathParameterSpec::new("packageId", "simple", false))));
         let headers = build_request_headers(
             &[
                 ("Idempotency-Key", HeaderParameterSpec::new(idempotency_key, "simple", false, None)),
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
             ],
             &[],
         );
@@ -782,12 +733,11 @@ impl CommerceApi {
     }
 
     /// Wallet Adjustments Create
-    pub async fn wallet_adjustments_create(&self, body: &CommerceStandardCommandRequest, idempotency_key: &str, x_request_id: Option<&str>) -> Result<WalletAdjustmentsCreateResult, SdkworkError> {
+    pub async fn wallet_adjustments_create(&self, body: &CommerceStandardCommandRequest, idempotency_key: &str) -> Result<WalletAdjustmentsCreateResult, SdkworkError> {
         let path = backend_path(&"/wallet/adjustments".to_string());
         let headers = build_request_headers(
             &[
                 ("Idempotency-Key", HeaderParameterSpec::new(idempotency_key, "simple", false, None)),
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
             ],
             &[],
         );

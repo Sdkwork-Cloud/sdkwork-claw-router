@@ -141,8 +141,8 @@ const result = await client.iam.accessGroups.list();
 ### integration
 
 ```typescript
-// List channels
-const result = await client.integration.channels.list();
+// List channel endpoints
+const result = await client.integration.channelEndpoints.list();
 ```
 
 ### mcp

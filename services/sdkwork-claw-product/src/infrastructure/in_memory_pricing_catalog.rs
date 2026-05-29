@@ -1,7 +1,7 @@
 use crate::domain::{
     AiModel, ApiKeyGroup, ApiKeyGroupMetricSnapshot, BillingMeter, GatewayAccessPolicy,
     GatewayApiKey, ModelPrice, ModelProviderRoute, ModelVendorDefinition, PriceSide, PricingPlan,
-    ProviderAccountPoolRoute, QuotaPolicy, RoutingPolicy, RoutingRule,
+    ProviderChannelRoute, QuotaPolicy, RoutingPolicy, RoutingRule,
 };
 use crate::ports::PricingCatalog;
 
@@ -10,7 +10,7 @@ pub struct InMemoryPricingCatalog {
     vendors: Vec<ModelVendorDefinition>,
     models: Vec<AiModel>,
     provider_routes: Vec<ModelProviderRoute>,
-    provider_account_pool_routes: Vec<ProviderAccountPoolRoute>,
+    provider_channel_routes: Vec<ProviderChannelRoute>,
     routing_policies: Vec<RoutingPolicy>,
     routing_rules: Vec<RoutingRule>,
     plans: Vec<PricingPlan>,
@@ -35,10 +35,10 @@ impl InMemoryPricingCatalog {
         self.provider_routes.push(route);
     }
 
-    pub fn add_provider_account_pool_route(&mut self, route: ProviderAccountPoolRoute) {
-        self.provider_account_pool_routes
+    pub fn add_provider_channel_route(&mut self, route: ProviderChannelRoute) {
+        self.provider_channel_routes
             .retain(|item| item.channel_id != route.channel_id);
-        self.provider_account_pool_routes.push(route);
+        self.provider_channel_routes.push(route);
     }
 
     pub fn add_routing_policy(&mut self, policy: RoutingPolicy) {
@@ -109,13 +109,13 @@ impl PricingCatalog for InMemoryPricingCatalog {
     fn list_provider_routes(&self, model: &str) -> Vec<ModelProviderRoute> {
         self.provider_routes
             .iter()
-            .filter(|route| catalog_key_matches_runtime_scope(&route.catalog_key, model))
+            .filter(|route| catalog_key_matches_route_scope(&route.catalog_key, model))
             .cloned()
             .collect()
     }
 
-    fn list_provider_account_pool_routes(&self) -> Vec<ProviderAccountPoolRoute> {
-        self.provider_account_pool_routes.clone()
+    fn list_provider_channel_routes(&self) -> Vec<ProviderChannelRoute> {
+        self.provider_channel_routes.clone()
     }
 
     fn list_routing_policies(&self) -> Vec<RoutingPolicy> {
@@ -147,7 +147,7 @@ impl PricingCatalog for InMemoryPricingCatalog {
         self.prices
             .iter()
             .filter(|price| {
-                catalog_key_matches_runtime_scope(&price.catalog_key, model)
+                catalog_key_matches_price_scope(&price.catalog_key, model)
                     && price.price_side == price_side
                     && price.billing_meter == billing_meter
             })
@@ -159,7 +159,7 @@ impl PricingCatalog for InMemoryPricingCatalog {
         self.prices
             .iter()
             .filter(|price| {
-                catalog_key_matches_runtime_scope(&price.catalog_key, model)
+                catalog_key_matches_price_scope(&price.catalog_key, model)
                     && price.price_side == price_side
             })
             .cloned()
@@ -219,9 +219,10 @@ impl PricingCatalog for InMemoryPricingCatalog {
     }
 
     fn find_model(&self, model: &str) -> Option<AiModel> {
+        let model = model.trim();
         self.models
             .iter()
-            .find(|candidate| catalog_key_matches_model_key(&candidate.catalog_key, model))
+            .find(|candidate| candidate.catalog_key == model)
             .cloned()
     }
 
@@ -236,7 +237,7 @@ impl PricingCatalog for InMemoryPricingCatalog {
         self.provider_routes
             .iter()
             .find(|route| {
-                catalog_key_matches_runtime_scope(&route.catalog_key, model)
+                catalog_key_matches_route_scope(&route.catalog_key, model)
                     && route.provider_code == provider_code
             })
             .cloned()
@@ -253,7 +254,7 @@ impl PricingCatalog for InMemoryPricingCatalog {
         self.prices
             .iter()
             .find(|price| {
-                catalog_key_matches_runtime_scope(&price.catalog_key, model)
+                catalog_key_matches_price_scope(&price.catalog_key, model)
                     && price.price_side == price_side
                     && price.billing_meter == billing_meter
                     && option_matches(price.provider_code.as_deref(), provider_code)
@@ -270,58 +271,10 @@ fn option_matches(actual: Option<&str>, expected: Option<&str>) -> bool {
     }
 }
 
-fn catalog_key_matches_model_key(candidate: &str, model_key: &str) -> bool {
-    if candidate == model_key {
-        return true;
-    }
-    match (catalog_key_parts(candidate), catalog_key_parts(model_key)) {
-        (Some((candidate_vendor, candidate_model)), Some((model_vendor, model_model))) => {
-            candidate_vendor == model_vendor && candidate_model == model_model
-        }
-        _ => false,
-    }
+fn catalog_key_matches_route_scope(candidate: &str, model_key: &str) -> bool {
+    candidate.trim() == model_key.trim()
 }
 
-fn catalog_key_matches_runtime_scope(candidate: &str, model_key: &str) -> bool {
-    if candidate == model_key {
-        return true;
-    }
-    match catalog_key_shape(model_key) {
-        CatalogKeyShape::Base { vendor, model } => catalog_key_parts(candidate)
-            .map(|(candidate_vendor, candidate_model)| {
-                candidate_vendor == vendor && candidate_model == model
-            })
-            .unwrap_or(false),
-        CatalogKeyShape::Regional | CatalogKeyShape::Other => false,
-    }
-}
-
-fn catalog_key_parts(value: &str) -> Option<(&str, &str)> {
-    let parts = value
-        .split('/')
-        .filter(|part| !part.is_empty())
-        .collect::<Vec<_>>();
-    match parts.as_slice() {
-        [vendor, model] => Some((*vendor, *model)),
-        [vendor, _region, model] => Some((*vendor, *model)),
-        _ => None,
-    }
-}
-
-enum CatalogKeyShape<'a> {
-    Base { vendor: &'a str, model: &'a str },
-    Regional,
-    Other,
-}
-
-fn catalog_key_shape(value: &str) -> CatalogKeyShape<'_> {
-    let parts = value
-        .split('/')
-        .filter(|part| !part.is_empty())
-        .collect::<Vec<_>>();
-    match parts.as_slice() {
-        [vendor, model] => CatalogKeyShape::Base { vendor, model },
-        [_vendor, _region, _model] => CatalogKeyShape::Regional,
-        _ => CatalogKeyShape::Other,
-    }
+fn catalog_key_matches_price_scope(candidate: &str, model_key: &str) -> bool {
+    candidate.trim() == model_key.trim()
 }

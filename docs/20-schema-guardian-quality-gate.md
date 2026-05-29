@@ -1,4 +1,4 @@
-# Schema Guardian 标准质量门禁
+﻿# Schema Guardian 标准质量门禁
 
 ## 目标
 
@@ -14,7 +14,7 @@
 - 统一领域名称：`ModelVendor`、`BillingMeter` 等需要持久化的领域名必须有注册表表定义，并具备 Java/Rust/TypeScript/OpenAPI 类型绑定。
 - 多模态计费：`BillingMode`、`BillingMeter` 必须覆盖 LLM、图片、音频、视频、音效、API 按次、API 按结果、API 按个数等计费维度。
 - 定价方案：禁止退化为 `ai_pricing_group`，统一使用 `ai_pricing_plan`、`ai_pricing_plan_binding`、`ai_pricing_rule`、`ai_pricing_tier` 组合，支持官方价、供应商成本价、客户销售价、倍率、表达式和阶梯。
-- API Key 分组：`iam_gateway_api_key` 必须能绑定 `iam_gateway_api_key_group`，分组必须能选择 `ai_pricing_plan`，并允许通过 `ai_pricing_plan_binding` 扩展到 API Key、分组、VIP、租户、用户等主体。
+- API Key 分组：`iam_gateway_api_key` 必须能绑定 `ai_channel_group`，分组必须能选择 `ai_pricing_plan`，并允许通过 `ai_pricing_plan_binding` 扩展到 API Key、分组、VIP、租户、用户等主体。
 - API 路径标准：`api_prefixes.app` 必须是 `/app/v3/api`，`api_prefixes.backend` 必须是 `/backend/v3/api`，OpenAI 兼容面必须是 `/v1`。
 - 前端路由覆盖：`/admin/*` 页面必须声明 `backend` API surface，非 `/admin/*` 页面必须声明 `app` API surface，确保 admin 与 console/public 可以按 Java app/backend 标准自由切换。
 - 命名标准：非 legacy 新表不得使用 `claw_`、`router_`、`sdkwork_`、`console_`、`admin_`、`portal_` 等产品名或部署名前缀。

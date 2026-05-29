@@ -3,17 +3,18 @@ use std::pin::Pin;
 use std::sync::Arc;
 use std::time::{SystemTime, UNIX_EPOCH};
 
-use axum::http::{HeaderMap, StatusCode, Uri};
+use axum::http::{header::USER_AGENT, HeaderMap, StatusCode, Uri};
 use axum::response::Response;
 use serde_json::Value;
 
-use crate::api::request_id::generate_server_request_id;
 use crate::api::openai_error::openai_error;
+use crate::api::request_id::generate_server_request_id;
 use crate::application::AuthenticatedApiKeyContext;
 
 pub use super::openai_runtime::ResolvedOpenAiProviderRoute as OpenAiProviderRoute;
 
 const X_TRACE_ID: &str = "x-trace-id";
+const MAX_HTTP_USER_AGENT_LEN: usize = 1024;
 
 pub type OpenAiInvocationPluginFuture<'a> =
     Pin<Box<dyn Future<Output = Result<(), OpenAiInvocationPluginError>> + Send + 'a>>;
@@ -47,6 +48,7 @@ pub struct OpenAiInvocationContext {
     pub http_method: String,
     pub request_id: String,
     pub trace_id: Option<String>,
+    pub user_agent: Option<String>,
 }
 
 impl OpenAiInvocationContext {
@@ -69,8 +71,28 @@ impl OpenAiInvocationContext {
             http_method: "POST".to_owned(),
             request_id: server_generated_request_id(),
             trace_id: header_value(headers, X_TRACE_ID),
+            user_agent: header_value(headers, USER_AGENT.as_str())
+                .and_then(|value| normalize_user_agent_header(value.as_str())),
         }
     }
+}
+
+pub fn normalize_user_agent_header(value: &str) -> Option<String> {
+    let sanitized = value
+        .chars()
+        .map(|character| {
+            if character.is_control() {
+                ' '
+            } else {
+                character
+            }
+        })
+        .collect::<String>();
+    let compact = sanitized.split_whitespace().collect::<Vec<_>>().join(" ");
+    if compact.is_empty() {
+        return None;
+    }
+    Some(compact.chars().take(MAX_HTTP_USER_AGENT_LEN).collect())
 }
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
@@ -513,7 +535,10 @@ mod tests {
     #[test]
     fn openai_invocation_context_ignores_client_request_id_header() {
         let mut headers = HeaderMap::new();
-        headers.insert("x-request-id", HeaderValue::from_static("client-request-id"));
+        headers.insert(
+            "x-request-id",
+            HeaderValue::from_static("client-request-id"),
+        );
         headers.insert("x-trace-id", HeaderValue::from_static("client-trace-id"));
         let uri: Uri = "/v1/chat/completions".parse().unwrap();
 
@@ -530,6 +555,33 @@ mod tests {
         assert_ne!("client-request-id", context.request_id);
         assert!(is_uuid(&context.request_id));
         assert_eq!(Some("client-trace-id"), context.trace_id.as_deref());
+    }
+
+    #[test]
+    fn openai_invocation_context_captures_normalized_user_agent_header() {
+        let mut headers = HeaderMap::new();
+        headers.insert(
+            axum::http::header::USER_AGENT,
+            HeaderValue::from_static(
+                " Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/126.0.0.0 ",
+            ),
+        );
+        let uri: Uri = "/v1/chat/completions".parse().unwrap();
+
+        let context = OpenAiInvocationContext::new(
+            OpenAiInvocationEndpoint::ChatCompletions,
+            authenticated_api_key_context(),
+            "gpt-4o-mini",
+            false,
+            json!({"model": "gpt-4o-mini"}),
+            &headers,
+            &uri,
+        );
+
+        assert_eq!(
+            Some("Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/126.0.0.0"),
+            context.user_agent.as_deref()
+        );
     }
 
     fn authenticated_api_key_context() -> AuthenticatedApiKeyContext {

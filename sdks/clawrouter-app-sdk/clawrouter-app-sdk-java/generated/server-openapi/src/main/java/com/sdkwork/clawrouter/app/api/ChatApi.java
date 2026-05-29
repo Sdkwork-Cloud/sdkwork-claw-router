@@ -24,9 +24,9 @@ public class ChatApi {
     }
 
     /** Create product chat conversation */
-    public ConversationsCreateResult conversationsCreate(ChatConversationCreateRequest body, String idempotencyKey, String xRequestId) throws Exception {
+    public ConversationsCreateResult conversationsCreate(ChatConversationCreateRequest body, String idempotencyKey) throws Exception {
         Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null), "X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
+                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null)),
                 Map.of()
         );
         Object raw = client.post(ApiPaths.appPath("/chat/conversations"), body, null, requestHeaders, "application/json");
@@ -50,9 +50,9 @@ public class ChatApi {
     }
 
     /** Create product chat turn */
-    public TurnsCreateResult turnsCreate(String conversationId, ChatTurnCreateRequest body, String idempotencyKey, String xRequestId) throws Exception {
+    public TurnsCreateResult turnsCreate(String conversationId, ChatTurnCreateRequest body, String idempotencyKey) throws Exception {
         Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null), "X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
+                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null)),
                 Map.of()
         );
         Object raw = client.post(ApiPaths.appPath("/chat/conversations/" + serializePathParameter(conversationId, new PathParameterSpec("conversationId", "simple", false)) + "/turns"), body, null, requestHeaders, "application/json");
@@ -60,9 +60,9 @@ public class ChatApi {
     }
 
     /** Complete product chat turn response */
-    public TurnResponsesCreateResult turnResponsesCreate(String conversationId, String turnId, ChatTurnResponseRequest body, String idempotencyKey, String xRequestId) throws Exception {
+    public TurnResponsesCreateResult turnResponsesCreate(String conversationId, String turnId, ChatTurnResponseRequest body, String idempotencyKey) throws Exception {
         Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null), "X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
+                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null)),
                 Map.of()
         );
         Object raw = client.post(ApiPaths.appPath("/chat/conversations/" + serializePathParameter(conversationId, new PathParameterSpec("conversationId", "simple", false)) + "/turns/" + serializePathParameter(turnId, new PathParameterSpec("turnId", "simple", false)) + "/response"), body, null, requestHeaders, "application/json");

@@ -1,0 +1,33 @@
+package com.sdkwork.clawrouter.app
+
+data class AiChannelGroupRecord(
+    val allowedOrigin: Map<String, String>? = null,
+    val billingType: String? = null,
+    val capacityLimit: String? = null,
+    val createdAt: String? = null,
+    val dataScope: String? = null,
+    val deletedAt: String? = null,
+    val deletedBy: String? = null,
+    val description: String? = null,
+    val environment: String? = null,
+    val groupCode: String? = null,
+    val groupName: String? = null,
+    val groupType: String? = null,
+    val id: String? = null,
+    val metadata: Map<String, String>? = null,
+    val officialPriceMultiplier: String? = null,
+    val organizationId: String? = null,
+    val priceReferenceMode: String? = null,
+    val pricingPlanCode: String? = null,
+    val pricingPlanId: String? = null,
+    val providerCode: String? = null,
+    val quotaPolicyId: String? = null,
+    val rateLimitPolicyId: String? = null,
+    val rateMultiplier: String? = null,
+    val routingPolicyId: String? = null,
+    val status: String? = null,
+    val tenantId: String? = null,
+    val updatedAt: String? = null,
+    val uuid: String? = null,
+    val version: String? = null
+)

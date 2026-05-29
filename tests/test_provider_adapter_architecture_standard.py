@@ -77,7 +77,7 @@ def test_provider_adapter_architecture_document_records_runtime_contract():
         "exact standard-path match",
         "database account-pool routing",
         "metadata only",
-        "after the account pool selects the final channel and provider account",
+        "after the channel route selects the final channel and provider account",
         "selected account provider code",
         "falls back to direct HTTP with the selected account's base URL and rendered credentials",
         "protects both `/internal/adapter-manifest` and provider invocation routes with gateway bearer authentication",
@@ -138,10 +138,10 @@ def test_provider_native_passthrough_uses_explicit_registry_hit_before_adapter()
     assert "forward_to_adapter" in passthrough
     assert "forward_to_target" in passthrough
     assert "standard_path_from_passthrough_uri" in passthrough
-    assert "forward_with_account_pool" in passthrough
-    assert "SelectProviderAccountPoolRouteQuery" in passthrough
+    assert "forward_with_channel_route" in passthrough
+    assert "SelectProviderChannelRouteQuery" in passthrough
     assert "ProviderRouteSelector::new(catalog)" in passthrough
-    assert "account_pool_route_to_passthrough_target" in passthrough
+    assert "channel_route_to_passthrough_target" in passthrough
     assert "account_route.provider_code.as_str()" in passthrough
     assert "metadata_route.capability.as_deref()" in passthrough
     assert "metadata_route.endpoint_key.as_deref()" in passthrough
@@ -152,13 +152,13 @@ def test_provider_native_passthrough_uses_explicit_registry_hit_before_adapter()
     assert "invocation_shape: endpoint.invocation_shape.clone()" in snapshot
 
 
-def test_provider_native_database_account_pool_adapter_tests_lock_route_order():
+def test_provider_native_database_channel_route_adapter_tests_lock_route_order():
     gateway_tests = (
         ROOT / "services/sdkwork-claw-gateway/tests/provider_passthrough_route.rs"
     ).read_text(encoding="utf-8")
 
     assert (
-        "gateway_database_provider_native_adapter_routes_after_account_pool_selection"
+        "gateway_database_provider_native_adapter_routes_after_channel_route_selection"
         in gateway_tests
     )
     assert (

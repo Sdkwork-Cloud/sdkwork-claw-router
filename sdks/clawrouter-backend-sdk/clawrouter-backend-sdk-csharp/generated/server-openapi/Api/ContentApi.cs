@@ -26,16 +26,9 @@ namespace Sdkwork.ClawRouter.Backend.Api
         /// <summary>
         /// Create announcement
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.AnnouncementsCreateResult?> AnnouncementsCreateAsync(Sdkwork.ClawRouter.Backend.Models.AdminAnnouncementCreateRequest body, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.AnnouncementsCreateResult?> AnnouncementsCreateAsync(Sdkwork.ClawRouter.Backend.Models.AdminAnnouncementCreateRequest body)
         {
-            var requestHeaders = BuildRequestHeaders(
-                new Dictionary<string, HeaderParameterSpec>
-                {
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
-                },
-                new Dictionary<string, HeaderParameterSpec>()
-            );
-            return await _client.PostAsync<Sdkwork.ClawRouter.Backend.Models.AnnouncementsCreateResult>(ApiPaths.BackendPath("/content/announcements"), body, null, requestHeaders, "application/json");
+            return await _client.PostAsync<Sdkwork.ClawRouter.Backend.Models.AnnouncementsCreateResult>(ApiPaths.BackendPath("/content/announcements"), body, null, null, "application/json");
         }
 
         /// <summary>
@@ -49,16 +42,9 @@ namespace Sdkwork.ClawRouter.Backend.Api
         /// <summary>
         /// Update announcement
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.AnnouncementsUpdateResult?> AnnouncementsUpdateAsync(string announcementId, Sdkwork.ClawRouter.Backend.Models.AdminAnnouncementUpdateRequest body, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.AnnouncementsUpdateResult?> AnnouncementsUpdateAsync(string announcementId, Sdkwork.ClawRouter.Backend.Models.AdminAnnouncementUpdateRequest body)
         {
-            var requestHeaders = BuildRequestHeaders(
-                new Dictionary<string, HeaderParameterSpec>
-                {
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
-                },
-                new Dictionary<string, HeaderParameterSpec>()
-            );
-            return await _client.PatchAsync<Sdkwork.ClawRouter.Backend.Models.AnnouncementsUpdateResult>(ApiPaths.BackendPath($"/content/announcements/{SerializePathParameter(announcementId, new PathParameterSpec("announcementId", "simple", false))}"), body, null, requestHeaders, "application/json");
+            return await _client.PatchAsync<Sdkwork.ClawRouter.Backend.Models.AnnouncementsUpdateResult>(ApiPaths.BackendPath($"/content/announcements/{SerializePathParameter(announcementId, new PathParameterSpec("announcementId", "simple", false))}"), body, null, null, "application/json");
         }
 
         /// <summary>
@@ -79,76 +65,41 @@ namespace Sdkwork.ClawRouter.Backend.Api
         /// <summary>
         /// Admin Course Application Review
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.CourseApplicationsReviewResult?> CourseApplicationsReviewAsync(string applicationId, Sdkwork.ClawRouter.Backend.Models.AdminCourseApplicationReviewRequest body, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.CourseApplicationsReviewResult?> CourseApplicationsReviewAsync(string applicationId, Sdkwork.ClawRouter.Backend.Models.AdminCourseApplicationReviewRequest body)
         {
-            var requestHeaders = BuildRequestHeaders(
-                new Dictionary<string, HeaderParameterSpec>
-                {
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
-                },
-                new Dictionary<string, HeaderParameterSpec>()
-            );
-            return await _client.PatchAsync<Sdkwork.ClawRouter.Backend.Models.CourseApplicationsReviewResult>(ApiPaths.BackendPath($"/content/course-applications/{SerializePathParameter(applicationId, new PathParameterSpec("applicationId", "simple", false))}/review"), body, null, requestHeaders, "application/json");
+            return await _client.PatchAsync<Sdkwork.ClawRouter.Backend.Models.CourseApplicationsReviewResult>(ApiPaths.BackendPath($"/content/course-applications/{SerializePathParameter(applicationId, new PathParameterSpec("applicationId", "simple", false))}/review"), body, null, null, "application/json");
         }
 
         /// <summary>
         /// Admin Course Lesson Delete
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.CourseLessonsDeleteResult?> CourseLessonsDeleteAsync(string lessonId, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.CourseLessonsDeleteResult?> CourseLessonsDeleteAsync(string lessonId)
         {
-            var requestHeaders = BuildRequestHeaders(
-                new Dictionary<string, HeaderParameterSpec>
-                {
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
-                },
-                new Dictionary<string, HeaderParameterSpec>()
-            );
-            return await _client.DeleteAsync<Sdkwork.ClawRouter.Backend.Models.CourseLessonsDeleteResult>(ApiPaths.BackendPath($"/content/course-lessons/{SerializePathParameter(lessonId, new PathParameterSpec("lessonId", "simple", false))}"), null, requestHeaders);
+            return await _client.DeleteAsync<Sdkwork.ClawRouter.Backend.Models.CourseLessonsDeleteResult>(ApiPaths.BackendPath($"/content/course-lessons/{SerializePathParameter(lessonId, new PathParameterSpec("lessonId", "simple", false))}"));
         }
 
         /// <summary>
         /// Admin Course Lesson Update
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.CourseLessonsUpdateResult?> CourseLessonsUpdateAsync(string lessonId, Sdkwork.ClawRouter.Backend.Models.AdminCourseLessonMutationRequest body, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.CourseLessonsUpdateResult?> CourseLessonsUpdateAsync(string lessonId, Sdkwork.ClawRouter.Backend.Models.AdminCourseLessonMutationRequest body)
         {
-            var requestHeaders = BuildRequestHeaders(
-                new Dictionary<string, HeaderParameterSpec>
-                {
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
-                },
-                new Dictionary<string, HeaderParameterSpec>()
-            );
-            return await _client.PatchAsync<Sdkwork.ClawRouter.Backend.Models.CourseLessonsUpdateResult>(ApiPaths.BackendPath($"/content/course-lessons/{SerializePathParameter(lessonId, new PathParameterSpec("lessonId", "simple", false))}"), body, null, requestHeaders, "application/json");
+            return await _client.PatchAsync<Sdkwork.ClawRouter.Backend.Models.CourseLessonsUpdateResult>(ApiPaths.BackendPath($"/content/course-lessons/{SerializePathParameter(lessonId, new PathParameterSpec("lessonId", "simple", false))}"), body, null, null, "application/json");
         }
 
         /// <summary>
         /// Admin Course Section Delete
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.CourseSectionsDeleteResult?> CourseSectionsDeleteAsync(string sectionId, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.CourseSectionsDeleteResult?> CourseSectionsDeleteAsync(string sectionId)
         {
-            var requestHeaders = BuildRequestHeaders(
-                new Dictionary<string, HeaderParameterSpec>
-                {
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
-                },
-                new Dictionary<string, HeaderParameterSpec>()
-            );
-            return await _client.DeleteAsync<Sdkwork.ClawRouter.Backend.Models.CourseSectionsDeleteResult>(ApiPaths.BackendPath($"/content/course-sections/{SerializePathParameter(sectionId, new PathParameterSpec("sectionId", "simple", false))}"), null, requestHeaders);
+            return await _client.DeleteAsync<Sdkwork.ClawRouter.Backend.Models.CourseSectionsDeleteResult>(ApiPaths.BackendPath($"/content/course-sections/{SerializePathParameter(sectionId, new PathParameterSpec("sectionId", "simple", false))}"));
         }
 
         /// <summary>
         /// Admin Course Section Update
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.CourseSectionsUpdateResult?> CourseSectionsUpdateAsync(string sectionId, Sdkwork.ClawRouter.Backend.Models.AdminCourseSectionMutationRequest body, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.CourseSectionsUpdateResult?> CourseSectionsUpdateAsync(string sectionId, Sdkwork.ClawRouter.Backend.Models.AdminCourseSectionMutationRequest body)
         {
-            var requestHeaders = BuildRequestHeaders(
-                new Dictionary<string, HeaderParameterSpec>
-                {
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
-                },
-                new Dictionary<string, HeaderParameterSpec>()
-            );
-            return await _client.PatchAsync<Sdkwork.ClawRouter.Backend.Models.CourseSectionsUpdateResult>(ApiPaths.BackendPath($"/content/course-sections/{SerializePathParameter(sectionId, new PathParameterSpec("sectionId", "simple", false))}"), body, null, requestHeaders, "application/json");
+            return await _client.PatchAsync<Sdkwork.ClawRouter.Backend.Models.CourseSectionsUpdateResult>(ApiPaths.BackendPath($"/content/course-sections/{SerializePathParameter(sectionId, new PathParameterSpec("sectionId", "simple", false))}"), body, null, null, "application/json");
         }
 
         /// <summary>
@@ -169,16 +120,9 @@ namespace Sdkwork.ClawRouter.Backend.Api
         /// <summary>
         /// Admin Course Create
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.CoursesCreateResult?> CoursesCreateAsync(Sdkwork.ClawRouter.Backend.Models.AdminCourseMutationRequest body, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.CoursesCreateResult?> CoursesCreateAsync(Sdkwork.ClawRouter.Backend.Models.AdminCourseMutationRequest body)
         {
-            var requestHeaders = BuildRequestHeaders(
-                new Dictionary<string, HeaderParameterSpec>
-                {
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
-                },
-                new Dictionary<string, HeaderParameterSpec>()
-            );
-            return await _client.PostAsync<Sdkwork.ClawRouter.Backend.Models.CoursesCreateResult>(ApiPaths.BackendPath("/content/courses"), body, null, requestHeaders, "application/json");
+            return await _client.PostAsync<Sdkwork.ClawRouter.Backend.Models.CoursesCreateResult>(ApiPaths.BackendPath("/content/courses"), body, null, null, "application/json");
         }
 
         /// <summary>
@@ -199,16 +143,9 @@ namespace Sdkwork.ClawRouter.Backend.Api
         /// <summary>
         /// Admin Course Comment Moderate
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.CourseCommentsModerateResult?> CourseCommentsModerateAsync(string commentId, Sdkwork.ClawRouter.Backend.Models.AdminCourseCommentModerationRequest body, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.CourseCommentsModerateResult?> CourseCommentsModerateAsync(string commentId, Sdkwork.ClawRouter.Backend.Models.AdminCourseCommentModerationRequest body)
         {
-            var requestHeaders = BuildRequestHeaders(
-                new Dictionary<string, HeaderParameterSpec>
-                {
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
-                },
-                new Dictionary<string, HeaderParameterSpec>()
-            );
-            return await _client.PatchAsync<Sdkwork.ClawRouter.Backend.Models.CourseCommentsModerateResult>(ApiPaths.BackendPath($"/content/courses/comments/{SerializePathParameter(commentId, new PathParameterSpec("commentId", "simple", false))}/moderation"), body, null, requestHeaders, "application/json");
+            return await _client.PatchAsync<Sdkwork.ClawRouter.Backend.Models.CourseCommentsModerateResult>(ApiPaths.BackendPath($"/content/courses/comments/{SerializePathParameter(commentId, new PathParameterSpec("commentId", "simple", false))}/moderation"), body, null, null, "application/json");
         }
 
         /// <summary>
@@ -237,31 +174,17 @@ namespace Sdkwork.ClawRouter.Backend.Api
         /// <summary>
         /// Admin Course Delete
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.CoursesDeleteResult?> CoursesDeleteAsync(string courseId, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.CoursesDeleteResult?> CoursesDeleteAsync(string courseId)
         {
-            var requestHeaders = BuildRequestHeaders(
-                new Dictionary<string, HeaderParameterSpec>
-                {
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
-                },
-                new Dictionary<string, HeaderParameterSpec>()
-            );
-            return await _client.DeleteAsync<Sdkwork.ClawRouter.Backend.Models.CoursesDeleteResult>(ApiPaths.BackendPath($"/content/courses/{SerializePathParameter(courseId, new PathParameterSpec("courseId", "simple", false))}"), null, requestHeaders);
+            return await _client.DeleteAsync<Sdkwork.ClawRouter.Backend.Models.CoursesDeleteResult>(ApiPaths.BackendPath($"/content/courses/{SerializePathParameter(courseId, new PathParameterSpec("courseId", "simple", false))}"));
         }
 
         /// <summary>
         /// Admin Course Update
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.CoursesUpdateResult?> CoursesUpdateAsync(string courseId, Sdkwork.ClawRouter.Backend.Models.AdminCourseMutationRequest body, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.CoursesUpdateResult?> CoursesUpdateAsync(string courseId, Sdkwork.ClawRouter.Backend.Models.AdminCourseMutationRequest body)
         {
-            var requestHeaders = BuildRequestHeaders(
-                new Dictionary<string, HeaderParameterSpec>
-                {
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
-                },
-                new Dictionary<string, HeaderParameterSpec>()
-            );
-            return await _client.PatchAsync<Sdkwork.ClawRouter.Backend.Models.CoursesUpdateResult>(ApiPaths.BackendPath($"/content/courses/{SerializePathParameter(courseId, new PathParameterSpec("courseId", "simple", false))}"), body, null, requestHeaders, "application/json");
+            return await _client.PatchAsync<Sdkwork.ClawRouter.Backend.Models.CoursesUpdateResult>(ApiPaths.BackendPath($"/content/courses/{SerializePathParameter(courseId, new PathParameterSpec("courseId", "simple", false))}"), body, null, null, "application/json");
         }
 
         /// <summary>
@@ -282,16 +205,9 @@ namespace Sdkwork.ClawRouter.Backend.Api
         /// <summary>
         /// Admin Course Lesson Create
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.CoursesLessonsCreateResult?> CoursesLessonsCreateAsync(string courseId, Sdkwork.ClawRouter.Backend.Models.AdminCourseLessonMutationRequest body, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.CoursesLessonsCreateResult?> CoursesLessonsCreateAsync(string courseId, Sdkwork.ClawRouter.Backend.Models.AdminCourseLessonMutationRequest body)
         {
-            var requestHeaders = BuildRequestHeaders(
-                new Dictionary<string, HeaderParameterSpec>
-                {
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
-                },
-                new Dictionary<string, HeaderParameterSpec>()
-            );
-            return await _client.PostAsync<Sdkwork.ClawRouter.Backend.Models.CoursesLessonsCreateResult>(ApiPaths.BackendPath($"/content/courses/{SerializePathParameter(courseId, new PathParameterSpec("courseId", "simple", false))}/lessons"), body, null, requestHeaders, "application/json");
+            return await _client.PostAsync<Sdkwork.ClawRouter.Backend.Models.CoursesLessonsCreateResult>(ApiPaths.BackendPath($"/content/courses/{SerializePathParameter(courseId, new PathParameterSpec("courseId", "simple", false))}/lessons"), body, null, null, "application/json");
         }
 
         /// <summary>
@@ -312,16 +228,9 @@ namespace Sdkwork.ClawRouter.Backend.Api
         /// <summary>
         /// Admin Course Relations Replace
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.CoursesRelationsReplaceResult?> CoursesRelationsReplaceAsync(string courseId, Sdkwork.ClawRouter.Backend.Models.AdminCourseRelationsReplaceRequest body, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.CoursesRelationsReplaceResult?> CoursesRelationsReplaceAsync(string courseId, Sdkwork.ClawRouter.Backend.Models.AdminCourseRelationsReplaceRequest body)
         {
-            var requestHeaders = BuildRequestHeaders(
-                new Dictionary<string, HeaderParameterSpec>
-                {
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
-                },
-                new Dictionary<string, HeaderParameterSpec>()
-            );
-            return await _client.PutAsync<Sdkwork.ClawRouter.Backend.Models.CoursesRelationsReplaceResult>(ApiPaths.BackendPath($"/content/courses/{SerializePathParameter(courseId, new PathParameterSpec("courseId", "simple", false))}/relations"), body, null, requestHeaders, "application/json");
+            return await _client.PutAsync<Sdkwork.ClawRouter.Backend.Models.CoursesRelationsReplaceResult>(ApiPaths.BackendPath($"/content/courses/{SerializePathParameter(courseId, new PathParameterSpec("courseId", "simple", false))}/relations"), body, null, null, "application/json");
         }
 
         /// <summary>
@@ -342,16 +251,9 @@ namespace Sdkwork.ClawRouter.Backend.Api
         /// <summary>
         /// Admin Course Section Create
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.CoursesSectionsCreateResult?> CoursesSectionsCreateAsync(string courseId, Sdkwork.ClawRouter.Backend.Models.AdminCourseSectionMutationRequest body, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.CoursesSectionsCreateResult?> CoursesSectionsCreateAsync(string courseId, Sdkwork.ClawRouter.Backend.Models.AdminCourseSectionMutationRequest body)
         {
-            var requestHeaders = BuildRequestHeaders(
-                new Dictionary<string, HeaderParameterSpec>
-                {
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
-                },
-                new Dictionary<string, HeaderParameterSpec>()
-            );
-            return await _client.PostAsync<Sdkwork.ClawRouter.Backend.Models.CoursesSectionsCreateResult>(ApiPaths.BackendPath($"/content/courses/{SerializePathParameter(courseId, new PathParameterSpec("courseId", "simple", false))}/sections"), body, null, requestHeaders, "application/json");
+            return await _client.PostAsync<Sdkwork.ClawRouter.Backend.Models.CoursesSectionsCreateResult>(ApiPaths.BackendPath($"/content/courses/{SerializePathParameter(courseId, new PathParameterSpec("courseId", "simple", false))}/sections"), body, null, null, "application/json");
         }
 
         private sealed record PathParameterSpec(string Name, string Style, bool Explode);
@@ -581,92 +483,5 @@ namespace Sdkwork.ClawRouter.Backend.Api
                 .Replace("%3B", ";").Replace("%3D", "=");
         }
 
-        private sealed record HeaderParameterSpec(object? Value, string Style, bool Explode, string? ContentType);
-
-        private static Dictionary<string, string>? BuildRequestHeaders(
-            Dictionary<string, HeaderParameterSpec> headers,
-            Dictionary<string, HeaderParameterSpec> cookies)
-        {
-            var requestHeaders = new Dictionary<string, string>();
-            foreach (var item in headers)
-            {
-                var serialized = SerializeParameterValue(item.Value);
-                if (serialized is not null)
-                {
-                    requestHeaders[item.Key] = serialized;
-                }
-            }
-
-            var cookieHeader = BuildCookieHeader(cookies);
-            if (!string.IsNullOrEmpty(cookieHeader))
-            {
-                requestHeaders["Cookie"] = requestHeaders.TryGetValue("Cookie", out var existing) && !string.IsNullOrEmpty(existing)
-                    ? existing + "; " + cookieHeader
-                    : cookieHeader;
-            }
-
-            return requestHeaders.Count == 0 ? null : requestHeaders;
-        }
-
-        private static string BuildCookieHeader(Dictionary<string, HeaderParameterSpec> cookies)
-        {
-            var pairs = new List<string>();
-            foreach (var item in cookies)
-            {
-                var serialized = SerializeParameterValue(item.Value);
-                if (serialized is not null)
-                {
-                    pairs.Add(Uri.EscapeDataString(item.Key) + "=" + Uri.EscapeDataString(serialized));
-                }
-            }
-            return string.Join("; ", pairs);
-        }
-
-        private static string? SerializeParameterValue(HeaderParameterSpec? parameter)
-        {
-            var value = parameter?.Value;
-            if (value is null)
-            {
-                return null;
-            }
-            if (!string.IsNullOrWhiteSpace(parameter!.ContentType))
-            {
-                return System.Text.Json.JsonSerializer.Serialize(value);
-            }
-            if (value is System.Collections.IEnumerable enumerable && value is not string)
-            {
-                var values = new List<string>();
-                foreach (var item in enumerable)
-                {
-                    if (item is not null)
-                    {
-                        values.Add(item.ToString() ?? string.Empty);
-                    }
-                }
-                return string.Join(",", values);
-            }
-            if (value is System.Collections.IDictionary dictionary)
-            {
-                var values = new List<string>();
-                foreach (System.Collections.DictionaryEntry item in dictionary)
-                {
-                    if (item.Value is null)
-                    {
-                        continue;
-                    }
-                    if (parameter.Explode)
-                    {
-                        values.Add((item.Key.ToString() ?? string.Empty) + "=" + (item.Value.ToString() ?? string.Empty));
-                    }
-                    else
-                    {
-                        values.Add(item.Key.ToString() ?? string.Empty);
-                        values.Add(item.Value.ToString() ?? string.Empty);
-                    }
-                }
-                return string.Join(",", values);
-            }
-            return value.ToString();
-        }
     }
 }

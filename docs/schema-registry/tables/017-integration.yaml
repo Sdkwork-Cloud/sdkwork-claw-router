@@ -1,0 +1,191 @@
+tables:
+- table: ai_channel_endpoint
+  domain: ai
+  profile: channel_endpoint
+  compliance_level: L3
+  system_of_record: true
+  write_owner: ai-routing-service
+  common_columns: tenant_entity
+  source_tables:
+  - ai_channel
+  - ai_model_vendor
+  - ai_api_endpoint
+  frontend_routes:
+  - /admin/channel
+  - /admin/channel/resources
+  - /admin/channel/endpoints
+  api_surfaces:
+  - app
+  - backend
+  - worker
+  not_null_columns:
+  - uuid
+  - tenant_id
+  - organization_id
+  - status
+  - channel_id
+  - channel_code
+  - channel_type
+  - vendor_code
+  - region_code
+  - api_code
+  - base_url
+  unique_constraints:
+  - columns:
+    - uuid
+    source: column_unique
+  columns:
+    channel_id: int64
+    provider_code: string(64)
+    channel_code: string(64)
+    channel_type: string(32)
+    vendor_id: int64
+    vendor_code: string(64)
+    region_code: string(64)
+    api_endpoint_id: int64
+    api_code: string(128)
+    base_url: string(512)
+    path_prefix: string(256)
+    priority:
+      type: int32
+      constraints: NOT NULL DEFAULT 100
+    weight:
+      type: int32
+      constraints: NOT NULL DEFAULT 100
+    timeout_ms: int32
+    retry_policy: json
+    health_status:
+      type: enum_int32
+      constraints: NOT NULL DEFAULT 1
+    last_latency_ms: int32
+    consecutive_error_count: int64
+    effective_from: instant
+    effective_to: instant
+  indexes:
+  - name: uk_ai_channel_endpoint_scope
+    unique: true
+    columns:
+    - tenant_id
+    - organization_id
+    - channel_id
+    - vendor_code
+    - region_code
+    - api_code
+  - name: idx_ai_channel_endpoint_lookup
+    columns:
+    - tenant_id
+    - organization_id
+    - status
+    - channel_id
+    - vendor_code
+    - region_code
+    - api_code
+    - priority
+    - weight
+    - id
+  - name: idx_ai_channel_endpoint_channel
+    columns:
+    - tenant_id
+    - organization_id
+    - channel_id
+    - status
+    - channel_type
+    - id
+  security:
+    sensitivity: PROVIDER_ENDPOINT
+    stores_secret_plaintext: false
+    audit_required: true
+- table: ai_route_candidate
+  domain: ai
+  profile: projection
+  compliance_level: L2
+  system_of_record: false
+  write_owner: ai-routing-service
+  common_columns: projection
+  source_tables:
+  - ai_channel_group
+  - ai_channel_group_member
+  - ai_channel_group_resource
+  - ai_channel
+  - ai_channel_vendor
+  - ai_channel_resource
+  - ai_channel_endpoint
+  - ai_resource
+  - ai_resource_group
+  frontend_routes:
+  - /playground
+  - /console/routing
+  - /admin/group
+  - /admin/channel
+  api_surfaces:
+  - app
+  - backend
+  - worker
+  not_null_columns:
+  - uuid
+  - tenant_id
+  - organization_id
+  - status
+  columns:
+    channel_group_id: int64
+    channel_id: int64
+    endpoint_id: int64
+    provider_code: string(64)
+    channel_type: string(32)
+    vendor_code: string(64)
+    api_code: string(128)
+    model_code: string(128)
+    catalog_key: string(256)
+    region_code: string(64)
+    priority: int32
+    weight: int32
+    health_status: enum_int32
+    config_version: int64
+    refreshed_at: instant
+  unique_constraints:
+  - columns:
+    - uuid
+    source: column_unique
+  indexes:
+  - name: idx_ai_route_candidate_status
+    columns:
+    - tenant_id
+    - organization_id
+    - status
+    - channel_group_id
+    - api_code
+    - catalog_key
+    - id
+  - name: uk_ai_route_candidate_scope
+    unique: true
+    columns:
+    - tenant_id
+    - organization_id
+    - channel_group_id
+    - channel_id
+    - endpoint_id
+    - api_code
+    - catalog_key
+  - name: idx_ai_route_candidate_model
+    columns:
+    - tenant_id
+    - organization_id
+    - channel_group_id
+    - api_code
+    - catalog_key
+    - status
+    - health_status
+    - priority
+    - weight
+    - id
+  - name: idx_ai_route_candidate_api
+    columns:
+    - tenant_id
+    - organization_id
+    - channel_group_id
+    - api_code
+    - status
+    - health_status
+    - priority
+    - weight
+    - id

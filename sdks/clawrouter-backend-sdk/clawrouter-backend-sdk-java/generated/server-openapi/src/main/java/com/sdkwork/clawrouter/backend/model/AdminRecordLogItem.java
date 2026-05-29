@@ -7,7 +7,12 @@ public class AdminRecordLogItem {
     private String cacheReadPrice;
     private Integer cacheReadTokens;
     private String cost;
+    private String errorCode;
+    private String errorMessage;
+    private String errorType;
     private String group;
+    private String httpMethod;
+    private Integer httpStatus;
     private String id;
     private Integer inputTokens;
     private String ip;
@@ -16,14 +21,18 @@ public class AdminRecordLogItem {
     private String multiplier;
     private Integer outputTokens;
     private String path;
+    private String providerNativeModel;
     private String reasoningEffort;
     private String requestId;
+    private String requestedModelCatalogKey;
+    private String status;
     private String time;
     private String tokenName;
     private String totalTime;
     private String ttft;
     private String type;
     private String user;
+    private String userAgent;
 
     public String getBaseInputPrice() {
         return this.baseInputPrice;
@@ -65,12 +74,52 @@ public class AdminRecordLogItem {
         this.cost = cost;
     }
 
+    public String getErrorCode() {
+        return this.errorCode;
+    }
+
+    public void setErrorCode(String errorCode) {
+        this.errorCode = errorCode;
+    }
+
+    public String getErrorMessage() {
+        return this.errorMessage;
+    }
+
+    public void setErrorMessage(String errorMessage) {
+        this.errorMessage = errorMessage;
+    }
+
+    public String getErrorType() {
+        return this.errorType;
+    }
+
+    public void setErrorType(String errorType) {
+        this.errorType = errorType;
+    }
+
     public String getGroup() {
         return this.group;
     }
 
     public void setGroup(String group) {
         this.group = group;
+    }
+
+    public String getHttpMethod() {
+        return this.httpMethod;
+    }
+
+    public void setHttpMethod(String httpMethod) {
+        this.httpMethod = httpMethod;
+    }
+
+    public Integer getHttpStatus() {
+        return this.httpStatus;
+    }
+
+    public void setHttpStatus(Integer httpStatus) {
+        this.httpStatus = httpStatus;
     }
 
     public String getId() {
@@ -137,6 +186,14 @@ public class AdminRecordLogItem {
         this.path = path;
     }
 
+    public String getProviderNativeModel() {
+        return this.providerNativeModel;
+    }
+
+    public void setProviderNativeModel(String providerNativeModel) {
+        this.providerNativeModel = providerNativeModel;
+    }
+
     public String getReasoningEffort() {
         return this.reasoningEffort;
     }
@@ -151,6 +208,22 @@ public class AdminRecordLogItem {
 
     public void setRequestId(String requestId) {
         this.requestId = requestId;
+    }
+
+    public String getRequestedModelCatalogKey() {
+        return this.requestedModelCatalogKey;
+    }
+
+    public void setRequestedModelCatalogKey(String requestedModelCatalogKey) {
+        this.requestedModelCatalogKey = requestedModelCatalogKey;
+    }
+
+    public String getStatus() {
+        return this.status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     public String getTime() {
@@ -199,5 +272,13 @@ public class AdminRecordLogItem {
 
     public void setUser(String user) {
         this.user = user;
+    }
+
+    public String getUserAgent() {
+        return this.userAgent;
+    }
+
+    public void setUserAgent(String userAgent) {
+        this.userAgent = userAgent;
     }
 }

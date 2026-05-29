@@ -7,9 +7,11 @@ from pathlib import Path
 import yaml
 
 from tools.frontend_contract_loader import load_frontend_field_contract
+from tools.schema_registry_loader import load_schema_registry
 
 
 ROOT = Path(__file__).resolve().parents[1]
+TABLE_REGISTRY_PATH = ROOT / "docs" / "schema-registry" / "sdkwork-claw-router.tables.yaml"
 BACKEND_OPENAPI_PATH = ROOT / "generated" / "openapi" / "clawrouter-backend-openapi.json"
 BACKEND_SDK_ROOT = (
     ROOT
@@ -95,9 +97,7 @@ class AdminPromptMcpRuntimeStandardTest(unittest.TestCase):
         self.assertNotIn("ai_capability", route_contracts["/admin/prompts"]["required_tables"])
         self.assertNotIn("ai_capability", route_contracts["/admin/mcp"]["required_tables"])
 
-        table_registry = yaml.safe_load(
-            (ROOT / "docs" / "schema-registry" / "sdkwork-claw-router.tables.yaml").read_text(encoding="utf-8")
-        )
+        table_registry = load_schema_registry(TABLE_REGISTRY_PATH)
         tables = {table["table"]: table for table in table_registry["tables"]}
         self.assertIn("/admin/prompts", tables["plus_category"]["frontend_routes"])
         self.assertIn("/admin/mcp", tables["plus_category"]["frontend_routes"])
@@ -470,25 +470,29 @@ class AdminPromptMcpRuntimeStandardTest(unittest.TestCase):
             "\u9009\u62e9 MCP \u670d\u52a1\u540e\u67e5\u770b\u4fee\u8ba2\u3001\u5de5\u5177\u548c\u7ed1\u5b9a",
             "MCP \u5de5\u5177\u65e0\u6cd5\u66f4\u65b0\u3002",
         ]
+        unreadable_marker_codepoints = [
+            (0x93BB, 0x611C, 0x305A),
+            (0x9352, 0x6D98, 0x7F13),
+            (0x6DC7, 0xE1C6, 0x8A79),
+            (0x7BA1, 0xFF04, 0x60B3),
+            (0x9354, 0x72B2, 0x6D47),
+            (0x9418, 0x8235),
+            (0x93BB, 0x612E, 0x305A),
+            (0x9352, 0x6D98, 0x7F13),
+            (0x95AB, 0x590B, 0x5AE8),
+            (0x93C3, 0x72B3, 0x7876),
+            (0x9286, 0x003F),
+            (0x9417, 0x581F, 0x6E70),
+            (0x7F01, 0x621D, 0x757E),
+            (0x6DC7, 0xE1BF, 0xE179),
+            (0x5BB8, 0x30E5, 0x53FF),
+            (0x93C8, 0x5D85, 0x59DF),
+            (0x935A, 0xE21C, 0x6564),
+            (0x9418, 0x8235, 0x20AC),
+        ]
         unreadable_markers = [
-            "\u93bb\u611c\u305a",
-            "\u9352\u6d98\u7f13",
-            "\u6dc7\ue1c6\u8a79",
-            "\u7ba1\uff04\u60b3",
-            "\u9354\u72b2\u6d47",
-            "\u9418\u8235",
-            "鎻愮ず",
-            "鍒涘缓",
-            "閫夋嫨",
-            "鏃犳硶",
-            "銆?",
-            "鐗堟湰",
-            "缁戝畾",
-            "淇",
-            "宸ュ叿",
-            "鏈嶅姟",
-            "鍚敤",
-            "鐘舵€",
+            "".join(chr(codepoint) for codepoint in marker)
+            for marker in unreadable_marker_codepoints
         ]
 
         for text in expected_prompt_text:

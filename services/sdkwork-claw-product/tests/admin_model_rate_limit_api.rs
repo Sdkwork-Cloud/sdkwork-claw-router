@@ -30,7 +30,7 @@ async fn admin_model_rate_limit_route_creates_and_lists_model_limits() {
                 .header("content-type", "application/json")
                 .internal_trusted_subject(10, 20, 30)
                 .body(Body::from(
-                    r#"{"model":"openai/global/gpt-4o-mini","group":"standard-group","rpm":600,"tpm":120000}"#,
+                    r#"{"model":"openai/gpt-4o-mini","group":"standard-group","rpm":600,"tpm":120000}"#,
                 ))
                 .unwrap(),
         )
@@ -41,7 +41,7 @@ async fn admin_model_rate_limit_route_creates_and_lists_model_limits() {
     let create_payload = json_payload(create_response).await;
     assert_eq!("2000", create_payload["code"]);
     assert_eq!(
-        "openai/global/gpt-4o-mini",
+        "openai/gpt-4o-mini",
         create_payload["data"]["item"]["model"]
     );
     assert_eq!("standard-group", create_payload["data"]["item"]["group"]);
@@ -65,7 +65,7 @@ async fn admin_model_rate_limit_route_creates_and_lists_model_limits() {
     let list_payload = json_payload(list_response).await;
     assert_eq!(1, list_payload["data"]["items"].as_array().unwrap().len());
     assert_eq!(
-        "openai/global/gpt-4o-mini",
+        "openai/gpt-4o-mini",
         list_payload["data"]["items"][0]["model"]
     );
     assert_eq!(vec!["create"], *store.commands.lock().unwrap());

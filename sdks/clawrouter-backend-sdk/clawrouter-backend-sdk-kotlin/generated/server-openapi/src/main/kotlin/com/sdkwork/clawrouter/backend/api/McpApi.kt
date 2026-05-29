@@ -9,26 +9,14 @@ import com.sdkwork.clawrouter.backend.http.HttpClient
 class McpApi(private val client: HttpClient) {
 
     /** Update MCP binding */
-    suspend fun serversBindingsUpdate(bindingId: String, body: AdminMcpBindingUpdateRequest, xRequestId: String? = null): ServersBindingsUpdateResult? {
-        val requestHeaders = buildRequestHeaders(
-            mapOf(
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
-            ),
-            emptyMap()
-        )
-        val raw = client.put(ApiPaths.backendPath("/mcp/bindings/${serializePathParameter(bindingId, PathParameterSpec("bindingId", "simple", false))}"), body, null, requestHeaders, "application/json")
+    suspend fun serversBindingsUpdate(bindingId: String, body: AdminMcpBindingUpdateRequest): ServersBindingsUpdateResult? {
+        val raw = client.put(ApiPaths.backendPath("/mcp/bindings/${serializePathParameter(bindingId, PathParameterSpec("bindingId", "simple", false))}"), body, null, null, "application/json")
         return client.convertValue(raw, object : TypeReference<ServersBindingsUpdateResult>() {})
     }
 
     /** Publish MCP server revision */
-    suspend fun revisionsPublish(revisionId: String, xRequestId: String? = null): RevisionsPublishResult? {
-        val requestHeaders = buildRequestHeaders(
-            mapOf(
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
-            ),
-            emptyMap()
-        )
-        val raw = client.post(ApiPaths.backendPath("/mcp/revisions/${serializePathParameter(revisionId, PathParameterSpec("revisionId", "simple", false))}/publish"), null, null, requestHeaders)
+    suspend fun revisionsPublish(revisionId: String): RevisionsPublishResult? {
+        val raw = client.post(ApiPaths.backendPath("/mcp/revisions/${serializePathParameter(revisionId, PathParameterSpec("revisionId", "simple", false))}/publish"), null)
         return client.convertValue(raw, object : TypeReference<RevisionsPublishResult>() {})
     }
 
@@ -48,11 +36,10 @@ class McpApi(private val client: HttpClient) {
     }
 
     /** Create MCP server */
-    suspend fun serversCreate(body: AdminMcpServerCreateRequest, idempotencyKey: String, xRequestId: String? = null): ServersCreateResult? {
+    suspend fun serversCreate(body: AdminMcpServerCreateRequest, idempotencyKey: String): ServersCreateResult? {
         val requestHeaders = buildRequestHeaders(
             mapOf(
                 "Idempotency-Key" to HeaderParameterSpec(idempotencyKey, "simple", false, null),
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
             ),
             emptyMap()
         )
@@ -67,14 +54,8 @@ class McpApi(private val client: HttpClient) {
     }
 
     /** Update MCP server */
-    suspend fun serversUpdate(serverId: String, body: AdminMcpServerUpdateRequest, xRequestId: String? = null): ServersUpdateResult? {
-        val requestHeaders = buildRequestHeaders(
-            mapOf(
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
-            ),
-            emptyMap()
-        )
-        val raw = client.put(ApiPaths.backendPath("/mcp/servers/${serializePathParameter(serverId, PathParameterSpec("serverId", "simple", false))}"), body, null, requestHeaders, "application/json")
+    suspend fun serversUpdate(serverId: String, body: AdminMcpServerUpdateRequest): ServersUpdateResult? {
+        val raw = client.put(ApiPaths.backendPath("/mcp/servers/${serializePathParameter(serverId, PathParameterSpec("serverId", "simple", false))}"), body, null, null, "application/json")
         return client.convertValue(raw, object : TypeReference<ServersUpdateResult>() {})
     }
 
@@ -85,11 +66,10 @@ class McpApi(private val client: HttpClient) {
     }
 
     /** Create MCP binding */
-    suspend fun serversBindingsCreate(serverId: String, body: AdminMcpBindingCreateRequest, idempotencyKey: String, xRequestId: String? = null): ServersBindingsCreateResult? {
+    suspend fun serversBindingsCreate(serverId: String, body: AdminMcpBindingCreateRequest, idempotencyKey: String): ServersBindingsCreateResult? {
         val requestHeaders = buildRequestHeaders(
             mapOf(
                 "Idempotency-Key" to HeaderParameterSpec(idempotencyKey, "simple", false, null),
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
             ),
             emptyMap()
         )
@@ -98,26 +78,14 @@ class McpApi(private val client: HttpClient) {
     }
 
     /** Discover MCP tools */
-    suspend fun serversToolsRefresh(serverId: String, xRequestId: String? = null): ServersToolsRefreshResult? {
-        val requestHeaders = buildRequestHeaders(
-            mapOf(
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
-            ),
-            emptyMap()
-        )
-        val raw = client.post(ApiPaths.backendPath("/mcp/servers/${serializePathParameter(serverId, PathParameterSpec("serverId", "simple", false))}/discover"), null, null, requestHeaders)
+    suspend fun serversToolsRefresh(serverId: String): ServersToolsRefreshResult? {
+        val raw = client.post(ApiPaths.backendPath("/mcp/servers/${serializePathParameter(serverId, PathParameterSpec("serverId", "simple", false))}/discover"), null)
         return client.convertValue(raw, object : TypeReference<ServersToolsRefreshResult>() {})
     }
 
     /** Check MCP server health */
-    suspend fun serversHealthChecksCreate(serverId: String, xRequestId: String? = null): ServersHealthChecksCreateResult? {
-        val requestHeaders = buildRequestHeaders(
-            mapOf(
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
-            ),
-            emptyMap()
-        )
-        val raw = client.post(ApiPaths.backendPath("/mcp/servers/${serializePathParameter(serverId, PathParameterSpec("serverId", "simple", false))}/health_check"), null, null, requestHeaders)
+    suspend fun serversHealthChecksCreate(serverId: String): ServersHealthChecksCreateResult? {
+        val raw = client.post(ApiPaths.backendPath("/mcp/servers/${serializePathParameter(serverId, PathParameterSpec("serverId", "simple", false))}/health_check"), null)
         return client.convertValue(raw, object : TypeReference<ServersHealthChecksCreateResult>() {})
     }
 
@@ -128,11 +96,10 @@ class McpApi(private val client: HttpClient) {
     }
 
     /** Create MCP server revision */
-    suspend fun serversRevisionsCreate(serverId: String, body: AdminMcpServerRevisionCreateRequest, idempotencyKey: String, xRequestId: String? = null): ServersRevisionsCreateResult? {
+    suspend fun serversRevisionsCreate(serverId: String, body: AdminMcpServerRevisionCreateRequest, idempotencyKey: String): ServersRevisionsCreateResult? {
         val requestHeaders = buildRequestHeaders(
             mapOf(
                 "Idempotency-Key" to HeaderParameterSpec(idempotencyKey, "simple", false, null),
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
             ),
             emptyMap()
         )
@@ -147,14 +114,8 @@ class McpApi(private val client: HttpClient) {
     }
 
     /** Update MCP tool */
-    suspend fun toolsUpdate(toolId: String, body: AdminMcpToolUpdateRequest, xRequestId: String? = null): ToolsUpdateResult? {
-        val requestHeaders = buildRequestHeaders(
-            mapOf(
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
-            ),
-            emptyMap()
-        )
-        val raw = client.put(ApiPaths.backendPath("/mcp/tools/${serializePathParameter(toolId, PathParameterSpec("toolId", "simple", false))}"), body, null, requestHeaders, "application/json")
+    suspend fun toolsUpdate(toolId: String, body: AdminMcpToolUpdateRequest): ToolsUpdateResult? {
+        val raw = client.put(ApiPaths.backendPath("/mcp/tools/${serializePathParameter(toolId, PathParameterSpec("toolId", "simple", false))}"), body, null, null, "application/json")
         return client.convertValue(raw, object : TypeReference<ToolsUpdateResult>() {})
     }
 

@@ -155,8 +155,8 @@ System.out.println(result);
 ### integration
 
 ```java
-// List channels
-ChannelsListResult result = client.getIntegration().channelsList();
+// List channel endpoints
+ChannelEndpointsListResult result = client.getIntegration().channelEndpointsList();
 System.out.println(result);
 ```
 

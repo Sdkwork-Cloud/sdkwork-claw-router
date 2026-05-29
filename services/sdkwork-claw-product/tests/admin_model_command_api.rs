@@ -43,7 +43,7 @@ async fn admin_model_command_route_creates_lists_and_syncs_catalog_models() {
         signed_request(
             "POST",
             "/backend/v3/api/ai/models",
-            r#"{"vendorId":"1","name":"acme-chat-large","type":"Chat","priceIn":"0.120000","priceOut":"0.450000","cacheReadPrice":"0.030000","cacheWritePrice":"0.060000","contextTokens":"128000","description":"Acme commercial chat model","modalities":["text"],"inputModalities":["text"],"outputModalities":["text"],"apiFormat":"openai_responses","supportsStreaming":true,"supportsTools":true,"supportsJsonSchema":true}"#,
+            r#"{"vendorId":"1","model":"acme-chat-large","type":"Chat","priceIn":"0.120000","priceOut":"0.450000","cacheReadPrice":"0.030000","cacheWritePrice":"0.060000","contextTokens":"128000","description":"Acme commercial chat model","modalities":["text"],"inputModalities":["text"],"outputModalities":["text"],"apiFormat":"openai_responses","supportsStreaming":true,"supportsTools":true,"supportsJsonSchema":true}"#,
         ),
     )
     .await;
@@ -79,7 +79,7 @@ async fn admin_model_command_route_creates_lists_and_syncs_catalog_models() {
         signed_request(
             "POST",
             "/backend/v3/api/ai/models",
-            r#"{"vendorId":"1","name":"acme-chat-regional","type":"Chat","priceIn":"0.120000","priceOut":"0.450000","regionPrices":[{"regionCode":"cn","priceIn":"0.180000","priceOut":"0.560000","cacheReadPrice":"0.040000","cacheWritePrice":"0.080000"},{"regionCode":"global","priceIn":"0.120000","priceOut":"0.450000"}],"contextTokens":"128000"}"#,
+            r#"{"vendorId":"1","model":"acme-chat-regional","type":"Chat","priceIn":"0.120000","priceOut":"0.450000","regionPrices":[{"regionCode":"cn","priceIn":"0.180000","priceOut":"0.560000","cacheReadPrice":"0.040000","cacheWritePrice":"0.080000"},{"regionCode":"global","priceIn":"0.120000","priceOut":"0.450000"}],"contextTokens":"128000"}"#,
         ),
     )
     .await;
@@ -110,7 +110,7 @@ async fn admin_model_command_route_creates_lists_and_syncs_catalog_models() {
         signed_request(
             "POST",
             "/backend/v3/api/ai/models",
-            r#"{"vendorId":"1","name":"acme-sfx-pro","type":"sfx","priceIn":"0.010000","priceOut":"0.080000","contextTokens":"8"}"#,
+            r#"{"vendorId":"1","model":"acme-sfx-pro","type":"sfx","priceIn":"0.010000","priceOut":"0.080000","contextTokens":"8"}"#,
         ),
     )
     .await;
@@ -123,7 +123,7 @@ async fn admin_model_command_route_creates_lists_and_syncs_catalog_models() {
         signed_request(
             "PATCH",
             "/backend/v3/api/ai/models/1",
-            r#"{"name":"acme-chat-large-v2","type":"Chat","priceIn":"0.180000","priceOut":"0.520000","cacheReadPrice":"0.040000","cacheWritePrice":"0.080000","contextTokens":"256k","status":"inactive","description":"Updated Acme commercial chat model","supportsStreaming":true,"supportsTools":true,"supportsJsonSchema":true}"#,
+            r#"{"model":"acme-chat-large-v2","type":"Chat","priceIn":"0.180000","priceOut":"0.520000","cacheReadPrice":"0.040000","cacheWritePrice":"0.080000","contextTokens":"256k","status":"inactive","description":"Updated Acme commercial chat model","supportsStreaming":true,"supportsTools":true,"supportsJsonSchema":true}"#,
         ),
     )
     .await;
@@ -253,7 +253,7 @@ async fn admin_model_command_route_rejects_invalid_price_without_calling_store()
         .oneshot(signed_request(
             "POST",
             "/backend/v3/api/ai/models",
-            r#"{"vendorId":"1","name":"acme-chat-large","type":"Chat","priceIn":"-1","priceOut":"0.450000","contextTokens":"128000"}"#,
+            r#"{"vendorId":"1","model":"acme-chat-large","type":"Chat","priceIn":"-1","priceOut":"0.450000","contextTokens":"128000"}"#,
         ))
         .await
         .unwrap();

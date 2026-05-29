@@ -28,12 +28,11 @@ impl AgentsApi {
     }
 
     /// Create Playground agent definition
-    pub async fn agent_definitions_create(&self, body: &AgentCreateRequest, idempotency_key: &str, x_request_id: Option<&str>) -> Result<AgentDefinitionsCreateResult, SdkworkError> {
+    pub async fn agent_definitions_create(&self, body: &AgentCreateRequest, idempotency_key: &str) -> Result<AgentDefinitionsCreateResult, SdkworkError> {
         let path = app_path(&"/agents".to_string());
         let headers = build_request_headers(
             &[
                 ("Idempotency-Key", HeaderParameterSpec::new(idempotency_key, "simple", false, None)),
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
             ],
             &[],
         );
@@ -47,12 +46,11 @@ impl AgentsApi {
     }
 
     /// Complete Playground agent run
-    pub async fn agent_runs_submit(&self, run_id: &str, body: &AgentRunCompleteRequest, idempotency_key: &str, x_request_id: Option<&str>) -> Result<AgentRunsSubmitResult, SdkworkError> {
+    pub async fn agent_runs_submit(&self, run_id: &str, body: &AgentRunCompleteRequest, idempotency_key: &str) -> Result<AgentRunsSubmitResult, SdkworkError> {
         let path = app_path(&format!("/agents/runs/{}/complete", serialize_path_parameter(run_id, PathParameterSpec::new("runId", "simple", false))));
         let headers = build_request_headers(
             &[
                 ("Idempotency-Key", HeaderParameterSpec::new(idempotency_key, "simple", false, None)),
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
             ],
             &[],
         );
@@ -70,12 +68,11 @@ impl AgentsApi {
     }
 
     /// Create Playground agent run step
-    pub async fn agent_run_steps_create(&self, run_id: &str, body: &AgentRunStepCreateRequest, idempotency_key: &str, x_request_id: Option<&str>) -> Result<AgentRunStepsCreateResult, SdkworkError> {
+    pub async fn agent_run_steps_create(&self, run_id: &str, body: &AgentRunStepCreateRequest, idempotency_key: &str) -> Result<AgentRunStepsCreateResult, SdkworkError> {
         let path = app_path(&format!("/agents/runs/{}/steps", serialize_path_parameter(run_id, PathParameterSpec::new("runId", "simple", false))));
         let headers = build_request_headers(
             &[
                 ("Idempotency-Key", HeaderParameterSpec::new(idempotency_key, "simple", false, None)),
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
             ],
             &[],
         );
@@ -83,12 +80,11 @@ impl AgentsApi {
     }
 
     /// Complete Playground agent run step
-    pub async fn agent_run_steps_submit(&self, run_id: &str, step_id: &str, body: &AgentRunStepCompleteRequest, idempotency_key: &str, x_request_id: Option<&str>) -> Result<AgentRunStepsSubmitResult, SdkworkError> {
+    pub async fn agent_run_steps_submit(&self, run_id: &str, step_id: &str, body: &AgentRunStepCompleteRequest, idempotency_key: &str) -> Result<AgentRunStepsSubmitResult, SdkworkError> {
         let path = app_path(&format!("/agents/runs/{}/steps/{}/complete", serialize_path_parameter(run_id, PathParameterSpec::new("runId", "simple", false)), serialize_path_parameter(step_id, PathParameterSpec::new("stepId", "simple", false))));
         let headers = build_request_headers(
             &[
                 ("Idempotency-Key", HeaderParameterSpec::new(idempotency_key, "simple", false, None)),
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
             ],
             &[],
         );
@@ -112,12 +108,11 @@ impl AgentsApi {
     }
 
     /// Create Playground agent run
-    pub async fn agent_runs_create(&self, session_id: &str, body: &AgentRunCreateRequest, idempotency_key: &str, x_request_id: Option<&str>) -> Result<AgentRunsCreateResult, SdkworkError> {
+    pub async fn agent_runs_create(&self, session_id: &str, body: &AgentRunCreateRequest, idempotency_key: &str) -> Result<AgentRunsCreateResult, SdkworkError> {
         let path = app_path(&format!("/agents/sessions/{}/runs", serialize_path_parameter(session_id, PathParameterSpec::new("sessionId", "simple", false))));
         let headers = build_request_headers(
             &[
                 ("Idempotency-Key", HeaderParameterSpec::new(idempotency_key, "simple", false, None)),
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
             ],
             &[],
         );
@@ -141,12 +136,11 @@ impl AgentsApi {
     }
 
     /// Create Playground agent session
-    pub async fn agent_sessions_create(&self, agent_id: &str, body: &AgentSessionCreateRequest, idempotency_key: &str, x_request_id: Option<&str>) -> Result<AgentSessionsCreateResult, SdkworkError> {
+    pub async fn agent_sessions_create(&self, agent_id: &str, body: &AgentSessionCreateRequest, idempotency_key: &str) -> Result<AgentSessionsCreateResult, SdkworkError> {
         let path = app_path(&format!("/agents/{}/sessions", serialize_path_parameter(agent_id, PathParameterSpec::new("agentId", "simple", false))));
         let headers = build_request_headers(
             &[
                 ("Idempotency-Key", HeaderParameterSpec::new(idempotency_key, "simple", false, None)),
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
             ],
             &[],
         );

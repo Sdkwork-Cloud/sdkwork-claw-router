@@ -14,18 +14,20 @@ import {
   Zap,
 } from 'lucide-react';
 import { BusinessStatePanel } from 'sdkwork-claw-router-commons';
-import { VipPurchaseModal } from 'sdkwork-claw-router-vip';
 import { useTranslation } from 'react-i18next';
 import {
   MembershipService,
   type MembershipBenefit,
   type MembershipOverview,
+  type MembershipPackage,
 } from './membershipService';
 
 type TranslationFunction = ReturnType<typeof useTranslation>['t'];
-type MembershipActionState = {
-  type: 'dailyReward' | 'speedUp';
-} | null;
+type MembershipActionState =
+  | { type: 'dailyReward' }
+  | { type: 'speedUp' }
+  | { type: 'purchase'; packageId: string }
+  | null;
 type EntitlementAccessStatus = 'included' | 'inactive' | 'unavailable';
 type EntitlementRow = {
   accessStatus: EntitlementAccessStatus;
@@ -51,7 +53,7 @@ function getMembershipErrorMessage(error: unknown, fallback: string, t: Translat
 export function MembershipsView() {
   const { t } = useTranslation();
   const [overview, setOverview] = useState<MembershipOverview | null>(null);
-  const [vipPurchaseModalOpen, setVipPurchaseModalOpen] = useState(false);
+  const [purchasePackages, setPurchasePackages] = useState<MembershipPackage[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [loadError, setLoadError] = useState<string | null>(null);
   const [actionState, setActionState] = useState<MembershipActionState>(null);
@@ -62,14 +64,27 @@ export function MembershipsView() {
     setIsLoading(true);
     setLoadError(null);
     try {
-      const nextOverview = await MembershipService.fetchMembershipOverview();
+      const [nextOverview, nextSummary, nextPackages] = await Promise.all([
+        MembershipService.fetchMembershipOverview(),
+        MembershipService.fetchMembershipSummary().catch(() => null),
+        MembershipService.fetchMembershipPackages().catch(() => []),
+      ]);
       if (!isActive()) {
         return;
       }
-      setOverview(nextOverview);
+      setOverview({
+        ...nextOverview,
+        summary: nextOverview.summary ?? nextSummary,
+      });
+      setPurchasePackages(
+        nextPackages.length > 0
+          ? nextPackages
+          : collectMembershipPackages(nextOverview),
+      );
     } catch (error) {
       if (isActive()) {
         setOverview(null);
+        setPurchasePackages([]);
         setLoadError(getMembershipErrorMessage(error, t('console.memberships.errors.overviewFallback', 'Membership center could not be loaded.'), t));
       }
     } finally {
@@ -91,11 +106,23 @@ export function MembershipsView() {
     await loadMemberships();
   }, [loadMemberships]);
 
-  const openVipPurchaseModal = useCallback(() => {
+  const handleMembershipPurchase = async (membershipPackage: MembershipPackage) => {
+    if (!membershipPackage.isPurchasable || actionState !== null) {
+      return;
+    }
+    setActionState({ type: 'purchase', packageId: membershipPackage.id });
     setActionSuccessMsg('');
     setActionErrorMsg('');
-    setVipPurchaseModalOpen(true);
-  }, []);
+    try {
+      const result = await MembershipService.purchaseMembership(membershipPackage.id);
+      setActionSuccessMsg(t('console.memberships.success.purchase', 'Membership purchase submitted. Request: {{requestNo}}', { requestNo: result.requestNo }));
+      await refreshMembershipsAfterAction();
+    } catch (error) {
+      setActionErrorMsg(getMembershipErrorMessage(error, t('console.memberships.errors.purchaseFallback', 'Membership purchase could not be submitted.'), t));
+    } finally {
+      setActionState(null);
+    }
+  };
 
   const handleDailyReward = async () => {
     if (!overview?.dailyReward.available) {
@@ -156,7 +183,7 @@ export function MembershipsView() {
         ) : overview ? (
           <>
             <MembershipStatusHero
-              onOpenVipPurchase={openVipPurchaseModal}
+              packageCount={purchasePackages.length}
               overview={overview}
               t={t}
             />
@@ -170,6 +197,12 @@ export function MembershipsView() {
 
             <div className="grid grid-cols-1 gap-6 xl:grid-cols-[minmax(0,1.15fr)_minmax(320px,0.85fr)]">
               <div className="min-w-0 space-y-6">
+                <MembershipPurchasePanel
+                  actionState={actionState}
+                  onPurchase={handleMembershipPurchase}
+                  packages={purchasePackages}
+                  t={t}
+                />
                 <EntitlementOverviewPanel overview={overview} t={t} />
               </div>
 
@@ -187,24 +220,17 @@ export function MembershipsView() {
           </>
         ) : null}
       </div>
-
-      {vipPurchaseModalOpen ? (
-        <VipPurchaseModal
-          onClose={() => setVipPurchaseModalOpen(false)}
-          onPurchased={() => { void refreshMembershipsAfterAction(); }}
-        />
-      ) : null}
     </div>
   );
 }
 
 function MembershipStatusHero({
-  onOpenVipPurchase,
   overview,
+  packageCount,
   t,
 }: {
-  onOpenVipPurchase: () => void;
   overview: MembershipOverview;
+  packageCount: number;
   t: TranslationFunction;
 }) {
   const summary = overview.summary;
@@ -230,18 +256,14 @@ function MembershipStatusHero({
               </div>
               <p className="mt-3 text-sm leading-6 text-slate-500 dark:text-slate-400">
                 {summary
-                  ? t('console.memberships.dashboard.activeDescription', 'Your VIP benefits are attached to this account and settle through the unified commerce center.')
-                  : t('console.memberships.dashboard.noActiveDescription', 'Open VIP purchase to choose a server-configured package and activate membership benefits.')}
+                  ? t('console.memberships.dashboard.activeDescription', 'Your membership benefits are attached to this account and settle through the unified commerce center.')
+                  : t('console.memberships.dashboard.noActiveDescription', 'Choose a server-configured package and activate membership benefits.')}
               </p>
             </div>
-            <button
-              className="inline-flex h-10 shrink-0 items-center justify-center gap-2 rounded-lg bg-slate-900 px-4 text-sm font-bold text-white transition-colors hover:bg-slate-800 dark:bg-white dark:text-slate-950 dark:hover:bg-slate-200"
-              onClick={onOpenVipPurchase}
-              type="button"
-            >
+            <div className="inline-flex h-10 shrink-0 items-center justify-center gap-2 rounded-lg border border-slate-200 bg-slate-50 px-4 text-sm font-bold text-slate-700 dark:border-white/10 dark:bg-white/5 dark:text-slate-200">
               <ArrowUpRight className="h-4 w-4" />
-              {t('console.memberships.actions.openVipPurchase', 'Buy or upgrade VIP')}
-            </button>
+              {t('console.memberships.dashboard.packageOptions', '{{count}} package options', { count: packageCount })}
+            </div>
           </div>
 
           <div className="mt-6 grid grid-cols-1 gap-3 md:grid-cols-3">
@@ -284,19 +306,121 @@ function MembershipStatusHero({
               <div className="flex items-center gap-2 text-sm font-bold">
                 <ShieldCheck className="h-4 w-4" />
                 {active
-                  ? t('console.memberships.dashboard.activePlan', 'VIP protection is active')
-                  : t('console.memberships.dashboard.noActiveTitle', 'VIP is not active')}
+                  ? t('console.memberships.dashboard.activePlan', 'Membership protection is active')
+                  : t('console.memberships.dashboard.noActiveTitle', 'Membership is not active')}
               </div>
               <p className="mt-2 text-xs leading-5">
                 {active
                   ? t('console.memberships.current.activeHint', 'Membership privileges are active for the current account.')
-                  : t('console.memberships.current.emptyHint', 'Open VIP purchase to activate membership for the current account.')}
+                  : t('console.memberships.current.emptyHint', 'Choose a membership package to activate the current account.')}
               </p>
             </div>
           </div>
         </div>
       </div>
     </section>
+  );
+}
+
+function MembershipPurchasePanel({
+  actionState,
+  onPurchase,
+  packages,
+  t,
+}: {
+  actionState: MembershipActionState;
+  onPurchase: (membershipPackage: MembershipPackage) => void;
+  packages: MembershipPackage[];
+  t: TranslationFunction;
+}) {
+  return (
+    <section className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm dark:border-white/5 dark:bg-[#252525]">
+      <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+        <div>
+          <div className="flex items-center gap-2">
+            <WalletCards className="h-4 w-4 text-lobster-500" />
+            <h2 className="text-base font-bold text-slate-900 dark:text-white">
+              {t('console.memberships.packageGroups.title', 'Membership packages')}
+            </h2>
+          </div>
+          <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
+            {t('console.memberships.packageGroups.description', 'Packages are loaded from the server-side membership configuration.')}
+          </p>
+        </div>
+        <span className="inline-flex w-fit rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-xs font-semibold text-slate-600 dark:border-white/10 dark:bg-white/5 dark:text-slate-300">
+          {t('console.memberships.packages.packageCount', '{{count}} options', { count: packages.length })}
+        </span>
+      </div>
+
+      {packages.length === 0 ? (
+        <BusinessStatePanel
+          kind="empty"
+          title={t('console.memberships.packageGroups.empty', 'No membership packages')}
+          description={t('console.memberships.packageGroups.emptyHint', 'Membership packages are managed by the admin membership center.')}
+          className="mt-5 min-h-40 rounded-xl border border-dashed border-slate-200 bg-slate-50 dark:border-white/10 dark:bg-[#1e1e1e]"
+        />
+      ) : (
+        <div className="mt-5 grid gap-3 md:grid-cols-2">
+          {packages.slice(0, 4).map((membershipPackage) => (
+            <MembershipPurchaseOption
+              key={membershipPackage.id}
+              actionState={actionState}
+              membershipPackage={membershipPackage}
+              onPurchase={onPurchase}
+              t={t}
+            />
+          ))}
+        </div>
+      )}
+    </section>
+  );
+}
+
+function MembershipPurchaseOption({
+  actionState,
+  membershipPackage,
+  onPurchase,
+  t,
+}: {
+  actionState: MembershipActionState;
+  membershipPackage: MembershipPackage;
+  onPurchase: (membershipPackage: MembershipPackage) => void;
+  t: TranslationFunction;
+}) {
+  const processing = actionState?.type === 'purchase' && actionState.packageId === membershipPackage.id;
+  const disabled = !membershipPackage.isPurchasable || actionState !== null;
+
+  return (
+    <div className="rounded-xl border border-slate-200 bg-slate-50 p-4 dark:border-white/10 dark:bg-[#1e1e1e]">
+      <div className="flex min-w-0 items-start justify-between gap-3">
+        <div className="min-w-0">
+          <div className="truncate text-sm font-bold text-slate-900 dark:text-white" title={membershipPackage.planName}>
+            {membershipPackage.planName}
+          </div>
+          <div className="mt-1 flex flex-wrap items-center gap-2 text-xs text-slate-500 dark:text-slate-400">
+            <span>{t('console.memberships.package.durationDays', '{{days}} days', { days: membershipPackage.durationDays })}</span>
+            <span>{formatRecurrenceCycle(membershipPackage.recurrenceCycle, t)}</span>
+          </div>
+        </div>
+        <div className="shrink-0 text-right">
+          <div className="font-mono text-sm font-bold text-slate-900 dark:text-white">
+            {membershipPackage.currencyCode} {membershipPackage.priceAmount}
+          </div>
+          <StatusBadge compact active={normalizeStatus(membershipPackage.status) === 'active'} status={membershipPackage.status} t={t} />
+        </div>
+      </div>
+      <button
+        className="mt-4 inline-flex h-9 w-full items-center justify-center gap-2 rounded-lg bg-slate-900 px-3 text-xs font-bold text-white transition-colors hover:bg-slate-800 disabled:cursor-not-allowed disabled:opacity-50 dark:bg-white dark:text-slate-950 dark:hover:bg-slate-200"
+        disabled={disabled}
+        onClick={() => onPurchase(membershipPackage)}
+        type="button"
+      >
+        {processing ? <Loader2 className="h-4 w-4 animate-spin" /> : <ArrowUpRight className="h-4 w-4" />}
+        {processing
+          ? t('console.memberships.actions.processing', 'Submitting...')
+          : t('console.memberships.actions.purchase', 'Purchase membership')}
+      </button>
+    </div>
   );
 }
 
@@ -422,7 +546,7 @@ function EntitlementStatusSummary({
         value={counts.included.toLocaleString('en-US')}
       />
       <EntitlementSummaryCell
-        label={t('console.memberships.entitlements.accessInactive', 'Activate VIP')}
+        label={t('console.memberships.entitlements.accessInactive', 'Activate membership')}
         tone="warning"
         value={counts.inactive.toLocaleString('en-US')}
       />
@@ -487,7 +611,7 @@ function EntitlementAccessBadge({
     inactive: {
       className: 'border-amber-200 bg-amber-50 text-amber-700 dark:border-amber-500/20 dark:bg-amber-500/10 dark:text-amber-300',
       icon: Clock3,
-      label: t('console.memberships.entitlements.accessInactive', 'Activate VIP'),
+      label: t('console.memberships.entitlements.accessInactive', 'Activate membership'),
     },
     unavailable: {
       className: 'border-slate-200 bg-slate-50 text-slate-500 dark:border-white/10 dark:bg-white/5 dark:text-slate-400',
@@ -824,4 +948,18 @@ export function formatMembershipLocalTime(value: string | null | undefined): str
   ].join(':');
 
   return `${datePart} ${timePart}`;
+}
+
+function collectMembershipPackages(overview: MembershipOverview): MembershipPackage[] {
+  const packagesById = new Map<string, MembershipPackage>();
+  for (const group of overview.packageGroups) {
+    for (const membershipPackage of group.packages) {
+      packagesById.set(membershipPackage.id, membershipPackage);
+    }
+  }
+  return [...packagesById.values()];
+}
+
+function formatRecurrenceCycle(value: string, t: TranslationFunction): string {
+  return t(`console.memberships.recurrence.${normalizeStatus(value)}`, value || '-');
 }

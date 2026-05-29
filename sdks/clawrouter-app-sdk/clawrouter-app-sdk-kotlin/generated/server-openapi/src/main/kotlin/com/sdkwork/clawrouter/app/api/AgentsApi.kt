@@ -20,11 +20,10 @@ class AgentsApi(private val client: HttpClient) {
     }
 
     /** Create Playground agent definition */
-    suspend fun agentDefinitionsCreate(body: AgentCreateRequest, idempotencyKey: String, xRequestId: String? = null): AgentDefinitionsCreateResult? {
+    suspend fun agentDefinitionsCreate(body: AgentCreateRequest, idempotencyKey: String): AgentDefinitionsCreateResult? {
         val requestHeaders = buildRequestHeaders(
             mapOf(
                 "Idempotency-Key" to HeaderParameterSpec(idempotencyKey, "simple", false, null),
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
             ),
             emptyMap()
         )
@@ -39,11 +38,10 @@ class AgentsApi(private val client: HttpClient) {
     }
 
     /** Complete Playground agent run */
-    suspend fun agentRunsSubmit(runId: String, body: AgentRunCompleteRequest, idempotencyKey: String, xRequestId: String? = null): AgentRunsSubmitResult? {
+    suspend fun agentRunsSubmit(runId: String, body: AgentRunCompleteRequest, idempotencyKey: String): AgentRunsSubmitResult? {
         val requestHeaders = buildRequestHeaders(
             mapOf(
                 "Idempotency-Key" to HeaderParameterSpec(idempotencyKey, "simple", false, null),
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
             ),
             emptyMap()
         )
@@ -62,11 +60,10 @@ class AgentsApi(private val client: HttpClient) {
     }
 
     /** Create Playground agent run step */
-    suspend fun agentRunStepsCreate(runId: String, body: AgentRunStepCreateRequest, idempotencyKey: String, xRequestId: String? = null): AgentRunStepsCreateResult? {
+    suspend fun agentRunStepsCreate(runId: String, body: AgentRunStepCreateRequest, idempotencyKey: String): AgentRunStepsCreateResult? {
         val requestHeaders = buildRequestHeaders(
             mapOf(
                 "Idempotency-Key" to HeaderParameterSpec(idempotencyKey, "simple", false, null),
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
             ),
             emptyMap()
         )
@@ -75,11 +72,10 @@ class AgentsApi(private val client: HttpClient) {
     }
 
     /** Complete Playground agent run step */
-    suspend fun agentRunStepsSubmit(runId: String, stepId: String, body: AgentRunStepCompleteRequest, idempotencyKey: String, xRequestId: String? = null): AgentRunStepsSubmitResult? {
+    suspend fun agentRunStepsSubmit(runId: String, stepId: String, body: AgentRunStepCompleteRequest, idempotencyKey: String): AgentRunStepsSubmitResult? {
         val requestHeaders = buildRequestHeaders(
             mapOf(
                 "Idempotency-Key" to HeaderParameterSpec(idempotencyKey, "simple", false, null),
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
             ),
             emptyMap()
         )
@@ -104,11 +100,10 @@ class AgentsApi(private val client: HttpClient) {
     }
 
     /** Create Playground agent run */
-    suspend fun agentRunsCreate(sessionId: String, body: AgentRunCreateRequest, idempotencyKey: String, xRequestId: String? = null): AgentRunsCreateResult? {
+    suspend fun agentRunsCreate(sessionId: String, body: AgentRunCreateRequest, idempotencyKey: String): AgentRunsCreateResult? {
         val requestHeaders = buildRequestHeaders(
             mapOf(
                 "Idempotency-Key" to HeaderParameterSpec(idempotencyKey, "simple", false, null),
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
             ),
             emptyMap()
         )
@@ -133,11 +128,10 @@ class AgentsApi(private val client: HttpClient) {
     }
 
     /** Create Playground agent session */
-    suspend fun agentSessionsCreate(agentId: String, body: AgentSessionCreateRequest, idempotencyKey: String, xRequestId: String? = null): AgentSessionsCreateResult? {
+    suspend fun agentSessionsCreate(agentId: String, body: AgentSessionCreateRequest, idempotencyKey: String): AgentSessionsCreateResult? {
         val requestHeaders = buildRequestHeaders(
             mapOf(
                 "Idempotency-Key" to HeaderParameterSpec(idempotencyKey, "simple", false, null),
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
             ),
             emptyMap()
         )

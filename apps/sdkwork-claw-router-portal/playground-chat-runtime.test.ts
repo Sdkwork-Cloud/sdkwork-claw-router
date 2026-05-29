@@ -12,7 +12,10 @@ import {
 import { ChatCodeBlock } from "./packages/sdkwork-claw-router-playground/src/components/chat/ChatCodeBlock.tsx";
 import { ChatMessageBubble } from "./packages/sdkwork-claw-router-playground/src/components/chat/ChatMessageBubble.tsx";
 import { ChatMessageList } from "./packages/sdkwork-claw-router-playground/src/components/chat/ChatMessageList.tsx";
-import { resolveChatInputModelSelection } from "./packages/sdkwork-claw-router-playground/src/components/chat/chatModelSelection.ts";
+import {
+  resolveChatInputModelSelection,
+  resolveChatInputSubmitBlockReason,
+} from "./packages/sdkwork-claw-router-playground/src/components/chat/chatModelSelection.ts";
 import {
   loadStoredChatSessions,
   mergeChatSessions,
@@ -559,6 +562,95 @@ test("chat playground never submits catalog-only models without runtime routes",
   assert.doesNotMatch(inputSource, /selectedModelId=\{submitModel\?\.id \?\? ''\}/);
   assert.doesNotMatch(inputSource, /selectedModelId: displaySelectedModel!\.id/);
   assert.doesNotMatch(inputSource, /const realSelectedModel = selectedModel \|\| firstChatModel\(modelGroups\);/);
+});
+
+test("simple chat input explains why the send button is disabled", () => {
+  const callableModel = createSampleChatModel({
+    id: "openai/global/gpt-4o-mini",
+    displayName: "GPT-4o Mini",
+  });
+  const catalogOnlyModel = createSampleChatModel({
+    id: "openai/global/catalog-preview",
+    displayName: "Catalog Preview",
+    providerCodes: [],
+    supportsStreaming: true,
+  });
+  const nonStreamingModel = createSampleChatModel({
+    id: "openai/global/sync-only",
+    displayName: "Sync Only",
+    providerCodes: ["openrouter"],
+    supportsStreaming: false,
+  });
+  const groups = [createSampleChatModelGroup([callableModel, catalogOnlyModel, nonStreamingModel])];
+
+  assert.equal(
+    resolveChatInputSubmitBlockReason({
+      loadingHistory: true,
+      normalizedPrompt: "hello",
+      selectedModelId: callableModel.id,
+      submitting: false,
+      modelGroups: groups,
+    }),
+    "playground.chat.input.disabled.loadingHistory",
+  );
+  assert.equal(
+    resolveChatInputSubmitBlockReason({
+      loadingHistory: false,
+      normalizedPrompt: "hello",
+      selectedModelId: catalogOnlyModel.id,
+      submitting: false,
+      modelGroups: groups,
+    }),
+    "playground.chat.input.disabled.modelUnrouted",
+  );
+  assert.equal(
+    resolveChatInputSubmitBlockReason({
+      loadingHistory: false,
+      normalizedPrompt: "hello",
+      selectedModelId: nonStreamingModel.id,
+      submitting: false,
+      modelGroups: groups,
+    }),
+    "playground.chat.input.disabled.modelNotStreaming",
+  );
+  assert.equal(
+    resolveChatInputSubmitBlockReason({
+      loadingHistory: false,
+      normalizedPrompt: "hello",
+      selectedModelId: "",
+      submitting: false,
+      modelGroups: [createSampleChatModelGroup([catalogOnlyModel])],
+    }),
+    "playground.chat.input.disabled.noCallableModel",
+  );
+  assert.equal(
+    resolveChatInputSubmitBlockReason({
+      loadingHistory: false,
+      normalizedPrompt: "",
+      selectedModelId: callableModel.id,
+      submitting: false,
+      modelGroups: groups,
+    }),
+    "playground.chat.input.disabled.emptyPrompt",
+  );
+  assert.equal(
+    resolveChatInputSubmitBlockReason({
+      loadingHistory: false,
+      normalizedPrompt: "hello",
+      selectedModelId: callableModel.id,
+      submitting: false,
+      modelGroups: groups,
+    }),
+    null,
+  );
+
+  const inputSource = readPortalFile("./packages/sdkwork-claw-router-playground/src/components/chat/SimpleChatInput.tsx");
+  const chatMessages = readPortalFile("./packages/sdkwork-claw-router-i18n/src/resources/playground/chat.ts");
+  assert.match(inputSource, /resolveChatInputSubmitBlockReason/);
+  assert.match(inputSource, /sendButtonTooltip/);
+  assert.match(inputSource, /disabled:pointer-events-none/);
+  assert.match(chatMessages, /playground\.chat\.input\.disabled\.modelUnrouted/);
+  assert.match(chatMessages, /playground\.chat\.input\.disabled\.emptyPrompt/);
 });
 
 test("console API keys expose backend runtime default selection", () => {
@@ -1593,7 +1685,14 @@ test("video generation reference assets sit above the prompt and follow model mo
   assert.match(assetMessages, /playground\.referenceAsset\.unsupported/);
   assert.match(assetMessages, /playground\.referenceAsset\.tooMany/);
   assert.match(assetMessages, /playground\.videoReference\.mode\.firstLastFrame/);
-  assert.doesNotMatch(videoPopupSource, /鐢熸垚|瑙嗛|闊崇/);
+  const mojibakeVideoTokens = [
+    [0x9422, 0x71b8, 0x579a],
+    [0x7459, 0x55db, 0x6b1b],
+    [0x95ca, 0x5d07],
+  ].map((codepoints) => String.fromCodePoint(...codepoints));
+  for (const token of mojibakeVideoTokens) {
+    assert.doesNotMatch(videoPopupSource, new RegExp(token));
+  }
 
   const textOnlyVideo = resolveVideoReferenceCapability("video", createSampleChatModel({
     capabilities: ["video_generation"],

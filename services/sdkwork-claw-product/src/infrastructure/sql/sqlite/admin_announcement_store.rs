@@ -187,8 +187,8 @@ async fn list_announcements(
             COALESCE(m.show_as_popup, 0) AS show_as_popup,
             CAST(COALESCE(m.published_at, m.updated_at, m.created_at) AS TEXT) AS display_date,
             CAST(m.deleted_at AS TEXT) AS deleted_at,
-            COALESCE(r.recipient_type, 1) AS recipient_type,
-            COALESCE(r.recipient_value, 'all') AS recipient_value,
+            r.recipient_type AS recipient_type,
+            r.recipient_value AS recipient_value,
             r.recipient_role_code
         FROM ops_notification_message m
         LEFT JOIN ops_notification_recipient r
@@ -505,8 +505,8 @@ async fn load_announcement_by_id(
             COALESCE(m.show_as_popup, 0) AS show_as_popup,
             CAST(COALESCE(m.published_at, m.updated_at, m.created_at) AS TEXT) AS display_date,
             CAST(m.deleted_at AS TEXT) AS deleted_at,
-            COALESCE(r.recipient_type, 1) AS recipient_type,
-            COALESCE(r.recipient_value, 'all') AS recipient_value,
+            r.recipient_type AS recipient_type,
+            r.recipient_value AS recipient_value,
             r.recipient_role_code
         FROM ops_notification_message m
         LEFT JOIN ops_notification_recipient r
@@ -610,7 +610,9 @@ fn target_label(
     if recipient_type == RECIPIENT_ROLE as i64 {
         let value = recipient_role_code
             .or_else(|| (!recipient_value.trim().is_empty()).then_some(recipient_value))
-            .unwrap_or("all");
+            .ok_or_else(|| {
+                DomainError::new("missing admin announcement target from database row")
+            })?;
         return match value {
             "vip" | "free" | "beta" => Ok(value.to_owned()),
             value => Err(DomainError::new(format!(

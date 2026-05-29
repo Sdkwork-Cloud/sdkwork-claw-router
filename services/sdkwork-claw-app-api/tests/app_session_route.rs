@@ -199,9 +199,12 @@ async fn app_session_exchange_issues_session_from_signed_subject_and_audits_even
     assert_eq!(10, events[0].tenant_id);
     assert_eq!(20, events[0].organization_id);
     assert_eq!(30, events[0].user_id);
-    assert_eq!(
-        Some("55555555-5555-4333-8444-555555555555".to_owned()),
-        events[0].request_id
+    let audit_request_id = events[0].request_id.as_deref();
+    assert!(audit_request_id.is_some_and(|value| value.len() == 36));
+    assert_ne!(
+        Some("55555555-5555-4333-8444-555555555555"),
+        audit_request_id,
+        "app session audits must use a server-generated request id instead of trusting X-Request-Id"
     );
     assert_eq!(64, events[0].session_id_hash.len());
     assert!(!events[0].session_id_hash.contains(auth_token));

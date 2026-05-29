@@ -41,6 +41,20 @@ async fn admin_record_route_lists_logs_and_normalizes_filters() {
     assert_eq!("standard-group", payload["data"]["logs"][0]["group"]);
     assert_eq!("text", payload["data"]["logs"][0]["type"]);
     assert_eq!("gpt-4o-mini", payload["data"]["logs"][0]["model"]);
+    assert_eq!(
+        "gpt-4o-mini-2026-05-13",
+        payload["data"]["logs"][0]["providerNativeModel"]
+    );
+    assert_eq!(
+        "openai/global/gpt-4o-mini",
+        payload["data"]["logs"][0]["requestedModelCatalogKey"]
+    );
+    assert_eq!("success", payload["data"]["logs"][0]["status"]);
+    assert_eq!(200, payload["data"]["logs"][0]["httpStatus"]);
+    assert_eq!("POST", payload["data"]["logs"][0]["httpMethod"]);
+    assert_eq!("", payload["data"]["logs"][0]["errorCode"]);
+    assert_eq!("", payload["data"]["logs"][0]["errorType"]);
+    assert_eq!("", payload["data"]["logs"][0]["errorMessage"]);
     assert_eq!("842ms", payload["data"]["logs"][0]["totalTime"]);
     assert_eq!("120ms", payload["data"]["logs"][0]["ttft"]);
     assert_eq!(true, payload["data"]["logs"][0]["isStream"]);
@@ -55,6 +69,10 @@ async fn admin_record_route_lists_logs_and_normalizes_filters() {
     assert_eq!("/v1/chat/completions", payload["data"]["logs"][0]["path"]);
     assert_eq!("medium", payload["data"]["logs"][0]["reasoningEffort"]);
     assert_eq!("203.0.113.***", payload["data"]["logs"][0]["ip"]);
+    assert_eq!(
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/126.0.0.0",
+        payload["data"]["logs"][0]["userAgent"]
+    );
 
     let captured = store.captured.lock().unwrap();
     let query = captured.as_ref().expect("store should be called");
@@ -158,6 +176,14 @@ impl AdminRecordStore for TestAdminRecordStore {
                     group: "standard-group".to_owned(),
                     log_type: "text".to_owned(),
                     model: "gpt-4o-mini".to_owned(),
+                    provider_native_model: "gpt-4o-mini-2026-05-13".to_owned(),
+                    requested_model_catalog_key: "openai/global/gpt-4o-mini".to_owned(),
+                    status: "success".to_owned(),
+                    http_status: 200,
+                    http_method: "POST".to_owned(),
+                    error_code: String::new(),
+                    error_type: String::new(),
+                    error_message: String::new(),
                     total_time: "842ms".to_owned(),
                     ttft: "120ms".to_owned(),
                     is_stream: true,
@@ -172,6 +198,8 @@ impl AdminRecordStore for TestAdminRecordStore {
                     path: "/v1/chat/completions".to_owned(),
                     reasoning_effort: "medium".to_owned(),
                     ip: "203.0.113.***".to_owned(),
+                    user_agent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/126.0.0.0"
+                        .to_owned(),
                 }],
                 total: 7,
                 page_no: query.page_no,

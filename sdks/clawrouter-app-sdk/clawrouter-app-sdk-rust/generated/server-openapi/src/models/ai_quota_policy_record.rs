@@ -11,6 +11,10 @@ pub struct AiQuotaPolicyRecord {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub burst_limit: Option<String>,
 
+    /// Channel group id field on ai quota policy record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub channel_group_id: Option<String>,
+
     /// Created at field on ai quota policy record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub created_at: Option<String>,
@@ -38,10 +42,6 @@ pub struct AiQuotaPolicyRecord {
     /// Exhausted at field on ai quota policy record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub exhausted_at: Option<String>,
-
-    /// Group id field on ai quota policy record.
-    #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub group_id: Option<String>,
 
     /// Id field on ai quota policy record.
     #[serde(default, skip_serializing_if = "Option::is_none")]

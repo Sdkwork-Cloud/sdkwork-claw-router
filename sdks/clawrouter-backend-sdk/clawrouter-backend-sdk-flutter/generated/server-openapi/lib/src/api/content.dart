@@ -21,15 +21,9 @@ class ContentApi {
   }
 
   /// Create announcement
-  Future<AnnouncementsCreateResult?> announcementsCreate(AdminAnnouncementCreateRequest body, [String? xRequestId]) async {
-    final requestHeaders = buildRequestHeaders(
-      <String, HeaderParameterSpec>{
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
-      },
-      <String, HeaderParameterSpec>{},
-    );
+  Future<AnnouncementsCreateResult?> announcementsCreate(AdminAnnouncementCreateRequest body) async {
     final payload = body.toJson();
-    final response = await _client.post(ApiPaths.backendPath('/content/announcements'), body: payload, headers: requestHeaders, contentType: 'application/json');
+    final response = await _client.post(ApiPaths.backendPath('/content/announcements'), body: payload, contentType: 'application/json');
     return (() {
       final map = sdkworkResponseAsMap(response);
       return map == null ? null : AnnouncementsCreateResult.fromJson(map);
@@ -46,15 +40,9 @@ class ContentApi {
   }
 
   /// Update announcement
-  Future<AnnouncementsUpdateResult?> announcementsUpdate(String announcementId, AdminAnnouncementUpdateRequest body, [String? xRequestId]) async {
-    final requestHeaders = buildRequestHeaders(
-      <String, HeaderParameterSpec>{
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
-      },
-      <String, HeaderParameterSpec>{},
-    );
+  Future<AnnouncementsUpdateResult?> announcementsUpdate(String announcementId, AdminAnnouncementUpdateRequest body) async {
     final payload = body.toJson();
-    final response = await _client.patch(ApiPaths.backendPath('/content/announcements/${serializePathParameter(announcementId, const PathParameterSpec('announcementId', 'simple', false))}'), body: payload, headers: requestHeaders, contentType: 'application/json');
+    final response = await _client.patch(ApiPaths.backendPath('/content/announcements/${serializePathParameter(announcementId, const PathParameterSpec('announcementId', 'simple', false))}'), body: payload, contentType: 'application/json');
     return (() {
       final map = sdkworkResponseAsMap(response);
       return map == null ? null : AnnouncementsUpdateResult.fromJson(map);
@@ -77,15 +65,9 @@ class ContentApi {
   }
 
   /// Admin Course Application Review
-  Future<CourseApplicationsReviewResult?> courseApplicationsReview(String applicationId, AdminCourseApplicationReviewRequest body, [String? xRequestId]) async {
-    final requestHeaders = buildRequestHeaders(
-      <String, HeaderParameterSpec>{
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
-      },
-      <String, HeaderParameterSpec>{},
-    );
+  Future<CourseApplicationsReviewResult?> courseApplicationsReview(String applicationId, AdminCourseApplicationReviewRequest body) async {
     final payload = body.toJson();
-    final response = await _client.patch(ApiPaths.backendPath('/content/course-applications/${serializePathParameter(applicationId, const PathParameterSpec('applicationId', 'simple', false))}/review'), body: payload, headers: requestHeaders, contentType: 'application/json');
+    final response = await _client.patch(ApiPaths.backendPath('/content/course-applications/${serializePathParameter(applicationId, const PathParameterSpec('applicationId', 'simple', false))}/review'), body: payload, contentType: 'application/json');
     return (() {
       final map = sdkworkResponseAsMap(response);
       return map == null ? null : CourseApplicationsReviewResult.fromJson(map);
@@ -93,14 +75,8 @@ class ContentApi {
   }
 
   /// Admin Course Lesson Delete
-  Future<CourseLessonsDeleteResult?> courseLessonsDelete(String lessonId, [String? xRequestId]) async {
-    final requestHeaders = buildRequestHeaders(
-      <String, HeaderParameterSpec>{
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
-      },
-      <String, HeaderParameterSpec>{},
-    );
-    final response = await _client.delete(ApiPaths.backendPath('/content/course-lessons/${serializePathParameter(lessonId, const PathParameterSpec('lessonId', 'simple', false))}'), headers: requestHeaders);
+  Future<CourseLessonsDeleteResult?> courseLessonsDelete(String lessonId) async {
+    final response = await _client.delete(ApiPaths.backendPath('/content/course-lessons/${serializePathParameter(lessonId, const PathParameterSpec('lessonId', 'simple', false))}'));
     return (() {
       final map = sdkworkResponseAsMap(response);
       return map == null ? null : CourseLessonsDeleteResult.fromJson(map);
@@ -108,15 +84,9 @@ class ContentApi {
   }
 
   /// Admin Course Lesson Update
-  Future<CourseLessonsUpdateResult?> courseLessonsUpdate(String lessonId, AdminCourseLessonMutationRequest body, [String? xRequestId]) async {
-    final requestHeaders = buildRequestHeaders(
-      <String, HeaderParameterSpec>{
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
-      },
-      <String, HeaderParameterSpec>{},
-    );
+  Future<CourseLessonsUpdateResult?> courseLessonsUpdate(String lessonId, AdminCourseLessonMutationRequest body) async {
     final payload = body.toJson();
-    final response = await _client.patch(ApiPaths.backendPath('/content/course-lessons/${serializePathParameter(lessonId, const PathParameterSpec('lessonId', 'simple', false))}'), body: payload, headers: requestHeaders, contentType: 'application/json');
+    final response = await _client.patch(ApiPaths.backendPath('/content/course-lessons/${serializePathParameter(lessonId, const PathParameterSpec('lessonId', 'simple', false))}'), body: payload, contentType: 'application/json');
     return (() {
       final map = sdkworkResponseAsMap(response);
       return map == null ? null : CourseLessonsUpdateResult.fromJson(map);
@@ -124,14 +94,8 @@ class ContentApi {
   }
 
   /// Admin Course Section Delete
-  Future<CourseSectionsDeleteResult?> courseSectionsDelete(String sectionId, [String? xRequestId]) async {
-    final requestHeaders = buildRequestHeaders(
-      <String, HeaderParameterSpec>{
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
-      },
-      <String, HeaderParameterSpec>{},
-    );
-    final response = await _client.delete(ApiPaths.backendPath('/content/course-sections/${serializePathParameter(sectionId, const PathParameterSpec('sectionId', 'simple', false))}'), headers: requestHeaders);
+  Future<CourseSectionsDeleteResult?> courseSectionsDelete(String sectionId) async {
+    final response = await _client.delete(ApiPaths.backendPath('/content/course-sections/${serializePathParameter(sectionId, const PathParameterSpec('sectionId', 'simple', false))}'));
     return (() {
       final map = sdkworkResponseAsMap(response);
       return map == null ? null : CourseSectionsDeleteResult.fromJson(map);
@@ -139,15 +103,9 @@ class ContentApi {
   }
 
   /// Admin Course Section Update
-  Future<CourseSectionsUpdateResult?> courseSectionsUpdate(String sectionId, AdminCourseSectionMutationRequest body, [String? xRequestId]) async {
-    final requestHeaders = buildRequestHeaders(
-      <String, HeaderParameterSpec>{
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
-      },
-      <String, HeaderParameterSpec>{},
-    );
+  Future<CourseSectionsUpdateResult?> courseSectionsUpdate(String sectionId, AdminCourseSectionMutationRequest body) async {
     final payload = body.toJson();
-    final response = await _client.patch(ApiPaths.backendPath('/content/course-sections/${serializePathParameter(sectionId, const PathParameterSpec('sectionId', 'simple', false))}'), body: payload, headers: requestHeaders, contentType: 'application/json');
+    final response = await _client.patch(ApiPaths.backendPath('/content/course-sections/${serializePathParameter(sectionId, const PathParameterSpec('sectionId', 'simple', false))}'), body: payload, contentType: 'application/json');
     return (() {
       final map = sdkworkResponseAsMap(response);
       return map == null ? null : CourseSectionsUpdateResult.fromJson(map);
@@ -170,15 +128,9 @@ class ContentApi {
   }
 
   /// Admin Course Create
-  Future<CoursesCreateResult?> coursesCreate(AdminCourseMutationRequest body, [String? xRequestId]) async {
-    final requestHeaders = buildRequestHeaders(
-      <String, HeaderParameterSpec>{
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
-      },
-      <String, HeaderParameterSpec>{},
-    );
+  Future<CoursesCreateResult?> coursesCreate(AdminCourseMutationRequest body) async {
     final payload = body.toJson();
-    final response = await _client.post(ApiPaths.backendPath('/content/courses'), body: payload, headers: requestHeaders, contentType: 'application/json');
+    final response = await _client.post(ApiPaths.backendPath('/content/courses'), body: payload, contentType: 'application/json');
     return (() {
       final map = sdkworkResponseAsMap(response);
       return map == null ? null : CoursesCreateResult.fromJson(map);
@@ -201,15 +153,9 @@ class ContentApi {
   }
 
   /// Admin Course Comment Moderate
-  Future<CourseCommentsModerateResult?> courseCommentsModerate(String commentId, AdminCourseCommentModerationRequest body, [String? xRequestId]) async {
-    final requestHeaders = buildRequestHeaders(
-      <String, HeaderParameterSpec>{
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
-      },
-      <String, HeaderParameterSpec>{},
-    );
+  Future<CourseCommentsModerateResult?> courseCommentsModerate(String commentId, AdminCourseCommentModerationRequest body) async {
     final payload = body.toJson();
-    final response = await _client.patch(ApiPaths.backendPath('/content/courses/comments/${serializePathParameter(commentId, const PathParameterSpec('commentId', 'simple', false))}/moderation'), body: payload, headers: requestHeaders, contentType: 'application/json');
+    final response = await _client.patch(ApiPaths.backendPath('/content/courses/comments/${serializePathParameter(commentId, const PathParameterSpec('commentId', 'simple', false))}/moderation'), body: payload, contentType: 'application/json');
     return (() {
       final map = sdkworkResponseAsMap(response);
       return map == null ? null : CourseCommentsModerateResult.fromJson(map);
@@ -241,14 +187,8 @@ class ContentApi {
   }
 
   /// Admin Course Delete
-  Future<CoursesDeleteResult?> coursesDelete(String courseId, [String? xRequestId]) async {
-    final requestHeaders = buildRequestHeaders(
-      <String, HeaderParameterSpec>{
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
-      },
-      <String, HeaderParameterSpec>{},
-    );
-    final response = await _client.delete(ApiPaths.backendPath('/content/courses/${serializePathParameter(courseId, const PathParameterSpec('courseId', 'simple', false))}'), headers: requestHeaders);
+  Future<CoursesDeleteResult?> coursesDelete(String courseId) async {
+    final response = await _client.delete(ApiPaths.backendPath('/content/courses/${serializePathParameter(courseId, const PathParameterSpec('courseId', 'simple', false))}'));
     return (() {
       final map = sdkworkResponseAsMap(response);
       return map == null ? null : CoursesDeleteResult.fromJson(map);
@@ -256,15 +196,9 @@ class ContentApi {
   }
 
   /// Admin Course Update
-  Future<CoursesUpdateResult?> coursesUpdate(String courseId, AdminCourseMutationRequest body, [String? xRequestId]) async {
-    final requestHeaders = buildRequestHeaders(
-      <String, HeaderParameterSpec>{
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
-      },
-      <String, HeaderParameterSpec>{},
-    );
+  Future<CoursesUpdateResult?> coursesUpdate(String courseId, AdminCourseMutationRequest body) async {
     final payload = body.toJson();
-    final response = await _client.patch(ApiPaths.backendPath('/content/courses/${serializePathParameter(courseId, const PathParameterSpec('courseId', 'simple', false))}'), body: payload, headers: requestHeaders, contentType: 'application/json');
+    final response = await _client.patch(ApiPaths.backendPath('/content/courses/${serializePathParameter(courseId, const PathParameterSpec('courseId', 'simple', false))}'), body: payload, contentType: 'application/json');
     return (() {
       final map = sdkworkResponseAsMap(response);
       return map == null ? null : CoursesUpdateResult.fromJson(map);
@@ -287,15 +221,9 @@ class ContentApi {
   }
 
   /// Admin Course Lesson Create
-  Future<CoursesLessonsCreateResult?> coursesLessonsCreate(String courseId, AdminCourseLessonMutationRequest body, [String? xRequestId]) async {
-    final requestHeaders = buildRequestHeaders(
-      <String, HeaderParameterSpec>{
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
-      },
-      <String, HeaderParameterSpec>{},
-    );
+  Future<CoursesLessonsCreateResult?> coursesLessonsCreate(String courseId, AdminCourseLessonMutationRequest body) async {
     final payload = body.toJson();
-    final response = await _client.post(ApiPaths.backendPath('/content/courses/${serializePathParameter(courseId, const PathParameterSpec('courseId', 'simple', false))}/lessons'), body: payload, headers: requestHeaders, contentType: 'application/json');
+    final response = await _client.post(ApiPaths.backendPath('/content/courses/${serializePathParameter(courseId, const PathParameterSpec('courseId', 'simple', false))}/lessons'), body: payload, contentType: 'application/json');
     return (() {
       final map = sdkworkResponseAsMap(response);
       return map == null ? null : CoursesLessonsCreateResult.fromJson(map);
@@ -318,15 +246,9 @@ class ContentApi {
   }
 
   /// Admin Course Relations Replace
-  Future<CoursesRelationsReplaceResult?> coursesRelationsReplace(String courseId, AdminCourseRelationsReplaceRequest body, [String? xRequestId]) async {
-    final requestHeaders = buildRequestHeaders(
-      <String, HeaderParameterSpec>{
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
-      },
-      <String, HeaderParameterSpec>{},
-    );
+  Future<CoursesRelationsReplaceResult?> coursesRelationsReplace(String courseId, AdminCourseRelationsReplaceRequest body) async {
     final payload = body.toJson();
-    final response = await _client.put(ApiPaths.backendPath('/content/courses/${serializePathParameter(courseId, const PathParameterSpec('courseId', 'simple', false))}/relations'), body: payload, headers: requestHeaders, contentType: 'application/json');
+    final response = await _client.put(ApiPaths.backendPath('/content/courses/${serializePathParameter(courseId, const PathParameterSpec('courseId', 'simple', false))}/relations'), body: payload, contentType: 'application/json');
     return (() {
       final map = sdkworkResponseAsMap(response);
       return map == null ? null : CoursesRelationsReplaceResult.fromJson(map);
@@ -349,15 +271,9 @@ class ContentApi {
   }
 
   /// Admin Course Section Create
-  Future<CoursesSectionsCreateResult?> coursesSectionsCreate(String courseId, AdminCourseSectionMutationRequest body, [String? xRequestId]) async {
-    final requestHeaders = buildRequestHeaders(
-      <String, HeaderParameterSpec>{
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
-      },
-      <String, HeaderParameterSpec>{},
-    );
+  Future<CoursesSectionsCreateResult?> coursesSectionsCreate(String courseId, AdminCourseSectionMutationRequest body) async {
     final payload = body.toJson();
-    final response = await _client.post(ApiPaths.backendPath('/content/courses/${serializePathParameter(courseId, const PathParameterSpec('courseId', 'simple', false))}/sections'), body: payload, headers: requestHeaders, contentType: 'application/json');
+    final response = await _client.post(ApiPaths.backendPath('/content/courses/${serializePathParameter(courseId, const PathParameterSpec('courseId', 'simple', false))}/sections'), body: payload, contentType: 'application/json');
     return (() {
       final map = sdkworkResponseAsMap(response);
       return map == null ? null : CoursesSectionsCreateResult.fromJson(map);
@@ -568,75 +484,3 @@ String encodeQueryValue(String value, bool allowReserved) {
 }
 
 String urlEncode(String value) => Uri.encodeQueryComponent(value);
-class HeaderParameterSpec {
-  final dynamic value;
-  final String style;
-  final bool explode;
-  final String? contentType;
-
-  HeaderParameterSpec(this.value, this.style, this.explode, this.contentType);
-}
-
-Map<String, String>? buildRequestHeaders(
-  Map<String, HeaderParameterSpec> headers, [
-  Map<String, HeaderParameterSpec> cookies = const {},
-]) {
-  final requestHeaders = <String, String>{};
-
-  headers.forEach((name, parameter) {
-    final serialized = serializeParameterValue(parameter);
-    if (serialized != null) {
-      requestHeaders[name] = serialized;
-    }
-  });
-
-  final cookieHeader = buildCookieHeader(cookies);
-  if (cookieHeader != null && cookieHeader.isNotEmpty) {
-    requestHeaders['Cookie'] = requestHeaders.containsKey('Cookie')
-        ? '${requestHeaders['Cookie']}; $cookieHeader'
-        : cookieHeader;
-  }
-
-  return requestHeaders.isEmpty ? null : requestHeaders;
-}
-
-String? buildCookieHeader(Map<String, HeaderParameterSpec> cookies) {
-  final pairs = <String>[];
-  cookies.forEach((name, parameter) {
-    final serialized = serializeParameterValue(parameter);
-    if (serialized != null) {
-      pairs.add('${Uri.encodeComponent(name)}=${Uri.encodeComponent(serialized)}');
-    }
-  });
-  return pairs.isEmpty ? null : pairs.join('; ');
-}
-
-String? serializeParameterValue(HeaderParameterSpec? parameter) {
-  final value = parameter?.value;
-  if (value == null) return null;
-  if (parameter!.contentType != null && parameter.contentType!.trim().isNotEmpty) {
-    return jsonEncode(value);
-  }
-  if (value is DateTime) return value.toIso8601String();
-  if (value is Iterable) {
-    return value
-        .where((item) => item != null)
-        .map((item) => item.toString())
-        .whereType<String>()
-        .join(',');
-  }
-  if (value is Map) {
-    final serialized = <String>[];
-    value.forEach((key, item) {
-      if (item == null) return;
-      if (parameter.explode) {
-        serialized.add('$key=$item');
-      } else {
-        serialized.add(key.toString());
-        serialized.add(item.toString());
-      }
-    });
-    return serialized.join(',');
-  }
-  return value.toString();
-}

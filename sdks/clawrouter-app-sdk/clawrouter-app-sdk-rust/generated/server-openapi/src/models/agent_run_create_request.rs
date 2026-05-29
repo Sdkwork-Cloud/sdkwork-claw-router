@@ -34,10 +34,6 @@ pub struct AgentRunCreateRequest {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub model: Option<String>,
 
-    /// Request id field on agent run create request.
-    #[serde(rename = "requestId")]
-    pub request_id: String,
-
     /// Runtime field on agent run create request.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub runtime: Option<String>,

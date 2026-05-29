@@ -42,7 +42,6 @@ frontend_models:
   - useCases
   data_sources:
   - ai_model_vendor
-  - ai_model_vendor_region
   - ai_model
   - ai_model_capability
   - ai_model_pricing
@@ -87,7 +86,6 @@ frontend_models:
   - limit
   data_sources:
   - ai_model_vendor
-  - ai_model_vendor_region
   - ai_model
   - ai_model_capability
   - ai_model_pricing
@@ -99,7 +97,7 @@ frontend_models:
   - label
   - modelCount
   data_sources:
-  - iam_gateway_api_key_group
+  - ai_channel_group
 - route: /models
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-models/src/modelService.ts
   interface: ModelCatalogResult
@@ -111,12 +109,11 @@ frontend_models:
   - groups.modelCount
   data_sources:
   - ai_model_vendor
-  - ai_model_vendor_region
   - ai_model
   - ai_model_capability
   - ai_model_pricing
-  - iam_gateway_api_key_group
-  - iam_api_key_group_channel
+  - ai_channel_group
+  - ai_channel_group_member
 - route: /models
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-models/src/runtimeModelCatalog.ts
   interface: RuntimeModelCatalogItem
@@ -156,7 +153,6 @@ frontend_models:
   - priceAvailability
   data_sources:
   - ai_model_vendor
-  - ai_model_vendor_region
   - ai_model
   - ai_model_capability
   - ai_model_pricing

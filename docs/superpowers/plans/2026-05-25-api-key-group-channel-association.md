@@ -1,10 +1,10 @@
-# API Key Group Channel Association Implementation Plan
+﻿# API Key Group Channel Association Implementation Plan
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
 **Goal:** Add flexible management for access groups to associate with provider channel accounts, allowing one channel account to be used by multiple groups.
 
-**Architecture:** Introduce `iam_api_key_group_channel` as the many-to-many system-of-record table owned by the access group management flow. Expose group-owned backend APIs through `@sdkwork/clawrouter-backend-sdk`, update the SQL catalog/runtime route selection to honor active group-channel bindings, and add a focused association panel in the admin group UI.
+**Architecture:** Introduce `ai_channel_group_member` as the many-to-many system-of-record table owned by the access group management flow. Expose group-owned backend APIs through `@sdkwork/clawrouter-backend-sdk`, update the SQL catalog/runtime route selection to honor active group-channel bindings, and add a focused association panel in the admin group UI.
 
 **Tech Stack:** Rust/Axum/sqlx, PostgreSQL and SQLite schema contracts, YAML frontend field contracts, generated TypeScript backend SDK, React/TypeScript portal, pnpm.
 
@@ -35,7 +35,7 @@
 - Test: `services/sdkwork-claw-product/tests/sqlite_admin_access_group_store.rs`
 
 - [ ] Write failing SQLite store tests proving one channel can be bound to two groups and replace is idempotent.
-- [ ] Add `iam_api_key_group_channel` to schema registry with tenant entity columns, indexes, and frontend route ownership.
+- [ ] Add `ai_channel_group_member` to schema registry with tenant entity columns, indexes, and frontend route ownership.
 - [ ] Regenerate schema SQL and manifest via `python -B -m tools.schema_compiler` and `python -B -m tools.schema_manifest`.
 - [ ] Implement Postgres and SQLite list/replace methods using soft delete for removed bindings.
 - [ ] Re-run focused SQLite tests.

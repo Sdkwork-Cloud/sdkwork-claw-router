@@ -246,9 +246,19 @@ fn unique_sqlite_url() -> String {
         .as_nanos();
     let sequence = DB_SEQUENCE.fetch_add(1, Ordering::Relaxed);
     let process_id = std::process::id();
-    let path = format!("target/test-dbs/app-store-route-{process_id}-{nonce}-{sequence}.db");
-    std::fs::create_dir_all("target/test-dbs").unwrap();
-    format!("sqlite://{path}")
+    let mut path = sqlite_test_database_dir();
+    std::fs::create_dir_all(&path).unwrap();
+    path.push(format!(
+        "app-store-route-{process_id}-{nonce}-{sequence}.db"
+    ));
+    format!("sqlite://{}", path.to_string_lossy().replace('\\', "/"))
+}
+
+fn sqlite_test_database_dir() -> std::path::PathBuf {
+    std::env::var_os("CARGO_TARGET_DIR")
+        .map(std::path::PathBuf::from)
+        .unwrap_or_else(std::env::temp_dir)
+        .join("test-dbs")
 }
 
 async fn connect_sqlite_for_test(database_url: &str) -> sqlx::SqlitePool {

@@ -1,5 +1,5 @@
 const TABLE_REGISTRY: &str =
-    include_str!("../../../docs/schema-registry/sdkwork-claw-router.tables.yaml");
+    include_str!("../../../generated/schema/registry/sdkwork-claw-router.tables.effective.yaml");
 const POSTGRES_SCHEMA: &str = include_str!("../../../generated/schema/postgres/schema.sql");
 
 fn compact(value: &str) -> String {

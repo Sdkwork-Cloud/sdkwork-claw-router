@@ -43,8 +43,8 @@ pub use pricing_resolver::{
 };
 pub use provider_route_selector::{
     ProviderRouteSelectionError, ProviderRouteSelectionErrorKind, ProviderRouteSelector,
-    SelectProviderAccountPoolRouteQuery, SelectProviderRouteQuery,
-    SelectedProviderAccountPoolRoute, SelectedProviderRoute, SelectedProviderRoutePlan,
+    SelectProviderChannelRouteQuery, SelectProviderRouteQuery, SelectedProviderChannelRoute,
+    SelectedProviderRoute, SelectedProviderRoutePlan,
 };
 pub use runtime_stream_bus::{InMemoryRuntimeStreamBus, RuntimeStreamBus, RuntimeStreamBusFuture};
 pub use usage_settlement_worker::{UsageSettlementWorker, UsageSettlementWorkerConfig};

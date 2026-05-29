@@ -507,7 +507,7 @@ SHOULD NOT：
 | `content_article` | `content` | 内容文章 |
 | `media_file_part` | `media` | 文件分片 |
 | `ai_model_price` | `ai` | AI 模型价格 |
-| `integration_channel_account` | `integration` | 外部渠道账号 |
+| `ai_channel` | `integration` | 外部渠道账号 |
 | `studio_project_content` | `studio` | 设计时项目内容 |
 | `ops_claw_schedule_task` | `ops` | 运营/任务调度 |
 | `data_datasource_table` | `data` | 数据源元数据 |
@@ -535,7 +535,7 @@ SHOULD NOT：
 | `comms` | 会话、消息、IM、RTC、话题 | `comms_conversation`、`comms_message` |
 | `data` | 数据源、schema、table、column、向量库、知识库、记忆 | `data_datasource`、`data_vector_store` |
 | `ops` | 调度、通知、邮件、反馈、访问记录、短链、网络、爬取 | `ops_schedule_task`、`ops_notification` |
-| `integration` | 外部渠道、连接器、供应商账号、代理配置 | `integration_channel`、`integration_channel_account` |
+| `integration` | 外部渠道、连接器、供应商账号、代理配置 | `ai_channel`、`ai_channel` |
 | `studio` | 工作空间、项目、应用、文档页、模板等设计时资产 | `studio_workspace`、`studio_project`、`studio_app` |
 | `game` | 游戏、房间、比赛、积分、排行榜 | `game_room`、`game_leaderboard` |
 | `recruit` | 招聘、简历、职位、投递、人才池 | `recruit_resume`、`recruit_delivery` |
@@ -2550,7 +2550,7 @@ L3 表的 runbook MUST 至少每半年演练一次，并记录演练结果。
 | `plus_ai_agent` | `ai_agent` |
 | `plus_ai_model_info` | `ai_model_info` |
 | `plus_usage_record` | `ai_usage_record` |
-| `plus_channel_account` | `integration_channel_account` |
+| `ai_channel` | `ai_channel` |
 | `plus_app` | `studio_app` |
 | `plus_project` | `studio_project` |
 | `plus_workspace` | `studio_workspace` |

@@ -8,6 +8,7 @@ namespace Sdkwork.ClawRouter.App.Models
     {
         public string? BlockDurationSeconds { get; set; }
         public string? BurstLimit { get; set; }
+        public string? ChannelGroupId { get; set; }
         public string? CreatedAt { get; set; }
         public string? DataScope { get; set; }
         public string? DeletedAt { get; set; }
@@ -15,7 +16,6 @@ namespace Sdkwork.ClawRouter.App.Models
         public string? EffectiveFrom { get; set; }
         public string? EffectiveTo { get; set; }
         public string? ExhaustedAt { get; set; }
-        public string? GroupId { get; set; }
         public string? Id { get; set; }
         public Dictionary<string, string>? Metadata { get; set; }
         public string? Model { get; set; }

@@ -132,12 +132,9 @@ func (a *ServiceProvidersApi) DownstreamsList(page *int, pageSize *int, status *
 }
 
 // Service Provider Downstream Create
-func (a *ServiceProvidersApi) DownstreamsCreate(body sdktypes.ServiceProviderDownstreamCreateRequest, idempotencyKey string, xRequestId *string) (sdktypes.DownstreamsCreateResult, error) {
+func (a *ServiceProvidersApi) DownstreamsCreate(body sdktypes.ServiceProviderDownstreamCreateRequest, idempotencyKey string) (sdktypes.DownstreamsCreateResult, error) {
     headers := BuildRequestHeaders(
-        map[string]ParameterSpec{
-            "Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},
-            "X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},
-        },
+        map[string]ParameterSpec{"Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},},
         map[string]ParameterSpec{},
     )
     raw, err := a.client.Post(BackendApiPath("/service_providers/downstreams"), body, nil, headers, "application/json")
@@ -187,12 +184,9 @@ func (a *ServiceProvidersApi) PricingRulesList(page *int, pageSize *int, status 
 }
 
 // Service Provider Pricing Rule Create
-func (a *ServiceProvidersApi) PricingRulesCreate(body sdktypes.ServiceProviderPricingRuleCreateRequest, idempotencyKey string, xRequestId *string) (sdktypes.PricingRulesCreateResult, error) {
+func (a *ServiceProvidersApi) PricingRulesCreate(body sdktypes.ServiceProviderPricingRuleCreateRequest, idempotencyKey string) (sdktypes.PricingRulesCreateResult, error) {
     headers := BuildRequestHeaders(
-        map[string]ParameterSpec{
-            "Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},
-            "X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},
-        },
+        map[string]ParameterSpec{"Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},},
         map[string]ParameterSpec{},
     )
     raw, err := a.client.Post(BackendApiPath("/service_providers/pricing/rules"), body, nil, headers, "application/json")
@@ -204,12 +198,9 @@ func (a *ServiceProvidersApi) PricingRulesCreate(body sdktypes.ServiceProviderPr
 }
 
 // Service Provider Pricing Rule Update
-func (a *ServiceProvidersApi) PricingRulesUpdate(ruleId string, body sdktypes.ServiceProviderPricingRuleUpdateRequest, idempotencyKey string, xRequestId *string) (sdktypes.PricingRulesUpdateResult, error) {
+func (a *ServiceProvidersApi) PricingRulesUpdate(ruleId string, body sdktypes.ServiceProviderPricingRuleUpdateRequest, idempotencyKey string) (sdktypes.PricingRulesUpdateResult, error) {
     headers := BuildRequestHeaders(
-        map[string]ParameterSpec{
-            "Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},
-            "X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},
-        },
+        map[string]ParameterSpec{"Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},},
         map[string]ParameterSpec{},
     )
     raw, err := a.client.Patch(BackendApiPath(fmt.Sprintf("/service_providers/pricing/rules/%s", SerializePathParameter(ruleId, PathParameterSpec{Name: "ruleId", Style: "simple", Explode: false}))), body, nil, headers, "application/json")
@@ -221,12 +212,9 @@ func (a *ServiceProvidersApi) PricingRulesUpdate(ruleId string, body sdktypes.Se
 }
 
 // Service Provider Price Simulation Create
-func (a *ServiceProvidersApi) PriceSimulationCreate(body sdktypes.ServiceProviderPriceSimulationRequest, idempotencyKey string, xRequestId *string) (sdktypes.PriceSimulationCreateResult, error) {
+func (a *ServiceProvidersApi) PriceSimulationCreate(body sdktypes.ServiceProviderPriceSimulationRequest, idempotencyKey string) (sdktypes.PriceSimulationCreateResult, error) {
     headers := BuildRequestHeaders(
-        map[string]ParameterSpec{
-            "Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},
-            "X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},
-        },
+        map[string]ParameterSpec{"Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},},
         map[string]ParameterSpec{},
     )
     raw, err := a.client.Post(BackendApiPath("/service_providers/pricing/simulations"), body, nil, headers, "application/json")

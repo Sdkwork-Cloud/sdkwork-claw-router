@@ -134,10 +134,10 @@ async fn ensure_default_api_key_group(
     let pricing_plan_id = find_pricing_plan_id(tx, command).await?;
     let insert_result = sqlx::query(
         r#"
-        INSERT INTO iam_gateway_api_key_group
-            (uuid, tenant_id, organization_id, data_scope, status, created_at, updated_at, version, name, code, description, group_type, environment, pricing_plan_id, pricing_plan_code, rate_multiplier, official_price_multiplier, billing_type, capacity_limit, allowed_origin, metadata)
+        INSERT INTO ai_channel_group
+            (uuid, tenant_id, organization_id, data_scope, status, created_at, updated_at, version, group_name, group_code, description, group_type, environment, pricing_plan_id, pricing_plan_code, rate_multiplier, official_price_multiplier, billing_type, capacity_limit, allowed_origin, metadata)
         VALUES
-            (?, ?, ?, 1, 1, ?, ?, 0, ?, ?, '', 1, 1, ?, ?, ?, ?, 1, 0, '{}', '{}')
+            (?, ?, ?, 1, 1, ?, ?, 0, ?, ?, '', 'default', 1, ?, ?, ?, ?, 1, 0, '{}', '{}')
         "#,
     )
     .bind(&command.group_uuid)
@@ -173,10 +173,10 @@ async fn reactivate_default_api_key_group(
 ) -> DomainResult<()> {
     sqlx::query(
         r#"
-        UPDATE iam_gateway_api_key_group
+        UPDATE ai_channel_group
         SET status = 1,
             deleted_at = NULL,
-            name = COALESCE(NULLIF(name, ''), ?),
+            group_name = COALESCE(NULLIF(group_name, ''), ?),
             pricing_plan_id = COALESCE(pricing_plan_id, ?),
             pricing_plan_code = COALESCE(NULLIF(pricing_plan_code, ''), ?),
             rate_multiplier = COALESCE(rate_multiplier, ?),
@@ -184,7 +184,7 @@ async fn reactivate_default_api_key_group(
             updated_at = ?
         WHERE tenant_id = ?
           AND organization_id = ?
-          AND code = ?
+          AND group_code = ?
         "#,
     )
     .bind(&command.name)
@@ -212,15 +212,15 @@ async fn find_api_key_group_by_code(
             id,
             COALESCE(tenant_id, 0) AS tenant_id,
             COALESCE(organization_id, 0) AS organization_id,
-            COALESCE(NULLIF(name, ''), COALESCE(code, '')) AS name,
-            COALESCE(code, '') AS code,
+            COALESCE(NULLIF(group_name, ''), COALESCE(group_code, '')) AS name,
+            COALESCE(group_code, '') AS code,
             COALESCE(NULLIF(pricing_plan_code, ''), ?) AS pricing_plan_code,
             COALESCE(CAST(rate_multiplier AS TEXT), '1.000000') AS rate_multiplier,
             COALESCE(CAST(official_price_multiplier AS TEXT), '1.000000') AS official_price_multiplier
-        FROM iam_gateway_api_key_group
+        FROM ai_channel_group
         WHERE tenant_id = ?
           AND organization_id = ?
-          AND code = ?
+          AND group_code = ?
           AND deleted_at IS NULL
           AND status = 1
         LIMIT 1
@@ -402,7 +402,7 @@ async fn insert_api_key(
     sqlx::query(
         r#"
         INSERT INTO iam_gateway_api_key
-            (uuid, tenant_id, organization_id, user_id, group_id, name, key_prefix, key_display_masked, key_hash, hash_alg, secret_version, idempotency_key, policy_id, quota_policy_id, status, created_at, updated_at, expire_at, last_revealed_at, metadata)
+            (uuid, tenant_id, organization_id, user_id, channel_group_id, name, key_prefix, key_display_masked, key_hash, hash_alg, secret_version, idempotency_key, policy_id, quota_policy_id, status, created_at, updated_at, expire_at, last_revealed_at, metadata)
         VALUES
             (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 1, ?, ?, ?, CURRENT_TIMESTAMP, ?)
         "#,
@@ -567,7 +567,7 @@ async fn update_api_key(
         r#"
         UPDATE iam_gateway_api_key
         SET name = ?,
-            group_id = ?,
+            channel_group_id = ?,
             policy_id = ?,
             quota_policy_id = ?,
             expire_at = ?,
@@ -617,7 +617,7 @@ async fn load_owned_api_key(
             COALESCE(tenant_id, 0) AS tenant_id,
             COALESCE(organization_id, 0) AS organization_id,
             COALESCE(user_id, 0) AS user_id,
-            COALESCE(group_id, 0) AS group_id,
+            COALESCE(channel_group_id, 0) AS group_id,
             COALESCE(name, '') AS name,
             COALESCE(key_prefix, '') AS key_prefix,
             COALESCE(NULLIF(key_display_masked, ''), COALESCE(key_prefix, '') || '********') AS key_display_masked,

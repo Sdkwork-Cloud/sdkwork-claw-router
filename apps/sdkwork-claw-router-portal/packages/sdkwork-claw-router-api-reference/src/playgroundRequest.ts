@@ -1,4 +1,4 @@
-﻿import type { ParamRow } from './apiPlaygroundRows';
+import type { ParamRow } from './apiPlaygroundRows';
 import { resolveApiRequestUrl } from 'sdkwork-claw-router-commons/runtime';
 
 type AuthType = 'current_user' | 'api_key';

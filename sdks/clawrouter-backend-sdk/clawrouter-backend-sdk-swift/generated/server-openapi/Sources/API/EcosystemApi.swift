@@ -23,14 +23,8 @@ public class EcosystemApi {
     }
 
     /// Create skill
-    public func skillsCreate(body: AdminSkillCreateRequest, xRequestId: String? = nil) async throws -> SkillsCreateResult? {
-        let requestHeaders = buildRequestHeaders(
-            [
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
-            ],
-            [:]
-        )
-        return try await client.post(ApiPaths.backendPath("/ecosystem/skills"), body: body, params: nil, headers: requestHeaders, contentType: "application/json", responseType: SkillsCreateResult.self)
+    public func skillsCreate(body: AdminSkillCreateRequest) async throws -> SkillsCreateResult? {
+        return try await client.post(ApiPaths.backendPath("/ecosystem/skills"), body: body, params: nil, headers: nil, contentType: "application/json", responseType: SkillsCreateResult.self)
     }
 
     /// List skill categories
@@ -39,36 +33,18 @@ public class EcosystemApi {
     }
 
     /// Create skill category
-    public func skillsCategoriesCreate(body: AdminSkillCategoryCreateRequest, xRequestId: String? = nil) async throws -> SkillsCategoriesCreateResult? {
-        let requestHeaders = buildRequestHeaders(
-            [
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
-            ],
-            [:]
-        )
-        return try await client.post(ApiPaths.backendPath("/ecosystem/skills/categories"), body: body, params: nil, headers: requestHeaders, contentType: "application/json", responseType: SkillsCategoriesCreateResult.self)
+    public func skillsCategoriesCreate(body: AdminSkillCategoryCreateRequest) async throws -> SkillsCategoriesCreateResult? {
+        return try await client.post(ApiPaths.backendPath("/ecosystem/skills/categories"), body: body, params: nil, headers: nil, contentType: "application/json", responseType: SkillsCategoriesCreateResult.self)
     }
 
     /// Delete skill category
-    public func skillsCategoriesDelete(categoryId: String, xRequestId: String? = nil) async throws -> SkillsCategoriesDeleteResult? {
-        let requestHeaders = buildRequestHeaders(
-            [
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
-            ],
-            [:]
-        )
-        return try await client.delete(ApiPaths.backendPath("/ecosystem/skills/categories/\(serializePathParameter(categoryId, PathParameterSpec(name: "categoryId", style: "simple", explode: false)))"), params: nil, headers: requestHeaders, responseType: SkillsCategoriesDeleteResult.self)
+    public func skillsCategoriesDelete(categoryId: String) async throws -> SkillsCategoriesDeleteResult? {
+        return try await client.delete(ApiPaths.backendPath("/ecosystem/skills/categories/\(serializePathParameter(categoryId, PathParameterSpec(name: "categoryId", style: "simple", explode: false)))"), responseType: SkillsCategoriesDeleteResult.self)
     }
 
     /// Update skill category
-    public func skillsCategoriesUpdate(categoryId: String, body: AdminSkillCategoryUpdateRequest, xRequestId: String? = nil) async throws -> SkillsCategoriesUpdateResult? {
-        let requestHeaders = buildRequestHeaders(
-            [
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
-            ],
-            [:]
-        )
-        return try await client.put(ApiPaths.backendPath("/ecosystem/skills/categories/\(serializePathParameter(categoryId, PathParameterSpec(name: "categoryId", style: "simple", explode: false)))"), body: body, params: nil, headers: requestHeaders, contentType: "application/json", responseType: SkillsCategoriesUpdateResult.self)
+    public func skillsCategoriesUpdate(categoryId: String, body: AdminSkillCategoryUpdateRequest) async throws -> SkillsCategoriesUpdateResult? {
+        return try await client.put(ApiPaths.backendPath("/ecosystem/skills/categories/\(serializePathParameter(categoryId, PathParameterSpec(name: "categoryId", style: "simple", explode: false)))"), body: body, params: nil, headers: nil, contentType: "application/json", responseType: SkillsCategoriesUpdateResult.self)
     }
 
     /// List skill packages
@@ -84,14 +60,8 @@ public class EcosystemApi {
     }
 
     /// Create skill package
-    public func skillsPackageCreate(body: AdminSkillPackageCreateRequest, xRequestId: String? = nil) async throws -> SkillsPackageCreateResult? {
-        let requestHeaders = buildRequestHeaders(
-            [
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
-            ],
-            [:]
-        )
-        return try await client.post(ApiPaths.backendPath("/ecosystem/skills/package"), body: body, params: nil, headers: requestHeaders, contentType: "application/json", responseType: SkillsPackageCreateResult.self)
+    public func skillsPackageCreate(body: AdminSkillPackageCreateRequest) async throws -> SkillsPackageCreateResult? {
+        return try await client.post(ApiPaths.backendPath("/ecosystem/skills/package"), body: body, params: nil, headers: nil, contentType: "application/json", responseType: SkillsPackageCreateResult.self)
     }
 
     /// Delete skill package
@@ -105,36 +75,18 @@ public class EcosystemApi {
     }
 
     /// Update skill package
-    public func skillsPackageUpdate(packageId: String, body: AdminSkillPackageUpdateRequest, xRequestId: String? = nil) async throws -> SkillsPackageUpdateResult? {
-        let requestHeaders = buildRequestHeaders(
-            [
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
-            ],
-            [:]
-        )
-        return try await client.put(ApiPaths.backendPath("/ecosystem/skills/package/\(serializePathParameter(packageId, PathParameterSpec(name: "packageId", style: "simple", explode: false)))"), body: body, params: nil, headers: requestHeaders, contentType: "application/json", responseType: SkillsPackageUpdateResult.self)
+    public func skillsPackageUpdate(packageId: String, body: AdminSkillPackageUpdateRequest) async throws -> SkillsPackageUpdateResult? {
+        return try await client.put(ApiPaths.backendPath("/ecosystem/skills/package/\(serializePathParameter(packageId, PathParameterSpec(name: "packageId", style: "simple", explode: false)))"), body: body, params: nil, headers: nil, contentType: "application/json", responseType: SkillsPackageUpdateResult.self)
     }
 
     /// Disable skill package
-    public func skillsPackageDisable(packageId: String, xRequestId: String? = nil) async throws -> SkillsPackageDisableResult? {
-        let requestHeaders = buildRequestHeaders(
-            [
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
-            ],
-            [:]
-        )
-        return try await client.post(ApiPaths.backendPath("/ecosystem/skills/package/\(serializePathParameter(packageId, PathParameterSpec(name: "packageId", style: "simple", explode: false)))/disable"), body: nil, params: nil, headers: requestHeaders, responseType: SkillsPackageDisableResult.self)
+    public func skillsPackageDisable(packageId: String) async throws -> SkillsPackageDisableResult? {
+        return try await client.post(ApiPaths.backendPath("/ecosystem/skills/package/\(serializePathParameter(packageId, PathParameterSpec(name: "packageId", style: "simple", explode: false)))/disable"), body: nil, responseType: SkillsPackageDisableResult.self)
     }
 
     /// Enable skill package
-    public func skillsPackageEnable(packageId: String, xRequestId: String? = nil) async throws -> SkillsPackageEnableResult? {
-        let requestHeaders = buildRequestHeaders(
-            [
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
-            ],
-            [:]
-        )
-        return try await client.post(ApiPaths.backendPath("/ecosystem/skills/package/\(serializePathParameter(packageId, PathParameterSpec(name: "packageId", style: "simple", explode: false)))/enable"), body: nil, params: nil, headers: requestHeaders, responseType: SkillsPackageEnableResult.self)
+    public func skillsPackageEnable(packageId: String) async throws -> SkillsPackageEnableResult? {
+        return try await client.post(ApiPaths.backendPath("/ecosystem/skills/package/\(serializePathParameter(packageId, PathParameterSpec(name: "packageId", style: "simple", explode: false)))/enable"), body: nil, responseType: SkillsPackageEnableResult.self)
     }
 
     /// Delete skill
@@ -148,14 +100,8 @@ public class EcosystemApi {
     }
 
     /// Update skill
-    public func skillsUpdate(skillId: String, body: AdminSkillUpdateRequest, xRequestId: String? = nil) async throws -> SkillsUpdateResult? {
-        let requestHeaders = buildRequestHeaders(
-            [
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
-            ],
-            [:]
-        )
-        return try await client.put(ApiPaths.backendPath("/ecosystem/skills/\(serializePathParameter(skillId, PathParameterSpec(name: "skillId", style: "simple", explode: false)))"), body: body, params: nil, headers: requestHeaders, contentType: "application/json", responseType: SkillsUpdateResult.self)
+    public func skillsUpdate(skillId: String, body: AdminSkillUpdateRequest) async throws -> SkillsUpdateResult? {
+        return try await client.put(ApiPaths.backendPath("/ecosystem/skills/\(serializePathParameter(skillId, PathParameterSpec(name: "skillId", style: "simple", explode: false)))"), body: body, params: nil, headers: nil, contentType: "application/json", responseType: SkillsUpdateResult.self)
     }
 
     /// List skill artifacts
@@ -164,25 +110,13 @@ public class EcosystemApi {
     }
 
     /// Create skill artifact
-    public func skillsArtifactsCreate(skillId: String, body: AdminSkillArtifactCreateRequest, xRequestId: String? = nil) async throws -> SkillsArtifactsCreateResult? {
-        let requestHeaders = buildRequestHeaders(
-            [
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
-            ],
-            [:]
-        )
-        return try await client.post(ApiPaths.backendPath("/ecosystem/skills/\(serializePathParameter(skillId, PathParameterSpec(name: "skillId", style: "simple", explode: false)))/artifacts"), body: body, params: nil, headers: requestHeaders, contentType: "application/json", responseType: SkillsArtifactsCreateResult.self)
+    public func skillsArtifactsCreate(skillId: String, body: AdminSkillArtifactCreateRequest) async throws -> SkillsArtifactsCreateResult? {
+        return try await client.post(ApiPaths.backendPath("/ecosystem/skills/\(serializePathParameter(skillId, PathParameterSpec(name: "skillId", style: "simple", explode: false)))/artifacts"), body: body, params: nil, headers: nil, contentType: "application/json", responseType: SkillsArtifactsCreateResult.self)
     }
 
     /// Delete skill artifact
-    public func skillsArtifactsDelete(skillId: String, artifactId: String, xRequestId: String? = nil) async throws -> SkillsArtifactsDeleteResult? {
-        let requestHeaders = buildRequestHeaders(
-            [
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
-            ],
-            [:]
-        )
-        return try await client.delete(ApiPaths.backendPath("/ecosystem/skills/\(serializePathParameter(skillId, PathParameterSpec(name: "skillId", style: "simple", explode: false)))/artifacts/\(serializePathParameter(artifactId, PathParameterSpec(name: "artifactId", style: "simple", explode: false)))"), params: nil, headers: requestHeaders, responseType: SkillsArtifactsDeleteResult.self)
+    public func skillsArtifactsDelete(skillId: String, artifactId: String) async throws -> SkillsArtifactsDeleteResult? {
+        return try await client.delete(ApiPaths.backendPath("/ecosystem/skills/\(serializePathParameter(skillId, PathParameterSpec(name: "skillId", style: "simple", explode: false)))/artifacts/\(serializePathParameter(artifactId, PathParameterSpec(name: "artifactId", style: "simple", explode: false)))"), responseType: SkillsArtifactsDeleteResult.self)
     }
 
     /// Get skill artifact
@@ -191,14 +125,8 @@ public class EcosystemApi {
     }
 
     /// Update skill artifact
-    public func skillsArtifactsUpdate(skillId: String, artifactId: String, body: AdminSkillArtifactUpdateRequest, xRequestId: String? = nil) async throws -> SkillsArtifactsUpdateResult? {
-        let requestHeaders = buildRequestHeaders(
-            [
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
-            ],
-            [:]
-        )
-        return try await client.put(ApiPaths.backendPath("/ecosystem/skills/\(serializePathParameter(skillId, PathParameterSpec(name: "skillId", style: "simple", explode: false)))/artifacts/\(serializePathParameter(artifactId, PathParameterSpec(name: "artifactId", style: "simple", explode: false)))"), body: body, params: nil, headers: requestHeaders, contentType: "application/json", responseType: SkillsArtifactsUpdateResult.self)
+    public func skillsArtifactsUpdate(skillId: String, artifactId: String, body: AdminSkillArtifactUpdateRequest) async throws -> SkillsArtifactsUpdateResult? {
+        return try await client.put(ApiPaths.backendPath("/ecosystem/skills/\(serializePathParameter(skillId, PathParameterSpec(name: "skillId", style: "simple", explode: false)))/artifacts/\(serializePathParameter(artifactId, PathParameterSpec(name: "artifactId", style: "simple", explode: false)))"), body: body, params: nil, headers: nil, contentType: "application/json", responseType: SkillsArtifactsUpdateResult.self)
     }
 
     /// List skill assets
@@ -207,25 +135,13 @@ public class EcosystemApi {
     }
 
     /// Create skill asset
-    public func skillsAssetsCreate(skillId: String, body: AdminSkillAssetCreateRequest, xRequestId: String? = nil) async throws -> SkillsAssetsCreateResult? {
-        let requestHeaders = buildRequestHeaders(
-            [
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
-            ],
-            [:]
-        )
-        return try await client.post(ApiPaths.backendPath("/ecosystem/skills/\(serializePathParameter(skillId, PathParameterSpec(name: "skillId", style: "simple", explode: false)))/assets"), body: body, params: nil, headers: requestHeaders, contentType: "application/json", responseType: SkillsAssetsCreateResult.self)
+    public func skillsAssetsCreate(skillId: String, body: AdminSkillAssetCreateRequest) async throws -> SkillsAssetsCreateResult? {
+        return try await client.post(ApiPaths.backendPath("/ecosystem/skills/\(serializePathParameter(skillId, PathParameterSpec(name: "skillId", style: "simple", explode: false)))/assets"), body: body, params: nil, headers: nil, contentType: "application/json", responseType: SkillsAssetsCreateResult.self)
     }
 
     /// Delete skill asset
-    public func skillsAssetsDelete(skillId: String, assetId: String, xRequestId: String? = nil) async throws -> SkillsAssetsDeleteResult? {
-        let requestHeaders = buildRequestHeaders(
-            [
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
-            ],
-            [:]
-        )
-        return try await client.delete(ApiPaths.backendPath("/ecosystem/skills/\(serializePathParameter(skillId, PathParameterSpec(name: "skillId", style: "simple", explode: false)))/assets/\(serializePathParameter(assetId, PathParameterSpec(name: "assetId", style: "simple", explode: false)))"), params: nil, headers: requestHeaders, responseType: SkillsAssetsDeleteResult.self)
+    public func skillsAssetsDelete(skillId: String, assetId: String) async throws -> SkillsAssetsDeleteResult? {
+        return try await client.delete(ApiPaths.backendPath("/ecosystem/skills/\(serializePathParameter(skillId, PathParameterSpec(name: "skillId", style: "simple", explode: false)))/assets/\(serializePathParameter(assetId, PathParameterSpec(name: "assetId", style: "simple", explode: false)))"), responseType: SkillsAssetsDeleteResult.self)
     }
 
     /// Get skill asset
@@ -234,80 +150,38 @@ public class EcosystemApi {
     }
 
     /// Update skill asset
-    public func skillsAssetsUpdate(skillId: String, assetId: String, body: AdminSkillAssetUpdateRequest, xRequestId: String? = nil) async throws -> SkillsAssetsUpdateResult? {
-        let requestHeaders = buildRequestHeaders(
-            [
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
-            ],
-            [:]
-        )
-        return try await client.put(ApiPaths.backendPath("/ecosystem/skills/\(serializePathParameter(skillId, PathParameterSpec(name: "skillId", style: "simple", explode: false)))/assets/\(serializePathParameter(assetId, PathParameterSpec(name: "assetId", style: "simple", explode: false)))"), body: body, params: nil, headers: requestHeaders, contentType: "application/json", responseType: SkillsAssetsUpdateResult.self)
+    public func skillsAssetsUpdate(skillId: String, assetId: String, body: AdminSkillAssetUpdateRequest) async throws -> SkillsAssetsUpdateResult? {
+        return try await client.put(ApiPaths.backendPath("/ecosystem/skills/\(serializePathParameter(skillId, PathParameterSpec(name: "skillId", style: "simple", explode: false)))/assets/\(serializePathParameter(assetId, PathParameterSpec(name: "assetId", style: "simple", explode: false)))"), body: body, params: nil, headers: nil, contentType: "application/json", responseType: SkillsAssetsUpdateResult.self)
     }
 
     /// Disable skill
-    public func skillsDisable(skillId: String, xRequestId: String? = nil) async throws -> SkillsDisableResult? {
-        let requestHeaders = buildRequestHeaders(
-            [
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
-            ],
-            [:]
-        )
-        return try await client.post(ApiPaths.backendPath("/ecosystem/skills/\(serializePathParameter(skillId, PathParameterSpec(name: "skillId", style: "simple", explode: false)))/disable"), body: nil, params: nil, headers: requestHeaders, responseType: SkillsDisableResult.self)
+    public func skillsDisable(skillId: String) async throws -> SkillsDisableResult? {
+        return try await client.post(ApiPaths.backendPath("/ecosystem/skills/\(serializePathParameter(skillId, PathParameterSpec(name: "skillId", style: "simple", explode: false)))/disable"), body: nil, responseType: SkillsDisableResult.self)
     }
 
     /// Enable skill
-    public func skillsEnable(skillId: String, xRequestId: String? = nil) async throws -> SkillsEnableResult? {
-        let requestHeaders = buildRequestHeaders(
-            [
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
-            ],
-            [:]
-        )
-        return try await client.post(ApiPaths.backendPath("/ecosystem/skills/\(serializePathParameter(skillId, PathParameterSpec(name: "skillId", style: "simple", explode: false)))/enable"), body: nil, params: nil, headers: requestHeaders, responseType: SkillsEnableResult.self)
+    public func skillsEnable(skillId: String) async throws -> SkillsEnableResult? {
+        return try await client.post(ApiPaths.backendPath("/ecosystem/skills/\(serializePathParameter(skillId, PathParameterSpec(name: "skillId", style: "simple", explode: false)))/enable"), body: nil, responseType: SkillsEnableResult.self)
     }
 
     /// Publish skill
-    public func skillsPublish(skillId: String, xRequestId: String? = nil) async throws -> SkillsPublishResult? {
-        let requestHeaders = buildRequestHeaders(
-            [
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
-            ],
-            [:]
-        )
-        return try await client.post(ApiPaths.backendPath("/ecosystem/skills/\(serializePathParameter(skillId, PathParameterSpec(name: "skillId", style: "simple", explode: false)))/publish"), body: nil, params: nil, headers: requestHeaders, responseType: SkillsPublishResult.self)
+    public func skillsPublish(skillId: String) async throws -> SkillsPublishResult? {
+        return try await client.post(ApiPaths.backendPath("/ecosystem/skills/\(serializePathParameter(skillId, PathParameterSpec(name: "skillId", style: "simple", explode: false)))/publish"), body: nil, responseType: SkillsPublishResult.self)
     }
 
     /// Approve skill
-    public func skillsReviewApprove(skillId: String, body: AdminSkillReviewRequest, xRequestId: String? = nil) async throws -> SkillsReviewApproveResult? {
-        let requestHeaders = buildRequestHeaders(
-            [
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
-            ],
-            [:]
-        )
-        return try await client.post(ApiPaths.backendPath("/ecosystem/skills/\(serializePathParameter(skillId, PathParameterSpec(name: "skillId", style: "simple", explode: false)))/review/approve"), body: body, params: nil, headers: requestHeaders, contentType: "application/json", responseType: SkillsReviewApproveResult.self)
+    public func skillsReviewApprove(skillId: String, body: AdminSkillReviewRequest) async throws -> SkillsReviewApproveResult? {
+        return try await client.post(ApiPaths.backendPath("/ecosystem/skills/\(serializePathParameter(skillId, PathParameterSpec(name: "skillId", style: "simple", explode: false)))/review/approve"), body: body, params: nil, headers: nil, contentType: "application/json", responseType: SkillsReviewApproveResult.self)
     }
 
     /// Reject skill
-    public func skillsReviewReject(skillId: String, body: AdminSkillReviewRequest, xRequestId: String? = nil) async throws -> SkillsReviewRejectResult? {
-        let requestHeaders = buildRequestHeaders(
-            [
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
-            ],
-            [:]
-        )
-        return try await client.post(ApiPaths.backendPath("/ecosystem/skills/\(serializePathParameter(skillId, PathParameterSpec(name: "skillId", style: "simple", explode: false)))/review/reject"), body: body, params: nil, headers: requestHeaders, contentType: "application/json", responseType: SkillsReviewRejectResult.self)
+    public func skillsReviewReject(skillId: String, body: AdminSkillReviewRequest) async throws -> SkillsReviewRejectResult? {
+        return try await client.post(ApiPaths.backendPath("/ecosystem/skills/\(serializePathParameter(skillId, PathParameterSpec(name: "skillId", style: "simple", explode: false)))/review/reject"), body: body, params: nil, headers: nil, contentType: "application/json", responseType: SkillsReviewRejectResult.self)
     }
 
     /// Offline skill
-    public func skillsUnpublish(skillId: String, xRequestId: String? = nil) async throws -> SkillsUnpublishResult? {
-        let requestHeaders = buildRequestHeaders(
-            [
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
-            ],
-            [:]
-        )
-        return try await client.post(ApiPaths.backendPath("/ecosystem/skills/\(serializePathParameter(skillId, PathParameterSpec(name: "skillId", style: "simple", explode: false)))/unpublish"), body: nil, params: nil, headers: requestHeaders, responseType: SkillsUnpublishResult.self)
+    public func skillsUnpublish(skillId: String) async throws -> SkillsUnpublishResult? {
+        return try await client.post(ApiPaths.backendPath("/ecosystem/skills/\(serializePathParameter(skillId, PathParameterSpec(name: "skillId", style: "simple", explode: false)))/unpublish"), body: nil, responseType: SkillsUnpublishResult.self)
     }
 
     private struct PathParameterSpec {
@@ -487,68 +361,4 @@ public class EcosystemApi {
         value.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? value
     }
 
-    private struct HeaderParameterSpec {
-        let value: Any?
-        let style: String
-        let explode: Bool
-        let contentType: String?
-    }
-
-    private func buildRequestHeaders(_ headers: [String: HeaderParameterSpec], _ cookies: [String: HeaderParameterSpec]) -> [String: String]? {
-        var requestHeaders: [String: String] = [:]
-        for (name, parameter) in headers {
-            if let serialized = serializeParameterValue(parameter) {
-                requestHeaders[name] = serialized
-            }
-        }
-
-        if let cookieHeader = buildCookieHeader(cookies), !cookieHeader.isEmpty {
-            requestHeaders["Cookie"] = requestHeaders["Cookie"].map { "\($0); \(cookieHeader)" } ?? cookieHeader
-        }
-
-        return requestHeaders.isEmpty ? nil : requestHeaders
-    }
-
-    private func buildCookieHeader(_ cookies: [String: HeaderParameterSpec]) -> String? {
-        let pairs = cookies.compactMap { name, parameter -> String? in
-            guard let serialized = serializeParameterValue(parameter) else { return nil }
-            return "\(urlEncode(name))=\(urlEncode(serialized))"
-        }
-        return pairs.isEmpty ? nil : pairs.joined(separator: "; ")
-    }
-
-    private func serializeParameterValue(_ parameter: HeaderParameterSpec?) -> String? {
-        guard let parameter, let value = parameter.value else { return nil }
-        if let contentType = parameter.contentType, !contentType.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
-            if JSONSerialization.isValidJSONObject(value),
-               let data = try? JSONSerialization.data(withJSONObject: value, options: []),
-               let json = String(data: data, encoding: .utf8) {
-                return json
-            }
-            return String(describing: value)
-        }
-        if let array = value as? [Any?] {
-            return array.compactMap { $0.map { String(describing: $0) } }.joined(separator: ",")
-        }
-        if let object = value as? [String: Any] {
-            var values: [String] = []
-            for (key, item) in object {
-                if parameter.explode {
-                    values.append("\(key)=\(item)")
-                } else {
-                    values.append(key)
-                    values.append(String(describing: item))
-                }
-            }
-            return values.joined(separator: ",")
-        }
-        if let date = value as? Date {
-            return ISO8601DateFormatter().string(from: date)
-        }
-        return String(describing: value)
-    }
-
-    private func urlEncode(_ value: String) -> String {
-        value.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? value
-    }
 }

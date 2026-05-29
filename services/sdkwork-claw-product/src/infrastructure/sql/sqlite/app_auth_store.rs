@@ -224,7 +224,7 @@ async fn create_registration(
     command: AppAuthRegistrationCommand,
 ) -> DomainResult<AppAuthUserCredential> {
     let mut tx = pool
-        .begin()
+        .begin_with("BEGIN IMMEDIATE")
         .await
         .map_err(|error| store_error("failed to begin registration transaction", error))?;
     let tenant_id = select_tenant_id(&mut tx, command.tenant_code.as_deref()).await?;
@@ -423,7 +423,7 @@ async fn reset_password(
         return Ok(false);
     };
     let mut tx = pool
-        .begin()
+        .begin_with("BEGIN IMMEDIATE")
         .await
         .map_err(|error| store_error("failed to begin password reset transaction", error))?;
     let reset_code = sqlx::query(
@@ -536,7 +536,7 @@ async fn consume_code(
 ) -> DomainResult<bool> {
     let tenant_id = default_tenant_id(pool, None).await?;
     let mut tx = pool
-        .begin()
+        .begin_with("BEGIN IMMEDIATE")
         .await
         .map_err(|error| store_error("failed to begin code consume transaction", error))?;
     let consumed =

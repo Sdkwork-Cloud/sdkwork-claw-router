@@ -34,5 +34,6 @@ namespace Sdkwork.ClawRouter.App.Models
         public string? TotalTime { get; set; }
         public string? Ttft { get; set; }
         public string? Type { get; set; }
+        public string? UserAgent { get; set; }
     }
 }

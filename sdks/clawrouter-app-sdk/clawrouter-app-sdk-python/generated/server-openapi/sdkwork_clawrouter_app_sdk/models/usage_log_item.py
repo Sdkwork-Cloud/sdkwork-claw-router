@@ -34,3 +34,4 @@ class UsageLogItem:
     total_time: str
     ttft: str
     type: str
+    user_agent: str

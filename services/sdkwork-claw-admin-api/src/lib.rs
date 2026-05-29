@@ -32,41 +32,44 @@ use sdkwork_claw_product::infrastructure::sql::installer::{
     log_bootstrap_admin_report, DatabaseInstallError, DatabaseInstaller,
 };
 use sdkwork_claw_product::infrastructure::sql::postgres::{
-    PostgresAdminAccessGroupStore, PostgresAdminAnalyticsReadStore, PostgresAdminAnnouncementStore,
-    PostgresAdminApiKeyRateLimitStore, PostgresAdminAppStore, PostgresAdminAuthSettingsStore,
-    PostgresAdminChannelStore, PostgresAdminDashboardReadStore, PostgresAdminFinanceStore,
-    PostgresAdminFirewallRuleStore, PostgresAdminIpRateLimitStore, PostgresAdminMarketingStore,
-    PostgresAdminMcpStore, PostgresAdminMessagingStore, PostgresAdminModelRateLimitStore,
-    PostgresAdminModelStore, PostgresAdminMonitorReadStore, PostgresAdminOpenPlatformStore,
-    PostgresAdminPromptStore, PostgresAdminProviderSecretStore, PostgresAdminRecordStore,
-    PostgresAdminServiceNodeStore, PostgresAdminServiceProviderStore, PostgresAdminSkillStore,
-    PostgresAdminStorageStore, PostgresAdminTransactionCenterStore, PostgresAdminUserStore,
-    PostgresAppAgentRegistryStore, PostgresCatalogLoadError, PostgresModelRankingRefreshStore,
-    PostgresModelRankingsReadStore, PostgresPricingCatalogLoader, PostgresSiteSettingsStore,
+    PostgresAdminAccessGroupStore, PostgresAdminAiResourceStore, PostgresAdminAnalyticsReadStore,
+    PostgresAdminAnnouncementStore, PostgresAdminApiKeyRateLimitStore, PostgresAdminAppStore,
+    PostgresAdminAuthSettingsStore, PostgresAdminChannelEndpointStore, PostgresAdminChannelStore,
+    PostgresAdminDashboardReadStore, PostgresAdminFinanceStore, PostgresAdminFirewallRuleStore,
+    PostgresAdminIpRateLimitStore, PostgresAdminMarketingStore, PostgresAdminMcpStore,
+    PostgresAdminMessagingStore, PostgresAdminModelRateLimitStore, PostgresAdminModelStore,
+    PostgresAdminMonitorReadStore, PostgresAdminOpenPlatformStore, PostgresAdminPromptStore,
+    PostgresAdminProviderSecretStore, PostgresAdminRecordStore, PostgresAdminServiceNodeStore,
+    PostgresAdminServiceProviderStore, PostgresAdminSkillStore, PostgresAdminStorageStore,
+    PostgresAdminTransactionCenterStore, PostgresAdminUserStore, PostgresAppAgentRegistryStore,
+    PostgresCatalogLoadError, PostgresModelRankingRefreshStore, PostgresModelRankingsReadStore,
+    PostgresPricingCatalogLoader, PostgresRuntimeRegionSettingsStore, PostgresSiteSettingsStore,
 };
 use sdkwork_claw_product::infrastructure::sql::sqlite::{
-    SqlCatalogLoadError, SqliteAdminAccessGroupStore, SqliteAdminAnalyticsReadStore,
-    SqliteAdminAnnouncementStore, SqliteAdminApiKeyRateLimitStore, SqliteAdminAppStore,
-    SqliteAdminAuthSettingsStore, SqliteAdminChannelStore, SqliteAdminDashboardReadStore,
-    SqliteAdminFinanceStore, SqliteAdminFirewallRuleStore, SqliteAdminIpRateLimitStore,
-    SqliteAdminMarketingStore, SqliteAdminMcpStore, SqliteAdminMessagingStore,
-    SqliteAdminModelRateLimitStore, SqliteAdminModelStore, SqliteAdminMonitorReadStore,
-    SqliteAdminOpenPlatformStore, SqliteAdminPromptStore, SqliteAdminProviderSecretStore,
-    SqliteAdminRecordStore, SqliteAdminServiceNodeStore, SqliteAdminServiceProviderStore,
-    SqliteAdminSkillStore, SqliteAdminStorageStore, SqliteAdminTransactionCenterStore,
-    SqliteAdminUserStore, SqliteAppAgentRegistryStore, SqliteModelRankingRefreshStore,
-    SqliteModelRankingsReadStore, SqlitePricingCatalogLoader, SqliteSiteSettingsStore,
+    SqlCatalogLoadError, SqliteAdminAccessGroupStore, SqliteAdminAiResourceStore,
+    SqliteAdminAnalyticsReadStore, SqliteAdminAnnouncementStore, SqliteAdminApiKeyRateLimitStore,
+    SqliteAdminAppStore, SqliteAdminAuthSettingsStore, SqliteAdminChannelEndpointStore,
+    SqliteAdminChannelStore, SqliteAdminDashboardReadStore, SqliteAdminFinanceStore,
+    SqliteAdminFirewallRuleStore, SqliteAdminIpRateLimitStore, SqliteAdminMarketingStore,
+    SqliteAdminMcpStore, SqliteAdminMessagingStore, SqliteAdminModelRateLimitStore,
+    SqliteAdminModelStore, SqliteAdminMonitorReadStore, SqliteAdminOpenPlatformStore,
+    SqliteAdminPromptStore, SqliteAdminProviderSecretStore, SqliteAdminRecordStore,
+    SqliteAdminServiceNodeStore, SqliteAdminServiceProviderStore, SqliteAdminSkillStore,
+    SqliteAdminStorageStore, SqliteAdminTransactionCenterStore, SqliteAdminUserStore,
+    SqliteAppAgentRegistryStore, SqliteModelRankingRefreshStore, SqliteModelRankingsReadStore,
+    SqlitePricingCatalogLoader, SqliteRuntimeRegionSettingsStore, SqliteSiteSettingsStore,
 };
 use sdkwork_claw_product::infrastructure::OsApiKeySecretGenerator;
 use sdkwork_claw_product::ports::{
-    AdminAccessGroupStore, AdminAgentStore, AdminAnalyticsReadStore, AdminAnnouncementStore,
-    AdminApiKeyRateLimitStore, AdminAppStore, AdminAuthSettingsStore, AdminChannelStore,
-    AdminDashboardReadStore, AdminFinanceStore, AdminFirewallRuleStore, AdminIpRateLimitStore,
-    AdminMarketingStore, AdminMcpStore, AdminMessagingStore, AdminModelRateLimitStore,
-    AdminModelStore, AdminMonitorReadStore, AdminOpenPlatformStore, AdminPromptStore,
-    AdminProviderSecretStore, AdminRecordStore, AdminServiceNodeStore, AdminServiceProviderStore,
-    AdminSkillStore, AdminStorageStore, AdminTransactionCenterStore, AdminUserStore,
-    ModelRankingRefreshStore, ModelRankingsReadModelStore, PricingCatalog, ProviderHealthProbe,
+    AdminAccessGroupStore, AdminAgentStore, AdminAiResourceStore, AdminAnalyticsReadStore,
+    AdminAnnouncementStore, AdminApiKeyRateLimitStore, AdminAppStore, AdminAuthSettingsStore,
+    AdminChannelEndpointStore, AdminChannelStore, AdminDashboardReadStore, AdminFinanceStore,
+    AdminFirewallRuleStore, AdminIpRateLimitStore, AdminMarketingStore, AdminMcpStore,
+    AdminMessagingStore, AdminModelRateLimitStore, AdminModelStore, AdminMonitorReadStore,
+    AdminOpenPlatformStore, AdminPromptStore, AdminProviderSecretStore, AdminRecordStore,
+    AdminServiceNodeStore, AdminServiceProviderStore, AdminSkillStore, AdminStorageStore,
+    AdminTransactionCenterStore, AdminUserStore, ModelRankingRefreshStore,
+    ModelRankingsReadModelStore, PricingCatalog, ProviderHealthProbe, RuntimeRegionSettingsStore,
     SiteSettingsStore, UnconfiguredProviderHealthProbe,
 };
 use sdkwork_commerce_membership_sqlx::{
@@ -91,7 +94,10 @@ type AdminAnnouncementRuntimeStore = Arc<dyn AdminAnnouncementStore + Send + Syn
 type AdminAppRuntimeStore = Arc<dyn AdminAppStore + Send + Sync>;
 type AdminAuthSettingsRuntimeStore = Arc<dyn AdminAuthSettingsStore + Send + Sync>;
 type SiteSettingsRuntimeStore = Arc<dyn SiteSettingsStore + Send + Sync>;
+type RuntimeRegionSettingsRuntimeStore = Arc<dyn RuntimeRegionSettingsStore + Send + Sync>;
+type AdminAiResourceRuntimeStore = Arc<dyn AdminAiResourceStore + Send + Sync>;
 type AdminChannelRuntimeStore = Arc<dyn AdminChannelStore + Send + Sync>;
+type AdminChannelEndpointRuntimeStore = Arc<dyn AdminChannelEndpointStore + Send + Sync>;
 type AdminProviderSecretRuntimeStore = Arc<dyn AdminProviderSecretStore + Send + Sync>;
 type AdminAccessGroupRuntimeStore = Arc<dyn AdminAccessGroupStore + Send + Sync>;
 type AdminIpRateLimitRuntimeStore = Arc<dyn AdminIpRateLimitStore + Send + Sync>;
@@ -151,7 +157,10 @@ struct AdminRouterRuntime<'a> {
     app_store: Option<AdminAppRuntimeStore>,
     auth_settings_store: Option<AdminAuthSettingsRuntimeStore>,
     site_settings_store: Option<SiteSettingsRuntimeStore>,
+    runtime_region_settings_store: Option<RuntimeRegionSettingsRuntimeStore>,
+    ai_resource_store: Option<AdminAiResourceRuntimeStore>,
     channel_store: Option<AdminChannelRuntimeStore>,
+    channel_endpoint_store: Option<AdminChannelEndpointRuntimeStore>,
     provider_secret_store: Option<AdminProviderSecretRuntimeStore>,
     access_group_store: Option<AdminAccessGroupRuntimeStore>,
     ip_rate_limit_store: Option<AdminIpRateLimitRuntimeStore>,
@@ -220,7 +229,10 @@ where
         app_store,
         auth_settings_store,
         site_settings_store,
+        runtime_region_settings_store,
+        ai_resource_store,
         channel_store,
+        channel_endpoint_store,
         provider_secret_store,
         access_group_store,
         ip_rate_limit_store,
@@ -421,9 +433,45 @@ where
                 )),
             );
         }
+        if let Some(store) = runtime_region_settings_store {
+            router = router.merge(
+                sdkwork_claw_product::api::admin_runtime_region_settings_router_with_store(
+                    store,
+                    Arc::new(OsApiKeySecretGenerator),
+                )
+                .layer(from_fn_with_state(
+                    admin_subject_boundary_config.clone(),
+                    admin_request_subject_boundary,
+                )),
+            );
+        }
+        if let Some(store) = ai_resource_store {
+            router = router.merge(
+                sdkwork_claw_product::api::admin_ai_resource_router_with_store(
+                    store,
+                    Arc::new(OsApiKeySecretGenerator),
+                )
+                .layer(from_fn_with_state(
+                    admin_subject_boundary_config.clone(),
+                    admin_request_subject_boundary,
+                )),
+            );
+        }
         if let Some(store) = channel_store {
             router = router.merge(
                 sdkwork_claw_product::api::admin_channel_router_with_store(
+                    store,
+                    Arc::new(OsApiKeySecretGenerator),
+                )
+                .layer(from_fn_with_state(
+                    admin_subject_boundary_config.clone(),
+                    admin_request_subject_boundary,
+                )),
+            );
+        }
+        if let Some(store) = channel_endpoint_store {
+            router = router.merge(
+                sdkwork_claw_product::api::admin_channel_endpoint_router_with_store(
                     store,
                     Arc::new(OsApiKeySecretGenerator),
                 )
@@ -848,6 +896,10 @@ async fn router_with_database_api_key_trusted_subject_app_session_and_optional_p
                 Arc::new(SqliteAdminAuthSettingsStore::new(pool.clone()));
             let site_settings_store: SiteSettingsRuntimeStore =
                 Arc::new(SqliteSiteSettingsStore::new(pool.clone()));
+            let runtime_region_settings_store: RuntimeRegionSettingsRuntimeStore =
+                Arc::new(SqliteRuntimeRegionSettingsStore::new(pool.clone()));
+            let ai_resource_store: AdminAiResourceRuntimeStore =
+                Arc::new(SqliteAdminAiResourceStore::new(pool.clone()));
             let channel_store: AdminChannelRuntimeStore = Arc::new(
                 SqliteAdminChannelStore::with_provider_health_probe_and_api_key_secret_codec(
                     pool.clone(),
@@ -855,6 +907,8 @@ async fn router_with_database_api_key_trusted_subject_app_session_and_optional_p
                     api_key_secret_codec.clone(),
                 ),
             );
+            let channel_endpoint_store: AdminChannelEndpointRuntimeStore =
+                Arc::new(SqliteAdminChannelEndpointStore::new(pool.clone()));
             let provider_secret_store: AdminProviderSecretRuntimeStore =
                 Arc::new(SqliteAdminProviderSecretStore::new(pool.clone()));
             let access_group_store: AdminAccessGroupRuntimeStore =
@@ -922,7 +976,10 @@ async fn router_with_database_api_key_trusted_subject_app_session_and_optional_p
                     app_store: Some(app_store),
                     auth_settings_store: Some(auth_settings_store),
                     site_settings_store: Some(site_settings_store),
+                    runtime_region_settings_store: Some(runtime_region_settings_store),
+                    ai_resource_store: Some(ai_resource_store),
                     channel_store: Some(channel_store),
+                    channel_endpoint_store: Some(channel_endpoint_store),
                     provider_secret_store: Some(provider_secret_store),
                     access_group_store: Some(access_group_store),
                     ip_rate_limit_store: Some(ip_rate_limit_store),
@@ -988,6 +1045,10 @@ async fn router_with_database_api_key_trusted_subject_app_session_and_optional_p
                 Arc::new(PostgresAdminAuthSettingsStore::new(pool.clone()));
             let site_settings_store: SiteSettingsRuntimeStore =
                 Arc::new(PostgresSiteSettingsStore::new(pool.clone()));
+            let runtime_region_settings_store: RuntimeRegionSettingsRuntimeStore =
+                Arc::new(PostgresRuntimeRegionSettingsStore::new(pool.clone()));
+            let ai_resource_store: AdminAiResourceRuntimeStore =
+                Arc::new(PostgresAdminAiResourceStore::new(pool.clone()));
             let channel_store: AdminChannelRuntimeStore = Arc::new(
                 PostgresAdminChannelStore::with_provider_health_probe_and_api_key_secret_codec(
                     pool.clone(),
@@ -995,6 +1056,8 @@ async fn router_with_database_api_key_trusted_subject_app_session_and_optional_p
                     api_key_secret_codec.clone(),
                 ),
             );
+            let channel_endpoint_store: AdminChannelEndpointRuntimeStore =
+                Arc::new(PostgresAdminChannelEndpointStore::new(pool.clone()));
             let provider_secret_store: AdminProviderSecretRuntimeStore =
                 Arc::new(PostgresAdminProviderSecretStore::new(pool.clone()));
             let access_group_store: AdminAccessGroupRuntimeStore =
@@ -1063,7 +1126,10 @@ async fn router_with_database_api_key_trusted_subject_app_session_and_optional_p
                     app_store: Some(app_store),
                     auth_settings_store: Some(auth_settings_store),
                     site_settings_store: Some(site_settings_store),
+                    runtime_region_settings_store: Some(runtime_region_settings_store),
+                    ai_resource_store: Some(ai_resource_store),
                     channel_store: Some(channel_store),
+                    channel_endpoint_store: Some(channel_endpoint_store),
                     provider_secret_store: Some(provider_secret_store),
                     access_group_store: Some(access_group_store),
                     ip_rate_limit_store: Some(ip_rate_limit_store),

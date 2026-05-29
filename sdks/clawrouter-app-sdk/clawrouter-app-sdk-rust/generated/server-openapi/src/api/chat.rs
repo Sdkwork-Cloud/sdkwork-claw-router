@@ -27,12 +27,11 @@ impl ChatApi {
     }
 
     /// Create product chat conversation
-    pub async fn conversations_create(&self, body: &ChatConversationCreateRequest, idempotency_key: &str, x_request_id: Option<&str>) -> Result<ConversationsCreateResult, SdkworkError> {
+    pub async fn conversations_create(&self, body: &ChatConversationCreateRequest, idempotency_key: &str) -> Result<ConversationsCreateResult, SdkworkError> {
         let path = app_path(&"/chat/conversations".to_string());
         let headers = build_request_headers(
             &[
                 ("Idempotency-Key", HeaderParameterSpec::new(idempotency_key, "simple", false, None)),
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
             ],
             &[],
         );
@@ -56,12 +55,11 @@ impl ChatApi {
     }
 
     /// Create product chat turn
-    pub async fn turns_create(&self, conversation_id: &str, body: &ChatTurnCreateRequest, idempotency_key: &str, x_request_id: Option<&str>) -> Result<TurnsCreateResult, SdkworkError> {
+    pub async fn turns_create(&self, conversation_id: &str, body: &ChatTurnCreateRequest, idempotency_key: &str) -> Result<TurnsCreateResult, SdkworkError> {
         let path = app_path(&format!("/chat/conversations/{}/turns", serialize_path_parameter(conversation_id, PathParameterSpec::new("conversationId", "simple", false))));
         let headers = build_request_headers(
             &[
                 ("Idempotency-Key", HeaderParameterSpec::new(idempotency_key, "simple", false, None)),
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
             ],
             &[],
         );
@@ -69,12 +67,11 @@ impl ChatApi {
     }
 
     /// Complete product chat turn response
-    pub async fn turn_responses_create(&self, conversation_id: &str, turn_id: &str, body: &ChatTurnResponseRequest, idempotency_key: &str, x_request_id: Option<&str>) -> Result<TurnResponsesCreateResult, SdkworkError> {
+    pub async fn turn_responses_create(&self, conversation_id: &str, turn_id: &str, body: &ChatTurnResponseRequest, idempotency_key: &str) -> Result<TurnResponsesCreateResult, SdkworkError> {
         let path = app_path(&format!("/chat/conversations/{}/turns/{}/response", serialize_path_parameter(conversation_id, PathParameterSpec::new("conversationId", "simple", false)), serialize_path_parameter(turn_id, PathParameterSpec::new("turnId", "simple", false))));
         let headers = build_request_headers(
             &[
                 ("Idempotency-Key", HeaderParameterSpec::new(idempotency_key, "simple", false, None)),
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
             ],
             &[],
         );

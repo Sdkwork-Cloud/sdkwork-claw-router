@@ -3,6 +3,7 @@ import unittest
 from pathlib import Path
 
 from tools.api_contract_manifest import ApiContractManifestGenerator
+from tools.schema_registry_loader import render_schema_registry
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -328,13 +329,12 @@ class AdminMarketingRuntimeStandardTest(unittest.TestCase):
 
     def test_admin_marketing_route_contracts_use_promotion_code_page_semantics(self) -> None:
         combined = "\n".join(
-            path.read_text(encoding="utf-8")
-            for path in [
-                FRONTEND_FIELD_CONTRACT_PATH,
-                FRONTEND_ROUTE_CLASSIFICATION_PATH,
-                FRONTEND_ROUTE_CONTRACT_PATH,
-                TABLE_REGISTRY_PATH,
-                SCHEMA_MANIFEST_PATH,
+            [
+                FRONTEND_FIELD_CONTRACT_PATH.read_text(encoding="utf-8"),
+                FRONTEND_ROUTE_CLASSIFICATION_PATH.read_text(encoding="utf-8"),
+                FRONTEND_ROUTE_CONTRACT_PATH.read_text(encoding="utf-8"),
+                render_schema_registry(TABLE_REGISTRY_PATH),
+                SCHEMA_MANIFEST_PATH.read_text(encoding="utf-8"),
             ]
         )
 

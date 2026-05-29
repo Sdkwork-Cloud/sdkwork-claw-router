@@ -8,8 +8,8 @@ frontend_operations:
   api_method: GET
   api_path: /backend/v3/api/router/access_groups
   read_sources:
-  - iam_gateway_api_key_group
-  - iam_gateway_api_key_group_metric_snapshot
+  - ai_channel_group
+  - ai_channel_group_metric_snapshot
   - ai_pricing_plan
   query_parameters: []
   response_schema:
@@ -116,10 +116,10 @@ frontend_operations:
   api_method: POST
   api_path: /backend/v3/api/router/access_groups
   read_sources:
-  - iam_gateway_api_key_group
+  - ai_channel_group
   - ai_pricing_plan
   write_tables:
-  - iam_gateway_api_key_group
+  - ai_channel_group
   - ai_pricing_plan_binding
   - ops_audit_log
   request_schema:
@@ -188,10 +188,10 @@ frontend_operations:
   api_method: PATCH
   api_path: /backend/v3/api/router/access_groups/{groupId}
   read_sources:
-  - iam_gateway_api_key_group
+  - ai_channel_group
   - ai_pricing_plan
   write_tables:
-  - iam_gateway_api_key_group
+  - ai_channel_group
   - ai_pricing_plan_binding
   - ops_audit_log
   request_schema:
@@ -259,9 +259,9 @@ frontend_operations:
   api_method: DELETE
   api_path: /backend/v3/api/router/access_groups/{groupId}
   read_sources:
-  - iam_gateway_api_key_group
+  - ai_channel_group
   write_tables:
-  - iam_gateway_api_key_group
+  - ai_channel_group
   - ai_pricing_plan_binding
   - ops_audit_log
   response_schema: &id008
@@ -281,10 +281,10 @@ frontend_operations:
   api_method: GET
   api_path: /backend/v3/api/integration/channels
   read_sources:
-  - integration_provider
-  - integration_channel
-  - integration_channel_model
-  - integration_provider_account
+  - ai_provider
+  - ai_channel
+  - ai_channel_model
+  - ai_channel
   query_parameters: []
   openapi_exposed: false
   response_schema:
@@ -308,11 +308,11 @@ frontend_operations:
   api_method: GET
   api_path: /backend/v3/api/router/access_groups/{groupId}/channel_bindings
   read_sources:
-  - iam_gateway_api_key_group
-  - iam_api_key_group_channel
-  - integration_channel
-  - integration_channel_model
-  - integration_provider
+  - ai_channel_group
+  - ai_channel_group_member
+  - ai_channel
+  - ai_channel_model
+  - ai_provider
   query_parameters: []
   response_schema:
     name: AdminAccessGroupChannelBindingsResponse
@@ -419,13 +419,13 @@ frontend_operations:
   api_method: PUT
   api_path: /backend/v3/api/router/access_groups/{groupId}/channel_bindings
   read_sources:
-  - iam_gateway_api_key_group
-  - iam_api_key_group_channel
-  - integration_channel
-  - integration_channel_model
-  - integration_provider
+  - ai_channel_group
+  - ai_channel_group_member
+  - ai_channel
+  - ai_channel_model
+  - ai_provider
   write_tables:
-  - iam_api_key_group_channel
+  - ai_channel_group_member
   - ops_audit_log
   - ops_config_snapshot
   request_schema:
@@ -882,7 +882,7 @@ frontend_operations:
   api_path: /backend/v3/api/router/rate_limits/models
   read_sources:
   - ai_quota_policy
-  - iam_gateway_api_key_group
+  - ai_channel_group
   query_parameters: []
   response_schema:
     name: AdminModelLimitsResponse
@@ -901,7 +901,7 @@ frontend_operations:
   api_path: /backend/v3/api/router/rate_limits/models
   read_sources:
   - ai_quota_policy
-  - iam_gateway_api_key_group
+  - ai_channel_group
   write_tables:
   - ai_quota_policy
   - ops_audit_log

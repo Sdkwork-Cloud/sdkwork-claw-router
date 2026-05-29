@@ -18,28 +18,20 @@ namespace Sdkwork.ClawRouter.Backend.Api
         /// <summary>
         /// Messaging route simulation
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.DiagnosticsRouteSimulationCreateResult?> DiagnosticsRouteSimulationCreateAsync(Sdkwork.ClawRouter.Backend.Models.MessagingRouteSimulationRequest body, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.DiagnosticsRouteSimulationCreateResult?> DiagnosticsRouteSimulationCreateAsync(Sdkwork.ClawRouter.Backend.Models.MessagingRouteSimulationRequest body)
         {
-            var requestHeaders = BuildRequestHeaders(
-                new Dictionary<string, HeaderParameterSpec>
-                {
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
-                },
-                new Dictionary<string, HeaderParameterSpec>()
-            );
-            return await _client.PostAsync<Sdkwork.ClawRouter.Backend.Models.DiagnosticsRouteSimulationCreateResult>(ApiPaths.BackendPath("/messaging/diagnostics/route_simulation"), body, null, requestHeaders, "application/json");
+            return await _client.PostAsync<Sdkwork.ClawRouter.Backend.Models.DiagnosticsRouteSimulationCreateResult>(ApiPaths.BackendPath("/messaging/diagnostics/route_simulation"), body, null, null, "application/json");
         }
 
         /// <summary>
         /// Messaging test send
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.DiagnosticsTestSendsCreateResult?> DiagnosticsTestSendsCreateAsync(Sdkwork.ClawRouter.Backend.Models.MessagingTestSendRequest body, string idempotencyKey, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.DiagnosticsTestSendsCreateResult?> DiagnosticsTestSendsCreateAsync(Sdkwork.ClawRouter.Backend.Models.MessagingTestSendRequest body, string idempotencyKey)
         {
             var requestHeaders = BuildRequestHeaders(
                 new Dictionary<string, HeaderParameterSpec>
                 {
                     ["Idempotency-Key"] = new HeaderParameterSpec(idempotencyKey, "simple", false, null),
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
                 },
                 new Dictionary<string, HeaderParameterSpec>()
             );
@@ -66,13 +58,12 @@ namespace Sdkwork.ClawRouter.Backend.Api
         /// <summary>
         /// Messaging provider account create
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.ProviderAccountsCreateResult?> ProviderAccountsCreateAsync(Sdkwork.ClawRouter.Backend.Models.MessagingProviderAccountCreateRequest body, string idempotencyKey, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.ProviderAccountsCreateResult?> ProviderAccountsCreateAsync(Sdkwork.ClawRouter.Backend.Models.MessagingProviderAccountCreateRequest body, string idempotencyKey)
         {
             var requestHeaders = BuildRequestHeaders(
                 new Dictionary<string, HeaderParameterSpec>
                 {
                     ["Idempotency-Key"] = new HeaderParameterSpec(idempotencyKey, "simple", false, null),
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
                 },
                 new Dictionary<string, HeaderParameterSpec>()
             );
@@ -117,13 +108,12 @@ namespace Sdkwork.ClawRouter.Backend.Api
         /// <summary>
         /// Messaging route rule create
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.RouteRulesCreateResult?> RouteRulesCreateAsync(Sdkwork.ClawRouter.Backend.Models.MessagingRouteRuleCreateRequest body, string idempotencyKey, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.RouteRulesCreateResult?> RouteRulesCreateAsync(Sdkwork.ClawRouter.Backend.Models.MessagingRouteRuleCreateRequest body, string idempotencyKey)
         {
             var requestHeaders = BuildRequestHeaders(
                 new Dictionary<string, HeaderParameterSpec>
                 {
                     ["Idempotency-Key"] = new HeaderParameterSpec(idempotencyKey, "simple", false, null),
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
                 },
                 new Dictionary<string, HeaderParameterSpec>()
             );
@@ -168,13 +158,12 @@ namespace Sdkwork.ClawRouter.Backend.Api
         /// <summary>
         /// Messaging sender identity create
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.SenderIdentitiesCreateResult?> SenderIdentitiesCreateAsync(Sdkwork.ClawRouter.Backend.Models.MessagingSenderIdentityCreateRequest body, string idempotencyKey, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.SenderIdentitiesCreateResult?> SenderIdentitiesCreateAsync(Sdkwork.ClawRouter.Backend.Models.MessagingSenderIdentityCreateRequest body, string idempotencyKey)
         {
             var requestHeaders = BuildRequestHeaders(
                 new Dictionary<string, HeaderParameterSpec>
                 {
                     ["Idempotency-Key"] = new HeaderParameterSpec(idempotencyKey, "simple", false, null),
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
                 },
                 new Dictionary<string, HeaderParameterSpec>()
             );
@@ -201,13 +190,12 @@ namespace Sdkwork.ClawRouter.Backend.Api
         /// <summary>
         /// Messaging suppression create
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.SuppressionsCreateResult?> SuppressionsCreateAsync(Sdkwork.ClawRouter.Backend.Models.MessagingSuppressionCreateRequest body, string idempotencyKey, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.SuppressionsCreateResult?> SuppressionsCreateAsync(Sdkwork.ClawRouter.Backend.Models.MessagingSuppressionCreateRequest body, string idempotencyKey)
         {
             var requestHeaders = BuildRequestHeaders(
                 new Dictionary<string, HeaderParameterSpec>
                 {
                     ["Idempotency-Key"] = new HeaderParameterSpec(idempotencyKey, "simple", false, null),
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
                 },
                 new Dictionary<string, HeaderParameterSpec>()
             );
@@ -217,13 +205,12 @@ namespace Sdkwork.ClawRouter.Backend.Api
         /// <summary>
         /// Messaging template send
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.TemplateSendsCreateResult?> TemplateSendsCreateAsync(Sdkwork.ClawRouter.Backend.Models.MessagingTemplateSendRequest body, string idempotencyKey, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.TemplateSendsCreateResult?> TemplateSendsCreateAsync(Sdkwork.ClawRouter.Backend.Models.MessagingTemplateSendRequest body, string idempotencyKey)
         {
             var requestHeaders = BuildRequestHeaders(
                 new Dictionary<string, HeaderParameterSpec>
                 {
                     ["Idempotency-Key"] = new HeaderParameterSpec(idempotencyKey, "simple", false, null),
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
                 },
                 new Dictionary<string, HeaderParameterSpec>()
             );
@@ -250,13 +237,12 @@ namespace Sdkwork.ClawRouter.Backend.Api
         /// <summary>
         /// Messaging template create
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.TemplatesCreateResult?> TemplatesCreateAsync(Sdkwork.ClawRouter.Backend.Models.MessagingTemplateCreateRequest body, string idempotencyKey, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.TemplatesCreateResult?> TemplatesCreateAsync(Sdkwork.ClawRouter.Backend.Models.MessagingTemplateCreateRequest body, string idempotencyKey)
         {
             var requestHeaders = BuildRequestHeaders(
                 new Dictionary<string, HeaderParameterSpec>
                 {
                     ["Idempotency-Key"] = new HeaderParameterSpec(idempotencyKey, "simple", false, null),
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
                 },
                 new Dictionary<string, HeaderParameterSpec>()
             );
@@ -266,16 +252,9 @@ namespace Sdkwork.ClawRouter.Backend.Api
         /// <summary>
         /// Messaging template version publish
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.TemplatesVersionsPublishResult?> TemplatesVersionsPublishAsync(string templateId, string versionId, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.TemplatesVersionsPublishResult?> TemplatesVersionsPublishAsync(string templateId, string versionId)
         {
-            var requestHeaders = BuildRequestHeaders(
-                new Dictionary<string, HeaderParameterSpec>
-                {
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
-                },
-                new Dictionary<string, HeaderParameterSpec>()
-            );
-            return await _client.PostAsync<Sdkwork.ClawRouter.Backend.Models.TemplatesVersionsPublishResult>(ApiPaths.BackendPath($"/messaging/templates/{SerializePathParameter(templateId, new PathParameterSpec("templateId", "simple", false))}/versions/{SerializePathParameter(versionId, new PathParameterSpec("versionId", "simple", false))}/publish"), null, null, requestHeaders);
+            return await _client.PostAsync<Sdkwork.ClawRouter.Backend.Models.TemplatesVersionsPublishResult>(ApiPaths.BackendPath($"/messaging/templates/{SerializePathParameter(templateId, new PathParameterSpec("templateId", "simple", false))}/versions/{SerializePathParameter(versionId, new PathParameterSpec("versionId", "simple", false))}/publish"), null);
         }
 
         /// <summary>
@@ -298,16 +277,9 @@ namespace Sdkwork.ClawRouter.Backend.Api
         /// <summary>
         /// Verification policy update
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.VerificationPoliciesUpdateResult?> VerificationPoliciesUpdateAsync(string policyId, Sdkwork.ClawRouter.Backend.Models.VerificationPolicyUpdateRequest body, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.VerificationPoliciesUpdateResult?> VerificationPoliciesUpdateAsync(string policyId, Sdkwork.ClawRouter.Backend.Models.VerificationPolicyUpdateRequest body)
         {
-            var requestHeaders = BuildRequestHeaders(
-                new Dictionary<string, HeaderParameterSpec>
-                {
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
-                },
-                new Dictionary<string, HeaderParameterSpec>()
-            );
-            return await _client.PutAsync<Sdkwork.ClawRouter.Backend.Models.VerificationPoliciesUpdateResult>(ApiPaths.BackendPath($"/messaging/verification_policies/{SerializePathParameter(policyId, new PathParameterSpec("policyId", "simple", false))}"), body, null, requestHeaders, "application/json");
+            return await _client.PutAsync<Sdkwork.ClawRouter.Backend.Models.VerificationPoliciesUpdateResult>(ApiPaths.BackendPath($"/messaging/verification_policies/{SerializePathParameter(policyId, new PathParameterSpec("policyId", "simple", false))}"), body, null, null, "application/json");
         }
 
         private sealed record PathParameterSpec(string Name, string Style, bool Explode);

@@ -20,12 +20,8 @@ public class ContentApi {
     }
 
     /** Create announcement */
-    public AnnouncementsCreateResult announcementsCreate(AdminAnnouncementCreateRequest body, String xRequestId) throws Exception {
-        Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
-                Map.of()
-        );
-        Object raw = client.post(ApiPaths.backendPath("/content/announcements"), body, null, requestHeaders, "application/json");
+    public AnnouncementsCreateResult announcementsCreate(AdminAnnouncementCreateRequest body) throws Exception {
+        Object raw = client.post(ApiPaths.backendPath("/content/announcements"), body, null, null, "application/json");
         return client.convertValue(raw, new TypeReference<AnnouncementsCreateResult>() {});
     }
 
@@ -36,12 +32,8 @@ public class ContentApi {
     }
 
     /** Update announcement */
-    public AnnouncementsUpdateResult announcementsUpdate(String announcementId, AdminAnnouncementUpdateRequest body, String xRequestId) throws Exception {
-        Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
-                Map.of()
-        );
-        Object raw = client.patch(ApiPaths.backendPath("/content/announcements/" + serializePathParameter(announcementId, new PathParameterSpec("announcementId", "simple", false)) + ""), body, null, requestHeaders, "application/json");
+    public AnnouncementsUpdateResult announcementsUpdate(String announcementId, AdminAnnouncementUpdateRequest body) throws Exception {
+        Object raw = client.patch(ApiPaths.backendPath("/content/announcements/" + serializePathParameter(announcementId, new PathParameterSpec("announcementId", "simple", false)) + ""), body, null, null, "application/json");
         return client.convertValue(raw, new TypeReference<AnnouncementsUpdateResult>() {});
     }
 
@@ -58,52 +50,32 @@ public class ContentApi {
     }
 
     /** Admin Course Application Review */
-    public CourseApplicationsReviewResult courseApplicationsReview(String applicationId, AdminCourseApplicationReviewRequest body, String xRequestId) throws Exception {
-        Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
-                Map.of()
-        );
-        Object raw = client.patch(ApiPaths.backendPath("/content/course-applications/" + serializePathParameter(applicationId, new PathParameterSpec("applicationId", "simple", false)) + "/review"), body, null, requestHeaders, "application/json");
+    public CourseApplicationsReviewResult courseApplicationsReview(String applicationId, AdminCourseApplicationReviewRequest body) throws Exception {
+        Object raw = client.patch(ApiPaths.backendPath("/content/course-applications/" + serializePathParameter(applicationId, new PathParameterSpec("applicationId", "simple", false)) + "/review"), body, null, null, "application/json");
         return client.convertValue(raw, new TypeReference<CourseApplicationsReviewResult>() {});
     }
 
     /** Admin Course Lesson Delete */
-    public CourseLessonsDeleteResult courseLessonsDelete(String lessonId, String xRequestId) throws Exception {
-        Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
-                Map.of()
-        );
-        Object raw = client.delete(ApiPaths.backendPath("/content/course-lessons/" + serializePathParameter(lessonId, new PathParameterSpec("lessonId", "simple", false)) + ""), null, requestHeaders);
+    public CourseLessonsDeleteResult courseLessonsDelete(String lessonId) throws Exception {
+        Object raw = client.delete(ApiPaths.backendPath("/content/course-lessons/" + serializePathParameter(lessonId, new PathParameterSpec("lessonId", "simple", false)) + ""));
         return client.convertValue(raw, new TypeReference<CourseLessonsDeleteResult>() {});
     }
 
     /** Admin Course Lesson Update */
-    public CourseLessonsUpdateResult courseLessonsUpdate(String lessonId, AdminCourseLessonMutationRequest body, String xRequestId) throws Exception {
-        Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
-                Map.of()
-        );
-        Object raw = client.patch(ApiPaths.backendPath("/content/course-lessons/" + serializePathParameter(lessonId, new PathParameterSpec("lessonId", "simple", false)) + ""), body, null, requestHeaders, "application/json");
+    public CourseLessonsUpdateResult courseLessonsUpdate(String lessonId, AdminCourseLessonMutationRequest body) throws Exception {
+        Object raw = client.patch(ApiPaths.backendPath("/content/course-lessons/" + serializePathParameter(lessonId, new PathParameterSpec("lessonId", "simple", false)) + ""), body, null, null, "application/json");
         return client.convertValue(raw, new TypeReference<CourseLessonsUpdateResult>() {});
     }
 
     /** Admin Course Section Delete */
-    public CourseSectionsDeleteResult courseSectionsDelete(String sectionId, String xRequestId) throws Exception {
-        Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
-                Map.of()
-        );
-        Object raw = client.delete(ApiPaths.backendPath("/content/course-sections/" + serializePathParameter(sectionId, new PathParameterSpec("sectionId", "simple", false)) + ""), null, requestHeaders);
+    public CourseSectionsDeleteResult courseSectionsDelete(String sectionId) throws Exception {
+        Object raw = client.delete(ApiPaths.backendPath("/content/course-sections/" + serializePathParameter(sectionId, new PathParameterSpec("sectionId", "simple", false)) + ""));
         return client.convertValue(raw, new TypeReference<CourseSectionsDeleteResult>() {});
     }
 
     /** Admin Course Section Update */
-    public CourseSectionsUpdateResult courseSectionsUpdate(String sectionId, AdminCourseSectionMutationRequest body, String xRequestId) throws Exception {
-        Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
-                Map.of()
-        );
-        Object raw = client.patch(ApiPaths.backendPath("/content/course-sections/" + serializePathParameter(sectionId, new PathParameterSpec("sectionId", "simple", false)) + ""), body, null, requestHeaders, "application/json");
+    public CourseSectionsUpdateResult courseSectionsUpdate(String sectionId, AdminCourseSectionMutationRequest body) throws Exception {
+        Object raw = client.patch(ApiPaths.backendPath("/content/course-sections/" + serializePathParameter(sectionId, new PathParameterSpec("sectionId", "simple", false)) + ""), body, null, null, "application/json");
         return client.convertValue(raw, new TypeReference<CourseSectionsUpdateResult>() {});
     }
 
@@ -120,12 +92,8 @@ public class ContentApi {
     }
 
     /** Admin Course Create */
-    public CoursesCreateResult coursesCreate(AdminCourseMutationRequest body, String xRequestId) throws Exception {
-        Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
-                Map.of()
-        );
-        Object raw = client.post(ApiPaths.backendPath("/content/courses"), body, null, requestHeaders, "application/json");
+    public CoursesCreateResult coursesCreate(AdminCourseMutationRequest body) throws Exception {
+        Object raw = client.post(ApiPaths.backendPath("/content/courses"), body, null, null, "application/json");
         return client.convertValue(raw, new TypeReference<CoursesCreateResult>() {});
     }
 
@@ -142,12 +110,8 @@ public class ContentApi {
     }
 
     /** Admin Course Comment Moderate */
-    public CourseCommentsModerateResult courseCommentsModerate(String commentId, AdminCourseCommentModerationRequest body, String xRequestId) throws Exception {
-        Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
-                Map.of()
-        );
-        Object raw = client.patch(ApiPaths.backendPath("/content/courses/comments/" + serializePathParameter(commentId, new PathParameterSpec("commentId", "simple", false)) + "/moderation"), body, null, requestHeaders, "application/json");
+    public CourseCommentsModerateResult courseCommentsModerate(String commentId, AdminCourseCommentModerationRequest body) throws Exception {
+        Object raw = client.patch(ApiPaths.backendPath("/content/courses/comments/" + serializePathParameter(commentId, new PathParameterSpec("commentId", "simple", false)) + "/moderation"), body, null, null, "application/json");
         return client.convertValue(raw, new TypeReference<CourseCommentsModerateResult>() {});
     }
 
@@ -170,22 +134,14 @@ public class ContentApi {
     }
 
     /** Admin Course Delete */
-    public CoursesDeleteResult coursesDelete(String courseId, String xRequestId) throws Exception {
-        Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
-                Map.of()
-        );
-        Object raw = client.delete(ApiPaths.backendPath("/content/courses/" + serializePathParameter(courseId, new PathParameterSpec("courseId", "simple", false)) + ""), null, requestHeaders);
+    public CoursesDeleteResult coursesDelete(String courseId) throws Exception {
+        Object raw = client.delete(ApiPaths.backendPath("/content/courses/" + serializePathParameter(courseId, new PathParameterSpec("courseId", "simple", false)) + ""));
         return client.convertValue(raw, new TypeReference<CoursesDeleteResult>() {});
     }
 
     /** Admin Course Update */
-    public CoursesUpdateResult coursesUpdate(String courseId, AdminCourseMutationRequest body, String xRequestId) throws Exception {
-        Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
-                Map.of()
-        );
-        Object raw = client.patch(ApiPaths.backendPath("/content/courses/" + serializePathParameter(courseId, new PathParameterSpec("courseId", "simple", false)) + ""), body, null, requestHeaders, "application/json");
+    public CoursesUpdateResult coursesUpdate(String courseId, AdminCourseMutationRequest body) throws Exception {
+        Object raw = client.patch(ApiPaths.backendPath("/content/courses/" + serializePathParameter(courseId, new PathParameterSpec("courseId", "simple", false)) + ""), body, null, null, "application/json");
         return client.convertValue(raw, new TypeReference<CoursesUpdateResult>() {});
     }
 
@@ -202,12 +158,8 @@ public class ContentApi {
     }
 
     /** Admin Course Lesson Create */
-    public CoursesLessonsCreateResult coursesLessonsCreate(String courseId, AdminCourseLessonMutationRequest body, String xRequestId) throws Exception {
-        Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
-                Map.of()
-        );
-        Object raw = client.post(ApiPaths.backendPath("/content/courses/" + serializePathParameter(courseId, new PathParameterSpec("courseId", "simple", false)) + "/lessons"), body, null, requestHeaders, "application/json");
+    public CoursesLessonsCreateResult coursesLessonsCreate(String courseId, AdminCourseLessonMutationRequest body) throws Exception {
+        Object raw = client.post(ApiPaths.backendPath("/content/courses/" + serializePathParameter(courseId, new PathParameterSpec("courseId", "simple", false)) + "/lessons"), body, null, null, "application/json");
         return client.convertValue(raw, new TypeReference<CoursesLessonsCreateResult>() {});
     }
 
@@ -224,12 +176,8 @@ public class ContentApi {
     }
 
     /** Admin Course Relations Replace */
-    public CoursesRelationsReplaceResult coursesRelationsReplace(String courseId, AdminCourseRelationsReplaceRequest body, String xRequestId) throws Exception {
-        Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
-                Map.of()
-        );
-        Object raw = client.put(ApiPaths.backendPath("/content/courses/" + serializePathParameter(courseId, new PathParameterSpec("courseId", "simple", false)) + "/relations"), body, null, requestHeaders, "application/json");
+    public CoursesRelationsReplaceResult coursesRelationsReplace(String courseId, AdminCourseRelationsReplaceRequest body) throws Exception {
+        Object raw = client.put(ApiPaths.backendPath("/content/courses/" + serializePathParameter(courseId, new PathParameterSpec("courseId", "simple", false)) + "/relations"), body, null, null, "application/json");
         return client.convertValue(raw, new TypeReference<CoursesRelationsReplaceResult>() {});
     }
 
@@ -246,12 +194,8 @@ public class ContentApi {
     }
 
     /** Admin Course Section Create */
-    public CoursesSectionsCreateResult coursesSectionsCreate(String courseId, AdminCourseSectionMutationRequest body, String xRequestId) throws Exception {
-        Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
-                Map.of()
-        );
-        Object raw = client.post(ApiPaths.backendPath("/content/courses/" + serializePathParameter(courseId, new PathParameterSpec("courseId", "simple", false)) + "/sections"), body, null, requestHeaders, "application/json");
+    public CoursesSectionsCreateResult coursesSectionsCreate(String courseId, AdminCourseSectionMutationRequest body) throws Exception {
+        Object raw = client.post(ApiPaths.backendPath("/content/courses/" + serializePathParameter(courseId, new PathParameterSpec("courseId", "simple", false)) + "/sections"), body, null, null, "application/json");
         return client.convertValue(raw, new TypeReference<CoursesSectionsCreateResult>() {});
     }
 
@@ -444,74 +388,6 @@ public class ContentApi {
         return new com.fasterxml.jackson.databind.ObjectMapper();
     }
 
-    private record HeaderParameterSpec(Object value, String style, boolean explode, String contentType) {}
-
-    private static Map<String, String> buildRequestHeaders(Map<String, HeaderParameterSpec> headers, Map<String, HeaderParameterSpec> cookies) throws Exception {
-        Map<String, String> requestHeaders = new java.util.LinkedHashMap<>();
-        for (Map.Entry<String, HeaderParameterSpec> entry : headers.entrySet()) {
-            String serialized = serializeParameterValue(entry.getValue());
-            if (serialized != null) {
-                requestHeaders.put(entry.getKey(), serialized);
-            }
-        }
-
-        String cookieHeader = buildCookieHeader(cookies);
-        if (cookieHeader != null && !cookieHeader.isEmpty()) {
-            requestHeaders.merge("Cookie", cookieHeader, (left, right) -> left + "; " + right);
-        }
-
-        return requestHeaders.isEmpty() ? null : requestHeaders;
-    }
-
-    private static String buildCookieHeader(Map<String, HeaderParameterSpec> cookies) throws Exception {
-        java.util.List<String> pairs = new java.util.ArrayList<>();
-        for (Map.Entry<String, HeaderParameterSpec> entry : cookies.entrySet()) {
-            String serialized = serializeParameterValue(entry.getValue());
-            if (serialized != null) {
-                pairs.add(urlEncode(entry.getKey()) + "=" + urlEncode(serialized));
-            }
-        }
-        return String.join("; ", pairs);
-    }
-
-    private static String serializeParameterValue(HeaderParameterSpec parameter) throws Exception {
-        if (parameter == null || parameter.value() == null) {
-            return null;
-        }
-        Object value = parameter.value();
-        if (parameter.contentType() != null && !parameter.contentType().isBlank()) {
-            return headerObjectMapper().writeValueAsString(value);
-        }
-        if (value instanceof Iterable<?> iterable) {
-            java.util.List<String> values = new java.util.ArrayList<>();
-            for (Object item : iterable) {
-                if (item != null) {
-                    values.add(String.valueOf(item));
-                }
-            }
-            return String.join(",", values);
-        }
-        if (value instanceof Map<?, ?> map) {
-            java.util.List<String> values = new java.util.ArrayList<>();
-            map.forEach((key, item) -> {
-                if (item == null) {
-                    return;
-                }
-                if (parameter.explode()) {
-                    values.add(String.valueOf(key) + "=" + String.valueOf(item));
-                } else {
-                    values.add(String.valueOf(key));
-                    values.add(String.valueOf(item));
-                }
-            });
-            return String.join(",", values);
-        }
-        return String.valueOf(value);
-    }
-
-    private static com.fasterxml.jackson.databind.ObjectMapper headerObjectMapper() {
-        return new com.fasterxml.jackson.databind.ObjectMapper();
-    }
 
     private static String urlEncode(String value) {
         return java.net.URLEncoder.encode(value, java.nio.charset.StandardCharsets.UTF_8);

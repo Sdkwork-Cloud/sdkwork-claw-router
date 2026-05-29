@@ -8,6 +8,24 @@ import com.sdkwork.clawrouter.backend.http.HttpClient
 
 class IntegrationApi(private val client: HttpClient) {
 
+    /** List channel endpoints */
+    suspend fun channelEndpointsList(): ChannelEndpointsListResult? {
+        val raw = client.get(ApiPaths.backendPath("/integration/channel_endpoints"))
+        return client.convertValue(raw, object : TypeReference<ChannelEndpointsListResult>() {})
+    }
+
+    /** Create channel endpoint */
+    suspend fun channelEndpointsCreate(body: AdminChannelEndpointCreateRequest): ChannelEndpointsCreateResult? {
+        val raw = client.post(ApiPaths.backendPath("/integration/channel_endpoints"), body, null, null, "application/json")
+        return client.convertValue(raw, object : TypeReference<ChannelEndpointsCreateResult>() {})
+    }
+
+    /** Update channel endpoint */
+    suspend fun channelEndpointsUpdate(endpointId: String, body: AdminChannelEndpointUpdateRequest): ChannelEndpointsUpdateResult? {
+        val raw = client.put(ApiPaths.backendPath("/integration/channel_endpoints/${serializePathParameter(endpointId, PathParameterSpec("endpointId", "simple", false))}"), body, null, null, "application/json")
+        return client.convertValue(raw, object : TypeReference<ChannelEndpointsUpdateResult>() {})
+    }
+
     /** List channels */
     suspend fun channelsList(): ChannelsListResult? {
         val raw = client.get(ApiPaths.backendPath("/integration/channels"))
@@ -15,26 +33,14 @@ class IntegrationApi(private val client: HttpClient) {
     }
 
     /** Create channel */
-    suspend fun channelsCreate(body: AdminChannelCreateRequest, xRequestId: String? = null): ChannelsCreateResult? {
-        val requestHeaders = buildRequestHeaders(
-            mapOf(
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
-            ),
-            emptyMap()
-        )
-        val raw = client.post(ApiPaths.backendPath("/integration/channels"), body, null, requestHeaders, "application/json")
+    suspend fun channelsCreate(body: AdminChannelCreateRequest): ChannelsCreateResult? {
+        val raw = client.post(ApiPaths.backendPath("/integration/channels"), body, null, null, "application/json")
         return client.convertValue(raw, object : TypeReference<ChannelsCreateResult>() {})
     }
 
     /** Update channel */
-    suspend fun channelsUpdate(body: AdminChannelUpdateRequest, xRequestId: String? = null): ChannelsUpdateResult? {
-        val requestHeaders = buildRequestHeaders(
-            mapOf(
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
-            ),
-            emptyMap()
-        )
-        val raw = client.put(ApiPaths.backendPath("/integration/channels"), body, null, requestHeaders, "application/json")
+    suspend fun channelsUpdate(body: AdminChannelUpdateRequest): ChannelsUpdateResult? {
+        val raw = client.put(ApiPaths.backendPath("/integration/channels"), body, null, null, "application/json")
         return client.convertValue(raw, object : TypeReference<ChannelsUpdateResult>() {})
     }
 
@@ -45,14 +51,8 @@ class IntegrationApi(private val client: HttpClient) {
     }
 
     /** Test channel */
-    suspend fun channelsVerify(channelId: String, xRequestId: String? = null): ChannelsVerifyResult? {
-        val requestHeaders = buildRequestHeaders(
-            mapOf(
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
-            ),
-            emptyMap()
-        )
-        val raw = client.post(ApiPaths.backendPath("/integration/channels/${serializePathParameter(channelId, PathParameterSpec("channelId", "simple", false))}/verify"), null, null, requestHeaders)
+    suspend fun channelsVerify(channelId: String): ChannelsVerifyResult? {
+        val raw = client.post(ApiPaths.backendPath("/integration/channels/${serializePathParameter(channelId, PathParameterSpec("channelId", "simple", false))}/verify"), null)
         return client.convertValue(raw, object : TypeReference<ChannelsVerifyResult>() {})
     }
 
@@ -67,26 +67,14 @@ class IntegrationApi(private val client: HttpClient) {
     }
 
     /** Create provider secret */
-    suspend fun providerSecretsCreate(body: AdminProviderSecretCreateRequest, xRequestId: String? = null): ProviderSecretsCreateResult? {
-        val requestHeaders = buildRequestHeaders(
-            mapOf(
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
-            ),
-            emptyMap()
-        )
-        val raw = client.post(ApiPaths.backendPath("/integration/provider_secrets"), body, null, requestHeaders, "application/json")
+    suspend fun providerSecretsCreate(body: AdminProviderSecretCreateRequest): ProviderSecretsCreateResult? {
+        val raw = client.post(ApiPaths.backendPath("/integration/provider_secrets"), body, null, null, "application/json")
         return client.convertValue(raw, object : TypeReference<ProviderSecretsCreateResult>() {})
     }
 
     /** Update provider secret */
-    suspend fun providerSecretsUpdate(body: AdminProviderSecretUpdateRequest, xRequestId: String? = null): ProviderSecretsUpdateResult? {
-        val requestHeaders = buildRequestHeaders(
-            mapOf(
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
-            ),
-            emptyMap()
-        )
-        val raw = client.put(ApiPaths.backendPath("/integration/provider_secrets"), body, null, requestHeaders, "application/json")
+    suspend fun providerSecretsUpdate(body: AdminProviderSecretUpdateRequest): ProviderSecretsUpdateResult? {
+        val raw = client.put(ApiPaths.backendPath("/integration/provider_secrets"), body, null, null, "application/json")
         return client.convertValue(raw, object : TypeReference<ProviderSecretsUpdateResult>() {})
     }
 
@@ -268,50 +256,4 @@ class IntegrationApi(private val client: HttpClient) {
         return java.net.URLEncoder.encode(value, java.nio.charset.StandardCharsets.UTF_8)
     }
 
-    private data class HeaderParameterSpec(val value: Any?, val style: String, val explode: Boolean, val contentType: String?)
-
-    private val headerObjectMapper = ObjectMapper().registerKotlinModule()
-
-    private fun buildRequestHeaders(headers: Map<String, HeaderParameterSpec>, cookies: Map<String, HeaderParameterSpec>): Map<String, String>? {
-        val requestHeaders = linkedMapOf<String, String>()
-        headers.forEach { (name, parameter) ->
-            serializeParameterValue(parameter)?.let { requestHeaders[name] = it }
-        }
-
-        val cookieHeader = buildCookieHeader(cookies)
-        if (cookieHeader.isNotEmpty()) {
-            requestHeaders["Cookie"] = requestHeaders["Cookie"]?.let { "$it; $cookieHeader" } ?: cookieHeader
-        }
-
-        return requestHeaders.takeIf { it.isNotEmpty() }
-    }
-
-    private fun buildCookieHeader(cookies: Map<String, HeaderParameterSpec>): String {
-        return cookies.mapNotNull { (name, parameter) ->
-            serializeParameterValue(parameter)?.let {
-                java.net.URLEncoder.encode(name, java.nio.charset.StandardCharsets.UTF_8) + "=" +
-                    java.net.URLEncoder.encode(it, java.nio.charset.StandardCharsets.UTF_8)
-            }
-        }.joinToString("; ")
-    }
-
-    private fun serializeParameterValue(parameter: HeaderParameterSpec?): String? {
-        val value = parameter?.value ?: return null
-        if (!parameter.contentType.isNullOrBlank()) {
-            return headerObjectMapper.writeValueAsString(value)
-        }
-        return when (value) {
-            is Iterable<*> -> value.mapNotNull { it?.toString() }.joinToString(",")
-            is Map<*, *> -> value.mapNotNull { (key, item) ->
-                if (item == null) {
-                    null
-                } else if (parameter.explode) {
-                    "$key=$item"
-                } else {
-                    listOf(key.toString(), item.toString()).joinToString(",")
-                }
-            }.joinToString(",")
-            else -> value.toString()
-        }
-    }
 }

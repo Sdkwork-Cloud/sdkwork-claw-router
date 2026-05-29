@@ -149,29 +149,17 @@ class IamAccessGroupsApi:
         """List groups"""
         return self._client.get(f"/backend/v3/api/iam/access_groups")
 
-    def create(self, body: AdminAccessGroupCreateRequest, x_request_id: Optional[str] = None) -> AccessGroupsCreateResult:
+    def create(self, body: AdminAccessGroupCreateRequest) -> AccessGroupsCreateResult:
         """Create group"""
-        request_headers = build_request_headers(
-            {
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
-            },
-            {}
-        )
-        return self._client.post(f"/backend/v3/api/iam/access_groups", json=body, headers=request_headers)
+        return self._client.post(f"/backend/v3/api/iam/access_groups", json=body)
 
     def delete(self, group_id: str) -> AccessGroupsDeleteResult:
         """Delete group"""
         return self._client.delete(f"/backend/v3/api/iam/access_groups/{serialize_path_parameter(group_id, {'name': 'groupId', 'style': 'simple', 'explode': False})}")
 
-    def update(self, group_id: str, body: AdminAccessGroupUpdateRequest, x_request_id: Optional[str] = None) -> AccessGroupsUpdateResult:
+    def update(self, group_id: str, body: AdminAccessGroupUpdateRequest) -> AccessGroupsUpdateResult:
         """Update group"""
-        request_headers = build_request_headers(
-            {
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
-            },
-            {}
-        )
-        return self._client.patch(f"/backend/v3/api/iam/access_groups/{serialize_path_parameter(group_id, {'name': 'groupId', 'style': 'simple', 'explode': False})}", json=body, headers=request_headers)
+        return self._client.patch(f"/backend/v3/api/iam/access_groups/{serialize_path_parameter(group_id, {'name': 'groupId', 'style': 'simple', 'explode': False})}", json=body)
 
 class IamAccessGroupsChannelBindingsApi:
     """iam iam.access_groups.channel_bindings API client."""
@@ -184,15 +172,9 @@ class IamAccessGroupsChannelBindingsApi:
         """List group channel bindings"""
         return self._client.get(f"/backend/v3/api/iam/access_groups/{serialize_path_parameter(group_id, {'name': 'groupId', 'style': 'simple', 'explode': False})}/channel_bindings")
 
-    def update(self, group_id: str, body: AdminAccessGroupChannelBindingsReplaceRequest, x_request_id: Optional[str] = None) -> AccessGroupsChannelBindingsUpdateResult:
+    def update(self, group_id: str, body: AdminAccessGroupChannelBindingsReplaceRequest) -> AccessGroupsChannelBindingsUpdateResult:
         """Replace group channel bindings"""
-        request_headers = build_request_headers(
-            {
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
-            },
-            {}
-        )
-        return self._client.put(f"/backend/v3/api/iam/access_groups/{serialize_path_parameter(group_id, {'name': 'groupId', 'style': 'simple', 'explode': False})}/channel_bindings", json=body, headers=request_headers)
+        return self._client.put(f"/backend/v3/api/iam/access_groups/{serialize_path_parameter(group_id, {'name': 'groupId', 'style': 'simple', 'explode': False})}/channel_bindings", json=body)
 
 class IamApiKeysApi:
     """iam iam.api_keys API client."""
@@ -205,12 +187,11 @@ class IamApiKeysApi:
         """List API key map"""
         return self._client.get(f"/backend/v3/api/iam/api_keys")
 
-    def create(self, body: AdminApiKeyCreateRequest, idempotency_key: str, x_request_id: Optional[str] = None) -> ApiKeysCreateResult:
+    def create(self, body: AdminApiKeyCreateRequest, idempotency_key: str) -> ApiKeysCreateResult:
         """Create API key"""
         request_headers = build_request_headers(
             {
                 'Idempotency-Key': {'value': idempotency_key, 'style': 'simple', 'explode': False},
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
             },
             {}
         )
@@ -231,22 +212,10 @@ class IamUsersApi:
         """List users"""
         return self._client.get(f"/backend/v3/api/iam/users")
 
-    def create(self, body: AdminUserCreateRequest, x_request_id: Optional[str] = None) -> UsersCreateResult:
+    def create(self, body: AdminUserCreateRequest) -> UsersCreateResult:
         """Create user"""
-        request_headers = build_request_headers(
-            {
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
-            },
-            {}
-        )
-        return self._client.post(f"/backend/v3/api/iam/users", json=body, headers=request_headers)
+        return self._client.post(f"/backend/v3/api/iam/users", json=body)
 
-    def update(self, body: AdminUserUpdateRequest, x_request_id: Optional[str] = None) -> UsersUpdateResult:
+    def update(self, body: AdminUserUpdateRequest) -> UsersUpdateResult:
         """Update user"""
-        request_headers = build_request_headers(
-            {
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
-            },
-            {}
-        )
-        return self._client.put(f"/backend/v3/api/iam/users", json=body, headers=request_headers)
+        return self._client.put(f"/backend/v3/api/iam/users", json=body)

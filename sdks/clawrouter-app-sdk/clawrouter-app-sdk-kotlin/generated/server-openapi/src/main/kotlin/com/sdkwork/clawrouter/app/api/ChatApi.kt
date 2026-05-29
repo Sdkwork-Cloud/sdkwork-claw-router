@@ -19,11 +19,10 @@ class ChatApi(private val client: HttpClient) {
     }
 
     /** Create product chat conversation */
-    suspend fun conversationsCreate(body: ChatConversationCreateRequest, idempotencyKey: String, xRequestId: String? = null): ConversationsCreateResult? {
+    suspend fun conversationsCreate(body: ChatConversationCreateRequest, idempotencyKey: String): ConversationsCreateResult? {
         val requestHeaders = buildRequestHeaders(
             mapOf(
                 "Idempotency-Key" to HeaderParameterSpec(idempotencyKey, "simple", false, null),
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
             ),
             emptyMap()
         )
@@ -48,11 +47,10 @@ class ChatApi(private val client: HttpClient) {
     }
 
     /** Create product chat turn */
-    suspend fun turnsCreate(conversationId: String, body: ChatTurnCreateRequest, idempotencyKey: String, xRequestId: String? = null): TurnsCreateResult? {
+    suspend fun turnsCreate(conversationId: String, body: ChatTurnCreateRequest, idempotencyKey: String): TurnsCreateResult? {
         val requestHeaders = buildRequestHeaders(
             mapOf(
                 "Idempotency-Key" to HeaderParameterSpec(idempotencyKey, "simple", false, null),
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
             ),
             emptyMap()
         )
@@ -61,11 +59,10 @@ class ChatApi(private val client: HttpClient) {
     }
 
     /** Complete product chat turn response */
-    suspend fun turnResponsesCreate(conversationId: String, turnId: String, body: ChatTurnResponseRequest, idempotencyKey: String, xRequestId: String? = null): TurnResponsesCreateResult? {
+    suspend fun turnResponsesCreate(conversationId: String, turnId: String, body: ChatTurnResponseRequest, idempotencyKey: String): TurnResponsesCreateResult? {
         val requestHeaders = buildRequestHeaders(
             mapOf(
                 "Idempotency-Key" to HeaderParameterSpec(idempotencyKey, "simple", false, null),
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
             ),
             emptyMap()
         )

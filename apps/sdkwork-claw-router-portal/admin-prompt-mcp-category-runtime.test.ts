@@ -27,14 +27,30 @@ test("admin prompt and mcp pages use left category management instead of section
     assert.match(source, /deleteCategoryTarget/);
     assert.match(source, /showSectionNavigation=\{false\}/);
     assert.doesNotMatch(source, /<div className="flex shrink-0 flex-col gap-2 rounded-lg border border-slate-200 bg-white p-3 shadow-sm[\s\S]*scope\.(?:prompt|server)/);
-    assert.match(source, /activeSectionId=\{activeSectionId\}/, `${name} section tabs must be controlled outside the left sidebar`);
+    if (name === "mcp") {
+      assert.match(source, /activeSectionId=\{activeSectionId\}/, `${name} section tabs must be controlled outside the left sidebar`);
+    }
   }
+});
+
+test("admin prompt page keeps versions and bindings inside prompt detail", () => {
+  const promptSource = readPortalFile("packages/sdkwork-claw-router-admin-prompts/src/index.tsx");
+
+  assert.doesNotMatch(promptSource, /type PromptAdminSectionId = 'prompts' \| 'versions' \| 'bindings'/);
+  assert.doesNotMatch(promptSource, /<SectionTabs[\s\S]*sections=\{sections\}/);
+  assert.doesNotMatch(promptSource, /activeSectionId=\{activeSectionId\}/);
+  assert.match(promptSource, /type PromptDetailTabId = 'overview' \| 'versions' \| 'usage'/);
+  assert.match(promptSource, /PromptDetailPanel/);
+  assert.match(promptSource, /onRecordOpen=\{handleOpenPromptDetail\}/);
+  assert.match(promptSource, /listPromptVersions\(/);
+  assert.match(promptSource, /listPromptBindings\(/);
 });
 
 test("admin prompt and mcp category management uses generated backend SDK category CRUD", () => {
   const categorySource = readPortalFile("packages/sdkwork-claw-router-commons/src/admin-category-options.ts");
   const promptServiceSource = readPortalFile("packages/sdkwork-claw-router-admin-prompts/src/promptService.ts");
   const mcpServiceSource = readPortalFile("packages/sdkwork-claw-router-admin-mcp/src/mcpService.ts");
+  const tsconfig = JSON.parse(readPortalFile("tsconfig.json"));
 
   assert.match(categorySource, /createAdminAiCategory/);
   assert.match(categorySource, /updateAdminAiCategory/);
@@ -50,4 +66,12 @@ test("admin prompt and mcp category management uses generated backend SDK catego
   assert.match(promptServiceSource, /categoryId:\s*optionalPromptListCategoryId/);
   assert.match(mcpServiceSource, /normalizeMcpServerListParams/);
   assert.match(mcpServiceSource, /categoryId:\s*optionalMcpListCategoryId/);
+  assert.deepEqual(
+    tsconfig.compilerOptions.paths["sdkwork-claw-router-admin-prompts"],
+    ["./packages/sdkwork-claw-router-admin-prompts/src/index.tsx"],
+  );
+  assert.deepEqual(
+    tsconfig.compilerOptions.paths["sdkwork-claw-router-admin-mcp"],
+    ["./packages/sdkwork-claw-router-admin-mcp/src/index.tsx"],
+  );
 });

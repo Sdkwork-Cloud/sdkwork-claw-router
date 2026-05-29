@@ -513,6 +513,80 @@ frontend_operations:
         type: string
         maxLength: 20000
   response_schema: *id005
+- route: /admin/runtime-region
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-runtime-region/src/runtimeRegionService.ts
+  operation: fetchSettings
+  operation_id: runtimeRegion.settings.retrieve
+  kind: read
+  api_surface: backend
+  api_method: GET
+  api_path: /backend/v3/api/system/runtime_region/settings
+  sdk_domain: system
+  summary: Retrieve runtime region settings
+  description: Returns the tenant-scoped default runtime region used for route, endpoint, and regional pricing selection. Defaults to China region when no snapshot has been published.
+  read_sources:
+  - ops_config_snapshot
+  query_parameters: []
+  response_schema: &adminRuntimeRegionSettingsResponse
+    name: AdminRuntimeRegionSettingsResponse
+    type: object
+    additionalProperties: false
+    required:
+    - currentRegionCode
+    - currentRegionName
+    - remark
+    properties:
+      currentRegionCode:
+        type: string
+        minLength: 1
+        maxLength: 64
+        pattern: ^[a-z0-9_-]+$
+        description: Lowercase runtime region code. The default value is cn.
+      currentRegionName:
+        type: string
+        minLength: 1
+        maxLength: 128
+        description: Human-readable runtime region name displayed in admin operations.
+      remark:
+        type: string
+        maxLength: 512
+        description: Operator-facing explanation for how this runtime region is used.
+- route: /admin/runtime-region
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-runtime-region/src/runtimeRegionService.ts
+  operation: updateSettings
+  operation_id: runtimeRegion.settings.update
+  kind: update
+  api_surface: backend
+  api_method: PATCH
+  api_path: /backend/v3/api/system/runtime_region/settings
+  sdk_domain: system
+  summary: Update runtime region settings
+  description: Updates the tenant-scoped default runtime region used for route, endpoint, and regional pricing selection, writes an immutable configuration snapshot, and records an operations audit entry.
+  read_sources:
+  - ops_config_snapshot
+  write_tables:
+  - ops_config_snapshot
+  - ops_audit_log
+  request_schema:
+    name: AdminRuntimeRegionSettingsUpdateRequest
+    type: object
+    additionalProperties: false
+    properties:
+      currentRegionCode:
+        type: string
+        minLength: 1
+        maxLength: 64
+        pattern: ^[a-z0-9_-]+$
+        description: Lowercase runtime region code, for example cn, us, eu, or global.
+      currentRegionName:
+        type: string
+        maxLength: 128
+        description: Human-readable runtime region name displayed in admin operations.
+      remark:
+        type: string
+        maxLength: 512
+        description: Operator-facing explanation for how this runtime region is used.
+  response_schema: *adminRuntimeRegionSettingsResponse
 - route: /admin/cache
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-cache/src/cacheService.ts
   operation: fetchOverview
@@ -1669,6 +1743,14 @@ frontend_operations:
           - group
           - type
           - model
+          - providerNativeModel
+          - requestedModelCatalogKey
+          - status
+          - httpStatus
+          - httpMethod
+          - errorCode
+          - errorType
+          - errorMessage
           - totalTime
           - ttft
           - isStream
@@ -1683,6 +1765,7 @@ frontend_operations:
           - path
           - reasoningEffort
           - ip
+          - userAgent
           properties:
             id:
               type: string
@@ -1716,6 +1799,40 @@ frontend_operations:
               type: string
               minLength: 1
               maxLength: 128
+            providerNativeModel:
+              type: string
+              maxLength: 128
+            requestedModelCatalogKey:
+              type: string
+              maxLength: 256
+            status:
+              type: string
+              enum:
+              - success
+              - error
+            httpStatus:
+              type: integer
+              format: int64
+              minimum: 0
+            httpMethod:
+              type: string
+              enum:
+              - GET
+              - POST
+              - PUT
+              - PATCH
+              - DELETE
+              - OPTIONS
+              - HEAD
+            errorCode:
+              type: string
+              maxLength: 128
+            errorType:
+              type: string
+              maxLength: 128
+            errorMessage:
+              type: string
+              maxLength: 2048
             totalTime:
               type: string
               minLength: 1
@@ -1764,6 +1881,10 @@ frontend_operations:
               type: string
               minLength: 1
               maxLength: 128
+            userAgent:
+              type: string
+              maxLength: 1024
+              description: Full HTTP User-Agent header captured from the gateway request. Empty when the client omitted the header.
       total:
         type: integer
         format: int64

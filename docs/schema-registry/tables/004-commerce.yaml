@@ -1,0 +1,356 @@
+tables:
+- table: commerce_idempotency_key
+  domain: commerce
+  profile: appbase_standard
+  compliance_level: L3
+  system_of_record: true
+  write_owner: sdkwork-appbase-commerce
+  generated_by_this_project: false
+  frontend_routes: []
+  api_surfaces:
+  - worker
+  - system
+  columns:
+    id:
+      type: string(512)
+      constraints: PRIMARY KEY
+    tenant_id: string(512)
+    organization_id: string(512)
+    scope: string(512)
+    idempotency_key: string(512)
+    request_hash: string(512)
+    response_json: string(512)
+    status: string(512)
+    locked_until: string(512)
+    expires_at: string(512)
+    created_at: string(512)
+    updated_at: string(512)
+  not_null_columns:
+  - tenant_id
+  - scope
+  - idempotency_key
+  - request_hash
+  - status
+  - expires_at
+  - created_at
+  - updated_at
+  unique_constraints:
+  - columns:
+    - tenant_id
+    - scope
+    - idempotency_key
+  indexes:
+  - name: idx_commerce_idempotency_key_tenant_key
+    columns:
+    - tenant_id
+    - scope
+    - idempotency_key
+- table: commerce_account
+  domain: commerce
+  profile: appbase_standard
+  compliance_level: L3
+  system_of_record: true
+  write_owner: sdkwork-appbase-commerce
+  generated_by_this_project: false
+  frontend_routes:
+  - /admin/user
+  - /console/account
+  - /console/wallet
+  - /console/recharge
+  - /console/memberships
+  - /console/checkout
+  - /vip
+  - /admin/wallet
+  - /admin/memberships/recharge-packages
+  - /admin/wallet/recharge-orders
+  - /admin/wallet/wallet-accounts
+  - /admin/wallet/wallet-ledger
+  - /admin/wallet/exchange-rules
+  - /admin/service-providers/wallet
+  api_surfaces:
+  - app
+  - backend
+  - worker
+  columns:
+    id:
+      type: string(512)
+      constraints: PRIMARY KEY
+    tenant_id: string(512)
+    organization_id: string(512)
+    owner_user_id: string(512)
+    asset_type: string(512)
+    currency_code: string(512)
+    available_amount:
+      type: string(512)
+      constraints: DEFAULT '0'
+    frozen_amount:
+      type: string(512)
+      constraints: DEFAULT '0'
+    version:
+      type: int64
+      constraints: DEFAULT 0
+    status: string(512)
+    created_at: string(512)
+    updated_at: string(512)
+  not_null_columns:
+  - tenant_id
+  - owner_user_id
+  - asset_type
+  - available_amount
+  - frozen_amount
+  - version
+  - status
+  - created_at
+  - updated_at
+  unique_constraints:
+  - columns:
+    - tenant_id
+    - organization_id
+    - owner_user_id
+    - asset_type
+    - currency_code
+  indexes:
+  - name: idx_commerce_account_owner_asset
+    columns:
+    - tenant_id
+    - owner_user_id
+    - asset_type
+    - currency_code
+- table: commerce_account_ledger_entry
+  domain: commerce
+  profile: appbase_standard
+  compliance_level: L3
+  system_of_record: true
+  write_owner: sdkwork-appbase-commerce
+  generated_by_this_project: false
+  frontend_routes:
+  - /admin/user
+  - /console/account
+  - /console/wallet
+  - /console/recharge
+  - /console/memberships
+  - /console/checkout
+  - /console/settlements
+  - /admin/wallet
+  - /admin/memberships/recharge-packages
+  - /admin/wallet/recharge-orders
+  - /admin/wallet/wallet-accounts
+  - /admin/wallet/wallet-ledger
+  - /admin/wallet/exchange-rules
+  - /admin/service-providers/wallet
+  - /admin/service-providers/adjustments
+  api_surfaces:
+  - app
+  - backend
+  - worker
+  columns:
+    id:
+      type: string(512)
+      constraints: PRIMARY KEY
+    tenant_id: string(512)
+    organization_id: string(512)
+    account_id: string(512)
+    owner_user_id: string(512)
+    asset_type: string(512)
+    direction: string(512)
+    amount: string(512)
+    balance_after: string(512)
+    business_type: string(512)
+    transaction_no: string(512)
+    request_no: string(512)
+    idempotency_key: string(512)
+    source_type: string(512)
+    source_id: string(512)
+    remark: string(512)
+    created_at: string(512)
+  not_null_columns:
+  - tenant_id
+  - account_id
+  - owner_user_id
+  - asset_type
+  - direction
+  - amount
+  - balance_after
+  - business_type
+  - transaction_no
+  - request_no
+  - idempotency_key
+  - created_at
+  unique_constraints:
+  - columns:
+    - tenant_id
+    - transaction_no
+  indexes:
+  - name: idx_commerce_account_ledger_account_created_at
+    columns:
+    - tenant_id
+    - account_id
+    - created_at
+  - name: idx_commerce_account_ledger_request_no
+    columns:
+    - tenant_id
+    - request_no
+  - name: idx_commerce_account_ledger_idempotency_key
+    columns:
+    - tenant_id
+    - idempotency_key
+- table: commerce_account_hold
+  domain: commerce
+  profile: appbase_standard
+  compliance_level: L3
+  system_of_record: true
+  write_owner: sdkwork-appbase-commerce
+  generated_by_this_project: false
+  frontend_routes:
+  - /admin/marketing
+  - /console/wallet
+  - /admin/wallet
+  - /console/checkout
+  - /admin/memberships/recharge-packages
+  - /admin/wallet/recharge-orders
+  - /admin/wallet/wallet-accounts
+  - /admin/wallet/wallet-ledger
+  - /admin/wallet/exchange-rules
+  api_surfaces:
+  - app
+  - backend
+  - worker
+  columns:
+    id:
+      type: string(512)
+      constraints: PRIMARY KEY
+    tenant_id: string(512)
+    organization_id: string(512)
+    owner_user_id: string(512)
+    account_id: string(512)
+    prehold_no: string(512)
+    request_no: string(512)
+    idempotency_key: string(512)
+    asset_type: string(512)
+    amount: string(512)
+    status: string(512)
+    expires_at: string(512)
+    settled_at: string(512)
+    released_at: string(512)
+    created_at: string(512)
+    updated_at: string(512)
+  not_null_columns:
+  - tenant_id
+  - owner_user_id
+  - account_id
+  - prehold_no
+  - request_no
+  - idempotency_key
+  - asset_type
+  - amount
+  - status
+  - expires_at
+  - created_at
+  - updated_at
+  unique_constraints:
+  - columns:
+    - tenant_id
+    - prehold_no
+  indexes:
+  - name: idx_commerce_account_hold_request_no
+    columns:
+    - tenant_id
+    - request_no
+  - name: idx_commerce_account_hold_status_expires_at
+    columns:
+    - tenant_id
+    - status
+    - expires_at
+- table: commerce_billing_history
+  domain: commerce
+  profile: read_model
+  compliance_level: L3
+  system_of_record: false
+  write_owner: sdkwork-appbase-commerce
+  generated_by_this_project: false
+  source_tables:
+  - commerce_account
+  - commerce_account_ledger_entry
+  - promotion_user_coupon
+  - promotion_discount_application
+  - commerce_order
+  - commerce_payment_attempt
+  - commerce_recharge_package
+  frontend_routes:
+  - /console/wallet
+  - /console/recharge
+  api_surfaces:
+  - app
+  - backend
+  - worker
+  columns:
+    id:
+      type: string(512)
+      constraints: PRIMARY KEY
+    tenant_id: string(512)
+    organization_id: string(512)
+    owner_user_id: string(512)
+    history_no: string(512)
+    history_type: string(512)
+    direction: string(512)
+    asset_type: string(512)
+    amount:
+      type: string(512)
+      constraints: DEFAULT '0'
+    currency_code: string(512)
+    points_delta:
+      type: int64
+      constraints: DEFAULT 0
+    status: string(512)
+    title: string(512)
+    reference_no: string(512)
+    source_type: string(512)
+    source_id: string(512)
+    related_order_id: string(512)
+    related_order_no: string(512)
+    payment_method: string(512)
+    occurred_at: string(512)
+    metadata_json: json
+    created_at: string(512)
+    updated_at: string(512)
+  not_null_columns:
+  - tenant_id
+  - owner_user_id
+  - history_no
+  - history_type
+  - direction
+  - asset_type
+  - amount
+  - points_delta
+  - status
+  - title
+  - source_type
+  - source_id
+  - occurred_at
+  - created_at
+  - updated_at
+  unique_constraints:
+  - columns:
+    - tenant_id
+    - history_no
+  - columns:
+    - tenant_id
+    - source_type
+    - source_id
+  indexes:
+  - name: idx_commerce_billing_history_owner_occurred_at
+    columns:
+    - tenant_id
+    - owner_user_id
+    - occurred_at
+  - name: idx_commerce_billing_history_owner_type_occurred_at
+    columns:
+    - tenant_id
+    - owner_user_id
+    - history_type
+    - occurred_at
+  - name: idx_commerce_billing_history_source
+    columns:
+    - tenant_id
+    - source_type
+    - source_id

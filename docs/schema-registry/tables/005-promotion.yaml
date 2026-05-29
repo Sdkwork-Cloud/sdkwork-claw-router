@@ -1,0 +1,1708 @@
+tables:
+- table: promotion_offer
+  domain: promotion
+  profile: appbase_standard
+  compliance_level: L3
+  system_of_record: true
+  write_owner: sdkwork-appbase-promotion
+  generated_by_this_project: false
+  frontend_routes:
+  - /admin/marketing
+  - /admin/marketing/offers
+  - /admin/marketing/promotion-coupon-stocks
+  - /admin/marketing/promotion-codes
+  - /admin/marketing/promotion-code-redemptions
+  - /admin/marketing/user-coupons
+  - /admin/marketing/discount-applications
+  - /admin/marketing/discount-allocations
+  - /admin/marketing/promotion-coupon-ledger
+  - /admin/marketing/budget-ledger
+  - /admin/marketing/external-bindings
+  - /admin/marketing/events
+  - /admin/marketing/referrals
+  - /admin/finance
+  - /console/wallet
+  - /console/checkout
+  - /vip
+  api_surfaces:
+  - app
+  - backend
+  - worker
+  columns:
+    id:
+      type: string(512)
+      constraints: PRIMARY KEY
+    tenant_id: string(512)
+    organization_id: string(512)
+    offer_no: string(128)
+    offer_code: string(128)
+    name: string(256)
+    description: string(2048)
+    offer_type: string(64)
+    audience_scope: string(64)
+    combinability: string(64)
+    priority:
+      type: int32
+      constraints: DEFAULT 0
+    status: string(64)
+    current_offer_version_id: string(512)
+    starts_at: instant
+    ends_at: instant
+    created_at: instant
+    updated_at: instant
+    created_by: string(512)
+    updated_by: string(512)
+  not_null_columns:
+  - tenant_id
+  - offer_no
+  - offer_code
+  - name
+  - offer_type
+  - audience_scope
+  - combinability
+  - priority
+  - status
+  - created_at
+  - updated_at
+  unique_constraints:
+  - columns:
+    - tenant_id
+    - offer_no
+  - columns:
+    - tenant_id
+    - organization_id
+    - offer_code
+  indexes:
+  - name: idx_promotion_offer_status
+    columns:
+    - tenant_id
+    - organization_id
+    - status
+    - starts_at
+    - ends_at
+  - name: idx_promotion_offer_code
+    columns:
+    - tenant_id
+    - organization_id
+    - offer_code
+  - name: idx_promotion_offer_current_version
+    columns:
+    - tenant_id
+    - current_offer_version_id
+- table: promotion_offer_version
+  domain: promotion
+  profile: appbase_standard
+  compliance_level: L3
+  system_of_record: true
+  write_owner: sdkwork-appbase-promotion
+  generated_by_this_project: false
+  frontend_routes:
+  - /admin/marketing
+  - /admin/marketing/offers
+  - /admin/marketing/promotion-coupon-stocks
+  - /admin/marketing/promotion-codes
+  - /admin/marketing/promotion-code-redemptions
+  - /admin/marketing/user-coupons
+  - /admin/marketing/discount-applications
+  - /admin/marketing/discount-allocations
+  - /admin/marketing/promotion-coupon-ledger
+  - /admin/marketing/budget-ledger
+  - /admin/marketing/external-bindings
+  - /admin/marketing/events
+  - /admin/marketing/referrals
+  - /admin/finance
+  - /console/wallet
+  - /console/checkout
+  - /vip
+  api_surfaces:
+  - app
+  - backend
+  - worker
+  columns:
+    id:
+      type: string(512)
+      constraints: PRIMARY KEY
+    tenant_id: string(512)
+    organization_id: string(512)
+    offer_id: string(512)
+    version_no: int64
+    lifecycle_status: string(64)
+    discount_type: string(64)
+    discount_amount_minor: int64
+    discount_percent_bps: int32
+    fixed_price_minor: int64
+    maximum_discount_amount_minor: int64
+    minimum_order_amount_minor:
+      type: int64
+      constraints: DEFAULT 0
+    currency_code: string(3)
+    benefit_kind: string(64)
+    face_value_minor: int64
+    liability_policy: string(64)
+    breakage_policy: string(64)
+    tax_treatment: string(64)
+    validity_type: string(64)
+    validity_duration_seconds: int64
+    return_policy: string(64)
+    settlement_policy: string(64)
+    customer_visible:
+      type: bool
+      constraints: DEFAULT TRUE
+    benefit_definition_id: string(512)
+    benefit_quantity: decimal
+    stack_strategy: string(64)
+    rule_snapshot_json: json
+    published_at: instant
+    created_at: instant
+    updated_at: instant
+    created_by: string(512)
+    updated_by: string(512)
+  not_null_columns:
+  - tenant_id
+  - offer_id
+  - version_no
+  - lifecycle_status
+  - discount_type
+  - currency_code
+  - benefit_kind
+  - face_value_minor
+  - liability_policy
+  - breakage_policy
+  - tax_treatment
+  - validity_type
+  - return_policy
+  - settlement_policy
+  - customer_visible
+  - minimum_order_amount_minor
+  - stack_strategy
+  - rule_snapshot_json
+  - created_at
+  - updated_at
+  unique_constraints:
+  - columns:
+    - tenant_id
+    - offer_id
+    - version_no
+  indexes:
+  - name: idx_promotion_offer_version_offer_status
+    columns:
+    - tenant_id
+    - offer_id
+    - lifecycle_status
+  - name: idx_promotion_offer_version_status_published
+    columns:
+    - tenant_id
+    - lifecycle_status
+    - published_at
+- table: promotion_offer_presentation
+  domain: promotion
+  profile: appbase_standard
+  compliance_level: L3
+  system_of_record: true
+  write_owner: sdkwork-appbase-promotion
+  generated_by_this_project: false
+  frontend_routes:
+  - /admin/marketing
+  - /admin/marketing/offers
+  - /admin/marketing/promotion-coupon-stocks
+  - /admin/marketing/promotion-codes
+  - /admin/marketing/promotion-code-redemptions
+  - /admin/marketing/user-coupons
+  - /admin/marketing/discount-applications
+  - /admin/marketing/discount-allocations
+  - /admin/marketing/promotion-coupon-ledger
+  - /admin/marketing/budget-ledger
+  - /admin/marketing/external-bindings
+  - /admin/marketing/events
+  - /admin/marketing/referrals
+  - /console/wallet
+  - /console/checkout
+  - /vip
+  api_surfaces:
+  - app
+  - backend
+  - worker
+  columns:
+    id:
+      type: string(512)
+      constraints: PRIMARY KEY
+    tenant_id: string(512)
+    organization_id: string(512)
+    presentation_no: string(128)
+    offer_id: string(512)
+    offer_version_id: string(512)
+    surface_type: string(64)
+    locale: string(32)
+    display_name: string(256)
+    merchant_display_name: string(256)
+    brand_name: string(256)
+    logo_asset_id: string(512)
+    cover_asset_id: string(512)
+    primary_color: string(32)
+    secondary_color: string(32)
+    param_schema_json: json
+    field_schema_json: json
+    verify_method: string(64)
+    recognition_type: string(64)
+    recognition_hash: string(256)
+    terms_json: json
+    customer_action_json: json
+    style_snapshot_json: json
+    status: string(64)
+    created_at: instant
+    updated_at: instant
+    created_by: string(512)
+    updated_by: string(512)
+  not_null_columns:
+  - tenant_id
+  - presentation_no
+  - offer_version_id
+  - surface_type
+  - locale
+  - display_name
+  - merchant_display_name
+  - param_schema_json
+  - field_schema_json
+  - verify_method
+  - recognition_type
+  - terms_json
+  - customer_action_json
+  - style_snapshot_json
+  - status
+  - created_at
+  - updated_at
+  unique_constraints:
+  - columns:
+    - tenant_id
+    - presentation_no
+  - columns:
+    - tenant_id
+    - offer_version_id
+    - surface_type
+    - locale
+  indexes:
+  - name: idx_promotion_offer_presentation_version
+    columns:
+    - tenant_id
+    - offer_version_id
+    - status
+  - name: idx_promotion_offer_presentation_surface
+    columns:
+    - tenant_id
+    - surface_type
+    - locale
+    - status
+- table: promotion_offer_scope
+  domain: promotion
+  profile: appbase_standard
+  compliance_level: L3
+  system_of_record: true
+  write_owner: sdkwork-appbase-promotion
+  generated_by_this_project: false
+  frontend_routes:
+  - /admin/marketing
+  - /admin/marketing/offers
+  - /admin/marketing/promotion-coupon-stocks
+  - /admin/marketing/promotion-codes
+  - /admin/marketing/promotion-code-redemptions
+  - /admin/marketing/user-coupons
+  - /admin/marketing/discount-applications
+  - /admin/marketing/discount-allocations
+  - /admin/marketing/promotion-coupon-ledger
+  - /admin/marketing/budget-ledger
+  - /admin/marketing/external-bindings
+  - /admin/marketing/events
+  - /admin/marketing/referrals
+  - /console/wallet
+  - /console/checkout
+  - /vip
+  api_surfaces:
+  - app
+  - backend
+  - worker
+  columns:
+    id:
+      type: string(512)
+      constraints: PRIMARY KEY
+    tenant_id: string(512)
+    organization_id: string(512)
+    offer_version_id: string(512)
+    scope_type: string(64)
+    match_mode: string(64)
+    target_id: string(512)
+    target_code: string(256)
+    priority:
+      type: int32
+      constraints: DEFAULT 0
+    created_at: instant
+    updated_at: instant
+  not_null_columns:
+  - tenant_id
+  - offer_version_id
+  - scope_type
+  - match_mode
+  - priority
+  - created_at
+  - updated_at
+  indexes:
+  - name: idx_promotion_offer_scope_version
+    columns:
+    - tenant_id
+    - offer_version_id
+    - scope_type
+    - match_mode
+  - name: idx_promotion_offer_scope_target
+    columns:
+    - tenant_id
+    - scope_type
+    - target_id
+- table: promotion_offer_audience_rule
+  domain: promotion
+  profile: appbase_standard
+  compliance_level: L3
+  system_of_record: true
+  write_owner: sdkwork-appbase-promotion
+  generated_by_this_project: false
+  frontend_routes:
+  - /admin/marketing
+  - /admin/marketing/offers
+  - /admin/marketing/promotion-coupon-stocks
+  - /admin/marketing/promotion-codes
+  - /admin/marketing/promotion-code-redemptions
+  - /admin/marketing/user-coupons
+  - /admin/marketing/discount-applications
+  - /admin/marketing/discount-allocations
+  - /admin/marketing/promotion-coupon-ledger
+  - /admin/marketing/budget-ledger
+  - /admin/marketing/external-bindings
+  - /admin/marketing/events
+  - /admin/marketing/referrals
+  - /console/wallet
+  - /console/checkout
+  - /vip
+  api_surfaces:
+  - app
+  - backend
+  - worker
+  columns:
+    id:
+      type: string(512)
+      constraints: PRIMARY KEY
+    tenant_id: string(512)
+    organization_id: string(512)
+    offer_version_id: string(512)
+    rule_type: string(64)
+    rule_operator: string(64)
+    rule_value: string(1024)
+    rule_value_json: json
+    priority:
+      type: int32
+      constraints: DEFAULT 0
+    created_at: instant
+    updated_at: instant
+  not_null_columns:
+  - tenant_id
+  - offer_version_id
+  - rule_type
+  - rule_operator
+  - priority
+  - created_at
+  - updated_at
+  indexes:
+  - name: idx_promotion_offer_audience_version
+    columns:
+    - tenant_id
+    - offer_version_id
+    - rule_type
+- table: promotion_offer_time_window
+  domain: promotion
+  profile: appbase_standard
+  compliance_level: L3
+  system_of_record: true
+  write_owner: sdkwork-appbase-promotion
+  generated_by_this_project: false
+  frontend_routes:
+  - /admin/marketing
+  - /admin/marketing/offers
+  - /admin/marketing/promotion-coupon-stocks
+  - /admin/marketing/promotion-codes
+  - /admin/marketing/promotion-code-redemptions
+  - /admin/marketing/user-coupons
+  - /admin/marketing/discount-applications
+  - /admin/marketing/discount-allocations
+  - /admin/marketing/promotion-coupon-ledger
+  - /admin/marketing/budget-ledger
+  - /admin/marketing/external-bindings
+  - /admin/marketing/events
+  - /admin/marketing/referrals
+  - /console/wallet
+  - /console/checkout
+  - /vip
+  api_surfaces:
+  - app
+  - backend
+  - worker
+  columns:
+    id:
+      type: string(512)
+      constraints: PRIMARY KEY
+    tenant_id: string(512)
+    organization_id: string(512)
+    offer_version_id: string(512)
+    window_type: string(64)
+    starts_at: instant
+    ends_at: instant
+    timezone: string(64)
+    local_start_time: string(32)
+    local_end_time: string(32)
+    weekday_mask: int32
+    created_at: instant
+    updated_at: instant
+  not_null_columns:
+  - tenant_id
+  - offer_version_id
+  - window_type
+  - created_at
+  - updated_at
+  indexes:
+  - name: idx_promotion_offer_time_window_version
+    columns:
+    - tenant_id
+    - offer_version_id
+    - window_type
+    - starts_at
+    - ends_at
+- table: promotion_budget_account
+  domain: promotion
+  profile: appbase_standard
+  compliance_level: L3
+  system_of_record: true
+  write_owner: sdkwork-appbase-promotion
+  generated_by_this_project: false
+  frontend_routes:
+  - /admin/marketing
+  - /admin/marketing/offers
+  - /admin/marketing/promotion-coupon-stocks
+  - /admin/marketing/promotion-codes
+  - /admin/marketing/promotion-code-redemptions
+  - /admin/marketing/user-coupons
+  - /admin/marketing/discount-applications
+  - /admin/marketing/discount-allocations
+  - /admin/marketing/promotion-coupon-ledger
+  - /admin/marketing/budget-ledger
+  - /admin/marketing/external-bindings
+  - /admin/marketing/events
+  - /admin/marketing/referrals
+  - /console/wallet
+  - /console/checkout
+  - /vip
+  api_surfaces:
+  - app
+  - backend
+  - worker
+  columns:
+    id:
+      type: string(512)
+      constraints: PRIMARY KEY
+    tenant_id: string(512)
+    organization_id: string(512)
+    budget_no: string(128)
+    offer_id: string(512)
+    offer_version_id: string(512)
+    stock_id: string(512)
+    budget_type: string(64)
+    currency_code: string(3)
+    total_amount_minor:
+      type: int64
+      constraints: DEFAULT 0
+    reserved_amount_minor:
+      type: int64
+      constraints: DEFAULT 0
+    consumed_amount_minor:
+      type: int64
+      constraints: DEFAULT 0
+    available_amount_minor:
+      type: int64
+      constraints: DEFAULT 0
+    planned_amount_minor: int64
+    overrun_amount_minor: int64
+    lock_mode: string(64)
+    total_quantity:
+      type: decimal
+      constraints: DEFAULT 0
+    reserved_quantity:
+      type: decimal
+      constraints: DEFAULT 0
+    consumed_quantity:
+      type: decimal
+      constraints: DEFAULT 0
+    available_quantity:
+      type: decimal
+      constraints: DEFAULT 0
+    status: string(64)
+    created_at: instant
+    updated_at: instant
+    created_by: string(512)
+    updated_by: string(512)
+  not_null_columns:
+  - tenant_id
+  - budget_no
+  - offer_id
+  - budget_type
+  - currency_code
+  - total_amount_minor
+  - reserved_amount_minor
+  - consumed_amount_minor
+  - available_amount_minor
+  - planned_amount_minor
+  - overrun_amount_minor
+  - lock_mode
+  - total_quantity
+  - reserved_quantity
+  - consumed_quantity
+  - available_quantity
+  - status
+  - created_at
+  - updated_at
+  unique_constraints:
+  - columns:
+    - tenant_id
+    - budget_no
+  indexes:
+  - name: idx_promotion_budget_account_offer
+    columns:
+    - tenant_id
+    - offer_id
+    - status
+  - name: idx_promotion_budget_account_stock
+    columns:
+    - tenant_id
+    - stock_id
+    - status
+- table: promotion_budget_ledger_entry
+  domain: promotion
+  profile: appbase_standard
+  compliance_level: L3
+  system_of_record: true
+  write_owner: sdkwork-appbase-promotion
+  generated_by_this_project: false
+  frontend_routes:
+  - /admin/marketing
+  - /admin/marketing/offers
+  - /admin/marketing/promotion-coupon-stocks
+  - /admin/marketing/promotion-codes
+  - /admin/marketing/promotion-code-redemptions
+  - /admin/marketing/user-coupons
+  - /admin/marketing/discount-applications
+  - /admin/marketing/discount-allocations
+  - /admin/marketing/promotion-coupon-ledger
+  - /admin/marketing/budget-ledger
+  - /admin/marketing/external-bindings
+  - /admin/marketing/events
+  - /admin/marketing/referrals
+  - /console/wallet
+  - /console/checkout
+  - /vip
+  api_surfaces:
+  - app
+  - backend
+  - worker
+  columns:
+    id:
+      type: string(512)
+      constraints: PRIMARY KEY
+    tenant_id: string(512)
+    organization_id: string(512)
+    ledger_no: string(128)
+    budget_account_id: string(512)
+    application_id: string(512)
+    direction: string(64)
+    amount_delta_minor:
+      type: int64
+      constraints: DEFAULT 0
+    currency_code: string(3)
+    quantity_delta:
+      type: decimal
+      constraints: DEFAULT 0
+    balance_amount_minor:
+      type: int64
+      constraints: DEFAULT 0
+    balance_quantity:
+      type: decimal
+      constraints: DEFAULT 0
+    business_type: string(64)
+    source_type: string(64)
+    source_id: string(512)
+    request_no: string(128)
+    idempotency_key: string(128)
+    occurred_at: instant
+    created_at: instant
+  not_null_columns:
+  - tenant_id
+  - ledger_no
+  - budget_account_id
+  - direction
+  - amount_delta_minor
+  - currency_code
+  - quantity_delta
+  - balance_amount_minor
+  - balance_quantity
+  - business_type
+  - source_type
+  - source_id
+  - request_no
+  - idempotency_key
+  - occurred_at
+  - created_at
+  unique_constraints:
+  - columns:
+    - tenant_id
+    - ledger_no
+  - columns:
+    - tenant_id
+    - request_no
+  indexes:
+  - name: idx_promotion_budget_ledger_account_time
+    columns:
+    - tenant_id
+    - budget_account_id
+    - occurred_at
+  - name: idx_promotion_budget_ledger_currency_time
+    columns:
+    - tenant_id
+    - currency_code
+    - occurred_at
+- table: promotion_coupon_stock
+  domain: promotion
+  profile: appbase_standard
+  compliance_level: L3
+  system_of_record: true
+  write_owner: sdkwork-appbase-promotion
+  generated_by_this_project: false
+  frontend_routes:
+  - /admin/marketing
+  - /admin/marketing/offers
+  - /admin/marketing/promotion-coupon-stocks
+  - /admin/marketing/promotion-codes
+  - /admin/marketing/promotion-code-redemptions
+  - /admin/marketing/user-coupons
+  - /admin/marketing/discount-applications
+  - /admin/marketing/discount-allocations
+  - /admin/marketing/promotion-coupon-ledger
+  - /admin/marketing/budget-ledger
+  - /admin/marketing/external-bindings
+  - /admin/marketing/events
+  - /admin/marketing/referrals
+  - /admin/finance
+  - /console/wallet
+  - /console/checkout
+  - /vip
+  api_surfaces:
+  - app
+  - backend
+  - worker
+  columns:
+    id:
+      type: string(512)
+      constraints: PRIMARY KEY
+    tenant_id: string(512)
+    organization_id: string(512)
+    stock_no: string(128)
+    name: string(256)
+    title: string(256)
+    offer_id: string(512)
+    offer_version_id: string(512)
+    budget_account_id: string(512)
+    stock_type: string(64)
+    currency_code: string(3)
+    issue_channel: string(64)
+    stock_creator_merchant_id: string(256)
+    code_mode: string(64)
+    activation_status: string(64)
+    cancel_until: instant
+    can_resend: bool
+    budget_warning_threshold_bps: int32
+    budget_stop_threshold_bps: int32
+    overspend_policy: string(64)
+    code_prefix: string(64)
+    requested_quantity:
+      type: int64
+      constraints: DEFAULT 0
+    generated_quantity:
+      type: int64
+      constraints: DEFAULT 0
+    total_quantity: int64
+    available_quantity:
+      type: int64
+      constraints: DEFAULT 0
+    claimed_quantity:
+      type: int64
+      constraints: DEFAULT 0
+    redeemed_quantity:
+      type: int64
+      constraints: DEFAULT 0
+    locked_quantity:
+      type: int64
+      constraints: DEFAULT 0
+    disabled_quantity:
+      type: int64
+      constraints: DEFAULT 0
+    returned_quantity:
+      type: int64
+      constraints: DEFAULT 0
+    max_claims_per_subject: int32
+    max_claims_per_natural_person: int32
+    per_subject_limit: int64
+    status: string(64)
+    starts_at: instant
+    expires_at: instant
+    created_at: instant
+    updated_at: instant
+    created_by: string(512)
+    updated_by: string(512)
+  not_null_columns:
+  - tenant_id
+  - stock_no
+  - name
+  - title
+  - offer_id
+  - offer_version_id
+  - stock_type
+  - currency_code
+  - issue_channel
+  - code_mode
+  - activation_status
+  - can_resend
+  - overspend_policy
+  - requested_quantity
+  - generated_quantity
+  - available_quantity
+  - claimed_quantity
+  - redeemed_quantity
+  - locked_quantity
+  - disabled_quantity
+  - returned_quantity
+  - status
+  - created_at
+  - updated_at
+  unique_constraints:
+  - columns:
+    - tenant_id
+    - stock_no
+  indexes:
+  - name: idx_promotion_coupon_stock_offer_status
+    columns:
+    - tenant_id
+    - offer_id
+    - status
+    - expires_at
+  - name: idx_promotion_coupon_stock_version
+    columns:
+    - tenant_id
+    - offer_version_id
+    - status
+  - name: idx_promotion_coupon_stock_currency_status
+    columns:
+    - tenant_id
+    - currency_code
+    - status
+    - expires_at
+  - name: idx_promotion_coupon_stock_code_mode
+    columns:
+    - tenant_id
+    - code_mode
+    - status
+  - name: idx_promotion_coupon_stock_activation
+    columns:
+    - tenant_id
+    - activation_status
+    - cancel_until
+- table: promotion_code
+  domain: promotion
+  profile: appbase_standard
+  compliance_level: L3
+  system_of_record: true
+  write_owner: sdkwork-appbase-promotion
+  generated_by_this_project: false
+  frontend_routes:
+  - /admin/marketing
+  - /admin/marketing/offers
+  - /admin/marketing/promotion-coupon-stocks
+  - /admin/marketing/promotion-codes
+  - /admin/marketing/promotion-code-redemptions
+  - /admin/marketing/user-coupons
+  - /admin/marketing/discount-applications
+  - /admin/marketing/discount-allocations
+  - /admin/marketing/promotion-coupon-ledger
+  - /admin/marketing/budget-ledger
+  - /admin/marketing/external-bindings
+  - /admin/marketing/events
+  - /admin/marketing/referrals
+  - /admin/finance
+  - /console/wallet
+  - /console/checkout
+  - /console/commerce
+  - /vip
+  api_surfaces:
+  - app
+  - backend
+  - worker
+  columns:
+    id:
+      type: string(512)
+      constraints: PRIMARY KEY
+    tenant_id: string(512)
+    organization_id: string(512)
+    code_no: string(128)
+    stock_id: string(512)
+    offer_id: string(512)
+    offer_version_id: string(512)
+    promotion_code_hash: string(256)
+    promotion_code_last4: string(16)
+    code_type: string(64)
+    currency_code: string(3)
+    claim_code_hash: string(256)
+    claim_code_suffix: string(16)
+    activation_status: string(64)
+    activated_at: instant
+    canceled_at: instant
+    cancel_until: instant
+    can_resend: bool
+    channel_code: string(128)
+    max_claims:
+      type: int64
+      constraints: DEFAULT 1
+    claimed_quantity:
+      type: int64
+      constraints: DEFAULT 0
+    status: string(64)
+    starts_at: instant
+    expires_at: instant
+    created_at: instant
+    updated_at: instant
+    created_by: string(512)
+    updated_by: string(512)
+  not_null_columns:
+  - tenant_id
+  - code_no
+  - stock_id
+  - offer_id
+  - offer_version_id
+  - promotion_code_hash
+  - code_type
+  - currency_code
+  - activation_status
+  - can_resend
+  - max_claims
+  - claimed_quantity
+  - status
+  - created_at
+  - updated_at
+  unique_constraints:
+  - columns:
+    - tenant_id
+    - code_no
+  - columns:
+    - tenant_id
+    - promotion_code_hash
+  indexes:
+  - name: idx_promotion_code_stock_status
+    columns:
+    - tenant_id
+    - stock_id
+    - status
+    - expires_at
+  - name: idx_promotion_code_hash
+    columns:
+    - tenant_id
+    - promotion_code_hash
+  - name: idx_promotion_code_last4
+    columns:
+    - tenant_id
+    - promotion_code_last4
+  - name: idx_promotion_code_claim_hash
+    columns:
+    - tenant_id
+    - claim_code_hash
+  - name: idx_promotion_code_activation
+    columns:
+    - tenant_id
+    - activation_status
+    - cancel_until
+- table: promotion_code_redemption
+  domain: promotion
+  profile: appbase_standard
+  compliance_level: L3
+  system_of_record: true
+  write_owner: sdkwork-appbase-promotion
+  generated_by_this_project: false
+  frontend_routes:
+  - /admin/marketing
+  - /admin/marketing/offers
+  - /admin/marketing/promotion-coupon-stocks
+  - /admin/marketing/promotion-codes
+  - /admin/marketing/promotion-code-redemptions
+  - /admin/marketing/user-coupons
+  - /admin/marketing/discount-applications
+  - /admin/marketing/discount-allocations
+  - /admin/marketing/promotion-coupon-ledger
+  - /admin/marketing/budget-ledger
+  - /admin/marketing/external-bindings
+  - /admin/marketing/events
+  - /admin/marketing/referrals
+  - /admin/finance
+  - /console/wallet
+  - /console/checkout
+  - /console/commerce
+  - /vip
+  api_surfaces:
+  - app
+  - backend
+  - worker
+  columns:
+    id:
+      type: string(512)
+      constraints: PRIMARY KEY
+    tenant_id: string(512)
+    organization_id: string(512)
+    redemption_no: string(128)
+    code_id: string(512)
+    stock_id: string(512)
+    offer_id: string(512)
+    offer_version_id: string(512)
+    user_coupon_id: string(512)
+    submitted_code_hash: string(256)
+    submitted_code_suffix: string(16)
+    subject_type: string(64)
+    subject_id: string(512)
+    owner_user_id: string(512)
+    currency_code: string(3)
+    result_status: string(64)
+    failure_code: string(128)
+    failure_message: string(1024)
+    redemption_channel: string(64)
+    redemption_scene: string(64)
+    request_no: string(128)
+    idempotency_key: string(128)
+    occurred_at: instant
+    created_at: instant
+  not_null_columns:
+  - tenant_id
+  - redemption_no
+  - stock_id
+  - offer_id
+  - offer_version_id
+  - submitted_code_hash
+  - subject_type
+  - subject_id
+  - currency_code
+  - result_status
+  - redemption_channel
+  - request_no
+  - idempotency_key
+  - occurred_at
+  - created_at
+  unique_constraints:
+  - columns:
+    - tenant_id
+    - redemption_no
+  - columns:
+    - tenant_id
+    - request_no
+  - columns:
+    - tenant_id
+    - idempotency_key
+  indexes:
+  - name: idx_promotion_code_redemption_code_time
+    columns:
+    - tenant_id
+    - code_id
+    - occurred_at
+  - name: idx_promotion_code_redemption_hash_time
+    columns:
+    - tenant_id
+    - submitted_code_hash
+    - occurred_at
+  - name: idx_promotion_code_redemption_subject_status
+    columns:
+    - tenant_id
+    - subject_type
+    - subject_id
+    - result_status
+    - occurred_at
+  - name: idx_promotion_code_redemption_stock_status
+    columns:
+    - tenant_id
+    - stock_id
+    - result_status
+    - occurred_at
+- table: promotion_user_coupon
+  domain: promotion
+  profile: appbase_standard
+  compliance_level: L3
+  system_of_record: true
+  write_owner: sdkwork-appbase-promotion
+  generated_by_this_project: false
+  frontend_routes:
+  - /admin/marketing
+  - /admin/marketing/offers
+  - /admin/marketing/promotion-coupon-stocks
+  - /admin/marketing/promotion-codes
+  - /admin/marketing/promotion-code-redemptions
+  - /admin/marketing/user-coupons
+  - /admin/marketing/discount-applications
+  - /admin/marketing/discount-allocations
+  - /admin/marketing/promotion-coupon-ledger
+  - /admin/marketing/budget-ledger
+  - /admin/marketing/external-bindings
+  - /admin/marketing/events
+  - /admin/marketing/referrals
+  - /admin/finance
+  - /console/wallet
+  - /console/checkout
+  - /console/commerce
+  - /vip
+  api_surfaces:
+  - app
+  - backend
+  - worker
+  columns:
+    id:
+      type: string(512)
+      constraints: PRIMARY KEY
+    tenant_id: string(512)
+    organization_id: string(512)
+    coupon_no: string(128)
+    stock_id: string(512)
+    code_id: string(512)
+    offer_id: string(512)
+    offer_version_id: string(512)
+    budget_account_id: string(512)
+    subject_type: string(64)
+    subject_id: string(512)
+    owner_user_id: string(512)
+    coupon_code_hash: string(256)
+    coupon_code_suffix: string(16)
+    verify_method: string(64)
+    recognition_type: string(64)
+    recognition_hash: string(256)
+    claim_code_hash: string(256)
+    claim_code_suffix: string(16)
+    activation_status: string(64)
+    cancel_until: instant
+    can_resend: bool
+    face_value_minor:
+      type: int64
+      constraints: DEFAULT 0
+    maximum_discount_amount_minor:
+      type: int64
+      constraints: DEFAULT 0
+    minimum_order_amount_minor:
+      type: int64
+      constraints: DEFAULT 0
+    discount_percent_bps: int32
+    currency_code: string(3)
+    status: string(64)
+    claim_source: string(64)
+    claimed_at: instant
+    valid_from: instant
+    expires_at: instant
+    locked_at: instant
+    lock_expires_at: instant
+    redeemed_at: instant
+    disabled_at: instant
+    returned_at: instant
+    request_no: string(128)
+    idempotency_key: string(128)
+    created_at: instant
+    updated_at: instant
+  not_null_columns:
+  - tenant_id
+  - coupon_no
+  - stock_id
+  - offer_id
+  - offer_version_id
+  - subject_type
+  - subject_id
+  - face_value_minor
+  - maximum_discount_amount_minor
+  - minimum_order_amount_minor
+  - currency_code
+  - verify_method
+  - activation_status
+  - can_resend
+  - status
+  - claim_source
+  - request_no
+  - idempotency_key
+  - created_at
+  - updated_at
+  unique_constraints:
+  - columns:
+    - tenant_id
+    - coupon_no
+  - columns:
+    - tenant_id
+    - idempotency_key
+  indexes:
+  - name: idx_promotion_user_coupon_subject_status
+    columns:
+    - tenant_id
+    - subject_type
+    - subject_id
+    - status
+    - expires_at
+  - name: idx_promotion_user_coupon_stock
+    columns:
+    - tenant_id
+    - stock_id
+    - status
+  - name: idx_promotion_user_coupon_currency_status
+    columns:
+    - tenant_id
+    - currency_code
+    - status
+    - expires_at
+  - name: idx_promotion_user_coupon_claim_hash
+    columns:
+    - tenant_id
+    - claim_code_hash
+  - name: idx_promotion_user_coupon_activation
+    columns:
+    - tenant_id
+    - activation_status
+    - cancel_until
+- table: promotion_discount_application
+  domain: promotion
+  profile: appbase_standard
+  compliance_level: L3
+  system_of_record: true
+  write_owner: sdkwork-appbase-promotion
+  generated_by_this_project: false
+  frontend_routes:
+  - /admin/marketing
+  - /admin/marketing/offers
+  - /admin/marketing/promotion-coupon-stocks
+  - /admin/marketing/promotion-codes
+  - /admin/marketing/promotion-code-redemptions
+  - /admin/marketing/user-coupons
+  - /admin/marketing/discount-applications
+  - /admin/marketing/discount-allocations
+  - /admin/marketing/promotion-coupon-ledger
+  - /admin/marketing/budget-ledger
+  - /admin/marketing/external-bindings
+  - /admin/marketing/events
+  - /admin/marketing/referrals
+  - /admin/finance
+  - /console/wallet
+  - /console/checkout
+  - /console/commerce
+  - /vip
+  api_surfaces:
+  - app
+  - backend
+  - worker
+  columns:
+    id:
+      type: string(512)
+      constraints: PRIMARY KEY
+    tenant_id: string(512)
+    organization_id: string(512)
+    application_no: string(128)
+    offer_id: string(512)
+    offer_version_id: string(512)
+    stock_id: string(512)
+    user_coupon_id: string(512)
+    budget_account_id: string(512)
+    order_id: string(512)
+    order_no: string(128)
+    payment_id: string(512)
+    subject_type: string(64)
+    subject_id: string(512)
+    discount_amount_minor:
+      type: int64
+      constraints: DEFAULT 0
+    currency_code: string(3)
+    status: string(64)
+    request_no: string(128)
+    idempotency_key: string(128)
+    reserved_at: instant
+    reservation_expires_at: instant
+    applied_at: instant
+    settled_at: instant
+    released_at: instant
+    rolled_back_at: instant
+    failure_code: string(128)
+    failure_message: string(1024)
+    rule_snapshot_json: json
+    created_at: instant
+    updated_at: instant
+  not_null_columns:
+  - tenant_id
+  - application_no
+  - offer_id
+  - offer_version_id
+  - order_id
+  - subject_type
+  - subject_id
+  - discount_amount_minor
+  - currency_code
+  - status
+  - request_no
+  - idempotency_key
+  - created_at
+  - updated_at
+  unique_constraints:
+  - columns:
+    - tenant_id
+    - application_no
+  - columns:
+    - tenant_id
+    - idempotency_key
+  indexes:
+  - name: idx_promotion_discount_application_order
+    columns:
+    - tenant_id
+    - order_id
+    - status
+  - name: idx_promotion_discount_application_coupon
+    columns:
+    - tenant_id
+    - user_coupon_id
+    - status
+  - name: idx_promotion_discount_application_currency_status
+    columns:
+    - tenant_id
+    - currency_code
+    - status
+    - created_at
+- table: promotion_discount_allocation
+  domain: promotion
+  profile: appbase_standard
+  compliance_level: L3
+  system_of_record: true
+  write_owner: sdkwork-appbase-promotion
+  generated_by_this_project: false
+  frontend_routes:
+  - /admin/marketing
+  - /admin/marketing/offers
+  - /admin/marketing/promotion-coupon-stocks
+  - /admin/marketing/promotion-codes
+  - /admin/marketing/promotion-code-redemptions
+  - /admin/marketing/user-coupons
+  - /admin/marketing/discount-applications
+  - /admin/marketing/discount-allocations
+  - /admin/marketing/promotion-coupon-ledger
+  - /admin/marketing/budget-ledger
+  - /admin/marketing/external-bindings
+  - /admin/marketing/events
+  - /admin/marketing/referrals
+  - /admin/finance
+  - /console/checkout
+  api_surfaces:
+  - app
+  - backend
+  - worker
+  columns:
+    id:
+      type: string(512)
+      constraints: PRIMARY KEY
+    tenant_id: string(512)
+    organization_id: string(512)
+    application_id: string(512)
+    order_id: string(512)
+    order_item_id: string(512)
+    sku_id: string(512)
+    allocation_amount_minor:
+      type: int64
+      constraints: DEFAULT 0
+    currency_code: string(3)
+    allocation_ratio_bps: int32
+    created_at: instant
+  not_null_columns:
+  - tenant_id
+  - application_id
+  - order_id
+  - allocation_amount_minor
+  - currency_code
+  - created_at
+  unique_constraints:
+  - columns:
+    - tenant_id
+    - application_id
+    - order_item_id
+  indexes:
+  - name: idx_promotion_discount_allocation_order
+    columns:
+    - tenant_id
+    - order_id
+    - order_item_id
+- table: promotion_coupon_ledger_entry
+  domain: promotion
+  profile: appbase_standard
+  compliance_level: L3
+  system_of_record: true
+  write_owner: sdkwork-appbase-promotion
+  generated_by_this_project: false
+  frontend_routes:
+  - /admin/marketing
+  - /admin/marketing/offers
+  - /admin/marketing/promotion-coupon-stocks
+  - /admin/marketing/promotion-codes
+  - /admin/marketing/promotion-code-redemptions
+  - /admin/marketing/user-coupons
+  - /admin/marketing/discount-applications
+  - /admin/marketing/discount-allocations
+  - /admin/marketing/promotion-coupon-ledger
+  - /admin/marketing/budget-ledger
+  - /admin/marketing/external-bindings
+  - /admin/marketing/events
+  - /admin/marketing/referrals
+  - /admin/finance
+  - /console/wallet
+  - /console/checkout
+  - /vip
+  api_surfaces:
+  - app
+  - backend
+  - worker
+  columns:
+    id:
+      type: string(512)
+      constraints: PRIMARY KEY
+    tenant_id: string(512)
+    organization_id: string(512)
+    ledger_no: string(128)
+    stock_id: string(512)
+    user_coupon_id: string(512)
+    application_id: string(512)
+    offer_id: string(512)
+    subject_type: string(64)
+    subject_id: string(512)
+    direction: string(64)
+    quantity_delta:
+      type: int64
+      constraints: DEFAULT 0
+    balance_after:
+      type: int64
+      constraints: DEFAULT 0
+    business_type: string(64)
+    source_type: string(64)
+    source_id: string(512)
+    request_no: string(128)
+    idempotency_key: string(128)
+    occurred_at: instant
+    created_at: instant
+  not_null_columns:
+  - tenant_id
+  - ledger_no
+  - stock_id
+  - offer_id
+  - direction
+  - quantity_delta
+  - balance_after
+  - business_type
+  - source_type
+  - source_id
+  - request_no
+  - idempotency_key
+  - occurred_at
+  - created_at
+  unique_constraints:
+  - columns:
+    - tenant_id
+    - ledger_no
+  - columns:
+    - tenant_id
+    - request_no
+  indexes:
+  - name: idx_promotion_coupon_ledger_stock_time
+    columns:
+    - tenant_id
+    - stock_id
+    - occurred_at
+  - name: idx_promotion_coupon_ledger_coupon_time
+    columns:
+    - tenant_id
+    - user_coupon_id
+    - occurred_at
+- table: promotion_external_binding
+  domain: promotion
+  profile: appbase_standard
+  compliance_level: L3
+  system_of_record: true
+  write_owner: sdkwork-appbase-promotion
+  generated_by_this_project: false
+  frontend_routes:
+  - /admin/marketing
+  - /admin/marketing/offers
+  - /admin/marketing/promotion-coupon-stocks
+  - /admin/marketing/promotion-codes
+  - /admin/marketing/promotion-code-redemptions
+  - /admin/marketing/user-coupons
+  - /admin/marketing/discount-applications
+  - /admin/marketing/discount-allocations
+  - /admin/marketing/promotion-coupon-ledger
+  - /admin/marketing/budget-ledger
+  - /admin/marketing/external-bindings
+  - /admin/marketing/events
+  - /admin/marketing/referrals
+  - /console/wallet
+  - /console/checkout
+  - /vip
+  api_surfaces:
+  - app
+  - backend
+  - worker
+  columns:
+    id:
+      type: string(512)
+      constraints: PRIMARY KEY
+    tenant_id: string(512)
+    organization_id: string(512)
+    binding_no: string(128)
+    platform: string(64)
+    external_merchant_id: string(256)
+    external_object_type: string(64)
+    external_object_id: string(512)
+    external_currency_code: string(3)
+    platform_template_id: string(512)
+    platform_stock_id: string(512)
+    platform_card_id: string(512)
+    platform_coupon_id: string(512)
+    claim_code_hash: string(256)
+    claim_code_suffix: string(16)
+    offer_id: string(512)
+    offer_version_id: string(512)
+    stock_id: string(512)
+    code_id: string(512)
+    user_coupon_id: string(512)
+    sync_status: string(64)
+    last_sync_at: instant
+    last_error_code: string(128)
+    last_error_message: string(1024)
+    metadata_json: json
+    created_at: instant
+    updated_at: instant
+    created_by: string(512)
+    updated_by: string(512)
+  not_null_columns:
+  - tenant_id
+  - binding_no
+  - platform
+  - external_object_type
+  - external_object_id
+  - external_currency_code
+  - sync_status
+  - created_at
+  - updated_at
+  unique_constraints:
+  - columns:
+    - tenant_id
+    - binding_no
+  - columns:
+    - tenant_id
+    - platform
+    - external_object_type
+    - external_object_id
+  indexes:
+  - name: idx_promotion_external_binding_offer
+    columns:
+    - tenant_id
+    - offer_id
+    - platform
+  - name: idx_promotion_external_binding_sync
+    columns:
+    - tenant_id
+    - sync_status
+    - last_sync_at
+- table: promotion_external_operation
+  domain: promotion
+  profile: external_operation_log
+  compliance_level: L3
+  system_of_record: true
+  write_owner: sdkwork-appbase-promotion
+  generated_by_this_project: false
+  frontend_routes:
+  - /admin/marketing
+  - /admin/marketing/offers
+  - /admin/marketing/promotion-coupon-stocks
+  - /admin/marketing/promotion-codes
+  - /admin/marketing/promotion-code-redemptions
+  - /admin/marketing/user-coupons
+  - /admin/marketing/discount-applications
+  - /admin/marketing/discount-allocations
+  - /admin/marketing/promotion-coupon-ledger
+  - /admin/marketing/budget-ledger
+  - /admin/marketing/external-bindings
+  - /admin/marketing/events
+  - /admin/marketing/referrals
+  - /console/wallet
+  - /console/checkout
+  - /vip
+  api_surfaces:
+  - app
+  - backend
+  - worker
+  columns:
+    id:
+      type: string(512)
+      constraints: PRIMARY KEY
+    tenant_id: string(512)
+    organization_id: string(512)
+    operation_no: string(128)
+    binding_id: string(512)
+    platform: string(64)
+    aggregate_type: string(64)
+    aggregate_id: string(512)
+    operation_type: string(64)
+    external_request_no: string(256)
+    external_operation_id: string(512)
+    provider_request_id: string(256)
+    provider_code: string(128)
+    callback_id: string(256)
+    callback_sig_hash: string(256)
+    callback_at: instant
+    external_status: string(64)
+    status: string(64)
+    request_hash: string(128)
+    response_hash: string(128)
+    sanitized_request_json: json
+    sanitized_response_json: json
+    retry_count:
+      type: int32
+      constraints: DEFAULT 0
+    next_retry_at: instant
+    cancel_until: instant
+    replay_op_id: string(512)
+    idempotency_key: string(128)
+    error_code: string(128)
+    error_message: string(1024)
+    occurred_at: instant
+    created_at: instant
+  not_null_columns:
+  - tenant_id
+  - operation_no
+  - platform
+  - aggregate_type
+  - aggregate_id
+  - operation_type
+  - status
+  - sanitized_request_json
+  - sanitized_response_json
+  - retry_count
+  - idempotency_key
+  - occurred_at
+  - created_at
+  unique_constraints:
+  - columns:
+    - tenant_id
+    - operation_no
+  - columns:
+    - tenant_id
+    - idempotency_key
+  indexes:
+  - name: idx_promotion_external_operation_binding_time
+    columns:
+    - tenant_id
+    - binding_id
+    - occurred_at
+  - name: idx_promotion_external_operation_platform_status
+    columns:
+    - tenant_id
+    - platform
+    - status
+    - next_retry_at
+  - name: idx_promotion_external_operation_request
+    columns:
+    - tenant_id
+    - platform
+    - external_request_no
+  - name: idx_promotion_external_operation_provider_request
+    columns:
+    - tenant_id
+    - platform
+    - provider_request_id
+  - name: idx_promotion_external_operation_callback
+    columns:
+    - tenant_id
+    - platform
+    - callback_id
+- table: promotion_event_outbox
+  domain: promotion
+  profile: event_log
+  compliance_level: L3
+  system_of_record: true
+  write_owner: sdkwork-appbase-promotion
+  generated_by_this_project: false
+  frontend_routes:
+  - /admin/marketing
+  - /admin/marketing/offers
+  - /admin/marketing/promotion-coupon-stocks
+  - /admin/marketing/promotion-codes
+  - /admin/marketing/promotion-code-redemptions
+  - /admin/marketing/user-coupons
+  - /admin/marketing/discount-applications
+  - /admin/marketing/discount-allocations
+  - /admin/marketing/promotion-coupon-ledger
+  - /admin/marketing/budget-ledger
+  - /admin/marketing/external-bindings
+  - /admin/marketing/events
+  - /admin/marketing/referrals
+  - /console/wallet
+  - /console/checkout
+  - /vip
+  api_surfaces:
+  - app
+  - backend
+  - worker
+  columns:
+    id:
+      type: string(512)
+      constraints: PRIMARY KEY
+    tenant_id: string(512)
+    organization_id: string(512)
+    event_no: string(128)
+    aggregate_type: string(64)
+    aggregate_id: string(512)
+    event_type: string(128)
+    event_version: int32
+    payload_json: json
+    payload_hash: string(128)
+    status: string(64)
+    publish_attempts:
+      type: int32
+      constraints: DEFAULT 0
+    next_retry_at: instant
+    occurred_at: instant
+    published_at: instant
+    created_at: instant
+  not_null_columns:
+  - tenant_id
+  - event_no
+  - aggregate_type
+  - aggregate_id
+  - event_type
+  - event_version
+  - payload_json
+  - status
+  - publish_attempts
+  - occurred_at
+  - created_at
+  unique_constraints:
+  - columns:
+    - tenant_id
+    - event_no
+  indexes:
+  - name: idx_promotion_event_outbox_status_retry
+    columns:
+    - tenant_id
+    - status
+    - next_retry_at
+    - occurred_at
+  - name: idx_promotion_event_outbox_aggregate
+    columns:
+    - tenant_id
+    - aggregate_type
+    - aggregate_id
+    - occurred_at

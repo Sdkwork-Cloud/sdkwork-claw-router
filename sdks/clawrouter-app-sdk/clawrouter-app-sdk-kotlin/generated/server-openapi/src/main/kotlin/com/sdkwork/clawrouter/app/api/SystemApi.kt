@@ -9,11 +9,10 @@ import com.sdkwork.clawrouter.app.http.HttpClient
 class SystemApi(private val client: HttpClient) {
 
     /** Promotion Code Redemption Create */
-    suspend fun promotionsCodesRedemptionsCreate(body: PromotionCodeRedemptionRequest, idempotencyKey: String, xRequestId: String? = null): PromotionsCodesRedemptionsCreateResult? {
+    suspend fun promotionsCodesRedemptionsCreate(body: PromotionCodeRedemptionRequest, idempotencyKey: String): PromotionsCodesRedemptionsCreateResult? {
         val requestHeaders = buildRequestHeaders(
             mapOf(
                 "Idempotency-Key" to HeaderParameterSpec(idempotencyKey, "simple", false, null),
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
             ),
             emptyMap()
         )
@@ -22,11 +21,10 @@ class SystemApi(private val client: HttpClient) {
     }
 
     /** Promotion Discount Application Create */
-    suspend fun promotionsDiscountApplicationsCreate(body: PromotionCommandRequest, idempotencyKey: String, xRequestId: String? = null): PromotionsDiscountApplicationsCreateResult? {
+    suspend fun promotionsDiscountApplicationsCreate(body: PromotionCommandRequest, idempotencyKey: String): PromotionsDiscountApplicationsCreateResult? {
         val requestHeaders = buildRequestHeaders(
             mapOf(
                 "Idempotency-Key" to HeaderParameterSpec(idempotencyKey, "simple", false, null),
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
             ),
             emptyMap()
         )
@@ -35,11 +33,10 @@ class SystemApi(private val client: HttpClient) {
     }
 
     /** Promotion Discount Application Reversal Create */
-    suspend fun promotionsDiscountApplicationsReversalsCreate(body: PromotionCommandRequest, idempotencyKey: String, xRequestId: String? = null): PromotionsDiscountApplicationsReversalsCreateResult? {
+    suspend fun promotionsDiscountApplicationsReversalsCreate(body: PromotionCommandRequest, idempotencyKey: String): PromotionsDiscountApplicationsReversalsCreateResult? {
         val requestHeaders = buildRequestHeaders(
             mapOf(
                 "Idempotency-Key" to HeaderParameterSpec(idempotencyKey, "simple", false, null),
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
             ),
             emptyMap()
         )
@@ -48,11 +45,10 @@ class SystemApi(private val client: HttpClient) {
     }
 
     /** Promotion Discount Application Release */
-    suspend fun promotionsDiscountApplicationsRelease(applicationId: String, body: PromotionCommandRequest, idempotencyKey: String, xRequestId: String? = null): PromotionsDiscountApplicationsReleaseResult? {
+    suspend fun promotionsDiscountApplicationsRelease(applicationId: String, body: PromotionCommandRequest, idempotencyKey: String): PromotionsDiscountApplicationsReleaseResult? {
         val requestHeaders = buildRequestHeaders(
             mapOf(
                 "Idempotency-Key" to HeaderParameterSpec(idempotencyKey, "simple", false, null),
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
             ),
             emptyMap()
         )
@@ -61,11 +57,10 @@ class SystemApi(private val client: HttpClient) {
     }
 
     /** Promotion Discount Application Settle */
-    suspend fun promotionsDiscountApplicationsSettle(applicationId: String, body: PromotionCommandRequest, idempotencyKey: String, xRequestId: String? = null): PromotionsDiscountApplicationsSettleResult? {
+    suspend fun promotionsDiscountApplicationsSettle(applicationId: String, body: PromotionCommandRequest, idempotencyKey: String): PromotionsDiscountApplicationsSettleResult? {
         val requestHeaders = buildRequestHeaders(
             mapOf(
                 "Idempotency-Key" to HeaderParameterSpec(idempotencyKey, "simple", false, null),
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
             ),
             emptyMap()
         )
@@ -74,11 +69,10 @@ class SystemApi(private val client: HttpClient) {
     }
 
     /** Promotion User Coupon Claim Create */
-    suspend fun promotionsUserCouponsClaimsCreate(body: PromotionCommandRequest, idempotencyKey: String, xRequestId: String? = null): PromotionsUserCouponsClaimsCreateResult? {
+    suspend fun promotionsUserCouponsClaimsCreate(body: PromotionCommandRequest, idempotencyKey: String): PromotionsUserCouponsClaimsCreateResult? {
         val requestHeaders = buildRequestHeaders(
             mapOf(
                 "Idempotency-Key" to HeaderParameterSpec(idempotencyKey, "simple", false, null),
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
             ),
             emptyMap()
         )

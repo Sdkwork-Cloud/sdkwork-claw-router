@@ -28,12 +28,11 @@ impl IamApi {
     }
 
     /// Create key
-    pub async fn api_keys_create(&self, body: &CreateApiKeyRequest, idempotency_key: &str, x_request_id: Option<&str>) -> Result<ApiKeysCreateResult, SdkworkError> {
+    pub async fn api_keys_create(&self, body: &CreateApiKeyRequest, idempotency_key: &str) -> Result<ApiKeysCreateResult, SdkworkError> {
         let path = app_path(&"/iam/api_keys".to_string());
         let headers = build_request_headers(
             &[
                 ("Idempotency-Key", HeaderParameterSpec::new(idempotency_key, "simple", false, None)),
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
             ],
             &[],
         );
@@ -47,15 +46,9 @@ impl IamApi {
     }
 
     /// Update key
-    pub async fn api_keys_update(&self, api_key_id: &str, body: &UpdateApiKeyRequest, x_request_id: Option<&str>) -> Result<ApiKeysUpdateResult, SdkworkError> {
+    pub async fn api_keys_update(&self, api_key_id: &str, body: &UpdateApiKeyRequest) -> Result<ApiKeysUpdateResult, SdkworkError> {
         let path = app_path(&format!("/iam/api_keys/{}", serialize_path_parameter(api_key_id, PathParameterSpec::new("apiKeyId", "simple", false))));
-        let headers = build_request_headers(
-            &[
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
-            ],
-            &[],
-        );
-        self.client.patch(&path, Some(body), None, headers.as_ref(), Some("application/json")).await
+        self.client.patch(&path, Some(body), None, None, Some("application/json")).await
     }
 
     /// Retrieve current IAM user

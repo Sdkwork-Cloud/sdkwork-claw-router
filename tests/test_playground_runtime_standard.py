@@ -513,11 +513,13 @@ class PlaygroundRuntimeStandardTest(unittest.TestCase):
             with self.subTest(canonical_name=canonical_name):
                 self.assertIn(canonical_name, combined_source)
 
-        for mojibake_token in ["鏅", "鐢", "鉁", "\ufffd"]:
+        mojibake_token_codepoints = [0x93C5, 0x9422, 0x9241, 0xFFFD]
+        for mojibake_token in (chr(codepoint) for codepoint in mojibake_token_codepoints):
             with self.subTest(mojibake_token=mojibake_token):
                 self.assertNotIn(mojibake_token, combined_source)
 
-        for mojibake_token in ["鐢", "姣", "瑙", "闊", "鏅", "楂", "璁"]:
+        mojibake_label_codepoints = [0x9422, 0x59E3, 0x7459, 0x95CA, 0x93C5, 0x6942, 0x7481]
+        for mojibake_token in (chr(codepoint) for codepoint in mojibake_label_codepoints):
             with self.subTest(mojibake_token=mojibake_token):
                 self.assertNotIn(mojibake_token, combined_source)
 
@@ -1180,7 +1182,9 @@ class PlaygroundRuntimeStandardTest(unittest.TestCase):
         self.assertIn("const hasSubmittableModel = Boolean(submitModel)", simple_chat_input_source)
         self.assertNotIn("selectedApiKey", simple_chat_input_source)
         self.assertNotIn("apiKeys", simple_chat_input_source)
-        self.assertIn("!loadingHistory", simple_chat_input_source)
+        self.assertIn("resolveChatInputSubmitBlockReason({", simple_chat_input_source)
+        self.assertIn("loadingHistory,", simple_chat_input_source)
+        self.assertIn("const canSubmit = !submitBlockReason && hasSubmittableModel", simple_chat_input_source)
         self.assertIn("const submitted = await onSubmit({", simple_chat_input_source)
         self.assertIn("if (submitted) {", simple_chat_input_source)
         self.assertIn("disabled={submitting}", simple_chat_input_source)

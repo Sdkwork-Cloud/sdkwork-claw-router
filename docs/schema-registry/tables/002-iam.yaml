@@ -1,0 +1,739 @@
+tables:
+- table: iam_tenant
+  domain: iam
+  profile: tenant_root
+  compliance_level: L3
+  system_of_record: true
+  write_owner: sdkwork-appbase-iam
+  generated_by_this_project: true
+  frontend_routes:
+  - /auth/login
+  - /auth/register
+  - /console/account
+  - /console/user
+  - /admin/user
+  api_surfaces:
+  - app
+  - backend
+  primary_key: id
+  columns:
+    id: string(128)
+    code: string(128)
+    name: string(256)
+    status: string(32)
+    created_at: instant
+    updated_at: instant
+  required_columns:
+  - id
+  - code
+  - name
+  - status
+  - created_at
+  - updated_at
+  unique_constraints:
+  - name: uk_iam_tenant_code
+    columns:
+    - code
+    source: appbase_iam_foundation
+  indexes:
+  - name: idx_iam_tenant_status_created_at
+    columns:
+    - status
+    - created_at
+- table: iam_organization
+  domain: iam
+  profile: tenant_entity
+  compliance_level: L3
+  system_of_record: true
+  write_owner: sdkwork-appbase-iam
+  generated_by_this_project: true
+  frontend_routes:
+  - /console/account
+  api_surfaces:
+  - app
+  - backend
+  primary_key: id
+  columns:
+    id: string(128)
+    tenant_id: string(128)
+    parent_id: string(128)
+    code: string(128)
+    name: string(256)
+    path: string(1024)
+    status: string(32)
+    created_at: instant
+    updated_at: instant
+  required_columns:
+  - id
+  - tenant_id
+  - code
+  - name
+  - path
+  - status
+  - created_at
+  - updated_at
+  unique_constraints:
+  - name: uk_iam_organization_tenant_code
+    columns:
+    - tenant_id
+    - code
+    source: appbase_iam_foundation
+  indexes:
+  - name: idx_iam_organization_tenant_parent
+    columns:
+    - tenant_id
+    - parent_id
+    - status
+  - name: idx_iam_organization_tenant_path
+    columns:
+    - tenant_id
+    - path
+    - status
+- table: iam_organization_member
+  domain: iam
+  profile: tenant_entity
+  compliance_level: L3
+  system_of_record: true
+  write_owner: sdkwork-appbase-iam
+  generated_by_this_project: true
+  frontend_routes:
+  - /console/notifications
+  api_surfaces:
+  - app
+  - backend
+  primary_key: id
+  columns:
+    id: string(128)
+    tenant_id: string(128)
+    organization_id: string(128)
+    user_id: string(128)
+    role_code: string(128)
+    status: string(32)
+    joined_at: instant
+    left_at: instant
+    remark: string(500)
+  required_columns:
+  - id
+  - tenant_id
+  - organization_id
+  - user_id
+  - status
+  - joined_at
+  unique_constraints:
+  - name: uk_iam_organization_member_tenant_org_user
+    columns:
+    - tenant_id
+    - organization_id
+    - user_id
+    source: appbase_iam_foundation
+  indexes:
+  - name: idx_iam_organization_member_tenant_user
+    columns:
+    - tenant_id
+    - user_id
+    - status
+  - name: idx_iam_organization_member_tenant_org
+    columns:
+    - tenant_id
+    - organization_id
+    - status
+- table: iam_user
+  domain: iam
+  profile: tenant_entity
+  compliance_level: L3
+  system_of_record: true
+  write_owner: sdkwork-appbase-iam
+  generated_by_this_project: true
+  frontend_routes:
+  - /auth/login
+  - /auth/register
+  - /auth/forgot-password
+  - /auth/oauth/callback/:provider
+  - /console/user
+  - /admin/user
+  - /admin/marketing
+  - /console/account
+  - /admin/marketing/referrals
+  - /admin/storage
+  - /admin/storage/providers
+  - /admin/storage/buckets
+  - /admin/storage/default-buckets
+  - /admin/storage/quotas
+  - /admin/storage/usage
+  - /admin/storage/reconciliation
+  - /admin/storage/garbage-collection
+  - /admin/drive
+  - /admin/drive/spaces
+  - /admin/drive/nodes
+  - /admin/drive/permissions
+  - /admin/drive/share-links
+  - /admin/drive/audit
+  api_surfaces:
+  - app
+  - backend
+  primary_key: id
+  columns:
+    id: string(128)
+    tenant_id: string(128)
+    username: string(128)
+    display_name: string(128)
+    email: string(256)
+    phone: string(32)
+    avatar_url: string(2048)
+    status: string(32)
+    created_at: instant
+    updated_at: instant
+  required_columns:
+  - id
+  - tenant_id
+  - username
+  - display_name
+  - status
+  - created_at
+  - updated_at
+  unique_constraints:
+  - name: uk_iam_user_tenant_username
+    columns:
+    - tenant_id
+    - username
+    source: appbase_iam_foundation
+  indexes:
+  - name: idx_iam_user_tenant_status
+    columns:
+    - tenant_id
+    - status
+    - created_at
+- table: iam_user_identity
+  domain: iam
+  profile: tenant_entity
+  compliance_level: L3
+  system_of_record: true
+  write_owner: sdkwork-appbase-iam
+  generated_by_this_project: true
+  frontend_routes:
+  - /auth/login
+  - /auth/register
+  - /auth/forgot-password
+  - /auth/oauth/callback/:provider
+  - /console/user
+  api_surfaces:
+  - app
+  - backend
+  primary_key: id
+  columns:
+    id: string(128)
+    tenant_id: string(128)
+    user_id: string(128)
+    provider: string(64)
+    subject: string(256)
+    email: string(256)
+    created_at: instant
+  required_columns:
+  - id
+  - tenant_id
+  - user_id
+  - provider
+  - subject
+  - created_at
+  unique_constraints:
+  - name: uk_iam_user_identity_tenant_provider_subject
+    columns:
+    - tenant_id
+    - provider
+    - subject
+    source: appbase_iam_foundation
+  indexes:
+  - name: idx_iam_user_identity_tenant_user
+    columns:
+    - tenant_id
+    - user_id
+    - provider
+- table: iam_credential
+  domain: iam
+  profile: tenant_entity
+  compliance_level: L3
+  system_of_record: true
+  write_owner: sdkwork-appbase-iam
+  generated_by_this_project: true
+  frontend_routes:
+  - /auth/login
+  - /auth/register
+  - /auth/forgot-password
+  api_surfaces:
+  - app
+  primary_key: id
+  columns:
+    id: string(128)
+    tenant_id: string(128)
+    user_id: string(128)
+    credential_type: string(32)
+    credential_hash: string(512)
+    status: string(32)
+    expires_at: instant
+    created_at: instant
+    updated_at: instant
+  required_columns:
+  - id
+  - tenant_id
+  - user_id
+  - credential_type
+  - credential_hash
+  - status
+  - created_at
+  - updated_at
+  indexes:
+  - name: idx_iam_credential_tenant_user_type
+    columns:
+    - tenant_id
+    - user_id
+    - credential_type
+    - status
+- table: iam_session
+  domain: iam
+  profile: tenant_entity
+  compliance_level: L3
+  system_of_record: true
+  write_owner: sdkwork-appbase-iam
+  generated_by_this_project: true
+  frontend_routes:
+  - /auth/login
+  - /auth/register
+  - /auth/oauth/callback/:provider
+  - /console/user
+  api_surfaces:
+  - app
+  primary_key: id
+  columns:
+    id: string(128)
+    tenant_id: string(128)
+    organization_id: string(128)
+    user_id: string(128)
+    app_id: string(128)
+    environment: string(32)
+    deployment_mode: string(32)
+    auth_level: string(32)
+    auth_token_hash: string(128)
+    access_token_hash: string(128)
+    refresh_token_hash: string(128)
+    sharding_key: string(256)
+    sharding_strategy: string(64)
+    data_scope_json: json
+    permission_scope_json: json
+    expires_at: instant
+    revoked_at: instant
+    created_at: instant
+    updated_at: instant
+  required_columns:
+  - id
+  - tenant_id
+  - user_id
+  - app_id
+  - environment
+  - deployment_mode
+  - auth_level
+  - auth_token_hash
+  - access_token_hash
+  - sharding_key
+  - sharding_strategy
+  - data_scope_json
+  - permission_scope_json
+  - expires_at
+  - created_at
+  - updated_at
+  indexes:
+  - name: idx_iam_session_tenant_user
+    columns:
+    - tenant_id
+    - user_id
+    - app_id
+    - revoked_at
+    - expires_at
+  - name: idx_iam_session_auth_token_hash
+    columns:
+    - auth_token_hash
+  - name: idx_iam_session_access_token_hash
+    columns:
+    - access_token_hash
+  - name: idx_iam_session_refresh_token_hash
+    columns:
+    - refresh_token_hash
+- table: iam_mfa_factor
+  domain: iam
+  profile: tenant_entity
+  compliance_level: L3
+  system_of_record: true
+  write_owner: sdkwork-appbase-iam
+  generated_by_this_project: true
+  frontend_routes:
+  - /auth/login
+  - /auth/register
+  - /auth/forgot-password
+  - /console/user
+  api_surfaces:
+  - app
+  - backend
+  primary_key: id
+  columns:
+    id: string(128)
+    tenant_id: string(128)
+    user_id: string(128)
+    factor_type: string(32)
+    secret_ref: string(512)
+    status: string(32)
+    created_at: instant
+    updated_at: instant
+  required_columns:
+  - id
+  - tenant_id
+  - user_id
+  - factor_type
+  - secret_ref
+  - status
+  - created_at
+  - updated_at
+- table: iam_device
+  domain: iam
+  profile: tenant_entity
+  compliance_level: L3
+  system_of_record: true
+  write_owner: sdkwork-appbase-iam
+  generated_by_this_project: true
+  frontend_routes:
+  - /auth/login
+  - /auth/register
+  - /auth/oauth/callback/:provider
+  - /console/user
+  api_surfaces:
+  - app
+  - backend
+  primary_key: id
+  columns:
+    id: string(128)
+    tenant_id: string(128)
+    user_id: string(128)
+    device_fingerprint: string(256)
+    name: string(256)
+    trusted: bool
+    last_seen_at: instant
+    created_at: instant
+  required_columns:
+  - id
+  - tenant_id
+  - user_id
+  - device_fingerprint
+  - trusted
+  - created_at
+  unique_constraints:
+  - name: uk_iam_device_tenant_user_fingerprint
+    columns:
+    - tenant_id
+    - user_id
+    - device_fingerprint
+    source: appbase_iam_foundation
+- table: iam_role
+  domain: iam
+  profile: tenant_entity
+  compliance_level: L3
+  system_of_record: true
+  write_owner: sdkwork-appbase-iam
+  generated_by_this_project: true
+  frontend_routes:
+  - /admin/user
+  api_surfaces:
+  - backend
+  primary_key: id
+  columns:
+    id: string(128)
+    tenant_id: string(128)
+    code: string(128)
+    name: string(256)
+    status: string(32)
+    created_at: instant
+    updated_at: instant
+  required_columns:
+  - id
+  - tenant_id
+  - code
+  - name
+  - status
+  - created_at
+  - updated_at
+  unique_constraints:
+  - name: uk_iam_role_tenant_code
+    columns:
+    - tenant_id
+    - code
+    source: appbase_iam_foundation
+  indexes:
+  - name: idx_iam_role_tenant_status
+    columns:
+    - tenant_id
+    - status
+    - code
+- table: iam_permission
+  domain: iam
+  profile: global_entity
+  compliance_level: L3
+  system_of_record: true
+  write_owner: sdkwork-appbase-iam
+  generated_by_this_project: true
+  frontend_routes:
+  - /admin/user
+  api_surfaces:
+  - backend
+  primary_key: id
+  columns:
+    id: string(128)
+    code: string(128)
+    name: string(256)
+    resource: string(128)
+    action: string(128)
+    created_at: instant
+  required_columns:
+  - id
+  - code
+  - name
+  - resource
+  - action
+  - created_at
+  unique_constraints:
+  - name: uk_iam_permission_code
+    columns:
+    - code
+    source: appbase_iam_foundation
+- table: iam_policy
+  domain: iam
+  profile: tenant_entity
+  compliance_level: L3
+  system_of_record: true
+  write_owner: sdkwork-appbase-iam
+  generated_by_this_project: true
+  frontend_routes:
+  - /admin/user
+  api_surfaces:
+  - backend
+  primary_key: id
+  columns:
+    id: string(128)
+    tenant_id: string(128)
+    code: string(128)
+    name: string(256)
+    policy_json: json
+    status: string(32)
+    created_at: instant
+    updated_at: instant
+  required_columns:
+  - id
+  - tenant_id
+  - code
+  - name
+  - policy_json
+  - status
+  - created_at
+  - updated_at
+  unique_constraints:
+  - name: uk_iam_policy_tenant_code
+    columns:
+    - tenant_id
+    - code
+    source: appbase_iam_foundation
+- table: iam_role_permission
+  domain: iam
+  profile: tenant_entity
+  compliance_level: L3
+  system_of_record: true
+  write_owner: sdkwork-appbase-iam
+  generated_by_this_project: true
+  frontend_routes:
+  - /admin/user
+  api_surfaces:
+  - backend
+  primary_key: id
+  columns:
+    id: string(128)
+    tenant_id: string(128)
+    role_id: string(128)
+    permission_id: string(128)
+    created_at: instant
+  required_columns:
+  - id
+  - tenant_id
+  - role_id
+  - permission_id
+  - created_at
+  unique_constraints:
+  - name: uk_iam_role_permission_tenant_role_permission
+    columns:
+    - tenant_id
+    - role_id
+    - permission_id
+    source: appbase_iam_foundation
+  indexes:
+  - name: idx_iam_role_permission_tenant_permission
+    columns:
+    - tenant_id
+    - permission_id
+    - role_id
+- table: iam_user_role
+  domain: iam
+  profile: tenant_entity
+  compliance_level: L3
+  system_of_record: true
+  write_owner: sdkwork-appbase-iam
+  generated_by_this_project: true
+  frontend_routes:
+  - /admin/user
+  api_surfaces:
+  - backend
+  primary_key: id
+  columns:
+    id: string(128)
+    tenant_id: string(128)
+    user_id: string(128)
+    role_id: string(128)
+    organization_id: string(128)
+    created_at: instant
+  required_columns:
+  - id
+  - tenant_id
+  - user_id
+  - role_id
+  - created_at
+  unique_constraints:
+  - name: uk_iam_user_role_tenant_user_role_org
+    columns:
+    - tenant_id
+    - user_id
+    - role_id
+    - organization_id
+    source: appbase_iam_foundation
+  indexes:
+  - name: idx_iam_user_role_tenant_user
+    columns:
+    - tenant_id
+    - user_id
+    - organization_id
+    - role_id
+- table: iam_api_key
+  domain: iam
+  profile: tenant_entity
+  compliance_level: L3
+  system_of_record: true
+  write_owner: sdkwork-appbase-iam
+  generated_by_this_project: true
+  frontend_routes:
+  - /admin/user
+  api_surfaces:
+  - backend
+  primary_key: id
+  columns:
+    id: string(128)
+    tenant_id: string(128)
+    user_id: string(128)
+    name: string(128)
+    key_hash: string(128)
+    permission_scope_json: json
+    status: string(32)
+    expires_at: instant
+    created_at: instant
+    updated_at: instant
+  required_columns:
+  - id
+  - tenant_id
+  - user_id
+  - name
+  - key_hash
+  - permission_scope_json
+  - status
+  - created_at
+  - updated_at
+  indexes:
+  - name: idx_iam_api_key_tenant_user_status
+    columns:
+    - tenant_id
+    - user_id
+    - status
+- table: iam_security_event
+  domain: iam
+  profile: event_log
+  compliance_level: L3
+  system_of_record: true
+  write_owner: sdkwork-appbase-iam
+  generated_by_this_project: true
+  frontend_routes:
+  - /auth/login
+  - /auth/register
+  - /auth/forgot-password
+  - /auth/oauth/callback/:provider
+  api_surfaces:
+  - app
+  - backend
+  primary_key: id
+  columns:
+    id: string(128)
+    tenant_id: string(128)
+    user_id: string(128)
+    session_id: string(128)
+    event_type: string(64)
+    severity: string(32)
+    detail_json: json
+    created_at: instant
+  required_columns:
+  - id
+  - tenant_id
+  - event_type
+  - severity
+  - detail_json
+  - created_at
+  indexes:
+  - name: idx_iam_security_event_tenant_created_at
+    columns:
+    - tenant_id
+    - created_at
+    - severity
+- table: iam_audit_event
+  domain: iam
+  profile: audit_log
+  compliance_level: L3
+  system_of_record: true
+  write_owner: sdkwork-appbase-iam
+  generated_by_this_project: true
+  frontend_routes:
+  - /auth/login
+  - /auth/register
+  - /auth/forgot-password
+  - /auth/oauth/callback/:provider
+  api_surfaces:
+  - app
+  - backend
+  primary_key: id
+  columns:
+    id: string(128)
+    tenant_id: string(128)
+    organization_id: string(128)
+    actor_user_id: string(128)
+    action: string(128)
+    resource_type: string(128)
+    resource_id: string(128)
+    request_id: string(128)
+    app_id: string(128)
+    environment: string(32)
+    sharding_key: string(256)
+    detail_json: json
+    created_at: instant
+  required_columns:
+  - id
+  - tenant_id
+  - action
+  - resource_type
+  - detail_json
+  - created_at
+  indexes:
+  - name: idx_iam_audit_event_tenant_created_at
+    columns:
+    - tenant_id
+    - created_at
+    - action
+  - name: idx_iam_audit_event_request_id
+    columns:
+    - request_id

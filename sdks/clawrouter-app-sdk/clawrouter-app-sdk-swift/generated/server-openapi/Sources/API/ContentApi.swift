@@ -19,14 +19,8 @@ public class ContentApi {
     }
 
     /// Create forum comment
-    public func commentsCreate(body: ForumCreateCommentRequest, xRequestId: String? = nil) async throws -> CommentsCreateResult? {
-        let requestHeaders = buildRequestHeaders(
-            [
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
-            ],
-            [:]
-        )
-        return try await client.post(ApiPaths.appPath("/content/comments"), body: body, params: nil, headers: requestHeaders, contentType: "application/json", responseType: CommentsCreateResult.self)
+    public func commentsCreate(body: ForumCreateCommentRequest) async throws -> CommentsCreateResult? {
+        return try await client.post(ApiPaths.appPath("/content/comments"), body: body, params: nil, headers: nil, contentType: "application/json", responseType: CommentsCreateResult.self)
     }
 
     /// List forum comment statistics
@@ -49,14 +43,8 @@ public class ContentApi {
     }
 
     /// Like forum comment
-    public func commentsLikesCreate(commentId: String, xRequestId: String? = nil) async throws -> CommentsLikesCreateResult? {
-        let requestHeaders = buildRequestHeaders(
-            [
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
-            ],
-            [:]
-        )
-        return try await client.post(ApiPaths.appPath("/content/comments/\(serializePathParameter(commentId, PathParameterSpec(name: "commentId", style: "simple", explode: false)))/likes"), body: nil, params: nil, headers: requestHeaders, responseType: CommentsLikesCreateResult.self)
+    public func commentsLikesCreate(commentId: String) async throws -> CommentsLikesCreateResult? {
+        return try await client.post(ApiPaths.appPath("/content/comments/\(serializePathParameter(commentId, PathParameterSpec(name: "commentId", style: "simple", explode: false)))/likes"), body: nil, responseType: CommentsLikesCreateResult.self)
     }
 
     /// Unlike forum comment
@@ -65,14 +53,8 @@ public class ContentApi {
     }
 
     /// Pin forum comment
-    public func commentsPinsCreate(commentId: String, xRequestId: String? = nil) async throws -> CommentsPinsCreateResult? {
-        let requestHeaders = buildRequestHeaders(
-            [
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
-            ],
-            [:]
-        )
-        return try await client.post(ApiPaths.appPath("/content/comments/\(serializePathParameter(commentId, PathParameterSpec(name: "commentId", style: "simple", explode: false)))/pins"), body: nil, params: nil, headers: requestHeaders, responseType: CommentsPinsCreateResult.self)
+    public func commentsPinsCreate(commentId: String) async throws -> CommentsPinsCreateResult? {
+        return try await client.post(ApiPaths.appPath("/content/comments/\(serializePathParameter(commentId, PathParameterSpec(name: "commentId", style: "simple", explode: false)))/pins"), body: nil, responseType: CommentsPinsCreateResult.self)
     }
 
     /// Unpin forum comment
@@ -90,14 +72,8 @@ public class ContentApi {
     }
 
     /// Reply forum comment
-    public func commentsReplyCreate(commentId: String, body: ForumReplyCommentRequest, xRequestId: String? = nil) async throws -> CommentsReplyCreateResult? {
-        let requestHeaders = buildRequestHeaders(
-            [
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
-            ],
-            [:]
-        )
-        return try await client.post(ApiPaths.appPath("/content/comments/\(serializePathParameter(commentId, PathParameterSpec(name: "commentId", style: "simple", explode: false)))/reply"), body: body, params: nil, headers: requestHeaders, contentType: "application/json", responseType: CommentsReplyCreateResult.self)
+    public func commentsReplyCreate(commentId: String, body: ForumReplyCommentRequest) async throws -> CommentsReplyCreateResult? {
+        return try await client.post(ApiPaths.appPath("/content/comments/\(serializePathParameter(commentId, PathParameterSpec(name: "commentId", style: "simple", explode: false)))/reply"), body: body, params: nil, headers: nil, contentType: "application/json", responseType: CommentsReplyCreateResult.self)
     }
 
     /// List forum feeds
@@ -114,14 +90,8 @@ public class ContentApi {
     }
 
     /// Create forum feed
-    public func feedsCreate(body: ForumCreateFeedRequest, xRequestId: String? = nil) async throws -> FeedsCreateResult? {
-        let requestHeaders = buildRequestHeaders(
-            [
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
-            ],
-            [:]
-        )
-        return try await client.post(ApiPaths.appPath("/content/feeds"), body: body, params: nil, headers: requestHeaders, contentType: "application/json", responseType: FeedsCreateResult.self)
+    public func feedsCreate(body: ForumCreateFeedRequest) async throws -> FeedsCreateResult? {
+        return try await client.post(ApiPaths.appPath("/content/feeds"), body: body, params: nil, headers: nil, contentType: "application/json", responseType: FeedsCreateResult.self)
     }
 
     /// List category forum feeds
@@ -189,28 +159,16 @@ public class ContentApi {
     }
 
     /// Collect forum feed
-    public func feedsCollectionsCreate(id: String, folderId: Int? = nil, xRequestId: String? = nil) async throws -> FeedsCollectionsCreateResult? {
+    public func feedsCollectionsCreate(id: String, folderId: Int? = nil) async throws -> FeedsCollectionsCreateResult? {
         let query = buildQueryString([
             QueryParameterSpec(name: "folder_id", value: folderId, style: "form", explode: true, allowReserved: false, contentType: nil)
         ])
-        let requestHeaders = buildRequestHeaders(
-            [
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
-            ],
-            [:]
-        )
-        return try await client.post(ApiPaths.appendQueryString(ApiPaths.appPath("/content/feeds/\(serializePathParameter(id, PathParameterSpec(name: "id", style: "simple", explode: false)))/collections"), query), body: nil, params: nil, headers: requestHeaders, responseType: FeedsCollectionsCreateResult.self)
+        return try await client.post(ApiPaths.appendQueryString(ApiPaths.appPath("/content/feeds/\(serializePathParameter(id, PathParameterSpec(name: "id", style: "simple", explode: false)))/collections"), query), body: nil, responseType: FeedsCollectionsCreateResult.self)
     }
 
     /// Uncollect forum feed
-    public func feedsCollectionsCurrentDelete(id: String, xRequestId: String? = nil) async throws -> FeedsCollectionsCurrentDeleteResult? {
-        let requestHeaders = buildRequestHeaders(
-            [
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
-            ],
-            [:]
-        )
-        return try await client.delete(ApiPaths.appPath("/content/feeds/\(serializePathParameter(id, PathParameterSpec(name: "id", style: "simple", explode: false)))/collections/current"), params: nil, headers: requestHeaders, responseType: FeedsCollectionsCurrentDeleteResult.self)
+    public func feedsCollectionsCurrentDelete(id: String) async throws -> FeedsCollectionsCurrentDeleteResult? {
+        return try await client.delete(ApiPaths.appPath("/content/feeds/\(serializePathParameter(id, PathParameterSpec(name: "id", style: "simple", explode: false)))/collections/current"), responseType: FeedsCollectionsCurrentDeleteResult.self)
     }
 
     /// Check forum feed collected
@@ -219,36 +177,18 @@ public class ContentApi {
     }
 
     /// Like forum feed
-    public func feedsLikesCreate(id: String, xRequestId: String? = nil) async throws -> FeedsLikesCreateResult? {
-        let requestHeaders = buildRequestHeaders(
-            [
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
-            ],
-            [:]
-        )
-        return try await client.post(ApiPaths.appPath("/content/feeds/\(serializePathParameter(id, PathParameterSpec(name: "id", style: "simple", explode: false)))/likes"), body: nil, params: nil, headers: requestHeaders, responseType: FeedsLikesCreateResult.self)
+    public func feedsLikesCreate(id: String) async throws -> FeedsLikesCreateResult? {
+        return try await client.post(ApiPaths.appPath("/content/feeds/\(serializePathParameter(id, PathParameterSpec(name: "id", style: "simple", explode: false)))/likes"), body: nil, responseType: FeedsLikesCreateResult.self)
     }
 
     /// Unlike forum feed
-    public func feedsLikesCurrentDelete(id: String, xRequestId: String? = nil) async throws -> FeedsLikesCurrentDeleteResult? {
-        let requestHeaders = buildRequestHeaders(
-            [
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
-            ],
-            [:]
-        )
-        return try await client.delete(ApiPaths.appPath("/content/feeds/\(serializePathParameter(id, PathParameterSpec(name: "id", style: "simple", explode: false)))/likes/current"), params: nil, headers: requestHeaders, responseType: FeedsLikesCurrentDeleteResult.self)
+    public func feedsLikesCurrentDelete(id: String) async throws -> FeedsLikesCurrentDeleteResult? {
+        return try await client.delete(ApiPaths.appPath("/content/feeds/\(serializePathParameter(id, PathParameterSpec(name: "id", style: "simple", explode: false)))/likes/current"), responseType: FeedsLikesCurrentDeleteResult.self)
     }
 
     /// Share forum feed
-    public func feedsSharesCreate(id: String, xRequestId: String? = nil) async throws -> FeedsSharesCreateResult? {
-        let requestHeaders = buildRequestHeaders(
-            [
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
-            ],
-            [:]
-        )
-        return try await client.post(ApiPaths.appPath("/content/feeds/\(serializePathParameter(id, PathParameterSpec(name: "id", style: "simple", explode: false)))/shares"), body: nil, params: nil, headers: requestHeaders, responseType: FeedsSharesCreateResult.self)
+    public func feedsSharesCreate(id: String) async throws -> FeedsSharesCreateResult? {
+        return try await client.post(ApiPaths.appPath("/content/feeds/\(serializePathParameter(id, PathParameterSpec(name: "id", style: "simple", explode: false)))/shares"), body: nil, responseType: FeedsSharesCreateResult.self)
     }
 
     /// List my forum comments
@@ -474,68 +414,4 @@ public class ContentApi {
         value.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? value
     }
 
-    private struct HeaderParameterSpec {
-        let value: Any?
-        let style: String
-        let explode: Bool
-        let contentType: String?
-    }
-
-    private func buildRequestHeaders(_ headers: [String: HeaderParameterSpec], _ cookies: [String: HeaderParameterSpec]) -> [String: String]? {
-        var requestHeaders: [String: String] = [:]
-        for (name, parameter) in headers {
-            if let serialized = serializeParameterValue(parameter) {
-                requestHeaders[name] = serialized
-            }
-        }
-
-        if let cookieHeader = buildCookieHeader(cookies), !cookieHeader.isEmpty {
-            requestHeaders["Cookie"] = requestHeaders["Cookie"].map { "\($0); \(cookieHeader)" } ?? cookieHeader
-        }
-
-        return requestHeaders.isEmpty ? nil : requestHeaders
-    }
-
-    private func buildCookieHeader(_ cookies: [String: HeaderParameterSpec]) -> String? {
-        let pairs = cookies.compactMap { name, parameter -> String? in
-            guard let serialized = serializeParameterValue(parameter) else { return nil }
-            return "\(urlEncode(name))=\(urlEncode(serialized))"
-        }
-        return pairs.isEmpty ? nil : pairs.joined(separator: "; ")
-    }
-
-    private func serializeParameterValue(_ parameter: HeaderParameterSpec?) -> String? {
-        guard let parameter, let value = parameter.value else { return nil }
-        if let contentType = parameter.contentType, !contentType.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
-            if JSONSerialization.isValidJSONObject(value),
-               let data = try? JSONSerialization.data(withJSONObject: value, options: []),
-               let json = String(data: data, encoding: .utf8) {
-                return json
-            }
-            return String(describing: value)
-        }
-        if let array = value as? [Any?] {
-            return array.compactMap { $0.map { String(describing: $0) } }.joined(separator: ",")
-        }
-        if let object = value as? [String: Any] {
-            var values: [String] = []
-            for (key, item) in object {
-                if parameter.explode {
-                    values.append("\(key)=\(item)")
-                } else {
-                    values.append(key)
-                    values.append(String(describing: item))
-                }
-            }
-            return values.joined(separator: ",")
-        }
-        if let date = value as? Date {
-            return ISO8601DateFormatter().string(from: date)
-        }
-        return String(describing: value)
-    }
-
-    private func urlEncode(_ value: String) -> String {
-        value.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? value
-    }
 }

@@ -43,6 +43,22 @@ pub(crate) fn build_openai_adapter_invocation(
     parts: OpenAiAdapterInvocationParts,
     secret_resolver: Option<&ProviderSecretResolverRef>,
 ) -> DomainResult<AdapterInvocationRequest> {
+    build_openai_adapter_invocation_with_shape(
+        endpoint,
+        parts,
+        secret_resolver,
+        AdapterInvocationShape::SyncJson,
+        false,
+    )
+}
+
+pub(crate) fn build_openai_adapter_invocation_with_shape(
+    endpoint: OpenAiAdapterEndpoint,
+    parts: OpenAiAdapterInvocationParts,
+    secret_resolver: Option<&ProviderSecretResolverRef>,
+    shape: AdapterInvocationShape,
+    stream: bool,
+) -> DomainResult<AdapterInvocationRequest> {
     let auth_profile = provider_auth_profile_json(&parts.provider_auth_profile);
     let secret = adapter_secret(
         parts.provider_secret_ref,
@@ -62,8 +78,8 @@ pub(crate) fn build_openai_adapter_invocation(
             endpoint_key: endpoint.endpoint_key.to_owned(),
             method: endpoint.method.to_owned(),
             standard_path: endpoint.standard_path.to_owned(),
-            shape: AdapterInvocationShape::SyncJson,
-            stream: false,
+            shape,
+            stream,
             request_id: None,
             trace_id: None,
         },

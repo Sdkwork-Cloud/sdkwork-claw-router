@@ -23,11 +23,11 @@ fn catalog() -> InMemoryPricingCatalog {
         vec!["chat"],
     ));
     catalog.add_provider_route(ModelProviderRoute::new_for_catalog_key(
-        "openai/global/gpt-4o-mini",
+        "openai/gpt-4o-mini",
         "gpt-4o-mini",
         "openrouter",
         3001,
-        "openai/global/gpt-4o-mini",
+        "gpt-4o-mini",
     ));
     catalog.add_plan(PricingPlan::new(
         "standard",
@@ -44,7 +44,7 @@ fn catalog() -> InMemoryPricingCatalog {
     ));
     catalog.add_api_key(GatewayApiKey::new(100, 10, "sk-test", "hash:sk-test"));
     catalog.add_price(ModelPrice::new_for_catalog_key(
-        "openai/global/gpt-4o-mini",
+        "openai/gpt-4o-mini",
         "gpt-4o-mini",
         PriceSide::OfficialReference,
         BillingMeter::LlmInputToken,
@@ -52,7 +52,7 @@ fn catalog() -> InMemoryPricingCatalog {
     ));
     catalog.add_price(
         ModelPrice::new_for_catalog_key(
-            "openai/global/gpt-4o-mini",
+            "openai/gpt-4o-mini",
             "gpt-4o-mini",
             PriceSide::UpstreamCost,
             BillingMeter::LlmInputToken,

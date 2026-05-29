@@ -1,6 +1,5 @@
 use std::sync::Arc;
 
-use crate::api::base::{RequestHeaders};
 use crate::api::paths::backend_path;
 use crate::api::paths::append_query_string;
 use crate::http::{SdkworkError, SdkworkHttpClient};
@@ -33,15 +32,9 @@ impl EcosystemApi {
     }
 
     /// Create skill
-    pub async fn skills_create(&self, body: &AdminSkillCreateRequest, x_request_id: Option<&str>) -> Result<SkillsCreateResult, SdkworkError> {
+    pub async fn skills_create(&self, body: &AdminSkillCreateRequest) -> Result<SkillsCreateResult, SdkworkError> {
         let path = backend_path(&"/ecosystem/skills".to_string());
-        let headers = build_request_headers(
-            &[
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
-            ],
-            &[],
-        );
-        self.client.post(&path, Some(body), None, headers.as_ref(), Some("application/json")).await
+        self.client.post(&path, Some(body), None, None, Some("application/json")).await
     }
 
     /// List skill categories
@@ -51,39 +44,21 @@ impl EcosystemApi {
     }
 
     /// Create skill category
-    pub async fn skills_categories_create(&self, body: &AdminSkillCategoryCreateRequest, x_request_id: Option<&str>) -> Result<SkillsCategoriesCreateResult, SdkworkError> {
+    pub async fn skills_categories_create(&self, body: &AdminSkillCategoryCreateRequest) -> Result<SkillsCategoriesCreateResult, SdkworkError> {
         let path = backend_path(&"/ecosystem/skills/categories".to_string());
-        let headers = build_request_headers(
-            &[
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
-            ],
-            &[],
-        );
-        self.client.post(&path, Some(body), None, headers.as_ref(), Some("application/json")).await
+        self.client.post(&path, Some(body), None, None, Some("application/json")).await
     }
 
     /// Delete skill category
-    pub async fn skills_categories_delete(&self, category_id: &str, x_request_id: Option<&str>) -> Result<SkillsCategoriesDeleteResult, SdkworkError> {
+    pub async fn skills_categories_delete(&self, category_id: &str) -> Result<SkillsCategoriesDeleteResult, SdkworkError> {
         let path = backend_path(&format!("/ecosystem/skills/categories/{}", serialize_path_parameter(category_id, PathParameterSpec::new("categoryId", "simple", false))));
-        let headers = build_request_headers(
-            &[
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
-            ],
-            &[],
-        );
-        self.client.delete(&path, None, headers.as_ref()).await
+        self.client.delete(&path, None, None).await
     }
 
     /// Update skill category
-    pub async fn skills_categories_update(&self, category_id: &str, body: &AdminSkillCategoryUpdateRequest, x_request_id: Option<&str>) -> Result<SkillsCategoriesUpdateResult, SdkworkError> {
+    pub async fn skills_categories_update(&self, category_id: &str, body: &AdminSkillCategoryUpdateRequest) -> Result<SkillsCategoriesUpdateResult, SdkworkError> {
         let path = backend_path(&format!("/ecosystem/skills/categories/{}", serialize_path_parameter(category_id, PathParameterSpec::new("categoryId", "simple", false))));
-        let headers = build_request_headers(
-            &[
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
-            ],
-            &[],
-        );
-        self.client.put(&path, Some(body), None, headers.as_ref(), Some("application/json")).await
+        self.client.put(&path, Some(body), None, None, Some("application/json")).await
     }
 
     /// List skill packages
@@ -100,15 +75,9 @@ impl EcosystemApi {
     }
 
     /// Create skill package
-    pub async fn skills_package_create(&self, body: &AdminSkillPackageCreateRequest, x_request_id: Option<&str>) -> Result<SkillsPackageCreateResult, SdkworkError> {
+    pub async fn skills_package_create(&self, body: &AdminSkillPackageCreateRequest) -> Result<SkillsPackageCreateResult, SdkworkError> {
         let path = backend_path(&"/ecosystem/skills/package".to_string());
-        let headers = build_request_headers(
-            &[
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
-            ],
-            &[],
-        );
-        self.client.post(&path, Some(body), None, headers.as_ref(), Some("application/json")).await
+        self.client.post(&path, Some(body), None, None, Some("application/json")).await
     }
 
     /// Delete skill package
@@ -124,39 +93,21 @@ impl EcosystemApi {
     }
 
     /// Update skill package
-    pub async fn skills_package_update(&self, package_id: &str, body: &AdminSkillPackageUpdateRequest, x_request_id: Option<&str>) -> Result<SkillsPackageUpdateResult, SdkworkError> {
+    pub async fn skills_package_update(&self, package_id: &str, body: &AdminSkillPackageUpdateRequest) -> Result<SkillsPackageUpdateResult, SdkworkError> {
         let path = backend_path(&format!("/ecosystem/skills/package/{}", serialize_path_parameter(package_id, PathParameterSpec::new("packageId", "simple", false))));
-        let headers = build_request_headers(
-            &[
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
-            ],
-            &[],
-        );
-        self.client.put(&path, Some(body), None, headers.as_ref(), Some("application/json")).await
+        self.client.put(&path, Some(body), None, None, Some("application/json")).await
     }
 
     /// Disable skill package
-    pub async fn skills_package_disable(&self, package_id: &str, x_request_id: Option<&str>) -> Result<SkillsPackageDisableResult, SdkworkError> {
+    pub async fn skills_package_disable(&self, package_id: &str) -> Result<SkillsPackageDisableResult, SdkworkError> {
         let path = backend_path(&format!("/ecosystem/skills/package/{}/disable", serialize_path_parameter(package_id, PathParameterSpec::new("packageId", "simple", false))));
-        let headers = build_request_headers(
-            &[
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
-            ],
-            &[],
-        );
-        self.client.post(&path, Option::<&serde_json::Value>::None, None, headers.as_ref(), None).await
+        self.client.post(&path, Option::<&serde_json::Value>::None, None, None, None).await
     }
 
     /// Enable skill package
-    pub async fn skills_package_enable(&self, package_id: &str, x_request_id: Option<&str>) -> Result<SkillsPackageEnableResult, SdkworkError> {
+    pub async fn skills_package_enable(&self, package_id: &str) -> Result<SkillsPackageEnableResult, SdkworkError> {
         let path = backend_path(&format!("/ecosystem/skills/package/{}/enable", serialize_path_parameter(package_id, PathParameterSpec::new("packageId", "simple", false))));
-        let headers = build_request_headers(
-            &[
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
-            ],
-            &[],
-        );
-        self.client.post(&path, Option::<&serde_json::Value>::None, None, headers.as_ref(), None).await
+        self.client.post(&path, Option::<&serde_json::Value>::None, None, None, None).await
     }
 
     /// Delete skill
@@ -172,15 +123,9 @@ impl EcosystemApi {
     }
 
     /// Update skill
-    pub async fn skills_update(&self, skill_id: &str, body: &AdminSkillUpdateRequest, x_request_id: Option<&str>) -> Result<SkillsUpdateResult, SdkworkError> {
+    pub async fn skills_update(&self, skill_id: &str, body: &AdminSkillUpdateRequest) -> Result<SkillsUpdateResult, SdkworkError> {
         let path = backend_path(&format!("/ecosystem/skills/{}", serialize_path_parameter(skill_id, PathParameterSpec::new("skillId", "simple", false))));
-        let headers = build_request_headers(
-            &[
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
-            ],
-            &[],
-        );
-        self.client.put(&path, Some(body), None, headers.as_ref(), Some("application/json")).await
+        self.client.put(&path, Some(body), None, None, Some("application/json")).await
     }
 
     /// List skill artifacts
@@ -190,27 +135,15 @@ impl EcosystemApi {
     }
 
     /// Create skill artifact
-    pub async fn skills_artifacts_create(&self, skill_id: &str, body: &AdminSkillArtifactCreateRequest, x_request_id: Option<&str>) -> Result<SkillsArtifactsCreateResult, SdkworkError> {
+    pub async fn skills_artifacts_create(&self, skill_id: &str, body: &AdminSkillArtifactCreateRequest) -> Result<SkillsArtifactsCreateResult, SdkworkError> {
         let path = backend_path(&format!("/ecosystem/skills/{}/artifacts", serialize_path_parameter(skill_id, PathParameterSpec::new("skillId", "simple", false))));
-        let headers = build_request_headers(
-            &[
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
-            ],
-            &[],
-        );
-        self.client.post(&path, Some(body), None, headers.as_ref(), Some("application/json")).await
+        self.client.post(&path, Some(body), None, None, Some("application/json")).await
     }
 
     /// Delete skill artifact
-    pub async fn skills_artifacts_delete(&self, skill_id: &str, artifact_id: &str, x_request_id: Option<&str>) -> Result<SkillsArtifactsDeleteResult, SdkworkError> {
+    pub async fn skills_artifacts_delete(&self, skill_id: &str, artifact_id: &str) -> Result<SkillsArtifactsDeleteResult, SdkworkError> {
         let path = backend_path(&format!("/ecosystem/skills/{}/artifacts/{}", serialize_path_parameter(skill_id, PathParameterSpec::new("skillId", "simple", false)), serialize_path_parameter(artifact_id, PathParameterSpec::new("artifactId", "simple", false))));
-        let headers = build_request_headers(
-            &[
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
-            ],
-            &[],
-        );
-        self.client.delete(&path, None, headers.as_ref()).await
+        self.client.delete(&path, None, None).await
     }
 
     /// Get skill artifact
@@ -220,15 +153,9 @@ impl EcosystemApi {
     }
 
     /// Update skill artifact
-    pub async fn skills_artifacts_update(&self, skill_id: &str, artifact_id: &str, body: &AdminSkillArtifactUpdateRequest, x_request_id: Option<&str>) -> Result<SkillsArtifactsUpdateResult, SdkworkError> {
+    pub async fn skills_artifacts_update(&self, skill_id: &str, artifact_id: &str, body: &AdminSkillArtifactUpdateRequest) -> Result<SkillsArtifactsUpdateResult, SdkworkError> {
         let path = backend_path(&format!("/ecosystem/skills/{}/artifacts/{}", serialize_path_parameter(skill_id, PathParameterSpec::new("skillId", "simple", false)), serialize_path_parameter(artifact_id, PathParameterSpec::new("artifactId", "simple", false))));
-        let headers = build_request_headers(
-            &[
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
-            ],
-            &[],
-        );
-        self.client.put(&path, Some(body), None, headers.as_ref(), Some("application/json")).await
+        self.client.put(&path, Some(body), None, None, Some("application/json")).await
     }
 
     /// List skill assets
@@ -238,27 +165,15 @@ impl EcosystemApi {
     }
 
     /// Create skill asset
-    pub async fn skills_assets_create(&self, skill_id: &str, body: &AdminSkillAssetCreateRequest, x_request_id: Option<&str>) -> Result<SkillsAssetsCreateResult, SdkworkError> {
+    pub async fn skills_assets_create(&self, skill_id: &str, body: &AdminSkillAssetCreateRequest) -> Result<SkillsAssetsCreateResult, SdkworkError> {
         let path = backend_path(&format!("/ecosystem/skills/{}/assets", serialize_path_parameter(skill_id, PathParameterSpec::new("skillId", "simple", false))));
-        let headers = build_request_headers(
-            &[
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
-            ],
-            &[],
-        );
-        self.client.post(&path, Some(body), None, headers.as_ref(), Some("application/json")).await
+        self.client.post(&path, Some(body), None, None, Some("application/json")).await
     }
 
     /// Delete skill asset
-    pub async fn skills_assets_delete(&self, skill_id: &str, asset_id: &str, x_request_id: Option<&str>) -> Result<SkillsAssetsDeleteResult, SdkworkError> {
+    pub async fn skills_assets_delete(&self, skill_id: &str, asset_id: &str) -> Result<SkillsAssetsDeleteResult, SdkworkError> {
         let path = backend_path(&format!("/ecosystem/skills/{}/assets/{}", serialize_path_parameter(skill_id, PathParameterSpec::new("skillId", "simple", false)), serialize_path_parameter(asset_id, PathParameterSpec::new("assetId", "simple", false))));
-        let headers = build_request_headers(
-            &[
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
-            ],
-            &[],
-        );
-        self.client.delete(&path, None, headers.as_ref()).await
+        self.client.delete(&path, None, None).await
     }
 
     /// Get skill asset
@@ -268,87 +183,45 @@ impl EcosystemApi {
     }
 
     /// Update skill asset
-    pub async fn skills_assets_update(&self, skill_id: &str, asset_id: &str, body: &AdminSkillAssetUpdateRequest, x_request_id: Option<&str>) -> Result<SkillsAssetsUpdateResult, SdkworkError> {
+    pub async fn skills_assets_update(&self, skill_id: &str, asset_id: &str, body: &AdminSkillAssetUpdateRequest) -> Result<SkillsAssetsUpdateResult, SdkworkError> {
         let path = backend_path(&format!("/ecosystem/skills/{}/assets/{}", serialize_path_parameter(skill_id, PathParameterSpec::new("skillId", "simple", false)), serialize_path_parameter(asset_id, PathParameterSpec::new("assetId", "simple", false))));
-        let headers = build_request_headers(
-            &[
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
-            ],
-            &[],
-        );
-        self.client.put(&path, Some(body), None, headers.as_ref(), Some("application/json")).await
+        self.client.put(&path, Some(body), None, None, Some("application/json")).await
     }
 
     /// Disable skill
-    pub async fn skills_disable(&self, skill_id: &str, x_request_id: Option<&str>) -> Result<SkillsDisableResult, SdkworkError> {
+    pub async fn skills_disable(&self, skill_id: &str) -> Result<SkillsDisableResult, SdkworkError> {
         let path = backend_path(&format!("/ecosystem/skills/{}/disable", serialize_path_parameter(skill_id, PathParameterSpec::new("skillId", "simple", false))));
-        let headers = build_request_headers(
-            &[
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
-            ],
-            &[],
-        );
-        self.client.post(&path, Option::<&serde_json::Value>::None, None, headers.as_ref(), None).await
+        self.client.post(&path, Option::<&serde_json::Value>::None, None, None, None).await
     }
 
     /// Enable skill
-    pub async fn skills_enable(&self, skill_id: &str, x_request_id: Option<&str>) -> Result<SkillsEnableResult, SdkworkError> {
+    pub async fn skills_enable(&self, skill_id: &str) -> Result<SkillsEnableResult, SdkworkError> {
         let path = backend_path(&format!("/ecosystem/skills/{}/enable", serialize_path_parameter(skill_id, PathParameterSpec::new("skillId", "simple", false))));
-        let headers = build_request_headers(
-            &[
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
-            ],
-            &[],
-        );
-        self.client.post(&path, Option::<&serde_json::Value>::None, None, headers.as_ref(), None).await
+        self.client.post(&path, Option::<&serde_json::Value>::None, None, None, None).await
     }
 
     /// Publish skill
-    pub async fn skills_publish(&self, skill_id: &str, x_request_id: Option<&str>) -> Result<SkillsPublishResult, SdkworkError> {
+    pub async fn skills_publish(&self, skill_id: &str) -> Result<SkillsPublishResult, SdkworkError> {
         let path = backend_path(&format!("/ecosystem/skills/{}/publish", serialize_path_parameter(skill_id, PathParameterSpec::new("skillId", "simple", false))));
-        let headers = build_request_headers(
-            &[
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
-            ],
-            &[],
-        );
-        self.client.post(&path, Option::<&serde_json::Value>::None, None, headers.as_ref(), None).await
+        self.client.post(&path, Option::<&serde_json::Value>::None, None, None, None).await
     }
 
     /// Approve skill
-    pub async fn skills_review_approve(&self, skill_id: &str, body: &AdminSkillReviewRequest, x_request_id: Option<&str>) -> Result<SkillsReviewApproveResult, SdkworkError> {
+    pub async fn skills_review_approve(&self, skill_id: &str, body: &AdminSkillReviewRequest) -> Result<SkillsReviewApproveResult, SdkworkError> {
         let path = backend_path(&format!("/ecosystem/skills/{}/review/approve", serialize_path_parameter(skill_id, PathParameterSpec::new("skillId", "simple", false))));
-        let headers = build_request_headers(
-            &[
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
-            ],
-            &[],
-        );
-        self.client.post(&path, Some(body), None, headers.as_ref(), Some("application/json")).await
+        self.client.post(&path, Some(body), None, None, Some("application/json")).await
     }
 
     /// Reject skill
-    pub async fn skills_review_reject(&self, skill_id: &str, body: &AdminSkillReviewRequest, x_request_id: Option<&str>) -> Result<SkillsReviewRejectResult, SdkworkError> {
+    pub async fn skills_review_reject(&self, skill_id: &str, body: &AdminSkillReviewRequest) -> Result<SkillsReviewRejectResult, SdkworkError> {
         let path = backend_path(&format!("/ecosystem/skills/{}/review/reject", serialize_path_parameter(skill_id, PathParameterSpec::new("skillId", "simple", false))));
-        let headers = build_request_headers(
-            &[
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
-            ],
-            &[],
-        );
-        self.client.post(&path, Some(body), None, headers.as_ref(), Some("application/json")).await
+        self.client.post(&path, Some(body), None, None, Some("application/json")).await
     }
 
     /// Offline skill
-    pub async fn skills_unpublish(&self, skill_id: &str, x_request_id: Option<&str>) -> Result<SkillsUnpublishResult, SdkworkError> {
+    pub async fn skills_unpublish(&self, skill_id: &str) -> Result<SkillsUnpublishResult, SdkworkError> {
         let path = backend_path(&format!("/ecosystem/skills/{}/unpublish", serialize_path_parameter(skill_id, PathParameterSpec::new("skillId", "simple", false))));
-        let headers = build_request_headers(
-            &[
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
-            ],
-            &[],
-        );
-        self.client.post(&path, Option::<&serde_json::Value>::None, None, headers.as_ref(), None).await
+        self.client.post(&path, Option::<&serde_json::Value>::None, None, None, None).await
     }
 
 }
@@ -451,118 +324,6 @@ fn path_primitive_prefix(name: &str, style: &str) -> String {
     }
 }
 
-struct HeaderParameterSpec {
-    value: serde_json::Value,
-    explode: bool,
-    content_type: Option<&'static str>,
-}
-
-impl HeaderParameterSpec {
-    fn new<T: serde::Serialize>(
-        value: T,
-        _style: &'static str,
-        explode: bool,
-        content_type: Option<&'static str>,
-    ) -> Self {
-        Self {
-            value: serde_json::to_value(value).unwrap_or(serde_json::Value::Null),
-            explode,
-            content_type,
-        }
-    }
-}
-
-fn build_request_headers(headers: &[(&str, HeaderParameterSpec)], cookies: &[(&str, HeaderParameterSpec)]) -> Option<RequestHeaders> {
-    let mut request_headers = RequestHeaders::new();
-    for (name, parameter) in headers {
-        if let Some(value) = serialize_header_parameter(parameter) {
-            request_headers.insert((*name).to_string(), value);
-        }
-    }
-
-    let cookie_header = build_cookie_header(cookies);
-    if !cookie_header.is_empty() {
-        request_headers
-            .entry("Cookie".to_string())
-            .and_modify(|existing| {
-                existing.push_str("; ");
-                existing.push_str(&cookie_header);
-            })
-            .or_insert(cookie_header);
-    }
-
-    if request_headers.is_empty() {
-        None
-    } else {
-        Some(request_headers)
-    }
-}
-
-fn build_cookie_header(cookies: &[(&str, HeaderParameterSpec)]) -> String {
-    cookies
-        .iter()
-        .filter_map(|(name, value)| {
-            serialize_header_parameter(value)
-                .map(|value| format!("{}={}", percent_encode(name), percent_encode(&value)))
-        })
-        .collect::<Vec<_>>()
-        .join("; ")
-}
-
-fn serialize_header_parameter(parameter: &HeaderParameterSpec) -> Option<String> {
-    if parameter.value.is_null() {
-        return None;
-    }
-    if parameter.content_type.is_some() {
-        return Some(parameter.value.to_string());
-    }
-    match &parameter.value {
-        serde_json::Value::Null => None,
-        serde_json::Value::String(value) => Some(value.clone()),
-        serde_json::Value::Number(value) => Some(value.to_string()),
-        serde_json::Value::Bool(value) => Some(value.to_string()),
-        serde_json::Value::Array(values) => {
-            let serialized = values
-                .iter()
-                .filter_map(serialize_json_value)
-                .collect::<Vec<_>>();
-            if serialized.is_empty() {
-                None
-            } else {
-                Some(serialized.join(","))
-            }
-        }
-        serde_json::Value::Object(values) => {
-            let serialized = values
-                .iter()
-                .filter_map(|(key, value)| {
-                    serialize_json_value(value).map(|serialized| {
-                        if parameter.explode {
-                            format!("{}={}", key, serialized)
-                        } else {
-                            format!("{},{}", key, serialized)
-                        }
-                    })
-                })
-                .collect::<Vec<_>>();
-            if serialized.is_empty() {
-                None
-            } else {
-                Some(serialized.join(","))
-            }
-        }
-    }
-}
-
-fn serialize_json_value(value: &serde_json::Value) -> Option<String> {
-    match value {
-        serde_json::Value::Null => None,
-        serde_json::Value::String(value) => Some(value.clone()),
-        serde_json::Value::Number(value) => Some(value.to_string()),
-        serde_json::Value::Bool(value) => Some(value.to_string()),
-        other => Some(other.to_string()),
-    }
-}
 
 struct QueryParameterSpec<'a> {
     name: &'a str,

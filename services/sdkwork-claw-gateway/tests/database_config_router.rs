@@ -14,6 +14,27 @@ use std::sync::{Arc, Mutex};
 use tokio::time::{sleep, Duration};
 use tower::ServiceExt;
 
+fn assert_server_generated_request_id(actual: &str, client_request_id: &str) {
+    assert_ne!(
+        client_request_id, actual,
+        "gateway must ignore client supplied x-request-id and use a server request id"
+    );
+    assert_eq!(36, actual.len(), "server request id must be a UUID");
+    assert_eq!(Some('-'), actual.chars().nth(8));
+    assert_eq!(Some('-'), actual.chars().nth(13));
+    assert_eq!(Some('-'), actual.chars().nth(18));
+    assert_eq!(Some('-'), actual.chars().nth(23));
+    assert_eq!(Some('4'), actual.chars().nth(14));
+    let variant = actual
+        .chars()
+        .nth(19)
+        .expect("server request id must include UUID variant");
+    assert!(
+        matches!(variant, '8' | '9' | 'a' | 'b'),
+        "server request id must be an RFC 4122 variant UUID"
+    );
+}
+
 #[tokio::test]
 async fn database_config_router_loads_sqlite_catalog_for_openai_models() {
     let catalog = seeded_sqlite_catalog().await.unwrap();
@@ -203,13 +224,13 @@ async fn database_config_router_records_non_stream_chat_usage_when_provider_succ
     let trace = sqlx::query(
         r#"
         SELECT request_id, trace_id, tenant_id, organization_id, user_id, api_key_id,
-               api_key_group_snapshot, requested_model, provider_model, http_status,
+               channel_group_snapshot, requested_model, provider_model, http_status,
                streaming, prompt_tokens, completion_tokens, total_tokens
         FROM ai_request_trace
-        WHERE request_id = ?
+        WHERE trace_id = ?
         "#,
     )
-    .bind("req-gateway-usage-1")
+    .bind("trace-gateway-usage-1")
     .fetch_optional(&read_pool)
     .await
     .unwrap();
@@ -218,6 +239,8 @@ async fn database_config_router_records_non_stream_chat_usage_when_provider_succ
         "database-configured provider relay must write ai_request_trace"
     );
     let trace = trace.unwrap();
+    let request_id = trace.get::<String, _>("request_id");
+    assert_server_generated_request_id(&request_id, "req-gateway-usage-1");
     assert_eq!("trace-gateway-usage-1", trace.get::<String, _>("trace_id"));
     assert_eq!(10_i64, trace.get::<i64, _>("tenant_id"));
     assert_eq!(20_i64, trace.get::<i64, _>("organization_id"));
@@ -225,7 +248,7 @@ async fn database_config_router_records_non_stream_chat_usage_when_provider_succ
     assert_eq!(100_i64, trace.get::<i64, _>("api_key_id"));
     assert_eq!(
         "standard-group",
-        trace.get::<String, _>("api_key_group_snapshot")
+        trace.get::<String, _>("channel_group_snapshot")
     );
     assert_eq!("gpt-4o-mini", trace.get::<String, _>("requested_model"));
     assert_eq!("gpt-4o-mini", trace.get::<String, _>("provider_model"));
@@ -244,7 +267,7 @@ async fn database_config_router_records_non_stream_chat_usage_when_provider_succ
         WHERE request_id = ?
         "#,
     )
-    .bind("req-gateway-usage-1")
+    .bind(&request_id)
     .fetch_optional(&read_pool)
     .await
     .unwrap();
@@ -253,6 +276,7 @@ async fn database_config_router_records_non_stream_chat_usage_when_provider_succ
         "database-configured provider relay must write ai_usage_fact"
     );
     let usage = usage.unwrap();
+    assert_eq!(request_id, usage.get::<String, _>("request_id"));
     assert_eq!(100_i64, usage.get::<i64, _>("api_key_id"));
     assert_eq!("gpt-4o-mini", usage.get::<String, _>("model"));
     assert_eq!(3001_i64, usage.get::<i64, _>("channel_id"));
@@ -295,7 +319,7 @@ async fn database_config_router_applies_database_retry_policy_without_duplicate_
     let pool = catalog.open_pool().await.unwrap();
     sqlx::query(
         r#"
-        UPDATE integration_channel
+        UPDATE ai_channel
         SET base_url = ?,
             retry_policy = '{"max_attempts":3,"retryable_status_codes":[503],"backoff_ms":0}'
         WHERE id = 3001
@@ -370,13 +394,15 @@ async fn database_config_router_applies_database_retry_policy_without_duplicate_
         SELECT request_id, trace_id, channel_id, requested_model, provider_model, http_status,
                streaming, prompt_tokens, completion_tokens, total_tokens
         FROM ai_request_trace
-        WHERE request_id = ?
+        WHERE trace_id = ?
         "#,
     )
-    .bind("req-gateway-db-retry-1")
+    .bind("trace-gateway-db-retry-1")
     .fetch_one(&read_pool)
     .await
     .unwrap();
+    let request_id = trace.get::<String, _>("request_id");
+    assert_server_generated_request_id(&request_id, "req-gateway-db-retry-1");
     assert_eq!(
         "trace-gateway-db-retry-1",
         trace.get::<String, _>("trace_id")
@@ -399,10 +425,11 @@ async fn database_config_router_applies_database_retry_policy_without_duplicate_
         WHERE request_id = ?
         "#,
     )
-    .bind("req-gateway-db-retry-1")
+    .bind(&request_id)
     .fetch_one(&read_pool)
     .await
     .unwrap();
+    assert_eq!(request_id, usage.get::<String, _>("request_id"));
     assert_eq!(3001_i64, usage.get::<i64, _>("channel_id"));
     assert_eq!(
         "llm_input_token",
@@ -421,13 +448,13 @@ async fn database_config_router_applies_database_retry_policy_without_duplicate_
 
     let trace_count: i64 =
         sqlx::query_scalar("SELECT COUNT(*) FROM ai_request_trace WHERE request_id = ?")
-            .bind("req-gateway-db-retry-1")
+            .bind(&request_id)
             .fetch_one(&read_pool)
             .await
             .unwrap();
     let usage_count: i64 =
         sqlx::query_scalar("SELECT COUNT(*) FROM ai_usage_fact WHERE request_id = ?")
-            .bind("req-gateway-db-retry-1")
+            .bind(&request_id)
             .fetch_one(&read_pool)
             .await
             .unwrap();
@@ -507,7 +534,14 @@ async fn database_config_router_background_settlement_worker_settles_recorded_ch
 
     assert_eq!(StatusCode::OK, response.status());
     let read_pool = catalog.open_pool().await.unwrap();
-    wait_for_usage_settlement_success(&read_pool, "req-gateway-usage-settlement-1").await;
+    let request_id: String =
+        sqlx::query_scalar("SELECT request_id FROM ai_usage_fact WHERE trace_id = ? LIMIT 1")
+            .bind("trace-gateway-usage-settlement-1")
+            .fetch_one(&read_pool)
+            .await
+            .unwrap();
+    assert_server_generated_request_id(&request_id, "req-gateway-usage-settlement-1");
+    wait_for_usage_settlement_success(&read_pool, &request_id).await;
 
     assert_eq!(
         990,
@@ -531,11 +565,13 @@ async fn database_config_router_background_settlement_worker_settles_recorded_ch
     );
     assert_eq!(
         2,
-        scalar_i64(
-            &read_pool,
-            "SELECT settlement_status FROM ai_usage_fact WHERE request_id = 'req-gateway-usage-settlement-1'"
+        sqlx::query_scalar::<_, i64>(
+            "SELECT settlement_status FROM ai_usage_fact WHERE request_id = ?"
         )
+        .bind(&request_id)
+        .fetch_one(&read_pool)
         .await
+        .unwrap()
     );
     read_pool.close().await;
 }
@@ -615,12 +651,12 @@ async fn database_config_router_uses_provider_relay_config_for_streaming_chat_co
     let read_pool = catalog.open_pool().await.unwrap();
     let trace = sqlx::query(
         r#"
-        SELECT request_id, streaming, prompt_tokens, completion_tokens, total_tokens
+        SELECT request_id, trace_id, streaming, prompt_tokens, completion_tokens, total_tokens
         FROM ai_request_trace
-        WHERE request_id = ?
+        WHERE trace_id = ?
         "#,
     )
-    .bind("req-gateway-stream-usage-1")
+    .bind("trace-gateway-stream-usage-1")
     .fetch_optional(&read_pool)
     .await
     .unwrap();
@@ -630,7 +666,11 @@ async fn database_config_router_uses_provider_relay_config_for_streaming_chat_co
     );
     let trace = trace.unwrap();
     let request_id = trace.get::<String, _>("request_id");
-    assert_eq!("req-gateway-stream-usage-1", request_id);
+    assert_server_generated_request_id(&request_id, "req-gateway-stream-usage-1");
+    assert_eq!(
+        "trace-gateway-stream-usage-1",
+        trace.get::<String, _>("trace_id")
+    );
     assert_eq!(1_i64, trace.get::<i64, _>("streaming"));
     assert_eq!(1_i64, trace.get::<i64, _>("prompt_tokens"));
     assert_eq!(1_i64, trace.get::<i64, _>("completion_tokens"));
@@ -761,7 +801,7 @@ async fn database_config_router_uses_provider_relay_config_for_embeddings() {
                 .header("authorization", catalog.gateway_authorization_header())
                 .header("content-type", "application/json")
                 .body(Body::from(
-                    r#"{"model":"openai/global/text-embedding-3-small","input":["ping"]}"#,
+                    r#"{"model":"openai/text-embedding-3-small","input":["ping"]}"#,
                 ))
                 .unwrap(),
         )
@@ -804,7 +844,7 @@ async fn database_config_router_uses_provider_secret_map_for_route_scoped_chat_r
 
     let catalog = seeded_sqlite_catalog().await.unwrap();
     let pool = catalog.open_pool().await.unwrap();
-    sqlx::query("UPDATE integration_channel SET base_url = ? WHERE id = 3001")
+    sqlx::query("UPDATE ai_channel SET base_url = ? WHERE id = 3001")
         .bind(format!("http://{addr}"))
         .execute(&pool)
         .await
@@ -876,7 +916,7 @@ async fn database_config_router_uses_provider_secret_map_for_route_scoped_stream
 
     let catalog = seeded_sqlite_catalog().await.unwrap();
     let pool = catalog.open_pool().await.unwrap();
-    sqlx::query("UPDATE integration_channel SET base_url = ? WHERE id = 3001")
+    sqlx::query("UPDATE ai_channel SET base_url = ? WHERE id = 3001")
         .bind(format!("http://{addr}"))
         .execute(&pool)
         .await
@@ -932,8 +972,7 @@ async fn database_config_router_uses_provider_secret_map_for_route_scoped_stream
 }
 
 #[tokio::test]
-async fn database_config_router_keeps_account_pool_route_after_streaming_chat_success_snapshot_reload(
-) {
+async fn database_config_router_keeps_channel_route_after_streaming_chat_success_snapshot_reload() {
     let captured = Arc::new(Mutex::new(Vec::new()));
     let provider = Router::new()
         .route(
@@ -949,7 +988,7 @@ async fn database_config_router_keeps_account_pool_route_after_streaming_chat_su
 
     let catalog = seeded_sqlite_catalog().await.unwrap();
     let pool = catalog.open_pool().await.unwrap();
-    sqlx::query("UPDATE integration_channel SET base_url = ? WHERE id = 3001")
+    sqlx::query("UPDATE ai_channel SET base_url = ? WHERE id = 3001")
         .bind(format!("http://{addr}"))
         .execute(&pool)
         .await
@@ -983,7 +1022,7 @@ async fn database_config_router_keeps_account_pool_route_after_streaming_chat_su
                     .header("x-request-id", format!("req-gateway-stream-repeat-{request_no}"))
                     .header("x-trace-id", format!("trace-gateway-stream-repeat-{request_no}"))
                     .body(Body::from(
-                        r#"{"model":"openai/global/gpt-4o-mini","messages":[{"role":"user","content":"ping"}],"stream":true}"#,
+                        r#"{"model":"openai/gpt-4o-mini","messages":[{"role":"user","content":"ping"}],"stream":true}"#,
                     ))
                     .unwrap(),
             )
@@ -1005,7 +1044,7 @@ async fn database_config_router_keeps_account_pool_route_after_streaming_chat_su
             .unwrap();
         assert!(
             snapshot
-                .list_provider_account_pool_routes()
+                .list_provider_channel_routes()
                 .iter()
                 .any(|route| route.channel_id == 3001),
             "catalog reload after request {request_no} must keep the account-pool route callable"
@@ -1036,7 +1075,7 @@ async fn database_config_router_uses_provider_secret_map_for_route_scoped_respon
 
     let catalog = seeded_sqlite_catalog().await.unwrap();
     let pool = catalog.open_pool().await.unwrap();
-    sqlx::query("UPDATE integration_channel SET base_url = ? WHERE id = 3001")
+    sqlx::query("UPDATE ai_channel SET base_url = ? WHERE id = 3001")
         .bind(format!("http://{addr}"))
         .execute(&pool)
         .await
@@ -1103,7 +1142,7 @@ async fn database_config_router_uses_provider_secret_map_for_route_scoped_embedd
 
     let catalog = seeded_sqlite_catalog().await.unwrap();
     let pool = catalog.open_pool().await.unwrap();
-    sqlx::query("UPDATE integration_channel SET base_url = ? WHERE id = 3001")
+    sqlx::query("UPDATE ai_channel SET base_url = ? WHERE id = 3001")
         .bind(format!("http://{addr}"))
         .execute(&pool)
         .await
@@ -1133,7 +1172,7 @@ async fn database_config_router_uses_provider_secret_map_for_route_scoped_embedd
                 .header("authorization", catalog.gateway_authorization_header())
                 .header("content-type", "application/json")
                 .body(Body::from(
-                    r#"{"model":"openai/global/text-embedding-3-small","input":["ping"]}"#,
+                    r#"{"model":"openai/text-embedding-3-small","input":["ping"]}"#,
                 ))
                 .unwrap(),
         )
@@ -1234,7 +1273,7 @@ async fn capture_provider_chat_completion(
         Json(json!({
             "id": "chatcmpl-upstream",
             "object": "chat.completion",
-            "model": "openai/global/gpt-4o-mini",
+            "model": "openai/gpt-4o-mini",
             "choices": [
                 {
                     "index": 0,
@@ -1264,7 +1303,7 @@ async fn capture_provider_chat_completion_billable_usage(
         Json(json!({
             "id": "chatcmpl-upstream-billable",
             "object": "chat.completion",
-            "model": "openai/global/gpt-4o-mini",
+            "model": "openai/gpt-4o-mini",
             "choices": [
                 {
                     "index": 0,
@@ -1310,7 +1349,7 @@ async fn capture_twice_flaky_provider_chat_completion(
         Json(json!({
             "id": "chatcmpl-upstream-retry",
             "object": "chat.completion",
-            "model": "openai/global/gpt-4o-mini",
+            "model": "openai/gpt-4o-mini",
             "choices": [
                 {
                     "index": 0,
@@ -1400,7 +1439,7 @@ async fn capture_provider_response(
         Json(json!({
             "id": "resp-upstream",
             "object": "response",
-            "model": "openai/global/gpt-4o-mini",
+            "model": "openai/gpt-4o-mini",
             "output": [
                 {
                     "type": "message",
@@ -1429,7 +1468,7 @@ async fn capture_provider_embedding(
         StatusCode::OK,
         Json(json!({
             "object": "list",
-            "model": "openai/global/text-embedding-3-small",
+            "model": "openai/text-embedding-3-small",
             "data": [
                 {"object": "embedding", "index": 0, "embedding": [0.1, 0.2, 0.3]}
             ],

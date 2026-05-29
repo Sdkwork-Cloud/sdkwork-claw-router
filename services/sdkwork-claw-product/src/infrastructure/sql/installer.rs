@@ -18,7 +18,7 @@ use sdkwork_iam_storage_sqlx::{
     DEFAULT_IAM_ORGANIZATION_NAME, DEFAULT_IAM_ORGANIZATION_PATH, DEFAULT_IAM_TENANT_CODE,
     DEFAULT_IAM_TENANT_ID, DEFAULT_IAM_TENANT_NAME,
 };
-use sdkwork_models::{catalog_key, ModelCatalog};
+use sdkwork_models::ModelCatalog;
 use sha2::{Digest, Sha256};
 use sqlx::{PgPool, Postgres, Row, Sqlite, SqlitePool, Transaction};
 
@@ -36,8 +36,12 @@ use crate::infrastructure::sql::forum_seed::{
     postgres_forum_seed_complete, sqlite_forum_seed_complete,
 };
 use crate::infrastructure::sql::model_catalog_import::{
-    catalog_scope_counts, catalog_scope_vendor_codes, catalog_with_selected_vendors,
-    load_catalog_root_with_pin, model_catalog_key, DEFAULT_CATALOG_REFRESH_SOURCE,
+    catalog_ai_resource_projections, catalog_api_endpoint_projections,
+    catalog_modality_api_endpoint_projections, catalog_modality_projections,
+    catalog_model_api_endpoint_projections, catalog_model_modality_projections,
+    catalog_scope_counts, catalog_scope_vendor_codes, catalog_vendor_api_endpoint_projections,
+    catalog_vendor_modality_projections, catalog_with_selected_vendors, load_catalog_root_with_pin,
+    model_catalog_key, pricing_catalog_key, DEFAULT_CATALOG_REFRESH_SOURCE,
 };
 use crate::infrastructure::sql::skills_seed::{
     bundled_skills_seed_payload, import_postgres_skills_seed, import_sqlite_skills_seed,
@@ -77,7 +81,12 @@ static CATALOG_REFRESH_SEQUENCE: AtomicU64 = AtomicU64::new(1);
 static ADMIN_PASSWORD_RESET_SEQUENCE: AtomicU64 = AtomicU64::new(1);
 static GENERATED_SCHEMA_TABLE_NAMES: OnceLock<BTreeSet<String>> = OnceLock::new();
 static GENERATED_SCHEMA_INDEX_NAMES: OnceLock<BTreeSet<String>> = OnceLock::new();
-static GENERATED_SCHEMA_TABLE_COLUMNS: OnceLock<Vec<(String, BTreeSet<String>)>> = OnceLock::new();
+static GENERATED_SCHEMA_POSTGRES_TABLE_COLUMNS: OnceLock<
+    Vec<(String, Vec<SchemaColumnDefinition>)>,
+> = OnceLock::new();
+static GENERATED_SCHEMA_SQLITE_TABLE_COLUMNS: OnceLock<Vec<(String, Vec<SqliteColumnDefinition>)>> =
+    OnceLock::new();
+static GENERATED_SCHEMA_SQLITE_INDEX_STATEMENTS: OnceLock<Vec<String>> = OnceLock::new();
 
 #[derive(Debug, Clone, PartialEq, Eq)]
 pub struct DatabaseInstallOptions {
@@ -972,10 +981,14 @@ impl DatabaseInstaller {
     async fn apply_schema_startup_repairs(&self) -> Result<bool, DatabaseInstallError> {
         let changed = match &self.backend {
             InstallerBackend::Sqlite(pool) => {
-                drop_sqlite_obsolete_generated_schema_indexes(pool).await?
+                let mut changed = drop_sqlite_obsolete_generated_schema_indexes(pool).await?;
+                changed |= repair_sqlite_generated_schema_index_definitions(pool).await?;
+                changed
             }
             InstallerBackend::Postgres(pool) => {
-                drop_postgres_obsolete_generated_schema_indexes(pool).await?
+                let mut changed = ensure_postgres_generated_schema_columns(pool).await?;
+                changed |= drop_postgres_obsolete_generated_schema_indexes(pool).await?;
+                changed
             }
         };
         Ok(changed)
@@ -1403,12 +1416,19 @@ struct CatalogCompletenessSpec {
     meter_codes: BTreeSet<String>,
     price_keys: BTreeSet<ModelPriceCompletenessKey>,
     ranking_keys: BTreeSet<ModelRankingCompletenessKey>,
+    modality_codes: BTreeSet<String>,
+    api_endpoint_codes: BTreeSet<String>,
+    vendor_modality_keys: BTreeSet<VendorModalityCompletenessKey>,
+    vendor_api_endpoint_keys: BTreeSet<VendorApiEndpointCompletenessKey>,
+    modality_api_endpoint_keys: BTreeSet<ModalityApiEndpointCompletenessKey>,
+    model_modality_keys: BTreeSet<ModelModalityCompletenessKey>,
+    model_api_endpoint_keys: BTreeSet<ModelApiEndpointCompletenessKey>,
+    ai_resource_codes: BTreeSet<String>,
 }
 
 #[derive(Debug, Clone, PartialEq, Eq, PartialOrd, Ord)]
 struct ModelFamilyCompletenessKey {
     vendor_code: String,
-    region_code: String,
     family_code: String,
 }
 
@@ -1422,7 +1442,9 @@ struct ModelCapabilityCompletenessKey {
 
 #[derive(Debug, Clone, PartialEq, Eq, PartialOrd, Ord)]
 struct ModelPriceCompletenessKey {
+    uuid: String,
     catalog_key: String,
+    region_code: String,
     meter_code: String,
     price_side: i32,
     pricing_scope: i32,
@@ -1432,7 +1454,40 @@ struct ModelPriceCompletenessKey {
 struct ModelRankingCompletenessKey {
     snapshot_date: String,
     rank_scope: String,
+    vendor_code: String,
+    region_code: String,
     catalog_key: String,
+}
+
+#[derive(Debug, Clone, PartialEq, Eq, PartialOrd, Ord)]
+struct VendorModalityCompletenessKey {
+    vendor_code: String,
+    modality_code: String,
+}
+
+#[derive(Debug, Clone, PartialEq, Eq, PartialOrd, Ord)]
+struct VendorApiEndpointCompletenessKey {
+    vendor_code: String,
+    endpoint_code: String,
+}
+
+#[derive(Debug, Clone, PartialEq, Eq, PartialOrd, Ord)]
+struct ModalityApiEndpointCompletenessKey {
+    modality_code: String,
+    endpoint_code: String,
+}
+
+#[derive(Debug, Clone, PartialEq, Eq, PartialOrd, Ord)]
+struct ModelModalityCompletenessKey {
+    catalog_key: String,
+    modality_code: String,
+    direction: String,
+}
+
+#[derive(Debug, Clone, PartialEq, Eq, PartialOrd, Ord)]
+struct ModelApiEndpointCompletenessKey {
+    catalog_key: String,
+    endpoint_code: String,
 }
 
 fn catalog_completeness_spec(catalog: &ModelCatalog) -> CatalogCompletenessSpec {
@@ -1450,7 +1505,6 @@ fn catalog_completeness_spec(catalog: &ModelCatalog) -> CatalogCompletenessSpec 
                 .iter()
                 .map(|family| ModelFamilyCompletenessKey {
                     vendor_code: vendor.vendor.vendor_code.clone(),
-                    region_code: vendor.vendor.region_code.clone(),
                     family_code: family.family_code.clone(),
                 })
         })
@@ -1459,13 +1513,10 @@ fn catalog_completeness_spec(catalog: &ModelCatalog) -> CatalogCompletenessSpec 
         .vendors
         .iter()
         .flat_map(|vendor| {
-            vendor.models.iter().map(|model| {
-                model_catalog_key(
-                    &vendor.vendor.vendor_code,
-                    &vendor.vendor.region_code,
-                    &model.model_id,
-                )
-            })
+            vendor
+                .models
+                .iter()
+                .map(|model| model_catalog_key(&vendor.vendor.vendor_code, &model.model_id))
         })
         .collect::<BTreeSet<_>>();
     let capability_keys = catalog
@@ -1474,11 +1525,7 @@ fn catalog_completeness_spec(catalog: &ModelCatalog) -> CatalogCompletenessSpec 
         .flat_map(|vendor| {
             vendor.models.iter().map(|model| {
                 (
-                    model_catalog_key(
-                        &vendor.vendor.vendor_code,
-                        &vendor.vendor.region_code,
-                        &model.model_id,
-                    ),
+                    model_catalog_key(&vendor.vendor.vendor_code, &model.model_id),
                     model,
                 )
             })
@@ -1511,18 +1558,24 @@ fn catalog_completeness_spec(catalog: &ModelCatalog) -> CatalogCompletenessSpec 
     let price_keys = catalog
         .vendors
         .iter()
-        .flat_map(|vendor| vendor.pricing.iter().map(move |pricing| (vendor, pricing)))
-        .flat_map(|(vendor, pricing)| {
-            let pricing_catalog_key = catalog_key(
-                &vendor.vendor.vendor_code,
-                &vendor.vendor.region_code,
-                &pricing.model_id,
-            );
+        .flat_map(|vendor| vendor.pricing.iter())
+        .flat_map(|pricing| {
+            let pricing_catalog_key = pricing_catalog_key(&pricing.vendor_code, &pricing.model_id);
             pricing
                 .prices
                 .iter()
                 .map(move |price| ModelPriceCompletenessKey {
+                    uuid: crate::infrastructure::sql::model_catalog_import::stable_uuid(
+                        "sdk-price",
+                        &[
+                            &pricing.vendor_code,
+                            &pricing.region_code,
+                            &pricing.model_id,
+                            &price.price_id,
+                        ],
+                    ),
                     catalog_key: pricing_catalog_key.clone(),
+                    region_code: pricing.region_code.clone(),
                     meter_code: price.meter_code.clone(),
                     price_side: crate::infrastructure::sql::model_catalog_import::price_side_code(
                         &price.price_side,
@@ -1546,20 +1599,16 @@ fn catalog_completeness_spec(catalog: &ModelCatalog) -> CatalogCompletenessSpec 
         .flat_map(|(vendor, snapshot)| {
             let model_catalog_keys = catalog_keys.clone();
             snapshot.items.iter().filter_map(move |item| {
-                let item_catalog_key = catalog_key(
-                    &vendor.vendor.vendor_code,
-                    &vendor.vendor.region_code,
-                    &item.model_id,
-                );
-                let model_catalog_key = model_catalog_key(
-                    &vendor.vendor.vendor_code,
-                    &vendor.vendor.region_code,
-                    &item.model_id,
-                );
+                let item_catalog_key =
+                    pricing_catalog_key(&vendor.vendor.vendor_code, &item.model_id);
+                let model_catalog_key =
+                    model_catalog_key(&vendor.vendor.vendor_code, &item.model_id);
                 if model_catalog_keys.contains(&model_catalog_key) {
                     Some(ModelRankingCompletenessKey {
                         snapshot_date: snapshot.snapshot_date.clone(),
                         rank_scope: snapshot.rank_scope.clone(),
+                        vendor_code: vendor.vendor.vendor_code.clone(),
+                        region_code: vendor.vendor.region_code.clone(),
                         catalog_key: item_catalog_key,
                     })
                 } else {
@@ -1567,6 +1616,54 @@ fn catalog_completeness_spec(catalog: &ModelCatalog) -> CatalogCompletenessSpec 
                 }
             })
         })
+        .collect::<BTreeSet<_>>();
+    let modality_codes = catalog_modality_projections(catalog)
+        .into_iter()
+        .map(|item| item.modality_code)
+        .collect::<BTreeSet<_>>();
+    let api_endpoint_codes = catalog_api_endpoint_projections(catalog)
+        .into_iter()
+        .map(|item| item.endpoint_code)
+        .collect::<BTreeSet<_>>();
+    let vendor_modality_keys = catalog_vendor_modality_projections(catalog)
+        .into_iter()
+        .map(|item| VendorModalityCompletenessKey {
+            vendor_code: item.vendor_code,
+            modality_code: item.modality_code,
+        })
+        .collect::<BTreeSet<_>>();
+    let vendor_api_endpoint_keys = catalog_vendor_api_endpoint_projections(catalog)
+        .into_iter()
+        .map(|item| VendorApiEndpointCompletenessKey {
+            vendor_code: item.vendor_code,
+            endpoint_code: item.endpoint_code,
+        })
+        .collect::<BTreeSet<_>>();
+    let modality_api_endpoint_keys = catalog_modality_api_endpoint_projections(catalog)
+        .into_iter()
+        .map(|item| ModalityApiEndpointCompletenessKey {
+            modality_code: item.modality_code,
+            endpoint_code: item.endpoint_code,
+        })
+        .collect::<BTreeSet<_>>();
+    let model_modality_keys = catalog_model_modality_projections(catalog)
+        .into_iter()
+        .map(|item| ModelModalityCompletenessKey {
+            catalog_key: item.catalog_key,
+            modality_code: item.modality_code,
+            direction: item.direction,
+        })
+        .collect::<BTreeSet<_>>();
+    let model_api_endpoint_keys = catalog_model_api_endpoint_projections(catalog)
+        .into_iter()
+        .map(|item| ModelApiEndpointCompletenessKey {
+            catalog_key: item.catalog_key,
+            endpoint_code: item.endpoint_code,
+        })
+        .collect::<BTreeSet<_>>();
+    let ai_resource_codes = catalog_ai_resource_projections(catalog)
+        .into_iter()
+        .map(|item| item.resource_code)
         .collect::<BTreeSet<_>>();
 
     CatalogCompletenessSpec {
@@ -1577,6 +1674,14 @@ fn catalog_completeness_spec(catalog: &ModelCatalog) -> CatalogCompletenessSpec 
         meter_codes,
         price_keys,
         ranking_keys,
+        modality_codes,
+        api_endpoint_codes,
+        vendor_modality_keys,
+        vendor_api_endpoint_keys,
+        modality_api_endpoint_keys,
+        model_modality_keys,
+        model_api_endpoint_keys,
+        ai_resource_codes,
     }
 }
 
@@ -1823,6 +1928,9 @@ async fn postgres_status(
 
     if !postgres_generated_schema_tables_exist(pool).await? {
         return Ok(InstallationStatus::Corrupt);
+    }
+    if !postgres_generated_schema_columns_exist(pool).await? {
+        return Ok(InstallationStatus::UpgradeRequired);
     }
     if !postgres_generated_schema_indexes_exist(pool).await? {
         return Ok(InstallationStatus::UpgradeRequired);
@@ -2316,6 +2424,7 @@ async fn repair_postgres_installation(
     bootstrap_admin_options: &BootstrapAdminOptions,
 ) -> Result<Option<BootstrapAdminReport>, DatabaseInstallError> {
     if !postgres_generated_schema_tables_exist(pool).await?
+        || !postgres_generated_schema_columns_exist(pool).await?
         || !postgres_generated_schema_indexes_exist(pool).await?
     {
         record_postgres_migration_started(
@@ -3381,6 +3490,16 @@ async fn drop_sqlite_obsolete_generated_schema_indexes(
     Ok(changed)
 }
 
+async fn repair_sqlite_generated_schema_index_definitions(
+    pool: &SqlitePool,
+) -> Result<bool, sqlx::Error> {
+    let mut changed = false;
+    for statement in generated_schema_sqlite_index_statements() {
+        changed |= ensure_sqlite_index_statement(pool, statement.as_str()).await?;
+    }
+    Ok(changed)
+}
+
 async fn drop_postgres_obsolete_generated_schema_indexes(
     pool: &PgPool,
 ) -> Result<bool, sqlx::Error> {
@@ -3423,8 +3542,26 @@ async fn sqlite_generated_schema_tables_exist(pool: &SqlitePool) -> Result<bool,
 }
 
 async fn sqlite_generated_schema_columns_exist(pool: &SqlitePool) -> Result<bool, sqlx::Error> {
-    for (table, expected_columns) in generated_schema_table_columns() {
+    for (table, expected_columns) in generated_schema_sqlite_table_columns() {
         let installed_columns = sqlite_existing_columns(pool, &table).await?;
+        let expected_columns = expected_columns
+            .iter()
+            .map(|column| column.name.to_ascii_lowercase())
+            .collect::<BTreeSet<_>>();
+        if !expected_columns.is_subset(&installed_columns) {
+            return Ok(false);
+        }
+    }
+    Ok(true)
+}
+
+async fn postgres_generated_schema_columns_exist(pool: &PgPool) -> Result<bool, sqlx::Error> {
+    for (table, expected_columns) in generated_schema_postgres_table_columns() {
+        let installed_columns = postgres_existing_columns(pool, &table).await?;
+        let expected_columns = expected_columns
+            .iter()
+            .map(|column| column.name.to_ascii_lowercase())
+            .collect::<BTreeSet<_>>();
         if !expected_columns.is_subset(&installed_columns) {
             return Ok(false);
         }
@@ -3447,16 +3584,12 @@ async fn postgres_generated_schema_tables_exist(pool: &PgPool) -> Result<bool, s
 }
 
 async fn sqlite_generated_schema_indexes_exist(pool: &SqlitePool) -> Result<bool, sqlx::Error> {
-    let installed_indexes = sqlite_string_set(
-        pool,
-        r#"
-        SELECT name
-        FROM sqlite_master
-        WHERE type = 'index'
-        "#,
-    )
-    .await?;
-    Ok(generated_schema_index_names().is_subset(&installed_indexes))
+    for statement in generated_schema_sqlite_index_statements() {
+        if !sqlite_index_statement_matches(pool, statement.as_str()).await? {
+            return Ok(false);
+        }
+    }
+    Ok(true)
 }
 
 async fn sqlite_appbase_commerce_schema_tables_exist(
@@ -3580,6 +3713,9 @@ async fn postgres_refresh_schema_needs_prepare(
         return Ok(true);
     }
     if !postgres_generated_schema_tables_exist(pool).await? {
+        return Ok(true);
+    }
+    if !postgres_generated_schema_columns_exist(pool).await? {
         return Ok(true);
     }
     if !postgres_generated_schema_indexes_exist(pool).await? {
@@ -3926,7 +4062,7 @@ async fn sqlite_sdkwork_models_catalog_complete(
         pool,
         r#"
         SELECT DISTINCT vendor_code
-        FROM ai_model_vendor_region
+        FROM ai_model_vendor
         WHERE status = 1
           AND deleted_at IS NULL
         "#,
@@ -3956,6 +4092,41 @@ async fn sqlite_sdkwork_models_catalog_complete(
     .await?;
     let price_keys = sqlite_model_price_keys(pool).await?;
     let ranking_keys = sqlite_model_ranking_keys(pool).await?;
+    let modality_codes = sqlite_string_set(
+        pool,
+        r#"
+        SELECT DISTINCT modality_code
+        FROM ai_modality
+        WHERE status = 1
+          AND deleted_at IS NULL
+        "#,
+    )
+    .await?;
+    let api_endpoint_codes = sqlite_string_set(
+        pool,
+        r#"
+        SELECT DISTINCT endpoint_code
+        FROM ai_api_endpoint
+        WHERE status = 1
+          AND deleted_at IS NULL
+        "#,
+    )
+    .await?;
+    let vendor_modality_keys = sqlite_vendor_modality_keys(pool).await?;
+    let vendor_api_endpoint_keys = sqlite_vendor_api_endpoint_keys(pool).await?;
+    let modality_api_endpoint_keys = sqlite_modality_api_endpoint_keys(pool).await?;
+    let model_modality_keys = sqlite_model_modality_keys(pool).await?;
+    let model_api_endpoint_keys = sqlite_model_api_endpoint_keys(pool).await?;
+    let ai_resource_codes = sqlite_string_set(
+        pool,
+        r#"
+        SELECT DISTINCT resource_code
+        FROM ai_resource
+        WHERE status = 1
+          AND deleted_at IS NULL
+        "#,
+    )
+    .await?;
 
     Ok(spec.vendor_codes.is_subset(&vendor_codes)
         && spec.family_keys.is_subset(&family_keys)
@@ -3963,7 +4134,21 @@ async fn sqlite_sdkwork_models_catalog_complete(
         && spec.capability_keys.is_subset(&capability_keys)
         && spec.meter_codes.is_subset(&meter_codes)
         && spec.price_keys.is_subset(&price_keys)
-        && spec.ranking_keys.is_subset(&ranking_keys))
+        && spec.ranking_keys.is_subset(&ranking_keys)
+        && spec.modality_codes.is_subset(&modality_codes)
+        && spec.api_endpoint_codes.is_subset(&api_endpoint_codes)
+        && spec.vendor_modality_keys.is_subset(&vendor_modality_keys)
+        && spec
+            .vendor_api_endpoint_keys
+            .is_subset(&vendor_api_endpoint_keys)
+        && spec
+            .modality_api_endpoint_keys
+            .is_subset(&modality_api_endpoint_keys)
+        && spec.model_modality_keys.is_subset(&model_modality_keys)
+        && spec
+            .model_api_endpoint_keys
+            .is_subset(&model_api_endpoint_keys)
+        && spec.ai_resource_codes.is_subset(&ai_resource_codes))
 }
 
 async fn postgres_sdkwork_models_catalog_complete(
@@ -3974,7 +4159,7 @@ async fn postgres_sdkwork_models_catalog_complete(
         pool,
         r#"
         SELECT DISTINCT vendor_code
-        FROM ai_model_vendor_region
+        FROM ai_model_vendor
         WHERE status = 1
           AND deleted_at IS NULL
         "#,
@@ -4004,6 +4189,41 @@ async fn postgres_sdkwork_models_catalog_complete(
     .await?;
     let price_keys = postgres_model_price_keys(pool).await?;
     let ranking_keys = postgres_model_ranking_keys(pool).await?;
+    let modality_codes = postgres_string_set(
+        pool,
+        r#"
+        SELECT DISTINCT modality_code
+        FROM ai_modality
+        WHERE status = 1
+          AND deleted_at IS NULL
+        "#,
+    )
+    .await?;
+    let api_endpoint_codes = postgres_string_set(
+        pool,
+        r#"
+        SELECT DISTINCT endpoint_code
+        FROM ai_api_endpoint
+        WHERE status = 1
+          AND deleted_at IS NULL
+        "#,
+    )
+    .await?;
+    let vendor_modality_keys = postgres_vendor_modality_keys(pool).await?;
+    let vendor_api_endpoint_keys = postgres_vendor_api_endpoint_keys(pool).await?;
+    let modality_api_endpoint_keys = postgres_modality_api_endpoint_keys(pool).await?;
+    let model_modality_keys = postgres_model_modality_keys(pool).await?;
+    let model_api_endpoint_keys = postgres_model_api_endpoint_keys(pool).await?;
+    let ai_resource_codes = postgres_string_set(
+        pool,
+        r#"
+        SELECT DISTINCT resource_code
+        FROM ai_resource
+        WHERE status = 1
+          AND deleted_at IS NULL
+        "#,
+    )
+    .await?;
 
     Ok(spec.vendor_codes.is_subset(&vendor_codes)
         && spec.family_keys.is_subset(&family_keys)
@@ -4011,7 +4231,21 @@ async fn postgres_sdkwork_models_catalog_complete(
         && spec.capability_keys.is_subset(&capability_keys)
         && spec.meter_codes.is_subset(&meter_codes)
         && spec.price_keys.is_subset(&price_keys)
-        && spec.ranking_keys.is_subset(&ranking_keys))
+        && spec.ranking_keys.is_subset(&ranking_keys)
+        && spec.modality_codes.is_subset(&modality_codes)
+        && spec.api_endpoint_codes.is_subset(&api_endpoint_codes)
+        && spec.vendor_modality_keys.is_subset(&vendor_modality_keys)
+        && spec
+            .vendor_api_endpoint_keys
+            .is_subset(&vendor_api_endpoint_keys)
+        && spec
+            .modality_api_endpoint_keys
+            .is_subset(&modality_api_endpoint_keys)
+        && spec.model_modality_keys.is_subset(&model_modality_keys)
+        && spec
+            .model_api_endpoint_keys
+            .is_subset(&model_api_endpoint_keys)
+        && spec.ai_resource_codes.is_subset(&ai_resource_codes))
 }
 
 async fn sqlite_string_set(
@@ -4042,7 +4276,7 @@ async fn sqlite_model_family_keys(
 ) -> Result<BTreeSet<ModelFamilyCompletenessKey>, sqlx::Error> {
     let rows = sqlx::query(
         r#"
-        SELECT vendor_code, region_code, family_code
+        SELECT vendor_code, family_code
         FROM ai_model_family
         WHERE status = 1
           AND deleted_at IS NULL
@@ -4054,7 +4288,6 @@ async fn sqlite_model_family_keys(
         .into_iter()
         .map(|row| ModelFamilyCompletenessKey {
             vendor_code: row.try_get::<String, _>("vendor_code").unwrap_or_default(),
-            region_code: row.try_get::<String, _>("region_code").unwrap_or_default(),
             family_code: row.try_get::<String, _>("family_code").unwrap_or_default(),
         })
         .collect())
@@ -4065,7 +4298,7 @@ async fn postgres_model_family_keys(
 ) -> Result<BTreeSet<ModelFamilyCompletenessKey>, sqlx::Error> {
     let rows = sqlx::query(
         r#"
-        SELECT vendor_code, region_code, family_code
+        SELECT vendor_code, family_code
         FROM ai_model_family
         WHERE status = 1
           AND deleted_at IS NULL
@@ -4077,7 +4310,6 @@ async fn postgres_model_family_keys(
         .into_iter()
         .map(|row| ModelFamilyCompletenessKey {
             vendor_code: row.try_get::<String, _>("vendor_code").unwrap_or_default(),
-            region_code: row.try_get::<String, _>("region_code").unwrap_or_default(),
             family_code: row.try_get::<String, _>("family_code").unwrap_or_default(),
         })
         .collect())
@@ -4140,7 +4372,7 @@ async fn sqlite_model_price_keys(
 ) -> Result<BTreeSet<ModelPriceCompletenessKey>, sqlx::Error> {
     let rows = sqlx::query(
         r#"
-        SELECT catalog_key, billing_meter_code, price_side, pricing_scope
+        SELECT uuid, catalog_key, region_code, billing_meter_code, price_side, pricing_scope
         FROM ai_model_pricing
         WHERE status = 1
           AND deleted_at IS NULL
@@ -4151,7 +4383,9 @@ async fn sqlite_model_price_keys(
     Ok(rows
         .into_iter()
         .map(|row| ModelPriceCompletenessKey {
+            uuid: row.try_get::<String, _>("uuid").unwrap_or_default(),
             catalog_key: row.try_get::<String, _>("catalog_key").unwrap_or_default(),
+            region_code: row.try_get::<String, _>("region_code").unwrap_or_default(),
             meter_code: row
                 .try_get::<String, _>("billing_meter_code")
                 .unwrap_or_default(),
@@ -4166,7 +4400,7 @@ async fn postgres_model_price_keys(
 ) -> Result<BTreeSet<ModelPriceCompletenessKey>, sqlx::Error> {
     let rows = sqlx::query(
         r#"
-        SELECT catalog_key, billing_meter_code, price_side, pricing_scope
+        SELECT uuid, catalog_key, region_code, billing_meter_code, price_side, pricing_scope
         FROM ai_model_pricing
         WHERE status = 1
           AND deleted_at IS NULL
@@ -4177,7 +4411,9 @@ async fn postgres_model_price_keys(
     Ok(rows
         .into_iter()
         .map(|row| ModelPriceCompletenessKey {
+            uuid: row.try_get::<String, _>("uuid").unwrap_or_default(),
             catalog_key: row.try_get::<String, _>("catalog_key").unwrap_or_default(),
+            region_code: row.try_get::<String, _>("region_code").unwrap_or_default(),
             meter_code: row
                 .try_get::<String, _>("billing_meter_code")
                 .unwrap_or_default(),
@@ -4187,12 +4423,258 @@ async fn postgres_model_price_keys(
         .collect())
 }
 
+async fn sqlite_vendor_modality_keys(
+    pool: &SqlitePool,
+) -> Result<BTreeSet<VendorModalityCompletenessKey>, sqlx::Error> {
+    let rows = sqlx::query(
+        r#"
+        SELECT vendor_code, modality_code
+        FROM ai_vendor_modality
+        WHERE status = 1
+          AND deleted_at IS NULL
+        "#,
+    )
+    .fetch_all(pool)
+    .await?;
+    Ok(rows
+        .into_iter()
+        .map(|row| VendorModalityCompletenessKey {
+            vendor_code: row.try_get::<String, _>("vendor_code").unwrap_or_default(),
+            modality_code: row
+                .try_get::<String, _>("modality_code")
+                .unwrap_or_default(),
+        })
+        .collect())
+}
+
+async fn postgres_vendor_modality_keys(
+    pool: &PgPool,
+) -> Result<BTreeSet<VendorModalityCompletenessKey>, sqlx::Error> {
+    let rows = sqlx::query(
+        r#"
+        SELECT vendor_code, modality_code
+        FROM ai_vendor_modality
+        WHERE status = 1
+          AND deleted_at IS NULL
+        "#,
+    )
+    .fetch_all(pool)
+    .await?;
+    Ok(rows
+        .into_iter()
+        .map(|row| VendorModalityCompletenessKey {
+            vendor_code: row.try_get::<String, _>("vendor_code").unwrap_or_default(),
+            modality_code: row
+                .try_get::<String, _>("modality_code")
+                .unwrap_or_default(),
+        })
+        .collect())
+}
+
+async fn sqlite_vendor_api_endpoint_keys(
+    pool: &SqlitePool,
+) -> Result<BTreeSet<VendorApiEndpointCompletenessKey>, sqlx::Error> {
+    let rows = sqlx::query(
+        r#"
+        SELECT vendor_code, endpoint_code
+        FROM ai_vendor_api_endpoint
+        WHERE status = 1
+          AND deleted_at IS NULL
+        "#,
+    )
+    .fetch_all(pool)
+    .await?;
+    Ok(rows
+        .into_iter()
+        .map(|row| VendorApiEndpointCompletenessKey {
+            vendor_code: row.try_get::<String, _>("vendor_code").unwrap_or_default(),
+            endpoint_code: row
+                .try_get::<String, _>("endpoint_code")
+                .unwrap_or_default(),
+        })
+        .collect())
+}
+
+async fn postgres_vendor_api_endpoint_keys(
+    pool: &PgPool,
+) -> Result<BTreeSet<VendorApiEndpointCompletenessKey>, sqlx::Error> {
+    let rows = sqlx::query(
+        r#"
+        SELECT vendor_code, endpoint_code
+        FROM ai_vendor_api_endpoint
+        WHERE status = 1
+          AND deleted_at IS NULL
+        "#,
+    )
+    .fetch_all(pool)
+    .await?;
+    Ok(rows
+        .into_iter()
+        .map(|row| VendorApiEndpointCompletenessKey {
+            vendor_code: row.try_get::<String, _>("vendor_code").unwrap_or_default(),
+            endpoint_code: row
+                .try_get::<String, _>("endpoint_code")
+                .unwrap_or_default(),
+        })
+        .collect())
+}
+
+async fn sqlite_modality_api_endpoint_keys(
+    pool: &SqlitePool,
+) -> Result<BTreeSet<ModalityApiEndpointCompletenessKey>, sqlx::Error> {
+    let rows = sqlx::query(
+        r#"
+        SELECT modality_code, endpoint_code
+        FROM ai_modality_api_endpoint
+        WHERE status = 1
+          AND deleted_at IS NULL
+        "#,
+    )
+    .fetch_all(pool)
+    .await?;
+    Ok(rows
+        .into_iter()
+        .map(|row| ModalityApiEndpointCompletenessKey {
+            modality_code: row
+                .try_get::<String, _>("modality_code")
+                .unwrap_or_default(),
+            endpoint_code: row
+                .try_get::<String, _>("endpoint_code")
+                .unwrap_or_default(),
+        })
+        .collect())
+}
+
+async fn postgres_modality_api_endpoint_keys(
+    pool: &PgPool,
+) -> Result<BTreeSet<ModalityApiEndpointCompletenessKey>, sqlx::Error> {
+    let rows = sqlx::query(
+        r#"
+        SELECT modality_code, endpoint_code
+        FROM ai_modality_api_endpoint
+        WHERE status = 1
+          AND deleted_at IS NULL
+        "#,
+    )
+    .fetch_all(pool)
+    .await?;
+    Ok(rows
+        .into_iter()
+        .map(|row| ModalityApiEndpointCompletenessKey {
+            modality_code: row
+                .try_get::<String, _>("modality_code")
+                .unwrap_or_default(),
+            endpoint_code: row
+                .try_get::<String, _>("endpoint_code")
+                .unwrap_or_default(),
+        })
+        .collect())
+}
+
+async fn sqlite_model_modality_keys(
+    pool: &SqlitePool,
+) -> Result<BTreeSet<ModelModalityCompletenessKey>, sqlx::Error> {
+    let rows = sqlx::query(
+        r#"
+        SELECT catalog_key, modality_code, direction
+        FROM ai_model_modality
+        WHERE status = 1
+          AND deleted_at IS NULL
+        "#,
+    )
+    .fetch_all(pool)
+    .await?;
+    Ok(rows
+        .into_iter()
+        .map(|row| ModelModalityCompletenessKey {
+            catalog_key: row.try_get::<String, _>("catalog_key").unwrap_or_default(),
+            modality_code: row
+                .try_get::<String, _>("modality_code")
+                .unwrap_or_default(),
+            direction: row.try_get::<String, _>("direction").unwrap_or_default(),
+        })
+        .collect())
+}
+
+async fn postgres_model_modality_keys(
+    pool: &PgPool,
+) -> Result<BTreeSet<ModelModalityCompletenessKey>, sqlx::Error> {
+    let rows = sqlx::query(
+        r#"
+        SELECT catalog_key, modality_code, direction
+        FROM ai_model_modality
+        WHERE status = 1
+          AND deleted_at IS NULL
+        "#,
+    )
+    .fetch_all(pool)
+    .await?;
+    Ok(rows
+        .into_iter()
+        .map(|row| ModelModalityCompletenessKey {
+            catalog_key: row.try_get::<String, _>("catalog_key").unwrap_or_default(),
+            modality_code: row
+                .try_get::<String, _>("modality_code")
+                .unwrap_or_default(),
+            direction: row.try_get::<String, _>("direction").unwrap_or_default(),
+        })
+        .collect())
+}
+
+async fn sqlite_model_api_endpoint_keys(
+    pool: &SqlitePool,
+) -> Result<BTreeSet<ModelApiEndpointCompletenessKey>, sqlx::Error> {
+    let rows = sqlx::query(
+        r#"
+        SELECT catalog_key, endpoint_code
+        FROM ai_model_api_endpoint
+        WHERE status = 1
+          AND deleted_at IS NULL
+        "#,
+    )
+    .fetch_all(pool)
+    .await?;
+    Ok(rows
+        .into_iter()
+        .map(|row| ModelApiEndpointCompletenessKey {
+            catalog_key: row.try_get::<String, _>("catalog_key").unwrap_or_default(),
+            endpoint_code: row
+                .try_get::<String, _>("endpoint_code")
+                .unwrap_or_default(),
+        })
+        .collect())
+}
+
+async fn postgres_model_api_endpoint_keys(
+    pool: &PgPool,
+) -> Result<BTreeSet<ModelApiEndpointCompletenessKey>, sqlx::Error> {
+    let rows = sqlx::query(
+        r#"
+        SELECT catalog_key, endpoint_code
+        FROM ai_model_api_endpoint
+        WHERE status = 1
+          AND deleted_at IS NULL
+        "#,
+    )
+    .fetch_all(pool)
+    .await?;
+    Ok(rows
+        .into_iter()
+        .map(|row| ModelApiEndpointCompletenessKey {
+            catalog_key: row.try_get::<String, _>("catalog_key").unwrap_or_default(),
+            endpoint_code: row
+                .try_get::<String, _>("endpoint_code")
+                .unwrap_or_default(),
+        })
+        .collect())
+}
+
 async fn sqlite_model_ranking_keys(
     pool: &SqlitePool,
 ) -> Result<BTreeSet<ModelRankingCompletenessKey>, sqlx::Error> {
     let rows = sqlx::query(
         r#"
-        SELECT CAST(snapshot_date AS TEXT) AS snapshot_date, rank_scope, catalog_key
+        SELECT CAST(snapshot_date AS TEXT) AS snapshot_date, rank_scope, vendor_code, region_code, catalog_key
         FROM ai_model_rank_snapshot
         WHERE status = 1
         "#,
@@ -4206,6 +4688,8 @@ async fn sqlite_model_ranking_keys(
                 .try_get::<String, _>("snapshot_date")
                 .unwrap_or_default(),
             rank_scope: row.try_get::<String, _>("rank_scope").unwrap_or_default(),
+            vendor_code: row.try_get::<String, _>("vendor_code").unwrap_or_default(),
+            region_code: row.try_get::<String, _>("region_code").unwrap_or_default(),
             catalog_key: row.try_get::<String, _>("catalog_key").unwrap_or_default(),
         })
         .collect())
@@ -4216,7 +4700,7 @@ async fn postgres_model_ranking_keys(
 ) -> Result<BTreeSet<ModelRankingCompletenessKey>, sqlx::Error> {
     let rows = sqlx::query(
         r#"
-        SELECT CAST(snapshot_date AS TEXT) AS snapshot_date, rank_scope, catalog_key
+        SELECT CAST(snapshot_date AS TEXT) AS snapshot_date, rank_scope, vendor_code, region_code, catalog_key
         FROM ai_model_rank_snapshot
         WHERE status = 1
         "#,
@@ -4230,6 +4714,8 @@ async fn postgres_model_ranking_keys(
                 .try_get::<String, _>("snapshot_date")
                 .unwrap_or_default(),
             rank_scope: row.try_get::<String, _>("rank_scope").unwrap_or_default(),
+            vendor_code: row.try_get::<String, _>("vendor_code").unwrap_or_default(),
+            region_code: row.try_get::<String, _>("region_code").unwrap_or_default(),
             catalog_key: row.try_get::<String, _>("catalog_key").unwrap_or_default(),
         })
         .collect())
@@ -4832,17 +5318,40 @@ fn generated_schema_index_names() -> BTreeSet<String> {
         .clone()
 }
 
-fn generated_schema_table_columns() -> Vec<(String, BTreeSet<String>)> {
-    GENERATED_SCHEMA_TABLE_COLUMNS
+fn generated_schema_sqlite_index_statements() -> Vec<String> {
+    GENERATED_SCHEMA_SQLITE_INDEX_STATEMENTS
+        .get_or_init(|| {
+            sqlite_schema_statements()
+                .into_iter()
+                .filter(|statement| create_index_name(statement).is_some())
+                .collect()
+        })
+        .clone()
+}
+
+fn generated_schema_postgres_table_columns() -> Vec<(String, Vec<SchemaColumnDefinition>)> {
+    GENERATED_SCHEMA_POSTGRES_TABLE_COLUMNS
+        .get_or_init(|| {
+            postgres_schema_statements()
+                .into_iter()
+                .filter_map(|statement| {
+                    let table = create_table_name(&statement)?;
+                    let columns = create_table_columns(&statement);
+                    Some((table, columns))
+                })
+                .collect()
+        })
+        .clone()
+}
+
+fn generated_schema_sqlite_table_columns() -> Vec<(String, Vec<SqliteColumnDefinition>)> {
+    GENERATED_SCHEMA_SQLITE_TABLE_COLUMNS
         .get_or_init(|| {
             sqlite_schema_statements()
                 .into_iter()
                 .filter_map(|statement| {
                     let table = create_table_name(&statement)?;
-                    let columns = sqlite_create_table_columns(&statement)
-                        .into_iter()
-                        .map(|column| column.name.to_ascii_lowercase())
-                        .collect();
+                    let columns = sqlite_create_table_columns(&statement);
                     Some((table, columns))
                 })
                 .collect()
@@ -4885,9 +5394,85 @@ async fn execute_sqlite_statement(pool: &SqlitePool, statement: &str) -> Result<
     if statement.is_empty() {
         return Ok(());
     }
+    if create_index_name(statement).is_some() {
+        ensure_sqlite_index_statement(pool, statement).await?;
+        return Ok(());
+    }
     sqlx::query(statement).execute(pool).await?;
     ensure_sqlite_table_columns(pool, statement).await?;
     Ok(())
+}
+
+async fn ensure_sqlite_index_statement(
+    pool: &SqlitePool,
+    statement: &str,
+) -> Result<bool, sqlx::Error> {
+    let Some(index_name) = create_index_name(statement) else {
+        return Ok(false);
+    };
+    let existing_sql: Option<String> = sqlx::query_scalar(
+        r#"
+        SELECT sql
+        FROM sqlite_master
+        WHERE type = 'index'
+          AND name = ?
+        "#,
+    )
+    .bind(&index_name)
+    .fetch_optional(pool)
+    .await?;
+    let mut changed = existing_sql.is_none();
+    if existing_sql
+        .as_deref()
+        .is_some_and(|sql| !sqlite_index_sql_matches(sql, statement))
+    {
+        let drop_statement = format!(
+            "DROP INDEX IF EXISTS {}",
+            quote_sqlite_identifier(&index_name)
+        );
+        sqlx::query(drop_statement.as_str()).execute(pool).await?;
+        changed = true;
+    }
+    sqlx::query(statement).execute(pool).await?;
+    Ok(changed)
+}
+
+async fn sqlite_index_statement_matches(
+    pool: &SqlitePool,
+    statement: &str,
+) -> Result<bool, sqlx::Error> {
+    let Some(index_name) = create_index_name(statement) else {
+        return Ok(true);
+    };
+    let existing_sql: Option<String> = sqlx::query_scalar(
+        r#"
+        SELECT sql
+        FROM sqlite_master
+        WHERE type = 'index'
+          AND name = ?
+        "#,
+    )
+    .bind(index_name)
+    .fetch_optional(pool)
+    .await?;
+    Ok(existing_sql
+        .as_deref()
+        .is_some_and(|sql| sqlite_index_sql_matches(sql, statement)))
+}
+
+fn sqlite_index_sql_matches(existing_sql: &str, expected_sql: &str) -> bool {
+    normalize_sqlite_index_sql(existing_sql) == normalize_sqlite_index_sql(expected_sql)
+}
+
+fn normalize_sqlite_index_sql(sql: &str) -> String {
+    sql.trim()
+        .trim_end_matches(';')
+        .to_ascii_lowercase()
+        .replace("create unique index if not exists", "create unique index")
+        .replace("create index if not exists", "create index")
+        .split_whitespace()
+        .collect::<Vec<_>>()
+        .join(" ")
 }
 
 async fn execute_postgres_statement(pool: &PgPool, statement: &str) -> Result<(), sqlx::Error> {
@@ -4896,7 +5481,47 @@ async fn execute_postgres_statement(pool: &PgPool, statement: &str) -> Result<()
         return Ok(());
     }
     sqlx::query(statement).execute(pool).await?;
+    ensure_postgres_table_columns(pool, statement).await?;
     Ok(())
+}
+
+async fn ensure_postgres_generated_schema_columns(pool: &PgPool) -> Result<bool, sqlx::Error> {
+    let mut changed = false;
+    for statement in postgres_schema_statements() {
+        changed |= ensure_postgres_table_columns(pool, statement.as_str()).await?;
+    }
+    Ok(changed)
+}
+
+async fn ensure_postgres_table_columns(
+    pool: &PgPool,
+    statement: &str,
+) -> Result<bool, sqlx::Error> {
+    let Some(table) = create_table_name(statement) else {
+        return Ok(false);
+    };
+    let columns = create_table_columns(statement);
+    if columns.is_empty() {
+        return Ok(false);
+    }
+    let existing_columns = postgres_existing_columns(pool, &table).await?;
+    let mut changed = false;
+    for column in columns {
+        if existing_columns.contains(&column.name.to_ascii_lowercase()) {
+            continue;
+        }
+        let Some(definition) = postgres_add_column_definition(&column) else {
+            continue;
+        };
+        let alter = format!(
+            "ALTER TABLE {} ADD COLUMN {}",
+            quote_postgres_identifier(&table),
+            definition
+        );
+        sqlx::query(alter.as_str()).execute(pool).await?;
+        changed = true;
+    }
+    Ok(changed)
 }
 
 async fn ensure_sqlite_table_columns(
@@ -4934,6 +5559,12 @@ struct SqliteColumnDefinition {
     rest: String,
 }
 
+#[derive(Debug, Clone, PartialEq, Eq)]
+struct SchemaColumnDefinition {
+    name: String,
+    rest: String,
+}
+
 async fn sqlite_existing_columns(
     pool: &SqlitePool,
     table: &str,
@@ -4943,6 +5574,28 @@ async fn sqlite_existing_columns(
     Ok(rows
         .into_iter()
         .filter_map(|row| row.try_get::<String, _>("name").ok())
+        .map(|name| name.to_ascii_lowercase())
+        .collect())
+}
+
+async fn postgres_existing_columns(
+    pool: &PgPool,
+    table: &str,
+) -> Result<std::collections::BTreeSet<String>, sqlx::Error> {
+    let rows = sqlx::query(
+        r#"
+        SELECT column_name
+        FROM information_schema.columns
+        WHERE table_schema = current_schema()
+          AND table_name = $1
+        "#,
+    )
+    .bind(table)
+    .fetch_all(pool)
+    .await?;
+    Ok(rows
+        .into_iter()
+        .filter_map(|row| row.try_get::<String, _>("column_name").ok())
         .map(|name| name.to_ascii_lowercase())
         .collect())
 }
@@ -4993,12 +5646,22 @@ fn create_index_name(statement: &str) -> Option<String> {
 }
 
 fn sqlite_create_table_columns(statement: &str) -> Vec<SqliteColumnDefinition> {
+    create_table_columns(statement)
+        .into_iter()
+        .map(|column| SqliteColumnDefinition {
+            name: column.name,
+            rest: postgres_statement_to_sqlite(column.rest.as_str()),
+        })
+        .collect()
+}
+
+fn create_table_columns(statement: &str) -> Vec<SchemaColumnDefinition> {
     let Some(body) = sqlite_create_table_body(statement) else {
         return Vec::new();
     };
     split_sqlite_table_entries(body)
         .into_iter()
-        .filter_map(|entry| sqlite_column_definition(entry.as_str()))
+        .filter_map(|entry| schema_column_definition(entry.as_str()))
         .collect()
 }
 
@@ -5006,13 +5669,18 @@ fn sqlite_create_table_body(statement: &str) -> Option<&str> {
     let open = statement.find('(')?;
     let mut depth = 0usize;
     let mut in_single_quote = false;
-    let mut previous = '\0';
-    for (index, ch) in statement
+    let mut chars = statement
         .char_indices()
         .skip_while(|(index, _)| *index < open)
-    {
-        if ch == '\'' && previous != '\'' {
-            in_single_quote = !in_single_quote;
+        .peekable();
+    while let Some((index, ch)) = chars.next() {
+        if ch == '\'' {
+            if in_single_quote && chars.peek().is_some_and(|(_, next)| *next == '\'') {
+                chars.next();
+            } else {
+                in_single_quote = !in_single_quote;
+            }
+            continue;
         }
         if !in_single_quote {
             match ch {
@@ -5026,7 +5694,6 @@ fn sqlite_create_table_body(statement: &str) -> Option<&str> {
                 _ => {}
             }
         }
-        previous = ch;
     }
     None
 }
@@ -5036,10 +5703,15 @@ fn split_sqlite_table_entries(body: &str) -> Vec<String> {
     let mut start = 0usize;
     let mut depth = 0usize;
     let mut in_single_quote = false;
-    let mut previous = '\0';
-    for (index, ch) in body.char_indices() {
-        if ch == '\'' && previous != '\'' {
-            in_single_quote = !in_single_quote;
+    let mut chars = body.char_indices().peekable();
+    while let Some((index, ch)) = chars.next() {
+        if ch == '\'' {
+            if in_single_quote && chars.peek().is_some_and(|(_, next)| *next == '\'') {
+                chars.next();
+            } else {
+                in_single_quote = !in_single_quote;
+            }
+            continue;
         }
         if !in_single_quote {
             match ch {
@@ -5052,7 +5724,6 @@ fn split_sqlite_table_entries(body: &str) -> Vec<String> {
                 _ => {}
             }
         }
-        previous = ch;
     }
     let tail = body[start..].trim();
     if !tail.is_empty() {
@@ -5061,7 +5732,7 @@ fn split_sqlite_table_entries(body: &str) -> Vec<String> {
     entries
 }
 
-fn sqlite_column_definition(entry: &str) -> Option<SqliteColumnDefinition> {
+fn schema_column_definition(entry: &str) -> Option<SchemaColumnDefinition> {
     let entry = entry.trim();
     if entry.is_empty() {
         return None;
@@ -5079,13 +5750,13 @@ fn sqlite_column_definition(entry: &str) -> Option<SqliteColumnDefinition> {
     if name.is_empty() || rest.is_empty() {
         None
     } else {
-        Some(SqliteColumnDefinition { name, rest })
+        Some(SchemaColumnDefinition { name, rest })
     }
 }
 
 fn sqlite_add_column_definition(column: &SqliteColumnDefinition) -> Option<String> {
     let upper = column.rest.to_ascii_uppercase();
-    if upper.contains("PRIMARY KEY") {
+    if upper.contains("PRIMARY KEY") || upper.contains("GENERATED ALWAYS") {
         return None;
     }
     let mut rest = column
@@ -5102,12 +5773,47 @@ fn sqlite_add_column_definition(column: &SqliteColumnDefinition) -> Option<Strin
     ))
 }
 
+fn postgres_add_column_definition(column: &SchemaColumnDefinition) -> Option<String> {
+    let upper = column.rest.to_ascii_uppercase();
+    if upper.contains("PRIMARY KEY") {
+        return None;
+    }
+    let mut rest = column.rest.replace(
+        "DEFAULT CURRENT_TIMESTAMP",
+        "DEFAULT '1970-01-01 00:00:00+00'",
+    );
+    let upper = rest.to_ascii_uppercase();
+    if upper.contains(" NOT NULL") && !upper.contains(" DEFAULT ") {
+        rest.push_str(postgres_default_for_added_not_null_column(rest.as_str()));
+    }
+    Some(format!(
+        "{} {}",
+        quote_postgres_identifier(&column.name),
+        rest.trim()
+    ))
+}
+
 fn sqlite_default_for_added_not_null_column(rest: &str) -> &'static str {
     let upper = rest.to_ascii_uppercase();
     if upper.contains("CHAR") || upper.contains("TEXT") {
         " DEFAULT ''"
     } else if upper.contains("JSON") {
         " DEFAULT '{}'"
+    } else {
+        " DEFAULT 0"
+    }
+}
+
+fn postgres_default_for_added_not_null_column(rest: &str) -> &'static str {
+    let upper = rest.to_ascii_uppercase();
+    if upper.contains("CHAR") || upper.contains("TEXT") {
+        " DEFAULT ''"
+    } else if upper.contains("JSONB") || upper.contains("JSON") {
+        " DEFAULT '{}'::jsonb"
+    } else if upper.contains("BOOL") {
+        " DEFAULT false"
+    } else if upper.contains("TIMESTAMP") || upper.contains("TIMESTAMPTZ") {
+        " DEFAULT '1970-01-01 00:00:00+00'"
     } else {
         " DEFAULT 0"
     }
@@ -5213,6 +5919,8 @@ fn normalize_install_code(value: String, name: &str) -> Result<String, DatabaseI
 
 #[cfg(test)]
 mod tests {
+    use std::collections::BTreeMap;
+
     use super::*;
 
     #[test]
@@ -5227,6 +5935,77 @@ mod tests {
         assert_ne!(
             first, second,
             "catalog refresh ids must remain unique for same-millisecond requests"
+        );
+    }
+
+    #[test]
+    fn postgres_add_column_definition_preserves_model_price_region_column() {
+        let column = create_table_columns(
+            r#"
+            CREATE TABLE IF NOT EXISTS ai_model_pricing (
+                id BIGSERIAL PRIMARY KEY,
+                region_code VARCHAR(64) NOT NULL
+            )
+            "#,
+        )
+        .into_iter()
+        .find(|column| column.name == "region_code")
+        .unwrap();
+
+        assert_eq!(
+            "\"region_code\" VARCHAR(64) NOT NULL DEFAULT ''",
+            postgres_add_column_definition(&column).unwrap(),
+            "Postgres schema repair must make newly added region columns safe for existing model pricing rows"
+        );
+    }
+
+    #[test]
+    fn postgres_add_column_definition_preserves_channel_endpoint_columns() {
+        let columns = create_table_columns(
+            r#"
+            CREATE TABLE IF NOT EXISTS ai_channel_endpoint (
+                id BIGSERIAL PRIMARY KEY,
+                channel_type VARCHAR(32) NOT NULL,
+                api_code VARCHAR(128) NOT NULL,
+                priority INTEGER NOT NULL DEFAULT 100,
+                weight INTEGER NOT NULL DEFAULT 100
+            )
+            "#,
+        )
+        .into_iter()
+        .filter_map(|column| {
+            let definition = postgres_add_column_definition(&column)?;
+            (column.name.clone(), definition).into()
+        })
+        .collect::<BTreeMap<_, _>>();
+
+        assert_eq!(
+            "\"channel_type\" VARCHAR(32) NOT NULL DEFAULT ''",
+            columns["channel_type"]
+        );
+        assert_eq!(
+            "\"api_code\" VARCHAR(128) NOT NULL DEFAULT ''",
+            columns["api_code"]
+        );
+        assert_eq!(
+            "\"priority\" INTEGER NOT NULL DEFAULT 100",
+            columns["priority"]
+        );
+        assert_eq!("\"weight\" INTEGER NOT NULL DEFAULT 100", columns["weight"]);
+    }
+
+    #[test]
+    fn postgres_add_column_definition_keeps_generated_columns_for_runtime_indexes() {
+        let column = SchemaColumnDefinition {
+            name: "agent_run_step_id_key".to_owned(),
+            rest: "VARCHAR(128) GENERATED ALWAYS AS (COALESCE(agent_run_step_id, '')) STORED"
+                .to_owned(),
+        };
+
+        assert_eq!(
+            "\"agent_run_step_id_key\" VARCHAR(128) GENERATED ALWAYS AS (COALESCE(agent_run_step_id, '')) STORED",
+            postgres_add_column_definition(&column).unwrap(),
+            "Postgres schema repair must restore generated columns required by generated unique indexes"
         );
     }
 }

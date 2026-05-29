@@ -155,13 +155,13 @@ async fn sqlite_admin_model_store_creates_region_pricing_catalog_rows() {
         .collect::<Vec<_>>();
     assert_eq!(6, pricing.len());
     assert!(pricing.iter().any(|(catalog_key, region, meter, price)| {
-        catalog_key == "openai/cn/admin-region-model"
+        catalog_key == "openai/admin-region-model"
             && region == "cn"
             && meter == "llm_input_token"
             && *price == 0.18
     }));
     assert!(pricing.iter().any(|(catalog_key, region, meter, price)| {
-        catalog_key == "openai/global/admin-region-model"
+        catalog_key == "openai/admin-region-model"
             && region == "global"
             && meter == "llm_output_token"
             && *price == 0.45

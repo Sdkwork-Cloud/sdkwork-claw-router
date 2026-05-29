@@ -3,12 +3,12 @@ package com.sdkwork.clawrouter.backend.model;
 import java.util.Map;
 
 public class AiRequestTraceRecord {
-    private String apiKeyGroupId;
-    private String apiKeyGroupSnapshot;
     private String apiKeyId;
     private String apiKeyNameSnapshot;
     private Integer attemptNo;
     private String cachedTokens;
+    private String channelGroupId;
+    private String channelGroupSnapshot;
     private String channelId;
     private String channelNameSnapshot;
     private String clientIpHash;
@@ -34,7 +34,6 @@ public class AiRequestTraceRecord {
     private String ownerType;
     private String payloadHash;
     private String promptTokens;
-    private String providerAccountId;
     private String providerErrorCode;
     private String providerId;
     private String providerModel;
@@ -59,22 +58,6 @@ public class AiRequestTraceRecord {
     private String userAgentHash;
     private String userId;
     private String uuid;
-
-    public String getApiKeyGroupId() {
-        return this.apiKeyGroupId;
-    }
-
-    public void setApiKeyGroupId(String apiKeyGroupId) {
-        this.apiKeyGroupId = apiKeyGroupId;
-    }
-
-    public String getApiKeyGroupSnapshot() {
-        return this.apiKeyGroupSnapshot;
-    }
-
-    public void setApiKeyGroupSnapshot(String apiKeyGroupSnapshot) {
-        this.apiKeyGroupSnapshot = apiKeyGroupSnapshot;
-    }
 
     public String getApiKeyId() {
         return this.apiKeyId;
@@ -106,6 +89,22 @@ public class AiRequestTraceRecord {
 
     public void setCachedTokens(String cachedTokens) {
         this.cachedTokens = cachedTokens;
+    }
+
+    public String getChannelGroupId() {
+        return this.channelGroupId;
+    }
+
+    public void setChannelGroupId(String channelGroupId) {
+        this.channelGroupId = channelGroupId;
+    }
+
+    public String getChannelGroupSnapshot() {
+        return this.channelGroupSnapshot;
+    }
+
+    public void setChannelGroupSnapshot(String channelGroupSnapshot) {
+        this.channelGroupSnapshot = channelGroupSnapshot;
     }
 
     public String getChannelId() {
@@ -306,14 +305,6 @@ public class AiRequestTraceRecord {
 
     public void setPromptTokens(String promptTokens) {
         this.promptTokens = promptTokens;
-    }
-
-    public String getProviderAccountId() {
-        return this.providerAccountId;
-    }
-
-    public void setProviderAccountId(String providerAccountId) {
-        this.providerAccountId = providerAccountId;
     }
 
     public String getProviderErrorCode() {

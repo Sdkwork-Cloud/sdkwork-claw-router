@@ -38,12 +38,8 @@ func (a *EcosystemApi) SkillsList(q *string, marketStatus *string, reviewStatus 
 }
 
 // Create skill
-func (a *EcosystemApi) SkillsCreate(body sdktypes.AdminSkillCreateRequest, xRequestId *string) (sdktypes.SkillsCreateResult, error) {
-    headers := BuildRequestHeaders(
-        map[string]ParameterSpec{"X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},},
-        map[string]ParameterSpec{},
-    )
-    raw, err := a.client.Post(BackendApiPath("/ecosystem/skills"), body, nil, headers, "application/json")
+func (a *EcosystemApi) SkillsCreate(body sdktypes.AdminSkillCreateRequest) (sdktypes.SkillsCreateResult, error) {
+    raw, err := a.client.Post(BackendApiPath("/ecosystem/skills"), body, nil, nil, "application/json")
     if err != nil {
         var zero sdktypes.SkillsCreateResult
         return zero, err
@@ -62,12 +58,8 @@ func (a *EcosystemApi) SkillsCategoriesList() (sdktypes.SkillsCategoriesListResu
 }
 
 // Create skill category
-func (a *EcosystemApi) SkillsCategoriesCreate(body sdktypes.AdminSkillCategoryCreateRequest, xRequestId *string) (sdktypes.SkillsCategoriesCreateResult, error) {
-    headers := BuildRequestHeaders(
-        map[string]ParameterSpec{"X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},},
-        map[string]ParameterSpec{},
-    )
-    raw, err := a.client.Post(BackendApiPath("/ecosystem/skills/categories"), body, nil, headers, "application/json")
+func (a *EcosystemApi) SkillsCategoriesCreate(body sdktypes.AdminSkillCategoryCreateRequest) (sdktypes.SkillsCategoriesCreateResult, error) {
+    raw, err := a.client.Post(BackendApiPath("/ecosystem/skills/categories"), body, nil, nil, "application/json")
     if err != nil {
         var zero sdktypes.SkillsCategoriesCreateResult
         return zero, err
@@ -76,12 +68,8 @@ func (a *EcosystemApi) SkillsCategoriesCreate(body sdktypes.AdminSkillCategoryCr
 }
 
 // Delete skill category
-func (a *EcosystemApi) SkillsCategoriesDelete(categoryId string, xRequestId *string) (sdktypes.SkillsCategoriesDeleteResult, error) {
-    headers := BuildRequestHeaders(
-        map[string]ParameterSpec{"X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},},
-        map[string]ParameterSpec{},
-    )
-    raw, err := a.client.Delete(BackendApiPath(fmt.Sprintf("/ecosystem/skills/categories/%s", SerializePathParameter(categoryId, PathParameterSpec{Name: "categoryId", Style: "simple", Explode: false}))), nil, headers)
+func (a *EcosystemApi) SkillsCategoriesDelete(categoryId string) (sdktypes.SkillsCategoriesDeleteResult, error) {
+    raw, err := a.client.Delete(BackendApiPath(fmt.Sprintf("/ecosystem/skills/categories/%s", SerializePathParameter(categoryId, PathParameterSpec{Name: "categoryId", Style: "simple", Explode: false}))), nil, nil)
     if err != nil {
         var zero sdktypes.SkillsCategoriesDeleteResult
         return zero, err
@@ -90,12 +78,8 @@ func (a *EcosystemApi) SkillsCategoriesDelete(categoryId string, xRequestId *str
 }
 
 // Update skill category
-func (a *EcosystemApi) SkillsCategoriesUpdate(categoryId string, body sdktypes.AdminSkillCategoryUpdateRequest, xRequestId *string) (sdktypes.SkillsCategoriesUpdateResult, error) {
-    headers := BuildRequestHeaders(
-        map[string]ParameterSpec{"X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},},
-        map[string]ParameterSpec{},
-    )
-    raw, err := a.client.Put(BackendApiPath(fmt.Sprintf("/ecosystem/skills/categories/%s", SerializePathParameter(categoryId, PathParameterSpec{Name: "categoryId", Style: "simple", Explode: false}))), body, nil, headers, "application/json")
+func (a *EcosystemApi) SkillsCategoriesUpdate(categoryId string, body sdktypes.AdminSkillCategoryUpdateRequest) (sdktypes.SkillsCategoriesUpdateResult, error) {
+    raw, err := a.client.Put(BackendApiPath(fmt.Sprintf("/ecosystem/skills/categories/%s", SerializePathParameter(categoryId, PathParameterSpec{Name: "categoryId", Style: "simple", Explode: false}))), body, nil, nil, "application/json")
     if err != nil {
         var zero sdktypes.SkillsCategoriesUpdateResult
         return zero, err
@@ -121,12 +105,8 @@ func (a *EcosystemApi) SkillsPackageList(q *string, enabled *bool, categoryId *s
 }
 
 // Create skill package
-func (a *EcosystemApi) SkillsPackageCreate(body sdktypes.AdminSkillPackageCreateRequest, xRequestId *string) (sdktypes.SkillsPackageCreateResult, error) {
-    headers := BuildRequestHeaders(
-        map[string]ParameterSpec{"X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},},
-        map[string]ParameterSpec{},
-    )
-    raw, err := a.client.Post(BackendApiPath("/ecosystem/skills/package"), body, nil, headers, "application/json")
+func (a *EcosystemApi) SkillsPackageCreate(body sdktypes.AdminSkillPackageCreateRequest) (sdktypes.SkillsPackageCreateResult, error) {
+    raw, err := a.client.Post(BackendApiPath("/ecosystem/skills/package"), body, nil, nil, "application/json")
     if err != nil {
         var zero sdktypes.SkillsPackageCreateResult
         return zero, err
@@ -155,12 +135,8 @@ func (a *EcosystemApi) SkillsPackageRetrieve(packageId string) (sdktypes.SkillsP
 }
 
 // Update skill package
-func (a *EcosystemApi) SkillsPackageUpdate(packageId string, body sdktypes.AdminSkillPackageUpdateRequest, xRequestId *string) (sdktypes.SkillsPackageUpdateResult, error) {
-    headers := BuildRequestHeaders(
-        map[string]ParameterSpec{"X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},},
-        map[string]ParameterSpec{},
-    )
-    raw, err := a.client.Put(BackendApiPath(fmt.Sprintf("/ecosystem/skills/package/%s", SerializePathParameter(packageId, PathParameterSpec{Name: "packageId", Style: "simple", Explode: false}))), body, nil, headers, "application/json")
+func (a *EcosystemApi) SkillsPackageUpdate(packageId string, body sdktypes.AdminSkillPackageUpdateRequest) (sdktypes.SkillsPackageUpdateResult, error) {
+    raw, err := a.client.Put(BackendApiPath(fmt.Sprintf("/ecosystem/skills/package/%s", SerializePathParameter(packageId, PathParameterSpec{Name: "packageId", Style: "simple", Explode: false}))), body, nil, nil, "application/json")
     if err != nil {
         var zero sdktypes.SkillsPackageUpdateResult
         return zero, err
@@ -169,12 +145,8 @@ func (a *EcosystemApi) SkillsPackageUpdate(packageId string, body sdktypes.Admin
 }
 
 // Disable skill package
-func (a *EcosystemApi) SkillsPackageDisable(packageId string, xRequestId *string) (sdktypes.SkillsPackageDisableResult, error) {
-    headers := BuildRequestHeaders(
-        map[string]ParameterSpec{"X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},},
-        map[string]ParameterSpec{},
-    )
-    raw, err := a.client.Post(BackendApiPath(fmt.Sprintf("/ecosystem/skills/package/%s/disable", SerializePathParameter(packageId, PathParameterSpec{Name: "packageId", Style: "simple", Explode: false}))), nil, nil, headers, "")
+func (a *EcosystemApi) SkillsPackageDisable(packageId string) (sdktypes.SkillsPackageDisableResult, error) {
+    raw, err := a.client.Post(BackendApiPath(fmt.Sprintf("/ecosystem/skills/package/%s/disable", SerializePathParameter(packageId, PathParameterSpec{Name: "packageId", Style: "simple", Explode: false}))), nil, nil, nil, "")
     if err != nil {
         var zero sdktypes.SkillsPackageDisableResult
         return zero, err
@@ -183,12 +155,8 @@ func (a *EcosystemApi) SkillsPackageDisable(packageId string, xRequestId *string
 }
 
 // Enable skill package
-func (a *EcosystemApi) SkillsPackageEnable(packageId string, xRequestId *string) (sdktypes.SkillsPackageEnableResult, error) {
-    headers := BuildRequestHeaders(
-        map[string]ParameterSpec{"X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},},
-        map[string]ParameterSpec{},
-    )
-    raw, err := a.client.Post(BackendApiPath(fmt.Sprintf("/ecosystem/skills/package/%s/enable", SerializePathParameter(packageId, PathParameterSpec{Name: "packageId", Style: "simple", Explode: false}))), nil, nil, headers, "")
+func (a *EcosystemApi) SkillsPackageEnable(packageId string) (sdktypes.SkillsPackageEnableResult, error) {
+    raw, err := a.client.Post(BackendApiPath(fmt.Sprintf("/ecosystem/skills/package/%s/enable", SerializePathParameter(packageId, PathParameterSpec{Name: "packageId", Style: "simple", Explode: false}))), nil, nil, nil, "")
     if err != nil {
         var zero sdktypes.SkillsPackageEnableResult
         return zero, err
@@ -217,12 +185,8 @@ func (a *EcosystemApi) SkillsRetrieve(skillId string) (sdktypes.SkillsRetrieveRe
 }
 
 // Update skill
-func (a *EcosystemApi) SkillsUpdate(skillId string, body sdktypes.AdminSkillUpdateRequest, xRequestId *string) (sdktypes.SkillsUpdateResult, error) {
-    headers := BuildRequestHeaders(
-        map[string]ParameterSpec{"X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},},
-        map[string]ParameterSpec{},
-    )
-    raw, err := a.client.Put(BackendApiPath(fmt.Sprintf("/ecosystem/skills/%s", SerializePathParameter(skillId, PathParameterSpec{Name: "skillId", Style: "simple", Explode: false}))), body, nil, headers, "application/json")
+func (a *EcosystemApi) SkillsUpdate(skillId string, body sdktypes.AdminSkillUpdateRequest) (sdktypes.SkillsUpdateResult, error) {
+    raw, err := a.client.Put(BackendApiPath(fmt.Sprintf("/ecosystem/skills/%s", SerializePathParameter(skillId, PathParameterSpec{Name: "skillId", Style: "simple", Explode: false}))), body, nil, nil, "application/json")
     if err != nil {
         var zero sdktypes.SkillsUpdateResult
         return zero, err
@@ -241,12 +205,8 @@ func (a *EcosystemApi) SkillsArtifactsList(skillId string) (sdktypes.SkillsArtif
 }
 
 // Create skill artifact
-func (a *EcosystemApi) SkillsArtifactsCreate(skillId string, body sdktypes.AdminSkillArtifactCreateRequest, xRequestId *string) (sdktypes.SkillsArtifactsCreateResult, error) {
-    headers := BuildRequestHeaders(
-        map[string]ParameterSpec{"X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},},
-        map[string]ParameterSpec{},
-    )
-    raw, err := a.client.Post(BackendApiPath(fmt.Sprintf("/ecosystem/skills/%s/artifacts", SerializePathParameter(skillId, PathParameterSpec{Name: "skillId", Style: "simple", Explode: false}))), body, nil, headers, "application/json")
+func (a *EcosystemApi) SkillsArtifactsCreate(skillId string, body sdktypes.AdminSkillArtifactCreateRequest) (sdktypes.SkillsArtifactsCreateResult, error) {
+    raw, err := a.client.Post(BackendApiPath(fmt.Sprintf("/ecosystem/skills/%s/artifacts", SerializePathParameter(skillId, PathParameterSpec{Name: "skillId", Style: "simple", Explode: false}))), body, nil, nil, "application/json")
     if err != nil {
         var zero sdktypes.SkillsArtifactsCreateResult
         return zero, err
@@ -255,12 +215,8 @@ func (a *EcosystemApi) SkillsArtifactsCreate(skillId string, body sdktypes.Admin
 }
 
 // Delete skill artifact
-func (a *EcosystemApi) SkillsArtifactsDelete(skillId string, artifactId string, xRequestId *string) (sdktypes.SkillsArtifactsDeleteResult, error) {
-    headers := BuildRequestHeaders(
-        map[string]ParameterSpec{"X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},},
-        map[string]ParameterSpec{},
-    )
-    raw, err := a.client.Delete(BackendApiPath(fmt.Sprintf("/ecosystem/skills/%s/artifacts/%s", SerializePathParameter(skillId, PathParameterSpec{Name: "skillId", Style: "simple", Explode: false}), SerializePathParameter(artifactId, PathParameterSpec{Name: "artifactId", Style: "simple", Explode: false}))), nil, headers)
+func (a *EcosystemApi) SkillsArtifactsDelete(skillId string, artifactId string) (sdktypes.SkillsArtifactsDeleteResult, error) {
+    raw, err := a.client.Delete(BackendApiPath(fmt.Sprintf("/ecosystem/skills/%s/artifacts/%s", SerializePathParameter(skillId, PathParameterSpec{Name: "skillId", Style: "simple", Explode: false}), SerializePathParameter(artifactId, PathParameterSpec{Name: "artifactId", Style: "simple", Explode: false}))), nil, nil)
     if err != nil {
         var zero sdktypes.SkillsArtifactsDeleteResult
         return zero, err
@@ -279,12 +235,8 @@ func (a *EcosystemApi) SkillsArtifactsRetrieve(skillId string, artifactId string
 }
 
 // Update skill artifact
-func (a *EcosystemApi) SkillsArtifactsUpdate(skillId string, artifactId string, body sdktypes.AdminSkillArtifactUpdateRequest, xRequestId *string) (sdktypes.SkillsArtifactsUpdateResult, error) {
-    headers := BuildRequestHeaders(
-        map[string]ParameterSpec{"X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},},
-        map[string]ParameterSpec{},
-    )
-    raw, err := a.client.Put(BackendApiPath(fmt.Sprintf("/ecosystem/skills/%s/artifacts/%s", SerializePathParameter(skillId, PathParameterSpec{Name: "skillId", Style: "simple", Explode: false}), SerializePathParameter(artifactId, PathParameterSpec{Name: "artifactId", Style: "simple", Explode: false}))), body, nil, headers, "application/json")
+func (a *EcosystemApi) SkillsArtifactsUpdate(skillId string, artifactId string, body sdktypes.AdminSkillArtifactUpdateRequest) (sdktypes.SkillsArtifactsUpdateResult, error) {
+    raw, err := a.client.Put(BackendApiPath(fmt.Sprintf("/ecosystem/skills/%s/artifacts/%s", SerializePathParameter(skillId, PathParameterSpec{Name: "skillId", Style: "simple", Explode: false}), SerializePathParameter(artifactId, PathParameterSpec{Name: "artifactId", Style: "simple", Explode: false}))), body, nil, nil, "application/json")
     if err != nil {
         var zero sdktypes.SkillsArtifactsUpdateResult
         return zero, err
@@ -303,12 +255,8 @@ func (a *EcosystemApi) SkillsAssetsList(skillId string) (sdktypes.SkillsAssetsLi
 }
 
 // Create skill asset
-func (a *EcosystemApi) SkillsAssetsCreate(skillId string, body sdktypes.AdminSkillAssetCreateRequest, xRequestId *string) (sdktypes.SkillsAssetsCreateResult, error) {
-    headers := BuildRequestHeaders(
-        map[string]ParameterSpec{"X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},},
-        map[string]ParameterSpec{},
-    )
-    raw, err := a.client.Post(BackendApiPath(fmt.Sprintf("/ecosystem/skills/%s/assets", SerializePathParameter(skillId, PathParameterSpec{Name: "skillId", Style: "simple", Explode: false}))), body, nil, headers, "application/json")
+func (a *EcosystemApi) SkillsAssetsCreate(skillId string, body sdktypes.AdminSkillAssetCreateRequest) (sdktypes.SkillsAssetsCreateResult, error) {
+    raw, err := a.client.Post(BackendApiPath(fmt.Sprintf("/ecosystem/skills/%s/assets", SerializePathParameter(skillId, PathParameterSpec{Name: "skillId", Style: "simple", Explode: false}))), body, nil, nil, "application/json")
     if err != nil {
         var zero sdktypes.SkillsAssetsCreateResult
         return zero, err
@@ -317,12 +265,8 @@ func (a *EcosystemApi) SkillsAssetsCreate(skillId string, body sdktypes.AdminSki
 }
 
 // Delete skill asset
-func (a *EcosystemApi) SkillsAssetsDelete(skillId string, assetId string, xRequestId *string) (sdktypes.SkillsAssetsDeleteResult, error) {
-    headers := BuildRequestHeaders(
-        map[string]ParameterSpec{"X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},},
-        map[string]ParameterSpec{},
-    )
-    raw, err := a.client.Delete(BackendApiPath(fmt.Sprintf("/ecosystem/skills/%s/assets/%s", SerializePathParameter(skillId, PathParameterSpec{Name: "skillId", Style: "simple", Explode: false}), SerializePathParameter(assetId, PathParameterSpec{Name: "assetId", Style: "simple", Explode: false}))), nil, headers)
+func (a *EcosystemApi) SkillsAssetsDelete(skillId string, assetId string) (sdktypes.SkillsAssetsDeleteResult, error) {
+    raw, err := a.client.Delete(BackendApiPath(fmt.Sprintf("/ecosystem/skills/%s/assets/%s", SerializePathParameter(skillId, PathParameterSpec{Name: "skillId", Style: "simple", Explode: false}), SerializePathParameter(assetId, PathParameterSpec{Name: "assetId", Style: "simple", Explode: false}))), nil, nil)
     if err != nil {
         var zero sdktypes.SkillsAssetsDeleteResult
         return zero, err
@@ -341,12 +285,8 @@ func (a *EcosystemApi) SkillsAssetsRetrieve(skillId string, assetId string) (sdk
 }
 
 // Update skill asset
-func (a *EcosystemApi) SkillsAssetsUpdate(skillId string, assetId string, body sdktypes.AdminSkillAssetUpdateRequest, xRequestId *string) (sdktypes.SkillsAssetsUpdateResult, error) {
-    headers := BuildRequestHeaders(
-        map[string]ParameterSpec{"X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},},
-        map[string]ParameterSpec{},
-    )
-    raw, err := a.client.Put(BackendApiPath(fmt.Sprintf("/ecosystem/skills/%s/assets/%s", SerializePathParameter(skillId, PathParameterSpec{Name: "skillId", Style: "simple", Explode: false}), SerializePathParameter(assetId, PathParameterSpec{Name: "assetId", Style: "simple", Explode: false}))), body, nil, headers, "application/json")
+func (a *EcosystemApi) SkillsAssetsUpdate(skillId string, assetId string, body sdktypes.AdminSkillAssetUpdateRequest) (sdktypes.SkillsAssetsUpdateResult, error) {
+    raw, err := a.client.Put(BackendApiPath(fmt.Sprintf("/ecosystem/skills/%s/assets/%s", SerializePathParameter(skillId, PathParameterSpec{Name: "skillId", Style: "simple", Explode: false}), SerializePathParameter(assetId, PathParameterSpec{Name: "assetId", Style: "simple", Explode: false}))), body, nil, nil, "application/json")
     if err != nil {
         var zero sdktypes.SkillsAssetsUpdateResult
         return zero, err
@@ -355,12 +295,8 @@ func (a *EcosystemApi) SkillsAssetsUpdate(skillId string, assetId string, body s
 }
 
 // Disable skill
-func (a *EcosystemApi) SkillsDisable(skillId string, xRequestId *string) (sdktypes.SkillsDisableResult, error) {
-    headers := BuildRequestHeaders(
-        map[string]ParameterSpec{"X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},},
-        map[string]ParameterSpec{},
-    )
-    raw, err := a.client.Post(BackendApiPath(fmt.Sprintf("/ecosystem/skills/%s/disable", SerializePathParameter(skillId, PathParameterSpec{Name: "skillId", Style: "simple", Explode: false}))), nil, nil, headers, "")
+func (a *EcosystemApi) SkillsDisable(skillId string) (sdktypes.SkillsDisableResult, error) {
+    raw, err := a.client.Post(BackendApiPath(fmt.Sprintf("/ecosystem/skills/%s/disable", SerializePathParameter(skillId, PathParameterSpec{Name: "skillId", Style: "simple", Explode: false}))), nil, nil, nil, "")
     if err != nil {
         var zero sdktypes.SkillsDisableResult
         return zero, err
@@ -369,12 +305,8 @@ func (a *EcosystemApi) SkillsDisable(skillId string, xRequestId *string) (sdktyp
 }
 
 // Enable skill
-func (a *EcosystemApi) SkillsEnable(skillId string, xRequestId *string) (sdktypes.SkillsEnableResult, error) {
-    headers := BuildRequestHeaders(
-        map[string]ParameterSpec{"X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},},
-        map[string]ParameterSpec{},
-    )
-    raw, err := a.client.Post(BackendApiPath(fmt.Sprintf("/ecosystem/skills/%s/enable", SerializePathParameter(skillId, PathParameterSpec{Name: "skillId", Style: "simple", Explode: false}))), nil, nil, headers, "")
+func (a *EcosystemApi) SkillsEnable(skillId string) (sdktypes.SkillsEnableResult, error) {
+    raw, err := a.client.Post(BackendApiPath(fmt.Sprintf("/ecosystem/skills/%s/enable", SerializePathParameter(skillId, PathParameterSpec{Name: "skillId", Style: "simple", Explode: false}))), nil, nil, nil, "")
     if err != nil {
         var zero sdktypes.SkillsEnableResult
         return zero, err
@@ -383,12 +315,8 @@ func (a *EcosystemApi) SkillsEnable(skillId string, xRequestId *string) (sdktype
 }
 
 // Publish skill
-func (a *EcosystemApi) SkillsPublish(skillId string, xRequestId *string) (sdktypes.SkillsPublishResult, error) {
-    headers := BuildRequestHeaders(
-        map[string]ParameterSpec{"X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},},
-        map[string]ParameterSpec{},
-    )
-    raw, err := a.client.Post(BackendApiPath(fmt.Sprintf("/ecosystem/skills/%s/publish", SerializePathParameter(skillId, PathParameterSpec{Name: "skillId", Style: "simple", Explode: false}))), nil, nil, headers, "")
+func (a *EcosystemApi) SkillsPublish(skillId string) (sdktypes.SkillsPublishResult, error) {
+    raw, err := a.client.Post(BackendApiPath(fmt.Sprintf("/ecosystem/skills/%s/publish", SerializePathParameter(skillId, PathParameterSpec{Name: "skillId", Style: "simple", Explode: false}))), nil, nil, nil, "")
     if err != nil {
         var zero sdktypes.SkillsPublishResult
         return zero, err
@@ -397,12 +325,8 @@ func (a *EcosystemApi) SkillsPublish(skillId string, xRequestId *string) (sdktyp
 }
 
 // Approve skill
-func (a *EcosystemApi) SkillsReviewApprove(skillId string, body sdktypes.AdminSkillReviewRequest, xRequestId *string) (sdktypes.SkillsReviewApproveResult, error) {
-    headers := BuildRequestHeaders(
-        map[string]ParameterSpec{"X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},},
-        map[string]ParameterSpec{},
-    )
-    raw, err := a.client.Post(BackendApiPath(fmt.Sprintf("/ecosystem/skills/%s/review/approve", SerializePathParameter(skillId, PathParameterSpec{Name: "skillId", Style: "simple", Explode: false}))), body, nil, headers, "application/json")
+func (a *EcosystemApi) SkillsReviewApprove(skillId string, body sdktypes.AdminSkillReviewRequest) (sdktypes.SkillsReviewApproveResult, error) {
+    raw, err := a.client.Post(BackendApiPath(fmt.Sprintf("/ecosystem/skills/%s/review/approve", SerializePathParameter(skillId, PathParameterSpec{Name: "skillId", Style: "simple", Explode: false}))), body, nil, nil, "application/json")
     if err != nil {
         var zero sdktypes.SkillsReviewApproveResult
         return zero, err
@@ -411,12 +335,8 @@ func (a *EcosystemApi) SkillsReviewApprove(skillId string, body sdktypes.AdminSk
 }
 
 // Reject skill
-func (a *EcosystemApi) SkillsReviewReject(skillId string, body sdktypes.AdminSkillReviewRequest, xRequestId *string) (sdktypes.SkillsReviewRejectResult, error) {
-    headers := BuildRequestHeaders(
-        map[string]ParameterSpec{"X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},},
-        map[string]ParameterSpec{},
-    )
-    raw, err := a.client.Post(BackendApiPath(fmt.Sprintf("/ecosystem/skills/%s/review/reject", SerializePathParameter(skillId, PathParameterSpec{Name: "skillId", Style: "simple", Explode: false}))), body, nil, headers, "application/json")
+func (a *EcosystemApi) SkillsReviewReject(skillId string, body sdktypes.AdminSkillReviewRequest) (sdktypes.SkillsReviewRejectResult, error) {
+    raw, err := a.client.Post(BackendApiPath(fmt.Sprintf("/ecosystem/skills/%s/review/reject", SerializePathParameter(skillId, PathParameterSpec{Name: "skillId", Style: "simple", Explode: false}))), body, nil, nil, "application/json")
     if err != nil {
         var zero sdktypes.SkillsReviewRejectResult
         return zero, err
@@ -425,12 +345,8 @@ func (a *EcosystemApi) SkillsReviewReject(skillId string, body sdktypes.AdminSki
 }
 
 // Offline skill
-func (a *EcosystemApi) SkillsUnpublish(skillId string, xRequestId *string) (sdktypes.SkillsUnpublishResult, error) {
-    headers := BuildRequestHeaders(
-        map[string]ParameterSpec{"X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},},
-        map[string]ParameterSpec{},
-    )
-    raw, err := a.client.Post(BackendApiPath(fmt.Sprintf("/ecosystem/skills/%s/unpublish", SerializePathParameter(skillId, PathParameterSpec{Name: "skillId", Style: "simple", Explode: false}))), nil, nil, headers, "")
+func (a *EcosystemApi) SkillsUnpublish(skillId string) (sdktypes.SkillsUnpublishResult, error) {
+    raw, err := a.client.Post(BackendApiPath(fmt.Sprintf("/ecosystem/skills/%s/unpublish", SerializePathParameter(skillId, PathParameterSpec{Name: "skillId", Style: "simple", Explode: false}))), nil, nil, nil, "")
     if err != nil {
         var zero sdktypes.SkillsUnpublishResult
         return zero, err
@@ -664,92 +580,7 @@ func EncodeQueryValue(value string, allowReserved bool) string {
 }
 
 
-type ParameterSpec struct {
-    Value       interface{}
-    Style       string
-    Explode     bool
-    ContentType string
-}
 
-func BuildRequestHeaders(headers map[string]ParameterSpec, cookies map[string]ParameterSpec) map[string]string {
-    requestHeaders := map[string]string{}
-    for name, parameter := range headers {
-        if serialized, ok := SerializeParameterValue(parameter); ok {
-            requestHeaders[name] = serialized
-        }
-    }
-
-    if cookieHeader := BuildCookieHeader(cookies); cookieHeader != "" {
-        if existing, ok := requestHeaders["Cookie"]; ok && existing != "" {
-            requestHeaders["Cookie"] = existing + "; " + cookieHeader
-        } else {
-            requestHeaders["Cookie"] = cookieHeader
-        }
-    }
-
-    if len(requestHeaders) == 0 {
-        return nil
-    }
-    return requestHeaders
-}
-
-func BuildCookieHeader(cookies map[string]ParameterSpec) string {
-    pairs := make([]string, 0, len(cookies))
-    for name, parameter := range cookies {
-        if serialized, ok := SerializeParameterValue(parameter); ok {
-            pairs = append(pairs, url.QueryEscape(name)+"="+url.QueryEscape(serialized))
-        }
-    }
-    return strings.Join(pairs, "; ")
-}
-
-func SerializeParameterValue(parameter ParameterSpec) (string, bool) {
-    value := parameter.Value
-    if value == nil {
-        return "", false
-    }
-    if parameter.ContentType != "" {
-        encoded, _ := json.Marshal(value)
-        return string(encoded), true
-    }
-    switch typed := value.(type) {
-    case string:
-        return typed, true
-    case fmt.Stringer:
-        return typed.String(), true
-    case []string:
-        return strings.Join(typed, ","), true
-    case []int:
-        values := make([]string, 0, len(typed))
-        for _, item := range typed {
-            values = append(values, fmt.Sprint(item))
-        }
-        return strings.Join(values, ","), true
-    case map[string]string:
-        return SerializeHeaderObject(stringMapToInterface(typed), parameter.Explode), true
-    case map[string]int:
-        return SerializeHeaderObject(intMapToInterface(typed), parameter.Explode), true
-    case map[string]interface{}:
-        return SerializeHeaderObject(typed, parameter.Explode), true
-    default:
-        return fmt.Sprint(value), true
-    }
-}
-
-func SerializeHeaderObject(values map[string]interface{}, explode bool) string {
-    serialized := make([]string, 0, len(values)*2)
-    for key, value := range values {
-        if value == nil {
-            continue
-        }
-        if explode {
-            serialized = append(serialized, key+"="+fmt.Sprint(value))
-        } else {
-            serialized = append(serialized, key, fmt.Sprint(value))
-        }
-    }
-    return strings.Join(serialized, ",")
-}
 func stringSliceToInterface(values []string) []interface{} {
     result := make([]interface{}, 0, len(values))
     for _, value := range values {

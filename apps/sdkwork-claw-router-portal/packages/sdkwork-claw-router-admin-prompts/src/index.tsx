@@ -5,6 +5,8 @@ import {
   AdminCategoryManagementSidebar,
   AdminResourceCenter,
   ConfirmDialog,
+  readAdminResourceRecordList,
+  type AdminResourceRecord,
   type AdminResourceSection,
 } from 'sdkwork-claw-router-commons';
 import {
@@ -23,7 +25,6 @@ import {
 } from 'sdkwork-claw-router-commons/runtime';
 import {
   DEFAULT_PROMPT_PAGE_PARAMS,
-  EMPTY_PROMPT_ITEMS,
   createPrompt,
   createPromptBinding,
   createPromptVersion,
@@ -40,8 +41,9 @@ import {
   type AdminPromptVersionCreateInput,
 } from './promptService';
 
-type PromptAdminSectionId = 'prompts' | 'versions' | 'bindings';
+type PromptAdminSectionId = 'prompts';
 type PromptAdminGroup = string;
+type PromptDetailTabId = 'overview' | 'versions' | 'usage';
 type PromptDialogKind = 'createPrompt' | 'createVersion' | 'publishVersion' | 'renderVersion' | 'createBinding' | 'updateBinding' | 'createCategory' | 'editCategory';
 type JsonPrimitive = string | number | boolean | null;
 type JsonValue = JsonPrimitive | JsonValue[] | { [key: string]: JsonValue };
@@ -52,13 +54,12 @@ type CategoryModalState = {
   parentId: string | null;
 } | null;
 
-const DEFAULT_SECTION_ID: PromptAdminSectionId = 'prompts';
 const PROMPT_BINDING_NULL_VERSION_VALUE = '__sdkwork_prompt_binding_null_version__';
 
 export function PromptsAdmin() {
   const { t } = useTranslation();
   const [promptId, setPromptId] = useState('');
-  const [activeSectionId, setActiveSectionId] = useState<PromptAdminSectionId>(DEFAULT_SECTION_ID);
+  const [selectedPromptRecord, setSelectedPromptRecord] = useState<AdminResourceRecord | null>(null);
   const [selectedCategoryId, setSelectedCategoryId] = useState('');
   const [categoryOptions, setCategoryOptions] = useState<AdminCategoryOption[]>([]);
   const [categoriesLoading, setCategoriesLoading] = useState(true);
@@ -66,8 +67,10 @@ export function PromptsAdmin() {
   const [promptOptions, setPromptOptions] = useState<AdminResourceOption[]>([]);
   const [promptLoadError, setPromptLoadError] = useState<string | null>(null);
   const [versionOptions, setVersionOptions] = useState<AdminResourceOption[]>([]);
+  const [versionRecords, setVersionRecords] = useState<AdminResourceRecord[]>([]);
   const [versionLoadError, setVersionLoadError] = useState<string | null>(null);
   const [bindingOptions, setBindingOptions] = useState<AdminResourceOption[]>([]);
+  const [bindingRecords, setBindingRecords] = useState<AdminResourceRecord[]>([]);
   const [bindingLoadError, setBindingLoadError] = useState<string | null>(null);
   const [dialogKind, setDialogKind] = useState<PromptDialogKind | null>(null);
   const [categoryModalState, setCategoryModalState] = useState<CategoryModalState>(null);
@@ -126,6 +129,7 @@ export function PromptsAdmin() {
     if (!normalizedPromptId) {
       if (isActive()) {
         setVersionOptions([]);
+        setVersionRecords([]);
         setVersionLoadError(null);
       }
       return;
@@ -139,11 +143,13 @@ export function PromptsAdmin() {
       });
       if (isActive()) {
         setVersionOptions(options);
+        setVersionRecords(readAdminResourceRecordList(result));
         setVersionLoadError(null);
       }
     } catch (caught) {
       if (isActive()) {
         setVersionOptions([]);
+        setVersionRecords([]);
         setVersionLoadError(errorMessage(caught, t('admin.prompts.versionScopeLoadError')));
       }
     }
@@ -153,6 +159,7 @@ export function PromptsAdmin() {
     if (!normalizedPromptId) {
       if (isActive()) {
         setBindingOptions([]);
+        setBindingRecords([]);
         setBindingLoadError(null);
       }
       return;
@@ -166,11 +173,13 @@ export function PromptsAdmin() {
       });
       if (isActive()) {
         setBindingOptions(options);
+        setBindingRecords(readAdminResourceRecordList(result));
         setBindingLoadError(null);
       }
     } catch (caught) {
       if (isActive()) {
         setBindingOptions([]);
+        setBindingRecords([]);
         setBindingLoadError(errorMessage(caught, t('admin.prompts.bindingScopeLoadError', 'Prompt bindings could not be loaded.')));
       }
     }
@@ -190,15 +199,18 @@ export function PromptsAdmin() {
     setCategoryModalState({ category, parentId: category.parentId });
     setDialogKind('editCategory');
   }, []);
-  const sections = useMemo(() => buildPromptSections(t, scopedPromptId, scopedCategoryId, categoryOptions, {
-    onCreateBinding: () => setDialogKind('createBinding'),
+  const sections = useMemo(() => buildPromptSections(t, scopedCategoryId, categoryOptions, {
     onCreatePrompt: () => setDialogKind('createPrompt'),
-    onCreateVersion: () => setDialogKind('createVersion'),
-    onPublishVersion: () => setDialogKind('publishVersion'),
-    onRenderVersion: () => setDialogKind('renderVersion'),
-    onUpdateBinding: () => setDialogKind('updateBinding'),
-  }), [categoryOptions, scopedCategoryId, scopedPromptId, t]);
+  }), [categoryOptions, scopedCategoryId, t]);
   const categoryUsage = useMemo(() => buildCategoryUsage(categoryOptions, promptOptions), [categoryOptions, promptOptions]);
+  const handleOpenPromptDetail = useCallback((record: AdminResourceRecord) => {
+    const recordPromptId = normalizeRecordId(record.id);
+    if (!recordPromptId) {
+      return;
+    }
+    setPromptId(recordPromptId);
+    setSelectedPromptRecord(record);
+  }, []);
 
   useEffect(() => {
     let active = true;
@@ -210,6 +222,7 @@ export function PromptsAdmin() {
 
   useEffect(() => {
     setPromptId('');
+    setSelectedPromptRecord(null);
   }, [scopedCategoryId]);
 
   useEffect(() => {
@@ -264,37 +277,43 @@ export function PromptsAdmin() {
           selectedCategoryId={selectedCategoryId}
           usageCountByCategoryId={categoryUsage}
         />
-        <div className="flex min-h-0 min-w-0 flex-col gap-2">
-          <SectionTabs
-            activeSectionId={activeSectionId}
-            onChange={setActiveSectionId}
-            sections={sections}
-          />
-          {activeSectionId !== 'prompts' ? (
-            <div className="flex shrink-0 rounded-lg border border-slate-200 bg-white p-3 shadow-sm dark:border-white/10 dark:bg-[#1a1a1a]">
-              <ResourceSelectField
-                emptyLabel={t('admin.prompts.scope.promptPlaceholder', 'Select a prompt for versions and bindings')}
-                label={t('admin.prompts.scope.prompt', 'Prompt')}
-                onChange={setPromptId}
-                options={promptOptions}
-                value={promptId}
-              />
-            </div>
-          ) : null}
+        <div className={`grid min-h-0 min-w-0 gap-2 ${scopedPromptId ? 'xl:grid-cols-[minmax(0,1fr)_420px]' : ''}`}>
           <AdminResourceCenter<PromptAdminSectionId, PromptAdminGroup>
-            activeSectionId={activeSectionId}
             emptyDescription={t('admin.prompts.empty.desc', 'No prompt records match the current filters.')}
             emptyTitle={t('admin.prompts.empty.title', 'No prompt records')}
             errorTitle={t('admin.prompts.error.title', 'Prompt data could not be loaded')}
-            initialSectionId={DEFAULT_SECTION_ID}
             loadingTitle={t('admin.prompts.loading', 'Loading prompt records...')}
-            refreshKey={`${refreshKey}:${scopedPromptId}:${scopedCategoryId}`}
+            onRecordOpen={handleOpenPromptDetail}
+            recordActionColumnLabel={t('common.columns.actions', 'Actions')}
+            recordOpenLabel={t('admin.prompts.actions.openDetail', 'Details')}
+            refreshKey={`${refreshKey}:${scopedCategoryId}`}
             reloadLabel={t('common.actions.reload')}
             searchPlaceholder={t('admin.prompts.search.placeholder')}
             sections={sections}
             showSectionNavigation={false}
             tableViewportDataAttribute="admin-prompts-table"
           />
+          {scopedPromptId ? (
+            <PromptDetailPanel
+              bindingError={bindingLoadError}
+              bindingRecords={bindingRecords}
+              onClose={() => {
+                setPromptId('');
+                setSelectedPromptRecord(null);
+              }}
+              onCreateBinding={() => setDialogKind('createBinding')}
+              onCreateVersion={() => setDialogKind('createVersion')}
+              onPublishVersion={() => setDialogKind('publishVersion')}
+              onRenderVersion={() => setDialogKind('renderVersion')}
+              onUpdateBinding={() => setDialogKind('updateBinding')}
+              promptId={scopedPromptId}
+              promptOptions={promptOptions}
+              promptRecord={selectedPromptRecord}
+              t={t}
+              versionError={versionLoadError}
+              versionRecords={versionRecords}
+            />
+          ) : null}
         </div>
       </div>
 
@@ -361,16 +380,10 @@ export function PromptsAdmin() {
 
 function buildPromptSections(
   t: ReturnType<typeof useTranslation>['t'],
-  promptId: string,
   categoryId: string,
   categoryOptions: readonly AdminCategoryOption[],
   actions: {
-    onCreateBinding: () => void;
     onCreatePrompt: () => void;
-    onCreateVersion: () => void;
-    onPublishVersion: () => void;
-    onRenderVersion: () => void;
-    onUpdateBinding: () => void;
   },
 ): AdminResourceSection<PromptAdminSectionId, PromptAdminGroup>[] {
   return [
@@ -400,74 +413,6 @@ function buildPromptSections(
       ],
       searchFields: ['promptKey', 'name', 'description', 'categoryName', 'categoryCode', 'promptType', 'visibility', 'status'],
     },
-    {
-      id: 'versions',
-      title: t('admin.prompts.sections.versions.title', 'Versions'),
-      description: t('admin.prompts.sections.versions.desc', 'Immutable prompt versions with schemas, examples, lifecycle, and review state.'),
-      icon: <FileText className="h-4 w-4" />,
-      group: t('admin.prompts.group.lifecycle', 'Lifecycle'),
-      load: () => promptId ? listPromptVersions(promptId) : Promise.resolve(EMPTY_PROMPT_ITEMS),
-      actions: [
-        {
-          icon: <Plus className="h-4 w-4" />,
-          label: t('admin.prompts.actions.createVersion', 'Create Version'),
-          onClick: actions.onCreateVersion,
-        },
-        {
-          icon: <Rocket className="h-4 w-4" />,
-          label: t('admin.prompts.actions.publishVersion', 'Publish'),
-          onClick: actions.onPublishVersion,
-        },
-        {
-          icon: <Play className="h-4 w-4" />,
-          label: t('admin.prompts.actions.renderVersion', 'Render'),
-          onClick: actions.onRenderVersion,
-        },
-      ],
-      columns: [
-        { key: 'versionNo', label: t('admin.prompts.columns.version', 'Version') },
-        { key: 'title', label: t('admin.prompts.columns.title', 'Title') },
-        { key: 'lifecycleStatus', label: t('admin.prompts.columns.lifecycle', 'Lifecycle') },
-        { key: 'reviewStatus', label: t('admin.prompts.columns.review', 'Review') },
-        { key: 'checksumHash', label: t('admin.prompts.columns.checksum', 'Checksum') },
-        { key: 'updatedAt', label: t('admin.prompts.columns.updatedAt', 'Updated') },
-      ],
-      searchFields: ['versionNo', 'title', 'lifecycleStatus', 'reviewStatus', 'checksumHash', 'content'],
-    },
-    {
-      id: 'bindings',
-      title: t('admin.prompts.sections.bindings.title', 'Bindings'),
-      description: t('admin.prompts.sections.bindings.desc', 'Agent, skill, and runtime owners bound to prompt versions or default prompt resolution.'),
-      icon: <Tags className="h-4 w-4" />,
-      group: t('admin.prompts.group.governance', 'Governance'),
-      load: () => promptId ? listPromptBindings(promptId) : Promise.resolve(EMPTY_PROMPT_ITEMS),
-      actions: [
-        {
-          icon: <Plus className="h-4 w-4" />,
-          label: t('admin.prompts.actions.createBinding', 'Create Binding'),
-          onClick: actions.onCreateBinding,
-        },
-        {
-          icon: <Tags className="h-4 w-4" />,
-          label: t('admin.prompts.actions.updateBinding', 'Update Binding'),
-          onClick: actions.onUpdateBinding,
-        },
-      ],
-      columns: [
-        { key: 'ownerType', label: t('admin.prompts.columns.ownerType', 'Owner Type') },
-        { key: 'ownerId', label: t('admin.prompts.columns.ownerId', 'Owner ID') },
-        {
-          key: 'promptVersionId',
-          label: t('admin.prompts.columns.promptVersion', 'Prompt Version'),
-          format: (value) => formatPromptBindingVersionCell(value, t),
-        },
-        { key: 'bindingRole', label: t('admin.prompts.columns.bindingRole', 'Role') },
-        { key: 'priority', label: t('admin.prompts.columns.priority', 'Priority'), align: 'right' },
-        { key: 'enabled', label: t('admin.prompts.columns.enabled', 'Enabled') },
-        { key: 'updatedAt', label: t('admin.prompts.columns.updatedAt', 'Updated') },
-      ],
-      searchFields: ['ownerType', 'ownerId', 'promptVersionId', 'bindingRole', 'priority', 'enabled'],
-    },
   ];
 }
 
@@ -478,35 +423,305 @@ function formatPromptBindingVersionCell(value: unknown, t: TranslationFn): strin
   return String(value);
 }
 
-function SectionTabs({
-  activeSectionId,
+function PromptDetailPanel({
+  bindingError,
+  bindingRecords,
+  onClose,
+  onCreateBinding,
+  onCreateVersion,
+  onPublishVersion,
+  onRenderVersion,
+  onUpdateBinding,
+  promptId,
+  promptOptions,
+  promptRecord,
+  t,
+  versionError,
+  versionRecords,
+}: PromptDetailPanelProps) {
+  const [activeTab, setActiveTab] = useState<PromptDetailTabId>('overview');
+  const promptOption = promptOptions.find((option) => option.value === promptId);
+  const title = readRecordText(promptRecord, 'name') || promptOption?.label || `#${promptId}`;
+
+  useEffect(() => {
+    setActiveTab('overview');
+  }, [promptId]);
+
+  return (
+    <aside
+      className="flex min-h-0 min-w-0 flex-col overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm dark:border-white/10 dark:bg-[#1a1a1a]"
+      data-admin-prompts-detail="prompt-detail"
+    >
+      <div className="flex shrink-0 items-start justify-between gap-3 border-b border-slate-200 p-4 dark:border-white/10">
+        <div className="min-w-0">
+          <div className="flex items-center gap-2 text-sm font-bold text-slate-900 dark:text-white">
+            <BookText className="h-4 w-4 text-blue-600 dark:text-blue-300" />
+            <span className="truncate">{title}</span>
+          </div>
+          <div className="mt-1 truncate text-xs text-slate-500">
+            {readRecordText(promptRecord, 'promptKey') || promptOption?.detail || `#${promptId}`}
+          </div>
+        </div>
+        <button
+          className="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-lg text-slate-500 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-white/10"
+          onClick={onClose}
+          title={t('common.actions.close', 'Close')}
+          type="button"
+        >
+          <X className="h-4 w-4" />
+        </button>
+      </div>
+
+      <PromptDetailTabs activeTab={activeTab} onChange={setActiveTab} t={t} />
+
+      <div className="custom-scrollbar min-h-0 flex-1 overflow-y-auto p-4">
+        {activeTab === 'overview' ? (
+          <PromptOverview promptId={promptId} promptRecord={promptRecord} t={t} />
+        ) : activeTab === 'versions' ? (
+          <PromptVersionsDetail
+            error={versionError}
+            onCreateVersion={onCreateVersion}
+            onPublishVersion={onPublishVersion}
+            onRenderVersion={onRenderVersion}
+            records={versionRecords}
+            t={t}
+          />
+        ) : (
+          <PromptUsageDetail
+            error={bindingError}
+            onCreateBinding={onCreateBinding}
+            onUpdateBinding={onUpdateBinding}
+            records={bindingRecords}
+            t={t}
+          />
+        )}
+      </div>
+    </aside>
+  );
+}
+
+function PromptDetailTabs({
+  activeTab,
   onChange,
-  sections,
+  t,
 }: {
-  activeSectionId: PromptAdminSectionId;
-  onChange: (sectionId: PromptAdminSectionId) => void;
-  sections: readonly AdminResourceSection<PromptAdminSectionId, PromptAdminGroup>[];
+  activeTab: PromptDetailTabId;
+  onChange: (tab: PromptDetailTabId) => void;
+  t: TranslationFn;
+}) {
+  const tabs: Array<{ id: PromptDetailTabId; icon: React.ReactNode; label: string }> = [
+    { id: 'overview', icon: <BookText className="h-4 w-4" />, label: t('admin.prompts.detail.overview', 'Overview') },
+    { id: 'versions', icon: <FileText className="h-4 w-4" />, label: t('admin.prompts.detail.versions', 'Versions') },
+    { id: 'usage', icon: <Tags className="h-4 w-4" />, label: t('admin.prompts.detail.usage', 'Usage') },
+  ];
+  return (
+    <div className="flex shrink-0 gap-1 border-b border-slate-200 px-3 py-2 dark:border-white/10">
+      {tabs.map((tab) => (
+        <button
+          className={`inline-flex min-w-0 flex-1 items-center justify-center gap-1.5 rounded-md px-2 py-2 text-xs font-semibold transition-colors ${
+            activeTab === tab.id
+              ? 'bg-blue-50 text-blue-700 dark:bg-blue-500/15 dark:text-blue-200'
+              : 'text-slate-600 hover:bg-slate-50 dark:text-slate-300 dark:hover:bg-white/10'
+          }`}
+          key={tab.id}
+          onClick={() => onChange(tab.id)}
+          type="button"
+        >
+          {tab.icon}
+          <span className="truncate">{tab.label}</span>
+        </button>
+      ))}
+    </div>
+  );
+}
+
+function PromptOverview({ promptId, promptRecord, t }: {
+  promptId: string;
+  promptRecord: AdminResourceRecord | null;
+  t: TranslationFn;
+}) {
+  const fields = [
+    { label: t('admin.prompts.fields.promptKey', 'Prompt Key'), value: readRecordText(promptRecord, 'promptKey') || `#${promptId}` },
+    { label: t('admin.prompts.fields.name', 'Name'), value: readRecordText(promptRecord, 'name') },
+    { label: t('admin.prompts.fields.category', 'Category'), value: readRecordText(promptRecord, 'categoryName') || readRecordText(promptRecord, 'categoryCode') },
+    { label: t('admin.prompts.fields.promptType', 'Type'), value: readRecordText(promptRecord, 'promptType') },
+    { label: t('admin.prompts.fields.visibility', 'Visibility'), value: readRecordText(promptRecord, 'visibility') },
+    { label: t('admin.prompts.fields.status', 'Status'), value: readRecordText(promptRecord, 'status') },
+    { label: t('admin.prompts.fields.latestVersion', 'Latest version'), value: readRecordText(promptRecord, 'latestVersionId') },
+    { label: t('admin.prompts.fields.publishedVersion', 'Published version'), value: readRecordText(promptRecord, 'publishedVersionId') },
+  ];
+  return (
+    <div className="grid gap-3">
+      <div className="grid gap-2 sm:grid-cols-2 xl:grid-cols-1 2xl:grid-cols-2">
+        {fields.map((field) => (
+          <div className="rounded-lg border border-slate-200 bg-slate-50 px-3 py-2 dark:border-white/10 dark:bg-white/[0.03]" key={field.label}>
+            <div className="text-[11px] font-semibold uppercase text-slate-400">{field.label}</div>
+            <div className="mt-1 truncate text-sm font-semibold text-slate-800 dark:text-slate-100" title={field.value || '-'}>
+              {field.value || '-'}
+            </div>
+          </div>
+        ))}
+      </div>
+      <div className="rounded-lg border border-slate-200 bg-white p-3 dark:border-white/10 dark:bg-white/[0.03]">
+        <div className="text-[11px] font-semibold uppercase text-slate-400">
+          {t('admin.prompts.fields.description', 'Description')}
+        </div>
+        <div className="mt-2 whitespace-pre-wrap text-sm leading-6 text-slate-600 dark:text-slate-300">
+          {readRecordText(promptRecord, 'description') || '-'}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function PromptVersionsDetail({
+  error,
+  onCreateVersion,
+  onPublishVersion,
+  onRenderVersion,
+  records,
+  t,
+}: {
+  error: string | null;
+  onCreateVersion: () => void;
+  onPublishVersion: () => void;
+  onRenderVersion: () => void;
+  records: readonly AdminResourceRecord[];
+  t: TranslationFn;
 }) {
   return (
-    <div className="flex shrink-0 flex-wrap gap-2 rounded-lg border border-slate-200 bg-white p-2 shadow-sm dark:border-white/10 dark:bg-[#1a1a1a]">
-      {sections.map((section) => {
-        const active = section.id === activeSectionId;
-        return (
-          <button
-            className={`inline-flex items-center gap-2 rounded-md px-3 py-2 text-sm font-semibold transition-colors ${
-              active
-                ? 'bg-blue-50 text-blue-700 dark:bg-blue-500/15 dark:text-blue-200'
-                : 'text-slate-600 hover:bg-slate-50 dark:text-slate-300 dark:hover:bg-white/10'
-            }`}
-            key={section.id}
-            onClick={() => onChange(section.id)}
-            type="button"
-          >
-            {section.icon}
-            {section.title}
-          </button>
-        );
-      })}
+    <div className="grid gap-3">
+      <div className="flex flex-wrap gap-2">
+        <DetailActionButton icon={<Plus className="h-4 w-4" />} label={t('admin.prompts.actions.createVersion', 'Create Version')} onClick={onCreateVersion} />
+        <DetailActionButton icon={<Rocket className="h-4 w-4" />} label={t('admin.prompts.actions.publishVersion', 'Publish')} onClick={onPublishVersion} />
+        <DetailActionButton icon={<Play className="h-4 w-4" />} label={t('admin.prompts.actions.renderVersion', 'Render')} onClick={onRenderVersion} />
+      </div>
+      {error ? <ErrorMessage message={error} /> : null}
+      <DetailRecordTable
+        columns={[
+          { key: 'versionNo', label: t('admin.prompts.columns.version', 'Version') },
+          { key: 'title', label: t('admin.prompts.columns.title', 'Title') },
+          { key: 'lifecycleStatus', label: t('admin.prompts.columns.lifecycle', 'Lifecycle') },
+          { key: 'reviewStatus', label: t('admin.prompts.columns.review', 'Review') },
+          { key: 'updatedAt', label: t('admin.prompts.columns.updatedAt', 'Updated') },
+        ]}
+        emptyLabel={t('admin.prompts.detail.emptyVersions', 'No versions for this prompt.')}
+        records={records}
+      />
+    </div>
+  );
+}
+
+function PromptUsageDetail({
+  error,
+  onCreateBinding,
+  onUpdateBinding,
+  records,
+  t,
+}: {
+  error: string | null;
+  onCreateBinding: () => void;
+  onUpdateBinding: () => void;
+  records: readonly AdminResourceRecord[];
+  t: TranslationFn;
+}) {
+  return (
+    <div className="grid gap-3">
+      <div className="flex flex-wrap gap-2">
+        <DetailActionButton icon={<Plus className="h-4 w-4" />} label={t('admin.prompts.actions.createBinding', 'Create Binding')} onClick={onCreateBinding} />
+        <DetailActionButton icon={<Edit2 className="h-4 w-4" />} label={t('admin.prompts.actions.updateBinding', 'Update Binding')} onClick={onUpdateBinding} />
+      </div>
+      {error ? <ErrorMessage message={error} /> : null}
+      <DetailRecordTable
+        columns={[
+          { key: 'ownerType', label: t('admin.prompts.columns.ownerType', 'Owner Type') },
+          { key: 'ownerId', label: t('admin.prompts.columns.ownerId', 'Owner ID') },
+          {
+            key: 'promptVersionId',
+            label: t('admin.prompts.columns.promptVersion', 'Prompt Version'),
+            format: (value) => formatPromptBindingVersionCell(value, t),
+          },
+          { key: 'bindingRole', label: t('admin.prompts.columns.bindingRole', 'Role') },
+          { key: 'priority', label: t('admin.prompts.columns.priority', 'Priority'), align: 'right' },
+          { key: 'enabled', label: t('admin.prompts.columns.enabled', 'Enabled') },
+        ]}
+        emptyLabel={t('admin.prompts.detail.emptyUsage', 'No usage bindings for this prompt.')}
+        records={records}
+      />
+    </div>
+  );
+}
+
+function DetailActionButton({
+  icon,
+  label,
+  onClick,
+}: {
+  icon: React.ReactNode;
+  label: string;
+  onClick: () => void;
+}) {
+  return (
+    <button
+      className="inline-flex items-center gap-2 rounded-lg border border-slate-200 bg-white px-3 py-2 text-xs font-semibold text-slate-700 shadow-sm transition-colors hover:bg-slate-50 dark:border-white/10 dark:bg-white/5 dark:text-slate-200 dark:hover:bg-white/10"
+      onClick={onClick}
+      type="button"
+    >
+      {icon}
+      {label}
+    </button>
+  );
+}
+
+function DetailRecordTable({
+  columns,
+  emptyLabel,
+  records,
+}: {
+  columns: readonly DetailRecordColumn[];
+  emptyLabel: string;
+  records: readonly AdminResourceRecord[];
+}) {
+  if (records.length === 0) {
+    return (
+      <div className="rounded-lg border border-dashed border-slate-200 px-3 py-8 text-center text-sm text-slate-500 dark:border-white/10">
+        {emptyLabel}
+      </div>
+    );
+  }
+  return (
+    <div className="custom-scrollbar overflow-x-auto rounded-lg border border-slate-200 dark:border-white/10">
+      <table className="w-full min-w-[520px] text-left text-xs">
+        <thead className="bg-slate-50 text-[11px] uppercase text-slate-500 dark:bg-[#121212] dark:text-slate-400">
+          <tr>
+            {columns.map((column) => (
+              <th className={`px-3 py-2 font-semibold ${column.align === 'right' ? 'text-right' : ''}`} key={column.key}>
+                {column.label}
+              </th>
+            ))}
+          </tr>
+        </thead>
+        <tbody className="divide-y divide-slate-200 dark:divide-white/5">
+          {records.map((record, index) => (
+            <tr className="text-slate-600 dark:text-slate-300" key={detailRecordKey(record, index)}>
+              {columns.map((column) => {
+                const cellValue = column.format
+                  ? column.format(record[column.key], record)
+                  : formatDetailCell(record[column.key]);
+                return (
+                  <td
+                    className={`max-w-[180px] truncate px-3 py-2 ${column.align === 'right' ? 'text-right tabular-nums' : ''}`}
+                    key={column.key}
+                    title={cellValue}
+                  >
+                    {cellValue}
+                  </td>
+                );
+              })}
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 }
@@ -946,6 +1161,30 @@ type PromptDialogProps = {
   onClose: () => void;
   onSuccess: () => void;
   t: ReturnType<typeof useTranslation>['t'];
+};
+
+type PromptDetailPanelProps = {
+  bindingError: string | null;
+  bindingRecords: readonly AdminResourceRecord[];
+  onClose: () => void;
+  onCreateBinding: () => void;
+  onCreateVersion: () => void;
+  onPublishVersion: () => void;
+  onRenderVersion: () => void;
+  onUpdateBinding: () => void;
+  promptId: string;
+  promptOptions: readonly AdminResourceOption[];
+  promptRecord: AdminResourceRecord | null;
+  t: TranslationFn;
+  versionError: string | null;
+  versionRecords: readonly AdminResourceRecord[];
+};
+
+type DetailRecordColumn = {
+  key: string;
+  label: string;
+  align?: 'right';
+  format?: (value: unknown, record: AdminResourceRecord) => string;
 };
 
 type CreatePromptDialogProps = PromptDialogProps & {
@@ -1487,6 +1726,38 @@ function optionalFormText(form: FormData, key: string): string | undefined {
   }
   const normalized = value.trim();
   return normalized ? normalized : undefined;
+}
+
+function normalizeRecordId(value: unknown): string {
+  if (typeof value === 'string') {
+    return value.trim();
+  }
+  if (typeof value === 'number' && Number.isFinite(value)) {
+    return String(Math.trunc(value));
+  }
+  return '';
+}
+
+function readRecordText(record: AdminResourceRecord | null, key: string): string {
+  if (!record) {
+    return '';
+  }
+  return formatDetailCell(record[key]);
+}
+
+function formatDetailCell(value: unknown): string {
+  if (value === null || value === undefined || value === '') {
+    return '';
+  }
+  if (typeof value === 'string' || typeof value === 'number' || typeof value === 'boolean') {
+    return String(value);
+  }
+  return JSON.stringify(value);
+}
+
+function detailRecordKey(record: AdminResourceRecord, index: number): string {
+  const id = normalizeRecordId(record.id ?? record.uuid);
+  return id || String(index);
 }
 
 function splitCsv(value: string): string[] {

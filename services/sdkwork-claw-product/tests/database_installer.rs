@@ -71,6 +71,12 @@ async fn sqlite_installer_installs_schema_and_sdkwork_models_catalog_once() {
     assert_table_exists(&pool, "ai_model_pricing").await;
     assert_table_exists(&pool, "ai_usage_fact").await;
     assert_table_exists(&pool, "ai_model_rank_snapshot").await;
+    assert_table_exists(&pool, "ai_channel_group").await;
+    assert_table_exists(&pool, "ai_channel_group_member").await;
+    assert_table_exists(&pool, "ai_channel_group_metric_snapshot").await;
+    assert_table_absent(&pool, "iam_gateway_api_key_group").await;
+    assert_table_absent(&pool, "iam_api_key_group_channel").await;
+    assert_table_absent(&pool, "iam_gateway_api_key_group_metric_snapshot").await;
     assert_table_exists(&pool, "ops_job_execution").await;
     assert_table_exists(&pool, "ai_request_trace").await;
     assert_table_exists(&pool, "plus_app").await;
@@ -115,8 +121,73 @@ async fn sqlite_installer_installs_schema_and_sdkwork_models_catalog_once() {
     assert_sqlite_columns_absent(&pool, "ai_model", &["region_code"]).await;
     assert_sqlite_columns_absent(&pool, "ai_model_capability", &["region_code"]).await;
     assert_sqlite_columns_absent(&pool, "ai_model_vendor", &["region_code"]).await;
-    assert_sqlite_columns_exist(&pool, "ai_model_vendor_region", &["region_code"]).await;
-    assert_sqlite_columns_exist(&pool, "ai_model_family", &["region_code"]).await;
+    assert_sqlite_columns_absent(&pool, "ai_model_family", &["region_code"]).await;
+    assert_table_exists(&pool, "ai_modality").await;
+    assert_table_exists(&pool, "ai_api_endpoint").await;
+    assert_table_exists(&pool, "ai_resource").await;
+    assert_table_exists(&pool, "ai_resource_group").await;
+    assert_table_exists(&pool, "ai_resource_group_item").await;
+    assert_table_exists(&pool, "ai_channel_vendor").await;
+    assert_table_exists(&pool, "ai_channel_resource").await;
+    assert_table_exists(&pool, "ai_channel_endpoint").await;
+    assert_sqlite_columns_exist(
+        &pool,
+        "ai_channel_endpoint",
+        &[
+            "channel_id",
+            "provider_code",
+            "channel_code",
+            "channel_type",
+            "vendor_code",
+            "region_code",
+            "api_code",
+            "base_url",
+            "priority",
+            "weight",
+            "health_status",
+        ],
+    )
+    .await;
+    assert_sqlite_index_exists(&pool, "uk_ai_channel_endpoint_scope").await;
+    assert_sqlite_index_columns(
+        &pool,
+        "uk_ai_channel_endpoint_scope",
+        true,
+        &[
+            "tenant_id",
+            "organization_id",
+            "channel_id",
+            "vendor_code",
+            "region_code",
+            "api_code",
+        ],
+    )
+    .await;
+    assert_sqlite_index_exists(&pool, "idx_ai_channel_endpoint_lookup").await;
+    assert_sqlite_index_columns(
+        &pool,
+        "idx_ai_channel_endpoint_lookup",
+        false,
+        &[
+            "tenant_id",
+            "organization_id",
+            "status",
+            "channel_id",
+            "vendor_code",
+            "region_code",
+            "api_code",
+            "priority",
+            "weight",
+            "id",
+        ],
+    )
+    .await;
+    assert_sqlite_columns_exist(
+        &pool,
+        "ai_channel_model",
+        &["provider_native_model", "api_code"],
+    )
+    .await;
     assert_sqlite_columns_exist(&pool, "ai_model_pricing", &["region_code"]).await;
     assert_sqlite_columns_exist(
         &pool,
@@ -297,6 +368,8 @@ async fn sqlite_installer_installs_schema_and_sdkwork_models_catalog_once() {
             "snapshot_date",
             "snapshot_period",
             "rank_scope",
+            "vendor_code",
+            "region_code",
             "catalog_key",
         ],
     )
@@ -597,7 +670,7 @@ async fn sqlite_admin_user_store_creates_default_api_key_group_when_missing() {
         operator_type: 1,
     };
 
-    sqlx::query("DELETE FROM iam_gateway_api_key_group")
+    sqlx::query("DELETE FROM ai_channel_group")
         .execute(&pool)
         .await
         .unwrap();
@@ -629,15 +702,15 @@ async fn sqlite_admin_user_store_creates_default_api_key_group_when_missing() {
         r#"
         SELECT
             id,
-            code,
-            name,
+            group_code,
+            group_name,
             pricing_plan_code,
             printf('%.6f', rate_multiplier) AS rate_multiplier,
             printf('%.6f', official_price_multiplier) AS official_price_multiplier
-        FROM iam_gateway_api_key_group
+        FROM ai_channel_group
         WHERE tenant_id = 10
           AND organization_id = 20
-          AND code = 'default'
+          AND group_code = 'default'
           AND status = 1
           AND deleted_at IS NULL
         "#,
@@ -645,8 +718,8 @@ async fn sqlite_admin_user_store_creates_default_api_key_group_when_missing() {
     .fetch_one(&pool)
     .await
     .unwrap();
-    assert_eq!("default", group.get::<String, _>("code"));
-    assert_eq!("Default", group.get::<String, _>("name"));
+    assert_eq!("default", group.get::<String, _>("group_code"));
+    assert_eq!("Default", group.get::<String, _>("group_name"));
     assert_eq!("standard", group.get::<String, _>("pricing_plan_code"));
     assert_eq!("1.000000", group.get::<String, _>("rate_multiplier"));
     assert_eq!(
@@ -654,9 +727,9 @@ async fn sqlite_admin_user_store_creates_default_api_key_group_when_missing() {
         group.get::<String, _>("official_price_multiplier")
     );
 
-    let api_key_group_id: i64 = sqlx::query_scalar(
+    let channel_group_id: i64 = sqlx::query_scalar(
         r#"
-        SELECT group_id
+        SELECT channel_group_id
         FROM iam_gateway_api_key
         WHERE id = ?
         "#,
@@ -665,7 +738,7 @@ async fn sqlite_admin_user_store_creates_default_api_key_group_when_missing() {
     .fetch_one(&pool)
     .await
     .unwrap();
-    assert_eq!(group.get::<i64, _>("id"), api_key_group_id);
+    assert_eq!(group.get::<i64, _>("id"), channel_group_id);
 }
 
 #[tokio::test]
@@ -1051,7 +1124,7 @@ async fn sqlite_installer_bootstraps_admin_without_touching_existing_plus_user_t
 }
 
 #[tokio::test]
-async fn sqlite_installer_keeps_model_catalog_and_pricing_region_scoped() {
+async fn sqlite_installer_keeps_model_catalog_vendor_scoped_and_pricing_region_scoped() {
     let pool = repair_sqlite_pool().await;
 
     let rows = sqlx::query(
@@ -1068,30 +1141,25 @@ async fn sqlite_installer_keeps_model_catalog_and_pricing_region_scoped() {
     .unwrap();
 
     assert_eq!(
-        2,
+        1,
         rows.len(),
-        "ai_model must keep one active row per vendor region catalog key"
+        "ai_model must keep one active row per vendor/model catalog key"
     );
     assert_eq!("minimax", rows[0].get::<String, _>("vendor_code"));
     assert_eq!(
-        "minimax/cn/MiniMax-M2.7",
+        "minimax/MiniMax-M2.7",
         rows[0].get::<String, _>("catalog_key")
-    );
-    assert_eq!("minimax", rows[1].get::<String, _>("vendor_code"));
-    assert_eq!(
-        "minimax/global/MiniMax-M2.7",
-        rows[1].get::<String, _>("catalog_key")
     );
 
     let currencies = sqlx::query(
         r#"
-        SELECT catalog_key, currency
+        SELECT catalog_key, region_code, currency
         FROM ai_model_pricing
         WHERE model = 'MiniMax-M2.7'
           AND billing_meter_code = 'llm_input_token'
           AND price_side = 1
           AND status = 1
-        ORDER BY catalog_key
+        ORDER BY region_code, currency
         "#,
     )
     .fetch_all(&pool)
@@ -1101,6 +1169,7 @@ async fn sqlite_installer_keeps_model_catalog_and_pricing_region_scoped() {
     .map(|row| {
         (
             row.get::<String, _>("catalog_key"),
+            row.get::<String, _>("region_code"),
             row.get::<String, _>("currency"),
         )
     })
@@ -1108,8 +1177,16 @@ async fn sqlite_installer_keeps_model_catalog_and_pricing_region_scoped() {
 
     assert_eq!(
         vec![
-            ("minimax/cn/MiniMax-M2.7".to_owned(), "CNY".to_owned()),
-            ("minimax/global/MiniMax-M2.7".to_owned(), "USD".to_owned()),
+            (
+                "minimax/MiniMax-M2.7".to_owned(),
+                "cn".to_owned(),
+                "CNY".to_owned()
+            ),
+            (
+                "minimax/MiniMax-M2.7".to_owned(),
+                "global".to_owned(),
+                "USD".to_owned()
+            ),
         ],
         currencies,
         "regional MiniMax prices must preserve each vendor's billing currency"
@@ -1422,6 +1499,82 @@ async fn sqlite_installer_repairs_missing_sdkwork_models_catalog_rows_on_startup
     }
 
     assert_catalog_rows(&pool, &catalog).await;
+}
+
+#[tokio::test]
+async fn sqlite_installer_repairs_missing_regional_model_price_rows_on_startup_check() {
+    let pool = repair_sqlite_pool().await;
+    let installer = installer(pool.clone());
+    let missing_price_uuid = duplicate_regional_price_uuid(&pool).await;
+
+    sqlx::query("DELETE FROM ai_model_pricing WHERE uuid = ?")
+        .bind(&missing_price_uuid)
+        .execute(&pool)
+        .await
+        .unwrap();
+
+    assert_eq!(
+        InstallationStatus::UpgradeRequired,
+        installer.status().await.unwrap(),
+        "installer status must detect a missing regional price row even when another region still has the same model/meter/side/scope"
+    );
+
+    let repaired = installer.ensure_installed().await.unwrap();
+    assert_eq!(InstallationStatus::Installed, repaired.status);
+    assert!(repaired.changed);
+
+    let repaired_count: i64 =
+        sqlx::query_scalar("SELECT COUNT(1) FROM ai_model_pricing WHERE uuid = ? AND status = 1")
+            .bind(&missing_price_uuid)
+            .fetch_one(&pool)
+            .await
+            .unwrap();
+    assert_eq!(1, repaired_count);
+}
+
+#[tokio::test]
+async fn sqlite_installer_imports_model_catalog_capability_projection_rows() {
+    let pool = sqlite_pool().await;
+    let installer = installer(pool.clone());
+    let catalog = bundled_catalog();
+
+    installer.ensure_installed().await.unwrap();
+
+    assert_catalog_capability_projection_rows(&pool, &catalog).await;
+}
+
+#[tokio::test]
+async fn sqlite_installer_repairs_missing_model_catalog_capability_projection_rows_on_startup_check(
+) {
+    let pool = repair_sqlite_pool().await;
+    let installer = installer(pool.clone());
+    let catalog = bundled_catalog();
+    let model_resource_code = catalog_model_resource_codes(&catalog)
+        .into_iter()
+        .next()
+        .expect("bundled catalog must expose a model AI resource");
+
+    sqlx::query("DELETE FROM ai_model_api_endpoint")
+        .execute(&pool)
+        .await
+        .unwrap();
+    sqlx::query("DELETE FROM ai_resource WHERE resource_code = ?")
+        .bind(&model_resource_code)
+        .execute(&pool)
+        .await
+        .unwrap();
+
+    assert_eq!(
+        InstallationStatus::UpgradeRequired,
+        installer.status().await.unwrap(),
+        "installer status must detect missing model catalog endpoint/resource projections"
+    );
+
+    let repaired = installer.ensure_installed().await.unwrap();
+    assert_eq!(InstallationStatus::Installed, repaired.status);
+    assert!(repaired.changed);
+
+    assert_catalog_capability_projection_rows(&pool, &catalog).await;
 }
 
 #[tokio::test]
@@ -2288,6 +2441,74 @@ async fn sqlite_installer_repairs_missing_generated_schema_indexes_on_startup_ch
     assert_eq!(InstallationStatus::Installed, repaired.status);
     assert!(repaired.changed);
     assert_sqlite_index_exists(&pool, "idx_ai_model_public_rank_desc").await;
+}
+
+#[tokio::test]
+async fn sqlite_installer_repairs_changed_generated_schema_index_definitions_before_catalog_import()
+{
+    let pool = repair_sqlite_pool().await;
+    let installer = installer(pool.clone());
+
+    sqlx::query("DROP INDEX uk_ai_model_rank_snapshot_scope_catalog_key")
+        .execute(&pool)
+        .await
+        .unwrap();
+    sqlx::query(
+        r#"
+        CREATE UNIQUE INDEX uk_ai_model_rank_snapshot_scope_catalog_key
+        ON ai_model_rank_snapshot (
+            tenant_id,
+            organization_id,
+            snapshot_date,
+            snapshot_period,
+            rank_scope,
+            catalog_key
+        )
+        "#,
+    )
+    .execute(&pool)
+    .await
+    .unwrap();
+    sqlx::query(
+        r#"
+        DELETE FROM ai_model_rank_snapshot
+        WHERE uuid IN (
+            SELECT uuid
+            FROM ai_model_rank_snapshot
+            WHERE status = 1
+            LIMIT 1
+        )
+        "#,
+    )
+    .execute(&pool)
+    .await
+    .unwrap();
+
+    assert_eq!(
+        InstallationStatus::UpgradeRequired,
+        installer.status().await.unwrap(),
+        "installer status must detect stale same-name SQLite unique indexes before model catalog import uses ON CONFLICT"
+    );
+
+    let repaired = installer.ensure_installed().await.unwrap();
+    assert_eq!(InstallationStatus::Installed, repaired.status);
+    assert!(repaired.changed);
+    assert_sqlite_index_columns(
+        &pool,
+        "uk_ai_model_rank_snapshot_scope_catalog_key",
+        true,
+        &[
+            "tenant_id",
+            "organization_id",
+            "snapshot_date",
+            "snapshot_period",
+            "rank_scope",
+            "vendor_code",
+            "region_code",
+            "catalog_key",
+        ],
+    )
+    .await;
 }
 
 #[tokio::test]
@@ -3242,6 +3463,42 @@ async fn sqlite_installer_refresh_reactivates_soft_deleted_catalog_rows() {
 }
 
 #[tokio::test]
+async fn sqlite_installer_imports_canonical_ranking_catalog_keys() {
+    let pool = installed_sqlite_pool().await;
+
+    assert_eq!(
+        0_i64,
+        sqlx::query_scalar::<_, i64>(
+            r#"
+            SELECT COUNT(1)
+            FROM ai_model_rank_snapshot
+            WHERE status = 1
+              AND catalog_key = vendor_code || '/' || region_code || '/' || model
+            "#,
+        )
+        .fetch_one(&pool)
+        .await
+        .unwrap(),
+        "ranking catalog_key must use canonical vendor/model identity; region_code is a separate supply context"
+    );
+
+    let catalog_key: String = sqlx::query_scalar(
+        r#"
+        SELECT catalog_key
+        FROM ai_model_rank_snapshot
+        WHERE vendor_code = 'openai'
+          AND model = 'gpt-5.5'
+          AND status = 1
+        LIMIT 1
+        "#,
+    )
+    .fetch_one(&pool)
+    .await
+    .unwrap();
+    assert_eq!("openai/gpt-5.5", catalog_key);
+}
+
+#[tokio::test]
 async fn sqlite_installer_status_detects_catalog_rows_hidden_by_soft_delete_markers() {
     let pool = repair_sqlite_pool().await;
     let installer = installer(pool.clone());
@@ -3449,6 +3706,44 @@ async fn active_admin_password_hash(pool: &SqlitePool) -> String {
     .unwrap()
 }
 
+async fn duplicate_regional_price_uuid(pool: &SqlitePool) -> String {
+    let row = sqlx::query(
+        r#"
+        SELECT p.uuid
+        FROM ai_model_pricing p
+        JOIN (
+            SELECT catalog_key, billing_meter_code, price_side, pricing_scope
+            FROM ai_model_pricing
+            WHERE status = 1
+            GROUP BY catalog_key, billing_meter_code, price_side, pricing_scope
+            HAVING COUNT(1) > 1
+            LIMIT 1
+        ) duplicate_key
+          ON duplicate_key.catalog_key = p.catalog_key
+         AND duplicate_key.billing_meter_code = p.billing_meter_code
+         AND duplicate_key.price_side = p.price_side
+         AND duplicate_key.pricing_scope = p.pricing_scope
+        WHERE p.status = 1
+        ORDER BY p.region_code ASC, p.uuid ASC
+        LIMIT 1
+        "#,
+    )
+    .fetch_one(pool)
+    .await
+    .expect("bundled catalog must include at least one region-scoped duplicate price key");
+    row.get::<String, _>("uuid")
+}
+
+async fn sqlite_string_column(pool: &SqlitePool, query: &str) -> BTreeSet<String> {
+    sqlx::query(query)
+        .fetch_all(pool)
+        .await
+        .unwrap()
+        .into_iter()
+        .map(|row| row.get::<String, _>(0))
+        .collect()
+}
+
 fn assert_pbkdf2_sha256_hash_format(hash: &str, label: &str) {
     assert!(
         hash.starts_with("pbkdf2-sha256$v=1$i=") && hash.contains("$s=") && hash.contains("$h="),
@@ -3471,10 +3766,10 @@ async fn assert_catalog_rows(pool: &SqlitePool, catalog: &sdkwork_models::ModelC
     .fetch_one(pool)
     .await
     .unwrap();
-    let vendor_region_count: i64 = sqlx::query_scalar(
+    let family_count: i64 = sqlx::query_scalar(
         r#"
-        SELECT COUNT(1)
-        FROM ai_model_vendor_region
+        SELECT COUNT(DISTINCT vendor_code || '/' || family_code)
+        FROM ai_model_family
         WHERE status = 1
         "#,
     )
@@ -3507,7 +3802,7 @@ async fn assert_catalog_rows(pool: &SqlitePool, catalog: &sdkwork_models::ModelC
     .unwrap();
 
     assert_eq!(catalog_vendor_codes(catalog).len() as i64, vendor_count);
-    assert_eq!(catalog.vendors.len() as i64, vendor_region_count);
+    assert_eq!(catalog_family_keys(catalog).len() as i64, family_count);
     assert_eq!(expected_model_keys.len() as i64, model_count);
     assert_eq!(catalog.meters.len() as i64, meter_count);
     assert!(
@@ -3538,11 +3833,7 @@ async fn assert_catalog_rows(pool: &SqlitePool, catalog: &sdkwork_models::ModelC
 
     for vendor in &catalog.vendors {
         for model in &vendor.models {
-            let catalog_key = catalog_model_key(
-                &vendor.vendor.vendor_code,
-                &vendor.vendor.region_code,
-                &model.model_id,
-            );
+            let catalog_key = catalog_model_key(&vendor.vendor.vendor_code, &model.model_id);
             let capabilities = actual_model_capabilities
                 .get(&catalog_key)
                 .unwrap_or_else(|| panic!("{catalog_key} must be imported from sdkwork-models"));
@@ -3599,7 +3890,7 @@ async fn assert_catalog_rows(pool: &SqlitePool, catalog: &sdkwork_models::ModelC
 
     let actual_ranking_keys = sqlx::query(
         r#"
-        SELECT snapshot_date, rank_scope, catalog_key
+        SELECT snapshot_date, rank_scope, vendor_code, region_code, catalog_key
         FROM ai_model_rank_snapshot
         WHERE status = 1
         "#,
@@ -3611,18 +3902,128 @@ async fn assert_catalog_rows(pool: &SqlitePool, catalog: &sdkwork_models::ModelC
     .map(|row| CatalogRankingKey {
         snapshot_date: row.get::<String, _>("snapshot_date"),
         rank_scope: row.get::<String, _>("rank_scope"),
+        vendor_code: row.get::<String, _>("vendor_code"),
+        region_code: row.get::<String, _>("region_code"),
         catalog_key: row.get::<String, _>("catalog_key"),
     })
     .collect::<BTreeSet<_>>();
     for ranking_key in expected_ranking_keys {
         assert!(
             actual_ranking_keys.contains(&ranking_key),
-            "{} {} {} must be imported from sdkwork-models rankings",
+            "{} {} {} {} {} must be imported from sdkwork-models rankings",
             ranking_key.snapshot_date,
             ranking_key.rank_scope,
+            ranking_key.vendor_code,
+            ranking_key.region_code,
             ranking_key.catalog_key
         );
     }
+}
+
+async fn assert_catalog_capability_projection_rows(
+    pool: &SqlitePool,
+    catalog: &sdkwork_models::ModelCatalog,
+) {
+    let expected_modalities = catalog_modality_codes(catalog);
+    let expected_api_endpoints = catalog_api_endpoint_codes(catalog);
+    let expected_model_keys = catalog_model_keys(catalog);
+    let expected_model_resource_codes = catalog_model_resource_codes(catalog);
+    let expected_vendor_resource_codes = catalog_vendor_codes(catalog)
+        .into_iter()
+        .map(|vendor_code| format!("vendor.{vendor_code}"))
+        .collect::<BTreeSet<_>>();
+
+    let actual_modalities = sqlite_string_column(
+        pool,
+        r#"
+        SELECT modality_code
+        FROM ai_modality
+        WHERE status = 1
+          AND deleted_at IS NULL
+        "#,
+    )
+    .await;
+    assert!(
+        expected_modalities.is_subset(&actual_modalities),
+        "ai_modality must contain every sdkwork-models modality/capability used by the catalog"
+    );
+
+    let actual_api_endpoints = sqlite_string_column(
+        pool,
+        r#"
+        SELECT endpoint_code
+        FROM ai_api_endpoint
+        WHERE status = 1
+          AND deleted_at IS NULL
+        "#,
+    )
+    .await;
+    assert!(
+        expected_api_endpoints.is_subset(&actual_api_endpoints),
+        "ai_api_endpoint must contain every endpoint code derived from sdkwork-models capabilities"
+    );
+
+    let model_api_endpoint_count: i64 = sqlx::query_scalar(
+        r#"
+        SELECT COUNT(DISTINCT catalog_key)
+        FROM ai_model_api_endpoint
+        WHERE status = 1
+          AND deleted_at IS NULL
+        "#,
+    )
+    .fetch_one(pool)
+    .await
+    .unwrap();
+    assert_eq!(
+        expected_model_keys.len() as i64,
+        model_api_endpoint_count,
+        "ai_model_api_endpoint must expose one endpoint projection for each catalog model"
+    );
+
+    let actual_resource_codes = sqlite_string_column(
+        pool,
+        r#"
+        SELECT resource_code
+        FROM ai_resource
+        WHERE status = 1
+          AND deleted_at IS NULL
+        "#,
+    )
+    .await;
+    assert!(
+        expected_vendor_resource_codes.is_subset(&actual_resource_codes),
+        "ai_resource must expose vendor resources for channel binding"
+    );
+    assert!(
+        expected_model_resource_codes.is_subset(&actual_resource_codes),
+        "ai_resource must expose model API resources for channel binding"
+    );
+
+    let vendor_modality_count: i64 =
+        sqlx::query_scalar("SELECT COUNT(1) FROM ai_vendor_modality WHERE status = 1")
+            .fetch_one(pool)
+            .await
+            .unwrap();
+    let vendor_api_endpoint_count: i64 =
+        sqlx::query_scalar("SELECT COUNT(1) FROM ai_vendor_api_endpoint WHERE status = 1")
+            .fetch_one(pool)
+            .await
+            .unwrap();
+    let model_modality_count: i64 =
+        sqlx::query_scalar("SELECT COUNT(1) FROM ai_model_modality WHERE status = 1")
+            .fetch_one(pool)
+            .await
+            .unwrap();
+    let modality_api_endpoint_count: i64 =
+        sqlx::query_scalar("SELECT COUNT(1) FROM ai_modality_api_endpoint WHERE status = 1")
+            .fetch_one(pool)
+            .await
+            .unwrap();
+
+    assert!(vendor_modality_count > 0);
+    assert!(vendor_api_endpoint_count > 0);
+    assert!(model_modality_count > 0);
+    assert!(modality_api_endpoint_count > 0);
 }
 
 async fn assert_pricing_snapshot_contains_catalog_models(
@@ -4460,13 +4861,10 @@ fn catalog_model_keys(catalog: &sdkwork_models::ModelCatalog) -> Vec<String> {
         .vendors
         .iter()
         .flat_map(|vendor| {
-            vendor.models.iter().map(|model| {
-                catalog_model_key(
-                    &vendor.vendor.vendor_code,
-                    &vendor.vendor.region_code,
-                    &model.model_id,
-                )
-            })
+            vendor
+                .models
+                .iter()
+                .map(|model| catalog_model_key(&vendor.vendor.vendor_code, &model.model_id))
         })
         .collect::<Vec<_>>();
     catalog_keys.sort();
@@ -4474,8 +4872,21 @@ fn catalog_model_keys(catalog: &sdkwork_models::ModelCatalog) -> Vec<String> {
     catalog_keys
 }
 
-fn catalog_model_key(vendor_code: &str, region_code: &str, model_id: &str) -> String {
-    sdkwork_models::catalog_key(vendor_code, region_code, model_id)
+fn catalog_model_key(vendor_code: &str, model_id: &str) -> String {
+    format!("{vendor_code}/{model_id}")
+}
+
+fn catalog_family_keys(catalog: &sdkwork_models::ModelCatalog) -> BTreeSet<String> {
+    catalog
+        .vendors
+        .iter()
+        .flat_map(|vendor| {
+            vendor
+                .families
+                .iter()
+                .map(|family| format!("{}/{}", vendor.vendor.vendor_code, family.family_code))
+        })
+        .collect()
 }
 
 fn catalog_vendor_codes(catalog: &sdkwork_models::ModelCatalog) -> BTreeSet<String> {
@@ -4495,13 +4906,7 @@ fn catalog_routable_keys(catalog: &sdkwork_models::ModelCatalog) -> Vec<String> 
                 .models
                 .iter()
                 .filter(|model| model.routing_state == "enabled" && model.shelf_state != "archived")
-                .map(|model| {
-                    catalog_model_key(
-                        &vendor.vendor.vendor_code,
-                        &vendor.vendor.region_code,
-                        &model.model_id,
-                    )
-                })
+                .map(|model| catalog_model_key(&vendor.vendor.vendor_code, &model.model_id))
         })
         .collect::<Vec<_>>();
     catalog_keys.sort();
@@ -4538,6 +4943,68 @@ fn catalog_price_keys(catalog: &sdkwork_models::ModelCatalog) -> BTreeSet<Catalo
         .collect()
 }
 
+fn catalog_modality_codes(catalog: &sdkwork_models::ModelCatalog) -> BTreeSet<String> {
+    catalog
+        .vendors
+        .iter()
+        .flat_map(|vendor| vendor.models.iter())
+        .flat_map(|model| {
+            model
+                .input_modalities
+                .iter()
+                .chain(model.output_modalities.iter())
+                .chain(std::iter::once(&model.primary_capability))
+                .cloned()
+        })
+        .collect()
+}
+
+fn catalog_api_endpoint_codes(catalog: &sdkwork_models::ModelCatalog) -> BTreeSet<String> {
+    catalog
+        .vendors
+        .iter()
+        .flat_map(|vendor| vendor.models.iter())
+        .map(catalog_model_endpoint_code)
+        .collect()
+}
+
+fn catalog_model_resource_codes(catalog: &sdkwork_models::ModelCatalog) -> BTreeSet<String> {
+    catalog
+        .vendors
+        .iter()
+        .flat_map(|vendor| vendor.models.iter())
+        .map(|model| {
+            format!(
+                "model.{}.{}.{}",
+                model.vendor_code,
+                model.model_id,
+                catalog_model_resource_suffix(model)
+            )
+        })
+        .collect()
+}
+
+fn catalog_model_endpoint_code(model: &sdkwork_models::ModelInfo) -> String {
+    match model.primary_capability.as_str() {
+        "image" => "openai.images",
+        "audio" => "openai.audio",
+        "music" => "suno.music",
+        "video" => "openai.video",
+        "embedding" => "openai.embeddings",
+        "rerank" => "rerank",
+        _ => "openai.chat_completions",
+    }
+    .to_owned()
+}
+
+fn catalog_model_resource_suffix(model: &sdkwork_models::ModelInfo) -> String {
+    if model.primary_capability == "chat" {
+        "chat".to_owned()
+    } else {
+        model.primary_capability.clone()
+    }
+}
+
 fn catalog_price_side_code(value: &str) -> i32 {
     match value {
         "upstream" => 2,
@@ -4559,6 +5026,8 @@ fn catalog_pricing_scope_code(value: Option<&str>) -> i32 {
 struct CatalogRankingKey {
     snapshot_date: String,
     rank_scope: String,
+    vendor_code: String,
+    region_code: String,
     catalog_key: String,
 }
 
@@ -4583,15 +5052,14 @@ fn catalog_ranking_keys(catalog: &sdkwork_models::ModelCatalog) -> BTreeSet<Cata
                     &vendor.vendor.region_code,
                     &item.model_id,
                 );
-                let model_catalog_key = catalog_model_key(
-                    &vendor.vendor.vendor_code,
-                    &vendor.vendor.region_code,
-                    &item.model_id,
-                );
+                let model_catalog_key =
+                    catalog_model_key(&vendor.vendor.vendor_code, &item.model_id);
                 if model_catalog_keys.contains(&model_catalog_key) {
                     Some(CatalogRankingKey {
                         snapshot_date: snapshot.snapshot_date.clone(),
                         rank_scope: snapshot.rank_scope.clone(),
+                        vendor_code: vendor.vendor.vendor_code.clone(),
+                        region_code: vendor.vendor.region_code.clone(),
                         catalog_key,
                     })
                 } else {
@@ -4859,6 +5327,22 @@ async fn assert_table_exists(pool: &SqlitePool, table: &str) {
     .await
     .unwrap();
     assert_eq!(1, exists, "{table} table must exist after installation");
+}
+
+async fn assert_table_absent(pool: &SqlitePool, table: &str) {
+    let exists: i64 = sqlx::query_scalar(
+        r#"
+        SELECT COUNT(1)
+        FROM sqlite_master
+        WHERE type = 'table'
+          AND name = ?
+        "#,
+    )
+    .bind(table)
+    .fetch_one(pool)
+    .await
+    .unwrap();
+    assert_eq!(0, exists, "{table} table must not exist after installation");
 }
 
 async fn assert_sqlite_index_exists(pool: &SqlitePool, index: &str) {

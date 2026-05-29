@@ -32,12 +32,11 @@ impl RuntimeApi {
     }
 
     /// Create runtime invocation
-    pub async fn invocations_create(&self, body: &RuntimeInvocationCreateRequest, idempotency_key: &str, x_request_id: Option<&str>) -> Result<InvocationsCreateResult, SdkworkError> {
+    pub async fn invocations_create(&self, body: &RuntimeInvocationCreateRequest, idempotency_key: &str) -> Result<InvocationsCreateResult, SdkworkError> {
         let path = app_path(&"/runtime/invocations".to_string());
         let headers = build_request_headers(
             &[
                 ("Idempotency-Key", HeaderParameterSpec::new(idempotency_key, "simple", false, None)),
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
             ],
             &[],
         );
@@ -61,12 +60,11 @@ impl RuntimeApi {
     }
 
     /// Create runtime artifact
-    pub async fn artifacts_create(&self, invocation_id: &str, body: &RuntimeArtifactCreateRequest, idempotency_key: &str, x_request_id: Option<&str>) -> Result<ArtifactsCreateResult, SdkworkError> {
+    pub async fn artifacts_create(&self, invocation_id: &str, body: &RuntimeArtifactCreateRequest, idempotency_key: &str) -> Result<ArtifactsCreateResult, SdkworkError> {
         let path = app_path(&format!("/runtime/invocations/{}/artifacts", serialize_path_parameter(invocation_id, PathParameterSpec::new("invocationId", "simple", false))));
         let headers = build_request_headers(
             &[
                 ("Idempotency-Key", HeaderParameterSpec::new(idempotency_key, "simple", false, None)),
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
             ],
             &[],
         );
@@ -74,12 +72,11 @@ impl RuntimeApi {
     }
 
     /// Complete runtime invocation
-    pub async fn invocations_submit(&self, invocation_id: &str, body: &RuntimeInvocationCompleteRequest, idempotency_key: &str, x_request_id: Option<&str>) -> Result<InvocationsSubmitResult, SdkworkError> {
+    pub async fn invocations_submit(&self, invocation_id: &str, body: &RuntimeInvocationCompleteRequest, idempotency_key: &str) -> Result<InvocationsSubmitResult, SdkworkError> {
         let path = app_path(&format!("/runtime/invocations/{}/complete", serialize_path_parameter(invocation_id, PathParameterSpec::new("invocationId", "simple", false))));
         let headers = build_request_headers(
             &[
                 ("Idempotency-Key", HeaderParameterSpec::new(idempotency_key, "simple", false, None)),
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
             ],
             &[],
         );
@@ -97,12 +94,11 @@ impl RuntimeApi {
     }
 
     /// Create runtime invocation event
-    pub async fn invocation_events_create(&self, invocation_id: &str, body: &RuntimeEventCreateRequest, idempotency_key: &str, x_request_id: Option<&str>) -> Result<InvocationEventsCreateResult, SdkworkError> {
+    pub async fn invocation_events_create(&self, invocation_id: &str, body: &RuntimeEventCreateRequest, idempotency_key: &str) -> Result<InvocationEventsCreateResult, SdkworkError> {
         let path = app_path(&format!("/runtime/invocations/{}/events", serialize_path_parameter(invocation_id, PathParameterSpec::new("invocationId", "simple", false))));
         let headers = build_request_headers(
             &[
                 ("Idempotency-Key", HeaderParameterSpec::new(idempotency_key, "simple", false, None)),
-                ("X-Request-Id", HeaderParameterSpec::new(x_request_id, "simple", false, None)),
             ],
             &[],
         );

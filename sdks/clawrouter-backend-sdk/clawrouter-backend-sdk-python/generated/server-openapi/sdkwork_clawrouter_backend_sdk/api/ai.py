@@ -1,6 +1,6 @@
 from typing import Any, Dict, List, Optional
 from ..http_client import HttpClient
-from ..models import AdminAiModelCreateRequest, AdminAiModelUpdateRequest, AdminModelCatalogSyncRequest, AdminModelVendorCreateRequest, ModelRankingRefreshTriggerRequest, ModelRankingsJobsListResult, ModelRankingsListResult, ModelRankingsRefreshResult, ModelRankingsStatusRetrieveResult, ModelsCreateResult, ModelsDeleteResult, ModelsListResult, ModelsRefreshResult, ModelsUpdateResult, ModelVendorsCreateResult, ModelVendorsListResult
+from ..models import AdminAiModelCreateRequest, AdminAiModelUpdateRequest, AdminAiResourceCreateRequest, AdminAiResourceUpdateRequest, AdminModelCatalogSyncRequest, AdminModelVendorCreateRequest, AiResourcesCreateResult, AiResourcesListResult, AiResourcesUpdateResult, ModelRankingRefreshTriggerRequest, ModelRankingsJobsListResult, ModelRankingsListResult, ModelRankingsRefreshResult, ModelRankingsStatusRetrieveResult, ModelsCreateResult, ModelsDeleteResult, ModelsListResult, ModelsRefreshResult, ModelsUpdateResult, ModelVendorsCreateResult, ModelVendorsListResult
 
 def _append_query_string(path: str, raw_query_string: str) -> str:
     query = raw_query_string.lstrip('?')
@@ -182,59 +182,6 @@ def encode_query_value(value: str, allow_reserved: bool) -> str:
 
     return quote(value, safe=':/?#[]@!$&\'()*+,;=' if allow_reserved else '')
 
-def build_request_headers(headers: Dict[str, Dict[str, Any]], cookies: Optional[Dict[str, Dict[str, Any]]] = None) -> Optional[Dict[str, str]]:
-    request_headers: Dict[str, str] = {}
-    for name, parameter in headers.items():
-        serialized = serialize_parameter_value(parameter)
-        if serialized is not None:
-            request_headers[name] = serialized
-
-    cookie_header = build_cookie_header(cookies or {})
-    if cookie_header:
-        request_headers['Cookie'] = (
-            f"{request_headers['Cookie']}; {cookie_header}"
-            if 'Cookie' in request_headers
-            else cookie_header
-        )
-
-    return request_headers or None
-
-
-def build_cookie_header(cookies: Dict[str, Dict[str, Any]]) -> Optional[str]:
-    from urllib.parse import quote
-
-    pairs: List[str] = []
-    for name, parameter in cookies.items():
-        serialized = serialize_parameter_value(parameter)
-        if serialized is not None:
-            pairs.append(f"{quote(str(name), safe='')}={quote(serialized, safe='')}")
-    return '; '.join(pairs) if pairs else None
-
-
-def serialize_parameter_value(parameter: Optional[Dict[str, Any]]) -> Optional[str]:
-    value = None if parameter is None else parameter.get('value')
-    if value is None:
-        return None
-    if parameter and parameter.get('content_type'):
-        import json
-
-        return json.dumps(value, separators=(',', ':'))
-    if isinstance(value, (list, tuple)):
-        return ','.join(serialize_header_primitive(item) for item in value if item is not None)
-    if isinstance(value, dict):
-        return serialize_header_object(value, bool(parameter and parameter.get('explode')))
-    return serialize_header_primitive(value)
-
-
-def serialize_header_object(value: Dict[str, Any], explode: bool) -> str:
-    entries = [(key, entry_value) for key, entry_value in value.items() if entry_value is not None]
-    if explode:
-        return ','.join(f"{key}={serialize_header_primitive(entry_value)}" for key, entry_value in entries)
-    return ','.join(item for key, entry_value in entries for item in (str(key), serialize_header_primitive(entry_value)))
-
-
-def serialize_header_primitive(value: Any) -> str:
-    return str(value)
 
 
 class AiApi:
@@ -245,6 +192,7 @@ class AiApi:
         self.model_rankings = AiModelRankingsApi(client)
         self.model_vendors = AiModelVendorsApi(client)
         self.models = AiModelsApi(client)
+        self.ai_resources = AiAiResourcesApi(client)
 
 
 class AiModelRankingsApi:
@@ -267,15 +215,9 @@ class AiModelRankingsApi:
         ])
         return self._client.get(_append_query_string(f"/backend/v3/api/ai/model_rankings", query))
 
-    def refresh(self, body: ModelRankingRefreshTriggerRequest, x_request_id: Optional[str] = None) -> ModelRankingsRefreshResult:
+    def refresh(self, body: ModelRankingRefreshTriggerRequest) -> ModelRankingsRefreshResult:
         """Trigger model ranking refresh"""
-        request_headers = build_request_headers(
-            {
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
-            },
-            {}
-        )
-        return self._client.post(f"/backend/v3/api/ai/model_rankings/refresh", json=body, headers=request_headers)
+        return self._client.post(f"/backend/v3/api/ai/model_rankings/refresh", json=body)
 
 class AiModelRankingsJobsApi:
     """ai ai.model_rankings.jobs API client."""
@@ -317,15 +259,9 @@ class AiModelVendorsApi:
         """List vendors"""
         return self._client.get(f"/backend/v3/api/ai/model_vendors")
 
-    def create(self, body: AdminModelVendorCreateRequest, x_request_id: Optional[str] = None) -> ModelVendorsCreateResult:
+    def create(self, body: AdminModelVendorCreateRequest) -> ModelVendorsCreateResult:
         """Create vendor"""
-        request_headers = build_request_headers(
-            {
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
-            },
-            {}
-        )
-        return self._client.post(f"/backend/v3/api/ai/model_vendors", json=body, headers=request_headers)
+        return self._client.post(f"/backend/v3/api/ai/model_vendors", json=body)
 
 class AiModelsApi:
     """ai ai.models API client."""
@@ -338,36 +274,37 @@ class AiModelsApi:
         """List models"""
         return self._client.get(f"/backend/v3/api/ai/models")
 
-    def create(self, body: AdminAiModelCreateRequest, x_request_id: Optional[str] = None) -> ModelsCreateResult:
+    def create(self, body: AdminAiModelCreateRequest) -> ModelsCreateResult:
         """Create model"""
-        request_headers = build_request_headers(
-            {
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
-            },
-            {}
-        )
-        return self._client.post(f"/backend/v3/api/ai/models", json=body, headers=request_headers)
+        return self._client.post(f"/backend/v3/api/ai/models", json=body)
 
-    def refresh(self, body: AdminModelCatalogSyncRequest, x_request_id: Optional[str] = None) -> ModelsRefreshResult:
+    def refresh(self, body: AdminModelCatalogSyncRequest) -> ModelsRefreshResult:
         """Sync vendors and models"""
-        request_headers = build_request_headers(
-            {
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
-            },
-            {}
-        )
-        return self._client.post(f"/backend/v3/api/ai/models/refresh", json=body, headers=request_headers)
+        return self._client.post(f"/backend/v3/api/ai/models/refresh", json=body)
 
     def delete(self, model_id: str) -> ModelsDeleteResult:
         """Delete model"""
         return self._client.delete(f"/backend/v3/api/ai/models/{serialize_path_parameter(model_id, {'name': 'modelId', 'style': 'simple', 'explode': False})}")
 
-    def update(self, model_id: str, body: AdminAiModelUpdateRequest, x_request_id: Optional[str] = None) -> ModelsUpdateResult:
+    def update(self, model_id: str, body: AdminAiModelUpdateRequest) -> ModelsUpdateResult:
         """Update model"""
-        request_headers = build_request_headers(
-            {
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
-            },
-            {}
-        )
-        return self._client.patch(f"/backend/v3/api/ai/models/{serialize_path_parameter(model_id, {'name': 'modelId', 'style': 'simple', 'explode': False})}", json=body, headers=request_headers)
+        return self._client.patch(f"/backend/v3/api/ai/models/{serialize_path_parameter(model_id, {'name': 'modelId', 'style': 'simple', 'explode': False})}", json=body)
+
+class AiAiResourcesApi:
+    """ai ai.ai_resources API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+
+
+    def list(self) -> AiResourcesListResult:
+        """List ai resources"""
+        return self._client.get(f"/backend/v3/api/ai/resources")
+
+    def create(self, body: AdminAiResourceCreateRequest) -> AiResourcesCreateResult:
+        """Create ai resource"""
+        return self._client.post(f"/backend/v3/api/ai/resources", json=body)
+
+    def update(self, resource_id: str, body: AdminAiResourceUpdateRequest) -> AiResourcesUpdateResult:
+        """Update ai resource"""
+        return self._client.put(f"/backend/v3/api/ai/resources/{serialize_path_parameter(resource_id, {'name': 'resourceId', 'style': 'simple', 'explode': False})}", json=body)

@@ -1,4 +1,4 @@
-﻿import { createIdempotencyParams, createClientOperationToken, getClawRouterBackendSdkClient } from 'sdkwork-claw-router-commons/runtime';
+import { createIdempotencyParams, createClientOperationToken, getClawRouterBackendSdkClient } from 'sdkwork-claw-router-commons/runtime';
 
 type BackendCommerce = ReturnType<typeof getClawRouterBackendSdkClient>['commerce'];
 export type PaymentProviderAccountMutationInput = Parameters<BackendCommerce['payments']['providerAccounts']['create']>[0];

@@ -20,10 +20,11 @@ use sdkwork_claw_product::infrastructure::crypto::{
     HmacSha256ApiKeySecretHasher, RingAeadApiKeySecretCodec,
 };
 use sdkwork_claw_product::infrastructure::provider::{
-    AdapterAwareChatCompletionRelay, AdapterAwareEmbeddingsRelay, AdapterAwareResponsesRelay,
-    OpenAiCompatibleChatCompletionRelay, OpenAiCompatibleChatCompletionStreamRelay,
-    OpenAiCompatibleEmbeddingsRelay, OpenAiCompatibleResponsesRelay,
-    RefreshableProviderSecretMapResolver, SecretRefOpenAiCompatibleChatCompletionRelay,
+    AdapterAwareChatCompletionRelay, AdapterAwareChatCompletionStreamRelay,
+    AdapterAwareEmbeddingsRelay, AdapterAwareResponsesRelay, OpenAiCompatibleChatCompletionRelay,
+    OpenAiCompatibleChatCompletionStreamRelay, OpenAiCompatibleEmbeddingsRelay,
+    OpenAiCompatibleResponsesRelay, RefreshableProviderSecretMapResolver,
+    SecretRefOpenAiCompatibleChatCompletionRelay,
     SecretRefOpenAiCompatibleChatCompletionStreamRelay, SecretRefOpenAiCompatibleEmbeddingsRelay,
     SecretRefOpenAiCompatibleResponsesRelay, UpstreamProviderEndpoint,
     DEFAULT_PROVIDER_RESPONSE_TIMEOUT_MILLIS,
@@ -96,6 +97,7 @@ where
         None,
         None,
         None,
+        false,
     )
 }
 
@@ -124,6 +126,7 @@ where
         None,
         None,
         None,
+        false,
     )
 }
 
@@ -152,6 +155,7 @@ where
         None,
         None,
         None,
+        false,
     )
 }
 
@@ -180,6 +184,7 @@ where
         None,
         None,
         None,
+        false,
     )
 }
 
@@ -208,6 +213,7 @@ where
         None,
         None,
         None,
+        false,
     )
 }
 
@@ -223,11 +229,17 @@ fn router_with_openai_runtime_routes<C>(
     provider_passthrough_config: Option<ProviderRelayConfig>,
     provider_adapter_config: Option<ProviderAdapterConfig>,
     provider_secret_resolver: Option<Arc<RefreshableProviderSecretMapResolver>>,
+    prefer_secret_ref_openai_runtime: bool,
 ) -> Router
 where
     C: PricingCatalog + Send + Sync + 'static,
 {
-    let has_route_scoped_openai_passthrough = provider_secret_resolver.is_some();
+    let has_static_openai_passthrough = provider_passthrough_config
+        .as_ref()
+        .and_then(ProviderRelayConfig::openai_relay)
+        .is_some();
+    let has_route_scoped_openai_passthrough = provider_secret_resolver.is_some()
+        && (prefer_secret_ref_openai_runtime || !has_static_openai_passthrough);
     let base_router = if !has_route_scoped_openai_passthrough {
         match provider_passthrough_config.clone() {
             Some(config) => base_router.merge(
@@ -359,7 +371,10 @@ where
         .merge(responses_router)
         .merge(chat_router);
 
-    let router = if let Some(secret_resolver) = provider_secret_resolver.clone() {
+    let router = if has_route_scoped_openai_passthrough {
+        let secret_resolver = provider_secret_resolver
+            .clone()
+            .expect("route scoped OpenAI passthrough requires a secret resolver");
         router.merge(crate::passthrough::route_scoped_openai_passthrough_router(
             Arc::clone(&catalog),
             Arc::clone(&api_key_hasher),
@@ -558,11 +573,17 @@ async fn router_with_database_api_key_provider_configs_usage_settlement_worker_c
                 provider_secret_map_config.clone(),
                 snapshot.managed_provider_secrets(),
             ));
+            let prefer_secret_ref_openai_runtime = provider_secret_map_config.is_some()
+                || provider_relay_config
+                    .as_ref()
+                    .and_then(ProviderRelayConfig::openai_relay)
+                    .is_none();
             let relays = apply_provider_adapter_config(
                 build_openai_runtime_relays(
                     provider_relay_config.clone(),
                     provider_secret_resolver.clone(),
                     provider_runtime.clone(),
+                    prefer_secret_ref_openai_runtime,
                 )?,
                 provider_adapter_config.clone(),
                 provider_secret_resolver.clone().map(|resolver| {
@@ -603,6 +624,7 @@ async fn router_with_database_api_key_provider_configs_usage_settlement_worker_c
                 provider_passthrough_config,
                 provider_adapter_config.clone(),
                 provider_secret_resolver.clone(),
+                prefer_secret_ref_openai_runtime,
             ))
         }
         DatabaseEngine::Postgres => {
@@ -634,11 +656,17 @@ async fn router_with_database_api_key_provider_configs_usage_settlement_worker_c
                 provider_secret_map_config.clone(),
                 snapshot.managed_provider_secrets(),
             ));
+            let prefer_secret_ref_openai_runtime = provider_secret_map_config.is_some()
+                || provider_relay_config
+                    .as_ref()
+                    .and_then(ProviderRelayConfig::openai_relay)
+                    .is_none();
             let relays = apply_provider_adapter_config(
                 build_openai_runtime_relays(
                     provider_relay_config.clone(),
                     provider_secret_resolver.clone(),
                     provider_runtime.clone(),
+                    prefer_secret_ref_openai_runtime,
                 )?,
                 provider_adapter_config.clone(),
                 provider_secret_resolver.clone().map(|resolver| {
@@ -679,6 +707,7 @@ async fn router_with_database_api_key_provider_configs_usage_settlement_worker_c
                 provider_passthrough_config,
                 provider_adapter_config.clone(),
                 provider_secret_resolver.clone(),
+                prefer_secret_ref_openai_runtime,
             ))
         }
     }
@@ -934,9 +963,9 @@ fn log_gateway_runtime_catalog_snapshot_summary(
             models = summary.models,
             provider_routes = summary.provider_routes,
             callable_provider_routes = summary.callable_provider_routes,
-            provider_account_pool_routes = summary.provider_account_pool_routes,
-            callable_provider_account_pool_routes = summary.callable_provider_account_pool_routes,
-            provider_account_pool_group_bindings = summary.provider_account_pool_group_bindings,
+            provider_channel_routes = summary.provider_channel_routes,
+            callable_provider_channel_routes = summary.callable_provider_channel_routes,
+            provider_channel_group_bindings = summary.provider_channel_group_bindings,
             routing_policies = summary.routing_policies,
             routing_rules = summary.routing_rules,
             pricing_plans = summary.pricing_plans,
@@ -955,9 +984,9 @@ fn log_gateway_runtime_catalog_snapshot_summary(
             models = summary.models,
             provider_routes = summary.provider_routes,
             callable_provider_routes = summary.callable_provider_routes,
-            provider_account_pool_routes = summary.provider_account_pool_routes,
-            callable_provider_account_pool_routes = summary.callable_provider_account_pool_routes,
-            provider_account_pool_group_bindings = summary.provider_account_pool_group_bindings,
+            provider_channel_routes = summary.provider_channel_routes,
+            callable_provider_channel_routes = summary.callable_provider_channel_routes,
+            provider_channel_group_bindings = summary.provider_channel_group_bindings,
             routing_policies = summary.routing_policies,
             routing_rules = summary.routing_rules,
             pricing_plans = summary.pricing_plans,
@@ -1204,75 +1233,87 @@ fn build_openai_runtime_relays(
     config: Option<ProviderRelayConfig>,
     provider_secret_resolver: Option<Arc<RefreshableProviderSecretMapResolver>>,
     provider_runtime: ProviderRelayRuntimeConfig,
+    prefer_secret_ref_relays: bool,
 ) -> Result<OpenAiRuntimeRelays, GatewayRouterError> {
-    if let Some(resolver) = provider_secret_resolver {
+    if prefer_secret_ref_relays {
+        if let Some(resolver) = provider_secret_resolver {
+            return Ok(secret_ref_openai_runtime_relays(resolver, provider_runtime));
+        }
+    }
+
+    if let Some(openai_relay) = config.as_ref().and_then(ProviderRelayConfig::openai_relay) {
+        let endpoint = UpstreamProviderEndpoint::new(
+            openai_relay.base_url().to_owned(),
+            openai_relay.bearer_token().to_owned(),
+        )
+        .map_err(|error| GatewayRouterError::Config(error.to_string()))?;
         return Ok(OpenAiRuntimeRelays {
-            chat: Some(Arc::new(
-                SecretRefOpenAiCompatibleChatCompletionRelay::with_runtime(
-                    resolver.clone(),
-                    provider_runtime.response_timeout,
-                    provider_runtime.default_retry_policy.clone(),
-                ),
-            )),
+            chat: Some(Arc::new(OpenAiCompatibleChatCompletionRelay::with_runtime(
+                endpoint.clone(),
+                provider_runtime.response_timeout,
+                provider_runtime.default_retry_policy.clone(),
+            ))),
             chat_stream: Some(Arc::new(
-                SecretRefOpenAiCompatibleChatCompletionStreamRelay::with_runtime(
-                    resolver.clone(),
+                OpenAiCompatibleChatCompletionStreamRelay::with_runtime(
+                    endpoint.clone(),
                     provider_runtime.response_timeout,
                     provider_runtime.default_retry_policy.clone(),
                 ),
             )),
-            embeddings: Some(Arc::new(
-                SecretRefOpenAiCompatibleEmbeddingsRelay::with_runtime(
-                    resolver.clone(),
-                    provider_runtime.response_timeout,
-                    provider_runtime.default_retry_policy.clone(),
-                ),
-            )),
-            responses: Some(Arc::new(
-                SecretRefOpenAiCompatibleResponsesRelay::with_runtime(
-                    resolver,
-                    provider_runtime.response_timeout,
-                    provider_runtime.default_retry_policy,
-                ),
-            )),
+            embeddings: Some(Arc::new(OpenAiCompatibleEmbeddingsRelay::with_runtime(
+                endpoint.clone(),
+                provider_runtime.response_timeout,
+                provider_runtime.default_retry_policy.clone(),
+            ))),
+            responses: Some(Arc::new(OpenAiCompatibleResponsesRelay::with_runtime(
+                endpoint,
+                provider_runtime.response_timeout,
+                provider_runtime.default_retry_policy,
+            ))),
         });
     }
 
-    let Some(config) = config else {
-        return Ok(OpenAiRuntimeRelays::default());
-    };
-    let Some(openai_relay) = config.openai_relay() else {
-        return Ok(OpenAiRuntimeRelays::default());
-    };
-    let endpoint = UpstreamProviderEndpoint::new(
-        openai_relay.base_url().to_owned(),
-        openai_relay.bearer_token().to_owned(),
-    )
-    .map_err(|error| GatewayRouterError::Config(error.to_string()))?;
-    Ok(OpenAiRuntimeRelays {
-        chat: Some(Arc::new(OpenAiCompatibleChatCompletionRelay::with_runtime(
-            endpoint.clone(),
-            provider_runtime.response_timeout,
-            provider_runtime.default_retry_policy.clone(),
-        ))),
-        chat_stream: Some(Arc::new(
-            OpenAiCompatibleChatCompletionStreamRelay::with_runtime(
-                endpoint.clone(),
+    if let Some(resolver) = provider_secret_resolver {
+        return Ok(secret_ref_openai_runtime_relays(resolver, provider_runtime));
+    }
+
+    Ok(OpenAiRuntimeRelays::default())
+}
+
+fn secret_ref_openai_runtime_relays(
+    resolver: Arc<RefreshableProviderSecretMapResolver>,
+    provider_runtime: ProviderRelayRuntimeConfig,
+) -> OpenAiRuntimeRelays {
+    OpenAiRuntimeRelays {
+        chat: Some(Arc::new(
+            SecretRefOpenAiCompatibleChatCompletionRelay::with_runtime(
+                resolver.clone(),
                 provider_runtime.response_timeout,
                 provider_runtime.default_retry_policy.clone(),
             ),
         )),
-        embeddings: Some(Arc::new(OpenAiCompatibleEmbeddingsRelay::with_runtime(
-            endpoint.clone(),
-            provider_runtime.response_timeout,
-            provider_runtime.default_retry_policy.clone(),
-        ))),
-        responses: Some(Arc::new(OpenAiCompatibleResponsesRelay::with_runtime(
-            endpoint,
-            provider_runtime.response_timeout,
-            provider_runtime.default_retry_policy,
-        ))),
-    })
+        chat_stream: Some(Arc::new(
+            SecretRefOpenAiCompatibleChatCompletionStreamRelay::with_runtime(
+                resolver.clone(),
+                provider_runtime.response_timeout,
+                provider_runtime.default_retry_policy.clone(),
+            ),
+        )),
+        embeddings: Some(Arc::new(
+            SecretRefOpenAiCompatibleEmbeddingsRelay::with_runtime(
+                resolver.clone(),
+                provider_runtime.response_timeout,
+                provider_runtime.default_retry_policy.clone(),
+            ),
+        )),
+        responses: Some(Arc::new(
+            SecretRefOpenAiCompatibleResponsesRelay::with_runtime(
+                resolver,
+                provider_runtime.response_timeout,
+                provider_runtime.default_retry_policy,
+            ),
+        )),
+    }
 }
 
 fn apply_provider_adapter_config(
@@ -1311,6 +1352,19 @@ fn apply_provider_adapter_config(
             adapter_relay
         };
         relays.chat = Some(Arc::new(adapter_relay));
+        if let Some(chat_stream_relay) = relays.chat_stream.take() {
+            let adapter_stream_relay = AdapterAwareChatCompletionStreamRelay::new(
+                chat_stream_relay,
+                Arc::clone(&registry),
+                adapter_client.clone(),
+            );
+            let adapter_stream_relay = if let Some(resolver) = provider_secret_resolver.clone() {
+                adapter_stream_relay.with_secret_resolver(resolver)
+            } else {
+                adapter_stream_relay
+            };
+            relays.chat_stream = Some(Arc::new(adapter_stream_relay));
+        }
     }
     if has_responses_adapter_route(routes) {
         let Some(responses_relay) = relays.responses.take() else {
@@ -1648,6 +1702,7 @@ mod tests {
                 std::collections::BTreeMap::new(),
             )),
             provider_relay_runtime_for_test(),
+            true,
         )
         .unwrap();
 
@@ -1748,6 +1803,168 @@ mod tests {
             .unwrap();
 
         assert_eq!("direct", response.body["id"]);
+    }
+
+    #[tokio::test]
+    async fn provider_adapter_config_wraps_chat_stream_relay_for_adapter_hits() {
+        use axum::body::Body;
+        use axum::extract::State;
+        use axum::routing::post;
+        use axum::Json;
+        use sdkwork_claw_provider_adapter_contract::{
+            AdapterInvocationRequest, AdapterInvocationResponse,
+        };
+        use std::sync::Mutex;
+
+        #[derive(Clone)]
+        struct DirectRelay;
+
+        impl ChatCompletionRelay for DirectRelay {
+            fn create_chat_completion<'a>(
+                &'a self,
+                _request: sdkwork_claw_product::ports::ChatCompletionRelayRequest,
+            ) -> sdkwork_claw_product::ports::ChatCompletionRelayFuture<'a> {
+                Box::pin(async {
+                    Ok(
+                        sdkwork_claw_product::ports::ChatCompletionRelayResponse::json(
+                            200,
+                            serde_json::json!({"id": "direct"}),
+                        ),
+                    )
+                })
+            }
+        }
+
+        #[derive(Clone)]
+        struct DirectStreamRelay {
+            calls: Arc<Mutex<Vec<sdkwork_claw_product::ports::ChatCompletionRelayRequest>>>,
+        }
+
+        impl ChatCompletionStreamRelay for DirectStreamRelay {
+            fn create_chat_completion_stream<'a>(
+                &'a self,
+                request: sdkwork_claw_product::ports::ChatCompletionRelayRequest,
+            ) -> sdkwork_claw_product::ports::ChatCompletionStreamRelayFuture<'a> {
+                self.calls.lock().unwrap().push(request);
+                Box::pin(async {
+                    Ok(
+                        sdkwork_claw_product::ports::ChatCompletionStreamRelayResponse::new(
+                            200,
+                            Some("text/event-stream".to_owned()),
+                            Body::from("data: {\"id\":\"direct-stream\"}\n\ndata: [DONE]\n\n"),
+                        ),
+                    )
+                })
+            }
+        }
+
+        let adapter_calls = Arc::new(Mutex::new(Vec::<AdapterInvocationRequest>::new()));
+        let app = Router::new()
+            .route(
+                "/providers/openrouter/v1/chat/completions",
+                post(
+                    |State(adapter_calls): State<
+                        Arc<Mutex<Vec<AdapterInvocationRequest>>>,
+                    >,
+                     Json(body): Json<AdapterInvocationRequest>| async move {
+                        adapter_calls.lock().unwrap().push(body);
+                        Json(AdapterInvocationResponse::json(
+                            200,
+                            serde_json::json!({
+                                "id": "chatcmpl-adapter-stream",
+                                "choices": [{"index": 0, "message": {"role": "assistant", "content": "adapter"}, "finish_reason": "stop"}],
+                                "usage": {"prompt_tokens": 1, "completion_tokens": 1, "total_tokens": 2}
+                            }),
+                        ))
+                    },
+                ),
+            )
+            .with_state(Arc::clone(&adapter_calls));
+        let listener = tokio::net::TcpListener::bind("127.0.0.1:0").await.unwrap();
+        let base_url = format!("http://{}", listener.local_addr().unwrap());
+        let server = tokio::spawn(async move {
+            axum::serve(listener, app).await.unwrap();
+        });
+
+        let adapter_config = sdkwork_claw_config::ProviderAdapterConfig::from_json(
+            &format!(
+                r#"{{
+                "routes": [
+                    {{
+                        "providerCode": "openrouter",
+                        "adapterKind": "internal_http",
+                        "adapterBaseUrl": "{base_url}",
+                        "endpointKey": "openai.chat_completions",
+                        "method": "POST",
+                        "invocationShape": "sse_stream",
+                        "standardPathPattern": "/v1/chat/completions",
+                        "adapterPathTemplate": "/providers/{{provider_code}}{{standard_path}}",
+                        "status": "enabled",
+                        "priority": 10
+                    }}
+                ]
+            }}"#
+            ),
+            Some("adapter-token".to_owned()),
+        )
+        .unwrap();
+        let direct_stream_calls = Arc::new(Mutex::new(Vec::new()));
+        let relays = apply_provider_adapter_config(
+            OpenAiRuntimeRelays {
+                chat: Some(Arc::new(DirectRelay)),
+                chat_stream: Some(Arc::new(DirectStreamRelay {
+                    calls: Arc::clone(&direct_stream_calls),
+                })),
+                embeddings: None,
+                responses: None,
+            },
+            Some(adapter_config),
+            None,
+        )
+        .unwrap();
+
+        let response = relays
+            .chat_stream
+            .unwrap()
+            .create_chat_completion_stream(
+                sdkwork_claw_product::ports::ChatCompletionRelayRequest {
+                    api_key_id: 101,
+                    tenant_id: 10,
+                    organization_id: 20,
+                    user_id: 30,
+                    group_id: 10,
+                    group_code: "standard-group".to_owned(),
+                    pricing_plan_code: "standard".to_owned(),
+                    model: "openai/global/gpt-4o-mini".to_owned(),
+                    provider_code: "openrouter".to_owned(),
+                    provider_channel_id: 3001,
+                    provider_model: "gpt-4o-mini".to_owned(),
+                    provider_base_url: Some("http://provider.example".to_owned()),
+                    provider_secret_ref: None,
+                    provider_auth_profile:
+                        sdkwork_claw_product::domain::ProviderAuthProfile::bearer(),
+                    provider_timeout_ms: None,
+                    provider_retry_policy: None,
+                    request_body: serde_json::json!({
+                        "model": "openai/global/gpt-4o-mini",
+                        "messages": [{"role": "user", "content": "ping"}],
+                        "stream": true
+                    }),
+                },
+            )
+            .await
+            .unwrap();
+
+        assert!(direct_stream_calls.lock().unwrap().is_empty());
+        assert_eq!(1, adapter_calls.lock().unwrap().len());
+        let body = axum::body::to_bytes(response.body, usize::MAX)
+            .await
+            .unwrap();
+        let body = String::from_utf8(body.to_vec()).unwrap();
+        assert!(body.contains("chatcmpl-adapter-stream"));
+        assert!(body.contains("data: [DONE]"));
+
+        server.abort();
     }
 
     #[tokio::test]

@@ -55,7 +55,7 @@ frontend_models:
   - tpm
   data_sources:
   - ai_quota_policy
-  - iam_gateway_api_key_group
+  - ai_channel_group
 - route: /admin/ratelimit
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-ratelimit/src/ratelimitService.ts
   interface: ModelLimitRule
@@ -68,7 +68,7 @@ frontend_models:
   - status
   data_sources:
   - ai_quota_policy
-  - iam_gateway_api_key_group
+  - ai_channel_group
 - route: /admin/ratelimit
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-ratelimit/src/ratelimitService.ts
   interface: TokenLimitCreateInput

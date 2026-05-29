@@ -6,11 +6,13 @@ type AdminChannelCreateRequest struct {
 	ApiKey string `json:"apiKey"`
 	BaseUrl string `json:"baseUrl"`
 	Capabilities []string `json:"capabilities"`
+	ChannelType string `json:"channelType"`
 	CircuitBreakerPolicy ProviderCircuitBreakerPolicy `json:"circuitBreakerPolicy"`
 	ExpiresAt string `json:"expiresAt"`
 	Models []string `json:"models"`
 	Name string `json:"name"`
 	Protocol string `json:"protocol"`
+	ResourceCodes []string `json:"resourceCodes"`
 	RetryPolicy ProviderRetryPolicy `json:"retryPolicy"`
 	SecretRef string `json:"secretRef"`
 	Status string `json:"status"`

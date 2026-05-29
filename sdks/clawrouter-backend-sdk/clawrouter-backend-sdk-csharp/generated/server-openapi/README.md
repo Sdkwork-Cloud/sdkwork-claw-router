@@ -146,8 +146,8 @@ Console.WriteLine(result);
 ### integration
 
 ```csharp
-// List channels
-var result = await client.Integration.ChannelsListAsync();
+// List channel endpoints
+var result = await client.Integration.ChannelEndpointsListAsync();
 Console.WriteLine(result);
 ```
 

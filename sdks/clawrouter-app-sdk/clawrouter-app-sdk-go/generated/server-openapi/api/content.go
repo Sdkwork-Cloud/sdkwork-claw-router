@@ -34,12 +34,8 @@ func (a *ContentApi) CommentsList(contentType string, contentId int, page *int, 
 }
 
 // Create forum comment
-func (a *ContentApi) CommentsCreate(body sdktypes.ForumCreateCommentRequest, xRequestId *string) (sdktypes.CommentsCreateResult, error) {
-    headers := BuildRequestHeaders(
-        map[string]ParameterSpec{"X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},},
-        map[string]ParameterSpec{},
-    )
-    raw, err := a.client.Post(AppApiPath("/content/comments"), body, nil, headers, "application/json")
+func (a *ContentApi) CommentsCreate(body sdktypes.ForumCreateCommentRequest) (sdktypes.CommentsCreateResult, error) {
+    raw, err := a.client.Post(AppApiPath("/content/comments"), body, nil, nil, "application/json")
     if err != nil {
         var zero sdktypes.CommentsCreateResult
         return zero, err
@@ -82,12 +78,8 @@ func (a *ContentApi) CommentsRetrieve(commentId string) (sdktypes.CommentsRetrie
 }
 
 // Like forum comment
-func (a *ContentApi) CommentsLikesCreate(commentId string, xRequestId *string) (sdktypes.CommentsLikesCreateResult, error) {
-    headers := BuildRequestHeaders(
-        map[string]ParameterSpec{"X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},},
-        map[string]ParameterSpec{},
-    )
-    raw, err := a.client.Post(AppApiPath(fmt.Sprintf("/content/comments/%s/likes", SerializePathParameter(commentId, PathParameterSpec{Name: "commentId", Style: "simple", Explode: false}))), nil, nil, headers, "")
+func (a *ContentApi) CommentsLikesCreate(commentId string) (sdktypes.CommentsLikesCreateResult, error) {
+    raw, err := a.client.Post(AppApiPath(fmt.Sprintf("/content/comments/%s/likes", SerializePathParameter(commentId, PathParameterSpec{Name: "commentId", Style: "simple", Explode: false}))), nil, nil, nil, "")
     if err != nil {
         var zero sdktypes.CommentsLikesCreateResult
         return zero, err
@@ -106,12 +98,8 @@ func (a *ContentApi) CommentsLikesCurrentDelete(commentId string) (sdktypes.Comm
 }
 
 // Pin forum comment
-func (a *ContentApi) CommentsPinsCreate(commentId string, xRequestId *string) (sdktypes.CommentsPinsCreateResult, error) {
-    headers := BuildRequestHeaders(
-        map[string]ParameterSpec{"X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},},
-        map[string]ParameterSpec{},
-    )
-    raw, err := a.client.Post(AppApiPath(fmt.Sprintf("/content/comments/%s/pins", SerializePathParameter(commentId, PathParameterSpec{Name: "commentId", Style: "simple", Explode: false}))), nil, nil, headers, "")
+func (a *ContentApi) CommentsPinsCreate(commentId string) (sdktypes.CommentsPinsCreateResult, error) {
+    raw, err := a.client.Post(AppApiPath(fmt.Sprintf("/content/comments/%s/pins", SerializePathParameter(commentId, PathParameterSpec{Name: "commentId", Style: "simple", Explode: false}))), nil, nil, nil, "")
     if err != nil {
         var zero sdktypes.CommentsPinsCreateResult
         return zero, err
@@ -144,12 +132,8 @@ func (a *ContentApi) CommentsRepliesList(commentId string, page *int, pageSize *
 }
 
 // Reply forum comment
-func (a *ContentApi) CommentsReplyCreate(commentId string, body sdktypes.ForumReplyCommentRequest, xRequestId *string) (sdktypes.CommentsReplyCreateResult, error) {
-    headers := BuildRequestHeaders(
-        map[string]ParameterSpec{"X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},},
-        map[string]ParameterSpec{},
-    )
-    raw, err := a.client.Post(AppApiPath(fmt.Sprintf("/content/comments/%s/reply", SerializePathParameter(commentId, PathParameterSpec{Name: "commentId", Style: "simple", Explode: false}))), body, nil, headers, "application/json")
+func (a *ContentApi) CommentsReplyCreate(commentId string, body sdktypes.ForumReplyCommentRequest) (sdktypes.CommentsReplyCreateResult, error) {
+    raw, err := a.client.Post(AppApiPath(fmt.Sprintf("/content/comments/%s/reply", SerializePathParameter(commentId, PathParameterSpec{Name: "commentId", Style: "simple", Explode: false}))), body, nil, nil, "application/json")
     if err != nil {
         var zero sdktypes.CommentsReplyCreateResult
         return zero, err
@@ -176,12 +160,8 @@ func (a *ContentApi) FeedsList(type_ *string, contentType *string, q *string, au
 }
 
 // Create forum feed
-func (a *ContentApi) FeedsCreate(body sdktypes.ForumCreateFeedRequest, xRequestId *string) (sdktypes.FeedsCreateResult, error) {
-    headers := BuildRequestHeaders(
-        map[string]ParameterSpec{"X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},},
-        map[string]ParameterSpec{},
-    )
-    raw, err := a.client.Post(AppApiPath("/content/feeds"), body, nil, headers, "application/json")
+func (a *ContentApi) FeedsCreate(body sdktypes.ForumCreateFeedRequest) (sdktypes.FeedsCreateResult, error) {
+    raw, err := a.client.Post(AppApiPath("/content/feeds"), body, nil, nil, "application/json")
     if err != nil {
         var zero sdktypes.FeedsCreateResult
         return zero, err
@@ -299,15 +279,11 @@ func (a *ContentApi) FeedsRetrieve(id string) (sdktypes.FeedsRetrieveResult, err
 }
 
 // Collect forum feed
-func (a *ContentApi) FeedsCollectionsCreate(id string, folderId *int, xRequestId *string) (sdktypes.FeedsCollectionsCreateResult, error) {
+func (a *ContentApi) FeedsCollectionsCreate(id string, folderId *int) (sdktypes.FeedsCollectionsCreateResult, error) {
     query := BuildQueryString([]QueryParameterSpec{
         {Name: "folder_id", Value: func() interface{} { if folderId == nil { return nil }; return *folderId }(), Style: "form", Explode: true, AllowReserved: false},
     })
-    headers := BuildRequestHeaders(
-        map[string]ParameterSpec{"X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},},
-        map[string]ParameterSpec{},
-    )
-    raw, err := a.client.Post(AppendQueryString(AppApiPath(fmt.Sprintf("/content/feeds/%s/collections", SerializePathParameter(id, PathParameterSpec{Name: "id", Style: "simple", Explode: false}))), query), nil, nil, headers, "")
+    raw, err := a.client.Post(AppendQueryString(AppApiPath(fmt.Sprintf("/content/feeds/%s/collections", SerializePathParameter(id, PathParameterSpec{Name: "id", Style: "simple", Explode: false}))), query), nil, nil, nil, "")
     if err != nil {
         var zero sdktypes.FeedsCollectionsCreateResult
         return zero, err
@@ -316,12 +292,8 @@ func (a *ContentApi) FeedsCollectionsCreate(id string, folderId *int, xRequestId
 }
 
 // Uncollect forum feed
-func (a *ContentApi) FeedsCollectionsCurrentDelete(id string, xRequestId *string) (sdktypes.FeedsCollectionsCurrentDeleteResult, error) {
-    headers := BuildRequestHeaders(
-        map[string]ParameterSpec{"X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},},
-        map[string]ParameterSpec{},
-    )
-    raw, err := a.client.Delete(AppApiPath(fmt.Sprintf("/content/feeds/%s/collections/current", SerializePathParameter(id, PathParameterSpec{Name: "id", Style: "simple", Explode: false}))), nil, headers)
+func (a *ContentApi) FeedsCollectionsCurrentDelete(id string) (sdktypes.FeedsCollectionsCurrentDeleteResult, error) {
+    raw, err := a.client.Delete(AppApiPath(fmt.Sprintf("/content/feeds/%s/collections/current", SerializePathParameter(id, PathParameterSpec{Name: "id", Style: "simple", Explode: false}))), nil, nil)
     if err != nil {
         var zero sdktypes.FeedsCollectionsCurrentDeleteResult
         return zero, err
@@ -340,12 +312,8 @@ func (a *ContentApi) FeedsCollectionsCurrentRetrieve(id string) (sdktypes.FeedsC
 }
 
 // Like forum feed
-func (a *ContentApi) FeedsLikesCreate(id string, xRequestId *string) (sdktypes.FeedsLikesCreateResult, error) {
-    headers := BuildRequestHeaders(
-        map[string]ParameterSpec{"X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},},
-        map[string]ParameterSpec{},
-    )
-    raw, err := a.client.Post(AppApiPath(fmt.Sprintf("/content/feeds/%s/likes", SerializePathParameter(id, PathParameterSpec{Name: "id", Style: "simple", Explode: false}))), nil, nil, headers, "")
+func (a *ContentApi) FeedsLikesCreate(id string) (sdktypes.FeedsLikesCreateResult, error) {
+    raw, err := a.client.Post(AppApiPath(fmt.Sprintf("/content/feeds/%s/likes", SerializePathParameter(id, PathParameterSpec{Name: "id", Style: "simple", Explode: false}))), nil, nil, nil, "")
     if err != nil {
         var zero sdktypes.FeedsLikesCreateResult
         return zero, err
@@ -354,12 +322,8 @@ func (a *ContentApi) FeedsLikesCreate(id string, xRequestId *string) (sdktypes.F
 }
 
 // Unlike forum feed
-func (a *ContentApi) FeedsLikesCurrentDelete(id string, xRequestId *string) (sdktypes.FeedsLikesCurrentDeleteResult, error) {
-    headers := BuildRequestHeaders(
-        map[string]ParameterSpec{"X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},},
-        map[string]ParameterSpec{},
-    )
-    raw, err := a.client.Delete(AppApiPath(fmt.Sprintf("/content/feeds/%s/likes/current", SerializePathParameter(id, PathParameterSpec{Name: "id", Style: "simple", Explode: false}))), nil, headers)
+func (a *ContentApi) FeedsLikesCurrentDelete(id string) (sdktypes.FeedsLikesCurrentDeleteResult, error) {
+    raw, err := a.client.Delete(AppApiPath(fmt.Sprintf("/content/feeds/%s/likes/current", SerializePathParameter(id, PathParameterSpec{Name: "id", Style: "simple", Explode: false}))), nil, nil)
     if err != nil {
         var zero sdktypes.FeedsLikesCurrentDeleteResult
         return zero, err
@@ -368,12 +332,8 @@ func (a *ContentApi) FeedsLikesCurrentDelete(id string, xRequestId *string) (sdk
 }
 
 // Share forum feed
-func (a *ContentApi) FeedsSharesCreate(id string, xRequestId *string) (sdktypes.FeedsSharesCreateResult, error) {
-    headers := BuildRequestHeaders(
-        map[string]ParameterSpec{"X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},},
-        map[string]ParameterSpec{},
-    )
-    raw, err := a.client.Post(AppApiPath(fmt.Sprintf("/content/feeds/%s/shares", SerializePathParameter(id, PathParameterSpec{Name: "id", Style: "simple", Explode: false}))), nil, nil, headers, "")
+func (a *ContentApi) FeedsSharesCreate(id string) (sdktypes.FeedsSharesCreateResult, error) {
+    raw, err := a.client.Post(AppApiPath(fmt.Sprintf("/content/feeds/%s/shares", SerializePathParameter(id, PathParameterSpec{Name: "id", Style: "simple", Explode: false}))), nil, nil, nil, "")
     if err != nil {
         var zero sdktypes.FeedsSharesCreateResult
         return zero, err
@@ -688,92 +648,7 @@ func EncodeQueryValue(value string, allowReserved bool) string {
 }
 
 
-type ParameterSpec struct {
-    Value       interface{}
-    Style       string
-    Explode     bool
-    ContentType string
-}
 
-func BuildRequestHeaders(headers map[string]ParameterSpec, cookies map[string]ParameterSpec) map[string]string {
-    requestHeaders := map[string]string{}
-    for name, parameter := range headers {
-        if serialized, ok := SerializeParameterValue(parameter); ok {
-            requestHeaders[name] = serialized
-        }
-    }
-
-    if cookieHeader := BuildCookieHeader(cookies); cookieHeader != "" {
-        if existing, ok := requestHeaders["Cookie"]; ok && existing != "" {
-            requestHeaders["Cookie"] = existing + "; " + cookieHeader
-        } else {
-            requestHeaders["Cookie"] = cookieHeader
-        }
-    }
-
-    if len(requestHeaders) == 0 {
-        return nil
-    }
-    return requestHeaders
-}
-
-func BuildCookieHeader(cookies map[string]ParameterSpec) string {
-    pairs := make([]string, 0, len(cookies))
-    for name, parameter := range cookies {
-        if serialized, ok := SerializeParameterValue(parameter); ok {
-            pairs = append(pairs, url.QueryEscape(name)+"="+url.QueryEscape(serialized))
-        }
-    }
-    return strings.Join(pairs, "; ")
-}
-
-func SerializeParameterValue(parameter ParameterSpec) (string, bool) {
-    value := parameter.Value
-    if value == nil {
-        return "", false
-    }
-    if parameter.ContentType != "" {
-        encoded, _ := json.Marshal(value)
-        return string(encoded), true
-    }
-    switch typed := value.(type) {
-    case string:
-        return typed, true
-    case fmt.Stringer:
-        return typed.String(), true
-    case []string:
-        return strings.Join(typed, ","), true
-    case []int:
-        values := make([]string, 0, len(typed))
-        for _, item := range typed {
-            values = append(values, fmt.Sprint(item))
-        }
-        return strings.Join(values, ","), true
-    case map[string]string:
-        return SerializeHeaderObject(stringMapToInterface(typed), parameter.Explode), true
-    case map[string]int:
-        return SerializeHeaderObject(intMapToInterface(typed), parameter.Explode), true
-    case map[string]interface{}:
-        return SerializeHeaderObject(typed, parameter.Explode), true
-    default:
-        return fmt.Sprint(value), true
-    }
-}
-
-func SerializeHeaderObject(values map[string]interface{}, explode bool) string {
-    serialized := make([]string, 0, len(values)*2)
-    for key, value := range values {
-        if value == nil {
-            continue
-        }
-        if explode {
-            serialized = append(serialized, key+"="+fmt.Sprint(value))
-        } else {
-            serialized = append(serialized, key, fmt.Sprint(value))
-        }
-    }
-    return strings.Join(serialized, ",")
-}
 func stringSliceToInterface(values []string) []interface{} {
     result := make([]interface{}, 0, len(values))
     for _, value := range values {

@@ -37,12 +37,9 @@ func (a *RuntimeApi) InvocationsList(page *int, pageSize *int, conversationId *s
 }
 
 // Create runtime invocation
-func (a *RuntimeApi) InvocationsCreate(body sdktypes.RuntimeInvocationCreateRequest, idempotencyKey string, xRequestId *string) (sdktypes.InvocationsCreateResult, error) {
+func (a *RuntimeApi) InvocationsCreate(body sdktypes.RuntimeInvocationCreateRequest, idempotencyKey string) (sdktypes.InvocationsCreateResult, error) {
     headers := BuildRequestHeaders(
-        map[string]ParameterSpec{
-            "Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},
-            "X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},
-        },
+        map[string]ParameterSpec{"Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},},
         map[string]ParameterSpec{},
     )
     raw, err := a.client.Post(AppApiPath("/runtime/invocations"), body, nil, headers, "application/json")
@@ -78,12 +75,9 @@ func (a *RuntimeApi) ArtifactsList(invocationId string, page *int, pageSize *int
 }
 
 // Create runtime artifact
-func (a *RuntimeApi) ArtifactsCreate(invocationId string, body sdktypes.RuntimeArtifactCreateRequest, idempotencyKey string, xRequestId *string) (sdktypes.ArtifactsCreateResult, error) {
+func (a *RuntimeApi) ArtifactsCreate(invocationId string, body sdktypes.RuntimeArtifactCreateRequest, idempotencyKey string) (sdktypes.ArtifactsCreateResult, error) {
     headers := BuildRequestHeaders(
-        map[string]ParameterSpec{
-            "Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},
-            "X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},
-        },
+        map[string]ParameterSpec{"Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},},
         map[string]ParameterSpec{},
     )
     raw, err := a.client.Post(AppApiPath(fmt.Sprintf("/runtime/invocations/%s/artifacts", SerializePathParameter(invocationId, PathParameterSpec{Name: "invocationId", Style: "simple", Explode: false}))), body, nil, headers, "application/json")
@@ -95,12 +89,9 @@ func (a *RuntimeApi) ArtifactsCreate(invocationId string, body sdktypes.RuntimeA
 }
 
 // Complete runtime invocation
-func (a *RuntimeApi) InvocationsSubmit(invocationId string, body sdktypes.RuntimeInvocationCompleteRequest, idempotencyKey string, xRequestId *string) (sdktypes.InvocationsSubmitResult, error) {
+func (a *RuntimeApi) InvocationsSubmit(invocationId string, body sdktypes.RuntimeInvocationCompleteRequest, idempotencyKey string) (sdktypes.InvocationsSubmitResult, error) {
     headers := BuildRequestHeaders(
-        map[string]ParameterSpec{
-            "Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},
-            "X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},
-        },
+        map[string]ParameterSpec{"Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},},
         map[string]ParameterSpec{},
     )
     raw, err := a.client.Post(AppApiPath(fmt.Sprintf("/runtime/invocations/%s/complete", SerializePathParameter(invocationId, PathParameterSpec{Name: "invocationId", Style: "simple", Explode: false}))), body, nil, headers, "application/json")
@@ -126,12 +117,9 @@ func (a *RuntimeApi) InvocationEventsList(invocationId string, page *int, pageSi
 }
 
 // Create runtime invocation event
-func (a *RuntimeApi) InvocationEventsCreate(invocationId string, body sdktypes.RuntimeEventCreateRequest, idempotencyKey string, xRequestId *string) (sdktypes.InvocationEventsCreateResult, error) {
+func (a *RuntimeApi) InvocationEventsCreate(invocationId string, body sdktypes.RuntimeEventCreateRequest, idempotencyKey string) (sdktypes.InvocationEventsCreateResult, error) {
     headers := BuildRequestHeaders(
-        map[string]ParameterSpec{
-            "Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},
-            "X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},
-        },
+        map[string]ParameterSpec{"Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},},
         map[string]ParameterSpec{},
     )
     raw, err := a.client.Post(AppApiPath(fmt.Sprintf("/runtime/invocations/%s/events", SerializePathParameter(invocationId, PathParameterSpec{Name: "invocationId", Style: "simple", Explode: false}))), body, nil, headers, "application/json")

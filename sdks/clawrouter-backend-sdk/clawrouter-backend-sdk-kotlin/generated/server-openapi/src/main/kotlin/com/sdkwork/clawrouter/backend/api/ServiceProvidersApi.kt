@@ -99,11 +99,10 @@ class ServiceProvidersApi(private val client: HttpClient) {
     }
 
     /** Service Provider Downstream Create */
-    suspend fun downstreamsCreate(body: ServiceProviderDownstreamCreateRequest, idempotencyKey: String, xRequestId: String? = null): DownstreamsCreateResult? {
+    suspend fun downstreamsCreate(body: ServiceProviderDownstreamCreateRequest, idempotencyKey: String): DownstreamsCreateResult? {
         val requestHeaders = buildRequestHeaders(
             mapOf(
                 "Idempotency-Key" to HeaderParameterSpec(idempotencyKey, "simple", false, null),
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
             ),
             emptyMap()
         )
@@ -142,11 +141,10 @@ class ServiceProvidersApi(private val client: HttpClient) {
     }
 
     /** Service Provider Pricing Rule Create */
-    suspend fun pricingRulesCreate(body: ServiceProviderPricingRuleCreateRequest, idempotencyKey: String, xRequestId: String? = null): PricingRulesCreateResult? {
+    suspend fun pricingRulesCreate(body: ServiceProviderPricingRuleCreateRequest, idempotencyKey: String): PricingRulesCreateResult? {
         val requestHeaders = buildRequestHeaders(
             mapOf(
                 "Idempotency-Key" to HeaderParameterSpec(idempotencyKey, "simple", false, null),
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
             ),
             emptyMap()
         )
@@ -155,11 +153,10 @@ class ServiceProvidersApi(private val client: HttpClient) {
     }
 
     /** Service Provider Pricing Rule Update */
-    suspend fun pricingRulesUpdate(ruleId: String, body: ServiceProviderPricingRuleUpdateRequest, idempotencyKey: String, xRequestId: String? = null): PricingRulesUpdateResult? {
+    suspend fun pricingRulesUpdate(ruleId: String, body: ServiceProviderPricingRuleUpdateRequest, idempotencyKey: String): PricingRulesUpdateResult? {
         val requestHeaders = buildRequestHeaders(
             mapOf(
                 "Idempotency-Key" to HeaderParameterSpec(idempotencyKey, "simple", false, null),
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
             ),
             emptyMap()
         )
@@ -168,11 +165,10 @@ class ServiceProvidersApi(private val client: HttpClient) {
     }
 
     /** Service Provider Price Simulation Create */
-    suspend fun priceSimulationCreate(body: ServiceProviderPriceSimulationRequest, idempotencyKey: String, xRequestId: String? = null): PriceSimulationCreateResult? {
+    suspend fun priceSimulationCreate(body: ServiceProviderPriceSimulationRequest, idempotencyKey: String): PriceSimulationCreateResult? {
         val requestHeaders = buildRequestHeaders(
             mapOf(
                 "Idempotency-Key" to HeaderParameterSpec(idempotencyKey, "simple", false, null),
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
             ),
             emptyMap()
         )

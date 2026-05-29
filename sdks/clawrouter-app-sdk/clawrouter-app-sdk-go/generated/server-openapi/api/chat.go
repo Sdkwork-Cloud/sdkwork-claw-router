@@ -32,12 +32,9 @@ func (a *ChatApi) ConversationsList(page *int, pageSize *int) (sdktypes.Conversa
 }
 
 // Create product chat conversation
-func (a *ChatApi) ConversationsCreate(body sdktypes.ChatConversationCreateRequest, idempotencyKey string, xRequestId *string) (sdktypes.ConversationsCreateResult, error) {
+func (a *ChatApi) ConversationsCreate(body sdktypes.ChatConversationCreateRequest, idempotencyKey string) (sdktypes.ConversationsCreateResult, error) {
     headers := BuildRequestHeaders(
-        map[string]ParameterSpec{
-            "Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},
-            "X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},
-        },
+        map[string]ParameterSpec{"Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},},
         map[string]ParameterSpec{},
     )
     raw, err := a.client.Post(AppApiPath("/chat/conversations"), body, nil, headers, "application/json")
@@ -73,12 +70,9 @@ func (a *ChatApi) ConversationMessagesList(conversationId string, limit *int, or
 }
 
 // Create product chat turn
-func (a *ChatApi) TurnsCreate(conversationId string, body sdktypes.ChatTurnCreateRequest, idempotencyKey string, xRequestId *string) (sdktypes.TurnsCreateResult, error) {
+func (a *ChatApi) TurnsCreate(conversationId string, body sdktypes.ChatTurnCreateRequest, idempotencyKey string) (sdktypes.TurnsCreateResult, error) {
     headers := BuildRequestHeaders(
-        map[string]ParameterSpec{
-            "Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},
-            "X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},
-        },
+        map[string]ParameterSpec{"Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},},
         map[string]ParameterSpec{},
     )
     raw, err := a.client.Post(AppApiPath(fmt.Sprintf("/chat/conversations/%s/turns", SerializePathParameter(conversationId, PathParameterSpec{Name: "conversationId", Style: "simple", Explode: false}))), body, nil, headers, "application/json")
@@ -90,12 +84,9 @@ func (a *ChatApi) TurnsCreate(conversationId string, body sdktypes.ChatTurnCreat
 }
 
 // Complete product chat turn response
-func (a *ChatApi) TurnResponsesCreate(conversationId string, turnId string, body sdktypes.ChatTurnResponseRequest, idempotencyKey string, xRequestId *string) (sdktypes.TurnResponsesCreateResult, error) {
+func (a *ChatApi) TurnResponsesCreate(conversationId string, turnId string, body sdktypes.ChatTurnResponseRequest, idempotencyKey string) (sdktypes.TurnResponsesCreateResult, error) {
     headers := BuildRequestHeaders(
-        map[string]ParameterSpec{
-            "Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},
-            "X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},
-        },
+        map[string]ParameterSpec{"Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},},
         map[string]ParameterSpec{},
     )
     raw, err := a.client.Post(AppApiPath(fmt.Sprintf("/chat/conversations/%s/turns/%s/response", SerializePathParameter(conversationId, PathParameterSpec{Name: "conversationId", Style: "simple", Explode: false}), SerializePathParameter(turnId, PathParameterSpec{Name: "turnId", Style: "simple", Explode: false}))), body, nil, headers, "application/json")

@@ -11,7 +11,7 @@ use sdkwork_claw_product::application::ApiKeySecretHasher;
 use sdkwork_claw_product::domain::{
     AiModel, ApiKeyGroup, BillingMeter, DecimalValue, GatewayApiKey, ModelPrice,
     ModelProviderRoute, ModelVendor, ModelVendorDefinition, Money, PriceSide, PricingPlan,
-    ProviderAccountPoolRoute, RouteCandidate, RoutingCapability, RoutingPolicy, RoutingPolicyScope,
+    ProviderChannelRoute, RouteCandidate, RoutingCapability, RoutingPolicy, RoutingPolicyScope,
     RoutingRule,
 };
 use sdkwork_claw_product::infrastructure::crypto::HmacSha256ApiKeySecretHasher;
@@ -267,23 +267,23 @@ fn catalog_with_hashed_api_key(key_hash: String) -> InMemoryPricingCatalog {
             "openai",
             vec!["embedding"],
         )
-        .with_catalog_key("openai/global/text-embedding-3-small"),
+        .with_catalog_key("openai/text-embedding-3-small"),
     );
     catalog.add_provider_route(
         ModelProviderRoute::new_for_catalog_key(
-            "openai/global/text-embedding-3-small",
+            "openai/text-embedding-3-small",
             "text-embedding-3-small",
             "openrouter",
             3001,
-            "openai/global/text-embedding-3-small",
+            "text-embedding-3-small",
         )
         .with_provider_endpoint(
             Some("http://provider-proxy.internal/openrouter"),
             Some("vault://providers/openrouter/account/embedding"),
         ),
     );
-    catalog.add_provider_account_pool_route(
-        ProviderAccountPoolRoute::new("openrouter", 3001).with_provider_endpoint(
+    catalog.add_provider_channel_route(
+        ProviderChannelRoute::new("openrouter", 3001).with_provider_endpoint(
             Some("http://provider-proxy.internal/openrouter"),
             Some("vault://providers/openrouter/account/embedding"),
         ),
@@ -303,7 +303,7 @@ fn catalog_with_hashed_api_key(key_hash: String) -> InMemoryPricingCatalog {
     ));
     catalog.add_api_key(GatewayApiKey::new(101, 10, "sk-live", &key_hash).with_owner(10, 20, 30));
     catalog.add_price(ModelPrice::new_for_catalog_key(
-        "openai/global/text-embedding-3-small",
+        "openai/text-embedding-3-small",
         "text-embedding-3-small",
         PriceSide::OfficialReference,
         BillingMeter::EmbeddingInputToken,
@@ -311,7 +311,7 @@ fn catalog_with_hashed_api_key(key_hash: String) -> InMemoryPricingCatalog {
     ));
     catalog.add_price(
         ModelPrice::new_for_catalog_key(
-            "openai/global/text-embedding-3-small",
+            "openai/text-embedding-3-small",
             "text-embedding-3-small",
             PriceSide::UpstreamCost,
             BillingMeter::EmbeddingInputToken,
@@ -339,8 +339,8 @@ fn catalog_with_hashed_api_key(key_hash: String) -> InMemoryPricingCatalog {
             9101,
             "standard-group-text-embedding-3-small",
             1,
-            r#"{"catalogKey":"openai/global/text-embedding-3-small"}"#,
-            "openai/global/text-embedding-3-small",
+            r#"{"catalogKey":"openai/text-embedding-3-small"}"#,
+            "openai/text-embedding-3-small",
         )
         .with_candidate_channels(vec![RouteCandidate::new(3001, 100)]),
     );

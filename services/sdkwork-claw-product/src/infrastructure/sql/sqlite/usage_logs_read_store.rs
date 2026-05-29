@@ -63,7 +63,7 @@ SELECT
     COALESCE(NULLIF(t.request_id, ''), CAST(t.id AS TEXT)) AS request_id,
     CAST(COALESCE(t.started_at, t.created_at) AS TEXT) AS started_at,
     COALESCE(NULLIF(t.api_key_name_snapshot, ''), '-') AS api_key_name_snapshot,
-    COALESCE(NULLIF(g.name, ''), NULLIF(t.api_key_group_snapshot, ''), '-') AS api_key_group_display_name,
+    COALESCE(NULLIF(g.group_name, ''), NULLIF(t.channel_group_snapshot, ''), '-') AS channel_group_display_name,
     COALESCE(
         u.modality,
         CASE
@@ -112,13 +112,14 @@ SELECT
     COALESCE(u.cache_read_unit_price, '0') AS cache_read_unit_price,
     COALESCE(NULLIF(t.request_path, ''), NULLIF(t.endpoint, ''), '-') AS request_path,
     COALESCE(NULLIF(t.reasoning_effort, ''), '-') AS reasoning_effort,
-    COALESCE(NULLIF(t.client_ip_masked, ''), '-') AS client_ip_masked
+    COALESCE(NULLIF(t.client_ip_masked, ''), '-') AS client_ip_masked,
+    COALESCE(NULLIF(json_extract(t.metadata, '$.userAgent'), ''), '') AS user_agent
 FROM selected_trace t
-LEFT JOIN iam_gateway_api_key_group g
+LEFT JOIN ai_channel_group g
   ON g.status = 1
  AND g.tenant_id = t.tenant_id
  AND g.organization_id = t.organization_id
- AND g.id = t.api_key_group_id
+ AND g.id = t.channel_group_id
 LEFT JOIN usage_by_request u
   ON u.tenant_id = t.tenant_id
  AND u.organization_id = t.organization_id
@@ -132,8 +133,8 @@ WHERE (
     ?6 IS NULL
     OR lower(COALESCE(t.request_id, '')) LIKE ?6
     OR lower(COALESCE(t.api_key_name_snapshot, '')) LIKE ?6
-    OR lower(COALESCE(t.api_key_group_snapshot, '')) LIKE ?6
-    OR lower(COALESCE(g.name, '')) LIKE ?6
+    OR lower(COALESCE(t.channel_group_snapshot, '')) LIKE ?6
+    OR lower(COALESCE(g.group_name, '')) LIKE ?6
     OR lower(COALESCE(t.requested_model, '')) LIKE ?6
     OR lower(COALESCE(t.requested_model_catalog_key, '')) LIKE ?6
     OR lower(COALESCE(t.provider_native_model, '')) LIKE ?6
@@ -143,6 +144,7 @@ WHERE (
     OR lower(COALESCE(u.provider_native_model, '')) LIKE ?6
     OR lower(COALESCE(t.request_path, '')) LIKE ?6
     OR lower(COALESCE(t.client_ip_masked, '')) LIKE ?6
+    OR lower(COALESCE(json_extract(t.metadata, '$.userAgent'), '')) LIKE ?6
     OR lower(COALESCE(t.provider_error_code, '')) LIKE ?6
     OR lower(COALESCE(t.error_message_masked, '')) LIKE ?6
 )
@@ -192,11 +194,11 @@ usage_by_request AS (
 )
 SELECT CAST(COUNT(1) AS TEXT) AS total
 FROM selected_trace t
-LEFT JOIN iam_gateway_api_key_group g
+LEFT JOIN ai_channel_group g
   ON g.status = 1
  AND g.tenant_id = t.tenant_id
  AND g.organization_id = t.organization_id
- AND g.id = t.api_key_group_id
+ AND g.id = t.channel_group_id
 LEFT JOIN usage_by_request u
   ON u.tenant_id = t.tenant_id
  AND u.organization_id = t.organization_id
@@ -210,8 +212,8 @@ WHERE (
     ?6 IS NULL
     OR lower(COALESCE(t.request_id, '')) LIKE ?6
     OR lower(COALESCE(t.api_key_name_snapshot, '')) LIKE ?6
-    OR lower(COALESCE(t.api_key_group_snapshot, '')) LIKE ?6
-    OR lower(COALESCE(g.name, '')) LIKE ?6
+    OR lower(COALESCE(t.channel_group_snapshot, '')) LIKE ?6
+    OR lower(COALESCE(g.group_name, '')) LIKE ?6
     OR lower(COALESCE(t.requested_model, '')) LIKE ?6
     OR lower(COALESCE(t.requested_model_catalog_key, '')) LIKE ?6
     OR lower(COALESCE(t.provider_native_model, '')) LIKE ?6
@@ -221,6 +223,7 @@ WHERE (
     OR lower(COALESCE(u.provider_native_model, '')) LIKE ?6
     OR lower(COALESCE(t.request_path, '')) LIKE ?6
     OR lower(COALESCE(t.client_ip_masked, '')) LIKE ?6
+    OR lower(COALESCE(json_extract(t.metadata, '$.userAgent'), '')) LIKE ?6
     OR lower(COALESCE(t.provider_error_code, '')) LIKE ?6
     OR lower(COALESCE(t.error_message_masked, '')) LIKE ?6
 )
@@ -304,7 +307,7 @@ fn row_to_usage_log(row: sqlx::sqlite::SqliteRow) -> Result<UsageLogItem, Domain
         request_id: string_cell(&row, "request_id"),
         time: string_cell(&row, "started_at"),
         token_name: string_cell(&row, "api_key_name_snapshot"),
-        group: string_cell(&row, "api_key_group_display_name"),
+        group: string_cell(&row, "channel_group_display_name"),
         log_type: modality_label(optional_integer_cell(&row, "modality")),
         model: string_cell(&row, "model"),
         provider_native_model: string_cell(&row, "provider_native_model"),
@@ -348,6 +351,7 @@ fn row_to_usage_log(row: sqlx::sqlite::SqliteRow) -> Result<UsageLogItem, Domain
         path: string_cell(&row, "request_path"),
         reasoning_effort: string_cell(&row, "reasoning_effort"),
         ip: string_cell(&row, "client_ip_masked"),
+        user_agent: string_cell(&row, "user_agent"),
     })
 }
 
@@ -474,25 +478,25 @@ mod tests {
     fn usage_logs_query_uses_api_key_group_name_for_display_and_search() {
         for sql in [LOAD_USAGE_LOGS, LOAD_USAGE_LOGS_TOTAL] {
             assert!(
-                sql.contains("LEFT JOIN iam_gateway_api_key_group g"),
-                "usage logs SQLite SQL must join the API key group table"
+                sql.contains("LEFT JOIN ai_channel_group g"),
+                "usage logs SQLite SQL must join the channel group table"
             );
             assert!(
                 sql.contains("g.tenant_id = t.tenant_id")
                     && sql.contains("g.organization_id = t.organization_id")
-                    && sql.contains("g.id = t.api_key_group_id"),
+                    && sql.contains("g.id = t.channel_group_id"),
                 "usage logs SQLite SQL must scope group lookup by tenant, organization, and group id"
             );
             assert!(
-                sql.contains("lower(COALESCE(g.name, '')) LIKE ?6"),
-                "usage logs SQLite keyword search must include the maintained group name"
+                sql.contains("lower(COALESCE(g.group_name, '')) LIKE ?6"),
+                "usage logs SQLite keyword search must include the maintained channel group name"
             );
         }
         assert!(
             LOAD_USAGE_LOGS.contains(
-                "COALESCE(NULLIF(g.name, ''), NULLIF(t.api_key_group_snapshot, ''), '-') AS api_key_group_display_name"
+                "COALESCE(NULLIF(g.group_name, ''), NULLIF(t.channel_group_snapshot, ''), '-') AS channel_group_display_name"
             ),
-            "usage logs SQLite SQL must project the maintained group name with snapshot fallback"
+            "usage logs SQLite SQL must project the maintained channel group name with snapshot fallback"
         );
     }
 
@@ -522,5 +526,17 @@ mod tests {
                 "usage logs SQLite aggregation must keep requested model catalog key searchable"
             );
         }
+    }
+
+    #[test]
+    fn usage_logs_query_projects_user_agent_from_trace_metadata() {
+        assert!(
+            LOAD_USAGE_LOGS.contains("json_extract(t.metadata, '$.userAgent')"),
+            "usage logs SQLite SQL must project the full User-Agent from trace metadata"
+        );
+        assert!(
+            LOAD_USAGE_LOGS.contains("AS user_agent"),
+            "usage logs SQLite SQL must expose a user_agent column for API serialization"
+        );
     }
 }

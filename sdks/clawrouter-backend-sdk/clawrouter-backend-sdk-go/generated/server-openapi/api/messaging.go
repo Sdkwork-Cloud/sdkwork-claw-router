@@ -18,12 +18,8 @@ func NewMessagingApi(client *sdkhttp.Client) *MessagingApi {
 }
 
 // Messaging route simulation
-func (a *MessagingApi) DiagnosticsRouteSimulationCreate(body sdktypes.MessagingRouteSimulationRequest, xRequestId *string) (sdktypes.DiagnosticsRouteSimulationCreateResult, error) {
-    headers := BuildRequestHeaders(
-        map[string]ParameterSpec{"X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},},
-        map[string]ParameterSpec{},
-    )
-    raw, err := a.client.Post(BackendApiPath("/messaging/diagnostics/route_simulation"), body, nil, headers, "application/json")
+func (a *MessagingApi) DiagnosticsRouteSimulationCreate(body sdktypes.MessagingRouteSimulationRequest) (sdktypes.DiagnosticsRouteSimulationCreateResult, error) {
+    raw, err := a.client.Post(BackendApiPath("/messaging/diagnostics/route_simulation"), body, nil, nil, "application/json")
     if err != nil {
         var zero sdktypes.DiagnosticsRouteSimulationCreateResult
         return zero, err
@@ -32,12 +28,9 @@ func (a *MessagingApi) DiagnosticsRouteSimulationCreate(body sdktypes.MessagingR
 }
 
 // Messaging test send
-func (a *MessagingApi) DiagnosticsTestSendsCreate(body sdktypes.MessagingTestSendRequest, idempotencyKey string, xRequestId *string) (sdktypes.DiagnosticsTestSendsCreateResult, error) {
+func (a *MessagingApi) DiagnosticsTestSendsCreate(body sdktypes.MessagingTestSendRequest, idempotencyKey string) (sdktypes.DiagnosticsTestSendsCreateResult, error) {
     headers := BuildRequestHeaders(
-        map[string]ParameterSpec{
-            "Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},
-            "X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},
-        },
+        map[string]ParameterSpec{"Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},},
         map[string]ParameterSpec{},
     )
     raw, err := a.client.Post(BackendApiPath("/messaging/diagnostics/test_sends"), body, nil, headers, "application/json")
@@ -67,12 +60,9 @@ func (a *MessagingApi) ProviderAccountsList(page *int, pageSize *int, q *string,
 }
 
 // Messaging provider account create
-func (a *MessagingApi) ProviderAccountsCreate(body sdktypes.MessagingProviderAccountCreateRequest, idempotencyKey string, xRequestId *string) (sdktypes.ProviderAccountsCreateResult, error) {
+func (a *MessagingApi) ProviderAccountsCreate(body sdktypes.MessagingProviderAccountCreateRequest, idempotencyKey string) (sdktypes.ProviderAccountsCreateResult, error) {
     headers := BuildRequestHeaders(
-        map[string]ParameterSpec{
-            "Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},
-            "X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},
-        },
+        map[string]ParameterSpec{"Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},},
         map[string]ParameterSpec{},
     )
     raw, err := a.client.Post(BackendApiPath("/messaging/provider_accounts"), body, nil, headers, "application/json")
@@ -121,12 +111,9 @@ func (a *MessagingApi) RouteRulesList(page *int, pageSize *int, q *string, statu
 }
 
 // Messaging route rule create
-func (a *MessagingApi) RouteRulesCreate(body sdktypes.MessagingRouteRuleCreateRequest, idempotencyKey string, xRequestId *string) (sdktypes.RouteRulesCreateResult, error) {
+func (a *MessagingApi) RouteRulesCreate(body sdktypes.MessagingRouteRuleCreateRequest, idempotencyKey string) (sdktypes.RouteRulesCreateResult, error) {
     headers := BuildRequestHeaders(
-        map[string]ParameterSpec{
-            "Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},
-            "X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},
-        },
+        map[string]ParameterSpec{"Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},},
         map[string]ParameterSpec{},
     )
     raw, err := a.client.Post(BackendApiPath("/messaging/route_rules"), body, nil, headers, "application/json")
@@ -175,12 +162,9 @@ func (a *MessagingApi) SenderIdentitiesList(page *int, pageSize *int, q *string,
 }
 
 // Messaging sender identity create
-func (a *MessagingApi) SenderIdentitiesCreate(body sdktypes.MessagingSenderIdentityCreateRequest, idempotencyKey string, xRequestId *string) (sdktypes.SenderIdentitiesCreateResult, error) {
+func (a *MessagingApi) SenderIdentitiesCreate(body sdktypes.MessagingSenderIdentityCreateRequest, idempotencyKey string) (sdktypes.SenderIdentitiesCreateResult, error) {
     headers := BuildRequestHeaders(
-        map[string]ParameterSpec{
-            "Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},
-            "X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},
-        },
+        map[string]ParameterSpec{"Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},},
         map[string]ParameterSpec{},
     )
     raw, err := a.client.Post(BackendApiPath("/messaging/sender_identities"), body, nil, headers, "application/json")
@@ -210,12 +194,9 @@ func (a *MessagingApi) SuppressionsList(page *int, pageSize *int, status *string
 }
 
 // Messaging suppression create
-func (a *MessagingApi) SuppressionsCreate(body sdktypes.MessagingSuppressionCreateRequest, idempotencyKey string, xRequestId *string) (sdktypes.SuppressionsCreateResult, error) {
+func (a *MessagingApi) SuppressionsCreate(body sdktypes.MessagingSuppressionCreateRequest, idempotencyKey string) (sdktypes.SuppressionsCreateResult, error) {
     headers := BuildRequestHeaders(
-        map[string]ParameterSpec{
-            "Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},
-            "X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},
-        },
+        map[string]ParameterSpec{"Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},},
         map[string]ParameterSpec{},
     )
     raw, err := a.client.Post(BackendApiPath("/messaging/suppressions"), body, nil, headers, "application/json")
@@ -227,12 +208,9 @@ func (a *MessagingApi) SuppressionsCreate(body sdktypes.MessagingSuppressionCrea
 }
 
 // Messaging template send
-func (a *MessagingApi) TemplateSendsCreate(body sdktypes.MessagingTemplateSendRequest, idempotencyKey string, xRequestId *string) (sdktypes.TemplateSendsCreateResult, error) {
+func (a *MessagingApi) TemplateSendsCreate(body sdktypes.MessagingTemplateSendRequest, idempotencyKey string) (sdktypes.TemplateSendsCreateResult, error) {
     headers := BuildRequestHeaders(
-        map[string]ParameterSpec{
-            "Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},
-            "X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},
-        },
+        map[string]ParameterSpec{"Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},},
         map[string]ParameterSpec{},
     )
     raw, err := a.client.Post(BackendApiPath("/messaging/template_sends"), body, nil, headers, "application/json")
@@ -262,12 +240,9 @@ func (a *MessagingApi) TemplatesList(page *int, pageSize *int, q *string, status
 }
 
 // Messaging template create
-func (a *MessagingApi) TemplatesCreate(body sdktypes.MessagingTemplateCreateRequest, idempotencyKey string, xRequestId *string) (sdktypes.TemplatesCreateResult, error) {
+func (a *MessagingApi) TemplatesCreate(body sdktypes.MessagingTemplateCreateRequest, idempotencyKey string) (sdktypes.TemplatesCreateResult, error) {
     headers := BuildRequestHeaders(
-        map[string]ParameterSpec{
-            "Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},
-            "X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},
-        },
+        map[string]ParameterSpec{"Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},},
         map[string]ParameterSpec{},
     )
     raw, err := a.client.Post(BackendApiPath("/messaging/templates"), body, nil, headers, "application/json")
@@ -279,12 +254,8 @@ func (a *MessagingApi) TemplatesCreate(body sdktypes.MessagingTemplateCreateRequ
 }
 
 // Messaging template version publish
-func (a *MessagingApi) TemplatesVersionsPublish(templateId string, versionId string, xRequestId *string) (sdktypes.TemplatesVersionsPublishResult, error) {
-    headers := BuildRequestHeaders(
-        map[string]ParameterSpec{"X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},},
-        map[string]ParameterSpec{},
-    )
-    raw, err := a.client.Post(BackendApiPath(fmt.Sprintf("/messaging/templates/%s/versions/%s/publish", SerializePathParameter(templateId, PathParameterSpec{Name: "templateId", Style: "simple", Explode: false}), SerializePathParameter(versionId, PathParameterSpec{Name: "versionId", Style: "simple", Explode: false}))), nil, nil, headers, "")
+func (a *MessagingApi) TemplatesVersionsPublish(templateId string, versionId string) (sdktypes.TemplatesVersionsPublishResult, error) {
+    raw, err := a.client.Post(BackendApiPath(fmt.Sprintf("/messaging/templates/%s/versions/%s/publish", SerializePathParameter(templateId, PathParameterSpec{Name: "templateId", Style: "simple", Explode: false}), SerializePathParameter(versionId, PathParameterSpec{Name: "versionId", Style: "simple", Explode: false}))), nil, nil, nil, "")
     if err != nil {
         var zero sdktypes.TemplatesVersionsPublishResult
         return zero, err
@@ -311,12 +282,8 @@ func (a *MessagingApi) VerificationPoliciesList(page *int, pageSize *int, q *str
 }
 
 // Verification policy update
-func (a *MessagingApi) VerificationPoliciesUpdate(policyId string, body sdktypes.VerificationPolicyUpdateRequest, xRequestId *string) (sdktypes.VerificationPoliciesUpdateResult, error) {
-    headers := BuildRequestHeaders(
-        map[string]ParameterSpec{"X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},},
-        map[string]ParameterSpec{},
-    )
-    raw, err := a.client.Put(BackendApiPath(fmt.Sprintf("/messaging/verification_policies/%s", SerializePathParameter(policyId, PathParameterSpec{Name: "policyId", Style: "simple", Explode: false}))), body, nil, headers, "application/json")
+func (a *MessagingApi) VerificationPoliciesUpdate(policyId string, body sdktypes.VerificationPolicyUpdateRequest) (sdktypes.VerificationPoliciesUpdateResult, error) {
+    raw, err := a.client.Put(BackendApiPath(fmt.Sprintf("/messaging/verification_policies/%s", SerializePathParameter(policyId, PathParameterSpec{Name: "policyId", Style: "simple", Explode: false}))), body, nil, nil, "application/json")
     if err != nil {
         var zero sdktypes.VerificationPoliciesUpdateResult
         return zero, err

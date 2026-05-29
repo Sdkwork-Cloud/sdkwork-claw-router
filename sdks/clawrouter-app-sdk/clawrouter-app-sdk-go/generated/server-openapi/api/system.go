@@ -18,12 +18,9 @@ func NewSystemApi(client *sdkhttp.Client) *SystemApi {
 }
 
 // Promotion Code Redemption Create
-func (a *SystemApi) PromotionsCodesRedemptionsCreate(body sdktypes.PromotionCodeRedemptionRequest, idempotencyKey string, xRequestId *string) (sdktypes.PromotionsCodesRedemptionsCreateResult, error) {
+func (a *SystemApi) PromotionsCodesRedemptionsCreate(body sdktypes.PromotionCodeRedemptionRequest, idempotencyKey string) (sdktypes.PromotionsCodesRedemptionsCreateResult, error) {
     headers := BuildRequestHeaders(
-        map[string]ParameterSpec{
-            "Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},
-            "X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},
-        },
+        map[string]ParameterSpec{"Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},},
         map[string]ParameterSpec{},
     )
     raw, err := a.client.Post(AppApiPath("/promotions/codes/redemptions"), body, nil, headers, "application/json")
@@ -35,12 +32,9 @@ func (a *SystemApi) PromotionsCodesRedemptionsCreate(body sdktypes.PromotionCode
 }
 
 // Promotion Discount Application Create
-func (a *SystemApi) PromotionsDiscountApplicationsCreate(body sdktypes.PromotionCommandRequest, idempotencyKey string, xRequestId *string) (sdktypes.PromotionsDiscountApplicationsCreateResult, error) {
+func (a *SystemApi) PromotionsDiscountApplicationsCreate(body sdktypes.PromotionCommandRequest, idempotencyKey string) (sdktypes.PromotionsDiscountApplicationsCreateResult, error) {
     headers := BuildRequestHeaders(
-        map[string]ParameterSpec{
-            "Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},
-            "X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},
-        },
+        map[string]ParameterSpec{"Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},},
         map[string]ParameterSpec{},
     )
     raw, err := a.client.Post(AppApiPath("/promotions/discount_applications"), body, nil, headers, "application/json")
@@ -52,12 +46,9 @@ func (a *SystemApi) PromotionsDiscountApplicationsCreate(body sdktypes.Promotion
 }
 
 // Promotion Discount Application Reversal Create
-func (a *SystemApi) PromotionsDiscountApplicationsReversalsCreate(body sdktypes.PromotionCommandRequest, idempotencyKey string, xRequestId *string) (sdktypes.PromotionsDiscountApplicationsReversalsCreateResult, error) {
+func (a *SystemApi) PromotionsDiscountApplicationsReversalsCreate(body sdktypes.PromotionCommandRequest, idempotencyKey string) (sdktypes.PromotionsDiscountApplicationsReversalsCreateResult, error) {
     headers := BuildRequestHeaders(
-        map[string]ParameterSpec{
-            "Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},
-            "X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},
-        },
+        map[string]ParameterSpec{"Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},},
         map[string]ParameterSpec{},
     )
     raw, err := a.client.Post(AppApiPath("/promotions/discount_applications/reversals"), body, nil, headers, "application/json")
@@ -69,12 +60,9 @@ func (a *SystemApi) PromotionsDiscountApplicationsReversalsCreate(body sdktypes.
 }
 
 // Promotion Discount Application Release
-func (a *SystemApi) PromotionsDiscountApplicationsRelease(applicationId string, body sdktypes.PromotionCommandRequest, idempotencyKey string, xRequestId *string) (sdktypes.PromotionsDiscountApplicationsReleaseResult, error) {
+func (a *SystemApi) PromotionsDiscountApplicationsRelease(applicationId string, body sdktypes.PromotionCommandRequest, idempotencyKey string) (sdktypes.PromotionsDiscountApplicationsReleaseResult, error) {
     headers := BuildRequestHeaders(
-        map[string]ParameterSpec{
-            "Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},
-            "X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},
-        },
+        map[string]ParameterSpec{"Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},},
         map[string]ParameterSpec{},
     )
     raw, err := a.client.Post(AppApiPath(fmt.Sprintf("/promotions/discount_applications/%s/releases", SerializePathParameter(applicationId, PathParameterSpec{Name: "applicationId", Style: "simple", Explode: false}))), body, nil, headers, "application/json")
@@ -86,12 +74,9 @@ func (a *SystemApi) PromotionsDiscountApplicationsRelease(applicationId string, 
 }
 
 // Promotion Discount Application Settle
-func (a *SystemApi) PromotionsDiscountApplicationsSettle(applicationId string, body sdktypes.PromotionCommandRequest, idempotencyKey string, xRequestId *string) (sdktypes.PromotionsDiscountApplicationsSettleResult, error) {
+func (a *SystemApi) PromotionsDiscountApplicationsSettle(applicationId string, body sdktypes.PromotionCommandRequest, idempotencyKey string) (sdktypes.PromotionsDiscountApplicationsSettleResult, error) {
     headers := BuildRequestHeaders(
-        map[string]ParameterSpec{
-            "Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},
-            "X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},
-        },
+        map[string]ParameterSpec{"Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},},
         map[string]ParameterSpec{},
     )
     raw, err := a.client.Post(AppApiPath(fmt.Sprintf("/promotions/discount_applications/%s/settlements", SerializePathParameter(applicationId, PathParameterSpec{Name: "applicationId", Style: "simple", Explode: false}))), body, nil, headers, "application/json")
@@ -103,12 +88,9 @@ func (a *SystemApi) PromotionsDiscountApplicationsSettle(applicationId string, b
 }
 
 // Promotion User Coupon Claim Create
-func (a *SystemApi) PromotionsUserCouponsClaimsCreate(body sdktypes.PromotionCommandRequest, idempotencyKey string, xRequestId *string) (sdktypes.PromotionsUserCouponsClaimsCreateResult, error) {
+func (a *SystemApi) PromotionsUserCouponsClaimsCreate(body sdktypes.PromotionCommandRequest, idempotencyKey string) (sdktypes.PromotionsUserCouponsClaimsCreateResult, error) {
     headers := BuildRequestHeaders(
-        map[string]ParameterSpec{
-            "Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},
-            "X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},
-        },
+        map[string]ParameterSpec{"Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},},
         map[string]ParameterSpec{},
     )
     raw, err := a.client.Post(AppApiPath("/promotions/user_coupon_claims"), body, nil, headers, "application/json")

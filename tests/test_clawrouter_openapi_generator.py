@@ -1,4 +1,4 @@
-import json
+﻿import json
 import tempfile
 import textwrap
 import unittest
@@ -233,7 +233,7 @@ class ClawRouterOpenApiGeneratorTest(unittest.TestCase):
                             "path_params": [],
                             "source": "apps/portal/apiKeyService.ts",
                             "idempotency_required": True,
-                            "read_sources": ["iam_gateway_api_key_group"],
+                            "read_sources": ["ai_channel_group"],
                             "write_tables": ["iam_gateway_api_key", "ops_audit_log"],
                             "request_schema": {
                                 "name": "CreateApiKeyRequest",

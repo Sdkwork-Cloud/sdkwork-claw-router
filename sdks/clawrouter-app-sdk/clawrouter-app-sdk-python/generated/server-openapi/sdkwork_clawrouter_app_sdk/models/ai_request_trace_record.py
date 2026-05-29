@@ -6,12 +6,12 @@ from typing import TYPE_CHECKING, Optional, List, Dict, Any
 @dataclass
 class AiRequestTraceRecord:
     """Ai request trace record schema exposed by Claw Router."""
-    api_key_group_id: Optional[str] = None
-    api_key_group_snapshot: Optional[str] = None
     api_key_id: Optional[str] = None
     api_key_name_snapshot: Optional[str] = None
     attempt_no: Optional[int] = None
     cached_tokens: Optional[str] = None
+    channel_group_id: Optional[str] = None
+    channel_group_snapshot: Optional[str] = None
     channel_id: Optional[str] = None
     channel_name_snapshot: Optional[str] = None
     client_ip_hash: Optional[str] = None
@@ -37,7 +37,6 @@ class AiRequestTraceRecord:
     owner_type: Optional[str] = None
     payload_hash: Optional[str] = None
     prompt_tokens: Optional[str] = None
-    provider_account_id: Optional[str] = None
     provider_error_code: Optional[str] = None
     provider_id: Optional[str] = None
     provider_model: Optional[str] = None

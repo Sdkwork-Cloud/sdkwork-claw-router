@@ -1,4 +1,4 @@
-﻿import {
+import {
   getClawRouterAppSdkClient,
   readApiRecord,
   readRequiredApiItems,

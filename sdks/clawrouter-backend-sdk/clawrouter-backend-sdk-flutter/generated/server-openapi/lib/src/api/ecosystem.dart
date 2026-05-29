@@ -31,15 +31,9 @@ class EcosystemApi {
   }
 
   /// Create skill
-  Future<SkillsCreateResult?> skillsCreate(AdminSkillCreateRequest body, [String? xRequestId]) async {
-    final requestHeaders = buildRequestHeaders(
-      <String, HeaderParameterSpec>{
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
-      },
-      <String, HeaderParameterSpec>{},
-    );
+  Future<SkillsCreateResult?> skillsCreate(AdminSkillCreateRequest body) async {
     final payload = body.toJson();
-    final response = await _client.post(ApiPaths.backendPath('/ecosystem/skills'), body: payload, headers: requestHeaders, contentType: 'application/json');
+    final response = await _client.post(ApiPaths.backendPath('/ecosystem/skills'), body: payload, contentType: 'application/json');
     return (() {
       final map = sdkworkResponseAsMap(response);
       return map == null ? null : SkillsCreateResult.fromJson(map);
@@ -56,15 +50,9 @@ class EcosystemApi {
   }
 
   /// Create skill category
-  Future<SkillsCategoriesCreateResult?> skillsCategoriesCreate(AdminSkillCategoryCreateRequest body, [String? xRequestId]) async {
-    final requestHeaders = buildRequestHeaders(
-      <String, HeaderParameterSpec>{
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
-      },
-      <String, HeaderParameterSpec>{},
-    );
+  Future<SkillsCategoriesCreateResult?> skillsCategoriesCreate(AdminSkillCategoryCreateRequest body) async {
     final payload = body.toJson();
-    final response = await _client.post(ApiPaths.backendPath('/ecosystem/skills/categories'), body: payload, headers: requestHeaders, contentType: 'application/json');
+    final response = await _client.post(ApiPaths.backendPath('/ecosystem/skills/categories'), body: payload, contentType: 'application/json');
     return (() {
       final map = sdkworkResponseAsMap(response);
       return map == null ? null : SkillsCategoriesCreateResult.fromJson(map);
@@ -72,14 +60,8 @@ class EcosystemApi {
   }
 
   /// Delete skill category
-  Future<SkillsCategoriesDeleteResult?> skillsCategoriesDelete(String categoryId, [String? xRequestId]) async {
-    final requestHeaders = buildRequestHeaders(
-      <String, HeaderParameterSpec>{
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
-      },
-      <String, HeaderParameterSpec>{},
-    );
-    final response = await _client.delete(ApiPaths.backendPath('/ecosystem/skills/categories/${serializePathParameter(categoryId, const PathParameterSpec('categoryId', 'simple', false))}'), headers: requestHeaders);
+  Future<SkillsCategoriesDeleteResult?> skillsCategoriesDelete(String categoryId) async {
+    final response = await _client.delete(ApiPaths.backendPath('/ecosystem/skills/categories/${serializePathParameter(categoryId, const PathParameterSpec('categoryId', 'simple', false))}'));
     return (() {
       final map = sdkworkResponseAsMap(response);
       return map == null ? null : SkillsCategoriesDeleteResult.fromJson(map);
@@ -87,15 +69,9 @@ class EcosystemApi {
   }
 
   /// Update skill category
-  Future<SkillsCategoriesUpdateResult?> skillsCategoriesUpdate(String categoryId, AdminSkillCategoryUpdateRequest body, [String? xRequestId]) async {
-    final requestHeaders = buildRequestHeaders(
-      <String, HeaderParameterSpec>{
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
-      },
-      <String, HeaderParameterSpec>{},
-    );
+  Future<SkillsCategoriesUpdateResult?> skillsCategoriesUpdate(String categoryId, AdminSkillCategoryUpdateRequest body) async {
     final payload = body.toJson();
-    final response = await _client.put(ApiPaths.backendPath('/ecosystem/skills/categories/${serializePathParameter(categoryId, const PathParameterSpec('categoryId', 'simple', false))}'), body: payload, headers: requestHeaders, contentType: 'application/json');
+    final response = await _client.put(ApiPaths.backendPath('/ecosystem/skills/categories/${serializePathParameter(categoryId, const PathParameterSpec('categoryId', 'simple', false))}'), body: payload, contentType: 'application/json');
     return (() {
       final map = sdkworkResponseAsMap(response);
       return map == null ? null : SkillsCategoriesUpdateResult.fromJson(map);
@@ -119,15 +95,9 @@ class EcosystemApi {
   }
 
   /// Create skill package
-  Future<SkillsPackageCreateResult?> skillsPackageCreate(AdminSkillPackageCreateRequest body, [String? xRequestId]) async {
-    final requestHeaders = buildRequestHeaders(
-      <String, HeaderParameterSpec>{
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
-      },
-      <String, HeaderParameterSpec>{},
-    );
+  Future<SkillsPackageCreateResult?> skillsPackageCreate(AdminSkillPackageCreateRequest body) async {
     final payload = body.toJson();
-    final response = await _client.post(ApiPaths.backendPath('/ecosystem/skills/package'), body: payload, headers: requestHeaders, contentType: 'application/json');
+    final response = await _client.post(ApiPaths.backendPath('/ecosystem/skills/package'), body: payload, contentType: 'application/json');
     return (() {
       final map = sdkworkResponseAsMap(response);
       return map == null ? null : SkillsPackageCreateResult.fromJson(map);
@@ -153,15 +123,9 @@ class EcosystemApi {
   }
 
   /// Update skill package
-  Future<SkillsPackageUpdateResult?> skillsPackageUpdate(String packageId, AdminSkillPackageUpdateRequest body, [String? xRequestId]) async {
-    final requestHeaders = buildRequestHeaders(
-      <String, HeaderParameterSpec>{
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
-      },
-      <String, HeaderParameterSpec>{},
-    );
+  Future<SkillsPackageUpdateResult?> skillsPackageUpdate(String packageId, AdminSkillPackageUpdateRequest body) async {
     final payload = body.toJson();
-    final response = await _client.put(ApiPaths.backendPath('/ecosystem/skills/package/${serializePathParameter(packageId, const PathParameterSpec('packageId', 'simple', false))}'), body: payload, headers: requestHeaders, contentType: 'application/json');
+    final response = await _client.put(ApiPaths.backendPath('/ecosystem/skills/package/${serializePathParameter(packageId, const PathParameterSpec('packageId', 'simple', false))}'), body: payload, contentType: 'application/json');
     return (() {
       final map = sdkworkResponseAsMap(response);
       return map == null ? null : SkillsPackageUpdateResult.fromJson(map);
@@ -169,14 +133,8 @@ class EcosystemApi {
   }
 
   /// Disable skill package
-  Future<SkillsPackageDisableResult?> skillsPackageDisable(String packageId, [String? xRequestId]) async {
-    final requestHeaders = buildRequestHeaders(
-      <String, HeaderParameterSpec>{
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
-      },
-      <String, HeaderParameterSpec>{},
-    );
-    final response = await _client.post(ApiPaths.backendPath('/ecosystem/skills/package/${serializePathParameter(packageId, const PathParameterSpec('packageId', 'simple', false))}/disable'), headers: requestHeaders);
+  Future<SkillsPackageDisableResult?> skillsPackageDisable(String packageId) async {
+    final response = await _client.post(ApiPaths.backendPath('/ecosystem/skills/package/${serializePathParameter(packageId, const PathParameterSpec('packageId', 'simple', false))}/disable'));
     return (() {
       final map = sdkworkResponseAsMap(response);
       return map == null ? null : SkillsPackageDisableResult.fromJson(map);
@@ -184,14 +142,8 @@ class EcosystemApi {
   }
 
   /// Enable skill package
-  Future<SkillsPackageEnableResult?> skillsPackageEnable(String packageId, [String? xRequestId]) async {
-    final requestHeaders = buildRequestHeaders(
-      <String, HeaderParameterSpec>{
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
-      },
-      <String, HeaderParameterSpec>{},
-    );
-    final response = await _client.post(ApiPaths.backendPath('/ecosystem/skills/package/${serializePathParameter(packageId, const PathParameterSpec('packageId', 'simple', false))}/enable'), headers: requestHeaders);
+  Future<SkillsPackageEnableResult?> skillsPackageEnable(String packageId) async {
+    final response = await _client.post(ApiPaths.backendPath('/ecosystem/skills/package/${serializePathParameter(packageId, const PathParameterSpec('packageId', 'simple', false))}/enable'));
     return (() {
       final map = sdkworkResponseAsMap(response);
       return map == null ? null : SkillsPackageEnableResult.fromJson(map);
@@ -217,15 +169,9 @@ class EcosystemApi {
   }
 
   /// Update skill
-  Future<SkillsUpdateResult?> skillsUpdate(String skillId, AdminSkillUpdateRequest body, [String? xRequestId]) async {
-    final requestHeaders = buildRequestHeaders(
-      <String, HeaderParameterSpec>{
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
-      },
-      <String, HeaderParameterSpec>{},
-    );
+  Future<SkillsUpdateResult?> skillsUpdate(String skillId, AdminSkillUpdateRequest body) async {
     final payload = body.toJson();
-    final response = await _client.put(ApiPaths.backendPath('/ecosystem/skills/${serializePathParameter(skillId, const PathParameterSpec('skillId', 'simple', false))}'), body: payload, headers: requestHeaders, contentType: 'application/json');
+    final response = await _client.put(ApiPaths.backendPath('/ecosystem/skills/${serializePathParameter(skillId, const PathParameterSpec('skillId', 'simple', false))}'), body: payload, contentType: 'application/json');
     return (() {
       final map = sdkworkResponseAsMap(response);
       return map == null ? null : SkillsUpdateResult.fromJson(map);
@@ -242,15 +188,9 @@ class EcosystemApi {
   }
 
   /// Create skill artifact
-  Future<SkillsArtifactsCreateResult?> skillsArtifactsCreate(String skillId, AdminSkillArtifactCreateRequest body, [String? xRequestId]) async {
-    final requestHeaders = buildRequestHeaders(
-      <String, HeaderParameterSpec>{
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
-      },
-      <String, HeaderParameterSpec>{},
-    );
+  Future<SkillsArtifactsCreateResult?> skillsArtifactsCreate(String skillId, AdminSkillArtifactCreateRequest body) async {
     final payload = body.toJson();
-    final response = await _client.post(ApiPaths.backendPath('/ecosystem/skills/${serializePathParameter(skillId, const PathParameterSpec('skillId', 'simple', false))}/artifacts'), body: payload, headers: requestHeaders, contentType: 'application/json');
+    final response = await _client.post(ApiPaths.backendPath('/ecosystem/skills/${serializePathParameter(skillId, const PathParameterSpec('skillId', 'simple', false))}/artifacts'), body: payload, contentType: 'application/json');
     return (() {
       final map = sdkworkResponseAsMap(response);
       return map == null ? null : SkillsArtifactsCreateResult.fromJson(map);
@@ -258,14 +198,8 @@ class EcosystemApi {
   }
 
   /// Delete skill artifact
-  Future<SkillsArtifactsDeleteResult?> skillsArtifactsDelete(String skillId, String artifactId, [String? xRequestId]) async {
-    final requestHeaders = buildRequestHeaders(
-      <String, HeaderParameterSpec>{
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
-      },
-      <String, HeaderParameterSpec>{},
-    );
-    final response = await _client.delete(ApiPaths.backendPath('/ecosystem/skills/${serializePathParameter(skillId, const PathParameterSpec('skillId', 'simple', false))}/artifacts/${serializePathParameter(artifactId, const PathParameterSpec('artifactId', 'simple', false))}'), headers: requestHeaders);
+  Future<SkillsArtifactsDeleteResult?> skillsArtifactsDelete(String skillId, String artifactId) async {
+    final response = await _client.delete(ApiPaths.backendPath('/ecosystem/skills/${serializePathParameter(skillId, const PathParameterSpec('skillId', 'simple', false))}/artifacts/${serializePathParameter(artifactId, const PathParameterSpec('artifactId', 'simple', false))}'));
     return (() {
       final map = sdkworkResponseAsMap(response);
       return map == null ? null : SkillsArtifactsDeleteResult.fromJson(map);
@@ -282,15 +216,9 @@ class EcosystemApi {
   }
 
   /// Update skill artifact
-  Future<SkillsArtifactsUpdateResult?> skillsArtifactsUpdate(String skillId, String artifactId, AdminSkillArtifactUpdateRequest body, [String? xRequestId]) async {
-    final requestHeaders = buildRequestHeaders(
-      <String, HeaderParameterSpec>{
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
-      },
-      <String, HeaderParameterSpec>{},
-    );
+  Future<SkillsArtifactsUpdateResult?> skillsArtifactsUpdate(String skillId, String artifactId, AdminSkillArtifactUpdateRequest body) async {
     final payload = body.toJson();
-    final response = await _client.put(ApiPaths.backendPath('/ecosystem/skills/${serializePathParameter(skillId, const PathParameterSpec('skillId', 'simple', false))}/artifacts/${serializePathParameter(artifactId, const PathParameterSpec('artifactId', 'simple', false))}'), body: payload, headers: requestHeaders, contentType: 'application/json');
+    final response = await _client.put(ApiPaths.backendPath('/ecosystem/skills/${serializePathParameter(skillId, const PathParameterSpec('skillId', 'simple', false))}/artifacts/${serializePathParameter(artifactId, const PathParameterSpec('artifactId', 'simple', false))}'), body: payload, contentType: 'application/json');
     return (() {
       final map = sdkworkResponseAsMap(response);
       return map == null ? null : SkillsArtifactsUpdateResult.fromJson(map);
@@ -307,15 +235,9 @@ class EcosystemApi {
   }
 
   /// Create skill asset
-  Future<SkillsAssetsCreateResult?> skillsAssetsCreate(String skillId, AdminSkillAssetCreateRequest body, [String? xRequestId]) async {
-    final requestHeaders = buildRequestHeaders(
-      <String, HeaderParameterSpec>{
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
-      },
-      <String, HeaderParameterSpec>{},
-    );
+  Future<SkillsAssetsCreateResult?> skillsAssetsCreate(String skillId, AdminSkillAssetCreateRequest body) async {
     final payload = body.toJson();
-    final response = await _client.post(ApiPaths.backendPath('/ecosystem/skills/${serializePathParameter(skillId, const PathParameterSpec('skillId', 'simple', false))}/assets'), body: payload, headers: requestHeaders, contentType: 'application/json');
+    final response = await _client.post(ApiPaths.backendPath('/ecosystem/skills/${serializePathParameter(skillId, const PathParameterSpec('skillId', 'simple', false))}/assets'), body: payload, contentType: 'application/json');
     return (() {
       final map = sdkworkResponseAsMap(response);
       return map == null ? null : SkillsAssetsCreateResult.fromJson(map);
@@ -323,14 +245,8 @@ class EcosystemApi {
   }
 
   /// Delete skill asset
-  Future<SkillsAssetsDeleteResult?> skillsAssetsDelete(String skillId, String assetId, [String? xRequestId]) async {
-    final requestHeaders = buildRequestHeaders(
-      <String, HeaderParameterSpec>{
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
-      },
-      <String, HeaderParameterSpec>{},
-    );
-    final response = await _client.delete(ApiPaths.backendPath('/ecosystem/skills/${serializePathParameter(skillId, const PathParameterSpec('skillId', 'simple', false))}/assets/${serializePathParameter(assetId, const PathParameterSpec('assetId', 'simple', false))}'), headers: requestHeaders);
+  Future<SkillsAssetsDeleteResult?> skillsAssetsDelete(String skillId, String assetId) async {
+    final response = await _client.delete(ApiPaths.backendPath('/ecosystem/skills/${serializePathParameter(skillId, const PathParameterSpec('skillId', 'simple', false))}/assets/${serializePathParameter(assetId, const PathParameterSpec('assetId', 'simple', false))}'));
     return (() {
       final map = sdkworkResponseAsMap(response);
       return map == null ? null : SkillsAssetsDeleteResult.fromJson(map);
@@ -347,15 +263,9 @@ class EcosystemApi {
   }
 
   /// Update skill asset
-  Future<SkillsAssetsUpdateResult?> skillsAssetsUpdate(String skillId, String assetId, AdminSkillAssetUpdateRequest body, [String? xRequestId]) async {
-    final requestHeaders = buildRequestHeaders(
-      <String, HeaderParameterSpec>{
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
-      },
-      <String, HeaderParameterSpec>{},
-    );
+  Future<SkillsAssetsUpdateResult?> skillsAssetsUpdate(String skillId, String assetId, AdminSkillAssetUpdateRequest body) async {
     final payload = body.toJson();
-    final response = await _client.put(ApiPaths.backendPath('/ecosystem/skills/${serializePathParameter(skillId, const PathParameterSpec('skillId', 'simple', false))}/assets/${serializePathParameter(assetId, const PathParameterSpec('assetId', 'simple', false))}'), body: payload, headers: requestHeaders, contentType: 'application/json');
+    final response = await _client.put(ApiPaths.backendPath('/ecosystem/skills/${serializePathParameter(skillId, const PathParameterSpec('skillId', 'simple', false))}/assets/${serializePathParameter(assetId, const PathParameterSpec('assetId', 'simple', false))}'), body: payload, contentType: 'application/json');
     return (() {
       final map = sdkworkResponseAsMap(response);
       return map == null ? null : SkillsAssetsUpdateResult.fromJson(map);
@@ -363,14 +273,8 @@ class EcosystemApi {
   }
 
   /// Disable skill
-  Future<SkillsDisableResult?> skillsDisable(String skillId, [String? xRequestId]) async {
-    final requestHeaders = buildRequestHeaders(
-      <String, HeaderParameterSpec>{
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
-      },
-      <String, HeaderParameterSpec>{},
-    );
-    final response = await _client.post(ApiPaths.backendPath('/ecosystem/skills/${serializePathParameter(skillId, const PathParameterSpec('skillId', 'simple', false))}/disable'), headers: requestHeaders);
+  Future<SkillsDisableResult?> skillsDisable(String skillId) async {
+    final response = await _client.post(ApiPaths.backendPath('/ecosystem/skills/${serializePathParameter(skillId, const PathParameterSpec('skillId', 'simple', false))}/disable'));
     return (() {
       final map = sdkworkResponseAsMap(response);
       return map == null ? null : SkillsDisableResult.fromJson(map);
@@ -378,14 +282,8 @@ class EcosystemApi {
   }
 
   /// Enable skill
-  Future<SkillsEnableResult?> skillsEnable(String skillId, [String? xRequestId]) async {
-    final requestHeaders = buildRequestHeaders(
-      <String, HeaderParameterSpec>{
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
-      },
-      <String, HeaderParameterSpec>{},
-    );
-    final response = await _client.post(ApiPaths.backendPath('/ecosystem/skills/${serializePathParameter(skillId, const PathParameterSpec('skillId', 'simple', false))}/enable'), headers: requestHeaders);
+  Future<SkillsEnableResult?> skillsEnable(String skillId) async {
+    final response = await _client.post(ApiPaths.backendPath('/ecosystem/skills/${serializePathParameter(skillId, const PathParameterSpec('skillId', 'simple', false))}/enable'));
     return (() {
       final map = sdkworkResponseAsMap(response);
       return map == null ? null : SkillsEnableResult.fromJson(map);
@@ -393,14 +291,8 @@ class EcosystemApi {
   }
 
   /// Publish skill
-  Future<SkillsPublishResult?> skillsPublish(String skillId, [String? xRequestId]) async {
-    final requestHeaders = buildRequestHeaders(
-      <String, HeaderParameterSpec>{
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
-      },
-      <String, HeaderParameterSpec>{},
-    );
-    final response = await _client.post(ApiPaths.backendPath('/ecosystem/skills/${serializePathParameter(skillId, const PathParameterSpec('skillId', 'simple', false))}/publish'), headers: requestHeaders);
+  Future<SkillsPublishResult?> skillsPublish(String skillId) async {
+    final response = await _client.post(ApiPaths.backendPath('/ecosystem/skills/${serializePathParameter(skillId, const PathParameterSpec('skillId', 'simple', false))}/publish'));
     return (() {
       final map = sdkworkResponseAsMap(response);
       return map == null ? null : SkillsPublishResult.fromJson(map);
@@ -408,15 +300,9 @@ class EcosystemApi {
   }
 
   /// Approve skill
-  Future<SkillsReviewApproveResult?> skillsReviewApprove(String skillId, AdminSkillReviewRequest body, [String? xRequestId]) async {
-    final requestHeaders = buildRequestHeaders(
-      <String, HeaderParameterSpec>{
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
-      },
-      <String, HeaderParameterSpec>{},
-    );
+  Future<SkillsReviewApproveResult?> skillsReviewApprove(String skillId, AdminSkillReviewRequest body) async {
     final payload = body.toJson();
-    final response = await _client.post(ApiPaths.backendPath('/ecosystem/skills/${serializePathParameter(skillId, const PathParameterSpec('skillId', 'simple', false))}/review/approve'), body: payload, headers: requestHeaders, contentType: 'application/json');
+    final response = await _client.post(ApiPaths.backendPath('/ecosystem/skills/${serializePathParameter(skillId, const PathParameterSpec('skillId', 'simple', false))}/review/approve'), body: payload, contentType: 'application/json');
     return (() {
       final map = sdkworkResponseAsMap(response);
       return map == null ? null : SkillsReviewApproveResult.fromJson(map);
@@ -424,15 +310,9 @@ class EcosystemApi {
   }
 
   /// Reject skill
-  Future<SkillsReviewRejectResult?> skillsReviewReject(String skillId, AdminSkillReviewRequest body, [String? xRequestId]) async {
-    final requestHeaders = buildRequestHeaders(
-      <String, HeaderParameterSpec>{
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
-      },
-      <String, HeaderParameterSpec>{},
-    );
+  Future<SkillsReviewRejectResult?> skillsReviewReject(String skillId, AdminSkillReviewRequest body) async {
     final payload = body.toJson();
-    final response = await _client.post(ApiPaths.backendPath('/ecosystem/skills/${serializePathParameter(skillId, const PathParameterSpec('skillId', 'simple', false))}/review/reject'), body: payload, headers: requestHeaders, contentType: 'application/json');
+    final response = await _client.post(ApiPaths.backendPath('/ecosystem/skills/${serializePathParameter(skillId, const PathParameterSpec('skillId', 'simple', false))}/review/reject'), body: payload, contentType: 'application/json');
     return (() {
       final map = sdkworkResponseAsMap(response);
       return map == null ? null : SkillsReviewRejectResult.fromJson(map);
@@ -440,14 +320,8 @@ class EcosystemApi {
   }
 
   /// Offline skill
-  Future<SkillsUnpublishResult?> skillsUnpublish(String skillId, [String? xRequestId]) async {
-    final requestHeaders = buildRequestHeaders(
-      <String, HeaderParameterSpec>{
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
-      },
-      <String, HeaderParameterSpec>{},
-    );
-    final response = await _client.post(ApiPaths.backendPath('/ecosystem/skills/${serializePathParameter(skillId, const PathParameterSpec('skillId', 'simple', false))}/unpublish'), headers: requestHeaders);
+  Future<SkillsUnpublishResult?> skillsUnpublish(String skillId) async {
+    final response = await _client.post(ApiPaths.backendPath('/ecosystem/skills/${serializePathParameter(skillId, const PathParameterSpec('skillId', 'simple', false))}/unpublish'));
     return (() {
       final map = sdkworkResponseAsMap(response);
       return map == null ? null : SkillsUnpublishResult.fromJson(map);
@@ -658,75 +532,3 @@ String encodeQueryValue(String value, bool allowReserved) {
 }
 
 String urlEncode(String value) => Uri.encodeQueryComponent(value);
-class HeaderParameterSpec {
-  final dynamic value;
-  final String style;
-  final bool explode;
-  final String? contentType;
-
-  HeaderParameterSpec(this.value, this.style, this.explode, this.contentType);
-}
-
-Map<String, String>? buildRequestHeaders(
-  Map<String, HeaderParameterSpec> headers, [
-  Map<String, HeaderParameterSpec> cookies = const {},
-]) {
-  final requestHeaders = <String, String>{};
-
-  headers.forEach((name, parameter) {
-    final serialized = serializeParameterValue(parameter);
-    if (serialized != null) {
-      requestHeaders[name] = serialized;
-    }
-  });
-
-  final cookieHeader = buildCookieHeader(cookies);
-  if (cookieHeader != null && cookieHeader.isNotEmpty) {
-    requestHeaders['Cookie'] = requestHeaders.containsKey('Cookie')
-        ? '${requestHeaders['Cookie']}; $cookieHeader'
-        : cookieHeader;
-  }
-
-  return requestHeaders.isEmpty ? null : requestHeaders;
-}
-
-String? buildCookieHeader(Map<String, HeaderParameterSpec> cookies) {
-  final pairs = <String>[];
-  cookies.forEach((name, parameter) {
-    final serialized = serializeParameterValue(parameter);
-    if (serialized != null) {
-      pairs.add('${Uri.encodeComponent(name)}=${Uri.encodeComponent(serialized)}');
-    }
-  });
-  return pairs.isEmpty ? null : pairs.join('; ');
-}
-
-String? serializeParameterValue(HeaderParameterSpec? parameter) {
-  final value = parameter?.value;
-  if (value == null) return null;
-  if (parameter!.contentType != null && parameter.contentType!.trim().isNotEmpty) {
-    return jsonEncode(value);
-  }
-  if (value is DateTime) return value.toIso8601String();
-  if (value is Iterable) {
-    return value
-        .where((item) => item != null)
-        .map((item) => item.toString())
-        .whereType<String>()
-        .join(',');
-  }
-  if (value is Map) {
-    final serialized = <String>[];
-    value.forEach((key, item) {
-      if (item == null) return;
-      if (parameter.explode) {
-        serialized.add('$key=$item');
-      } else {
-        serialized.add(key.toString());
-        serialized.add(item.toString());
-      }
-    });
-    return serialized.join(',');
-  }
-  return value.toString();
-}

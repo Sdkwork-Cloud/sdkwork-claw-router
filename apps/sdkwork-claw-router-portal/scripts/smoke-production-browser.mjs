@@ -1871,6 +1871,9 @@ const BROWSER_SMOKE_ROUTES = [
     setupExpressions: [
       selectRouteApiReferenceEndpointByName("Create Chat Completion"),
       clickRouteButtonByExactText("Try it out"),
+      clickRoutePlaygroundTabByExactText("Authorization"),
+      setRouteSelectValueByOptionText("Bearer Token"),
+      setRoutePasswordInputByPlaceholder("Enter your API Key (sk-...)", "browser-smoke-api-key"),
       clickRoutePlaygroundBulkEditForSection("Query Params"),
       setRouteBulkEditValue("browser_smoke:query-value"),
       clickRouteButtonByExactText("Key-Value Edit"),
@@ -1919,6 +1922,9 @@ const BROWSER_SMOKE_ROUTES = [
     setupExpressions: [
       selectRouteApiReferenceEndpointByName("Create Chat Completion"),
       clickRouteButtonByExactText("Try it out"),
+      clickRoutePlaygroundTabByExactText("Authorization"),
+      setRouteSelectValueByOptionText("Bearer Token"),
+      setRoutePasswordInputByPlaceholder("Enter your API Key (sk-...)", "browser-smoke-api-key"),
       clickRoutePlaygroundTabByExactText("Body"),
       setRouteTextareaValue(JSON.stringify({
         model: "browser-smoke-model",
@@ -1967,6 +1973,9 @@ const BROWSER_SMOKE_ROUTES = [
     setupExpressions: [
       selectRouteApiReferenceEndpointByName("Create Chat Completion"),
       clickRouteButtonByExactText("Try it out"),
+      clickRoutePlaygroundTabByExactText("Authorization"),
+      setRouteSelectValueByOptionText("Bearer Token"),
+      setRoutePasswordInputByPlaceholder("Enter your API Key (sk-...)", "browser-smoke-api-key"),
       clickRoutePlaygroundTabByExactText("Body"),
       setRouteTextareaValue(JSON.stringify({
         model: "browser-smoke-model",
@@ -2039,6 +2048,9 @@ const BROWSER_SMOKE_ROUTES = [
     setupExpressions: [
       selectRouteApiReferenceEndpointByName("Create Chat Completion"),
       clickRouteButtonByExactText("Try it out"),
+      clickRoutePlaygroundTabByExactText("Authorization"),
+      setRouteSelectValueByOptionText("Bearer Token"),
+      setRoutePasswordInputByPlaceholder("Enter your API Key (sk-...)", "browser-smoke-api-key"),
       clickRoutePlaygroundTabByExactText("Body"),
       setRouteTextareaValue(JSON.stringify({
         model: "browser-smoke-model",

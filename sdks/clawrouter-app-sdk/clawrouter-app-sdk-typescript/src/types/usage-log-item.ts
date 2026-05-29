@@ -42,7 +42,7 @@ export interface UsageLogItem {
   reasoningEffort: string;
   /** Request id field on usage log item. */
   requestId: string;
-  /** Routed catalog model identity in vendor/region/model form, for example openai/global/gpt-5.5. */
+  /** Routed base catalog model identity in vendor/model form, for example openai/gpt-5.5. Region-specific pricing or ranking keys are stored separately from the routed model identity. */
   requestedModelCatalogKey: string;
   /** Status field on usage log item. */
   status: string;
@@ -56,4 +56,6 @@ export interface UsageLogItem {
   ttft: string;
   /** Type field on usage log item. */
   type: string;
+  /** Full HTTP User-Agent header captured from the gateway request. Empty when the client omitted the header. */
+  userAgent: string;
 }

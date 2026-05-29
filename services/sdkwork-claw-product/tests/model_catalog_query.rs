@@ -4,7 +4,7 @@ use sdkwork_claw_product::application::{
 use sdkwork_claw_product::domain::{
     AiModel, ApiKeyGroup, BillingMeter, DecimalValue, GatewayApiKey, ModelPrice,
     ModelProviderRoute, ModelVendor, ModelVendorDefinition, Money, PriceSide, PricingPlan,
-    ProviderAccountPoolRoute,
+    ProviderChannelRoute,
 };
 use sdkwork_claw_product::infrastructure::InMemoryPricingCatalog;
 
@@ -20,34 +20,32 @@ fn catalog_for_model_list() -> InMemoryPricingCatalog {
         ModelVendor::Anthropic,
         "Anthropic",
     ));
-    catalog.add_model(
-        AiModel::new(
-            "gpt-4o-mini",
-            "GPT-4o mini",
-            "openai",
-            vec!["chat", "tools", "json_schema"],
-        )
-        .with_catalog_key("openai/global/gpt-4o-mini"),
-    );
+    catalog.add_model(AiModel::new(
+        "gpt-4o-mini",
+        "GPT-4o mini",
+        "openai",
+        vec!["chat", "tools", "json_schema"],
+    ));
     catalog.add_model(AiModel::new(
         "claude-3-haiku",
         "Claude 3 Haiku",
         "anthropic",
         vec!["chat"],
     ));
-    catalog.add_provider_route(
-        ModelProviderRoute::new(
-            "gpt-4o-mini",
-            "openrouter",
-            3001,
-            "openai/global/gpt-4o-mini",
-        )
-        .with_catalog_key("openai/global/gpt-4o-mini"),
-    );
-    catalog.add_provider_route(
-        ModelProviderRoute::new("gpt-4o-mini", "azure_openai", 2001, "gpt-4o-mini")
-            .with_catalog_key("openai/global/gpt-4o-mini"),
-    );
+    catalog.add_provider_route(ModelProviderRoute::new_for_catalog_key(
+        "openai/gpt-4o-mini",
+        "gpt-4o-mini",
+        "openrouter",
+        3001,
+        "gpt-4o-mini",
+    ));
+    catalog.add_provider_route(ModelProviderRoute::new_for_catalog_key(
+        "openai/gpt-4o-mini",
+        "gpt-4o-mini",
+        "azure_openai",
+        2001,
+        "gpt-4o-mini",
+    ));
     catalog.add_plan(PricingPlan::new(
         "standard",
         PriceSide::OfficialReference,
@@ -79,7 +77,7 @@ fn catalog_for_model_list() -> InMemoryPricingCatalog {
             BillingMeter::LlmInputToken,
             Money::usd("0.150000").unwrap(),
         )
-        .with_catalog_key("openai/global/gpt-4o-mini"),
+        .with_catalog_key("openai/gpt-4o-mini"),
     );
     catalog.add_price(
         ModelPrice::new(
@@ -88,7 +86,7 @@ fn catalog_for_model_list() -> InMemoryPricingCatalog {
             BillingMeter::LlmOutputToken,
             Money::usd("0.600000").unwrap(),
         )
-        .with_catalog_key("openai/global/gpt-4o-mini"),
+        .with_catalog_key("openai/gpt-4o-mini"),
     );
     catalog.add_price(
         ModelPrice::new(
@@ -97,7 +95,7 @@ fn catalog_for_model_list() -> InMemoryPricingCatalog {
             BillingMeter::LlmCacheReadToken,
             Money::usd("0.075000").unwrap(),
         )
-        .with_catalog_key("openai/global/gpt-4o-mini"),
+        .with_catalog_key("openai/gpt-4o-mini"),
     );
     catalog.add_price(
         ModelPrice::new(
@@ -106,7 +104,7 @@ fn catalog_for_model_list() -> InMemoryPricingCatalog {
             BillingMeter::LlmInputToken,
             Money::usd("0.151000").unwrap(),
         )
-        .with_catalog_key("openai/global/gpt-4o-mini")
+        .with_catalog_key("openai/gpt-4o-mini")
         .for_provider("openrouter", 3001),
     );
     catalog.add_price(
@@ -116,7 +114,7 @@ fn catalog_for_model_list() -> InMemoryPricingCatalog {
             BillingMeter::LlmInputToken,
             Money::usd("0.110000").unwrap(),
         )
-        .with_catalog_key("openai/global/gpt-4o-mini")
+        .with_catalog_key("openai/gpt-4o-mini")
         .for_provider("openrouter", 3001),
     );
     catalog.add_price(
@@ -126,7 +124,7 @@ fn catalog_for_model_list() -> InMemoryPricingCatalog {
             BillingMeter::LlmInputToken,
             Money::usd("0.120000").unwrap(),
         )
-        .with_catalog_key("openai/global/gpt-4o-mini")
+        .with_catalog_key("openai/gpt-4o-mini")
         .for_provider("azure_openai", 2001),
     );
     catalog
@@ -155,7 +153,7 @@ fn lists_models_with_customer_price_provider_count_and_vendor_filter() {
     assert_eq!(1, page.items.len());
     let item = &page.items[0];
     assert_eq!("gpt-4o-mini", item.model);
-    assert_eq!("openai/global/gpt-4o-mini", item.catalog_key);
+    assert_eq!("openai/gpt-4o-mini", item.catalog_key);
     assert_eq!("GPT-4o mini", item.display_name);
     assert_eq!("openai", item.vendor_code);
     assert_eq!("global", item.region_code);
@@ -245,9 +243,9 @@ fn list_keeps_unpriced_models_explicitly_unavailable_instead_of_fake_success() {
 #[test]
 fn list_models_reads_backend_group_bindings_and_applies_catalog_filters() {
     let mut catalog = catalog_for_model_list();
-    catalog.add_provider_account_pool_route(
-        ProviderAccountPoolRoute::new("openrouter", 3001)
-            .with_scoped_group_binding(10, 10, 100, vec!["openai/global/gpt-4o-mini"], vec!["llm"])
+    catalog.add_provider_channel_route(
+        ProviderChannelRoute::new("openrouter", 3001)
+            .with_scoped_group_binding(10, 10, 100, vec!["openai/gpt-4o-mini"], vec!["llm"])
             .with_scoped_group_binding(11, 20, 100, Vec::<String>::new(), vec!["tools"]),
     );
     let service = ModelCatalogQueryService::new(&catalog);
@@ -269,7 +267,7 @@ fn list_models_reads_backend_group_bindings_and_applies_catalog_filters() {
 
     assert_eq!(1, page.items.len());
     let item = &page.items[0];
-    assert_eq!("openai/global/gpt-4o-mini", item.catalog_key);
+    assert_eq!("openai/gpt-4o-mini", item.catalog_key);
     assert_eq!(vec!["premium-lab", "standard-group"], item.groups);
     assert_eq!(vec!["Recommended", "Proprietary"], item.categories);
 }
@@ -287,9 +285,9 @@ fn list_models_returns_complete_admin_group_catalog_independent_of_item_filters(
         )
         .with_name("Empty Admin Group"),
     );
-    catalog.add_provider_account_pool_route(
-        ProviderAccountPoolRoute::new("openrouter", 3001)
-            .with_scoped_group_binding(10, 10, 100, vec!["openai/global/gpt-4o-mini"], vec!["llm"])
+    catalog.add_provider_channel_route(
+        ProviderChannelRoute::new("openrouter", 3001)
+            .with_scoped_group_binding(10, 10, 100, vec!["openai/gpt-4o-mini"], vec!["llm"])
             .with_scoped_group_binding(11, 20, 100, Vec::<String>::new(), vec!["tools"]),
     );
     let service = ModelCatalogQueryService::new(&catalog);

@@ -1,4 +1,4 @@
-﻿import {
+import {
   getClawRouterAppSdkClient,
   createIdempotencyParams,
   createClientOperationToken,

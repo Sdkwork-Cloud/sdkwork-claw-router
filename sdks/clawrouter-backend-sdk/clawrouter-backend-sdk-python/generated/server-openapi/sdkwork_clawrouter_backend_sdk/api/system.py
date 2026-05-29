@@ -1,6 +1,6 @@
 from typing import Any, Dict, List, Optional
 from ..http_client import HttpClient
-from ..models import AdminAuthSettingsUpdateRequest, AdminFirewallRuleCreateRequest, AdminIpLimitCreateRequest, AdminModelLimitCreateRequest, AdminServiceNodeCreateRequest, AdminServiceNodeStatusUpdateRequest, AdminServiceNodeUpdateRequest, AdminSiteSettingsUpdateRequest, AdminTokenLimitCreateRequest, AnalyticsAdminOverviewRetrieveResult, AuthSettingsRetrieveResult, AuthSettingsUpdateResult, CacheInstancesDeleteResult, CacheInstancesRefreshCreateResult, CacheNamespacesDeleteResult, CacheNamespacesKeysDeleteResult, CacheNamespacesKeysListResult, CacheNamespacesRefreshCreateResult, CacheOverviewRetrieveResult, CacheRefreshCreateResult, DashboardAdminOverviewRetrieveResult, FirewallsRulesCreateResult, FirewallsRulesDeleteResult, FirewallsRulesListResult, InstallationStatusRetrieveResult, MarketingReferralStatsListResult, MonitorAlertsListResult, MonitorNodesListResult, MonitorPerformanceListResult, PromotionsBudgetLedgerEntriesListResult, PromotionsCodesListResult, PromotionsCodesRedemptionsListResult, PromotionsCouponLedgerEntriesListResult, PromotionsCouponStocksListResult, PromotionsDiscountAllocationsListResult, PromotionsDiscountApplicationsListResult, PromotionsEventsListResult, PromotionsExternalBindingsListResult, PromotionsOffersManagementListResult, PromotionsUserCouponsManagementListResult, RateLimitsApiKeysCreateResult, RateLimitsApiKeysListResult, RateLimitsIpCreateResult, RateLimitsIpListResult, RateLimitsModelsCreateResult, RateLimitsModelsListResult, RecordsListResult, ServiceNodesCreateResult, ServiceNodesDeleteResult, ServiceNodesListResult, ServiceNodesStatusUpdateResult, ServiceNodesUpdateResult, SiteSettingsRetrieveResult, SiteSettingsUpdateResult
+from ..models import AdminAuthSettingsUpdateRequest, AdminFirewallRuleCreateRequest, AdminIpLimitCreateRequest, AdminModelLimitCreateRequest, AdminRuntimeRegionSettingsUpdateRequest, AdminServiceNodeCreateRequest, AdminServiceNodeStatusUpdateRequest, AdminServiceNodeUpdateRequest, AdminSiteSettingsUpdateRequest, AdminTokenLimitCreateRequest, AnalyticsAdminOverviewRetrieveResult, AuthSettingsRetrieveResult, AuthSettingsUpdateResult, CacheInstancesDeleteResult, CacheInstancesRefreshCreateResult, CacheNamespacesDeleteResult, CacheNamespacesKeysDeleteResult, CacheNamespacesKeysListResult, CacheNamespacesRefreshCreateResult, CacheOverviewRetrieveResult, CacheRefreshCreateResult, DashboardAdminOverviewRetrieveResult, FirewallsRulesCreateResult, FirewallsRulesDeleteResult, FirewallsRulesListResult, InstallationStatusRetrieveResult, MarketingReferralStatsListResult, MonitorAlertsListResult, MonitorNodesListResult, MonitorPerformanceListResult, PromotionsBudgetLedgerEntriesListResult, PromotionsCodesListResult, PromotionsCodesRedemptionsListResult, PromotionsCouponLedgerEntriesListResult, PromotionsCouponStocksListResult, PromotionsDiscountAllocationsListResult, PromotionsDiscountApplicationsListResult, PromotionsEventsListResult, PromotionsExternalBindingsListResult, PromotionsOffersManagementListResult, PromotionsUserCouponsManagementListResult, RateLimitsApiKeysCreateResult, RateLimitsApiKeysListResult, RateLimitsIpCreateResult, RateLimitsIpListResult, RateLimitsModelsCreateResult, RateLimitsModelsListResult, RecordsListResult, RuntimeRegionSettingsRetrieveResult, RuntimeRegionSettingsUpdateResult, ServiceNodesCreateResult, ServiceNodesDeleteResult, ServiceNodesListResult, ServiceNodesStatusUpdateResult, ServiceNodesUpdateResult, SiteSettingsRetrieveResult, SiteSettingsUpdateResult
 
 def _append_query_string(path: str, raw_query_string: str) -> str:
     query = raw_query_string.lstrip('?')
@@ -182,59 +182,6 @@ def encode_query_value(value: str, allow_reserved: bool) -> str:
 
     return quote(value, safe=':/?#[]@!$&\'()*+,;=' if allow_reserved else '')
 
-def build_request_headers(headers: Dict[str, Dict[str, Any]], cookies: Optional[Dict[str, Dict[str, Any]]] = None) -> Optional[Dict[str, str]]:
-    request_headers: Dict[str, str] = {}
-    for name, parameter in headers.items():
-        serialized = serialize_parameter_value(parameter)
-        if serialized is not None:
-            request_headers[name] = serialized
-
-    cookie_header = build_cookie_header(cookies or {})
-    if cookie_header:
-        request_headers['Cookie'] = (
-            f"{request_headers['Cookie']}; {cookie_header}"
-            if 'Cookie' in request_headers
-            else cookie_header
-        )
-
-    return request_headers or None
-
-
-def build_cookie_header(cookies: Dict[str, Dict[str, Any]]) -> Optional[str]:
-    from urllib.parse import quote
-
-    pairs: List[str] = []
-    for name, parameter in cookies.items():
-        serialized = serialize_parameter_value(parameter)
-        if serialized is not None:
-            pairs.append(f"{quote(str(name), safe='')}={quote(serialized, safe='')}")
-    return '; '.join(pairs) if pairs else None
-
-
-def serialize_parameter_value(parameter: Optional[Dict[str, Any]]) -> Optional[str]:
-    value = None if parameter is None else parameter.get('value')
-    if value is None:
-        return None
-    if parameter and parameter.get('content_type'):
-        import json
-
-        return json.dumps(value, separators=(',', ':'))
-    if isinstance(value, (list, tuple)):
-        return ','.join(serialize_header_primitive(item) for item in value if item is not None)
-    if isinstance(value, dict):
-        return serialize_header_object(value, bool(parameter and parameter.get('explode')))
-    return serialize_header_primitive(value)
-
-
-def serialize_header_object(value: Dict[str, Any], explode: bool) -> str:
-    entries = [(key, entry_value) for key, entry_value in value.items() if entry_value is not None]
-    if explode:
-        return ','.join(f"{key}={serialize_header_primitive(entry_value)}" for key, entry_value in entries)
-    return ','.join(item for key, entry_value in entries for item in (str(key), serialize_header_primitive(entry_value)))
-
-
-def serialize_header_primitive(value: Any) -> str:
-    return str(value)
 
 
 class SystemApi:
@@ -253,6 +200,7 @@ class SystemApi:
         self.monitor = SystemMonitorApi(client)
         self.rate_limits = SystemRateLimitsApi(client)
         self.records = SystemRecordsApi(client)
+        self.runtime_region = SystemRuntimeRegionApi(client)
         self.service_nodes = SystemServiceNodesApi(client)
         self.site = SystemSiteApi(client)
 
@@ -509,15 +457,9 @@ class SystemAuthSettingsApi:
         """Retrieve IAM auth runtime settings"""
         return self._client.get(f"/backend/v3/api/system/auth/settings")
 
-    def update(self, body: AdminAuthSettingsUpdateRequest, x_request_id: Optional[str] = None) -> AuthSettingsUpdateResult:
+    def update(self, body: AdminAuthSettingsUpdateRequest) -> AuthSettingsUpdateResult:
         """Update IAM auth runtime settings"""
-        request_headers = build_request_headers(
-            {
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
-            },
-            {}
-        )
-        return self._client.patch(f"/backend/v3/api/system/auth/settings", json=body, headers=request_headers)
+        return self._client.patch(f"/backend/v3/api/system/auth/settings", json=body)
 
 class SystemCacheApi:
     """system system.cache API client."""
@@ -664,15 +606,9 @@ class SystemFirewallsRulesApi:
         """List firewalls"""
         return self._client.get(f"/backend/v3/api/system/firewalls/rules")
 
-    def create(self, body: AdminFirewallRuleCreateRequest, x_request_id: Optional[str] = None) -> FirewallsRulesCreateResult:
+    def create(self, body: AdminFirewallRuleCreateRequest) -> FirewallsRulesCreateResult:
         """Create firewall"""
-        request_headers = build_request_headers(
-            {
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
-            },
-            {}
-        )
-        return self._client.post(f"/backend/v3/api/system/firewalls/rules", json=body, headers=request_headers)
+        return self._client.post(f"/backend/v3/api/system/firewalls/rules", json=body)
 
     def delete(self, rule_id: str) -> FirewallsRulesDeleteResult:
         """Delete firewall"""
@@ -780,15 +716,9 @@ class SystemRateLimitsApiKeysApi:
         """List token limits"""
         return self._client.get(f"/backend/v3/api/system/rate_limits/api_keys")
 
-    def create(self, body: AdminTokenLimitCreateRequest, x_request_id: Optional[str] = None) -> RateLimitsApiKeysCreateResult:
+    def create(self, body: AdminTokenLimitCreateRequest) -> RateLimitsApiKeysCreateResult:
         """Create token limit"""
-        request_headers = build_request_headers(
-            {
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
-            },
-            {}
-        )
-        return self._client.post(f"/backend/v3/api/system/rate_limits/api_keys", json=body, headers=request_headers)
+        return self._client.post(f"/backend/v3/api/system/rate_limits/api_keys", json=body)
 
 class SystemRateLimitsIpApi:
     """system system.rate_limits.ip API client."""
@@ -801,15 +731,9 @@ class SystemRateLimitsIpApi:
         """List IP limits"""
         return self._client.get(f"/backend/v3/api/system/rate_limits/ip")
 
-    def create(self, body: AdminIpLimitCreateRequest, x_request_id: Optional[str] = None) -> RateLimitsIpCreateResult:
+    def create(self, body: AdminIpLimitCreateRequest) -> RateLimitsIpCreateResult:
         """Create IP limit"""
-        request_headers = build_request_headers(
-            {
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
-            },
-            {}
-        )
-        return self._client.post(f"/backend/v3/api/system/rate_limits/ip", json=body, headers=request_headers)
+        return self._client.post(f"/backend/v3/api/system/rate_limits/ip", json=body)
 
 class SystemRateLimitsModelsApi:
     """system system.rate_limits.models API client."""
@@ -822,15 +746,9 @@ class SystemRateLimitsModelsApi:
         """List model limits"""
         return self._client.get(f"/backend/v3/api/system/rate_limits/models")
 
-    def create(self, body: AdminModelLimitCreateRequest, x_request_id: Optional[str] = None) -> RateLimitsModelsCreateResult:
+    def create(self, body: AdminModelLimitCreateRequest) -> RateLimitsModelsCreateResult:
         """Create model limit"""
-        request_headers = build_request_headers(
-            {
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
-            },
-            {}
-        )
-        return self._client.post(f"/backend/v3/api/system/rate_limits/models", json=body, headers=request_headers)
+        return self._client.post(f"/backend/v3/api/system/rate_limits/models", json=body)
 
 class SystemRecordsApi:
     """system system.records API client."""
@@ -849,6 +767,29 @@ class SystemRecordsApi:
             {'name': 'model', 'value': model, 'style': 'form', 'explode': True, 'allow_reserved': False},
         ])
         return self._client.get(_append_query_string(f"/backend/v3/api/system/records", query))
+
+class SystemRuntimeRegionApi:
+    """system system.runtime_region API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+        self.settings = SystemRuntimeRegionSettingsApi(client)
+
+
+class SystemRuntimeRegionSettingsApi:
+    """system system.runtime_region.settings API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+
+
+    def retrieve(self) -> RuntimeRegionSettingsRetrieveResult:
+        """Retrieve runtime region settings"""
+        return self._client.get(f"/backend/v3/api/system/runtime_region/settings")
+
+    def update(self, body: AdminRuntimeRegionSettingsUpdateRequest) -> RuntimeRegionSettingsUpdateResult:
+        """Update runtime region settings"""
+        return self._client.patch(f"/backend/v3/api/system/runtime_region/settings", json=body)
 
 class SystemServiceNodesApi:
     """system system.service_nodes API client."""
@@ -908,12 +849,6 @@ class SystemSiteSettingsApi:
         """Retrieve site branding and deployment personalization settings"""
         return self._client.get(f"/backend/v3/api/system/site/settings")
 
-    def update(self, body: AdminSiteSettingsUpdateRequest, x_request_id: Optional[str] = None) -> SiteSettingsUpdateResult:
+    def update(self, body: AdminSiteSettingsUpdateRequest) -> SiteSettingsUpdateResult:
         """Update site branding and deployment personalization settings"""
-        request_headers = build_request_headers(
-            {
-                'X-Request-Id': {'value': x_request_id, 'style': 'simple', 'explode': False},
-            },
-            {}
-        )
-        return self._client.patch(f"/backend/v3/api/system/site/settings", json=body, headers=request_headers)
+        return self._client.patch(f"/backend/v3/api/system/site/settings", json=body)

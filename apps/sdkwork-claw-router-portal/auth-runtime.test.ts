@@ -1,4 +1,4 @@
-﻿import assert from "node:assert/strict";
+import assert from "node:assert/strict";
 import { existsSync, readFileSync, readdirSync } from "node:fs";
 import test from "node:test";
 
@@ -1657,7 +1657,7 @@ test("admin model vendor item is grouped under model management", () => {
   assert.doesNotMatch(i18nSource, /模型平台管理/);
 });
 
-test("admin group and channel provider accounts are grouped under account pool management", () => {
+test("admin group and AI channels are grouped under AI channel management", () => {
   const adminRegistrySource = readAdminRegistrySource();
   const i18nSource = readI18nResourceSource();
 
@@ -1676,8 +1676,8 @@ test("admin group and channel provider accounts are grouped under account pool m
   const agentsAndSkillsGroup = findAdminMenuGroupSource(adminRegistrySource, "admin.menu.home.agentSkills");
   assert.doesNotMatch(agentsAndSkillsGroup, /path:\s*'\/admin\/group'/);
   assert.doesNotMatch(agentsAndSkillsGroup, /path:\s*'\/admin\/channel'/);
-  assert.match(i18nSource, /"admin\.menu\.home\.accountPoolManagement":\s*"Account Pool Management"/);
-  assert.match(i18nSource, /"admin\.menu\.home\.accountPoolManagement":\s*"号池管理"/);
+  assert.match(i18nSource, /"admin\.menu\.home\.accountPoolManagement":\s*"AI Channel Management"/);
+  assert.match(i18nSource, /"admin\.menu\.home\.accountPoolManagement":\s*"AI 渠道管理"/);
 });
 
 test("admin channel accounts expose API key copy without showing secret references", () => {

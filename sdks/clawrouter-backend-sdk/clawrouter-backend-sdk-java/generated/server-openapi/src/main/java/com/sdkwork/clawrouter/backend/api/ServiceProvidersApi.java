@@ -104,9 +104,9 @@ public class ServiceProvidersApi {
     }
 
     /** Service Provider Downstream Create */
-    public DownstreamsCreateResult downstreamsCreate(ServiceProviderDownstreamCreateRequest body, String idempotencyKey, String xRequestId) throws Exception {
+    public DownstreamsCreateResult downstreamsCreate(ServiceProviderDownstreamCreateRequest body, String idempotencyKey) throws Exception {
         Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null), "X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
+                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null)),
                 Map.of()
         );
         Object raw = client.post(ApiPaths.backendPath("/service_providers/downstreams"), body, null, requestHeaders, "application/json");
@@ -144,9 +144,9 @@ public class ServiceProvidersApi {
     }
 
     /** Service Provider Pricing Rule Create */
-    public PricingRulesCreateResult pricingRulesCreate(ServiceProviderPricingRuleCreateRequest body, String idempotencyKey, String xRequestId) throws Exception {
+    public PricingRulesCreateResult pricingRulesCreate(ServiceProviderPricingRuleCreateRequest body, String idempotencyKey) throws Exception {
         Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null), "X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
+                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null)),
                 Map.of()
         );
         Object raw = client.post(ApiPaths.backendPath("/service_providers/pricing/rules"), body, null, requestHeaders, "application/json");
@@ -154,9 +154,9 @@ public class ServiceProvidersApi {
     }
 
     /** Service Provider Pricing Rule Update */
-    public PricingRulesUpdateResult pricingRulesUpdate(String ruleId, ServiceProviderPricingRuleUpdateRequest body, String idempotencyKey, String xRequestId) throws Exception {
+    public PricingRulesUpdateResult pricingRulesUpdate(String ruleId, ServiceProviderPricingRuleUpdateRequest body, String idempotencyKey) throws Exception {
         Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null), "X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
+                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null)),
                 Map.of()
         );
         Object raw = client.patch(ApiPaths.backendPath("/service_providers/pricing/rules/" + serializePathParameter(ruleId, new PathParameterSpec("ruleId", "simple", false)) + ""), body, null, requestHeaders, "application/json");
@@ -164,9 +164,9 @@ public class ServiceProvidersApi {
     }
 
     /** Service Provider Price Simulation Create */
-    public PriceSimulationCreateResult priceSimulationCreate(ServiceProviderPriceSimulationRequest body, String idempotencyKey, String xRequestId) throws Exception {
+    public PriceSimulationCreateResult priceSimulationCreate(ServiceProviderPriceSimulationRequest body, String idempotencyKey) throws Exception {
         Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null), "X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
+                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null)),
                 Map.of()
         );
         Object raw = client.post(ApiPaths.backendPath("/service_providers/pricing/simulations"), body, null, requestHeaders, "application/json");

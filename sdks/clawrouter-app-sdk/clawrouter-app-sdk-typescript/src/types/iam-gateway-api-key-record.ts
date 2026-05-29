@@ -2,6 +2,8 @@ import type { JsonValue } from './json-value';
 
 /** Iam gateway api key record schema exposed by Claw Router. */
 export interface IamGatewayApiKeyRecord {
+  /** Channel group id field on iam gateway api key record. */
+  channel_group_id?: string;
   /** Created at field on iam gateway api key record. */
   created_at?: string;
   /** Data scope field on iam gateway api key record. */
@@ -14,8 +16,6 @@ export interface IamGatewayApiKeyRecord {
   environment?: string;
   /** Expire at field on iam gateway api key record. */
   expire_at?: string;
-  /** Group id field on iam gateway api key record. */
-  group_id?: string;
   /** Hash alg field on iam gateway api key record. */
   hash_alg?: string;
   /** Id field on iam gateway api key record. */

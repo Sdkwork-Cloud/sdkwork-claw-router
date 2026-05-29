@@ -37,16 +37,9 @@ namespace Sdkwork.ClawRouter.Backend.Api
         /// <summary>
         /// Create skill
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.SkillsCreateResult?> SkillsCreateAsync(Sdkwork.ClawRouter.Backend.Models.AdminSkillCreateRequest body, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.SkillsCreateResult?> SkillsCreateAsync(Sdkwork.ClawRouter.Backend.Models.AdminSkillCreateRequest body)
         {
-            var requestHeaders = BuildRequestHeaders(
-                new Dictionary<string, HeaderParameterSpec>
-                {
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
-                },
-                new Dictionary<string, HeaderParameterSpec>()
-            );
-            return await _client.PostAsync<Sdkwork.ClawRouter.Backend.Models.SkillsCreateResult>(ApiPaths.BackendPath("/ecosystem/skills"), body, null, requestHeaders, "application/json");
+            return await _client.PostAsync<Sdkwork.ClawRouter.Backend.Models.SkillsCreateResult>(ApiPaths.BackendPath("/ecosystem/skills"), body, null, null, "application/json");
         }
 
         /// <summary>
@@ -60,46 +53,25 @@ namespace Sdkwork.ClawRouter.Backend.Api
         /// <summary>
         /// Create skill category
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.SkillsCategoriesCreateResult?> SkillsCategoriesCreateAsync(Sdkwork.ClawRouter.Backend.Models.AdminSkillCategoryCreateRequest body, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.SkillsCategoriesCreateResult?> SkillsCategoriesCreateAsync(Sdkwork.ClawRouter.Backend.Models.AdminSkillCategoryCreateRequest body)
         {
-            var requestHeaders = BuildRequestHeaders(
-                new Dictionary<string, HeaderParameterSpec>
-                {
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
-                },
-                new Dictionary<string, HeaderParameterSpec>()
-            );
-            return await _client.PostAsync<Sdkwork.ClawRouter.Backend.Models.SkillsCategoriesCreateResult>(ApiPaths.BackendPath("/ecosystem/skills/categories"), body, null, requestHeaders, "application/json");
+            return await _client.PostAsync<Sdkwork.ClawRouter.Backend.Models.SkillsCategoriesCreateResult>(ApiPaths.BackendPath("/ecosystem/skills/categories"), body, null, null, "application/json");
         }
 
         /// <summary>
         /// Delete skill category
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.SkillsCategoriesDeleteResult?> SkillsCategoriesDeleteAsync(string categoryId, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.SkillsCategoriesDeleteResult?> SkillsCategoriesDeleteAsync(string categoryId)
         {
-            var requestHeaders = BuildRequestHeaders(
-                new Dictionary<string, HeaderParameterSpec>
-                {
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
-                },
-                new Dictionary<string, HeaderParameterSpec>()
-            );
-            return await _client.DeleteAsync<Sdkwork.ClawRouter.Backend.Models.SkillsCategoriesDeleteResult>(ApiPaths.BackendPath($"/ecosystem/skills/categories/{SerializePathParameter(categoryId, new PathParameterSpec("categoryId", "simple", false))}"), null, requestHeaders);
+            return await _client.DeleteAsync<Sdkwork.ClawRouter.Backend.Models.SkillsCategoriesDeleteResult>(ApiPaths.BackendPath($"/ecosystem/skills/categories/{SerializePathParameter(categoryId, new PathParameterSpec("categoryId", "simple", false))}"));
         }
 
         /// <summary>
         /// Update skill category
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.SkillsCategoriesUpdateResult?> SkillsCategoriesUpdateAsync(string categoryId, Sdkwork.ClawRouter.Backend.Models.AdminSkillCategoryUpdateRequest body, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.SkillsCategoriesUpdateResult?> SkillsCategoriesUpdateAsync(string categoryId, Sdkwork.ClawRouter.Backend.Models.AdminSkillCategoryUpdateRequest body)
         {
-            var requestHeaders = BuildRequestHeaders(
-                new Dictionary<string, HeaderParameterSpec>
-                {
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
-                },
-                new Dictionary<string, HeaderParameterSpec>()
-            );
-            return await _client.PutAsync<Sdkwork.ClawRouter.Backend.Models.SkillsCategoriesUpdateResult>(ApiPaths.BackendPath($"/ecosystem/skills/categories/{SerializePathParameter(categoryId, new PathParameterSpec("categoryId", "simple", false))}"), body, null, requestHeaders, "application/json");
+            return await _client.PutAsync<Sdkwork.ClawRouter.Backend.Models.SkillsCategoriesUpdateResult>(ApiPaths.BackendPath($"/ecosystem/skills/categories/{SerializePathParameter(categoryId, new PathParameterSpec("categoryId", "simple", false))}"), body, null, null, "application/json");
         }
 
         /// <summary>
@@ -121,16 +93,9 @@ namespace Sdkwork.ClawRouter.Backend.Api
         /// <summary>
         /// Create skill package
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.SkillsPackageCreateResult?> SkillsPackageCreateAsync(Sdkwork.ClawRouter.Backend.Models.AdminSkillPackageCreateRequest body, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.SkillsPackageCreateResult?> SkillsPackageCreateAsync(Sdkwork.ClawRouter.Backend.Models.AdminSkillPackageCreateRequest body)
         {
-            var requestHeaders = BuildRequestHeaders(
-                new Dictionary<string, HeaderParameterSpec>
-                {
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
-                },
-                new Dictionary<string, HeaderParameterSpec>()
-            );
-            return await _client.PostAsync<Sdkwork.ClawRouter.Backend.Models.SkillsPackageCreateResult>(ApiPaths.BackendPath("/ecosystem/skills/package"), body, null, requestHeaders, "application/json");
+            return await _client.PostAsync<Sdkwork.ClawRouter.Backend.Models.SkillsPackageCreateResult>(ApiPaths.BackendPath("/ecosystem/skills/package"), body, null, null, "application/json");
         }
 
         /// <summary>
@@ -152,46 +117,25 @@ namespace Sdkwork.ClawRouter.Backend.Api
         /// <summary>
         /// Update skill package
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.SkillsPackageUpdateResult?> SkillsPackageUpdateAsync(string packageId, Sdkwork.ClawRouter.Backend.Models.AdminSkillPackageUpdateRequest body, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.SkillsPackageUpdateResult?> SkillsPackageUpdateAsync(string packageId, Sdkwork.ClawRouter.Backend.Models.AdminSkillPackageUpdateRequest body)
         {
-            var requestHeaders = BuildRequestHeaders(
-                new Dictionary<string, HeaderParameterSpec>
-                {
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
-                },
-                new Dictionary<string, HeaderParameterSpec>()
-            );
-            return await _client.PutAsync<Sdkwork.ClawRouter.Backend.Models.SkillsPackageUpdateResult>(ApiPaths.BackendPath($"/ecosystem/skills/package/{SerializePathParameter(packageId, new PathParameterSpec("packageId", "simple", false))}"), body, null, requestHeaders, "application/json");
+            return await _client.PutAsync<Sdkwork.ClawRouter.Backend.Models.SkillsPackageUpdateResult>(ApiPaths.BackendPath($"/ecosystem/skills/package/{SerializePathParameter(packageId, new PathParameterSpec("packageId", "simple", false))}"), body, null, null, "application/json");
         }
 
         /// <summary>
         /// Disable skill package
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.SkillsPackageDisableResult?> SkillsPackageDisableAsync(string packageId, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.SkillsPackageDisableResult?> SkillsPackageDisableAsync(string packageId)
         {
-            var requestHeaders = BuildRequestHeaders(
-                new Dictionary<string, HeaderParameterSpec>
-                {
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
-                },
-                new Dictionary<string, HeaderParameterSpec>()
-            );
-            return await _client.PostAsync<Sdkwork.ClawRouter.Backend.Models.SkillsPackageDisableResult>(ApiPaths.BackendPath($"/ecosystem/skills/package/{SerializePathParameter(packageId, new PathParameterSpec("packageId", "simple", false))}/disable"), null, null, requestHeaders);
+            return await _client.PostAsync<Sdkwork.ClawRouter.Backend.Models.SkillsPackageDisableResult>(ApiPaths.BackendPath($"/ecosystem/skills/package/{SerializePathParameter(packageId, new PathParameterSpec("packageId", "simple", false))}/disable"), null);
         }
 
         /// <summary>
         /// Enable skill package
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.SkillsPackageEnableResult?> SkillsPackageEnableAsync(string packageId, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.SkillsPackageEnableResult?> SkillsPackageEnableAsync(string packageId)
         {
-            var requestHeaders = BuildRequestHeaders(
-                new Dictionary<string, HeaderParameterSpec>
-                {
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
-                },
-                new Dictionary<string, HeaderParameterSpec>()
-            );
-            return await _client.PostAsync<Sdkwork.ClawRouter.Backend.Models.SkillsPackageEnableResult>(ApiPaths.BackendPath($"/ecosystem/skills/package/{SerializePathParameter(packageId, new PathParameterSpec("packageId", "simple", false))}/enable"), null, null, requestHeaders);
+            return await _client.PostAsync<Sdkwork.ClawRouter.Backend.Models.SkillsPackageEnableResult>(ApiPaths.BackendPath($"/ecosystem/skills/package/{SerializePathParameter(packageId, new PathParameterSpec("packageId", "simple", false))}/enable"), null);
         }
 
         /// <summary>
@@ -213,16 +157,9 @@ namespace Sdkwork.ClawRouter.Backend.Api
         /// <summary>
         /// Update skill
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.SkillsUpdateResult?> SkillsUpdateAsync(string skillId, Sdkwork.ClawRouter.Backend.Models.AdminSkillUpdateRequest body, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.SkillsUpdateResult?> SkillsUpdateAsync(string skillId, Sdkwork.ClawRouter.Backend.Models.AdminSkillUpdateRequest body)
         {
-            var requestHeaders = BuildRequestHeaders(
-                new Dictionary<string, HeaderParameterSpec>
-                {
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
-                },
-                new Dictionary<string, HeaderParameterSpec>()
-            );
-            return await _client.PutAsync<Sdkwork.ClawRouter.Backend.Models.SkillsUpdateResult>(ApiPaths.BackendPath($"/ecosystem/skills/{SerializePathParameter(skillId, new PathParameterSpec("skillId", "simple", false))}"), body, null, requestHeaders, "application/json");
+            return await _client.PutAsync<Sdkwork.ClawRouter.Backend.Models.SkillsUpdateResult>(ApiPaths.BackendPath($"/ecosystem/skills/{SerializePathParameter(skillId, new PathParameterSpec("skillId", "simple", false))}"), body, null, null, "application/json");
         }
 
         /// <summary>
@@ -236,31 +173,17 @@ namespace Sdkwork.ClawRouter.Backend.Api
         /// <summary>
         /// Create skill artifact
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.SkillsArtifactsCreateResult?> SkillsArtifactsCreateAsync(string skillId, Sdkwork.ClawRouter.Backend.Models.AdminSkillArtifactCreateRequest body, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.SkillsArtifactsCreateResult?> SkillsArtifactsCreateAsync(string skillId, Sdkwork.ClawRouter.Backend.Models.AdminSkillArtifactCreateRequest body)
         {
-            var requestHeaders = BuildRequestHeaders(
-                new Dictionary<string, HeaderParameterSpec>
-                {
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
-                },
-                new Dictionary<string, HeaderParameterSpec>()
-            );
-            return await _client.PostAsync<Sdkwork.ClawRouter.Backend.Models.SkillsArtifactsCreateResult>(ApiPaths.BackendPath($"/ecosystem/skills/{SerializePathParameter(skillId, new PathParameterSpec("skillId", "simple", false))}/artifacts"), body, null, requestHeaders, "application/json");
+            return await _client.PostAsync<Sdkwork.ClawRouter.Backend.Models.SkillsArtifactsCreateResult>(ApiPaths.BackendPath($"/ecosystem/skills/{SerializePathParameter(skillId, new PathParameterSpec("skillId", "simple", false))}/artifacts"), body, null, null, "application/json");
         }
 
         /// <summary>
         /// Delete skill artifact
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.SkillsArtifactsDeleteResult?> SkillsArtifactsDeleteAsync(string skillId, string artifactId, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.SkillsArtifactsDeleteResult?> SkillsArtifactsDeleteAsync(string skillId, string artifactId)
         {
-            var requestHeaders = BuildRequestHeaders(
-                new Dictionary<string, HeaderParameterSpec>
-                {
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
-                },
-                new Dictionary<string, HeaderParameterSpec>()
-            );
-            return await _client.DeleteAsync<Sdkwork.ClawRouter.Backend.Models.SkillsArtifactsDeleteResult>(ApiPaths.BackendPath($"/ecosystem/skills/{SerializePathParameter(skillId, new PathParameterSpec("skillId", "simple", false))}/artifacts/{SerializePathParameter(artifactId, new PathParameterSpec("artifactId", "simple", false))}"), null, requestHeaders);
+            return await _client.DeleteAsync<Sdkwork.ClawRouter.Backend.Models.SkillsArtifactsDeleteResult>(ApiPaths.BackendPath($"/ecosystem/skills/{SerializePathParameter(skillId, new PathParameterSpec("skillId", "simple", false))}/artifacts/{SerializePathParameter(artifactId, new PathParameterSpec("artifactId", "simple", false))}"));
         }
 
         /// <summary>
@@ -274,16 +197,9 @@ namespace Sdkwork.ClawRouter.Backend.Api
         /// <summary>
         /// Update skill artifact
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.SkillsArtifactsUpdateResult?> SkillsArtifactsUpdateAsync(string skillId, string artifactId, Sdkwork.ClawRouter.Backend.Models.AdminSkillArtifactUpdateRequest body, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.SkillsArtifactsUpdateResult?> SkillsArtifactsUpdateAsync(string skillId, string artifactId, Sdkwork.ClawRouter.Backend.Models.AdminSkillArtifactUpdateRequest body)
         {
-            var requestHeaders = BuildRequestHeaders(
-                new Dictionary<string, HeaderParameterSpec>
-                {
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
-                },
-                new Dictionary<string, HeaderParameterSpec>()
-            );
-            return await _client.PutAsync<Sdkwork.ClawRouter.Backend.Models.SkillsArtifactsUpdateResult>(ApiPaths.BackendPath($"/ecosystem/skills/{SerializePathParameter(skillId, new PathParameterSpec("skillId", "simple", false))}/artifacts/{SerializePathParameter(artifactId, new PathParameterSpec("artifactId", "simple", false))}"), body, null, requestHeaders, "application/json");
+            return await _client.PutAsync<Sdkwork.ClawRouter.Backend.Models.SkillsArtifactsUpdateResult>(ApiPaths.BackendPath($"/ecosystem/skills/{SerializePathParameter(skillId, new PathParameterSpec("skillId", "simple", false))}/artifacts/{SerializePathParameter(artifactId, new PathParameterSpec("artifactId", "simple", false))}"), body, null, null, "application/json");
         }
 
         /// <summary>
@@ -297,31 +213,17 @@ namespace Sdkwork.ClawRouter.Backend.Api
         /// <summary>
         /// Create skill asset
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.SkillsAssetsCreateResult?> SkillsAssetsCreateAsync(string skillId, Sdkwork.ClawRouter.Backend.Models.AdminSkillAssetCreateRequest body, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.SkillsAssetsCreateResult?> SkillsAssetsCreateAsync(string skillId, Sdkwork.ClawRouter.Backend.Models.AdminSkillAssetCreateRequest body)
         {
-            var requestHeaders = BuildRequestHeaders(
-                new Dictionary<string, HeaderParameterSpec>
-                {
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
-                },
-                new Dictionary<string, HeaderParameterSpec>()
-            );
-            return await _client.PostAsync<Sdkwork.ClawRouter.Backend.Models.SkillsAssetsCreateResult>(ApiPaths.BackendPath($"/ecosystem/skills/{SerializePathParameter(skillId, new PathParameterSpec("skillId", "simple", false))}/assets"), body, null, requestHeaders, "application/json");
+            return await _client.PostAsync<Sdkwork.ClawRouter.Backend.Models.SkillsAssetsCreateResult>(ApiPaths.BackendPath($"/ecosystem/skills/{SerializePathParameter(skillId, new PathParameterSpec("skillId", "simple", false))}/assets"), body, null, null, "application/json");
         }
 
         /// <summary>
         /// Delete skill asset
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.SkillsAssetsDeleteResult?> SkillsAssetsDeleteAsync(string skillId, string assetId, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.SkillsAssetsDeleteResult?> SkillsAssetsDeleteAsync(string skillId, string assetId)
         {
-            var requestHeaders = BuildRequestHeaders(
-                new Dictionary<string, HeaderParameterSpec>
-                {
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
-                },
-                new Dictionary<string, HeaderParameterSpec>()
-            );
-            return await _client.DeleteAsync<Sdkwork.ClawRouter.Backend.Models.SkillsAssetsDeleteResult>(ApiPaths.BackendPath($"/ecosystem/skills/{SerializePathParameter(skillId, new PathParameterSpec("skillId", "simple", false))}/assets/{SerializePathParameter(assetId, new PathParameterSpec("assetId", "simple", false))}"), null, requestHeaders);
+            return await _client.DeleteAsync<Sdkwork.ClawRouter.Backend.Models.SkillsAssetsDeleteResult>(ApiPaths.BackendPath($"/ecosystem/skills/{SerializePathParameter(skillId, new PathParameterSpec("skillId", "simple", false))}/assets/{SerializePathParameter(assetId, new PathParameterSpec("assetId", "simple", false))}"));
         }
 
         /// <summary>
@@ -335,106 +237,57 @@ namespace Sdkwork.ClawRouter.Backend.Api
         /// <summary>
         /// Update skill asset
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.SkillsAssetsUpdateResult?> SkillsAssetsUpdateAsync(string skillId, string assetId, Sdkwork.ClawRouter.Backend.Models.AdminSkillAssetUpdateRequest body, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.SkillsAssetsUpdateResult?> SkillsAssetsUpdateAsync(string skillId, string assetId, Sdkwork.ClawRouter.Backend.Models.AdminSkillAssetUpdateRequest body)
         {
-            var requestHeaders = BuildRequestHeaders(
-                new Dictionary<string, HeaderParameterSpec>
-                {
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
-                },
-                new Dictionary<string, HeaderParameterSpec>()
-            );
-            return await _client.PutAsync<Sdkwork.ClawRouter.Backend.Models.SkillsAssetsUpdateResult>(ApiPaths.BackendPath($"/ecosystem/skills/{SerializePathParameter(skillId, new PathParameterSpec("skillId", "simple", false))}/assets/{SerializePathParameter(assetId, new PathParameterSpec("assetId", "simple", false))}"), body, null, requestHeaders, "application/json");
+            return await _client.PutAsync<Sdkwork.ClawRouter.Backend.Models.SkillsAssetsUpdateResult>(ApiPaths.BackendPath($"/ecosystem/skills/{SerializePathParameter(skillId, new PathParameterSpec("skillId", "simple", false))}/assets/{SerializePathParameter(assetId, new PathParameterSpec("assetId", "simple", false))}"), body, null, null, "application/json");
         }
 
         /// <summary>
         /// Disable skill
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.SkillsDisableResult?> SkillsDisableAsync(string skillId, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.SkillsDisableResult?> SkillsDisableAsync(string skillId)
         {
-            var requestHeaders = BuildRequestHeaders(
-                new Dictionary<string, HeaderParameterSpec>
-                {
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
-                },
-                new Dictionary<string, HeaderParameterSpec>()
-            );
-            return await _client.PostAsync<Sdkwork.ClawRouter.Backend.Models.SkillsDisableResult>(ApiPaths.BackendPath($"/ecosystem/skills/{SerializePathParameter(skillId, new PathParameterSpec("skillId", "simple", false))}/disable"), null, null, requestHeaders);
+            return await _client.PostAsync<Sdkwork.ClawRouter.Backend.Models.SkillsDisableResult>(ApiPaths.BackendPath($"/ecosystem/skills/{SerializePathParameter(skillId, new PathParameterSpec("skillId", "simple", false))}/disable"), null);
         }
 
         /// <summary>
         /// Enable skill
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.SkillsEnableResult?> SkillsEnableAsync(string skillId, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.SkillsEnableResult?> SkillsEnableAsync(string skillId)
         {
-            var requestHeaders = BuildRequestHeaders(
-                new Dictionary<string, HeaderParameterSpec>
-                {
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
-                },
-                new Dictionary<string, HeaderParameterSpec>()
-            );
-            return await _client.PostAsync<Sdkwork.ClawRouter.Backend.Models.SkillsEnableResult>(ApiPaths.BackendPath($"/ecosystem/skills/{SerializePathParameter(skillId, new PathParameterSpec("skillId", "simple", false))}/enable"), null, null, requestHeaders);
+            return await _client.PostAsync<Sdkwork.ClawRouter.Backend.Models.SkillsEnableResult>(ApiPaths.BackendPath($"/ecosystem/skills/{SerializePathParameter(skillId, new PathParameterSpec("skillId", "simple", false))}/enable"), null);
         }
 
         /// <summary>
         /// Publish skill
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.SkillsPublishResult?> SkillsPublishAsync(string skillId, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.SkillsPublishResult?> SkillsPublishAsync(string skillId)
         {
-            var requestHeaders = BuildRequestHeaders(
-                new Dictionary<string, HeaderParameterSpec>
-                {
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
-                },
-                new Dictionary<string, HeaderParameterSpec>()
-            );
-            return await _client.PostAsync<Sdkwork.ClawRouter.Backend.Models.SkillsPublishResult>(ApiPaths.BackendPath($"/ecosystem/skills/{SerializePathParameter(skillId, new PathParameterSpec("skillId", "simple", false))}/publish"), null, null, requestHeaders);
+            return await _client.PostAsync<Sdkwork.ClawRouter.Backend.Models.SkillsPublishResult>(ApiPaths.BackendPath($"/ecosystem/skills/{SerializePathParameter(skillId, new PathParameterSpec("skillId", "simple", false))}/publish"), null);
         }
 
         /// <summary>
         /// Approve skill
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.SkillsReviewApproveResult?> SkillsReviewApproveAsync(string skillId, Sdkwork.ClawRouter.Backend.Models.AdminSkillReviewRequest body, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.SkillsReviewApproveResult?> SkillsReviewApproveAsync(string skillId, Sdkwork.ClawRouter.Backend.Models.AdminSkillReviewRequest body)
         {
-            var requestHeaders = BuildRequestHeaders(
-                new Dictionary<string, HeaderParameterSpec>
-                {
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
-                },
-                new Dictionary<string, HeaderParameterSpec>()
-            );
-            return await _client.PostAsync<Sdkwork.ClawRouter.Backend.Models.SkillsReviewApproveResult>(ApiPaths.BackendPath($"/ecosystem/skills/{SerializePathParameter(skillId, new PathParameterSpec("skillId", "simple", false))}/review/approve"), body, null, requestHeaders, "application/json");
+            return await _client.PostAsync<Sdkwork.ClawRouter.Backend.Models.SkillsReviewApproveResult>(ApiPaths.BackendPath($"/ecosystem/skills/{SerializePathParameter(skillId, new PathParameterSpec("skillId", "simple", false))}/review/approve"), body, null, null, "application/json");
         }
 
         /// <summary>
         /// Reject skill
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.SkillsReviewRejectResult?> SkillsReviewRejectAsync(string skillId, Sdkwork.ClawRouter.Backend.Models.AdminSkillReviewRequest body, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.SkillsReviewRejectResult?> SkillsReviewRejectAsync(string skillId, Sdkwork.ClawRouter.Backend.Models.AdminSkillReviewRequest body)
         {
-            var requestHeaders = BuildRequestHeaders(
-                new Dictionary<string, HeaderParameterSpec>
-                {
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
-                },
-                new Dictionary<string, HeaderParameterSpec>()
-            );
-            return await _client.PostAsync<Sdkwork.ClawRouter.Backend.Models.SkillsReviewRejectResult>(ApiPaths.BackendPath($"/ecosystem/skills/{SerializePathParameter(skillId, new PathParameterSpec("skillId", "simple", false))}/review/reject"), body, null, requestHeaders, "application/json");
+            return await _client.PostAsync<Sdkwork.ClawRouter.Backend.Models.SkillsReviewRejectResult>(ApiPaths.BackendPath($"/ecosystem/skills/{SerializePathParameter(skillId, new PathParameterSpec("skillId", "simple", false))}/review/reject"), body, null, null, "application/json");
         }
 
         /// <summary>
         /// Offline skill
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.SkillsUnpublishResult?> SkillsUnpublishAsync(string skillId, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.SkillsUnpublishResult?> SkillsUnpublishAsync(string skillId)
         {
-            var requestHeaders = BuildRequestHeaders(
-                new Dictionary<string, HeaderParameterSpec>
-                {
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
-                },
-                new Dictionary<string, HeaderParameterSpec>()
-            );
-            return await _client.PostAsync<Sdkwork.ClawRouter.Backend.Models.SkillsUnpublishResult>(ApiPaths.BackendPath($"/ecosystem/skills/{SerializePathParameter(skillId, new PathParameterSpec("skillId", "simple", false))}/unpublish"), null, null, requestHeaders);
+            return await _client.PostAsync<Sdkwork.ClawRouter.Backend.Models.SkillsUnpublishResult>(ApiPaths.BackendPath($"/ecosystem/skills/{SerializePathParameter(skillId, new PathParameterSpec("skillId", "simple", false))}/unpublish"), null);
         }
 
         private sealed record PathParameterSpec(string Name, string Style, bool Explode);
@@ -664,92 +517,5 @@ namespace Sdkwork.ClawRouter.Backend.Api
                 .Replace("%3B", ";").Replace("%3D", "=");
         }
 
-        private sealed record HeaderParameterSpec(object? Value, string Style, bool Explode, string? ContentType);
-
-        private static Dictionary<string, string>? BuildRequestHeaders(
-            Dictionary<string, HeaderParameterSpec> headers,
-            Dictionary<string, HeaderParameterSpec> cookies)
-        {
-            var requestHeaders = new Dictionary<string, string>();
-            foreach (var item in headers)
-            {
-                var serialized = SerializeParameterValue(item.Value);
-                if (serialized is not null)
-                {
-                    requestHeaders[item.Key] = serialized;
-                }
-            }
-
-            var cookieHeader = BuildCookieHeader(cookies);
-            if (!string.IsNullOrEmpty(cookieHeader))
-            {
-                requestHeaders["Cookie"] = requestHeaders.TryGetValue("Cookie", out var existing) && !string.IsNullOrEmpty(existing)
-                    ? existing + "; " + cookieHeader
-                    : cookieHeader;
-            }
-
-            return requestHeaders.Count == 0 ? null : requestHeaders;
-        }
-
-        private static string BuildCookieHeader(Dictionary<string, HeaderParameterSpec> cookies)
-        {
-            var pairs = new List<string>();
-            foreach (var item in cookies)
-            {
-                var serialized = SerializeParameterValue(item.Value);
-                if (serialized is not null)
-                {
-                    pairs.Add(Uri.EscapeDataString(item.Key) + "=" + Uri.EscapeDataString(serialized));
-                }
-            }
-            return string.Join("; ", pairs);
-        }
-
-        private static string? SerializeParameterValue(HeaderParameterSpec? parameter)
-        {
-            var value = parameter?.Value;
-            if (value is null)
-            {
-                return null;
-            }
-            if (!string.IsNullOrWhiteSpace(parameter!.ContentType))
-            {
-                return System.Text.Json.JsonSerializer.Serialize(value);
-            }
-            if (value is System.Collections.IEnumerable enumerable && value is not string)
-            {
-                var values = new List<string>();
-                foreach (var item in enumerable)
-                {
-                    if (item is not null)
-                    {
-                        values.Add(item.ToString() ?? string.Empty);
-                    }
-                }
-                return string.Join(",", values);
-            }
-            if (value is System.Collections.IDictionary dictionary)
-            {
-                var values = new List<string>();
-                foreach (System.Collections.DictionaryEntry item in dictionary)
-                {
-                    if (item.Value is null)
-                    {
-                        continue;
-                    }
-                    if (parameter.Explode)
-                    {
-                        values.Add((item.Key.ToString() ?? string.Empty) + "=" + (item.Value.ToString() ?? string.Empty));
-                    }
-                    else
-                    {
-                        values.Add(item.Key.ToString() ?? string.Empty);
-                        values.Add(item.Value.ToString() ?? string.Empty);
-                    }
-                }
-                return string.Join(",", values);
-            }
-            return value.ToString();
-        }
     }
 }

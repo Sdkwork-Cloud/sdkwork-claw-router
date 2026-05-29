@@ -49,12 +49,8 @@ func (a *AiApi) ModelRankingsJobsList(rankScope *string, limit *int) (sdktypes.M
 }
 
 // Trigger model ranking refresh
-func (a *AiApi) ModelRankingsRefresh(body sdktypes.ModelRankingRefreshTriggerRequest, xRequestId *string) (sdktypes.ModelRankingsRefreshResult, error) {
-    headers := BuildRequestHeaders(
-        map[string]ParameterSpec{"X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},},
-        map[string]ParameterSpec{},
-    )
-    raw, err := a.client.Post(BackendApiPath("/ai/model_rankings/refresh"), body, nil, headers, "application/json")
+func (a *AiApi) ModelRankingsRefresh(body sdktypes.ModelRankingRefreshTriggerRequest) (sdktypes.ModelRankingsRefreshResult, error) {
+    raw, err := a.client.Post(BackendApiPath("/ai/model_rankings/refresh"), body, nil, nil, "application/json")
     if err != nil {
         var zero sdktypes.ModelRankingsRefreshResult
         return zero, err
@@ -86,12 +82,8 @@ func (a *AiApi) ModelVendorsList() (sdktypes.ModelVendorsListResult, error) {
 }
 
 // Create vendor
-func (a *AiApi) ModelVendorsCreate(body sdktypes.AdminModelVendorCreateRequest, xRequestId *string) (sdktypes.ModelVendorsCreateResult, error) {
-    headers := BuildRequestHeaders(
-        map[string]ParameterSpec{"X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},},
-        map[string]ParameterSpec{},
-    )
-    raw, err := a.client.Post(BackendApiPath("/ai/model_vendors"), body, nil, headers, "application/json")
+func (a *AiApi) ModelVendorsCreate(body sdktypes.AdminModelVendorCreateRequest) (sdktypes.ModelVendorsCreateResult, error) {
+    raw, err := a.client.Post(BackendApiPath("/ai/model_vendors"), body, nil, nil, "application/json")
     if err != nil {
         var zero sdktypes.ModelVendorsCreateResult
         return zero, err
@@ -110,12 +102,8 @@ func (a *AiApi) ModelsList() (sdktypes.ModelsListResult, error) {
 }
 
 // Create model
-func (a *AiApi) ModelsCreate(body sdktypes.AdminAiModelCreateRequest, xRequestId *string) (sdktypes.ModelsCreateResult, error) {
-    headers := BuildRequestHeaders(
-        map[string]ParameterSpec{"X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},},
-        map[string]ParameterSpec{},
-    )
-    raw, err := a.client.Post(BackendApiPath("/ai/models"), body, nil, headers, "application/json")
+func (a *AiApi) ModelsCreate(body sdktypes.AdminAiModelCreateRequest) (sdktypes.ModelsCreateResult, error) {
+    raw, err := a.client.Post(BackendApiPath("/ai/models"), body, nil, nil, "application/json")
     if err != nil {
         var zero sdktypes.ModelsCreateResult
         return zero, err
@@ -124,12 +112,8 @@ func (a *AiApi) ModelsCreate(body sdktypes.AdminAiModelCreateRequest, xRequestId
 }
 
 // Sync vendors and models
-func (a *AiApi) ModelsRefresh(body sdktypes.AdminModelCatalogSyncRequest, xRequestId *string) (sdktypes.ModelsRefreshResult, error) {
-    headers := BuildRequestHeaders(
-        map[string]ParameterSpec{"X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},},
-        map[string]ParameterSpec{},
-    )
-    raw, err := a.client.Post(BackendApiPath("/ai/models/refresh"), body, nil, headers, "application/json")
+func (a *AiApi) ModelsRefresh(body sdktypes.AdminModelCatalogSyncRequest) (sdktypes.ModelsRefreshResult, error) {
+    raw, err := a.client.Post(BackendApiPath("/ai/models/refresh"), body, nil, nil, "application/json")
     if err != nil {
         var zero sdktypes.ModelsRefreshResult
         return zero, err
@@ -148,17 +132,43 @@ func (a *AiApi) ModelsDelete(modelId string) (sdktypes.ModelsDeleteResult, error
 }
 
 // Update model
-func (a *AiApi) ModelsUpdate(modelId string, body sdktypes.AdminAiModelUpdateRequest, xRequestId *string) (sdktypes.ModelsUpdateResult, error) {
-    headers := BuildRequestHeaders(
-        map[string]ParameterSpec{"X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},},
-        map[string]ParameterSpec{},
-    )
-    raw, err := a.client.Patch(BackendApiPath(fmt.Sprintf("/ai/models/%s", SerializePathParameter(modelId, PathParameterSpec{Name: "modelId", Style: "simple", Explode: false}))), body, nil, headers, "application/json")
+func (a *AiApi) ModelsUpdate(modelId string, body sdktypes.AdminAiModelUpdateRequest) (sdktypes.ModelsUpdateResult, error) {
+    raw, err := a.client.Patch(BackendApiPath(fmt.Sprintf("/ai/models/%s", SerializePathParameter(modelId, PathParameterSpec{Name: "modelId", Style: "simple", Explode: false}))), body, nil, nil, "application/json")
     if err != nil {
         var zero sdktypes.ModelsUpdateResult
         return zero, err
     }
     return decodeResult[sdktypes.ModelsUpdateResult](raw)
+}
+
+// List ai resources
+func (a *AiApi) ResourcesList() (sdktypes.AiResourcesListResult, error) {
+    raw, err := a.client.Get(BackendApiPath("/ai/resources"), nil, nil)
+    if err != nil {
+        var zero sdktypes.AiResourcesListResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.AiResourcesListResult](raw)
+}
+
+// Create ai resource
+func (a *AiApi) ResourcesCreate(body sdktypes.AdminAiResourceCreateRequest) (sdktypes.AiResourcesCreateResult, error) {
+    raw, err := a.client.Post(BackendApiPath("/ai/resources"), body, nil, nil, "application/json")
+    if err != nil {
+        var zero sdktypes.AiResourcesCreateResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.AiResourcesCreateResult](raw)
+}
+
+// Update ai resource
+func (a *AiApi) ResourcesUpdate(resourceId string, body sdktypes.AdminAiResourceUpdateRequest) (sdktypes.AiResourcesUpdateResult, error) {
+    raw, err := a.client.Put(BackendApiPath(fmt.Sprintf("/ai/resources/%s", SerializePathParameter(resourceId, PathParameterSpec{Name: "resourceId", Style: "simple", Explode: false}))), body, nil, nil, "application/json")
+    if err != nil {
+        var zero sdktypes.AiResourcesUpdateResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.AiResourcesUpdateResult](raw)
 }
 
 type PathParameterSpec struct {
@@ -387,92 +397,7 @@ func EncodeQueryValue(value string, allowReserved bool) string {
 }
 
 
-type ParameterSpec struct {
-    Value       interface{}
-    Style       string
-    Explode     bool
-    ContentType string
-}
 
-func BuildRequestHeaders(headers map[string]ParameterSpec, cookies map[string]ParameterSpec) map[string]string {
-    requestHeaders := map[string]string{}
-    for name, parameter := range headers {
-        if serialized, ok := SerializeParameterValue(parameter); ok {
-            requestHeaders[name] = serialized
-        }
-    }
-
-    if cookieHeader := BuildCookieHeader(cookies); cookieHeader != "" {
-        if existing, ok := requestHeaders["Cookie"]; ok && existing != "" {
-            requestHeaders["Cookie"] = existing + "; " + cookieHeader
-        } else {
-            requestHeaders["Cookie"] = cookieHeader
-        }
-    }
-
-    if len(requestHeaders) == 0 {
-        return nil
-    }
-    return requestHeaders
-}
-
-func BuildCookieHeader(cookies map[string]ParameterSpec) string {
-    pairs := make([]string, 0, len(cookies))
-    for name, parameter := range cookies {
-        if serialized, ok := SerializeParameterValue(parameter); ok {
-            pairs = append(pairs, url.QueryEscape(name)+"="+url.QueryEscape(serialized))
-        }
-    }
-    return strings.Join(pairs, "; ")
-}
-
-func SerializeParameterValue(parameter ParameterSpec) (string, bool) {
-    value := parameter.Value
-    if value == nil {
-        return "", false
-    }
-    if parameter.ContentType != "" {
-        encoded, _ := json.Marshal(value)
-        return string(encoded), true
-    }
-    switch typed := value.(type) {
-    case string:
-        return typed, true
-    case fmt.Stringer:
-        return typed.String(), true
-    case []string:
-        return strings.Join(typed, ","), true
-    case []int:
-        values := make([]string, 0, len(typed))
-        for _, item := range typed {
-            values = append(values, fmt.Sprint(item))
-        }
-        return strings.Join(values, ","), true
-    case map[string]string:
-        return SerializeHeaderObject(stringMapToInterface(typed), parameter.Explode), true
-    case map[string]int:
-        return SerializeHeaderObject(intMapToInterface(typed), parameter.Explode), true
-    case map[string]interface{}:
-        return SerializeHeaderObject(typed, parameter.Explode), true
-    default:
-        return fmt.Sprint(value), true
-    }
-}
-
-func SerializeHeaderObject(values map[string]interface{}, explode bool) string {
-    serialized := make([]string, 0, len(values)*2)
-    for key, value := range values {
-        if value == nil {
-            continue
-        }
-        if explode {
-            serialized = append(serialized, key+"="+fmt.Sprint(value))
-        } else {
-            serialized = append(serialized, key, fmt.Sprint(value))
-        }
-    }
-    return strings.Join(serialized, ",")
-}
 func stringSliceToInterface(values []string) []interface{} {
     result := make([]interface{}, 0, len(values))
     for _, value := range values {

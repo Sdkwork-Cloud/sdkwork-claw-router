@@ -230,52 +230,51 @@ async fn database_config_app_models_route_reads_global_commercial_catalog() {
         items.len() >= catalog_routable_models_with_meter(&catalog, "llm_input_token").len(),
         "installed app model catalog must include the bundled sdkwork-models routing scope"
     );
+    let regional_catalog_keys = items
+        .iter()
+        .filter_map(|item| item["catalogKey"].as_str())
+        .filter(|catalog_key| is_regional_catalog_key(catalog_key))
+        .collect::<Vec<_>>();
+    assert_eq!(
+        Vec::<&str>::new(),
+        regional_catalog_keys,
+        "app model catalog must expose vendor/model identities; region belongs to pricing and ranking data"
+    );
 
     let expected_models = [
-        ("openai/global/gpt-5.5-pro", "gpt-5.5-pro", "openai"),
-        ("openai/global/gpt-5.5", "gpt-5.5", "openai"),
+        ("openai/gpt-5.5-pro", "gpt-5.5-pro", "openai"),
+        ("openai/gpt-5.5", "gpt-5.5", "openai"),
+        ("anthropic/claude-opus-4-7", "claude-opus-4-7", "anthropic"),
         (
-            "anthropic/global/claude-opus-4-7",
-            "claude-opus-4-7",
-            "anthropic",
-        ),
-        (
-            "anthropic/global/claude-sonnet-4-6",
+            "anthropic/claude-sonnet-4-6",
             "claude-sonnet-4-6",
             "anthropic",
         ),
         (
-            "google/global/gemini-3.1-pro-preview",
+            "google/gemini-3.1-pro-preview",
             "gemini-3.1-pro-preview",
             "google",
         ),
         (
-            "google/global/gemini-3-flash-preview",
+            "google/gemini-3-flash-preview",
             "gemini-3-flash-preview",
             "google",
         ),
-        ("xai/global/grok-4.3", "grok-4.3", "xai"),
+        ("xai/grok-4.3", "grok-4.3", "xai"),
         (
-            "alibaba/cn/qwen3.6-max-preview",
+            "alibaba/qwen3.6-max-preview",
             "qwen3.6-max-preview",
             "alibaba",
         ),
-        ("deepseek/cn/deepseek-v4-pro", "deepseek-v4-pro", "deepseek"),
+        ("deepseek/deepseek-v4-pro", "deepseek-v4-pro", "deepseek"),
+        ("moonshot/kimi-k2.6", "kimi-k2.6", "moonshot"),
+        ("zhipu/glm-5.1", "glm-5.1", "zhipu"),
         (
-            "deepseek/global/deepseek-v4-pro",
-            "deepseek-v4-pro",
-            "deepseek",
-        ),
-        ("moonshot/cn/kimi-k2.6", "kimi-k2.6", "moonshot"),
-        ("moonshot/global/kimi-k2.6", "kimi-k2.6", "moonshot"),
-        ("zhipu/cn/glm-5.1", "glm-5.1", "zhipu"),
-        (
-            "bytedance/cn/doubao-seed-2-0-pro-260215",
+            "bytedance/doubao-seed-2-0-pro-260215",
             "doubao-seed-2-0-pro-260215",
             "bytedance",
         ),
-        ("minimax/cn/MiniMax-M2.7", "MiniMax-M2.7", "minimax"),
-        ("minimax/global/MiniMax-M2.7", "MiniMax-M2.7", "minimax"),
+        ("minimax/MiniMax-M2.7", "MiniMax-M2.7", "minimax"),
     ];
 
     for (catalog_key, model, vendor_code) in expected_models {
@@ -283,7 +282,14 @@ async fn database_config_app_models_route_reads_global_commercial_catalog() {
             .iter()
             .find(|item| item["catalogKey"] == catalog_key)
             .unwrap_or_else(|| {
-                panic!("expected installed model {catalog_key} in app catalog response")
+                let available_keys = items
+                    .iter()
+                    .filter_map(|item| item["catalogKey"].as_str())
+                    .collect::<Vec<_>>()
+                    .join(", ");
+                panic!(
+                    "expected installed model {catalog_key} in app catalog response; available catalog keys: {available_keys}"
+                )
             });
         assert_eq!(model, item["model"]);
         assert_eq!(vendor_code, item["vendorCode"]);
@@ -422,9 +428,19 @@ fn unique_sqlite_url() -> String {
         .as_nanos();
     let sequence = DB_SEQUENCE.fetch_add(1, Ordering::Relaxed);
     let process_id = std::process::id();
-    let path = format!("target/test-dbs/app-model-rankings-{process_id}-{nonce}-{sequence}.db");
-    std::fs::create_dir_all("target/test-dbs").unwrap();
-    format!("sqlite://{path}")
+    let mut path = sqlite_test_database_dir();
+    std::fs::create_dir_all(&path).unwrap();
+    path.push(format!(
+        "app-model-rankings-{process_id}-{nonce}-{sequence}.db"
+    ));
+    format!("sqlite://{}", path.to_string_lossy().replace('\\', "/"))
+}
+
+fn sqlite_test_database_dir() -> std::path::PathBuf {
+    std::env::var_os("CARGO_TARGET_DIR")
+        .map(std::path::PathBuf::from)
+        .unwrap_or_else(std::env::temp_dir)
+        .join("test-dbs")
 }
 
 async fn connect_sqlite_for_test(database_url: &str) -> sqlx::SqlitePool {
@@ -461,4 +477,34 @@ fn catalog_routable_models_with_meter(
             })
         })
         .collect()
+}
+
+fn is_regional_catalog_key(catalog_key: &str) -> bool {
+    let parts = catalog_key
+        .split('/')
+        .filter(|part| !part.is_empty())
+        .collect::<Vec<_>>();
+    matches!(
+        parts.as_slice(),
+        [_vendor, region, _model @ ..] if known_region_segment(region)
+    )
+}
+
+fn known_region_segment(value: &str) -> bool {
+    matches!(
+        value.trim().to_ascii_lowercase().as_str(),
+        "global"
+            | "cn"
+            | "us"
+            | "eu"
+            | "ap"
+            | "apac"
+            | "jp"
+            | "sg"
+            | "hk"
+            | "aws"
+            | "azure"
+            | "gcp"
+            | "local"
+    )
 }

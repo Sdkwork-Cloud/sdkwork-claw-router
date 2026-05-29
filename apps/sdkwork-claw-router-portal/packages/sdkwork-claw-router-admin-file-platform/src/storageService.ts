@@ -1,4 +1,4 @@
-﻿import {
+import {
   ensureSdkworkApiSuccess,
   isRecord,
   readRequiredApiItem,

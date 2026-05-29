@@ -8,25 +8,13 @@ public class McpApi {
     }
 
     /// Update MCP binding
-    public func serversBindingsUpdate(bindingId: String, body: AdminMcpBindingUpdateRequest, xRequestId: String? = nil) async throws -> ServersBindingsUpdateResult? {
-        let requestHeaders = buildRequestHeaders(
-            [
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
-            ],
-            [:]
-        )
-        return try await client.put(ApiPaths.backendPath("/mcp/bindings/\(serializePathParameter(bindingId, PathParameterSpec(name: "bindingId", style: "simple", explode: false)))"), body: body, params: nil, headers: requestHeaders, contentType: "application/json", responseType: ServersBindingsUpdateResult.self)
+    public func serversBindingsUpdate(bindingId: String, body: AdminMcpBindingUpdateRequest) async throws -> ServersBindingsUpdateResult? {
+        return try await client.put(ApiPaths.backendPath("/mcp/bindings/\(serializePathParameter(bindingId, PathParameterSpec(name: "bindingId", style: "simple", explode: false)))"), body: body, params: nil, headers: nil, contentType: "application/json", responseType: ServersBindingsUpdateResult.self)
     }
 
     /// Publish MCP server revision
-    public func revisionsPublish(revisionId: String, xRequestId: String? = nil) async throws -> RevisionsPublishResult? {
-        let requestHeaders = buildRequestHeaders(
-            [
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
-            ],
-            [:]
-        )
-        return try await client.post(ApiPaths.backendPath("/mcp/revisions/\(serializePathParameter(revisionId, PathParameterSpec(name: "revisionId", style: "simple", explode: false)))/publish"), body: nil, params: nil, headers: requestHeaders, responseType: RevisionsPublishResult.self)
+    public func revisionsPublish(revisionId: String) async throws -> RevisionsPublishResult? {
+        return try await client.post(ApiPaths.backendPath("/mcp/revisions/\(serializePathParameter(revisionId, PathParameterSpec(name: "revisionId", style: "simple", explode: false)))/publish"), body: nil, responseType: RevisionsPublishResult.self)
     }
 
     /// List MCP servers
@@ -44,11 +32,10 @@ public class McpApi {
     }
 
     /// Create MCP server
-    public func serversCreate(body: AdminMcpServerCreateRequest, idempotencyKey: String, xRequestId: String? = nil) async throws -> ServersCreateResult? {
+    public func serversCreate(body: AdminMcpServerCreateRequest, idempotencyKey: String) async throws -> ServersCreateResult? {
         let requestHeaders = buildRequestHeaders(
             [
                 "Idempotency-Key": HeaderParameterSpec(value: idempotencyKey, style: "simple", explode: false, contentType: nil),
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
             ],
             [:]
         )
@@ -61,14 +48,8 @@ public class McpApi {
     }
 
     /// Update MCP server
-    public func serversUpdate(serverId: String, body: AdminMcpServerUpdateRequest, xRequestId: String? = nil) async throws -> ServersUpdateResult? {
-        let requestHeaders = buildRequestHeaders(
-            [
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
-            ],
-            [:]
-        )
-        return try await client.put(ApiPaths.backendPath("/mcp/servers/\(serializePathParameter(serverId, PathParameterSpec(name: "serverId", style: "simple", explode: false)))"), body: body, params: nil, headers: requestHeaders, contentType: "application/json", responseType: ServersUpdateResult.self)
+    public func serversUpdate(serverId: String, body: AdminMcpServerUpdateRequest) async throws -> ServersUpdateResult? {
+        return try await client.put(ApiPaths.backendPath("/mcp/servers/\(serializePathParameter(serverId, PathParameterSpec(name: "serverId", style: "simple", explode: false)))"), body: body, params: nil, headers: nil, contentType: "application/json", responseType: ServersUpdateResult.self)
     }
 
     /// List MCP bindings
@@ -77,11 +58,10 @@ public class McpApi {
     }
 
     /// Create MCP binding
-    public func serversBindingsCreate(serverId: String, body: AdminMcpBindingCreateRequest, idempotencyKey: String, xRequestId: String? = nil) async throws -> ServersBindingsCreateResult? {
+    public func serversBindingsCreate(serverId: String, body: AdminMcpBindingCreateRequest, idempotencyKey: String) async throws -> ServersBindingsCreateResult? {
         let requestHeaders = buildRequestHeaders(
             [
                 "Idempotency-Key": HeaderParameterSpec(value: idempotencyKey, style: "simple", explode: false, contentType: nil),
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
             ],
             [:]
         )
@@ -89,25 +69,13 @@ public class McpApi {
     }
 
     /// Discover MCP tools
-    public func serversToolsRefresh(serverId: String, xRequestId: String? = nil) async throws -> ServersToolsRefreshResult? {
-        let requestHeaders = buildRequestHeaders(
-            [
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
-            ],
-            [:]
-        )
-        return try await client.post(ApiPaths.backendPath("/mcp/servers/\(serializePathParameter(serverId, PathParameterSpec(name: "serverId", style: "simple", explode: false)))/discover"), body: nil, params: nil, headers: requestHeaders, responseType: ServersToolsRefreshResult.self)
+    public func serversToolsRefresh(serverId: String) async throws -> ServersToolsRefreshResult? {
+        return try await client.post(ApiPaths.backendPath("/mcp/servers/\(serializePathParameter(serverId, PathParameterSpec(name: "serverId", style: "simple", explode: false)))/discover"), body: nil, responseType: ServersToolsRefreshResult.self)
     }
 
     /// Check MCP server health
-    public func serversHealthChecksCreate(serverId: String, xRequestId: String? = nil) async throws -> ServersHealthChecksCreateResult? {
-        let requestHeaders = buildRequestHeaders(
-            [
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
-            ],
-            [:]
-        )
-        return try await client.post(ApiPaths.backendPath("/mcp/servers/\(serializePathParameter(serverId, PathParameterSpec(name: "serverId", style: "simple", explode: false)))/health_check"), body: nil, params: nil, headers: requestHeaders, responseType: ServersHealthChecksCreateResult.self)
+    public func serversHealthChecksCreate(serverId: String) async throws -> ServersHealthChecksCreateResult? {
+        return try await client.post(ApiPaths.backendPath("/mcp/servers/\(serializePathParameter(serverId, PathParameterSpec(name: "serverId", style: "simple", explode: false)))/health_check"), body: nil, responseType: ServersHealthChecksCreateResult.self)
     }
 
     /// List MCP server revisions
@@ -116,11 +84,10 @@ public class McpApi {
     }
 
     /// Create MCP server revision
-    public func serversRevisionsCreate(serverId: String, body: AdminMcpServerRevisionCreateRequest, idempotencyKey: String, xRequestId: String? = nil) async throws -> ServersRevisionsCreateResult? {
+    public func serversRevisionsCreate(serverId: String, body: AdminMcpServerRevisionCreateRequest, idempotencyKey: String) async throws -> ServersRevisionsCreateResult? {
         let requestHeaders = buildRequestHeaders(
             [
                 "Idempotency-Key": HeaderParameterSpec(value: idempotencyKey, style: "simple", explode: false, contentType: nil),
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
             ],
             [:]
         )
@@ -133,14 +100,8 @@ public class McpApi {
     }
 
     /// Update MCP tool
-    public func toolsUpdate(toolId: String, body: AdminMcpToolUpdateRequest, xRequestId: String? = nil) async throws -> ToolsUpdateResult? {
-        let requestHeaders = buildRequestHeaders(
-            [
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
-            ],
-            [:]
-        )
-        return try await client.put(ApiPaths.backendPath("/mcp/tools/\(serializePathParameter(toolId, PathParameterSpec(name: "toolId", style: "simple", explode: false)))"), body: body, params: nil, headers: requestHeaders, contentType: "application/json", responseType: ToolsUpdateResult.self)
+    public func toolsUpdate(toolId: String, body: AdminMcpToolUpdateRequest) async throws -> ToolsUpdateResult? {
+        return try await client.put(ApiPaths.backendPath("/mcp/tools/\(serializePathParameter(toolId, PathParameterSpec(name: "toolId", style: "simple", explode: false)))"), body: body, params: nil, headers: nil, contentType: "application/json", responseType: ToolsUpdateResult.self)
     }
 
     private struct PathParameterSpec {

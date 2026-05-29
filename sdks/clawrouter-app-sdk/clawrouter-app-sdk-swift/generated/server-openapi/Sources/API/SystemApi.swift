@@ -8,11 +8,10 @@ public class SystemApi {
     }
 
     /// Promotion Code Redemption Create
-    public func promotionsCodesRedemptionsCreate(body: PromotionCodeRedemptionRequest, idempotencyKey: String, xRequestId: String? = nil) async throws -> PromotionsCodesRedemptionsCreateResult? {
+    public func promotionsCodesRedemptionsCreate(body: PromotionCodeRedemptionRequest, idempotencyKey: String) async throws -> PromotionsCodesRedemptionsCreateResult? {
         let requestHeaders = buildRequestHeaders(
             [
                 "Idempotency-Key": HeaderParameterSpec(value: idempotencyKey, style: "simple", explode: false, contentType: nil),
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
             ],
             [:]
         )
@@ -20,11 +19,10 @@ public class SystemApi {
     }
 
     /// Promotion Discount Application Create
-    public func promotionsDiscountApplicationsCreate(body: PromotionCommandRequest, idempotencyKey: String, xRequestId: String? = nil) async throws -> PromotionsDiscountApplicationsCreateResult? {
+    public func promotionsDiscountApplicationsCreate(body: PromotionCommandRequest, idempotencyKey: String) async throws -> PromotionsDiscountApplicationsCreateResult? {
         let requestHeaders = buildRequestHeaders(
             [
                 "Idempotency-Key": HeaderParameterSpec(value: idempotencyKey, style: "simple", explode: false, contentType: nil),
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
             ],
             [:]
         )
@@ -32,11 +30,10 @@ public class SystemApi {
     }
 
     /// Promotion Discount Application Reversal Create
-    public func promotionsDiscountApplicationsReversalsCreate(body: PromotionCommandRequest, idempotencyKey: String, xRequestId: String? = nil) async throws -> PromotionsDiscountApplicationsReversalsCreateResult? {
+    public func promotionsDiscountApplicationsReversalsCreate(body: PromotionCommandRequest, idempotencyKey: String) async throws -> PromotionsDiscountApplicationsReversalsCreateResult? {
         let requestHeaders = buildRequestHeaders(
             [
                 "Idempotency-Key": HeaderParameterSpec(value: idempotencyKey, style: "simple", explode: false, contentType: nil),
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
             ],
             [:]
         )
@@ -44,11 +41,10 @@ public class SystemApi {
     }
 
     /// Promotion Discount Application Release
-    public func promotionsDiscountApplicationsRelease(applicationId: String, body: PromotionCommandRequest, idempotencyKey: String, xRequestId: String? = nil) async throws -> PromotionsDiscountApplicationsReleaseResult? {
+    public func promotionsDiscountApplicationsRelease(applicationId: String, body: PromotionCommandRequest, idempotencyKey: String) async throws -> PromotionsDiscountApplicationsReleaseResult? {
         let requestHeaders = buildRequestHeaders(
             [
                 "Idempotency-Key": HeaderParameterSpec(value: idempotencyKey, style: "simple", explode: false, contentType: nil),
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
             ],
             [:]
         )
@@ -56,11 +52,10 @@ public class SystemApi {
     }
 
     /// Promotion Discount Application Settle
-    public func promotionsDiscountApplicationsSettle(applicationId: String, body: PromotionCommandRequest, idempotencyKey: String, xRequestId: String? = nil) async throws -> PromotionsDiscountApplicationsSettleResult? {
+    public func promotionsDiscountApplicationsSettle(applicationId: String, body: PromotionCommandRequest, idempotencyKey: String) async throws -> PromotionsDiscountApplicationsSettleResult? {
         let requestHeaders = buildRequestHeaders(
             [
                 "Idempotency-Key": HeaderParameterSpec(value: idempotencyKey, style: "simple", explode: false, contentType: nil),
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
             ],
             [:]
         )
@@ -68,11 +63,10 @@ public class SystemApi {
     }
 
     /// Promotion User Coupon Claim Create
-    public func promotionsUserCouponsClaimsCreate(body: PromotionCommandRequest, idempotencyKey: String, xRequestId: String? = nil) async throws -> PromotionsUserCouponsClaimsCreateResult? {
+    public func promotionsUserCouponsClaimsCreate(body: PromotionCommandRequest, idempotencyKey: String) async throws -> PromotionsUserCouponsClaimsCreateResult? {
         let requestHeaders = buildRequestHeaders(
             [
                 "Idempotency-Key": HeaderParameterSpec(value: idempotencyKey, style: "simple", explode: false, contentType: nil),
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
             ],
             [:]
         )

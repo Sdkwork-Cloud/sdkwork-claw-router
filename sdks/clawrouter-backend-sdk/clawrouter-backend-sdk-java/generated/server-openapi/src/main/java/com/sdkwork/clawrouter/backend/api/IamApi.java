@@ -20,12 +20,8 @@ public class IamApi {
     }
 
     /** Create group */
-    public AccessGroupsCreateResult accessGroupsCreate(AdminAccessGroupCreateRequest body, String xRequestId) throws Exception {
-        Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
-                Map.of()
-        );
-        Object raw = client.post(ApiPaths.backendPath("/iam/access_groups"), body, null, requestHeaders, "application/json");
+    public AccessGroupsCreateResult accessGroupsCreate(AdminAccessGroupCreateRequest body) throws Exception {
+        Object raw = client.post(ApiPaths.backendPath("/iam/access_groups"), body, null, null, "application/json");
         return client.convertValue(raw, new TypeReference<AccessGroupsCreateResult>() {});
     }
 
@@ -36,12 +32,8 @@ public class IamApi {
     }
 
     /** Update group */
-    public AccessGroupsUpdateResult accessGroupsUpdate(String groupId, AdminAccessGroupUpdateRequest body, String xRequestId) throws Exception {
-        Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
-                Map.of()
-        );
-        Object raw = client.patch(ApiPaths.backendPath("/iam/access_groups/" + serializePathParameter(groupId, new PathParameterSpec("groupId", "simple", false)) + ""), body, null, requestHeaders, "application/json");
+    public AccessGroupsUpdateResult accessGroupsUpdate(String groupId, AdminAccessGroupUpdateRequest body) throws Exception {
+        Object raw = client.patch(ApiPaths.backendPath("/iam/access_groups/" + serializePathParameter(groupId, new PathParameterSpec("groupId", "simple", false)) + ""), body, null, null, "application/json");
         return client.convertValue(raw, new TypeReference<AccessGroupsUpdateResult>() {});
     }
 
@@ -52,12 +44,8 @@ public class IamApi {
     }
 
     /** Replace group channel bindings */
-    public AccessGroupsChannelBindingsUpdateResult accessGroupsChannelBindingsUpdate(String groupId, AdminAccessGroupChannelBindingsReplaceRequest body, String xRequestId) throws Exception {
-        Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
-                Map.of()
-        );
-        Object raw = client.put(ApiPaths.backendPath("/iam/access_groups/" + serializePathParameter(groupId, new PathParameterSpec("groupId", "simple", false)) + "/channel_bindings"), body, null, requestHeaders, "application/json");
+    public AccessGroupsChannelBindingsUpdateResult accessGroupsChannelBindingsUpdate(String groupId, AdminAccessGroupChannelBindingsReplaceRequest body) throws Exception {
+        Object raw = client.put(ApiPaths.backendPath("/iam/access_groups/" + serializePathParameter(groupId, new PathParameterSpec("groupId", "simple", false)) + "/channel_bindings"), body, null, null, "application/json");
         return client.convertValue(raw, new TypeReference<AccessGroupsChannelBindingsUpdateResult>() {});
     }
 
@@ -68,9 +56,9 @@ public class IamApi {
     }
 
     /** Create API key */
-    public ApiKeysCreateResult apiKeysCreate(AdminApiKeyCreateRequest body, String idempotencyKey, String xRequestId) throws Exception {
+    public ApiKeysCreateResult apiKeysCreate(AdminApiKeyCreateRequest body, String idempotencyKey) throws Exception {
         Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null), "X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
+                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null)),
                 Map.of()
         );
         Object raw = client.post(ApiPaths.backendPath("/iam/api_keys"), body, null, requestHeaders, "application/json");
@@ -90,22 +78,14 @@ public class IamApi {
     }
 
     /** Create user */
-    public UsersCreateResult usersCreate(AdminUserCreateRequest body, String xRequestId) throws Exception {
-        Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
-                Map.of()
-        );
-        Object raw = client.post(ApiPaths.backendPath("/iam/users"), body, null, requestHeaders, "application/json");
+    public UsersCreateResult usersCreate(AdminUserCreateRequest body) throws Exception {
+        Object raw = client.post(ApiPaths.backendPath("/iam/users"), body, null, null, "application/json");
         return client.convertValue(raw, new TypeReference<UsersCreateResult>() {});
     }
 
     /** Update user */
-    public UsersUpdateResult usersUpdate(AdminUserUpdateRequest body, String xRequestId) throws Exception {
-        Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
-                Map.of()
-        );
-        Object raw = client.put(ApiPaths.backendPath("/iam/users"), body, null, requestHeaders, "application/json");
+    public UsersUpdateResult usersUpdate(AdminUserUpdateRequest body) throws Exception {
+        Object raw = client.put(ApiPaths.backendPath("/iam/users"), body, null, null, "application/json");
         return client.convertValue(raw, new TypeReference<UsersUpdateResult>() {});
     }
 

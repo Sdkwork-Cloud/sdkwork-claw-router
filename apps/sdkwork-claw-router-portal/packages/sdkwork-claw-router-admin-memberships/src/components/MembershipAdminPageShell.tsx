@@ -9,8 +9,6 @@ interface MembershipAdminPageShellProps {
   onRefresh: () => void;
   children: ReactNode;
   actions?: ReactNode;
-  title?: string;
-  description?: string;
 }
 
 export function MembershipAdminPageShell({
@@ -19,8 +17,6 @@ export function MembershipAdminPageShell({
   onRefresh,
   children,
   actions,
-  title,
-  description,
 }: MembershipAdminPageShellProps) {
   const { t } = useTranslation();
 
@@ -42,15 +38,7 @@ export function MembershipAdminPageShell({
 
   return (
     <div className="flex min-h-0 flex-col gap-4">
-      <div className="flex shrink-0 flex-wrap items-start justify-between gap-3">
-        <div className="min-w-0">
-          {title ? (
-            <h2 className="text-base font-semibold text-slate-950 dark:text-white">{title}</h2>
-          ) : null}
-          {description ? (
-            <p className="mt-1 max-w-3xl text-sm text-slate-500 dark:text-slate-400">{description}</p>
-          ) : null}
-        </div>
+      <div className="flex shrink-0 flex-wrap items-center justify-end gap-3">
         <div className="flex shrink-0 items-center justify-end gap-2">
           <button
             type="button"

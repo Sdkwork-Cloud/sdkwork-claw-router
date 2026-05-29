@@ -21,11 +21,10 @@ class IamApi(private val client: HttpClient) {
     }
 
     /** Create key */
-    suspend fun apiKeysCreate(body: CreateApiKeyRequest, idempotencyKey: String, xRequestId: String? = null): ApiKeysCreateResult? {
+    suspend fun apiKeysCreate(body: CreateApiKeyRequest, idempotencyKey: String): ApiKeysCreateResult? {
         val requestHeaders = buildRequestHeaders(
             mapOf(
                 "Idempotency-Key" to HeaderParameterSpec(idempotencyKey, "simple", false, null),
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
             ),
             emptyMap()
         )
@@ -40,14 +39,8 @@ class IamApi(private val client: HttpClient) {
     }
 
     /** Update key */
-    suspend fun apiKeysUpdate(apiKeyId: String, body: UpdateApiKeyRequest, xRequestId: String? = null): ApiKeysUpdateResult? {
-        val requestHeaders = buildRequestHeaders(
-            mapOf(
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
-            ),
-            emptyMap()
-        )
-        val raw = client.patch(ApiPaths.appPath("/iam/api_keys/${serializePathParameter(apiKeyId, PathParameterSpec("apiKeyId", "simple", false))}"), body, null, requestHeaders, "application/json")
+    suspend fun apiKeysUpdate(apiKeyId: String, body: UpdateApiKeyRequest): ApiKeysUpdateResult? {
+        val raw = client.patch(ApiPaths.appPath("/iam/api_keys/${serializePathParameter(apiKeyId, PathParameterSpec("apiKeyId", "simple", false))}"), body, null, null, "application/json")
         return client.convertValue(raw, object : TypeReference<ApiKeysUpdateResult>() {})
     }
 

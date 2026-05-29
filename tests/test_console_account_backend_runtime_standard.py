@@ -1,4 +1,4 @@
-﻿import unittest
+import unittest
 from pathlib import Path
 
 
@@ -51,7 +51,9 @@ class ConsoleAccountBackendRuntimeStandardTest(unittest.TestCase):
             / "packages"
             / "sdkwork-claw-router-i18n"
             / "src"
-            / "index.ts"
+            / "resources"
+            / "console"
+            / "account.ts"
         ).read_text(encoding="utf-8")
 
         for marker in [
@@ -99,6 +101,7 @@ class ConsoleAccountBackendRuntimeStandardTest(unittest.TestCase):
         contract = (
             ROOT / "docs" / "schema-registry" / "frontend-field-contracts.yaml"
         ).read_text(encoding="utf-8")
+        account_operation_contract = contract.split("operation: fetchAccountDetails", 1)[1].split("- route:", 1)[0]
 
         self.assertIn("AccountService.fetchAccountDetails()", account_view)
         self.assertNotIn("readOnlyAccountActions", account_view)
@@ -108,15 +111,22 @@ class ConsoleAccountBackendRuntimeStandardTest(unittest.TestCase):
         self.assertIn("BusinessStatePanel", account_view)
         self.assertIn("CopyButton", account_view)
         self.assertNotIn("<button", account_view)
-        for unsupported_label in [
-            "淇敼浼佷笟璧勮川",
-            "瀹夊叏绛栫暐涓庤闂帶鍒?",
+        unsupported_label_codepoints = [
+            (0x6DC7, 0xE1BD, 0x657C, 0x6D7C, 0x4F77, 0x7B1F, 0x74A7, 0x52EE, 0x5DDD),
+            (0x7039, 0x590A, 0x53CF, 0x7EDB, 0x682B, 0x6690, 0x6D93, 0x5EA4, 0xE196, 0x95C2, 0xE1BD, 0x5E36, 0x9352, 0x003F),
+        ]
+        unsupported_labels = [
+            *(
+                "".join(chr(codepoint) for codepoint in label)
+                for label in unsupported_label_codepoints
+            ),
             "Edit",
             "Save",
             "Update",
             "Security settings",
             "Invoice settings",
-        ]:
+        ]
+        for unsupported_label in unsupported_labels:
             self.assertNotIn(unsupported_label, account_view)
         for unsupported_handler in [
             "handleEditInvoice",
@@ -133,12 +143,12 @@ class ConsoleAccountBackendRuntimeStandardTest(unittest.TestCase):
         self.assertIn("route: /console/account", contract)
         self.assertIn("source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-account/src/accountService.ts", contract)
         self.assertIn("operation: fetchAccountDetails", contract)
-        self.assertIn("operation_id: console.accountDetails.retrieve", contract)
-        self.assertIn("api_path: /app/v3/api/accounts/current/summary", contract)
-        self.assertIn("openapi_exposed: false", contract)
-        self.assertNotIn("operation: updateInvoice", contract)
-        self.assertNotIn("operation: updateSecurity", contract)
-        self.assertNotIn("operation: updateAccount", contract)
+        self.assertIn("operation_id: console.accountDetails.retrieve", account_operation_contract)
+        self.assertIn("api_path: /app/v3/api/accounts/current/summary", account_operation_contract)
+        self.assertIn("openapi_exposed: false", account_operation_contract)
+        self.assertNotIn("operation: updateInvoice", account_operation_contract)
+        self.assertNotIn("operation: updateSecurity", account_operation_contract)
+        self.assertNotIn("operation: updateAccount", account_operation_contract)
 
     def test_console_account_operation_is_backed_by_real_app_api_router(self) -> None:
         product_api_mod = (

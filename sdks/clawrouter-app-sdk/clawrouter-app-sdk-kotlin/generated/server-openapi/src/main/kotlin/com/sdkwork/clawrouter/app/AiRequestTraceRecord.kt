@@ -1,12 +1,12 @@
 package com.sdkwork.clawrouter.app
 
 data class AiRequestTraceRecord(
-    val apiKeyGroupId: String? = null,
-    val apiKeyGroupSnapshot: String? = null,
     val apiKeyId: String? = null,
     val apiKeyNameSnapshot: String? = null,
     val attemptNo: Int? = null,
     val cachedTokens: String? = null,
+    val channelGroupId: String? = null,
+    val channelGroupSnapshot: String? = null,
     val channelId: String? = null,
     val channelNameSnapshot: String? = null,
     val clientIpHash: String? = null,
@@ -32,7 +32,6 @@ data class AiRequestTraceRecord(
     val ownerType: String? = null,
     val payloadHash: String? = null,
     val promptTokens: String? = null,
-    val providerAccountId: String? = null,
     val providerErrorCode: String? = null,
     val providerId: String? = null,
     val providerModel: String? = null,

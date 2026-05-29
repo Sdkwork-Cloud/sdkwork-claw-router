@@ -26,8 +26,6 @@ export interface AdminAiModelUpdateRequest {
   modalities?: string[];
   /** Optional runtime model identifier update. */
   model?: string;
-  /** Deprecated compatibility alias for model. */
-  name?: string;
   /** Output modalities field on admin ai model update request. */
   outputModalities?: string[];
   /** Optional official reference input unit price in USD. */

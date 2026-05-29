@@ -12,15 +12,9 @@ class MessagingApi {
   MessagingApi(this._client);
 
   /// Messaging route simulation
-  Future<DiagnosticsRouteSimulationCreateResult?> diagnosticsRouteSimulationCreate(MessagingRouteSimulationRequest body, [String? xRequestId]) async {
-    final requestHeaders = buildRequestHeaders(
-      <String, HeaderParameterSpec>{
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
-      },
-      <String, HeaderParameterSpec>{},
-    );
+  Future<DiagnosticsRouteSimulationCreateResult?> diagnosticsRouteSimulationCreate(MessagingRouteSimulationRequest body) async {
     final payload = body.toJson();
-    final response = await _client.post(ApiPaths.backendPath('/messaging/diagnostics/route_simulation'), body: payload, headers: requestHeaders, contentType: 'application/json');
+    final response = await _client.post(ApiPaths.backendPath('/messaging/diagnostics/route_simulation'), body: payload, contentType: 'application/json');
     return (() {
       final map = sdkworkResponseAsMap(response);
       return map == null ? null : DiagnosticsRouteSimulationCreateResult.fromJson(map);
@@ -28,11 +22,10 @@ class MessagingApi {
   }
 
   /// Messaging test send
-  Future<DiagnosticsTestSendsCreateResult?> diagnosticsTestSendsCreate(MessagingTestSendRequest body, String idempotencyKey, [String? xRequestId]) async {
+  Future<DiagnosticsTestSendsCreateResult?> diagnosticsTestSendsCreate(MessagingTestSendRequest body, String idempotencyKey) async {
     final requestHeaders = buildRequestHeaders(
       <String, HeaderParameterSpec>{
         'Idempotency-Key': HeaderParameterSpec(idempotencyKey, 'simple', false, null),
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
       },
       <String, HeaderParameterSpec>{},
     );
@@ -62,11 +55,10 @@ class MessagingApi {
   }
 
   /// Messaging provider account create
-  Future<ProviderAccountsCreateResult?> providerAccountsCreate(MessagingProviderAccountCreateRequest body, String idempotencyKey, [String? xRequestId]) async {
+  Future<ProviderAccountsCreateResult?> providerAccountsCreate(MessagingProviderAccountCreateRequest body, String idempotencyKey) async {
     final requestHeaders = buildRequestHeaders(
       <String, HeaderParameterSpec>{
         'Idempotency-Key': HeaderParameterSpec(idempotencyKey, 'simple', false, null),
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
       },
       <String, HeaderParameterSpec>{},
     );
@@ -114,11 +106,10 @@ class MessagingApi {
   }
 
   /// Messaging route rule create
-  Future<RouteRulesCreateResult?> routeRulesCreate(MessagingRouteRuleCreateRequest body, String idempotencyKey, [String? xRequestId]) async {
+  Future<RouteRulesCreateResult?> routeRulesCreate(MessagingRouteRuleCreateRequest body, String idempotencyKey) async {
     final requestHeaders = buildRequestHeaders(
       <String, HeaderParameterSpec>{
         'Idempotency-Key': HeaderParameterSpec(idempotencyKey, 'simple', false, null),
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
       },
       <String, HeaderParameterSpec>{},
     );
@@ -166,11 +157,10 @@ class MessagingApi {
   }
 
   /// Messaging sender identity create
-  Future<SenderIdentitiesCreateResult?> senderIdentitiesCreate(MessagingSenderIdentityCreateRequest body, String idempotencyKey, [String? xRequestId]) async {
+  Future<SenderIdentitiesCreateResult?> senderIdentitiesCreate(MessagingSenderIdentityCreateRequest body, String idempotencyKey) async {
     final requestHeaders = buildRequestHeaders(
       <String, HeaderParameterSpec>{
         'Idempotency-Key': HeaderParameterSpec(idempotencyKey, 'simple', false, null),
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
       },
       <String, HeaderParameterSpec>{},
     );
@@ -200,11 +190,10 @@ class MessagingApi {
   }
 
   /// Messaging suppression create
-  Future<SuppressionsCreateResult?> suppressionsCreate(MessagingSuppressionCreateRequest body, String idempotencyKey, [String? xRequestId]) async {
+  Future<SuppressionsCreateResult?> suppressionsCreate(MessagingSuppressionCreateRequest body, String idempotencyKey) async {
     final requestHeaders = buildRequestHeaders(
       <String, HeaderParameterSpec>{
         'Idempotency-Key': HeaderParameterSpec(idempotencyKey, 'simple', false, null),
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
       },
       <String, HeaderParameterSpec>{},
     );
@@ -217,11 +206,10 @@ class MessagingApi {
   }
 
   /// Messaging template send
-  Future<TemplateSendsCreateResult?> templateSendsCreate(MessagingTemplateSendRequest body, String idempotencyKey, [String? xRequestId]) async {
+  Future<TemplateSendsCreateResult?> templateSendsCreate(MessagingTemplateSendRequest body, String idempotencyKey) async {
     final requestHeaders = buildRequestHeaders(
       <String, HeaderParameterSpec>{
         'Idempotency-Key': HeaderParameterSpec(idempotencyKey, 'simple', false, null),
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
       },
       <String, HeaderParameterSpec>{},
     );
@@ -251,11 +239,10 @@ class MessagingApi {
   }
 
   /// Messaging template create
-  Future<TemplatesCreateResult?> templatesCreate(MessagingTemplateCreateRequest body, String idempotencyKey, [String? xRequestId]) async {
+  Future<TemplatesCreateResult?> templatesCreate(MessagingTemplateCreateRequest body, String idempotencyKey) async {
     final requestHeaders = buildRequestHeaders(
       <String, HeaderParameterSpec>{
         'Idempotency-Key': HeaderParameterSpec(idempotencyKey, 'simple', false, null),
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
       },
       <String, HeaderParameterSpec>{},
     );
@@ -268,14 +255,8 @@ class MessagingApi {
   }
 
   /// Messaging template version publish
-  Future<TemplatesVersionsPublishResult?> templatesVersionsPublish(String templateId, String versionId, [String? xRequestId]) async {
-    final requestHeaders = buildRequestHeaders(
-      <String, HeaderParameterSpec>{
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
-      },
-      <String, HeaderParameterSpec>{},
-    );
-    final response = await _client.post(ApiPaths.backendPath('/messaging/templates/${serializePathParameter(templateId, const PathParameterSpec('templateId', 'simple', false))}/versions/${serializePathParameter(versionId, const PathParameterSpec('versionId', 'simple', false))}/publish'), headers: requestHeaders);
+  Future<TemplatesVersionsPublishResult?> templatesVersionsPublish(String templateId, String versionId) async {
+    final response = await _client.post(ApiPaths.backendPath('/messaging/templates/${serializePathParameter(templateId, const PathParameterSpec('templateId', 'simple', false))}/versions/${serializePathParameter(versionId, const PathParameterSpec('versionId', 'simple', false))}/publish'));
     return (() {
       final map = sdkworkResponseAsMap(response);
       return map == null ? null : TemplatesVersionsPublishResult.fromJson(map);
@@ -300,15 +281,9 @@ class MessagingApi {
   }
 
   /// Verification policy update
-  Future<VerificationPoliciesUpdateResult?> verificationPoliciesUpdate(String policyId, VerificationPolicyUpdateRequest body, [String? xRequestId]) async {
-    final requestHeaders = buildRequestHeaders(
-      <String, HeaderParameterSpec>{
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
-      },
-      <String, HeaderParameterSpec>{},
-    );
+  Future<VerificationPoliciesUpdateResult?> verificationPoliciesUpdate(String policyId, VerificationPolicyUpdateRequest body) async {
     final payload = body.toJson();
-    final response = await _client.put(ApiPaths.backendPath('/messaging/verification_policies/${serializePathParameter(policyId, const PathParameterSpec('policyId', 'simple', false))}'), body: payload, headers: requestHeaders, contentType: 'application/json');
+    final response = await _client.put(ApiPaths.backendPath('/messaging/verification_policies/${serializePathParameter(policyId, const PathParameterSpec('policyId', 'simple', false))}'), body: payload, contentType: 'application/json');
     return (() {
       final map = sdkworkResponseAsMap(response);
       return map == null ? null : VerificationPoliciesUpdateResult.fromJson(map);

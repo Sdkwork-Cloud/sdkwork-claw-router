@@ -76,29 +76,33 @@ ORDER BY rank_score DESC, display_name ASC, id ASC
     pub fn list_provider_routes() -> &'static str {
         r#"
 SELECT
-    r.catalog_key AS catalog_key,
-    r.model AS model,
-    c.provider_code,
-    r.channel_id,
-    r.provider_model
-FROM integration_channel_model r
-JOIN integration_channel c ON c.id = r.channel_id
-WHERE r.deleted_at IS NULL
+    rc.catalog_key AS catalog_key,
+    COALESCE(NULLIF(cm.model, ''), NULLIF(rc.model_code, ''), rc.catalog_key) AS model,
+    COALESCE(NULLIF(rc.provider_code, ''), c.provider_code) AS provider_code,
+    rc.channel_id,
+    COALESCE(NULLIF(cm.provider_native_model, ''), NULLIF(cm.provider_model, ''), NULLIF(rc.model_code, ''), NULLIF(cm.model, ''), rc.catalog_key) AS provider_model
+FROM ai_route_candidate rc
+JOIN ai_channel c ON c.id = rc.channel_id
+JOIN ai_channel_model cm
+  ON cm.channel_id = rc.channel_id
+ AND cm.tenant_id = rc.tenant_id
+ AND cm.organization_id = rc.organization_id
+ AND cm.catalog_key = rc.catalog_key
+ AND (
+     NULLIF(cm.api_code, '') IS NULL
+     OR NULLIF(rc.api_code, '') IS NULL
+     OR rc.api_code = '*'
+     OR cm.api_code = rc.api_code
+ )
+WHERE rc.status = 1
   AND c.deleted_at IS NULL
-  AND r.status = 1
+  AND cm.deleted_at IS NULL
   AND c.status = 1
-  AND (
-      r.catalog_key = $1
-      OR (
-          array_length(string_to_array($1, '/'), 1) = 2
-          AND array_length(string_to_array(r.catalog_key, '/'), 1) = 3
-          AND split_part(r.catalog_key, '/', 1) = split_part($1, '/', 1)
-          AND split_part(r.catalog_key, '/', 3) = split_part($1, '/', 2)
-      )
-  )
-  AND (r.effective_from IS NULL OR r.effective_from <= CURRENT_TIMESTAMP)
-  AND (r.effective_to IS NULL OR r.effective_to > CURRENT_TIMESTAMP)
-ORDER BY c.priority ASC, c.weight DESC, r.id ASC
+  AND cm.status = 1
+  AND rc.catalog_key = $1
+  AND (cm.effective_from IS NULL OR cm.effective_from <= CURRENT_TIMESTAMP)
+  AND (cm.effective_to IS NULL OR cm.effective_to > CURRENT_TIMESTAMP)
+ORDER BY COALESCE(rc.priority, c.priority, 100) ASC, COALESCE(rc.weight, c.weight, 100) DESC, rc.id ASC
 "#
     }
 
@@ -107,6 +111,7 @@ ORDER BY c.priority ASC, c.weight DESC, r.id ASC
 SELECT
     catalog_key,
     model,
+    COALESCE(NULLIF(region_code, ''), 'global') AS region_code,
     CASE price_side
         WHEN 1 THEN 'official_reference'
         WHEN 2 THEN 'upstream_cost'
@@ -123,15 +128,7 @@ SELECT
 FROM ai_model_pricing
 WHERE deleted_at IS NULL
   AND status = 1
-  AND (
-      catalog_key = $1
-      OR (
-          array_length(string_to_array($1, '/'), 1) = 2
-          AND array_length(string_to_array(catalog_key, '/'), 1) = 3
-          AND split_part(catalog_key, '/', 1) = split_part($1, '/', 1)
-          AND split_part(catalog_key, '/', 3) = split_part($1, '/', 2)
-      )
-  )
+  AND catalog_key = $1
   AND price_side = $2
   AND billing_meter_code = $3
   AND (effective_from IS NULL OR effective_from <= CURRENT_TIMESTAMP)
@@ -144,7 +141,7 @@ ORDER BY priority ASC, effective_from DESC, id DESC
         r#"
 SELECT
     id,
-    COALESCE(group_id, 0) AS group_id,
+    COALESCE(channel_group_id, 0) AS group_id,
     COALESCE(name, '') AS name,
     COALESCE(key_prefix, '') AS key_prefix,
     COALESCE(NULLIF(key_display_masked, ''), COALESCE(key_prefix, '') || '********') AS key_display_masked,
@@ -170,11 +167,11 @@ SELECT
     id,
     COALESCE(tenant_id, 0) AS tenant_id,
     COALESCE(organization_id, 0) AS organization_id,
-    code,
-    pricing_plan_code,
+    group_code AS code,
+    COALESCE(NULLIF(BTRIM(pricing_plan_code), ''), 'standard') AS pricing_plan_code,
     rate_multiplier::text AS rate_multiplier,
     official_price_multiplier::text AS official_price_multiplier
-FROM iam_gateway_api_key_group
+FROM ai_channel_group
 WHERE deleted_at IS NULL
   AND status = 1
   AND id = $1
@@ -274,13 +271,7 @@ WHERE deleted_at IS NULL
   AND status = 1
   AND COALESCE(shelf_state, 1) <> 3
   AND COALESCE(routing_state, 1) = 1
-  AND (
-      m.catalog_key = $1
-      OR (
-          array_length(string_to_array($1, '/'), 1) = 3
-          AND m.catalog_key = split_part($1, '/', 1) || '/' || split_part($1, '/', 3)
-      )
-  )
+  AND m.catalog_key = $1
 LIMIT 1
 "#
     }
@@ -301,30 +292,34 @@ LIMIT 1
     pub fn find_provider_route() -> &'static str {
         r#"
 SELECT
-    r.catalog_key AS catalog_key,
-    r.model AS model,
-    c.provider_code,
-    r.channel_id,
-    r.provider_model
-FROM integration_channel_model r
-JOIN integration_channel c ON c.id = r.channel_id
-WHERE r.deleted_at IS NULL
+    rc.catalog_key AS catalog_key,
+    COALESCE(NULLIF(cm.model, ''), NULLIF(rc.model_code, ''), rc.catalog_key) AS model,
+    COALESCE(NULLIF(rc.provider_code, ''), c.provider_code) AS provider_code,
+    rc.channel_id,
+    COALESCE(NULLIF(cm.provider_native_model, ''), NULLIF(cm.provider_model, ''), NULLIF(rc.model_code, ''), NULLIF(cm.model, ''), rc.catalog_key) AS provider_model
+FROM ai_route_candidate rc
+JOIN ai_channel c ON c.id = rc.channel_id
+JOIN ai_channel_model cm
+  ON cm.channel_id = rc.channel_id
+ AND cm.tenant_id = rc.tenant_id
+ AND cm.organization_id = rc.organization_id
+ AND cm.catalog_key = rc.catalog_key
+ AND (
+     NULLIF(cm.api_code, '') IS NULL
+     OR NULLIF(rc.api_code, '') IS NULL
+     OR rc.api_code = '*'
+     OR cm.api_code = rc.api_code
+ )
+WHERE rc.status = 1
   AND c.deleted_at IS NULL
-  AND r.status = 1
+  AND cm.deleted_at IS NULL
   AND c.status = 1
-  AND (
-      r.catalog_key = $1
-      OR (
-          array_length(string_to_array($1, '/'), 1) = 2
-          AND array_length(string_to_array(r.catalog_key, '/'), 1) = 3
-          AND split_part(r.catalog_key, '/', 1) = split_part($1, '/', 1)
-          AND split_part(r.catalog_key, '/', 3) = split_part($1, '/', 2)
-      )
-  )
-  AND c.provider_code = $2
-  AND (r.effective_from IS NULL OR r.effective_from <= CURRENT_TIMESTAMP)
-  AND (r.effective_to IS NULL OR r.effective_to > CURRENT_TIMESTAMP)
-ORDER BY c.priority ASC, c.weight DESC, r.id ASC
+  AND cm.status = 1
+  AND rc.catalog_key = $1
+  AND COALESCE(NULLIF(rc.provider_code, ''), c.provider_code) = $2
+  AND (cm.effective_from IS NULL OR cm.effective_from <= CURRENT_TIMESTAMP)
+  AND (cm.effective_to IS NULL OR cm.effective_to > CURRENT_TIMESTAMP)
+ORDER BY COALESCE(rc.priority, c.priority, 100) ASC, COALESCE(rc.weight, c.weight, 100) DESC, rc.id ASC
 LIMIT 1
 "#
     }
@@ -334,6 +329,7 @@ LIMIT 1
 SELECT
     catalog_key,
     model,
+    COALESCE(NULLIF(region_code, ''), 'global') AS region_code,
     CASE price_side
         WHEN 1 THEN 'official_reference'
         WHEN 2 THEN 'upstream_cost'
@@ -350,15 +346,7 @@ SELECT
 FROM ai_model_pricing
 WHERE deleted_at IS NULL
   AND status = 1
-  AND (
-      catalog_key = $1
-      OR (
-          array_length(string_to_array($1, '/'), 1) = 2
-          AND array_length(string_to_array(catalog_key, '/'), 1) = 3
-          AND split_part(catalog_key, '/', 1) = split_part($1, '/', 1)
-          AND split_part(catalog_key, '/', 3) = split_part($1, '/', 2)
-      )
-  )
+  AND catalog_key = $1
   AND price_side = $2
   AND billing_meter_code = $3
   AND (($4 IS NULL AND provider_code IS NULL) OR provider_code = $4)

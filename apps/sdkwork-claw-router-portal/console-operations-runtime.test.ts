@@ -544,6 +544,7 @@ test("console usage service reads logs and total from generated app SDK data", a
             path: "/v1/chat/completions",
             reasoningEffort: "medium",
             ip: "10.0.0.11",
+            userAgent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/126.0.0.0",
           },
         ],
       };
@@ -558,6 +559,7 @@ test("console usage service reads logs and total from generated app SDK data", a
       assert.equal(result.logs[0].inputTokens, 100);
       assert.equal(result.logs[0].group, "Production Group");
       assert.equal(result.logs[0].cost, "0.000000990");
+      assert.equal(result.logs[0].userAgent, "Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/126.0.0.0");
     },
   );
 });

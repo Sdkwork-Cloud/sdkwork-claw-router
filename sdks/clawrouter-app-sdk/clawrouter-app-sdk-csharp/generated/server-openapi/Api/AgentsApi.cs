@@ -32,13 +32,12 @@ namespace Sdkwork.ClawRouter.App.Api
         /// <summary>
         /// Create Playground agent definition
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.App.Models.AgentDefinitionsCreateResult?> AgentDefinitionsCreateAsync(Sdkwork.ClawRouter.App.Models.AgentCreateRequest body, string idempotencyKey, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.App.Models.AgentDefinitionsCreateResult?> AgentDefinitionsCreateAsync(Sdkwork.ClawRouter.App.Models.AgentCreateRequest body, string idempotencyKey)
         {
             var requestHeaders = BuildRequestHeaders(
                 new Dictionary<string, HeaderParameterSpec>
                 {
                     ["Idempotency-Key"] = new HeaderParameterSpec(idempotencyKey, "simple", false, null),
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
                 },
                 new Dictionary<string, HeaderParameterSpec>()
             );
@@ -56,13 +55,12 @@ namespace Sdkwork.ClawRouter.App.Api
         /// <summary>
         /// Complete Playground agent run
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.App.Models.AgentRunsSubmitResult?> AgentRunsSubmitAsync(string runId, Sdkwork.ClawRouter.App.Models.AgentRunCompleteRequest body, string idempotencyKey, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.App.Models.AgentRunsSubmitResult?> AgentRunsSubmitAsync(string runId, Sdkwork.ClawRouter.App.Models.AgentRunCompleteRequest body, string idempotencyKey)
         {
             var requestHeaders = BuildRequestHeaders(
                 new Dictionary<string, HeaderParameterSpec>
                 {
                     ["Idempotency-Key"] = new HeaderParameterSpec(idempotencyKey, "simple", false, null),
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
                 },
                 new Dictionary<string, HeaderParameterSpec>()
             );
@@ -85,13 +83,12 @@ namespace Sdkwork.ClawRouter.App.Api
         /// <summary>
         /// Create Playground agent run step
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.App.Models.AgentRunStepsCreateResult?> AgentRunStepsCreateAsync(string runId, Sdkwork.ClawRouter.App.Models.AgentRunStepCreateRequest body, string idempotencyKey, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.App.Models.AgentRunStepsCreateResult?> AgentRunStepsCreateAsync(string runId, Sdkwork.ClawRouter.App.Models.AgentRunStepCreateRequest body, string idempotencyKey)
         {
             var requestHeaders = BuildRequestHeaders(
                 new Dictionary<string, HeaderParameterSpec>
                 {
                     ["Idempotency-Key"] = new HeaderParameterSpec(idempotencyKey, "simple", false, null),
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
                 },
                 new Dictionary<string, HeaderParameterSpec>()
             );
@@ -101,13 +98,12 @@ namespace Sdkwork.ClawRouter.App.Api
         /// <summary>
         /// Complete Playground agent run step
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.App.Models.AgentRunStepsSubmitResult?> AgentRunStepsSubmitAsync(string runId, string stepId, Sdkwork.ClawRouter.App.Models.AgentRunStepCompleteRequest body, string idempotencyKey, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.App.Models.AgentRunStepsSubmitResult?> AgentRunStepsSubmitAsync(string runId, string stepId, Sdkwork.ClawRouter.App.Models.AgentRunStepCompleteRequest body, string idempotencyKey)
         {
             var requestHeaders = BuildRequestHeaders(
                 new Dictionary<string, HeaderParameterSpec>
                 {
                     ["Idempotency-Key"] = new HeaderParameterSpec(idempotencyKey, "simple", false, null),
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
                 },
                 new Dictionary<string, HeaderParameterSpec>()
             );
@@ -138,13 +134,12 @@ namespace Sdkwork.ClawRouter.App.Api
         /// <summary>
         /// Create Playground agent run
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.App.Models.AgentRunsCreateResult?> AgentRunsCreateAsync(string sessionId, Sdkwork.ClawRouter.App.Models.AgentRunCreateRequest body, string idempotencyKey, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.App.Models.AgentRunsCreateResult?> AgentRunsCreateAsync(string sessionId, Sdkwork.ClawRouter.App.Models.AgentRunCreateRequest body, string idempotencyKey)
         {
             var requestHeaders = BuildRequestHeaders(
                 new Dictionary<string, HeaderParameterSpec>
                 {
                     ["Idempotency-Key"] = new HeaderParameterSpec(idempotencyKey, "simple", false, null),
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
                 },
                 new Dictionary<string, HeaderParameterSpec>()
             );
@@ -175,13 +170,12 @@ namespace Sdkwork.ClawRouter.App.Api
         /// <summary>
         /// Create Playground agent session
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.App.Models.AgentSessionsCreateResult?> AgentSessionsCreateAsync(string agentId, Sdkwork.ClawRouter.App.Models.AgentSessionCreateRequest body, string idempotencyKey, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.App.Models.AgentSessionsCreateResult?> AgentSessionsCreateAsync(string agentId, Sdkwork.ClawRouter.App.Models.AgentSessionCreateRequest body, string idempotencyKey)
         {
             var requestHeaders = BuildRequestHeaders(
                 new Dictionary<string, HeaderParameterSpec>
                 {
                     ["Idempotency-Key"] = new HeaderParameterSpec(idempotencyKey, "simple", false, null),
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
                 },
                 new Dictionary<string, HeaderParameterSpec>()
             );

@@ -4,6 +4,7 @@ package types
 type AiQuotaPolicyRecord struct {
 	BlockDurationSeconds string `json:"block_duration_seconds"`
 	BurstLimit string `json:"burst_limit"`
+	ChannelGroupId string `json:"channel_group_id"`
 	CreatedAt string `json:"created_at"`
 	DataScope string `json:"data_scope"`
 	DeletedAt string `json:"deleted_at"`
@@ -11,7 +12,6 @@ type AiQuotaPolicyRecord struct {
 	EffectiveFrom string `json:"effective_from"`
 	EffectiveTo string `json:"effective_to"`
 	ExhaustedAt string `json:"exhausted_at"`
-	GroupId string `json:"group_id"`
 	Id string `json:"id"`
 	Metadata map[string]JsonValue `json:"metadata"`
 	Model string `json:"model"`

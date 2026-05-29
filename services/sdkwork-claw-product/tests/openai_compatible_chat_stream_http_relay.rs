@@ -119,7 +119,7 @@ async fn openai_compatible_chat_stream_relay_does_not_retry_retryable_upstream_s
             model: "gpt-4o-mini".to_owned(),
             provider_code: "openrouter".to_owned(),
             provider_channel_id: 3001,
-            provider_model: "openai/global/gpt-4o-mini".to_owned(),
+            provider_model: "gpt-4o-mini".to_owned(),
             provider_base_url: Some(format!("http://{addr}")),
             provider_secret_ref: Some("vault://providers/openrouter/account/main".to_owned()),
             provider_auth_profile: ProviderAuthProfile::bearer(),

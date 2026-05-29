@@ -11,8 +11,8 @@ pub use access::{
 };
 pub use catalog::{
     provider_native_model_id, AiModel, AiModelPublicMetadata, ModelProviderRoute,
-    ModelVendorDefinition, ProviderAccountPoolGroupBinding, ProviderAccountPoolRoute,
-    ProviderAuthHeader, ProviderAuthProfile, ProviderAuthType, ProviderCircuitBreakerPolicy,
+    ModelVendorDefinition, ProviderAuthHeader, ProviderAuthProfile, ProviderAuthType,
+    ProviderChannelGroupBinding, ProviderChannelRoute, ProviderCircuitBreakerPolicy,
     ProviderRetryPolicy, DEFAULT_PROVIDER_CIRCUIT_BREAKER_FAILURE_THRESHOLD,
     DEFAULT_PROVIDER_CIRCUIT_BREAKER_RECOVERY_WINDOW_SECONDS, DEFAULT_PROVIDER_RETRY_ATTEMPTS,
     DEFAULT_RETRYABLE_PROVIDER_STATUS_CODES,

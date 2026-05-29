@@ -12,8 +12,8 @@ frontend_operations:
   summary: Messaging provider accounts list
   description: Lists SMS and email provider accounts with messaging capability, health, and approval posture.
   read_sources:
-  - integration_provider
-  - integration_provider_account
+  - messaging_provider
+  - messaging_provider_account
   - messaging_provider_capability
   query_parameters: &messagingPageQuery
   - name: page
@@ -87,9 +87,9 @@ frontend_operations:
   summary: Messaging provider account create
   description: Creates a provider account credential reference and declares its SMS or email delivery capability.
   read_sources:
-  - integration_provider
+  - messaging_provider
   write_tables:
-  - integration_provider_account
+  - messaging_provider_account
   - messaging_provider_capability
   - ops_audit_log
   request_schema:
@@ -135,7 +135,7 @@ frontend_operations:
   description: Lists approved and pending SMS signatures, sender IDs, email from addresses, domains, and reply-to identities.
   read_sources:
   - messaging_sender_identity
-  - integration_provider_account
+  - messaging_provider_account
   query_parameters: *messagingPageQuery
   response_schema: *messagingCollectionResponse
 - route: /admin/messaging/sender-identities
@@ -151,7 +151,7 @@ frontend_operations:
   summary: Messaging sender identity create
   description: Creates a reusable sender identity for SMS signatures, sender IDs, email from addresses, domains, and reply-to settings.
   read_sources:
-  - integration_provider_account
+  - messaging_provider_account
   write_tables:
   - messaging_sender_identity
   - ops_audit_log
@@ -282,7 +282,7 @@ frontend_operations:
   description: Creates weighted and ordered delivery routing targets for one SMS or email scene.
   read_sources:
   - messaging_template
-  - integration_provider_account
+  - messaging_provider_account
   - messaging_sender_identity
   - messaging_template_binding
   write_tables:

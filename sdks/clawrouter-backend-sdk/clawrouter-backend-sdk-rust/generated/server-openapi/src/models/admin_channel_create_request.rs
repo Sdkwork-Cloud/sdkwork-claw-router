@@ -10,7 +10,7 @@ pub struct AdminChannelCreateRequest {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub access_type: Option<String>,
 
-    /// Plaintext provider API key accepted only on create/update input. Backend encrypts it into integration_provider_account.auth_config and never returns it.
+    /// Plaintext provider API key accepted only on create/update input. Backend encrypts it into ai_channel.auth_config and never returns it.
     #[serde(rename = "apiKey")]
     pub api_key: String,
 
@@ -22,6 +22,11 @@ pub struct AdminChannelCreateRequest {
     /// Capabilities field on admin channel create request.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub capabilities: Option<Vec<String>>,
+
+    /// Channel type. official means a direct vendor account; relay means an upstream aggregator account that can expose multiple vendors.
+    #[serde(rename = "channelType")]
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub channel_type: Option<String>,
 
     /// Circuit breaker policy field on admin channel create request.
     #[serde(rename = "circuitBreakerPolicy")]
@@ -42,6 +47,11 @@ pub struct AdminChannelCreateRequest {
     /// Protocol field on admin channel create request.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub protocol: Option<String>,
+
+    /// Resource bindings selected from ai_resource or ai_resource_group, such as vendor.openai, api.openai.chat_completions, model.openai.gpt-4o-mini.chat, or bundle.openrouter.openai.standard.
+    #[serde(rename = "resourceCodes")]
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub resource_codes: Option<Vec<String>>,
 
     /// Retry policy field on admin channel create request.
     #[serde(rename = "retryPolicy")]

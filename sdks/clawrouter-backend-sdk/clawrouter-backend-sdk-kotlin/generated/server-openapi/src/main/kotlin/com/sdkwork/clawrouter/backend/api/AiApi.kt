@@ -32,14 +32,8 @@ class AiApi(private val client: HttpClient) {
     }
 
     /** Trigger model ranking refresh */
-    suspend fun modelRankingsRefresh(body: ModelRankingRefreshTriggerRequest, xRequestId: String? = null): ModelRankingsRefreshResult? {
-        val requestHeaders = buildRequestHeaders(
-            mapOf(
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
-            ),
-            emptyMap()
-        )
-        val raw = client.post(ApiPaths.backendPath("/ai/model_rankings/refresh"), body, null, requestHeaders, "application/json")
+    suspend fun modelRankingsRefresh(body: ModelRankingRefreshTriggerRequest): ModelRankingsRefreshResult? {
+        val raw = client.post(ApiPaths.backendPath("/ai/model_rankings/refresh"), body, null, null, "application/json")
         return client.convertValue(raw, object : TypeReference<ModelRankingsRefreshResult>() {})
     }
 
@@ -59,14 +53,8 @@ class AiApi(private val client: HttpClient) {
     }
 
     /** Create vendor */
-    suspend fun modelVendorsCreate(body: AdminModelVendorCreateRequest, xRequestId: String? = null): ModelVendorsCreateResult? {
-        val requestHeaders = buildRequestHeaders(
-            mapOf(
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
-            ),
-            emptyMap()
-        )
-        val raw = client.post(ApiPaths.backendPath("/ai/model_vendors"), body, null, requestHeaders, "application/json")
+    suspend fun modelVendorsCreate(body: AdminModelVendorCreateRequest): ModelVendorsCreateResult? {
+        val raw = client.post(ApiPaths.backendPath("/ai/model_vendors"), body, null, null, "application/json")
         return client.convertValue(raw, object : TypeReference<ModelVendorsCreateResult>() {})
     }
 
@@ -77,26 +65,14 @@ class AiApi(private val client: HttpClient) {
     }
 
     /** Create model */
-    suspend fun modelsCreate(body: AdminAiModelCreateRequest, xRequestId: String? = null): ModelsCreateResult? {
-        val requestHeaders = buildRequestHeaders(
-            mapOf(
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
-            ),
-            emptyMap()
-        )
-        val raw = client.post(ApiPaths.backendPath("/ai/models"), body, null, requestHeaders, "application/json")
+    suspend fun modelsCreate(body: AdminAiModelCreateRequest): ModelsCreateResult? {
+        val raw = client.post(ApiPaths.backendPath("/ai/models"), body, null, null, "application/json")
         return client.convertValue(raw, object : TypeReference<ModelsCreateResult>() {})
     }
 
     /** Sync vendors and models */
-    suspend fun modelsRefresh(body: AdminModelCatalogSyncRequest, xRequestId: String? = null): ModelsRefreshResult? {
-        val requestHeaders = buildRequestHeaders(
-            mapOf(
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
-            ),
-            emptyMap()
-        )
-        val raw = client.post(ApiPaths.backendPath("/ai/models/refresh"), body, null, requestHeaders, "application/json")
+    suspend fun modelsRefresh(body: AdminModelCatalogSyncRequest): ModelsRefreshResult? {
+        val raw = client.post(ApiPaths.backendPath("/ai/models/refresh"), body, null, null, "application/json")
         return client.convertValue(raw, object : TypeReference<ModelsRefreshResult>() {})
     }
 
@@ -107,15 +83,27 @@ class AiApi(private val client: HttpClient) {
     }
 
     /** Update model */
-    suspend fun modelsUpdate(modelId: String, body: AdminAiModelUpdateRequest, xRequestId: String? = null): ModelsUpdateResult? {
-        val requestHeaders = buildRequestHeaders(
-            mapOf(
-                "X-Request-Id" to HeaderParameterSpec(xRequestId, "simple", false, null),
-            ),
-            emptyMap()
-        )
-        val raw = client.patch(ApiPaths.backendPath("/ai/models/${serializePathParameter(modelId, PathParameterSpec("modelId", "simple", false))}"), body, null, requestHeaders, "application/json")
+    suspend fun modelsUpdate(modelId: String, body: AdminAiModelUpdateRequest): ModelsUpdateResult? {
+        val raw = client.patch(ApiPaths.backendPath("/ai/models/${serializePathParameter(modelId, PathParameterSpec("modelId", "simple", false))}"), body, null, null, "application/json")
         return client.convertValue(raw, object : TypeReference<ModelsUpdateResult>() {})
+    }
+
+    /** List ai resources */
+    suspend fun resourcesList(): AiResourcesListResult? {
+        val raw = client.get(ApiPaths.backendPath("/ai/resources"))
+        return client.convertValue(raw, object : TypeReference<AiResourcesListResult>() {})
+    }
+
+    /** Create ai resource */
+    suspend fun resourcesCreate(body: AdminAiResourceCreateRequest): AiResourcesCreateResult? {
+        val raw = client.post(ApiPaths.backendPath("/ai/resources"), body, null, null, "application/json")
+        return client.convertValue(raw, object : TypeReference<AiResourcesCreateResult>() {})
+    }
+
+    /** Update ai resource */
+    suspend fun resourcesUpdate(resourceId: String, body: AdminAiResourceUpdateRequest): AiResourcesUpdateResult? {
+        val raw = client.put(ApiPaths.backendPath("/ai/resources/${serializePathParameter(resourceId, PathParameterSpec("resourceId", "simple", false))}"), body, null, null, "application/json")
+        return client.convertValue(raw, object : TypeReference<AiResourcesUpdateResult>() {})
     }
 
     private data class PathParameterSpec(val name: String, val style: String, val explode: Boolean)
@@ -290,50 +278,4 @@ class AiApi(private val client: HttpClient) {
         return java.net.URLEncoder.encode(value, java.nio.charset.StandardCharsets.UTF_8)
     }
 
-    private data class HeaderParameterSpec(val value: Any?, val style: String, val explode: Boolean, val contentType: String?)
-
-    private val headerObjectMapper = ObjectMapper().registerKotlinModule()
-
-    private fun buildRequestHeaders(headers: Map<String, HeaderParameterSpec>, cookies: Map<String, HeaderParameterSpec>): Map<String, String>? {
-        val requestHeaders = linkedMapOf<String, String>()
-        headers.forEach { (name, parameter) ->
-            serializeParameterValue(parameter)?.let { requestHeaders[name] = it }
-        }
-
-        val cookieHeader = buildCookieHeader(cookies)
-        if (cookieHeader.isNotEmpty()) {
-            requestHeaders["Cookie"] = requestHeaders["Cookie"]?.let { "$it; $cookieHeader" } ?: cookieHeader
-        }
-
-        return requestHeaders.takeIf { it.isNotEmpty() }
-    }
-
-    private fun buildCookieHeader(cookies: Map<String, HeaderParameterSpec>): String {
-        return cookies.mapNotNull { (name, parameter) ->
-            serializeParameterValue(parameter)?.let {
-                java.net.URLEncoder.encode(name, java.nio.charset.StandardCharsets.UTF_8) + "=" +
-                    java.net.URLEncoder.encode(it, java.nio.charset.StandardCharsets.UTF_8)
-            }
-        }.joinToString("; ")
-    }
-
-    private fun serializeParameterValue(parameter: HeaderParameterSpec?): String? {
-        val value = parameter?.value ?: return null
-        if (!parameter.contentType.isNullOrBlank()) {
-            return headerObjectMapper.writeValueAsString(value)
-        }
-        return when (value) {
-            is Iterable<*> -> value.mapNotNull { it?.toString() }.joinToString(",")
-            is Map<*, *> -> value.mapNotNull { (key, item) ->
-                if (item == null) {
-                    null
-                } else if (parameter.explode) {
-                    "$key=$item"
-                } else {
-                    listOf(key.toString(), item.toString()).joinToString(",")
-                }
-            }.joinToString(",")
-            else -> value.toString()
-        }
-    }
 }

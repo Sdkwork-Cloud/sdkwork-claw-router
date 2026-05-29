@@ -4,7 +4,7 @@ use std::fmt::{Display, Formatter};
 
 use sha2::{Digest, Sha256};
 
-use sdkwork_models::{ModelCatalog, ModelInfo};
+use sdkwork_models::{ModelCatalog, ModelInfo, VendorCatalog};
 
 use crate::ports::{AdminAiModelItem, AdminModelSubject, AdminModelVendorItem};
 
@@ -15,16 +15,61 @@ pub(crate) const ACTIVE_STATUS: i32 = 1;
 pub(crate) const DEFAULT_CATALOG_REFRESH_SOURCE: &str = "sdkwork_models";
 pub(crate) const SYNC_MODE_DRY_RUN: &str = "dry_run";
 
-pub(crate) fn catalog_key(vendor_code: &str, region_code: &str, model_id: &str) -> String {
-    format!("{vendor_code}/{region_code}/{model_id}")
+pub(crate) fn pricing_catalog_key(vendor_code: &str, model_id: &str) -> String {
+    model_catalog_key(vendor_code, model_id)
 }
 
-pub(crate) fn model_base_catalog_key(vendor_code: &str, model_id: &str) -> String {
+pub(crate) fn model_catalog_key(vendor_code: &str, model_id: &str) -> String {
     format!("{vendor_code}/{model_id}")
 }
 
-pub(crate) fn model_catalog_key(vendor_code: &str, region_code: &str, model_id: &str) -> String {
-    catalog_key(vendor_code, region_code, model_id)
+pub(crate) fn catalog_identity_models(
+    catalog: &ModelCatalog,
+) -> BTreeMap<String, (&VendorCatalog, &ModelInfo)> {
+    let mut models: BTreeMap<String, (&VendorCatalog, &ModelInfo)> = BTreeMap::new();
+    for vendor in &catalog.vendors {
+        for model in &vendor.models {
+            let key = model_catalog_key(&model.vendor_code, &model.model_id);
+            let replace = models
+                .get(&key)
+                .map(|(existing_vendor, existing_model)| {
+                    model_identity_score(vendor, model)
+                        > model_identity_score(existing_vendor, existing_model)
+                })
+                .unwrap_or(true);
+            if replace {
+                models.insert(key, (vendor, model));
+            }
+        }
+    }
+    models
+}
+
+fn model_identity_score(vendor: &VendorCatalog, model: &ModelInfo) -> i32 {
+    let has_region_pricing = vendor
+        .pricing
+        .iter()
+        .any(|pricing| pricing.model_id == model.model_id && !pricing.prices.is_empty());
+    let mut score = 0;
+    if has_region_pricing {
+        score += 100;
+    }
+    if model.routing_state == "enabled" {
+        score += 40;
+    }
+    if model.shelf_state == "listed" {
+        score += 20;
+    }
+    if model.release_stage == "active" {
+        score += 10;
+    }
+    if matches!(model.lifecycle.as_str(), "current" | "preview") {
+        score += 5;
+    }
+    if vendor.region_code == "global" {
+        score += 1;
+    }
+    score
 }
 
 #[derive(Debug)]
@@ -130,20 +175,7 @@ pub(crate) fn catalog_scope_vendor_codes(catalog: &ModelCatalog) -> Vec<String> 
 }
 
 pub(crate) fn catalog_scope_model_count(catalog: &ModelCatalog) -> usize {
-    catalog
-        .vendors
-        .iter()
-        .flat_map(|vendor| {
-            vendor.models.iter().map(|model| {
-                model_catalog_key(
-                    &vendor.vendor.vendor_code,
-                    &vendor.vendor.region_code,
-                    &model.model_id,
-                )
-            })
-        })
-        .collect::<BTreeSet<_>>()
-        .len()
+    catalog_identity_models(catalog).len()
 }
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
@@ -160,12 +192,16 @@ pub(crate) struct CatalogScopeCounts {
 #[derive(Debug, Clone, PartialEq, Eq)]
 pub(crate) struct CatalogAuthorityKeys {
     pub vendor_codes: Vec<String>,
-    pub vendor_region_uuids: Vec<String>,
     pub catalog_keys: Vec<String>,
     pub family_uuids: Vec<String>,
     pub capability_uuids: Vec<String>,
     pub price_uuids: Vec<String>,
     pub ranking_uuids: Vec<String>,
+    pub vendor_modality_uuids: Vec<String>,
+    pub vendor_api_endpoint_uuids: Vec<String>,
+    pub model_modality_uuids: Vec<String>,
+    pub model_api_endpoint_uuids: Vec<String>,
+    pub ai_resource_codes: Vec<String>,
 }
 
 impl CatalogScopeCounts {
@@ -181,37 +217,18 @@ impl CatalogScopeCounts {
 }
 
 pub(crate) fn catalog_scope_counts(catalog: &ModelCatalog) -> CatalogScopeCounts {
-    let model_catalog_keys = catalog
-        .vendors
-        .iter()
-        .flat_map(|vendor| {
-            vendor.models.iter().map(|model| {
-                model_catalog_key(
-                    &vendor.vendor.vendor_code,
-                    &vendor.vendor.region_code,
-                    &model.model_id,
-                )
-            })
-        })
-        .collect::<BTreeSet<_>>();
-    let capability_count = catalog
-        .vendors
-        .iter()
-        .flat_map(|vendor| {
-            let region_code = vendor.vendor.region_code.clone();
-            vendor.models.iter().flat_map(move |model| {
-                let vendor_code = vendor.vendor.vendor_code.clone();
-                let region_code = region_code.clone();
-                let capabilities = if model.capabilities.is_empty() {
-                    vec![model.primary_capability.clone()]
-                } else {
-                    model.capabilities.clone()
-                };
-                capabilities.into_iter().map(move |capability| {
-                    model_catalog_key(&vendor_code, &region_code, &model.model_id)
-                        + "/"
-                        + &capability
-                })
+    let identity_models = catalog_identity_models(catalog);
+    let model_catalog_keys = identity_models.keys().cloned().collect::<BTreeSet<_>>();
+    let capability_count = identity_models
+        .values()
+        .flat_map(|(_, model)| {
+            let capabilities = if model.capabilities.is_empty() {
+                vec![model.primary_capability.clone()]
+            } else {
+                model.capabilities.clone()
+            };
+            capabilities.into_iter().map(move |capability| {
+                model_catalog_key(&model.vendor_code, &model.model_id) + "/" + &capability
             })
         })
         .collect::<BTreeSet<_>>()
@@ -227,12 +244,11 @@ pub(crate) fn catalog_scope_counts(catalog: &ModelCatalog) -> CatalogScopeCounts
         .iter()
         .flat_map(|vendor| {
             let vendor_code = vendor.vendor.vendor_code.as_str();
-            let region_code = vendor.vendor.region_code.as_str();
             vendor.rankings.iter().flat_map(move |snapshot| {
                 snapshot.items.iter().map(move |item| {
                     (
-                        model_catalog_key(vendor_code, region_code, &item.model_id),
-                        catalog_key(vendor_code, region_code, &item.model_id),
+                        model_catalog_key(vendor_code, &item.model_id),
+                        pricing_catalog_key(vendor_code, &item.model_id),
                     )
                 })
             })
@@ -245,8 +261,16 @@ pub(crate) fn catalog_scope_counts(catalog: &ModelCatalog) -> CatalogScopeCounts
         family_count: catalog
             .vendors
             .iter()
-            .map(|vendor| vendor.families.len())
-            .sum(),
+            .flat_map(|vendor| {
+                vendor.families.iter().map(|family| {
+                    (
+                        vendor.vendor.vendor_code.clone(),
+                        family.family_code.clone(),
+                    )
+                })
+            })
+            .collect::<BTreeSet<_>>()
+            .len(),
         model_count: catalog_scope_model_count(catalog),
         capability_count,
         price_count,
@@ -262,34 +286,12 @@ pub(crate) fn catalog_authority_keys(catalog: &ModelCatalog) -> CatalogAuthority
         .collect::<BTreeSet<_>>()
         .into_iter()
         .collect::<Vec<_>>();
-    let catalog_keys = catalog
-        .vendors
-        .iter()
-        .flat_map(|vendor| {
-            vendor.models.iter().map(|model| {
-                model_catalog_key(
-                    &vendor.vendor.vendor_code,
-                    &vendor.vendor.region_code,
-                    &model.model_id,
-                )
-            })
-        })
-        .collect::<BTreeSet<_>>()
+    let catalog_keys = catalog_identity_models(catalog)
+        .keys()
+        .cloned()
         .into_iter()
         .collect::<Vec<_>>();
     let model_catalog_key_set = catalog_keys.iter().cloned().collect::<BTreeSet<_>>();
-    let vendor_region_uuids = catalog
-        .vendors
-        .iter()
-        .map(|vendor| {
-            stable_uuid(
-                "sdk-vendor-region",
-                &[&vendor.vendor.vendor_code, &vendor.vendor.region_code],
-            )
-        })
-        .collect::<BTreeSet<_>>()
-        .into_iter()
-        .collect::<Vec<_>>();
     let family_uuids = catalog
         .vendors
         .iter()
@@ -297,37 +299,26 @@ pub(crate) fn catalog_authority_keys(catalog: &ModelCatalog) -> CatalogAuthority
             vendor.families.iter().map(|family| {
                 stable_uuid(
                     "sdk-family",
-                    &[
-                        &vendor.vendor.vendor_code,
-                        &vendor.vendor.region_code,
-                        &family.family_code,
-                    ],
+                    &[&vendor.vendor.vendor_code, &family.family_code],
                 )
             })
         })
         .collect::<BTreeSet<_>>()
         .into_iter()
         .collect::<Vec<_>>();
-    let capability_uuids = catalog
-        .vendors
-        .iter()
-        .flat_map(|vendor| {
-            let vendor_code = vendor.vendor.vendor_code.clone();
-            let region_code = vendor.vendor.region_code.clone();
-            vendor.models.iter().flat_map(move |model| {
-                let vendor_code = vendor_code.clone();
-                let region_code = region_code.clone();
-                let capabilities = if model.capabilities.is_empty() {
-                    vec![model.primary_capability.clone()]
-                } else {
-                    model.capabilities.clone()
-                };
-                capabilities.into_iter().map(move |capability| {
-                    stable_uuid(
-                        "sdk-cap",
-                        &[&vendor_code, &region_code, &model.model_id, &capability],
-                    )
-                })
+    let capability_uuids = catalog_identity_models(catalog)
+        .values()
+        .flat_map(|(_, model)| {
+            let capabilities = if model.capabilities.is_empty() {
+                vec![model.primary_capability.clone()]
+            } else {
+                model.capabilities.clone()
+            };
+            capabilities.into_iter().map(move |capability| {
+                stable_uuid(
+                    "sdk-cap",
+                    &[&model.vendor_code, &model.model_id, &capability],
+                )
             })
         })
         .collect::<BTreeSet<_>>()
@@ -342,8 +333,8 @@ pub(crate) fn catalog_authority_keys(catalog: &ModelCatalog) -> CatalogAuthority
                     stable_uuid(
                         "sdk-price",
                         &[
-                            &vendor.vendor.vendor_code,
-                            &vendor.vendor.region_code,
+                            &pricing.vendor_code,
+                            &pricing.region_code,
                             &pricing.model_id,
                             &price.price_id,
                         ],
@@ -366,8 +357,7 @@ pub(crate) fn catalog_authority_keys(catalog: &ModelCatalog) -> CatalogAuthority
                 let region_code = region_code.clone();
                 let model_catalog_key_set = model_catalog_key_set.clone();
                 snapshot.items.iter().filter_map(move |item| {
-                    let model_catalog_key =
-                        model_catalog_key(&vendor_code, &region_code, &item.model_id);
+                    let model_catalog_key = model_catalog_key(&vendor_code, &item.model_id);
                     if model_catalog_key_set.contains(&model_catalog_key) {
                         Some(stable_uuid(
                             "sdk-rank",
@@ -391,12 +381,672 @@ pub(crate) fn catalog_authority_keys(catalog: &ModelCatalog) -> CatalogAuthority
 
     CatalogAuthorityKeys {
         vendor_codes,
-        vendor_region_uuids,
         catalog_keys,
         family_uuids,
         capability_uuids,
         price_uuids,
         ranking_uuids,
+        vendor_modality_uuids: catalog_vendor_modality_projections(catalog)
+            .into_iter()
+            .map(|item| item.uuid)
+            .collect(),
+        vendor_api_endpoint_uuids: catalog_vendor_api_endpoint_projections(catalog)
+            .into_iter()
+            .map(|item| item.uuid)
+            .collect(),
+        model_modality_uuids: catalog_model_modality_projections(catalog)
+            .into_iter()
+            .map(|item| item.uuid)
+            .collect(),
+        model_api_endpoint_uuids: catalog_model_api_endpoint_projections(catalog)
+            .into_iter()
+            .map(|item| item.uuid)
+            .collect(),
+        ai_resource_codes: catalog_ai_resource_projections(catalog)
+            .into_iter()
+            .map(|item| item.resource_code)
+            .collect(),
+    }
+}
+
+#[derive(Debug, Clone, PartialEq, Eq)]
+pub(crate) struct CatalogModalityProjection {
+    pub uuid: String,
+    pub modality_code: String,
+    pub display_name: String,
+    pub modality_group: String,
+    pub description: String,
+    pub input_supported: bool,
+    pub output_supported: bool,
+    pub sort_order: i32,
+}
+
+#[derive(Debug, Clone, PartialEq, Eq)]
+pub(crate) struct CatalogApiEndpointProjection {
+    pub uuid: String,
+    pub endpoint_code: String,
+    pub protocol_code: String,
+    pub display_name: String,
+    pub method: String,
+    pub path_template: String,
+    pub streaming_supported: bool,
+    pub sort_order: i32,
+}
+
+#[derive(Debug, Clone, PartialEq, Eq)]
+pub(crate) struct CatalogVendorModalityProjection {
+    pub uuid: String,
+    pub vendor_code: String,
+    pub modality_code: String,
+    pub sort_order: i32,
+}
+
+#[derive(Debug, Clone, PartialEq, Eq)]
+pub(crate) struct CatalogVendorApiEndpointProjection {
+    pub uuid: String,
+    pub vendor_code: String,
+    pub endpoint_code: String,
+    pub sort_order: i32,
+}
+
+#[derive(Debug, Clone, PartialEq, Eq)]
+pub(crate) struct CatalogModalityApiEndpointProjection {
+    pub uuid: String,
+    pub modality_code: String,
+    pub endpoint_code: String,
+    pub sort_order: i32,
+}
+
+#[derive(Debug, Clone, PartialEq, Eq)]
+pub(crate) struct CatalogModelModalityProjection {
+    pub uuid: String,
+    pub catalog_key: String,
+    pub model: String,
+    pub vendor_code: String,
+    pub modality_code: String,
+    pub direction: String,
+    pub sort_order: i32,
+}
+
+#[derive(Debug, Clone, PartialEq, Eq)]
+pub(crate) struct CatalogModelApiEndpointProjection {
+    pub uuid: String,
+    pub catalog_key: String,
+    pub model: String,
+    pub vendor_code: String,
+    pub endpoint_code: String,
+    pub provider_native_model: String,
+    pub default_parameters: String,
+    pub supports_streaming: bool,
+    pub sort_order: i32,
+}
+
+#[derive(Debug, Clone, PartialEq, Eq)]
+pub(crate) struct CatalogAiResourceProjection {
+    pub uuid: String,
+    pub resource_code: String,
+    pub resource_kind: String,
+    pub display_name: String,
+    pub vendor_code: Option<String>,
+    pub modality_code: Option<String>,
+    pub api_endpoint_code: Option<String>,
+    pub catalog_key: Option<String>,
+    pub model: Option<String>,
+    pub provider_native_model: Option<String>,
+    pub composition_mode: String,
+    pub capability_schema: String,
+    pub metadata_schema: String,
+    pub description: Option<String>,
+    pub sort_order: i32,
+}
+
+pub(crate) fn catalog_modality_projections(
+    catalog: &ModelCatalog,
+) -> Vec<CatalogModalityProjection> {
+    let mut usage = catalog
+        .vendors
+        .iter()
+        .flat_map(|vendor| vendor.models.iter())
+        .fold(
+            BTreeMap::<String, (bool, bool)>::new(),
+            |mut usage, model| {
+                for modality in &model.input_modalities {
+                    let entry = usage.entry(modality.clone()).or_insert((false, false));
+                    entry.0 = true;
+                }
+                for modality in &model.output_modalities {
+                    let entry = usage.entry(modality.clone()).or_insert((false, false));
+                    entry.1 = true;
+                }
+                usage
+                    .entry(model.primary_capability.clone())
+                    .or_insert((true, true));
+                usage
+            },
+        );
+    for meter in &catalog.meters {
+        usage.entry(meter.modality.clone()).or_insert((true, true));
+    }
+    usage
+        .into_iter()
+        .enumerate()
+        .map(
+            |(index, (modality_code, (input_supported, output_supported)))| {
+                CatalogModalityProjection {
+                    uuid: stable_uuid("sdk-modality", &[&modality_code]),
+                    display_name: modality_display_name(&modality_code),
+                    modality_group: modality_group(&modality_code).to_owned(),
+                    description: modality_description(&modality_code),
+                    sort_order: modality_sort_order(&modality_code)
+                        .unwrap_or((index as i32) + 1000),
+                    modality_code,
+                    input_supported,
+                    output_supported,
+                }
+            },
+        )
+        .collect()
+}
+
+pub(crate) fn catalog_api_endpoint_projections(
+    catalog: &ModelCatalog,
+) -> Vec<CatalogApiEndpointProjection> {
+    catalog
+        .vendors
+        .iter()
+        .flat_map(|vendor| vendor.models.iter())
+        .map(model_endpoint_descriptor)
+        .map(|descriptor| (descriptor.endpoint_code.to_owned(), descriptor))
+        .collect::<BTreeMap<_, _>>()
+        .into_values()
+        .map(|descriptor| CatalogApiEndpointProjection {
+            uuid: stable_uuid("sdk-api-endpoint", &[descriptor.endpoint_code]),
+            endpoint_code: descriptor.endpoint_code.to_owned(),
+            protocol_code: descriptor.protocol_code.to_owned(),
+            display_name: descriptor.display_name.to_owned(),
+            method: descriptor.method.to_owned(),
+            path_template: descriptor.path_template.to_owned(),
+            streaming_supported: descriptor.streaming_supported,
+            sort_order: descriptor.sort_order,
+        })
+        .collect()
+}
+
+pub(crate) fn catalog_vendor_modality_projections(
+    catalog: &ModelCatalog,
+) -> Vec<CatalogVendorModalityProjection> {
+    catalog
+        .vendors
+        .iter()
+        .flat_map(|vendor| {
+            let vendor_code = vendor.vendor.vendor_code.clone();
+            vendor
+                .models
+                .iter()
+                .flat_map(|model| model_modality_codes(model).into_iter())
+                .map(move |modality_code| (vendor_code.clone(), modality_code))
+        })
+        .collect::<BTreeSet<_>>()
+        .into_iter()
+        .enumerate()
+        .map(
+            |(index, (vendor_code, modality_code))| CatalogVendorModalityProjection {
+                uuid: stable_uuid("sdk-vendor-modality", &[&vendor_code, &modality_code]),
+                vendor_code,
+                modality_code,
+                sort_order: (index as i32) + 1,
+            },
+        )
+        .collect()
+}
+
+pub(crate) fn catalog_vendor_api_endpoint_projections(
+    catalog: &ModelCatalog,
+) -> Vec<CatalogVendorApiEndpointProjection> {
+    catalog
+        .vendors
+        .iter()
+        .flat_map(|vendor| {
+            let vendor_code = vendor.vendor.vendor_code.clone();
+            vendor.models.iter().map(move |model| {
+                (
+                    vendor_code.clone(),
+                    model_endpoint_descriptor(model).endpoint_code.to_owned(),
+                )
+            })
+        })
+        .collect::<BTreeSet<_>>()
+        .into_iter()
+        .enumerate()
+        .map(
+            |(index, (vendor_code, endpoint_code))| CatalogVendorApiEndpointProjection {
+                uuid: stable_uuid("sdk-vendor-endpoint", &[&vendor_code, &endpoint_code]),
+                vendor_code,
+                endpoint_code,
+                sort_order: (index as i32) + 1,
+            },
+        )
+        .collect()
+}
+
+pub(crate) fn catalog_modality_api_endpoint_projections(
+    catalog: &ModelCatalog,
+) -> Vec<CatalogModalityApiEndpointProjection> {
+    catalog
+        .vendors
+        .iter()
+        .flat_map(|vendor| vendor.models.iter())
+        .flat_map(|model| {
+            let endpoint_code = model_endpoint_descriptor(model).endpoint_code.to_owned();
+            model_endpoint_modalities(model)
+                .into_iter()
+                .map(move |modality_code| (modality_code, endpoint_code.clone()))
+        })
+        .collect::<BTreeSet<_>>()
+        .into_iter()
+        .enumerate()
+        .map(
+            |(index, (modality_code, endpoint_code))| CatalogModalityApiEndpointProjection {
+                uuid: stable_uuid("sdk-modality-endpoint", &[&modality_code, &endpoint_code]),
+                modality_code,
+                endpoint_code,
+                sort_order: (index as i32) + 1,
+            },
+        )
+        .collect()
+}
+
+pub(crate) fn catalog_model_modality_projections(
+    catalog: &ModelCatalog,
+) -> Vec<CatalogModelModalityProjection> {
+    catalog_identity_models(catalog)
+        .into_iter()
+        .flat_map(|(catalog_key, (_, model))| {
+            model_modality_directions(model)
+                .into_iter()
+                .map(
+                    move |(modality_code, direction)| CatalogModelModalityProjection {
+                        uuid: stable_uuid(
+                            "sdk-model-modality",
+                            &[&catalog_key, &modality_code, &direction],
+                        ),
+                        catalog_key: catalog_key.clone(),
+                        model: model.model_id.clone(),
+                        vendor_code: model.vendor_code.clone(),
+                        modality_code,
+                        direction,
+                        sort_order: 1,
+                    },
+                )
+        })
+        .collect()
+}
+
+pub(crate) fn catalog_model_api_endpoint_projections(
+    catalog: &ModelCatalog,
+) -> Vec<CatalogModelApiEndpointProjection> {
+    catalog_identity_models(catalog)
+        .into_iter()
+        .enumerate()
+        .map(|(index, (catalog_key, (_, model)))| {
+            let endpoint = model_endpoint_descriptor(model);
+            CatalogModelApiEndpointProjection {
+                uuid: stable_uuid(
+                    "sdk-model-endpoint",
+                    &[&catalog_key, endpoint.endpoint_code],
+                ),
+                catalog_key,
+                model: model.model_id.clone(),
+                vendor_code: model.vendor_code.clone(),
+                endpoint_code: endpoint.endpoint_code.to_owned(),
+                provider_native_model: model.model_id.clone(),
+                default_parameters: "{}".to_owned(),
+                supports_streaming: model.supports_streaming,
+                sort_order: (index as i32) + 1,
+            }
+        })
+        .collect()
+}
+
+pub(crate) fn catalog_ai_resource_projections(
+    catalog: &ModelCatalog,
+) -> Vec<CatalogAiResourceProjection> {
+    let mut resources = BTreeMap::<String, CatalogAiResourceProjection>::new();
+    for (index, vendor) in catalog
+        .vendors
+        .iter()
+        .map(|vendor| &vendor.vendor)
+        .map(|vendor| (vendor.vendor_code.clone(), vendor))
+        .collect::<BTreeMap<_, _>>()
+        .into_values()
+        .enumerate()
+    {
+        let resource_code = format!("vendor.{}", vendor.vendor_code);
+        resources.insert(
+            resource_code.clone(),
+            CatalogAiResourceProjection {
+                uuid: stable_uuid("sdk-cap-resource", &[&resource_code]),
+                resource_code,
+                resource_kind: "vendor".to_owned(),
+                display_name: vendor.display_name.clone(),
+                vendor_code: Some(vendor.vendor_code.clone()),
+                modality_code: None,
+                api_endpoint_code: None,
+                catalog_key: None,
+                model: None,
+                provider_native_model: None,
+                composition_mode: "single".to_owned(),
+                capability_schema: "{}".to_owned(),
+                metadata_schema: "{}".to_owned(),
+                description: vendor.description.clone(),
+                sort_order: (index as i32) + 1,
+            },
+        );
+    }
+
+    for endpoint in catalog_api_endpoint_projections(catalog) {
+        let resource_code = format!("api.{}", endpoint.endpoint_code);
+        resources.insert(
+            resource_code.clone(),
+            CatalogAiResourceProjection {
+                uuid: stable_uuid("sdk-cap-resource", &[&resource_code]),
+                resource_code,
+                resource_kind: "api_endpoint".to_owned(),
+                display_name: endpoint.display_name,
+                vendor_code: endpoint_vendor_code(&endpoint.endpoint_code),
+                modality_code: endpoint_modality_code(&endpoint.endpoint_code),
+                api_endpoint_code: Some(endpoint.endpoint_code),
+                catalog_key: None,
+                model: None,
+                provider_native_model: None,
+                composition_mode: "single".to_owned(),
+                capability_schema: "{}".to_owned(),
+                metadata_schema: "{}".to_owned(),
+                description: Some("Model catalog API endpoint capability".to_owned()),
+                sort_order: 10_000 + endpoint.sort_order,
+            },
+        );
+    }
+
+    for (index, (catalog_key, (_, model))) in
+        catalog_identity_models(catalog).into_iter().enumerate()
+    {
+        let endpoint = model_endpoint_descriptor(model);
+        let modality_code = model_resource_suffix(model);
+        let resource_code = format!(
+            "model.{}.{}.{}",
+            model.vendor_code, model.model_id, modality_code
+        );
+        resources.insert(
+            resource_code.clone(),
+            CatalogAiResourceProjection {
+                uuid: stable_uuid("sdk-cap-resource", &[&resource_code]),
+                resource_code,
+                resource_kind: "model_api".to_owned(),
+                display_name: if model.display_name.trim().is_empty() {
+                    model.model_id.clone()
+                } else {
+                    model.display_name.clone()
+                },
+                vendor_code: Some(model.vendor_code.clone()),
+                modality_code: Some(modality_code),
+                api_endpoint_code: Some(endpoint.endpoint_code.to_owned()),
+                catalog_key: Some(catalog_key),
+                model: Some(model.model_id.clone()),
+                provider_native_model: Some(model.model_id.clone()),
+                composition_mode: "single".to_owned(),
+                capability_schema: serde_json::json!({
+                    "capability": &model.primary_capability,
+                    "capabilities": if model.capabilities.is_empty() {
+                        vec![model.primary_capability.clone()]
+                    } else {
+                        model.capabilities.clone()
+                    },
+                    "inputModalities": &model.input_modalities,
+                    "outputModalities": &model.output_modalities,
+                    "apiFormat": &model.api_format,
+                    "supportsStreaming": model.supports_streaming,
+                    "supportsTools": model.supports_tools,
+                    "supportsJsonSchema": model.supports_json_schema
+                })
+                .to_string(),
+                metadata_schema: "{}".to_owned(),
+                description: model.description.clone(),
+                sort_order: 20_000 + (index as i32) + 1,
+            },
+        );
+    }
+
+    resources.into_values().collect()
+}
+
+pub(crate) fn model_resource_suffix(model: &ModelInfo) -> String {
+    if model.primary_capability == "chat" {
+        "chat".to_owned()
+    } else {
+        model.primary_capability.clone()
+    }
+}
+
+#[derive(Debug, Clone, Copy)]
+struct EndpointDescriptor {
+    endpoint_code: &'static str,
+    protocol_code: &'static str,
+    display_name: &'static str,
+    method: &'static str,
+    path_template: &'static str,
+    streaming_supported: bool,
+    sort_order: i32,
+}
+
+fn model_endpoint_descriptor(model: &ModelInfo) -> EndpointDescriptor {
+    match model.primary_capability.as_str() {
+        "image" => EndpointDescriptor {
+            endpoint_code: "openai.images",
+            protocol_code: "openai_compatible",
+            display_name: "OpenAI Images",
+            method: "POST",
+            path_template: "/v1/images/generations",
+            streaming_supported: false,
+            sort_order: 30,
+        },
+        "audio" => EndpointDescriptor {
+            endpoint_code: "openai.audio",
+            protocol_code: "openai_compatible",
+            display_name: "OpenAI Audio",
+            method: "POST",
+            path_template: "/v1/audio",
+            streaming_supported: true,
+            sort_order: 40,
+        },
+        "music" => EndpointDescriptor {
+            endpoint_code: "suno.music",
+            protocol_code: "vendor_native",
+            display_name: "Suno Music",
+            method: "POST",
+            path_template: "/v1/music",
+            streaming_supported: false,
+            sort_order: 50,
+        },
+        "video" => EndpointDescriptor {
+            endpoint_code: "openai.video",
+            protocol_code: "openai_compatible",
+            display_name: "Video Generation",
+            method: "POST",
+            path_template: "/v1/videos",
+            streaming_supported: false,
+            sort_order: 60,
+        },
+        "embedding" => EndpointDescriptor {
+            endpoint_code: "openai.embeddings",
+            protocol_code: "openai_compatible",
+            display_name: "OpenAI Embeddings",
+            method: "POST",
+            path_template: "/v1/embeddings",
+            streaming_supported: false,
+            sort_order: 20,
+        },
+        "rerank" => EndpointDescriptor {
+            endpoint_code: "rerank",
+            protocol_code: "vendor_native",
+            display_name: "Rerank",
+            method: "POST",
+            path_template: "/v1/rerank",
+            streaming_supported: false,
+            sort_order: 70,
+        },
+        _ if model.api_format == "openai_responses" => EndpointDescriptor {
+            endpoint_code: "openai.chat_completions",
+            protocol_code: "openai_compatible",
+            display_name: "OpenAI Chat Completions",
+            method: "POST",
+            path_template: "/v1/chat/completions",
+            streaming_supported: model.supports_streaming,
+            sort_order: 10,
+        },
+        _ => EndpointDescriptor {
+            endpoint_code: "openai.chat_completions",
+            protocol_code: "openai_compatible",
+            display_name: "OpenAI Chat Completions",
+            method: "POST",
+            path_template: "/v1/chat/completions",
+            streaming_supported: model.supports_streaming,
+            sort_order: 10,
+        },
+    }
+}
+
+fn model_modality_codes(model: &ModelInfo) -> BTreeSet<String> {
+    model
+        .input_modalities
+        .iter()
+        .chain(model.output_modalities.iter())
+        .chain(std::iter::once(&model.primary_capability))
+        .filter_map(|value| {
+            let value = value.trim();
+            if value.is_empty() {
+                None
+            } else {
+                Some(value.to_owned())
+            }
+        })
+        .collect()
+}
+
+fn model_endpoint_modalities(model: &ModelInfo) -> BTreeSet<String> {
+    model
+        .input_modalities
+        .iter()
+        .chain(model.output_modalities.iter())
+        .chain(std::iter::once(&model.primary_capability))
+        .filter_map(|value| {
+            let value = value.trim();
+            if value.is_empty() {
+                None
+            } else {
+                Some(value.to_owned())
+            }
+        })
+        .collect()
+}
+
+fn model_modality_directions(model: &ModelInfo) -> Vec<(String, String)> {
+    let input = model
+        .input_modalities
+        .iter()
+        .map(|value| value.trim().to_owned())
+        .filter(|value| !value.is_empty())
+        .collect::<BTreeSet<_>>();
+    let output = model
+        .output_modalities
+        .iter()
+        .map(|value| value.trim().to_owned())
+        .filter(|value| !value.is_empty())
+        .collect::<BTreeSet<_>>();
+    input
+        .union(&output)
+        .map(|modality_code| {
+            let direction = match (
+                input.contains(modality_code),
+                output.contains(modality_code),
+            ) {
+                (true, true) => "input_output",
+                (true, false) => "input",
+                (false, true) => "output",
+                (false, false) => "input_output",
+            };
+            (modality_code.clone(), direction.to_owned())
+        })
+        .collect()
+}
+
+fn endpoint_vendor_code(endpoint_code: &str) -> Option<String> {
+    endpoint_code
+        .split_once('.')
+        .map(|(vendor_code, _)| vendor_code.to_owned())
+        .filter(|vendor_code| vendor_code != "rerank")
+}
+
+fn endpoint_modality_code(endpoint_code: &str) -> Option<String> {
+    match endpoint_code {
+        "openai.images" => Some("image"),
+        "openai.audio" => Some("audio"),
+        "suno.music" => Some("music"),
+        "openai.video" => Some("video"),
+        "openai.embeddings" => Some("embedding"),
+        "rerank" => Some("rerank"),
+        "openai.chat_completions" => Some("chat"),
+        _ => None,
+    }
+    .map(str::to_owned)
+}
+
+fn modality_display_name(modality_code: &str) -> String {
+    match modality_code {
+        "text" => "Text",
+        "chat" => "Chat",
+        "image" => "Image",
+        "audio" => "Audio",
+        "music" => "Music",
+        "video" => "Video",
+        "embedding" => "Embedding",
+        "rerank" => "Rerank",
+        "tool" => "Tool",
+        "storage" => "Storage",
+        "network" => "Network",
+        value => value,
+    }
+    .to_owned()
+}
+
+fn modality_group(modality_code: &str) -> &'static str {
+    match modality_code {
+        "chat" | "text" | "embedding" | "rerank" => "language",
+        "image" | "video" => "visual",
+        "audio" | "music" => "audio",
+        "tool" | "storage" | "network" => "tooling",
+        _ => "custom",
+    }
+}
+
+fn modality_description(modality_code: &str) -> String {
+    format!("SDKWork model catalog {modality_code} modality")
+}
+
+fn modality_sort_order(modality_code: &str) -> Option<i32> {
+    match modality_code {
+        "chat" => Some(10),
+        "text" => Some(20),
+        "embedding" => Some(30),
+        "image" => Some(40),
+        "audio" => Some(50),
+        "music" => Some(60),
+        "video" => Some(70),
+        "rerank" => Some(80),
+        "tool" => Some(90),
+        "storage" => Some(100),
+        "network" => Some(110),
+        _ => None,
     }
 }
 
@@ -411,9 +1061,8 @@ pub(crate) fn catalog_preview_admin_items(
     let vendors = catalog
         .vendors
         .iter()
-        .enumerate()
-        .map(|(index, vendor)| AdminModelVendorItem {
-            id: (index as i64) + 1,
+        .map(|vendor| AdminModelVendorItem {
+            id: 0,
             uuid: stable_uuid("sdk-vendor-preview", &[&vendor.vendor.vendor_code]),
             tenant_id: subject.tenant_id,
             organization_id: subject.organization_id,
@@ -424,74 +1073,70 @@ pub(crate) fn catalog_preview_admin_items(
             description: vendor.vendor.description.clone().unwrap_or_default(),
             deleted_at: None,
         })
+        .map(|item| (item.vendor_code.clone(), item))
+        .collect::<BTreeMap<_, _>>()
+        .into_values()
+        .enumerate()
+        .map(|(index, mut item)| {
+            item.id = (index as i64) + 1;
+            item
+        })
         .collect::<Vec<_>>();
-    let models = catalog
-        .vendors
-        .iter()
-        .flat_map(|vendor| {
-            vendor.models.iter().map(move |model| {
-                let prices = vendor
-                    .pricing
-                    .iter()
-                    .find(|pricing| pricing.model_id == model.model_id);
-                let catalog_key = model_catalog_key(
-                    &vendor.vendor.vendor_code,
-                    &vendor.vendor.region_code,
-                    &model.model_id,
-                );
-                let item = AdminAiModelItem {
-                    id: 0,
-                    uuid: stable_uuid(
-                        "sdk-model-preview",
-                        &[
-                            &vendor.vendor.vendor_code,
-                            &vendor.vendor.region_code,
-                            &model.model_id,
-                        ],
-                    ),
-                    tenant_id: subject.tenant_id,
-                    organization_id: subject.organization_id,
-                    vendor_id: vendor.vendor.vendor_code.clone(),
-                    vendor_code: vendor.vendor.vendor_code.clone(),
-                    region_code: vendor.vendor.region_code.clone(),
-                    catalog_key,
-                    model: model.model_id.clone(),
-                    display_name: model.display_name.clone(),
-                    name: if model.display_name.trim().is_empty() {
-                        model.model_id.clone()
-                    } else {
-                        model.display_name.clone()
-                    },
-                    model_type: preview_model_type(model),
-                    price_in: preview_price(prices, true),
-                    price_out: preview_price(prices, false),
-                    cache_read_price: preview_cache_price(prices, "llm_cache_read_token"),
-                    cache_write_price: preview_cache_price(prices, "llm_cache_write_token"),
-                    status: "active".to_owned(),
-                    calls: "0".to_owned(),
-                    description: model.description.clone(),
-                    modalities: preview_modalities(model),
-                    input_modalities: model.input_modalities.clone(),
-                    output_modalities: model.output_modalities.clone(),
-                    api_format: Some(model.api_format.clone()),
-                    capability_intro: None,
-                    limitations: Vec::new(),
-                    supported_languages: Vec::new(),
-                    use_cases: model.strengths.clone(),
-                    training_data_cutoff: None,
-                    context_tokens: model.context_tokens,
-                    max_output_tokens: model.max_output_tokens,
-                    supports_streaming: model.supports_streaming,
-                    supports_tools: model.supports_tools,
-                    supports_json_schema: model.supports_json_schema,
-                    release_stage: Some(release_stage_code(&model.release_stage)),
-                    shelf_state: Some(shelf_state_code(&model.shelf_state)),
-                    routing_state: Some(routing_state_code(&model.routing_state)),
-                    replacement_model: model.replacement_model.clone(),
-                    deleted_at: None,
-                };
-                (item.catalog_key.clone(), item)
-            })
+    let models = catalog_identity_models(catalog)
+        .into_iter()
+        .map(|(catalog_key, (vendor, model))| {
+            let prices = vendor
+                .pricing
+                .iter()
+                .find(|pricing| pricing.model_id == model.model_id);
+            let item = AdminAiModelItem {
+                id: 0,
+                uuid: stable_uuid(
+                    "sdk-model-preview",
+                    &[&vendor.vendor.vendor_code, &model.model_id],
+                ),
+                tenant_id: subject.tenant_id,
+                organization_id: subject.organization_id,
+                vendor_id: vendor.vendor.vendor_code.clone(),
+                vendor_code: vendor.vendor.vendor_code.clone(),
+                region_code: vendor.vendor.region_code.clone(),
+                catalog_key: catalog_key.clone(),
+                model: model.model_id.clone(),
+                display_name: model.display_name.clone(),
+                name: if model.display_name.trim().is_empty() {
+                    model.model_id.clone()
+                } else {
+                    model.display_name.clone()
+                },
+                model_type: preview_model_type(model),
+                price_in: preview_price(prices, true),
+                price_out: preview_price(prices, false),
+                cache_read_price: preview_cache_price(prices, "llm_cache_read_token"),
+                cache_write_price: preview_cache_price(prices, "llm_cache_write_token"),
+                status: "active".to_owned(),
+                calls: "0".to_owned(),
+                description: model.description.clone(),
+                modalities: preview_modalities(model),
+                input_modalities: model.input_modalities.clone(),
+                output_modalities: model.output_modalities.clone(),
+                api_format: Some(model.api_format.clone()),
+                capability_intro: None,
+                limitations: Vec::new(),
+                supported_languages: Vec::new(),
+                use_cases: model.strengths.clone(),
+                training_data_cutoff: None,
+                context_tokens: model.context_tokens,
+                max_output_tokens: model.max_output_tokens,
+                supports_streaming: model.supports_streaming,
+                supports_tools: model.supports_tools,
+                supports_json_schema: model.supports_json_schema,
+                release_stage: Some(release_stage_code(&model.release_stage)),
+                shelf_state: Some(shelf_state_code(&model.shelf_state)),
+                routing_state: Some(routing_state_code(&model.routing_state)),
+                replacement_model: model.replacement_model.clone(),
+                deleted_at: None,
+            };
+            (catalog_key, item)
         })
         .collect::<BTreeMap<_, _>>()
         .into_values()
@@ -538,7 +1183,7 @@ pub(crate) fn catalog_payload(catalog: &ModelCatalog) -> String {
         "generatedAt": catalog.manifest.generated_at,
         "vendorCount": catalog_scope_vendor_codes(catalog).len(),
         "regionCount": catalog.vendors.len(),
-        "modelCount": catalog.vendors.iter().map(|vendor| vendor.models.len()).sum::<usize>(),
+        "modelCount": catalog_scope_model_count(catalog),
         "meterCount": catalog.meters.len(),
     })
     .to_string()

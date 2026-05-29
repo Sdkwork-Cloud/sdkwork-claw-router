@@ -143,10 +143,7 @@ async fn app_auth_sessions_create_issues_dual_token_context_for_active_iam_user_
     .fetch_one(&pool)
     .await
     .unwrap();
-    assert_server_request_id(
-        &audit_request_id,
-        "66666666-6666-4333-8444-555555555555",
-    );
+    assert_server_request_id(&audit_request_id, "66666666-6666-4333-8444-555555555555");
 }
 
 #[tokio::test]

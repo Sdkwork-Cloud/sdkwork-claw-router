@@ -547,8 +547,8 @@ async fn create_schema(pool: &SqlitePool) {
             status INTEGER NOT NULL,
             api_key_id INTEGER,
             api_key_name_snapshot TEXT,
-            api_key_group_id INTEGER,
-            api_key_group_snapshot TEXT,
+            channel_group_id INTEGER,
+            channel_group_snapshot TEXT,
             owner_type INTEGER,
             owner_id INTEGER,
             owner_name_snapshot TEXT,
@@ -679,7 +679,7 @@ async fn seed_usage_fact(
         r#"
         INSERT INTO ai_usage_fact
             (id, uuid, tenant_id, organization_id, user_id, request_id, trace_id, status,
-             api_key_id, api_key_name_snapshot, api_key_group_id, api_key_group_snapshot,
+             api_key_id, api_key_name_snapshot, channel_group_id, channel_group_snapshot,
              owner_type, owner_id, owner_name_snapshot, model, provider_id, channel_id, modality,
              usage_type, billing_meter_code, billable_quantity, prompt_tokens, cached_tokens,
              completion_tokens, total_tokens, request_count, unit_price_snapshot,

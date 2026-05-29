@@ -15,6 +15,10 @@ import { ModelService, type Model } from "./packages/sdkwork-claw-router-admin-m
 import { RecordService } from "./packages/sdkwork-claw-router-admin-record/src/recordService.ts";
 import { ServiceNodeService } from "./packages/sdkwork-claw-router-admin-service-nodes/src/serviceNodeService.ts";
 import { SiteSettingsService } from "./packages/sdkwork-claw-router-admin-site/src/SiteSettingsService.ts";
+import {
+  DEFAULT_RUNTIME_REGION_SETTINGS,
+  RuntimeRegionService,
+} from "./packages/sdkwork-claw-router-admin-runtime-region/src/runtimeRegionService.ts";
 
 const originalFetch = globalThis.fetch;
 const originalWindowDescriptor = Object.getOwnPropertyDescriptor(globalThis, "window");
@@ -186,6 +190,7 @@ function readI18nSource(): string {
     "./packages/sdkwork-claw-router-i18n/src/resources/index.ts",
     "./packages/sdkwork-claw-router-i18n/src/resources/admin/core-navigation.ts",
     "./packages/sdkwork-claw-router-i18n/src/resources/admin/site-settings.ts",
+    "./packages/sdkwork-claw-router-i18n/src/resources/admin/runtime-region.ts",
     "./packages/sdkwork-claw-router-i18n/src/resources/admin/analytics-record.ts",
     "./packages/sdkwork-claw-router-i18n/src/resources/admin/service-nodes.ts",
   ].map((path) => readFileSync(new URL(path, import.meta.url), "utf8")).join("\n");
@@ -271,7 +276,7 @@ function readAdminAnalyticsRouteClassificationSource(): string {
 }
 
 function readClawRouterTablesRegistrySource(): string {
-  return readFileSync(new URL("../../docs/schema-registry/sdkwork-claw-router.tables.yaml", import.meta.url), "utf8");
+  return readFileSync(new URL("../../generated/schema/registry/sdkwork-claw-router.tables.effective.yaml", import.meta.url), "utf8");
 }
 
 function readFrontendContractSource(): string {
@@ -541,6 +546,68 @@ test("admin site settings uses generated backend SDK and is reachable from admin
         [
           ["GET", "/backend/v3/api/system/site/settings"],
           ["PATCH", "/backend/v3/api/system/site/settings"],
+        ],
+      );
+    },
+  );
+});
+
+test("admin runtime region settings use generated backend SDK and default to China", async () => {
+  const adminModuleRegistrySource = readAdminModuleRegistrySource();
+  const appSource = readAppSource();
+  const i18nSource = readI18nSource();
+  const contractSource = readFrontendContractSource();
+
+  assert.equal(DEFAULT_RUNTIME_REGION_SETTINGS.currentRegionCode, "cn");
+  assert.equal(DEFAULT_RUNTIME_REGION_SETTINGS.currentRegionName, "China");
+
+  for (const marker of [
+    "/admin/runtime-region",
+    "admin.menu.ops.system",
+    "admin.menu.runtimeRegion",
+  ]) {
+    assert.ok(adminModuleRegistrySource.includes(marker), `missing admin runtime region navigation marker: ${marker}`);
+  }
+
+  assert.ok(appSource.includes("RuntimeRegionAdmin"), "App routes must lazy-load the runtime region page");
+  assert.ok(appSource.includes("sdkwork-claw-router-admin-runtime-region"), "Runtime region page must live in its own admin package");
+  assert.ok(appSource.includes('path="runtime-region"'), "App routes must expose /admin/runtime-region");
+  assert.ok(i18nSource.includes("admin.runtimeRegion.title"), "i18n must include runtime region copy");
+  assert.ok(contractSource.includes("runtimeRegion.settings.retrieve"), "schema registry must declare runtime region retrieve");
+  assert.ok(contractSource.includes("/backend/v3/api/system/runtime_region/settings"), "schema registry must use the canonical backend runtime region path");
+
+  await withBackendSdkFetch(
+    (url, init) => {
+      const parsed = new URL(url, "http://localhost");
+      assert.equal(parsed.pathname, "/backend/v3/api/system/runtime_region/settings");
+      if ((init?.method ?? "GET") === "PATCH") {
+        const body = String(init?.body ?? "");
+        assert.match(body, /"currentRegionCode":"us"/);
+        assert.match(body, /"currentRegionName":"United States"/);
+      }
+      return {
+        currentRegionCode: "cn",
+        currentRegionName: "China",
+        remark: "Default runtime region for route, endpoint, and regional pricing selection.",
+      };
+    },
+    async (captured) => {
+      const current = await RuntimeRegionService.fetchSettings();
+      assert.equal(current.currentRegionCode, "cn");
+      assert.equal(current.currentRegionName, "China");
+
+      const saved = await RuntimeRegionService.updateSettings({
+        currentRegionCode: "us",
+        currentRegionName: "United States",
+        remark: "Route default traffic to the US runtime cell.",
+      });
+      assert.equal(saved.currentRegionCode, "cn");
+      assert.equal(saved.currentRegionName, "China");
+      assert.deepEqual(
+        captured.map((request) => [request.method, request.url]),
+        [
+          ["GET", "/backend/v3/api/system/runtime_region/settings"],
+          ["PATCH", "/backend/v3/api/system/runtime_region/settings"],
         ],
       );
     },
@@ -1638,6 +1705,14 @@ test("admin record service reads backend logs and total from generated backend S
             group: "default",
             type: "chat",
             model: "gpt-4o-mini",
+            providerNativeModel: "gpt-4o-mini-2026-05-13",
+            requestedModelCatalogKey: "openai/global/gpt-4o-mini",
+            status: "success",
+            httpStatus: 200,
+            httpMethod: "POST",
+            errorCode: "",
+            errorType: "",
+            errorMessage: "",
             totalTime: "120ms",
             ttft: "30ms",
             isStream: true,
@@ -1652,6 +1727,7 @@ test("admin record service reads backend logs and total from generated backend S
             path: "/v1/chat/completions",
             reasoningEffort: "medium",
             ip: "10.0.0.11",
+            userAgent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/126.0.0.0",
           },
         ],
       };
@@ -1665,6 +1741,79 @@ test("admin record service reads backend logs and total from generated backend S
       assert.equal(result.logs[0].inputTokens, 100);
       assert.equal(result.logs[0].isStream, true);
       assert.equal(result.logs[0].cost, "0.012345");
+      assert.equal(result.logs[0].providerNativeModel, "gpt-4o-mini-2026-05-13");
+      assert.equal(result.logs[0].requestedModelCatalogKey, "openai/global/gpt-4o-mini");
+      assert.equal(result.logs[0].status, "success");
+      assert.equal(result.logs[0].httpStatus, 200);
+      assert.equal(result.logs[0].httpMethod, "POST");
+      assert.equal(result.logs[0].errorCode, "");
+      assert.equal(result.logs[0].errorType, "");
+      assert.equal(result.logs[0].errorMessage, "");
+      assert.equal(result.logs[0].path, "/v1/chat/completions");
+      assert.equal(result.logs[0].userAgent, "Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/126.0.0.0");
+    },
+  );
+});
+
+test("admin record service exposes console-aligned request and error audit fields", async () => {
+  await withBackendSdkFetch(
+    (url, init) => {
+      if (isSystemRecordsRequest(url, init)) {
+        return {
+          total: 1,
+          logs: [
+            {
+              id: "log-err-1",
+              user: "ops@example.com",
+              requestId: "req-error-1",
+              time: "2026-05-05T08:00:00Z",
+              tokenName: "prod-key",
+              group: "default",
+              type: "chat",
+              model: "gpt-4o-mini",
+              providerNativeModel: "gpt-4o-mini-2026-05-13",
+              requestedModelCatalogKey: "openai/global/gpt-4o-mini",
+              status: "error",
+              httpStatus: 429,
+              httpMethod: "POST",
+              errorCode: "rate_limit_exceeded",
+              errorType: "provider_error",
+              errorMessage: "Provider quota exceeded",
+              totalTime: "120ms",
+              ttft: "30ms",
+              isStream: false,
+              inputTokens: 100,
+              cacheReadTokens: 20,
+              outputTokens: 40,
+              cost: "0.012345",
+              multiplier: "1.5",
+              baseInputPrice: "0.15",
+              baseOutputPrice: "0.6",
+              cacheReadPrice: "0.02",
+              path: "/v1/chat/completions",
+              reasoningEffort: "medium",
+              ip: "10.0.0.11",
+              userAgent: "curl/8.7.1",
+            },
+          ],
+        };
+      }
+      throw new Error(`unexpected SDK URL: ${url}`);
+    },
+    async () => {
+      const result = await RecordService.fetchLogs();
+      const log = result.logs[0];
+
+      assert.equal(log.status, "error");
+      assert.equal(log.httpStatus, 429);
+      assert.equal(log.httpMethod, "POST");
+      assert.equal(log.errorCode, "rate_limit_exceeded");
+      assert.equal(log.errorType, "provider_error");
+      assert.equal(log.errorMessage, "Provider quota exceeded");
+      assert.equal(log.providerNativeModel, "gpt-4o-mini-2026-05-13");
+      assert.equal(log.requestedModelCatalogKey, "openai/global/gpt-4o-mini");
+      assert.equal(log.path, "/v1/chat/completions");
+      assert.equal(log.userAgent, "curl/8.7.1");
     },
   );
 });
@@ -2209,6 +2358,7 @@ test("admin record log list fails closed when backend omits required audit field
     ["requestId", /Log request id is required/],
     ["inputTokens", /Log input tokens are required/],
     ["cost", /Log cost is required/],
+    ["httpMethod", /Log HTTP method is required/],
   ] as const) {
     await withBackendSdkFetch(
       (url, init) => {
@@ -2233,6 +2383,7 @@ test("admin record log list fails closed when backend omits required audit field
             baseInputPrice: "0.15",
             baseOutputPrice: "0.6",
             cacheReadPrice: "0.02",
+            httpMethod: "POST",
             path: "/v1/chat/completions",
             reasoningEffort: "medium",
             ip: "10.0.0.11",
@@ -2282,6 +2433,7 @@ test("admin record log list fails closed when backend returns invalid decimal au
               baseInputPrice: "0.15",
               baseOutputPrice: "0.6",
               cacheReadPrice: "0.02",
+              httpMethod: "POST",
               path: "/v1/chat/completions",
               reasoningEffort: "medium",
               ip: "10.0.0.11",
@@ -2328,6 +2480,7 @@ test("admin record log list fails closed when backend omits or corrupts paginati
                 baseInputPrice: "0.15",
                 baseOutputPrice: "0.6",
                 cacheReadPrice: "0.02",
+                httpMethod: "POST",
                 path: "/v1/chat/completions",
                 reasoningEffort: "medium",
                 ip: "10.0.0.11",
@@ -2373,6 +2526,28 @@ test("admin record table fills the available admin viewport", () => {
   ]) {
     assert.ok(source.includes(expected), `missing adaptive admin record table marker: ${expected}`);
   }
+});
+
+test("admin record table surfaces console usage request fields without requiring row expansion", () => {
+  const source = readAdminRecordSource();
+  const tableHeaderSource = source.slice(source.indexOf("<thead"), source.indexOf("</thead>"));
+  const mainRowSource = source.slice(source.indexOf("logs.map((log) => {"), source.indexOf("{/* Expanded Detail Panel */}"));
+
+  assert.match(tableHeaderSource, /admin\.record\.table\.status/);
+  assert.match(tableHeaderSource, /admin\.record\.table\.type/);
+  assert.match(tableHeaderSource, /admin\.record\.table\.requestUrl/);
+  assert.match(tableHeaderSource, /admin\.record\.table\.userAgent/);
+  assert.match(mainRowSource, /log\.status === 'error'/);
+  assert.match(mainRowSource, /log\.httpStatus > 0/);
+  assert.match(mainRowSource, /const requestUrlSignature = `\$\{log\.httpMethod\} \$\{log\.path\}`;/);
+  assert.match(mainRowSource, /title=\{requestUrlSignature\}/);
+  assert.match(mainRowSource, /\{requestUrlSignature\}/);
+  assert.match(mainRowSource, /title=\{log\.userAgent\}/);
+  assert.match(mainRowSource, /formatUserAgentDeviceLabel\(log\.userAgent\)/);
+  assert.match(mainRowSource, /const displayModel = log\.providerNativeModel \|\| log\.model;/);
+  assert.match(mainRowSource, /const modelTooltip = log\.requestedModelCatalogKey \|\| displayModel;/);
+  assert.match(mainRowSource, /title=\{modelTooltip\}/);
+  assert.match(source, /colSpan=\{14\}/);
 });
 
 test("admin monitor table fills the available admin viewport", () => {

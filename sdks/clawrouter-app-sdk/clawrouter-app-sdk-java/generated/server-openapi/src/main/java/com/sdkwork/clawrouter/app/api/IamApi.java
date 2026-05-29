@@ -26,9 +26,9 @@ public class IamApi {
     }
 
     /** Create key */
-    public ApiKeysCreateResult apiKeysCreate(CreateApiKeyRequest body, String idempotencyKey, String xRequestId) throws Exception {
+    public ApiKeysCreateResult apiKeysCreate(CreateApiKeyRequest body, String idempotencyKey) throws Exception {
         Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null), "X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
+                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null)),
                 Map.of()
         );
         Object raw = client.post(ApiPaths.appPath("/iam/api_keys"), body, null, requestHeaders, "application/json");
@@ -42,12 +42,8 @@ public class IamApi {
     }
 
     /** Update key */
-    public ApiKeysUpdateResult apiKeysUpdate(String apiKeyId, UpdateApiKeyRequest body, String xRequestId) throws Exception {
-        Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
-                Map.of()
-        );
-        Object raw = client.patch(ApiPaths.appPath("/iam/api_keys/" + serializePathParameter(apiKeyId, new PathParameterSpec("apiKeyId", "simple", false)) + ""), body, null, requestHeaders, "application/json");
+    public ApiKeysUpdateResult apiKeysUpdate(String apiKeyId, UpdateApiKeyRequest body) throws Exception {
+        Object raw = client.patch(ApiPaths.appPath("/iam/api_keys/" + serializePathParameter(apiKeyId, new PathParameterSpec("apiKeyId", "simple", false)) + ""), body, null, null, "application/json");
         return client.convertValue(raw, new TypeReference<ApiKeysUpdateResult>() {});
     }
 

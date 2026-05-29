@@ -1,4 +1,4 @@
-﻿from __future__ import annotations
+from __future__ import annotations
 
 # clawrouter-openapi-strong-types-marker
 import argparse

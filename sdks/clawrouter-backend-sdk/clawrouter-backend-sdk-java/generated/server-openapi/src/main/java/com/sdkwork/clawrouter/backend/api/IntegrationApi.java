@@ -13,6 +13,24 @@ public class IntegrationApi {
         this.client = client;
     }
 
+    /** List channel endpoints */
+    public ChannelEndpointsListResult channelEndpointsList() throws Exception {
+        Object raw = client.get(ApiPaths.backendPath("/integration/channel_endpoints"));
+        return client.convertValue(raw, new TypeReference<ChannelEndpointsListResult>() {});
+    }
+
+    /** Create channel endpoint */
+    public ChannelEndpointsCreateResult channelEndpointsCreate(AdminChannelEndpointCreateRequest body) throws Exception {
+        Object raw = client.post(ApiPaths.backendPath("/integration/channel_endpoints"), body, null, null, "application/json");
+        return client.convertValue(raw, new TypeReference<ChannelEndpointsCreateResult>() {});
+    }
+
+    /** Update channel endpoint */
+    public ChannelEndpointsUpdateResult channelEndpointsUpdate(String endpointId, AdminChannelEndpointUpdateRequest body) throws Exception {
+        Object raw = client.put(ApiPaths.backendPath("/integration/channel_endpoints/" + serializePathParameter(endpointId, new PathParameterSpec("endpointId", "simple", false)) + ""), body, null, null, "application/json");
+        return client.convertValue(raw, new TypeReference<ChannelEndpointsUpdateResult>() {});
+    }
+
     /** List channels */
     public ChannelsListResult channelsList() throws Exception {
         Object raw = client.get(ApiPaths.backendPath("/integration/channels"));
@@ -20,22 +38,14 @@ public class IntegrationApi {
     }
 
     /** Create channel */
-    public ChannelsCreateResult channelsCreate(AdminChannelCreateRequest body, String xRequestId) throws Exception {
-        Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
-                Map.of()
-        );
-        Object raw = client.post(ApiPaths.backendPath("/integration/channels"), body, null, requestHeaders, "application/json");
+    public ChannelsCreateResult channelsCreate(AdminChannelCreateRequest body) throws Exception {
+        Object raw = client.post(ApiPaths.backendPath("/integration/channels"), body, null, null, "application/json");
         return client.convertValue(raw, new TypeReference<ChannelsCreateResult>() {});
     }
 
     /** Update channel */
-    public ChannelsUpdateResult channelsUpdate(AdminChannelUpdateRequest body, String xRequestId) throws Exception {
-        Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
-                Map.of()
-        );
-        Object raw = client.put(ApiPaths.backendPath("/integration/channels"), body, null, requestHeaders, "application/json");
+    public ChannelsUpdateResult channelsUpdate(AdminChannelUpdateRequest body) throws Exception {
+        Object raw = client.put(ApiPaths.backendPath("/integration/channels"), body, null, null, "application/json");
         return client.convertValue(raw, new TypeReference<ChannelsUpdateResult>() {});
     }
 
@@ -46,12 +56,8 @@ public class IntegrationApi {
     }
 
     /** Test channel */
-    public ChannelsVerifyResult channelsVerify(String channelId, String xRequestId) throws Exception {
-        Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
-                Map.of()
-        );
-        Object raw = client.post(ApiPaths.backendPath("/integration/channels/" + serializePathParameter(channelId, new PathParameterSpec("channelId", "simple", false)) + "/verify"), null, null, requestHeaders);
+    public ChannelsVerifyResult channelsVerify(String channelId) throws Exception {
+        Object raw = client.post(ApiPaths.backendPath("/integration/channels/" + serializePathParameter(channelId, new PathParameterSpec("channelId", "simple", false)) + "/verify"), null);
         return client.convertValue(raw, new TypeReference<ChannelsVerifyResult>() {});
     }
 
@@ -66,22 +72,14 @@ public class IntegrationApi {
     }
 
     /** Create provider secret */
-    public ProviderSecretsCreateResult providerSecretsCreate(AdminProviderSecretCreateRequest body, String xRequestId) throws Exception {
-        Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
-                Map.of()
-        );
-        Object raw = client.post(ApiPaths.backendPath("/integration/provider_secrets"), body, null, requestHeaders, "application/json");
+    public ProviderSecretsCreateResult providerSecretsCreate(AdminProviderSecretCreateRequest body) throws Exception {
+        Object raw = client.post(ApiPaths.backendPath("/integration/provider_secrets"), body, null, null, "application/json");
         return client.convertValue(raw, new TypeReference<ProviderSecretsCreateResult>() {});
     }
 
     /** Update provider secret */
-    public ProviderSecretsUpdateResult providerSecretsUpdate(AdminProviderSecretUpdateRequest body, String xRequestId) throws Exception {
-        Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("X-Request-Id", new HeaderParameterSpec(xRequestId, "simple", false, null)),
-                Map.of()
-        );
-        Object raw = client.put(ApiPaths.backendPath("/integration/provider_secrets"), body, null, requestHeaders, "application/json");
+    public ProviderSecretsUpdateResult providerSecretsUpdate(AdminProviderSecretUpdateRequest body) throws Exception {
+        Object raw = client.put(ApiPaths.backendPath("/integration/provider_secrets"), body, null, null, "application/json");
         return client.convertValue(raw, new TypeReference<ProviderSecretsUpdateResult>() {});
     }
 
@@ -280,74 +278,6 @@ public class IntegrationApi {
         return new com.fasterxml.jackson.databind.ObjectMapper();
     }
 
-    private record HeaderParameterSpec(Object value, String style, boolean explode, String contentType) {}
-
-    private static Map<String, String> buildRequestHeaders(Map<String, HeaderParameterSpec> headers, Map<String, HeaderParameterSpec> cookies) throws Exception {
-        Map<String, String> requestHeaders = new java.util.LinkedHashMap<>();
-        for (Map.Entry<String, HeaderParameterSpec> entry : headers.entrySet()) {
-            String serialized = serializeParameterValue(entry.getValue());
-            if (serialized != null) {
-                requestHeaders.put(entry.getKey(), serialized);
-            }
-        }
-
-        String cookieHeader = buildCookieHeader(cookies);
-        if (cookieHeader != null && !cookieHeader.isEmpty()) {
-            requestHeaders.merge("Cookie", cookieHeader, (left, right) -> left + "; " + right);
-        }
-
-        return requestHeaders.isEmpty() ? null : requestHeaders;
-    }
-
-    private static String buildCookieHeader(Map<String, HeaderParameterSpec> cookies) throws Exception {
-        java.util.List<String> pairs = new java.util.ArrayList<>();
-        for (Map.Entry<String, HeaderParameterSpec> entry : cookies.entrySet()) {
-            String serialized = serializeParameterValue(entry.getValue());
-            if (serialized != null) {
-                pairs.add(urlEncode(entry.getKey()) + "=" + urlEncode(serialized));
-            }
-        }
-        return String.join("; ", pairs);
-    }
-
-    private static String serializeParameterValue(HeaderParameterSpec parameter) throws Exception {
-        if (parameter == null || parameter.value() == null) {
-            return null;
-        }
-        Object value = parameter.value();
-        if (parameter.contentType() != null && !parameter.contentType().isBlank()) {
-            return headerObjectMapper().writeValueAsString(value);
-        }
-        if (value instanceof Iterable<?> iterable) {
-            java.util.List<String> values = new java.util.ArrayList<>();
-            for (Object item : iterable) {
-                if (item != null) {
-                    values.add(String.valueOf(item));
-                }
-            }
-            return String.join(",", values);
-        }
-        if (value instanceof Map<?, ?> map) {
-            java.util.List<String> values = new java.util.ArrayList<>();
-            map.forEach((key, item) -> {
-                if (item == null) {
-                    return;
-                }
-                if (parameter.explode()) {
-                    values.add(String.valueOf(key) + "=" + String.valueOf(item));
-                } else {
-                    values.add(String.valueOf(key));
-                    values.add(String.valueOf(item));
-                }
-            });
-            return String.join(",", values);
-        }
-        return String.valueOf(value);
-    }
-
-    private static com.fasterxml.jackson.databind.ObjectMapper headerObjectMapper() {
-        return new com.fasterxml.jackson.databind.ObjectMapper();
-    }
 
     private static String urlEncode(String value) {
         return java.net.URLEncoder.encode(value, java.nio.charset.StandardCharsets.UTF_8);

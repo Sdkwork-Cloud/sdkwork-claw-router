@@ -5,7 +5,7 @@ use axum::http::{Request, StatusCode};
 use sdkwork_claw_product::domain::{
     AiModel, ApiKeyGroup, BillingMeter, DecimalValue, GatewayApiKey, ModelPrice,
     ModelProviderRoute, ModelVendor, ModelVendorDefinition, Money, PriceSide, PricingPlan,
-    ProviderAccountPoolRoute,
+    ProviderChannelRoute,
 };
 use sdkwork_claw_product::infrastructure::InMemoryPricingCatalog;
 use tower::ServiceExt;
@@ -34,7 +34,6 @@ fn catalog() -> InMemoryPricingCatalog {
             "openai",
             vec!["chat", "tools"],
         )
-        .with_catalog_key("openai/global/gpt-4o-mini")
         .with_public_metadata(sdkwork_claw_product::domain::AiModelPublicMetadata {
             description: Some("Fast public OpenAI model.".to_owned()),
             modalities: vec!["text".to_owned(), "image".to_owned()],
@@ -88,15 +87,13 @@ fn catalog() -> InMemoryPricingCatalog {
                 replacement_model: None,
             }),
     );
-    catalog.add_provider_route(
-        ModelProviderRoute::new(
-            "gpt-4o-mini",
-            "openrouter",
-            3001,
-            "openai/global/gpt-4o-mini",
-        )
-        .with_catalog_key("openai/global/gpt-4o-mini"),
-    );
+    catalog.add_provider_route(ModelProviderRoute::new_for_catalog_key(
+        "openai/gpt-4o-mini",
+        "gpt-4o-mini",
+        "openrouter",
+        3001,
+        "gpt-4o-mini",
+    ));
     catalog.add_plan(PricingPlan::new(
         "standard",
         PriceSide::OfficialReference,
@@ -133,7 +130,7 @@ fn catalog() -> InMemoryPricingCatalog {
             BillingMeter::LlmInputToken,
             Money::usd("0.150000").unwrap(),
         )
-        .with_catalog_key("openai/global/gpt-4o-mini"),
+        .with_catalog_key("openai/gpt-4o-mini"),
     );
     catalog.add_price(
         ModelPrice::new(
@@ -142,7 +139,7 @@ fn catalog() -> InMemoryPricingCatalog {
             BillingMeter::LlmOutputToken,
             Money::usd("0.600000").unwrap(),
         )
-        .with_catalog_key("openai/global/gpt-4o-mini"),
+        .with_catalog_key("openai/gpt-4o-mini"),
     );
     catalog.add_price(
         ModelPrice::new(
@@ -151,7 +148,7 @@ fn catalog() -> InMemoryPricingCatalog {
             BillingMeter::LlmCacheReadToken,
             Money::usd("0.075000").unwrap(),
         )
-        .with_catalog_key("openai/global/gpt-4o-mini"),
+        .with_catalog_key("openai/gpt-4o-mini"),
     );
     catalog.add_price(
         ModelPrice::new(
@@ -160,7 +157,7 @@ fn catalog() -> InMemoryPricingCatalog {
             BillingMeter::LlmInputToken,
             Money::usd("0.110000").unwrap(),
         )
-        .with_catalog_key("openai/global/gpt-4o-mini")
+        .with_catalog_key("openai/gpt-4o-mini")
         .for_provider("openrouter", 3001),
     );
     let mut channel_scoped_official_price = ModelPrice::new(
@@ -169,7 +166,7 @@ fn catalog() -> InMemoryPricingCatalog {
         BillingMeter::LlmReasoningToken,
         Money::usd("99.000000").unwrap(),
     )
-    .with_catalog_key("openai/global/gpt-4o-mini");
+    .with_catalog_key("openai/gpt-4o-mini");
     channel_scoped_official_price.channel_id = Some(3001);
     catalog.add_price(channel_scoped_official_price);
     catalog.add_price(
@@ -227,7 +224,7 @@ async fn app_model_catalog_route_returns_standard_items_for_playground_grouping(
     let items = payload["data"]["items"].as_array().unwrap();
     let gpt = items
         .iter()
-        .find(|item| item["catalogKey"] == "openai/global/gpt-4o-mini")
+        .find(|item| item["catalogKey"] == "openai/gpt-4o-mini")
         .unwrap();
     let image = items
         .iter()
@@ -311,7 +308,7 @@ async fn app_model_catalog_route_returns_public_plus_result_without_secret_mater
     assert_eq!(1, payload["data"]["items"].as_array().unwrap().len());
     assert_eq!("gpt-4o-mini", payload["data"]["items"][0]["model"]);
     assert_eq!(
-        "openai/global/gpt-4o-mini",
+        "openai/gpt-4o-mini",
         payload["data"]["items"][0]["catalogKey"]
     );
     assert_eq!("GPT-4o mini", payload["data"]["items"][0]["displayName"]);
@@ -435,7 +432,7 @@ async fn app_model_catalog_route_returns_complete_public_reference_prices_in_one
     let payload: serde_json::Value = serde_json::from_str(&body_text).unwrap();
     let item = &payload["data"]["items"][0];
 
-    assert_eq!("openai/global/gpt-4o-mini", item["catalogKey"]);
+    assert_eq!("openai/gpt-4o-mini", item["catalogKey"]);
     assert_eq!(3, item["officialReferencePrices"].as_array().unwrap().len());
     assert_model_catalog_price(item, "llm_input_token", "0.150000", "USD");
     assert_model_catalog_price(item, "llm_output_token", "0.600000", "USD");
@@ -534,9 +531,9 @@ async fn app_model_catalog_route_returns_public_taxonomy_and_filters_server_side
         )
         .with_name("Empty Admin Group"),
     );
-    catalog.add_provider_account_pool_route(
-        ProviderAccountPoolRoute::new("openrouter", 3001)
-            .with_scoped_group_binding(10, 10, 100, vec!["openai/global/gpt-4o-mini"], vec!["llm"])
+    catalog.add_provider_channel_route(
+        ProviderChannelRoute::new("openrouter", 3001)
+            .with_scoped_group_binding(10, 10, 100, vec!["openai/gpt-4o-mini"], vec!["llm"])
             .with_scoped_group_binding(11, 20, 100, Vec::<String>::new(), vec!["tools"]),
     );
     let router = sdkwork_claw_product::api::app_model_catalog_router(Arc::new(catalog));
@@ -560,7 +557,7 @@ async fn app_model_catalog_route_returns_public_taxonomy_and_filters_server_side
 
     assert_eq!(1, items.len());
     let item = &items[0];
-    assert_eq!("openai/global/gpt-4o-mini", item["catalogKey"]);
+    assert_eq!("openai/gpt-4o-mini", item["catalogKey"]);
     assert_eq!(
         serde_json::json!(["premium-lab", "standard-group"]),
         item["groups"]

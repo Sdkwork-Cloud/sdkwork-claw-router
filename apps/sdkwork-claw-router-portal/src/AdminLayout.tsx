@@ -11,6 +11,19 @@ import { getAdminModuleMenu, type AdminMenuGroup, type AdminMenuItem } from './a
 import { revokeAppSession } from 'sdkwork-claw-router-commons/runtime';
 
 const ADMIN_SIDEBAR_GROUPS_DEFAULT_OPEN = true;
+const ADMIN_BUSINESS_ROUTE_PREFIXES = [
+  '/admin/catalog',
+  '/admin/inventory',
+  '/admin/orders',
+  '/admin/payments',
+  '/admin/memberships',
+  '/admin/wallet',
+  '/admin/finance',
+] as const;
+
+function isAdminBusinessRoute(pathname: string): boolean {
+  return ADMIN_BUSINESS_ROUTE_PREFIXES.some((prefix) => pathname === prefix || pathname.startsWith(`${prefix}/`));
+}
 
 function isSidebarItemActive(pathname: string, item: AdminMenuItem): boolean {
   return pathname === item.path || pathname.startsWith(`${item.path}/`);
@@ -108,9 +121,13 @@ export function AdminLayout({ isDark, toggleTheme }: { isDark: boolean; toggleTh
     () => getAdminModuleMenu(activeModule),
     [activeModule],
   );
+  const businessRouteActive = isAdminBusinessRoute(location.pathname);
 
   return (
-    <div className="flex min-h-screen flex-col bg-slate-50 dark:bg-black font-sans text-slate-900 dark:text-white">
+    <div
+      data-admin-business-route={businessRouteActive ? 'active' : undefined}
+      className="flex min-h-screen flex-col bg-slate-50 dark:bg-black font-sans text-slate-900 dark:text-white"
+    >
       <AdminHeader
         isDark={isDark}
         toggleTheme={toggleTheme}

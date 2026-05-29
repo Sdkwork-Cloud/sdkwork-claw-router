@@ -33,12 +33,9 @@ func (a *StorageApi) OssBucketsList(cursor *string, limit *int, status *string) 
 }
 
 // Create storage bucket
-func (a *StorageApi) OssBucketsCreate(body sdktypes.CreateStorageBucketRequest, idempotencyKey string, xRequestId *string) (sdktypes.OssBucketsCreateResult, error) {
+func (a *StorageApi) OssBucketsCreate(body sdktypes.CreateStorageBucketRequest, idempotencyKey string) (sdktypes.OssBucketsCreateResult, error) {
     headers := BuildRequestHeaders(
-        map[string]ParameterSpec{
-            "Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},
-            "X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},
-        },
+        map[string]ParameterSpec{"Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},},
         map[string]ParameterSpec{},
     )
     raw, err := a.client.Post(BackendApiPath("/storage/buckets"), body, nil, headers, "application/json")
@@ -50,12 +47,8 @@ func (a *StorageApi) OssBucketsCreate(body sdktypes.CreateStorageBucketRequest, 
 }
 
 // Update storage bucket status
-func (a *StorageApi) OssBucketsUpdate(bucketId string, body sdktypes.UpdateStorageBucketRequest, xRequestId *string) (sdktypes.OssBucketsUpdateResult, error) {
-    headers := BuildRequestHeaders(
-        map[string]ParameterSpec{"X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},},
-        map[string]ParameterSpec{},
-    )
-    raw, err := a.client.Patch(BackendApiPath(fmt.Sprintf("/storage/buckets/%s", SerializePathParameter(bucketId, PathParameterSpec{Name: "bucketId", Style: "simple", Explode: false}))), body, nil, headers, "application/json")
+func (a *StorageApi) OssBucketsUpdate(bucketId string, body sdktypes.UpdateStorageBucketRequest) (sdktypes.OssBucketsUpdateResult, error) {
+    raw, err := a.client.Patch(BackendApiPath(fmt.Sprintf("/storage/buckets/%s", SerializePathParameter(bucketId, PathParameterSpec{Name: "bucketId", Style: "simple", Explode: false}))), body, nil, nil, "application/json")
     if err != nil {
         var zero sdktypes.OssBucketsUpdateResult
         return zero, err
@@ -77,12 +70,8 @@ func (a *StorageApi) OssDefaultBucketsList(logicalScope *string) (sdktypes.OssDe
 }
 
 // Set default storage bucket route
-func (a *StorageApi) OssDefaultBucketsUpdate(logicalScope string, body sdktypes.SetStorageDefaultBucketRequest, xRequestId *string) (sdktypes.OssDefaultBucketsUpdateResult, error) {
-    headers := BuildRequestHeaders(
-        map[string]ParameterSpec{"X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},},
-        map[string]ParameterSpec{},
-    )
-    raw, err := a.client.Patch(BackendApiPath(fmt.Sprintf("/storage/default_buckets/%s", SerializePathParameter(logicalScope, PathParameterSpec{Name: "logicalScope", Style: "simple", Explode: false}))), body, nil, headers, "application/json")
+func (a *StorageApi) OssDefaultBucketsUpdate(logicalScope string, body sdktypes.SetStorageDefaultBucketRequest) (sdktypes.OssDefaultBucketsUpdateResult, error) {
+    raw, err := a.client.Patch(BackendApiPath(fmt.Sprintf("/storage/default_buckets/%s", SerializePathParameter(logicalScope, PathParameterSpec{Name: "logicalScope", Style: "simple", Explode: false}))), body, nil, nil, "application/json")
     if err != nil {
         var zero sdktypes.OssDefaultBucketsUpdateResult
         return zero, err
@@ -106,12 +95,9 @@ func (a *StorageApi) OssGcJobsList(cursor *string, limit *int, status *string) (
 }
 
 // Create storage garbage collection job
-func (a *StorageApi) OssGcJobsCreate(body sdktypes.CreateStorageGarbageCollectionJobRequest, idempotencyKey string, xRequestId *string) (sdktypes.OssGcJobsCreateResult, error) {
+func (a *StorageApi) OssGcJobsCreate(body sdktypes.CreateStorageGarbageCollectionJobRequest, idempotencyKey string) (sdktypes.OssGcJobsCreateResult, error) {
     headers := BuildRequestHeaders(
-        map[string]ParameterSpec{
-            "Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},
-            "X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},
-        },
+        map[string]ParameterSpec{"Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},},
         map[string]ParameterSpec{},
     )
     raw, err := a.client.Post(BackendApiPath("/storage/gc_jobs"), body, nil, headers, "application/json")
@@ -133,12 +119,9 @@ func (a *StorageApi) OssProvidersList() (sdktypes.OssProvidersListResult, error)
 }
 
 // Create storage provider
-func (a *StorageApi) OssProvidersCreate(body sdktypes.CreateStorageProviderRequest, idempotencyKey string, xRequestId *string) (sdktypes.OssProvidersCreateResult, error) {
+func (a *StorageApi) OssProvidersCreate(body sdktypes.CreateStorageProviderRequest, idempotencyKey string) (sdktypes.OssProvidersCreateResult, error) {
     headers := BuildRequestHeaders(
-        map[string]ParameterSpec{
-            "Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},
-            "X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},
-        },
+        map[string]ParameterSpec{"Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},},
         map[string]ParameterSpec{},
     )
     raw, err := a.client.Post(BackendApiPath("/storage/providers"), body, nil, headers, "application/json")
@@ -150,12 +133,8 @@ func (a *StorageApi) OssProvidersCreate(body sdktypes.CreateStorageProviderReque
 }
 
 // Update storage provider status
-func (a *StorageApi) OssProvidersUpdate(providerId string, body sdktypes.UpdateStorageProviderRequest, xRequestId *string) (sdktypes.OssProvidersUpdateResult, error) {
-    headers := BuildRequestHeaders(
-        map[string]ParameterSpec{"X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},},
-        map[string]ParameterSpec{},
-    )
-    raw, err := a.client.Patch(BackendApiPath(fmt.Sprintf("/storage/providers/%s", SerializePathParameter(providerId, PathParameterSpec{Name: "providerId", Style: "simple", Explode: false}))), body, nil, headers, "application/json")
+func (a *StorageApi) OssProvidersUpdate(providerId string, body sdktypes.UpdateStorageProviderRequest) (sdktypes.OssProvidersUpdateResult, error) {
+    raw, err := a.client.Patch(BackendApiPath(fmt.Sprintf("/storage/providers/%s", SerializePathParameter(providerId, PathParameterSpec{Name: "providerId", Style: "simple", Explode: false}))), body, nil, nil, "application/json")
     if err != nil {
         var zero sdktypes.OssProvidersUpdateResult
         return zero, err
@@ -164,12 +143,8 @@ func (a *StorageApi) OssProvidersUpdate(providerId string, body sdktypes.UpdateS
 }
 
 // Check storage provider health
-func (a *StorageApi) OssProvidersHealthChecksCreate(providerId string, xRequestId *string) (sdktypes.OssProvidersHealthChecksCreateResult, error) {
-    headers := BuildRequestHeaders(
-        map[string]ParameterSpec{"X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},},
-        map[string]ParameterSpec{},
-    )
-    raw, err := a.client.Post(BackendApiPath(fmt.Sprintf("/storage/providers/%s/health_check", SerializePathParameter(providerId, PathParameterSpec{Name: "providerId", Style: "simple", Explode: false}))), nil, nil, headers, "")
+func (a *StorageApi) OssProvidersHealthChecksCreate(providerId string) (sdktypes.OssProvidersHealthChecksCreateResult, error) {
+    raw, err := a.client.Post(BackendApiPath(fmt.Sprintf("/storage/providers/%s/health_check", SerializePathParameter(providerId, PathParameterSpec{Name: "providerId", Style: "simple", Explode: false}))), nil, nil, nil, "")
     if err != nil {
         var zero sdktypes.OssProvidersHealthChecksCreateResult
         return zero, err
@@ -188,12 +163,9 @@ func (a *StorageApi) OssQuotasList() (sdktypes.OssQuotasListResult, error) {
 }
 
 // Create storage quota policy
-func (a *StorageApi) OssQuotasCreate(body sdktypes.CreateStorageQuotaPolicyRequest, idempotencyKey string, xRequestId *string) (sdktypes.OssQuotasCreateResult, error) {
+func (a *StorageApi) OssQuotasCreate(body sdktypes.CreateStorageQuotaPolicyRequest, idempotencyKey string) (sdktypes.OssQuotasCreateResult, error) {
     headers := BuildRequestHeaders(
-        map[string]ParameterSpec{
-            "Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},
-            "X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},
-        },
+        map[string]ParameterSpec{"Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},},
         map[string]ParameterSpec{},
     )
     raw, err := a.client.Post(BackendApiPath("/storage/quotas"), body, nil, headers, "application/json")
@@ -221,12 +193,9 @@ func (a *StorageApi) OssReconciliationRunsList(cursor *string, limit *int, runTy
 }
 
 // Create storage reconciliation run
-func (a *StorageApi) OssReconciliationRunsCreate(body sdktypes.CreateStorageReconciliationRunRequest, idempotencyKey string, xRequestId *string) (sdktypes.OssReconciliationRunsCreateResult, error) {
+func (a *StorageApi) OssReconciliationRunsCreate(body sdktypes.CreateStorageReconciliationRunRequest, idempotencyKey string) (sdktypes.OssReconciliationRunsCreateResult, error) {
     headers := BuildRequestHeaders(
-        map[string]ParameterSpec{
-            "Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},
-            "X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},
-        },
+        map[string]ParameterSpec{"Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},},
         map[string]ParameterSpec{},
     )
     raw, err := a.client.Post(BackendApiPath("/storage/reconciliation_runs"), body, nil, headers, "application/json")

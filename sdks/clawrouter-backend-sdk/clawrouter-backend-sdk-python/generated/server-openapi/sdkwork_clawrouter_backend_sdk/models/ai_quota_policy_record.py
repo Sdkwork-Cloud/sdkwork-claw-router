@@ -8,6 +8,7 @@ class AiQuotaPolicyRecord:
     """Ai quota policy record schema exposed by Claw Router."""
     block_duration_seconds: Optional[str] = None
     burst_limit: Optional[str] = None
+    channel_group_id: Optional[str] = None
     created_at: Optional[str] = None
     data_scope: Optional[str] = None
     deleted_at: Optional[str] = None
@@ -15,7 +16,6 @@ class AiQuotaPolicyRecord:
     effective_from: Optional[str] = None
     effective_to: Optional[str] = None
     exhausted_at: Optional[str] = None
-    group_id: Optional[str] = None
     id: Optional[str] = None
     metadata: Optional[Dict[str, str]] = None
     model: Optional[str] = None

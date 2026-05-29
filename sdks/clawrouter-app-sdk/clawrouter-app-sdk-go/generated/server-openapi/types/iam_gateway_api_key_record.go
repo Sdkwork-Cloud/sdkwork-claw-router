@@ -2,13 +2,13 @@ package types
 
 // Iam gateway api key record schema exposed by Claw Router.
 type IamGatewayApiKeyRecord struct {
+	ChannelGroupId string `json:"channel_group_id"`
 	CreatedAt string `json:"created_at"`
 	DataScope string `json:"data_scope"`
 	DeletedAt string `json:"deleted_at"`
 	DeletedBy string `json:"deleted_by"`
 	Environment string `json:"environment"`
 	ExpireAt string `json:"expire_at"`
-	GroupId string `json:"group_id"`
 	HashAlg string `json:"hash_alg"`
 	Id string `json:"id"`
 	IdempotencyKey string `json:"idempotency_key"`

@@ -92,11 +92,10 @@ public class ServiceProvidersApi {
     }
 
     /// Service Provider Downstream Create
-    public func downstreamsCreate(body: ServiceProviderDownstreamCreateRequest, idempotencyKey: String, xRequestId: String? = nil) async throws -> DownstreamsCreateResult? {
+    public func downstreamsCreate(body: ServiceProviderDownstreamCreateRequest, idempotencyKey: String) async throws -> DownstreamsCreateResult? {
         let requestHeaders = buildRequestHeaders(
             [
                 "Idempotency-Key": HeaderParameterSpec(value: idempotencyKey, style: "simple", explode: false, contentType: nil),
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
             ],
             [:]
         )
@@ -132,11 +131,10 @@ public class ServiceProvidersApi {
     }
 
     /// Service Provider Pricing Rule Create
-    public func pricingRulesCreate(body: ServiceProviderPricingRuleCreateRequest, idempotencyKey: String, xRequestId: String? = nil) async throws -> PricingRulesCreateResult? {
+    public func pricingRulesCreate(body: ServiceProviderPricingRuleCreateRequest, idempotencyKey: String) async throws -> PricingRulesCreateResult? {
         let requestHeaders = buildRequestHeaders(
             [
                 "Idempotency-Key": HeaderParameterSpec(value: idempotencyKey, style: "simple", explode: false, contentType: nil),
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
             ],
             [:]
         )
@@ -144,11 +142,10 @@ public class ServiceProvidersApi {
     }
 
     /// Service Provider Pricing Rule Update
-    public func pricingRulesUpdate(ruleId: String, body: ServiceProviderPricingRuleUpdateRequest, idempotencyKey: String, xRequestId: String? = nil) async throws -> PricingRulesUpdateResult? {
+    public func pricingRulesUpdate(ruleId: String, body: ServiceProviderPricingRuleUpdateRequest, idempotencyKey: String) async throws -> PricingRulesUpdateResult? {
         let requestHeaders = buildRequestHeaders(
             [
                 "Idempotency-Key": HeaderParameterSpec(value: idempotencyKey, style: "simple", explode: false, contentType: nil),
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
             ],
             [:]
         )
@@ -156,11 +153,10 @@ public class ServiceProvidersApi {
     }
 
     /// Service Provider Price Simulation Create
-    public func priceSimulationCreate(body: ServiceProviderPriceSimulationRequest, idempotencyKey: String, xRequestId: String? = nil) async throws -> PriceSimulationCreateResult? {
+    public func priceSimulationCreate(body: ServiceProviderPriceSimulationRequest, idempotencyKey: String) async throws -> PriceSimulationCreateResult? {
         let requestHeaders = buildRequestHeaders(
             [
                 "Idempotency-Key": HeaderParameterSpec(value: idempotencyKey, style: "simple", explode: false, contentType: nil),
-                "X-Request-Id": HeaderParameterSpec(value: xRequestId, style: "simple", explode: false, contentType: nil),
             ],
             [:]
         )

@@ -42,12 +42,9 @@ func (a *MemoryApi) SpacesList(page *int, pageSize *int) (sdktypes.SpacesListRes
 }
 
 // Create memory space
-func (a *MemoryApi) SpacesCreate(body sdktypes.MemorySpaceCreateRequest, idempotencyKey string, xRequestId *string) (sdktypes.SpacesCreateResult, error) {
+func (a *MemoryApi) SpacesCreate(body sdktypes.MemorySpaceCreateRequest, idempotencyKey string) (sdktypes.SpacesCreateResult, error) {
     headers := BuildRequestHeaders(
-        map[string]ParameterSpec{
-            "Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},
-            "X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},
-        },
+        map[string]ParameterSpec{"Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},},
         map[string]ParameterSpec{},
     )
     raw, err := a.client.Post(AppApiPath("/memory/spaces"), body, nil, headers, "application/json")
@@ -83,12 +80,9 @@ func (a *MemoryApi) EntriesList(spaceId string, page *int, pageSize *int) (sdkty
 }
 
 // Create memory entry
-func (a *MemoryApi) EntriesCreate(spaceId string, body sdktypes.MemoryEntryCreateRequest, idempotencyKey string, xRequestId *string) (sdktypes.EntriesCreateResult, error) {
+func (a *MemoryApi) EntriesCreate(spaceId string, body sdktypes.MemoryEntryCreateRequest, idempotencyKey string) (sdktypes.EntriesCreateResult, error) {
     headers := BuildRequestHeaders(
-        map[string]ParameterSpec{
-            "Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},
-            "X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},
-        },
+        map[string]ParameterSpec{"Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},},
         map[string]ParameterSpec{},
     )
     raw, err := a.client.Post(AppApiPath(fmt.Sprintf("/memory/spaces/%s/entries", SerializePathParameter(spaceId, PathParameterSpec{Name: "spaceId", Style: "simple", Explode: false}))), body, nil, headers, "application/json")

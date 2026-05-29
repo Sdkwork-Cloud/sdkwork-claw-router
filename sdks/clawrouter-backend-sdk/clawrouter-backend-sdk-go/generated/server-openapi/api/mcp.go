@@ -18,12 +18,8 @@ func NewMcpApi(client *sdkhttp.Client) *McpApi {
 }
 
 // Update MCP binding
-func (a *McpApi) ServersBindingsUpdate(bindingId string, body sdktypes.AdminMcpBindingUpdateRequest, xRequestId *string) (sdktypes.ServersBindingsUpdateResult, error) {
-    headers := BuildRequestHeaders(
-        map[string]ParameterSpec{"X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},},
-        map[string]ParameterSpec{},
-    )
-    raw, err := a.client.Put(BackendApiPath(fmt.Sprintf("/mcp/bindings/%s", SerializePathParameter(bindingId, PathParameterSpec{Name: "bindingId", Style: "simple", Explode: false}))), body, nil, headers, "application/json")
+func (a *McpApi) ServersBindingsUpdate(bindingId string, body sdktypes.AdminMcpBindingUpdateRequest) (sdktypes.ServersBindingsUpdateResult, error) {
+    raw, err := a.client.Put(BackendApiPath(fmt.Sprintf("/mcp/bindings/%s", SerializePathParameter(bindingId, PathParameterSpec{Name: "bindingId", Style: "simple", Explode: false}))), body, nil, nil, "application/json")
     if err != nil {
         var zero sdktypes.ServersBindingsUpdateResult
         return zero, err
@@ -32,12 +28,8 @@ func (a *McpApi) ServersBindingsUpdate(bindingId string, body sdktypes.AdminMcpB
 }
 
 // Publish MCP server revision
-func (a *McpApi) RevisionsPublish(revisionId string, xRequestId *string) (sdktypes.RevisionsPublishResult, error) {
-    headers := BuildRequestHeaders(
-        map[string]ParameterSpec{"X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},},
-        map[string]ParameterSpec{},
-    )
-    raw, err := a.client.Post(BackendApiPath(fmt.Sprintf("/mcp/revisions/%s/publish", SerializePathParameter(revisionId, PathParameterSpec{Name: "revisionId", Style: "simple", Explode: false}))), nil, nil, headers, "")
+func (a *McpApi) RevisionsPublish(revisionId string) (sdktypes.RevisionsPublishResult, error) {
+    raw, err := a.client.Post(BackendApiPath(fmt.Sprintf("/mcp/revisions/%s/publish", SerializePathParameter(revisionId, PathParameterSpec{Name: "revisionId", Style: "simple", Explode: false}))), nil, nil, nil, "")
     if err != nil {
         var zero sdktypes.RevisionsPublishResult
         return zero, err
@@ -65,12 +57,9 @@ func (a *McpApi) ServersList(page *int, pageSize *int, q *string, transport *str
 }
 
 // Create MCP server
-func (a *McpApi) ServersCreate(body sdktypes.AdminMcpServerCreateRequest, idempotencyKey string, xRequestId *string) (sdktypes.ServersCreateResult, error) {
+func (a *McpApi) ServersCreate(body sdktypes.AdminMcpServerCreateRequest, idempotencyKey string) (sdktypes.ServersCreateResult, error) {
     headers := BuildRequestHeaders(
-        map[string]ParameterSpec{
-            "Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},
-            "X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},
-        },
+        map[string]ParameterSpec{"Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},},
         map[string]ParameterSpec{},
     )
     raw, err := a.client.Post(BackendApiPath("/mcp/servers"), body, nil, headers, "application/json")
@@ -92,12 +81,8 @@ func (a *McpApi) ServersRetrieve(serverId string) (sdktypes.ServersRetrieveResul
 }
 
 // Update MCP server
-func (a *McpApi) ServersUpdate(serverId string, body sdktypes.AdminMcpServerUpdateRequest, xRequestId *string) (sdktypes.ServersUpdateResult, error) {
-    headers := BuildRequestHeaders(
-        map[string]ParameterSpec{"X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},},
-        map[string]ParameterSpec{},
-    )
-    raw, err := a.client.Put(BackendApiPath(fmt.Sprintf("/mcp/servers/%s", SerializePathParameter(serverId, PathParameterSpec{Name: "serverId", Style: "simple", Explode: false}))), body, nil, headers, "application/json")
+func (a *McpApi) ServersUpdate(serverId string, body sdktypes.AdminMcpServerUpdateRequest) (sdktypes.ServersUpdateResult, error) {
+    raw, err := a.client.Put(BackendApiPath(fmt.Sprintf("/mcp/servers/%s", SerializePathParameter(serverId, PathParameterSpec{Name: "serverId", Style: "simple", Explode: false}))), body, nil, nil, "application/json")
     if err != nil {
         var zero sdktypes.ServersUpdateResult
         return zero, err
@@ -116,12 +101,9 @@ func (a *McpApi) ServersBindingsList(serverId string) (sdktypes.ServersBindingsL
 }
 
 // Create MCP binding
-func (a *McpApi) ServersBindingsCreate(serverId string, body sdktypes.AdminMcpBindingCreateRequest, idempotencyKey string, xRequestId *string) (sdktypes.ServersBindingsCreateResult, error) {
+func (a *McpApi) ServersBindingsCreate(serverId string, body sdktypes.AdminMcpBindingCreateRequest, idempotencyKey string) (sdktypes.ServersBindingsCreateResult, error) {
     headers := BuildRequestHeaders(
-        map[string]ParameterSpec{
-            "Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},
-            "X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},
-        },
+        map[string]ParameterSpec{"Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},},
         map[string]ParameterSpec{},
     )
     raw, err := a.client.Post(BackendApiPath(fmt.Sprintf("/mcp/servers/%s/bindings", SerializePathParameter(serverId, PathParameterSpec{Name: "serverId", Style: "simple", Explode: false}))), body, nil, headers, "application/json")
@@ -133,12 +115,8 @@ func (a *McpApi) ServersBindingsCreate(serverId string, body sdktypes.AdminMcpBi
 }
 
 // Discover MCP tools
-func (a *McpApi) ServersToolsRefresh(serverId string, xRequestId *string) (sdktypes.ServersToolsRefreshResult, error) {
-    headers := BuildRequestHeaders(
-        map[string]ParameterSpec{"X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},},
-        map[string]ParameterSpec{},
-    )
-    raw, err := a.client.Post(BackendApiPath(fmt.Sprintf("/mcp/servers/%s/discover", SerializePathParameter(serverId, PathParameterSpec{Name: "serverId", Style: "simple", Explode: false}))), nil, nil, headers, "")
+func (a *McpApi) ServersToolsRefresh(serverId string) (sdktypes.ServersToolsRefreshResult, error) {
+    raw, err := a.client.Post(BackendApiPath(fmt.Sprintf("/mcp/servers/%s/discover", SerializePathParameter(serverId, PathParameterSpec{Name: "serverId", Style: "simple", Explode: false}))), nil, nil, nil, "")
     if err != nil {
         var zero sdktypes.ServersToolsRefreshResult
         return zero, err
@@ -147,12 +125,8 @@ func (a *McpApi) ServersToolsRefresh(serverId string, xRequestId *string) (sdkty
 }
 
 // Check MCP server health
-func (a *McpApi) ServersHealthChecksCreate(serverId string, xRequestId *string) (sdktypes.ServersHealthChecksCreateResult, error) {
-    headers := BuildRequestHeaders(
-        map[string]ParameterSpec{"X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},},
-        map[string]ParameterSpec{},
-    )
-    raw, err := a.client.Post(BackendApiPath(fmt.Sprintf("/mcp/servers/%s/health_check", SerializePathParameter(serverId, PathParameterSpec{Name: "serverId", Style: "simple", Explode: false}))), nil, nil, headers, "")
+func (a *McpApi) ServersHealthChecksCreate(serverId string) (sdktypes.ServersHealthChecksCreateResult, error) {
+    raw, err := a.client.Post(BackendApiPath(fmt.Sprintf("/mcp/servers/%s/health_check", SerializePathParameter(serverId, PathParameterSpec{Name: "serverId", Style: "simple", Explode: false}))), nil, nil, nil, "")
     if err != nil {
         var zero sdktypes.ServersHealthChecksCreateResult
         return zero, err
@@ -171,12 +145,9 @@ func (a *McpApi) ServersRevisionsList(serverId string) (sdktypes.ServersRevision
 }
 
 // Create MCP server revision
-func (a *McpApi) ServersRevisionsCreate(serverId string, body sdktypes.AdminMcpServerRevisionCreateRequest, idempotencyKey string, xRequestId *string) (sdktypes.ServersRevisionsCreateResult, error) {
+func (a *McpApi) ServersRevisionsCreate(serverId string, body sdktypes.AdminMcpServerRevisionCreateRequest, idempotencyKey string) (sdktypes.ServersRevisionsCreateResult, error) {
     headers := BuildRequestHeaders(
-        map[string]ParameterSpec{
-            "Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},
-            "X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},
-        },
+        map[string]ParameterSpec{"Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},},
         map[string]ParameterSpec{},
     )
     raw, err := a.client.Post(BackendApiPath(fmt.Sprintf("/mcp/servers/%s/revisions", SerializePathParameter(serverId, PathParameterSpec{Name: "serverId", Style: "simple", Explode: false}))), body, nil, headers, "application/json")
@@ -198,12 +169,8 @@ func (a *McpApi) ServersToolsList(serverId string) (sdktypes.ServersToolsListRes
 }
 
 // Update MCP tool
-func (a *McpApi) ToolsUpdate(toolId string, body sdktypes.AdminMcpToolUpdateRequest, xRequestId *string) (sdktypes.ToolsUpdateResult, error) {
-    headers := BuildRequestHeaders(
-        map[string]ParameterSpec{"X-Request-Id": ParameterSpec{Value: func() interface{} { if xRequestId == nil { return nil }; return *xRequestId }(), Style: "simple", Explode: false},},
-        map[string]ParameterSpec{},
-    )
-    raw, err := a.client.Put(BackendApiPath(fmt.Sprintf("/mcp/tools/%s", SerializePathParameter(toolId, PathParameterSpec{Name: "toolId", Style: "simple", Explode: false}))), body, nil, headers, "application/json")
+func (a *McpApi) ToolsUpdate(toolId string, body sdktypes.AdminMcpToolUpdateRequest) (sdktypes.ToolsUpdateResult, error) {
+    raw, err := a.client.Put(BackendApiPath(fmt.Sprintf("/mcp/tools/%s", SerializePathParameter(toolId, PathParameterSpec{Name: "toolId", Style: "simple", Explode: false}))), body, nil, nil, "application/json")
     if err != nil {
         var zero sdktypes.ToolsUpdateResult
         return zero, err

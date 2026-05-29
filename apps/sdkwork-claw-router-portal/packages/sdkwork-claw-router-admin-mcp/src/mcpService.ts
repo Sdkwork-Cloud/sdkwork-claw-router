@@ -1,4 +1,4 @@
-﻿import {
+import {
   createIdempotencyParams,
   ensureSdkworkApiSuccess,
   getClawRouterBackendSdkClient,

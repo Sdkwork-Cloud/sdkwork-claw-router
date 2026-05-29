@@ -1,4 +1,4 @@
-﻿import json
+import json
 import unittest
 from pathlib import Path
 
@@ -59,11 +59,11 @@ class AdminGroupRuntimeStandardTest(unittest.TestCase):
         self.assertIn("AccessGroupsCreateResult", iam_api)
         self.assertIn("AccessGroupsUpdateResult", iam_api)
         self.assertIn(
-            "async create(body: AdminAccessGroupCreateRequest, params?: IamAccessGroupsCreateParams): Promise<AccessGroupsCreateResult>",
+            "async create(body: AdminAccessGroupCreateRequest): Promise<AccessGroupsCreateResult>",
             iam_api,
         )
         self.assertIn(
-            "async update(groupId: string, body: AdminAccessGroupUpdateRequest, params?: IamAccessGroupsUpdateParams): Promise<AccessGroupsUpdateResult>",
+            "async update(groupId: string, body: AdminAccessGroupUpdateRequest): Promise<AccessGroupsUpdateResult>",
             iam_api,
         )
         self.assertNotIn("async create(body?: OperationRequest): Promise<PlusApiResult>", iam_api)
@@ -80,7 +80,7 @@ class AdminGroupRuntimeStandardTest(unittest.TestCase):
         self.assertIn("export type { AccessGroupsCreateResult }", type_exports)
         self.assertIn("export type { AccessGroupsUpdateResult }", type_exports)
 
-    def test_admin_group_channel_binding_modal_lists_only_current_group_bindings(self) -> None:
+    def test_admin_group_channel_binding_drawer_lists_only_current_group_bindings(self) -> None:
         view = (
             ROOT
             / "apps"
@@ -92,22 +92,25 @@ class AdminGroupRuntimeStandardTest(unittest.TestCase):
         ).read_text(encoding="utf-8")
 
         for marker in [
-            "data-admin-group-channel-bindings-modal",
+            "data-admin-group-channel-bindings-drawer",
             "data-admin-group-channel-bindings-toolbar",
             "data-admin-group-channel-binding-search",
             "data-admin-group-channel-binding-add",
             "data-admin-group-channel-binding-remove",
             "data-admin-group-channel-picker-modal",
             "visibleBindingRows",
-            "availableChannelOptions",
             "openChannelBindingPicker",
             "addSelectedChannelBindings",
             "removeChannelBindingDraft",
-            "max-h-[92vh]",
-            "max-w-7xl",
+            "pickerChannelOptions",
+            "w-[90vw]",
+            "h-full",
         ]:
             self.assertIn(marker, view)
 
+        self.assertIn("<aside data-admin-group-channel-bindings-drawer", view)
+        self.assertIn("fixed inset-0 z-50 flex justify-start", view)
+        self.assertNotIn("data-admin-group-channel-bindings-modal", view)
         self.assertNotIn("orderedChannelOptions.map", view)
         self.assertNotIn("toggleChannelBinding", view)
         self.assertNotIn("columns.enabled", view)
@@ -124,7 +127,8 @@ class AdminGroupRuntimeStandardTest(unittest.TestCase):
         service = (package / "groupService.ts").read_text(encoding="utf-8")
         view = (package / "index.tsx").read_text(encoding="utf-8")
 
-        for token in ["鍏", "涓", "姝", "寮", "é", "æ", "ç"]:
+        mojibake_marker_codepoints = [0x934F, 0x6D93, 0x59DD, 0x5BEE, 0x00E9, 0x00E6, 0x00E7]
+        for token in (chr(codepoint) for codepoint in mojibake_marker_codepoints):
             self.assertNotIn(token, service)
             self.assertNotIn(token, view)
 

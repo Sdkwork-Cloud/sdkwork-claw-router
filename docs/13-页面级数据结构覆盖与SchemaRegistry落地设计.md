@@ -1,4 +1,4 @@
-# 页面级数据结构覆盖与 Schema Registry 落地设计
+﻿# 页面级数据结构覆盖与 Schema Registry 落地设计
 
 > 版本：v0.1
 > 日期：2026-04-28
@@ -56,7 +56,7 @@
 | 页面 | 必须满足的数据能力 | 事实表/投影表 | 验收点 |
 | --- | --- | --- | --- |
 | `/console/dashboard` | 用户侧用量趋势、模型排行、公告 | `ai_usage_fact`、`ai_model_rank_snapshot`、`content_announcement`、`ops_metric_snapshot` | 不全表扫 usage；指标可通过快照或聚合读模型提供 |
-| `/console/api-keys` | Key 创建、批量创建、选择分组、额度、能力、IP、模型范围、过期、删除 | `plus_api_key`、`iam_gateway_api_key`、`iam_gateway_api_key_group`、`iam_gateway_api_key_group_metric_snapshot`、`iam_gateway_access_policy`、`ai_pricing_plan`、`ai_quota_policy` | Key 明文只展示一次；创建 Key 时选择 `iam_gateway_api_key_group`；分组通过 `pricing_plan_id` 获得默认定价方案；分组容量和已用量走投影快照 |
+| `/console/api-keys` | Key 创建、批量创建、选择分组、额度、能力、IP、模型范围、过期、删除 | `plus_api_key`、`iam_gateway_api_key`、`ai_channel_group`、`ai_channel_group_metric_snapshot`、`iam_gateway_access_policy`、`ai_pricing_plan`、`ai_quota_policy` | Key 明文只展示一次；创建 Key 时选择 `ai_channel_group`；分组通过 `pricing_plan_id` 获得默认定价方案；分组容量和已用量走投影快照 |
 | `/console/usage` | 请求日志、token、价格、IP、路径、TTFT、流式标记 | `ai_request_trace`、`ai_usage_fact`、`ai_routing_decision_log` | trace 和 usage 可按 request_id 关联 |
 | `/console/usage` 多模态计费 | 结果数、条目数、字符数、音频秒数、视频秒数、统一计费数量 | `ai_billing_meter`、`ai_usage_fact` | 所有模态最终都落 `billing_meter_code + billable_quantity + billable_unit`，原始 token/秒数/个数作为明细字段保留 |
 | `/console/gateway` | endpoint、method、status、duration、channel | `ai_request_trace`、`ops_gateway_instance` | 运行状态与请求事实分离 |
@@ -68,7 +68,7 @@
 | `/console/recharge` | 充值包、充值方式 | `plus_vip_recharge_pack`、`plus_vip_recharge_method` | 充值包沿用存量结构 |
 | `/console/settings` | 语言、时区、Webhook、通知偏好 | `iam_user_preference`、`integration_webhook_endpoint`、`ops_notification_delivery` | Webhook secret 存引用，通知偏好入用户偏好 |
 | `/console/notifications` | 通知列表、详情、已读、账单提醒、预警 | `ops_notification_message`、`ops_notification_delivery` | 通知定义和用户投递状态分离 |
-| `/console/providers` | Claude/Codex/Gemini/OpenCode 配置、模型、代理 | `integration_provider`、`integration_channel`、`integration_provider_account`、`integration_proxy`、`integration_channel_model` | 本地/云 Provider 用同一标准表 |
+| `/console/providers` | Claude/Codex/Gemini/OpenCode 配置、模型、代理 | `integration_provider`、`ai_channel`、`integration_provider_account`、`integration_proxy`、`ai_channel_model` | 本地/云 Provider 用同一标准表 |
 | `/console/user` | 个人资料、OAuth、MFA、安全状态、最近登录 | `plus_user`、`plus_oauth_account`、`iam_user_preference`、`iam_user_security_setting`、`iam_user_login_event` | 用户主数据仍在 `plus_user`，OAuth 物理表名与 entity 保持一致 |
 
 ### 3.3 Admin
@@ -77,9 +77,9 @@
 | --- | --- | --- | --- |
 | `/admin/dashboard` | 全局流量、成本、trace、图表 | `ai_usage_fact`、`ai_request_trace`、`ops_metric_snapshot` | 后台跨租户查询必须显式授权和审计 |
 | `/admin/user` | 用户管理、余额充值/退款、用户 Key | `plus_user`、`plus_account`、`plus_account_history`、`plus_api_key`、`iam_gateway_api_key` | 后台余额操作必须写账户流水和审计 |
-| `/admin/group` | 分组、平台、计费类型、倍率、默认定价方案、账号容量、使用量 | `iam_gateway_api_key_group`、`iam_gateway_api_key_group_metric_snapshot`、`iam_gateway_access_policy`、`ai_pricing_plan`、`ai_pricing_plan_binding` | 分组不是用户组替代表，是 Key/计费/策略分组；创建 Key 选择该分组；容量和用量从快照读取，避免页面扫热事实表 |
+| `/admin/group` | 分组、平台、计费类型、倍率、默认定价方案、账号容量、使用量 | `ai_channel_group`、`ai_channel_group_metric_snapshot`、`iam_gateway_access_policy`、`ai_pricing_plan`、`ai_pricing_plan_binding` | 分组不是用户组替代表，是 Key/计费/策略分组；创建 Key 选择该分组；容量和用量从快照读取，避免页面扫热事实表 |
 | `/admin/model` | 模型厂家、模型族、模型、接入供应商、计量表、官方价、供应商价、销售价、上下文、调用量 | `ai_model_vendor`、`ai_model_family`、`ai_model`、`ai_billing_meter`、`ai_model_pricing`、`ai_pricing_plan`、`ai_pricing_rule`、`ai_pricing_tier`、`integration_provider`、`ai_model_rank_snapshot` | 新价格表不使用 float/double；`BillingMeter` 覆盖 token、请求、结果、个数、秒数、字符、存储和流量；`price_side` 区分官方参考价、供应商上游成本价、客户销售价 |
-| `/admin/channel` | 渠道账号、协议、认证、模型厂家、模型白名单/映射、权重 | `ai_model_vendor`、`integration_provider`、`integration_channel`、`integration_provider_account`、`integration_channel_model`、`integration_proxy` | Secret 只存 `secret_ref`；模型映射保存 `vendor_code` |
+| `/admin/channel` | 渠道账号、协议、认证、模型厂家、模型白名单/映射、权重 | `ai_model_vendor`、`integration_provider`、`ai_channel`、`integration_provider_account`、`ai_channel_model`、`integration_proxy` | Secret 只存 `secret_ref`；模型映射保存 `vendor_code` |
 | `/admin/announcement` | 公告发布、草稿、目标人群 | `content_announcement` | 发布、撤回写审计 |
 | `/admin/marketing` | 优惠券、批次、兑换、充值记录、邀请统计 | `promotion_offer`、`promotion_offer_version`、`promotion_coupon_stock`、`promotion_code`、`promotion_user_coupon`、`promotion_discount_application`、`promotion_coupon_ledger_entry`、`promotion_external_binding`、`plus_vip_recharge*`、`plus_invitation*`、`plus_partner` | 卡券营销事实统一进入 `promotion_*` |
 | `/admin/finance` | 交易流水、账单、充值、退款、消费 | `plus_account_history`、`plus_payment`、`plus_refund`、`commerce_usage_statement` | 财务事实以 `plus_account_history`、支付退款表为准 |
@@ -152,9 +152,9 @@ schema-registry YAML
 先满足 API Gateway、Provider、路由、用量事实和审计闭环：
 
 - `integration_provider`
-- `integration_channel`
+- `ai_channel`
 - `integration_provider_account`
-- `integration_channel_model`
+- `ai_channel_model`
 - `ai_model_vendor`
 - `ai_model_family`
 - `ai_model`
@@ -178,8 +178,8 @@ schema-registry YAML
 
 再满足 console 高频页面和生产结算闭环：
 
-- `iam_gateway_api_key_group`
-- `iam_gateway_api_key_group_metric_snapshot`
+- `ai_channel_group`
+- `ai_channel_group_metric_snapshot`
 - `iam_gateway_api_key` 或 `plus_api_key` 扩展
 - `iam_gateway_access_policy`
 - `ai_pricing_import_snapshot`

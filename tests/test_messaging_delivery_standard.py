@@ -8,6 +8,7 @@ import yaml
 
 from tools.api_contract_manifest import ApiContractManifestGenerator
 from tools.frontend_contract_loader import load_frontend_field_contract
+from tools.schema_registry_loader import load_schema_registry
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -16,7 +17,7 @@ ROOT = Path(__file__).resolve().parents[1]
 class MessagingDeliveryStandardTest(unittest.TestCase):
     def load_registry(self) -> dict[str, Any]:
         registry = ROOT / "docs" / "schema-registry" / "sdkwork-claw-router.tables.yaml"
-        data = yaml.safe_load(registry.read_text(encoding="utf-8"))
+        data = load_schema_registry(registry)
         self.assertIsInstance(data, dict)
         return data
 

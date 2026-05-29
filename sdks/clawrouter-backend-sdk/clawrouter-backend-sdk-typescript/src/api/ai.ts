@@ -1,8 +1,32 @@
 import { backendApiPath } from './paths';
 import type { HttpClient } from '../http/client';
 
-import type { AdminAiModelCreateRequest, AdminAiModelUpdateRequest, AdminModelCatalogSyncRequest, AdminModelVendorCreateRequest, ModelRankingRefreshTriggerRequest, ModelRankingsJobsListResult, ModelRankingsListResult, ModelRankingsRefreshResult, ModelRankingsStatusRetrieveResult, ModelsCreateResult, ModelsDeleteResult, ModelsListResult, ModelsRefreshResult, ModelsUpdateResult, ModelVendorsCreateResult, ModelVendorsListResult } from '../types';
+import type { AdminAiModelCreateRequest, AdminAiModelUpdateRequest, AdminAiResourceCreateRequest, AdminAiResourceUpdateRequest, AdminModelCatalogSyncRequest, AdminModelVendorCreateRequest, AiResourcesCreateResult, AiResourcesListResult, AiResourcesUpdateResult, ModelRankingRefreshTriggerRequest, ModelRankingsJobsListResult, ModelRankingsListResult, ModelRankingsRefreshResult, ModelRankingsStatusRetrieveResult, ModelsCreateResult, ModelsDeleteResult, ModelsListResult, ModelsRefreshResult, ModelsUpdateResult, ModelVendorsCreateResult, ModelVendorsListResult } from '../types';
 
+
+export class AiAiResourcesApi {
+  private client: HttpClient;
+
+  constructor(client: HttpClient) {
+    this.client = client;
+  }
+
+
+/** List ai resources */
+  async list(): Promise<AiResourcesListResult> {
+    return this.client.get<AiResourcesListResult>(backendApiPath(`/ai/resources`));
+  }
+
+/** Create ai resource */
+  async create(body: AdminAiResourceCreateRequest): Promise<AiResourcesCreateResult> {
+    return this.client.post<AiResourcesCreateResult>(backendApiPath(`/ai/resources`), body, undefined, undefined, 'application/json');
+  }
+
+/** Update ai resource */
+  async update(resourceId: string, body: AdminAiResourceUpdateRequest): Promise<AiResourcesUpdateResult> {
+    return this.client.put<AiResourcesUpdateResult>(backendApiPath(`/ai/resources/${serializePathParameter(resourceId, { name: 'resourceId', style: 'simple', explode: false })}`), body, undefined, undefined, 'application/json');
+  }
+}
 
 export class AiModelsApi {
   private client: HttpClient;
@@ -144,12 +168,14 @@ export class AiApi {
   public readonly modelRankings: AiModelRankingsApi;
   public readonly modelVendors: AiModelVendorsApi;
   public readonly models: AiModelsApi;
+  public readonly aiResources: AiAiResourcesApi;
 
   constructor(client: HttpClient) {
     this.client = client;
     this.modelRankings = new AiModelRankingsApi(client);
     this.modelVendors = new AiModelVendorsApi(client);
     this.models = new AiModelsApi(client);
+    this.aiResources = new AiAiResourcesApi(client);
   }
 
 }

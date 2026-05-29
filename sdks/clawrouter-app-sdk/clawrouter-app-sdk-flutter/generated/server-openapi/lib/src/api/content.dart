@@ -27,15 +27,9 @@ class ContentApi {
   }
 
   /// Create forum comment
-  Future<CommentsCreateResult?> commentsCreate(ForumCreateCommentRequest body, [String? xRequestId]) async {
-    final requestHeaders = buildRequestHeaders(
-      <String, HeaderParameterSpec>{
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
-      },
-      <String, HeaderParameterSpec>{},
-    );
+  Future<CommentsCreateResult?> commentsCreate(ForumCreateCommentRequest body) async {
     final payload = body.toJson();
-    final response = await _client.post(ApiPaths.appPath('/content/comments'), body: payload, headers: requestHeaders, contentType: 'application/json');
+    final response = await _client.post(ApiPaths.appPath('/content/comments'), body: payload, contentType: 'application/json');
     return (() {
       final map = sdkworkResponseAsMap(response);
       return map == null ? null : CommentsCreateResult.fromJson(map);
@@ -74,14 +68,8 @@ class ContentApi {
   }
 
   /// Like forum comment
-  Future<CommentsLikesCreateResult?> commentsLikesCreate(String commentId, [String? xRequestId]) async {
-    final requestHeaders = buildRequestHeaders(
-      <String, HeaderParameterSpec>{
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
-      },
-      <String, HeaderParameterSpec>{},
-    );
-    final response = await _client.post(ApiPaths.appPath('/content/comments/${serializePathParameter(commentId, const PathParameterSpec('commentId', 'simple', false))}/likes'), headers: requestHeaders);
+  Future<CommentsLikesCreateResult?> commentsLikesCreate(String commentId) async {
+    final response = await _client.post(ApiPaths.appPath('/content/comments/${serializePathParameter(commentId, const PathParameterSpec('commentId', 'simple', false))}/likes'));
     return (() {
       final map = sdkworkResponseAsMap(response);
       return map == null ? null : CommentsLikesCreateResult.fromJson(map);
@@ -98,14 +86,8 @@ class ContentApi {
   }
 
   /// Pin forum comment
-  Future<CommentsPinsCreateResult?> commentsPinsCreate(String commentId, [String? xRequestId]) async {
-    final requestHeaders = buildRequestHeaders(
-      <String, HeaderParameterSpec>{
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
-      },
-      <String, HeaderParameterSpec>{},
-    );
-    final response = await _client.post(ApiPaths.appPath('/content/comments/${serializePathParameter(commentId, const PathParameterSpec('commentId', 'simple', false))}/pins'), headers: requestHeaders);
+  Future<CommentsPinsCreateResult?> commentsPinsCreate(String commentId) async {
+    final response = await _client.post(ApiPaths.appPath('/content/comments/${serializePathParameter(commentId, const PathParameterSpec('commentId', 'simple', false))}/pins'));
     return (() {
       final map = sdkworkResponseAsMap(response);
       return map == null ? null : CommentsPinsCreateResult.fromJson(map);
@@ -135,15 +117,9 @@ class ContentApi {
   }
 
   /// Reply forum comment
-  Future<CommentsReplyCreateResult?> commentsReplyCreate(String commentId, ForumReplyCommentRequest body, [String? xRequestId]) async {
-    final requestHeaders = buildRequestHeaders(
-      <String, HeaderParameterSpec>{
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
-      },
-      <String, HeaderParameterSpec>{},
-    );
+  Future<CommentsReplyCreateResult?> commentsReplyCreate(String commentId, ForumReplyCommentRequest body) async {
     final payload = body.toJson();
-    final response = await _client.post(ApiPaths.appPath('/content/comments/${serializePathParameter(commentId, const PathParameterSpec('commentId', 'simple', false))}/reply'), body: payload, headers: requestHeaders, contentType: 'application/json');
+    final response = await _client.post(ApiPaths.appPath('/content/comments/${serializePathParameter(commentId, const PathParameterSpec('commentId', 'simple', false))}/reply'), body: payload, contentType: 'application/json');
     return (() {
       final map = sdkworkResponseAsMap(response);
       return map == null ? null : CommentsReplyCreateResult.fromJson(map);
@@ -168,15 +144,9 @@ class ContentApi {
   }
 
   /// Create forum feed
-  Future<FeedsCreateResult?> feedsCreate(ForumCreateFeedRequest body, [String? xRequestId]) async {
-    final requestHeaders = buildRequestHeaders(
-      <String, HeaderParameterSpec>{
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
-      },
-      <String, HeaderParameterSpec>{},
-    );
+  Future<FeedsCreateResult?> feedsCreate(ForumCreateFeedRequest body) async {
     final payload = body.toJson();
-    final response = await _client.post(ApiPaths.appPath('/content/feeds'), body: payload, headers: requestHeaders, contentType: 'application/json');
+    final response = await _client.post(ApiPaths.appPath('/content/feeds'), body: payload, contentType: 'application/json');
     return (() {
       final map = sdkworkResponseAsMap(response);
       return map == null ? null : FeedsCreateResult.fromJson(map);
@@ -284,17 +254,11 @@ class ContentApi {
   }
 
   /// Collect forum feed
-  Future<FeedsCollectionsCreateResult?> feedsCollectionsCreate(String id, [int? folderId, String? xRequestId]) async {
+  Future<FeedsCollectionsCreateResult?> feedsCollectionsCreate(String id, [int? folderId]) async {
     final query = buildQueryString([
       QueryParameterSpec('folder_id', folderId, 'form', true, false, null)
     ]);
-    final requestHeaders = buildRequestHeaders(
-      <String, HeaderParameterSpec>{
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
-      },
-      <String, HeaderParameterSpec>{},
-    );
-    final response = await _client.post(ApiPaths.appendQueryString(ApiPaths.appPath('/content/feeds/${serializePathParameter(id, const PathParameterSpec('id', 'simple', false))}/collections'), query), headers: requestHeaders);
+    final response = await _client.post(ApiPaths.appendQueryString(ApiPaths.appPath('/content/feeds/${serializePathParameter(id, const PathParameterSpec('id', 'simple', false))}/collections'), query));
     return (() {
       final map = sdkworkResponseAsMap(response);
       return map == null ? null : FeedsCollectionsCreateResult.fromJson(map);
@@ -302,14 +266,8 @@ class ContentApi {
   }
 
   /// Uncollect forum feed
-  Future<FeedsCollectionsCurrentDeleteResult?> feedsCollectionsCurrentDelete(String id, [String? xRequestId]) async {
-    final requestHeaders = buildRequestHeaders(
-      <String, HeaderParameterSpec>{
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
-      },
-      <String, HeaderParameterSpec>{},
-    );
-    final response = await _client.delete(ApiPaths.appPath('/content/feeds/${serializePathParameter(id, const PathParameterSpec('id', 'simple', false))}/collections/current'), headers: requestHeaders);
+  Future<FeedsCollectionsCurrentDeleteResult?> feedsCollectionsCurrentDelete(String id) async {
+    final response = await _client.delete(ApiPaths.appPath('/content/feeds/${serializePathParameter(id, const PathParameterSpec('id', 'simple', false))}/collections/current'));
     return (() {
       final map = sdkworkResponseAsMap(response);
       return map == null ? null : FeedsCollectionsCurrentDeleteResult.fromJson(map);
@@ -326,14 +284,8 @@ class ContentApi {
   }
 
   /// Like forum feed
-  Future<FeedsLikesCreateResult?> feedsLikesCreate(String id, [String? xRequestId]) async {
-    final requestHeaders = buildRequestHeaders(
-      <String, HeaderParameterSpec>{
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
-      },
-      <String, HeaderParameterSpec>{},
-    );
-    final response = await _client.post(ApiPaths.appPath('/content/feeds/${serializePathParameter(id, const PathParameterSpec('id', 'simple', false))}/likes'), headers: requestHeaders);
+  Future<FeedsLikesCreateResult?> feedsLikesCreate(String id) async {
+    final response = await _client.post(ApiPaths.appPath('/content/feeds/${serializePathParameter(id, const PathParameterSpec('id', 'simple', false))}/likes'));
     return (() {
       final map = sdkworkResponseAsMap(response);
       return map == null ? null : FeedsLikesCreateResult.fromJson(map);
@@ -341,14 +293,8 @@ class ContentApi {
   }
 
   /// Unlike forum feed
-  Future<FeedsLikesCurrentDeleteResult?> feedsLikesCurrentDelete(String id, [String? xRequestId]) async {
-    final requestHeaders = buildRequestHeaders(
-      <String, HeaderParameterSpec>{
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
-      },
-      <String, HeaderParameterSpec>{},
-    );
-    final response = await _client.delete(ApiPaths.appPath('/content/feeds/${serializePathParameter(id, const PathParameterSpec('id', 'simple', false))}/likes/current'), headers: requestHeaders);
+  Future<FeedsLikesCurrentDeleteResult?> feedsLikesCurrentDelete(String id) async {
+    final response = await _client.delete(ApiPaths.appPath('/content/feeds/${serializePathParameter(id, const PathParameterSpec('id', 'simple', false))}/likes/current'));
     return (() {
       final map = sdkworkResponseAsMap(response);
       return map == null ? null : FeedsLikesCurrentDeleteResult.fromJson(map);
@@ -356,14 +302,8 @@ class ContentApi {
   }
 
   /// Share forum feed
-  Future<FeedsSharesCreateResult?> feedsSharesCreate(String id, [String? xRequestId]) async {
-    final requestHeaders = buildRequestHeaders(
-      <String, HeaderParameterSpec>{
-        'X-Request-Id': HeaderParameterSpec(xRequestId, 'simple', false, null),
-      },
-      <String, HeaderParameterSpec>{},
-    );
-    final response = await _client.post(ApiPaths.appPath('/content/feeds/${serializePathParameter(id, const PathParameterSpec('id', 'simple', false))}/shares'), headers: requestHeaders);
+  Future<FeedsSharesCreateResult?> feedsSharesCreate(String id) async {
+    final response = await _client.post(ApiPaths.appPath('/content/feeds/${serializePathParameter(id, const PathParameterSpec('id', 'simple', false))}/shares'));
     return (() {
       final map = sdkworkResponseAsMap(response);
       return map == null ? null : FeedsSharesCreateResult.fromJson(map);
@@ -650,75 +590,3 @@ String encodeQueryValue(String value, bool allowReserved) {
 }
 
 String urlEncode(String value) => Uri.encodeQueryComponent(value);
-class HeaderParameterSpec {
-  final dynamic value;
-  final String style;
-  final bool explode;
-  final String? contentType;
-
-  HeaderParameterSpec(this.value, this.style, this.explode, this.contentType);
-}
-
-Map<String, String>? buildRequestHeaders(
-  Map<String, HeaderParameterSpec> headers, [
-  Map<String, HeaderParameterSpec> cookies = const {},
-]) {
-  final requestHeaders = <String, String>{};
-
-  headers.forEach((name, parameter) {
-    final serialized = serializeParameterValue(parameter);
-    if (serialized != null) {
-      requestHeaders[name] = serialized;
-    }
-  });
-
-  final cookieHeader = buildCookieHeader(cookies);
-  if (cookieHeader != null && cookieHeader.isNotEmpty) {
-    requestHeaders['Cookie'] = requestHeaders.containsKey('Cookie')
-        ? '${requestHeaders['Cookie']}; $cookieHeader'
-        : cookieHeader;
-  }
-
-  return requestHeaders.isEmpty ? null : requestHeaders;
-}
-
-String? buildCookieHeader(Map<String, HeaderParameterSpec> cookies) {
-  final pairs = <String>[];
-  cookies.forEach((name, parameter) {
-    final serialized = serializeParameterValue(parameter);
-    if (serialized != null) {
-      pairs.add('${Uri.encodeComponent(name)}=${Uri.encodeComponent(serialized)}');
-    }
-  });
-  return pairs.isEmpty ? null : pairs.join('; ');
-}
-
-String? serializeParameterValue(HeaderParameterSpec? parameter) {
-  final value = parameter?.value;
-  if (value == null) return null;
-  if (parameter!.contentType != null && parameter.contentType!.trim().isNotEmpty) {
-    return jsonEncode(value);
-  }
-  if (value is DateTime) return value.toIso8601String();
-  if (value is Iterable) {
-    return value
-        .where((item) => item != null)
-        .map((item) => item.toString())
-        .whereType<String>()
-        .join(',');
-  }
-  if (value is Map) {
-    final serialized = <String>[];
-    value.forEach((key, item) {
-      if (item == null) return;
-      if (parameter.explode) {
-        serialized.add('$key=$item');
-      } else {
-        serialized.add(key.toString());
-        serialized.add(item.toString());
-      }
-    });
-    return serialized.join(',');
-  }
-  return value.toString();
-}

@@ -67,6 +67,25 @@ class RepositoryDeliveryGuardianTest(unittest.TestCase):
 
         self.assertIn("data/skills/raw-too-large.json is 52428801 bytes in the index", "\n".join(messages))
 
+    def test_history_large_blob_check_does_not_fetch_remote_refs(self) -> None:
+        with tempfile.TemporaryDirectory() as temp_dir:
+            root = Path(temp_dir)
+            write_valid_lfs_fixture(root)
+            with patch("tools.repository_delivery_guardian.run_git") as run_git:
+                run_git.side_effect = [
+                    git_result(""),
+                    git_result(""),
+                    git_result(""),
+                    git_result(""),
+                ]
+                messages = RepositoryDeliveryGuardian(root).run()
+
+        self.assertEqual([], messages)
+        history_call = next(
+            call for call in run_git.call_args_list if call.args[:3] == (root, "lfs", "migrate")
+        )
+        self.assertIn("--skip-fetch", history_call.args)
+
     def test_parse_ls_tree_sizes_ignores_trees_and_missing_sizes(self) -> None:
         raw = "\n".join(
             [

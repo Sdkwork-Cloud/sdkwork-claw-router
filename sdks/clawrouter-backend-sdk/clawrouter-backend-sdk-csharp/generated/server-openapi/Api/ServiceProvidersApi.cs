@@ -126,13 +126,12 @@ namespace Sdkwork.ClawRouter.Backend.Api
         /// <summary>
         /// Service Provider Downstream Create
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.DownstreamsCreateResult?> DownstreamsCreateAsync(Sdkwork.ClawRouter.Backend.Models.ServiceProviderDownstreamCreateRequest body, string idempotencyKey, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.DownstreamsCreateResult?> DownstreamsCreateAsync(Sdkwork.ClawRouter.Backend.Models.ServiceProviderDownstreamCreateRequest body, string idempotencyKey)
         {
             var requestHeaders = BuildRequestHeaders(
                 new Dictionary<string, HeaderParameterSpec>
                 {
                     ["Idempotency-Key"] = new HeaderParameterSpec(idempotencyKey, "simple", false, null),
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
                 },
                 new Dictionary<string, HeaderParameterSpec>()
             );
@@ -178,13 +177,12 @@ namespace Sdkwork.ClawRouter.Backend.Api
         /// <summary>
         /// Service Provider Pricing Rule Create
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.PricingRulesCreateResult?> PricingRulesCreateAsync(Sdkwork.ClawRouter.Backend.Models.ServiceProviderPricingRuleCreateRequest body, string idempotencyKey, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.PricingRulesCreateResult?> PricingRulesCreateAsync(Sdkwork.ClawRouter.Backend.Models.ServiceProviderPricingRuleCreateRequest body, string idempotencyKey)
         {
             var requestHeaders = BuildRequestHeaders(
                 new Dictionary<string, HeaderParameterSpec>
                 {
                     ["Idempotency-Key"] = new HeaderParameterSpec(idempotencyKey, "simple", false, null),
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
                 },
                 new Dictionary<string, HeaderParameterSpec>()
             );
@@ -194,13 +192,12 @@ namespace Sdkwork.ClawRouter.Backend.Api
         /// <summary>
         /// Service Provider Pricing Rule Update
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.PricingRulesUpdateResult?> PricingRulesUpdateAsync(string ruleId, Sdkwork.ClawRouter.Backend.Models.ServiceProviderPricingRuleUpdateRequest body, string idempotencyKey, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.PricingRulesUpdateResult?> PricingRulesUpdateAsync(string ruleId, Sdkwork.ClawRouter.Backend.Models.ServiceProviderPricingRuleUpdateRequest body, string idempotencyKey)
         {
             var requestHeaders = BuildRequestHeaders(
                 new Dictionary<string, HeaderParameterSpec>
                 {
                     ["Idempotency-Key"] = new HeaderParameterSpec(idempotencyKey, "simple", false, null),
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
                 },
                 new Dictionary<string, HeaderParameterSpec>()
             );
@@ -210,13 +207,12 @@ namespace Sdkwork.ClawRouter.Backend.Api
         /// <summary>
         /// Service Provider Price Simulation Create
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.PriceSimulationCreateResult?> PriceSimulationCreateAsync(Sdkwork.ClawRouter.Backend.Models.ServiceProviderPriceSimulationRequest body, string idempotencyKey, string? xRequestId = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.PriceSimulationCreateResult?> PriceSimulationCreateAsync(Sdkwork.ClawRouter.Backend.Models.ServiceProviderPriceSimulationRequest body, string idempotencyKey)
         {
             var requestHeaders = BuildRequestHeaders(
                 new Dictionary<string, HeaderParameterSpec>
                 {
                     ["Idempotency-Key"] = new HeaderParameterSpec(idempotencyKey, "simple", false, null),
-                    ["X-Request-Id"] = new HeaderParameterSpec(xRequestId, "simple", false, null),
                 },
                 new Dictionary<string, HeaderParameterSpec>()
             );

@@ -3,6 +3,7 @@ package com.sdkwork.clawrouter.app
 data class AiQuotaPolicyRecord(
     val blockDurationSeconds: String? = null,
     val burstLimit: String? = null,
+    val channelGroupId: String? = null,
     val createdAt: String? = null,
     val dataScope: String? = null,
     val deletedAt: String? = null,
@@ -10,7 +11,6 @@ data class AiQuotaPolicyRecord(
     val effectiveFrom: String? = null,
     val effectiveTo: String? = null,
     val exhaustedAt: String? = null,
-    val groupId: String? = null,
     val id: String? = null,
     val metadata: Map<String, String>? = null,
     val model: String? = null,

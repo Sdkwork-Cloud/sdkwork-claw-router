@@ -3,7 +3,7 @@ const GENERATED_POSTGRES_SCHEMA: &str =
 const SCHEMA_MANIFEST: &str =
     include_str!("../../../generated/schema/manifest/schema-manifest.json");
 const SCHEMA_REGISTRY_TABLES: &str =
-    include_str!("../../../docs/schema-registry/sdkwork-claw-router.tables.yaml");
+    include_str!("../../../generated/schema/registry/sdkwork-claw-router.tables.effective.yaml");
 
 fn compact_sql(value: &str) -> String {
     value.split_whitespace().collect::<Vec<_>>().join(" ")
@@ -54,7 +54,7 @@ fn generated_schema_has_table_field_contract_for_model_ranking_refresh_and_reads
 #[test]
 fn generated_schema_has_index_contract_for_model_ranking_refresh_and_reads() {
     for expected in [
-        "CREATE UNIQUE INDEX IF NOT EXISTS uk_ai_model_rank_snapshot_scope_catalog_key ON ai_model_rank_snapshot (tenant_id, organization_id, snapshot_date, snapshot_period, rank_scope, catalog_key)",
+        "CREATE UNIQUE INDEX IF NOT EXISTS uk_ai_model_rank_snapshot_scope_catalog_key ON ai_model_rank_snapshot (tenant_id, organization_id, snapshot_date, snapshot_period, rank_scope, vendor_code, region_code, catalog_key)",
         "CREATE INDEX IF NOT EXISTS idx_ai_model_rank_snapshot_latest_scope ON ai_model_rank_snapshot (tenant_id, organization_id, status, rank_scope, snapshot_date, snapshot_period, rank_no)",
         "CREATE INDEX IF NOT EXISTS idx_ai_model_rank_snapshot_filter_rank ON ai_model_rank_snapshot (tenant_id, organization_id, status, snapshot_date, snapshot_period, rank_scope, vendor_code, region_code, modality, rank_no)",
         "CREATE INDEX IF NOT EXISTS idx_ai_usage_fact_model_occurred ON ai_usage_fact (tenant_id, organization_id, catalog_key, occurred_at, id)",
@@ -72,7 +72,7 @@ fn schema_registry_declares_the_same_model_ranking_field_and_index_contract() {
         "pricing_snapshot: json",
         "time_field: occurred_at",
         "window_predicate: half_open_utc",
-        "aggregation_grain: [tenant_id, organization_id, catalog_key]",
+        "aggregation_grain: - tenant_id - organization_id - catalog_key",
         "snapshot_date: date",
         "snapshot_period: enum_int32",
         "rank_scope: string(64)",
@@ -91,27 +91,27 @@ fn schema_registry_declares_the_same_model_ranking_field_and_index_contract() {
         "scheduled: 1",
         "manual: 2",
         "payload_contract:",
-        "required_fields: [rankScope, snapshotDate, snapshotPeriod, windowStart, windowEnd, generatedCount, sourceCount, refreshIntervalSeconds, cacheMaxAgeSeconds, nextRefreshAt, status, attemptCount, retryCount, consecutiveFailureCount, alertRecommended, sourceTables]",
-        "source_tables: [ai_usage_fact, ai_model, ai_model_rank_snapshot]",
+        "required_fields: - rankScope - snapshotDate - snapshotPeriod - windowStart - windowEnd - generatedCount - sourceCount - refreshIntervalSeconds - cacheMaxAgeSeconds - nextRefreshAt - status - attemptCount - retryCount - consecutiveFailureCount - alertRecommended - sourceTables",
+        "source_tables: - ai_usage_fact - ai_model - ai_model_rank_snapshot",
         "runtime_contract:",
         "scheduler_owner: sdkwork-claw-app-api",
         "run_on_startup_default: true",
         "default_millis: 300000",
         "max_retry_attempts_default: 1",
-        "scope: [worker_instance, tenant_id, organization_id, rank_scope]",
+        "scope: - worker_instance - tenant_id - organization_id - rank_scope",
         "overlap_behavior: audit_skipped",
-        "invalidate_after_status: [succeeded, empty]",
+        "invalidate_after_status: - succeeded - empty",
         "alert_after_consecutive_failures_default: 3",
         "uk_ai_model_rank_snapshot_scope_catalog_key",
-        "columns: [tenant_id, organization_id, snapshot_date, snapshot_period, rank_scope, catalog_key]",
+        "columns: - tenant_id - organization_id - snapshot_date - snapshot_period - rank_scope - vendor_code - region_code - catalog_key",
         "idx_ai_model_rank_snapshot_latest_scope",
-        "columns: [tenant_id, organization_id, status, rank_scope, snapshot_date, snapshot_period, rank_no]",
+        "columns: - tenant_id - organization_id - status - rank_scope - snapshot_date - snapshot_period - rank_no",
         "idx_ai_model_rank_snapshot_filter_rank",
-        "columns: [tenant_id, organization_id, status, snapshot_date, snapshot_period, rank_scope, vendor_code, region_code, modality, rank_no]",
+        "columns: - tenant_id - organization_id - status - snapshot_date - snapshot_period - rank_scope - vendor_code - region_code - modality - rank_no",
         "idx_ai_usage_fact_model_occurred",
-        "columns: [tenant_id, organization_id, catalog_key, occurred_at, id]",
+        "columns: - tenant_id - organization_id - catalog_key - occurred_at - id",
         "idx_ops_job_execution_model_ranking_scope_started",
-        "columns: [tenant_id, organization_id, status, job_type, job_name, started_at, id]",
+        "columns: - tenant_id - organization_id - status - job_type - job_name - started_at - id",
     ] {
         assert_contains(SCHEMA_REGISTRY_TABLES, expected, "schema registry");
     }

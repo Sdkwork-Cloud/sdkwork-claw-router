@@ -10,7 +10,6 @@ public class AgentRunCreateRequest {
     private String memorySpaceId;
     private Map<String, String> metadata;
     private String model;
-    private String requestId;
     private String runtime;
     private String sourceSurface;
     private String traceId;
@@ -69,14 +68,6 @@ public class AgentRunCreateRequest {
 
     public void setModel(String model) {
         this.model = model;
-    }
-
-    public String getRequestId() {
-        return this.requestId;
-    }
-
-    public void setRequestId(String requestId) {
-        this.requestId = requestId;
     }
 
     public String getRuntime() {
