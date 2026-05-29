@@ -1318,20 +1318,20 @@ async fn database_config_router_serves_signed_subject_access_group_crud() {
         ))
         .await
         .unwrap();
-    assert_eq!(StatusCode::OK, list_response.status());
-    let list_payload: serde_json::Value = serde_json::from_slice(
-        &axum::body::to_bytes(list_response.into_body(), usize::MAX)
-            .await
-            .unwrap(),
-    )
-    .unwrap();
-    assert_eq!(1, list_payload["data"]["items"].as_array().unwrap().len());
-    assert_eq!(
-        group_id,
-        list_payload["data"]["items"][0]["id"].as_str().unwrap()
-    );
-    assert_eq!("openai", list_payload["data"]["items"][0]["platform"]);
-    assert_eq!("disabled", list_payload["data"]["items"][0]["status"]);
+    let list_status = list_response.status();
+    let list_body = axum::body::to_bytes(list_response.into_body(), usize::MAX)
+        .await
+        .unwrap();
+    let list_body_text = String::from_utf8(list_body.to_vec()).unwrap();
+    assert_eq!(StatusCode::OK, list_status, "{list_body_text}");
+    let list_payload: serde_json::Value = serde_json::from_str(&list_body_text).unwrap();
+    let list_items = list_payload["data"]["items"].as_array().unwrap();
+    let listed_group = list_items
+        .iter()
+        .find(|item| item["id"].as_str() == Some(group_id))
+        .expect("created access group should be returned by admin access group list");
+    assert_eq!("openai", listed_group["platform"]);
+    assert_eq!("disabled", listed_group["status"]);
 
     let delete_response = router
         .clone()
@@ -1366,12 +1366,12 @@ async fn database_config_router_serves_signed_subject_access_group_crud() {
             .unwrap(),
     )
     .unwrap();
-    assert_eq!(
-        0,
-        final_list_payload["data"]["items"]
-            .as_array()
-            .unwrap()
-            .len()
+    let final_items = final_list_payload["data"]["items"].as_array().unwrap();
+    assert!(
+        final_items
+            .iter()
+            .all(|item| item["id"].as_str() != Some(group_id)),
+        "deleted access group must not be returned by admin access group list"
     );
 }
 
@@ -1590,13 +1590,13 @@ async fn database_config_router_serves_signed_subject_model_rate_limit_create_an
         ))
         .await
         .unwrap();
-    assert_eq!(StatusCode::OK, create_response.status());
-    let create_payload: serde_json::Value = serde_json::from_slice(
-        &axum::body::to_bytes(create_response.into_body(), usize::MAX)
-            .await
-            .unwrap(),
-    )
-    .unwrap();
+    let create_status = create_response.status();
+    let create_body = axum::body::to_bytes(create_response.into_body(), usize::MAX)
+        .await
+        .unwrap();
+    let create_body_text = String::from_utf8(create_body.to_vec()).unwrap();
+    assert_eq!(StatusCode::OK, create_status, "{create_body_text}");
+    let create_payload: serde_json::Value = serde_json::from_str(&create_body_text).unwrap();
     assert_eq!("2000", create_payload["code"]);
     assert_eq!("gpt-4o-mini", create_payload["data"]["item"]["model"]);
     assert_eq!("standard-group", create_payload["data"]["item"]["group"]);
@@ -1837,13 +1837,13 @@ async fn database_config_router_serves_backend_sdk_contract_aliases() {
             .oneshot(signed_request("GET", path, Body::empty()))
             .await
             .unwrap();
-        assert_eq!(StatusCode::OK, response.status(), "{path}");
-        let payload: serde_json::Value = serde_json::from_slice(
-            &axum::body::to_bytes(response.into_body(), usize::MAX)
-                .await
-                .unwrap(),
-        )
-        .unwrap();
+        let status = response.status();
+        let body = axum::body::to_bytes(response.into_body(), usize::MAX)
+            .await
+            .unwrap();
+        let body_text = String::from_utf8(body.to_vec()).unwrap();
+        assert_eq!(StatusCode::OK, status, "{path}: {body_text}");
+        let payload: serde_json::Value = serde_json::from_str(&body_text).unwrap();
         assert_eq!("2000", payload["code"], "{path}");
         if path == "/backend/v3/api/system/dashboard/admin/overview" {
             assert!(
@@ -4149,6 +4149,7 @@ async fn create_schema(pool: &SqlitePool) {
             subject_ref_masked TEXT,
             scope_type INTEGER,
             scope_id INTEGER,
+            group_id INTEGER,
             channel_group_id INTEGER,
             model TEXT,
             quota_period INTEGER,
@@ -4597,7 +4598,7 @@ async fn seed_catalog(pool: &SqlitePool) {
         "INSERT INTO ai_channel_model (id, tenant_id, organization_id, catalog_key, model, channel_id, vendor_code, provider_model, provider_native_model, api_code, status) VALUES (1, 10, 20, 'openai/gpt-4o-mini', 'gpt-4o-mini', 3001, 'openai', 'gpt-4o-mini', 'gpt-4o-mini', 'openai.chat_completions', 1)",
         "INSERT INTO ai_route_candidate (id, uuid, tenant_id, organization_id, channel_group_id, channel_id, provider_code, channel_type, vendor_code, api_code, model_code, catalog_key, region_code, priority, weight, health_status, status) VALUES (1, 'route-openrouter-gpt-4o-mini-chat', 10, 20, 10, 3001, 'openrouter', 'relay', 'openai', 'openai.chat_completions', 'gpt-4o-mini', 'openai/gpt-4o-mini', 'global', 1, 100, 1, 1)",
         "INSERT INTO ai_pricing_plan (id, plan_code, base_price_side, default_multiplier, default_markup_amount, currency, status, priority) VALUES (1, 'standard', 1, '1.200000', '0.000000', 'USD', 1, 1)",
-        "INSERT INTO ai_channel_group (id, tenant_id, organization_id, group_code, group_name, pricing_plan_code, rate_multiplier, official_price_multiplier, status) VALUES (10, 10, 20, 'standard-group', 'Standard Group', 'standard', '1.000000', '1.100000', 1)",
+        "INSERT INTO ai_channel_group (id, tenant_id, organization_id, group_code, group_name, provider_code, group_type, pricing_plan_code, billing_type, rate_multiplier, official_price_multiplier, status) VALUES (10, 10, 20, 'standard-group', 'Standard Group', 'openai', 2, 'standard', 1, '1.000000', '1.100000', 1)",
         "INSERT INTO ai_channel_group_member (id, tenant_id, organization_id, channel_group_id, channel_id, priority, weight, enabled, status) VALUES (600, 10, 20, 10, 3001, 1, 100, 1, 1)",
         "INSERT INTO iam_gateway_api_key (id, tenant_id, organization_id, user_id, channel_group_id, key_prefix, key_hash, idempotency_key, status) VALUES (100, 10, 20, 30, 10, 'sk-test', 'hash:sk-test', 'seed-api-key-100', 1)",
         "INSERT INTO ai_model_pricing (id, catalog_key, model, vendor_code, region_code, price_side, billing_meter_code, unit_price, currency, status, priority) VALUES (1, 'openai/gpt-4o-mini', 'gpt-4o-mini', 'openai', 'global', 1, 'llm_input_token', '0.150000', 'USD', 1, 1)",
