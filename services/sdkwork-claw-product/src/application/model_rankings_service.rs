@@ -22,6 +22,8 @@ const MAX_RANKING_LIMIT: i64 = 200;
 const MIN_JOB_HISTORY_LIMIT: i64 = 1;
 const MAX_JOB_HISTORY_LIMIT: i64 = 100;
 
+type MonotonicNow = Arc<dyn Fn() -> Instant + Send + Sync>;
+
 #[derive(Debug, Clone, PartialEq, Eq)]
 struct ModelRankingsCacheKey {
     tenant_id: i64,
@@ -65,25 +67,35 @@ pub struct ModelRankingsService {
     read_store: Arc<dyn ModelRankingsReadModelStore + Send + Sync>,
     cache: Arc<Mutex<ModelRankingsCache>>,
     fallback_ttl_seconds: i64,
+    now: MonotonicNow,
 }
 
 impl ModelRankingsService {
     pub fn new(read_store: Arc<dyn ModelRankingsReadModelStore + Send + Sync>) -> Self {
-        Self {
+        Self::with_fallback_ttl_seconds_and_clock(
             read_store,
-            cache: Arc::new(Mutex::new(ModelRankingsCache::default())),
-            fallback_ttl_seconds: DEFAULT_CACHE_TTL_SECONDS,
-        }
+            DEFAULT_CACHE_TTL_SECONDS,
+            Instant::now,
+        )
     }
 
     pub fn with_fallback_ttl_seconds(
         read_store: Arc<dyn ModelRankingsReadModelStore + Send + Sync>,
         fallback_ttl_seconds: i64,
     ) -> Self {
+        Self::with_fallback_ttl_seconds_and_clock(read_store, fallback_ttl_seconds, Instant::now)
+    }
+
+    pub fn with_fallback_ttl_seconds_and_clock(
+        read_store: Arc<dyn ModelRankingsReadModelStore + Send + Sync>,
+        fallback_ttl_seconds: i64,
+        now: impl Fn() -> Instant + Send + Sync + 'static,
+    ) -> Self {
         Self {
             read_store,
             cache: Arc::new(Mutex::new(ModelRankingsCache::default())),
             fallback_ttl_seconds: fallback_ttl_seconds.max(MIN_CACHE_TTL_SECONDS),
+            now: Arc::new(now),
         }
     }
 }
@@ -190,7 +202,7 @@ impl ModelRankingsCacheInvalidator for ModelRankingsService {
 
 impl ModelRankingsService {
     fn load_cached(&self, key: &ModelRankingsCacheKey) -> Option<ModelRankingsSnapshot> {
-        let now = Instant::now();
+        let now = (self.now.as_ref())();
         let mut cache = self.cache.lock().ok()?;
         cache.entries.retain(|entry| entry.expires_at > now);
         cache
@@ -215,7 +227,7 @@ impl ModelRankingsService {
         }
         cache.entries.push_back(ModelRankingsCacheEntry {
             key,
-            expires_at: Instant::now() + Duration::from_secs(ttl_seconds as u64),
+            expires_at: (self.now.as_ref())() + Duration::from_secs(ttl_seconds as u64),
             snapshot,
         });
     }
@@ -224,7 +236,7 @@ impl ModelRankingsService {
         &self,
         key: &ModelRankingRefreshStatusCacheKey,
     ) -> Option<ModelRankingRefreshStatus> {
-        let now = Instant::now();
+        let now = (self.now.as_ref())();
         let mut cache = self.cache.lock().ok()?;
         cache.status_entries.retain(|entry| entry.expires_at > now);
         cache
@@ -255,7 +267,7 @@ impl ModelRankingsService {
             .status_entries
             .push_back(ModelRankingRefreshStatusCacheEntry {
                 key,
-                expires_at: Instant::now() + Duration::from_secs(ttl_seconds as u64),
+                expires_at: (self.now.as_ref())() + Duration::from_secs(ttl_seconds as u64),
                 status,
             });
     }

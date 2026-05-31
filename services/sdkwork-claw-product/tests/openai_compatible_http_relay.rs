@@ -15,6 +15,10 @@ use sdkwork_claw_product::ports::{
 use serde_json::json;
 use tokio::io::{AsyncReadExt, AsyncWriteExt};
 
+const SLOW_UPSTREAM_RESPONSE_DELAY_MILLIS: u64 = 50;
+const SLOW_UPSTREAM_BODY_TIMEOUT_MILLIS: u64 = 300;
+const SLOW_UPSTREAM_BODY_DELAY_MILLIS: u64 = 450;
+
 #[derive(Debug, Default)]
 struct CapturedUpstreamRequest {
     authorization: Option<String>,
@@ -223,7 +227,7 @@ async fn openai_compatible_relay_times_out_slow_upstream_responses_without_leaki
     let provider = Router::new().route(
         "/v1/chat/completions",
         post(|| async {
-            tokio::time::sleep(Duration::from_millis(200)).await;
+            tokio::time::sleep(Duration::from_millis(SLOW_UPSTREAM_RESPONSE_DELAY_MILLIS)).await;
             (StatusCode::OK, Json(json!({"id": "late-upstream"})))
         }),
     );
@@ -500,7 +504,7 @@ async fn openai_compatible_relay_uses_request_provider_timeout_over_runtime_defa
     let provider = Router::new().route(
         "/v1/chat/completions",
         post(|| async {
-            tokio::time::sleep(Duration::from_millis(200)).await;
+            tokio::time::sleep(Duration::from_millis(SLOW_UPSTREAM_RESPONSE_DELAY_MILLIS)).await;
             (StatusCode::OK, Json(json!({"id": "late-upstream"})))
         }),
     );
@@ -565,9 +569,9 @@ async fn openai_compatible_relay_times_out_slow_upstream_bodies_without_leaking_
             .await
             .unwrap();
         socket.flush().await.unwrap();
-        // Keep the header/body gap wider than loaded workspace scheduling jitter;
+        // Keep the header/body gap comfortably above the timeout and expected jitter;
         // this test targets body timeout handling after response headers arrive.
-        tokio::time::sleep(Duration::from_secs(2)).await;
+        tokio::time::sleep(Duration::from_millis(SLOW_UPSTREAM_BODY_DELAY_MILLIS)).await;
         socket
             .write_all(br#"{"id":"late-body-upstream"}"#)
             .await
@@ -579,7 +583,7 @@ async fn openai_compatible_relay_times_out_slow_upstream_bodies_without_leaking_
             .unwrap();
     let relay = OpenAiCompatibleChatCompletionRelay::with_response_timeout(
         endpoint,
-        Duration::from_millis(500),
+        Duration::from_millis(SLOW_UPSTREAM_BODY_TIMEOUT_MILLIS),
     );
     let error = relay
         .create_chat_completion(ChatCompletionRelayRequest {

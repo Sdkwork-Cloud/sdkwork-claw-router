@@ -325,7 +325,7 @@ async fn appbase_vip_routes_are_exposed_by_default_router() {
                     .method(Method::POST)
                     .uri(path)
                     .header("content-type", "application/json")
-                    .body(Body::from(r#"{"packageId":1,"paymentMethod":"wechat"}"#))
+                    .body(Body::from(r#"{"packageId":1}"#))
                     .unwrap(),
             )
             .await

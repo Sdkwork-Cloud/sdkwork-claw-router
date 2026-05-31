@@ -12,7 +12,10 @@ pub(crate) const POINTS_ASSET_TYPE: &str = "points";
 pub(crate) const POINTS_CURRENCY_CODE: &str = "POINT";
 
 pub(crate) fn normalize_payment_method(method: &str) -> String {
-    method.trim().to_ascii_lowercase()
+    match method.trim().to_ascii_lowercase().as_str() {
+        "wechat_pay" => "wechat".to_string(),
+        value => value.to_string(),
+    }
 }
 
 pub(crate) fn method_alias(method: &str) -> &str {
@@ -20,6 +23,24 @@ pub(crate) fn method_alias(method: &str) -> &str {
         "card" => "stripe",
         "wechat" | "wechatpay" => "wechat_pay",
         _ => method,
+    }
+}
+
+pub(crate) fn payment_provider_code(method: &str) -> &'static str {
+    match method.trim().to_ascii_lowercase().as_str() {
+        "wechat" | "wechat_pay" | "wechatpay" => "wechat_pay",
+        "alipay" | "ali" => "alipay",
+        "card" | "stripe" => "stripe",
+        _ => "wechat_pay",
+    }
+}
+
+pub(crate) fn payment_product_for_scan_qr(method: &str) -> &'static str {
+    match method.trim().to_ascii_lowercase().as_str() {
+        "wechat" | "wechat_pay" | "wechatpay" => "wechat_native",
+        "alipay" | "ali" => "alipay_page",
+        "card" | "stripe" => "card",
+        _ => "wechat_native",
     }
 }
 

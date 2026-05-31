@@ -11,7 +11,13 @@ mod request_identity;
 mod route_scoped_openai_passthrough;
 pub mod runtime;
 
-pub use edge_server::{edge_server_router, EdgeServerConfig};
+pub use edge_server::{
+    all_in_one_edge_router_from_env, edge_server_router,
+    edge_server_router_with_in_process_upstreams, serve,
+    serve_all_in_one_edge_server_with_runtime_config, serve_edge_server,
+    serve_edge_server_with_runtime_config, serve_with_runtime_config, EdgeInProcessUpstreams,
+    EdgeServerConfig,
+};
 #[rustfmt::skip]
 pub use openai_passthrough_routes::{openai_compatible_passthrough_paths, openai_method_passthrough_paths, stored_chat_completion_passthrough_paths};
 #[rustfmt::skip]
@@ -46,43 +52,4 @@ pub(crate) fn router_with_database_status_and_passthrough_placeholder(
     } else {
         router
     }
-}
-
-pub async fn serve(bind_addr: &str) -> anyhow::Result<()> {
-    let runtime_toml = sdkwork_claw_config::RuntimeTomlConfig::from_env_config_file()
-        .map_err(anyhow::Error::msg)?;
-    serve_with_runtime_config(bind_addr, runtime_toml.as_ref()).await
-}
-
-pub async fn serve_with_runtime_config(
-    bind_addr: &str,
-    runtime_toml: Option<&sdkwork_claw_config::RuntimeTomlConfig>,
-) -> anyhow::Result<()> {
-    sdkwork_claw_observability::init_tracing_with_runtime_config(
-        runtime_toml.map(|config| &config.observability),
-    )
-    .map_err(anyhow::Error::msg)?;
-    let listener = tokio::net::TcpListener::bind(bind_addr).await?;
-    axum::serve(listener, router_from_env().await?).await?;
-    Ok(())
-}
-
-pub async fn serve_edge_server(bind_addr: &str, config: EdgeServerConfig) -> anyhow::Result<()> {
-    let runtime_toml = sdkwork_claw_config::RuntimeTomlConfig::from_env_config_file()
-        .map_err(anyhow::Error::msg)?;
-    serve_edge_server_with_runtime_config(bind_addr, config, runtime_toml.as_ref()).await
-}
-
-pub async fn serve_edge_server_with_runtime_config(
-    bind_addr: &str,
-    config: EdgeServerConfig,
-    runtime_toml: Option<&sdkwork_claw_config::RuntimeTomlConfig>,
-) -> anyhow::Result<()> {
-    sdkwork_claw_observability::init_tracing_with_runtime_config(
-        runtime_toml.map(|config| &config.observability),
-    )
-    .map_err(anyhow::Error::msg)?;
-    let listener = tokio::net::TcpListener::bind(bind_addr).await?;
-    axum::serve(listener, edge_server_router(config)).await?;
-    Ok(())
 }

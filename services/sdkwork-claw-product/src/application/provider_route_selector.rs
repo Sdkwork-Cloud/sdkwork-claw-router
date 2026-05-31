@@ -43,6 +43,7 @@ pub struct SelectProviderRouteQuery {
     pub context: AuthenticatedApiKeyContext,
     pub catalog_key: String,
     pub requested_model: String,
+    pub api_code: String,
     pub capability: RoutingCapability,
     pub billing_meter: BillingMeter,
 }
@@ -65,6 +66,7 @@ pub struct SelectedProviderRoutePlan {
 pub struct SelectProviderChannelRouteQuery {
     pub context: AuthenticatedApiKeyContext,
     pub route_key: String,
+    pub api_code: String,
     pub capability: RoutingCapability,
 }
 
@@ -167,10 +169,12 @@ impl<'a, C: PricingCatalog> ProviderRouteSelector<'a, C> {
         let channel_routes = self.catalog.list_provider_channel_routes();
         let channel_routes_loaded = channel_routes.len();
         let model_scope_keys = [query.catalog_key.as_str(), query.requested_model.as_str()];
+        let api_scope_keys = [query.api_code.as_str()];
         let group_bindings = channel_group_bindings(
             &channel_routes,
             query.context.group_id,
             &model_scope_keys,
+            &api_scope_keys,
             query.capability,
         );
         let model_routes = self.catalog.list_provider_routes(&query.catalog_key);
@@ -233,10 +237,12 @@ impl<'a, C: PricingCatalog> ProviderRouteSelector<'a, C> {
         query: SelectProviderChannelRouteQuery,
     ) -> Result<SelectedProviderChannelRoute, ProviderRouteSelectionError> {
         let channel_routes = self.catalog.list_provider_channel_routes();
+        let api_scope_keys = [query.api_code.as_str()];
         let group_bindings = channel_group_bindings(
             &channel_routes,
             query.context.group_id,
             &[],
+            &api_scope_keys,
             query.capability,
         );
         let routes = self.group_scoped_channel_routes(channel_routes, &group_bindings);
@@ -470,7 +476,7 @@ impl<'a, C: PricingCatalog> ProviderRouteSelector<'a, C> {
             }
             return PolicyScopeChannelRouteSelection::SoftUnavailable(
                 ProviderRouteSelectionError::provider_route_unavailable(format!(
-                    "provider route is not available for configured channel route: policy {} rule {} has no callable channel candidate channel{} for route {}",
+                    "provider route is not available for configured channel route: policy {} rule {} has no callable channel route candidate{} for route {}",
                     policy.policy_code,
                     rule.rule_code,
                     if used_rule_fallback_chain { " or fallback channel" } else { "" },
@@ -625,7 +631,10 @@ impl<'a, C: PricingCatalog> ProviderRouteSelector<'a, C> {
     ) -> Option<ModelProviderRoute> {
         if let Some(route) = routes
             .iter()
-            .find(|route| route.channel_id == channel_id)
+            .find(|route| {
+                route.channel_id == channel_id
+                    && model_route_matches_request_api(route, &query.api_code)
+            })
             .cloned()
         {
             return Some(route);
@@ -931,6 +940,7 @@ fn channel_group_bindings(
     routes: &[ProviderChannelRoute],
     group_id: i64,
     model_scope_keys: &[&str],
+    api_scope_keys: &[&str],
     capability: RoutingCapability,
 ) -> ChannelGroupBindings {
     let mut bindings = ChannelGroupBindings::default();
@@ -943,7 +953,8 @@ fn channel_group_bindings(
                 if binding.group_id != group_id {
                     return false;
                 }
-                binding_matches_model_scope(binding, model_scope_keys)
+                binding_matches_request_scope(binding, model_scope_keys, api_scope_keys)
+                    && binding_matches_api_scope(binding, api_scope_keys)
                     && binding_matches_capability(binding, capability)
             })
             .cloned()
@@ -953,6 +964,25 @@ fn channel_group_bindings(
         }
     }
     bindings
+}
+
+fn binding_matches_request_scope(
+    binding: &ProviderChannelGroupBinding,
+    model_scope_keys: &[&str],
+    api_scope_keys: &[&str],
+) -> bool {
+    if binding.model_scope.is_empty() {
+        return true;
+    }
+    if !model_scope_keys.is_empty() {
+        return binding_matches_model_scope(binding, model_scope_keys);
+    }
+
+    if api_scope_keys.is_empty() {
+        return false;
+    }
+
+    !binding.api_scope.is_empty() && binding_matches_api_scope(binding, api_scope_keys)
 }
 
 fn best_group_binding(
@@ -1058,6 +1088,45 @@ fn normalize_model_scope_value(value: &str) -> String {
     value.trim().trim_matches('/').to_ascii_lowercase()
 }
 
+fn binding_matches_api_scope(
+    binding: &ProviderChannelGroupBinding,
+    api_scope_keys: &[&str],
+) -> bool {
+    if binding.api_scope.is_empty() {
+        return true;
+    }
+    if api_scope_keys.is_empty() {
+        return false;
+    }
+    binding.api_scope.iter().any(|scope| {
+        api_scope_keys
+            .iter()
+            .any(|key| api_scope_value_matches_key(scope, key))
+    })
+}
+
+fn api_scope_value_matches_key(scope: &str, key: &str) -> bool {
+    let scope = normalize_api_scope_value(scope);
+    let key = normalize_api_scope_value(key);
+    if scope.is_empty() || key.is_empty() {
+        return false;
+    }
+    scope == "*" || scope == "all" || scope == key
+}
+
+fn normalize_api_scope_value(value: &str) -> String {
+    let normalized = value
+        .trim()
+        .trim_matches('/')
+        .to_ascii_lowercase()
+        .replace(['/', ':', '-'], ".");
+    normalized
+        .strip_prefix("api.")
+        .unwrap_or(&normalized)
+        .trim_matches('.')
+        .to_owned()
+}
+
 fn binding_matches_capability(
     binding: &ProviderChannelGroupBinding,
     capability: RoutingCapability,
@@ -1099,11 +1168,20 @@ fn synthetic_model_route_from_channel_route(
         &provider_model,
     )
     .with_region_code(&route.region_code)
+    .with_api_code(&query.api_code)
     .with_provider_endpoint(route.base_url.clone(), route.secret_ref.clone())
     .with_auth_profile(route.auth_profile.clone());
     model_route.timeout_ms = route.timeout_ms;
     model_route.retry_policy = route.retry_policy.clone();
     model_route
+}
+
+fn model_route_matches_request_api(route: &ModelProviderRoute, requested_api_code: &str) -> bool {
+    route
+        .api_code
+        .as_deref()
+        .map(|api_code| api_scope_value_matches_key(api_code, requested_api_code))
+        .unwrap_or(true)
 }
 
 fn provider_native_model_from_query(query: &SelectProviderRouteQuery) -> String {

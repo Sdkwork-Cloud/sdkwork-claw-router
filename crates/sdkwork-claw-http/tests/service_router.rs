@@ -128,21 +128,528 @@ async fn service_router_exposes_ordered_openapi_schema_tabs_from_route_config() 
         .unwrap();
     let payload: serde_json::Value = serde_json::from_slice(&body).unwrap();
     assert_eq!(30, payload["cacheTtlSeconds"]);
-    assert_eq!(3, payload["tabs"].as_array().unwrap().len());
+    assert_eq!(5, payload["tabs"].as_array().unwrap().len());
     assert_eq!("gateway", payload["tabs"][0]["id"]);
-    assert_eq!("Claw Router Open API", payload["tabs"][0]["name"]);
+    assert_eq!("AI聚合API", payload["tabs"][0]["name"]);
+    assert_eq!("available", payload["tabs"][0]["status"]);
     assert_eq!(10, payload["tabs"][0]["order"]);
     assert_eq!("/openapi.json", payload["tabs"][0]["defaultSchemaUrl"]);
     assert_eq!("/openapi.json", payload["tabs"][0]["schemaUrls"][0]);
-    assert_eq!("app", payload["tabs"][1]["id"]);
+    assert_eq!("payment-aggregate", payload["tabs"][1]["id"]);
+    assert_eq!("支付聚合API", payload["tabs"][1]["name"]);
+    assert_eq!("available", payload["tabs"][1]["status"]);
+    assert_eq!(20, payload["tabs"][1]["order"]);
     assert_eq!(
-        "/app/v3/api/openapi.json",
+        "/payments/v3/openapi.json",
+        payload["tabs"][1]["defaultSchemaUrl"]
+    );
+    assert_eq!(
+        "/payments/v3/openapi.json",
         payload["tabs"][1]["schemaUrls"][0]
     );
-    assert_eq!("backend", payload["tabs"][2]["id"]);
+    assert_eq!("cloud-services", payload["tabs"][2]["id"]);
+    assert_eq!("基础云服务API", payload["tabs"][2]["name"]);
+    assert_eq!("planned", payload["tabs"][2]["status"]);
+    assert_eq!(30, payload["tabs"][2]["order"]);
+    assert!(payload["tabs"][2]["schemaUrls"]
+        .as_array()
+        .unwrap()
+        .is_empty());
+    assert!(payload["tabs"][2].get("defaultSchemaUrl").is_none());
+    assert_eq!("app", payload["tabs"][3]["id"]);
+    assert_eq!(40, payload["tabs"][3]["order"]);
+    assert_eq!(
+        "/app/v3/api/openapi.json",
+        payload["tabs"][3]["schemaUrls"][0]
+    );
+    assert_eq!("backend", payload["tabs"][4]["id"]);
+    assert_eq!(50, payload["tabs"][4]["order"]);
     assert_eq!(
         "/backend/v3/api/openapi.json",
-        payload["tabs"][2]["schemaUrls"][0]
+        payload["tabs"][4]["schemaUrls"][0]
+    );
+}
+
+#[tokio::test]
+async fn service_router_exposes_payment_aggregate_openapi_document() {
+    let response = sdkwork_claw_http::service_router("sdkwork-claw-gateway")
+        .oneshot(
+            Request::builder()
+                .uri("/payments/v3/openapi.json")
+                .body(Body::empty())
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+    assert_eq!(StatusCode::OK, response.status());
+    assert_eq!(
+        "public, max-age=30, stale-while-revalidate=60",
+        response
+            .headers()
+            .get("cache-control")
+            .unwrap()
+            .to_str()
+            .unwrap()
+    );
+    let body = axum::body::to_bytes(response.into_body(), usize::MAX)
+        .await
+        .unwrap();
+    let payload: serde_json::Value = serde_json::from_slice(&body).unwrap();
+    assert_eq!("3.1.2", payload["openapi"]);
+    assert_eq!("SDKWork Payment Aggregate API", payload["info"]["title"]);
+    assert_eq!("/payments/v3", payload["x-api-prefix"]);
+    assert!(payload["paths"]
+        .get("/payments/v3/payment_intents")
+        .is_some());
+    assert!(payload["paths"].get("/payments/v3/refunds").is_some());
+    assert!(payload["paths"]
+        .get("/payments/v3/reconciliation/statements")
+        .is_some());
+    assert!(payload["paths"]
+        .get("/payments/v3/native_operations")
+        .is_some());
+    assert!(payload["components"]["schemas"]["PaymentProviderCode"]
+        ["x-sdkwork-initial-provider-codes"]
+        .as_array()
+        .unwrap()
+        .iter()
+        .any(|value| value == "wechat_pay"));
+    assert!(payload["components"]["schemas"]["PaymentProviderCode"]
+        ["x-sdkwork-initial-provider-codes"]
+        .as_array()
+        .unwrap()
+        .iter()
+        .any(|value| value == "stripe"));
+}
+
+#[tokio::test]
+async fn service_router_payment_aggregate_openapi_contract_defines_standard_payment_surface() {
+    let payload = fetch_runtime_openapi_json(
+        sdkwork_claw_http::service_router("sdkwork-claw-gateway"),
+        "/payments/v3/openapi.json",
+    )
+    .await;
+
+    assert_eq!("definition-only", payload["x-sdkwork-contract-state"]);
+    assert_eq!("payment-aggregate", payload["x-sdkwork-sdk-family"]);
+
+    for provider_code in [
+        "wechat_pay",
+        "alipay",
+        "stripe",
+        "paypal",
+        "apple_pay",
+        "google_pay",
+    ] {
+        assert_json_array_contains(
+            &payload["components"]["schemas"]["PaymentProviderCode"]
+                ["x-sdkwork-initial-provider-codes"],
+            provider_code,
+        );
+        assert_json_array_contains(&payload["x-supported-provider-codes"], provider_code);
+    }
+    for provider_code in [
+        "yeepay",
+        "unionpay",
+        "jd_pay",
+        "lianlian_pay",
+        "lakala",
+        "allinpay",
+        "china_ums",
+        "fuiou_pay",
+        "sandpay",
+        "huifu_pay",
+        "baofoo",
+        "bill99",
+        "pingan_pay",
+        "icbc_pay",
+        "cmb_pay",
+        "ccb_pay",
+        "boc_pay",
+        "psbc_pay",
+    ] {
+        assert_json_array_contains(
+            &payload["components"]["schemas"]["PaymentProviderCode"]
+                ["x-sdkwork-extension-provider-codes"],
+            provider_code,
+        );
+        assert_json_array_contains(&payload["x-extension-provider-codes"], provider_code);
+    }
+    for provider_option in [
+        "wechatPay",
+        "alipay",
+        "stripe",
+        "paypal",
+        "applePay",
+        "googlePay",
+        "extension",
+    ] {
+        assert_eq!(
+            "#/components/schemas/ProviderNativeOptions",
+            payload["components"]["schemas"]["PaymentProviderOptions"]["properties"]
+                [provider_option]["$ref"],
+            "PaymentProviderOptions must expose provider-native options for {provider_option}"
+        );
+    }
+
+    for capability in [
+        "payment_intent_create",
+        "payment_intent_confirm",
+        "payment_intent_capture",
+        "payment_intent_cancel",
+        "refund_create",
+        "refund_cancel",
+        "statement_download",
+        "reconciliation_task",
+        "webhook_verify",
+        "webhook_event_ingest",
+        "native_operation",
+    ] {
+        assert_json_array_contains(
+            &payload["components"]["schemas"]["PaymentCapabilityCode"]["enum"],
+            capability,
+        );
+    }
+
+    assert_eq!(
+        "#/components/schemas/PaymentRefundItemCreateRequest",
+        payload["components"]["schemas"]["PaymentRefundCreateRequest"]["properties"]["items"]
+            ["items"]["$ref"]
+    );
+    assert_eq!(
+        "#/components/schemas/PaymentRefundItem",
+        payload["components"]["schemas"]["PaymentRefund"]["properties"]["items"]["items"]["$ref"]
+    );
+    assert_json_array_contains(
+        &payload["components"]["schemas"]["PaymentRefund"]["required"],
+        "items",
+    );
+
+    for (method, path, operation_id, result_schema) in [
+        (
+            "get",
+            "/payments/v3/providers",
+            "paymentProviders.list",
+            "PaymentProviderListResult",
+        ),
+        (
+            "get",
+            "/payments/v3/providers/{providerCode}/capabilities",
+            "paymentProviders.capabilities.retrieve",
+            "PaymentProviderCapabilitiesResult",
+        ),
+        (
+            "get",
+            "/payments/v3/payment_methods",
+            "paymentMethods.list",
+            "PaymentMethodListResult",
+        ),
+        (
+            "get",
+            "/payments/v3/payment_intents",
+            "paymentIntents.list",
+            "PaymentIntentListResult",
+        ),
+        (
+            "post",
+            "/payments/v3/payment_intents",
+            "paymentIntents.create",
+            "PaymentIntentResult",
+        ),
+        (
+            "get",
+            "/payments/v3/payment_intents/{paymentIntentId}",
+            "paymentIntents.retrieve",
+            "PaymentIntentResult",
+        ),
+        (
+            "post",
+            "/payments/v3/payment_intents/{paymentIntentId}/confirm",
+            "paymentIntents.confirm",
+            "PaymentIntentResult",
+        ),
+        (
+            "post",
+            "/payments/v3/payment_intents/{paymentIntentId}/capture",
+            "paymentIntents.capture",
+            "PaymentIntentResult",
+        ),
+        (
+            "post",
+            "/payments/v3/payment_intents/{paymentIntentId}/cancel",
+            "paymentIntents.cancel",
+            "PaymentIntentResult",
+        ),
+        (
+            "get",
+            "/payments/v3/refunds",
+            "paymentRefunds.list",
+            "PaymentRefundListResult",
+        ),
+        (
+            "post",
+            "/payments/v3/refunds",
+            "paymentRefunds.create",
+            "PaymentRefundResult",
+        ),
+        (
+            "get",
+            "/payments/v3/refunds/{refundId}",
+            "paymentRefunds.retrieve",
+            "PaymentRefundResult",
+        ),
+        (
+            "post",
+            "/payments/v3/refunds/{refundId}/cancel",
+            "paymentRefunds.cancel",
+            "PaymentRefundResult",
+        ),
+        (
+            "get",
+            "/payments/v3/reconciliation/statements",
+            "paymentReconciliationStatements.list",
+            "ReconciliationStatementListResult",
+        ),
+        (
+            "get",
+            "/payments/v3/reconciliation/statements/{statementId}",
+            "paymentReconciliationStatements.retrieve",
+            "ReconciliationStatementResult",
+        ),
+        (
+            "post",
+            "/payments/v3/reconciliation/statements/downloads",
+            "paymentReconciliationStatementDownloads.create",
+            "ReconciliationStatementDownloadResult",
+        ),
+        (
+            "post",
+            "/payments/v3/reconciliation/tasks",
+            "paymentReconciliationTasks.create",
+            "ReconciliationTaskResult",
+        ),
+        (
+            "get",
+            "/payments/v3/reconciliation/tasks/{taskId}",
+            "paymentReconciliationTasks.retrieve",
+            "ReconciliationTaskResult",
+        ),
+        (
+            "get",
+            "/payments/v3/reconciliation/tasks/{taskId}/differences",
+            "paymentReconciliationTasks.differences.list",
+            "ReconciliationDifferenceListResult",
+        ),
+        (
+            "post",
+            "/payments/v3/webhooks/{providerCode}/verify",
+            "paymentWebhooks.verify",
+            "WebhookVerifyResult",
+        ),
+        (
+            "post",
+            "/payments/v3/webhooks/{providerCode}/events",
+            "paymentWebhooks.events.create",
+            "WebhookEventResult",
+        ),
+        (
+            "get",
+            "/payments/v3/webhook_events",
+            "paymentWebhookEvents.list",
+            "WebhookEventListResult",
+        ),
+        (
+            "post",
+            "/payments/v3/webhook_events/{eventId}/replay",
+            "paymentWebhookEvents.replay",
+            "WebhookReplayResult",
+        ),
+        (
+            "post",
+            "/payments/v3/native_operations",
+            "paymentNativeOperations.invoke",
+            "NativeOperationResult",
+        ),
+    ] {
+        let operation = assert_openapi_operation(&payload, method, path, operation_id);
+        assert_eq!(
+            Some(true),
+            operation
+                .get("x-sdkwork-definition-only")
+                .and_then(Value::as_bool),
+            "payment aggregate operation must be marked definition-only for {method} {path}"
+        );
+        assert!(
+            operation.get("summary").and_then(Value::as_str).is_some(),
+            "missing summary for {method} {path}"
+        );
+        assert!(
+            operation
+                .get("description")
+                .and_then(Value::as_str)
+                .is_some(),
+            "missing description for {method} {path}"
+        );
+        assert_eq!(
+            Some(format!("#/components/schemas/{result_schema}")),
+            operation["responses"]["200"]["content"]["application/json"]["schema"]["$ref"]
+                .as_str()
+                .map(str::to_owned),
+            "200 JSON response must use the expected SDKWORK result envelope for {method} {path}"
+        );
+        assert!(
+            operation["responses"]["default"]["$ref"]
+                .as_str()
+                .is_some_and(|response_ref| response_ref == "#/components/responses/PaymentError"),
+            "default response must use PaymentError for {method} {path}"
+        );
+    }
+
+    let webhook_ingest = assert_openapi_operation(
+        &payload,
+        "post",
+        "/payments/v3/webhooks/{providerCode}/events",
+        "paymentWebhooks.events.create",
+    );
+    assert!(
+        !operation_references_parameter(
+            webhook_ingest,
+            "#/components/parameters/IdempotencyKeyHeader"
+        ),
+        "provider webhook ingestion must not require SDKWORK Idempotency-Key because native providers do not consistently send it"
+    );
+    assert!(
+        operation_references_parameter(
+            webhook_ingest,
+            "#/components/parameters/ProviderWebhookDeliveryIdHeader"
+        ),
+        "provider webhook ingestion should accept an optional provider delivery id header"
+    );
+    assert_eq!(
+        Some(false),
+        payload["components"]["parameters"]["ProviderWebhookDeliveryIdHeader"]["required"]
+            .as_bool(),
+        "provider webhook delivery id header must be optional"
+    );
+    assert_eq!(
+        Some(true),
+        payload["components"]["schemas"]["NativeOperationResponse"]["properties"]["payload"]
+            ["additionalProperties"]
+            .as_bool(),
+        "native operation responses must expose the provider-native payload for unsupported channel capabilities"
+    );
+    for (method, path, operation_id, response_schema) in [
+        (
+            "get",
+            "/payments/v3/payment_intents",
+            "paymentIntents.list",
+            "PaymentIntentListResponse",
+        ),
+        (
+            "get",
+            "/payments/v3/refunds",
+            "paymentRefunds.list",
+            "PaymentRefundListResponse",
+        ),
+        (
+            "get",
+            "/payments/v3/reconciliation/statements",
+            "paymentReconciliationStatements.list",
+            "ReconciliationStatementListResponse",
+        ),
+        (
+            "get",
+            "/payments/v3/reconciliation/tasks/{taskId}/differences",
+            "paymentReconciliationTasks.differences.list",
+            "ReconciliationDifferenceListResponse",
+        ),
+        (
+            "get",
+            "/payments/v3/webhook_events",
+            "paymentWebhookEvents.list",
+            "WebhookEventListResponse",
+        ),
+    ] {
+        let operation = assert_openapi_operation(&payload, method, path, operation_id);
+        assert!(
+            operation_has_parameter(operation, "page"),
+            "{operation_id} must expose a page query parameter"
+        );
+        assert!(
+            operation_has_parameter(operation, "pageSize"),
+            "{operation_id} must expose a pageSize query parameter"
+        );
+        assert_eq!(
+            "#/components/schemas/PageInfo",
+            payload["components"]["schemas"][response_schema]["properties"]["pageInfo"]["$ref"],
+            "{response_schema} must include standard pageInfo"
+        );
+    }
+    for (method, path, operation_id) in [
+        ("get", "/payments/v3/payment_intents", "paymentIntents.list"),
+        ("get", "/payments/v3/refunds", "paymentRefunds.list"),
+        (
+            "get",
+            "/payments/v3/webhook_events",
+            "paymentWebhookEvents.list",
+        ),
+    ] {
+        let operation = assert_openapi_operation(&payload, method, path, operation_id);
+        assert!(
+            operation_has_parameter(operation, "createdFrom"),
+            "{operation_id} must expose a createdFrom query parameter for SDK sync and reconciliation windows"
+        );
+        assert!(
+            operation_has_parameter(operation, "createdTo"),
+            "{operation_id} must expose a createdTo query parameter for SDK sync and reconciliation windows"
+        );
+    }
+    for schema_name in [
+        "PaymentIntent",
+        "PaymentRefund",
+        "ReconciliationStatement",
+        "ReconciliationTask",
+        "ReconciliationDifference",
+        "WebhookEvent",
+    ] {
+        assert_schema_requires_property(&payload, schema_name, "createdAt");
+        assert_schema_requires_property(&payload, schema_name, "updatedAt");
+    }
+    assert_schema_requires_property(&payload, "WebhookEventResponse", "verified");
+    assert_schema_requires_property(&payload, "NativeOperationResponse", "payload");
+
+    let result_schemas = payload["components"]["schemas"]
+        .as_object()
+        .unwrap()
+        .iter()
+        .filter(|(name, _)| name.ends_with("Result") && name.as_str() != "PaymentErrorResult");
+    for (schema_name, schema) in result_schemas {
+        assert_eq!(
+            "#/components/schemas/PaymentResultBase", schema["allOf"][0]["$ref"],
+            "{schema_name} must include PaymentResultBase"
+        );
+        assert!(
+            schema["allOf"].as_array().unwrap().iter().all(|item| item
+                .get("additionalProperties")
+                .is_none()),
+            "{schema_name} allOf branches must not use additionalProperties:false because it blocks the composed SDKWORK envelope"
+        );
+        let has_required_data = schema["allOf"].as_array().unwrap().iter().any(|item| {
+            item["required"]
+                .as_array()
+                .is_some_and(|required| required.iter().any(|value| value == "data"))
+                && item["properties"]["data"].is_object()
+        });
+        assert!(
+            has_required_data,
+            "{schema_name} must include a required data payload"
+        );
+    }
+    assert!(
+        payload["components"]["schemas"]["PaymentResultBase"]
+            .get("additionalProperties")
+            .is_none(),
+        "PaymentResultBase must stay composable with concrete data envelopes"
     );
 }
 
@@ -175,6 +682,34 @@ async fn service_router_keeps_gateway_openapi_off_app_and_backend_root_paths() {
     .await
     .unwrap();
     assert_eq!(StatusCode::NOT_FOUND, backend_response.status());
+
+    let app_payment_response = sdkwork_claw_http::service_router_with_contract_routes(
+        "sdkwork-claw-app-api",
+        ApiSurface::App,
+    )
+    .oneshot(
+        Request::builder()
+            .uri("/payments/v3/openapi.json")
+            .body(Body::empty())
+            .unwrap(),
+    )
+    .await
+    .unwrap();
+    assert_eq!(StatusCode::NOT_FOUND, app_payment_response.status());
+
+    let backend_payment_response = sdkwork_claw_http::service_router_with_contract_routes(
+        "sdkwork-claw-admin-api",
+        ApiSurface::Backend,
+    )
+    .oneshot(
+        Request::builder()
+            .uri("/payments/v3/openapi.json")
+            .body(Body::empty())
+            .unwrap(),
+    )
+    .await
+    .unwrap();
+    assert_eq!(StatusCode::NOT_FOUND, backend_payment_response.status());
 }
 
 #[tokio::test]
@@ -352,8 +887,8 @@ async fn service_router_surface_openapi_documents_include_appbase_commerce_contr
         ),
         (
             "get",
-            "/backend/v3/api/coupons/campaigns",
-            "coupons.campaigns.list",
+            "/backend/v3/api/promotions/offers",
+            "promotions.offers.management.list",
         ),
         (
             "get",
@@ -532,7 +1067,12 @@ fn authority_openapi_json(source: &str) -> Value {
     serde_json::from_str(source).unwrap()
 }
 
-fn assert_openapi_operation(payload: &Value, method: &str, path: &str, operation_id: &str) {
+fn assert_openapi_operation<'a>(
+    payload: &'a Value,
+    method: &str,
+    path: &str,
+    operation_id: &str,
+) -> &'a Value {
     let operation = payload
         .get("paths")
         .and_then(|paths| paths.get(path))
@@ -542,5 +1082,50 @@ fn assert_openapi_operation(payload: &Value, method: &str, path: &str, operation
         Some(operation_id),
         operation.get("operationId").and_then(Value::as_str),
         "unexpected OpenAPI operationId for {method} {path}"
+    );
+    operation
+}
+
+fn assert_json_array_contains(values: &Value, expected: &str) {
+    assert!(
+        values
+            .as_array()
+            .unwrap_or_else(|| panic!("expected JSON array containing {expected}"))
+            .iter()
+            .any(|value| value == expected),
+        "expected JSON array to contain {expected}"
+    );
+}
+
+fn operation_references_parameter(operation: &Value, parameter_ref: &str) -> bool {
+    operation["parameters"]
+        .as_array()
+        .is_some_and(|parameters| {
+            parameters
+                .iter()
+                .any(|parameter| parameter["$ref"] == parameter_ref)
+        })
+}
+
+fn operation_has_parameter(operation: &Value, expected_name: &str) -> bool {
+    operation["parameters"]
+        .as_array()
+        .is_some_and(|parameters| {
+            parameters
+                .iter()
+                .any(|parameter| parameter["name"] == expected_name)
+        })
+}
+
+fn assert_schema_requires_property(payload: &Value, schema_name: &str, property_name: &str) {
+    assert!(
+        payload["components"]["schemas"][schema_name]["required"]
+            .as_array()
+            .is_some_and(|required| required.iter().any(|value| value == property_name)),
+        "{schema_name} must require {property_name}"
+    );
+    assert!(
+        payload["components"]["schemas"][schema_name]["properties"][property_name].is_object(),
+        "{schema_name} must define {property_name}"
     );
 }

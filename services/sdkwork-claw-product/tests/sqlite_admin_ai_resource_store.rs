@@ -1,12 +1,9 @@
-#[path = "common/installed_sqlite.rs"]
-mod installed_sqlite_common;
-
-use installed_sqlite_common::schema_sqlite_pool;
 use sdkwork_claw_product::infrastructure::sql::sqlite::SqliteAdminAiResourceStore;
 use sdkwork_claw_product::ports::{
     AdminAiResourceMemberCommand, AdminAiResourceStore, AdminAiResourceSubject,
     CreateAdminAiResourceCommand, ListAdminAiResourcesQuery, UpdateAdminAiResourceCommand,
 };
+use sdkwork_claw_product_test_support::schema_sqlite_pool;
 use sqlx::Row;
 
 #[tokio::test]
@@ -127,17 +124,11 @@ async fn sqlite_admin_ai_resource_store_creates_updates_and_audits_resource_grap
     assert_eq!("disabled", updated.status);
     assert_eq!(None, updated.vendor_code);
     assert_eq!(None, updated.sort_order);
-    assert_eq!(1, updated.members.len());
     assert_eq!(
-        "bundle.openrouter.openai.realtime",
-        updated.members[0].parent_resource_code
+        0,
+        updated.members.len(),
+        "disabled composite resources should not expose active members"
     );
-    assert_eq!(
-        "model.openai.text-embedding-3-small.embedding",
-        updated.members[0].member_resource_code
-    );
-    assert_eq!("optional", updated.members[0].member_role);
-    assert!(!updated.members[0].required);
 
     let row = sqlx::query(
         r#"
@@ -169,21 +160,27 @@ async fn sqlite_admin_ai_resource_store_creates_updates_and_audits_resource_grap
     .unwrap();
     assert_eq!(0, old_parent_count);
 
-    let new_parent_count: i64 = sqlx::query_scalar(
+    let (resource_group_status, new_parent_member_status): (i64, i64) = sqlx::query_as(
         r#"
-        SELECT COUNT(1)
-        FROM ai_resource_group_item
-        WHERE tenant_id = 10
-          AND organization_id = 20
-          AND resource_group_code = 'bundle.openrouter.openai.realtime'
-          AND status = 1
-          AND deleted_at IS NULL
+        SELECT g.status, item.status
+        FROM ai_resource_group g
+        JOIN ai_resource_group_item item
+          ON item.tenant_id = g.tenant_id
+         AND item.organization_id = g.organization_id
+         AND item.resource_group_id = g.id
+         AND item.resource_group_code = g.group_code
+         AND item.deleted_at IS NULL
+        WHERE g.tenant_id = 10
+          AND g.organization_id = 20
+          AND g.group_code = 'bundle.openrouter.openai.realtime'
+          AND g.deleted_at IS NULL
         "#,
     )
     .fetch_one(&pool)
     .await
     .unwrap();
-    assert_eq!(1, new_parent_count);
+    assert_eq!(0, resource_group_status);
+    assert_eq!(0, new_parent_member_status);
 
     let audit_count: i64 = sqlx::query_scalar(
         r#"
@@ -198,6 +195,301 @@ async fn sqlite_admin_ai_resource_store_creates_updates_and_audits_resource_grap
     .await
     .unwrap();
     assert_eq!(2, audit_count);
+
+    let (config_version, changed_object_type, changed_object_id): (i64, String, i64) =
+        sqlx::query_as(
+            r#"
+            SELECT config_version, changed_object_type, changed_object_id
+            FROM ai_config_version
+            WHERE tenant_id = 10
+              AND organization_id = 20
+              AND config_scope = 'routing'
+            "#,
+        )
+        .fetch_one(&pool)
+        .await
+        .unwrap();
+    assert_eq!(2, config_version);
+    assert_eq!("ai_resource", changed_object_type);
+    assert_eq!(created.id, changed_object_id);
+
+    let event_actions: Vec<String> = sqlx::query_scalar(
+        r#"
+        SELECT event_payload ->> 'action' AS event_action
+        FROM ai_config_change_event
+        WHERE tenant_id = 10
+          AND organization_id = 20
+          AND config_scope = 'routing'
+          AND changed_object_type = 'ai_resource'
+          AND changed_object_id = ?
+        ORDER BY config_version ASC
+        "#,
+    )
+    .bind(created.id)
+    .fetch_all(&pool)
+    .await
+    .unwrap();
+    assert_eq!(
+        vec![
+            "create_ai_resource".to_owned(),
+            "update_ai_resource".to_owned()
+        ],
+        event_actions
+    );
+}
+
+#[tokio::test]
+async fn sqlite_admin_ai_resource_store_prefers_child_resource_group_members() {
+    let pool = schema_sqlite_pool().await;
+    seed_ai_resources(&pool).await;
+    let store = SqliteAdminAiResourceStore::new(pool.clone());
+
+    let created = store
+        .create_ai_resource(CreateAdminAiResourceCommand {
+            subject: subject(),
+            resource_uuid: "resource-openrouter-openai-composite".to_owned(),
+            member_uuids: vec!["resource-member-openrouter-standard-group".to_owned()],
+            audit_log_uuid: "audit-ai-resource-create-group-member".to_owned(),
+            resource_code: "bundle.openrouter.openai.composite".to_owned(),
+            resource_type: "bundle".to_owned(),
+            display_name: "OpenRouter OpenAI Composite".to_owned(),
+            vendor_code: Some("openai".to_owned()),
+            modality_code: None,
+            api_endpoint_code: None,
+            catalog_key: None,
+            model: None,
+            provider_native_model: None,
+            composition_mode: "all".to_owned(),
+            status: "active".to_owned(),
+            sort_order: Some(11),
+            members: vec![AdminAiResourceMemberCommand {
+                member_resource_code: "bundle.openrouter.openai.standard".to_owned(),
+                member_role: "included".to_owned(),
+                required: false,
+                sort_order: Some(1),
+            }],
+            request_id: "req-ai-resource-create-group-member".to_owned(),
+            requested_at: "2026-05-28 10:02:00".to_owned(),
+        })
+        .await
+        .unwrap();
+
+    assert_eq!(1, created.members.len());
+    assert_eq!(
+        "bundle.openrouter.openai.standard",
+        created.members[0].member_resource_code
+    );
+    assert!(!created.members[0].required);
+
+    let (item_type, resource_id, resource_code, child_resource_group_id, child_resource_group_code): (
+        String,
+        Option<i64>,
+        Option<String>,
+        Option<i64>,
+        Option<String>,
+    ) = sqlx::query_as(
+        r#"
+        SELECT item_type, resource_id, resource_code, child_resource_group_id, child_resource_group_code
+        FROM ai_resource_group_item
+        WHERE tenant_id = 10
+          AND organization_id = 20
+          AND resource_group_code = 'bundle.openrouter.openai.composite'
+          AND status = 1
+          AND deleted_at IS NULL
+        "#,
+    )
+    .fetch_one(&pool)
+    .await
+    .unwrap();
+
+    assert_eq!("resource_group", item_type);
+    assert_eq!(None, resource_id);
+    assert_eq!(Some(String::new()), resource_code);
+    assert_eq!(Some(9204), child_resource_group_id);
+    assert_eq!(
+        Some("bundle.openrouter.openai.standard".to_owned()),
+        child_resource_group_code
+    );
+
+    let items = store
+        .list_ai_resources(ListAdminAiResourcesQuery { subject: subject() })
+        .await
+        .unwrap();
+    let reloaded = items
+        .iter()
+        .find(|item| item.id == created.id)
+        .expect("created AI resource should be listed");
+    assert_eq!(1, reloaded.members.len());
+    assert_eq!(
+        "bundle.openrouter.openai.standard",
+        reloaded.members[0].member_resource_code
+    );
+}
+
+#[tokio::test]
+async fn sqlite_admin_ai_resource_store_rejects_unknown_member_resource_code() {
+    let pool = schema_sqlite_pool().await;
+    seed_ai_resources(&pool).await;
+    let store = SqliteAdminAiResourceStore::new(pool.clone());
+
+    let error = store
+        .create_ai_resource(CreateAdminAiResourceCommand {
+            subject: subject(),
+            resource_uuid: "resource-openrouter-openai-invalid".to_owned(),
+            member_uuids: vec!["resource-member-openrouter-missing".to_owned()],
+            audit_log_uuid: "audit-ai-resource-create-missing-member".to_owned(),
+            resource_code: "bundle.openrouter.openai.invalid".to_owned(),
+            resource_type: "bundle".to_owned(),
+            display_name: "OpenRouter OpenAI Invalid".to_owned(),
+            vendor_code: Some("openai".to_owned()),
+            modality_code: None,
+            api_endpoint_code: None,
+            catalog_key: None,
+            model: None,
+            provider_native_model: None,
+            composition_mode: "all".to_owned(),
+            status: "active".to_owned(),
+            sort_order: Some(12),
+            members: vec![AdminAiResourceMemberCommand {
+                member_resource_code: "model.openai.missing.chat".to_owned(),
+                member_role: "included".to_owned(),
+                required: true,
+                sort_order: Some(1),
+            }],
+            request_id: "req-ai-resource-create-missing-member".to_owned(),
+            requested_at: "2026-05-28 10:03:00".to_owned(),
+        })
+        .await
+        .unwrap_err();
+
+    assert!(
+        error.is_not_found(),
+        "missing member resource should be a not-found error: {error}"
+    );
+    assert!(error.to_string().contains("model.openai.missing.chat"));
+
+    let created_count: i64 = sqlx::query_scalar(
+        r#"
+        SELECT COUNT(1)
+        FROM ai_resource
+        WHERE tenant_id = 10
+          AND organization_id = 20
+          AND resource_code = 'bundle.openrouter.openai.invalid'
+        "#,
+    )
+    .fetch_one(&pool)
+    .await
+    .unwrap();
+    assert_eq!(0, created_count);
+}
+
+#[tokio::test]
+async fn sqlite_admin_ai_resource_store_syncs_group_members_when_composite_resource_status_changes()
+{
+    let pool = schema_sqlite_pool().await;
+    seed_ai_resources(&pool).await;
+    let store = SqliteAdminAiResourceStore::new(pool.clone());
+
+    let disabled = store
+        .update_ai_resource(UpdateAdminAiResourceCommand {
+            subject: subject(),
+            resource_id: 9104,
+            member_uuids: Vec::new(),
+            audit_log_uuid: "audit-disable-composite-resource".to_owned(),
+            resource_code: None,
+            resource_type: None,
+            display_name: None,
+            vendor_code: None,
+            modality_code: None,
+            api_endpoint_code: None,
+            catalog_key: None,
+            model: None,
+            provider_native_model: None,
+            composition_mode: None,
+            status: Some("disabled".to_owned()),
+            sort_order: None,
+            members: None,
+            request_id: "req-disable-composite-resource".to_owned(),
+            requested_at: "2026-05-28 10:04:00".to_owned(),
+        })
+        .await
+        .unwrap()
+        .expect("resource should update");
+    assert_eq!("disabled", disabled.status);
+
+    let (group_status, active_member_count): (i64, i64) = sqlx::query_as(
+        r#"
+        SELECT
+            COALESCE(g.status, -999) AS group_status,
+            (
+                SELECT COUNT(1)
+                FROM ai_resource_group_item item
+                WHERE item.tenant_id = g.tenant_id
+                  AND item.organization_id = g.organization_id
+                  AND item.resource_group_id = g.id
+                  AND item.status = 1
+                  AND item.deleted_at IS NULL
+            ) AS active_member_count
+        FROM ai_resource_group g
+        WHERE g.tenant_id = 10
+          AND g.organization_id = 20
+          AND g.group_code = 'bundle.openrouter.openai.standard'
+        "#,
+    )
+    .fetch_one(&pool)
+    .await
+    .unwrap();
+    assert_eq!(0, group_status);
+    assert_eq!(
+        0, active_member_count,
+        "disabling a composite resource must disable its group members so recursive route expansion cannot still use them"
+    );
+
+    let enabled = store
+        .update_ai_resource(UpdateAdminAiResourceCommand {
+            subject: subject(),
+            resource_id: 9104,
+            member_uuids: Vec::new(),
+            audit_log_uuid: "audit-enable-composite-resource".to_owned(),
+            resource_code: None,
+            resource_type: None,
+            display_name: None,
+            vendor_code: None,
+            modality_code: None,
+            api_endpoint_code: None,
+            catalog_key: None,
+            model: None,
+            provider_native_model: None,
+            composition_mode: None,
+            status: Some("active".to_owned()),
+            sort_order: None,
+            members: None,
+            request_id: "req-enable-composite-resource".to_owned(),
+            requested_at: "2026-05-28 10:05:00".to_owned(),
+        })
+        .await
+        .unwrap()
+        .expect("resource should update");
+    assert_eq!("active", enabled.status);
+
+    let active_member_count: i64 = sqlx::query_scalar(
+        r#"
+        SELECT COUNT(1)
+        FROM ai_resource_group_item
+        WHERE tenant_id = 10
+          AND organization_id = 20
+          AND resource_group_id = 9204
+          AND status = 1
+          AND deleted_at IS NULL
+        "#,
+    )
+    .fetch_one(&pool)
+    .await
+    .unwrap();
+    assert_eq!(
+        2, active_member_count,
+        "re-enabling a composite resource should restore existing non-deleted member rows"
+    );
 }
 
 fn subject() -> AdminAiResourceSubject {

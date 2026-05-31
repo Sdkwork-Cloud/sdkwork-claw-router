@@ -1,3 +1,4 @@
+use sdkwork_claw_config::DatabaseConfig;
 use sdkwork_claw_product::application::{PasswordHasher, Pbkdf2Sha256PasswordHasher};
 use std::process::Command;
 use std::sync::atomic::{AtomicU64, Ordering};
@@ -726,7 +727,10 @@ fn installer_cli_auto_initializes_desktop_sqlite_runtime_config() {
     assert!(config_path.exists());
     let generated_config = fs::read_to_string(config_path).unwrap();
     assert!(generated_config.contains("engine = \"sqlite\""));
-    assert!(generated_config.contains("max_connections = 1"));
+    assert!(generated_config.contains(&format!(
+        "max_connections = {}",
+        DatabaseConfig::DESKTOP_SQLITE_DEFAULT_MAX_CONNECTIONS
+    )));
 }
 
 #[test]

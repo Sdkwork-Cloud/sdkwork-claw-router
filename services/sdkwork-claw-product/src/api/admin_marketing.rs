@@ -5,6 +5,8 @@ use axum::body::Bytes;
 use axum::extract::{Path, Query, State};
 use axum::http::{HeaderMap, StatusCode};
 use axum::response::{IntoResponse, Response};
+use std::collections::BTreeMap;
+
 use axum::routing::{get, patch};
 use axum::{Json, Router};
 use sdkwork_claw_http::TrustedRequestSubject;
@@ -24,8 +26,9 @@ use crate::ports::{
     ListAdminReferralStatsQuery, ListPromotionCodeRedemptionsQuery, ListPromotionCodesQuery,
     ListPromotionCouponStocksQuery, ListPromotionOffersQuery, LoadAdminRechargeRecordQuery,
     PromotionCodeItem, PromotionCodeRedemptionItem, PromotionCouponStockItem, PromotionOfferItem,
-    UpdateAdminExchangeRuleCommand, UpdateAdminRechargePackageCommand,
-    UpdatePromotionCodeStatusCommand, UpdatePromotionOfferCommand,
+    RechargeSettingsUpdateCommand, UpdateAdminExchangeRuleCommand,
+    UpdateAdminRechargePackageCommand, UpdatePromotionCodeStatusCommand,
+    UpdatePromotionOfferCommand,
 };
 
 const MAX_NAME_LEN: usize = 128;
@@ -170,9 +173,18 @@ struct RechargePackageListQueryRequest {
 #[derive(Debug, Deserialize)]
 #[serde(rename_all = "camelCase")]
 struct RechargePackageMutationRequest {
-    rmb: Option<Value>,
-    bonus: Option<Value>,
+    price_amount: Option<Value>,
+    currency_code: Option<String>,
+    bonus_points: Option<Value>,
     status: Option<String>,
+}
+
+#[derive(Debug, Deserialize)]
+#[serde(rename_all = "camelCase")]
+struct RechargeSettingsUpdateRequest {
+    base_currency_code: Option<String>,
+    base_points_per_cny: Option<Value>,
+    currency_to_cny_rates: Option<BTreeMap<String, Value>>,
 }
 
 #[derive(Debug, Deserialize)]
@@ -204,9 +216,17 @@ struct NormalizedDiscountValue {
 
 #[derive(Debug, Clone, PartialEq, Eq)]
 struct NormalizedRechargePackageMutation {
-    rmb: String,
-    bonus: i64,
+    price_amount: String,
+    currency_code: String,
+    bonus_points: i64,
     status: AdminRechargePackageStatus,
+}
+
+#[derive(Debug, Clone, PartialEq, Eq)]
+struct NormalizedRechargeSettingsMutation {
+    base_currency_code: String,
+    base_points_per_cny: String,
+    currency_to_cny_rates: BTreeMap<String, String>,
 }
 
 #[derive(Debug, Clone, PartialEq, Eq)]
@@ -265,6 +285,10 @@ pub fn admin_marketing_router_with_store(
         .route(
             "/backend/v3/api/recharges/packages/{package_id}",
             patch(update_recharge_package).delete(delete_recharge_package),
+        )
+        .route(
+            "/backend/v3/api/recharges/settings",
+            get(fetch_recharge_settings).put(update_recharge_settings),
         )
         .route(
             "/backend/v3/api/billing/exchange_rules",
@@ -734,6 +758,49 @@ async fn delete_recharge_package(
     }
 }
 
+async fn fetch_recharge_settings(
+    State(state): State<AdminMarketingState>,
+    headers: HeaderMap,
+) -> Response {
+    let subject = match resolve_subject(&headers) {
+        Ok(subject) => subject,
+        Err(response) => return response,
+    };
+    match state.store.load_recharge_settings(subject).await {
+        Ok(item) => Json(PlusApiResult::success(item)).into_response(),
+        Err(error) => {
+            marketing_system_response("recharge settings read model is unavailable", error)
+        }
+    }
+}
+
+async fn update_recharge_settings(
+    State(state): State<AdminMarketingState>,
+    headers: HeaderMap,
+    body: Bytes,
+) -> Response {
+    let subject = match resolve_subject(&headers) {
+        Ok(subject) => subject,
+        Err(response) => return response,
+    };
+    let request = match parse_json_body::<RechargeSettingsUpdateRequest>(&body, "recharge settings")
+    {
+        Ok(request) => request,
+        Err(message) => return bad_request(message),
+    };
+    let command = match build_update_recharge_settings_command(state.clone(), subject, request) {
+        Ok(command) => command,
+        Err(error) => return command_build_error_response(error),
+    };
+    match state.store.update_recharge_settings(command).await {
+        Ok(item) => Json(PlusApiResult::success(item)).into_response(),
+        Err(error) if error.is_conflict() => conflict_response(error),
+        Err(error) => {
+            marketing_system_response("recharge settings command store is unavailable", error)
+        }
+    }
+}
+
 async fn fetch_referral_stats(
     State(state): State<AdminMarketingState>,
     headers: HeaderMap,
@@ -1081,8 +1148,9 @@ fn build_create_recharge_package_command(
         product_uuid: generate_entity_uuid(&state)?,
         sku_uuid: generate_entity_uuid(&state)?,
         audit_log_uuid: generate_entity_uuid(&state)?,
-        rmb: mutation.rmb,
-        bonus: mutation.bonus,
+        price_amount: mutation.price_amount,
+        currency_code: mutation.currency_code,
+        bonus_points: mutation.bonus_points,
         status: mutation.status,
         request_id: generate_server_request_id().map_err(request_id_error)?,
         requested_at: current_timestamp_string(),
@@ -1103,8 +1171,9 @@ fn build_update_recharge_package_command(
         product_uuid: generate_entity_uuid(&state)?,
         sku_uuid: generate_entity_uuid(&state)?,
         audit_log_uuid: generate_entity_uuid(&state)?,
-        rmb: mutation.rmb,
-        bonus: mutation.bonus,
+        price_amount: mutation.price_amount,
+        currency_code: mutation.currency_code,
+        bonus_points: mutation.bonus_points,
         status: mutation.status,
         request_id: generate_server_request_id().map_err(request_id_error)?,
         requested_at: current_timestamp_string(),
@@ -1133,12 +1202,34 @@ fn build_update_exchange_rule_command(
     request: ExchangeRuleMutationRequest,
 ) -> Result<UpdateAdminExchangeRuleCommand, AdminMarketingCommandBuildError> {
     let mutation = normalize_exchange_rule_mutation(request)?;
+    let remark = format!(
+        "{} to {} exchange rate",
+        mutation.source_asset_type, mutation.target_asset_type
+    );
     Ok(UpdateAdminExchangeRuleCommand {
         subject,
         audit_log_uuid: generate_entity_uuid(&state)?,
         source_asset_type: mutation.source_asset_type,
         target_asset_type: mutation.target_asset_type,
         rate: mutation.rate,
+        remark,
+        request_id: generate_server_request_id().map_err(request_id_error)?,
+        requested_at: current_timestamp_string(),
+    })
+}
+
+fn build_update_recharge_settings_command(
+    state: AdminMarketingState,
+    subject: AdminMarketingSubject,
+    request: RechargeSettingsUpdateRequest,
+) -> Result<RechargeSettingsUpdateCommand, AdminMarketingCommandBuildError> {
+    let mutation = normalize_recharge_settings_mutation(request)?;
+    Ok(RechargeSettingsUpdateCommand {
+        subject,
+        audit_log_uuid: generate_entity_uuid(&state)?,
+        base_currency_code: mutation.base_currency_code,
+        base_points_per_cny: mutation.base_points_per_cny,
+        currency_to_cny_rates: mutation.currency_to_cny_rates,
         request_id: generate_server_request_id().map_err(request_id_error)?,
         requested_at: current_timestamp_string(),
     })
@@ -1240,13 +1331,17 @@ fn normalize_recharge_package_mutation(
     request: RechargePackageMutationRequest,
 ) -> Result<NormalizedRechargePackageMutation, AdminMarketingCommandBuildError> {
     Ok(NormalizedRechargePackageMutation {
-        rmb: normalize_recharge_package_rmb(request.rmb.as_ref())?,
-        bonus: normalize_recharge_package_bonus(request.bonus.as_ref())?,
+        price_amount: normalize_recharge_package_price_amount(request.price_amount.as_ref())?,
+        currency_code: normalize_currency_code(
+            request.currency_code.as_deref(),
+            "recharge package currencyCode",
+        )?,
+        bonus_points: normalize_recharge_package_bonus_points(request.bonus_points.as_ref())?,
         status: normalize_recharge_package_status(request.status.as_deref())?,
     })
 }
 
-fn normalize_recharge_package_rmb(
+fn normalize_recharge_package_price_amount(
     value: Option<&Value>,
 ) -> Result<String, AdminMarketingCommandBuildError> {
     let raw = match value {
@@ -1254,20 +1349,20 @@ fn normalize_recharge_package_rmb(
         Some(Value::Number(value)) => value.to_string(),
         Some(_) => {
             return Err(AdminMarketingCommandBuildError::BadRequest(
-                "recharge package rmb must be a number or string".to_owned(),
+                "recharge package priceAmount must be a number or string".to_owned(),
             ));
         }
         None => {
             return Err(AdminMarketingCommandBuildError::BadRequest(
-                "recharge package rmb is required".to_owned(),
+                "recharge package priceAmount is required".to_owned(),
             ));
         }
     };
-    let cents = decimal_money_to_cents_with_field(&raw, "recharge package rmb")?;
+    let cents = decimal_money_to_cents_with_field(&raw, "recharge package priceAmount")?;
     Ok(cents_to_plain_money_string(cents))
 }
 
-fn normalize_recharge_package_bonus(
+fn normalize_recharge_package_bonus_points(
     value: Option<&Value>,
 ) -> Result<i64, AdminMarketingCommandBuildError> {
     let bonus = match value {
@@ -1276,21 +1371,138 @@ fn normalize_recharge_package_bonus(
         Some(_) => None,
         None => {
             return Err(AdminMarketingCommandBuildError::BadRequest(
-                "recharge package bonus is required".to_owned(),
+                "recharge package bonusPoints is required".to_owned(),
             ));
         }
     }
     .ok_or_else(|| {
         AdminMarketingCommandBuildError::BadRequest(
-            "recharge package bonus must be a non-negative integer".to_owned(),
+            "recharge package bonusPoints must be a non-negative integer".to_owned(),
         )
     })?;
     if bonus < 0 {
         return Err(AdminMarketingCommandBuildError::BadRequest(
-            "recharge package bonus must be a non-negative integer".to_owned(),
+            "recharge package bonusPoints must be a non-negative integer".to_owned(),
         ));
     }
     Ok(bonus)
+}
+
+fn normalize_recharge_settings_mutation(
+    request: RechargeSettingsUpdateRequest,
+) -> Result<NormalizedRechargeSettingsMutation, AdminMarketingCommandBuildError> {
+    let base_currency_code = normalize_currency_code(
+        request.base_currency_code.as_deref(),
+        "recharge settings baseCurrencyCode",
+    )?;
+    let base_points_per_cny = normalize_decimal_value(
+        request.base_points_per_cny.as_ref(),
+        "recharge settings basePointsPerCny",
+    )?;
+    let currency_to_cny_rates = normalize_currency_rates(
+        request.currency_to_cny_rates,
+        "recharge settings currencyToCnyRates",
+        &base_currency_code,
+    )?;
+    Ok(NormalizedRechargeSettingsMutation {
+        base_currency_code,
+        base_points_per_cny,
+        currency_to_cny_rates,
+    })
+}
+
+fn normalize_decimal_value(
+    value: Option<&Value>,
+    field_name: &str,
+) -> Result<String, AdminMarketingCommandBuildError> {
+    let raw = match value {
+        Some(Value::String(value)) => value.trim().to_owned(),
+        Some(Value::Number(value)) => value.to_string(),
+        Some(_) => {
+            return Err(AdminMarketingCommandBuildError::BadRequest(format!(
+                "{field_name} must be a number or string"
+            )));
+        }
+        None => {
+            return Err(AdminMarketingCommandBuildError::BadRequest(format!(
+                "{field_name} is required"
+            )));
+        }
+    };
+    normalize_decimal_string(&raw, field_name)
+}
+
+fn normalize_decimal_string(
+    value: &str,
+    field_name: &str,
+) -> Result<String, AdminMarketingCommandBuildError> {
+    let value = value.trim().replace(',', "");
+    if value.is_empty() || value.starts_with('-') || value.starts_with('+') {
+        return Err(AdminMarketingCommandBuildError::BadRequest(format!(
+            "{field_name} must be a positive decimal"
+        )));
+    }
+    let mut parts = value.split('.');
+    let whole = parts.next().unwrap_or_default();
+    let fraction = parts.next().unwrap_or_default();
+    if whole.is_empty()
+        || !whole.chars().all(|ch| ch.is_ascii_digit())
+        || parts.next().is_some()
+        || fraction.len() > 6
+        || !fraction.chars().all(|ch| ch.is_ascii_digit())
+    {
+        return Err(AdminMarketingCommandBuildError::BadRequest(format!(
+            "{field_name} must be a valid decimal"
+        )));
+    }
+    let whole = whole.trim_start_matches('0');
+    let whole = if whole.is_empty() { "0" } else { whole };
+    let fraction = fraction.trim_end_matches('0');
+    if fraction.is_empty() {
+        Ok(whole.to_owned())
+    } else {
+        Ok(format!("{whole}.{fraction}"))
+    }
+}
+
+fn normalize_currency_code(
+    value: Option<&str>,
+    field_name: &str,
+) -> Result<String, AdminMarketingCommandBuildError> {
+    let value = value.unwrap_or("").trim().to_ascii_uppercase();
+    if value.len() != 3 || !value.chars().all(|ch| ch.is_ascii_uppercase()) {
+        return Err(AdminMarketingCommandBuildError::BadRequest(format!(
+            "{field_name} must match ^[A-Z]{{3}}$"
+        )));
+    }
+    Ok(value)
+}
+
+fn normalize_currency_rates(
+    value: Option<BTreeMap<String, Value>>,
+    field_name: &str,
+    base_currency_code: &str,
+) -> Result<BTreeMap<String, String>, AdminMarketingCommandBuildError> {
+    let Some(value) = value else {
+        return Err(AdminMarketingCommandBuildError::BadRequest(format!(
+            "{field_name} is required"
+        )));
+    };
+    if value.is_empty() {
+        return Err(AdminMarketingCommandBuildError::BadRequest(format!(
+            "{field_name} must not be empty"
+        )));
+    }
+    let mut normalized = BTreeMap::new();
+    for (currency_code, rate_value) in value {
+        let currency_code = normalize_currency_code(Some(&currency_code), field_name)?;
+        let rate = normalize_decimal_value(Some(&rate_value), field_name)?;
+        normalized.insert(currency_code, rate);
+    }
+    normalized
+        .entry(base_currency_code.to_owned())
+        .or_insert_with(|| "1".to_owned());
+    Ok(normalized)
 }
 
 fn normalize_recharge_package_status(

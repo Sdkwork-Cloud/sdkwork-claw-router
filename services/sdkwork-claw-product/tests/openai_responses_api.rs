@@ -161,6 +161,59 @@ fn catalog_with_hashed_api_key_missing_billing_subject(key_hash: String) -> InMe
     catalog
 }
 
+fn catalog_with_responses_fallback_route(key_hash: String) -> InMemoryPricingCatalog {
+    let mut catalog = catalog_with_hashed_api_key(key_hash);
+    catalog.add_provider_route(
+        ModelProviderRoute::new_for_catalog_key(
+            "openai/gpt-4.1-mini",
+            "gpt-4.1-mini",
+            "openrouter-fallback",
+            3002,
+            "gpt-4.1-mini-fallback",
+        )
+        .with_provider_endpoint(
+            Some("http://provider-proxy.internal/openrouter-fallback"),
+            Some("vault://providers/openrouter/account/responses-fallback"),
+        )
+        .with_timeout_ms(20_000)
+        .with_retry_policy(ProviderRetryPolicy::new(3, vec![429, 503], 0).unwrap()),
+    );
+    catalog.add_provider_channel_route(
+        ProviderChannelRoute::new("openrouter-fallback", 3002)
+            .with_provider_endpoint(
+                Some("http://provider-proxy.internal/openrouter-fallback"),
+                Some("vault://providers/openrouter/account/responses-fallback"),
+            )
+            .with_timeout_ms(20_000)
+            .with_retry_policy(ProviderRetryPolicy::new(3, vec![429, 503], 0).unwrap()),
+    );
+    catalog.add_price(
+        ModelPrice::new_for_catalog_key(
+            "openai/gpt-4.1-mini",
+            "gpt-4.1-mini",
+            PriceSide::UpstreamCost,
+            BillingMeter::LlmInputToken,
+            Money::usd("0.120000").unwrap(),
+        )
+        .for_provider("openrouter-fallback", 3002),
+    );
+    catalog.add_routing_rule(
+        RoutingRule::new(
+            9100,
+            10,
+            20,
+            9101,
+            "standard-group-gpt-4-1-mini-sticky-fail-closed",
+            0,
+            r#"{"catalogKey":"openai/gpt-4.1-mini"}"#,
+            "openai/gpt-4.1-mini",
+        )
+        .with_candidate_channels(vec![RouteCandidate::new(3001, 100)])
+        .with_fallback_chain(vec![RouteCandidate::new(3002, 50)]),
+    );
+    catalog
+}
+
 #[tokio::test]
 async fn openai_responses_authenticates_validates_price_and_returns_honest_not_implemented() {
     let hasher =
@@ -301,6 +354,66 @@ impl ResponsesRelay for RecordingResponsesRelay {
                     "id": "resp-test",
                     "object": "response",
                     "model": "gpt-4.1-mini",
+                    "output": [
+                        {
+                            "type": "message",
+                            "role": "assistant",
+                            "content": [{"type": "output_text", "text": "pong"}]
+                        }
+                    ],
+                    "usage": {"input_tokens": 1, "output_tokens": 1, "total_tokens": 2}
+                }),
+            ))
+        })
+    }
+}
+
+#[derive(Debug)]
+struct RetryableStatusPrimaryResponsesRelay {
+    captured: Arc<Mutex<Vec<ResponsesRelayRequest>>>,
+    failing_provider_code: &'static str,
+}
+
+impl RetryableStatusPrimaryResponsesRelay {
+    fn new(
+        captured: Arc<Mutex<Vec<ResponsesRelayRequest>>>,
+        failing_provider_code: &'static str,
+    ) -> Self {
+        Self {
+            captured,
+            failing_provider_code,
+        }
+    }
+}
+
+impl ResponsesRelay for RetryableStatusPrimaryResponsesRelay {
+    fn create_response<'a>(
+        &'a self,
+        request: ResponsesRelayRequest,
+    ) -> std::pin::Pin<
+        Box<dyn std::future::Future<Output = DomainResult<ResponsesRelayResponse>> + Send + 'a>,
+    > {
+        let provider_code = request.provider_code.clone();
+        self.captured.lock().unwrap().push(request);
+        Box::pin(async move {
+            if provider_code == self.failing_provider_code {
+                return Ok(ResponsesRelayResponse::json(
+                    503,
+                    serde_json::json!({
+                        "error": {
+                            "message": "upstream overloaded",
+                            "type": "server_error",
+                            "code": "overloaded"
+                        }
+                    }),
+                ));
+            }
+            Ok(ResponsesRelayResponse::json(
+                200,
+                serde_json::json!({
+                    "id": "resp-fallback",
+                    "object": "response",
+                    "model": "gpt-4.1-mini-fallback",
                     "output": [
                         {
                             "type": "message",
@@ -547,6 +660,51 @@ async fn openai_responses_relays_non_stream_request_after_auth_model_and_price_v
         captured[0].provider_retry_policy
     );
     assert_eq!("hello", captured[0].request_body["input"]);
+}
+
+#[tokio::test]
+async fn openai_responses_create_fails_closed_after_retryable_provider_status() {
+    let hasher =
+        Arc::new(HmacSha256ApiKeySecretHasher::new("0123456789abcdef0123456789abcdef").unwrap());
+    let key_hash = hasher.hash_secret("sk-live-secret").unwrap();
+    let captured = Arc::new(Mutex::new(Vec::new()));
+    let router = sdkwork_claw_product::api::openai_responses_router_with_relay(
+        Arc::new(catalog_with_responses_fallback_route(key_hash)),
+        hasher,
+        Arc::new(RetryableStatusPrimaryResponsesRelay::new(
+            Arc::clone(&captured),
+            "openrouter",
+        )),
+    );
+
+    let response = router
+        .oneshot(
+            Request::builder()
+                .method("POST")
+                .uri("/v1/responses")
+                .header("authorization", "Bearer sk-live-secret")
+                .header("content-type", "application/json")
+                .body(Body::from(r#"{"model":"gpt-4.1-mini","input":"hello"}"#))
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+
+    assert_eq!(StatusCode::SERVICE_UNAVAILABLE, response.status());
+    let body = axum::body::to_bytes(response.into_body(), usize::MAX)
+        .await
+        .unwrap();
+    let payload: serde_json::Value = serde_json::from_slice(&body).unwrap();
+    assert_eq!("overloaded", payload["error"]["code"]);
+
+    let captured = captured.lock().unwrap();
+    assert_eq!(1, captured.len());
+    assert_eq!("openrouter", captured[0].provider_code);
+    assert_eq!(3001, captured[0].provider_channel_id);
+    assert_eq!(
+        Some(ProviderRetryPolicy::new(1, Vec::new(), 0).unwrap()),
+        captured[0].provider_retry_policy
+    );
 }
 
 #[tokio::test]

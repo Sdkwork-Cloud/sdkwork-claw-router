@@ -1,7 +1,3 @@
-#[path = "common/installed_sqlite.rs"]
-mod installed_sqlite_common;
-
-use installed_sqlite_common::{repair_sqlite_pool, schema_sqlite_pool};
 use sdkwork_claw_product::infrastructure::sql::sqlite::SqliteAdminSkillStore;
 use sdkwork_claw_product::ports::{
     AdminSkillStore, AdminSkillSubject, CreateAdminSkillArtifactCommand,
@@ -14,6 +10,7 @@ use sdkwork_claw_product::ports::{
     UpdateAdminSkillAssetCommand, UpdateAdminSkillCategoryCommand, UpdateAdminSkillCommand,
     UpdateAdminSkillPackageCommand,
 };
+use sdkwork_claw_product_test_support::{repair_sqlite_pool, schema_sqlite_pool};
 use serde_json::json;
 use sqlx::Row;
 

@@ -173,6 +173,7 @@ test('api reference playground SSR renders actionable parameter DOM controls', (
       { initialEntries: ['/api-reference'] },
       React.createElement(ApiPlayground, {
         endpoint,
+        requestBaseUrl: '/v1',
         onClose: () => undefined,
       }),
     ),

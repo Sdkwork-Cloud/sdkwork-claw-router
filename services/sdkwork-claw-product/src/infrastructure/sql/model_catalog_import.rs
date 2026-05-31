@@ -744,6 +744,38 @@ pub(crate) fn catalog_ai_resource_projections(
         );
     }
 
+    for (index, modality) in catalog_modality_resource_projections(catalog)
+        .into_iter()
+        .enumerate()
+    {
+        let resource_code = format!("modality.{}", modality.modality_code);
+        resources.insert(
+            resource_code.clone(),
+            CatalogAiResourceProjection {
+                uuid: stable_uuid("sdk-cap-resource", &[&resource_code]),
+                resource_code,
+                resource_kind: "modality".to_owned(),
+                display_name: modality.display_name,
+                vendor_code: None,
+                modality_code: Some(modality.modality_code),
+                api_endpoint_code: None,
+                catalog_key: None,
+                model: None,
+                provider_native_model: None,
+                composition_mode: "single".to_owned(),
+                capability_schema: serde_json::json!({
+                    "modalityGroup": modality.modality_group,
+                    "inputSupported": modality.input_supported,
+                    "outputSupported": modality.output_supported
+                })
+                .to_string(),
+                metadata_schema: "{}".to_owned(),
+                description: Some(modality.description),
+                sort_order: 5_000 + modality.sort_order + (index as i32),
+            },
+        );
+    }
+
     for endpoint in catalog_api_endpoint_projections(catalog) {
         let resource_code = format!("api.{}", endpoint.endpoint_code);
         resources.insert(
@@ -818,6 +850,31 @@ pub(crate) fn catalog_ai_resource_projections(
     }
 
     resources.into_values().collect()
+}
+
+fn catalog_modality_resource_projections(catalog: &ModelCatalog) -> Vec<CatalogModalityProjection> {
+    let mut modalities = catalog_modality_projections(catalog);
+    if modalities.iter().any(|modality| {
+        matches!(
+            modality.modality_code.as_str(),
+            "chat" | "text" | "embedding" | "rerank"
+        )
+    }) && !modalities
+        .iter()
+        .any(|modality| modality.modality_code == "llm")
+    {
+        modalities.push(CatalogModalityProjection {
+            uuid: stable_uuid("sdk-modality", &["llm"]),
+            modality_code: "llm".to_owned(),
+            display_name: modality_display_name("llm"),
+            modality_group: modality_group("llm").to_owned(),
+            input_supported: true,
+            output_supported: true,
+            description: modality_description("llm"),
+            sort_order: modality_sort_order("llm").unwrap_or(5),
+        });
+    }
+    modalities
 }
 
 pub(crate) fn model_resource_suffix(model: &ModelInfo) -> String {
@@ -1003,6 +1060,7 @@ fn endpoint_modality_code(endpoint_code: &str) -> Option<String> {
 
 fn modality_display_name(modality_code: &str) -> String {
     match modality_code {
+        "llm" => "LLM",
         "text" => "Text",
         "chat" => "Chat",
         "image" => "Image",
@@ -1021,7 +1079,7 @@ fn modality_display_name(modality_code: &str) -> String {
 
 fn modality_group(modality_code: &str) -> &'static str {
     match modality_code {
-        "chat" | "text" | "embedding" | "rerank" => "language",
+        "llm" | "chat" | "text" | "embedding" | "rerank" => "language",
         "image" | "video" => "visual",
         "audio" | "music" => "audio",
         "tool" | "storage" | "network" => "tooling",
@@ -1035,6 +1093,7 @@ fn modality_description(modality_code: &str) -> String {
 
 fn modality_sort_order(modality_code: &str) -> Option<i32> {
     match modality_code {
+        "llm" => Some(5),
         "chat" => Some(10),
         "text" => Some(20),
         "embedding" => Some(30),

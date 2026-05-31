@@ -78,11 +78,10 @@ fn postgres_model_ranking_refresh_reads_previous_rank_from_same_scope_period_and
 }
 
 #[test]
-fn postgres_model_ranking_refresh_uses_canonical_catalog_key_and_model_region_context() {
+fn postgres_model_ranking_refresh_uses_canonical_catalog_key_and_regionless_model_context() {
     for expected in [
-        "COALESCE(NULLIF(m.region_code, ''), 'global') AS region_code",
+        "'global' AS region_code",
         "m.catalog_key,",
-        "m.region_code,",
         "ON m.catalog_key = u.catalog_key",
         "PARTITION BY r.vendor_code, r.region_code, r.catalog_key",
     ] {
@@ -90,6 +89,9 @@ fn postgres_model_ranking_refresh_uses_canonical_catalog_key_and_model_region_co
     }
 
     for forbidden in [
+        "NULLIF(m.region_code",
+        "m.region_code AS region_code",
+        "COALESCE(NULLIF(m.region_code",
         "split_part(u.catalog_key",
         "substr(u.catalog_key",
         "length(COALESCE(u.catalog_key",

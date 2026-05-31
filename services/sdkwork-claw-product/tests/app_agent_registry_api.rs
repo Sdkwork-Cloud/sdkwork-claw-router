@@ -97,7 +97,7 @@ async fn app_agent_registry_create_route_returns_standard_agent_definition() {
     assert_eq!(20, commands[0].subject.organization_id);
     assert_eq!(30, commands[0].subject.user_id);
     assert_eq!("create-product-studio-agent", commands[0].idempotency_key);
-    assert_eq!(TEST_REQUEST_ID, commands[0].request_id);
+    assert_server_request_id(&commands[0].request_id, TEST_REQUEST_ID);
     assert_eq!("agent-uuid-001", commands[0].agent_uuid);
     assert_eq!("agent-version-uuid-001", commands[0].version_uuid);
     assert_eq!("Product Studio Agent", commands[0].name);
@@ -292,28 +292,6 @@ async fn app_agent_registry_create_route_rejects_whitespace_wrapped_request_toke
         .unwrap()
         .contains("Idempotency-Key must contain only visible ASCII characters"));
 
-    let request_id_response = router
-        .oneshot(
-            Request::builder()
-                .method("POST")
-                .uri("/app/v3/api/agents")
-                .header("content-type", "application/json")
-                .internal_trusted_subject(10, 20, 30)
-                .header("Idempotency-Key", "create-product-studio-agent")
-                .header("X-Request-Id", "not-a-uuid")
-                .body(Body::from(r#"{"name":"Product Studio Agent"}"#))
-                .unwrap(),
-        )
-        .await
-        .unwrap();
-
-    assert_eq!(StatusCode::BAD_REQUEST, request_id_response.status());
-    let request_id_payload = response_json(request_id_response).await;
-    assert_eq!("4001", request_id_payload["code"]);
-    assert!(request_id_payload["msg"]
-        .as_str()
-        .unwrap()
-        .contains("X-Request-Id must be a UUID"));
     assert!(store.commands.lock().unwrap().is_empty());
 }
 
@@ -350,28 +328,6 @@ async fn app_agent_registry_create_route_rejects_oversized_request_tokens() {
         .unwrap()
         .contains("Idempotency-Key must be at most 128 characters"));
 
-    let request_id_response = router
-        .oneshot(
-            Request::builder()
-                .method("POST")
-                .uri("/app/v3/api/agents")
-                .header("content-type", "application/json")
-                .internal_trusted_subject(10, 20, 30)
-                .header("Idempotency-Key", "create-product-studio-agent")
-                .header("X-Request-Id", oversized.as_str())
-                .body(Body::from(r#"{"name":"Product Studio Agent"}"#))
-                .unwrap(),
-        )
-        .await
-        .unwrap();
-
-    assert_eq!(StatusCode::BAD_REQUEST, request_id_response.status());
-    let request_id_payload = response_json(request_id_response).await;
-    assert_eq!("4001", request_id_payload["code"]);
-    assert!(request_id_payload["msg"]
-        .as_str()
-        .unwrap()
-        .contains("X-Request-Id must be a UUID"));
     assert!(store.commands.lock().unwrap().is_empty());
 }
 
@@ -458,6 +414,14 @@ fn assert_uuid(value: &str) {
         matches!(index, 8 | 13 | 18 | 23) && *byte == b'-'
             || !matches!(index, 8 | 13 | 18 | 23) && byte.is_ascii_hexdigit()
     }));
+}
+
+fn assert_server_request_id(value: &str, client_header_value: &str) {
+    assert_uuid(value);
+    assert_ne!(
+        client_header_value, value,
+        "server-generated request id must ignore client X-Request-Id"
+    );
 }
 
 struct FixedAppAgentRegistryStore {

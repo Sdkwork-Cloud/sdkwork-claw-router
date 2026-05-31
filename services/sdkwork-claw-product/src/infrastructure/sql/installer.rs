@@ -7,7 +7,10 @@ use std::sync::atomic::{AtomicU64, Ordering};
 use std::sync::OnceLock;
 use std::time::{SystemTime, UNIX_EPOCH};
 
-use sdkwork_commerce_bootstrap::commerce_experience_seed_manifest;
+use sdkwork_commerce_bootstrap::{
+    commerce_experience_seed_manifest, commerce_recharge_package_seeds,
+    commerce_recharge_settings_seeds,
+};
 use sdkwork_commerce_core::CommerceServiceError;
 use sdkwork_commerce_storage_sqlx::{
     commerce_database_indexes, commerce_database_tables, commerce_initial_migration_sql,
@@ -23,6 +26,11 @@ use sha2::{Digest, Sha256};
 use sqlx::{PgPool, Postgres, Row, Sqlite, SqlitePool, Transaction};
 
 use crate::application::{PasswordHasher, Pbkdf2Sha256PasswordHasher};
+use crate::infrastructure::sql::ai_routing_seed::{
+    bundled_ai_routing_seed_payload, import_postgres_ai_routing_seed,
+    import_sqlite_ai_routing_seed, postgres_ai_routing_seed_complete,
+    sqlite_ai_routing_seed_complete,
+};
 use crate::infrastructure::sql::app_seed::{
     bundled_app_seed_payload, import_postgres_app_seed, import_sqlite_app_seed,
     postgres_app_seed_complete, repair_sqlite_app_seed, sqlite_app_seed_complete,
@@ -57,7 +65,6 @@ const BUNDLED_MODELS_CATALOG_MANIFEST: &str =
 pub const CURRENT_SCHEMA_VERSION: &str = "2026.05.08.1";
 pub const DEFAULT_SEED_PROFILE: &str = "commercial";
 pub const DEFAULT_INSTALL_ENVIRONMENT: &str = "production";
-const OBSOLETE_GENERATED_SCHEMA_INDEXES: &[&str] = &["uk_integration_provider_account_secret_hash"];
 pub const ENV_INSTALL_ENVIRONMENT: &str = "SDKWORK_CLAW_INSTALL_ENVIRONMENT";
 pub const ENV_INSTALL_SEED_PROFILE: &str = "SDKWORK_CLAW_INSTALL_SEED_PROFILE";
 pub const ENV_MODELS_CATALOG_ROOT: &str = "SDKWORK_MODELS_CATALOG_ROOT";
@@ -808,6 +815,7 @@ impl DatabaseInstaller {
     async fn import_installation_support_seeds(&self) -> Result<(), DatabaseInstallError> {
         match &self.backend {
             InstallerBackend::Sqlite(pool) => {
+                import_sqlite_bundled_ai_routing_seed(pool).await?;
                 import_sqlite_bundled_app_seed(pool).await?;
                 import_sqlite_bundled_skills_seed(pool).await?;
                 import_sqlite_bundled_course_seed(pool).await?;
@@ -816,6 +824,7 @@ impl DatabaseInstaller {
                 import_sqlite_commerce_experience_seed(pool).await?;
             }
             InstallerBackend::Postgres(pool) => {
+                import_postgres_bundled_ai_routing_seed(pool).await?;
                 import_postgres_bundled_app_seed(pool).await?;
                 import_postgres_bundled_skills_seed(pool).await?;
                 import_postgres_bundled_course_seed(pool).await?;
@@ -979,16 +988,20 @@ impl DatabaseInstaller {
 
 impl DatabaseInstaller {
     async fn apply_schema_startup_repairs(&self) -> Result<bool, DatabaseInstallError> {
-        let changed = match &self.backend {
+        let mut changed = match &self.backend {
             InstallerBackend::Sqlite(pool) => {
-                let mut changed = drop_sqlite_obsolete_generated_schema_indexes(pool).await?;
-                changed |= repair_sqlite_generated_schema_index_definitions(pool).await?;
-                changed
+                repair_sqlite_generated_schema_index_definitions(pool).await?
             }
             InstallerBackend::Postgres(pool) => {
-                let mut changed = ensure_postgres_generated_schema_columns(pool).await?;
-                changed |= drop_postgres_obsolete_generated_schema_indexes(pool).await?;
-                changed
+                ensure_postgres_generated_schema_columns(pool).await?
+            }
+        };
+        changed |= match &self.backend {
+            InstallerBackend::Sqlite(pool) => {
+                ensure_sqlite_bootstrap_admin_recharge_catalog(pool).await?
+            }
+            InstallerBackend::Postgres(pool) => {
+                ensure_postgres_bootstrap_admin_recharge_catalog(pool).await?
             }
         };
         Ok(changed)
@@ -1868,7 +1881,6 @@ async fn prepare_sqlite_schema_with_catalog_version(
     for statement in sqlite_schema_statements() {
         execute_sqlite_statement(pool, statement.as_str()).await?;
     }
-    drop_sqlite_obsolete_generated_schema_indexes(pool).await?;
     apply_sqlite_appbase_commerce_schema(pool).await?;
     record_sqlite_migration_completed(
         pool,
@@ -2093,7 +2105,6 @@ async fn prepare_postgres_schema_with_catalog_version(
     for statement in postgres_schema_statements() {
         execute_postgres_statement(pool, statement.as_str()).await?;
     }
-    drop_postgres_obsolete_generated_schema_indexes(pool).await?;
     apply_postgres_appbase_commerce_schema(pool).await?;
     record_postgres_migration_completed(
         pool,
@@ -2139,11 +2150,13 @@ async fn install_sqlite(
     )
     .await?;
     import_sqlite_bundled_app_seed(pool).await?;
+    import_sqlite_bundled_ai_routing_seed(pool).await?;
     import_sqlite_bundled_skills_seed(pool).await?;
     import_sqlite_bundled_course_seed(pool).await?;
     import_sqlite_bundled_forum_seed(pool).await?;
     import_sqlite_default_iam_subject_seed(pool).await?;
     import_sqlite_commerce_experience_seed(pool).await?;
+    ensure_sqlite_bootstrap_admin_recharge_catalog(pool).await?;
     let bootstrap_admin =
         bootstrap_sqlite_admin_user_if_needed(pool, bootstrap_admin_options).await?;
     mark_sqlite_installed(pool).await?;
@@ -2184,11 +2197,13 @@ async fn install_postgres(
     )
     .await?;
     import_postgres_bundled_app_seed(pool).await?;
+    import_postgres_bundled_ai_routing_seed(pool).await?;
     import_postgres_bundled_skills_seed(pool).await?;
     import_postgres_bundled_course_seed(pool).await?;
     import_postgres_bundled_forum_seed(pool).await?;
     import_postgres_default_iam_subject_seed(pool).await?;
     import_postgres_commerce_experience_seed(pool).await?;
+    ensure_postgres_bootstrap_admin_recharge_catalog(pool).await?;
     let bootstrap_admin =
         bootstrap_postgres_admin_user_if_needed(pool, bootstrap_admin_options).await?;
     mark_postgres_installed(pool).await?;
@@ -2214,7 +2229,6 @@ async fn repair_sqlite_installation(
         for statement in sqlite_schema_statements() {
             execute_sqlite_statement(pool, statement.as_str()).await?;
         }
-        drop_sqlite_obsolete_generated_schema_indexes(pool).await?;
         record_sqlite_migration_completed(
             pool,
             "schema",
@@ -2222,8 +2236,6 @@ async fn repair_sqlite_installation(
             GENERATED_POSTGRES_SCHEMA,
         )
         .await?;
-    } else {
-        drop_sqlite_obsolete_generated_schema_indexes(pool).await?;
     }
 
     if !sqlite_appbase_commerce_schema_tables_exist(pool).await?
@@ -2255,6 +2267,19 @@ async fn repair_sqlite_installation(
             catalog_payload.as_str(),
         )
         .await?;
+    }
+
+    let ai_routing_payload = bundled_ai_routing_seed_payload()
+        .map_err(|error| DatabaseInstallError::InvalidState(error.to_string()))?;
+    let ai_routing_payload_current = sqlite_seed_migration_payload_current(
+        pool,
+        "ai-routing",
+        CURRENT_SCHEMA_VERSION,
+        ai_routing_payload.as_str(),
+    )
+    .await?;
+    if !sqlite_ai_routing_seed_complete(pool).await? || !ai_routing_payload_current {
+        import_sqlite_bundled_ai_routing_seed(pool).await?;
     }
 
     let app_seed_complete = sqlite_app_seed_complete(pool).await?;
@@ -2407,6 +2432,7 @@ async fn repair_sqlite_installation(
         )
         .await?;
     }
+    ensure_sqlite_bootstrap_admin_recharge_catalog(pool).await?;
     let bootstrap_admin =
         bootstrap_sqlite_admin_user_if_needed(pool, bootstrap_admin_options).await?;
     mark_sqlite_installed_with_catalog_version(
@@ -2437,7 +2463,6 @@ async fn repair_postgres_installation(
         for statement in postgres_schema_statements() {
             execute_postgres_statement(pool, statement.as_str()).await?;
         }
-        drop_postgres_obsolete_generated_schema_indexes(pool).await?;
         record_postgres_migration_completed(
             pool,
             "schema",
@@ -2445,8 +2470,6 @@ async fn repair_postgres_installation(
             GENERATED_POSTGRES_SCHEMA,
         )
         .await?;
-    } else {
-        drop_postgres_obsolete_generated_schema_indexes(pool).await?;
     }
 
     if !postgres_appbase_commerce_schema_tables_exist(pool).await?
@@ -2478,6 +2501,20 @@ async fn repair_postgres_installation(
             catalog_payload.as_str(),
         )
         .await?;
+    }
+
+    if !postgres_ai_routing_seed_complete(pool).await?
+        || !postgres_seed_migration_payload_current(
+            pool,
+            "ai-routing",
+            CURRENT_SCHEMA_VERSION,
+            bundled_ai_routing_seed_payload()
+                .map_err(|error| DatabaseInstallError::InvalidState(error.to_string()))?
+                .as_str(),
+        )
+        .await?
+    {
+        import_postgres_bundled_ai_routing_seed(pool).await?;
     }
 
     if !postgres_app_seed_complete(pool).await? {
@@ -2518,6 +2555,7 @@ async fn repair_postgres_installation(
     if !postgres_commerce_experience_seed_complete(pool).await? {
         import_postgres_commerce_experience_seed(pool).await?;
     }
+    ensure_postgres_bootstrap_admin_recharge_catalog(pool).await?;
     let bootstrap_admin =
         bootstrap_postgres_admin_user_if_needed(pool, bootstrap_admin_options).await?;
     mark_postgres_installed_with_catalog_version(
@@ -2548,6 +2586,37 @@ async fn import_postgres_bundled_app_seed(pool: &PgPool) -> Result<(), DatabaseI
     import_postgres_app_seed(pool).await?;
     record_postgres_migration_completed(pool, "app-seed", CURRENT_SCHEMA_VERSION, payload.as_str())
         .await?;
+    Ok(())
+}
+
+async fn import_sqlite_bundled_ai_routing_seed(
+    pool: &SqlitePool,
+) -> Result<(), DatabaseInstallError> {
+    let payload = bundled_ai_routing_seed_payload()
+        .map_err(|error| DatabaseInstallError::InvalidState(error.to_string()))?;
+    record_sqlite_migration_started(pool, "ai-routing", CURRENT_SCHEMA_VERSION, payload.as_str())
+        .await?;
+    import_sqlite_ai_routing_seed(pool).await?;
+    record_sqlite_migration_completed(pool, "ai-routing", CURRENT_SCHEMA_VERSION, payload.as_str())
+        .await?;
+    Ok(())
+}
+
+async fn import_postgres_bundled_ai_routing_seed(
+    pool: &PgPool,
+) -> Result<(), DatabaseInstallError> {
+    let payload = bundled_ai_routing_seed_payload()
+        .map_err(|error| DatabaseInstallError::InvalidState(error.to_string()))?;
+    record_postgres_migration_started(pool, "ai-routing", CURRENT_SCHEMA_VERSION, payload.as_str())
+        .await?;
+    import_postgres_ai_routing_seed(pool).await?;
+    record_postgres_migration_completed(
+        pool,
+        "ai-routing",
+        CURRENT_SCHEMA_VERSION,
+        payload.as_str(),
+    )
+    .await?;
     Ok(())
 }
 
@@ -2672,6 +2741,590 @@ async fn import_postgres_commerce_experience_seed(
         payload.as_str(),
     )
     .await?;
+    Ok(())
+}
+
+async fn ensure_sqlite_bootstrap_admin_recharge_catalog(
+    pool: &SqlitePool,
+) -> Result<bool, DatabaseInstallError> {
+    let payload = bootstrap_admin_recharge_catalog_payload();
+    let payload_current = sqlite_seed_migration_payload_current(
+        pool,
+        "bootstrap-admin-recharge-catalog",
+        CURRENT_SCHEMA_VERSION,
+        payload.as_str(),
+    )
+    .await?;
+    let package_count: i64 = sqlx::query_scalar(
+        r#"
+        SELECT COUNT(1)
+        FROM commerce_recharge_package
+        WHERE tenant_id = ?
+          AND organization_id = ?
+          AND status <> 'deleted'
+        "#,
+    )
+    .bind(DEFAULT_IAM_TENANT_ID)
+    .bind(DEFAULT_IAM_ORGANIZATION_ID)
+    .fetch_one(pool)
+    .await?;
+    let settings_count: i64 = sqlx::query_scalar(
+        r#"
+        SELECT COUNT(1)
+        FROM commerce_exchange_rule
+        WHERE tenant_id = ?
+          AND organization_id = ?
+          AND rule_no = 'CASH_TO_POINTS'
+          AND source_asset_type = 'cash'
+          AND target_asset_type = 'points'
+          AND status = 'active'
+        "#,
+    )
+    .bind(DEFAULT_IAM_TENANT_ID)
+    .bind(DEFAULT_IAM_ORGANIZATION_ID)
+    .fetch_one(pool)
+    .await?;
+    if payload_current && package_count > 0 && settings_count > 0 {
+        return Ok(false);
+    }
+
+    record_sqlite_migration_started(
+        pool,
+        "bootstrap-admin-recharge-catalog",
+        CURRENT_SCHEMA_VERSION,
+        payload.as_str(),
+    )
+    .await?;
+    upsert_sqlite_bootstrap_admin_recharge_settings(pool).await?;
+    upsert_sqlite_bootstrap_admin_recharge_packages(pool).await?;
+    record_sqlite_migration_completed(
+        pool,
+        "bootstrap-admin-recharge-catalog",
+        CURRENT_SCHEMA_VERSION,
+        payload.as_str(),
+    )
+    .await?;
+    Ok(true)
+}
+
+async fn ensure_postgres_bootstrap_admin_recharge_catalog(
+    pool: &PgPool,
+) -> Result<bool, DatabaseInstallError> {
+    let payload = bootstrap_admin_recharge_catalog_payload();
+    let payload_current = postgres_seed_migration_payload_current(
+        pool,
+        "bootstrap-admin-recharge-catalog",
+        CURRENT_SCHEMA_VERSION,
+        payload.as_str(),
+    )
+    .await?;
+    let package_count: i64 = sqlx::query_scalar(
+        r#"
+        SELECT COUNT(1)
+        FROM commerce_recharge_package
+        WHERE tenant_id = $1
+          AND organization_id = $2
+          AND status <> 'deleted'
+        "#,
+    )
+    .bind(DEFAULT_IAM_TENANT_ID)
+    .bind(DEFAULT_IAM_ORGANIZATION_ID)
+    .fetch_one(pool)
+    .await?;
+    let settings_count: i64 = sqlx::query_scalar(
+        r#"
+        SELECT COUNT(1)
+        FROM commerce_exchange_rule
+        WHERE tenant_id = $1
+          AND organization_id = $2
+          AND rule_no = 'CASH_TO_POINTS'
+          AND source_asset_type = 'cash'
+          AND target_asset_type = 'points'
+          AND status = 'active'
+        "#,
+    )
+    .bind(DEFAULT_IAM_TENANT_ID)
+    .bind(DEFAULT_IAM_ORGANIZATION_ID)
+    .fetch_one(pool)
+    .await?;
+    if payload_current && package_count > 0 && settings_count > 0 {
+        return Ok(false);
+    }
+
+    record_postgres_migration_started(
+        pool,
+        "bootstrap-admin-recharge-catalog",
+        CURRENT_SCHEMA_VERSION,
+        payload.as_str(),
+    )
+    .await?;
+    upsert_postgres_bootstrap_admin_recharge_settings(pool).await?;
+    upsert_postgres_bootstrap_admin_recharge_packages(pool).await?;
+    record_postgres_migration_completed(
+        pool,
+        "bootstrap-admin-recharge-catalog",
+        CURRENT_SCHEMA_VERSION,
+        payload.as_str(),
+    )
+    .await?;
+    Ok(true)
+}
+
+fn bootstrap_admin_recharge_catalog_payload() -> String {
+    let recharge_packages = commerce_recharge_package_seeds()
+        .into_iter()
+        .map(|package| {
+            serde_json::json!({
+                "packageNo": package.package_no,
+                "priceAmount": package.price_amount,
+                "currencyCode": package.currency_code,
+                "bonusPoints": package.bonus_points,
+                "status": package.status,
+                "sortWeight": package.sort_weight,
+            })
+        })
+        .collect::<Vec<_>>();
+    let recharge_settings = commerce_recharge_settings_seeds()
+        .into_iter()
+        .map(|setting| {
+            serde_json::json!({
+                "ruleNo": setting.rule_no,
+                "rate": setting.rate,
+                "baseCurrencyCode": setting.base_currency_code,
+                "currencyToCnyRates": setting.currency_to_cny_rates,
+            })
+        })
+        .collect::<Vec<_>>();
+    serde_json::json!({
+        "tenantId": DEFAULT_IAM_TENANT_ID,
+        "organizationId": DEFAULT_IAM_ORGANIZATION_ID,
+        "packages": recharge_packages,
+        "settings": recharge_settings,
+    })
+    .to_string()
+}
+
+async fn upsert_sqlite_bootstrap_admin_recharge_settings(
+    pool: &SqlitePool,
+) -> Result<(), DatabaseInstallError> {
+    let now = current_utc_timestamp_string();
+    for setting in commerce_recharge_settings_seeds() {
+        let currency_to_cny_rates = setting
+            .currency_to_cny_rates
+            .iter()
+            .map(|(currency_code, rate)| {
+                (
+                    currency_code.to_string(),
+                    serde_json::Value::String((*rate).to_string()),
+                )
+            })
+            .collect::<serde_json::Map<String, serde_json::Value>>();
+        let remark = serde_json::json!({
+            "baseCurrencyCode": setting.base_currency_code,
+            "currencyToCnyRates": currency_to_cny_rates,
+        })
+        .to_string();
+        let rule_id = format!(
+            "bootstrap-admin-recharge-settings-{}-{}",
+            DEFAULT_IAM_TENANT_ID,
+            setting.rule_no.to_ascii_lowercase()
+        );
+        sqlx::query(
+            r#"
+            INSERT INTO commerce_exchange_rule
+                (id, tenant_id, organization_id, rule_no, source_asset_type, target_asset_type, rate, status, remark, request_no, idempotency_key, created_at, updated_at)
+            VALUES
+                (?, ?, ?, ?, ?, ?, ?, 'active', ?, ?, ?, ?, ?)
+            ON CONFLICT(tenant_id, organization_id, source_asset_type, target_asset_type) DO UPDATE SET
+                id = excluded.id,
+                rule_no = excluded.rule_no,
+                rate = excluded.rate,
+                status = excluded.status,
+                remark = excluded.remark,
+                request_no = excluded.request_no,
+                idempotency_key = excluded.idempotency_key,
+                updated_at = excluded.updated_at
+            "#,
+        )
+        .bind(&rule_id)
+        .bind(DEFAULT_IAM_TENANT_ID)
+        .bind(DEFAULT_IAM_ORGANIZATION_ID)
+        .bind(setting.rule_no)
+        .bind(setting.source_asset_type)
+        .bind(setting.target_asset_type)
+        .bind(setting.rate)
+        .bind(&remark)
+        .bind(format!(
+            "bootstrap-admin-recharge-settings-{}",
+            setting.rule_no.to_ascii_lowercase()
+        ))
+        .bind(format!(
+            "bootstrap-admin-recharge-settings-{}",
+            setting.rule_no.to_ascii_lowercase()
+        ))
+        .bind(&now)
+        .bind(&now)
+        .execute(pool)
+        .await?;
+    }
+    Ok(())
+}
+
+async fn upsert_postgres_bootstrap_admin_recharge_settings(
+    pool: &PgPool,
+) -> Result<(), DatabaseInstallError> {
+    let now = current_utc_timestamp_string();
+    for setting in commerce_recharge_settings_seeds() {
+        let currency_to_cny_rates = setting
+            .currency_to_cny_rates
+            .iter()
+            .map(|(currency_code, rate)| {
+                (
+                    currency_code.to_string(),
+                    serde_json::Value::String((*rate).to_string()),
+                )
+            })
+            .collect::<serde_json::Map<String, serde_json::Value>>();
+        let remark = serde_json::json!({
+            "baseCurrencyCode": setting.base_currency_code,
+            "currencyToCnyRates": currency_to_cny_rates,
+        })
+        .to_string();
+        let rule_id = format!(
+            "bootstrap-admin-recharge-settings-{}-{}",
+            DEFAULT_IAM_TENANT_ID,
+            setting.rule_no.to_ascii_lowercase()
+        );
+        sqlx::query(
+            r#"
+            INSERT INTO commerce_exchange_rule
+                (id, tenant_id, organization_id, rule_no, source_asset_type, target_asset_type, rate, status, remark, request_no, idempotency_key, created_at, updated_at)
+            VALUES
+                ($1, $2, $3, $4, $5, $6, $7, 'active', $8, $9, $10, $11, $12)
+            ON CONFLICT(tenant_id, organization_id, source_asset_type, target_asset_type) DO UPDATE SET
+                id = excluded.id,
+                rule_no = excluded.rule_no,
+                rate = excluded.rate,
+                status = excluded.status,
+                remark = excluded.remark,
+                request_no = excluded.request_no,
+                idempotency_key = excluded.idempotency_key,
+                updated_at = excluded.updated_at
+            "#,
+        )
+        .bind(&rule_id)
+        .bind(DEFAULT_IAM_TENANT_ID)
+        .bind(DEFAULT_IAM_ORGANIZATION_ID)
+        .bind(setting.rule_no)
+        .bind(setting.source_asset_type)
+        .bind(setting.target_asset_type)
+        .bind(setting.rate)
+        .bind(&remark)
+        .bind(format!(
+            "bootstrap-admin-recharge-settings-{}",
+            setting.rule_no.to_ascii_lowercase()
+        ))
+        .bind(format!(
+            "bootstrap-admin-recharge-settings-{}",
+            setting.rule_no.to_ascii_lowercase()
+        ))
+        .bind(&now)
+        .bind(&now)
+        .execute(pool)
+        .await?;
+    }
+    Ok(())
+}
+
+async fn upsert_sqlite_bootstrap_admin_recharge_packages(
+    pool: &SqlitePool,
+) -> Result<(), DatabaseInstallError> {
+    let now = current_utc_timestamp_string();
+    let mut sort_weight = 1_i64;
+    for package in commerce_recharge_package_seeds() {
+        let spu_id = format!(
+            "bootstrap-admin-recharge-spu-{}-{}",
+            DEFAULT_IAM_TENANT_ID, package.external_id
+        );
+        let sku_id = format!(
+            "bootstrap-admin-recharge-sku-{}-{}",
+            DEFAULT_IAM_TENANT_ID, package.external_id
+        );
+        let package_id = format!(
+            "bootstrap-admin-recharge-package-{}-{}",
+            DEFAULT_IAM_TENANT_ID, package.external_id
+        );
+        let spu_no = format!("bootstrap-admin-recharge-{}", package.external_id);
+        let sku_no = format!("bootstrap-admin-recharge-{}", package.external_id);
+        let package_no = format!("bootstrap-admin-recharge-{}", package.external_id);
+        let spec_json = serde_json::json!({
+            "kind": "points_recharge_package",
+            "packageId": package_id,
+            "packageNo": package_no,
+            "seedPackageNo": package.package_no,
+            "externalId": package.external_id,
+            "bonusPoints": package.bonus_points,
+        })
+        .to_string();
+
+        sqlx::query(
+            r#"
+            INSERT INTO commerce_product_spu
+                (id, tenant_id, organization_id, spu_no, title, subtitle, description, product_type, category_id, sales_status, visible_surfaces, created_at, updated_at)
+            VALUES
+                (?, ?, ?, ?, ?, ?, ?, 'points_recharge', 'commerce-recharge', 'active', '["app","console","admin"]', ?, ?)
+            ON CONFLICT(tenant_id, spu_no) DO UPDATE SET
+                id = excluded.id,
+                organization_id = excluded.organization_id,
+                title = excluded.title,
+                subtitle = excluded.subtitle,
+                description = excluded.description,
+                product_type = excluded.product_type,
+                category_id = excluded.category_id,
+                sales_status = excluded.sales_status,
+                visible_surfaces = excluded.visible_surfaces,
+                updated_at = excluded.updated_at
+            "#,
+        )
+        .bind(&spu_id)
+        .bind(DEFAULT_IAM_TENANT_ID)
+        .bind(DEFAULT_IAM_ORGANIZATION_ID)
+        .bind(&spu_no)
+        .bind(package.name)
+        .bind("Bootstrap admin recharge catalog")
+        .bind("Bootstrap admin recharge package")
+        .bind(&now)
+        .bind(&now)
+        .execute(pool)
+        .await?;
+
+        sqlx::query(
+            r#"
+            INSERT INTO commerce_product_sku
+                (id, tenant_id, organization_id, spu_id, sku_no, name, title, price_amount, original_price_amount, currency_code, delivery_mode, inventory_tracking, sales_status, spec_json, created_at, updated_at)
+            VALUES
+                (?, ?, ?, ?, ?, ?, ?, ?, NULL, ?, 'points_credit', 'untracked', 'active', ?, ?, ?)
+            ON CONFLICT(tenant_id, sku_no) DO UPDATE SET
+                id = excluded.id,
+                organization_id = excluded.organization_id,
+                spu_id = excluded.spu_id,
+                name = excluded.name,
+                title = excluded.title,
+                price_amount = excluded.price_amount,
+                original_price_amount = excluded.original_price_amount,
+                currency_code = excluded.currency_code,
+                delivery_mode = excluded.delivery_mode,
+                inventory_tracking = excluded.inventory_tracking,
+                sales_status = excluded.sales_status,
+                spec_json = excluded.spec_json,
+                updated_at = excluded.updated_at
+            "#,
+        )
+        .bind(&sku_id)
+        .bind(DEFAULT_IAM_TENANT_ID)
+        .bind(DEFAULT_IAM_ORGANIZATION_ID)
+        .bind(&spu_id)
+        .bind(&sku_no)
+        .bind(package.name)
+        .bind(package.name)
+        .bind(package.price_amount)
+        .bind(package.currency_code)
+        .bind(&spec_json)
+        .bind(&now)
+        .bind(&now)
+        .execute(pool)
+        .await?;
+
+        sqlx::query(
+            r#"
+            INSERT INTO commerce_recharge_package
+                (id, tenant_id, organization_id, external_id, package_no, sku_id, name, price_amount, currency_code, bonus_points, status, valid_from, valid_to, sort_weight, request_no, idempotency_key, created_at, updated_at)
+            VALUES
+                (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NULL, NULL, ?, ?, ?, ?, ?)
+            ON CONFLICT(tenant_id, package_no) DO UPDATE SET
+                id = excluded.id,
+                organization_id = excluded.organization_id,
+                external_id = excluded.external_id,
+                sku_id = excluded.sku_id,
+                name = excluded.name,
+                price_amount = excluded.price_amount,
+                currency_code = excluded.currency_code,
+                bonus_points = excluded.bonus_points,
+                status = excluded.status,
+                valid_from = excluded.valid_from,
+                valid_to = excluded.valid_to,
+                sort_weight = excluded.sort_weight,
+                request_no = excluded.request_no,
+                idempotency_key = excluded.idempotency_key,
+                updated_at = excluded.updated_at
+            "#,
+        )
+        .bind(&package_id)
+        .bind(DEFAULT_IAM_TENANT_ID)
+        .bind(DEFAULT_IAM_ORGANIZATION_ID)
+        .bind(package.external_id)
+        .bind(&package_no)
+        .bind(&sku_id)
+        .bind(package.name)
+        .bind(package.price_amount)
+        .bind(package.currency_code)
+        .bind(package.bonus_points)
+        .bind(package.status)
+        .bind(sort_weight)
+        .bind(format!("bootstrap-admin-recharge-package-{package_no}"))
+        .bind(format!("bootstrap-admin-recharge-package-{package_no}"))
+        .bind(&now)
+        .bind(&now)
+        .execute(pool)
+        .await?;
+        sort_weight += 1;
+    }
+    Ok(())
+}
+
+async fn upsert_postgres_bootstrap_admin_recharge_packages(
+    pool: &PgPool,
+) -> Result<(), DatabaseInstallError> {
+    let now = current_utc_timestamp_string();
+    let mut sort_weight = 1_i64;
+    for package in commerce_recharge_package_seeds() {
+        let spu_id = format!(
+            "bootstrap-admin-recharge-spu-{}-{}",
+            DEFAULT_IAM_TENANT_ID, package.external_id
+        );
+        let sku_id = format!(
+            "bootstrap-admin-recharge-sku-{}-{}",
+            DEFAULT_IAM_TENANT_ID, package.external_id
+        );
+        let package_id = format!(
+            "bootstrap-admin-recharge-package-{}-{}",
+            DEFAULT_IAM_TENANT_ID, package.external_id
+        );
+        let spu_no = format!("bootstrap-admin-recharge-{}", package.external_id);
+        let sku_no = format!("bootstrap-admin-recharge-{}", package.external_id);
+        let package_no = format!("bootstrap-admin-recharge-{}", package.external_id);
+        let spec_json = serde_json::json!({
+            "kind": "points_recharge_package",
+            "packageId": package_id,
+            "packageNo": package_no,
+            "seedPackageNo": package.package_no,
+            "externalId": package.external_id,
+            "bonusPoints": package.bonus_points,
+        })
+        .to_string();
+
+        sqlx::query(
+            r#"
+            INSERT INTO commerce_product_spu
+                (id, tenant_id, organization_id, spu_no, title, subtitle, description, product_type, category_id, sales_status, visible_surfaces, created_at, updated_at)
+            VALUES
+                ($1, $2, $3, $4, $5, $6, $7, 'points_recharge', 'commerce-recharge', 'active', '["app","console","admin"]', $8, $9)
+            ON CONFLICT(tenant_id, spu_no) DO UPDATE SET
+                id = excluded.id,
+                organization_id = excluded.organization_id,
+                title = excluded.title,
+                subtitle = excluded.subtitle,
+                description = excluded.description,
+                product_type = excluded.product_type,
+                category_id = excluded.category_id,
+                sales_status = excluded.sales_status,
+                visible_surfaces = excluded.visible_surfaces,
+                updated_at = excluded.updated_at
+            "#,
+        )
+        .bind(&spu_id)
+        .bind(DEFAULT_IAM_TENANT_ID)
+        .bind(DEFAULT_IAM_ORGANIZATION_ID)
+        .bind(&spu_no)
+        .bind(package.name)
+        .bind("Bootstrap admin recharge catalog")
+        .bind("Bootstrap admin recharge package")
+        .bind(&now)
+        .bind(&now)
+        .execute(pool)
+        .await?;
+
+        sqlx::query(
+            r#"
+            INSERT INTO commerce_product_sku
+                (id, tenant_id, organization_id, spu_id, sku_no, name, title, price_amount, original_price_amount, currency_code, delivery_mode, inventory_tracking, sales_status, spec_json, created_at, updated_at)
+            VALUES
+                ($1, $2, $3, $4, $5, $6, $7, $8, NULL, $9, 'points_credit', 'untracked', 'active', $10, $11, $12)
+            ON CONFLICT(tenant_id, sku_no) DO UPDATE SET
+                id = excluded.id,
+                organization_id = excluded.organization_id,
+                spu_id = excluded.spu_id,
+                name = excluded.name,
+                title = excluded.title,
+                price_amount = excluded.price_amount,
+                original_price_amount = excluded.original_price_amount,
+                currency_code = excluded.currency_code,
+                delivery_mode = excluded.delivery_mode,
+                inventory_tracking = excluded.inventory_tracking,
+                sales_status = excluded.sales_status,
+                spec_json = excluded.spec_json,
+                updated_at = excluded.updated_at
+            "#,
+        )
+        .bind(&sku_id)
+        .bind(DEFAULT_IAM_TENANT_ID)
+        .bind(DEFAULT_IAM_ORGANIZATION_ID)
+        .bind(&spu_id)
+        .bind(&sku_no)
+        .bind(package.name)
+        .bind(package.name)
+        .bind(package.price_amount)
+        .bind(package.currency_code)
+        .bind(&spec_json)
+        .bind(&now)
+        .bind(&now)
+        .execute(pool)
+        .await?;
+
+        sqlx::query(
+            r#"
+            INSERT INTO commerce_recharge_package
+                (id, tenant_id, organization_id, external_id, package_no, sku_id, name, price_amount, currency_code, bonus_points, status, valid_from, valid_to, sort_weight, request_no, idempotency_key, created_at, updated_at)
+            VALUES
+                ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, NULL, NULL, $12, $13, $14, $15, $16)
+            ON CONFLICT(tenant_id, package_no) DO UPDATE SET
+                id = excluded.id,
+                organization_id = excluded.organization_id,
+                external_id = excluded.external_id,
+                sku_id = excluded.sku_id,
+                name = excluded.name,
+                price_amount = excluded.price_amount,
+                currency_code = excluded.currency_code,
+                bonus_points = excluded.bonus_points,
+                status = excluded.status,
+                valid_from = excluded.valid_from,
+                valid_to = excluded.valid_to,
+                sort_weight = excluded.sort_weight,
+                request_no = excluded.request_no,
+                idempotency_key = excluded.idempotency_key,
+                updated_at = excluded.updated_at
+            "#,
+        )
+        .bind(&package_id)
+        .bind(DEFAULT_IAM_TENANT_ID)
+        .bind(DEFAULT_IAM_ORGANIZATION_ID)
+        .bind(package.external_id)
+        .bind(&package_no)
+        .bind(&sku_id)
+        .bind(package.name)
+        .bind(package.price_amount)
+        .bind(package.currency_code)
+        .bind(package.bonus_points)
+        .bind(package.status)
+        .bind(sort_weight)
+        .bind(format!("bootstrap-admin-recharge-package-{package_no}"))
+        .bind(format!("bootstrap-admin-recharge-package-{package_no}"))
+        .bind(&now)
+        .bind(&now)
+        .execute(pool)
+        .await?;
+        sort_weight += 1;
+    }
     Ok(())
 }
 
@@ -3464,66 +4117,12 @@ async fn postgres_table_exists(pool: &PgPool, table_name: &str) -> Result<bool, 
     Ok(count == 1)
 }
 
-async fn drop_sqlite_obsolete_generated_schema_indexes(
-    pool: &SqlitePool,
-) -> Result<bool, sqlx::Error> {
-    let mut changed = false;
-    for index in OBSOLETE_GENERATED_SCHEMA_INDEXES {
-        let exists: i64 = sqlx::query_scalar(
-            r#"
-            SELECT COUNT(1)
-            FROM sqlite_master
-            WHERE type = 'index'
-              AND name = ?
-            "#,
-        )
-        .bind(index)
-        .fetch_one(pool)
-        .await?;
-        if exists == 0 {
-            continue;
-        }
-        let drop_statement = format!("DROP INDEX IF EXISTS {}", quote_sqlite_identifier(index));
-        sqlx::query(drop_statement.as_str()).execute(pool).await?;
-        changed = true;
-    }
-    Ok(changed)
-}
-
 async fn repair_sqlite_generated_schema_index_definitions(
     pool: &SqlitePool,
 ) -> Result<bool, sqlx::Error> {
     let mut changed = false;
     for statement in generated_schema_sqlite_index_statements() {
         changed |= ensure_sqlite_index_statement(pool, statement.as_str()).await?;
-    }
-    Ok(changed)
-}
-
-async fn drop_postgres_obsolete_generated_schema_indexes(
-    pool: &PgPool,
-) -> Result<bool, sqlx::Error> {
-    let mut changed = false;
-    for index in OBSOLETE_GENERATED_SCHEMA_INDEXES {
-        let exists: bool = sqlx::query_scalar(
-            r#"
-            SELECT EXISTS (
-                SELECT 1
-                FROM pg_indexes
-                WHERE schemaname = current_schema()
-                  AND indexname = $1
-            )
-            "#,
-        )
-        .bind(index)
-        .fetch_one(pool)
-        .await?;
-        if !exists {
-            continue;
-        }
-        let drop_statement = format!("DROP INDEX IF EXISTS {}", quote_postgres_identifier(index));
-        sqlx::query(drop_statement.as_str()).execute(pool).await?;
-        changed = true;
     }
     Ok(changed)
 }

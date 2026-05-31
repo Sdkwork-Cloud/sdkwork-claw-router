@@ -24,7 +24,6 @@ use crate::{
     SubmitMembershipPurchaseCommand,
 };
 
-const MAX_PAYMENT_METHOD_LEN: usize = 50;
 const PAYMENT_EXPIRE_SECONDS: i64 = 1_800;
 
 use crate::subject::numeric_runtime_subject_from_extension;
@@ -103,7 +102,6 @@ struct MembershipPointsHistoryQuery {
 #[serde(rename_all = "camelCase")]
 struct SubmitMembershipPurchaseRequest {
     package_id: i64,
-    payment_method: Option<String>,
     coupon_id: Option<String>,
 }
 
@@ -580,17 +578,11 @@ async fn submit_purchase(
         Ok(subject) => subject,
         Err(response) => return response,
     };
-    let (package_id, payment_method) = match validate_purchase_request(request) {
+    let package_id = match validate_purchase_request(request) {
         Ok(value) => value,
         Err(message) => return bad_request_response(message),
     };
-    let command = match build_submit_purchase_command(
-        state.clone(),
-        subject,
-        package_id,
-        payment_method,
-        action,
-    ) {
+    let command = match build_submit_purchase_command(state.clone(), subject, package_id, action) {
         Ok(command) => command,
         Err(error) => {
             return membership_system_response("membership purchase command build failed", error)
@@ -681,31 +673,13 @@ fn app_membership_subject_from_extension(
     })
 }
 
-fn validate_purchase_request(
-    request: SubmitMembershipPurchaseRequest,
-) -> Result<(i64, String), String> {
+fn validate_purchase_request(request: SubmitMembershipPurchaseRequest) -> Result<i64, String> {
     let package_id = request.package_id;
     if package_id <= 0 {
         return Err("membership package id must be greater than zero".to_owned());
     }
-    let method = request
-        .payment_method
-        .unwrap_or_else(|| "wechat".to_owned())
-        .trim()
-        .to_ascii_lowercase();
     let _ = request.coupon_id;
-    if method.is_empty() {
-        return Err("payment method must not be empty".to_owned());
-    }
-    if method.chars().count() > MAX_PAYMENT_METHOD_LEN {
-        return Err(format!(
-            "payment method length must not exceed {MAX_PAYMENT_METHOD_LEN} characters"
-        ));
-    }
-    if !method.bytes().all(|byte| (0x21..=0x7e).contains(&byte)) {
-        return Err("payment method must contain only visible ASCII characters".to_owned());
-    }
-    Ok((package_id, method))
+    Ok(package_id)
 }
 
 fn normalize_optional_text(value: Option<String>) -> Option<String> {
@@ -718,7 +692,6 @@ fn build_submit_purchase_command(
     state: AppMembershipState,
     subject: AppMembershipSubject,
     package_id: i64,
-    payment_method: String,
     action: &str,
 ) -> AppMembershipResult<SubmitMembershipPurchaseCommand> {
     let order_uuid = state.entity_id_generator.generate_entity_uuid()?;
@@ -737,7 +710,6 @@ fn build_submit_purchase_command(
     Ok(SubmitMembershipPurchaseCommand {
         subject,
         package_id,
-        payment_method,
         order_uuid,
         order_item_uuid,
         payment_uuid,

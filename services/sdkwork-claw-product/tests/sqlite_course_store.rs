@@ -1,12 +1,9 @@
-#[path = "common/installed_sqlite.rs"]
-mod installed_sqlite_common;
-
-use installed_sqlite_common::{repair_sqlite_pool, schema_sqlite_pool};
 use sdkwork_claw_product::infrastructure::sql::sqlite::SqliteCourseStore;
 use sdkwork_claw_product::ports::{
     CourseApplicationCommandStore, CourseQuery, CourseReadStore, CourseSubject,
     CreateCourseApplicationCommand,
 };
+use sdkwork_claw_product_test_support::{repair_sqlite_pool, schema_sqlite_pool};
 
 #[tokio::test]
 async fn sqlite_course_store_reads_seeded_course_catalog_from_java_compatible_tables() {

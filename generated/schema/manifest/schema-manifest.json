@@ -42,6 +42,8 @@
     "ai_chat_message",
     "ai_chat_message_part",
     "ai_chat_turn",
+    "ai_config_change_event",
+    "ai_config_version",
     "ai_generation_asset",
     "ai_generation_asset_action",
     "ai_generation_job",
@@ -77,13 +79,16 @@
     "ai_prompt_binding",
     "ai_prompt_version",
     "ai_provider",
+    "ai_provider_object_route",
     "ai_quota_policy",
     "ai_rate_limit_bucket",
     "ai_request_trace",
     "ai_resource",
     "ai_resource_group",
     "ai_resource_group_item",
+    "ai_resource_route_profile",
     "ai_route_candidate",
+    "ai_route_idempotency",
     "ai_routing_decision_log",
     "ai_routing_policy",
     "ai_routing_profile",
@@ -147,6 +152,7 @@
     "iam_verification_attempt",
     "iam_verification_challenge",
     "iam_verification_scene_policy",
+    "integration_provider_account",
     "integration_provider_health_snapshot",
     "integration_provider_invoice_import",
     "integration_provider_invoice_item",
@@ -486,6 +492,7 @@
         "ai_routing_policy",
         "ai_routing_profile",
         "ai_routing_rule",
+        "integration_provider_account",
         "integration_provider_health_snapshot",
         "ops_audit_log",
         "ops_config_snapshot",
@@ -515,6 +522,7 @@
       "api_surfaces": [
         "app",
         "backend",
+        "openai_v1",
         "worker"
       ],
       "required_api_surface": "backend",
@@ -530,9 +538,37 @@
         "ai_resource",
         "ai_resource_group",
         "ai_resource_group_item",
+        "ai_resource_route_profile",
         "ai_vendor_api_endpoint",
         "ai_vendor_modality",
         "ops_audit_log"
+      ]
+    },
+    "/admin/channel/routing": {
+      "api_surfaces": [
+        "backend",
+        "openai_v1",
+        "worker"
+      ],
+      "required_api_surface": "backend",
+      "route_scope": "admin",
+      "tables": [
+        "ai_config_change_event",
+        "ai_config_version",
+        "ai_provider_object_route",
+        "ai_resource_route_profile",
+        "ai_route_idempotency"
+      ]
+    },
+    "/admin/channel/secrets": {
+      "api_surfaces": [
+        "backend",
+        "worker"
+      ],
+      "required_api_surface": "backend",
+      "route_scope": "admin",
+      "tables": [
+        "integration_provider_account"
       ]
     },
     "/admin/courses": {
@@ -971,6 +1007,17 @@
         "commerce_usage_pricing_plan",
         "ops_audit_log",
         "ops_config_snapshot"
+      ]
+    },
+    "/admin/integration/provider-secrets": {
+      "api_surfaces": [
+        "backend",
+        "worker"
+      ],
+      "required_api_surface": "backend",
+      "route_scope": "admin",
+      "tables": [
+        "integration_provider_account"
       ]
     },
     "/admin/inventory": {
@@ -2225,12 +2272,17 @@
       "route_scope": "admin",
       "tables": [
         "commerce_payment_attempt",
+        "commerce_payment_capture",
         "commerce_payment_channel",
+        "commerce_payment_dispute",
+        "commerce_payment_dispute_event",
         "commerce_payment_intent",
         "commerce_payment_method",
+        "commerce_payment_operation_attempt",
         "commerce_payment_provider",
         "commerce_payment_provider_account",
         "commerce_payment_reconciliation_run",
+        "commerce_payment_route_decision",
         "commerce_payment_route_rule",
         "commerce_payment_webhook_event",
         "open_platform_pay_binding",
@@ -2252,6 +2304,7 @@
         "commerce_payment_method",
         "commerce_payment_provider",
         "commerce_payment_provider_account",
+        "commerce_payment_provider_capability",
         "commerce_payment_reconciliation_run",
         "commerce_payment_route_rule",
         "commerce_payment_webhook_event",
@@ -2318,6 +2371,7 @@
         "commerce_payment_method",
         "commerce_payment_provider",
         "commerce_payment_provider_account",
+        "commerce_payment_provider_capability",
         "commerce_payment_reconciliation_run",
         "commerce_payment_route_rule",
         "commerce_payment_webhook_event",
@@ -2338,8 +2392,10 @@
         "commerce_payment_channel",
         "commerce_payment_intent",
         "commerce_payment_method",
+        "commerce_payment_operation_attempt",
         "commerce_payment_provider",
         "commerce_payment_provider_account",
+        "commerce_payment_provider_capability",
         "commerce_payment_reconciliation_run",
         "commerce_payment_route_rule",
         "commerce_payment_webhook_event",
@@ -2358,12 +2414,16 @@
       "tables": [
         "commerce_payment_attempt",
         "commerce_payment_channel",
+        "commerce_payment_fee",
         "commerce_payment_intent",
         "commerce_payment_method",
         "commerce_payment_provider",
         "commerce_payment_provider_account",
+        "commerce_payment_reconciliation_item",
         "commerce_payment_reconciliation_run",
         "commerce_payment_route_rule",
+        "commerce_payment_statement",
+        "commerce_payment_statement_item",
         "commerce_payment_webhook_event",
         "open_platform_pay_binding",
         "ops_audit_log"
@@ -2385,6 +2445,7 @@
         "commerce_payment_provider",
         "commerce_payment_provider_account",
         "commerce_payment_reconciliation_run",
+        "commerce_payment_route_decision",
         "commerce_payment_route_rule",
         "commerce_payment_webhook_event",
         "open_platform_pay_binding",
@@ -2408,6 +2469,7 @@
         "commerce_payment_provider_account",
         "commerce_payment_reconciliation_run",
         "commerce_payment_route_rule",
+        "commerce_payment_webhook_delivery",
         "commerce_payment_webhook_event",
         "open_platform_pay_binding",
         "ops_audit_log"
@@ -2941,6 +3003,21 @@
         "storage_usage_counter",
         "storage_usage_ledger",
         "storage_usage_snapshot"
+      ]
+    },
+    "/admin/system/cache": {
+      "api_surfaces": [
+        "backend",
+        "openai_v1",
+        "worker"
+      ],
+      "required_api_surface": "backend",
+      "route_scope": "admin",
+      "tables": [
+        "ai_config_change_event",
+        "ai_config_version",
+        "ai_provider_object_route",
+        "ai_route_idempotency"
       ]
     },
     "/admin/user": {
@@ -3516,8 +3593,12 @@
         "commerce_account",
         "commerce_account_ledger_entry",
         "commerce_billing_history",
+        "commerce_exchange_rule",
         "commerce_order",
+        "commerce_order_address_snapshot",
         "commerce_order_amount_breakdown",
+        "commerce_order_cancellation",
+        "commerce_order_event",
         "commerce_order_item",
         "commerce_payment_attempt",
         "commerce_payment_intent",
@@ -3992,16 +4073,16 @@
   "summary": {
     "api_surface_counts": {
       "app": 206,
-      "backend": 299,
-      "openai_v1": 7,
+      "backend": 316,
+      "openai_v1": 10,
       "system": 3,
-      "worker": 232
+      "worker": 249
     },
     "external_legacy_table_count": 15,
-    "frontend_route_count": 179,
-    "generated_table_count": 215,
+    "frontend_route_count": 183,
+    "generated_table_count": 221,
     "legacy_table_count": 24,
-    "table_count": 310
+    "table_count": 327
   },
   "tables": [
     {
@@ -12059,6 +12140,537 @@
       "table": "ai_chat_turn",
       "unique_constraints": [],
       "write_owner": "chat-service"
+    },
+    {
+      "api_surfaces": [
+        "backend",
+        "worker"
+      ],
+      "column_types": {},
+      "columns": [
+        {
+          "group": "event_log",
+          "name": "id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "event_log",
+          "name": "uuid",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "event_log",
+          "name": "tenant_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "event_log",
+          "name": "organization_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "event_log",
+          "name": "user_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "event_log",
+          "name": "request_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "event_log",
+          "name": "trace_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "event_log",
+          "name": "payload_hash",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "event_log",
+          "name": "status",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "event_log",
+          "name": "created_at",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "event_log",
+          "name": "retention_until",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "event_log",
+          "name": "legal_hold",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "event_log",
+          "name": "metadata",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "name": "config_scope",
+          "source": "explicit",
+          "type": "string(64)"
+        },
+        {
+          "name": "changed_object_type",
+          "source": "explicit",
+          "type": "string(64)"
+        },
+        {
+          "name": "changed_object_id",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "config_version",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "event_status",
+          "source": "explicit",
+          "type": "string(32)"
+        },
+        {
+          "name": "event_payload",
+          "source": "explicit",
+          "type": "json"
+        },
+        {
+          "name": "published_at",
+          "source": "explicit",
+          "type": "instant"
+        },
+        {
+          "name": "publish_attempts",
+          "source": "explicit",
+          "type": "int32"
+        },
+        {
+          "name": "last_error_message",
+          "source": "explicit",
+          "type": "string(512)"
+        }
+      ],
+      "common_columns": [
+        {
+          "group": "event_log",
+          "name": "id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "event_log",
+          "name": "uuid",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "event_log",
+          "name": "tenant_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "event_log",
+          "name": "organization_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "event_log",
+          "name": "user_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "event_log",
+          "name": "request_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "event_log",
+          "name": "trace_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "event_log",
+          "name": "payload_hash",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "event_log",
+          "name": "status",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "event_log",
+          "name": "created_at",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "event_log",
+          "name": "retention_until",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "event_log",
+          "name": "legal_hold",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "event_log",
+          "name": "metadata",
+          "source": "common",
+          "type": "common"
+        }
+      ],
+      "compliance_level": "L3",
+      "domain": "ai",
+      "foreign_keys": [],
+      "frontend_routes": [
+        "/admin/system/cache",
+        "/admin/channel/routing"
+      ],
+      "generated_by_this_project": true,
+      "indexes": [
+        {
+          "columns": [
+            "tenant_id",
+            "organization_id",
+            "event_status",
+            "created_at",
+            "id"
+          ],
+          "name": "idx_ai_config_change_event_pending",
+          "unique": false
+        },
+        {
+          "columns": [
+            "tenant_id",
+            "organization_id",
+            "config_scope",
+            "config_version",
+            "id"
+          ],
+          "name": "idx_ai_config_change_event_scope_version",
+          "unique": false
+        }
+      ],
+      "lifecycle": null,
+      "not_null_columns": [
+        "uuid",
+        "tenant_id",
+        "organization_id",
+        "status",
+        "config_scope",
+        "config_version",
+        "event_status"
+      ],
+      "physical_columns": null,
+      "profile": "runtime_coordination_event",
+      "projection_policy": null,
+      "security": {
+        "audit_required": true,
+        "sensitivity": "RUNTIME_COORDINATION",
+        "stores_secret_plaintext": false
+      },
+      "source_refs": [],
+      "source_tables": [
+        "ai_config_version"
+      ],
+      "system_of_record": true,
+      "table": "ai_config_change_event",
+      "unique_constraints": [
+        {
+          "columns": [
+            "uuid"
+          ],
+          "source": "column_unique"
+        }
+      ],
+      "write_owner": "ai-routing-service"
+    },
+    {
+      "api_surfaces": [
+        "backend",
+        "worker"
+      ],
+      "column_types": {},
+      "columns": [
+        {
+          "group": "tenant_entity",
+          "name": "id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "uuid",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "tenant_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "organization_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "data_scope",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "status",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "created_at",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "updated_at",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "version",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "deleted_at",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "deleted_by",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "metadata",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "name": "config_scope",
+          "source": "explicit",
+          "type": "string(64)"
+        },
+        {
+          "name": "config_version",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "changed_object_type",
+          "source": "explicit",
+          "type": "string(64)"
+        },
+        {
+          "name": "changed_object_id",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "published_at",
+          "source": "explicit",
+          "type": "instant"
+        }
+      ],
+      "common_columns": [
+        {
+          "group": "tenant_entity",
+          "name": "id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "uuid",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "tenant_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "organization_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "data_scope",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "status",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "created_at",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "updated_at",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "version",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "deleted_at",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "deleted_by",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "metadata",
+          "source": "common",
+          "type": "common"
+        }
+      ],
+      "compliance_level": "L3",
+      "domain": "ai",
+      "foreign_keys": [],
+      "frontend_routes": [
+        "/admin/system/cache",
+        "/admin/channel/routing"
+      ],
+      "generated_by_this_project": true,
+      "indexes": [
+        {
+          "columns": [
+            "tenant_id",
+            "organization_id",
+            "config_scope",
+            "updated_at",
+            "id"
+          ],
+          "name": "idx_ai_config_version_scope_updated",
+          "unique": false
+        },
+        {
+          "columns": [
+            "config_scope",
+            "status",
+            "deleted_at",
+            "id"
+          ],
+          "name": "idx_ai_config_version_scope_status",
+          "unique": false
+        }
+      ],
+      "lifecycle": null,
+      "not_null_columns": [
+        "uuid",
+        "tenant_id",
+        "organization_id",
+        "status",
+        "config_scope",
+        "config_version"
+      ],
+      "physical_columns": null,
+      "profile": "runtime_coordination",
+      "projection_policy": null,
+      "security": {
+        "audit_required": true,
+        "sensitivity": "RUNTIME_COORDINATION",
+        "stores_secret_plaintext": false
+      },
+      "source_refs": [],
+      "source_tables": [
+        "ai_resource",
+        "ai_channel",
+        "ai_channel_group",
+        "ai_routing_policy"
+      ],
+      "system_of_record": true,
+      "table": "ai_config_version",
+      "unique_constraints": [
+        {
+          "columns": [
+            "uuid"
+          ],
+          "source": "column_unique"
+        },
+        {
+          "columns": [
+            "tenant_id",
+            "organization_id",
+            "config_scope"
+          ],
+          "name": "uk_ai_config_version_scope"
+        }
+      ],
+      "write_owner": "ai-routing-service"
     },
     {
       "api_surfaces": [
@@ -23308,6 +23920,354 @@
     },
     {
       "api_surfaces": [
+        "backend",
+        "worker",
+        "openai_v1"
+      ],
+      "column_types": {},
+      "columns": [
+        {
+          "group": "tenant_entity",
+          "name": "id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "uuid",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "tenant_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "organization_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "data_scope",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "status",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "created_at",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "updated_at",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "version",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "deleted_at",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "deleted_by",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "metadata",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "name": "api_key_id",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "channel_group_id",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "object_type",
+          "source": "explicit",
+          "type": "string(64)"
+        },
+        {
+          "name": "object_id",
+          "source": "explicit",
+          "type": "string(256)"
+        },
+        {
+          "name": "object_key_hash",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "parent_object_type",
+          "source": "explicit",
+          "type": "string(64)"
+        },
+        {
+          "name": "parent_object_id",
+          "source": "explicit",
+          "type": "string(256)"
+        },
+        {
+          "name": "provider_code",
+          "source": "explicit",
+          "type": "string(64)"
+        },
+        {
+          "name": "channel_id",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "endpoint_id",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "vendor_code",
+          "source": "explicit",
+          "type": "string(64)"
+        },
+        {
+          "name": "api_code",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "catalog_key",
+          "source": "explicit",
+          "type": "string(256)"
+        },
+        {
+          "name": "provider_model",
+          "source": "explicit",
+          "type": "string(256)"
+        },
+        {
+          "name": "region_code",
+          "source": "explicit",
+          "type": "string(64)"
+        },
+        {
+          "name": "sticky_scope",
+          "source": "explicit",
+          "type": "string(64)"
+        },
+        {
+          "name": "expires_at",
+          "source": "explicit",
+          "type": "instant"
+        },
+        {
+          "name": "last_seen_at",
+          "source": "explicit",
+          "type": "instant"
+        }
+      ],
+      "common_columns": [
+        {
+          "group": "tenant_entity",
+          "name": "id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "uuid",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "tenant_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "organization_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "data_scope",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "status",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "created_at",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "updated_at",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "version",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "deleted_at",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "deleted_by",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "metadata",
+          "source": "common",
+          "type": "common"
+        }
+      ],
+      "compliance_level": "L3",
+      "domain": "ai",
+      "foreign_keys": [],
+      "frontend_routes": [
+        "/admin/channel/routing",
+        "/admin/system/cache"
+      ],
+      "generated_by_this_project": true,
+      "indexes": [
+        {
+          "columns": [
+            "tenant_id",
+            "organization_id",
+            "object_key_hash",
+            "status",
+            "id"
+          ],
+          "name": "idx_ai_provider_object_route_fast",
+          "unique": false
+        },
+        {
+          "columns": [
+            "tenant_id",
+            "organization_id",
+            "parent_object_type",
+            "parent_object_id",
+            "status",
+            "id"
+          ],
+          "name": "idx_ai_provider_object_route_parent",
+          "unique": false
+        },
+        {
+          "columns": [
+            "tenant_id",
+            "organization_id",
+            "channel_group_id",
+            "channel_id",
+            "status",
+            "id"
+          ],
+          "name": "idx_ai_provider_object_route_channel",
+          "unique": false
+        },
+        {
+          "columns": [
+            "tenant_id",
+            "organization_id",
+            "expires_at",
+            "status",
+            "id"
+          ],
+          "name": "idx_ai_provider_object_route_expiry",
+          "unique": false
+        }
+      ],
+      "lifecycle": null,
+      "not_null_columns": [
+        "uuid",
+        "tenant_id",
+        "organization_id",
+        "status",
+        "object_type",
+        "object_id",
+        "object_key_hash",
+        "channel_id"
+      ],
+      "physical_columns": null,
+      "profile": "runtime_binding",
+      "projection_policy": null,
+      "security": {
+        "audit_required": true,
+        "sensitivity": "PROVIDER_OBJECT_ROUTE",
+        "stores_secret_plaintext": false
+      },
+      "source_refs": [],
+      "source_tables": [
+        "ai_channel",
+        "ai_channel_endpoint",
+        "ai_channel_group",
+        "iam_gateway_api_key"
+      ],
+      "system_of_record": true,
+      "table": "ai_provider_object_route",
+      "unique_constraints": [
+        {
+          "columns": [
+            "uuid"
+          ],
+          "source": "column_unique"
+        },
+        {
+          "columns": [
+            "tenant_id",
+            "organization_id",
+            "object_type",
+            "object_id"
+          ],
+          "name": "uk_ai_provider_object_route_object"
+        }
+      ],
+      "write_owner": "gateway-runtime"
+    },
+    {
+      "api_surfaces": [
         "app",
         "backend",
         "worker"
@@ -25194,6 +26154,342 @@
     },
     {
       "api_surfaces": [
+        "backend",
+        "worker",
+        "openai_v1"
+      ],
+      "column_types": {},
+      "columns": [
+        {
+          "group": "tenant_entity",
+          "name": "id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "uuid",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "tenant_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "organization_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "data_scope",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "status",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "created_at",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "updated_at",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "version",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "deleted_at",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "deleted_by",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "metadata",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "name": "resource_id",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "resource_code",
+          "source": "explicit",
+          "type": "string(192)"
+        },
+        {
+          "name": "route_key",
+          "source": "explicit",
+          "type": "string(192)"
+        },
+        {
+          "name": "http_method",
+          "source": "explicit",
+          "type": "string(16)"
+        },
+        {
+          "name": "path_pattern",
+          "source": "explicit",
+          "type": "string(512)"
+        },
+        {
+          "name": "capability",
+          "source": "explicit",
+          "type": "enum_int32"
+        },
+        {
+          "name": "billing_meter_code",
+          "source": "explicit",
+          "type": "string(64)"
+        },
+        {
+          "name": "model_requirement",
+          "source": "explicit",
+          "type": "string(32)"
+        },
+        {
+          "name": "route_strategy",
+          "source": "explicit",
+          "type": "string(64)"
+        },
+        {
+          "name": "failure_strategy",
+          "source": "explicit",
+          "type": "string(64)"
+        },
+        {
+          "name": "selection_strategy",
+          "source": "explicit",
+          "type": "string(64)"
+        },
+        {
+          "name": "sticky_object_type",
+          "source": "explicit",
+          "type": "string(64)"
+        },
+        {
+          "name": "sticky_scope",
+          "source": "explicit",
+          "type": "string(64)"
+        },
+        {
+          "name": "parent_object_types",
+          "source": "explicit",
+          "type": "json"
+        },
+        {
+          "name": "request_extractors",
+          "source": "explicit",
+          "type": "json"
+        },
+        {
+          "name": "response_bindings",
+          "source": "explicit",
+          "type": "json"
+        },
+        {
+          "name": "endpoint_failover_scope",
+          "source": "explicit",
+          "type": "string(64)"
+        },
+        {
+          "name": "idempotency_mode",
+          "source": "explicit",
+          "type": "string(32)"
+        },
+        {
+          "name": "cache_ttl_seconds",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "sort_order",
+          "source": "explicit",
+          "type": "int32"
+        }
+      ],
+      "common_columns": [
+        {
+          "group": "tenant_entity",
+          "name": "id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "uuid",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "tenant_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "organization_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "data_scope",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "status",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "created_at",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "updated_at",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "version",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "deleted_at",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "deleted_by",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "metadata",
+          "source": "common",
+          "type": "common"
+        }
+      ],
+      "compliance_level": "L3",
+      "domain": "ai",
+      "foreign_keys": [],
+      "frontend_routes": [
+        "/admin/channel/resources",
+        "/admin/channel/routing"
+      ],
+      "generated_by_this_project": true,
+      "indexes": [
+        {
+          "columns": [
+            "tenant_id",
+            "organization_id",
+            "status",
+            "route_key",
+            "resource_code",
+            "id"
+          ],
+          "name": "idx_ai_resource_route_profile_lookup",
+          "unique": false
+        },
+        {
+          "columns": [
+            "tenant_id",
+            "organization_id",
+            "status",
+            "route_strategy",
+            "model_requirement",
+            "id"
+          ],
+          "name": "idx_ai_resource_route_profile_strategy",
+          "unique": false
+        }
+      ],
+      "lifecycle": null,
+      "not_null_columns": [
+        "uuid",
+        "tenant_id",
+        "organization_id",
+        "status",
+        "resource_code",
+        "route_key",
+        "route_strategy",
+        "failure_strategy",
+        "selection_strategy",
+        "model_requirement"
+      ],
+      "physical_columns": null,
+      "profile": "routing_policy_entity",
+      "projection_policy": null,
+      "security": {
+        "audit_required": true,
+        "sensitivity": "ROUTING_POLICY",
+        "stores_secret_plaintext": false
+      },
+      "source_refs": [],
+      "source_tables": [
+        "ai_resource",
+        "ai_api_endpoint"
+      ],
+      "system_of_record": true,
+      "table": "ai_resource_route_profile",
+      "unique_constraints": [
+        {
+          "columns": [
+            "uuid"
+          ],
+          "source": "column_unique"
+        },
+        {
+          "columns": [
+            "tenant_id",
+            "organization_id",
+            "resource_code",
+            "route_key"
+          ],
+          "name": "uk_ai_resource_route_profile_route"
+        }
+      ],
+      "write_owner": "ai-routing-service"
+    },
+    {
+      "api_surfaces": [
         "app",
         "backend",
         "worker"
@@ -25525,6 +26821,294 @@
         }
       ],
       "write_owner": "ai-routing-service"
+    },
+    {
+      "api_surfaces": [
+        "backend",
+        "worker",
+        "openai_v1"
+      ],
+      "column_types": {},
+      "columns": [
+        {
+          "group": "tenant_entity",
+          "name": "id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "uuid",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "tenant_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "organization_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "data_scope",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "status",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "created_at",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "updated_at",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "version",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "deleted_at",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "deleted_by",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "metadata",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "name": "api_key_id",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "channel_group_id",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "idempotency_key",
+          "source": "explicit",
+          "type": "string(256)"
+        },
+        {
+          "name": "request_hash",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "route_strategy",
+          "source": "explicit",
+          "type": "string(64)"
+        },
+        {
+          "name": "channel_id",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "endpoint_id",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "object_type",
+          "source": "explicit",
+          "type": "string(64)"
+        },
+        {
+          "name": "object_id",
+          "source": "explicit",
+          "type": "string(256)"
+        },
+        {
+          "name": "response_status",
+          "source": "explicit",
+          "type": "int32"
+        },
+        {
+          "name": "expires_at",
+          "source": "explicit",
+          "type": "instant"
+        }
+      ],
+      "common_columns": [
+        {
+          "group": "tenant_entity",
+          "name": "id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "uuid",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "tenant_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "organization_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "data_scope",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "status",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "created_at",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "updated_at",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "version",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "deleted_at",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "deleted_by",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "metadata",
+          "source": "common",
+          "type": "common"
+        }
+      ],
+      "compliance_level": "L3",
+      "domain": "ai",
+      "foreign_keys": [],
+      "frontend_routes": [
+        "/admin/channel/routing",
+        "/admin/system/cache"
+      ],
+      "generated_by_this_project": true,
+      "indexes": [
+        {
+          "columns": [
+            "tenant_id",
+            "organization_id",
+            "api_key_id",
+            "idempotency_key",
+            "status",
+            "id"
+          ],
+          "name": "idx_ai_route_idempotency_lookup",
+          "unique": false
+        },
+        {
+          "columns": [
+            "tenant_id",
+            "organization_id",
+            "expires_at",
+            "status",
+            "id"
+          ],
+          "name": "idx_ai_route_idempotency_expiry",
+          "unique": false
+        }
+      ],
+      "lifecycle": null,
+      "not_null_columns": [
+        "uuid",
+        "tenant_id",
+        "organization_id",
+        "status",
+        "api_key_id",
+        "idempotency_key",
+        "request_hash"
+      ],
+      "physical_columns": null,
+      "profile": "runtime_binding",
+      "projection_policy": null,
+      "security": {
+        "audit_required": true,
+        "sensitivity": "ROUTING_IDEMPOTENCY",
+        "stores_secret_plaintext": false
+      },
+      "source_refs": [],
+      "source_tables": [
+        "iam_gateway_api_key",
+        "ai_provider_object_route",
+        "ai_channel"
+      ],
+      "system_of_record": true,
+      "table": "ai_route_idempotency",
+      "unique_constraints": [
+        {
+          "columns": [
+            "uuid"
+          ],
+          "source": "column_unique"
+        },
+        {
+          "columns": [
+            "tenant_id",
+            "organization_id",
+            "api_key_id",
+            "idempotency_key"
+          ],
+          "name": "uk_ai_route_idempotency_key"
+        }
+      ],
+      "write_owner": "gateway-runtime"
     },
     {
       "api_surfaces": [
@@ -31673,6 +33257,7 @@
       "frontend_routes": [
         "/admin/marketing",
         "/console/wallet",
+        "/console/recharge",
         "/admin/wallet",
         "/admin/memberships/recharge-packages",
         "/admin/wallet/recharge-orders",
@@ -34208,6 +35793,7 @@
       "domain": "commerce",
       "foreign_keys": [],
       "frontend_routes": [
+        "/console/recharge",
         "/console/checkout",
         "/admin/orders",
         "/admin/orders/orders",
@@ -34430,6 +36016,7 @@
       "domain": "commerce",
       "foreign_keys": [],
       "frontend_routes": [
+        "/console/recharge",
         "/console/checkout",
         "/admin/orders",
         "/admin/orders/orders",
@@ -34572,6 +36159,7 @@
       "domain": "commerce",
       "foreign_keys": [],
       "frontend_routes": [
+        "/console/recharge",
         "/console/checkout",
         "/admin/orders",
         "/admin/orders/orders",
@@ -34956,6 +36544,154 @@
           "type": "string(512)"
         },
         {
+          "name": "capture_no",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "payment_attempt_id",
+          "source": "explicit",
+          "type": "string(512)"
+        },
+        {
+          "name": "provider_code",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "provider_account_id",
+          "source": "explicit",
+          "type": "string(512)"
+        },
+        {
+          "name": "native_capture_id",
+          "source": "explicit",
+          "type": "string(256)"
+        },
+        {
+          "name": "amount",
+          "source": "explicit",
+          "type": "string(64)"
+        },
+        {
+          "name": "currency_code",
+          "source": "explicit",
+          "type": "string(16)"
+        },
+        {
+          "name": "final_capture",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "status",
+          "source": "explicit",
+          "type": "string(64)"
+        },
+        {
+          "name": "failure_code",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "failure_message",
+          "source": "explicit",
+          "type": "string(1024)"
+        },
+        {
+          "name": "submitted_at",
+          "source": "explicit",
+          "type": "string(512)"
+        },
+        {
+          "name": "succeeded_at",
+          "source": "explicit",
+          "type": "string(512)"
+        },
+        {
+          "name": "failed_at",
+          "source": "explicit",
+          "type": "string(512)"
+        },
+        {
+          "name": "request_no",
+          "source": "explicit",
+          "type": "string(512)"
+        },
+        {
+          "name": "idempotency_key",
+          "source": "explicit",
+          "type": "string(512)"
+        },
+        {
+          "name": "created_at",
+          "source": "explicit",
+          "type": "string(512)"
+        },
+        {
+          "name": "updated_at",
+          "source": "explicit",
+          "type": "string(512)"
+        }
+      ],
+      "common_columns": [],
+      "compliance_level": "L3",
+      "domain": "commerce",
+      "foreign_keys": [],
+      "frontend_routes": [
+        "/admin/payments/attempts"
+      ],
+      "generated_by_this_project": false,
+      "indexes": [],
+      "lifecycle": null,
+      "not_null_columns": [
+        "tenant_id",
+        "capture_no",
+        "payment_attempt_id",
+        "provider_code",
+        "amount",
+        "currency_code",
+        "final_capture",
+        "status",
+        "request_no",
+        "idempotency_key",
+        "created_at",
+        "updated_at"
+      ],
+      "physical_columns": null,
+      "profile": "appbase_standard",
+      "projection_policy": null,
+      "security": null,
+      "source_refs": [],
+      "source_tables": [],
+      "system_of_record": true,
+      "table": "commerce_payment_capture",
+      "unique_constraints": [],
+      "write_owner": "sdkwork-appbase-commerce"
+    },
+    {
+      "api_surfaces": [
+        "backend",
+        "worker"
+      ],
+      "column_types": {},
+      "columns": [
+        {
+          "name": "id",
+          "source": "explicit",
+          "type": "string(512)"
+        },
+        {
+          "name": "tenant_id",
+          "source": "explicit",
+          "type": "string(512)"
+        },
+        {
+          "name": "organization_id",
+          "source": "explicit",
+          "type": "string(512)"
+        },
+        {
           "name": "channel_no",
           "source": "explicit",
           "type": "string(128)"
@@ -35072,6 +36808,334 @@
     },
     {
       "api_surfaces": [
+        "backend",
+        "worker"
+      ],
+      "column_types": {},
+      "columns": [
+        {
+          "name": "id",
+          "source": "explicit",
+          "type": "string(512)"
+        },
+        {
+          "name": "tenant_id",
+          "source": "explicit",
+          "type": "string(512)"
+        },
+        {
+          "name": "organization_id",
+          "source": "explicit",
+          "type": "string(512)"
+        },
+        {
+          "name": "dispute_no",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "provider_code",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "provider_account_id",
+          "source": "explicit",
+          "type": "string(512)"
+        },
+        {
+          "name": "payment_attempt_id",
+          "source": "explicit",
+          "type": "string(512)"
+        },
+        {
+          "name": "native_dispute_id",
+          "source": "explicit",
+          "type": "string(256)"
+        },
+        {
+          "name": "reason_code",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "amount",
+          "source": "explicit",
+          "type": "string(64)"
+        },
+        {
+          "name": "currency_code",
+          "source": "explicit",
+          "type": "string(16)"
+        },
+        {
+          "name": "status",
+          "source": "explicit",
+          "type": "string(64)"
+        },
+        {
+          "name": "evidence_due_at",
+          "source": "explicit",
+          "type": "string(512)"
+        },
+        {
+          "name": "opened_at",
+          "source": "explicit",
+          "type": "string(512)"
+        },
+        {
+          "name": "closed_at",
+          "source": "explicit",
+          "type": "string(512)"
+        },
+        {
+          "name": "created_at",
+          "source": "explicit",
+          "type": "string(512)"
+        },
+        {
+          "name": "updated_at",
+          "source": "explicit",
+          "type": "string(512)"
+        }
+      ],
+      "common_columns": [],
+      "compliance_level": "L3",
+      "domain": "commerce",
+      "foreign_keys": [],
+      "frontend_routes": [
+        "/admin/payments/attempts"
+      ],
+      "generated_by_this_project": false,
+      "indexes": [],
+      "lifecycle": null,
+      "not_null_columns": [
+        "tenant_id",
+        "dispute_no",
+        "provider_code",
+        "payment_attempt_id",
+        "native_dispute_id",
+        "amount",
+        "currency_code",
+        "status",
+        "opened_at",
+        "created_at",
+        "updated_at"
+      ],
+      "physical_columns": null,
+      "profile": "appbase_standard",
+      "projection_policy": null,
+      "security": null,
+      "source_refs": [],
+      "source_tables": [],
+      "system_of_record": true,
+      "table": "commerce_payment_dispute",
+      "unique_constraints": [],
+      "write_owner": "sdkwork-appbase-commerce"
+    },
+    {
+      "api_surfaces": [
+        "backend",
+        "worker"
+      ],
+      "column_types": {},
+      "columns": [
+        {
+          "name": "id",
+          "source": "explicit",
+          "type": "string(512)"
+        },
+        {
+          "name": "tenant_id",
+          "source": "explicit",
+          "type": "string(512)"
+        },
+        {
+          "name": "organization_id",
+          "source": "explicit",
+          "type": "string(512)"
+        },
+        {
+          "name": "event_no",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "dispute_id",
+          "source": "explicit",
+          "type": "string(512)"
+        },
+        {
+          "name": "event_type",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "from_status",
+          "source": "explicit",
+          "type": "string(64)"
+        },
+        {
+          "name": "to_status",
+          "source": "explicit",
+          "type": "string(64)"
+        },
+        {
+          "name": "actor_type",
+          "source": "explicit",
+          "type": "string(64)"
+        },
+        {
+          "name": "actor_id",
+          "source": "explicit",
+          "type": "string(512)"
+        },
+        {
+          "name": "payload_json",
+          "source": "explicit",
+          "type": "json"
+        },
+        {
+          "name": "created_at",
+          "source": "explicit",
+          "type": "string(512)"
+        }
+      ],
+      "common_columns": [],
+      "compliance_level": "L3",
+      "domain": "commerce",
+      "foreign_keys": [],
+      "frontend_routes": [
+        "/admin/payments/attempts"
+      ],
+      "generated_by_this_project": false,
+      "indexes": [],
+      "lifecycle": null,
+      "not_null_columns": [
+        "tenant_id",
+        "event_no",
+        "dispute_id",
+        "event_type",
+        "to_status",
+        "actor_type",
+        "created_at"
+      ],
+      "physical_columns": null,
+      "profile": "appbase_standard",
+      "projection_policy": null,
+      "security": null,
+      "source_refs": [],
+      "source_tables": [],
+      "system_of_record": true,
+      "table": "commerce_payment_dispute_event",
+      "unique_constraints": [],
+      "write_owner": "sdkwork-appbase-commerce"
+    },
+    {
+      "api_surfaces": [
+        "backend",
+        "worker"
+      ],
+      "column_types": {},
+      "columns": [
+        {
+          "name": "id",
+          "source": "explicit",
+          "type": "string(512)"
+        },
+        {
+          "name": "tenant_id",
+          "source": "explicit",
+          "type": "string(512)"
+        },
+        {
+          "name": "organization_id",
+          "source": "explicit",
+          "type": "string(512)"
+        },
+        {
+          "name": "provider_code",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "provider_account_id",
+          "source": "explicit",
+          "type": "string(512)"
+        },
+        {
+          "name": "payment_attempt_id",
+          "source": "explicit",
+          "type": "string(512)"
+        },
+        {
+          "name": "refund_id",
+          "source": "explicit",
+          "type": "string(512)"
+        },
+        {
+          "name": "statement_item_id",
+          "source": "explicit",
+          "type": "string(512)"
+        },
+        {
+          "name": "fee_type",
+          "source": "explicit",
+          "type": "string(64)"
+        },
+        {
+          "name": "amount",
+          "source": "explicit",
+          "type": "string(64)"
+        },
+        {
+          "name": "currency_code",
+          "source": "explicit",
+          "type": "string(16)"
+        },
+        {
+          "name": "occurred_at",
+          "source": "explicit",
+          "type": "string(512)"
+        },
+        {
+          "name": "created_at",
+          "source": "explicit",
+          "type": "string(512)"
+        }
+      ],
+      "common_columns": [],
+      "compliance_level": "L3",
+      "domain": "commerce",
+      "foreign_keys": [],
+      "frontend_routes": [
+        "/admin/payments/reconciliation-runs"
+      ],
+      "generated_by_this_project": false,
+      "indexes": [],
+      "lifecycle": null,
+      "not_null_columns": [
+        "tenant_id",
+        "provider_code",
+        "fee_type",
+        "amount",
+        "currency_code",
+        "occurred_at",
+        "created_at"
+      ],
+      "physical_columns": null,
+      "profile": "appbase_standard",
+      "projection_policy": null,
+      "security": null,
+      "source_refs": [],
+      "source_tables": [],
+      "system_of_record": true,
+      "table": "commerce_payment_fee",
+      "unique_constraints": [],
+      "write_owner": "sdkwork-appbase-commerce"
+    },
+    {
+      "api_surfaces": [
         "app",
         "backend",
         "worker"
@@ -35104,7 +37168,32 @@
           "type": "string(512)"
         },
         {
+          "name": "merchant_order_no",
+          "source": "explicit",
+          "type": "string(512)"
+        },
+        {
+          "name": "subject",
+          "source": "explicit",
+          "type": "string(512)"
+        },
+        {
           "name": "provider",
+          "source": "explicit",
+          "type": "string(512)"
+        },
+        {
+          "name": "provider_code",
+          "source": "explicit",
+          "type": "string(512)"
+        },
+        {
+          "name": "payment_method",
+          "source": "explicit",
+          "type": "string(512)"
+        },
+        {
+          "name": "scene_code",
           "source": "explicit",
           "type": "string(512)"
         },
@@ -35130,6 +37219,31 @@
         },
         {
           "name": "idempotency_key",
+          "source": "explicit",
+          "type": "string(512)"
+        },
+        {
+          "name": "metadata_json",
+          "source": "explicit",
+          "type": "text"
+        },
+        {
+          "name": "provider_native_json",
+          "source": "explicit",
+          "type": "text"
+        },
+        {
+          "name": "next_action_json",
+          "source": "explicit",
+          "type": "text"
+        },
+        {
+          "name": "captured_amount",
+          "source": "explicit",
+          "type": "string(512)"
+        },
+        {
+          "name": "refunded_amount",
           "source": "explicit",
           "type": "string(512)"
         },
@@ -35186,6 +37300,23 @@
           ],
           "name": "idx_commerce_payment_intent_order",
           "unique": false
+        },
+        {
+          "columns": [
+            "tenant_id",
+            "merchant_order_no"
+          ],
+          "name": "idx_commerce_payment_intent_merchant_order",
+          "unique": false
+        },
+        {
+          "columns": [
+            "tenant_id",
+            "provider_code",
+            "status"
+          ],
+          "name": "idx_commerce_payment_intent_provider_status",
+          "unique": false
         }
       ],
       "lifecycle": null,
@@ -35193,12 +37324,19 @@
         "tenant_id",
         "owner_user_id",
         "order_id",
+        "merchant_order_no",
+        "subject",
         "provider",
+        "provider_code",
+        "payment_method",
+        "scene_code",
         "amount",
         "currency_code",
         "status",
         "request_no",
         "idempotency_key",
+        "captured_amount",
+        "refunded_amount",
         "created_at",
         "updated_at"
       ],
@@ -35342,6 +37480,195 @@
             "tenant_id",
             "organization_id",
             "method_key"
+          ]
+        }
+      ],
+      "write_owner": "sdkwork-appbase-commerce"
+    },
+    {
+      "api_surfaces": [
+        "backend",
+        "worker"
+      ],
+      "column_types": {},
+      "columns": [
+        {
+          "name": "id",
+          "source": "explicit",
+          "type": "string(512)"
+        },
+        {
+          "name": "tenant_id",
+          "source": "explicit",
+          "type": "string(512)"
+        },
+        {
+          "name": "organization_id",
+          "source": "explicit",
+          "type": "string(512)"
+        },
+        {
+          "name": "operation_no",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "provider_code",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "provider_account_id",
+          "source": "explicit",
+          "type": "string(512)"
+        },
+        {
+          "name": "channel_id",
+          "source": "explicit",
+          "type": "string(512)"
+        },
+        {
+          "name": "operation_code",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "sdkwork_resource_type",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "sdkwork_resource_id",
+          "source": "explicit",
+          "type": "string(512)"
+        },
+        {
+          "name": "idempotency_key",
+          "source": "explicit",
+          "type": "string(512)"
+        },
+        {
+          "name": "request_digest",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "response_digest",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "native_request_id",
+          "source": "explicit",
+          "type": "string(256)"
+        },
+        {
+          "name": "native_trade_id",
+          "source": "explicit",
+          "type": "string(256)"
+        },
+        {
+          "name": "native_refund_id",
+          "source": "explicit",
+          "type": "string(256)"
+        },
+        {
+          "name": "http_status",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "provider_error_code",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "provider_error_message",
+          "source": "explicit",
+          "type": "string(1024)"
+        },
+        {
+          "name": "retryable",
+          "source": "explicit",
+          "type": "string(64)"
+        },
+        {
+          "name": "status",
+          "source": "explicit",
+          "type": "string(64)"
+        },
+        {
+          "name": "started_at",
+          "source": "explicit",
+          "type": "string(512)"
+        },
+        {
+          "name": "completed_at",
+          "source": "explicit",
+          "type": "string(512)"
+        },
+        {
+          "name": "created_at",
+          "source": "explicit",
+          "type": "string(512)"
+        }
+      ],
+      "common_columns": [],
+      "compliance_level": "L3",
+      "domain": "commerce",
+      "foreign_keys": [],
+      "frontend_routes": [
+        "/admin/payments/attempts",
+        "/admin/payments/providers"
+      ],
+      "generated_by_this_project": false,
+      "indexes": [
+        {
+          "columns": [
+            "tenant_id",
+            "sdkwork_resource_type",
+            "sdkwork_resource_id",
+            "created_at"
+          ],
+          "name": "idx_pay_op_attempt_resource",
+          "unique": false
+        }
+      ],
+      "lifecycle": null,
+      "not_null_columns": [
+        "tenant_id",
+        "operation_no",
+        "provider_code",
+        "operation_code",
+        "sdkwork_resource_type",
+        "sdkwork_resource_id",
+        "idempotency_key",
+        "request_digest",
+        "status",
+        "started_at",
+        "created_at"
+      ],
+      "physical_columns": null,
+      "profile": "appbase_standard",
+      "projection_policy": null,
+      "security": null,
+      "source_refs": [],
+      "source_tables": [],
+      "system_of_record": true,
+      "table": "commerce_payment_operation_attempt",
+      "unique_constraints": [
+        {
+          "columns": [
+            "tenant_id",
+            "operation_no"
+          ]
+        },
+        {
+          "columns": [
+            "tenant_id",
+            "provider_code",
+            "operation_code",
+            "idempotency_key"
           ]
         }
       ],
@@ -35653,6 +37980,321 @@
           "type": "string(512)"
         },
         {
+          "name": "provider_code",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "provider_account_id",
+          "source": "explicit",
+          "type": "string(512)"
+        },
+        {
+          "name": "capability_code",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "method_code",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "scene_code",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "country_code",
+          "source": "explicit",
+          "type": "string(16)"
+        },
+        {
+          "name": "currency_code",
+          "source": "explicit",
+          "type": "string(16)"
+        },
+        {
+          "name": "min_amount",
+          "source": "explicit",
+          "type": "string(64)"
+        },
+        {
+          "name": "max_amount",
+          "source": "explicit",
+          "type": "string(64)"
+        },
+        {
+          "name": "supported_statement_types",
+          "source": "explicit",
+          "type": "json"
+        },
+        {
+          "name": "supported_webhook_events",
+          "source": "explicit",
+          "type": "json"
+        },
+        {
+          "name": "native_operation_codes",
+          "source": "explicit",
+          "type": "json"
+        },
+        {
+          "name": "status",
+          "source": "explicit",
+          "type": "string(64)"
+        },
+        {
+          "name": "effective_from",
+          "source": "explicit",
+          "type": "string(512)"
+        },
+        {
+          "name": "effective_to",
+          "source": "explicit",
+          "type": "string(512)"
+        },
+        {
+          "name": "metadata_json",
+          "source": "explicit",
+          "type": "json"
+        },
+        {
+          "name": "created_at",
+          "source": "explicit",
+          "type": "string(512)"
+        },
+        {
+          "name": "updated_at",
+          "source": "explicit",
+          "type": "string(512)"
+        }
+      ],
+      "common_columns": [],
+      "compliance_level": "L3",
+      "domain": "commerce",
+      "foreign_keys": [],
+      "frontend_routes": [
+        "/admin/payments/providers",
+        "/admin/payments/provider-accounts",
+        "/admin/payments/channels"
+      ],
+      "generated_by_this_project": false,
+      "indexes": [
+        {
+          "columns": [
+            "tenant_id",
+            "organization_id",
+            "provider_code",
+            "capability_code",
+            "status"
+          ],
+          "name": "idx_pay_capability_lookup",
+          "unique": false
+        }
+      ],
+      "lifecycle": null,
+      "not_null_columns": [
+        "tenant_id",
+        "provider_code",
+        "capability_code",
+        "status",
+        "created_at",
+        "updated_at"
+      ],
+      "physical_columns": null,
+      "profile": "appbase_standard",
+      "projection_policy": null,
+      "security": null,
+      "source_refs": [],
+      "source_tables": [],
+      "system_of_record": true,
+      "table": "commerce_payment_provider_capability",
+      "unique_constraints": [],
+      "write_owner": "sdkwork-appbase-commerce"
+    },
+    {
+      "api_surfaces": [
+        "backend",
+        "worker"
+      ],
+      "column_types": {},
+      "columns": [
+        {
+          "name": "id",
+          "source": "explicit",
+          "type": "string(512)"
+        },
+        {
+          "name": "tenant_id",
+          "source": "explicit",
+          "type": "string(512)"
+        },
+        {
+          "name": "organization_id",
+          "source": "explicit",
+          "type": "string(512)"
+        },
+        {
+          "name": "reconciliation_run_id",
+          "source": "explicit",
+          "type": "string(512)"
+        },
+        {
+          "name": "statement_id",
+          "source": "explicit",
+          "type": "string(512)"
+        },
+        {
+          "name": "statement_item_id",
+          "source": "explicit",
+          "type": "string(512)"
+        },
+        {
+          "name": "payment_attempt_id",
+          "source": "explicit",
+          "type": "string(512)"
+        },
+        {
+          "name": "refund_id",
+          "source": "explicit",
+          "type": "string(512)"
+        },
+        {
+          "name": "refund_attempt_id",
+          "source": "explicit",
+          "type": "string(512)"
+        },
+        {
+          "name": "provider_code",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "difference_type",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "match_status",
+          "source": "explicit",
+          "type": "string(64)"
+        },
+        {
+          "name": "internal_amount",
+          "source": "explicit",
+          "type": "string(64)"
+        },
+        {
+          "name": "provider_amount",
+          "source": "explicit",
+          "type": "string(64)"
+        },
+        {
+          "name": "difference_amount",
+          "source": "explicit",
+          "type": "string(64)"
+        },
+        {
+          "name": "currency_code",
+          "source": "explicit",
+          "type": "string(16)"
+        },
+        {
+          "name": "internal_status",
+          "source": "explicit",
+          "type": "string(64)"
+        },
+        {
+          "name": "provider_status",
+          "source": "explicit",
+          "type": "string(64)"
+        },
+        {
+          "name": "resolution_status",
+          "source": "explicit",
+          "type": "string(64)"
+        },
+        {
+          "name": "resolution_note",
+          "source": "explicit",
+          "type": "string(1024)"
+        },
+        {
+          "name": "resolved_by",
+          "source": "explicit",
+          "type": "string(512)"
+        },
+        {
+          "name": "resolved_at",
+          "source": "explicit",
+          "type": "string(512)"
+        },
+        {
+          "name": "created_at",
+          "source": "explicit",
+          "type": "string(512)"
+        },
+        {
+          "name": "updated_at",
+          "source": "explicit",
+          "type": "string(512)"
+        }
+      ],
+      "common_columns": [],
+      "compliance_level": "L3",
+      "domain": "commerce",
+      "foreign_keys": [],
+      "frontend_routes": [
+        "/admin/payments/reconciliation-runs"
+      ],
+      "generated_by_this_project": false,
+      "indexes": [],
+      "lifecycle": null,
+      "not_null_columns": [
+        "tenant_id",
+        "reconciliation_run_id",
+        "provider_code",
+        "difference_type",
+        "match_status",
+        "resolution_status",
+        "created_at",
+        "updated_at"
+      ],
+      "physical_columns": null,
+      "profile": "appbase_standard",
+      "projection_policy": null,
+      "security": null,
+      "source_refs": [],
+      "source_tables": [],
+      "system_of_record": true,
+      "table": "commerce_payment_reconciliation_item",
+      "unique_constraints": [],
+      "write_owner": "sdkwork-appbase-commerce"
+    },
+    {
+      "api_surfaces": [
+        "backend",
+        "worker"
+      ],
+      "column_types": {},
+      "columns": [
+        {
+          "name": "id",
+          "source": "explicit",
+          "type": "string(512)"
+        },
+        {
+          "name": "tenant_id",
+          "source": "explicit",
+          "type": "string(512)"
+        },
+        {
+          "name": "organization_id",
+          "source": "explicit",
+          "type": "string(512)"
+        },
+        {
           "name": "run_no",
           "source": "explicit",
           "type": "string(128)"
@@ -35860,6 +38502,145 @@
           "type": "string(512)"
         },
         {
+          "name": "payment_intent_id",
+          "source": "explicit",
+          "type": "string(512)"
+        },
+        {
+          "name": "payment_attempt_id",
+          "source": "explicit",
+          "type": "string(512)"
+        },
+        {
+          "name": "route_rule_id",
+          "source": "explicit",
+          "type": "string(512)"
+        },
+        {
+          "name": "channel_id",
+          "source": "explicit",
+          "type": "string(512)"
+        },
+        {
+          "name": "provider_code",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "provider_account_id",
+          "source": "explicit",
+          "type": "string(512)"
+        },
+        {
+          "name": "method_code",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "scene_code",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "country_code",
+          "source": "explicit",
+          "type": "string(16)"
+        },
+        {
+          "name": "currency_code",
+          "source": "explicit",
+          "type": "string(16)"
+        },
+        {
+          "name": "amount",
+          "source": "explicit",
+          "type": "string(64)"
+        },
+        {
+          "name": "risk_level",
+          "source": "explicit",
+          "type": "string(64)"
+        },
+        {
+          "name": "decision_reason",
+          "source": "explicit",
+          "type": "string(512)"
+        },
+        {
+          "name": "fallback_from_channel_id",
+          "source": "explicit",
+          "type": "string(512)"
+        },
+        {
+          "name": "created_at",
+          "source": "explicit",
+          "type": "string(512)"
+        }
+      ],
+      "common_columns": [],
+      "compliance_level": "L3",
+      "domain": "commerce",
+      "foreign_keys": [],
+      "frontend_routes": [
+        "/admin/payments/attempts",
+        "/admin/payments/route-rules"
+      ],
+      "generated_by_this_project": false,
+      "indexes": [],
+      "lifecycle": null,
+      "not_null_columns": [
+        "tenant_id",
+        "payment_intent_id",
+        "payment_attempt_id",
+        "channel_id",
+        "provider_code",
+        "method_code",
+        "scene_code",
+        "currency_code",
+        "amount",
+        "created_at"
+      ],
+      "physical_columns": null,
+      "profile": "appbase_standard",
+      "projection_policy": null,
+      "security": null,
+      "source_refs": [],
+      "source_tables": [],
+      "system_of_record": true,
+      "table": "commerce_payment_route_decision",
+      "unique_constraints": [
+        {
+          "columns": [
+            "tenant_id",
+            "payment_attempt_id"
+          ]
+        }
+      ],
+      "write_owner": "sdkwork-appbase-commerce"
+    },
+    {
+      "api_surfaces": [
+        "backend",
+        "worker"
+      ],
+      "column_types": {},
+      "columns": [
+        {
+          "name": "id",
+          "source": "explicit",
+          "type": "string(512)"
+        },
+        {
+          "name": "tenant_id",
+          "source": "explicit",
+          "type": "string(512)"
+        },
+        {
+          "name": "organization_id",
+          "source": "explicit",
+          "type": "string(512)"
+        },
+        {
           "name": "rule_no",
           "source": "explicit",
           "type": "string(128)"
@@ -35999,6 +38780,509 @@
           ]
         }
       ],
+      "write_owner": "sdkwork-appbase-commerce"
+    },
+    {
+      "api_surfaces": [
+        "backend",
+        "worker"
+      ],
+      "column_types": {},
+      "columns": [
+        {
+          "name": "id",
+          "source": "explicit",
+          "type": "string(512)"
+        },
+        {
+          "name": "tenant_id",
+          "source": "explicit",
+          "type": "string(512)"
+        },
+        {
+          "name": "organization_id",
+          "source": "explicit",
+          "type": "string(512)"
+        },
+        {
+          "name": "statement_no",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "provider_code",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "provider_account_id",
+          "source": "explicit",
+          "type": "string(512)"
+        },
+        {
+          "name": "statement_type",
+          "source": "explicit",
+          "type": "string(64)"
+        },
+        {
+          "name": "settlement_currency",
+          "source": "explicit",
+          "type": "string(16)"
+        },
+        {
+          "name": "period_start",
+          "source": "explicit",
+          "type": "string(512)"
+        },
+        {
+          "name": "period_end",
+          "source": "explicit",
+          "type": "string(512)"
+        },
+        {
+          "name": "provider_statement_id",
+          "source": "explicit",
+          "type": "string(256)"
+        },
+        {
+          "name": "file_ref",
+          "source": "explicit",
+          "type": "string(512)"
+        },
+        {
+          "name": "file_digest",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "download_status",
+          "source": "explicit",
+          "type": "string(64)"
+        },
+        {
+          "name": "parse_status",
+          "source": "explicit",
+          "type": "string(64)"
+        },
+        {
+          "name": "row_count",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "total_amount",
+          "source": "explicit",
+          "type": "string(64)"
+        },
+        {
+          "name": "fee_amount",
+          "source": "explicit",
+          "type": "string(64)"
+        },
+        {
+          "name": "net_amount",
+          "source": "explicit",
+          "type": "string(64)"
+        },
+        {
+          "name": "downloaded_at",
+          "source": "explicit",
+          "type": "string(512)"
+        },
+        {
+          "name": "parsed_at",
+          "source": "explicit",
+          "type": "string(512)"
+        },
+        {
+          "name": "request_no",
+          "source": "explicit",
+          "type": "string(512)"
+        },
+        {
+          "name": "idempotency_key",
+          "source": "explicit",
+          "type": "string(512)"
+        },
+        {
+          "name": "created_at",
+          "source": "explicit",
+          "type": "string(512)"
+        },
+        {
+          "name": "updated_at",
+          "source": "explicit",
+          "type": "string(512)"
+        }
+      ],
+      "common_columns": [],
+      "compliance_level": "L3",
+      "domain": "commerce",
+      "foreign_keys": [],
+      "frontend_routes": [
+        "/admin/payments/reconciliation-runs"
+      ],
+      "generated_by_this_project": false,
+      "indexes": [],
+      "lifecycle": null,
+      "not_null_columns": [
+        "tenant_id",
+        "statement_no",
+        "provider_code",
+        "statement_type",
+        "settlement_currency",
+        "period_start",
+        "period_end",
+        "download_status",
+        "parse_status",
+        "row_count",
+        "total_amount",
+        "fee_amount",
+        "net_amount",
+        "request_no",
+        "idempotency_key",
+        "created_at",
+        "updated_at"
+      ],
+      "physical_columns": null,
+      "profile": "appbase_standard",
+      "projection_policy": null,
+      "security": null,
+      "source_refs": [],
+      "source_tables": [],
+      "system_of_record": true,
+      "table": "commerce_payment_statement",
+      "unique_constraints": [],
+      "write_owner": "sdkwork-appbase-commerce"
+    },
+    {
+      "api_surfaces": [
+        "backend",
+        "worker"
+      ],
+      "column_types": {},
+      "columns": [
+        {
+          "name": "id",
+          "source": "explicit",
+          "type": "string(512)"
+        },
+        {
+          "name": "tenant_id",
+          "source": "explicit",
+          "type": "string(512)"
+        },
+        {
+          "name": "organization_id",
+          "source": "explicit",
+          "type": "string(512)"
+        },
+        {
+          "name": "statement_id",
+          "source": "explicit",
+          "type": "string(512)"
+        },
+        {
+          "name": "provider_code",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "provider_account_id",
+          "source": "explicit",
+          "type": "string(512)"
+        },
+        {
+          "name": "row_no",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "native_trade_id",
+          "source": "explicit",
+          "type": "string(256)"
+        },
+        {
+          "name": "native_refund_id",
+          "source": "explicit",
+          "type": "string(256)"
+        },
+        {
+          "name": "native_order_no",
+          "source": "explicit",
+          "type": "string(256)"
+        },
+        {
+          "name": "sdkwork_out_trade_no",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "sdkwork_out_refund_no",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "transaction_type",
+          "source": "explicit",
+          "type": "string(64)"
+        },
+        {
+          "name": "occurred_at",
+          "source": "explicit",
+          "type": "string(512)"
+        },
+        {
+          "name": "settled_at",
+          "source": "explicit",
+          "type": "string(512)"
+        },
+        {
+          "name": "gross_amount",
+          "source": "explicit",
+          "type": "string(64)"
+        },
+        {
+          "name": "fee_amount",
+          "source": "explicit",
+          "type": "string(64)"
+        },
+        {
+          "name": "net_amount",
+          "source": "explicit",
+          "type": "string(64)"
+        },
+        {
+          "name": "currency_code",
+          "source": "explicit",
+          "type": "string(16)"
+        },
+        {
+          "name": "provider_status",
+          "source": "explicit",
+          "type": "string(64)"
+        },
+        {
+          "name": "raw_row_digest",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "metadata_json",
+          "source": "explicit",
+          "type": "json"
+        },
+        {
+          "name": "created_at",
+          "source": "explicit",
+          "type": "string(512)"
+        }
+      ],
+      "common_columns": [],
+      "compliance_level": "L3",
+      "domain": "commerce",
+      "foreign_keys": [],
+      "frontend_routes": [
+        "/admin/payments/reconciliation-runs"
+      ],
+      "generated_by_this_project": false,
+      "indexes": [],
+      "lifecycle": null,
+      "not_null_columns": [
+        "tenant_id",
+        "statement_id",
+        "provider_code",
+        "row_no",
+        "transaction_type",
+        "occurred_at",
+        "gross_amount",
+        "fee_amount",
+        "net_amount",
+        "currency_code",
+        "raw_row_digest",
+        "created_at"
+      ],
+      "physical_columns": null,
+      "profile": "appbase_standard",
+      "projection_policy": null,
+      "security": null,
+      "source_refs": [],
+      "source_tables": [],
+      "system_of_record": true,
+      "table": "commerce_payment_statement_item",
+      "unique_constraints": [],
+      "write_owner": "sdkwork-appbase-commerce"
+    },
+    {
+      "api_surfaces": [
+        "backend",
+        "worker"
+      ],
+      "column_types": {},
+      "columns": [
+        {
+          "name": "id",
+          "source": "explicit",
+          "type": "string(512)"
+        },
+        {
+          "name": "tenant_id",
+          "source": "explicit",
+          "type": "string(512)"
+        },
+        {
+          "name": "organization_id",
+          "source": "explicit",
+          "type": "string(512)"
+        },
+        {
+          "name": "delivery_no",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "provider_code",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "provider_account_id",
+          "source": "explicit",
+          "type": "string(512)"
+        },
+        {
+          "name": "event_id",
+          "source": "explicit",
+          "type": "string(512)"
+        },
+        {
+          "name": "nonce",
+          "source": "explicit",
+          "type": "string(512)"
+        },
+        {
+          "name": "request_timestamp",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "signature",
+          "source": "explicit",
+          "type": "string(1024)"
+        },
+        {
+          "name": "signature_algorithm",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "headers_json",
+          "source": "explicit",
+          "type": "json"
+        },
+        {
+          "name": "payload_digest",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "payload_ref",
+          "source": "explicit",
+          "type": "string(512)"
+        },
+        {
+          "name": "source_ip",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "user_agent",
+          "source": "explicit",
+          "type": "string(512)"
+        },
+        {
+          "name": "verification_status",
+          "source": "explicit",
+          "type": "string(64)"
+        },
+        {
+          "name": "delivery_status",
+          "source": "explicit",
+          "type": "string(64)"
+        },
+        {
+          "name": "failure_code",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "failure_message",
+          "source": "explicit",
+          "type": "string(1024)"
+        },
+        {
+          "name": "received_at",
+          "source": "explicit",
+          "type": "string(512)"
+        },
+        {
+          "name": "verified_at",
+          "source": "explicit",
+          "type": "string(512)"
+        },
+        {
+          "name": "normalized_event_id",
+          "source": "explicit",
+          "type": "string(512)"
+        },
+        {
+          "name": "processed_at",
+          "source": "explicit",
+          "type": "string(512)"
+        },
+        {
+          "name": "created_at",
+          "source": "explicit",
+          "type": "string(512)"
+        },
+        {
+          "name": "updated_at",
+          "source": "explicit",
+          "type": "string(512)"
+        }
+      ],
+      "common_columns": [],
+      "compliance_level": "L3",
+      "domain": "commerce",
+      "foreign_keys": [],
+      "frontend_routes": [
+        "/admin/payments/webhook-events"
+      ],
+      "generated_by_this_project": false,
+      "indexes": [],
+      "lifecycle": null,
+      "not_null_columns": [
+        "tenant_id",
+        "delivery_no",
+        "provider_code",
+        "event_id",
+        "nonce",
+        "payload_digest",
+        "verification_status",
+        "delivery_status",
+        "received_at",
+        "created_at",
+        "updated_at"
+      ],
+      "physical_columns": null,
+      "profile": "appbase_standard",
+      "projection_policy": null,
+      "security": null,
+      "source_refs": [],
+      "source_tables": [],
+      "system_of_record": true,
+      "table": "commerce_payment_webhook_delivery",
+      "unique_constraints": [],
       "write_owner": "sdkwork-appbase-commerce"
     },
     {
@@ -37565,6 +40849,16 @@
           "type": "string(512)"
         },
         {
+          "name": "organization_id",
+          "source": "explicit",
+          "type": "string(512)"
+        },
+        {
+          "name": "payment_intent_id",
+          "source": "explicit",
+          "type": "string(512)"
+        },
+        {
           "name": "payment_attempt_id",
           "source": "explicit",
           "type": "string(512)"
@@ -37578,6 +40872,21 @@
           "name": "amount",
           "source": "explicit",
           "type": "string(512)"
+        },
+        {
+          "name": "currency_code",
+          "source": "explicit",
+          "type": "string(512)"
+        },
+        {
+          "name": "provider_code",
+          "source": "explicit",
+          "type": "string(512)"
+        },
+        {
+          "name": "reason",
+          "source": "explicit",
+          "type": "string(1024)"
         },
         {
           "name": "status",
@@ -49195,6 +52504,374 @@
       "table": "iam_verification_scene_policy",
       "unique_constraints": [],
       "write_owner": "sdkwork-appbase-iam"
+    },
+    {
+      "api_surfaces": [
+        "backend",
+        "worker"
+      ],
+      "column_types": {},
+      "columns": [
+        {
+          "group": "tenant_entity",
+          "name": "id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "uuid",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "tenant_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "organization_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "data_scope",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "status",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "created_at",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "updated_at",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "version",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "deleted_at",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "deleted_by",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "metadata",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "name": "provider_id",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "provider_code",
+          "source": "explicit",
+          "type": "string(64)"
+        },
+        {
+          "name": "account_code",
+          "source": "explicit",
+          "type": "string(64)"
+        },
+        {
+          "name": "account_name",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "account_type",
+          "source": "explicit",
+          "type": "string(32)"
+        },
+        {
+          "name": "channel_type",
+          "source": "explicit",
+          "type": "string(32)"
+        },
+        {
+          "name": "auth_type",
+          "source": "explicit",
+          "type": "enum_int32"
+        },
+        {
+          "name": "credential_profile",
+          "source": "explicit",
+          "type": "enum_int32"
+        },
+        {
+          "name": "auth_config",
+          "source": "explicit",
+          "type": "json"
+        },
+        {
+          "name": "secret_ref",
+          "source": "explicit",
+          "type": "string(512)"
+        },
+        {
+          "name": "secret_hash",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "masked_label",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "credential_version",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "base_url",
+          "source": "explicit",
+          "type": "string(512)"
+        },
+        {
+          "name": "region_code",
+          "source": "explicit",
+          "type": "string(64)"
+        },
+        {
+          "name": "environment",
+          "source": "explicit",
+          "type": "enum_int32"
+        },
+        {
+          "name": "health_status",
+          "source": "explicit",
+          "type": "enum_int32"
+        },
+        {
+          "name": "last_latency_ms",
+          "source": "explicit",
+          "type": "int32"
+        },
+        {
+          "name": "consecutive_error_count",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "risk_level",
+          "source": "explicit",
+          "type": "enum_int32"
+        },
+        {
+          "name": "quota_snapshot",
+          "source": "explicit",
+          "type": "json"
+        },
+        {
+          "name": "last_verified_at",
+          "source": "explicit",
+          "type": "instant"
+        },
+        {
+          "name": "last_used_at",
+          "source": "explicit",
+          "type": "instant"
+        },
+        {
+          "name": "last_rotated_at",
+          "source": "explicit",
+          "type": "instant"
+        },
+        {
+          "name": "next_rotate_at",
+          "source": "explicit",
+          "type": "instant"
+        }
+      ],
+      "common_columns": [
+        {
+          "group": "tenant_entity",
+          "name": "id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "uuid",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "tenant_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "organization_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "data_scope",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "status",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "created_at",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "updated_at",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "version",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "deleted_at",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "deleted_by",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "metadata",
+          "source": "common",
+          "type": "common"
+        }
+      ],
+      "compliance_level": "L3",
+      "domain": "integration",
+      "foreign_keys": [],
+      "frontend_routes": [
+        "/admin/channel",
+        "/admin/channel/secrets",
+        "/admin/integration/provider-secrets"
+      ],
+      "generated_by_this_project": true,
+      "indexes": [
+        {
+          "columns": [
+            "tenant_id",
+            "organization_id",
+            "provider_code",
+            "account_type",
+            "status",
+            "id"
+          ],
+          "name": "idx_integration_provider_account_provider",
+          "unique": false
+        },
+        {
+          "columns": [
+            "tenant_id",
+            "organization_id",
+            "secret_hash",
+            "status",
+            "id"
+          ],
+          "name": "idx_integration_provider_account_secret",
+          "unique": false
+        },
+        {
+          "columns": [
+            "tenant_id",
+            "organization_id",
+            "status",
+            "health_status",
+            "risk_level",
+            "id"
+          ],
+          "name": "idx_integration_provider_account_health",
+          "unique": false
+        }
+      ],
+      "lifecycle": null,
+      "not_null_columns": [
+        "uuid",
+        "tenant_id",
+        "organization_id",
+        "status",
+        "provider_code",
+        "account_code",
+        "account_name"
+      ],
+      "physical_columns": null,
+      "profile": "provider_account_secret_ref",
+      "projection_policy": null,
+      "security": {
+        "audit_required": true,
+        "sensitivity": "SECRET_REF",
+        "stores_secret_plaintext": false
+      },
+      "source_refs": [],
+      "source_tables": [
+        "ai_provider",
+        "messaging_provider"
+      ],
+      "system_of_record": true,
+      "table": "integration_provider_account",
+      "unique_constraints": [
+        {
+          "columns": [
+            "uuid"
+          ],
+          "source": "column_unique"
+        },
+        {
+          "columns": [
+            "tenant_id",
+            "organization_id",
+            "account_code"
+          ],
+          "name": "uk_integration_provider_account_code"
+        }
+      ],
+      "write_owner": "integration-service"
     },
     {
       "api_surfaces": [

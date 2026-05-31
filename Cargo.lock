@@ -1512,6 +1512,7 @@ dependencies = [
  "bytes",
  "futures-core",
  "getrandom 0.3.4",
+ "hex",
  "http-body-util",
  "hyper",
  "hyper-rustls",
@@ -1528,6 +1529,7 @@ dependencies = [
  "sdkwork-claw-test-support",
  "sdkwork-sdk-generator-client",
  "serde_json",
+ "sha2",
  "sqlx",
  "tokio",
  "tower",
@@ -1598,6 +1600,7 @@ dependencies = [
  "sdkwork-claw-contract",
  "sdkwork-claw-core",
  "sdkwork-claw-http",
+ "sdkwork-claw-product-test-support",
  "sdkwork-claw-provider-adapter-contract",
  "sdkwork-claw-provider-adapter-http",
  "sdkwork-claw-provider-adapter-registry",
@@ -1617,6 +1620,16 @@ dependencies = [
  "tokio",
  "tower",
  "tracing",
+]
+
+[[package]]
+name = "sdkwork-claw-product-test-support"
+version = "0.1.0"
+dependencies = [
+ "sdkwork-claw-product",
+ "sdkwork_commerce_bootstrap",
+ "sqlx",
+ "tokio",
 ]
 
 [[package]]
@@ -1689,9 +1702,11 @@ version = "0.1.0"
 dependencies = [
  "anyhow",
  "axum",
+ "hex",
+ "hmac",
  "sdkwork-claw-config",
  "sdkwork-claw-http",
- "sdkwork-claw-product",
+ "sha2",
  "sqlx",
  "tokio",
 ]
@@ -1872,6 +1887,7 @@ dependencies = [
  "sdkwork_commerce_invoice",
  "sdkwork_commerce_payment",
  "sdkwork_commerce_promotion",
+ "serde",
  "serde_json",
  "sqlx",
  "tokio",

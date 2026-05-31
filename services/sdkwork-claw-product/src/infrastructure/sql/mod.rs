@@ -1,3 +1,5 @@
+pub(crate) mod admin_marketing_recharge;
+pub(crate) mod ai_routing_seed;
 pub(crate) mod app_catalog_mapping;
 pub(crate) mod app_seed;
 pub mod catalog;
@@ -10,6 +12,7 @@ pub(crate) mod model_modality;
 pub mod postgres;
 pub(crate) mod provider_classification;
 mod queries;
+pub(crate) mod routing_config_change;
 pub mod rows;
 pub(crate) mod skills_seed;
 pub(crate) mod sql_admin_analytics;

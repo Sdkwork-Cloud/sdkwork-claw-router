@@ -36,6 +36,12 @@ export async function backendPaymentsRouteRulesList(params?: Parameters<BackendC
   return getClawRouterBackendSdkClient().commerce.payments.routeRules.list(params);
 }
 
+export async function backendPaymentsRuntimeSnapshotRetrieve(
+  params?: Parameters<BackendCommerce['payments']['runtime']['snapshot']['retrieve']>[0],
+) {
+  return getClawRouterBackendSdkClient().commerce.payments.runtime.snapshot.retrieve(params);
+}
+
 export async function backendPaymentsIntentsList(params?: Parameters<BackendCommerce['payments']['intents']['list']>[0]) {
   return getClawRouterBackendSdkClient().commerce.payments.intents.list(params);
 }

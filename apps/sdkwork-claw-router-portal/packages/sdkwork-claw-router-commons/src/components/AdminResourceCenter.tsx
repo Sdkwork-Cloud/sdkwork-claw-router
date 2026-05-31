@@ -1,9 +1,20 @@
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import { RefreshCw, Search } from 'lucide-react';
 import { AdminTableShell } from './AdminTableShell';
+import { BottomPagination } from './BottomPagination';
 import { BusinessStatePanel, BusinessStateTableRow } from './BusinessState';
 
 export type AdminResourceRecord = Record<string, unknown>;
+export type AdminResourceLoadParams = {
+  page: number;
+  pageSize: number;
+};
+
+export type AdminResourceCollectionMeta = {
+  total: number;
+  page: number;
+  pageSize: number;
+};
 
 export type AdminResourceColumn = {
   key: string;
@@ -17,12 +28,14 @@ export type AdminResourceSection<TSectionId extends string = string, TGroup exte
   title: string;
   description: string;
   icon: React.ReactNode;
-  load: () => Promise<unknown>;
+  load: (params?: AdminResourceLoadParams) => Promise<unknown>;
   columns: AdminResourceColumn[];
   searchFields: string[];
   group: TGroup;
   action?: AdminResourceAction;
   actions?: AdminResourceAction[];
+  pagination?: AdminResourcePagination;
+  rowActions?: AdminResourceRowAction<TSectionId, TGroup>[];
 };
 
 export type AdminResourceAction = {
@@ -31,10 +44,25 @@ export type AdminResourceAction = {
   onClick: () => void;
 };
 
+export type AdminResourcePagination = {
+  initialPageSize?: number;
+  pageSizeOptions?: number[];
+};
+
+export type AdminResourceRowAction<TSectionId extends string = string, TGroup extends string = string> = {
+  label: string;
+  icon?: React.ReactNode;
+  tone?: 'default' | 'danger';
+  title?: string | ((record: AdminResourceRecord) => string);
+  isDisabled?: (record: AdminResourceRecord) => boolean;
+  onClick: (record: AdminResourceRecord, section: AdminResourceSection<TSectionId, TGroup>) => void;
+};
+
 type AdminResourceState = {
   loading: boolean;
   error: string | null;
   records: AdminResourceRecord[];
+  collectionMeta: AdminResourceCollectionMeta | null;
 };
 
 export interface AdminResourceCenterProps<TSectionId extends string = string, TGroup extends string = string> {
@@ -50,6 +78,11 @@ export interface AdminResourceCenterProps<TSectionId extends string = string, TG
   reloadLabel?: string;
   tableViewportDataAttribute?: string;
   refreshKey?: unknown;
+  paginationNextLabel?: string;
+  paginationPageLabel?: string;
+  paginationPageSizeLabel?: string;
+  paginationPreviousLabel?: string;
+  paginationShowingLabel?: string;
   onRecordOpen?: (record: AdminResourceRecord, section: AdminResourceSection<TSectionId, TGroup>) => void;
   recordActionColumnLabel?: string;
   recordOpenLabel?: string;
@@ -59,6 +92,7 @@ const INITIAL_STATE: AdminResourceState = {
   loading: true,
   error: null,
   records: [],
+  collectionMeta: null,
 };
 
 export function AdminResourceCenter<TSectionId extends string = string, TGroup extends string = string>({
@@ -69,6 +103,11 @@ export function AdminResourceCenter<TSectionId extends string = string, TGroup e
   initialSectionId,
   loadingTitle = 'Loading records...',
   onRecordOpen,
+  paginationNextLabel = 'Next page',
+  paginationPageLabel = 'Page',
+  paginationPageSizeLabel = 'Rows',
+  paginationPreviousLabel = 'Previous page',
+  paginationShowingLabel = 'Showing',
   recordActionColumnLabel = 'Action',
   recordOpenLabel = 'Details',
   reloadLabel = 'Reload',
@@ -85,25 +124,56 @@ export function AdminResourceCenter<TSectionId extends string = string, TGroup e
   const [stateByTab, setStateByTab] = useState<Record<TSectionId, AdminResourceState>>(
     () => Object.fromEntries(sections.map((section) => [section.id, INITIAL_STATE])) as Record<TSectionId, AdminResourceState>,
   );
+  const [paginationByTab, setPaginationByTab] = useState<Record<string, AdminResourceLoadParams>>(() =>
+    Object.fromEntries(
+      sections
+        .filter((section) => section.pagination)
+        .map((section) => [
+          section.id,
+          {
+            page: 1,
+            pageSize: normalizePageSize(section.pagination?.initialPageSize),
+          },
+        ]),
+    ),
+  );
   const requestedActiveTab = activeSectionId ?? uncontrolledActiveTab;
   const activeSection = sections.find((section) => section.id === requestedActiveTab) ?? sections[0];
   const activeTab = activeSection.id;
   const activeState = stateByTab[activeTab] ?? INITIAL_STATE;
   const activeActions = activeSection.actions ?? (activeSection.action ? [activeSection.action] : []);
-  const tableColumnCount = activeSection.columns.length + (onRecordOpen ? 1 : 0);
+  const activePagination = activeSection.pagination;
+  const activePageState = paginationByTab[activeTab] ?? {
+    page: 1,
+    pageSize: normalizePageSize(activePagination?.initialPageSize),
+  };
+  const recordRowActions = activeSection.rowActions ?? [];
+  const hasRecordActions = Boolean(onRecordOpen) || recordRowActions.length > 0;
+  const tableColumnCount = activeSection.columns.length + (hasRecordActions ? 1 : 0);
+  const totalPages = activeState.collectionMeta
+    ? Math.max(1, Math.ceil(activeState.collectionMeta.total / activePageState.pageSize))
+    : 1;
+  const hasNextPage = activeState.collectionMeta
+    ? activePageState.page < totalPages
+    : activeState.records.length >= activePageState.pageSize;
 
-  const loadSection = useCallback(async (section: AdminResourceSection<TSectionId, TGroup>, isActive: () => boolean = () => true) => {
+  const loadSection = useCallback(async (
+    section: AdminResourceSection<TSectionId, TGroup>,
+    pageState?: AdminResourceLoadParams,
+    isActive: () => boolean = () => true,
+  ) => {
     setStateByTab((current) => ({
       ...current,
       [section.id]: { ...(current[section.id] ?? INITIAL_STATE), loading: true, error: null },
     }));
     try {
-      const result = await section.load();
+      const result = await section.load(section.pagination ? pageState : undefined);
       const records = readAdminResourceRecordList(result);
+      const collectionMeta = readAdminResourceCollectionMeta(result);
       if (isActive()) {
         setStateByTab((current) => ({
           ...current,
-          [section.id]: { loading: false, error: null, records },
+          [section.id]: { loading: false, error: null, records, collectionMeta },
         }));
       }
     } catch (error) {
@@ -114,6 +184,7 @@ export function AdminResourceCenter<TSectionId extends string = string, TGroup e
             loading: false,
             error: error instanceof Error && error.message ? error.message : errorTitle,
             records: [],
+            collectionMeta: null,
           },
         }));
       }
@@ -122,15 +193,33 @@ export function AdminResourceCenter<TSectionId extends string = string, TGroup e
 
   useEffect(() => {
     let active = true;
-    void loadSection(activeSection, () => active);
+    void loadSection(activeSection, activePagination ? activePageState : undefined, () => active);
     return () => {
       active = false;
     };
-  }, [activeSection, loadSection, refreshKey]);
+  }, [activePageState.page, activePageState.pageSize, activePagination, activeSection, loadSection, refreshKey]);
 
   useEffect(() => {
     setSearch('');
   }, [activeTab]);
+
+  useEffect(() => {
+    setPaginationByTab((current) => {
+      let changed = false;
+      const next = { ...current };
+      for (const section of sections) {
+        if (!section.pagination || next[section.id]) {
+          continue;
+        }
+        next[section.id] = {
+          page: 1,
+          pageSize: normalizePageSize(section.pagination.initialPageSize),
+        };
+        changed = true;
+      }
+      return changed ? next : current;
+    });
+  }, [sections]);
 
   const visibleRecords = useMemo(() => {
     const query = search.trim().toLowerCase();
@@ -148,6 +237,40 @@ export function AdminResourceCenter<TSectionId extends string = string, TGroup e
   const viewportProps = tableViewportDataAttribute
     ? { [`data-${tableViewportDataAttribute}`]: true }
     : undefined;
+  const paginationFooter = activePagination ? (
+    <BottomPagination
+      disabled={activeState.loading}
+      hasNextPage={hasNextPage}
+      itemCount={visibleRecords.length}
+      nextLabel={paginationNextLabel}
+      onNextPage={() => updateSectionPagination(activeTab, { page: activePageState.page + 1 })}
+      onPageSizeChange={(pageSize) => updateSectionPagination(activeTab, { page: 1, pageSize })}
+      onPreviousPage={() => updateSectionPagination(activeTab, { page: Math.max(1, activePageState.page - 1) })}
+      page={activePageState.page}
+      pageLabel={`${paginationPageLabel} ${activePageState.page}${activeState.collectionMeta ? ` / ${totalPages}` : ''}`}
+      pageSize={activePageState.pageSize}
+      pageSizeLabel={paginationPageSizeLabel}
+      pageSizeOptions={activePagination.pageSizeOptions}
+      previousLabel={paginationPreviousLabel}
+      showingLabel={paginationShowingLabel}
+    />
+  ) : undefined;
+
+  function updateSectionPagination(sectionId: TSectionId, patch: Partial<AdminResourceLoadParams>) {
+    setPaginationByTab((current) => {
+      const currentPageState = current[sectionId] ?? {
+        page: 1,
+        pageSize: normalizePageSize(sections.find((section) => section.id === sectionId)?.pagination?.initialPageSize),
+      };
+      return {
+        ...current,
+        [sectionId]: {
+          ...currentPageState,
+          ...patch,
+        },
+      };
+    });
+  }
 
   return (
     <div className="flex h-full min-h-0 w-full overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm dark:border-white/10 dark:bg-[#1a1a1a]">
@@ -209,7 +332,7 @@ export function AdminResourceCenter<TSectionId extends string = string, TGroup e
             ))}
             <button
               className="inline-flex shrink-0 items-center gap-2 rounded-lg border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-slate-700 shadow-sm transition-colors hover:bg-slate-50 dark:border-white/10 dark:bg-white/5 dark:text-slate-200 dark:hover:bg-white/10"
-              onClick={() => void loadSection(activeSection)}
+              onClick={() => void loadSection(activeSection, activePagination ? activePageState : undefined)}
               type="button"
             >
               <RefreshCw className="h-4 w-4" />
@@ -223,11 +346,16 @@ export function AdminResourceCenter<TSectionId extends string = string, TGroup e
             className="min-h-[360px]"
             description={activeState.error}
             kind="error"
-            onRetry={() => void loadSection(activeSection)}
+            onRetry={() => void loadSection(activeSection, activePagination ? activePageState : undefined)}
             title={errorTitle}
           />
         ) : (
-          <AdminTableShell className="m-5 mt-4 rounded-xl" viewportClassName="custom-scrollbar" viewportProps={viewportProps}>
+          <AdminTableShell
+            className="m-5 mt-4 min-h-0 flex-1 rounded-xl"
+            footer={paginationFooter}
+            viewportClassName="custom-scrollbar"
+            viewportProps={viewportProps}
+          >
             <table className="w-full min-w-[760px] text-left text-sm text-slate-600 dark:text-slate-400">
               <thead className="sticky top-0 z-10 border-b border-slate-200 bg-slate-50 text-xs uppercase text-slate-500 dark:border-white/10 dark:bg-[#121212] dark:text-slate-400">
                 <tr>
@@ -239,7 +367,7 @@ export function AdminResourceCenter<TSectionId extends string = string, TGroup e
                       {column.label}
                     </th>
                   ))}
-                  {onRecordOpen ? (
+                  {hasRecordActions ? (
                     <th className="px-6 py-4 text-right font-semibold">
                       {recordActionColumnLabel}
                     </th>
@@ -270,15 +398,36 @@ export function AdminResourceCenter<TSectionId extends string = string, TGroup e
                         </td>
                       );
                     })}
-                    {onRecordOpen ? (
+                    {hasRecordActions ? (
                       <td className="px-6 py-4 text-right">
-                        <button
-                          className="inline-flex items-center justify-center rounded-md border border-slate-200 bg-white px-2.5 py-1.5 text-xs font-semibold text-slate-700 transition-colors hover:bg-slate-50 dark:border-white/10 dark:bg-white/5 dark:text-slate-200 dark:hover:bg-white/10"
-                          onClick={() => onRecordOpen(record, activeSection)}
-                          type="button"
-                        >
-                          {recordOpenLabel}
-                        </button>
+                        <div className="flex justify-end gap-2">
+                          {onRecordOpen ? (
+                            <button
+                              className="inline-flex items-center justify-center rounded-md border border-slate-200 bg-white px-2.5 py-1.5 text-xs font-semibold text-slate-700 transition-colors hover:bg-slate-50 dark:border-white/10 dark:bg-white/5 dark:text-slate-200 dark:hover:bg-white/10"
+                              onClick={() => onRecordOpen(record, activeSection)}
+                              type="button"
+                            >
+                              {recordOpenLabel}
+                            </button>
+                          ) : null}
+                          {recordRowActions.map((action, actionIndex) => {
+                            const actionDisabled = action.isDisabled?.(record) ?? false;
+                            const actionTitle = typeof action.title === 'function' ? action.title(record) : action.title;
+                            return (
+                              <button
+                                className={adminResourceRowActionClassName(action.tone)}
+                                disabled={actionDisabled}
+                                key={`${action.label}-${actionIndex}`}
+                                onClick={() => action.onClick(record, activeSection)}
+                                title={actionTitle}
+                                type="button"
+                              >
+                                {action.icon}
+                                {action.label}
+                              </button>
+                            );
+                          })}
+                        </div>
                       </td>
                     ) : null}
                   </tr>
@@ -290,6 +439,17 @@ export function AdminResourceCenter<TSectionId extends string = string, TGroup e
       </main>
     </div>
   );
+}
+
+function normalizePageSize(pageSize: number | undefined): number {
+  return Number.isFinite(pageSize) && pageSize && pageSize > 0 ? Math.trunc(pageSize) : 50;
+}
+
+function adminResourceRowActionClassName(tone: 'default' | 'danger' | undefined): string {
+  if (tone === 'danger') {
+    return 'inline-flex items-center justify-center gap-1.5 rounded-md border border-red-200 bg-white px-2.5 py-1.5 text-xs font-semibold text-red-700 transition-colors hover:bg-red-50 disabled:cursor-not-allowed disabled:opacity-50 dark:border-red-500/30 dark:bg-white/5 dark:text-red-300 dark:hover:bg-red-500/10';
+  }
+  return 'inline-flex items-center justify-center gap-1.5 rounded-md border border-slate-200 bg-white px-2.5 py-1.5 text-xs font-semibold text-slate-700 transition-colors hover:bg-slate-50 disabled:cursor-not-allowed disabled:opacity-50 dark:border-white/10 dark:bg-white/5 dark:text-slate-200 dark:hover:bg-white/10';
 }
 
 function groupAdminResourceSections<TSectionId extends string, TGroup extends string>(
@@ -330,6 +490,20 @@ export function readAdminResourceRecordList(value: unknown): AdminResourceRecord
     .map(([key, itemValue]) => ({ metric: key, value: itemValue }));
 }
 
+export function readAdminResourceCollectionMeta(value: unknown): AdminResourceCollectionMeta | null {
+  const data = readAdminResourcePayload(value);
+  if (!isAdminResourceRecord(data)) {
+    return null;
+  }
+  const total = readFiniteNumber(data.total);
+  const page = readFiniteNumber(data.page);
+  const pageSize = readFiniteNumber(data.pageSize ?? data.page_size);
+  if (total === null || page === null || pageSize === null) {
+    return null;
+  }
+  return { total, page, pageSize };
+}
+
 export function readAdminResourcePayload(value: unknown): unknown {
   if (!isAdminResourceRecord(value)) {
     return value;
@@ -338,6 +512,17 @@ export function readAdminResourcePayload(value: unknown): unknown {
     return value.data;
   }
   return value;
+}
+
+function readFiniteNumber(value: unknown): number | null {
+  if (typeof value === 'number' && Number.isFinite(value)) {
+    return value;
+  }
+  if (typeof value === 'string' && value.trim()) {
+    const parsed = Number(value);
+    return Number.isFinite(parsed) ? parsed : null;
+  }
+  return null;
 }
 
 export function isAdminResourceRecord(value: unknown): value is AdminResourceRecord {

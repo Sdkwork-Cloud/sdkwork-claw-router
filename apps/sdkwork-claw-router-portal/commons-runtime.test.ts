@@ -28,6 +28,7 @@ import {
   resolvePortalLoginRequiredAction,
 } from "./packages/sdkwork-claw-router-commons/src/portal-auth.ts";
 import { normalizeGeneratedSdkBaseUrl } from "./packages/sdkwork-claw-router-commons/src/sdk-base-url.ts";
+import { formatRechargeCurrencyAmount } from "./packages/sdkwork-claw-router-commons/src/recharge-math.ts";
 import {
   createClawRouterAiSdkClient,
   getClawRouterAiSdkClient,
@@ -127,6 +128,13 @@ test("createClientOperationToken fails closed when secure randomness is unavaila
     () => withCrypto(undefined, () => createClientOperationToken("request")),
     /Secure random source is unavailable/,
   );
+});
+
+test("formatRechargeCurrencyAmount prefers currency symbols for standard recharge currencies", () => {
+  assert.equal(formatRechargeCurrencyAmount("29.90", "CNY"), "¥29.90");
+  assert.equal(formatRechargeCurrencyAmount("100", "USD"), "$100.00");
+  assert.equal(formatRechargeCurrencyAmount("5", "EUR"), "EUR 5.00");
+  assert.equal(formatRechargeCurrencyAmount("0", "CNY"), "¥0.00");
 });
 
 test("createClientOperationToken rejects an all-zero random byte result", () => {
@@ -248,6 +256,16 @@ test("generated SDK metadata declares independent runtime base URL variables for
   assert.equal(SDK_SYSTEM_CONFIG.backend.runtimeEnvName, "VITE_CLAWROUTER_BACKEND_API_BASE_URL");
 });
 
+test("sdk clients use a static IAM runtime reset dependency so Vite can chunk the portal deterministically", () => {
+  const source = readFileSync(
+    new URL("./packages/sdkwork-claw-router-commons/src/sdk-clients.ts", import.meta.url),
+    "utf8",
+  );
+
+  assert.match(source, /from '\.\/iam-runtime\.ts';/);
+  assert.doesNotMatch(source, /await import\('\.\/iam-runtime\.ts'\)/);
+});
+
 test("open gateway SDK clients never inherit portal session tokens", () => {
   clearStoredAppSessionToken();
   resetClawRouterSdkClients();
@@ -337,7 +355,7 @@ test("portal notification service fetches console announcements without frontend
   );
 
   for (const marker of [
-    "client.notification.listNotifications({",
+    "client.notification.list({",
     "includeArchived: options.includeArchived ?? false",
     "page: options.page ?? DEFAULT_NOTIFICATION_PAGE",
     "pageSize: options.pageSize ?? DEFAULT_NOTIFICATION_PAGE_SIZE",

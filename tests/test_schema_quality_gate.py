@@ -490,6 +490,8 @@ class SchemaQualityGateTest(unittest.TestCase):
             "function generatorArgs(language) {\n"
             f"  return ['-i', {generation_input_path}, '-l', language];\n"
             "}\n"
+            "function runLanguage(language) { cleanGeneratedOutput(language); }\n"
+            "function cleanGeneratedOutput(language) {}\n"
             "console.log('--language');\n"
             "console.log('sdks/${sdkFamily}/${sdkFamily}-${language}/generated/server-openapi');\n",
             encoding="utf-8",

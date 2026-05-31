@@ -3,6 +3,9 @@ use std::collections::HashMap;
 use sqlx::{Row, Sqlite, SqlitePool, Transaction};
 
 use crate::domain::{DomainError, DomainResult};
+use crate::infrastructure::sql::routing_config_change::{
+    record_sqlite_ai_routing_config_change, AiRoutingConfigChange,
+};
 use crate::ports::{
     AdminAiResourceItem, AdminAiResourceMemberCommand, AdminAiResourceMemberItem,
     AdminAiResourceReadFuture, AdminAiResourceStore, CreateAdminAiResourceCommand,
@@ -10,6 +13,14 @@ use crate::ports::{
 };
 
 const AI_RESOURCE_TARGET_TYPE: i32 = 91;
+
+struct ResolvedAiResourceGroupMember {
+    item_type: &'static str,
+    resource_id: Option<i64>,
+    resource_code: String,
+    child_resource_group_id: Option<i64>,
+    child_resource_group_code: String,
+}
 
 #[derive(Debug, Clone)]
 pub struct SqliteAdminAiResourceStore {
@@ -59,6 +70,26 @@ impl AdminAiResourceStore for SqliteAdminAiResourceStore {
                     "status": &command.status,
                     "memberCount": command.members.len()
                 }),
+            )
+            .await?;
+            record_sqlite_ai_routing_config_change(
+                &mut tx,
+                ai_resource_routing_config_change(
+                    command.subject.tenant_id,
+                    command.subject.organization_id,
+                    command.subject.operator_id,
+                    &command.request_id,
+                    &command.requested_at,
+                    "create_ai_resource",
+                    resource_id,
+                    serde_json::json!({
+                        "resourceId": resource_id,
+                        "resourceCode": &command.resource_code,
+                        "resourceType": &command.resource_type,
+                        "status": &command.status,
+                        "memberCount": command.members.len()
+                    }),
+                ),
             )
             .await?;
             let item = load_resource_by_id(
@@ -120,6 +151,15 @@ impl AdminAiResourceStore for SqliteAdminAiResourceStore {
                 )
                 .await?;
             }
+            if command.status.is_some() {
+                sync_resource_group_status(
+                    &mut tx,
+                    effective_resource_code,
+                    &command,
+                    status_code(command.status.as_deref().unwrap_or("active")),
+                )
+                .await?;
+            }
             insert_audit_log(
                 &mut tx,
                 &command.audit_log_uuid,
@@ -137,6 +177,32 @@ impl AdminAiResourceStore for SqliteAdminAiResourceStore {
                     "statusChanged": command.status.is_some(),
                     "membersChanged": command.members.is_some()
                 }),
+            )
+            .await?;
+            record_sqlite_ai_routing_config_change(
+                &mut tx,
+                ai_resource_routing_config_change(
+                    command.subject.tenant_id,
+                    command.subject.organization_id,
+                    command.subject.operator_id,
+                    &command.request_id,
+                    &command.requested_at,
+                    "update_ai_resource",
+                    command.resource_id,
+                    serde_json::json!({
+                        "resourceId": command.resource_id,
+                        "resourceCodeChanged": command.resource_code.is_some(),
+                        "resourceTypeChanged": command.resource_type.is_some(),
+                        "vendorChanged": command.vendor_code.is_some(),
+                        "modalityChanged": command.modality_code.is_some(),
+                        "apiChanged": command.api_endpoint_code.is_some(),
+                        "modelChanged": command.model.is_some()
+                            || command.catalog_key.is_some()
+                            || command.provider_native_model.is_some(),
+                        "statusChanged": command.status.is_some(),
+                        "membersChanged": command.members.is_some()
+                    }),
+                ),
             )
             .await?;
             let item = load_resource_by_id(
@@ -410,6 +476,56 @@ async fn rename_members_for_resource_code(
     Ok(())
 }
 
+async fn sync_resource_group_status(
+    tx: &mut Transaction<'_, Sqlite>,
+    resource_code: &str,
+    command: &UpdateAdminAiResourceCommand,
+    status: i32,
+) -> DomainResult<()> {
+    sqlx::query(
+        r#"
+        UPDATE ai_resource_group
+        SET status = ?,
+            updated_at = ?,
+            version = COALESCE(version, 0) + 1
+        WHERE tenant_id = ?
+          AND organization_id = ?
+          AND group_code = ?
+          AND deleted_at IS NULL
+        "#,
+    )
+    .bind(status)
+    .bind(&command.requested_at)
+    .bind(command.subject.tenant_id)
+    .bind(command.subject.organization_id)
+    .bind(resource_code)
+    .execute(&mut **tx)
+    .await
+    .map_err(|error| store_error("failed to sync resource group status", error))?;
+
+    sqlx::query(
+        r#"
+        UPDATE ai_resource_group_item
+        SET status = ?,
+            updated_at = ?,
+            version = COALESCE(version, 0) + 1
+        WHERE tenant_id = ?
+          AND organization_id = ?
+          AND resource_group_code = ?
+          AND deleted_at IS NULL
+        "#,
+    )
+    .bind(status)
+    .bind(&command.requested_at)
+    .bind(command.subject.tenant_id)
+    .bind(command.subject.organization_id)
+    .bind(resource_code)
+    .execute(&mut **tx)
+    .await
+    .map_err(|error| store_error("failed to sync resource group member status", error))?;
+    Ok(())
+}
+
 async fn insert_members(
     tx: &mut Transaction<'_, Sqlite>,
     parent_resource_id: i64,
@@ -438,20 +554,19 @@ async fn insert_members(
             .get(index)
             .cloned()
             .unwrap_or_else(|| format!("{parent_resource_code}-member-{index}"));
+        let resolved_member = resolve_ai_resource_group_member(
+            tx,
+            tenant_id,
+            organization_id,
+            &member.member_resource_code,
+        )
+        .await?;
         sqlx::query(
             r#"
             INSERT INTO ai_resource_group_item
                 (uuid, tenant_id, organization_id, data_scope, status, created_at, updated_at, version, metadata, resource_group_id, resource_group_code, item_type, resource_id, resource_code, child_resource_group_id, child_resource_group_code, item_role, sort_order)
             VALUES
-                (?, ?, ?, 1, 1, ?, ?, 0, ?, ?, ?, 'resource', (
-                    SELECT id
-                    FROM ai_resource
-                    WHERE tenant_id = ?
-                      AND organization_id = ?
-                      AND resource_code = ?
-                      AND deleted_at IS NULL
-                    LIMIT 1
-                ), ?, NULL, '', ?, ?)
+                (?, ?, ?, 1, 1, ?, ?, 0, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
             ON CONFLICT(tenant_id, organization_id, resource_group_id, item_type, resource_code, child_resource_group_code) DO UPDATE SET
                 status = 1,
                 deleted_at = NULL,
@@ -472,10 +587,11 @@ async fn insert_members(
         .bind(serde_json::json!({ "required": member.required }).to_string())
         .bind(group_id)
         .bind(parent_resource_code)
-        .bind(tenant_id)
-        .bind(organization_id)
-        .bind(&member.member_resource_code)
-        .bind(&member.member_resource_code)
+        .bind(resolved_member.item_type)
+        .bind(resolved_member.resource_id)
+        .bind(&resolved_member.resource_code)
+        .bind(resolved_member.child_resource_group_id)
+        .bind(&resolved_member.child_resource_group_code)
         .bind(&member.member_role)
         .bind(member.sort_order)
         .execute(&mut **tx)
@@ -483,6 +599,71 @@ async fn insert_members(
         .map_err(|error| store_error("failed to upsert AI resource member", error))?;
     }
     Ok(())
+}
+
+async fn resolve_ai_resource_group_member(
+    tx: &mut Transaction<'_, Sqlite>,
+    tenant_id: i64,
+    organization_id: i64,
+    member_resource_code: &str,
+) -> DomainResult<ResolvedAiResourceGroupMember> {
+    if let Some(resource_group_id) = sqlx::query_scalar::<_, i64>(
+        r#"
+        SELECT id
+        FROM ai_resource_group
+        WHERE tenant_id = ?
+          AND organization_id = ?
+          AND group_code = ?
+          AND deleted_at IS NULL
+        LIMIT 1
+        "#,
+    )
+    .bind(tenant_id)
+    .bind(organization_id)
+    .bind(member_resource_code)
+    .fetch_optional(&mut **tx)
+    .await
+    .map_err(|error| store_error("failed to resolve AI resource member group", error))?
+    {
+        return Ok(ResolvedAiResourceGroupMember {
+            item_type: "resource_group",
+            resource_id: None,
+            resource_code: String::new(),
+            child_resource_group_id: Some(resource_group_id),
+            child_resource_group_code: member_resource_code.to_owned(),
+        });
+    }
+
+    let resource_id = sqlx::query_scalar::<_, i64>(
+        r#"
+        SELECT id
+        FROM ai_resource
+        WHERE tenant_id = ?
+          AND organization_id = ?
+          AND resource_code = ?
+          AND deleted_at IS NULL
+        LIMIT 1
+        "#,
+    )
+    .bind(tenant_id)
+    .bind(organization_id)
+    .bind(member_resource_code)
+    .fetch_optional(&mut **tx)
+    .await
+    .map_err(|error| store_error("failed to resolve AI resource member", error))?
+    .ok_or_else(|| {
+        DomainError::not_found(format!(
+            "AI resource member was not found: {member_resource_code}"
+        ))
+    })?;
+
+    Ok(ResolvedAiResourceGroupMember {
+        item_type: "resource",
+        resource_id: Some(resource_id),
+        resource_code: member_resource_code.to_owned(),
+        child_resource_group_id: None,
+        child_resource_group_code: String::new(),
+    })
 }
 
 async fn ensure_resource_group(
@@ -676,7 +857,7 @@ async fn load_members(
         r#"
         SELECT
             resource_group_code AS parent_resource_code,
-            resource_code AS member_resource_code,
+            COALESCE(NULLIF(resource_code, ''), child_resource_group_code) AS member_resource_code,
             COALESCE(NULLIF(item_role, ''), 'included') AS member_role,
             COALESCE(json_extract(COALESCE(metadata, '{}'), '$.required'), 1) AS required,
             sort_order
@@ -706,7 +887,7 @@ async fn load_members_tx(
         r#"
         SELECT
             resource_group_code AS parent_resource_code,
-            resource_code AS member_resource_code,
+            COALESCE(NULLIF(resource_code, ''), child_resource_group_code) AS member_resource_code,
             COALESCE(NULLIF(item_role, ''), 'included') AS member_role,
             COALESCE(json_extract(COALESCE(metadata, '{}'), '$.required'), 1) AS required,
             sort_order
@@ -810,6 +991,29 @@ fn present_flag(is_present: bool) -> i32 {
 
 fn optional_optional_str(value: &Option<Option<String>>) -> Option<&str> {
     value.as_ref().and_then(|inner| inner.as_deref())
+}
+
+fn ai_resource_routing_config_change<'a>(
+    tenant_id: i64,
+    organization_id: i64,
+    operator_id: i64,
+    request_id: &'a str,
+    requested_at: &'a str,
+    action: &'a str,
+    resource_id: i64,
+    event_payload: serde_json::Value,
+) -> AiRoutingConfigChange<'a> {
+    AiRoutingConfigChange {
+        tenant_id,
+        organization_id,
+        operator_id,
+        request_id,
+        requested_at,
+        changed_object_type: "ai_resource",
+        changed_object_id: resource_id,
+        action,
+        event_payload,
+    }
 }
 
 async fn last_insert_rowid(tx: &mut Transaction<'_, Sqlite>) -> DomainResult<i64> {

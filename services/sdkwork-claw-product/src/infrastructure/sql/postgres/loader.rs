@@ -9,6 +9,7 @@ use crate::domain::{
 use crate::infrastructure::sql::catalog::{PricingCatalogRows, SqlPricingCatalogSnapshot};
 use crate::infrastructure::sql::postgres::error::PostgresCatalogLoadError;
 use crate::infrastructure::sql::postgres::row_mapping;
+use crate::infrastructure::sql::routing_config_change::AI_ROUTING_CONFIG_SCOPE;
 use crate::infrastructure::sql::rows::GatewayApiKeyRow;
 use crate::infrastructure::sql::PricingCatalogSql;
 use crate::ports::{
@@ -116,6 +117,39 @@ impl PostgresPricingCatalogLoader {
                 managed_provider_secrets,
             )?,
         )
+    }
+
+    pub async fn load_routing_config_version(&self) -> Result<i64, PostgresCatalogLoadError> {
+        sqlx::query_scalar(
+            r#"
+            SELECT COALESCE(
+                (
+                    SELECT config_version
+                    FROM ai_config_version
+                    WHERE tenant_id = 0
+                      AND organization_id = 0
+                      AND config_scope = $1
+                      AND status = 1
+                      AND deleted_at IS NULL
+                    LIMIT 1
+                ),
+                (
+                    SELECT COALESCE(SUM(config_version), 0)
+                    FROM ai_config_version
+                    WHERE config_scope = $2
+                      AND status = 1
+                      AND deleted_at IS NULL
+                      AND NOT (tenant_id = 0 AND organization_id = 0)
+                ),
+                0
+            )
+            "#,
+        )
+        .bind(AI_ROUTING_CONFIG_SCOPE)
+        .bind(AI_ROUTING_CONFIG_SCOPE)
+        .fetch_one(&self.pool)
+        .await
+        .map_err(PostgresCatalogLoadError::from)
     }
 
     async fn load_api_key_rows(&self) -> Result<Vec<GatewayApiKeyRow>, PostgresCatalogLoadError> {

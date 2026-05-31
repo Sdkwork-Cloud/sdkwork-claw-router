@@ -43,7 +43,7 @@
     },
     {
       "path": "README.md",
-      "sha256": "652625d27d63ef43c77685723f86e991b1d680f15a71d0ca8372834f32ede1ca"
+      "sha256": "9a7f1d0ce1a21ecc39abc09caac8955e8ead2da9c87d2bd6e6b6cf7764d14fa3"
     },
     {
       "path": "sdkwork-sdk.json",
@@ -71,7 +71,7 @@
     },
     {
       "path": "src/api/commerce.ts",
-      "sha256": "1708d1c7127a4158e1959e25f5f918bea272b2b91fbd0f26dbefb5b3f073ed51"
+      "sha256": "0384d5cbbb826d329a9801105aaa21570afc9d4c2b4a444a1fc3a51fe18805af"
     },
     {
       "path": "src/api/content.ts",
@@ -95,7 +95,7 @@
     },
     {
       "path": "src/api/notification.ts",
-      "sha256": "adbe6fd78761fa0f9cb9efdf998ed4886df70da46270a4bcbf7b5556f8076f03"
+      "sha256": "77b0edbb21f1f287eab8cbec5c9a617e7a155a95e1a3f83e4cee7bbee7ff79a9"
     },
     {
       "path": "src/api/open-platform.ts",
@@ -398,6 +398,14 @@
       "sha256": "1937b3a925503807eec255896cf0612ba070bda6e4f4456ea9d6fdfd1c56bb58"
     },
     {
+      "path": "src/types/ai-config-change-event-record.ts",
+      "sha256": "ebde59f93943423cb80d8c223b77237f5191b767a0420c25bc5b04b1c76e9f6f"
+    },
+    {
+      "path": "src/types/ai-config-version-record.ts",
+      "sha256": "3c5260f8292a0c154a4cdb1ab7dc8613b5bd3f14d6e4a283a4df8dda42b7f1a9"
+    },
+    {
       "path": "src/types/ai-generation-asset-action-record.ts",
       "sha256": "5c451e5c5405d9da4533d356c12f02479e3017b56dbe7a3ba2a7037f4d98f57c"
     },
@@ -534,6 +542,10 @@
       "sha256": "5e92916bb3c96362e85e0d79523510059d2f1b0343026299267b4caf3e67a478"
     },
     {
+      "path": "src/types/ai-provider-object-route-record.ts",
+      "sha256": "f77f7ee01acde1a43315ead9b2c81f94b88172c51e6dd39dc733d59f39965b28"
+    },
+    {
       "path": "src/types/ai-provider-record.ts",
       "sha256": "d8c30de397034bc0abf0c38079c463af70a33da9f8c7506f67ddc6ef4ecac66d"
     },
@@ -562,8 +574,16 @@
       "sha256": "fb84360d2e195487a02f2a931ea70bb1e2d829fbdecaa29fbb623f53bd89b9cd"
     },
     {
+      "path": "src/types/ai-resource-route-profile-record.ts",
+      "sha256": "c5d43e4c913b607365e5a4f5f9b48b24f61249a3288b74fbe4a74b62013b0d6a"
+    },
+    {
       "path": "src/types/ai-route-candidate-record.ts",
       "sha256": "bc21714488162137c828600612a870aa2caa16cfb170aefb5f1266125fbe657e"
+    },
+    {
+      "path": "src/types/ai-route-idempotency-record.ts",
+      "sha256": "3a198460994e9430eedf130ee01b277fb55a84c8528cc1039a352e3513047230"
     },
     {
       "path": "src/types/ai-routing-decision-log-record.ts",
@@ -1007,7 +1027,7 @@
     },
     {
       "path": "src/types/commerce-membership-purchase-request.ts",
-      "sha256": "c47655e58fbdeab8a96ae346175bddb9ccd5e29e609733698616ce0b5ac1ea0d"
+      "sha256": "bcb32b38ac6040e3457daba26dcdd8950f74b0a643fa4ca95cfe88f09296cc5e"
     },
     {
       "path": "src/types/commerce-membership-record.ts",
@@ -1058,8 +1078,24 @@
       "sha256": "cdcaa1d5c63995a9dbb495b4f94b4b888c980d7b56551152fc06e429e569f1df"
     },
     {
+      "path": "src/types/commerce-payment-capture-record.ts",
+      "sha256": "b4f4a5d93cd2f4539b4759918c4228a597d97fa8c475fc458b7a4aa0c3aa6441"
+    },
+    {
       "path": "src/types/commerce-payment-channel-record.ts",
       "sha256": "08f7333623f9bb59e815c186c583bd211c2b347641463b7849bd645936be57cf"
+    },
+    {
+      "path": "src/types/commerce-payment-dispute-event-record.ts",
+      "sha256": "238f1aed785eb6ac270bdcdbd1ed2ed70981e6b56cae1a05375a6bd727319f9a"
+    },
+    {
+      "path": "src/types/commerce-payment-dispute-record.ts",
+      "sha256": "ea0e9627b24c5032d37b4f8aa42c64c229327d6178a68672cfb63706cbbfe43c"
+    },
+    {
+      "path": "src/types/commerce-payment-fee-record.ts",
+      "sha256": "b7ffac75d5d53a82ad81a1adcc0d013b15cf60037443ccc271b6b92baa9f3002"
     },
     {
       "path": "src/types/commerce-payment-intent-create-request.ts",
@@ -1071,7 +1107,7 @@
     },
     {
       "path": "src/types/commerce-payment-intent-record.ts",
-      "sha256": "e3ddc65a788b7b4b245f6b67d718722b91020434a915566658acfb561adf5735"
+      "sha256": "2c00e67ff2c5fb96d770a536c53d7db7fab95a64e9e278b06beb5a29246d27e9"
     },
     {
       "path": "src/types/commerce-payment-intent-response.ts",
@@ -1090,20 +1126,48 @@
       "sha256": "51f31fa9c5637f3cd8c47b92c1fe9a0f327dc4cdf375375e3bc37c26812991e1"
     },
     {
+      "path": "src/types/commerce-payment-operation-attempt-record.ts",
+      "sha256": "2676838ebf2809c84ace324854de2f4bdd3661315d0b17a497e92dfc94c9ed56"
+    },
+    {
       "path": "src/types/commerce-payment-provider-account-record.ts",
       "sha256": "ad7745aafc5b567b042843a10ea02de1545b666660db52a5068e0773ea45966e"
+    },
+    {
+      "path": "src/types/commerce-payment-provider-capability-record.ts",
+      "sha256": "d5553fe361bd1201c84033b49c06d62775d11eb8ce913902245cfc64ca73cf0e"
     },
     {
       "path": "src/types/commerce-payment-provider-record.ts",
       "sha256": "ab6dfae9fcf3dd4869d85ffd09248c13c6e826d9b87a678c0a17b5da7e4ac594"
     },
     {
+      "path": "src/types/commerce-payment-reconciliation-item-record.ts",
+      "sha256": "bb92eea3e982149b78328bebdffc3f9d5b022cf62699cccc2d725093213e4ea1"
+    },
+    {
       "path": "src/types/commerce-payment-reconciliation-run-record.ts",
       "sha256": "b60f0c149f6477214c8a0f583b749b55035f11e423b507cb55e0858cc9e4f05b"
     },
     {
+      "path": "src/types/commerce-payment-route-decision-record.ts",
+      "sha256": "88824f6b2fda86200cbfdd7c9877a2aa2caa723f1dd10c15682e2dba7ea7a373"
+    },
+    {
       "path": "src/types/commerce-payment-route-rule-record.ts",
       "sha256": "b44bc29a4a3cbb446afd1ee75e3a1d78cd48b7bbca6ccbd90a8b33a40c9ae073"
+    },
+    {
+      "path": "src/types/commerce-payment-statement-item-record.ts",
+      "sha256": "6522b9b1eda68aa9de91377ecf16f51c50887b0c1cc29d47d36630eb0cabbf3d"
+    },
+    {
+      "path": "src/types/commerce-payment-statement-record.ts",
+      "sha256": "592aee13b321b60095fec2907c6df3db346f7f7fd4066d245a444a4494f264c2"
+    },
+    {
+      "path": "src/types/commerce-payment-webhook-delivery-record.ts",
+      "sha256": "c092abab5cb3df60559124c0cb0cf5633d31e5060f4aa34a7622e14fafb25e65"
     },
     {
       "path": "src/types/commerce-payment-webhook-event-record.ts",
@@ -1182,8 +1246,32 @@
       "sha256": "f41cae33338f48f859b547d8c45b8de6bc342f89fa17e52b71bae11ae92b9e56"
     },
     {
+      "path": "src/types/commerce-recharge-checkout-status-response.ts",
+      "sha256": "f10a62b8a22270df4f955847ef1790561bcfc4a3296331cc5e62b5a117df3899"
+    },
+    {
+      "path": "src/types/commerce-recharge-order-create-request.ts",
+      "sha256": "78bc1f3abae35f7dbd06e0477864e3371270c3cf45b38935ce7576c40f077e18"
+    },
+    {
+      "path": "src/types/commerce-recharge-order-create-response.ts",
+      "sha256": "02725e67bda8d9bd0c9c3332c72e4c175651dfa24eeb1379670c0e02a02c9cda"
+    },
+    {
+      "path": "src/types/commerce-recharge-package-item.ts",
+      "sha256": "639681ab995443cea86226e6354247e6a1d0e4f36ce59b5059d9adcb52d1e6af"
+    },
+    {
+      "path": "src/types/commerce-recharge-package-list-response.ts",
+      "sha256": "22119bfcb42264a1d62590c55f1837f7e6a9f2c7abcdb48e6836dbcda8d31e3f"
+    },
+    {
       "path": "src/types/commerce-recharge-package-record.ts",
       "sha256": "8e3c3b1d0488e0a2b07952c33fc47d7abb626aa8be82b516cdd550a1c9f00fd5"
+    },
+    {
+      "path": "src/types/commerce-recharge-settings-response.ts",
+      "sha256": "2b67114cea87fff6c6ef6894684ed85b73f592234704683d6e5442dfc4b4e676"
     },
     {
       "path": "src/types/commerce-refund-attempt-record.ts",
@@ -1199,7 +1287,7 @@
     },
     {
       "path": "src/types/commerce-refund-record.ts",
-      "sha256": "c66b9f7b38a4cb13b2232244ef58c61f1034d0a0f2832c642b6d4921eb6e48df"
+      "sha256": "03975bb6775b8182d4c5ae400c5fa910988ab650c6940ed0b38786c5c751c151"
     },
     {
       "path": "src/types/commerce-service-provider-exposure-snapshot-record.ts",
@@ -1827,7 +1915,11 @@
     },
     {
       "path": "src/types/index.ts",
-      "sha256": "b62a8df9d4dd5abb507bd0fee666381b2a41dc8e3a193f2fd9d031d9a2cba313"
+      "sha256": "7bc9c47127a951d565b96e5ed563506ad3e88a62a5d530caef3c0e2c9915e5f8"
+    },
+    {
+      "path": "src/types/integration-provider-account-record.ts",
+      "sha256": "59ec7568c05507cc724830cb120baa1a78c58df5b2d42935535d01fe84ffa5a1"
     },
     {
       "path": "src/types/integration-provider-health-snapshot-record.ts",
@@ -2590,16 +2682,24 @@
       "sha256": "e96909e343f7747d2555efea40c1414c5b52c16dd1cfafaca50157e3c538c858"
     },
     {
+      "path": "src/types/recharges-orders-cancel-result.ts",
+      "sha256": "e44ede583829b157a13e4cf6b13f4617dca88fe86dfeb55ef056791ec74afd12"
+    },
+    {
       "path": "src/types/recharges-orders-create-result.ts",
-      "sha256": "52f9f05a9c61c07f1c95d251840074287c0b733415cc1855a02a13bba1a75144"
+      "sha256": "b81824c8ab99945c80e5df9cb4d7376e87f8627a3f6dbb73650844a44732f643"
     },
     {
       "path": "src/types/recharges-orders-retrieve-result.ts",
-      "sha256": "a5b7a3edcdc7c412db9f95fe233957f17d9e3c18f0a2854804ffcd795c9ab740"
+      "sha256": "487b5dc83eca4a4fa8003573fdc99662ab8708099ea437d0b484674b00fe3bb7"
     },
     {
       "path": "src/types/recharges-packages-list-result.ts",
-      "sha256": "929aa2db41cf0daae729e7db09f92909f232014bd4b10422570f8cdfad4f9b3c"
+      "sha256": "56963b069a75ab4ef8ab0fa093c71993731854ceefceb136fe6aa5f2722f8edb"
+    },
+    {
+      "path": "src/types/recharges-settings-retrieve-result.ts",
+      "sha256": "a4cff1da487167ef7bd01eeefba040f811d8176d7ac2d803b72df66c255de984"
     },
     {
       "path": "src/types/refunds-create-result.ts",

@@ -60,6 +60,16 @@ class ClawRouterSdkGuardian:
         flags=re.MULTILINE,
     )
     FORBIDDEN_COMMON_TYPE_EXPORTS = ("PageResult",)
+    STANDARD_PACKAGE_ENTRY_FILES = {
+        "main": "./dist/index.cjs",
+        "module": "./dist/index.js",
+        "types": "./dist/index.d.ts",
+    }
+    STANDARD_PACKAGE_EXPORT_ENTRY_FILES = {
+        "types": "./dist/index.d.ts",
+        "import": "./dist/index.js",
+        "require": "./dist/index.cjs",
+    }
     FORBIDDEN_PUBLIC_EMPTY_RECORD_PREFIXES = (
         "Create",
         "Delete",
@@ -505,12 +515,18 @@ class ClawRouterSdkGuardian:
         package: dict[str, Any],
         messages: list[str],
     ) -> None:
-        for field in ("main", "module", "types"):
+        for field, expected_value in self.STANDARD_PACKAGE_ENTRY_FILES.items():
             value = package.get(field)
             if not isinstance(value, str) or not value.strip():
                 messages.append(f"{sdk_dir} package.json must declare {field}")
                 continue
-            self._check_package_relative_file(sdk_dir, base, f"package.json {field}", value, messages)
+            self._check_package_entry_path(
+                sdk_dir,
+                f"package.json {field}",
+                value,
+                expected_value,
+                messages,
+            )
 
         exports = package.get("exports")
         if not isinstance(exports, dict):
@@ -522,25 +538,25 @@ class ClawRouterSdkGuardian:
             messages.append(f"{sdk_dir} package.json exports must declare .")
             return
 
-        for condition in ("types", "import", "require"):
+        for condition, expected_value in self.STANDARD_PACKAGE_EXPORT_ENTRY_FILES.items():
             value = root_export.get(condition)
             if not isinstance(value, str) or not value.strip():
                 messages.append(f"{sdk_dir} package.json exports[.] must declare {condition}")
                 continue
-            self._check_package_relative_file(
+            self._check_package_entry_path(
                 sdk_dir,
-                base,
                 f"package.json exports[.].{condition}",
                 value,
+                expected_value,
                 messages,
             )
 
-    def _check_package_relative_file(
+    def _check_package_entry_path(
         self,
         sdk_dir: str,
-        base: Path,
         label: str,
         raw_value: str,
+        expected_value: str,
         messages: list[str],
     ) -> None:
         display = self._display_package_path(raw_value)
@@ -549,9 +565,10 @@ class ClawRouterSdkGuardian:
         if relative_path.is_absolute() or ".." in relative_path.parts:
             messages.append(f"{sdk_dir} {label} must stay inside SDK package: {display}")
             return
-        target = base / relative_path
-        if not target.exists() or not target.is_file():
-            messages.append(f"{sdk_dir} {label} points to missing file: {display}")
+        if display != self._display_package_path(expected_value):
+            messages.append(
+                f"{sdk_dir} {label} must be {self._display_package_path(expected_value)}"
+            )
 
     def _display_package_path(self, raw_value: str) -> str:
         return raw_value.removeprefix("./").replace("\\", "/")

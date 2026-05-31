@@ -13,8 +13,10 @@ use sdkwork_claw_product::ports::{
     ModelRankingRefreshStore, ModelRankingsCacheInvalidation, ModelRankingsCacheInvalidator,
     ModelRankingsQuery, ModelRankingsReadFuture, ModelRankingsReadStore, ModelRankingsSubject,
 };
+use std::sync::atomic::{AtomicBool, Ordering};
 use std::sync::{Arc, Mutex};
 use std::time::Duration;
+use tokio::sync::Notify;
 use tower::ServiceExt;
 
 #[tokio::test]
@@ -254,13 +256,11 @@ async fn admin_model_ranking_manual_refresh_route_runs_worker_and_returns_result
 
 #[tokio::test]
 async fn admin_model_ranking_manual_refresh_route_rejects_concurrent_refresh() {
-    let refresh_store = Arc::new(RecordingModelRankingRefreshStore::with_delay(
-        Duration::from_millis(120),
-    ));
+    let refresh_store = Arc::new(RecordingModelRankingRefreshStore::with_hold_gate());
     let router =
         sdkwork_claw_product::api::admin_model_rankings_router_with_read_store_and_refresh_store(
             Arc::new(StubModelRankingsReadStore),
-            refresh_store,
+            refresh_store.clone(),
         );
     let first_router = router.clone();
     let first = tokio::spawn(async move {
@@ -277,7 +277,7 @@ async fn admin_model_ranking_manual_refresh_route_rejects_concurrent_refresh() {
             .await
             .unwrap()
     });
-    tokio::time::sleep(Duration::from_millis(20)).await;
+    refresh_store.wait_until_started().await;
 
     let second = router
         .oneshot(
@@ -293,6 +293,7 @@ async fn admin_model_ranking_manual_refresh_route_rejects_concurrent_refresh() {
         .unwrap();
 
     assert_eq!(StatusCode::CONFLICT, second.status());
+    refresh_store.release();
     let first = first.await.unwrap();
     assert_eq!(StatusCode::OK, first.status());
 }
@@ -456,11 +457,11 @@ impl ModelRankingsCacheInvalidator for RecordingModelRankingsReadStore {
     }
 }
 
-#[derive(Debug)]
 struct RecordingModelRankingRefreshStore {
     commands: Mutex<Vec<ModelRankingRefreshCommand>>,
     audits: Mutex<Vec<ModelRankingRefreshAuditCommand>>,
     delay: Duration,
+    gate: Option<RefreshGate>,
 }
 
 impl RecordingModelRankingRefreshStore {
@@ -473,6 +474,28 @@ impl RecordingModelRankingRefreshStore {
             commands: Mutex::new(Vec::new()),
             audits: Mutex::new(Vec::new()),
             delay,
+            gate: None,
+        }
+    }
+
+    fn with_hold_gate() -> Self {
+        Self {
+            commands: Mutex::new(Vec::new()),
+            audits: Mutex::new(Vec::new()),
+            delay: Duration::ZERO,
+            gate: Some(RefreshGate::new()),
+        }
+    }
+
+    async fn wait_until_started(&self) {
+        if let Some(gate) = &self.gate {
+            gate.wait_until_started().await;
+        }
+    }
+
+    fn release(&self) {
+        if let Some(gate) = &self.gate {
+            gate.release();
         }
     }
 }
@@ -483,6 +506,10 @@ impl ModelRankingRefreshStore for RecordingModelRankingRefreshStore {
         command: ModelRankingRefreshCommand,
     ) -> ModelRankingRefreshFuture<'a> {
         Box::pin(async move {
+            if let Some(gate) = &self.gate {
+                gate.mark_started();
+                gate.wait_until_released().await;
+            }
             if self.delay > Duration::ZERO {
                 tokio::time::sleep(self.delay).await;
             }
@@ -509,5 +536,53 @@ impl ModelRankingRefreshStore for RecordingModelRankingRefreshStore {
             self.audits.lock().unwrap().push(command);
             DomainResult::Ok(())
         })
+    }
+}
+
+struct RefreshGate {
+    started: AtomicBool,
+    started_notify: Notify,
+    released: AtomicBool,
+    released_notify: Notify,
+}
+
+impl RefreshGate {
+    fn new() -> Self {
+        Self {
+            started: AtomicBool::new(false),
+            started_notify: Notify::new(),
+            released: AtomicBool::new(false),
+            released_notify: Notify::new(),
+        }
+    }
+
+    fn mark_started(&self) {
+        self.started.store(true, Ordering::SeqCst);
+        self.started_notify.notify_waiters();
+    }
+
+    async fn wait_until_started(&self) {
+        loop {
+            let notified = self.started_notify.notified();
+            if self.started.load(Ordering::SeqCst) {
+                return;
+            }
+            notified.await;
+        }
+    }
+
+    fn release(&self) {
+        self.released.store(true, Ordering::SeqCst);
+        self.released_notify.notify_waiters();
+    }
+
+    async fn wait_until_released(&self) {
+        loop {
+            let notified = self.released_notify.notified();
+            if self.released.load(Ordering::SeqCst) {
+                return;
+            }
+            notified.await;
+        }
     }
 }

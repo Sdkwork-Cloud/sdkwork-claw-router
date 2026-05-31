@@ -4,7 +4,12 @@ use std::sync::{Arc, Mutex};
 
 use axum::body::Body;
 use axum::http::{Request, StatusCode};
-use sdkwork_claw_product::application::EntityUuidGenerator;
+use sdkwork_claw_product::application::{
+    default_desktop_cache_manager, AiRoutingCacheInvalidatingAdminAccessGroupStore,
+    EntityUuidGenerator, ROUTING_CONFIG_VERSION_CACHE_NAMESPACE,
+    ROUTING_DISABLED_CHANNEL_CACHE_NAMESPACE, ROUTING_PROVIDER_OBJECT_ROUTE_CACHE_NAMESPACE,
+    ROUTING_SNAPSHOT_CACHE_NAMESPACE,
+};
 use sdkwork_claw_product::domain::DomainResult;
 use sdkwork_claw_product::ports::{
     AdminAccessGroupChannelBindingItem, AdminAccessGroupCommandFuture, AdminAccessGroupItem,
@@ -186,7 +191,7 @@ async fn admin_access_group_route_lists_and_replaces_channel_bindings() {
                 .header("content-type", "application/json")
                 .internal_trusted_subject(10, 20, 30)
                 .body(Body::from(
-                    r#"{"items":[{"channelId":"3001","priority":5,"weight":100,"status":"active","modelScope":["openai/gpt-4o-mini"],"capabilities":["llm"]},{"channelId":"3003","priority":30,"weight":20,"status":"disabled"}]}"#,
+                    r#"{"items":[{"channelId":"3001","priority":5,"weight":100,"status":"active","modelScope":["openai/gpt-4o-mini"],"apiScope":["openai.chat_completions"],"capabilities":["llm"],"resourceCodes":["model.openai.gpt-4o-mini.chat","api.openai.chat_completions","bundle.openrouter.openai.standard"]},{"channelId":"3003","priority":30,"weight":20,"status":"disabled"}]}"#,
                 ))
                 .unwrap(),
         )
@@ -211,6 +216,14 @@ async fn admin_access_group_route_lists_and_replaces_channel_bindings() {
         "llm",
         replace_payload["data"]["items"][0]["capabilities"][0]
     );
+    assert_eq!(
+        "openai.chat_completions",
+        replace_payload["data"]["items"][0]["apiScope"][0]
+    );
+    assert_eq!(
+        "api.openai.chat_completions",
+        replace_payload["data"]["items"][0]["resourceCodes"][1]
+    );
 
     let final_list_response = router
         .oneshot(
@@ -231,6 +244,96 @@ async fn admin_access_group_route_lists_and_replaces_channel_bindings() {
 
     let commands = store.commands.lock().unwrap();
     assert_eq!(vec!["replace_channel_bindings"], *commands);
+}
+
+#[tokio::test]
+async fn admin_access_group_route_invalidates_routing_cache_after_successful_binding_mutation() {
+    let store = Arc::new(TestAccessGroupStore::with_bindings(vec![
+        channel_binding_item(1, 10, 3001, "OpenAI primary", "openai", 10, 80, "active"),
+    ]));
+    let manager = default_desktop_cache_manager();
+    manager
+        .set_json(
+            ROUTING_SNAPSHOT_CACHE_NAMESPACE,
+            "tenant:10:org:20",
+            serde_json::json!({ "status": "warm" }),
+        )
+        .await
+        .unwrap();
+    manager
+        .set_json(
+            ROUTING_CONFIG_VERSION_CACHE_NAMESPACE,
+            "tenant:10:org:20",
+            serde_json::json!({ "version": 7 }),
+        )
+        .await
+        .unwrap();
+    manager
+        .set_json(
+            ROUTING_DISABLED_CHANNEL_CACHE_NAMESPACE,
+            "tenant:10:org:20:channel:3001",
+            serde_json::json!({ "disabled": true }),
+        )
+        .await
+        .unwrap();
+    manager
+        .set_json(
+            ROUTING_PROVIDER_OBJECT_ROUTE_CACHE_NAMESPACE,
+            "tenant:10:org:20:object:resp_123",
+            serde_json::json!({ "channelId": 3001 }),
+        )
+        .await
+        .unwrap();
+    let router = sdkwork_claw_product::api::admin_access_group_router_with_store(
+        Arc::new(AiRoutingCacheInvalidatingAdminAccessGroupStore::new(
+            store,
+            manager.clone(),
+        )),
+        Arc::new(TestUuidGenerator),
+    );
+
+    let response = router
+        .oneshot(
+            Request::builder()
+                .method("PUT")
+                .uri("/backend/v3/api/router/access_groups/10/channel_bindings")
+                .header("content-type", "application/json")
+                .internal_trusted_subject(10, 20, 30)
+                .body(Body::from(
+                    r#"{"items":[{"channelId":"3001","priority":5,"weight":100,"status":"active","resourceCodes":["model.openai.gpt-4o-mini.chat"]}]}"#,
+                ))
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+
+    assert_eq!(StatusCode::OK, response.status());
+    assert!(manager
+        .get_json(ROUTING_SNAPSHOT_CACHE_NAMESPACE, "tenant:10:org:20")
+        .await
+        .unwrap()
+        .is_none());
+    assert!(manager
+        .get_json(ROUTING_CONFIG_VERSION_CACHE_NAMESPACE, "tenant:10:org:20")
+        .await
+        .unwrap()
+        .is_none());
+    assert!(manager
+        .get_json(
+            ROUTING_DISABLED_CHANNEL_CACHE_NAMESPACE,
+            "tenant:10:org:20:channel:3001"
+        )
+        .await
+        .unwrap()
+        .is_none());
+    assert!(manager
+        .get_json(
+            ROUTING_PROVIDER_OBJECT_ROUTE_CACHE_NAMESPACE,
+            "tenant:10:org:20:object:resp_123"
+        )
+        .await
+        .unwrap()
+        .is_some());
 }
 
 #[tokio::test]
@@ -483,7 +586,9 @@ impl AdminAccessGroupStore for TestAccessGroupStore {
                     &input.status,
                 );
                 item.model_scope = input.model_scope;
+                item.api_scope = input.api_scope;
                 item.capabilities = input.capabilities;
+                item.resource_codes = input.resource_codes;
                 bindings.push(item);
             }
             Ok(bindings
@@ -521,6 +626,8 @@ fn channel_binding_item(
         provider_code: provider_code.to_owned(),
         provider_name: provider_code.to_owned(),
         channel_code: format!("{provider_code}-{channel_id}"),
+        resource_codes: Vec::new(),
+        api_scope: Vec::new(),
         models: Vec::new(),
         capabilities: Vec::new(),
         model_scope: Vec::new(),

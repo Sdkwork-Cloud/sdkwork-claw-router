@@ -745,6 +745,7 @@ fn default_query_auth_name(provider_code: &str) -> Option<String> {
 pub struct ModelProviderRoute {
     pub catalog_key: String,
     pub model: String,
+    pub api_code: Option<String>,
     pub region_code: String,
     pub provider_code: String,
     pub channel_id: i64,
@@ -762,6 +763,7 @@ pub struct ProviderChannelGroupBinding {
     pub priority: i32,
     pub weight: i32,
     pub model_scope: Vec<String>,
+    pub api_scope: Vec<String>,
     pub capabilities: Vec<String>,
 }
 
@@ -772,6 +774,7 @@ impl ProviderChannelGroupBinding {
             priority,
             weight,
             model_scope: Vec::new(),
+            api_scope: Vec::new(),
             capabilities: Vec::new(),
         }
     }
@@ -794,6 +797,33 @@ impl ProviderChannelGroupBinding {
             priority,
             weight,
             model_scope: model_scope.into_iter().map(Into::into).collect(),
+            api_scope: Vec::new(),
+            capabilities: capabilities.into_iter().map(Into::into).collect(),
+        }
+    }
+
+    pub fn new_resource_scoped<M, A, C, MS, AS, CS>(
+        group_id: i64,
+        priority: i32,
+        weight: i32,
+        model_scope: MS,
+        api_scope: AS,
+        capabilities: CS,
+    ) -> Self
+    where
+        M: Into<String>,
+        A: Into<String>,
+        C: Into<String>,
+        MS: IntoIterator<Item = M>,
+        AS: IntoIterator<Item = A>,
+        CS: IntoIterator<Item = C>,
+    {
+        Self {
+            group_id,
+            priority,
+            weight,
+            model_scope: model_scope.into_iter().map(Into::into).collect(),
+            api_scope: api_scope.into_iter().map(Into::into).collect(),
             capabilities: capabilities.into_iter().map(Into::into).collect(),
         }
     }
@@ -888,6 +918,35 @@ impl ProviderChannelRoute {
         self
     }
 
+    pub fn with_resource_scoped_group_binding<M, A, C, MS, AS, CS>(
+        mut self,
+        group_id: i64,
+        priority: i32,
+        weight: i32,
+        model_scope: MS,
+        api_scope: AS,
+        capabilities: CS,
+    ) -> Self
+    where
+        M: Into<String>,
+        A: Into<String>,
+        C: Into<String>,
+        MS: IntoIterator<Item = M>,
+        AS: IntoIterator<Item = A>,
+        CS: IntoIterator<Item = C>,
+    {
+        self.group_bindings
+            .push(ProviderChannelGroupBinding::new_resource_scoped(
+                group_id,
+                priority,
+                weight,
+                model_scope,
+                api_scope,
+                capabilities,
+            ));
+        self
+    }
+
     pub fn with_group_bindings(mut self, group_bindings: Vec<ProviderChannelGroupBinding>) -> Self {
         self.group_bindings = group_bindings;
         self
@@ -899,6 +958,7 @@ impl ModelProviderRoute {
         Self {
             catalog_key: model.to_owned(),
             model: model.to_owned(),
+            api_code: None,
             region_code: "global".to_owned(),
             provider_code: provider_code.to_owned(),
             channel_id,
@@ -921,6 +981,7 @@ impl ModelProviderRoute {
         Self {
             catalog_key: catalog_key.to_owned(),
             model: model.to_owned(),
+            api_code: None,
             region_code: "global".to_owned(),
             provider_code: provider_code.to_owned(),
             channel_id,
@@ -935,6 +996,12 @@ impl ModelProviderRoute {
 
     pub fn with_catalog_key(mut self, catalog_key: &str) -> Self {
         self.catalog_key = catalog_key.to_owned();
+        self
+    }
+
+    pub fn with_api_code(mut self, api_code: &str) -> Self {
+        let api_code = api_code.trim();
+        self.api_code = (!api_code.is_empty()).then(|| api_code.to_owned());
         self
     }
 

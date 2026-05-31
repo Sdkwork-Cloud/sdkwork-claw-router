@@ -1,5 +1,5 @@
 import { useMemo, useState } from 'react';
-import { Outlet, NavLink, useNavigate, useLocation } from 'react-router-dom';
+import { Outlet, Link, useNavigate, useLocation } from 'react-router-dom';
 import {
   ChevronDown,
   ChevronRight,
@@ -8,6 +8,7 @@ import {
 import { useTranslation } from 'react-i18next';
 import { AdminHeader, getActiveModuleFromPath, type AdminModuleId } from './AdminHeader';
 import { getAdminModuleMenu, type AdminMenuGroup, type AdminMenuItem } from './adminModuleRegistry';
+import { hasActiveSidebarGroupItem, isSidebarItemActive } from './adminSidebarActive';
 import { revokeAppSession } from 'sdkwork-claw-router-commons/runtime';
 
 const ADMIN_SIDEBAR_GROUPS_DEFAULT_OPEN = true;
@@ -25,8 +26,12 @@ function isAdminBusinessRoute(pathname: string): boolean {
   return ADMIN_BUSINESS_ROUTE_PREFIXES.some((prefix) => pathname === prefix || pathname.startsWith(`${prefix}/`));
 }
 
-function isSidebarItemActive(pathname: string, item: AdminMenuItem): boolean {
-  return pathname === item.path || pathname.startsWith(`${item.path}/`);
+function sidebarItemClassName(isActive: boolean): string {
+  return `flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
+    isActive
+      ? 'bg-lobster-50 text-lobster-600 dark:bg-lobster-500/10 dark:text-lobster-400'
+      : 'text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-white/5 hover:text-slate-900 dark:hover:text-white'
+  }`;
 }
 
 function SidebarGroup({
@@ -40,9 +45,7 @@ function SidebarGroup({
   const location = useLocation();
   const [isOpen, setIsOpen] = useState(defaultOpen);
 
-  const hasActiveChild = group.items.some(
-    (item) => isSidebarItemActive(location.pathname, item),
-  );
+  const hasActiveChild = hasActiveSidebarGroupItem(location.pathname, group);
 
   return (
     <div className="mb-1">
@@ -64,46 +67,48 @@ function SidebarGroup({
       </button>
       {isOpen && (
         <div className="flex flex-col gap-0.5">
-          {group.items.map((item) => (
-            <NavLink
-              key={item.path}
-              to={item.path}
-              className={({ isActive }) =>
-                `flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
-                  isActive
-                    ? 'bg-lobster-50 text-lobster-600 dark:bg-lobster-500/10 dark:text-lobster-400'
-                    : 'text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-white/5 hover:text-slate-900 dark:hover:text-white'
-                }`
-              }
-            >
-              <item.icon className={`w-4 h-4 ${item.iconColor ?? ''}`} />
-              {t(item.labelKey)}
-            </NavLink>
-          ))}
+          {group.items.map((item) => {
+            const isActive = isSidebarItemActive(location.pathname, item, group.items);
+
+            return (
+              <Link
+                key={item.path}
+                to={item.path}
+                aria-current={isActive ? 'page' : undefined}
+                className={sidebarItemClassName(isActive)}
+              >
+                <item.icon className={`w-4 h-4 ${item.iconColor ?? ''}`} />
+                {t(item.labelKey)}
+              </Link>
+            );
+          })}
         </div>
       )}
     </div>
   );
 }
 
-function SidebarItem({ item }: { item: AdminMenuItem }) {
+function SidebarItem({
+  item,
+  siblingItems,
+}: {
+  item: AdminMenuItem;
+  siblingItems: readonly AdminMenuItem[];
+}) {
   const { t } = useTranslation();
+  const location = useLocation();
+  const isActive = isSidebarItemActive(location.pathname, item, siblingItems);
 
   return (
-    <NavLink
+    <Link
       key={item.path}
       to={item.path}
-      className={({ isActive }) =>
-        `flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
-          isActive
-            ? 'bg-lobster-50 text-lobster-600 dark:bg-lobster-500/10 dark:text-lobster-400'
-            : 'text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-white/5 hover:text-slate-900 dark:hover:text-white'
-        }`
-      }
+      aria-current={isActive ? 'page' : undefined}
+      className={sidebarItemClassName(isActive)}
     >
       <item.icon className={`w-4 h-4 ${item.iconColor ?? ''}`} />
       {t(item.labelKey)}
-    </NavLink>
+    </Link>
   );
 }
 
@@ -139,7 +144,7 @@ export function AdminLayout({ isDark, toggleTheme }: { isDark: boolean; toggleTh
         <div className="w-64 min-h-0 bg-white dark:bg-[#121212] border-r border-slate-200 dark:border-white/10 flex flex-col overflow-hidden">
           <div className="min-h-0 flex-1 overflow-y-auto py-4 px-3 flex flex-col gap-2">
             {currentModuleMenu.items?.map((item) => (
-              <SidebarItem key={item.path} item={item} />
+              <SidebarItem key={item.path} item={item} siblingItems={currentModuleMenu.items ?? []} />
             ))}
             {currentModuleMenu.groups.map((group) => (
               <SidebarGroup

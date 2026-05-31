@@ -348,17 +348,20 @@ into the dev database on every server-mode startup.
 
 Command intent:
 
-- `pnpm.cmd dev` starts the edge development workspace: gateway, admin API,
-  app API, and the portal dev server, after ensuring schema installation and
-  refreshing model catalog data from `data/sdkwork-models`.
+- `pnpm.cmd dev` starts the default all-in-one edge development workspace:
+  one Rust edge/API process plus the portal dev server, after ensuring schema
+  installation and refreshing model catalog data from `data/sdkwork-models`.
+- `pnpm.cmd dev:distributed` starts the explicit distributed development
+  workspace with separate gateway, admin API, app API, edge, and portal
+  processes.
 - `pnpm.cmd test` runs the launcher/tooling contract tests.
 - `pnpm.cmd build` builds production portal assets, builds the generated app
   and backend SDK runtime packages, creates SDK ZIP archives under
   `apps/sdkwork-claw-router-portal/dist/sdk-archives`, and builds the Rust edge
   server release binary.
 - `pnpm.cmd start` serves the built production portal from
-  `apps/sdkwork-claw-router-portal/dist` through the Rust edge server, using
-  the release binary when it exists.
+  `apps/sdkwork-claw-router-portal/dist` through a single all-in-one Rust edge
+  process by default, using the release binary when it exists.
 - `pnpm.cmd release` validates the release environment, regenerates
   `.env.release.local` from the release host process environment, runs strict
   `release:preflight`, and then runs the full `verify` gate.
@@ -367,9 +370,12 @@ Command intent:
   desktop environment flags.
 - `pnpm.cmd service:dev` starts the full install-checked workspace with
   service-mode environment flags.
-- `pnpm.cmd server:dev` starts Rust services plus the portal dev server.
+- `pnpm.cmd server:dev` starts the all-in-one Rust edge/API process plus the
+  portal dev server.
+- `pnpm.cmd server:dev:distributed` starts the legacy multi-process Rust
+  service topology behind the edge server.
 - `pnpm.cmd smoke:dev` starts the root `pnpm dev` entrypoint on isolated
-  random local ports, verifies the edge and direct OpenAPI/runtime URLs, and
+  random local ports, verifies the edge and portal OpenAPI/runtime URLs, and
   stops the spawned process tree.
 - `pnpm.cmd product:check` runs portal typecheck and production build.
 - `pnpm.cmd install:packages:plan` prints the deterministic cross-platform
@@ -385,9 +391,10 @@ Command intent:
 Use `pnpm.cmd`, not `pnpm.ps1`, on Windows shells that block PowerShell scripts.
 
 Edge startup prints the browser and API access matrix before launching
-processes. With default ports, the Rust edge server at `3900` is the
-single entrypoint and forwards portal/API traffic to the independent Rust
-service ports and the portal dev server:
+processes. With default ports, the Rust edge server at `3900` is the single
+entrypoint. In default all-in-one mode, `/v1`, `/backend/v3/api`, and
+`/app/v3/api` are dispatched to in-process Rust routers while portal assets
+are served through the portal dev server:
 
 - Portal: `http://127.0.0.1:3900/`
 - Edge Gateway OpenAPI: `http://127.0.0.1:3900/openapi.json`
@@ -402,11 +409,11 @@ service ports and the portal dev server:
 - Edge Server Ready: `http://127.0.0.1:3900/readyz`
 
 `/healthz` reports the edge server process health. `/readyz` probes the
-gateway, admin API, app API, and portal upstream `/healthz` endpoints and
-returns `503` when any dependency is unavailable.
+in-process gateway, admin API, app API routers and the portal upstream
+`/healthz` endpoint in all-in-one mode, and returns `503` when any dependency
+is unavailable.
 
-Direct service ports remain available for debugging and external reverse
-proxies:
+The portal dev server remains available directly:
 
 - Direct Portal Dev: `http://127.0.0.1:3901/`
 - Direct Portal Gateway API Proxy: `http://127.0.0.1:3901/v1`
@@ -419,6 +426,10 @@ proxies:
   `http://127.0.0.1:3901/backend/v3/api/openapi.json`
 - Direct Portal App API OpenAPI Proxy:
   `http://127.0.0.1:3901/app/v3/api/openapi.json`
+
+Direct gateway/admin/app service ports are only started in distributed mode
+for debugging and external reverse proxy setups:
+
 - Gateway OpenAPI: `http://127.0.0.1:18080/openapi.json`
 - Admin API OpenAPI:
   `http://127.0.0.1:18081/backend/v3/api/openapi.json`
@@ -431,15 +442,18 @@ Use `pnpm.cmd server:plan` to print the same URLs and command plan without
 starting processes. Forward bind overrides through `--`, for example:
 
 ```powershell
-pnpm.cmd dev -- --gateway-bind 0.0.0.0:19080 --server-bind 0.0.0.0:12900 --portal-bind 0.0.0.0:13900
+pnpm.cmd dev -- --server-bind 0.0.0.0:12900 --portal-bind 0.0.0.0:13900
+pnpm.cmd dev:distributed -- --gateway-bind 0.0.0.0:19080 --server-bind 0.0.0.0:12900 --portal-bind 0.0.0.0:13900
 ```
 
-The Rust edge server forwarding targets default to the loopback address for
-the matching service bind. Override them when the edge server should forward
-to another host or container network:
+The Rust edge server forwarding targets default to the edge server itself in
+all-in-one mode. Use `--distributed`, or provide any explicit forwarding URL,
+when the edge server should forward to another host, container network, or
+separate local service process:
 
 ```powershell
 pnpm.cmd dev -- --gateway-forward-url http://gateway.internal:18080 --backend-api-forward-url http://admin.internal:18081 --app-api-forward-url http://app.internal:18082
+pnpm.cmd dev:distributed -- --gateway-bind 0.0.0.0:19080 --server-bind 0.0.0.0:12900 --portal-bind 0.0.0.0:13900
 ```
 
 Forwarding URLs must be HTTP/HTTPS origins only. The Rust edge server uses
@@ -454,21 +468,24 @@ bases stay same-origin in server mode:
 This avoids publishing loopback addresses such as `127.0.0.1` into browser
 configuration and keeps remote deployments reachable through the same edge host
 that served the portal. Direct `3901` portal dev requests proxy the same
-same-origin API paths to the Rust services, so opening the Vite dev server
-directly exercises the same SDK base URLs as the unified edge entrypoint.
-Direct `18080`, `18081`, and `18082` service ports continue to work for
-debugging and external proxy setups.
+same-origin API paths to the edge server in all-in-one mode, so opening the
+Vite dev server directly exercises the same SDK base URLs as the unified edge
+entrypoint.
 
-Production `pnpm.cmd start` supports the same edge bind and upstream target
-controls after `pnpm.cmd build` has created the release artifact:
+Production `pnpm.cmd start` defaults to one all-in-one Rust edge/API process
+after `pnpm.cmd build` has created the release artifact. Use `--distributed`,
+or provide upstream target controls, when forwarding to separately deployed
+gateway/admin/app services:
 
 ```powershell
 pnpm.cmd start -- --server-bind 0.0.0.0:12900 --gateway-forward-url http://gateway.internal:18080 --backend-api-forward-url http://admin.internal:18081 --app-api-forward-url http://app.internal:18082
+pnpm.cmd start -- --distributed --server-bind 0.0.0.0:12900
 ```
 
-Its startup output includes the edge URLs, upstream forwarding targets, direct
-OpenAPI/API paths, public browser API bases, health checks, and the selected
-start command source (`release`, `env`, or `cargo`).
+Its startup output includes the runtime mode, edge URLs, public browser API
+bases, health checks, and the selected start command source (`release`, `env`,
+or `cargo`). Distributed mode also prints upstream forwarding targets and
+direct OpenAPI/API paths.
 
 When the edge server is deployed behind a controlled HTTPS reverse proxy,
 set the reported external scheme explicitly:
@@ -579,6 +596,46 @@ and source-standard regressions:
 - `node scripts/run-claw-router-product.test.mjs`
 - `pnpm.cmd --dir apps/sdkwork-claw-router-portal exec tsx auth-runtime.test.ts`
 - `python -B -m unittest tests.test_frontend_source_hygiene_standard`
+
+For Rust edits during local development, use the scoped Rust entrypoints instead
+of jumping straight to `cargo test --workspace`:
+
+```powershell
+pnpm.cmd test:rust:auto
+pnpm.cmd test:rust:smoke
+pnpm.cmd test:rust:quick
+```
+
+`pnpm.cmd test:rust:auto` inspects the current changed files and tries to pick
+the smallest useful Rust surface automatically:
+
+- exact `services/*/tests/*.rs` edits run only that integration-test target
+- common `services/*/src/*.rs` edits try to infer nearby test targets by name
+- shared `services/*/tests/common/*.rs` helper edits, plus `crates/sdkwork-claw-product-test-support/src/*.rs` fixture-crate edits, try to target only the integration tests that directly consume that shared test helper; product fixture module edits such as `schema.rs`, `repair.rs`, and `installed.rs` narrow further by the exported pool helper they affect
+- broader or ambiguous changes fall back to the existing scoped profiles
+
+When the worktree is noisy, choose one narrowing mode:
+
+```powershell
+pnpm.cmd test:rust:auto -- --changed-file services/sdkwork-claw-product/src/api/app_runtime.rs
+pnpm.cmd test:rust:auto -- --staged
+pnpm.cmd test:rust:auto -- --base-ref main
+```
+
+- `--changed-file <path>`: manual deterministic narrowing
+- `--staged`: only inspect staged Git changes, ignoring unstaged noise
+- `--base-ref <ref>`: only inspect committed changes since the merge-base with `<ref>`
+
+Use only one of `--changed-file`, `--staged`, or `--base-ref` per run.
+
+The main `pnpm.cmd verify` gate now also clears inherited `CARGO_BUILD_JOBS`
+for its Rust steps so a shell-level `$env:CARGO_BUILD_JOBS='1'` does not
+silently serialize local verification. When throttling is intentional, pass it
+explicitly:
+
+```powershell
+pnpm.cmd verify -- --build-jobs 4
+```
 
 It intentionally skips Rust compile/tests, SDK and architecture guardians,
 portal typecheck/build, production smoke tests, broad Python tests, and schema

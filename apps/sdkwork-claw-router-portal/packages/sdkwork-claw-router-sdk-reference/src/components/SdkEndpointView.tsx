@@ -20,6 +20,7 @@ import { normalizeSdkReferenceLanguage } from '../sdkReferenceRuntime';
 
 interface SdkEndpointViewProps {
   endpoint: ApiReferenceEndpoint;
+  requestBaseUrl: string;
   sdkData: SdkEndpointData;
   language: string;
   sdkConfig: GeneratedSdkToolConfig;
@@ -48,7 +49,7 @@ function flattenSdkParameters(parameters: ApiParameter[] = [], parentPath = ''):
   });
 }
 
-export function SdkEndpointView({ endpoint, sdkData, language, sdkConfig, spec }: SdkEndpointViewProps) {
+export function SdkEndpointView({ endpoint, requestBaseUrl, sdkData, language, sdkConfig, spec }: SdkEndpointViewProps) {
   const { t } = useTranslation();
   const [showPlayground, setShowPlayground] = useState(false);
   const [generatedDocs, setGeneratedDocs] = useState<SdkReferenceDocumentationResponse | null>(null);
@@ -248,6 +249,7 @@ export function SdkEndpointView({ endpoint, sdkData, language, sdkConfig, spec }
         {showPlayground && (
           <ApiPlayground
             endpoint={endpoint}
+            requestBaseUrl={requestBaseUrl}
             onClose={() => setShowPlayground(false)}
           />
         )}

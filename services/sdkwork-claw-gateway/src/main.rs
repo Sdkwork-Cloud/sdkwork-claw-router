@@ -2,7 +2,7 @@
 async fn main() -> anyhow::Result<()> {
     let runtime_toml = sdkwork_claw_config::RuntimeTomlConfig::from_env_config_file()
         .map_err(anyhow::Error::msg)?;
-    if edge_server_enabled(runtime_toml.as_ref()) {
+    if edge_server_enabled(runtime_toml.as_ref()) || all_in_one_runtime_enabled() {
         let config = runtime_config_from_env_or_toml(
             sdkwork_claw_gateway::SERVICE_NAME,
             "SDKWORK_CLAW_SERVER_BIND",
@@ -16,6 +16,14 @@ async fn main() -> anyhow::Result<()> {
         )
         .map_err(anyhow::Error::msg)?;
         let edge_config = build_edge_server_config(runtime_toml.as_ref())?;
+        if all_in_one_runtime_enabled() {
+            return sdkwork_claw_gateway::serve_all_in_one_edge_server_with_runtime_config(
+                config.bind_addr(),
+                edge_config,
+                runtime_toml.as_ref(),
+            )
+            .await;
+        }
         return sdkwork_claw_gateway::serve_edge_server_with_runtime_config(
             config.bind_addr(),
             edge_config,
@@ -287,6 +295,10 @@ fn edge_server_enabled(runtime_toml: Option<&sdkwork_claw_config::RuntimeTomlCon
         || runtime_toml
             .and_then(|config| config.edge.enabled)
             .unwrap_or(false)
+}
+
+fn all_in_one_runtime_enabled() -> bool {
+    env_truthy("SDKWORK_CLAW_ALL_IN_ONE_RUNTIME")
 }
 
 fn config_value_or_default(name: &str, config_value: Option<&str>, default_value: &str) -> String {

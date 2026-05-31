@@ -1,7 +1,8 @@
 import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { Check, Crown, Loader2, Sparkles, Star, Zap, Info, X, QrCode, CreditCard, Gift, WalletCards, User } from 'lucide-react';
 import { toDataURL } from 'qrcode';
-import { BusinessStatePanel } from 'sdkwork-claw-router-commons';
+import { BusinessStatePanel, formatRechargeCurrencyAmount } from 'sdkwork-claw-router-commons';
+import { hasStoredPortalSession } from 'sdkwork-claw-router-commons/runtime';
 import { CheckoutService, type CheckoutStatus } from 'sdkwork-claw-router-console-checkout';
 import { RechargePackageSelector, RechargeService, type RechargeOption } from 'sdkwork-claw-router-console-recharge';
 import { UserService, type UserProfile } from 'sdkwork-claw-router-console-user';
@@ -332,8 +333,20 @@ function VipPointsPurchaseModal({
   const [currentUser, setCurrentUser] = useState<UserProfile | null>(null);
   const [avatarLoadFailed, setAvatarLoadFailed] = useState(false);
   const latestCheckoutRequestRef = useRef(0);
+  const selectionCheckoutTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const activeCheckoutOrderRef = useRef<{
+    currencyCode: string;
+    orderNo: string;
+    optionId: string;
+    packageId?: string;
+  } | null>(null);
 
   useEffect(() => {
+    if (!hasStoredPortalSession()) {
+      setCurrentUser(null);
+      return;
+    }
+
     let active = true;
     void UserService.fetchCurrentUser()
       .then((profile) => {
@@ -378,45 +391,161 @@ function VipPointsPurchaseModal({
     setPointsCheckoutStatus(checkoutStatus);
   }, []);
 
-  const handleRechargeOptionChange = useCallback((option: RechargeOption | null) => {
-    setSelectedRechargeOption(option);
-    setSelectedRechargeOptionId(option?.id ?? '');
-    setPointsCheckoutStatus(null);
-    setGeneratedPointsQrCodeUrl('');
-    setCheckoutError('');
+  const clearSelectionCheckoutTimer = useCallback(() => {
+    if (selectionCheckoutTimerRef.current !== null) {
+      clearTimeout(selectionCheckoutTimerRef.current);
+      selectionCheckoutTimerRef.current = null;
+    }
   }, []);
 
-  const createPointsCheckout = useCallback(async (option: RechargeOption, isActive: () => boolean = () => true) => {
+  const resetCheckoutPresentation = useCallback(() => {
+    setPointsCheckoutStatus(null);
+    setGeneratedPointsQrCodeUrl('');
+  }, []);
+
+  const cancelRechargeOrderSilently = useCallback((orderNo: string, note: string) => {
+    void RechargeService.cancelRechargeOrder(orderNo, note).catch(() => {});
+  }, []);
+
+  const cancelActiveCheckoutOrder = useCallback(async (
+    checkoutOrder: {
+      currencyCode: string;
+      orderNo: string;
+      optionId: string;
+      packageId?: string;
+    },
+  ) => {
+    try {
+      await RechargeService.cancelRechargeOrder(checkoutOrder.orderNo, 'package-switch');
+      if (activeCheckoutOrderRef.current?.orderNo === checkoutOrder.orderNo) {
+        activeCheckoutOrderRef.current = null;
+      }
+      return;
+    } catch (error) {
+      const latestStatus = await CheckoutService.fetchCheckoutStatus(checkoutOrder.orderNo).catch(() => null);
+      if (latestStatus && isTerminalPointCheckoutStatus(latestStatus.paymentStatus)) {
+        if (activeCheckoutOrderRef.current?.orderNo === checkoutOrder.orderNo) {
+          activeCheckoutOrderRef.current = null;
+        }
+        return;
+      }
+      throw error;
+    }
+  }, []);
+
+  const createPointsCheckout = useCallback(async (option: RechargeOption, forceRefresh = false, isActive: () => boolean = () => true) => {
     const checkoutSequence = latestCheckoutRequestRef.current + 1;
     latestCheckoutRequestRef.current = checkoutSequence;
     setSelectedRechargeOptionId(option.id);
     setSelectedRechargeOption(option);
-    setPointsCheckoutStatus(null);
-    setGeneratedPointsQrCodeUrl('');
     setCheckoutError('');
+    const activeCheckoutOrder = activeCheckoutOrderRef.current;
+    const canReuseActiveOrder =
+      !forceRefresh
+      && activeCheckoutOrder !== null
+      && activeCheckoutOrder.optionId === option.id
+      && activeCheckoutOrder.currencyCode === option.currencyCode
+      && activeCheckoutOrder.packageId === option.packageId;
+    if (!canReuseActiveOrder) {
+      resetCheckoutPresentation();
+    }
     setIsCheckoutLoading(true);
+    let createdOrderNo: string | null = null;
     try {
-      const order = await RechargeService.submitRecharge(option.amount, 'alipay', option.packageId);
-      const checkoutStatus = await CheckoutService.fetchCheckoutStatus(order.orderNo);
-      if (isActive() && latestCheckoutRequestRef.current === checkoutSequence) {
-        onCheckoutCreated(checkoutStatus);
+      if (!canReuseActiveOrder && activeCheckoutOrder && activeCheckoutOrder.optionId !== option.id) {
+        await cancelActiveCheckoutOrder(activeCheckoutOrder);
       }
+
+      const reusableCheckoutOrder = activeCheckoutOrderRef.current;
+      const canReuseCurrentOrder =
+        !forceRefresh
+        && reusableCheckoutOrder !== null
+        && reusableCheckoutOrder.optionId === option.id
+        && reusableCheckoutOrder.currencyCode === option.currencyCode
+        && reusableCheckoutOrder.packageId === option.packageId;
+
+      const targetOrderNo = canReuseCurrentOrder
+        ? reusableCheckoutOrder.orderNo
+        : (createdOrderNo = (await RechargeService.submitRecharge(option.amount, option.currencyCode, option.packageId)).orderNo);
+      const checkoutStatus = await CheckoutService.fetchCheckoutStatus(targetOrderNo);
+      if (!isActive() || latestCheckoutRequestRef.current !== checkoutSequence) {
+        if (createdOrderNo) {
+          cancelRechargeOrderSilently(createdOrderNo, 'selection-replaced');
+        }
+        return;
+      }
+      if (!isTerminalPointCheckoutStatus(checkoutStatus.paymentStatus)) {
+        activeCheckoutOrderRef.current = {
+          currencyCode: option.currencyCode,
+          orderNo: targetOrderNo,
+          optionId: option.id,
+          packageId: option.packageId,
+        };
+      } else {
+        activeCheckoutOrderRef.current = null;
+      }
+      onCheckoutCreated(checkoutStatus);
     } catch (error) {
-      if (isActive() && latestCheckoutRequestRef.current === checkoutSequence) {
-        setCheckoutError(getVipErrorMessage(error, t('vip.pointsPurchase.checkoutError', 'Credit purchase checkout could not be created.'), t));
+      if (!isActive() || latestCheckoutRequestRef.current !== checkoutSequence) {
+        if (createdOrderNo) {
+          cancelRechargeOrderSilently(createdOrderNo, 'selection-replaced');
+        }
+        return;
       }
+      if (createdOrderNo) {
+        activeCheckoutOrderRef.current = {
+          currencyCode: option.currencyCode,
+          orderNo: createdOrderNo,
+          optionId: option.id,
+          packageId: option.packageId,
+        };
+      } else if (activeCheckoutOrderRef.current?.optionId !== option.id) {
+        activeCheckoutOrderRef.current = null;
+      }
+      setCheckoutError(getVipErrorMessage(error, t('vip.pointsPurchase.checkoutError', 'Credit purchase checkout could not be created.'), t));
     } finally {
       if (isActive() && latestCheckoutRequestRef.current === checkoutSequence) {
         setIsCheckoutLoading(false);
       }
     }
-  }, [onCheckoutCreated, t]);
+  }, [cancelActiveCheckoutOrder, cancelRechargeOrderSilently, onCheckoutCreated, resetCheckoutPresentation, t]);
+
+  const handleRechargeOptionChange = useCallback((option: RechargeOption | null) => {
+    clearSelectionCheckoutTimer();
+    latestCheckoutRequestRef.current += 1;
+    setSelectedRechargeOption(option);
+    setSelectedRechargeOptionId(option?.id ?? '');
+    setCheckoutError('');
+    if (!option) {
+      resetCheckoutPresentation();
+      setIsCheckoutLoading(false);
+      return;
+    }
+
+    const isSameOption = selectedRechargeOptionId === option.id;
+    const shouldForceRefresh = Boolean(
+      isSameOption
+      && pointsCheckoutStatus
+      && isTerminalPointCheckoutStatus(pointsCheckoutStatus.paymentStatus),
+    );
+
+    if (!isSameOption || shouldForceRefresh || !activeCheckoutOrderRef.current) {
+      resetCheckoutPresentation();
+    }
+
+    selectionCheckoutTimerRef.current = setTimeout(() => {
+      selectionCheckoutTimerRef.current = null;
+      void createPointsCheckout(option, shouldForceRefresh);
+    }, 180);
+  }, [clearSelectionCheckoutTimer, createPointsCheckout, pointsCheckoutStatus, resetCheckoutPresentation, selectedRechargeOptionId]);
 
   useEffect(() => {
     return () => {
+      clearSelectionCheckoutTimer();
       latestCheckoutRequestRef.current += 1;
+      activeCheckoutOrderRef.current = null;
     };
-  }, []);
+  }, [clearSelectionCheckoutTimer]);
 
   useEffect(() => {
     let active = true;
@@ -446,19 +575,13 @@ function VipPointsPurchaseModal({
     return () => { active = false; };
   }, [pointsCheckoutStatus?.qrCodePayload]);
 
-  const handlePointsCheckout = (option: RechargeOption | null = selectedRechargeOption) => {
-    if (option && !(isCheckoutLoading && option.id === selectedRechargeOptionId)) {
-      void createPointsCheckout(option);
-    }
-  };
-
   const paymentStatusText = pointsCheckoutStatus?.paymentStatus
     ? getPointCheckoutStatusText(pointsCheckoutStatus.paymentStatus, t)
     : isCheckoutLoading
       ? t('vip.pointsPurchase.creatingOrder', 'Creating order...')
       : selectedRechargeOption
-        ? t('vip.pointsPurchase.paymentHint', 'Click checkout to create the payment code')
-        : t('vip.pointsPurchase.selectPackageHint', 'Select a credit package to create a payment code');
+        ? t('vip.pointsPurchase.paymentHint', 'The payment code updates automatically when you switch credit packages')
+        : t('vip.pointsPurchase.selectPackageHint', 'Select a credit package to automatically update the payment code');
 
   return (
     <div data-vip-points-purchase className="fixed inset-0 z-50 flex items-center justify-center bg-black/75 px-3 py-4 backdrop-blur-md sm:px-6">
@@ -528,18 +651,6 @@ function VipPointsPurchaseModal({
                 selectedOptionId={selectedRechargeOptionId}
                 variant="vip"
               />
-
-              <button
-                className="mt-5 inline-flex h-11 w-full items-center justify-center gap-2 rounded-xl bg-lobster-600 px-5 text-sm font-bold text-white shadow-sm transition-colors hover:bg-lobster-700 disabled:cursor-not-allowed disabled:bg-slate-500 disabled:text-slate-300 sm:w-auto"
-                disabled={isCheckoutLoading || !selectedRechargeOption}
-                onClick={() => handlePointsCheckout()}
-                type="button"
-              >
-                {isCheckoutLoading ? <Loader2 className="h-4 w-4 animate-spin" /> : <CreditCard className="h-4 w-4" />}
-                {isCheckoutLoading
-                  ? t('vip.pointsPurchase.creatingOrder', 'Creating order...')
-                  : t('vip.pointsPurchase.createCheckout', 'Create checkout')}
-              </button>
 
               <p className="mt-10 text-center text-sm leading-6 text-slate-400 sm:text-left">
                 {t('vip.pointsPurchase.rules', 'Notice: credits cannot be exchanged for membership, transferred, or withdrawn. Credits are valid for 2 years after recharge and do not support refund or reverse conversion to RMB.')}
@@ -1083,6 +1194,10 @@ function getPointCheckoutStatusText(status: CheckoutStatus['paymentStatus'], t: 
   }
 }
 
+function isTerminalPointCheckoutStatus(status: CheckoutStatus['paymentStatus']): boolean {
+  return status === 'success' || status === 'failed' || status === 'expired' || status === 'refunding' || status === 'refunded';
+}
+
 function getDurationUnitText(durationUnit: string, t: TranslationFunction): string {
   const normalizedUnit = normalizeTranslationKeyToken(durationUnit);
   const fallback = durationUnit.trim() || t('vip.durationUnits.period', 'period');
@@ -1100,9 +1215,7 @@ function normalizeTranslationKeyToken(value: string): string {
 }
 
 function formatCurrency(amount: string, currencyCode: string): string {
-  const normalizedCurrency = currencyCode.trim().toUpperCase() || 'USD';
-  const normalizedAmount = amount.trim() || '0.00';
-  return `${normalizedCurrency} ${normalizedAmount}`;
+  return formatRechargeCurrencyAmount(amount, currencyCode);
 }
 
 export type { VipPackageGroup, VipPackage, VipSummary, VipCatalog };

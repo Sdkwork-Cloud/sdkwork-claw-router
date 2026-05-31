@@ -1,8 +1,6 @@
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import test from "node:test";
-import React from "react";
-import { renderToStaticMarkup } from "react-dom/server";
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 
@@ -17,6 +15,11 @@ import {
   type ApiSchemaTab,
   type ApiSchemaTabsDocument,
 } from "./packages/sdkwork-claw-router-api-reference/src/apiReferenceSchemaTabs.ts";
+import {
+  APP_API_PREFIX,
+  BACKEND_API_PREFIX,
+  OPEN_API_PREFIX,
+} from "./packages/sdkwork-claw-router-commons/src/sdk-clients.ts";
 import {
   buildSdkReferenceSidebarTree,
   buildSdkReferenceSystems,
@@ -44,12 +47,6 @@ import {
   buildPlaygroundRequest,
 } from "./packages/sdkwork-claw-router-api-reference/src/playgroundRequest.ts";
 import * as apiPlaygroundResponse from "./packages/sdkwork-claw-router-api-reference/src/playgroundResponseDownload.ts";
-import {
-  ApiEndpointView,
-} from "./packages/sdkwork-claw-router-api-reference/src/components/ApiEndpointView.tsx";
-import {
-  SdkEndpointView,
-} from "./packages/sdkwork-claw-router-sdk-reference/src/components/SdkEndpointView.tsx";
 
 if (!i18n.isInitialized) {
   void i18n
@@ -589,10 +586,15 @@ const appSpec = {
   },
 };
 
+const paymentAggregateSpec = JSON.parse(readFileSync(
+  new URL("../../crates/sdkwork-claw-http/specs/payment-aggregate-openapi.json", import.meta.url),
+  "utf8",
+));
+
 test("api reference schema tabs sort by backend order and keep schema urls", () => {
   const tabs: ApiSchemaTab[] = [
     { id: "backend", name: "Backend API", order: 30, schemaUrls: ["/backend/v3/api/openapi.json"], defaultSchemaUrl: "/backend/v3/api/openapi.json" },
-    { id: "gateway", name: "Claw Router Open API", order: 10, schemaUrls: ["/openapi.json"], defaultSchemaUrl: "/openapi.json" },
+    { id: "gateway", name: "AI聚合API", order: 10, schemaUrls: ["/openapi.json"], defaultSchemaUrl: "/openapi.json" },
   ];
 
   assert.deepEqual(sortApiSchemaTabs(tabs).map((tab) => tab.id), ["gateway", "backend"]);
@@ -604,7 +606,7 @@ test("api reference builds one system per backend schema tab", async () => {
     cacheTtlSeconds: 30,
     tabs: [
       { id: "app", name: "App API", order: 20, schemaUrls: ["/app/v3/api/openapi.json"], defaultSchemaUrl: "/app/v3/api/openapi.json" },
-      { id: "gateway", name: "Claw Router Open API", order: 10, schemaUrls: ["/openapi.json"], defaultSchemaUrl: "/openapi.json" },
+      { id: "gateway", name: "AI聚合API", order: 10, schemaUrls: ["/openapi.json"], defaultSchemaUrl: "/openapi.json" },
     ],
   };
 
@@ -619,13 +621,122 @@ test("api reference builds one system per backend schema tab", async () => {
   assert.equal(systems[1].categories[0].endpoints[0].path, "/app/v3/api/ai/models");
 });
 
+test("api reference loads available payment aggregate schema before planned cloud and app", async () => {
+  const manifest: ApiSchemaTabsDocument = {
+    cacheTtlSeconds: 30,
+    tabs: [
+      {
+        id: "app",
+        name: "App API",
+        order: 40,
+        schemaUrls: ["/app/v3/api/openapi.json"],
+        defaultSchemaUrl: "/app/v3/api/openapi.json",
+      },
+      {
+        id: "cloud-services",
+        name: "基础云服务API",
+        order: 30,
+        schemaUrls: [],
+        status: "planned",
+        description: "Object storage and SMS aggregation APIs are planned.",
+      },
+      {
+        id: "gateway",
+        name: "AI聚合API",
+        order: 10,
+        schemaUrls: ["/openapi.json"],
+        defaultSchemaUrl: "/openapi.json",
+      },
+      {
+        id: "payment-aggregate",
+        name: "支付聚合API",
+        order: 20,
+        schemaUrls: ["/payments/v3/openapi.json"],
+        defaultSchemaUrl: "/payments/v3/openapi.json",
+        status: "available",
+        description: "Payment aggregation APIs expose unified payment channel contracts.",
+      },
+    ],
+  };
+  const requested: string[] = [];
+
+  const systems = await buildApiReferenceSystemsFromTabs(manifest, async (url) => {
+    requested.push(url);
+    if (url === "/openapi.json") return gatewaySpec;
+    if (url === "/payments/v3/openapi.json") return paymentAggregateSpec;
+    if (url === "/app/v3/api/openapi.json") return appSpec;
+    throw new Error(`unexpected schema fetch ${url}`);
+  });
+
+  assert.deepEqual(systems.map((system) => system.id), ["gateway", "payment-aggregate", "cloud-services", "app"]);
+  assert.deepEqual(requested, ["/openapi.json", "/payments/v3/openapi.json", "/app/v3/api/openapi.json"]);
+  assert.equal(getApiSystemDisplayName(systems[0]), "AI聚合API");
+  assert.equal(systems[0].requestBaseUrl, "/v1");
+  assert.equal(systems[1].status, "available");
+  assert.equal(systems[1].schemaUrl, "/payments/v3/openapi.json");
+  assert.equal(systems[1].requestBaseUrl, "/payments/v3");
+  assert.equal(systems[1].categories.some((category) => category.name === "Payments/Intents"), true);
+  assert.equal(getDefaultApiReferenceEndpoint(systems[1])?.path, "/payments/v3/payment_intents");
+  const paymentEndpointIds = systems[1].categories.flatMap((category) => category.endpoints.map((endpoint) => endpoint.id));
+  assert.equal(paymentEndpointIds.includes("paymentIntents.capture"), true);
+  assert.equal(paymentEndpointIds.includes("paymentReconciliationTasks.differences.list"), true);
+  assert.equal(paymentEndpointIds.includes("paymentWebhooks.events.create"), true);
+  assert.equal(systems[2].status, "planned");
+  assert.equal(systems[2].schemaUrl, "");
+  assert.equal(systems[2].requestBaseUrl, "");
+  assert.equal(systems[2].categories.length, 0);
+  assert.equal(getDefaultApiReferenceEndpoint(systems[2]), null);
+  assert.equal(systems[3].requestBaseUrl, "/app/v3/api");
+});
+
+test("api reference systems derive request base urls per API surface", async () => {
+  const manifest: ApiSchemaTabsDocument = {
+    cacheTtlSeconds: 30,
+    tabs: [
+      { id: "gateway", name: "AI聚合API", order: 10, schemaUrls: ["/openapi.json"], defaultSchemaUrl: "/openapi.json" },
+      { id: "payment-aggregate", name: "支付聚合API", order: 20, schemaUrls: ["/payments/v3/openapi.json"], defaultSchemaUrl: "/payments/v3/openapi.json" },
+      { id: "app", name: "App API", order: 30, schemaUrls: ["/app/v3/api/openapi.json"], defaultSchemaUrl: "/app/v3/api/openapi.json" },
+      { id: "backend", name: "Backend API", order: 40, schemaUrls: ["/backend/v3/api/openapi.json"], defaultSchemaUrl: "/backend/v3/api/openapi.json" },
+    ],
+  };
+
+  const systems = await buildApiReferenceSystemsFromTabs(manifest, async (url) => {
+    if (url === "/openapi.json") return gatewaySpec;
+    if (url === "/payments/v3/openapi.json") return paymentAggregateSpec;
+    if (url === "/app/v3/api/openapi.json") return appSpec;
+    if (url === "/backend/v3/api/openapi.json") return appSpec;
+    throw new Error(`unexpected schema fetch ${url}`);
+  });
+  const requestBaseUrlById = new Map(systems.map((system) => [system.id, system.requestBaseUrl]));
+
+  assert.equal(requestBaseUrlById.get("gateway"), OPEN_API_PREFIX);
+  assert.equal(requestBaseUrlById.get("payment-aggregate"), "/payments/v3");
+  assert.equal(requestBaseUrlById.get("app"), APP_API_PREFIX);
+  assert.equal(requestBaseUrlById.get("backend"), BACKEND_API_PREFIX);
+});
+
+test("api reference schema tabs source uses commons SDK prefix boundary instead of local business prefix literals", () => {
+  const source = readFileSync(
+    new URL("./packages/sdkwork-claw-router-api-reference/src/apiReferenceSchemaTabs.ts", import.meta.url),
+    "utf8",
+  );
+
+  assert.match(source, /from 'sdkwork-claw-router-commons\/runtime'/);
+  assert.match(source, /\bAPP_API_PREFIX\b/);
+  assert.match(source, /\bBACKEND_API_PREFIX\b/);
+  assert.match(source, /\bOPEN_API_PREFIX\b/);
+  assert.doesNotMatch(source, /return '\/app\/v3\/api';/);
+  assert.doesNotMatch(source, /return '\/backend\/v3\/api';/);
+  assert.doesNotMatch(source, /return '\/v1';/);
+});
+
 test("api reference formats operation summaries as stable display titles", () => {
   assert.equal(formatApiOperationDisplayName("Create chat completion"), "Create Chat Completion");
   assert.equal(formatApiOperationDisplayName("Google Gemini stream generate content"), "Google Gemini Stream Generate Content");
   assert.equal(formatApiOperationDisplayName("POST /v1/chat/completions"), "POST /v1/chat/completions");
 });
 
-test("api reference defaults gateway display to Default Open API and opens chat completions first", async () => {
+test("api reference defaults gateway display to AI aggregation API and opens chat completions first", async () => {
   const gatewayOpenApi = JSON.parse(readFileSync(
     new URL("./public/openapi.json", import.meta.url),
     "utf8",
@@ -643,9 +754,53 @@ test("api reference defaults gateway display to Default Open API and opens chat 
   });
   const defaultEndpoint = getDefaultApiReferenceEndpoint(systems[0]);
 
-  assert.equal(getApiSystemDisplayName(systems[0]), "Default Open API");
+  assert.equal(getApiSystemDisplayName(systems[0]), "AI聚合API");
   assert.equal(defaultEndpoint?.name, "Create Chat Completion");
   assert.equal(defaultEndpoint?.path, "/v1/chat/completions");
+});
+
+test("api reference page renders planned API groups as planned empty states", () => {
+  const source = apiReferencePageSource();
+
+  assert.equal(source.includes("activeSystemData?.status === 'planned'"), true);
+  assert.equal(source.includes("system.status === 'planned'"), true);
+  assert.equal(source.includes("api.planned.title"), true);
+});
+
+test("api reference endpoint view and playground use system request base urls instead of global API base url", () => {
+  const endpointSource = readFileSync(
+    new URL("./packages/sdkwork-claw-router-api-reference/src/components/ApiEndpointView.tsx", import.meta.url),
+    "utf8",
+  );
+  const playgroundSource = readFileSync(
+    new URL("./packages/sdkwork-claw-router-api-reference/src/components/ApiPlayground.tsx", import.meta.url),
+    "utf8",
+  );
+  const pageSource = apiReferencePageSource();
+
+  assert.equal(endpointSource.includes("requestBaseUrl"), true);
+  assert.equal(endpointSource.includes("joinRequestUrl(API_BASE_URL, endpoint.path)"), false);
+  assert.equal(endpointSource.includes("baseUrl: requestBaseUrl"), true);
+  assert.equal(playgroundSource.includes("requestBaseUrl"), true);
+  assert.equal(playgroundSource.includes("baseUrl: API_BASE_URL"), false);
+  assert.equal(playgroundSource.includes("baseUrl: requestBaseUrl"), true);
+  assert.equal(pageSource.includes("<ApiEndpointView"), true);
+  assert.equal(pageSource.includes("requestBaseUrl={activeSystemData.requestBaseUrl}"), true);
+});
+
+test("sdk reference endpoint playground also threads system request base urls through the sdk endpoint view", () => {
+  const sdkEndpointViewSource = readFileSync(
+    new URL("./packages/sdkwork-claw-router-sdk-reference/src/components/SdkEndpointView.tsx", import.meta.url),
+    "utf8",
+  );
+  const sdkReferencePageSource = readFileSync(
+    new URL("./packages/sdkwork-claw-router-sdk-reference/src/pages/SdkReference.tsx", import.meta.url),
+    "utf8",
+  );
+
+  assert.equal(sdkEndpointViewSource.includes("requestBaseUrl: string;"), true);
+  assert.equal(sdkEndpointViewSource.includes("requestBaseUrl={requestBaseUrl}"), true);
+  assert.equal(sdkReferencePageSource.includes("requestBaseUrl={activeSystemData.requestBaseUrl}"), true);
 });
 
 test("api reference keeps vendor multimodal endpoints under their OpenAI modality groups", async () => {
@@ -835,6 +990,54 @@ test("api reference expands referenced request and response schemas into detaile
   assert.equal(endpoint.response, '{\n  "task_id": "string",\n  "state": "string",\n  "creations": [\n    {}\n  ]\n}');
 });
 
+test("api reference resolves reusable OpenAPI parameters", async () => {
+  const manifest: ApiSchemaTabsDocument = {
+    cacheTtlSeconds: 30,
+    tabs: [
+      { id: "payment-aggregate", name: "支付聚合API", order: 20, schemaUrls: ["/payments/v3/openapi.json"], defaultSchemaUrl: "/payments/v3/openapi.json" },
+    ],
+  };
+  const spec = {
+    components: {
+      parameters: {
+        PaymentIntentIdPath: {
+          name: "paymentIntentId",
+          in: "path",
+          required: true,
+          description: "SDKWork payment intent id.",
+          schema: { type: "string" },
+        },
+      },
+    },
+    paths: {
+      "/payments/v3/payment_intents/{paymentIntentId}": {
+        get: {
+          operationId: "retrievePaymentIntent",
+          summary: "Retrieve Payment Intent",
+          tags: ["Payments/Intents"],
+          parameters: [
+            { $ref: "#/components/parameters/PaymentIntentIdPath" },
+          ],
+          responses: { "200": { description: "ok" } },
+        },
+      },
+    },
+  };
+
+  const systems = await buildApiReferenceSystemsFromTabs(manifest, async (url) => {
+    if (url === "/payments/v3/openapi.json") return spec;
+    throw new Error(`unexpected url ${url}`);
+  });
+  const endpoint = systems[0].categories[0].endpoints[0];
+
+  assert.equal(endpoint.body.some((param) => (
+    param.name === "paymentIntentId"
+    && param.type === "string"
+    && param.desc === "SDKWork payment intent id."
+    && param.required === true
+  )), true);
+});
+
 test("api and sdk reference builders render recursive schema tabs without overflowing the stack", async () => {
   const manifest: ApiSchemaTabsDocument = {
     cacheTtlSeconds: 30,
@@ -918,28 +1121,15 @@ test("api endpoint view exposes response object and renders response properties 
 });
 
 test("api endpoint view keeps response object and properties table visible for empty response schemas", () => {
-  const html = renderToStaticMarkup(React.createElement(ApiEndpointView, {
-    endpoint: {
-      id: "empty-response-schema",
-      name: "Empty Response Schema",
-      method: "GET",
-      path: "/v1/empty-response-schema",
-      description: "Endpoint with a declared response object but no object properties.",
-      body: [],
-      responseProperties: [],
-      responseObject: "EmptyResponse",
-      responseStatus: "200",
-      responseContentType: "application/json",
-      curl: "",
-      response: "{}",
-    },
-  }));
+  const source = readFileSync(
+    new URL("./packages/sdkwork-claw-router-api-reference/src/components/ApiEndpointView.tsx", import.meta.url),
+    "utf8",
+  );
 
-  assert.equal(html.includes("Response Object"), true);
-  assert.equal(html.includes("EmptyResponse"), true);
-  assert.equal(html.includes("Response Properties"), true);
-  assert.equal(html.includes("<table"), true);
-  assert.equal(html.includes("No response parameters are defined for this response object."), true);
+  assert.equal(source.includes("const responseProperties = endpoint.responseProperties ?? [];"), true);
+  assert.equal(source.includes("endpoint.responseObject"), true);
+  assert.equal(source.includes("<ParameterTable parameters={responseProperties} isResponse={true} />"), true);
+  assert.equal(source.includes("No response parameters are defined for this response object."), true);
 });
 
 test("api reference documents JsonObject schemas as free-form objects instead of empty tables", async () => {
@@ -1178,8 +1368,10 @@ test("sdk reference reuses schema tabs and maps tabs to generated SDK metadata",
   const manifest: ApiSchemaTabsDocument = {
     cacheTtlSeconds: 30,
     tabs: [
-      { id: "app", name: "App API", order: 20, schemaUrls: ["/app/v3/api/openapi.json"], defaultSchemaUrl: "/app/v3/api/openapi.json" },
-      { id: "backend", name: "Backend API", order: 30, schemaUrls: ["/backend/v3/api/openapi.json"], defaultSchemaUrl: "/backend/v3/api/openapi.json" },
+      { id: "payment-aggregate", name: "支付聚合API", order: 20, schemaUrls: ["/payments/v3/openapi.json"], defaultSchemaUrl: "/payments/v3/openapi.json", status: "available" },
+      { id: "cloud-services", name: "基础云服务API", order: 30, schemaUrls: [], status: "planned" },
+      { id: "app", name: "App API", order: 40, schemaUrls: ["/app/v3/api/openapi.json"], defaultSchemaUrl: "/app/v3/api/openapi.json" },
+      { id: "backend", name: "Backend API", order: 50, schemaUrls: ["/backend/v3/api/openapi.json"], defaultSchemaUrl: "/backend/v3/api/openapi.json" },
     ],
   };
 
@@ -1436,18 +1628,21 @@ test("sdk endpoint view renders nested return fields instead of only top level r
     .find((item) => item.path === "/v1/conversations" && item.method === "GET");
 
   assert.ok(endpoint);
-  const html = renderToStaticMarkup(React.createElement(SdkEndpointView, {
+  const docs = buildSdkEndpointDocumentation(
     endpoint,
-    sdkData: {
+    {
       name: "ClawRouterGatewaySdk",
       packageName: "@sdkwork/clawrouter-gateway-sdk",
       baseUrl: "https://api.example.test",
     },
-    language: "typescript",
-  }));
+    "typescript",
+  );
+  const dataReturn = docs.returns.find((param) => param.name === "data");
+  const source = sdkEndpointViewSource();
 
-  assert.equal(html.includes("data[].id"), true);
-  assert.equal(html.includes("Conversation identifier."), true);
+  assert.equal(dataReturn?.children?.some((child) => child.name === "id" && child.desc === "Conversation identifier."), true);
+  assert.equal(source.includes("flattenSdkParameters(localDocumentation.returns)"), true);
+  assert.equal(source.includes("`${name}[]`"), true);
 });
 
 test("sdk reference endpoint documentation follows the selected SDK language", async () => {

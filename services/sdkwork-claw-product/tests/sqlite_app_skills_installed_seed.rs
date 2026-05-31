@@ -1,12 +1,9 @@
-#[path = "common/installed_sqlite.rs"]
-mod installed_sqlite_common;
-
-use installed_sqlite_common::repair_sqlite_pool;
 use sdkwork_claw_product::infrastructure::sql::sqlite::SqliteAppSkillsReadStore;
 use sdkwork_claw_product::ports::{
     AppSkillsCommandStore, AppSkillsQuery, AppSkillsReadStore, AppSkillsSubject,
     EnableAppSkillCommand,
 };
+use sdkwork_claw_product_test_support::repair_sqlite_pool;
 
 #[tokio::test]
 async fn sqlite_app_skills_reads_installed_seed_assets_artifacts_and_user_installations() {

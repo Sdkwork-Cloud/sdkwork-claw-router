@@ -8,7 +8,9 @@ frontend_models:
   - outTradeNo
   - amount
   - points
+  - providerCode
   - paymentMethod
+  - paymentProduct
   - orderStatus
   - paymentStatus
   - rechargeStatus
@@ -17,7 +19,9 @@ frontend_models:
   - expiresAt
   - paidAt
   - nextAction
+  - cashierUrl
   - qrCodePayload
+  - requestPaymentPayload
   data_sources:
   - commerce_order
   - commerce_payment_intent

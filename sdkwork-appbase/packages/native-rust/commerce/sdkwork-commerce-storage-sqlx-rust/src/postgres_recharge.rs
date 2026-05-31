@@ -1,17 +1,26 @@
+use std::collections::BTreeMap;
 use std::time::{SystemTime, UNIX_EPOCH};
 
 use sdkwork_commerce_core::{CommerceMoney, CommercePaymentStatus, CommerceServiceError};
 use sdkwork_commerce_payment::{
     CheckoutStatusQuery, CheckoutStatusSnapshot, CreatePointsRechargeOrderCommand,
-    CreatePointsRechargeOrderOutcome, RechargePackageItem, RechargePackageListQuery,
+    CreatePointsRechargeOrderOutcome, RechargeGrantPreview, RechargePackageItem,
+    RechargePackageListQuery, RechargeSettingsQuery, RechargeSettingsSnapshot,
 };
+use serde::Deserialize;
 use sqlx::{PgPool, Postgres, Row, Transaction};
 
-const LOAD_RECHARGE_PACKAGES: &str = r#"
+const DEFAULT_BASE_CURRENCY_CODE: &str = "CNY";
+const DEFAULT_BASE_POINTS_PER_CNY: &str = "10";
+const DEFAULT_USD_TO_CNY_RATE: &str = "7";
+const RECHARGE_RULE_NO: &str = "CASH_TO_POINTS";
+
+const LOAD_RECHARGE_PACKAGES_SCOPED: &str = r#"
 SELECT
     CAST(p.id AS TEXT) AS id,
-    CAST(p.price_amount AS TEXT) AS rmb,
-    CAST(COALESCE(p.bonus_points, 0) AS TEXT) AS bonus
+    CAST(p.price_amount AS TEXT) AS price_amount,
+    COALESCE(NULLIF(p.currency_code, ''), 'CNY') AS currency_code,
+    CAST(COALESCE(p.bonus_points, 0) AS TEXT) AS bonus_points
 FROM commerce_recharge_package p
 LEFT JOIN commerce_product_sku s
     ON s.id = p.sku_id
@@ -22,12 +31,11 @@ LEFT JOIN commerce_product_spu pr
 WHERE (
         (p.tenant_id = CAST($1 AS TEXT) AND p.organization_id = CAST($2 AS TEXT))
         OR (p.tenant_id = CAST($1 AS TEXT) AND p.organization_id IS NULL)
-        OR (p.tenant_id = '0' AND (p.organization_id = '0' OR p.organization_id IS NULL))
       )
   AND p.status = 'active'
   AND (p.valid_from IS NULL OR p.valid_from <= $3)
   AND (p.valid_to IS NULL OR p.valid_to >= $3)
-GROUP BY p.id, p.tenant_id, p.organization_id, p.price_amount, p.bonus_points, p.sort_weight
+GROUP BY p.id, p.tenant_id, p.organization_id, p.price_amount, p.currency_code, p.bonus_points, p.sort_weight
 ORDER BY
     CASE
         WHEN p.tenant_id = CAST($1 AS TEXT) AND p.organization_id = CAST($2 AS TEXT) THEN 0
@@ -35,34 +43,173 @@ ORDER BY
         ELSE 2
     END ASC,
     COALESCE(p.sort_weight, 0) ASC,
+    p.currency_code ASC,
     p.price_amount ASC,
     p.id ASC
 LIMIT 100
 "#;
 
-const LOAD_RECHARGE_PACK_FOR_AMOUNT: &str = r#"
+const LOAD_RECHARGE_PACKAGES_PUBLIC: &str = r#"
 SELECT
-    COALESCE(NULLIF(name, ''), 'Points recharge package') AS name,
-    CAST(price_amount AS TEXT) AS price,
-    CAST(COALESCE(bonus_points, 0) AS TEXT) AS bonus
-FROM commerce_recharge_package
+    CAST(p.id AS TEXT) AS id,
+    CAST(p.price_amount AS TEXT) AS price_amount,
+    COALESCE(NULLIF(p.currency_code, ''), 'CNY') AS currency_code,
+    CAST(COALESCE(p.bonus_points, 0) AS TEXT) AS bonus_points
+FROM commerce_recharge_package p
+LEFT JOIN commerce_product_sku s
+    ON s.id = p.sku_id
+   AND s.sales_status = 'active'
+LEFT JOIN commerce_product_spu pr
+    ON pr.id = s.spu_id
+   AND pr.sales_status = 'active'
+WHERE p.tenant_id = '0'
+  AND (p.organization_id = '0' OR p.organization_id IS NULL)
+  AND p.status = 'active'
+  AND (p.valid_from IS NULL OR p.valid_from <= $1)
+  AND (p.valid_to IS NULL OR p.valid_to >= $1)
+GROUP BY p.id, p.price_amount, p.currency_code, p.bonus_points, p.sort_weight
+ORDER BY
+    COALESCE(p.sort_weight, 0) ASC,
+    p.currency_code ASC,
+    p.price_amount ASC,
+    p.id ASC
+LIMIT 100
+"#;
+
+const LOAD_RECHARGE_SETTINGS_SCOPED: &str = r#"
+SELECT
+    CAST(rate AS TEXT) AS rate,
+    CAST(COALESCE(remark, '') AS TEXT) AS remark
+FROM commerce_exchange_rule
 WHERE (
         (tenant_id = CAST($1 AS TEXT) AND organization_id = CAST($2 AS TEXT))
         OR (tenant_id = CAST($1 AS TEXT) AND organization_id IS NULL)
-        OR (tenant_id = '0' AND (organization_id = '0' OR organization_id IS NULL))
       )
+  AND LOWER(source_asset_type) = 'cash'
+  AND LOWER(target_asset_type) = 'points'
   AND status = 'active'
-  AND CAST(price_amount AS TEXT) IN ($3, $4, $5)
-  AND (valid_from IS NULL OR valid_from <= $6)
-  AND (valid_to IS NULL OR valid_to >= $6)
 ORDER BY
     CASE
         WHEN tenant_id = CAST($1 AS TEXT) AND organization_id = CAST($2 AS TEXT) THEN 0
         WHEN tenant_id = CAST($1 AS TEXT) AND organization_id IS NULL THEN 1
         ELSE 2
     END ASC,
-    COALESCE(sort_weight, 0) ASC,
+    CASE
+        WHEN rule_no = $3 THEN 0
+        ELSE 1
+    END ASC,
     id ASC
+LIMIT 1
+"#;
+
+const LOAD_RECHARGE_SETTINGS_PUBLIC: &str = r#"
+SELECT
+    CAST(rate AS TEXT) AS rate,
+    CAST(COALESCE(remark, '') AS TEXT) AS remark
+FROM commerce_exchange_rule
+WHERE LOWER(source_asset_type) = 'cash'
+  AND tenant_id = '0'
+  AND (organization_id = '0' OR organization_id IS NULL)
+  AND LOWER(target_asset_type) = 'points'
+  AND status = 'active'
+ORDER BY
+    CASE
+        WHEN rule_no = $1 THEN 0
+        ELSE 1
+    END ASC,
+    id ASC
+LIMIT 1
+"#;
+
+const LOAD_RECHARGE_PACK_BY_ID: &str = r#"
+SELECT
+    COALESCE(NULLIF(p.name, ''), 'Points recharge package') AS name,
+    CAST(p.price_amount AS TEXT) AS price_amount,
+    COALESCE(NULLIF(p.currency_code, ''), 'CNY') AS currency_code,
+    CAST(COALESCE(p.bonus_points, 0) AS TEXT) AS bonus_points,
+    CAST(p.sku_id AS TEXT) AS sku_id
+FROM commerce_recharge_package p
+WHERE (
+        (p.tenant_id = CAST($1 AS TEXT) AND p.organization_id = CAST($2 AS TEXT))
+        OR (p.tenant_id = CAST($1 AS TEXT) AND p.organization_id IS NULL)
+      )
+  AND p.status = 'active'
+  AND p.id = $3
+  AND (p.valid_from IS NULL OR p.valid_from <= $4)
+  AND (p.valid_to IS NULL OR p.valid_to >= $4)
+ORDER BY
+    CASE
+        WHEN p.tenant_id = CAST($1 AS TEXT) AND p.organization_id = CAST($2 AS TEXT) THEN 0
+        WHEN p.tenant_id = CAST($1 AS TEXT) AND p.organization_id IS NULL THEN 1
+        ELSE 2
+    END ASC,
+    COALESCE(p.sort_weight, 0) ASC,
+    p.id ASC
+LIMIT 1
+"#;
+
+const LOAD_RECHARGE_PACK_BY_ID_PUBLIC: &str = r#"
+SELECT
+    COALESCE(NULLIF(p.name, ''), 'Points recharge package') AS name,
+    CAST(p.price_amount AS TEXT) AS price_amount,
+    COALESCE(NULLIF(p.currency_code, ''), 'CNY') AS currency_code,
+    CAST(COALESCE(p.bonus_points, 0) AS TEXT) AS bonus_points,
+    CAST(p.sku_id AS TEXT) AS sku_id
+FROM commerce_recharge_package p
+WHERE p.tenant_id = '0'
+  AND (p.organization_id = '0' OR p.organization_id IS NULL)
+  AND p.status = 'active'
+  AND p.id = $1
+  AND (p.valid_from IS NULL OR p.valid_from <= $2)
+  AND (p.valid_to IS NULL OR p.valid_to >= $2)
+ORDER BY COALESCE(p.sort_weight, 0) ASC, p.id ASC
+LIMIT 1
+"#;
+
+const LOAD_RECHARGE_PACK_FOR_AMOUNT: &str = r#"
+SELECT
+    COALESCE(NULLIF(p.name, ''), 'Points recharge package') AS name,
+    CAST(p.price_amount AS TEXT) AS price_amount,
+    COALESCE(NULLIF(p.currency_code, ''), 'CNY') AS currency_code,
+    CAST(COALESCE(p.bonus_points, 0) AS TEXT) AS bonus_points,
+    CAST(p.sku_id AS TEXT) AS sku_id
+FROM commerce_recharge_package p
+WHERE (
+        (p.tenant_id = CAST($1 AS TEXT) AND p.organization_id = CAST($2 AS TEXT))
+        OR (p.tenant_id = CAST($1 AS TEXT) AND p.organization_id IS NULL)
+      )
+  AND p.status = 'active'
+  AND COALESCE(NULLIF(p.currency_code, ''), 'CNY') = $3
+  AND CAST(p.price_amount AS TEXT) IN ($4, $5, $6)
+  AND (p.valid_from IS NULL OR p.valid_from <= $7)
+  AND (p.valid_to IS NULL OR p.valid_to >= $7)
+ORDER BY
+    CASE
+        WHEN p.tenant_id = CAST($1 AS TEXT) AND p.organization_id = CAST($2 AS TEXT) THEN 0
+        WHEN p.tenant_id = CAST($1 AS TEXT) AND p.organization_id IS NULL THEN 1
+        ELSE 2
+    END ASC,
+    COALESCE(p.sort_weight, 0) ASC,
+    p.id ASC
+LIMIT 1
+"#;
+
+const LOAD_RECHARGE_PACK_FOR_AMOUNT_PUBLIC: &str = r#"
+SELECT
+    COALESCE(NULLIF(p.name, ''), 'Points recharge package') AS name,
+    CAST(p.price_amount AS TEXT) AS price_amount,
+    COALESCE(NULLIF(p.currency_code, ''), 'CNY') AS currency_code,
+    CAST(COALESCE(p.bonus_points, 0) AS TEXT) AS bonus_points,
+    CAST(p.sku_id AS TEXT) AS sku_id
+FROM commerce_recharge_package p
+WHERE p.tenant_id = '0'
+  AND (p.organization_id = '0' OR p.organization_id IS NULL)
+  AND p.status = 'active'
+  AND COALESCE(NULLIF(p.currency_code, ''), 'CNY') = $1
+  AND CAST(p.price_amount AS TEXT) IN ($2, $3, $4)
+  AND (p.valid_from IS NULL OR p.valid_from <= $5)
+  AND (p.valid_to IS NULL OR p.valid_to >= $5)
+ORDER BY COALESCE(p.sort_weight, 0) ASC, p.id ASC
 LIMIT 1
 "#;
 
@@ -87,7 +234,39 @@ ORDER BY
 LIMIT 1
 "#;
 
-const LOAD_RECHARGE_PRODUCT_SKU: &str = r#"
+const LOAD_RECHARGE_METHOD_FALLBACK: &str = r#"
+SELECT method_key
+FROM commerce_payment_method
+WHERE (
+        (tenant_id = CAST($1 AS TEXT) AND organization_id = CAST($2 AS TEXT))
+        OR (tenant_id = CAST($1 AS TEXT) AND organization_id IS NULL)
+        OR (tenant_id = '0' AND (organization_id = '0' OR organization_id IS NULL))
+      )
+  AND status = 'active'
+ORDER BY
+    CASE
+        WHEN tenant_id = CAST($1 AS TEXT) AND organization_id = CAST($2 AS TEXT) THEN 0
+        WHEN tenant_id = CAST($1 AS TEXT) AND organization_id IS NULL THEN 1
+        ELSE 2
+    END ASC,
+    COALESCE(sort_weight, 0) ASC,
+    id ASC
+LIMIT 1
+"#;
+
+const LOAD_RECHARGE_PRODUCT_SKU_BY_ID: &str = r#"
+SELECT
+    CAST(s.id AS TEXT) AS sku_id,
+    COALESCE(NULLIF(s.name, ''), NULLIF(s.title, ''), NULLIF(pr.title, ''), 'Points recharge') AS product_name
+FROM commerce_product_sku s
+JOIN commerce_product_spu pr ON pr.id = s.spu_id
+WHERE s.id = $1
+  AND s.sales_status = 'active'
+  AND pr.sales_status = 'active'
+LIMIT 1
+"#;
+
+const LOAD_RECHARGE_PRODUCT_SKU_FOR_AMOUNT: &str = r#"
 SELECT
     CAST(s.id AS TEXT) AS sku_id,
     COALESCE(NULLIF(s.name, ''), NULLIF(s.title, ''), NULLIF(pr.title, ''), 'Points recharge') AS product_name
@@ -100,22 +279,37 @@ WHERE (
             AND pr.tenant_id = CAST($1 AS TEXT)
             AND (pr.organization_id = CAST($2 AS TEXT) OR pr.organization_id IS NULL)
         )
-        OR (
-            s.tenant_id = '0'
-            AND (s.organization_id = '0' OR s.organization_id IS NULL)
-            AND pr.tenant_id = '0'
-            AND (pr.organization_id = '0' OR pr.organization_id IS NULL)
-        )
       )
+  AND COALESCE(NULLIF(s.currency_code, ''), 'CNY') = $3
   AND s.sales_status = 'active'
   AND pr.sales_status = 'active'
 ORDER BY
-    CASE WHEN CAST(s.price_amount AS TEXT) IN ($3, $4, $5) THEN 0 ELSE 1 END,
+    CASE WHEN CAST(s.price_amount AS TEXT) IN ($4, $5, $6) THEN 0 ELSE 1 END,
     CASE
         WHEN s.tenant_id = CAST($1 AS TEXT) AND s.organization_id = CAST($2 AS TEXT) THEN 0
         WHEN s.tenant_id = CAST($1 AS TEXT) AND s.organization_id IS NULL THEN 1
         ELSE 2
     END ASC,
+    pr.id ASC,
+    s.id ASC
+LIMIT 1
+"#;
+
+const LOAD_RECHARGE_PRODUCT_SKU_FOR_AMOUNT_PUBLIC: &str = r#"
+SELECT
+    CAST(s.id AS TEXT) AS sku_id,
+    COALESCE(NULLIF(s.name, ''), NULLIF(s.title, ''), NULLIF(pr.title, ''), 'Points recharge') AS product_name
+FROM commerce_product_sku s
+JOIN commerce_product_spu pr ON pr.id = s.spu_id
+WHERE s.tenant_id = '0'
+  AND (s.organization_id = '0' OR s.organization_id IS NULL)
+  AND pr.tenant_id = '0'
+  AND (pr.organization_id = '0' OR pr.organization_id IS NULL)
+  AND COALESCE(NULLIF(s.currency_code, ''), 'CNY') = $1
+  AND s.sales_status = 'active'
+  AND pr.sales_status = 'active'
+ORDER BY
+    CASE WHEN CAST(s.price_amount AS TEXT) IN ($2, $3, $4) THEN 0 ELSE 1 END,
     pr.id ASC,
     s.id ASC
 LIMIT 1
@@ -129,10 +323,9 @@ SELECT
     COALESCE(NULLIF(o.order_no, ''), NULLIF(pa.out_trade_no, ''), '-') AS order_no,
     COALESCE(NULLIF(pa.out_trade_no, ''), NULLIF(o.order_no, ''), '-') AS out_trade_no,
     CAST(COALESCE(NULLIF(pa.amount, ''), NULLIF(pi.amount, ''), '0') AS TEXT) AS amount,
+    COALESCE(NULLIF(pa.currency_code, ''), NULLIF(pi.currency_code, ''), NULLIF(o.currency_code, ''), 'CNY') AS currency_code,
     CAST(COALESCE(
         NULLIF(pa.callback_payload::jsonb ->> 'points', ''),
-        NULLIF(pa.amount, ''),
-        NULLIF(pi.amount, ''),
         '0'
     ) AS TEXT) AS points_value,
     COALESCE(NULLIF(pa.provider, ''), NULLIF(pi.provider, ''), '-') AS payment_method,
@@ -170,18 +363,39 @@ pub struct PostgresCommerceRechargeStore {
 #[derive(Debug, Clone)]
 struct RechargeMethod {
     method_key: String,
+    provider_code: String,
+    payment_product: String,
 }
 
 #[derive(Debug, Clone)]
 struct RechargePack {
     name: String,
+    price_amount: CommerceMoney,
+    currency_code: String,
     bonus_points: i64,
+    sku_id: String,
 }
 
 #[derive(Debug, Clone)]
 struct RechargeProductSku {
     sku_id: String,
     product_name: String,
+}
+
+#[derive(Debug, Clone)]
+struct RechargeSettingsModel {
+    base_currency_code: String,
+    base_points_per_cny: String,
+    currency_to_cny_rates: BTreeMap<String, String>,
+}
+
+#[derive(Debug, Deserialize, Default)]
+#[serde(rename_all = "camelCase")]
+struct RechargeSettingsRemark {
+    #[serde(default)]
+    base_currency_code: Option<String>,
+    #[serde(default)]
+    currency_to_cny_rates: BTreeMap<String, String>,
 }
 
 impl PostgresCommerceRechargeStore {
@@ -193,22 +407,53 @@ impl PostgresCommerceRechargeStore {
         &self,
         query: RechargePackageListQuery,
     ) -> Result<Vec<RechargePackageItem>, CommerceServiceError> {
-        let rows = sqlx::query(LOAD_RECHARGE_PACKAGES)
-            .bind(&query.tenant_id)
-            .bind(query.organization_id.as_deref())
-            .bind(current_query_timestamp())
-            .fetch_all(&self.pool)
-            .await
-            .map_err(|error| store_error("failed to list recharge packages", error))?;
+        let settings = self
+            .load_recharge_settings_model(&query.tenant_id, query.organization_id.as_deref())
+            .await?;
+        let rows = if query.tenant_id.trim().is_empty() {
+            sqlx::query(LOAD_RECHARGE_PACKAGES_PUBLIC)
+                .bind(current_query_timestamp())
+                .fetch_all(&self.pool)
+                .await
+        } else {
+            let scoped_rows = sqlx::query(LOAD_RECHARGE_PACKAGES_SCOPED)
+                .bind(&query.tenant_id)
+                .bind(query.organization_id.as_deref())
+                .bind(current_query_timestamp())
+                .fetch_all(&self.pool)
+                .await
+                .map_err(|error| store_error("failed to list recharge packages", error))?;
+            if scoped_rows.is_empty() {
+                sqlx::query(LOAD_RECHARGE_PACKAGES_PUBLIC)
+                    .bind(current_query_timestamp())
+                    .fetch_all(&self.pool)
+                    .await
+            } else {
+                Ok(scoped_rows)
+            }
+        }
+        .map_err(|error| store_error("failed to list recharge packages", error))?;
 
         rows.iter()
-            .map(|row| {
-                let rmb = commerce_money_cell(row, "rmb", "recharge package rmb")?;
-                let bonus = required_non_negative_integer_cell(row, "bonus")?;
-                let points = checked_points_add(recharge_base_points(rmb.as_str())?, bonus)?;
-                RechargePackageItem::new(&string_cell(row, "id"), rmb, bonus, points)
-            })
+            .map(|row| map_package_row(row, &settings))
             .collect()
+    }
+
+    pub async fn load_recharge_settings(
+        &self,
+        query: RechargeSettingsQuery,
+    ) -> Result<RechargeSettingsSnapshot, CommerceServiceError> {
+        let settings = self
+            .load_recharge_settings_model(&query.tenant_id, query.organization_id.as_deref())
+            .await?;
+        let preview_examples = build_recharge_preview_examples(&settings)?;
+
+        RechargeSettingsSnapshot::new(
+            &settings.base_currency_code,
+            &settings.base_points_per_cny,
+            settings.currency_to_cny_rates,
+            preview_examples,
+        )
     }
 
     pub async fn create_points_recharge_order(
@@ -220,12 +465,21 @@ impl PostgresCommerceRechargeStore {
             .begin()
             .await
             .map_err(|error| store_error("failed to begin recharge transaction", error))?;
+        let settings = load_recharge_settings_for_transaction(
+            &mut tx,
+            &command.tenant_id,
+            command.organization_id.as_deref(),
+        )
+        .await?;
         let method = load_recharge_method(&mut tx, &command).await?;
         let pack = load_recharge_pack(&mut tx, &command).await?;
-        let product = load_recharge_product_sku(&mut tx, &command).await?;
-        let base_points = recharge_base_points(command.amount.as_str())?;
-        let bonus_points = pack.as_ref().map(|item| item.bonus_points).unwrap_or(0);
-        let credited_points = checked_points_add(base_points, bonus_points)?;
+        let product = load_recharge_product_sku(&mut tx, &command, pack.as_ref()).await?;
+        let credited_points = compute_grant_amount(
+            command.amount.as_str(),
+            &command.currency_code,
+            pack.as_ref().map(|item| item.bonus_points).unwrap_or(0),
+            &settings,
+        )?;
         let product_name = pack
             .as_ref()
             .map(|item| item.name.clone())
@@ -239,14 +493,23 @@ impl PostgresCommerceRechargeStore {
         tx.commit()
             .await
             .map_err(|error| store_error("failed to commit recharge transaction", error))?;
+        let cashier_url = recharge_cashier_url(&command.order_no, &command.out_trade_no);
 
         Ok(CreatePointsRechargeOrderOutcome {
             success: true,
             order_no: command.order_no,
+            out_trade_no: command.out_trade_no,
             amount: command.amount,
+            currency_code: command.currency_code,
             points: credited_points,
+            provider_code: method.provider_code.clone(),
             payment_method: method.method_key,
+            payment_product: method.payment_product.clone(),
             status: "pending".to_string(),
+            next_action: "scan_qr".to_string(),
+            cashier_url: cashier_url.clone(),
+            qr_code_payload: cashier_url,
+            request_payment_payload: None,
         })
     }
 
@@ -265,6 +528,173 @@ impl PostgresCommerceRechargeStore {
 
         row.as_ref().map(map_checkout_status).transpose()
     }
+
+    async fn load_recharge_settings_model(
+        &self,
+        tenant_id: &str,
+        organization_id: Option<&str>,
+    ) -> Result<RechargeSettingsModel, CommerceServiceError> {
+        load_recharge_settings_from_pool(&self.pool, tenant_id, organization_id).await
+    }
+}
+
+async fn load_recharge_settings_from_pool(
+    pool: &PgPool,
+    tenant_id: &str,
+    organization_id: Option<&str>,
+) -> Result<RechargeSettingsModel, CommerceServiceError> {
+    let row = if tenant_id.trim().is_empty() {
+        sqlx::query(LOAD_RECHARGE_SETTINGS_PUBLIC)
+            .bind(RECHARGE_RULE_NO)
+            .fetch_optional(pool)
+            .await
+    } else {
+        let scoped_row = sqlx::query(LOAD_RECHARGE_SETTINGS_SCOPED)
+            .bind(tenant_id)
+            .bind(organization_id)
+            .bind(RECHARGE_RULE_NO)
+            .fetch_optional(pool)
+            .await
+            .map_err(|error| store_error("failed to load recharge settings", error))?;
+        if scoped_row.is_some() {
+            Ok(scoped_row)
+        } else {
+            sqlx::query(LOAD_RECHARGE_SETTINGS_PUBLIC)
+                .bind(RECHARGE_RULE_NO)
+                .fetch_optional(pool)
+                .await
+        }
+    }
+    .map_err(|error| store_error("failed to load recharge settings", error))?;
+
+    map_settings_row(row.as_ref())
+}
+
+async fn load_recharge_settings_for_transaction(
+    tx: &mut Transaction<'_, Postgres>,
+    tenant_id: &str,
+    organization_id: Option<&str>,
+) -> Result<RechargeSettingsModel, CommerceServiceError> {
+    let row = if tenant_id.trim().is_empty() {
+        sqlx::query(LOAD_RECHARGE_SETTINGS_PUBLIC)
+            .bind(RECHARGE_RULE_NO)
+            .fetch_optional(&mut **tx)
+            .await
+    } else {
+        let scoped_row = sqlx::query(LOAD_RECHARGE_SETTINGS_SCOPED)
+            .bind(tenant_id)
+            .bind(organization_id)
+            .bind(RECHARGE_RULE_NO)
+            .fetch_optional(&mut **tx)
+            .await
+            .map_err(|error| store_error("failed to load recharge settings", error))?;
+        if scoped_row.is_some() {
+            Ok(scoped_row)
+        } else {
+            sqlx::query(LOAD_RECHARGE_SETTINGS_PUBLIC)
+                .bind(RECHARGE_RULE_NO)
+                .fetch_optional(&mut **tx)
+                .await
+        }
+    }
+    .map_err(|error| store_error("failed to load recharge settings", error))?;
+    map_settings_row(row.as_ref())
+}
+
+fn map_settings_row(
+    row: Option<&sqlx::postgres::PgRow>,
+) -> Result<RechargeSettingsModel, CommerceServiceError> {
+    let base_points_per_cny = row
+        .map(|row| string_cell(row, "rate"))
+        .filter(|value| !value.trim().is_empty())
+        .map(|value| normalize_decimal_string(&value))
+        .unwrap_or_else(|| DEFAULT_BASE_POINTS_PER_CNY.to_string());
+    let remark_json = row
+        .map(|row| string_cell(row, "remark"))
+        .filter(|value| !value.trim().is_empty())
+        .unwrap_or_else(default_recharge_remark_json);
+    let remark = parse_recharge_settings_remark(&remark_json)?;
+    let mut currency_to_cny_rates = remark.currency_to_cny_rates;
+    if currency_to_cny_rates.is_empty() {
+        currency_to_cny_rates = default_currency_to_cny_rates();
+    }
+    currency_to_cny_rates
+        .entry(DEFAULT_BASE_CURRENCY_CODE.to_string())
+        .or_insert_with(|| "1".to_string());
+    let base_currency_code = remark
+        .base_currency_code
+        .unwrap_or_else(|| DEFAULT_BASE_CURRENCY_CODE.to_string())
+        .trim()
+        .to_ascii_uppercase();
+
+    Ok(RechargeSettingsModel {
+        base_currency_code,
+        base_points_per_cny,
+        currency_to_cny_rates,
+    })
+}
+
+fn parse_recharge_settings_remark(
+    json: &str,
+) -> Result<RechargeSettingsRemark, CommerceServiceError> {
+    serde_json::from_str::<RechargeSettingsRemark>(json).map_err(|error| {
+        CommerceServiceError::storage(format!("invalid recharge settings remark json: {error}"))
+    })
+}
+
+fn default_recharge_remark_json() -> String {
+    serde_json::json!({
+        "baseCurrencyCode": DEFAULT_BASE_CURRENCY_CODE,
+        "currencyToCnyRates": default_currency_to_cny_rates(),
+    })
+    .to_string()
+}
+
+fn default_currency_to_cny_rates() -> BTreeMap<String, String> {
+    BTreeMap::from([
+        (DEFAULT_BASE_CURRENCY_CODE.to_string(), "1".to_string()),
+        ("USD".to_string(), DEFAULT_USD_TO_CNY_RATE.to_string()),
+    ])
+}
+
+fn build_recharge_preview_examples(
+    settings: &RechargeSettingsModel,
+) -> Result<BTreeMap<String, BTreeMap<String, RechargeGrantPreview>>, CommerceServiceError> {
+    let mut preview_examples = BTreeMap::new();
+    for currency_code in settings.currency_to_cny_rates.keys() {
+        let mut examples = BTreeMap::new();
+        for amount in ["5", "10", "20", "30", "50", "100", "200", "500", "1000"] {
+            let grant_amount = compute_grant_amount(amount, currency_code, 0, settings)?;
+            examples.insert(amount.to_string(), RechargeGrantPreview { grant_amount });
+        }
+        preview_examples.insert(currency_code.clone(), examples);
+    }
+    Ok(preview_examples)
+}
+
+fn map_package_row(
+    row: &sqlx::postgres::PgRow,
+    settings: &RechargeSettingsModel,
+) -> Result<RechargePackageItem, CommerceServiceError> {
+    let price_amount = commerce_money_cell(row, "price_amount", "recharge package price amount")?;
+    let currency_code = string_cell(row, "currency_code")
+        .trim()
+        .to_ascii_uppercase();
+    let bonus_points = required_non_negative_integer_cell(row, "bonus_points")?;
+    let grant_amount = compute_grant_amount(
+        price_amount.as_str(),
+        &currency_code,
+        bonus_points,
+        settings,
+    )?;
+    RechargePackageItem::new(
+        &string_cell(row, "id"),
+        price_amount,
+        &currency_code,
+        bonus_points,
+        grant_amount,
+        grant_amount,
+    )
 }
 
 async fn load_recharge_method(
@@ -272,59 +702,201 @@ async fn load_recharge_method(
     command: &CreatePointsRechargeOrderCommand,
 ) -> Result<RechargeMethod, CommerceServiceError> {
     let alias = method_alias(&command.method);
-    let row = sqlx::query(LOAD_RECHARGE_METHOD)
+    let preferred_row = sqlx::query(LOAD_RECHARGE_METHOD)
         .bind(&command.tenant_id)
         .bind(command.organization_id.as_deref())
         .bind(&command.method)
         .bind(alias)
         .fetch_optional(&mut **tx)
         .await
-        .map_err(|error| store_error("failed to load recharge method", error))?
-        .ok_or_else(|| CommerceServiceError::conflict("recharge payment method is unavailable"))?;
-    let method_key = string_cell(&row, "method_key").to_ascii_lowercase();
-    Ok(RechargeMethod { method_key })
+        .map_err(|error| store_error("failed to load recharge method", error))?;
+    let row = match preferred_row {
+        Some(row) => row,
+        None => sqlx::query(LOAD_RECHARGE_METHOD_FALLBACK)
+            .bind(&command.tenant_id)
+            .bind(command.organization_id.as_deref())
+            .fetch_optional(&mut **tx)
+            .await
+            .map_err(|error| store_error("failed to load fallback recharge method", error))?
+            .ok_or_else(|| {
+                CommerceServiceError::conflict("recharge payment method is unavailable")
+            })?,
+    };
+    let method_key = normalize_method_key(&string_cell(&row, "method_key"));
+    let provider_code = recharge_provider_code(&method_key).to_string();
+    let payment_product = recharge_payment_product(&method_key).to_string();
+    Ok(RechargeMethod {
+        method_key,
+        provider_code,
+        payment_product,
+    })
 }
 
 async fn load_recharge_pack(
     tx: &mut Transaction<'_, Postgres>,
     command: &CreatePointsRechargeOrderCommand,
 ) -> Result<Option<RechargePack>, CommerceServiceError> {
-    let amount_match = decimal_sql_match_keys(command.amount.as_str());
-    let row = sqlx::query(LOAD_RECHARGE_PACK_FOR_AMOUNT)
-        .bind(&command.tenant_id)
-        .bind(command.organization_id.as_deref())
-        .bind(command.amount.as_str())
-        .bind(&amount_match.compact)
-        .bind(&amount_match.one_decimal)
-        .bind(&command.requested_at)
-        .fetch_optional(&mut **tx)
-        .await
-        .map_err(|error| store_error("failed to load recharge package", error))?;
+    if let Some(package_id) = command.package_id.as_deref() {
+        let row = if command.tenant_id.trim().is_empty() {
+            sqlx::query(LOAD_RECHARGE_PACK_BY_ID_PUBLIC)
+                .bind(package_id)
+                .bind(&command.requested_at)
+                .fetch_optional(&mut **tx)
+                .await
+        } else {
+            let scoped_row = sqlx::query(LOAD_RECHARGE_PACK_BY_ID)
+                .bind(&command.tenant_id)
+                .bind(command.organization_id.as_deref())
+                .bind(package_id)
+                .bind(&command.requested_at)
+                .fetch_optional(&mut **tx)
+                .await
+                .map_err(|error| store_error("failed to load recharge package by id", error))?;
+            if scoped_row.is_some() {
+                Ok(scoped_row)
+            } else {
+                sqlx::query(LOAD_RECHARGE_PACK_BY_ID_PUBLIC)
+                    .bind(package_id)
+                    .bind(&command.requested_at)
+                    .fetch_optional(&mut **tx)
+                    .await
+            }
+        }
+        .map_err(|error| store_error("failed to load recharge package by id", error))?;
+        let Some(row) = row else {
+            return Err(CommerceServiceError::conflict(
+                "recharge package is unavailable",
+            ));
+        };
+        let pack = map_recharge_pack_row(&row)?;
+        ensure_command_matches_package(command, &pack)?;
+        return Ok(Some(pack));
+    }
 
-    row.map(|row| {
-        Ok(RechargePack {
-            name: string_cell(&row, "name"),
-            bonus_points: required_non_negative_integer_cell(&row, "bonus")?,
-        })
+    let amount_match = decimal_sql_match_keys(command.amount.as_str());
+    let row = if command.tenant_id.trim().is_empty() {
+        sqlx::query(LOAD_RECHARGE_PACK_FOR_AMOUNT_PUBLIC)
+            .bind(&command.currency_code)
+            .bind(command.amount.as_str())
+            .bind(&amount_match.compact)
+            .bind(&amount_match.one_decimal)
+            .bind(&command.requested_at)
+            .fetch_optional(&mut **tx)
+            .await
+    } else {
+        let scoped_row = sqlx::query(LOAD_RECHARGE_PACK_FOR_AMOUNT)
+            .bind(&command.tenant_id)
+            .bind(command.organization_id.as_deref())
+            .bind(&command.currency_code)
+            .bind(command.amount.as_str())
+            .bind(&amount_match.compact)
+            .bind(&amount_match.one_decimal)
+            .bind(&command.requested_at)
+            .fetch_optional(&mut **tx)
+            .await
+            .map_err(|error| store_error("failed to load recharge package", error))?;
+        if scoped_row.is_some() {
+            Ok(scoped_row)
+        } else {
+            sqlx::query(LOAD_RECHARGE_PACK_FOR_AMOUNT_PUBLIC)
+                .bind(&command.currency_code)
+                .bind(command.amount.as_str())
+                .bind(&amount_match.compact)
+                .bind(&amount_match.one_decimal)
+                .bind(&command.requested_at)
+                .fetch_optional(&mut **tx)
+                .await
+        }
+    }
+    .map_err(|error| store_error("failed to load recharge package", error))?;
+
+    row.as_ref().map(map_recharge_pack_row).transpose()
+}
+
+fn map_recharge_pack_row(
+    row: &sqlx::postgres::PgRow,
+) -> Result<RechargePack, CommerceServiceError> {
+    Ok(RechargePack {
+        name: string_cell(row, "name"),
+        price_amount: commerce_money_cell(row, "price_amount", "recharge package price amount")?,
+        currency_code: string_cell(row, "currency_code")
+            .trim()
+            .to_ascii_uppercase(),
+        bonus_points: required_non_negative_integer_cell(row, "bonus_points")?,
+        sku_id: string_cell(row, "sku_id"),
     })
-    .transpose()
+}
+
+fn ensure_command_matches_package(
+    command: &CreatePointsRechargeOrderCommand,
+    pack: &RechargePack,
+) -> Result<(), CommerceServiceError> {
+    if pack.currency_code != command.currency_code {
+        return Err(CommerceServiceError::validation(
+            "recharge currency code does not match package currency",
+        ));
+    }
+    if pack.price_amount != command.amount {
+        return Err(CommerceServiceError::validation(
+            "recharge amount does not match package amount",
+        ));
+    }
+    Ok(())
 }
 
 async fn load_recharge_product_sku(
     tx: &mut Transaction<'_, Postgres>,
     command: &CreatePointsRechargeOrderCommand,
+    pack: Option<&RechargePack>,
 ) -> Result<RechargeProductSku, CommerceServiceError> {
+    if let Some(pack) = pack {
+        let row = sqlx::query(LOAD_RECHARGE_PRODUCT_SKU_BY_ID)
+            .bind(&pack.sku_id)
+            .fetch_optional(&mut **tx)
+            .await
+            .map_err(|error| store_error("failed to load recharge product sku by id", error))?
+            .ok_or_else(|| CommerceServiceError::conflict("recharge product sku is unavailable"))?;
+
+        return Ok(RechargeProductSku {
+            sku_id: string_cell(&row, "sku_id"),
+            product_name: string_cell(&row, "product_name"),
+        });
+    }
+
     let amount_match = decimal_sql_match_keys(command.amount.as_str());
-    let row = sqlx::query(LOAD_RECHARGE_PRODUCT_SKU)
-        .bind(&command.tenant_id)
-        .bind(command.organization_id.as_deref())
-        .bind(command.amount.as_str())
-        .bind(&amount_match.compact)
-        .bind(&amount_match.one_decimal)
-        .fetch_optional(&mut **tx)
-        .await
-        .map_err(|error| store_error("failed to load recharge product sku", error))?
-        .ok_or_else(|| CommerceServiceError::conflict("recharge product sku is unavailable"))?;
+    let row = if command.tenant_id.trim().is_empty() {
+        sqlx::query(LOAD_RECHARGE_PRODUCT_SKU_FOR_AMOUNT_PUBLIC)
+            .bind(&command.currency_code)
+            .bind(command.amount.as_str())
+            .bind(&amount_match.compact)
+            .bind(&amount_match.one_decimal)
+            .fetch_optional(&mut **tx)
+            .await
+    } else {
+        let scoped_row = sqlx::query(LOAD_RECHARGE_PRODUCT_SKU_FOR_AMOUNT)
+            .bind(&command.tenant_id)
+            .bind(command.organization_id.as_deref())
+            .bind(&command.currency_code)
+            .bind(command.amount.as_str())
+            .bind(&amount_match.compact)
+            .bind(&amount_match.one_decimal)
+            .fetch_optional(&mut **tx)
+            .await
+            .map_err(|error| store_error("failed to load recharge product sku", error))?;
+        if scoped_row.is_some() {
+            Ok(scoped_row)
+        } else {
+            sqlx::query(LOAD_RECHARGE_PRODUCT_SKU_FOR_AMOUNT_PUBLIC)
+                .bind(&command.currency_code)
+                .bind(command.amount.as_str())
+                .bind(&amount_match.compact)
+                .bind(&amount_match.one_decimal)
+                .fetch_optional(&mut **tx)
+                .await
+        }
+    }
+    .map_err(|error| store_error("failed to load recharge product sku", error))?
+    .ok_or_else(|| CommerceServiceError::conflict("recharge product sku is unavailable"))?;
 
     Ok(RechargeProductSku {
         sku_id: string_cell(&row, "sku_id"),
@@ -341,7 +913,7 @@ async fn insert_order(
         INSERT INTO commerce_order
             (id, tenant_id, organization_id, owner_user_id, order_no, status, subject, currency_code, request_no, idempotency_key, created_at, paid_at, cancelled_at, expired_at, updated_at)
         VALUES
-            ($1, CAST($2 AS TEXT), CAST($3 AS TEXT), CAST($4 AS TEXT), $5, 'pending_payment', 'points_recharge', 'CNY', $6, $7, $8, NULL, NULL, $9, $8)
+            ($1, CAST($2 AS TEXT), CAST($3 AS TEXT), CAST($4 AS TEXT), $5, 'pending_payment', 'points_recharge', $6, $7, $8, $9, NULL, NULL, $10, $9)
         "#,
     )
     .bind(&command.order_id)
@@ -349,6 +921,7 @@ async fn insert_order(
     .bind(command.organization_id.as_deref())
     .bind(&command.owner_user_id)
     .bind(&command.order_no)
+    .bind(&command.currency_code)
     .bind(&command.order_no)
     .bind(&command.idempotency_key)
     .bind(&command.requested_at)
@@ -395,13 +968,14 @@ async fn insert_order_amount_breakdown(
         INSERT INTO commerce_order_amount_breakdown
             (id, tenant_id, order_id, original_amount, discount_amount, payable_amount, currency_code, created_at)
         VALUES
-            ($1, CAST($2 AS TEXT), $3, $4, '0.00', $4, 'CNY', $5)
+            ($1, CAST($2 AS TEXT), $3, $4, '0.00', $4, $5, $6)
         "#,
     )
     .bind(format!("{}-amount", command.order_id))
     .bind(&command.tenant_id)
     .bind(&command.order_id)
     .bind(command.amount.as_str())
+    .bind(&command.currency_code)
     .bind(&command.requested_at)
     .execute(&mut **tx)
     .await
@@ -420,7 +994,7 @@ async fn insert_payment(
         INSERT INTO commerce_payment_intent
             (id, tenant_id, organization_id, owner_user_id, order_id, provider, amount, currency_code, status, request_no, idempotency_key, created_at, updated_at)
         VALUES
-            ($1, CAST($2 AS TEXT), CAST($3 AS TEXT), CAST($4 AS TEXT), $5, $6, $7, 'CNY', $8, $9, $10, $11, $11)
+            ($1, CAST($2 AS TEXT), CAST($3 AS TEXT), CAST($4 AS TEXT), $5, $6, $7, $8, $9, $10, $11, $12, $12)
         "#,
     )
     .bind(&command.payment_intent_id)
@@ -430,6 +1004,7 @@ async fn insert_payment(
     .bind(&command.order_id)
     .bind(&method.method_key)
     .bind(command.amount.as_str())
+    .bind(&command.currency_code)
     .bind(CommercePaymentStatus::Pending.as_str())
     .bind(&command.order_no)
     .bind(&command.idempotency_key)
@@ -442,7 +1017,7 @@ async fn insert_payment(
         INSERT INTO commerce_payment_attempt
             (id, tenant_id, organization_id, owner_user_id, payment_intent_id, order_id, provider, out_trade_no, amount, currency_code, status, callback_payload, created_at, paid_at, updated_at)
         VALUES
-            ($1, CAST($2 AS TEXT), CAST($3 AS TEXT), CAST($4 AS TEXT), $5, $6, $7, $8, $9, 'CNY', $10, $11, $12, NULL, $12)
+            ($1, CAST($2 AS TEXT), CAST($3 AS TEXT), CAST($4 AS TEXT), $5, $6, $7, $8, $9, $10, $11, $12, $13, NULL, $13)
         "#,
     )
     .bind(&command.payment_attempt_id)
@@ -454,8 +1029,14 @@ async fn insert_payment(
     .bind(&method.method_key)
     .bind(&command.out_trade_no)
     .bind(command.amount.as_str())
+    .bind(&command.currency_code)
     .bind(CommercePaymentStatus::Pending.as_str())
-    .bind(format!(r#"{{"points":{credited_points}}}"#))
+    .bind(recharge_payment_callback_payload(
+        credited_points,
+        command.package_id.as_deref(),
+        command.client_request_no.as_deref(),
+        command.source.as_deref(),
+    ))
     .bind(&command.requested_at)
     .execute(&mut **tx)
     .await
@@ -478,9 +1059,9 @@ async fn insert_recharge_billing_history(
              related_order_no, payment_method, occurred_at, metadata_json, created_at, updated_at)
         VALUES
             ($1, CAST($2 AS TEXT), CAST($3 AS TEXT), CAST($4 AS TEXT), $5, 'recharge',
-             'credit', 'points', $6, 'CNY', $7, 'pending',
-             'Recharge', $8, 'commerce_order', $9, $10,
-             $11, $12, $13, NULL, $13, $13)
+             'credit', 'points', $6, $7, $8, 'pending',
+             'Recharge', $9, 'commerce_order', $10, $11,
+             $12, $13, $14, $15, $14, $14)
         ON CONFLICT (tenant_id, source_type, source_id) DO NOTHING
         "#,
     )
@@ -490,6 +1071,7 @@ async fn insert_recharge_billing_history(
     .bind(&command.owner_user_id)
     .bind(format!("BH-{}", command.order_no))
     .bind(command.amount.as_str())
+    .bind(&command.currency_code)
     .bind(credited_points)
     .bind(&command.order_no)
     .bind(&command.order_id)
@@ -497,10 +1079,36 @@ async fn insert_recharge_billing_history(
     .bind(&command.order_no)
     .bind(&method.method_key)
     .bind(&command.requested_at)
+    .bind(recharge_history_metadata_json(command))
     .execute(&mut **tx)
     .await
     .map_err(|error| store_error("failed to insert recharge billing history", error))?;
     Ok(())
+}
+
+fn recharge_history_metadata_json(command: &CreatePointsRechargeOrderCommand) -> String {
+    serde_json::json!({
+        "clientRequestNo": command.client_request_no,
+        "packageId": command.package_id,
+        "source": command.source,
+        "currencyCode": command.currency_code,
+    })
+    .to_string()
+}
+
+fn recharge_payment_callback_payload(
+    credited_points: i64,
+    package_id: Option<&str>,
+    client_request_no: Option<&str>,
+    source: Option<&str>,
+) -> String {
+    serde_json::json!({
+        "points": credited_points,
+        "packageId": package_id,
+        "clientRequestNo": client_request_no,
+        "source": source,
+    })
+    .to_string()
 }
 
 fn map_checkout_status(
@@ -531,8 +1139,21 @@ fn map_checkout_status(
         order_no: string_cell(row, "order_no"),
         out_trade_no: out_trade_no.clone(),
         amount: commerce_money_cell(row, "amount", "checkout amount")?,
+        currency_code: string_cell(row, "currency_code")
+            .trim()
+            .to_ascii_uppercase(),
         points: checkout_points(&string_cell(row, "points_value"))?,
-        payment_method: string_cell(row, "payment_method"),
+        provider_code: recharge_provider_code(&normalize_method_key(&string_cell(
+            row,
+            "payment_method",
+        )))
+        .to_string(),
+        payment_method: normalize_method_key(&string_cell(row, "payment_method")),
+        payment_product: recharge_payment_product(&normalize_method_key(&string_cell(
+            row,
+            "payment_method",
+        )))
+        .to_string(),
         order_status,
         payment_status: checkout_effective_payment_status(&payment_status, &payment_attempt_status),
         recharge_status,
@@ -541,7 +1162,9 @@ fn map_checkout_status(
         expires_at: string_cell(row, "expires_at"),
         paid_at: string_cell(row, "paid_at"),
         next_action: checkout_next_action(status).to_string(),
-        qr_code_payload: out_trade_no,
+        cashier_url: recharge_cashier_url(&string_cell(row, "order_no"), &out_trade_no),
+        qr_code_payload: recharge_cashier_url(&string_cell(row, "order_no"), &out_trade_no),
+        request_payment_payload: None,
     })
 }
 
@@ -618,12 +1241,16 @@ fn checkout_effective_payment_status(payment_status: &str, payment_attempt_statu
 fn checkout_next_action(status: &str) -> &'static str {
     match status {
         "success" => "completed",
-        "failed" => "contactSupport",
-        "expired" => "restartPayment",
-        "refunding" => "awaitRefund",
-        "refunded" => "refundCompleted",
-        _ => "awaitPayment",
+        "failed" | "expired" | "refunding" => "pending",
+        "refunded" => "completed",
+        _ => "scan_qr",
     }
+}
+
+fn recharge_cashier_url(order_no: &str, out_trade_no: &str) -> String {
+    format!(
+        "https://im.sdkwork.com/cashier?scene=recharge&orderId={order_no}&outTradeNo={out_trade_no}"
+    )
 }
 
 fn order_status_label(value: &str) -> Result<&'static str, CommerceServiceError> {
@@ -653,23 +1280,7 @@ fn payment_status_label(value: &str) -> Result<&'static str, CommerceServiceErro
     }
 }
 
-fn recharge_base_points(amount: &str) -> Result<i64, CommerceServiceError> {
-    let cents = money_cents(amount)?;
-    if cents <= 0 {
-        return Err(CommerceServiceError::validation(
-            "recharge amount must be greater than zero",
-        ));
-    }
-    let rounded_cents = cents
-        .checked_add(5)
-        .ok_or_else(|| CommerceServiceError::storage("recharge points rounding overflow"))?;
-    Ok((rounded_cents / 10).max(1))
-}
-
 fn checkout_points(value: &str) -> Result<i64, CommerceServiceError> {
-    if value.trim().contains('.') {
-        return checkout_points_from_amount(value);
-    }
     let points = value
         .trim()
         .parse::<i64>()
@@ -682,9 +1293,102 @@ fn checkout_points(value: &str) -> Result<i64, CommerceServiceError> {
     Ok(points)
 }
 
-fn checkout_points_from_amount(amount: &str) -> Result<i64, CommerceServiceError> {
-    let cents = money_cents(amount)?;
-    Ok(cents / 10)
+fn compute_grant_amount(
+    amount: &str,
+    currency_code: &str,
+    bonus_points: i64,
+    settings: &RechargeSettingsModel,
+) -> Result<i64, CommerceServiceError> {
+    let amount_scaled = decimal_to_scaled_i128(amount, 2)?;
+    if amount_scaled <= 0 {
+        return Err(CommerceServiceError::validation(
+            "recharge amount must be greater than zero",
+        ));
+    }
+    let base_points_scaled = decimal_to_scaled_i128(&settings.base_points_per_cny, 6)?;
+    let currency_rate = settings
+        .currency_to_cny_rates
+        .get(&currency_code.trim().to_ascii_uppercase())
+        .cloned()
+        .unwrap_or_else(|| {
+            settings
+                .currency_to_cny_rates
+                .get(DEFAULT_BASE_CURRENCY_CODE)
+                .cloned()
+                .unwrap_or_else(|| "1".to_string())
+        });
+    let currency_rate_scaled = decimal_to_scaled_i128(&currency_rate, 6)?;
+    let numerator = amount_scaled
+        .checked_mul(currency_rate_scaled)
+        .and_then(|value| value.checked_mul(base_points_scaled))
+        .ok_or_else(|| CommerceServiceError::storage("recharge credited points overflow"))?;
+    let denominator = 100_i128 * 1_000_000_i128 * 1_000_000_i128;
+    let rounded = round_divide_i128(numerator, denominator);
+    let credited_points = rounded
+        .checked_add(i128::from(bonus_points))
+        .ok_or_else(|| CommerceServiceError::storage("recharge credited points overflow"))?;
+    i64::try_from(credited_points)
+        .map_err(|_| CommerceServiceError::storage("recharge credited points overflow"))
+}
+
+fn round_divide_i128(numerator: i128, denominator: i128) -> i128 {
+    if denominator == 0 {
+        return 0;
+    }
+    if numerator >= 0 {
+        (numerator + denominator / 2) / denominator
+    } else {
+        (numerator - denominator / 2) / denominator
+    }
+}
+
+fn decimal_to_scaled_i128(value: &str, scale: usize) -> Result<i128, CommerceServiceError> {
+    let normalized = value.trim();
+    if normalized.is_empty() {
+        return Err(CommerceServiceError::storage(
+            "decimal value must not be empty",
+        ));
+    }
+    let mut parts = normalized.split('.');
+    let whole = parts
+        .next()
+        .unwrap_or_default()
+        .parse::<i128>()
+        .map_err(|_| CommerceServiceError::storage(format!("invalid decimal value: {value}")))?;
+    let fraction = parts.next().unwrap_or_default();
+    if parts.next().is_some() || fraction.len() > scale {
+        return Err(CommerceServiceError::storage(format!(
+            "invalid decimal value: {value}"
+        )));
+    }
+    let mut padded = fraction.to_string();
+    while padded.len() < scale {
+        padded.push('0');
+    }
+    let fraction_scaled = if padded.is_empty() {
+        0
+    } else {
+        padded
+            .parse::<i128>()
+            .map_err(|_| CommerceServiceError::storage(format!("invalid decimal value: {value}")))?
+    };
+    whole
+        .checked_mul(10_i128.pow(scale as u32))
+        .and_then(|scaled| scaled.checked_add(fraction_scaled))
+        .ok_or_else(|| CommerceServiceError::storage(format!("invalid decimal value: {value}")))
+}
+
+fn normalize_decimal_string(value: &str) -> String {
+    let trimmed = value.trim();
+    if !trimmed.contains('.') {
+        return trimmed.to_string();
+    }
+    let normalized = trimmed.trim_end_matches('0').trim_end_matches('.');
+    if normalized.is_empty() {
+        "0".to_string()
+    } else {
+        normalized.to_string()
+    }
 }
 
 fn money_cents(amount: &str) -> Result<i64, CommerceServiceError> {
@@ -812,11 +1516,6 @@ fn required_non_negative_integer_cell(
     Ok(value)
 }
 
-fn checked_points_add(left: i64, right: i64) -> Result<i64, CommerceServiceError> {
-    left.checked_add(right)
-        .ok_or_else(|| CommerceServiceError::storage("recharge credited points overflow"))
-}
-
 struct DecimalSqlMatchKeys {
     compact: String,
     one_decimal: String,
@@ -839,11 +1538,37 @@ fn decimal_sql_match_keys(amount: &str) -> DecimalSqlMatchKeys {
     }
 }
 
+fn normalize_method_key(method: &str) -> String {
+    match method.trim().to_ascii_lowercase().as_str() {
+        "wechat_pay" => "wechat".to_string(),
+        value => value.to_string(),
+    }
+}
+
+fn recharge_provider_code(method: &str) -> &'static str {
+    match method.trim().to_ascii_lowercase().as_str() {
+        "wechat" | "wechat_pay" | "wechatpay" => "wechat_pay",
+        "alipay" | "ali" => "alipay",
+        "card" | "stripe" => "stripe",
+        _ => "wechat_pay",
+    }
+}
+
+fn recharge_payment_product(method: &str) -> &'static str {
+    match method.trim().to_ascii_lowercase().as_str() {
+        "wechat" | "wechat_pay" | "wechatpay" => "wechat_native",
+        "alipay" | "ali" => "alipay_page",
+        "card" | "stripe" => "card",
+        _ => "wechat_native",
+    }
+}
+
 fn method_alias(method: &str) -> &str {
     match method {
         "card" => "stripe",
         "stripe" => "card",
-        "wechatpay" => "wechat",
+        "wechat" => "wechat_pay",
+        "wechatpay" | "wechat_pay" => "wechat",
         _ => method,
     }
 }
@@ -883,15 +1608,27 @@ fn civil_from_days(days: i64) -> (i64, i64, i64) {
 
 #[cfg(test)]
 mod tests {
-    #[test]
-    fn postgres_recharge_points_math_rejects_overflow() {
-        let error = super::recharge_base_points("92233720368547758.03")
-            .expect_err("rounding overflow must fail");
-        assert_eq!("storage", error.code());
+    use super::*;
 
-        let error =
-            super::checked_points_add(i64::MAX, 1).expect_err("credited points overflow must fail");
-        assert_eq!("storage", error.code());
+    #[test]
+    fn postgres_recharge_points_math_uses_currency_rate_and_bonus() {
+        let settings = RechargeSettingsModel {
+            base_currency_code: "CNY".to_string(),
+            base_points_per_cny: "10".to_string(),
+            currency_to_cny_rates: BTreeMap::from([
+                ("CNY".to_string(), "1".to_string()),
+                ("USD".to_string(), "7.5".to_string()),
+            ]),
+        };
+
+        assert_eq!(
+            compute_grant_amount("12.00", "CNY", 30, &settings).unwrap(),
+            150
+        );
+        assert_eq!(
+            compute_grant_amount("20.00", "USD", 50, &settings).unwrap(),
+            1550
+        );
     }
 
     #[test]

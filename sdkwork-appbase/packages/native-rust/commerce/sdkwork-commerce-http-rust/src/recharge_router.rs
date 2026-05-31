@@ -9,9 +9,12 @@ use axum::response::{IntoResponse, Response};
 use axum::routing::{get, post};
 use axum::{Json, Router};
 use sdkwork_commerce_core::{CommerceMoney, CommerceServiceError};
+use std::collections::BTreeMap;
+
 use sdkwork_commerce_payment::{
     CheckoutStatusQuery, CheckoutStatusSnapshot, CreatePointsRechargeOrderCommand,
-    CreatePointsRechargeOrderOutcome, RechargePackageItem, RechargePackageListQuery,
+    CreatePointsRechargeOrderOutcome, RechargeGrantPreview, RechargePackageItem,
+    RechargePackageListQuery, RechargeSettingsQuery, RechargeSettingsSnapshot,
 };
 use sdkwork_commerce_storage_sqlx::{PostgresCommerceRechargeStore, SqliteCommerceRechargeStore};
 use sdkwork_iam_core::IamAppContext;
@@ -23,10 +26,10 @@ use crate::with_request_identity;
 
 const IDEMPOTENCY_KEY_HEADER: &str = "Idempotency-Key";
 const REQUEST_NO_HEADER: &str = "Sdkwork-Request-No";
-const MAX_PAYMENT_METHOD_LEN: usize = 50;
 const MAX_CHECKOUT_ORDER_NO_LEN: usize = 128;
 const MAX_RECHARGE_CENTS: i64 = 1_000_000;
 const PAYMENT_EXPIRE_SECONDS: i64 = 1_800;
+const DEFAULT_RECHARGE_PAYMENT_METHOD: &str = "wechat";
 
 pub type AppbaseRechargeCheckoutFuture<'a, T> =
     Pin<Box<dyn Future<Output = Result<T, CommerceServiceError>> + Send + 'a>>;
@@ -36,6 +39,11 @@ pub trait AppbaseRechargeCheckoutStore: Send + Sync {
         &'a self,
         query: RechargePackageListQuery,
     ) -> AppbaseRechargeCheckoutFuture<'a, Vec<RechargePackageItem>>;
+
+    fn load_recharge_settings<'a>(
+        &'a self,
+        query: RechargeSettingsQuery,
+    ) -> AppbaseRechargeCheckoutFuture<'a, RechargeSettingsSnapshot>;
 
     fn create_points_recharge_order<'a>(
         &'a self,
@@ -57,33 +65,31 @@ struct AppRechargeCheckoutState {
 #[serde(rename_all = "camelCase")]
 struct SubmitRechargeRequest {
     amount: Option<serde_json::Value>,
-    method: Option<String>,
-    metadata: Option<serde_json::Value>,
+    client_request_no: Option<String>,
+    currency_code: Option<String>,
+    package_id: Option<String>,
+    source: Option<String>,
 }
 
 impl SubmitRechargeRequest {
     fn amount_value(&self) -> Option<&serde_json::Value> {
-        self.amount
-            .as_ref()
-            .or_else(|| self.metadata_value("amount"))
+        self.amount.as_ref()
     }
 
-    fn payment_method(&self) -> Option<&str> {
-        self.method
-            .as_deref()
-            .or_else(|| self.metadata_text("paymentMethod"))
-            .or_else(|| self.metadata_text("method"))
+    fn currency_code(&self) -> Option<&str> {
+        self.currency_code.as_deref()
     }
 
-    fn metadata_text(&self, key: &str) -> Option<&str> {
-        self.metadata_value(key).and_then(serde_json::Value::as_str)
+    fn package_id(&self) -> Option<&str> {
+        self.package_id.as_deref()
     }
 
-    fn metadata_value(&self, key: &str) -> Option<&serde_json::Value> {
-        self.metadata
-            .as_ref()
-            .and_then(serde_json::Value::as_object)
-            .and_then(|metadata| metadata.get(key))
+    fn client_request_no(&self) -> Option<&str> {
+        self.client_request_no.as_deref()
+    }
+
+    fn source(&self) -> Option<&str> {
+        self.source.as_deref()
     }
 }
 
@@ -100,9 +106,32 @@ struct AppRechargeApiResult<T: Serialize> {
 #[serde(rename_all = "camelCase")]
 struct RechargePackageResponse {
     id: String,
-    rmb: String,
-    bonus: i64,
+    price_amount: String,
+    currency_code: String,
+    bonus_points: i64,
+    grant_amount: i64,
     points: i64,
+}
+
+#[derive(Debug, Serialize)]
+#[serde(rename_all = "camelCase")]
+struct RechargePackageListResponse {
+    items: Vec<RechargePackageResponse>,
+}
+
+#[derive(Debug, Serialize)]
+#[serde(rename_all = "camelCase")]
+struct RechargeGrantPreviewResponse {
+    grant_amount: i64,
+}
+
+#[derive(Debug, Serialize)]
+#[serde(rename_all = "camelCase")]
+struct RechargeSettingsResponse {
+    base_currency_code: String,
+    base_points_per_cny: String,
+    currency_to_cny_rates: BTreeMap<String, String>,
+    preview_examples: BTreeMap<String, BTreeMap<String, RechargeGrantPreviewResponse>>,
 }
 
 #[derive(Debug, Serialize)]
@@ -110,10 +139,19 @@ struct RechargePackageResponse {
 struct SubmitRechargeResponse {
     success: bool,
     order_no: String,
+    out_trade_no: String,
     amount: String,
+    currency_code: String,
     points: i64,
+    provider_code: String,
     payment_method: String,
+    payment_product: String,
     status: String,
+    next_action: String,
+    cashier_url: String,
+    qr_code_payload: String,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    request_payment_payload: Option<String>,
 }
 
 #[derive(Debug, Serialize)]
@@ -122,8 +160,11 @@ struct CheckoutStatusResponse {
     order_no: String,
     out_trade_no: String,
     amount: String,
+    currency_code: String,
     points: i64,
+    provider_code: String,
     payment_method: String,
+    payment_product: String,
     order_status: String,
     payment_status: String,
     recharge_status: String,
@@ -132,7 +173,10 @@ struct CheckoutStatusResponse {
     expires_at: String,
     paid_at: String,
     next_action: String,
+    cashier_url: String,
     qr_code_payload: String,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    request_payment_payload: Option<String>,
 }
 
 impl AppbaseRechargeCheckoutStore for SqliteCommerceRechargeStore {
@@ -148,6 +192,13 @@ impl AppbaseRechargeCheckoutStore for SqliteCommerceRechargeStore {
         command: CreatePointsRechargeOrderCommand,
     ) -> AppbaseRechargeCheckoutFuture<'a, CreatePointsRechargeOrderOutcome> {
         Box::pin(async move { self.create_points_recharge_order(command).await })
+    }
+
+    fn load_recharge_settings<'a>(
+        &'a self,
+        query: RechargeSettingsQuery,
+    ) -> AppbaseRechargeCheckoutFuture<'a, RechargeSettingsSnapshot> {
+        Box::pin(async move { self.load_recharge_settings(query).await })
     }
 
     fn retrieve_checkout_status<'a>(
@@ -171,6 +222,13 @@ impl AppbaseRechargeCheckoutStore for PostgresCommerceRechargeStore {
         command: CreatePointsRechargeOrderCommand,
     ) -> AppbaseRechargeCheckoutFuture<'a, CreatePointsRechargeOrderOutcome> {
         Box::pin(async move { self.create_points_recharge_order(command).await })
+    }
+
+    fn load_recharge_settings<'a>(
+        &'a self,
+        query: RechargeSettingsQuery,
+    ) -> AppbaseRechargeCheckoutFuture<'a, RechargeSettingsSnapshot> {
+        Box::pin(async move { self.load_recharge_settings(query).await })
     }
 
     fn retrieve_checkout_status<'a>(
@@ -218,6 +276,10 @@ pub fn app_recharge_checkout_router_with_store(
                 "/app/v3/api/recharges/packages",
                 get(fetch_recharge_packages),
             )
+            .route(
+                "/app/v3/api/recharges/settings",
+                get(fetch_recharge_settings),
+            )
             .route("/app/v3/api/recharges/orders", post(submit_recharge))
             .route(
                 "/app/v3/api/recharges/orders/{orderId}",
@@ -231,26 +293,48 @@ async fn fetch_recharge_packages(
     State(state): State<AppRechargeCheckoutState>,
     runtime_context: Option<Extension<IamAppContext>>,
 ) -> Response {
-    let subject = match app_runtime_subject_from_extension(runtime_context) {
-        Ok(subject) => subject,
-        Err(message) => return unauthorized_response(message),
-    };
-    let query = match RechargePackageListQuery::new(
-        &subject.tenant_id,
-        subject.organization_id.as_deref(),
-        &subject.user_id,
-    ) {
-        Ok(query) => query,
-        Err(error) => return commerce_error_response(error),
+    let query = match app_runtime_subject_from_extension(runtime_context) {
+        Ok(subject) => match RechargePackageListQuery::new(
+            &subject.tenant_id,
+            subject.organization_id.as_deref(),
+        ) {
+            Ok(query) => query,
+            Err(error) => return commerce_error_response(error),
+        },
+        Err(_) => RechargePackageListQuery::public(),
     };
 
     match state.store.list_recharge_packages(query).await {
-        Ok(items) => Json(AppRechargeApiResult::success(
-            items
+        Ok(items) => Json(AppRechargeApiResult::success(RechargePackageListResponse {
+            items: items
                 .into_iter()
                 .map(map_recharge_package)
                 .collect::<Vec<_>>(),
-        ))
+        }))
+        .into_response(),
+        Err(error) => commerce_error_response(error),
+    }
+}
+
+async fn fetch_recharge_settings(
+    State(state): State<AppRechargeCheckoutState>,
+    runtime_context: Option<Extension<IamAppContext>>,
+) -> Response {
+    let query = match app_runtime_subject_from_extension(runtime_context) {
+        Ok(subject) => {
+            match RechargeSettingsQuery::new(&subject.tenant_id, subject.organization_id.as_deref())
+            {
+                Ok(query) => query,
+                Err(error) => return commerce_error_response(error),
+            }
+        }
+        Err(_) => RechargeSettingsQuery::public(),
+    };
+
+    match state.store.load_recharge_settings(query).await {
+        Ok(settings) => Json(AppRechargeApiResult::success(map_recharge_settings(
+            settings,
+        )))
         .into_response(),
         Err(error) => commerce_error_response(error),
     }
@@ -270,10 +354,11 @@ async fn submit_recharge(
         Ok(amount) => amount,
         Err(message) => return validation_response(message),
     };
-    let method = match validate_payment_method(request.payment_method()) {
-        Ok(method) => method,
+    let currency_code = match validate_currency_code(request.currency_code()) {
+        Ok(value) => value,
         Err(message) => return validation_response(message),
     };
+    let method = DEFAULT_RECHARGE_PAYMENT_METHOD.to_string();
     let idempotency_key = match required_text_header(&headers, IDEMPOTENCY_KEY_HEADER) {
         Ok(value) => value,
         Err(response) => return response,
@@ -284,9 +369,13 @@ async fn submit_recharge(
     let command = match build_create_recharge_command(
         &subject,
         amount,
+        &currency_code,
         &method,
         &request_no,
         &idempotency_key,
+        request.package_id(),
+        request.client_request_no(),
+        request.source(),
     ) {
         Ok(command) => command,
         Err(error) => return commerce_error_response(error),
@@ -380,20 +469,16 @@ fn validate_recharge_amount(value: Option<&serde_json::Value>) -> Result<Commerc
     CommerceMoney::new(&format_money_minor(cents)).map_err(str::to_string)
 }
 
-fn validate_payment_method(value: Option<&str>) -> Result<String, String> {
-    let method = value.unwrap_or_default().trim().to_ascii_lowercase();
-    if method.is_empty() {
-        return Err("payment method must not be empty".to_string());
+fn validate_currency_code(value: Option<&str>) -> Result<String, String> {
+    let currency_code = value.unwrap_or_default().trim().to_ascii_uppercase();
+    if currency_code.len() != 3
+        || !currency_code
+            .chars()
+            .all(|character| character.is_ascii_uppercase())
+    {
+        return Err("currency code must be a 3-letter uppercase code".to_string());
     }
-    if method.chars().count() > MAX_PAYMENT_METHOD_LEN {
-        return Err(format!(
-            "payment method length must not exceed {MAX_PAYMENT_METHOD_LEN} characters"
-        ));
-    }
-    if !method.bytes().all(|byte| (0x21..=0x7e).contains(&byte)) {
-        return Err("payment method must contain only visible ASCII characters".to_string());
-    }
-    Ok(method)
+    Ok(currency_code)
 }
 
 fn validate_checkout_order_no(order_no: String) -> Result<String, String> {
@@ -415,9 +500,13 @@ fn validate_checkout_order_no(order_no: String) -> Result<String, String> {
 fn build_create_recharge_command(
     subject: &AppRuntimeSubject,
     amount: CommerceMoney,
+    currency_code: &str,
     method: &str,
     request_no: &str,
     idempotency_key: &str,
+    package_id: Option<&str>,
+    client_request_no: Option<&str>,
+    source: Option<&str>,
 ) -> Result<CreatePointsRechargeOrderCommand, CommerceServiceError> {
     let now = current_unix_timestamp();
     let requested_at = format_unix_timestamp(now);
@@ -441,6 +530,7 @@ fn build_create_recharge_command(
         subject.organization_id.as_deref(),
         &subject.user_id,
         amount,
+        currency_code,
         method,
         &format!("order-{token}"),
         &format!("order-item-{token}"),
@@ -451,15 +541,47 @@ fn build_create_recharge_command(
         &requested_at,
         &expire_at,
         idempotency_key,
+        package_id,
+        client_request_no,
+        source,
     )
 }
 
 fn map_recharge_package(value: RechargePackageItem) -> RechargePackageResponse {
     RechargePackageResponse {
         id: value.id,
-        rmb: value.rmb.as_str().to_string(),
-        bonus: value.bonus,
+        price_amount: value.price_amount.as_str().to_string(),
+        currency_code: value.currency_code,
+        bonus_points: value.bonus_points,
+        grant_amount: value.grant_amount,
         points: value.points,
+    }
+}
+
+fn map_recharge_settings(value: RechargeSettingsSnapshot) -> RechargeSettingsResponse {
+    RechargeSettingsResponse {
+        base_currency_code: value.base_currency_code,
+        base_points_per_cny: value.base_points_per_cny,
+        currency_to_cny_rates: value.currency_to_cny_rates,
+        preview_examples: value
+            .preview_examples
+            .into_iter()
+            .map(|(currency_code, amount_map)| {
+                (
+                    currency_code,
+                    amount_map
+                        .into_iter()
+                        .map(|(amount, preview)| (amount, map_recharge_preview(preview)))
+                        .collect::<BTreeMap<_, _>>(),
+                )
+            })
+            .collect(),
+    }
+}
+
+fn map_recharge_preview(value: RechargeGrantPreview) -> RechargeGrantPreviewResponse {
+    RechargeGrantPreviewResponse {
+        grant_amount: value.grant_amount,
     }
 }
 
@@ -467,10 +589,18 @@ fn map_recharge_outcome(value: CreatePointsRechargeOrderOutcome) -> SubmitRechar
     SubmitRechargeResponse {
         success: value.success,
         order_no: value.order_no,
+        out_trade_no: value.out_trade_no,
         amount: value.amount.as_str().to_string(),
+        currency_code: value.currency_code,
         points: value.points,
+        provider_code: value.provider_code,
         payment_method: value.payment_method,
+        payment_product: value.payment_product,
         status: value.status,
+        next_action: value.next_action,
+        cashier_url: value.cashier_url,
+        qr_code_payload: value.qr_code_payload,
+        request_payment_payload: value.request_payment_payload,
     }
 }
 
@@ -479,8 +609,11 @@ fn map_checkout_status(value: CheckoutStatusSnapshot) -> CheckoutStatusResponse 
         order_no: value.order_no,
         out_trade_no: value.out_trade_no,
         amount: value.amount.as_str().to_string(),
+        currency_code: value.currency_code,
         points: value.points,
+        provider_code: value.provider_code,
         payment_method: value.payment_method,
+        payment_product: value.payment_product,
         order_status: value.order_status,
         payment_status: value.payment_status,
         recharge_status: value.recharge_status,
@@ -489,7 +622,9 @@ fn map_checkout_status(value: CheckoutStatusSnapshot) -> CheckoutStatusResponse 
         expires_at: value.expires_at,
         paid_at: value.paid_at,
         next_action: value.next_action,
+        cashier_url: value.cashier_url,
         qr_code_payload: value.qr_code_payload,
+        request_payment_payload: value.request_payment_payload,
     }
 }
 

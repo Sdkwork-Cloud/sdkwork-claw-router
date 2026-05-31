@@ -4,7 +4,12 @@ use std::sync::{Arc, Mutex};
 
 use axum::body::Body;
 use axum::http::{Request, StatusCode};
-use sdkwork_claw_product::application::EntityUuidGenerator;
+use sdkwork_claw_product::application::{
+    default_desktop_cache_manager, AiRoutingCacheInvalidatingAdminProviderSecretStore,
+    EntityUuidGenerator, ROUTING_CONFIG_VERSION_CACHE_NAMESPACE,
+    ROUTING_DISABLED_CHANNEL_CACHE_NAMESPACE, ROUTING_PROVIDER_OBJECT_ROUTE_CACHE_NAMESPACE,
+    ROUTING_SNAPSHOT_CACHE_NAMESPACE,
+};
 use sdkwork_claw_product::domain::DomainResult;
 use sdkwork_claw_product::ports::{
     AdminProviderSecretCommandFuture, AdminProviderSecretItem, AdminProviderSecretStore,
@@ -134,6 +139,94 @@ async fn admin_provider_secret_route_creates_lists_updates_and_soft_deletes_meta
 
     let commands = store.commands.lock().unwrap();
     assert_eq!(vec!["create", "update", "delete"], *commands);
+}
+
+#[tokio::test]
+async fn admin_provider_secret_route_invalidates_routing_cache_after_successful_mutation() {
+    let store = Arc::new(TestProviderSecretStore::default());
+    let manager = default_desktop_cache_manager();
+    manager
+        .set_json(
+            ROUTING_SNAPSHOT_CACHE_NAMESPACE,
+            "tenant:10:org:20",
+            serde_json::json!({ "status": "warm" }),
+        )
+        .await
+        .unwrap();
+    manager
+        .set_json(
+            ROUTING_CONFIG_VERSION_CACHE_NAMESPACE,
+            "tenant:10:org:20",
+            serde_json::json!({ "version": 7 }),
+        )
+        .await
+        .unwrap();
+    manager
+        .set_json(
+            ROUTING_DISABLED_CHANNEL_CACHE_NAMESPACE,
+            "tenant:10:org:20:channel:1",
+            serde_json::json!({ "disabled": true }),
+        )
+        .await
+        .unwrap();
+    manager
+        .set_json(
+            ROUTING_PROVIDER_OBJECT_ROUTE_CACHE_NAMESPACE,
+            "tenant:10:org:20:object:resp_123",
+            serde_json::json!({ "channelId": 1 }),
+        )
+        .await
+        .unwrap();
+    let router = sdkwork_claw_product::api::admin_provider_secret_router_with_store(
+        Arc::new(AiRoutingCacheInvalidatingAdminProviderSecretStore::new(
+            store,
+            manager.clone(),
+        )),
+        Arc::new(TestUuidGenerator),
+    );
+
+    let response = router
+        .oneshot(
+            Request::builder()
+                .method("POST")
+                .uri("/backend/v3/api/provider_secrets")
+                .header("content-type", "application/json")
+                .internal_trusted_subject(10, 20, 30)
+                .body(Body::from(
+                    r#"{"providerCode":"OpenAI","name":"OpenAI production","secretRef":"vault://providers/openai/account/main","authType":"api-key"}"#,
+                ))
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+
+    assert_eq!(StatusCode::OK, response.status());
+    assert!(manager
+        .get_json(ROUTING_SNAPSHOT_CACHE_NAMESPACE, "tenant:10:org:20")
+        .await
+        .unwrap()
+        .is_none());
+    assert!(manager
+        .get_json(ROUTING_CONFIG_VERSION_CACHE_NAMESPACE, "tenant:10:org:20")
+        .await
+        .unwrap()
+        .is_none());
+    assert!(manager
+        .get_json(
+            ROUTING_DISABLED_CHANNEL_CACHE_NAMESPACE,
+            "tenant:10:org:20:channel:1"
+        )
+        .await
+        .unwrap()
+        .is_none());
+    assert!(manager
+        .get_json(
+            ROUTING_PROVIDER_OBJECT_ROUTE_CACHE_NAMESPACE,
+            "tenant:10:org:20:object:resp_123"
+        )
+        .await
+        .unwrap()
+        .is_some());
 }
 
 #[tokio::test]

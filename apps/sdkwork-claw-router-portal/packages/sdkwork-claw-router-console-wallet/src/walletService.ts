@@ -8,7 +8,7 @@ import {
   readString,
   type ApiRecord,
 } from 'sdkwork-claw-router-commons/runtime';
-import { RechargeService, type BillingHistoryItem } from 'sdkwork-claw-router-console-recharge';
+import { RechargeService, type BillingHistoryItem } from '../../sdkwork-claw-router-console-recharge/src/rechargeService.ts';
 
 export interface CommerceHistoryItem {
   id: string;

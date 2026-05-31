@@ -587,6 +587,7 @@ export function SdkReference() {
               <SdkEndpointView
                 key={activeEndpoint.id}
                 endpoint={activeEndpoint}
+                requestBaseUrl={activeSystemData.requestBaseUrl}
                 sdkData={activeSdkConfig}
                 language={activeSdk.id}
                 sdkConfig={activeSdkConfig}

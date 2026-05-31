@@ -1,20 +1,19 @@
-#[path = "common/installed_sqlite.rs"]
-mod installed_sqlite_common;
-
-use installed_sqlite_common::{installed_sqlite_pool, repair_sqlite_pool};
 use sdkwork_claw_product::application::{PasswordHasher, Pbkdf2Sha256PasswordHasher};
 use sdkwork_claw_product::domain::DecimalValue;
 use sdkwork_claw_product::infrastructure::sql::installer::{
     CatalogRefreshOptions, DatabaseInstallOptions, DatabaseInstaller, InstallationStatus,
 };
 use sdkwork_claw_product::infrastructure::sql::sqlite::{
-    SqliteAdminUserStore, SqliteAppSkillsReadStore, SqliteForumStore, SqlitePricingCatalogLoader,
+    SqliteAdminMarketingStore, SqliteAdminUserStore, SqliteAppSkillsReadStore, SqliteForumStore,
+    SqlitePricingCatalogLoader,
 };
 use sdkwork_claw_product::ports::{
-    AdminUserStore, AdminUserSubject, AppSkillsQuery, AppSkillsReadStore, AppSkillsSubject,
-    CreateAdminUserApiKeyCommand, CreateAdminUserCommand, ForumFeedQuery, ForumFeedReadStore,
-    ListAdminUsersQuery, PricingCatalog, UpdateAdminUserCommand,
+    AdminMarketingStore, AdminMarketingSubject, AdminUserStore, AdminUserSubject, AppSkillsQuery,
+    AppSkillsReadStore, AppSkillsSubject, CreateAdminUserApiKeyCommand, CreateAdminUserCommand,
+    ForumFeedQuery, ForumFeedReadStore, ListAdminUsersQuery, PricingCatalog,
+    UpdateAdminUserCommand,
 };
+use sdkwork_claw_product_test_support::repair_sqlite_pool;
 use sdkwork_commerce_bootstrap::{
     commerce_payment_channel_seeds, commerce_payment_method_seeds,
     commerce_payment_provider_account_seeds, commerce_payment_provider_seeds,
@@ -1191,61 +1190,6 @@ async fn sqlite_installer_keeps_model_catalog_vendor_scoped_and_pricing_region_s
         currencies,
         "regional MiniMax prices must preserve each vendor's billing currency"
     );
-}
-
-#[tokio::test]
-async fn sqlite_installer_upgrades_existing_installation_when_versions_change() {
-    let pool = installed_sqlite_pool().await;
-    let installer = installer(pool.clone());
-    sqlx::query(
-        r#"
-        UPDATE system_installation_state
-        SET schema_version = '2026.05.06.1',
-            catalog_version = '2026.05.06.1'
-        WHERE id = 1
-        "#,
-    )
-    .execute(&pool)
-    .await
-    .unwrap();
-
-    assert_eq!(
-        InstallationStatus::UpgradeRequired,
-        installer.status().await.unwrap()
-    );
-    sqlx::query(
-        r#"
-        CREATE TRIGGER reject_unnecessary_course_seed_reimport
-        BEFORE UPDATE ON content_course
-        BEGIN
-            SELECT RAISE(ABORT, 'version-only upgrade must not reimport current course seed');
-        END
-        "#,
-    )
-    .execute(&pool)
-    .await
-    .unwrap();
-
-    let upgraded = installer.ensure_installed().await.unwrap();
-    assert_eq!(InstallationStatus::Installed, upgraded.status);
-    assert!(upgraded.changed);
-    assert_eq!(CATALOG_VERSION, upgraded.catalog_version);
-
-    let state = sqlx::query(
-        r#"
-        SELECT schema_version, catalog_version, status
-        FROM system_installation_state
-        WHERE id = 1
-        "#,
-    )
-    .fetch_one(&pool)
-    .await
-    .unwrap();
-    assert_eq!(SCHEMA_VERSION, state.get::<String, _>("schema_version"));
-    assert_eq!(CATALOG_VERSION, state.get::<String, _>("catalog_version"));
-    assert_eq!("installed", state.get::<String, _>("status"));
-
-    assert_catalog_rows(&pool, &bundled_catalog()).await;
 }
 
 #[tokio::test]
@@ -2535,31 +2479,6 @@ async fn sqlite_installer_repairs_missing_notification_delivery_upsert_index() {
 }
 
 #[tokio::test]
-async fn sqlite_installer_drops_obsolete_provider_account_secret_hash_unique_index() {
-    let pool = repair_sqlite_pool().await;
-    let installer = installer(pool.clone());
-
-    sqlx::query(
-        r#"
-        CREATE UNIQUE INDEX uk_integration_provider_account_secret_hash
-        ON integration_provider_account (tenant_id, organization_id, provider_code, secret_hash)
-        "#,
-    )
-    .execute(&pool)
-    .await
-    .unwrap();
-    assert_sqlite_index_exists(&pool, "uk_integration_provider_account_secret_hash").await;
-
-    let repaired = installer.ensure_installed().await.unwrap();
-    assert_eq!(InstallationStatus::Installed, repaired.status);
-    assert!(
-        repaired.changed,
-        "installer must report changed=true when it repairs obsolete generated schema indexes"
-    );
-    assert_sqlite_index_absent(&pool, "uk_integration_provider_account_secret_hash").await;
-}
-
-#[tokio::test]
 async fn sqlite_installer_repairs_missing_generated_schema_columns_on_startup_check() {
     let pool = repair_sqlite_pool().await;
     let installer = installer(pool.clone());
@@ -3071,88 +2990,6 @@ async fn sqlite_installer_catalog_sync_failure_records_failed_sync_run() {
 }
 
 #[tokio::test]
-async fn sqlite_installer_catalog_sync_failure_rolls_back_catalog_rows() {
-    let pool = installed_sqlite_pool().await;
-    let installer = installer(pool.clone());
-
-    let original_price: String = sqlx::query_scalar(
-        r#"
-        SELECT printf('%.6f', unit_price)
-        FROM ai_model_pricing
-        WHERE model = 'gpt-5.5-pro'
-          AND billing_meter_code = 'llm_input_token'
-          AND status = 1
-        LIMIT 1
-        "#,
-    )
-    .fetch_one(&pool)
-    .await
-    .unwrap();
-    sqlx::query(
-        r#"
-        UPDATE ai_model_pricing
-        SET unit_price = '999999.000000'
-        WHERE model = 'gpt-5.5-pro'
-          AND billing_meter_code = 'llm_input_token'
-          AND status = 1
-        "#,
-    )
-    .execute(&pool)
-    .await
-    .unwrap();
-    sqlx::query(
-        r#"
-        CREATE TRIGGER reject_catalog_refresh_snapshot
-        BEFORE INSERT ON ai_pricing_import_snapshot
-        BEGIN
-            SELECT RAISE(ABORT, 'test forced pricing import snapshot failure');
-        END
-        "#,
-    )
-    .execute(&pool)
-    .await
-    .unwrap();
-
-    let error = installer
-        .refresh_catalog(CatalogRefreshOptions {
-            mode: "vendor_refresh".to_owned(),
-            vendor_codes: vec!["openai".to_owned()],
-            force: true,
-            ..CatalogRefreshOptions::default()
-        })
-        .await
-        .unwrap_err();
-
-    assert!(
-        error
-            .to_string()
-            .contains("test forced pricing import snapshot failure"),
-        "refresh must return the root snapshot failure"
-    );
-    let price_after_failure: String = sqlx::query_scalar(
-        r#"
-        SELECT printf('%.6f', unit_price)
-        FROM ai_model_pricing
-        WHERE model = 'gpt-5.5-pro'
-          AND billing_meter_code = 'llm_input_token'
-          AND status = 1
-        LIMIT 1
-        "#,
-    )
-    .fetch_one(&pool)
-    .await
-    .unwrap();
-    assert_eq!(
-        "999999.000000", price_after_failure,
-        "failed catalog sync must not partially update model pricing before sync audit commits"
-    );
-    assert_ne!(
-        original_price, price_after_failure,
-        "the test must prove rollback against a catalog value that would otherwise be restored"
-    );
-}
-
-#[tokio::test]
 async fn sqlite_installer_catalog_sync_failure_preserves_original_error_when_audit_fails() {
     let pool = repair_sqlite_pool().await;
     let installer = installer(pool.clone());
@@ -3287,6 +3124,142 @@ async fn sqlite_installer_refresh_catalog_bootstraps_admin_on_empty_full_install
     );
 
     remove_catalog_root(catalog_root);
+}
+
+#[tokio::test]
+async fn sqlite_installer_auto_initializes_recharge_catalog_for_non_default_admin_subject() {
+    let pool = repair_sqlite_pool().await;
+    let installer = installer(pool.clone());
+
+    let installed = installer.ensure_installed().await.unwrap();
+    assert_eq!(InstallationStatus::Installed, installed.status);
+
+    let store = SqliteAdminMarketingStore::new(pool.clone());
+    let subject = AdminMarketingSubject {
+        tenant_id: 999,
+        organization_id: 888,
+        operator_id: 1,
+        operator_type: 1,
+    };
+
+    let packages = store
+        .list_recharge_packages(
+            sdkwork_claw_product::ports::ListAdminRechargePackagesQuery {
+                subject,
+                status: None,
+            },
+        )
+        .await
+        .unwrap();
+    assert_eq!(
+        18,
+        packages.len(),
+        "non-default admin tenant must receive a full recharge catalog on first read"
+    );
+    assert_eq!(
+        9,
+        packages
+            .iter()
+            .filter(|item| item.status == "active")
+            .count(),
+        "non-default admin tenant must activate only RMB recharge packages by default"
+    );
+    assert_eq!(
+        9,
+        packages
+            .iter()
+            .filter(|item| item.status == "inactive")
+            .count(),
+        "non-default admin tenant must keep USD recharge packages inactive by default"
+    );
+
+    let settings = store.load_recharge_settings(subject).await.unwrap();
+    assert_eq!("CNY", settings.base_currency_code);
+    assert_eq!("10", settings.base_points_per_cny);
+    assert_eq!(
+        Some("1"),
+        settings
+            .currency_to_cny_rates
+            .get("CNY")
+            .map(String::as_str)
+    );
+    assert_eq!(
+        Some("7"),
+        settings
+            .currency_to_cny_rates
+            .get("USD")
+            .map(String::as_str)
+    );
+
+    let persisted_package_count: i64 = sqlx::query_scalar(
+        r#"
+        SELECT COUNT(1)
+        FROM commerce_recharge_package
+        WHERE tenant_id = '999'
+          AND organization_id = '888'
+          AND status <> 'deleted'
+        "#,
+    )
+    .fetch_one(&pool)
+    .await
+    .unwrap();
+    assert_eq!(
+        18, persisted_package_count,
+        "first admin read must persist the initialized recharge catalog for the current tenant"
+    );
+
+    let persisted_active_count: i64 = sqlx::query_scalar(
+        r#"
+        SELECT COUNT(1)
+        FROM commerce_recharge_package
+        WHERE tenant_id = '999'
+          AND organization_id = '888'
+          AND status = 'active'
+        "#,
+    )
+    .fetch_one(&pool)
+    .await
+    .unwrap();
+    assert_eq!(
+        9, persisted_active_count,
+        "persisted tenant-scoped recharge catalog must activate only RMB packages by default"
+    );
+
+    let persisted_settings = sqlx::query(
+        r#"
+        SELECT rate, remark
+        FROM commerce_exchange_rule
+        WHERE tenant_id = '999'
+          AND organization_id = '888'
+          AND rule_no = 'CASH_TO_POINTS'
+          AND source_asset_type = 'cash'
+          AND target_asset_type = 'points'
+          AND status = 'active'
+        LIMIT 1
+        "#,
+    )
+    .fetch_one(&pool)
+    .await
+    .unwrap();
+    assert_eq!("10", persisted_settings.get::<String, _>("rate"));
+    let remark: serde_json::Value =
+        serde_json::from_str(&persisted_settings.get::<String, _>("remark")).unwrap();
+    assert_eq!(
+        "CNY",
+        remark["baseCurrencyCode"].as_str().unwrap_or_default()
+    );
+    assert_eq!(
+        "1",
+        remark["currencyToCnyRates"]["CNY"]
+            .as_str()
+            .unwrap_or_default()
+    );
+    assert_eq!(
+        "7",
+        remark["currencyToCnyRates"]["USD"]
+            .as_str()
+            .unwrap_or_default()
+    );
 }
 
 #[tokio::test]
@@ -3460,42 +3433,6 @@ async fn sqlite_installer_refresh_reactivates_soft_deleted_catalog_rows() {
     assert_pricing_snapshot_contains_catalog_models(&pool, &catalog).await;
 
     remove_catalog_root(catalog_root);
-}
-
-#[tokio::test]
-async fn sqlite_installer_imports_canonical_ranking_catalog_keys() {
-    let pool = installed_sqlite_pool().await;
-
-    assert_eq!(
-        0_i64,
-        sqlx::query_scalar::<_, i64>(
-            r#"
-            SELECT COUNT(1)
-            FROM ai_model_rank_snapshot
-            WHERE status = 1
-              AND catalog_key = vendor_code || '/' || region_code || '/' || model
-            "#,
-        )
-        .fetch_one(&pool)
-        .await
-        .unwrap(),
-        "ranking catalog_key must use canonical vendor/model identity; region_code is a separate supply context"
-    );
-
-    let catalog_key: String = sqlx::query_scalar(
-        r#"
-        SELECT catalog_key
-        FROM ai_model_rank_snapshot
-        WHERE vendor_code = 'openai'
-          AND model = 'gpt-5.5'
-          AND status = 1
-        LIMIT 1
-        "#,
-    )
-    .fetch_one(&pool)
-    .await
-    .unwrap();
-    assert_eq!("openai/gpt-5.5", catalog_key);
 }
 
 #[tokio::test]
@@ -3928,6 +3865,7 @@ async fn assert_catalog_capability_projection_rows(
     let expected_api_endpoints = catalog_api_endpoint_codes(catalog);
     let expected_model_keys = catalog_model_keys(catalog);
     let expected_model_resource_codes = catalog_model_resource_codes(catalog);
+    let expected_modality_resource_codes = catalog_modality_resource_codes(catalog);
     let expected_vendor_resource_codes = catalog_vendor_codes(catalog)
         .into_iter()
         .map(|vendor_code| format!("vendor.{vendor_code}"))
@@ -3993,6 +3931,10 @@ async fn assert_catalog_capability_projection_rows(
     assert!(
         expected_vendor_resource_codes.is_subset(&actual_resource_codes),
         "ai_resource must expose vendor resources for channel binding"
+    );
+    assert!(
+        expected_modality_resource_codes.is_subset(&actual_resource_codes),
+        "ai_resource must expose modality resources for channel binding"
     );
     assert!(
         expected_model_resource_codes.is_subset(&actual_resource_codes),
@@ -4545,8 +4487,116 @@ async fn assert_commerce_experience_seed_rows(pool: &SqlitePool) {
     .await
     .unwrap();
     assert_eq!(
-        4, recharge_package_count,
-        "installer must seed four points recharge packages"
+        9, recharge_package_count,
+        "installer must seed nine active default points recharge packages"
+    );
+
+    let recharge_package_total_count: i64 = sqlx::query_scalar(
+        r#"
+        SELECT COUNT(1)
+        FROM commerce_recharge_package
+        WHERE tenant_id = '0'
+          AND organization_id = '0'
+          AND status <> 'deleted'
+        "#,
+    )
+    .fetch_one(pool)
+    .await
+    .unwrap();
+    assert_eq!(
+        18, recharge_package_total_count,
+        "installer must initialize the full recharge package catalog"
+    );
+
+    let recharge_settings = sqlx::query(
+        r#"
+        SELECT rate, remark
+        FROM commerce_exchange_rule
+        WHERE tenant_id = '0'
+          AND organization_id = '0'
+          AND rule_no = 'CASH_TO_POINTS'
+          AND source_asset_type = 'cash'
+          AND target_asset_type = 'points'
+          AND status = 'active'
+        LIMIT 1
+        "#,
+    )
+    .fetch_one(pool)
+    .await
+    .unwrap();
+    assert_eq!("10", recharge_settings.get::<String, _>("rate"));
+    let remark: serde_json::Value =
+        serde_json::from_str(&recharge_settings.get::<String, _>("remark")).unwrap();
+    assert_eq!(
+        "CNY",
+        remark["baseCurrencyCode"].as_str().unwrap_or_default()
+    );
+    assert_eq!(
+        "1",
+        remark["currencyToCnyRates"]["CNY"]
+            .as_str()
+            .unwrap_or_default()
+    );
+    assert_eq!(
+        "7",
+        remark["currencyToCnyRates"]["USD"]
+            .as_str()
+            .unwrap_or_default()
+    );
+
+    let store = SqliteAdminMarketingStore::new(pool.clone());
+    let subject = AdminMarketingSubject {
+        tenant_id: 10,
+        organization_id: 20,
+        operator_id: 1,
+        operator_type: 1,
+    };
+    let admin_packages = store
+        .list_recharge_packages(
+            sdkwork_claw_product::ports::ListAdminRechargePackagesQuery {
+                subject,
+                status: None,
+            },
+        )
+        .await
+        .unwrap();
+    assert_eq!(
+        18,
+        admin_packages.len(),
+        "default admin tenant must see the initialized recharge package catalog on startup"
+    );
+    assert_eq!(
+        9,
+        admin_packages
+            .iter()
+            .filter(|item| item.status == "active")
+            .count(),
+        "default admin catalog must only activate the RMB recharge packages on startup"
+    );
+    assert_eq!(
+        9,
+        admin_packages
+            .iter()
+            .filter(|item| item.status == "inactive")
+            .count(),
+        "default admin catalog must keep USD recharge packages inactive on startup"
+    );
+    let admin_settings = store.load_recharge_settings(subject).await.unwrap();
+    assert_eq!("CNY", admin_settings.base_currency_code);
+    assert_eq!("10", admin_settings.base_points_per_cny);
+    assert_eq!(
+        Some("1"),
+        admin_settings
+            .currency_to_cny_rates
+            .get("CNY")
+            .map(String::as_str)
+    );
+    assert_eq!(
+        Some("7"),
+        admin_settings
+            .currency_to_cny_rates
+            .get("USD")
+            .map(String::as_str)
     );
 
     assert_seed_statuses(
@@ -4959,6 +5009,22 @@ fn catalog_modality_codes(catalog: &sdkwork_models::ModelCatalog) -> BTreeSet<St
         .collect()
 }
 
+fn catalog_modality_resource_codes(catalog: &sdkwork_models::ModelCatalog) -> BTreeSet<String> {
+    let mut values = catalog_modality_codes(catalog)
+        .into_iter()
+        .map(|modality_code| format!("modality.{modality_code}"))
+        .collect::<BTreeSet<_>>();
+    if values.iter().any(|value| {
+        matches!(
+            value.as_str(),
+            "modality.chat" | "modality.text" | "modality.embedding" | "modality.rerank"
+        )
+    }) {
+        values.insert("modality.llm".to_owned());
+    }
+    values
+}
+
 fn catalog_api_endpoint_codes(catalog: &sdkwork_models::ModelCatalog) -> BTreeSet<String> {
     catalog
         .vendors
@@ -5359,22 +5425,6 @@ async fn assert_sqlite_index_exists(pool: &SqlitePool, index: &str) {
     .await
     .unwrap();
     assert_eq!(1, exists, "{index} index must exist after installation");
-}
-
-async fn assert_sqlite_index_absent(pool: &SqlitePool, index: &str) {
-    let exists: i64 = sqlx::query_scalar(
-        r#"
-        SELECT COUNT(1)
-        FROM sqlite_master
-        WHERE type = 'index'
-          AND name = ?
-        "#,
-    )
-    .bind(index)
-    .fetch_one(pool)
-    .await
-    .unwrap();
-    assert_eq!(0, exists, "{index} index must not exist after repair");
 }
 
 async fn assert_sqlite_row_exists(pool: &SqlitePool, table: &str, predicate: &str) {

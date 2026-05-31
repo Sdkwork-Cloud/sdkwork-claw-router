@@ -97,7 +97,7 @@ async fn admin_api_serves_cache_management_overview_from_runtime() {
         payload["data"]["summary"]["runtimeTarget"]
     );
     assert_eq!(1, payload["data"]["summary"]["totalInstances"]);
-    assert_eq!(1, payload["data"]["summary"]["totalNamespaces"]);
+    assert_eq!(6, payload["data"]["summary"]["totalNamespaces"]);
     assert_eq!(
         "local_cache",
         payload["data"]["instances"][0]["providerKind"]
@@ -105,6 +105,10 @@ async fn admin_api_serves_cache_management_overview_from_runtime() {
     assert_eq!(
         "auth.qr.challenge",
         payload["data"]["namespacePolicies"][0]["namespace"]
+    );
+    assert_eq!(
+        "routing.snapshot",
+        payload["data"]["namespacePolicies"][1]["namespace"]
     );
 }
 

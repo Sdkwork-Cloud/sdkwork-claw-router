@@ -4,6 +4,4 @@ export interface CommerceMembershipPurchaseRequest {
   couponId?: string | null;
   /** Package id field on commerce membership purchase request. */
   packageId: number;
-  /** Payment method field on commerce membership purchase request. */
-  paymentMethod?: string;
 }

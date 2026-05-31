@@ -46,7 +46,7 @@ export class NotificationAcknowledgeApi {
   }
 }
 
-export interface NotificationListNotificationsParams {
+export interface NotificationListParams {
   appId?: string;
   includeArchived?: boolean;
   page?: number;
@@ -66,7 +66,7 @@ export class NotificationApi {
 
 
 /** List notifications */
-  async listNotifications(params?: NotificationListNotificationsParams): Promise<NotificationsListResult> {
+  async list(params?: NotificationListParams): Promise<NotificationsListResult> {
     const query = buildQueryString([
       { name: 'app_id', value: params?.appId, style: 'form', explode: true, allowReserved: false },
       { name: 'include_archived', value: params?.includeArchived, style: 'form', explode: true, allowReserved: false },

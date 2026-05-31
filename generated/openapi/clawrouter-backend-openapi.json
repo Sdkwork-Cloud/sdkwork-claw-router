@@ -11434,53 +11434,157 @@
         ],
         "type": "object"
       },
+      "AdminRechargePackageItem": {
+        "additionalProperties": false,
+        "description": "Admin recharge package item schema exposed by Claw Router.",
+        "properties": {
+          "bonusPoints": {
+            "description": "Bonus points field on admin recharge package item.",
+            "format": "int64",
+            "minimum": 0,
+            "type": "integer"
+          },
+          "currencyCode": {
+            "description": "Currency code field on admin recharge package item.",
+            "maxLength": 16,
+            "minLength": 3,
+            "pattern": "^[A-Z0-9_-]+$",
+            "type": "string"
+          },
+          "grantAmount": {
+            "description": "Grant amount field on admin recharge package item.",
+            "format": "int64",
+            "minimum": 0,
+            "type": "integer"
+          },
+          "id": {
+            "description": "Id field on admin recharge package item.",
+            "maxLength": 128,
+            "minLength": 1,
+            "type": "string"
+          },
+          "name": {
+            "description": "Name field on admin recharge package item.",
+            "maxLength": 256,
+            "type": "string"
+          },
+          "packageNo": {
+            "description": "Package no field on admin recharge package item.",
+            "maxLength": 128,
+            "minLength": 1,
+            "type": "string"
+          },
+          "points": {
+            "description": "Points field on admin recharge package item.",
+            "format": "int64",
+            "minimum": 0,
+            "type": "integer"
+          },
+          "priceAmount": {
+            "description": "Price amount field on admin recharge package item.",
+            "pattern": "^\\d+(?:\\.\\d{1,2})?$",
+            "type": "string"
+          },
+          "skuId": {
+            "description": "Sku id field on admin recharge package item.",
+            "maxLength": 128,
+            "minLength": 1,
+            "type": "string"
+          },
+          "status": {
+            "description": "Status field on admin recharge package item.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "updatedAt": {
+            "description": "Updated at field on admin recharge package item.",
+            "maxLength": 64,
+            "minLength": 1,
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "packageNo",
+          "skuId",
+          "priceAmount",
+          "currencyCode",
+          "bonusPoints",
+          "grantAmount",
+          "points",
+          "status",
+          "updatedAt"
+        ],
+        "type": "object"
+      },
+      "AdminRechargePackageListResponse": {
+        "additionalProperties": false,
+        "description": "Admin recharge package list response schema exposed by Claw Router.",
+        "name": "AdminRechargePackageListResponse",
+        "properties": {
+          "items": {
+            "description": "Items field on admin recharge package list response.",
+            "items": {
+              "$ref": "#/components/schemas/AdminRechargePackageItem"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "items"
+        ],
+        "type": "object"
+      },
       "AdminRechargePackageMutationResponse": {
         "additionalProperties": false,
         "description": "Admin recharge package mutation response schema exposed by Claw Router.",
         "name": "AdminRechargePackageMutationResponse",
         "properties": {
           "item": {
-            "additionalProperties": false,
-            "description": "Item field on admin recharge package mutation response.",
-            "properties": {
-              "bonus": {
-                "description": "Bonus field on admin recharge package mutation response.",
-                "format": "int64",
-                "minimum": 0,
-                "type": "integer"
-              },
-              "id": {
-                "description": "Id field on admin recharge package mutation response.",
-                "maxLength": 128,
-                "minLength": 1,
-                "type": "string"
-              },
-              "points": {
-                "description": "Points field on admin recharge package mutation response.",
-                "format": "int64",
-                "minimum": 0,
-                "type": "integer"
-              },
-              "rmb": {
-                "description": "Rmb field on admin recharge package mutation response.",
-                "maxLength": 64,
-                "type": "string"
-              },
-              "status": {
-                "description": "Status field on admin recharge package mutation response.",
-                "maxLength": 64,
-                "nullable": true,
-                "type": "string"
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/AdminRechargePackageItem"
               }
-            },
-            "required": [
-              "id"
             ],
-            "type": "object"
+            "description": "Item field on admin recharge package mutation response."
           }
         },
         "required": [
           "item"
+        ],
+        "type": "object"
+      },
+      "AdminRechargeSettingsResponse": {
+        "additionalProperties": false,
+        "description": "Admin recharge settings response schema exposed by Claw Router.",
+        "name": "AdminRechargeSettingsResponse",
+        "properties": {
+          "baseCurrencyCode": {
+            "description": "Base currency code field on admin recharge settings response.",
+            "maxLength": 16,
+            "minLength": 3,
+            "pattern": "^[A-Z0-9_-]+$",
+            "type": "string"
+          },
+          "basePointsPerCny": {
+            "description": "Base points per cny field on admin recharge settings response.",
+            "pattern": "^\\d+(?:\\.\\d{1,6})?$",
+            "type": "string"
+          },
+          "currencyToCnyRates": {
+            "additionalProperties": {
+              "description": "Currency to cny rates field on admin recharge settings response.",
+              "pattern": "^\\d+(?:\\.\\d{1,6})?$",
+              "type": "string"
+            },
+            "description": "Currency to cny rates field on admin recharge settings response.",
+            "type": "object"
+          }
+        },
+        "required": [
+          "baseCurrencyCode",
+          "basePointsPerCny",
+          "currencyToCnyRates"
         ],
         "type": "object"
       },
@@ -19306,6 +19410,241 @@
         "x-generated-by-this-project": true,
         "x-table": "ai_chat_turn"
       },
+      "AiConfigChangeEventRecord": {
+        "additionalProperties": false,
+        "description": "Ai config change event record schema exposed by Claw Router.",
+        "properties": {
+          "changed_object_id": {
+            "description": "Changed object id field on ai config change event record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "changed_object_type": {
+            "description": "Changed object type field on ai config change event record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "config_scope": {
+            "description": "Config scope field on ai config change event record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "config_version": {
+            "description": "Config version field on ai config change event record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "created_at": {
+            "description": "Created at field on ai config change event record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "event_payload": {
+            "additionalProperties": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/JsonValue"
+                }
+              ],
+              "description": "Event payload field on ai config change event record."
+            },
+            "description": "Event payload field on ai config change event record.",
+            "type": "object"
+          },
+          "id": {
+            "description": "Id field on ai config change event record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "last_error_message": {
+            "description": "Last error message field on ai config change event record.",
+            "maxLength": 512,
+            "type": "string"
+          },
+          "legal_hold": {
+            "description": "Legal hold field on ai config change event record.",
+            "type": "boolean"
+          },
+          "metadata": {
+            "additionalProperties": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/JsonValue"
+                }
+              ],
+              "description": "Metadata field on ai config change event record."
+            },
+            "description": "Metadata field on ai config change event record.",
+            "type": "object"
+          },
+          "organization_id": {
+            "description": "Organization id field on ai config change event record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "payload_hash": {
+            "description": "Payload hash field on ai config change event record.",
+            "maxLength": 128,
+            "type": "string"
+          },
+          "published_at": {
+            "description": "Published at field on ai config change event record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "request_id": {
+            "description": "Request id field on ai config change event record.",
+            "maxLength": 128,
+            "type": "string"
+          },
+          "retention_until": {
+            "description": "Retention until field on ai config change event record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "status": {
+            "description": "Status field on ai config change event record.",
+            "type": "string",
+            "x-db-type": "enum_int32"
+          },
+          "tenant_id": {
+            "description": "Tenant id field on ai config change event record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "trace_id": {
+            "description": "Trace id field on ai config change event record.",
+            "maxLength": 128,
+            "type": "string"
+          },
+          "user_id": {
+            "description": "User id field on ai config change event record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "uuid": {
+            "description": "Uuid field on ai config change event record.",
+            "maxLength": 64,
+            "type": "string"
+          }
+        },
+        "required": [
+          "uuid",
+          "tenant_id",
+          "organization_id",
+          "status",
+          "config_scope",
+          "config_version"
+        ],
+        "type": "object",
+        "x-domain": "ai",
+        "x-generated-by-this-project": true,
+        "x-table": "ai_config_change_event"
+      },
+      "AiConfigVersionRecord": {
+        "additionalProperties": false,
+        "description": "Ai config version record schema exposed by Claw Router.",
+        "properties": {
+          "changed_object_id": {
+            "description": "Changed object id field on ai config version record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "changed_object_type": {
+            "description": "Changed object type field on ai config version record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "config_scope": {
+            "description": "Config scope field on ai config version record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "created_at": {
+            "description": "Created at field on ai config version record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "data_scope": {
+            "description": "Data scope field on ai config version record.",
+            "type": "string",
+            "x-db-type": "enum_int32"
+          },
+          "deleted_at": {
+            "description": "Deleted at field on ai config version record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "deleted_by": {
+            "description": "Deleted by field on ai config version record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "id": {
+            "description": "Id field on ai config version record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "metadata": {
+            "additionalProperties": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/JsonValue"
+                }
+              ],
+              "description": "Metadata field on ai config version record."
+            },
+            "description": "Metadata field on ai config version record.",
+            "type": "object"
+          },
+          "organization_id": {
+            "description": "Organization id field on ai config version record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "published_at": {
+            "description": "Published at field on ai config version record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "status": {
+            "description": "Status field on ai config version record.",
+            "type": "string",
+            "x-db-type": "enum_int32"
+          },
+          "tenant_id": {
+            "description": "Tenant id field on ai config version record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "updated_at": {
+            "description": "Updated at field on ai config version record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "uuid": {
+            "description": "Uuid field on ai config version record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "version": {
+            "description": "Version field on ai config version record.",
+            "format": "int64",
+            "type": "string"
+          }
+        },
+        "required": [
+          "uuid",
+          "tenant_id",
+          "organization_id",
+          "status",
+          "config_scope"
+        ],
+        "type": "object",
+        "x-domain": "ai",
+        "x-generated-by-this-project": true,
+        "x-table": "ai_config_version"
+      },
       "AiGenerationAssetActionRecord": {
         "additionalProperties": false,
         "description": "Ai generation asset action record schema exposed by Claw Router.",
@@ -25165,6 +25504,183 @@
         "x-generated-by-this-project": true,
         "x-table": "ai_prompt_version"
       },
+      "AiProviderObjectRouteRecord": {
+        "additionalProperties": false,
+        "description": "Ai provider object route record schema exposed by Claw Router.",
+        "properties": {
+          "api_code": {
+            "description": "Api code field on ai provider object route record.",
+            "maxLength": 128,
+            "type": "string"
+          },
+          "api_key_id": {
+            "description": "Api key id field on ai provider object route record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "catalog_key": {
+            "description": "Catalog key field on ai provider object route record.",
+            "maxLength": 256,
+            "type": "string"
+          },
+          "channel_group_id": {
+            "description": "Channel group id field on ai provider object route record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "channel_id": {
+            "description": "Channel id field on ai provider object route record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "created_at": {
+            "description": "Created at field on ai provider object route record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "data_scope": {
+            "description": "Data scope field on ai provider object route record.",
+            "type": "string",
+            "x-db-type": "enum_int32"
+          },
+          "deleted_at": {
+            "description": "Deleted at field on ai provider object route record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "deleted_by": {
+            "description": "Deleted by field on ai provider object route record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "endpoint_id": {
+            "description": "Endpoint id field on ai provider object route record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "expires_at": {
+            "description": "Expires at field on ai provider object route record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "id": {
+            "description": "Id field on ai provider object route record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "last_seen_at": {
+            "description": "Last seen at field on ai provider object route record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "metadata": {
+            "additionalProperties": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/JsonValue"
+                }
+              ],
+              "description": "Metadata field on ai provider object route record."
+            },
+            "description": "Metadata field on ai provider object route record.",
+            "type": "object"
+          },
+          "object_id": {
+            "description": "Object id field on ai provider object route record.",
+            "maxLength": 256,
+            "type": "string"
+          },
+          "object_key_hash": {
+            "description": "Object key hash field on ai provider object route record.",
+            "maxLength": 128,
+            "type": "string"
+          },
+          "object_type": {
+            "description": "Object type field on ai provider object route record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "organization_id": {
+            "description": "Organization id field on ai provider object route record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "parent_object_id": {
+            "description": "Parent object id field on ai provider object route record.",
+            "maxLength": 256,
+            "type": "string"
+          },
+          "parent_object_type": {
+            "description": "Parent object type field on ai provider object route record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "provider_code": {
+            "description": "Provider code field on ai provider object route record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "provider_model": {
+            "description": "Provider model field on ai provider object route record.",
+            "maxLength": 256,
+            "type": "string"
+          },
+          "region_code": {
+            "description": "Region code field on ai provider object route record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "status": {
+            "description": "Status field on ai provider object route record.",
+            "type": "string",
+            "x-db-type": "enum_int32"
+          },
+          "sticky_scope": {
+            "description": "Sticky scope field on ai provider object route record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "tenant_id": {
+            "description": "Tenant id field on ai provider object route record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "updated_at": {
+            "description": "Updated at field on ai provider object route record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "uuid": {
+            "description": "Uuid field on ai provider object route record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "vendor_code": {
+            "description": "Vendor code field on ai provider object route record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "version": {
+            "description": "Version field on ai provider object route record.",
+            "format": "int64",
+            "type": "string"
+          }
+        },
+        "required": [
+          "uuid",
+          "tenant_id",
+          "organization_id",
+          "status",
+          "object_type",
+          "object_id",
+          "object_key_hash",
+          "channel_id"
+        ],
+        "type": "object",
+        "x-domain": "ai",
+        "x-generated-by-this-project": true,
+        "x-table": "ai_provider_object_route"
+      },
       "AiProviderRecord": {
         "additionalProperties": false,
         "description": "Ai provider record schema exposed by Claw Router.",
@@ -26380,6 +26896,182 @@
         "x-generated-by-this-project": true,
         "x-table": "ai_resource"
       },
+      "AiResourceRouteProfileRecord": {
+        "additionalProperties": false,
+        "description": "Ai resource route profile record schema exposed by Claw Router.",
+        "properties": {
+          "billing_meter_code": {
+            "description": "Billing meter code field on ai resource route profile record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "cache_ttl_seconds": {
+            "description": "Cache ttl seconds field on ai resource route profile record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "capability": {
+            "description": "Capability field on ai resource route profile record.",
+            "type": "string",
+            "x-db-type": "enum_int32"
+          },
+          "created_at": {
+            "description": "Created at field on ai resource route profile record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "data_scope": {
+            "description": "Data scope field on ai resource route profile record.",
+            "type": "string",
+            "x-db-type": "enum_int32"
+          },
+          "deleted_at": {
+            "description": "Deleted at field on ai resource route profile record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "deleted_by": {
+            "description": "Deleted by field on ai resource route profile record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "http_method": {
+            "description": "Http method field on ai resource route profile record.",
+            "maxLength": 16,
+            "type": "string"
+          },
+          "id": {
+            "description": "Id field on ai resource route profile record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "metadata": {
+            "additionalProperties": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/JsonValue"
+                }
+              ],
+              "description": "Metadata field on ai resource route profile record."
+            },
+            "description": "Metadata field on ai resource route profile record.",
+            "type": "object"
+          },
+          "organization_id": {
+            "description": "Organization id field on ai resource route profile record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "parent_object_types": {
+            "additionalProperties": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/JsonValue"
+                }
+              ],
+              "description": "Parent object types field on ai resource route profile record."
+            },
+            "description": "Parent object types field on ai resource route profile record.",
+            "type": "object"
+          },
+          "path_pattern": {
+            "description": "Path pattern field on ai resource route profile record.",
+            "maxLength": 512,
+            "type": "string"
+          },
+          "request_extractors": {
+            "additionalProperties": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/JsonValue"
+                }
+              ],
+              "description": "Request extractors field on ai resource route profile record."
+            },
+            "description": "Request extractors field on ai resource route profile record.",
+            "type": "object"
+          },
+          "resource_code": {
+            "description": "Resource code field on ai resource route profile record.",
+            "maxLength": 192,
+            "type": "string"
+          },
+          "resource_id": {
+            "description": "Resource id field on ai resource route profile record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "response_bindings": {
+            "additionalProperties": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/JsonValue"
+                }
+              ],
+              "description": "Response bindings field on ai resource route profile record."
+            },
+            "description": "Response bindings field on ai resource route profile record.",
+            "type": "object"
+          },
+          "route_key": {
+            "description": "Route key field on ai resource route profile record.",
+            "maxLength": 192,
+            "type": "string"
+          },
+          "sort_order": {
+            "description": "Sort order field on ai resource route profile record.",
+            "format": "int32",
+            "type": "integer"
+          },
+          "status": {
+            "description": "Status field on ai resource route profile record.",
+            "type": "string",
+            "x-db-type": "enum_int32"
+          },
+          "sticky_object_type": {
+            "description": "Sticky object type field on ai resource route profile record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "sticky_scope": {
+            "description": "Sticky scope field on ai resource route profile record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "tenant_id": {
+            "description": "Tenant id field on ai resource route profile record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "updated_at": {
+            "description": "Updated at field on ai resource route profile record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "uuid": {
+            "description": "Uuid field on ai resource route profile record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "version": {
+            "description": "Version field on ai resource route profile record.",
+            "format": "int64",
+            "type": "string"
+          }
+        },
+        "required": [
+          "uuid",
+          "tenant_id",
+          "organization_id",
+          "status",
+          "resource_code",
+          "route_key"
+        ],
+        "type": "object",
+        "x-domain": "ai",
+        "x-generated-by-this-project": true,
+        "x-table": "ai_resource_route_profile"
+      },
       "AiResourcesCreateResult": {
         "additionalProperties": false,
         "description": "Ai resources create result schema exposed by Claw Router.",
@@ -26618,6 +27310,147 @@
         "x-domain": "ai",
         "x-generated-by-this-project": true,
         "x-table": "ai_route_candidate"
+      },
+      "AiRouteIdempotencyRecord": {
+        "additionalProperties": false,
+        "description": "Ai route idempotency record schema exposed by Claw Router.",
+        "properties": {
+          "api_key_id": {
+            "description": "Api key id field on ai route idempotency record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "channel_group_id": {
+            "description": "Channel group id field on ai route idempotency record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "channel_id": {
+            "description": "Channel id field on ai route idempotency record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "created_at": {
+            "description": "Created at field on ai route idempotency record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "data_scope": {
+            "description": "Data scope field on ai route idempotency record.",
+            "type": "string",
+            "x-db-type": "enum_int32"
+          },
+          "deleted_at": {
+            "description": "Deleted at field on ai route idempotency record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "deleted_by": {
+            "description": "Deleted by field on ai route idempotency record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "endpoint_id": {
+            "description": "Endpoint id field on ai route idempotency record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "expires_at": {
+            "description": "Expires at field on ai route idempotency record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "id": {
+            "description": "Id field on ai route idempotency record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "idempotency_key": {
+            "description": "Idempotency key field on ai route idempotency record.",
+            "maxLength": 256,
+            "type": "string"
+          },
+          "metadata": {
+            "additionalProperties": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/JsonValue"
+                }
+              ],
+              "description": "Metadata field on ai route idempotency record."
+            },
+            "description": "Metadata field on ai route idempotency record.",
+            "type": "object"
+          },
+          "object_id": {
+            "description": "Object id field on ai route idempotency record.",
+            "maxLength": 256,
+            "type": "string"
+          },
+          "object_type": {
+            "description": "Object type field on ai route idempotency record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "organization_id": {
+            "description": "Organization id field on ai route idempotency record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "request_hash": {
+            "description": "Request hash field on ai route idempotency record.",
+            "maxLength": 128,
+            "type": "string"
+          },
+          "response_status": {
+            "description": "Response status field on ai route idempotency record.",
+            "format": "int32",
+            "type": "integer"
+          },
+          "route_strategy": {
+            "description": "Route strategy field on ai route idempotency record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "status": {
+            "description": "Status field on ai route idempotency record.",
+            "type": "string",
+            "x-db-type": "enum_int32"
+          },
+          "tenant_id": {
+            "description": "Tenant id field on ai route idempotency record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "updated_at": {
+            "description": "Updated at field on ai route idempotency record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "uuid": {
+            "description": "Uuid field on ai route idempotency record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "version": {
+            "description": "Version field on ai route idempotency record.",
+            "format": "int64",
+            "type": "string"
+          }
+        },
+        "required": [
+          "uuid",
+          "tenant_id",
+          "organization_id",
+          "status",
+          "api_key_id",
+          "idempotency_key",
+          "request_hash"
+        ],
+        "type": "object",
+        "x-domain": "ai",
+        "x-generated-by-this-project": true,
+        "x-table": "ai_route_idempotency"
       },
       "AiRoutingDecisionLogRecord": {
         "additionalProperties": false,
@@ -34587,6 +35420,124 @@
         "x-generated-by-this-project": false,
         "x-table": "commerce_payment_attempt"
       },
+      "CommercePaymentCaptureRecord": {
+        "additionalProperties": false,
+        "description": "Commerce payment capture record schema exposed by Claw Router.",
+        "properties": {
+          "amount": {
+            "description": "Amount field on commerce payment capture record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "capture_no": {
+            "description": "Capture no field on commerce payment capture record.",
+            "maxLength": 128,
+            "type": "string"
+          },
+          "created_at": {
+            "description": "Created at field on commerce payment capture record.",
+            "maxLength": 512,
+            "type": "string"
+          },
+          "currency_code": {
+            "description": "Currency code field on commerce payment capture record.",
+            "maxLength": 16,
+            "type": "string"
+          },
+          "failed_at": {
+            "description": "Failed at field on commerce payment capture record.",
+            "maxLength": 512,
+            "type": "string"
+          },
+          "failure_code": {
+            "description": "Failure code field on commerce payment capture record.",
+            "maxLength": 128,
+            "type": "string"
+          },
+          "failure_message": {
+            "description": "Failure message field on commerce payment capture record.",
+            "maxLength": 1024,
+            "type": "string"
+          },
+          "idempotency_key": {
+            "description": "Idempotency key field on commerce payment capture record.",
+            "maxLength": 512,
+            "type": "string"
+          },
+          "native_capture_id": {
+            "description": "Native capture id field on commerce payment capture record.",
+            "maxLength": 256,
+            "type": "string"
+          },
+          "organization_id": {
+            "description": "Organization id field on commerce payment capture record.",
+            "maxLength": 512,
+            "type": "string"
+          },
+          "payment_attempt_id": {
+            "description": "Payment attempt id field on commerce payment capture record.",
+            "maxLength": 512,
+            "type": "string"
+          },
+          "provider_account_id": {
+            "description": "Provider account id field on commerce payment capture record.",
+            "maxLength": 512,
+            "type": "string"
+          },
+          "provider_code": {
+            "description": "Provider code field on commerce payment capture record.",
+            "maxLength": 128,
+            "type": "string"
+          },
+          "request_no": {
+            "description": "Request no field on commerce payment capture record.",
+            "maxLength": 512,
+            "type": "string"
+          },
+          "status": {
+            "description": "Status field on commerce payment capture record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "submitted_at": {
+            "description": "Submitted at field on commerce payment capture record.",
+            "maxLength": 512,
+            "type": "string"
+          },
+          "succeeded_at": {
+            "description": "Succeeded at field on commerce payment capture record.",
+            "maxLength": 512,
+            "type": "string"
+          },
+          "tenant_id": {
+            "description": "Tenant id field on commerce payment capture record.",
+            "maxLength": 512,
+            "type": "string"
+          },
+          "updated_at": {
+            "description": "Updated at field on commerce payment capture record.",
+            "maxLength": 512,
+            "type": "string"
+          }
+        },
+        "required": [
+          "tenant_id",
+          "capture_no",
+          "payment_attempt_id",
+          "provider_code",
+          "amount",
+          "currency_code",
+          "status",
+          "request_no",
+          "idempotency_key",
+          "created_at",
+          "updated_at"
+        ],
+        "type": "object",
+        "x-domain": "commerce",
+        "x-generated-by-this-project": false,
+        "x-table": "commerce_payment_capture"
+      },
       "CommercePaymentChannelItem": {
         "additionalProperties": false,
         "description": "Commerce payment channel item schema exposed by Claw Router.",
@@ -34821,6 +35772,269 @@
         "x-generated-by-this-project": false,
         "x-table": "commerce_payment_channel"
       },
+      "CommercePaymentDisputeEventRecord": {
+        "additionalProperties": false,
+        "description": "Commerce payment dispute event record schema exposed by Claw Router.",
+        "properties": {
+          "actor_id": {
+            "description": "Actor id field on commerce payment dispute event record.",
+            "maxLength": 512,
+            "type": "string"
+          },
+          "actor_type": {
+            "description": "Actor type field on commerce payment dispute event record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "created_at": {
+            "description": "Created at field on commerce payment dispute event record.",
+            "maxLength": 512,
+            "type": "string"
+          },
+          "dispute_id": {
+            "description": "Dispute id field on commerce payment dispute event record.",
+            "maxLength": 512,
+            "type": "string"
+          },
+          "event_no": {
+            "description": "Event no field on commerce payment dispute event record.",
+            "maxLength": 128,
+            "type": "string"
+          },
+          "event_type": {
+            "description": "Event type field on commerce payment dispute event record.",
+            "maxLength": 128,
+            "type": "string"
+          },
+          "from_status": {
+            "description": "From status field on commerce payment dispute event record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "organization_id": {
+            "description": "Organization id field on commerce payment dispute event record.",
+            "maxLength": 512,
+            "type": "string"
+          },
+          "payload_json": {
+            "additionalProperties": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/JsonValue"
+                }
+              ],
+              "description": "Payload json field on commerce payment dispute event record."
+            },
+            "description": "Payload json field on commerce payment dispute event record.",
+            "type": "object"
+          },
+          "tenant_id": {
+            "description": "Tenant id field on commerce payment dispute event record.",
+            "maxLength": 512,
+            "type": "string"
+          },
+          "to_status": {
+            "description": "To status field on commerce payment dispute event record.",
+            "maxLength": 64,
+            "type": "string"
+          }
+        },
+        "required": [
+          "tenant_id",
+          "event_no",
+          "dispute_id",
+          "event_type",
+          "to_status",
+          "actor_type",
+          "created_at"
+        ],
+        "type": "object",
+        "x-domain": "commerce",
+        "x-generated-by-this-project": false,
+        "x-table": "commerce_payment_dispute_event"
+      },
+      "CommercePaymentDisputeRecord": {
+        "additionalProperties": false,
+        "description": "Commerce payment dispute record schema exposed by Claw Router.",
+        "properties": {
+          "amount": {
+            "description": "Amount field on commerce payment dispute record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "closed_at": {
+            "description": "Closed at field on commerce payment dispute record.",
+            "maxLength": 512,
+            "type": "string"
+          },
+          "created_at": {
+            "description": "Created at field on commerce payment dispute record.",
+            "maxLength": 512,
+            "type": "string"
+          },
+          "currency_code": {
+            "description": "Currency code field on commerce payment dispute record.",
+            "maxLength": 16,
+            "type": "string"
+          },
+          "dispute_no": {
+            "description": "Dispute no field on commerce payment dispute record.",
+            "maxLength": 128,
+            "type": "string"
+          },
+          "evidence_due_at": {
+            "description": "Evidence due at field on commerce payment dispute record.",
+            "maxLength": 512,
+            "type": "string"
+          },
+          "native_dispute_id": {
+            "description": "Native dispute id field on commerce payment dispute record.",
+            "maxLength": 256,
+            "type": "string"
+          },
+          "opened_at": {
+            "description": "Opened at field on commerce payment dispute record.",
+            "maxLength": 512,
+            "type": "string"
+          },
+          "organization_id": {
+            "description": "Organization id field on commerce payment dispute record.",
+            "maxLength": 512,
+            "type": "string"
+          },
+          "payment_attempt_id": {
+            "description": "Payment attempt id field on commerce payment dispute record.",
+            "maxLength": 512,
+            "type": "string"
+          },
+          "provider_account_id": {
+            "description": "Provider account id field on commerce payment dispute record.",
+            "maxLength": 512,
+            "type": "string"
+          },
+          "provider_code": {
+            "description": "Provider code field on commerce payment dispute record.",
+            "maxLength": 128,
+            "type": "string"
+          },
+          "reason_code": {
+            "description": "Reason code field on commerce payment dispute record.",
+            "maxLength": 128,
+            "type": "string"
+          },
+          "status": {
+            "description": "Status field on commerce payment dispute record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "tenant_id": {
+            "description": "Tenant id field on commerce payment dispute record.",
+            "maxLength": 512,
+            "type": "string"
+          },
+          "updated_at": {
+            "description": "Updated at field on commerce payment dispute record.",
+            "maxLength": 512,
+            "type": "string"
+          }
+        },
+        "required": [
+          "tenant_id",
+          "dispute_no",
+          "provider_code",
+          "payment_attempt_id",
+          "native_dispute_id",
+          "amount",
+          "currency_code",
+          "status",
+          "opened_at",
+          "created_at",
+          "updated_at"
+        ],
+        "type": "object",
+        "x-domain": "commerce",
+        "x-generated-by-this-project": false,
+        "x-table": "commerce_payment_dispute"
+      },
+      "CommercePaymentFeeRecord": {
+        "additionalProperties": false,
+        "description": "Commerce payment fee record schema exposed by Claw Router.",
+        "properties": {
+          "amount": {
+            "description": "Amount field on commerce payment fee record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "created_at": {
+            "description": "Created at field on commerce payment fee record.",
+            "maxLength": 512,
+            "type": "string"
+          },
+          "currency_code": {
+            "description": "Currency code field on commerce payment fee record.",
+            "maxLength": 16,
+            "type": "string"
+          },
+          "fee_type": {
+            "description": "Fee type field on commerce payment fee record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "occurred_at": {
+            "description": "Occurred at field on commerce payment fee record.",
+            "maxLength": 512,
+            "type": "string"
+          },
+          "organization_id": {
+            "description": "Organization id field on commerce payment fee record.",
+            "maxLength": 512,
+            "type": "string"
+          },
+          "payment_attempt_id": {
+            "description": "Payment attempt id field on commerce payment fee record.",
+            "maxLength": 512,
+            "type": "string"
+          },
+          "provider_account_id": {
+            "description": "Provider account id field on commerce payment fee record.",
+            "maxLength": 512,
+            "type": "string"
+          },
+          "provider_code": {
+            "description": "Provider code field on commerce payment fee record.",
+            "maxLength": 128,
+            "type": "string"
+          },
+          "refund_id": {
+            "description": "Refund id field on commerce payment fee record.",
+            "maxLength": 512,
+            "type": "string"
+          },
+          "statement_item_id": {
+            "description": "Statement item id field on commerce payment fee record.",
+            "maxLength": 512,
+            "type": "string"
+          },
+          "tenant_id": {
+            "description": "Tenant id field on commerce payment fee record.",
+            "maxLength": 512,
+            "type": "string"
+          }
+        },
+        "required": [
+          "tenant_id",
+          "provider_code",
+          "fee_type",
+          "amount",
+          "currency_code",
+          "occurred_at",
+          "created_at"
+        ],
+        "type": "object",
+        "x-domain": "commerce",
+        "x-generated-by-this-project": false,
+        "x-table": "commerce_payment_fee"
+      },
       "CommercePaymentIntentItem": {
         "additionalProperties": false,
         "description": "Commerce payment intent item schema exposed by Claw Router.",
@@ -34989,6 +36203,11 @@
             "maxLength": 512,
             "type": "string"
           },
+          "captured_amount": {
+            "description": "Captured amount field on commerce payment intent record.",
+            "maxLength": 512,
+            "type": "string"
+          },
           "created_at": {
             "description": "Created at field on commerce payment intent record.",
             "maxLength": 512,
@@ -35002,6 +36221,19 @@
           "idempotency_key": {
             "description": "Idempotency key field on commerce payment intent record.",
             "maxLength": 512,
+            "type": "string"
+          },
+          "merchant_order_no": {
+            "description": "Merchant order no field on commerce payment intent record.",
+            "maxLength": 512,
+            "type": "string"
+          },
+          "metadata_json": {
+            "description": "Metadata json field on commerce payment intent record.",
+            "type": "string"
+          },
+          "next_action_json": {
+            "description": "Next action json field on commerce payment intent record.",
             "type": "string"
           },
           "order_id": {
@@ -35019,8 +36251,27 @@
             "maxLength": 512,
             "type": "string"
           },
+          "payment_method": {
+            "description": "Payment method field on commerce payment intent record.",
+            "maxLength": 512,
+            "type": "string"
+          },
           "provider": {
             "description": "Provider field on commerce payment intent record.",
+            "maxLength": 512,
+            "type": "string"
+          },
+          "provider_code": {
+            "description": "Provider code field on commerce payment intent record.",
+            "maxLength": 512,
+            "type": "string"
+          },
+          "provider_native_json": {
+            "description": "Provider native json field on commerce payment intent record.",
+            "type": "string"
+          },
+          "refunded_amount": {
+            "description": "Refunded amount field on commerce payment intent record.",
             "maxLength": 512,
             "type": "string"
           },
@@ -35029,8 +36280,18 @@
             "maxLength": 512,
             "type": "string"
           },
+          "scene_code": {
+            "description": "Scene code field on commerce payment intent record.",
+            "maxLength": 512,
+            "type": "string"
+          },
           "status": {
             "description": "Status field on commerce payment intent record.",
+            "maxLength": 512,
+            "type": "string"
+          },
+          "subject": {
+            "description": "Subject field on commerce payment intent record.",
             "maxLength": 512,
             "type": "string"
           },
@@ -35049,12 +36310,19 @@
           "tenant_id",
           "owner_user_id",
           "order_id",
+          "merchant_order_no",
+          "subject",
           "provider",
+          "provider_code",
+          "payment_method",
+          "scene_code",
           "amount",
           "currency_code",
           "status",
           "request_no",
           "idempotency_key",
+          "captured_amount",
+          "refunded_amount",
           "created_at",
           "updated_at"
         ],
@@ -35283,6 +36551,144 @@
         "x-domain": "commerce",
         "x-generated-by-this-project": false,
         "x-table": "commerce_payment_method"
+      },
+      "CommercePaymentOperationAttemptRecord": {
+        "additionalProperties": false,
+        "description": "Commerce payment operation attempt record schema exposed by Claw Router.",
+        "properties": {
+          "channel_id": {
+            "description": "Channel id field on commerce payment operation attempt record.",
+            "maxLength": 512,
+            "type": "string"
+          },
+          "completed_at": {
+            "description": "Completed at field on commerce payment operation attempt record.",
+            "maxLength": 512,
+            "type": "string"
+          },
+          "created_at": {
+            "description": "Created at field on commerce payment operation attempt record.",
+            "maxLength": 512,
+            "type": "string"
+          },
+          "http_status": {
+            "description": "Http status field on commerce payment operation attempt record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "idempotency_key": {
+            "description": "Idempotency key field on commerce payment operation attempt record.",
+            "maxLength": 512,
+            "type": "string"
+          },
+          "native_refund_id": {
+            "description": "Native refund id field on commerce payment operation attempt record.",
+            "maxLength": 256,
+            "type": "string"
+          },
+          "native_request_id": {
+            "description": "Native request id field on commerce payment operation attempt record.",
+            "maxLength": 256,
+            "type": "string"
+          },
+          "native_trade_id": {
+            "description": "Native trade id field on commerce payment operation attempt record.",
+            "maxLength": 256,
+            "type": "string"
+          },
+          "operation_code": {
+            "description": "Operation code field on commerce payment operation attempt record.",
+            "maxLength": 128,
+            "type": "string"
+          },
+          "operation_no": {
+            "description": "Operation no field on commerce payment operation attempt record.",
+            "maxLength": 128,
+            "type": "string"
+          },
+          "organization_id": {
+            "description": "Organization id field on commerce payment operation attempt record.",
+            "maxLength": 512,
+            "type": "string"
+          },
+          "provider_account_id": {
+            "description": "Provider account id field on commerce payment operation attempt record.",
+            "maxLength": 512,
+            "type": "string"
+          },
+          "provider_code": {
+            "description": "Provider code field on commerce payment operation attempt record.",
+            "maxLength": 128,
+            "type": "string"
+          },
+          "provider_error_code": {
+            "description": "Provider error code field on commerce payment operation attempt record.",
+            "maxLength": 128,
+            "type": "string"
+          },
+          "provider_error_message": {
+            "description": "Provider error message field on commerce payment operation attempt record.",
+            "maxLength": 1024,
+            "type": "string"
+          },
+          "request_digest": {
+            "description": "Request digest field on commerce payment operation attempt record.",
+            "maxLength": 128,
+            "type": "string"
+          },
+          "response_digest": {
+            "description": "Response digest field on commerce payment operation attempt record.",
+            "maxLength": 128,
+            "type": "string"
+          },
+          "retryable": {
+            "description": "Retryable field on commerce payment operation attempt record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "sdkwork_resource_id": {
+            "description": "Sdkwork resource id field on commerce payment operation attempt record.",
+            "maxLength": 512,
+            "type": "string"
+          },
+          "sdkwork_resource_type": {
+            "description": "Sdkwork resource type field on commerce payment operation attempt record.",
+            "maxLength": 128,
+            "type": "string"
+          },
+          "started_at": {
+            "description": "Started at field on commerce payment operation attempt record.",
+            "maxLength": 512,
+            "type": "string"
+          },
+          "status": {
+            "description": "Status field on commerce payment operation attempt record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "tenant_id": {
+            "description": "Tenant id field on commerce payment operation attempt record.",
+            "maxLength": 512,
+            "type": "string"
+          }
+        },
+        "required": [
+          "tenant_id",
+          "operation_no",
+          "provider_code",
+          "operation_code",
+          "sdkwork_resource_type",
+          "sdkwork_resource_id",
+          "idempotency_key",
+          "request_digest",
+          "status",
+          "started_at",
+          "created_at"
+        ],
+        "type": "object",
+        "x-domain": "commerce",
+        "x-generated-by-this-project": false,
+        "x-table": "commerce_payment_operation_attempt"
       },
       "CommercePaymentProviderAccountItem": {
         "additionalProperties": false,
@@ -35675,6 +37081,152 @@
         "x-generated-by-this-project": false,
         "x-table": "commerce_payment_provider_account"
       },
+      "CommercePaymentProviderCapabilityRecord": {
+        "additionalProperties": false,
+        "description": "Commerce payment provider capability record schema exposed by Claw Router.",
+        "properties": {
+          "capability_code": {
+            "description": "Capability code field on commerce payment provider capability record.",
+            "maxLength": 128,
+            "type": "string"
+          },
+          "country_code": {
+            "description": "Country code field on commerce payment provider capability record.",
+            "maxLength": 16,
+            "type": "string"
+          },
+          "created_at": {
+            "description": "Created at field on commerce payment provider capability record.",
+            "maxLength": 512,
+            "type": "string"
+          },
+          "currency_code": {
+            "description": "Currency code field on commerce payment provider capability record.",
+            "maxLength": 16,
+            "type": "string"
+          },
+          "effective_from": {
+            "description": "Effective from field on commerce payment provider capability record.",
+            "maxLength": 512,
+            "type": "string"
+          },
+          "effective_to": {
+            "description": "Effective to field on commerce payment provider capability record.",
+            "maxLength": 512,
+            "type": "string"
+          },
+          "max_amount": {
+            "description": "Max amount field on commerce payment provider capability record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "metadata_json": {
+            "additionalProperties": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/JsonValue"
+                }
+              ],
+              "description": "Metadata json field on commerce payment provider capability record."
+            },
+            "description": "Metadata json field on commerce payment provider capability record.",
+            "type": "object"
+          },
+          "method_code": {
+            "description": "Method code field on commerce payment provider capability record.",
+            "maxLength": 128,
+            "type": "string"
+          },
+          "min_amount": {
+            "description": "Min amount field on commerce payment provider capability record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "native_operation_codes": {
+            "additionalProperties": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/JsonValue"
+                }
+              ],
+              "description": "Native operation codes field on commerce payment provider capability record."
+            },
+            "description": "Native operation codes field on commerce payment provider capability record.",
+            "type": "object"
+          },
+          "organization_id": {
+            "description": "Organization id field on commerce payment provider capability record.",
+            "maxLength": 512,
+            "type": "string"
+          },
+          "provider_account_id": {
+            "description": "Provider account id field on commerce payment provider capability record.",
+            "maxLength": 512,
+            "type": "string"
+          },
+          "provider_code": {
+            "description": "Provider code field on commerce payment provider capability record.",
+            "maxLength": 128,
+            "type": "string"
+          },
+          "scene_code": {
+            "description": "Scene code field on commerce payment provider capability record.",
+            "maxLength": 128,
+            "type": "string"
+          },
+          "status": {
+            "description": "Status field on commerce payment provider capability record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "supported_statement_types": {
+            "additionalProperties": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/JsonValue"
+                }
+              ],
+              "description": "Supported statement types field on commerce payment provider capability record."
+            },
+            "description": "Supported statement types field on commerce payment provider capability record.",
+            "type": "object"
+          },
+          "supported_webhook_events": {
+            "additionalProperties": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/JsonValue"
+                }
+              ],
+              "description": "Supported webhook events field on commerce payment provider capability record."
+            },
+            "description": "Supported webhook events field on commerce payment provider capability record.",
+            "type": "object"
+          },
+          "tenant_id": {
+            "description": "Tenant id field on commerce payment provider capability record.",
+            "maxLength": 512,
+            "type": "string"
+          },
+          "updated_at": {
+            "description": "Updated at field on commerce payment provider capability record.",
+            "maxLength": 512,
+            "type": "string"
+          }
+        },
+        "required": [
+          "tenant_id",
+          "provider_code",
+          "capability_code",
+          "status",
+          "created_at",
+          "updated_at"
+        ],
+        "type": "object",
+        "x-domain": "commerce",
+        "x-generated-by-this-project": false,
+        "x-table": "commerce_payment_provider_capability"
+      },
       "CommercePaymentProviderItem": {
         "additionalProperties": false,
         "description": "Commerce payment provider item schema exposed by Claw Router.",
@@ -35934,6 +37486,141 @@
         "x-generated-by-this-project": false,
         "x-table": "commerce_payment_provider"
       },
+      "CommercePaymentReconciliationItemRecord": {
+        "additionalProperties": false,
+        "description": "Commerce payment reconciliation item record schema exposed by Claw Router.",
+        "properties": {
+          "created_at": {
+            "description": "Created at field on commerce payment reconciliation item record.",
+            "maxLength": 512,
+            "type": "string"
+          },
+          "currency_code": {
+            "description": "Currency code field on commerce payment reconciliation item record.",
+            "maxLength": 16,
+            "type": "string"
+          },
+          "difference_amount": {
+            "description": "Difference amount field on commerce payment reconciliation item record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "difference_type": {
+            "description": "Difference type field on commerce payment reconciliation item record.",
+            "maxLength": 128,
+            "type": "string"
+          },
+          "internal_amount": {
+            "description": "Internal amount field on commerce payment reconciliation item record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "internal_status": {
+            "description": "Internal status field on commerce payment reconciliation item record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "match_status": {
+            "description": "Match status field on commerce payment reconciliation item record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "organization_id": {
+            "description": "Organization id field on commerce payment reconciliation item record.",
+            "maxLength": 512,
+            "type": "string"
+          },
+          "payment_attempt_id": {
+            "description": "Payment attempt id field on commerce payment reconciliation item record.",
+            "maxLength": 512,
+            "type": "string"
+          },
+          "provider_amount": {
+            "description": "Provider amount field on commerce payment reconciliation item record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "provider_code": {
+            "description": "Provider code field on commerce payment reconciliation item record.",
+            "maxLength": 128,
+            "type": "string"
+          },
+          "provider_status": {
+            "description": "Provider status field on commerce payment reconciliation item record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "reconciliation_run_id": {
+            "description": "Reconciliation run id field on commerce payment reconciliation item record.",
+            "maxLength": 512,
+            "type": "string"
+          },
+          "refund_attempt_id": {
+            "description": "Refund attempt id field on commerce payment reconciliation item record.",
+            "maxLength": 512,
+            "type": "string"
+          },
+          "refund_id": {
+            "description": "Refund id field on commerce payment reconciliation item record.",
+            "maxLength": 512,
+            "type": "string"
+          },
+          "resolution_note": {
+            "description": "Resolution note field on commerce payment reconciliation item record.",
+            "maxLength": 1024,
+            "type": "string"
+          },
+          "resolution_status": {
+            "description": "Resolution status field on commerce payment reconciliation item record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "resolved_at": {
+            "description": "Resolved at field on commerce payment reconciliation item record.",
+            "maxLength": 512,
+            "type": "string"
+          },
+          "resolved_by": {
+            "description": "Resolved by field on commerce payment reconciliation item record.",
+            "maxLength": 512,
+            "type": "string"
+          },
+          "statement_id": {
+            "description": "Statement id field on commerce payment reconciliation item record.",
+            "maxLength": 512,
+            "type": "string"
+          },
+          "statement_item_id": {
+            "description": "Statement item id field on commerce payment reconciliation item record.",
+            "maxLength": 512,
+            "type": "string"
+          },
+          "tenant_id": {
+            "description": "Tenant id field on commerce payment reconciliation item record.",
+            "maxLength": 512,
+            "type": "string"
+          },
+          "updated_at": {
+            "description": "Updated at field on commerce payment reconciliation item record.",
+            "maxLength": 512,
+            "type": "string"
+          }
+        },
+        "required": [
+          "tenant_id",
+          "reconciliation_run_id",
+          "provider_code",
+          "difference_type",
+          "match_status",
+          "resolution_status",
+          "created_at",
+          "updated_at"
+        ],
+        "type": "object",
+        "x-domain": "commerce",
+        "x-generated-by-this-project": false,
+        "x-table": "commerce_payment_reconciliation_item"
+      },
       "CommercePaymentReconciliationRunItem": {
         "additionalProperties": false,
         "description": "Commerce payment reconciliation run item schema exposed by Claw Router.",
@@ -36186,6 +37873,113 @@
         "x-domain": "commerce",
         "x-generated-by-this-project": false,
         "x-table": "commerce_payment_reconciliation_run"
+      },
+      "CommercePaymentRouteDecisionRecord": {
+        "additionalProperties": false,
+        "description": "Commerce payment route decision record schema exposed by Claw Router.",
+        "properties": {
+          "amount": {
+            "description": "Amount field on commerce payment route decision record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "channel_id": {
+            "description": "Channel id field on commerce payment route decision record.",
+            "maxLength": 512,
+            "type": "string"
+          },
+          "country_code": {
+            "description": "Country code field on commerce payment route decision record.",
+            "maxLength": 16,
+            "type": "string"
+          },
+          "created_at": {
+            "description": "Created at field on commerce payment route decision record.",
+            "maxLength": 512,
+            "type": "string"
+          },
+          "currency_code": {
+            "description": "Currency code field on commerce payment route decision record.",
+            "maxLength": 16,
+            "type": "string"
+          },
+          "decision_reason": {
+            "description": "Decision reason field on commerce payment route decision record.",
+            "maxLength": 512,
+            "type": "string"
+          },
+          "fallback_from_channel_id": {
+            "description": "Fallback from channel id field on commerce payment route decision record.",
+            "maxLength": 512,
+            "type": "string"
+          },
+          "method_code": {
+            "description": "Method code field on commerce payment route decision record.",
+            "maxLength": 128,
+            "type": "string"
+          },
+          "organization_id": {
+            "description": "Organization id field on commerce payment route decision record.",
+            "maxLength": 512,
+            "type": "string"
+          },
+          "payment_attempt_id": {
+            "description": "Payment attempt id field on commerce payment route decision record.",
+            "maxLength": 512,
+            "type": "string"
+          },
+          "payment_intent_id": {
+            "description": "Payment intent id field on commerce payment route decision record.",
+            "maxLength": 512,
+            "type": "string"
+          },
+          "provider_account_id": {
+            "description": "Provider account id field on commerce payment route decision record.",
+            "maxLength": 512,
+            "type": "string"
+          },
+          "provider_code": {
+            "description": "Provider code field on commerce payment route decision record.",
+            "maxLength": 128,
+            "type": "string"
+          },
+          "risk_level": {
+            "description": "Risk level field on commerce payment route decision record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "route_rule_id": {
+            "description": "Route rule id field on commerce payment route decision record.",
+            "maxLength": 512,
+            "type": "string"
+          },
+          "scene_code": {
+            "description": "Scene code field on commerce payment route decision record.",
+            "maxLength": 128,
+            "type": "string"
+          },
+          "tenant_id": {
+            "description": "Tenant id field on commerce payment route decision record.",
+            "maxLength": 512,
+            "type": "string"
+          }
+        },
+        "required": [
+          "tenant_id",
+          "payment_intent_id",
+          "payment_attempt_id",
+          "channel_id",
+          "provider_code",
+          "method_code",
+          "scene_code",
+          "currency_code",
+          "amount",
+          "created_at"
+        ],
+        "type": "object",
+        "x-domain": "commerce",
+        "x-generated-by-this-project": false,
+        "x-table": "commerce_payment_route_decision"
       },
       "CommercePaymentRouteRuleItem": {
         "additionalProperties": false,
@@ -36443,6 +38237,628 @@
         "x-domain": "commerce",
         "x-generated-by-this-project": false,
         "x-table": "commerce_payment_route_rule"
+      },
+      "CommercePaymentRuntimeAssemblyEvent": {
+        "additionalProperties": false,
+        "description": "Commerce payment runtime assembly event schema exposed by Claw Router.",
+        "properties": {
+          "accountNo": {
+            "description": "Account no field on commerce payment runtime assembly event.",
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_-]+$",
+            "type": "string"
+          },
+          "kind": {
+            "description": "Kind field on commerce payment runtime assembly event.",
+            "enum": [
+              "registered",
+              "failed",
+              "skipped"
+            ],
+            "type": "string"
+          },
+          "message": {
+            "description": "Message field on commerce payment runtime assembly event.",
+            "maxLength": 1024,
+            "nullable": true,
+            "type": "string"
+          },
+          "providerCode": {
+            "description": "Provider code field on commerce payment runtime assembly event.",
+            "enum": [
+              "wechat_pay",
+              "alipay",
+              "paypal",
+              "stripe",
+              "apple_pay",
+              "google_pay"
+            ],
+            "type": "string"
+          },
+          "reason": {
+            "description": "Reason field on commerce payment runtime assembly event.",
+            "maxLength": 128,
+            "nullable": true,
+            "type": "string"
+          }
+        },
+        "required": [
+          "kind",
+          "accountNo",
+          "providerCode"
+        ],
+        "type": "object"
+      },
+      "CommercePaymentRuntimeAssemblySummary": {
+        "additionalProperties": false,
+        "description": "Commerce payment runtime assembly summary schema exposed by Claw Router.",
+        "properties": {
+          "failed": {
+            "description": "Failed field on commerce payment runtime assembly summary.",
+            "format": "int64",
+            "minimum": 0,
+            "type": "integer"
+          },
+          "failedProviderCodes": {
+            "description": "Failed provider codes field on commerce payment runtime assembly summary.",
+            "items": {
+              "description": "Failed provider codes field on commerce payment runtime assembly summary.",
+              "enum": [
+                "wechat_pay",
+                "alipay",
+                "paypal",
+                "stripe",
+                "apple_pay",
+                "google_pay"
+              ],
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "registered": {
+            "description": "Registered field on commerce payment runtime assembly summary.",
+            "format": "int64",
+            "minimum": 0,
+            "type": "integer"
+          },
+          "registeredProviderCodes": {
+            "description": "Registered provider codes field on commerce payment runtime assembly summary.",
+            "items": {
+              "description": "Registered provider codes field on commerce payment runtime assembly summary.",
+              "enum": [
+                "wechat_pay",
+                "alipay",
+                "paypal",
+                "stripe",
+                "apple_pay",
+                "google_pay"
+              ],
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "skipped": {
+            "description": "Skipped field on commerce payment runtime assembly summary.",
+            "format": "int64",
+            "minimum": 0,
+            "type": "integer"
+          },
+          "skippedProviderCodes": {
+            "description": "Skipped provider codes field on commerce payment runtime assembly summary.",
+            "items": {
+              "description": "Skipped provider codes field on commerce payment runtime assembly summary.",
+              "enum": [
+                "wechat_pay",
+                "alipay",
+                "paypal",
+                "stripe",
+                "apple_pay",
+                "google_pay"
+              ],
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "total": {
+            "description": "Total field on commerce payment runtime assembly summary.",
+            "format": "int64",
+            "minimum": 0,
+            "type": "integer"
+          }
+        },
+        "required": [
+          "total",
+          "registered",
+          "failed",
+          "skipped",
+          "registeredProviderCodes",
+          "failedProviderCodes",
+          "skippedProviderCodes"
+        ],
+        "type": "object"
+      },
+      "CommercePaymentRuntimeSnapshotResponse": {
+        "additionalProperties": false,
+        "description": "Commerce payment runtime snapshot response schema exposed by Claw Router.",
+        "name": "CommercePaymentRuntimeSnapshotResponse",
+        "properties": {
+          "environment": {
+            "description": "Environment field on commerce payment runtime snapshot response.",
+            "enum": [
+              "sandbox",
+              "production"
+            ],
+            "type": "string"
+          },
+          "events": {
+            "description": "Events field on commerce payment runtime snapshot response.",
+            "items": {
+              "$ref": "#/components/schemas/CommercePaymentRuntimeAssemblyEvent"
+            },
+            "type": "array"
+          },
+          "recordedAt": {
+            "description": "Recorded at field on commerce payment runtime snapshot response.",
+            "maxLength": 64,
+            "minLength": 1,
+            "type": "string"
+          },
+          "summary": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/CommercePaymentRuntimeAssemblySummary"
+              }
+            ],
+            "description": "Summary field on commerce payment runtime snapshot response."
+          }
+        },
+        "required": [
+          "environment",
+          "recordedAt",
+          "summary",
+          "events"
+        ],
+        "type": "object"
+      },
+      "CommercePaymentStatementItemRecord": {
+        "additionalProperties": false,
+        "description": "Commerce payment statement item record schema exposed by Claw Router.",
+        "properties": {
+          "created_at": {
+            "description": "Created at field on commerce payment statement item record.",
+            "maxLength": 512,
+            "type": "string"
+          },
+          "currency_code": {
+            "description": "Currency code field on commerce payment statement item record.",
+            "maxLength": 16,
+            "type": "string"
+          },
+          "fee_amount": {
+            "description": "Fee amount field on commerce payment statement item record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "gross_amount": {
+            "description": "Gross amount field on commerce payment statement item record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "metadata_json": {
+            "additionalProperties": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/JsonValue"
+                }
+              ],
+              "description": "Metadata json field on commerce payment statement item record."
+            },
+            "description": "Metadata json field on commerce payment statement item record.",
+            "type": "object"
+          },
+          "native_order_no": {
+            "description": "Native order no field on commerce payment statement item record.",
+            "maxLength": 256,
+            "type": "string"
+          },
+          "native_refund_id": {
+            "description": "Native refund id field on commerce payment statement item record.",
+            "maxLength": 256,
+            "type": "string"
+          },
+          "native_trade_id": {
+            "description": "Native trade id field on commerce payment statement item record.",
+            "maxLength": 256,
+            "type": "string"
+          },
+          "net_amount": {
+            "description": "Net amount field on commerce payment statement item record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "occurred_at": {
+            "description": "Occurred at field on commerce payment statement item record.",
+            "maxLength": 512,
+            "type": "string"
+          },
+          "organization_id": {
+            "description": "Organization id field on commerce payment statement item record.",
+            "maxLength": 512,
+            "type": "string"
+          },
+          "provider_account_id": {
+            "description": "Provider account id field on commerce payment statement item record.",
+            "maxLength": 512,
+            "type": "string"
+          },
+          "provider_code": {
+            "description": "Provider code field on commerce payment statement item record.",
+            "maxLength": 128,
+            "type": "string"
+          },
+          "provider_status": {
+            "description": "Provider status field on commerce payment statement item record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "raw_row_digest": {
+            "description": "Raw row digest field on commerce payment statement item record.",
+            "maxLength": 128,
+            "type": "string"
+          },
+          "row_no": {
+            "description": "Row no field on commerce payment statement item record.",
+            "maxLength": 128,
+            "type": "string"
+          },
+          "sdkwork_out_refund_no": {
+            "description": "Sdkwork out refund no field on commerce payment statement item record.",
+            "maxLength": 128,
+            "type": "string"
+          },
+          "sdkwork_out_trade_no": {
+            "description": "Sdkwork out trade no field on commerce payment statement item record.",
+            "maxLength": 128,
+            "type": "string"
+          },
+          "settled_at": {
+            "description": "Settled at field on commerce payment statement item record.",
+            "maxLength": 512,
+            "type": "string"
+          },
+          "statement_id": {
+            "description": "Statement id field on commerce payment statement item record.",
+            "maxLength": 512,
+            "type": "string"
+          },
+          "tenant_id": {
+            "description": "Tenant id field on commerce payment statement item record.",
+            "maxLength": 512,
+            "type": "string"
+          },
+          "transaction_type": {
+            "description": "Transaction type field on commerce payment statement item record.",
+            "maxLength": 64,
+            "type": "string"
+          }
+        },
+        "required": [
+          "tenant_id",
+          "statement_id",
+          "provider_code",
+          "row_no",
+          "transaction_type",
+          "occurred_at",
+          "gross_amount",
+          "fee_amount",
+          "net_amount",
+          "currency_code",
+          "raw_row_digest",
+          "created_at"
+        ],
+        "type": "object",
+        "x-domain": "commerce",
+        "x-generated-by-this-project": false,
+        "x-table": "commerce_payment_statement_item"
+      },
+      "CommercePaymentStatementRecord": {
+        "additionalProperties": false,
+        "description": "Commerce payment statement record schema exposed by Claw Router.",
+        "properties": {
+          "created_at": {
+            "description": "Created at field on commerce payment statement record.",
+            "maxLength": 512,
+            "type": "string"
+          },
+          "download_status": {
+            "description": "Download status field on commerce payment statement record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "downloaded_at": {
+            "description": "Downloaded at field on commerce payment statement record.",
+            "maxLength": 512,
+            "type": "string"
+          },
+          "fee_amount": {
+            "description": "Fee amount field on commerce payment statement record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "file_digest": {
+            "description": "File digest field on commerce payment statement record.",
+            "maxLength": 128,
+            "type": "string"
+          },
+          "file_ref": {
+            "description": "File ref field on commerce payment statement record.",
+            "maxLength": 512,
+            "type": "string"
+          },
+          "idempotency_key": {
+            "description": "Idempotency key field on commerce payment statement record.",
+            "maxLength": 512,
+            "type": "string"
+          },
+          "net_amount": {
+            "description": "Net amount field on commerce payment statement record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "organization_id": {
+            "description": "Organization id field on commerce payment statement record.",
+            "maxLength": 512,
+            "type": "string"
+          },
+          "parse_status": {
+            "description": "Parse status field on commerce payment statement record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "parsed_at": {
+            "description": "Parsed at field on commerce payment statement record.",
+            "maxLength": 512,
+            "type": "string"
+          },
+          "period_end": {
+            "description": "Period end field on commerce payment statement record.",
+            "maxLength": 512,
+            "type": "string"
+          },
+          "period_start": {
+            "description": "Period start field on commerce payment statement record.",
+            "maxLength": 512,
+            "type": "string"
+          },
+          "provider_account_id": {
+            "description": "Provider account id field on commerce payment statement record.",
+            "maxLength": 512,
+            "type": "string"
+          },
+          "provider_code": {
+            "description": "Provider code field on commerce payment statement record.",
+            "maxLength": 128,
+            "type": "string"
+          },
+          "provider_statement_id": {
+            "description": "Provider statement id field on commerce payment statement record.",
+            "maxLength": 256,
+            "type": "string"
+          },
+          "request_no": {
+            "description": "Request no field on commerce payment statement record.",
+            "maxLength": 512,
+            "type": "string"
+          },
+          "settlement_currency": {
+            "description": "Settlement currency field on commerce payment statement record.",
+            "maxLength": 16,
+            "type": "string"
+          },
+          "statement_no": {
+            "description": "Statement no field on commerce payment statement record.",
+            "maxLength": 128,
+            "type": "string"
+          },
+          "statement_type": {
+            "description": "Statement type field on commerce payment statement record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "tenant_id": {
+            "description": "Tenant id field on commerce payment statement record.",
+            "maxLength": 512,
+            "type": "string"
+          },
+          "total_amount": {
+            "description": "Total amount field on commerce payment statement record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "updated_at": {
+            "description": "Updated at field on commerce payment statement record.",
+            "maxLength": 512,
+            "type": "string"
+          }
+        },
+        "required": [
+          "tenant_id",
+          "statement_no",
+          "provider_code",
+          "statement_type",
+          "settlement_currency",
+          "period_start",
+          "period_end",
+          "download_status",
+          "parse_status",
+          "total_amount",
+          "fee_amount",
+          "net_amount",
+          "request_no",
+          "idempotency_key",
+          "created_at",
+          "updated_at"
+        ],
+        "type": "object",
+        "x-domain": "commerce",
+        "x-generated-by-this-project": false,
+        "x-table": "commerce_payment_statement"
+      },
+      "CommercePaymentWebhookDeliveryRecord": {
+        "additionalProperties": false,
+        "description": "Commerce payment webhook delivery record schema exposed by Claw Router.",
+        "properties": {
+          "created_at": {
+            "description": "Created at field on commerce payment webhook delivery record.",
+            "maxLength": 512,
+            "type": "string"
+          },
+          "delivery_no": {
+            "description": "Delivery no field on commerce payment webhook delivery record.",
+            "maxLength": 128,
+            "type": "string"
+          },
+          "delivery_status": {
+            "description": "Delivery status field on commerce payment webhook delivery record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "event_id": {
+            "description": "Event id field on commerce payment webhook delivery record.",
+            "maxLength": 512,
+            "type": "string"
+          },
+          "failure_code": {
+            "description": "Failure code field on commerce payment webhook delivery record.",
+            "maxLength": 128,
+            "type": "string"
+          },
+          "failure_message": {
+            "description": "Failure message field on commerce payment webhook delivery record.",
+            "maxLength": 1024,
+            "type": "string"
+          },
+          "headers_json": {
+            "additionalProperties": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/JsonValue"
+                }
+              ],
+              "description": "Headers json field on commerce payment webhook delivery record."
+            },
+            "description": "Headers json field on commerce payment webhook delivery record.",
+            "type": "object"
+          },
+          "nonce": {
+            "description": "Nonce field on commerce payment webhook delivery record.",
+            "maxLength": 512,
+            "type": "string"
+          },
+          "normalized_event_id": {
+            "description": "Normalized event id field on commerce payment webhook delivery record.",
+            "maxLength": 512,
+            "type": "string"
+          },
+          "organization_id": {
+            "description": "Organization id field on commerce payment webhook delivery record.",
+            "maxLength": 512,
+            "type": "string"
+          },
+          "payload_digest": {
+            "description": "Payload digest field on commerce payment webhook delivery record.",
+            "maxLength": 128,
+            "type": "string"
+          },
+          "payload_ref": {
+            "description": "Payload ref field on commerce payment webhook delivery record.",
+            "maxLength": 512,
+            "type": "string"
+          },
+          "processed_at": {
+            "description": "Processed at field on commerce payment webhook delivery record.",
+            "maxLength": 512,
+            "type": "string"
+          },
+          "provider_account_id": {
+            "description": "Provider account id field on commerce payment webhook delivery record.",
+            "maxLength": 512,
+            "type": "string"
+          },
+          "provider_code": {
+            "description": "Provider code field on commerce payment webhook delivery record.",
+            "maxLength": 128,
+            "type": "string"
+          },
+          "received_at": {
+            "description": "Received at field on commerce payment webhook delivery record.",
+            "maxLength": 512,
+            "type": "string"
+          },
+          "request_timestamp": {
+            "description": "Request timestamp field on commerce payment webhook delivery record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "signature": {
+            "description": "Signature field on commerce payment webhook delivery record.",
+            "maxLength": 1024,
+            "type": "string"
+          },
+          "signature_algorithm": {
+            "description": "Signature algorithm field on commerce payment webhook delivery record.",
+            "maxLength": 128,
+            "type": "string"
+          },
+          "source_ip": {
+            "description": "Source ip field on commerce payment webhook delivery record.",
+            "maxLength": 128,
+            "type": "string"
+          },
+          "tenant_id": {
+            "description": "Tenant id field on commerce payment webhook delivery record.",
+            "maxLength": 512,
+            "type": "string"
+          },
+          "updated_at": {
+            "description": "Updated at field on commerce payment webhook delivery record.",
+            "maxLength": 512,
+            "type": "string"
+          },
+          "user_agent": {
+            "description": "User agent field on commerce payment webhook delivery record.",
+            "maxLength": 512,
+            "type": "string"
+          },
+          "verification_status": {
+            "description": "Verification status field on commerce payment webhook delivery record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "verified_at": {
+            "description": "Verified at field on commerce payment webhook delivery record.",
+            "maxLength": 512,
+            "type": "string"
+          }
+        },
+        "required": [
+          "tenant_id",
+          "delivery_no",
+          "provider_code",
+          "event_id",
+          "nonce",
+          "payload_digest",
+          "verification_status",
+          "delivery_status",
+          "received_at",
+          "created_at",
+          "updated_at"
+        ],
+        "type": "object",
+        "x-domain": "commerce",
+        "x-generated-by-this-project": false,
+        "x-table": "commerce_payment_webhook_delivery"
       },
       "CommercePaymentWebhookEventItem": {
         "additionalProperties": false,
@@ -38553,14 +40969,21 @@
         "description": "Commerce recharge package mutation request schema exposed by Claw Router.",
         "name": "CommerceRechargePackageMutationRequest",
         "properties": {
-          "bonus": {
-            "description": "Bonus field on commerce recharge package mutation request.",
+          "bonusPoints": {
+            "description": "Bonus points field on commerce recharge package mutation request.",
             "format": "int64",
             "minimum": 0,
             "type": "integer"
           },
-          "rmb": {
-            "description": "Rmb field on commerce recharge package mutation request.",
+          "currencyCode": {
+            "description": "Currency code field on commerce recharge package mutation request.",
+            "maxLength": 16,
+            "minLength": 3,
+            "pattern": "^[A-Z0-9_-]+$",
+            "type": "string"
+          },
+          "priceAmount": {
+            "description": "Price amount field on commerce recharge package mutation request.",
             "pattern": "^\\d+(?:\\.\\d{1,2})?$",
             "type": "string"
           },
@@ -38574,8 +40997,9 @@
           }
         },
         "required": [
-          "rmb",
-          "bonus"
+          "priceAmount",
+          "currencyCode",
+          "bonusPoints"
         ],
         "type": "object"
       },
@@ -38677,6 +41101,41 @@
         "x-domain": "commerce",
         "x-generated-by-this-project": false,
         "x-table": "commerce_recharge_package"
+      },
+      "CommerceRechargeSettingsUpdateRequest": {
+        "additionalProperties": false,
+        "description": "Commerce recharge settings update request schema exposed by Claw Router.",
+        "name": "CommerceRechargeSettingsUpdateRequest",
+        "properties": {
+          "baseCurrencyCode": {
+            "description": "Base currency code field on commerce recharge settings update request.",
+            "maxLength": 16,
+            "minLength": 3,
+            "pattern": "^[A-Z0-9_-]+$",
+            "type": "string"
+          },
+          "basePointsPerCny": {
+            "description": "Base points per cny field on commerce recharge settings update request.",
+            "pattern": "^\\d+(?:\\.\\d{1,6})?$",
+            "type": "string"
+          },
+          "currencyToCnyRates": {
+            "additionalProperties": {
+              "description": "Currency to cny rates field on commerce recharge settings update request.",
+              "pattern": "^\\d+(?:\\.\\d{1,6})?$",
+              "type": "string"
+            },
+            "description": "Currency to cny rates field on commerce recharge settings update request.",
+            "minProperties": 1,
+            "type": "object"
+          }
+        },
+        "required": [
+          "baseCurrencyCode",
+          "basePointsPerCny",
+          "currencyToCnyRates"
+        ],
+        "type": "object"
       },
       "CommerceRefundAttemptRecord": {
         "additionalProperties": false,
@@ -38953,14 +41412,39 @@
             "maxLength": 512,
             "type": "string"
           },
+          "currency_code": {
+            "description": "Currency code field on commerce refund record.",
+            "maxLength": 512,
+            "type": "string"
+          },
           "idempotency_key": {
             "description": "Idempotency key field on commerce refund record.",
+            "maxLength": 512,
+            "type": "string"
+          },
+          "organization_id": {
+            "description": "Organization id field on commerce refund record.",
             "maxLength": 512,
             "type": "string"
           },
           "payment_attempt_id": {
             "description": "Payment attempt id field on commerce refund record.",
             "maxLength": 512,
+            "type": "string"
+          },
+          "payment_intent_id": {
+            "description": "Payment intent id field on commerce refund record.",
+            "maxLength": 512,
+            "type": "string"
+          },
+          "provider_code": {
+            "description": "Provider code field on commerce refund record.",
+            "maxLength": 512,
+            "type": "string"
+          },
+          "reason": {
+            "description": "Reason field on commerce refund record.",
+            "maxLength": 1024,
             "type": "string"
           },
           "refund_no": {
@@ -46692,6 +49176,156 @@
         ],
         "type": "object",
         "x-operation-id": "installation.status.retrieve"
+      },
+      "IntegrationProviderAccountRecord": {
+        "additionalProperties": false,
+        "description": "Integration provider account record schema exposed by Claw Router.",
+        "properties": {
+          "base_url": {
+            "description": "Base url field on integration provider account record.",
+            "maxLength": 512,
+            "type": "string"
+          },
+          "created_at": {
+            "description": "Created at field on integration provider account record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "data_scope": {
+            "description": "Data scope field on integration provider account record.",
+            "type": "string",
+            "x-db-type": "enum_int32"
+          },
+          "deleted_at": {
+            "description": "Deleted at field on integration provider account record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "deleted_by": {
+            "description": "Deleted by field on integration provider account record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "id": {
+            "description": "Id field on integration provider account record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "last_latency_ms": {
+            "description": "Last latency ms field on integration provider account record.",
+            "format": "int32",
+            "type": "integer"
+          },
+          "last_rotated_at": {
+            "description": "Last rotated at field on integration provider account record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "last_used_at": {
+            "description": "Last used at field on integration provider account record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "last_verified_at": {
+            "description": "Last verified at field on integration provider account record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "masked_label": {
+            "description": "Masked label field on integration provider account record.",
+            "maxLength": 128,
+            "type": "string"
+          },
+          "metadata": {
+            "additionalProperties": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/JsonValue"
+                }
+              ],
+              "description": "Metadata field on integration provider account record."
+            },
+            "description": "Metadata field on integration provider account record.",
+            "type": "object"
+          },
+          "next_rotate_at": {
+            "description": "Next rotate at field on integration provider account record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "organization_id": {
+            "description": "Organization id field on integration provider account record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "provider_id": {
+            "description": "Provider id field on integration provider account record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "quota_snapshot": {
+            "additionalProperties": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/JsonValue"
+                }
+              ],
+              "description": "Quota snapshot field on integration provider account record."
+            },
+            "description": "Quota snapshot field on integration provider account record.",
+            "type": "object"
+          },
+          "region_code": {
+            "description": "Region code field on integration provider account record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "secret_hash": {
+            "description": "Secret hash field on integration provider account record.",
+            "maxLength": 128,
+            "type": "string"
+          },
+          "secret_ref": {
+            "description": "Secret ref field on integration provider account record.",
+            "maxLength": 512,
+            "type": "string"
+          },
+          "status": {
+            "description": "Status field on integration provider account record.",
+            "type": "string",
+            "x-db-type": "enum_int32"
+          },
+          "tenant_id": {
+            "description": "Tenant id field on integration provider account record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "updated_at": {
+            "description": "Updated at field on integration provider account record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "uuid": {
+            "description": "Uuid field on integration provider account record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "version": {
+            "description": "Version field on integration provider account record.",
+            "format": "int64",
+            "type": "string"
+          }
+        },
+        "required": [
+          "uuid",
+          "tenant_id",
+          "organization_id",
+          "status"
+        ],
+        "type": "object",
+        "x-domain": "integration",
+        "x-generated-by-this-project": true,
+        "x-table": "integration_provider_account"
       },
       "IntegrationProviderHealthSnapshotRecord": {
         "additionalProperties": false,
@@ -58155,6 +60789,33 @@
         "type": "object",
         "x-operation-id": "payments.routeRules.list"
       },
+      "PaymentsRuntimeSnapshotRetrieveResult": {
+        "additionalProperties": false,
+        "description": "Payments runtime snapshot retrieve result schema exposed by Claw Router.",
+        "properties": {
+          "code": {
+            "description": "Business response code.",
+            "type": "string"
+          },
+          "data": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/CommercePaymentRuntimeSnapshotResponse"
+              }
+            ],
+            "description": "Data field on payments runtime snapshot retrieve result."
+          },
+          "msg": {
+            "description": "Human-readable response message.",
+            "type": "string"
+          }
+        },
+        "required": [
+          "code"
+        ],
+        "type": "object",
+        "x-operation-id": "payments.runtime.snapshot.retrieve"
+      },
       "PaymentsWebhookEventsListResult": {
         "additionalProperties": false,
         "description": "Payments webhook events list result schema exposed by Claw Router.",
@@ -62434,7 +65095,7 @@
           "data": {
             "allOf": [
               {
-                "$ref": "#/components/schemas/CommerceStandardCollectionResponse"
+                "$ref": "#/components/schemas/AdminRechargePackageListResponse"
               }
             ],
             "description": "Data field on recharges packages list result."
@@ -62476,6 +65137,60 @@
         ],
         "type": "object",
         "x-operation-id": "recharges.packages.update"
+      },
+      "RechargesSettingsRetrieveResult": {
+        "additionalProperties": false,
+        "description": "Recharges settings retrieve result schema exposed by Claw Router.",
+        "properties": {
+          "code": {
+            "description": "Business response code.",
+            "type": "string"
+          },
+          "data": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/AdminRechargeSettingsResponse"
+              }
+            ],
+            "description": "Data field on recharges settings retrieve result."
+          },
+          "msg": {
+            "description": "Human-readable response message.",
+            "type": "string"
+          }
+        },
+        "required": [
+          "code"
+        ],
+        "type": "object",
+        "x-operation-id": "recharges.settings.retrieve"
+      },
+      "RechargesSettingsUpdateResult": {
+        "additionalProperties": false,
+        "description": "Recharges settings update result schema exposed by Claw Router.",
+        "properties": {
+          "code": {
+            "description": "Business response code.",
+            "type": "string"
+          },
+          "data": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/AdminRechargeSettingsResponse"
+              }
+            ],
+            "description": "Data field on recharges settings update result."
+          },
+          "msg": {
+            "description": "Human-readable response message.",
+            "type": "string"
+          }
+        },
+        "required": [
+          "code"
+        ],
+        "type": "object",
+        "x-operation-id": "recharges.settings.update"
       },
       "ReconciliationRunsListResult": {
         "additionalProperties": false,
@@ -90933,6 +93648,108 @@
         "x-write-tables": []
       }
     },
+    "/backend/v3/api/payments/runtime/snapshot": {
+      "get": {
+        "description": "Read-only payment provider runtime assembly diagnostics for the selected environment. The response contains sanitized status events and never exposes provider secrets, certificates, adapters, or live registry instances. Reads commerce_payment_provider, commerce_payment_provider_account, commerce_payment_method, commerce_payment_channel, commerce_payment_route_rule, commerce_payment_intent, commerce_payment_attempt, commerce_payment_webhook_event, commerce_payment_reconciliation_run. Writes none. File targets none.",
+        "operationId": "payments.runtime.snapshot.retrieve",
+        "parameters": [
+          {
+            "description": "Environment query parameter.",
+            "in": "query",
+            "name": "environment",
+            "required": false,
+            "schema": {
+              "enum": [
+                "sandbox",
+                "production"
+              ],
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PaymentsRuntimeSnapshotRetrieveResult"
+                }
+              }
+            },
+            "description": "OK"
+          },
+          "400": {
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            },
+            "description": "Bad Request"
+          },
+          "401": {
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            },
+            "description": "Unauthorized"
+          },
+          "500": {
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            },
+            "description": "Server Error"
+          },
+          "default": {
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            },
+            "description": "Error response."
+          }
+        },
+        "security": [
+          {
+            "AccessToken": [],
+            "AuthToken": []
+          }
+        ],
+        "summary": "Payments Runtime Snapshot Retrieve",
+        "tags": [
+          "commerce"
+        ],
+        "x-contract-kind": "read",
+        "x-file-targets": [],
+        "x-read-sources": [
+          "commerce_payment_provider",
+          "commerce_payment_provider_account",
+          "commerce_payment_method",
+          "commerce_payment_channel",
+          "commerce_payment_route_rule",
+          "commerce_payment_intent",
+          "commerce_payment_attempt",
+          "commerce_payment_webhook_event",
+          "commerce_payment_reconciliation_run"
+        ],
+        "x-route-scope": "admin",
+        "x-sdk-domain": "commerce",
+        "x-sdkwork-domain": "commerce",
+        "x-sdkwork-resource": "payments.runtime.snapshot",
+        "x-source-file": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-payments/src/paymentsService.ts",
+        "x-write-tables": []
+      }
+    },
     "/backend/v3/api/payments/webhook_events": {
       "get": {
         "description": "Standard appbase commerce API for payments.webhookEvents.list; no legacy billing compatibility route is exposed. Reads commerce_payment_provider, commerce_payment_provider_account, commerce_payment_method, commerce_payment_channel, commerce_payment_route_rule, commerce_payment_intent, commerce_payment_attempt, commerce_payment_webhook_event, commerce_payment_reconciliation_run. Writes none. File targets none.",
@@ -95823,6 +98640,178 @@
           "commerce_recharge_package",
           "commerce_product_spu",
           "commerce_product_sku",
+          "ops_audit_log"
+        ]
+      }
+    },
+    "/backend/v3/api/recharges/settings": {
+      "get": {
+        "description": "Retrieve the member-center cash-to-points recharge settings used to calculate grant points across currencies. Reads commerce_exchange_rule. Writes none. File targets none.",
+        "operationId": "recharges.settings.retrieve",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RechargesSettingsRetrieveResult"
+                }
+              }
+            },
+            "description": "OK"
+          },
+          "400": {
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            },
+            "description": "Bad Request"
+          },
+          "401": {
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            },
+            "description": "Unauthorized"
+          },
+          "500": {
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            },
+            "description": "Server Error"
+          },
+          "default": {
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            },
+            "description": "Error response."
+          }
+        },
+        "security": [
+          {
+            "AccessToken": [],
+            "AuthToken": []
+          }
+        ],
+        "summary": "Recharges Settings Retrieve",
+        "tags": [
+          "commerce"
+        ],
+        "x-contract-kind": "read",
+        "x-file-targets": [],
+        "x-read-sources": [
+          "commerce_exchange_rule"
+        ],
+        "x-route-scope": "admin",
+        "x-sdk-domain": "commerce",
+        "x-sdkwork-domain": "commerce",
+        "x-sdkwork-resource": "recharges.settings",
+        "x-source-file": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts",
+        "x-write-tables": []
+      },
+      "put": {
+        "description": "Update the member-center cash-to-points recharge settings, including the base CNY ratio and currency-to-CNY conversion rates. Reads commerce_exchange_rule. Writes commerce_exchange_rule, ops_audit_log. File targets none.",
+        "operationId": "recharges.settings.update",
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CommerceRechargeSettingsUpdateRequest"
+              }
+            }
+          },
+          "description": "Typed request payload for recharges settings update.",
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RechargesSettingsUpdateResult"
+                }
+              }
+            },
+            "description": "OK"
+          },
+          "400": {
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            },
+            "description": "Bad Request"
+          },
+          "401": {
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            },
+            "description": "Unauthorized"
+          },
+          "500": {
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            },
+            "description": "Server Error"
+          },
+          "default": {
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetail"
+                }
+              }
+            },
+            "description": "Error response."
+          }
+        },
+        "security": [
+          {
+            "AccessToken": [],
+            "AuthToken": []
+          }
+        ],
+        "summary": "Recharges Settings Update",
+        "tags": [
+          "commerce"
+        ],
+        "x-contract-kind": "update",
+        "x-file-targets": [],
+        "x-read-sources": [
+          "commerce_exchange_rule"
+        ],
+        "x-route-scope": "admin",
+        "x-sdk-domain": "commerce",
+        "x-sdkwork-domain": "commerce",
+        "x-sdkwork-resource": "recharges.settings",
+        "x-source-file": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts",
+        "x-write-tables": [
+          "commerce_exchange_rule",
           "ops_audit_log"
         ]
       }

@@ -380,6 +380,13 @@ class SdkRuntimeStandardizer:
             updated.extend(self._standardize_sdk(sdk_family, base))
         return updated
 
+    def sync_openapi_snapshots(self) -> list[Path]:
+        updated: list[Path] = []
+        for sdk_family in self.sdk_directories:
+            family = self.root / "sdks" / sdk_family
+            updated.extend(self._sync_sdk_family_openapi_snapshots(sdk_family, family))
+        return updated
+
     def _standardize_sdk_family(self, sdk_family: str, family: Path, base: Path) -> list[Path]:
         updated: list[Path] = []
         family.mkdir(parents=True, exist_ok=True)
@@ -396,18 +403,7 @@ class SdkRuntimeStandardizer:
             readme_path.write_text(readme, encoding="utf-8", newline="\n")
             updated.append(readme_path)
 
-        source_spec = self._resolve_source_openapi_path(sdk_family)
-        openapi_path = openapi_dir / f"{sdk_family}.openapi.json"
-        sdkgen_path = openapi_dir / f"{sdk_family}.sdkgen.json"
-        if source_spec is not None:
-            updated.extend(self._copy_spec_if_changed(source_spec, openapi_path))
-            updated.extend(self._write_sdkgen_spec_if_changed(sdk_family, source_spec, sdkgen_path))
-        else:
-            placeholder = self._render_placeholder_openapi(sdk_family)
-            for target in (openapi_path, sdkgen_path):
-                if not target.is_file() or target.read_text(encoding="utf-8") != placeholder:
-                    target.write_text(placeholder, encoding="utf-8", newline="\n")
-                    updated.append(target)
+        updated.extend(self._sync_sdk_family_openapi_snapshots(sdk_family, family))
 
         assembly_path = family / ".sdkwork-assembly.json"
         package = self._read_json_or_none(base / "package.json") or {}
@@ -434,6 +430,27 @@ class SdkRuntimeStandardizer:
             smoke_test_path.write_text(smoke_test, encoding="utf-8", newline="\n")
             updated.append(smoke_test_path)
 
+        return updated
+
+    def _sync_sdk_family_openapi_snapshots(self, sdk_family: str, family: Path) -> list[Path]:
+        updated: list[Path] = []
+        family.mkdir(parents=True, exist_ok=True)
+        openapi_dir = family / "openapi"
+        openapi_dir.mkdir(parents=True, exist_ok=True)
+
+        source_spec = self._resolve_source_openapi_path(sdk_family)
+        openapi_path = openapi_dir / f"{sdk_family}.openapi.json"
+        sdkgen_path = openapi_dir / f"{sdk_family}.sdkgen.json"
+        if source_spec is not None:
+            updated.extend(self._copy_spec_if_changed(source_spec, openapi_path))
+            updated.extend(self._write_sdkgen_spec_if_changed(sdk_family, source_spec, sdkgen_path))
+            return updated
+
+        placeholder = self._render_placeholder_openapi(sdk_family)
+        for target in (openapi_path, sdkgen_path):
+            if not target.is_file() or target.read_text(encoding="utf-8") != placeholder:
+                target.write_text(placeholder, encoding="utf-8", newline="\n")
+                updated.append(target)
         return updated
 
     def _resolve_source_openapi_path(self, sdk_family: str) -> Path | None:
@@ -783,6 +800,7 @@ class SdkRuntimeStandardizer:
             "const TEXT_FILE_EXTENSIONS = new Set(['.bat', '.cmd', '.cs', '.dart', '.go', '.gradle', '.java', '.js', '.json', '.kt', '.kts', '.lock', '.md', '.mjs', '.properties', '.ps1', '.py', '.rs', '.sh', '.swift', '.toml', '.ts', '.txt', '.xml', '.yaml', '.yml']);\n"
             "const TEXT_FILE_NAMES = new Set(['.gitattributes', '.gitignore', 'Dockerfile', 'LICENSE', 'Makefile', 'NOTICE']);\n\n"
             "const languages = parseLanguages(process.argv.slice(2));\n"
+            "syncFamilyOpenApiSnapshots();\n"
             "for (const language of languages) {\n"
             "  runLanguage(language);\n"
             "}\n\n"
@@ -821,6 +839,25 @@ class SdkRuntimeStandardizer:
             "    return language;\n"
             "  });\n"
             "}\n\n"
+            "function syncFamilyOpenApiSnapshots() {\n"
+            "  const python = process.env.PYTHON_BIN || 'python';\n"
+            "  const result = spawnSync(python, [\n"
+            "    '-B',\n"
+            "    '-m',\n"
+            "    'tools.clawrouter_sdk_runtime_standardizer',\n"
+            "    '--root',\n"
+            "    workspaceRoot,\n"
+            "    '--sdk-dir',\n"
+            "    sdkFamily,\n"
+            "    '--openapi-only',\n"
+            "  ], { cwd: workspaceRoot, stdio: 'inherit' });\n"
+            "  if (result.error) {\n"
+            "    throw result.error;\n"
+            "  }\n"
+            "  if ((result.status ?? 1) !== 0) {\n"
+            "    process.exit(result.status ?? 1);\n"
+            "  }\n"
+            "}\n\n"
             "function splitLanguages(value) {\n"
             "  return String(value).split(',').map((item) => item.trim()).filter(Boolean);\n"
             "}\n\n"
@@ -848,9 +885,7 @@ class SdkRuntimeStandardizer:
             "  if ((result.status ?? 1) !== 0) {\n"
             "    process.exit(result.status ?? 1);\n"
             "  }\n"
-            "  if (language !== 'typescript') {\n"
-            "    cleanGeneratedOutput(language);\n"
-            "  }\n"
+            "  cleanGeneratedOutput(language);\n"
             "}\n\n"
             "function strictTypeScriptArgs() {\n"
             "  return [\n"
@@ -896,6 +931,9 @@ class SdkRuntimeStandardizer:
             "  return args;\n"
             "}\n\n"
             "function cleanGeneratedOutput(language) {\n"
+            "  if (language === 'typescript') {\n"
+            "    return;\n"
+            "  }\n"
             "  const outputRoot = path.join(workspaceRoot, `sdks/${sdkFamily}/${sdkFamily}-${language}/generated/server-openapi`);\n"
             "  if (!existsSync(outputRoot)) {\n"
             "    return;\n"
@@ -1676,13 +1714,19 @@ def main() -> int:
         default=None,
         help="OpenAPI source path to snapshot into the SDK family root when one SDK is selected.",
     )
+    parser.add_argument(
+        "--openapi-only",
+        action="store_true",
+        help="Only synchronize SDK family OpenAPI snapshots; does not require materialized SDK workspaces.",
+    )
     args = parser.parse_args()
 
-    updated = SdkRuntimeStandardizer(
+    standardizer = SdkRuntimeStandardizer(
         root=args.root,
         sdk_directories=tuple(args.sdk_dir) if args.sdk_dir else None,
         api_spec_path=args.api_spec_path,
-    ).run()
+    )
+    updated = standardizer.sync_openapi_snapshots() if args.openapi_only else standardizer.run()
     for path in updated:
         print(path.relative_to(Path(args.root).resolve()).as_posix())
     return 0

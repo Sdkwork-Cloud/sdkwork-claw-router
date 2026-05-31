@@ -20,6 +20,9 @@ use sdkwork_sdk_generator::{
 };
 use serde_json::json;
 use tokio::sync::Mutex;
+use tower::ServiceExt;
+
+use crate::runtime;
 
 type ProxyConnector = HttpsConnector<HttpConnector>;
 type ProxyClient = Client<ProxyConnector, Body>;
@@ -131,6 +134,105 @@ pub struct EdgeServerConfig {
     portal_tool_api_sdk_archive_root: Option<PathBuf>,
     portal_tool_api_sdk_generator_base_url: Option<String>,
     portal_tool_api_sdk_generator_api_key: Option<String>,
+}
+
+#[derive(Clone)]
+pub struct EdgeInProcessUpstreams {
+    gateway_router: Router,
+    backend_router: Router,
+    app_router: Router,
+}
+
+#[derive(Clone, Copy)]
+enum EdgeApiSurface {
+    Gateway,
+    Backend,
+    App,
+}
+
+impl EdgeInProcessUpstreams {
+    pub fn new(gateway_router: Router, backend_router: Router, app_router: Router) -> Self {
+        Self {
+            gateway_router,
+            backend_router,
+            app_router,
+        }
+    }
+
+    fn router_for_surface(&self, surface: EdgeApiSurface) -> Router {
+        match surface {
+            EdgeApiSurface::Gateway => self.gateway_router.clone(),
+            EdgeApiSurface::Backend => self.backend_router.clone(),
+            EdgeApiSurface::App => self.app_router.clone(),
+        }
+    }
+
+    fn router_for_path(&self, path: &str) -> Option<Router> {
+        surface_for_path(path).map(|surface| self.router_for_surface(surface))
+    }
+}
+
+pub async fn serve(bind_addr: &str) -> anyhow::Result<()> {
+    let runtime_toml = sdkwork_claw_config::RuntimeTomlConfig::from_env_config_file()
+        .map_err(anyhow::Error::msg)?;
+    serve_with_runtime_config(bind_addr, runtime_toml.as_ref()).await
+}
+
+pub async fn serve_with_runtime_config(
+    bind_addr: &str,
+    runtime_toml: Option<&sdkwork_claw_config::RuntimeTomlConfig>,
+) -> anyhow::Result<()> {
+    sdkwork_claw_observability::init_tracing_with_runtime_config(
+        runtime_toml.map(|config| &config.observability),
+    )
+    .map_err(anyhow::Error::msg)?;
+    let listener = tokio::net::TcpListener::bind(bind_addr).await?;
+    axum::serve(listener, runtime::router_from_env().await?).await?;
+    Ok(())
+}
+
+pub async fn serve_edge_server(bind_addr: &str, config: EdgeServerConfig) -> anyhow::Result<()> {
+    let runtime_toml = sdkwork_claw_config::RuntimeTomlConfig::from_env_config_file()
+        .map_err(anyhow::Error::msg)?;
+    serve_edge_server_with_runtime_config(bind_addr, config, runtime_toml.as_ref()).await
+}
+
+pub async fn serve_edge_server_with_runtime_config(
+    bind_addr: &str,
+    config: EdgeServerConfig,
+    runtime_toml: Option<&sdkwork_claw_config::RuntimeTomlConfig>,
+) -> anyhow::Result<()> {
+    sdkwork_claw_observability::init_tracing_with_runtime_config(
+        runtime_toml.map(|config| &config.observability),
+    )
+    .map_err(anyhow::Error::msg)?;
+    let listener = tokio::net::TcpListener::bind(bind_addr).await?;
+    axum::serve(listener, edge_server_router(config)).await?;
+    Ok(())
+}
+
+pub async fn all_in_one_edge_router_from_env(
+    config: EdgeServerConfig,
+) -> anyhow::Result<axum::Router> {
+    let in_process_upstreams = runtime::all_in_one_in_process_upstreams_from_env().await?;
+    Ok(edge_server_router_with_in_process_upstreams(
+        config,
+        in_process_upstreams,
+    ))
+}
+
+pub async fn serve_all_in_one_edge_server_with_runtime_config(
+    bind_addr: &str,
+    config: EdgeServerConfig,
+    runtime_toml: Option<&sdkwork_claw_config::RuntimeTomlConfig>,
+) -> anyhow::Result<()> {
+    sdkwork_claw_observability::init_tracing_with_runtime_config(
+        runtime_toml.map(|config| &config.observability),
+    )
+    .map_err(anyhow::Error::msg)?;
+    let listener = tokio::net::TcpListener::bind(bind_addr).await?;
+    axum::serve(listener, all_in_one_edge_router_from_env(config).await?).await?;
+    Ok(())
 }
 
 #[derive(Clone, Debug)]
@@ -441,6 +543,9 @@ impl EdgeServerConfig {
         if path == "/openapi.json" {
             return Some(&self.gateway_base_url);
         }
+        if path == sdkwork_claw_http::PAYMENT_AGGREGATE_OPENAPI_PATH {
+            return Some(&self.gateway_base_url);
+        }
         if path == "/v1" || path.starts_with("/v1/") {
             return Some(&self.gateway_base_url);
         }
@@ -460,13 +565,50 @@ impl EdgeServerConfig {
     }
 }
 
+fn surface_for_path(path: &str) -> Option<EdgeApiSurface> {
+    if path == sdkwork_claw_http::OPENAPI_SCHEMA_TABS_PATH
+        || path == "/openapi.json"
+        || path == sdkwork_claw_http::PAYMENT_AGGREGATE_OPENAPI_PATH
+        || path == "/v1"
+        || path.starts_with("/v1/")
+    {
+        return Some(EdgeApiSurface::Gateway);
+    }
+    if path == "/backend/v3/api" || path.starts_with("/backend/v3/api/") {
+        return Some(EdgeApiSurface::Backend);
+    }
+    if path == "/app/v3/api"
+        || path.starts_with("/app/v3/api/")
+        || path == "/uploads/courses"
+        || path.starts_with("/uploads/courses/")
+    {
+        return Some(EdgeApiSurface::App);
+    }
+    None
+}
+
 struct EdgeServerState {
     config: EdgeServerConfig,
     client: ProxyClient,
+    in_process_upstreams: Option<EdgeInProcessUpstreams>,
     portal_tool_api_rate_limiter: Mutex<ToolApiRateLimiter>,
 }
 
 pub fn edge_server_router(config: EdgeServerConfig) -> Router {
+    edge_server_router_with_optional_in_process_upstreams(config, None)
+}
+
+pub fn edge_server_router_with_in_process_upstreams(
+    config: EdgeServerConfig,
+    in_process_upstreams: EdgeInProcessUpstreams,
+) -> Router {
+    edge_server_router_with_optional_in_process_upstreams(config, Some(in_process_upstreams))
+}
+
+fn edge_server_router_with_optional_in_process_upstreams(
+    config: EdgeServerConfig,
+    in_process_upstreams: Option<EdgeInProcessUpstreams>,
+) -> Router {
     let portal_tool_api_rate_limiter = Mutex::new(ToolApiRateLimiter::new(
         config.portal_tool_api_rate_limit.clone(),
     ));
@@ -477,6 +619,7 @@ pub fn edge_server_router(config: EdgeServerConfig) -> Router {
         .with_state(Arc::new(EdgeServerState {
             config,
             client: build_proxy_client(),
+            in_process_upstreams,
             portal_tool_api_rate_limiter,
         }))
 }
@@ -489,9 +632,9 @@ async fn edge_health() -> impl IntoResponse {
 }
 
 async fn edge_ready(State(state): State<Arc<EdgeServerState>>) -> Response {
-    let gateway = check_upstream_health(state.as_ref(), "gateway", &state.config.gateway_base_url);
-    let backend = check_upstream_health(state.as_ref(), "backend", &state.config.backend_base_url);
-    let app = check_upstream_health(state.as_ref(), "app", &state.config.app_base_url);
+    let gateway = check_edge_api_health(state.as_ref(), "gateway", EdgeApiSurface::Gateway);
+    let backend = check_edge_api_health(state.as_ref(), "backend", EdgeApiSurface::Backend);
+    let app = check_edge_api_health(state.as_ref(), "app", EdgeApiSurface::App);
     let portal = check_portal_readiness(state.as_ref());
     let (gateway, backend, app, portal) = tokio::join!(gateway, backend, app, portal);
     let ready = gateway.ready && backend.ready && app.ready && portal.ready;
@@ -537,6 +680,16 @@ async fn edge_dispatch(State(state): State<Arc<EdgeServerState>>, request: Reque
 }
 
 async fn forward_request(state: &EdgeServerState, request: Request) -> Result<Response, String> {
+    if state.in_process_upstreams.is_some() {
+        if let Some(router) = state
+            .in_process_upstreams
+            .as_ref()
+            .and_then(|upstreams| upstreams.router_for_path(request.uri().path()))
+        {
+            return forward_request_to_in_process_router(state, router, request).await;
+        }
+    }
+
     let target = state
         .config
         .target_for_path(request.uri().path())
@@ -592,6 +745,20 @@ async fn forward_request(state: &EdgeServerState, request: Request) -> Result<Re
     .map_err(|error| format!("upstream request failed: {error}"))?;
 
     upstream_to_axum_response(upstream_response).await
+}
+
+async fn forward_request_to_in_process_router(
+    state: &EdgeServerState,
+    router: Router,
+    request: Request,
+) -> Result<Response, String> {
+    tokio::time::timeout(
+        state.config.upstream_request_timeout,
+        router.oneshot(request),
+    )
+    .await
+    .map_err(|_| "in-process upstream request timed out".to_owned())?
+    .map_err(|error| format!("in-process upstream request failed: {error}"))
 }
 
 async fn serve_portal_static(state: &EdgeServerState, request: Request) -> Response {
@@ -670,6 +837,9 @@ fn static_portal_contract_response(state: &EdgeServerState, request: &Request) -
         ),
         sdkwork_claw_http::GATEWAY_OPENAPI_PATH => {
             Some(sdkwork_claw_http::gateway_openapi_response())
+        }
+        sdkwork_claw_http::PAYMENT_AGGREGATE_OPENAPI_PATH => {
+            Some(sdkwork_claw_http::payment_aggregate_openapi_response())
         }
         sdkwork_claw_http::APP_OPENAPI_PATH => Some(sdkwork_claw_http::app_openapi_response()),
         sdkwork_claw_http::BACKEND_OPENAPI_PATH => {
@@ -2257,6 +2427,125 @@ async fn check_portal_readiness(state: &EdgeServerState) -> ReadinessCheck {
         };
     }
     check_upstream_health(state, "portal", &state.config.portal_base_url).await
+}
+
+async fn check_edge_api_health(
+    state: &EdgeServerState,
+    name: &'static str,
+    surface: EdgeApiSurface,
+) -> ReadinessCheck {
+    if let Some(in_process_upstreams) = &state.in_process_upstreams {
+        return check_in_process_health(
+            state,
+            name,
+            in_process_upstreams.router_for_surface(surface),
+        )
+        .await;
+    }
+
+    let base_url = match surface {
+        EdgeApiSurface::Gateway => &state.config.gateway_base_url,
+        EdgeApiSurface::Backend => &state.config.backend_base_url,
+        EdgeApiSurface::App => &state.config.app_base_url,
+    };
+    check_upstream_health(state, name, base_url).await
+}
+
+async fn check_in_process_health(
+    state: &EdgeServerState,
+    name: &'static str,
+    router: Router,
+) -> ReadinessCheck {
+    let request = match Request::builder()
+        .method(Method::GET)
+        .uri("/healthz")
+        .body(Body::empty())
+    {
+        Ok(request) => request,
+        Err(error) => {
+            return ReadinessCheck {
+                ready: false,
+                payload: json!({
+                    "status": "unavailable",
+                    "service": name,
+                    "mode": "in-process",
+                    "error": format!("failed to build in-process health request: {error}"),
+                }),
+            }
+        }
+    };
+
+    match tokio::time::timeout(state.config.ready_check_timeout, router.oneshot(request)).await {
+        Ok(Ok(response)) => {
+            let status = response.status();
+            let ready = status.is_success();
+            let body = match to_bytes(response.into_body(), 64 * 1024).await {
+                Ok(body) => body,
+                Err(error) => {
+                    return ReadinessCheck {
+                        ready: false,
+                        payload: json!({
+                            "status": "unavailable",
+                            "service": name,
+                            "mode": "in-process",
+                            "httpStatus": status.as_u16(),
+                            "error": format!("failed to read in-process health response: {error}"),
+                        }),
+                    }
+                }
+            };
+            let payload = serde_json::from_slice::<serde_json::Value>(&body)
+                .ok()
+                .and_then(|value| match value {
+                    serde_json::Value::Object(mut object) => {
+                        object.entry("status").or_insert_with(|| {
+                            serde_json::Value::String(
+                                if ready { "ok" } else { "unavailable" }.to_owned(),
+                            )
+                        });
+                        object
+                            .entry("service")
+                            .or_insert_with(|| serde_json::Value::String(name.to_owned()));
+                        object
+                            .entry("mode")
+                            .or_insert_with(|| serde_json::Value::String("in-process".to_owned()));
+                        object.entry("httpStatus").or_insert_with(|| {
+                            serde_json::Value::Number(serde_json::Number::from(status.as_u16()))
+                        });
+                        Some(serde_json::Value::Object(object))
+                    }
+                    _ => None,
+                })
+                .unwrap_or_else(|| {
+                    json!({
+                        "status": if ready { "ok" } else { "unavailable" },
+                        "service": name,
+                        "mode": "in-process",
+                        "httpStatus": status.as_u16(),
+                    })
+                });
+
+            ReadinessCheck { ready, payload }
+        }
+        Ok(Err(error)) => ReadinessCheck {
+            ready: false,
+            payload: json!({
+                "status": "unavailable",
+                "service": name,
+                "mode": "in-process",
+                "error": error.to_string(),
+            }),
+        },
+        Err(_) => ReadinessCheck {
+            ready: false,
+            payload: json!({
+                "status": "unavailable",
+                "service": name,
+                "mode": "in-process",
+                "error": "in-process health check timed out",
+            }),
+        },
+    }
 }
 
 async fn check_upstream_health(

@@ -1,6 +1,9 @@
 use sqlx::{PgPool, Postgres, Row, Transaction};
 
 use crate::domain::{DomainError, DomainResult};
+use crate::infrastructure::sql::routing_config_change::{
+    record_postgres_ai_routing_config_change, AiRoutingConfigChange,
+};
 use crate::ports::{
     AdminChannelEndpointFuture, AdminChannelEndpointItem, AdminChannelEndpointStore,
     CreateAdminChannelEndpointCommand, ListAdminChannelEndpointsQuery,
@@ -60,6 +63,28 @@ impl AdminChannelEndpointStore for PostgresAdminChannelEndpointStore {
                 }),
             )
             .await?;
+            record_postgres_ai_routing_config_change(
+                &mut tx,
+                channel_endpoint_routing_config_change(
+                    command.subject.tenant_id,
+                    command.subject.organization_id,
+                    command.subject.operator_id,
+                    &command.request_id,
+                    &command.requested_at,
+                    "create_channel_endpoint",
+                    endpoint_id,
+                    serde_json::json!({
+                        "endpointId": endpoint_id,
+                        "channelId": command.channel_id,
+                        "vendorCode": &command.vendor_code,
+                        "regionCode": &command.region_code,
+                        "apiEndpointCode": &command.api_endpoint_code,
+                        "baseUrlChanged": true,
+                        "status": &command.status
+                    }),
+                ),
+            )
+            .await?;
             let item = load_endpoint_by_id(
                 &mut tx,
                 endpoint_id,
@@ -113,6 +138,30 @@ impl AdminChannelEndpointStore for PostgresAdminChannelEndpointStore {
                     "baseUrlChanged": command.base_url.is_some(),
                     "statusChanged": command.status.is_some()
                 }),
+            )
+            .await?;
+            record_postgres_ai_routing_config_change(
+                &mut tx,
+                channel_endpoint_routing_config_change(
+                    command.subject.tenant_id,
+                    command.subject.organization_id,
+                    command.subject.operator_id,
+                    &command.request_id,
+                    &command.requested_at,
+                    "update_channel_endpoint",
+                    command.endpoint_id,
+                    serde_json::json!({
+                        "endpointId": command.endpoint_id,
+                        "vendorCodeChanged": command.vendor_code.is_some(),
+                        "regionCodeChanged": command.region_code.is_some(),
+                        "apiEndpointCodeChanged": command.api_endpoint_code.is_some(),
+                        "baseUrlChanged": command.base_url.is_some(),
+                        "priorityChanged": command.priority.is_some(),
+                        "weightChanged": command.weight.is_some(),
+                        "statusChanged": command.status.is_some(),
+                        "effectiveWindowChanged": command.effective_from.is_some() || command.effective_to.is_some()
+                    }),
+                ),
             )
             .await?;
             let item = load_endpoint_by_id(
@@ -177,6 +226,20 @@ async fn insert_channel_endpoint(
     tx: &mut Transaction<'_, Postgres>,
     command: &CreateAdminChannelEndpointCommand,
 ) -> DomainResult<Option<i64>> {
+    ensure_vendor_exists(
+        tx,
+        command.subject.tenant_id,
+        command.subject.organization_id,
+        &command.vendor_code,
+    )
+    .await?;
+    ensure_api_endpoint_exists(
+        tx,
+        command.subject.tenant_id,
+        command.subject.organization_id,
+        &command.api_endpoint_code,
+    )
+    .await?;
     sqlx::query_scalar(
         r#"
         INSERT INTO ai_channel_endpoint
@@ -251,6 +314,24 @@ async fn update_channel_endpoint_core(
     tx: &mut Transaction<'_, Postgres>,
     command: &UpdateAdminChannelEndpointCommand,
 ) -> DomainResult<()> {
+    if let Some(vendor_code) = command.vendor_code.as_deref() {
+        ensure_vendor_exists(
+            tx,
+            command.subject.tenant_id,
+            command.subject.organization_id,
+            vendor_code,
+        )
+        .await?;
+    }
+    if let Some(api_endpoint_code) = command.api_endpoint_code.as_deref() {
+        ensure_api_endpoint_exists(
+            tx,
+            command.subject.tenant_id,
+            command.subject.organization_id,
+            api_endpoint_code,
+        )
+        .await?;
+    }
     sqlx::query(
         r#"
         UPDATE ai_channel_endpoint
@@ -321,6 +402,66 @@ async fn update_channel_endpoint_core(
     .execute(&mut **tx)
     .await
     .map_err(|error| store_error("failed to update channel endpoint", error))?;
+    Ok(())
+}
+
+async fn ensure_vendor_exists(
+    tx: &mut Transaction<'_, Postgres>,
+    tenant_id: i64,
+    organization_id: i64,
+    vendor_code: &str,
+) -> DomainResult<()> {
+    let exists: i64 = sqlx::query_scalar(
+        r#"
+        SELECT COUNT(1)
+        FROM ai_model_vendor
+        WHERE tenant_id = $1
+          AND organization_id = $2
+          AND vendor_code = $3
+          AND deleted_at IS NULL
+        "#,
+    )
+    .bind(tenant_id)
+    .bind(organization_id)
+    .bind(vendor_code)
+    .fetch_one(&mut **tx)
+    .await
+    .map_err(|error| store_error("failed to resolve channel endpoint vendor", error))?;
+    if exists == 0 {
+        return Err(DomainError::not_found(format!(
+            "AI vendor was not found: {vendor_code}"
+        )));
+    }
+    Ok(())
+}
+
+async fn ensure_api_endpoint_exists(
+    tx: &mut Transaction<'_, Postgres>,
+    tenant_id: i64,
+    organization_id: i64,
+    api_endpoint_code: &str,
+) -> DomainResult<()> {
+    let exists: i64 = sqlx::query_scalar(
+        r#"
+        SELECT COUNT(1)
+        FROM ai_api_endpoint
+        WHERE tenant_id = $1
+          AND organization_id = $2
+          AND endpoint_code = $3
+          AND deleted_at IS NULL
+        "#,
+    )
+    .bind(tenant_id)
+    .bind(organization_id)
+    .bind(api_endpoint_code)
+    .fetch_one(&mut **tx)
+    .await
+    .map_err(|error| store_error("failed to resolve channel endpoint API", error))?;
+    if exists == 0 {
+        return Err(DomainError::not_found(format!(
+            "AI API endpoint was not found: {api_endpoint_code}"
+        )));
+    }
     Ok(())
 }
 
@@ -458,6 +599,29 @@ async fn insert_audit_log(
     .await
     .map_err(|error| store_error("failed to write channel endpoint audit log", error))?;
     Ok(())
+}
+
+fn channel_endpoint_routing_config_change<'a>(
+    tenant_id: i64,
+    organization_id: i64,
+    operator_id: i64,
+    request_id: &'a str,
+    requested_at: &'a str,
+    action: &'a str,
+    endpoint_id: i64,
+    event_payload: serde_json::Value,
+) -> AiRoutingConfigChange<'a> {
+    AiRoutingConfigChange {
+        tenant_id,
+        organization_id,
+        operator_id,
+        request_id,
+        requested_at,
+        changed_object_type: "ai_channel_endpoint",
+        changed_object_id: endpoint_id,
+        action,
+        event_payload,
+    }
 }
 
 fn row_error(error: sqlx::Error) -> DomainError {

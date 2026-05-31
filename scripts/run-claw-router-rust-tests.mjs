@@ -1,10 +1,36 @@
 #!/usr/bin/env node
 
 import { spawn } from 'node:child_process';
+import { execFileSync } from 'node:child_process';
+import { existsSync, readFileSync, readdirSync } from 'node:fs';
 import path from 'node:path';
 import process from 'node:process';
 
-const PROFILES = new Set(['quick', 'admin-api', 'app-api', 'gateway', 'product-relay', 'runtime', 'full']);
+const PROFILES = new Set(['auto', 'smoke', 'quick', 'admin-api', 'app-api', 'gateway', 'product-relay', 'runtime', 'full']);
+const PACKAGE_BY_SERVICE_DIR = Object.freeze({
+  'sdkwork-claw-admin-api': 'sdkwork-claw-admin-api',
+  'sdkwork-claw-app-api': 'sdkwork-claw-app-api',
+  'sdkwork-claw-gateway': 'sdkwork-claw-gateway',
+  'sdkwork-claw-installer': 'sdkwork-claw-installer',
+  'sdkwork-claw-product': 'sdkwork-claw-product',
+});
+const PROFILE_BY_SERVICE_PACKAGE = Object.freeze({
+  'sdkwork-claw-admin-api': 'admin-api',
+  'sdkwork-claw-app-api': 'app-api',
+  'sdkwork-claw-gateway': 'gateway',
+  'sdkwork-claw-installer': 'runtime',
+  'sdkwork-claw-product': 'runtime',
+});
+const PROFILE_BY_PATH_PREFIX = Object.freeze([
+  ['crates/sdkwork-claw-config/', 'quick'],
+  ['crates/sdkwork-claw-security/', 'quick'],
+  ['crates/sdkwork-claw-test-support/', 'smoke'],
+  ['crates/sdkwork-claw-http/', 'runtime'],
+  ['services/sdkwork-claw-provider-adapter/', 'product-relay'],
+  ['Cargo.toml', 'quick'],
+  ['Cargo.lock', 'quick'],
+  ['.cargo/', 'quick'],
+]);
 
 function printHelp() {
   console.log(`Usage: node scripts/run-claw-router-rust-tests.mjs <profile> [options]
@@ -12,6 +38,8 @@ function printHelp() {
 Run scoped Rust verification profiles without reusing the shared target/debug tree.
 
 Profiles:
+  auto        Infer the smallest useful Rust test surface from changed files.
+  smoke       Ultra-fast fixture and route smoke for high-frequency iteration.
   quick       Format and focused high-signal package tests for daily iteration.
   admin-api   Admin API route tests split by test target.
   app-api     App API route tests split by test target.
@@ -22,9 +50,13 @@ Profiles:
   full        Full cargo workspace tests.
 
 Options:
+  --changed-file <path>   Hint one changed file for the auto profile. Can be repeated.
+  --staged                Only inspect staged Git changes for the auto profile.
+  --base-ref <ref>        Diff committed changes from <ref> for the auto profile.
   --target-dir <path>     Override Cargo target directory.
                           Defaults to target-rust-tests/daily for scoped profiles
                           and target-rust-tests/full for the full workspace profile.
+  --build-jobs <count>    Override Cargo build parallelism for this run.
   --test-threads <count>  Forward --test-threads to cargo test binaries.
   --dry-run               Print commands without executing them.
   -h, --help              Show this help.
@@ -34,7 +66,11 @@ Options:
 function parseArgs(argv) {
   const settings = {
     profile: null,
+    changedFiles: [],
+    staged: false,
+    baseRef: null,
     targetDir: null,
+    buildJobs: null,
     testThreads: null,
     dryRun: false,
     help: false,
@@ -60,6 +96,30 @@ function parseArgs(argv) {
         }
         settings.targetDir = argv[index];
         break;
+      case '--changed-file':
+        index += 1;
+        if (!argv[index]) {
+          throw new Error('--changed-file requires a value');
+        }
+        settings.changedFiles.push(argv[index]);
+        break;
+      case '--staged':
+        settings.staged = true;
+        break;
+      case '--base-ref':
+        index += 1;
+        if (!argv[index]) {
+          throw new Error('--base-ref requires a value');
+        }
+        settings.baseRef = argv[index];
+        break;
+      case '--build-jobs':
+        index += 1;
+        if (!argv[index] || !/^[1-9][0-9]*$/u.test(argv[index])) {
+          throw new Error('--build-jobs requires a positive integer');
+        }
+        settings.buildJobs = argv[index];
+        break;
       case '--test-threads':
         index += 1;
         if (!argv[index] || !/^[1-9][0-9]*$/u.test(argv[index])) {
@@ -79,12 +139,114 @@ function parseArgs(argv) {
   if (!settings.help && !settings.profile) {
     settings.profile = 'quick';
   }
+  const autoSelectorCount = Number(settings.changedFiles.length > 0) + Number(settings.staged) + Number(Boolean(settings.baseRef));
+  if (autoSelectorCount > 1) {
+    throw new Error('Choose only one auto change selector: --changed-file, --staged, or --base-ref');
+  }
   return settings;
 }
 
 function normalizeTargetDir(profile, targetDir, platform = process.platform) {
   const selected = targetDir || path.join('target-rust-tests', profile === 'full' ? 'full' : 'daily');
   return platform === 'win32' ? selected.replaceAll('/', '\\') : selected.replaceAll('\\', '/');
+}
+
+function buildCargoEnv(env, { targetDir, buildJobs }) {
+  const stepEnv = {
+    ...env,
+    CARGO_TARGET_DIR: targetDir,
+  };
+  delete stepEnv.CARGO_BUILD_JOBS;
+  if (buildJobs) {
+    stepEnv.CARGO_BUILD_JOBS = buildJobs;
+  }
+  if (!stepEnv.SDKWORK_CLAW_HTTP_OPENAPI_BUILD_MODE) {
+    stepEnv.SDKWORK_CLAW_HTTP_OPENAPI_BUILD_MODE = 'copy';
+  }
+  return stepEnv;
+}
+
+function normalizePathForMatching(value) {
+  return String(value).replaceAll('\\', '/');
+}
+
+function uniqueNormalizedPaths(paths) {
+  return [...new Set(paths.map((file) => normalizePathForMatching(file)).filter(Boolean))];
+}
+
+function parseGitStatusEntries(output) {
+  if (!output) {
+    return [];
+  }
+  const entries = output.split('\0').filter(Boolean);
+  const changed = [];
+  for (let index = 0; index < entries.length; index += 1) {
+    const entry = entries[index];
+    const status = entry.slice(0, 2);
+    const file = normalizePathForMatching(entry.slice(3));
+    if (status.startsWith('R') || status.startsWith('C')) {
+      const renamedTo = normalizePathForMatching(entries[index + 1] ?? '');
+      if (renamedTo) {
+        changed.push(renamedTo);
+      }
+      index += 1;
+      continue;
+    }
+    if (file) {
+      changed.push(file);
+    }
+  }
+  return uniqueNormalizedPaths(changed);
+}
+
+function parseGitNameOnlyEntries(output) {
+  if (!output) {
+    return [];
+  }
+  return uniqueNormalizedPaths(output.split('\0').filter(Boolean));
+}
+
+function collectAutoChangedFiles({ changedFiles = [], staged = false, baseRef = null } = {}, cwd = process.cwd()) {
+  if (changedFiles.length > 0) {
+    return uniqueNormalizedPaths(changedFiles);
+  }
+  if (!existsSync(path.join(cwd, '.git'))) {
+    return [];
+  }
+  try {
+    if (staged) {
+      const output = execFileSync(
+        'git',
+        ['diff', '--cached', '--name-only', '-z', '--diff-filter=ACMR'],
+        { cwd, encoding: 'utf8' },
+      );
+      return parseGitNameOnlyEntries(output);
+    }
+    if (baseRef) {
+      const mergeBase = execFileSync(
+        'git',
+        ['merge-base', baseRef, 'HEAD'],
+        { cwd, encoding: 'utf8' },
+      ).trim();
+      if (!mergeBase) {
+        return [];
+      }
+      const output = execFileSync(
+        'git',
+        ['diff', '--name-only', '-z', '--diff-filter=ACMR', mergeBase, 'HEAD'],
+        { cwd, encoding: 'utf8' },
+      );
+      return parseGitNameOnlyEntries(output);
+    }
+    const output = execFileSync(
+      'git',
+      ['status', '--porcelain', '--untracked-files=all', '-z'],
+      { cwd, encoding: 'utf8' },
+    );
+    return parseGitStatusEntries(output);
+  } catch {
+    return [];
+  }
 }
 
 function cargoStep(label, args, env, settings) {
@@ -97,6 +259,212 @@ function cargoStep(label, args, env, settings) {
     command: 'cargo',
     args: stepArgs,
     env,
+  };
+}
+
+function servicePackageFromChangedFile(changedFile) {
+  const normalized = normalizePathForMatching(changedFile);
+  const match = normalized.match(/^services\/([^/]+)\//u);
+  if (!match) {
+    return null;
+  }
+  return PACKAGE_BY_SERVICE_DIR[match[1]] ?? null;
+}
+
+function packageTestTargets(packageName, cwd = process.cwd()) {
+  return packageTestFiles(packageName, cwd).map(({ testTarget }) => testTarget);
+}
+
+function packageTestFiles(packageName, cwd = process.cwd()) {
+  const serviceDir = Object.entries(PACKAGE_BY_SERVICE_DIR).find(([, value]) => value === packageName)?.[0];
+  if (!serviceDir) {
+    return [];
+  }
+  const testsDir = path.join(cwd, 'services', serviceDir, 'tests');
+  if (!existsSync(testsDir)) {
+    return [];
+  }
+  return readdirSync(testsDir, { withFileTypes: true })
+    .filter((entry) => entry.isFile() && entry.name.endsWith('.rs'))
+    .map((entry) => ({
+      testTarget: entry.name.slice(0, -3),
+      filePath: path.join(testsDir, entry.name),
+    }));
+}
+
+function exactAutoTargetsFromChangedTestFile(changedFile) {
+  const normalized = normalizePathForMatching(changedFile);
+  const productTestMatch = normalized.match(/^services\/sdkwork-claw-product\/tests\/([^/]+)\.rs$/u);
+  if (productTestMatch) {
+    return [{ packageName: 'sdkwork-claw-product', testTarget: productTestMatch[1] }];
+  }
+  const gatewayTestMatch = normalized.match(/^services\/sdkwork-claw-gateway\/tests\/([^/]+)\.rs$/u);
+  if (gatewayTestMatch) {
+    return [{ packageName: 'sdkwork-claw-gateway', testTarget: gatewayTestMatch[1] }];
+  }
+  const adminApiTestMatch = normalized.match(/^services\/sdkwork-claw-admin-api\/tests\/([^/]+)\.rs$/u);
+  if (adminApiTestMatch) {
+    return [{ packageName: 'sdkwork-claw-admin-api', testTarget: adminApiTestMatch[1] }];
+  }
+  const appApiTestMatch = normalized.match(/^services\/sdkwork-claw-app-api\/tests\/([^/]+)\.rs$/u);
+  if (appApiTestMatch) {
+    return [{ packageName: 'sdkwork-claw-app-api', testTarget: appApiTestMatch[1] }];
+  }
+  return null;
+}
+
+function inferredAutoTargetsFromSourceFile(changedFile, cwd = process.cwd()) {
+  const normalized = normalizePathForMatching(changedFile);
+  const sourceMatch = normalized.match(/^services\/([^/]+)\/src\/.+\/([^/]+)\.rs$/u)
+    ?? normalized.match(/^services\/([^/]+)\/src\/([^/]+)\.rs$/u);
+  if (!sourceMatch) {
+    return null;
+  }
+  const packageName = PACKAGE_BY_SERVICE_DIR[sourceMatch[1]];
+  if (!packageName) {
+    return null;
+  }
+  const stem = sourceMatch[2];
+  const availableTargets = packageTestTargets(packageName, cwd);
+  if (availableTargets.length === 0) {
+    return null;
+  }
+  const candidateNames = new Set([
+    stem,
+    `${stem}_api`,
+    `${stem}_route`,
+    `${stem}_router`,
+    `${stem}_store`,
+    `${stem}_sql_contract`,
+    `sqlite_${stem}`,
+    `postgres_${stem}`,
+    `sqlite_${stem}_sql_contract`,
+    `postgres_${stem}_sql_contract`,
+    `secret_ref_${stem}`,
+  ]);
+  const selectedTargets = availableTargets.filter((target) =>
+    candidateNames.has(target)
+    || target.endsWith(`_${stem}`)
+    || target.endsWith(`_${stem}_api`)
+    || target.endsWith(`_${stem}_route`)
+    || target.endsWith(`_${stem}_store`)
+    || target.endsWith(`_${stem}_sql_contract`),
+  );
+  if (selectedTargets.length === 0) {
+    return null;
+  }
+  return selectedTargets.map((testTarget) => ({ packageName, testTarget }));
+}
+
+function inferredAutoTargetsFromSharedTestHelper(changedFile, cwd = process.cwd()) {
+  const normalized = normalizePathForMatching(changedFile);
+  const helperMatch = normalized.match(/^services\/([^/]+)\/tests\/common\/([^/]+)\.rs$/u);
+  if (!helperMatch) {
+    return null;
+  }
+  const packageName = PACKAGE_BY_SERVICE_DIR[helperMatch[1]];
+  if (!packageName) {
+    return null;
+  }
+  const helperStem = helperMatch[2];
+  const referencePattern = helperStem === 'mod'
+    ? 'mod common;'
+    : `#[path = "common/${helperStem}.rs"]`;
+  const selectedTargets = packageTestFiles(packageName, cwd)
+    .filter(({ filePath }) => readFileSync(filePath, 'utf8').includes(referencePattern))
+    .map(({ testTarget }) => ({ packageName, testTarget }));
+  if (selectedTargets.length === 0) {
+    return null;
+  }
+  return selectedTargets;
+}
+
+function inferredAutoTargetsFromProductTestSupportCrate(changedFile, cwd = process.cwd()) {
+  const normalized = normalizePathForMatching(changedFile);
+  if (!normalized.startsWith('crates/sdkwork-claw-product-test-support/src/')) {
+    return null;
+  }
+  const productTestSupportSymbolsByFile = Object.freeze({
+    'installed.rs': ['installed_sqlite_pool'],
+    'repair.rs': ['repair_sqlite_pool'],
+    'schema.rs': ['schema_sqlite_pool'],
+  });
+  const changedFileName = normalized.split('/').at(-1);
+  const requiredSymbols = productTestSupportSymbolsByFile[changedFileName] ?? null;
+  const selectedTargets = packageTestFiles('sdkwork-claw-product', cwd)
+    .filter(({ filePath }) => {
+      const source = readFileSync(filePath, 'utf8');
+      if (!source.includes('sdkwork_claw_product_test_support::')) {
+        return false;
+      }
+      if (!requiredSymbols) {
+        return true;
+      }
+      return requiredSymbols.some((symbol) => source.includes(symbol));
+    })
+    .map(({ testTarget }) => ({ packageName: 'sdkwork-claw-product', testTarget }));
+  if (selectedTargets.length === 0) {
+    return null;
+  }
+  return selectedTargets;
+}
+
+function autoTargetsFromChangedFile(changedFile, cwd = process.cwd()) {
+  return exactAutoTargetsFromChangedTestFile(changedFile)
+    ?? inferredAutoTargetsFromSourceFile(changedFile, cwd)
+    ?? inferredAutoTargetsFromProductTestSupportCrate(changedFile, cwd)
+    ?? inferredAutoTargetsFromSharedTestHelper(changedFile, cwd);
+}
+
+function buildAutoTargetSteps(changedFiles, env, settings, cwd = process.cwd()) {
+  const targets = [];
+  for (const changedFile of changedFiles) {
+    const fileTargets = autoTargetsFromChangedFile(changedFile, cwd);
+    if (!fileTargets) {
+      return null;
+    }
+    for (const target of fileTargets) {
+      if (!targets.some((item) => item.packageName === target.packageName && item.testTarget === target.testTarget)) {
+        targets.push(target);
+      }
+    }
+  }
+  if (targets.length === 0) {
+    return null;
+  }
+  return targets.map(({ packageName, testTarget }) =>
+    cargoStep(
+      `${packageName} ${testTarget} exact target`,
+      ['test', '-p', packageName, '--test', testTarget],
+      env,
+      settings,
+    ),
+  );
+}
+
+function resolveAutoProfile(changedFiles) {
+  if (changedFiles.length === 0) {
+    return { resolvedProfile: 'quick' };
+  }
+  for (const changedFile of changedFiles) {
+    const normalized = normalizePathForMatching(changedFile);
+    const matchedPrefix = PROFILE_BY_PATH_PREFIX.find(([prefix]) =>
+      normalized === prefix || normalized.startsWith(prefix),
+    );
+    if (matchedPrefix) {
+      return { resolvedProfile: matchedPrefix[1] };
+    }
+  }
+  const packages = [...new Set(changedFiles.map(servicePackageFromChangedFile).filter(Boolean))];
+  if (packages.length === 0) {
+    return { resolvedProfile: 'quick' };
+  }
+  if (packages.length > 1) {
+    return { resolvedProfile: 'runtime' };
+  }
+  const packageName = packages[0];
+  return {
+    resolvedProfile: PROFILE_BY_SERVICE_PACKAGE[packageName] ?? 'quick',
   };
 }
 
@@ -131,6 +499,30 @@ function buildQuickSteps(env, settings) {
     ),
     cargoStep(
       'sqlite product model route smoke',
+      [
+        'test',
+        '-p',
+        'sdkwork-claw-admin-api',
+        '--test',
+        'sqlite_product_model_route',
+        'sqlite_product_catalog_route_serves_real_backend_model_list',
+      ],
+      env,
+      settings,
+    ),
+  ];
+}
+
+function buildSmokeSteps(env, settings) {
+  return [
+    cargoStep(
+      'shared test fixture smoke',
+      ['test', '-p', 'sdkwork-claw-test-support', '--lib', 'seeded_sqlite_catalog_reopens_pool_for_real_route_tests'],
+      env,
+      settings,
+    ),
+    cargoStep(
+      'admin api sqlite product model route smoke',
       [
         'test',
         '-p',
@@ -338,24 +730,75 @@ function buildRuntimeSteps(env, settings) {
 }
 
 function buildFullSteps(env, settings) {
-  return [cargoStep('rust workspace tests', ['test', '--workspace'], env, settings)];
+  const runtimePackages = [
+    'sdkwork-claw-product',
+    'sdkwork-claw-gateway',
+    'sdkwork-claw-admin-api',
+    'sdkwork-claw-app-api',
+    'sdkwork-claw-installer',
+  ];
+  return [
+    cargoStep(
+      'rust workspace support tests',
+      [
+        'test',
+        '--workspace',
+        ...runtimePackages.flatMap((packageName) => ['--exclude', packageName]),
+      ],
+      env,
+      settings,
+    ),
+    ...runtimePackages.map((packageName) =>
+      cargoStep(
+        `${packageName} all target tests`,
+        ['test', '-p', packageName, '--all-targets'],
+        env,
+        settings,
+      ),
+    ),
+  ];
 }
 
-function buildRustTestPlan(settings, { env = process.env, platform = process.platform } = {}) {
+function buildRustTestPlan(settings, { env = process.env, platform = process.platform, cwd = process.cwd() } = {}) {
   const profile = settings.profile || 'quick';
   if (!PROFILES.has(profile)) {
     throw new Error(`Unsupported rust test profile: ${profile}`);
   }
   const targetDir = normalizeTargetDir(profile, settings.targetDir, platform);
-  const stepEnv = {
-    ...env,
-    CARGO_TARGET_DIR: targetDir,
-  };
-  if (profile !== 'full' && !stepEnv.SDKWORK_CLAW_HTTP_OPENAPI_BUILD_MODE) {
-    stepEnv.SDKWORK_CLAW_HTTP_OPENAPI_BUILD_MODE = 'copy';
+  const stepEnv = buildCargoEnv(env, {
+    targetDir,
+    buildJobs: settings.buildJobs,
+  });
+  const normalizedChangedFiles = collectAutoChangedFiles({
+    changedFiles: settings.changedFiles ?? [],
+    staged: settings.staged ?? false,
+    baseRef: settings.baseRef ?? null,
+  }, cwd);
+  const planSettings = { ...settings, profile, changedFiles: normalizedChangedFiles };
+  if (profile === 'auto') {
+    const autoTargetSteps = buildAutoTargetSteps(normalizedChangedFiles, stepEnv, planSettings, cwd);
+    if (autoTargetSteps) {
+      return {
+        profile,
+        resolvedProfile: 'auto-targets',
+        targetDir,
+        steps: autoTargetSteps,
+      };
+    }
+    const autoResolution = resolveAutoProfile(normalizedChangedFiles);
+    const delegatedPlan = buildRustTestPlan(
+      { ...planSettings, profile: autoResolution.resolvedProfile },
+      { env, platform, cwd },
+    );
+    return {
+      profile,
+      resolvedProfile: autoResolution.resolvedProfile,
+      targetDir,
+      steps: delegatedPlan.steps,
+    };
   }
-  const planSettings = { ...settings, profile };
   const steps = {
+    smoke: buildSmokeSteps,
     quick: buildQuickSteps,
     'admin-api': buildAdminApiSteps,
     'app-api': buildAppApiSteps,
@@ -423,7 +866,9 @@ if (process.argv[1] && import.meta.url.endsWith(process.argv[1].replaceAll('\\',
 }
 
 export {
+  buildCargoEnv,
   buildRustTestPlan,
+  collectAutoChangedFiles,
   commandLine,
   normalizeTargetDir,
   parseArgs,

@@ -67,8 +67,8 @@ fn admin_marketing_recharge_catalog_uses_appbase_catalog_tables() {
         );
 
         assert!(recharge_catalog_sections.contains("commerce_recharge_package"));
-        assert!(recharge_catalog_sections.contains("commerce_product"));
-        assert!(recharge_catalog_sections.contains("commerce_sku"));
+        assert!(recharge_catalog_sections.contains("commerce_product_spu"));
+        assert!(recharge_catalog_sections.contains("commerce_product_sku"));
         assert!(
             !recharge_catalog_sections.contains("plus_vip_recharge_pack"),
             "admin recharge package catalog path must not keep the legacy plus recharge package table"

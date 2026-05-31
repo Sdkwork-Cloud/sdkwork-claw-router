@@ -67,6 +67,7 @@ pub async fn load_provider_routes(
         Ok(ModelProviderRouteRow {
             catalog_key: row.try_get("catalog_key")?,
             model: row.try_get("model")?,
+            api_code: row.try_get("api_code")?,
             region_code: row.try_get("region_code")?,
             provider_code: row.try_get("provider_code")?,
             channel_id: row.try_get("channel_id")?,
@@ -110,7 +111,6 @@ pub async fn load_provider_channel_routes(
         })
     });
     sqlx::query(mapper.sql)
-        .bind(circuit_breaker_recovery_window_seconds)
         .bind(circuit_breaker_recovery_window_seconds)
         .bind(circuit_breaker_recovery_window_seconds)
         .fetch_all(pool)

@@ -1058,6 +1058,52 @@ CREATE TABLE IF NOT EXISTS iam_verification_attempt (
 CREATE INDEX IF NOT EXISTS idx_iam_verification_attempt_challenge ON iam_verification_attempt (tenant_id, organization_id, challenge_id, occurred_at);
 CREATE INDEX IF NOT EXISTS idx_iam_verification_attempt_target ON iam_verification_attempt (tenant_id, organization_id, target_type, target_hash, occurred_at);
 
+CREATE TABLE IF NOT EXISTS integration_provider_account (
+    id BIGSERIAL PRIMARY KEY,
+    uuid VARCHAR(64) NOT NULL,
+    tenant_id BIGINT NOT NULL DEFAULT 0,
+    organization_id BIGINT NOT NULL DEFAULT 0,
+    data_scope INTEGER NOT NULL DEFAULT 0,
+    status INTEGER NOT NULL DEFAULT 1,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    version BIGINT NOT NULL DEFAULT 0,
+    deleted_at TIMESTAMPTZ,
+    deleted_by BIGINT,
+    metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
+    provider_id BIGINT,
+    provider_code VARCHAR(64) NOT NULL DEFAULT '',
+    account_code VARCHAR(64) NOT NULL DEFAULT '',
+    account_name VARCHAR(128) NOT NULL DEFAULT '',
+    account_type VARCHAR(32) NOT NULL DEFAULT 'official',
+    channel_type VARCHAR(32) NOT NULL DEFAULT 'official',
+    auth_type INTEGER NOT NULL DEFAULT 1,
+    credential_profile INTEGER NOT NULL DEFAULT 1,
+    auth_config JSONB NOT NULL DEFAULT '{}'::jsonb,
+    secret_ref VARCHAR(512),
+    secret_hash VARCHAR(128),
+    masked_label VARCHAR(128),
+    credential_version BIGINT NOT NULL DEFAULT 1,
+    base_url VARCHAR(512),
+    region_code VARCHAR(64),
+    environment INTEGER NOT NULL DEFAULT 1,
+    health_status INTEGER NOT NULL DEFAULT 1,
+    last_latency_ms INTEGER,
+    consecutive_error_count BIGINT NOT NULL DEFAULT 0,
+    risk_level INTEGER NOT NULL DEFAULT 1,
+    quota_snapshot JSONB,
+    last_verified_at TIMESTAMPTZ,
+    last_used_at TIMESTAMPTZ,
+    last_rotated_at TIMESTAMPTZ,
+    next_rotate_at TIMESTAMPTZ
+);
+
+CREATE UNIQUE INDEX IF NOT EXISTS uk_integration_provider_account_uuid ON integration_provider_account (uuid);
+CREATE UNIQUE INDEX IF NOT EXISTS uk_integration_provider_account_code ON integration_provider_account (tenant_id, organization_id, account_code);
+CREATE INDEX IF NOT EXISTS idx_integration_provider_account_provider ON integration_provider_account (tenant_id, organization_id, provider_code, account_type, status, id);
+CREATE INDEX IF NOT EXISTS idx_integration_provider_account_secret ON integration_provider_account (tenant_id, organization_id, secret_hash, status, id);
+CREATE INDEX IF NOT EXISTS idx_integration_provider_account_health ON integration_provider_account (tenant_id, organization_id, status, health_status, risk_level, id);
+
 CREATE TABLE IF NOT EXISTS ai_provider (
     id BIGSERIAL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
@@ -2306,6 +2352,171 @@ CREATE INDEX IF NOT EXISTS idx_ai_route_candidate_status ON ai_route_candidate (
 CREATE UNIQUE INDEX IF NOT EXISTS uk_ai_route_candidate_scope ON ai_route_candidate (tenant_id, organization_id, channel_group_id, channel_id, endpoint_id, api_code, catalog_key);
 CREATE INDEX IF NOT EXISTS idx_ai_route_candidate_model ON ai_route_candidate (tenant_id, organization_id, channel_group_id, api_code, catalog_key, status, health_status, priority, weight, id);
 CREATE INDEX IF NOT EXISTS idx_ai_route_candidate_api ON ai_route_candidate (tenant_id, organization_id, channel_group_id, api_code, status, health_status, priority, weight, id);
+
+CREATE TABLE IF NOT EXISTS ai_resource_route_profile (
+    id BIGSERIAL PRIMARY KEY,
+    uuid VARCHAR(64) NOT NULL,
+    tenant_id BIGINT NOT NULL DEFAULT 0,
+    organization_id BIGINT NOT NULL DEFAULT 0,
+    data_scope INTEGER NOT NULL DEFAULT 0,
+    status INTEGER NOT NULL DEFAULT 1,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    version BIGINT NOT NULL DEFAULT 0,
+    deleted_at TIMESTAMPTZ,
+    deleted_by BIGINT,
+    metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
+    resource_id BIGINT,
+    resource_code VARCHAR(192) NOT NULL,
+    route_key VARCHAR(192) NOT NULL,
+    http_method VARCHAR(16),
+    path_pattern VARCHAR(512),
+    capability INTEGER,
+    billing_meter_code VARCHAR(64),
+    model_requirement VARCHAR(32) NOT NULL DEFAULT 'ignored',
+    route_strategy VARCHAR(64) NOT NULL DEFAULT 'stateless_failover',
+    failure_strategy VARCHAR(64) NOT NULL DEFAULT 'fail_closed',
+    selection_strategy VARCHAR(64) NOT NULL DEFAULT 'priority_weighted',
+    sticky_object_type VARCHAR(64),
+    sticky_scope VARCHAR(64),
+    parent_object_types JSONB,
+    request_extractors JSONB,
+    response_bindings JSONB,
+    endpoint_failover_scope VARCHAR(64) NOT NULL DEFAULT 'same_channel',
+    idempotency_mode VARCHAR(32) NOT NULL DEFAULT 'none',
+    cache_ttl_seconds BIGINT,
+    sort_order INTEGER
+);
+
+CREATE UNIQUE INDEX IF NOT EXISTS uk_ai_resource_route_profile_uuid ON ai_resource_route_profile (uuid);
+CREATE UNIQUE INDEX IF NOT EXISTS uk_ai_resource_route_profile_route ON ai_resource_route_profile (tenant_id, organization_id, resource_code, route_key);
+CREATE INDEX IF NOT EXISTS idx_ai_resource_route_profile_lookup ON ai_resource_route_profile (tenant_id, organization_id, status, route_key, resource_code, id);
+CREATE INDEX IF NOT EXISTS idx_ai_resource_route_profile_strategy ON ai_resource_route_profile (tenant_id, organization_id, status, route_strategy, model_requirement, id);
+
+CREATE TABLE IF NOT EXISTS ai_provider_object_route (
+    id BIGSERIAL PRIMARY KEY,
+    uuid VARCHAR(64) NOT NULL,
+    tenant_id BIGINT NOT NULL DEFAULT 0,
+    organization_id BIGINT NOT NULL DEFAULT 0,
+    data_scope INTEGER NOT NULL DEFAULT 0,
+    status INTEGER NOT NULL DEFAULT 1,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    version BIGINT NOT NULL DEFAULT 0,
+    deleted_at TIMESTAMPTZ,
+    deleted_by BIGINT,
+    metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
+    api_key_id BIGINT,
+    channel_group_id BIGINT,
+    object_type VARCHAR(64) NOT NULL,
+    object_id VARCHAR(256) NOT NULL,
+    object_key_hash VARCHAR(128) NOT NULL,
+    parent_object_type VARCHAR(64),
+    parent_object_id VARCHAR(256),
+    provider_code VARCHAR(64),
+    channel_id BIGINT NOT NULL,
+    endpoint_id BIGINT,
+    vendor_code VARCHAR(64),
+    api_code VARCHAR(128),
+    catalog_key VARCHAR(256),
+    provider_model VARCHAR(256),
+    region_code VARCHAR(64),
+    sticky_scope VARCHAR(64),
+    expires_at TIMESTAMPTZ,
+    last_seen_at TIMESTAMPTZ
+);
+
+CREATE UNIQUE INDEX IF NOT EXISTS uk_ai_provider_object_route_uuid ON ai_provider_object_route (uuid);
+CREATE UNIQUE INDEX IF NOT EXISTS uk_ai_provider_object_route_object ON ai_provider_object_route (tenant_id, organization_id, object_type, object_id);
+CREATE INDEX IF NOT EXISTS idx_ai_provider_object_route_fast ON ai_provider_object_route (tenant_id, organization_id, object_key_hash, status, id);
+CREATE INDEX IF NOT EXISTS idx_ai_provider_object_route_parent ON ai_provider_object_route (tenant_id, organization_id, parent_object_type, parent_object_id, status, id);
+CREATE INDEX IF NOT EXISTS idx_ai_provider_object_route_channel ON ai_provider_object_route (tenant_id, organization_id, channel_group_id, channel_id, status, id);
+CREATE INDEX IF NOT EXISTS idx_ai_provider_object_route_expiry ON ai_provider_object_route (tenant_id, organization_id, expires_at, status, id);
+
+CREATE TABLE IF NOT EXISTS ai_route_idempotency (
+    id BIGSERIAL PRIMARY KEY,
+    uuid VARCHAR(64) NOT NULL,
+    tenant_id BIGINT NOT NULL DEFAULT 0,
+    organization_id BIGINT NOT NULL DEFAULT 0,
+    data_scope INTEGER NOT NULL DEFAULT 0,
+    status INTEGER NOT NULL DEFAULT 1,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    version BIGINT NOT NULL DEFAULT 0,
+    deleted_at TIMESTAMPTZ,
+    deleted_by BIGINT,
+    metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
+    api_key_id BIGINT NOT NULL,
+    channel_group_id BIGINT,
+    idempotency_key VARCHAR(256) NOT NULL,
+    request_hash VARCHAR(128) NOT NULL,
+    route_strategy VARCHAR(64),
+    channel_id BIGINT,
+    endpoint_id BIGINT,
+    object_type VARCHAR(64),
+    object_id VARCHAR(256),
+    response_status INTEGER,
+    expires_at TIMESTAMPTZ
+);
+
+CREATE UNIQUE INDEX IF NOT EXISTS uk_ai_route_idempotency_uuid ON ai_route_idempotency (uuid);
+CREATE UNIQUE INDEX IF NOT EXISTS uk_ai_route_idempotency_key ON ai_route_idempotency (tenant_id, organization_id, api_key_id, idempotency_key);
+CREATE INDEX IF NOT EXISTS idx_ai_route_idempotency_lookup ON ai_route_idempotency (tenant_id, organization_id, api_key_id, idempotency_key, status, id);
+CREATE INDEX IF NOT EXISTS idx_ai_route_idempotency_expiry ON ai_route_idempotency (tenant_id, organization_id, expires_at, status, id);
+
+CREATE TABLE IF NOT EXISTS ai_config_version (
+    id BIGSERIAL PRIMARY KEY,
+    uuid VARCHAR(64) NOT NULL,
+    tenant_id BIGINT NOT NULL DEFAULT 0,
+    organization_id BIGINT NOT NULL DEFAULT 0,
+    data_scope INTEGER NOT NULL DEFAULT 0,
+    status INTEGER NOT NULL DEFAULT 1,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    version BIGINT NOT NULL DEFAULT 0,
+    deleted_at TIMESTAMPTZ,
+    deleted_by BIGINT,
+    metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
+    config_scope VARCHAR(64) NOT NULL,
+    config_version BIGINT NOT NULL DEFAULT 0,
+    changed_object_type VARCHAR(64),
+    changed_object_id BIGINT,
+    published_at TIMESTAMPTZ
+);
+
+CREATE UNIQUE INDEX IF NOT EXISTS uk_ai_config_version_uuid ON ai_config_version (uuid);
+CREATE UNIQUE INDEX IF NOT EXISTS uk_ai_config_version_scope ON ai_config_version (tenant_id, organization_id, config_scope);
+CREATE INDEX IF NOT EXISTS idx_ai_config_version_scope_updated ON ai_config_version (tenant_id, organization_id, config_scope, updated_at, id);
+CREATE INDEX IF NOT EXISTS idx_ai_config_version_scope_status ON ai_config_version (config_scope, status, deleted_at, id);
+
+CREATE TABLE IF NOT EXISTS ai_config_change_event (
+    id BIGSERIAL PRIMARY KEY,
+    uuid VARCHAR(64) NOT NULL,
+    tenant_id BIGINT NOT NULL DEFAULT 0,
+    organization_id BIGINT NOT NULL DEFAULT 0,
+    user_id BIGINT,
+    request_id VARCHAR(128),
+    trace_id VARCHAR(128),
+    payload_hash VARCHAR(128),
+    status INTEGER NOT NULL DEFAULT 1,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    retention_until TIMESTAMPTZ,
+    legal_hold BOOLEAN NOT NULL DEFAULT FALSE,
+    metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
+    config_scope VARCHAR(64) NOT NULL,
+    changed_object_type VARCHAR(64),
+    changed_object_id BIGINT,
+    config_version BIGINT NOT NULL,
+    event_status VARCHAR(32) NOT NULL DEFAULT 'pending',
+    event_payload JSONB,
+    published_at TIMESTAMPTZ,
+    publish_attempts INTEGER NOT NULL DEFAULT 0,
+    last_error_message VARCHAR(512)
+);
+
+CREATE UNIQUE INDEX IF NOT EXISTS uk_ai_config_change_event_uuid ON ai_config_change_event (uuid);
+CREATE INDEX IF NOT EXISTS idx_ai_config_change_event_pending ON ai_config_change_event (tenant_id, organization_id, event_status, created_at, id);
+CREATE INDEX IF NOT EXISTS idx_ai_config_change_event_scope_version ON ai_config_change_event (tenant_id, organization_id, config_scope, config_version, id);
 
 CREATE TABLE IF NOT EXISTS ai_model_family (
     id BIGSERIAL PRIMARY KEY,

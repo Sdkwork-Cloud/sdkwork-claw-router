@@ -316,10 +316,11 @@ impl AppRoutingChannelCommandStore for PostgresAppRoutingChannelCommandStore {
             let mut tx = self.pool.begin().await.map_err(|error| {
                 store_error("failed to begin routing channel transaction", error)
             })?;
-            let scope = DeleteAppRoutingChannelModelScope::from(command.clone());
-            soft_delete_channel_models(&mut tx, &scope).await?;
             let deleted = soft_delete_channel(&mut tx, &command).await?;
             if deleted {
+                let scope = DeleteAppRoutingChannelModelScope::from(command.clone());
+                soft_delete_channel_models(&mut tx, &scope).await?;
+                soft_delete_channel_relationships(&mut tx, &command).await?;
                 insert_config_snapshot(
                     &mut tx,
                     &command.config_snapshot_uuid,
@@ -827,6 +828,85 @@ async fn soft_delete_channel_models(
     .execute(&mut **tx)
     .await
     .map_err(|error| store_error("failed to delete routing channel models", error))?;
+    Ok(())
+}
+
+async fn soft_delete_channel_relationships(
+    tx: &mut Transaction<'_, Postgres>,
+    command: &DeleteAppRoutingChannelCommand,
+) -> DomainResult<()> {
+    sqlx::query(
+        r#"
+        UPDATE ai_channel_resource
+        SET status = -1,
+            deleted_at = $1::timestamptz,
+            deleted_by = $2,
+            updated_at = $3::timestamptz,
+            version = COALESCE(version, 0) + 1
+        WHERE channel_id = $4
+          AND tenant_id = $5
+          AND organization_id = $6
+          AND deleted_at IS NULL
+        "#,
+    )
+    .bind(&command.requested_at)
+    .bind(command.subject.user_id)
+    .bind(&command.requested_at)
+    .bind(command.channel_id)
+    .bind(command.subject.tenant_id)
+    .bind(command.subject.organization_id)
+    .execute(&mut **tx)
+    .await
+    .map_err(|error| store_error("failed to delete routing channel resources", error))?;
+
+    sqlx::query(
+        r#"
+        UPDATE ai_channel_vendor
+        SET status = -1,
+            deleted_at = $1::timestamptz,
+            deleted_by = $2,
+            updated_at = $3::timestamptz,
+            version = COALESCE(version, 0) + 1
+        WHERE channel_id = $4
+          AND tenant_id = $5
+          AND organization_id = $6
+          AND deleted_at IS NULL
+        "#,
+    )
+    .bind(&command.requested_at)
+    .bind(command.subject.user_id)
+    .bind(&command.requested_at)
+    .bind(command.channel_id)
+    .bind(command.subject.tenant_id)
+    .bind(command.subject.organization_id)
+    .execute(&mut **tx)
+    .await
+    .map_err(|error| store_error("failed to delete routing channel vendors", error))?;
+
+    sqlx::query(
+        r#"
+        UPDATE ai_channel_endpoint
+        SET status = -1,
+            deleted_at = $1::timestamptz,
+            deleted_by = $2,
+            updated_at = $3::timestamptz,
+            version = COALESCE(version, 0) + 1
+        WHERE channel_id = $4
+          AND tenant_id = $5
+          AND organization_id = $6
+          AND deleted_at IS NULL
+        "#,
+    )
+    .bind(&command.requested_at)
+    .bind(command.subject.user_id)
+    .bind(&command.requested_at)
+    .bind(command.channel_id)
+    .bind(command.subject.tenant_id)
+    .bind(command.subject.organization_id)
+    .execute(&mut **tx)
+    .await
+    .map_err(|error| store_error("failed to delete routing channel endpoints", error))?;
+
     Ok(())
 }
 

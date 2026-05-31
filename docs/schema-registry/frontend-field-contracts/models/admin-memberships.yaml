@@ -199,8 +199,9 @@ frontend_models:
   - skuId
   - priceAmount
   - currencyCode
-  - bonusAmount
+  - bonusPoints
   - grantAmount
+  - points
   - status
   - updatedAt
   data_sources:
@@ -211,11 +212,30 @@ frontend_models:
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts
   interface: MembershipsAdminRechargePackageMutationInput
   fields:
-  - rmb
-  - bonus
+  - priceAmount
+  - currencyCode
+  - bonusPoints
   - status
   data_sources:
   - commerce_recharge_package
+- route: /admin/memberships/recharge-packages
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts
+  interface: MembershipsAdminRechargeSettingsItem
+  fields:
+  - baseCurrencyCode
+  - basePointsPerCny
+  - currencyToCnyRates
+  data_sources:
+  - commerce_exchange_rule
+- route: /admin/memberships/recharge-packages
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts
+  interface: MembershipsAdminRechargeSettingsUpdateInput
+  fields:
+  - baseCurrencyCode
+  - basePointsPerCny
+  - currencyToCnyRates
+  data_sources:
+  - commerce_exchange_rule
 - route: /admin/memberships
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts
   interface: MembershipsAdminPackageCatalog

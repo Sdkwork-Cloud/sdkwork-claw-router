@@ -1,5 +1,5 @@
 import type { ElementType } from 'react';
-import { Layout, Server, Settings } from 'lucide-react';
+import { Cloud, CreditCard, Layout, Server, Settings, Sparkles } from 'lucide-react';
 import type {
   ApiParameter,
   ApiReferenceEndpoint,
@@ -25,6 +25,11 @@ import {
   schemaToApiParameters,
   schemaToTypeLabel,
 } from './openapiSchemaRuntime.ts';
+import {
+  APP_API_PREFIX,
+  BACKEND_API_PREFIX,
+  OPEN_API_PREFIX,
+} from 'sdkwork-claw-router-commons/runtime';
 
 export const API_SCHEMA_TABS_URL = '/openapi/schema-tabs.json';
 export const LEGACY_OPENAPI_URL = '/openapi.json';
@@ -36,12 +41,16 @@ export interface ApiSchemaTab {
   schemaUrls: string[];
   defaultSchemaUrl?: string;
   cacheTtlSeconds?: number;
+  status?: ApiSchemaTabStatus;
+  description?: string;
 }
 
 export interface ApiSchemaTabsDocument {
   cacheTtlSeconds?: number;
   tabs: ApiSchemaTab[];
 }
+
+export type ApiSchemaTabStatus = 'available' | 'planned';
 
 export interface ApiCategory {
   id: string;
@@ -63,8 +72,11 @@ export interface ApiSystemData {
   name: string;
   icon: ElementType;
   schemaUrl: string;
+  requestBaseUrl: string;
   openApiSpec?: OpenApiDocument;
   categories: ApiCategory[];
+  status: ApiSchemaTabStatus;
+  description?: string;
 }
 
 export type ApiReferenceFetchJson = (url: string) => Promise<unknown>;
@@ -129,10 +141,11 @@ export async function loadApiReferenceSystems(fetchJson: ApiReferenceFetchJson =
     return buildApiReferenceSystemsFromTabs({
       tabs: [{
         id: 'gateway',
-        name: 'Claw Router Open API',
+        name: 'AI聚合API',
         order: 10,
         schemaUrls: [LEGACY_OPENAPI_URL],
         defaultSchemaUrl: LEGACY_OPENAPI_URL,
+        status: 'available',
       }],
     }, async () => legacyPayload);
   }
@@ -143,6 +156,19 @@ export async function buildApiReferenceSystemsFromTabs(
   fetchJson: ApiReferenceFetchJson,
 ): Promise<ApiSystemData[]> {
   const systems = await Promise.all(sortApiSchemaTabs(manifest.tabs).map(async (tab) => {
+    if (tab.status === 'planned' && tab.schemaUrls.length === 0) {
+      return {
+        id: tab.id,
+        name: tab.name,
+        icon: iconForTab(tab.id),
+        schemaUrl: '',
+        requestBaseUrl: '',
+        categories: [],
+        status: tab.status,
+        description: tab.description,
+      };
+    }
+
     const schemaDocs = await Promise.all(tab.schemaUrls.map(async (url) => {
       const payload = await fetchJson(url);
       if (!isOpenApiDocument(payload)) {
@@ -158,17 +184,20 @@ export async function buildApiReferenceSystemsFromTabs(
       name: tab.name,
       icon: iconForTab(tab.id),
       schemaUrl,
+      requestBaseUrl: resolveApiSystemRequestBaseUrl(tab.id, schemaUrl, defaultSchemaDoc?.spec),
       openApiSpec: defaultSchemaDoc?.spec,
       categories: schemaDocs.flatMap((schemaDoc) => openApiDocumentToCategories(schemaDoc.spec)),
+      status: tab.status ?? 'available',
+      description: tab.description,
     };
   }));
 
-  return systems.filter((system) => system.categories.length > 0);
+  return systems.filter((system) => system.status === 'planned' || system.categories.length > 0);
 }
 
 export function getApiSystemDisplayName(system: Pick<ApiSystemData, 'id' | 'name'>): string {
   if (system.id === 'gateway') {
-    return 'Default Open API';
+    return 'AI聚合API';
   }
   return system.name;
 }
@@ -211,7 +240,9 @@ function normalizeApiSchemaTabsDocument(value: unknown): ApiSchemaTabsDocument {
     throw new Error('Invalid API schema tabs document');
   }
 
-  const tabs = value.tabs.map(normalizeApiSchemaTab).filter((tab) => tab.schemaUrls.length > 0);
+  const tabs = value.tabs.map(normalizeApiSchemaTab).filter((tab) => (
+    tab.status === 'planned' || tab.schemaUrls.length > 0
+  ));
   if (tabs.length === 0) {
     throw new Error('API schema tabs document has no schema urls');
   }
@@ -239,6 +270,8 @@ function normalizeApiSchemaTab(value: unknown): ApiSchemaTab {
     schemaUrls,
     defaultSchemaUrl: typeof value.defaultSchemaUrl === 'string' ? value.defaultSchemaUrl : undefined,
     cacheTtlSeconds: numberOrUndefined(value.cacheTtlSeconds),
+    status: normalizeApiSchemaTabStatus(value.status),
+    description: typeof value.description === 'string' ? value.description : undefined,
   };
 }
 
@@ -385,7 +418,7 @@ function categorySortKey(categoryName: string): string[] {
 
 function operationToParameters(operation: OpenApiOperation, pathItem: OpenApiPathItem, spec: OpenApiDocument): ApiParameter[] {
   const requestSchema = getDocumentedRequestSchema(operation.requestBody);
-  const pathParams = normalizeOpenApiOperationParameters(pathItem, operation).map((parameter) => ({
+  const pathParams = normalizeOpenApiOperationParameters(pathItem, operation, spec).map((parameter) => ({
     name: parameter.name ?? '',
     type: parameter.schema ? schemaToTypeLabel(parameter.schema, { spec }) : 'string',
     desc: parameter.description || '',
@@ -397,11 +430,48 @@ function operationToParameters(operation: OpenApiOperation, pathItem: OpenApiPat
   ];
 }
 
-function normalizeOpenApiOperationParameters(pathItem: OpenApiPathItem, operation: OpenApiOperation): OpenApiParameter[] {
+function normalizeOpenApiOperationParameters(
+  pathItem: OpenApiPathItem,
+  operation: OpenApiOperation,
+  spec: OpenApiDocument,
+): OpenApiParameter[] {
   return [
     ...(pathItem.parameters ?? []),
     ...(operation.parameters ?? []),
-  ].filter(isOpenApiParameter);
+  ]
+    .filter(isOpenApiParameter)
+    .map((parameter) => resolveOpenApiParameterReference(parameter, spec))
+    .filter(isOpenApiParameter);
+}
+
+function resolveOpenApiParameterReference(parameter: OpenApiParameter, spec: OpenApiDocument): OpenApiParameter {
+  if (typeof parameter.$ref !== 'string') {
+    return parameter;
+  }
+
+  const referenced = resolveLocalOpenApiParameterRef(parameter.$ref, spec);
+  if (!referenced) {
+    return parameter;
+  }
+
+  return {
+    ...referenced,
+    description: parameter.description ?? referenced.description,
+  };
+}
+
+function resolveLocalOpenApiParameterRef(ref: string, spec: OpenApiDocument): OpenApiParameter | undefined {
+  const prefix = '#/components/parameters/';
+  if (!ref.startsWith(prefix)) {
+    return undefined;
+  }
+  let parameterName: string;
+  try {
+    parameterName = decodeURIComponent(ref.slice(prefix.length));
+  } catch {
+    return undefined;
+  }
+  return spec.components?.parameters?.[parameterName];
 }
 
 function getSuccessResponse(operation: OpenApiOperation): OpenApiResponse | undefined {
@@ -427,8 +497,11 @@ async function defaultFetchJson(url: string): Promise<unknown> {
 }
 
 function iconForTab(id: string): ElementType {
+  if (id === 'payment-aggregate') return CreditCard;
+  if (id === 'cloud-services') return Cloud;
   if (id === 'backend') return Settings;
   if (id === 'app') return Layout;
+  if (id === 'gateway') return Sparkles;
   return Server;
 }
 
@@ -445,4 +518,36 @@ function stringOrThrow(value: unknown, label: string): string {
 
 function numberOrUndefined(value: unknown): number | undefined {
   return typeof value === 'number' && Number.isFinite(value) ? value : undefined;
+}
+
+function normalizeApiSchemaTabStatus(value: unknown): ApiSchemaTabStatus | undefined {
+  if (value === 'planned') return 'planned';
+  if (value === 'available') return 'available';
+  return undefined;
+}
+
+function resolveApiSystemRequestBaseUrl(
+  systemId: string,
+  schemaUrl: string,
+  spec?: OpenApiDocument,
+): string {
+  const contractPrefix = typeof spec?.["x-api-prefix"] === 'string'
+    ? spec["x-api-prefix"].trim()
+    : '';
+  if (contractPrefix) {
+    return contractPrefix;
+  }
+  if (systemId === 'backend') {
+    return BACKEND_API_PREFIX;
+  }
+  if (systemId === 'app') {
+    return APP_API_PREFIX;
+  }
+  if (systemId === 'gateway') {
+    return OPEN_API_PREFIX;
+  }
+  if (schemaUrl.endsWith('/openapi.json')) {
+    return schemaUrl.slice(0, -'/openapi.json'.length) || '';
+  }
+  return '';
 }

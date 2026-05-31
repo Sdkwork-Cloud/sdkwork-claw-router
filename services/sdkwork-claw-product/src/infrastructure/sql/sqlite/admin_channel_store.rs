@@ -6,6 +6,9 @@ use sqlx::{Row, Sqlite, SqlitePool, Transaction};
 
 use crate::application::ApiKeySecretCodec;
 use crate::domain::{DomainError, DomainResult};
+use crate::infrastructure::sql::routing_config_change::{
+    record_sqlite_ai_routing_config_change, AiRoutingConfigChange,
+};
 use crate::ports::{
     AdminChannelCommandFuture, AdminChannelItem, AdminChannelStore, AdminChannelTestOutcome,
     CreateAdminChannelCommand, DeleteAdminChannelCommand, ListAdminChannelsQuery,
@@ -163,6 +166,26 @@ impl AdminChannelStore for SqliteAdminChannelStore {
                     "resourceCodes": &resource_codes,
                     "secretStoredAsRef": true
                 }),
+            )
+            .await?;
+            record_sqlite_ai_routing_config_change(
+                &mut tx,
+                channel_routing_config_change(
+                    command.subject.tenant_id,
+                    command.subject.organization_id,
+                    command.subject.operator_id,
+                    &command.request_id,
+                    &command.requested_at,
+                    "create_channel",
+                    channel_id,
+                    serde_json::json!({
+                        "channelId": channel_id,
+                        "providerCode": &command.provider_code,
+                        "channelType": &command.channel_type,
+                        "modelsChanged": true,
+                        "resourcesChanged": true
+                    }),
+                ),
             )
             .await?;
             let item = load_channel_by_id(
@@ -340,6 +363,32 @@ impl AdminChannelStore for SqliteAdminChannelStore {
                 }),
             )
             .await?;
+            record_sqlite_ai_routing_config_change(
+                &mut tx,
+                channel_routing_config_change(
+                    command.subject.tenant_id,
+                    command.subject.organization_id,
+                    command.subject.operator_id,
+                    &command.request_id,
+                    &command.requested_at,
+                    "update_channel",
+                    command.channel_id,
+                    serde_json::json!({
+                        "channelId": command.channel_id,
+                        "providerChanged": command.provider_code.is_some(),
+                        "channelTypeChanged": command.channel_type.is_some(),
+                        "modelsChanged": command.models.is_some(),
+                        "capabilitiesChanged": command.capabilities.is_some(),
+                        "resourcesChanged": command.resource_codes.is_some(),
+                        "timeoutChanged": command.timeout_ms.is_some(),
+                        "retryPolicyChanged": command.retry_policy_json.is_some(),
+                        "circuitBreakerPolicyChanged": command.circuit_breaker_policy_json.is_some(),
+                        "statusChanged": command.status.is_some(),
+                        "weightChanged": command.weight.is_some()
+                    }),
+                ),
+            )
+            .await?;
             let item = load_channel_by_id(
                 &mut tx,
                 command.channel_id,
@@ -369,6 +418,7 @@ impl AdminChannelStore for SqliteAdminChannelStore {
             if deleted {
                 let scope = DeleteAdminChannelModelScope::from(command.clone());
                 soft_delete_channel_models(&mut tx, &scope).await?;
+                soft_delete_channel_relationships(&mut tx, &command).await?;
                 insert_config_snapshot(
                     &mut tx,
                     &command.config_snapshot_uuid,
@@ -396,6 +446,23 @@ impl AdminChannelStore for SqliteAdminChannelStore {
                         "action": "delete_channel",
                         "channelId": command.channel_id
                     }),
+                )
+                .await?;
+                record_sqlite_ai_routing_config_change(
+                    &mut tx,
+                    channel_routing_config_change(
+                        command.subject.tenant_id,
+                        command.subject.organization_id,
+                        command.subject.operator_id,
+                        &command.request_id,
+                        &command.requested_at,
+                        "delete_channel",
+                        command.channel_id,
+                        serde_json::json!({
+                            "channelId": command.channel_id,
+                            "deleted": true
+                        }),
+                    ),
                 )
                 .await?;
             }
@@ -489,6 +556,25 @@ impl AdminChannelStore for SqliteAdminChannelStore {
                     "healthStatus": if probe_outcome.success { "healthy" } else { "error" },
                     "httpStatus": probe_outcome.http_status
                 }),
+            )
+            .await?;
+            record_sqlite_ai_routing_config_change(
+                &mut tx,
+                channel_routing_config_change(
+                    command.subject.tenant_id,
+                    command.subject.organization_id,
+                    command.subject.operator_id,
+                    &command.request_id,
+                    &command.requested_at,
+                    "test_channel",
+                    command.channel_id,
+                    serde_json::json!({
+                        "channelId": command.channel_id,
+                        "success": probe_outcome.success,
+                        "healthStatus": if probe_outcome.success { "healthy" } else { "error" },
+                        "httpStatus": probe_outcome.http_status
+                    }),
+                ),
             )
             .await?;
             let item = load_channel_by_id(
@@ -1063,13 +1149,13 @@ async fn upsert_ai_resource_bindings(
         .take(32)
         .collect::<String>();
         let priority = priority_offset.saturating_add(i64::try_from(index + 1).unwrap_or(i64::MAX));
-        let resource_row = sqlx::query(
+        let resource_group_row = sqlx::query(
             r#"
             SELECT id
-            FROM ai_resource
+            FROM ai_resource_group
             WHERE tenant_id = ?
               AND organization_id = ?
-              AND resource_code = ?
+              AND group_code = ?
               AND deleted_at IS NULL
             LIMIT 1
             "#,
@@ -1079,34 +1165,39 @@ async fn upsert_ai_resource_bindings(
         .bind(resource_code)
         .fetch_optional(&mut **tx)
         .await
-        .map_err(|error| store_error("failed to resolve channel resource", error))?;
-        let resource_id = resource_row
+        .map_err(|error| store_error("failed to resolve channel resource group", error))?;
+        let resource_group_id = resource_group_row
             .as_ref()
             .and_then(|row| optional_integer_cell(row, "id"));
-        let resource_group_row = if resource_id.is_none() {
+        let resource_row = if resource_group_id.is_none() {
             sqlx::query(
                 r#"
-                SELECT id
-                FROM ai_resource_group
-                WHERE tenant_id = ?
-                  AND organization_id = ?
-                  AND group_code = ?
-                  AND deleted_at IS NULL
-                LIMIT 1
-                "#,
+            SELECT id
+            FROM ai_resource
+            WHERE tenant_id = ?
+              AND organization_id = ?
+              AND resource_code = ?
+              AND deleted_at IS NULL
+            LIMIT 1
+            "#,
             )
             .bind(scope.tenant_id)
             .bind(scope.organization_id)
             .bind(resource_code)
             .fetch_optional(&mut **tx)
             .await
-            .map_err(|error| store_error("failed to resolve channel resource group", error))?
+            .map_err(|error| store_error("failed to resolve channel resource", error))?
         } else {
             None
         };
-        let resource_group_id = resource_group_row
+        let resource_id = resource_row
             .as_ref()
             .and_then(|row| optional_integer_cell(row, "id"));
+        if resource_group_id.is_none() && resource_id.is_none() {
+            return Err(DomainError::not_found(format!(
+                "AI resource was not found: {resource_code}"
+            )));
+        }
         let direct_resource_code = if resource_group_id.is_some() {
             ""
         } else {
@@ -1322,7 +1413,10 @@ async fn replace_channel_vendor_bindings(
     scope: &AiResourceBindingScope,
     resource_codes: &[String],
 ) -> DomainResult<()> {
-    let mut vendor_codes = vec![scope.provider_code.clone()];
+    let mut vendor_codes = Vec::<String>::new();
+    if !scope.provider_code.trim().is_empty() {
+        vendor_codes.push(scope.provider_code.clone());
+    }
     for resource_code in resource_codes {
         if let Some(vendor_code) = resource_code.strip_prefix("vendor.") {
             let vendor_code = vendor_code.trim();
@@ -1336,6 +1430,7 @@ async fn replace_channel_vendor_bindings(
         }
     }
     for (index, vendor_code) in vendor_codes.iter().enumerate() {
+        ensure_vendor_resource_exists(tx, scope, vendor_code).await?;
         let uuid_suffix = digest_hex(&format!(
             "{}:{}:{}",
             scope.request_id, scope.channel_id, vendor_code
@@ -1389,6 +1484,35 @@ async fn replace_channel_vendor_bindings(
         .execute(&mut **tx)
         .await
         .map_err(|error| store_error("failed to upsert channel vendor binding", error))?;
+    }
+    Ok(())
+}
+
+async fn ensure_vendor_resource_exists(
+    tx: &mut Transaction<'_, Sqlite>,
+    scope: &AiResourceBindingScope,
+    vendor_code: &str,
+) -> DomainResult<()> {
+    let exists: i64 = sqlx::query_scalar(
+        r#"
+        SELECT COUNT(1)
+        FROM ai_model_vendor
+        WHERE tenant_id = ?
+          AND organization_id = ?
+          AND vendor_code = ?
+          AND deleted_at IS NULL
+        "#,
+    )
+    .bind(scope.tenant_id)
+    .bind(scope.organization_id)
+    .bind(vendor_code)
+    .fetch_one(&mut **tx)
+    .await
+    .map_err(|error| store_error("failed to resolve channel vendor", error))?;
+    if exists == 0 {
+        return Err(DomainError::not_found(format!(
+            "AI vendor was not found: {vendor_code}"
+        )));
     }
     Ok(())
 }
@@ -1461,6 +1585,43 @@ async fn soft_delete_channel_models(
     .execute(&mut **tx)
     .await
     .map_err(|error| store_error("failed to delete channel models", error))?;
+    Ok(())
+}
+
+async fn soft_delete_channel_relationships(
+    tx: &mut Transaction<'_, Sqlite>,
+    command: &DeleteAdminChannelCommand,
+) -> DomainResult<()> {
+    for (table_name, context) in [
+        ("ai_channel_resource", "failed to delete channel resources"),
+        ("ai_channel_vendor", "failed to delete channel vendors"),
+        ("ai_channel_endpoint", "failed to delete channel endpoints"),
+    ] {
+        let sql = format!(
+            r#"
+            UPDATE {table_name}
+            SET status = -1,
+                deleted_at = ?,
+                deleted_by = ?,
+                updated_at = ?,
+                version = COALESCE(version, 0) + 1
+            WHERE channel_id = ?
+              AND tenant_id = ?
+              AND organization_id = ?
+              AND deleted_at IS NULL
+            "#,
+        );
+        sqlx::query(&sql)
+            .bind(&command.requested_at)
+            .bind(command.subject.operator_id)
+            .bind(&command.requested_at)
+            .bind(command.channel_id)
+            .bind(command.subject.tenant_id)
+            .bind(command.subject.organization_id)
+            .execute(&mut **tx)
+            .await
+            .map_err(|error| store_error(context, error))?;
+    }
     Ok(())
 }
 
@@ -2157,6 +2318,29 @@ fn channel_snapshot_payload(channel_id: i64, name: &str, provider_code: &str) ->
         "name": name,
         "providerCode": provider_code
     })
+}
+
+fn channel_routing_config_change<'a>(
+    tenant_id: i64,
+    organization_id: i64,
+    operator_id: i64,
+    request_id: &'a str,
+    requested_at: &'a str,
+    action: &'a str,
+    channel_id: i64,
+    event_payload: serde_json::Value,
+) -> AiRoutingConfigChange<'a> {
+    AiRoutingConfigChange {
+        tenant_id,
+        organization_id,
+        operator_id,
+        request_id,
+        requested_at,
+        changed_object_type: "ai_channel",
+        changed_object_id: channel_id,
+        action,
+        event_payload,
+    }
 }
 
 fn entity_code(prefix: &str, uuid: &str) -> String {

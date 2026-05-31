@@ -313,6 +313,98 @@ frontend_operations:
       item: *commercePaymentProviderAccountItem
 - route: /admin/payments
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-payments/src/paymentsService.ts
+  operation: backendPaymentsRuntimeSnapshotRetrieve
+  operation_id: payments.runtime.snapshot.retrieve
+  kind: read
+  api_surface: backend
+  api_method: GET
+  api_path: /backend/v3/api/payments/runtime/snapshot
+  sdk_domain: commerce
+  summary: Payments Runtime Snapshot Retrieve
+  description: Read-only payment provider runtime assembly diagnostics for the selected environment. The response contains sanitized status events and never exposes provider secrets, certificates, adapters, or live registry instances.
+  read_sources: *paymentReadSources
+  query_parameters:
+  - name: environment
+    schema: *paymentEnvironmentSchema
+  response_schema:
+    name: CommercePaymentRuntimeSnapshotResponse
+    type: object
+    additionalProperties: false
+    required:
+    - environment
+    - recordedAt
+    - summary
+    - events
+    properties:
+      environment: *paymentEnvironmentSchema
+      recordedAt: *timestampSchema
+      summary:
+        name: CommercePaymentRuntimeAssemblySummary
+        type: object
+        additionalProperties: false
+        required:
+        - total
+        - registered
+        - failed
+        - skipped
+        - registeredProviderCodes
+        - failedProviderCodes
+        - skippedProviderCodes
+        properties:
+          total:
+            type: integer
+            format: int64
+            minimum: 0
+          registered:
+            type: integer
+            format: int64
+            minimum: 0
+          failed:
+            type: integer
+            format: int64
+            minimum: 0
+          skipped:
+            type: integer
+            format: int64
+            minimum: 0
+          registeredProviderCodes:
+            type: array
+            items: *paymentProviderCodeSchema
+          failedProviderCodes:
+            type: array
+            items: *paymentProviderCodeSchema
+          skippedProviderCodes:
+            type: array
+            items: *paymentProviderCodeSchema
+      events:
+        type: array
+        items:
+          name: CommercePaymentRuntimeAssemblyEvent
+          type: object
+          additionalProperties: false
+          required:
+          - kind
+          - accountNo
+          - providerCode
+          properties:
+            kind:
+              type: string
+              enum:
+              - registered
+              - failed
+              - skipped
+            accountNo: *accountNoSchema
+            providerCode: *paymentProviderCodeSchema
+            reason:
+              type: string
+              nullable: true
+              maxLength: 128
+            message:
+              type: string
+              nullable: true
+              maxLength: 1024
+- route: /admin/payments
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-payments/src/paymentsService.ts
   operation: backendPaymentsMethodsList
   operation_id: payments.methods.list
   kind: read

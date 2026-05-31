@@ -22,7 +22,7 @@ use sdkwork_commerce_storage_sqlx::{
 fn exposes_first_slice_commerce_table_catalog() {
     let tables = commerce_database_tables();
 
-    assert_eq!(tables.len(), 53);
+    assert_eq!(tables.len(), 67);
     assert!(tables.contains(&"commerce_idempotency_key"));
     assert!(tables.contains(&"commerce_account"));
     assert!(tables.contains(&"commerce_account_ledger_entry"));
@@ -71,7 +71,21 @@ fn exposes_first_slice_commerce_table_catalog() {
     assert!(tables.contains(&"commerce_payment_provider_account"));
     assert!(tables.contains(&"commerce_payment_channel"));
     assert!(tables.contains(&"commerce_payment_route_rule"));
+    assert!(tables.contains(&"commerce_payment_provider_capability"));
+    assert!(tables.contains(&"commerce_payment_operation_attempt"));
+    assert!(tables.contains(&"commerce_payment_route_decision"));
+    assert!(tables.contains(&"commerce_payment_capture"));
+    assert!(tables.contains(&"commerce_payment_webhook_delivery"));
+    assert!(tables.contains(&"commerce_payment_statement"));
+    assert!(tables.contains(&"commerce_payment_statement_item"));
+    assert!(tables.contains(&"commerce_payment_reconciliation_item"));
+    assert!(tables.contains(&"commerce_payment_fee"));
+    assert!(tables.contains(&"commerce_payment_dispute"));
+    assert!(tables.contains(&"commerce_payment_dispute_event"));
     assert!(tables.contains(&"commerce_refund"));
+    assert!(tables.contains(&"commerce_refund_item"));
+    assert!(tables.contains(&"commerce_refund_attempt"));
+    assert!(tables.contains(&"commerce_refund_event"));
     assert!(tables.contains(&"commerce_exchange_rule"));
     assert!(tables.contains(&"commerce_invoice_title"));
     assert!(tables.contains(&"commerce_invoice"));
@@ -2249,7 +2263,7 @@ fn migration_runner_failure_recovery_rejects_recorded_failed_migration() {
 fn storage_capability_manifest_is_complete_for_first_slice_runtime_bootstrap() {
     let manifest = commerce_storage_capability_manifest();
 
-    assert_eq!(manifest.tables.len(), 53);
+    assert_eq!(manifest.tables.len(), 67);
     assert_eq!(manifest.indexes.len(), 64);
     assert_eq!(manifest.migration_plan.len(), 13);
     assert_eq!(manifest.repository_bindings.len(), 15);
@@ -2396,6 +2410,39 @@ fn migration_plan_covers_first_slice_tables_by_domain() {
             "promotion_coupon_ledger_entry",
             "promotion_discount_application",
             "promotion_discount_allocation",
+        ],
+    );
+
+    let payment = plan
+        .iter()
+        .find(|migration| migration.domain == "payment")
+        .unwrap();
+    assert_eq!(
+        payment.required_tables,
+        vec![
+            "commerce_payment_intent",
+            "commerce_payment_attempt",
+            "commerce_payment_webhook_event",
+            "commerce_payment_method",
+            "commerce_payment_provider",
+            "commerce_payment_provider_account",
+            "commerce_payment_channel",
+            "commerce_payment_route_rule",
+            "commerce_payment_provider_capability",
+            "commerce_payment_operation_attempt",
+            "commerce_payment_route_decision",
+            "commerce_payment_capture",
+            "commerce_payment_webhook_delivery",
+            "commerce_payment_statement",
+            "commerce_payment_statement_item",
+            "commerce_payment_reconciliation_item",
+            "commerce_payment_fee",
+            "commerce_payment_dispute",
+            "commerce_payment_dispute_event",
+            "commerce_refund",
+            "commerce_refund_item",
+            "commerce_refund_attempt",
+            "commerce_refund_event",
         ],
     );
 }

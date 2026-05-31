@@ -127,6 +127,59 @@ fn catalog_with_hashed_api_key_missing_billing_subject(key_hash: String) -> InMe
     catalog
 }
 
+fn catalog_with_embeddings_fallback_route(key_hash: String) -> InMemoryPricingCatalog {
+    let mut catalog = catalog_with_hashed_api_key(key_hash);
+    catalog.add_provider_route(
+        ModelProviderRoute::new_for_catalog_key(
+            "openai/text-embedding-3-small",
+            "text-embedding-3-small",
+            "openrouter-fallback",
+            3002,
+            "text-embedding-3-small-fallback",
+        )
+        .with_provider_endpoint(
+            Some("http://provider-proxy.internal/openrouter-fallback"),
+            Some("vault://providers/openrouter/account/embedding-fallback"),
+        )
+        .with_timeout_ms(20_000)
+        .with_retry_policy(ProviderRetryPolicy::new(3, vec![429, 503], 0).unwrap()),
+    );
+    catalog.add_provider_channel_route(
+        ProviderChannelRoute::new("openrouter-fallback", 3002)
+            .with_provider_endpoint(
+                Some("http://provider-proxy.internal/openrouter-fallback"),
+                Some("vault://providers/openrouter/account/embedding-fallback"),
+            )
+            .with_timeout_ms(20_000)
+            .with_retry_policy(ProviderRetryPolicy::new(3, vec![429, 503], 0).unwrap()),
+    );
+    catalog.add_price(
+        ModelPrice::new_for_catalog_key(
+            "openai/text-embedding-3-small",
+            "text-embedding-3-small",
+            PriceSide::UpstreamCost,
+            BillingMeter::EmbeddingInputToken,
+            Money::usd("0.012000").unwrap(),
+        )
+        .for_provider("openrouter-fallback", 3002),
+    );
+    catalog.add_routing_rule(
+        RoutingRule::new(
+            9100,
+            10,
+            20,
+            9101,
+            "standard-group-text-embedding-3-small-failover",
+            0,
+            r#"{"catalogKey":"openai/text-embedding-3-small"}"#,
+            "openai/text-embedding-3-small",
+        )
+        .with_candidate_channels(vec![RouteCandidate::new(3001, 100)])
+        .with_fallback_chain(vec![RouteCandidate::new(3002, 50)]),
+    );
+    catalog
+}
+
 #[tokio::test]
 async fn openai_embeddings_authenticates_validates_price_and_returns_honest_not_implemented() {
     let hasher =
@@ -270,6 +323,65 @@ impl EmbeddingsRelay for RecordingEmbeddingsRelay {
                 serde_json::json!({
                     "object": "list",
                     "model": "text-embedding-3-small",
+                    "data": [
+                        {
+                            "object": "embedding",
+                            "index": 0,
+                            "embedding": [0.1, 0.2, 0.3]
+                        }
+                    ],
+                    "usage": {"prompt_tokens": 1, "total_tokens": 1}
+                }),
+            ))
+        })
+    }
+}
+
+#[derive(Debug)]
+struct RetryableStatusPrimaryEmbeddingsRelay {
+    captured: Arc<std::sync::Mutex<Vec<EmbeddingsRelayRequest>>>,
+    failing_provider_code: &'static str,
+}
+
+impl RetryableStatusPrimaryEmbeddingsRelay {
+    fn new(
+        captured: Arc<std::sync::Mutex<Vec<EmbeddingsRelayRequest>>>,
+        failing_provider_code: &'static str,
+    ) -> Self {
+        Self {
+            captured,
+            failing_provider_code,
+        }
+    }
+}
+
+impl EmbeddingsRelay for RetryableStatusPrimaryEmbeddingsRelay {
+    fn create_embedding<'a>(
+        &'a self,
+        request: EmbeddingsRelayRequest,
+    ) -> std::pin::Pin<
+        Box<dyn std::future::Future<Output = DomainResult<EmbeddingsRelayResponse>> + Send + 'a>,
+    > {
+        let provider_code = request.provider_code.clone();
+        self.captured.lock().unwrap().push(request);
+        Box::pin(async move {
+            if provider_code == self.failing_provider_code {
+                return Ok(EmbeddingsRelayResponse::json(
+                    503,
+                    serde_json::json!({
+                        "error": {
+                            "message": "upstream overloaded",
+                            "type": "server_error",
+                            "code": "overloaded"
+                        }
+                    }),
+                ));
+            }
+            Ok(EmbeddingsRelayResponse::json(
+                200,
+                serde_json::json!({
+                    "object": "list",
+                    "model": "text-embedding-3-small-fallback",
                     "data": [
                         {
                             "object": "embedding",
@@ -521,6 +633,59 @@ async fn openai_embeddings_relays_request_after_auth_model_and_price_validation(
     assert_eq!(
         "hello",
         captured[0].request_body["input"].as_array().unwrap()[0]
+    );
+}
+
+#[tokio::test]
+async fn openai_embeddings_failover_uses_single_attempt_per_candidate_channel() {
+    let hasher =
+        Arc::new(HmacSha256ApiKeySecretHasher::new("0123456789abcdef0123456789abcdef").unwrap());
+    let key_hash = hasher.hash_secret("sk-live-secret").unwrap();
+    let captured = Arc::new(std::sync::Mutex::new(Vec::new()));
+    let router = sdkwork_claw_product::api::openai_embeddings_router_with_relay(
+        Arc::new(catalog_with_embeddings_fallback_route(key_hash)),
+        hasher,
+        Arc::new(RetryableStatusPrimaryEmbeddingsRelay::new(
+            Arc::clone(&captured),
+            "openrouter",
+        )),
+    );
+
+    let response = router
+        .oneshot(
+            Request::builder()
+                .method("POST")
+                .uri("/v1/embeddings")
+                .header("authorization", "Bearer sk-live-secret")
+                .header("content-type", "application/json")
+                .body(Body::from(
+                    r#"{"model":"text-embedding-3-small","input":["hello"],"encoding_format":"float"}"#,
+                ))
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+
+    assert_eq!(StatusCode::OK, response.status());
+    let body = axum::body::to_bytes(response.into_body(), usize::MAX)
+        .await
+        .unwrap();
+    let payload: serde_json::Value = serde_json::from_slice(&body).unwrap();
+    assert_eq!("text-embedding-3-small-fallback", payload["model"]);
+
+    let captured = captured.lock().unwrap();
+    assert_eq!(2, captured.len());
+    assert_eq!("openrouter", captured[0].provider_code);
+    assert_eq!(3001, captured[0].provider_channel_id);
+    assert_eq!(
+        Some(ProviderRetryPolicy::new(1, Vec::new(), 0).unwrap()),
+        captured[0].provider_retry_policy
+    );
+    assert_eq!("openrouter-fallback", captured[1].provider_code);
+    assert_eq!(3002, captured[1].provider_channel_id);
+    assert_eq!(
+        Some(ProviderRetryPolicy::new(1, Vec::new(), 0).unwrap()),
+        captured[1].provider_retry_policy
     );
 }
 

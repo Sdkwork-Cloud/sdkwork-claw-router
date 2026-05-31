@@ -30,6 +30,7 @@ Measure curated slow Rust integration test targets and print a duration report.
 Options:
   --target <package:test>  Measure only one target. Can be repeated.
   --target-dir <path>      Override Cargo target directory.
+  --build-jobs <count>     Override Cargo build parallelism for this run.
   --test-threads <count>   Forward --test-threads to cargo test binaries.
   --json                   Print JSON report.
   --dry-run                Print commands without executing them.
@@ -49,6 +50,7 @@ function parseArgs(argv) {
   const settings = {
     targets: [],
     targetDir: null,
+    buildJobs: null,
     testThreads: null,
     json: false,
     dryRun: false,
@@ -71,6 +73,13 @@ function parseArgs(argv) {
           throw new Error('--target-dir requires a value');
         }
         settings.targetDir = argv[index];
+        break;
+      case '--build-jobs':
+        index += 1;
+        if (!argv[index] || !/^[1-9][0-9]*$/u.test(argv[index])) {
+          throw new Error('--build-jobs requires a positive integer');
+        }
+        settings.buildJobs = argv[index];
         break;
       case '--test-threads':
         index += 1;
@@ -102,15 +111,27 @@ function normalizeTargetDir(targetDir, platform = process.platform) {
   return platform === 'win32' ? selected.replaceAll('/', '\\') : selected.replaceAll('\\', '/');
 }
 
-function buildMeasurementPlan(settings, { env = process.env, platform = process.platform } = {}) {
-  const targetDir = normalizeTargetDir(settings.targetDir, platform);
+function buildCargoEnv(env, { targetDir, buildJobs }) {
   const stepEnv = {
     ...env,
     CARGO_TARGET_DIR: targetDir,
   };
+  delete stepEnv.CARGO_BUILD_JOBS;
+  if (buildJobs) {
+    stepEnv.CARGO_BUILD_JOBS = buildJobs;
+  }
   if (!stepEnv.SDKWORK_CLAW_HTTP_OPENAPI_BUILD_MODE) {
     stepEnv.SDKWORK_CLAW_HTTP_OPENAPI_BUILD_MODE = 'copy';
   }
+  return stepEnv;
+}
+
+function buildMeasurementPlan(settings, { env = process.env, platform = process.platform } = {}) {
+  const targetDir = normalizeTargetDir(settings.targetDir, platform);
+  const stepEnv = buildCargoEnv(env, {
+    targetDir,
+    buildJobs: settings.buildJobs,
+  });
 
   const targets = settings.targets.length > 0 ? settings.targets : DEFAULT_TARGETS;
   const steps = targets.map(([packageName, testTarget]) => {
@@ -220,6 +241,7 @@ if (process.argv[1] && import.meta.url.endsWith(process.argv[1].replaceAll('\\',
 }
 
 export {
+  buildCargoEnv,
   buildMeasurementPlan,
   commandLine,
   normalizeTargetDir,

@@ -58,6 +58,24 @@ fn add_callable_route(
     provider_model: &str,
     unit_price: &str,
 ) {
+    add_callable_route_for_api(
+        catalog,
+        channel_id,
+        provider_code,
+        provider_model,
+        "openai.chat_completions",
+        unit_price,
+    );
+}
+
+fn add_callable_route_for_api(
+    catalog: &mut InMemoryPricingCatalog,
+    channel_id: i64,
+    provider_code: &str,
+    provider_model: &str,
+    api_code: &str,
+    unit_price: &str,
+) {
     catalog.add_provider_route(
         ModelProviderRoute::new_for_catalog_key(
             "openai/gpt-4o-mini",
@@ -66,6 +84,7 @@ fn add_callable_route(
             channel_id,
             provider_model,
         )
+        .with_api_code(api_code)
         .with_provider_endpoint(
             Some(format!("http://provider-proxy.internal/{provider_code}")),
             Some(format!("vault://providers/{provider_code}/account/main")),
@@ -149,6 +168,7 @@ fn select_query() -> SelectProviderRouteQuery {
         context: authenticated_context(),
         catalog_key: "openai/gpt-4o-mini".to_owned(),
         requested_model: "gpt-4o-mini".to_owned(),
+        api_code: "openai.chat_completions".to_owned(),
         capability: RoutingCapability::Chat,
         billing_meter: BillingMeter::LlmInputToken,
     }
@@ -158,7 +178,15 @@ fn select_channel_route_query(route_key: &str) -> SelectProviderChannelRouteQuer
     SelectProviderChannelRouteQuery {
         context: authenticated_context(),
         route_key: route_key.to_owned(),
+        api_code: channel_route_api_code(route_key).to_owned(),
         capability: RoutingCapability::Chat,
+    }
+}
+
+fn channel_route_api_code(route_key: &str) -> &str {
+    match route_key {
+        "openai/management/files" => "openai.files",
+        _ => route_key,
     }
 }
 
@@ -790,6 +818,7 @@ fn selector_prices_candidate_routes_with_canonical_catalog_key_and_region_contex
             context: authenticated_context(),
             catalog_key: "minimax/MiniMax-M2.7".to_owned(),
             requested_model: "MiniMax-M2.7".to_owned(),
+            api_code: "openai.chat_completions".to_owned(),
             capability: RoutingCapability::Chat,
             billing_meter: BillingMeter::LlmInputToken,
         })
@@ -1126,6 +1155,7 @@ fn selector_routes_catalog_model_through_group_bound_channel_route_without_model
             context: authenticated_context(),
             catalog_key: "openai/gpt-5.5".to_owned(),
             requested_model: "openai/gpt-5.5".to_owned(),
+            api_code: "openai.chat_completions".to_owned(),
             capability: RoutingCapability::Chat,
             billing_meter: BillingMeter::LlmInputToken,
         })
@@ -1199,6 +1229,7 @@ fn selector_routes_slash_native_catalog_model_through_native_model_scope_channel
             context: authenticated_context(),
             catalog_key: "openrouter/anthropic/claude-3-opus".to_owned(),
             requested_model: "openrouter/anthropic/claude-3-opus".to_owned(),
+            api_code: "openai.chat_completions".to_owned(),
             capability: RoutingCapability::Chat,
             billing_meter: BillingMeter::LlmInputToken,
         })
@@ -1270,6 +1301,7 @@ fn selector_routes_regional_catalog_model_through_group_bound_channel_route_regi
             context: authenticated_context(),
             catalog_key: "alibaba/qwen3.6-max-preview".to_owned(),
             requested_model: "alibaba/qwen3.6-max-preview".to_owned(),
+            api_code: "openai.chat_completions".to_owned(),
             capability: RoutingCapability::Chat,
             billing_meter: BillingMeter::LlmInputToken,
         })
@@ -1333,6 +1365,7 @@ fn selector_routes_group_bound_channel_route_without_explicit_policy_rule() {
             context: authenticated_context(),
             catalog_key: "alibaba/qwen3.6-max-preview".to_owned(),
             requested_model: "alibaba/qwen3.6-max-preview".to_owned(),
+            api_code: "openai.chat_completions".to_owned(),
             capability: RoutingCapability::Chat,
             billing_meter: BillingMeter::LlmInputToken,
         })
@@ -1365,6 +1398,7 @@ fn selector_explains_when_channel_route_exists_but_api_key_group_has_no_matching
             context: authenticated_context(),
             catalog_key: "openai/gpt-4o-mini".to_owned(),
             requested_model: "openai/gpt-4o-mini".to_owned(),
+            api_code: "openai.chat_completions".to_owned(),
             capability: RoutingCapability::Chat,
             billing_meter: BillingMeter::LlmInputToken,
         })
@@ -1477,6 +1511,415 @@ fn selector_restricts_channel_group_bindings_by_capability_scope() {
 
     assert_eq!(3002, selection.route.channel_id);
     assert_eq!("openrouter-llm", selection.route.provider_code);
+}
+
+#[test]
+fn selector_restricts_channel_group_bindings_by_api_scope() {
+    let mut catalog = base_catalog();
+    catalog.add_provider_channel_route(
+        ProviderChannelRoute::new("openrouter-files-other-api", 3001)
+            .with_provider_endpoint(
+                Some("http://provider-proxy.internal/openrouter-files-other-api"),
+                Some("vault://providers/openrouter-files-other-api/account/main"),
+            )
+            .with_resource_scoped_group_binding(
+                10,
+                1,
+                100,
+                Vec::<String>::new(),
+                vec!["api.openai.responses"],
+                vec!["llm"],
+            ),
+    );
+    catalog.add_provider_channel_route(
+        ProviderChannelRoute::new("openrouter-files-api", 3002)
+            .with_provider_endpoint(
+                Some("http://provider-proxy.internal/openrouter-files-api"),
+                Some("vault://providers/openrouter-files-api/account/main"),
+            )
+            .with_resource_scoped_group_binding(
+                10,
+                50,
+                1,
+                Vec::<String>::new(),
+                vec!["api.openai.files"],
+                vec!["llm"],
+            ),
+    );
+    add_group_policy_rule(
+        &mut catalog,
+        2,
+        201,
+        202,
+        r#"{"routeKey":"openai/management/files"}"#,
+        "",
+        vec![RouteCandidate::new(3001, 100), RouteCandidate::new(3002, 1)],
+        vec![],
+    );
+
+    let selection = ProviderRouteSelector::new(&catalog)
+        .select_channel_route(select_channel_route_query("openai/management/files"))
+        .unwrap();
+
+    assert_eq!(3002, selection.route.channel_id);
+    assert_eq!("openrouter-files-api", selection.route.provider_code);
+}
+
+#[test]
+fn selector_rejects_route_key_alias_when_standard_api_code_scope_does_not_match() {
+    let mut catalog = base_catalog();
+    catalog.add_provider_channel_route(
+        ProviderChannelRoute::new("openrouter-route-key-alias", 3001)
+            .with_provider_endpoint(
+                Some("http://provider-proxy.internal/openrouter-route-key-alias"),
+                Some("vault://providers/openrouter-route-key-alias/account/main"),
+            )
+            .with_resource_scoped_group_binding(
+                10,
+                1,
+                100,
+                Vec::<String>::new(),
+                vec!["openai.management.files"],
+                vec!["network"],
+            ),
+    );
+    add_group_policy_rule(
+        &mut catalog,
+        2,
+        201,
+        202,
+        r#"{"routeKey":"openai/management/files"}"#,
+        "",
+        vec![RouteCandidate::new(3001, 100)],
+        vec![],
+    );
+
+    let error = ProviderRouteSelector::new(&catalog)
+        .select_channel_route(SelectProviderChannelRouteQuery {
+            capability: RoutingCapability::Network,
+            ..select_channel_route_query("openai/management/files")
+        })
+        .unwrap_err();
+
+    assert_eq!(
+        ProviderRouteSelectionErrorKind::ProviderRouteUnavailable,
+        error.kind()
+    );
+}
+
+#[test]
+fn selector_routes_provider_native_channel_by_exact_standard_api_code_only() {
+    let mut catalog = base_catalog();
+    catalog.add_provider_channel_route(
+        ProviderChannelRoute::new("kling-generic-image", 3001)
+            .with_provider_endpoint(
+                Some("http://provider-proxy.internal/kling-generic-image"),
+                Some("vault://providers/kling/account/generic-image"),
+            )
+            .with_resource_scoped_group_binding(
+                10,
+                1,
+                100,
+                Vec::<String>::new(),
+                vec!["kling.image_generation"],
+                vec!["image"],
+            ),
+    );
+    catalog.add_provider_channel_route(
+        ProviderChannelRoute::new("kling-video", 3002)
+            .with_provider_endpoint(
+                Some("http://provider-proxy.internal/kling-video"),
+                Some("vault://providers/kling/account/video"),
+            )
+            .with_resource_scoped_group_binding(
+                10,
+                50,
+                1,
+                Vec::<String>::new(),
+                vec!["api.kling.text_to_video"],
+                vec!["video"],
+            ),
+    );
+    add_group_policy_rule(
+        &mut catalog,
+        2,
+        201,
+        202,
+        r#"{"routeKey":"kling.text_to_video"}"#,
+        "",
+        vec![RouteCandidate::new(3001, 100), RouteCandidate::new(3002, 1)],
+        vec![],
+    );
+
+    let selection = ProviderRouteSelector::new(&catalog)
+        .select_channel_route(SelectProviderChannelRouteQuery {
+            context: authenticated_context(),
+            route_key: "kling.text_to_video".to_owned(),
+            api_code: "kling.text_to_video".to_owned(),
+            capability: RoutingCapability::Video,
+        })
+        .unwrap();
+
+    assert_eq!(3002, selection.route.channel_id);
+    assert_eq!("kling-video", selection.route.provider_code);
+}
+
+#[test]
+fn selector_ignores_model_scope_for_modeless_channel_route_when_api_scope_matches() {
+    let mut catalog = base_catalog();
+    catalog.add_provider_channel_route(
+        ProviderChannelRoute::new("openrouter-files-api", 3001)
+            .with_provider_endpoint(
+                Some("http://provider-proxy.internal/openrouter-files-api"),
+                Some("vault://providers/openrouter-files-api/account/main"),
+            )
+            .with_resource_scoped_group_binding(
+                10,
+                1,
+                100,
+                vec!["openai/gpt-4o-mini"],
+                vec!["openai.files"],
+                vec!["network"],
+            ),
+    );
+    add_group_policy_rule(
+        &mut catalog,
+        2,
+        201,
+        202,
+        r#"{"routeKey":"openai/management/files"}"#,
+        "",
+        vec![RouteCandidate::new(3001, 100)],
+        vec![],
+    );
+
+    let selection = ProviderRouteSelector::new(&catalog)
+        .select_channel_route(SelectProviderChannelRouteQuery {
+            capability: RoutingCapability::Network,
+            ..select_channel_route_query("openai/management/files")
+        })
+        .unwrap();
+
+    assert_eq!(3001, selection.route.channel_id);
+    assert_eq!("openrouter-files-api", selection.route.provider_code);
+}
+
+#[test]
+fn selector_rejects_model_only_binding_for_modeless_channel_route() {
+    let mut catalog = base_catalog();
+    catalog.add_provider_channel_route(
+        ProviderChannelRoute::new("openrouter-model-only", 3001)
+            .with_provider_endpoint(
+                Some("http://provider-proxy.internal/openrouter-model-only"),
+                Some("vault://providers/openrouter-model-only/account/main"),
+            )
+            .with_resource_scoped_group_binding(
+                10,
+                1,
+                100,
+                vec!["openai/gpt-4o-mini"],
+                Vec::<String>::new(),
+                vec!["network"],
+            ),
+    );
+    add_group_policy_rule(
+        &mut catalog,
+        2,
+        201,
+        202,
+        r#"{"routeKey":"openai/management/files"}"#,
+        "",
+        vec![RouteCandidate::new(3001, 100)],
+        vec![],
+    );
+
+    let error = ProviderRouteSelector::new(&catalog)
+        .select_channel_route(SelectProviderChannelRouteQuery {
+            capability: RoutingCapability::Network,
+            ..select_channel_route_query("openai/management/files")
+        })
+        .unwrap_err();
+
+    assert_eq!(
+        ProviderRouteSelectionErrorKind::ProviderRouteUnavailable,
+        error.kind()
+    );
+}
+
+#[test]
+fn selector_matches_channel_group_bindings_by_standard_api_code() {
+    let mut catalog = base_catalog();
+    catalog.add_provider_channel_route(
+        ProviderChannelRoute::new("openrouter-files-other-api", 3001)
+            .with_provider_endpoint(
+                Some("http://provider-proxy.internal/openrouter-files-other-api"),
+                Some("vault://providers/openrouter-files-other-api/account/main"),
+            )
+            .with_resource_scoped_group_binding(
+                10,
+                1,
+                100,
+                Vec::<String>::new(),
+                vec!["openai.responses"],
+                vec!["llm"],
+            ),
+    );
+    catalog.add_provider_channel_route(
+        ProviderChannelRoute::new("openrouter-files-api", 3002)
+            .with_provider_endpoint(
+                Some("http://provider-proxy.internal/openrouter-files-api"),
+                Some("vault://providers/openrouter-files-api/account/main"),
+            )
+            .with_resource_scoped_group_binding(
+                10,
+                50,
+                1,
+                Vec::<String>::new(),
+                vec!["openai.files"],
+                vec!["llm"],
+            ),
+    );
+    add_group_policy_rule(
+        &mut catalog,
+        2,
+        201,
+        202,
+        r#"{"routeKey":"openai/management/files"}"#,
+        "",
+        vec![RouteCandidate::new(3001, 100), RouteCandidate::new(3002, 1)],
+        vec![],
+    );
+
+    let selection = ProviderRouteSelector::new(&catalog)
+        .select_channel_route(select_channel_route_query("openai/management/files"))
+        .unwrap();
+
+    assert_eq!(3002, selection.route.channel_id);
+    assert_eq!("openrouter-files-api", selection.route.provider_code);
+}
+
+#[test]
+fn selector_restricts_model_group_bindings_by_api_scope() {
+    let mut catalog = base_catalog();
+    add_callable_route_for_api(
+        &mut catalog,
+        3001,
+        "openrouter-responses-only",
+        "gpt-4o-mini-responses",
+        "openai.responses",
+        "0.110000",
+    );
+    add_callable_route(
+        &mut catalog,
+        3002,
+        "openrouter-chat-completions",
+        "gpt-4o-mini-chat",
+        "0.120000",
+    );
+    catalog.add_provider_channel_route(
+        ProviderChannelRoute::new("openrouter-responses-only", 3001)
+            .with_provider_endpoint(
+                Some("http://provider-proxy.internal/openrouter-responses-only"),
+                Some("vault://providers/openrouter-responses-only/account/main"),
+            )
+            .with_resource_scoped_group_binding(
+                10,
+                1,
+                100,
+                vec!["openai/gpt-4o-mini"],
+                vec!["api.openai.responses"],
+                vec!["llm"],
+            ),
+    );
+    catalog.add_provider_channel_route(
+        ProviderChannelRoute::new("openrouter-chat-completions", 3002)
+            .with_provider_endpoint(
+                Some("http://provider-proxy.internal/openrouter-chat-completions"),
+                Some("vault://providers/openrouter-chat-completions/account/main"),
+            )
+            .with_resource_scoped_group_binding(
+                10,
+                50,
+                1,
+                vec!["openai/gpt-4o-mini"],
+                vec!["api.openai.chat_completions"],
+                vec!["llm"],
+            ),
+    );
+    add_group_policy_rule(
+        &mut catalog,
+        2,
+        201,
+        202,
+        r#"{"catalogKey":"openai/gpt-4o-mini"}"#,
+        "openai/gpt-4o-mini",
+        vec![RouteCandidate::new(3001, 100), RouteCandidate::new(3002, 1)],
+        vec![],
+    );
+
+    let selection = ProviderRouteSelector::new(&catalog)
+        .select(select_query())
+        .unwrap();
+
+    assert_eq!(3002, selection.route.channel_id);
+    assert_eq!("openrouter-chat-completions", selection.route.provider_code);
+}
+
+#[test]
+fn selector_prefers_channel_model_route_matching_request_api_on_same_channel() {
+    let mut catalog = base_catalog();
+    add_callable_route_for_api(
+        &mut catalog,
+        3001,
+        "openrouter-responses-only",
+        "gpt-4o-mini-responses",
+        "openai.responses",
+        "0.110000",
+    );
+    add_callable_route_for_api(
+        &mut catalog,
+        3001,
+        "openrouter-responses-only",
+        "gpt-4o-mini-chat",
+        "openai.chat_completions",
+        "0.110000",
+    );
+    catalog.add_provider_channel_route(
+        ProviderChannelRoute::new("openrouter-responses-only", 3001)
+            .with_provider_endpoint(
+                Some("http://provider-proxy.internal/openrouter-responses-only"),
+                Some("vault://providers/openrouter-responses-only/account/main"),
+            )
+            .with_resource_scoped_group_binding(
+                10,
+                1,
+                100,
+                vec!["openai/gpt-4o-mini"],
+                vec!["api.openai.chat_completions"],
+                vec!["llm"],
+            ),
+    );
+    add_group_policy_rule(
+        &mut catalog,
+        2,
+        201,
+        202,
+        r#"{"catalogKey":"openai/gpt-4o-mini"}"#,
+        "openai/gpt-4o-mini",
+        vec![RouteCandidate::new(3001, 100)],
+        vec![],
+    );
+
+    let selection = ProviderRouteSelector::new(&catalog)
+        .select(select_query())
+        .unwrap();
+
+    assert_eq!(3001, selection.route.channel_id);
+    assert_eq!("gpt-4o-mini-chat", selection.route.provider_model);
+    assert_eq!(
+        Some("openai.chat_completions"),
+        selection.route.api_code.as_deref()
+    );
 }
 
 #[test]

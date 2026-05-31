@@ -29,6 +29,10 @@ import {
   resolveChannelSelectFormValue,
   resolveChannelSelectSubmitValue,
 } from "./packages/sdkwork-claw-router-admin-channel/src/channelForm.ts";
+import {
+  deriveChannelTargetVendorCodes,
+  reconcileChannelVendorSelection,
+} from "./packages/sdkwork-claw-router-admin-channel/src/channelVendorSelection.ts";
 import { knownModelVendors, protocolsList } from "./packages/sdkwork-claw-router-admin-channel/src/channelOptions.ts";
 
 const originalFetch = globalThis.fetch;
@@ -177,6 +181,55 @@ test("admin channel form treats empty expiration as never expires by default", (
     status: "active",
   });
   assert.equal(updateWithExpiry.expiresAt, "2026-07-01T00:00:00Z");
+});
+
+test("admin channel vendor selection supports official single vendor and relay multi vendor resources", () => {
+  assert.deepEqual(
+    deriveChannelTargetVendorCodes({
+      channelType: "official",
+      accountVendor: "OpenAI",
+      models: ["anthropic/global/claude-3-5-sonnet"],
+      resourceCodes: ["vendor.anthropic"],
+    }),
+    ["openai"],
+  );
+  assert.deepEqual(
+    deriveChannelTargetVendorCodes({
+      channelType: "relay",
+      accountVendor: "OpenRouter",
+      models: ["openai/global/gpt-4o", "anthropic/global/claude-3-5-sonnet"],
+      resourceCodes: ["vendor.google"],
+    }),
+    ["openai", "anthropic", "google"],
+  );
+
+  assert.deepEqual(
+    reconcileChannelVendorSelection({
+      channelType: "official",
+      accountVendor: "OpenAI",
+      selectedVendorCodes: ["openai", "anthropic"],
+      selectedResourceCodes: ["vendor.anthropic", "bundle.openrouter.openai.chat"],
+      availableResourceCodes: ["vendor.openai", "vendor.anthropic"],
+    }),
+    {
+      selectedVendorCodes: ["openai"],
+      selectedResourceCodes: ["bundle.openrouter.openai.chat", "vendor.openai"],
+    },
+  );
+
+  assert.deepEqual(
+    reconcileChannelVendorSelection({
+      channelType: "relay",
+      accountVendor: "OpenRouter",
+      selectedVendorCodes: ["openai", "anthropic"],
+      selectedResourceCodes: ["vendor.google", "bundle.openrouter.openai.chat"],
+      availableResourceCodes: ["vendor.openai", "vendor.anthropic", "vendor.google"],
+    }),
+    {
+      selectedVendorCodes: ["openai", "anthropic"],
+      selectedResourceCodes: ["bundle.openrouter.openai.chat", "vendor.openai", "vendor.anthropic"],
+    },
+  );
 });
 
 test("admin channel create input rejects invalid optional values before persistence", () => {
@@ -713,6 +766,21 @@ test("admin channel modal does not expose unsupported per-channel model mapping 
   assert.doesNotMatch(source, /Gateway model|Provider model/);
   assert.match(source, /const models = whitelist\.map/);
   assert.match(source, /admin\.channel\.validation\.modelRequired/);
+});
+
+test("admin channel modal does not expose protocol as a product routing control", () => {
+  const source = readFileSync(
+    new URL("./packages/sdkwork-claw-router-admin-channel/src/index.tsx", import.meta.url),
+    "utf8",
+  );
+
+  assert.doesNotMatch(source, /showProtocolOptions/);
+  assert.doesNotMatch(source, /setSelectedProtocol/);
+  assert.doesNotMatch(source, /protocolsList\.map/);
+  assert.doesNotMatch(source, /admin\.channel\.vendorPicker\.protocolAuto/);
+  assert.doesNotMatch(source, /CredentialDetailField label=\{t\('admin\.channel\.fields\.protocol'\)\}/);
+  assert.doesNotMatch(source, /\{channel\.protocol\}/);
+  assert.match(source, /protocol: inferProtocolForVendor\(modelVendor\)/);
 });
 
 test("admin channel visible account copy is routed through i18n resources", () => {

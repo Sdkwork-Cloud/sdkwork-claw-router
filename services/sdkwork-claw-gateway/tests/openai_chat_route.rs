@@ -28,11 +28,11 @@ fn catalog_with_hashed_api_key(key_hash: String) -> InMemoryPricingCatalog {
     ));
     catalog.add_provider_route(
         ModelProviderRoute::new_for_catalog_key(
-            "openai/global/gpt-4o-mini",
+            "openai/gpt-4o-mini",
             "gpt-4o-mini",
             "openrouter",
             3001,
-            "openai/global/gpt-4o-mini",
+            "openai/gpt-4o-mini",
         )
         .with_provider_endpoint(
             Some("http://provider-proxy.internal/openrouter"),
@@ -65,7 +65,7 @@ fn catalog_with_hashed_api_key(key_hash: String) -> InMemoryPricingCatalog {
     ));
     catalog.add_api_key(GatewayApiKey::new(101, 10, "sk-live", &key_hash).with_owner(10, 20, 30));
     catalog.add_price(ModelPrice::new_for_catalog_key(
-        "openai/global/gpt-4o-mini",
+        "openai/gpt-4o-mini",
         "gpt-4o-mini",
         PriceSide::OfficialReference,
         BillingMeter::LlmInputToken,
@@ -73,7 +73,7 @@ fn catalog_with_hashed_api_key(key_hash: String) -> InMemoryPricingCatalog {
     ));
     catalog.add_price(
         ModelPrice::new_for_catalog_key(
-            "openai/global/gpt-4o-mini",
+            "openai/gpt-4o-mini",
             "gpt-4o-mini",
             PriceSide::UpstreamCost,
             BillingMeter::LlmInputToken,
@@ -101,8 +101,8 @@ fn catalog_with_hashed_api_key(key_hash: String) -> InMemoryPricingCatalog {
             9101,
             "standard-group-gpt-4o-mini",
             1,
-            r#"{"catalogKey":"openai/global/gpt-4o-mini"}"#,
-            "openai/global/gpt-4o-mini",
+            r#"{"catalogKey":"openai/gpt-4o-mini"}"#,
+            "openai/gpt-4o-mini",
         )
         .with_candidate_channels(vec![RouteCandidate::new(3001, 100)]),
     );

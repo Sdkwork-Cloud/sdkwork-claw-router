@@ -13,12 +13,15 @@ anyhow.workspace = true
 axum.workspace = true
 bytes.workspace = true
 getrandom.workspace = true
+hex.workspace = true
 http-body-util.workspace = true
 hyper.workspace = true
 hyper-rustls.workspace = true
 hyper-util.workspace = true
 serde_json.workspace = true
 sdkwork-claw-config = { path = "../../crates/sdkwork-claw-config" }
+sdkwork-claw-admin-api = { path = "../sdkwork-claw-admin-api" }
+sdkwork-claw-app-api = { path = "../sdkwork-claw-app-api" }
 sdkwork-claw-http = { path = "../../crates/sdkwork-claw-http" }
 sdkwork-claw-observability = { path = "../../crates/sdkwork-claw-observability" }
 sdkwork-claw-provider-adapter-contract = { path = "../../crates/sdkwork-claw-provider-adapter-contract" }
@@ -26,14 +29,13 @@ sdkwork-claw-provider-adapter-http = { path = "../../crates/sdkwork-claw-provide
 sdkwork-claw-provider-adapter-registry = { path = "../../crates/sdkwork-claw-provider-adapter-registry" }
 sdkwork-claw-product = { path = "../sdkwork-claw-product" }
 sdkwork-sdk-generator-client = { path = "../../../../sdk/sdkwork-sdk-generator/rust" }
+sha2.workspace = true
 sqlx.workspace = true
 tokio.workspace = true
+tower.workspace = true
 tracing.workspace = true
 
 [dev-dependencies]
 futures-core.workspace = true
 serde_json.workspace = true
-sdkwork-claw-admin-api = { path = "../sdkwork-claw-admin-api" }
-sdkwork-claw-app-api = { path = "../sdkwork-claw-app-api" }
 sdkwork-claw-test-support = { path = "../../crates/sdkwork-claw-test-support" }
-tower.workspace = true

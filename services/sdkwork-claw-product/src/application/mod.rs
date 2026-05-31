@@ -1,3 +1,6 @@
+mod ai_route_taxonomy;
+mod ai_routing_cache_invalidation;
+mod alipay_payment_adapter;
 mod api_key_authenticator;
 mod api_key_secret_generator;
 mod cache_runtime;
@@ -5,12 +8,37 @@ mod model_catalog_query;
 mod model_ranking_refresh_worker;
 mod model_rankings_service;
 mod password_hash;
+mod payment_adapter;
+mod payment_intent_runtime;
+mod payment_provider_account_resolver;
+mod payment_provider_registry;
+mod payment_provider_runtime_assembler;
+mod payment_provider_runtime_snapshot;
+mod payment_reconciliation_runtime;
+mod payment_refund_runtime;
+mod paypal_payment_adapter;
 mod pricing_resolver;
 mod provider_route_selector;
 mod runtime_stream_bus;
+mod stripe_payment_adapter;
 mod usage_settlement_worker;
+mod wechat_pay_adapter;
 
 pub use crate::ports::ModelRankingRefreshRunStatus;
+pub use ai_route_taxonomy::{
+    builtin_ai_route_taxonomy, find_builtin_ai_route, AiRouteTaxonomyEntry, AiRoutingIndex,
+};
+pub use ai_routing_cache_invalidation::{
+    AiRoutingCacheInvalidatingAdminAccessGroupStore,
+    AiRoutingCacheInvalidatingAdminAiResourceStore,
+    AiRoutingCacheInvalidatingAdminChannelEndpointStore,
+    AiRoutingCacheInvalidatingAdminChannelStore,
+    AiRoutingCacheInvalidatingAdminProviderSecretStore, AiRoutingCacheInvalidator,
+};
+pub use alipay_payment_adapter::{
+    AlipayHyperOpenApiClient, AlipayOpenApiClient, AlipayPaymentProviderAdapter,
+    AlipayPaymentProviderConfig, AlipaySigner,
+};
 pub use api_key_authenticator::{
     ApiKeyAuthenticator, ApiKeySecretCodec, ApiKeySecretHasher, AuthenticateApiKeyQuery,
     AuthenticatedApiKeyContext,
@@ -25,7 +53,9 @@ pub use cache_runtime::{
     CacheRuntimeSummary, CacheRuntimeTarget, LocalCacheBackend, RedisCacheBackend,
     RuntimeCacheManager, AUTH_QR_CACHE_NAMESPACE, DEFAULT_CACHE_KEY_PREFIX,
     DEFAULT_DESKTOP_CACHE_INSTANCE_NAME, DEFAULT_REDIS_CONNECTION_PROFILE_NAME,
-    DEFAULT_SERVICE_CACHE_INSTANCE_NAME,
+    DEFAULT_SERVICE_CACHE_INSTANCE_NAME, ROUTING_CONFIG_VERSION_CACHE_NAMESPACE,
+    ROUTING_DISABLED_CHANNEL_CACHE_NAMESPACE, ROUTING_IDEMPOTENCY_CACHE_NAMESPACE,
+    ROUTING_PROVIDER_OBJECT_ROUTE_CACHE_NAMESPACE, ROUTING_SNAPSHOT_CACHE_NAMESPACE,
 };
 pub use model_catalog_query::{
     ListModelCatalogQuery, ModelCatalogGroup, ModelCatalogItem, ModelCatalogPage,
@@ -38,6 +68,61 @@ pub use model_ranking_refresh_worker::{
 };
 pub use model_rankings_service::ModelRankingsService;
 pub use password_hash::{PasswordHasher, Pbkdf2Sha256PasswordHasher};
+pub use payment_adapter::{
+    PaymentAdapterFuture, PaymentAdapterOperation, PaymentCancelPaymentIntentRequest,
+    PaymentCancelRefundRequest, PaymentCapturePaymentIntentRequest,
+    PaymentConfirmPaymentIntentRequest, PaymentCreateIntentRequest, PaymentCreateRefundRequest,
+    PaymentDownloadStatementRequest, PaymentNativeOperationOutcome, PaymentNativeOperationRequest,
+    PaymentNormalizeWebhookRequest, PaymentNormalizedWebhookEvent, PaymentParseStatementRequest,
+    PaymentProviderAdapter, PaymentProviderCapabilities, PaymentProviderOperationOutcome,
+    PaymentQueryRefundRequest, PaymentStatementDownloadOutcome, PaymentStatementParseOutcome,
+    PaymentVerifyWebhookRequest, PaymentWebhookVerificationOutcome,
+};
+pub use payment_intent_runtime::{
+    InMemoryPaymentIntentRuntimeStore, PaymentIntentRuntimeRecord, PaymentIntentRuntimeService,
+    PaymentIntentRuntimeStore, PaymentIntentRuntimeStoreFuture, PaymentIntentStatus,
+    PaymentOperationAttemptRecord, PaymentRouteDecisionRecord, RuntimeCancelPaymentIntentCommand,
+    RuntimeCapturePaymentIntentCommand, RuntimeConfirmPaymentIntentCommand,
+    RuntimeCreatePaymentIntentCommand,
+};
+pub use payment_provider_account_resolver::{
+    validate_payment_secret_ref, PaymentProviderAccountCredentialRefs,
+    PaymentProviderAccountCredentialResolver, PaymentProviderResolvedCredentials,
+    PaymentProviderSecretResolver, PaymentProviderSecretValue,
+};
+pub use payment_provider_registry::{
+    default_payment_provider_registry, PaymentProviderRegistry, PaymentProviderRegistryError,
+};
+pub use payment_provider_runtime_assembler::{
+    ConfigurablePaymentProviderAdapterFactory, DefaultPaymentProviderAdapterFactory,
+    PaymentProviderAdapterFactory, PaymentProviderRuntimeAssembler,
+    PaymentProviderRuntimeAssemblyEvent, PaymentProviderRuntimeAssemblyFailure,
+    PaymentProviderRuntimeAssemblyReport, PaymentProviderRuntimeAssemblySkipped,
+    PaymentProviderRuntimeAssemblySuccess, PaymentProviderRuntimeAssemblySummary,
+};
+pub use payment_provider_runtime_snapshot::{
+    InMemoryPaymentProviderRuntimeSnapshotStore, PaymentProviderRuntimeSnapshot,
+    PaymentProviderRuntimeSnapshotFuture, PaymentProviderRuntimeSnapshotService,
+    PaymentProviderRuntimeSnapshotStore,
+};
+pub use payment_reconciliation_runtime::{
+    InMemoryPaymentReconciliationRuntimeStore, PaymentReconciliationDifferenceType,
+    PaymentReconciliationItemRecord, PaymentReconciliationRuntimeService,
+    PaymentReconciliationRuntimeStore, PaymentReconciliationRuntimeStoreFuture,
+    PaymentStatementItemRecord, PaymentStatementRecord,
+    RuntimeGeneratePaymentReconciliationItemsCommand, RuntimeImportPaymentStatementCommand,
+    RuntimeImportPaymentStatementItemCommand, RuntimeReconciliationLedgerEntry,
+};
+pub use payment_refund_runtime::{
+    PaymentAggregateRuntimeStore, PaymentRefundAttemptRecord, PaymentRefundEventRecord,
+    PaymentRefundItemRecord, PaymentRefundRuntimeRecord, PaymentRefundRuntimeService,
+    PaymentRefundRuntimeStore, PaymentRefundRuntimeStoreFuture, PaymentRefundStatus,
+    RuntimeCancelRefundCommand, RuntimeCreateRefundCommand, RuntimeCreateRefundItemCommand,
+};
+pub use paypal_payment_adapter::{
+    PayPalHyperPaymentHttpClient, PayPalPaymentHttpClient, PayPalPaymentProviderAdapter,
+    PayPalPaymentProviderConfig,
+};
 pub use pricing_resolver::{
     PricingResolver, ResolveModelPriceQuery, ResolvedModelPrice, ResolvedPriceSource,
 };
@@ -47,4 +132,12 @@ pub use provider_route_selector::{
     SelectedProviderRoute, SelectedProviderRoutePlan,
 };
 pub use runtime_stream_bus::{InMemoryRuntimeStreamBus, RuntimeStreamBus, RuntimeStreamBusFuture};
+pub use stripe_payment_adapter::{
+    StripeHyperPaymentHttpClient, StripePaymentHttpClient, StripePaymentProviderAdapter,
+    StripePaymentProviderConfig,
+};
 pub use usage_settlement_worker::{UsageSettlementWorker, UsageSettlementWorkerConfig};
+pub use wechat_pay_adapter::{
+    WeChatPayApiClient, WeChatPayCrypto, WeChatPayHyperApiClient, WeChatPayProviderAdapter,
+    WeChatPayProviderConfig,
+};

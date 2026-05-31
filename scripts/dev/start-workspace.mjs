@@ -92,6 +92,10 @@ function forwardingOriginFromBind(bind, flagName) {
   return forwardingOrigin(loopbackUrl(bind, ''), flagName);
 }
 
+function appendPath(origin, pathSuffix) {
+  return `${String(origin).replace(/\/+$/u, '')}${pathSuffix}`;
+}
+
 function normalizeExternalScheme(value, flagName) {
   const scheme = String(value ?? '').trim().toLowerCase();
   if (scheme !== 'http' && scheme !== 'https') {
@@ -149,6 +153,9 @@ export function parseWorkspaceArgs(argv = []) {
     gatewayForwardUrl: null,
     backendApiForwardUrl: null,
     appApiForwardUrl: null,
+    runtimeMode: 'all-in-one',
+    runtimeModeExplicit: false,
+    explicitForwarding: false,
     install: false,
     dryRun: false,
     planFormat: 'text',
@@ -191,15 +198,26 @@ export function parseWorkspaceArgs(argv = []) {
         break;
       case '--gateway-forward-url':
         settings.gatewayForwardUrl = forwardingOrigin(requireValue(argv, index, arg), arg);
+        settings.explicitForwarding = true;
         index += 1;
         break;
       case '--backend-api-forward-url':
         settings.backendApiForwardUrl = forwardingOrigin(requireValue(argv, index, arg), arg);
+        settings.explicitForwarding = true;
         index += 1;
         break;
       case '--app-api-forward-url':
         settings.appApiForwardUrl = forwardingOrigin(requireValue(argv, index, arg), arg);
+        settings.explicitForwarding = true;
         index += 1;
+        break;
+      case '--distributed':
+        settings.runtimeMode = 'distributed';
+        settings.runtimeModeExplicit = true;
+        break;
+      case '--all-in-one':
+        settings.runtimeMode = 'all-in-one';
+        settings.runtimeModeExplicit = true;
         break;
       case '--install':
         settings.install = true;
@@ -235,9 +253,19 @@ export function parseWorkspaceArgs(argv = []) {
   }
   settings.externalScheme = normalizeExternalScheme(settings.externalScheme, '--external-scheme');
 
-  settings.gatewayForwardUrl ??= forwardingOriginFromBind(settings.gatewayBind, '--gateway-bind');
-  settings.backendApiForwardUrl ??= forwardingOriginFromBind(settings.adminApiBind, '--admin-api-bind');
-  settings.appApiForwardUrl ??= forwardingOriginFromBind(settings.appApiBind, '--app-api-bind');
+  if (settings.explicitForwarding && !settings.runtimeModeExplicit) {
+    settings.runtimeMode = 'distributed';
+  }
+  const edgeServerOrigin = forwardingOriginFromBind(settings.serverBind, '--server-bind');
+  if (settings.runtimeMode === 'all-in-one') {
+    settings.gatewayForwardUrl ??= edgeServerOrigin;
+    settings.backendApiForwardUrl ??= edgeServerOrigin;
+    settings.appApiForwardUrl ??= edgeServerOrigin;
+  } else {
+    settings.gatewayForwardUrl ??= forwardingOriginFromBind(settings.gatewayBind, '--gateway-bind');
+    settings.backendApiForwardUrl ??= forwardingOriginFromBind(settings.adminApiBind, '--admin-api-bind');
+    settings.appApiForwardUrl ??= forwardingOriginFromBind(settings.appApiBind, '--app-api-bind');
+  }
 
   return settings;
 }
@@ -303,7 +331,7 @@ function portalEnv(settings) {
     ...process.env,
     HOST: host,
     PORT: port,
-    OPENAPI_DEV_URL: loopbackUrl(settings.gatewayBind, '/openapi.json'),
+    OPENAPI_DEV_URL: appendPath(settings.gatewayForwardUrl, '/openapi.json'),
     SDKWORK_CLAW_DEPLOYMENT_MODE: 'server',
     SDKWORK_CLAW_PORTAL_BIND: settings.portalBind,
     PORTAL_PUBLIC_API_BASE_URL: GATEWAY_API_PREFIX,
@@ -319,14 +347,17 @@ function portalEnv(settings) {
 }
 
 function edgeServerEnv(settings) {
+  const allInOne = settings.runtimeMode === 'all-in-one';
   return {
     ...serviceEnv(settings, 'SDKWORK_CLAW_SERVER_BIND', settings.serverBind, {
       startupInstallMode: 'skip',
     }),
     SDKWORK_CLAW_EDGE_SERVER: '1',
+    SDKWORK_CLAW_ALL_IN_ONE_RUNTIME: allInOne ? '1' : '0',
     SDKWORK_CLAW_EDGE_GATEWAY_BASE_URL: settings.gatewayForwardUrl,
     SDKWORK_CLAW_EDGE_BACKEND_API_BASE_URL: settings.backendApiForwardUrl,
     SDKWORK_CLAW_EDGE_APP_API_BASE_URL: settings.appApiForwardUrl,
+    SDKWORK_CLAW_APP_RUNTIME_GATEWAY_BASE_URL: settings.gatewayForwardUrl,
     SDKWORK_CLAW_EDGE_PORTAL_BASE_URL: forwardingOriginFromBind(
       settings.portalBind,
       '--portal-bind',
@@ -365,7 +396,7 @@ export function buildWorkspaceCommandPlan(settings, {
     });
   }
 
-  steps.push(
+  const blockingRuntimeSteps = [
     {
       name: 'installer',
       command: cargoCommand(platform),
@@ -397,6 +428,9 @@ export function buildWorkspaceCommandPlan(settings, {
       failureHint:
         'model catalog refresh failed. Run pnpm models:check, verify SDKWORK_MODELS_CATALOG_ROOT, and retry refresh-catalog before starting services.',
     },
+  ];
+  const distributedRuntimeSteps = settings.runtimeMode === 'distributed'
+    ? [
     {
       name: 'gateway',
       command: cargoCommand(platform),
@@ -433,6 +467,9 @@ export function buildWorkspaceCommandPlan(settings, {
       shell: false,
       windowsHide: platform === 'win32',
     },
+    ]
+    : [];
+  const interactiveRuntimeSteps = [
     {
       name: 'portal',
       command: pnpmCommand(platform),
@@ -451,7 +488,9 @@ export function buildWorkspaceCommandPlan(settings, {
       shell: false,
       windowsHide: platform === 'win32',
     },
-  );
+  ];
+
+  steps.push(...blockingRuntimeSteps, ...distributedRuntimeSteps, ...interactiveRuntimeSteps);
 
   return {
     nodeExecutable: process.execPath,
@@ -461,9 +500,13 @@ export function buildWorkspaceCommandPlan(settings, {
 
 export function workspaceBindTargets(settings) {
   return [
-    { name: 'gateway', bind: settings.gatewayBind },
-    { name: 'admin-api', bind: settings.adminApiBind },
-    { name: 'app-api', bind: settings.appApiBind },
+    ...(settings.runtimeMode === 'distributed'
+      ? [
+        { name: 'gateway', bind: settings.gatewayBind },
+        { name: 'admin-api', bind: settings.adminApiBind },
+        { name: 'app-api', bind: settings.appApiBind },
+      ]
+      : []),
     { name: 'portal', bind: settings.portalBind },
     { name: 'server', bind: settings.serverBind },
   ].map((target) => {
@@ -524,8 +567,8 @@ export async function assertWorkspaceBindsAvailable(
 }
 
 export function workspaceAccessLines(settings) {
-  return [
-    '[start-workspace] Mode: server',
+  const edgeAndPortal = [
+    `[start-workspace] Mode: server (${settings.runtimeMode})`,
     '[start-workspace] Edge Server Access',
     `[start-workspace]   Portal: ${loopbackUrl(settings.serverBind, '/')}`,
     `[start-workspace]   Gateway API: ${loopbackUrl(settings.serverBind, GATEWAY_API_PREFIX)}`,
@@ -542,6 +585,17 @@ export function workspaceAccessLines(settings) {
     `[start-workspace]   Direct Portal Gateway OpenAPI Proxy: ${loopbackUrl(settings.portalBind, '/openapi.json')}`,
     `[start-workspace]   Direct Portal Admin API OpenAPI Proxy: ${loopbackUrl(settings.portalBind, `${BACKEND_API_PREFIX}/openapi.json`)}`,
     `[start-workspace]   Direct Portal App API OpenAPI Proxy: ${loopbackUrl(settings.portalBind, `${APP_API_PREFIX}/openapi.json`)}`,
+  ];
+  const edgeHealth = [
+    '[start-workspace] Health Checks',
+    `[start-workspace]   Edge Server Health: ${loopbackUrl(settings.serverBind, '/healthz')}`,
+    `[start-workspace]   Edge Server Ready: ${loopbackUrl(settings.serverBind, '/readyz')}`,
+  ];
+  if (settings.runtimeMode !== 'distributed') {
+    return [...edgeAndPortal, ...edgeHealth];
+  }
+  return [
+    ...edgeAndPortal,
     '[start-workspace] OpenAPI Schemas',
     `[start-workspace]   Gateway OpenAPI: ${loopbackUrl(settings.gatewayBind, '/openapi.json')}`,
     `[start-workspace]   Admin API OpenAPI: ${loopbackUrl(settings.adminApiBind, `${BACKEND_API_PREFIX}/openapi.json`)}`,
@@ -550,9 +604,7 @@ export function workspaceAccessLines(settings) {
     `[start-workspace]   OpenAI-compatible Gateway API: ${loopbackUrl(settings.gatewayBind, GATEWAY_API_PREFIX)}`,
     `[start-workspace]   Backend/Admin API: ${loopbackUrl(settings.adminApiBind, BACKEND_API_PREFIX)}`,
     `[start-workspace]   App API: ${loopbackUrl(settings.appApiBind, APP_API_PREFIX)}`,
-    '[start-workspace] Health Checks',
-    `[start-workspace]   Edge Server Health: ${loopbackUrl(settings.serverBind, '/healthz')}`,
-    `[start-workspace]   Edge Server Ready: ${loopbackUrl(settings.serverBind, '/readyz')}`,
+    ...edgeHealth,
     `[start-workspace]   Gateway Health: ${loopbackUrl(settings.gatewayBind, '/healthz')}`,
     `[start-workspace]   Gateway Ready: ${loopbackUrl(settings.gatewayBind, '/readyz')}`,
     `[start-workspace]   Admin API Health: ${loopbackUrl(settings.adminApiBind, '/healthz')}`,
@@ -565,7 +617,7 @@ export function workspaceAccessLines(settings) {
 export function workspaceHelpText() {
   return `Usage: node scripts/dev/start-workspace.mjs [options]
 
-Starts the Rust gateway/admin/app services plus the claw router portal dev server.
+Starts the all-in-one Rust edge runtime plus the claw router portal dev server.
 
 Options:
   --database-url <url>    Optional shared SDKWORK_CLAW_DATABASE_URL override
@@ -580,6 +632,8 @@ Options:
                          Rust edge server target for /backend/v3/api
   --app-api-forward-url <url>
                          Rust edge server target for /app/v3/api
+  --all-in-one           Start the default single Rust edge API process
+  --distributed          Start separate gateway/admin/app API services behind the edge server
   --external-scheme <scheme>
                          External request scheme reported upstream: http or https (default ${DEFAULT_EXTERNAL_SCHEME})
   --trust-forwarded-headers
@@ -604,6 +658,7 @@ export function renderWorkspaceDryRun(settings, plan) {
       appApiBind: settings.appApiBind,
       serverBind: settings.serverBind,
       portalBind: settings.portalBind,
+      runtimeMode: settings.runtimeMode,
       modelsCatalogRoot: settings.modelsCatalogRoot,
       externalScheme: settings.externalScheme,
       trustForwardedHeaders: settings.trustForwardedHeaders,
@@ -623,6 +678,7 @@ export function renderWorkspaceDryRun(settings, plan) {
 
   return [
     '[start-workspace] edge launch settings',
+    `  SDKWORK_CLAW_RUNTIME_MODE=${settings.runtimeMode}`,
     `  SDKWORK_CLAW_DATABASE_URL=${settings.databaseUrl ?? '(local SQLite dev database)'}`,
     `  SDKWORK_MODELS_CATALOG_ROOT=${settings.modelsCatalogRoot}`,
     `  SDKWORK_CLAW_GATEWAY_BIND=${settings.gatewayBind}`,
@@ -641,6 +697,7 @@ export function renderWorkspaceDryRun(settings, plan) {
     `  PORTAL_TOOL_API_RATE_LIMIT_REQUESTS=${process.env.PORTAL_TOOL_API_RATE_LIMIT_REQUESTS ?? '120'}`,
     `  PORTAL_TOOL_API_RATE_LIMIT_WINDOW_SECONDS=${process.env.PORTAL_TOOL_API_RATE_LIMIT_WINDOW_SECONDS ?? '60'}`,
     `  PORTAL_TOOL_API_SDK_ARCHIVE_ROOT=${process.env.PORTAL_TOOL_API_SDK_ARCHIVE_ROOT ?? '(not configured)'}`,
+    `  SDKWORK_CLAW_ALL_IN_ONE_RUNTIME=${settings.runtimeMode === 'all-in-one' ? '1' : '0'}`,
     `  SDKWORK_CLAW_EDGE_GATEWAY_BASE_URL=${settings.gatewayForwardUrl}`,
     `  SDKWORK_CLAW_EDGE_BACKEND_API_BASE_URL=${settings.backendApiForwardUrl}`,
     `  SDKWORK_CLAW_EDGE_APP_API_BASE_URL=${settings.appApiForwardUrl}`,

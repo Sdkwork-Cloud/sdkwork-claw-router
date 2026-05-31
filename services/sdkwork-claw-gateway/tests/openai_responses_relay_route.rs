@@ -29,15 +29,15 @@ fn catalog_with_hashed_api_key(key_hash: String) -> InMemoryPricingCatalog {
             "openai",
             vec!["responses", "tools"],
         )
-        .with_catalog_key("openai/global/gpt-4.1-mini"),
+        .with_catalog_key("openai/gpt-4.1-mini"),
     );
     catalog.add_provider_route(
         ModelProviderRoute::new_for_catalog_key(
-            "openai/global/gpt-4.1-mini",
+            "openai/gpt-4.1-mini",
             "gpt-4.1-mini",
             "openrouter",
             3001,
-            "openai/global/gpt-4.1-mini",
+            "openai/gpt-4.1-mini",
         )
         .with_provider_endpoint(
             Some("http://provider-proxy.internal/openrouter"),
@@ -70,7 +70,7 @@ fn catalog_with_hashed_api_key(key_hash: String) -> InMemoryPricingCatalog {
     ));
     catalog.add_api_key(GatewayApiKey::new(101, 10, "sk-live", &key_hash).with_owner(10, 20, 30));
     catalog.add_price(ModelPrice::new_for_catalog_key(
-        "openai/global/gpt-4.1-mini",
+        "openai/gpt-4.1-mini",
         "gpt-4.1-mini",
         PriceSide::OfficialReference,
         BillingMeter::LlmInputToken,
@@ -78,7 +78,7 @@ fn catalog_with_hashed_api_key(key_hash: String) -> InMemoryPricingCatalog {
     ));
     catalog.add_price(
         ModelPrice::new_for_catalog_key(
-            "openai/global/gpt-4.1-mini",
+            "openai/gpt-4.1-mini",
             "gpt-4.1-mini",
             PriceSide::UpstreamCost,
             BillingMeter::LlmInputToken,
@@ -87,7 +87,7 @@ fn catalog_with_hashed_api_key(key_hash: String) -> InMemoryPricingCatalog {
         .for_provider("openrouter", 3001),
     );
     catalog.add_price(ModelPrice::new_for_catalog_key(
-        "openai/global/gpt-4.1-mini",
+        "openai/gpt-4.1-mini",
         "gpt-4.1-mini",
         PriceSide::OfficialReference,
         BillingMeter::LlmOutputToken,
@@ -95,7 +95,7 @@ fn catalog_with_hashed_api_key(key_hash: String) -> InMemoryPricingCatalog {
     ));
     catalog.add_price(
         ModelPrice::new_for_catalog_key(
-            "openai/global/gpt-4.1-mini",
+            "openai/gpt-4.1-mini",
             "gpt-4.1-mini",
             PriceSide::UpstreamCost,
             BillingMeter::LlmOutputToken,
@@ -123,8 +123,8 @@ fn catalog_with_hashed_api_key(key_hash: String) -> InMemoryPricingCatalog {
             9101,
             "standard-group-gpt-4-1-mini",
             1,
-            r#"{"catalogKey":"openai/global/gpt-4.1-mini"}"#,
-            "openai/global/gpt-4.1-mini",
+            r#"{"catalogKey":"openai/gpt-4.1-mini"}"#,
+            "openai/gpt-4.1-mini",
         )
         .with_candidate_channels(vec![RouteCandidate::new(3001, 100)]),
     );

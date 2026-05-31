@@ -220,6 +220,7 @@ where
             context: context.clone(),
             catalog_key: routing_catalog_key.clone(),
             requested_model: model.to_owned(),
+            api_code: openai_api_code(capability_label).to_owned(),
             capability,
             billing_meter,
         })
@@ -251,6 +252,14 @@ fn route_scope_catalog_key(requested_model: &str, model_catalog_key: &str) -> St
         requested_model.trim().to_owned()
     } else {
         model_catalog_key.to_owned()
+    }
+}
+
+fn openai_api_code(capability_label: &str) -> &'static str {
+    match capability_label {
+        "responses" | "response" => "openai.responses",
+        "embeddings" | "embedding" => "openai.embeddings",
+        _ => "openai.chat_completions",
     }
 }
 
@@ -357,6 +366,21 @@ pub(super) fn route_http_status_is_retryable(
         .as_ref()
         .unwrap_or(default_retry_policy)
         .is_retryable_status(status_code)
+}
+
+pub(super) fn provider_relay_attempt_retry_policy(
+    route: &ResolvedOpenAiProviderRoute,
+    _failure_strategy: OpenAiRuntimeFailureStrategy,
+    route_count: usize,
+) -> Option<ProviderRetryPolicy> {
+    if route_count > 1 {
+        return Some(ProviderRetryPolicy {
+            max_attempts: 1,
+            retryable_status_codes: Vec::new(),
+            backoff_ms: 0,
+        });
+    }
+    route.provider_retry_policy.clone()
 }
 
 fn provider_route_selection_error(error: ProviderRouteSelectionError) -> OpenAiRouteError {

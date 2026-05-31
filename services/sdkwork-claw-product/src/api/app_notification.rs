@@ -1,7 +1,7 @@
 use std::sync::Arc;
 
 use axum::extract::{Path, Query, State};
-use axum::http::StatusCode;
+use axum::http::{HeaderMap, StatusCode};
 use axum::response::{IntoResponse, Response};
 use axum::routing::get;
 use axum::{Json, Router};
@@ -121,9 +121,10 @@ fn app_notification_router_with_state(
 async fn list_notifications(
     State(state): State<AppNotificationState>,
     subject: Option<TrustedRequestSubject>,
+    headers: HeaderMap,
     Query(query): Query<NotificationListQuery>,
 ) -> Response {
-    let subject = match notification_subject(subject, state.require_subject) {
+    let subject = match notification_subject(subject, &headers, state.require_subject) {
         Ok(subject) => subject,
         Err(response) => return response,
     };
@@ -159,10 +160,11 @@ async fn list_notifications(
 async fn mark_popup_seen(
     State(state): State<AppNotificationState>,
     subject: Option<TrustedRequestSubject>,
+    headers: HeaderMap,
     Path(notification_id): Path<String>,
     Query(query): Query<NotificationCommandQuery>,
 ) -> Response {
-    let subject = match required_subject(&state, subject) {
+    let subject = match required_subject(&state, subject, &headers) {
         Ok(subject) => subject,
         Err(response) => return response,
     };
@@ -193,10 +195,11 @@ async fn mark_popup_seen(
 async fn acknowledge(
     State(state): State<AppNotificationState>,
     subject: Option<TrustedRequestSubject>,
+    headers: HeaderMap,
     Path(notification_id): Path<String>,
     Query(query): Query<NotificationCommandQuery>,
 ) -> Response {
-    let subject = match required_subject(&state, subject) {
+    let subject = match required_subject(&state, subject, &headers) {
         Ok(subject) => subject,
         Err(response) => return response,
     };
@@ -229,8 +232,9 @@ async fn acknowledge(
 fn required_subject(
     state: &AppNotificationState,
     subject: Option<TrustedRequestSubject>,
+    headers: &HeaderMap,
 ) -> Result<AppNotificationSubject, Response> {
-    notification_subject(subject, state.require_subject).and_then(|subject| {
+    notification_subject(subject, headers, state.require_subject).and_then(|subject| {
         subject.ok_or_else(|| {
             (
                 StatusCode::UNAUTHORIZED,
@@ -246,6 +250,7 @@ fn required_subject(
 
 fn notification_subject(
     subject: Option<TrustedRequestSubject>,
+    headers: &HeaderMap,
     require_subject: bool,
 ) -> Result<Option<AppNotificationSubject>, Response> {
     match subject {
@@ -254,15 +259,19 @@ fn notification_subject(
             organization_id: subject.organization_id,
             user_id: subject.user_id,
         })),
-        None if require_subject => Err((
-            StatusCode::UNAUTHORIZED,
-            Json(PlusApiResult::<()>::error(
-                "4010",
-                "trusted request subject is required",
-            )),
-        )
-            .into_response()),
-        None => Ok(None),
+        None => match TrustedRequestSubject::from_headers(headers) {
+            Ok(subject) => Ok(Some(AppNotificationSubject {
+                tenant_id: subject.tenant_id,
+                organization_id: subject.organization_id,
+                user_id: subject.user_id,
+            })),
+            Err(error) if require_subject => Err((
+                StatusCode::UNAUTHORIZED,
+                Json(PlusApiResult::<()>::error("4010", error.to_string())),
+            )
+                .into_response()),
+            Err(_) => Ok(None),
+        },
     }
 }
 

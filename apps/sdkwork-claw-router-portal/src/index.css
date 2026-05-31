@@ -42,6 +42,18 @@ body {
   @apply bg-slate-50 text-slate-900 dark:bg-[#050505] dark:text-slate-50 transition-colors duration-300;
 }
 
+select,
+option,
+optgroup {
+  color: #0f172a;
+  background-color: #ffffff;
+}
+
+.dark :is(select, option, optgroup) {
+  color: #f8fafc;
+  background-color: #202020;
+}
+
 .sdkwork-console-shell {
   --sdkwork-console-card-radius: 0.5rem;
 }

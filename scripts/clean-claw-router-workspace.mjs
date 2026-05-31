@@ -26,7 +26,7 @@ Remove rebuildable local artifacts that slow Codex workspace scans and
 verification loops.
 
 Options:
-  --rust-target       Also remove target/ Rust build artifacts.
+  --rust-target       Also remove Rust target* build artifacts.
   --node-modules      Also remove portal node_modules.
   --dry-run           Print paths without deleting them.
   -h, --help          Show this help.
@@ -105,14 +105,24 @@ function buildCleanPlan({
   rustTarget = false,
   nodeModules = false,
 } = {}) {
-  const relativePaths = [
-    ...DEFAULT_SAFE_CLEAN_PATHS,
-    ...DEFAULT_PYTHON_CACHE_ROOTS.map((root) => path.join(root, '__pycache__')),
-  ];
+  const relativePaths = [];
 
   if (rustTarget) {
-    relativePaths.push('target');
+    relativePaths.push(
+      'target',
+      'target-rust-tests',
+      'target-verify',
+      'target-verify2',
+      'target-verify-split',
+      'target-test-fixtures',
+    );
   }
+
+  relativePaths.push(
+    ...DEFAULT_SAFE_CLEAN_PATHS,
+    ...DEFAULT_PYTHON_CACHE_ROOTS.map((root) => path.join(root, '__pycache__')),
+  );
+
   if (nodeModules) {
     relativePaths.push(path.join('apps', 'sdkwork-claw-router-portal', 'node_modules'));
   }
@@ -133,6 +143,27 @@ async function removeEntry(entry, { dryRun = false } = {}) {
   });
 }
 
+async function removeEntries(entries, {
+  dryRun = false,
+  removeEntry: removeEntryFn = removeEntry,
+  logWarning = (message) => console.error(message),
+} = {}) {
+  const failures = [];
+  for (const entry of entries) {
+    try {
+      await removeEntryFn(entry, { dryRun });
+    } catch (error) {
+      const message = error instanceof Error ? error.message : String(error);
+      failures.push({
+        relativePath: entry.relativePath,
+        error,
+      });
+      logWarning(`[clean-claw-router-workspace] failed ${entry.relativePath}: ${message}`);
+    }
+  }
+  return failures;
+}
+
 async function main() {
   const settings = parseArgs(process.argv.slice(2));
   if (settings.help) {
@@ -147,8 +178,9 @@ async function main() {
     nodeModules: settings.nodeModules,
   });
 
-  for (const entry of plan) {
-    await removeEntry(entry, { dryRun: settings.dryRun });
+  const failures = await removeEntries(plan, { dryRun: settings.dryRun });
+  if (failures.length > 0) {
+    console.error(`[clean-claw-router-workspace] completed with ${failures.length} cleanup warning(s)`);
   }
 }
 
@@ -159,4 +191,4 @@ if (process.argv[1] && import.meta.url.endsWith(process.argv[1].replaceAll('\\',
   });
 }
 
-export { buildCleanPlan, parseArgs };
+export { buildCleanPlan, parseArgs, removeEntries };

@@ -137,6 +137,7 @@ CANONICAL_COMMERCE_TRANSACTION_API_OPERATIONS: tuple[tuple[str, str, str, str], 
     ("backend", "GET", "/backend/v3/api/payments/providers", "payments.providers.list"),
     ("backend", "GET", "/backend/v3/api/payments/provider_accounts", "payments.providerAccounts.list"),
     ("backend", "POST", "/backend/v3/api/payments/provider_accounts", "payments.providerAccounts.create"),
+    ("backend", "GET", "/backend/v3/api/payments/runtime/snapshot", "payments.runtime.snapshot.retrieve"),
     ("backend", "GET", "/backend/v3/api/payments/methods", "payments.methods.list"),
     ("backend", "GET", "/backend/v3/api/payments/channels", "payments.channels.list"),
     ("backend", "GET", "/backend/v3/api/payments/route_rules", "payments.routeRules.list"),
@@ -357,6 +358,7 @@ class CommerceStandardTest(unittest.TestCase):
             "/backend/v3/api/catalog/products",
             "/backend/v3/api/inventory/stocks",
             "/backend/v3/api/payments/provider_accounts",
+            "/backend/v3/api/payments/runtime/snapshot",
             "/backend/v3/api/payments/route_rules",
             "/backend/v3/api/wallet/ledger_entries",
             "/backend/v3/api/promotions/offers",
@@ -1185,7 +1187,8 @@ class CommerceStandardTest(unittest.TestCase):
         self.assertIn("getClawRouterAppSdkClient().commerce.memberships.packages.list", service)
         self.assertIn("getClawRouterAppSdkClient().commerce.memberships.purchases.create", service)
         self.assertIn("packageId: requiredPositiveIntegerId(packageId, 'packageId')", service)
-        self.assertIn("paymentMethod: 'wechat'", service)
+        self.assertNotIn("paymentMethod: 'wechat'", service)
+        self.assertIn("packageId: requiredPositiveIntegerId(packageId, 'packageId')", service)
         self.assertNotIn("createClientOperationToken('membership-purchase')", service)
         self.assertNotIn("metadata:", service)
         self.assertNotIn('"/vip"', view)

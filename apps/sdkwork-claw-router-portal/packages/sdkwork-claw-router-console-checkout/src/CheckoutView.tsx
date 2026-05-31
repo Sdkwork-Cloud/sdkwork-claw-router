@@ -15,7 +15,6 @@ import { CheckoutService, type CheckoutStatus } from './checkoutService';
 import { RechargeService } from 'sdkwork-claw-router-console-recharge';
 
 import { useTranslation } from 'react-i18next';
-type PaymentMethod = 'wechat' | 'alipay' | 'card';
 type TranslationFunction = ReturnType<typeof useTranslation>['t'];
 
 function getCheckoutErrorMessage(error: unknown, fallback: string, t: TranslationFunction): string {
@@ -38,7 +37,6 @@ export function CheckoutView() {
   const amount = parseAmount(searchParams.get('amount'));
   const initialOrderNo = searchParams.get('orderNo') || '';
 
-  const [paymentMethod, setPaymentMethod] = useState<PaymentMethod>('wechat');
   const [orderNo, setOrderNo] = useState(initialOrderNo);
   const [checkoutStatus, setCheckoutStatus] = useState<CheckoutStatus | null>(null);
   const [isLoading, setIsLoading] = useState(false);
@@ -51,7 +49,7 @@ export function CheckoutView() {
   const points = checkoutStatus?.points;
   const status = checkoutStatus?.status || 'pending';
   const terminalNotice = checkoutStatus ? checkoutStatusNotice(status, t) : '';
-  const activePaymentMethod = normalizePaymentMethod(checkoutStatus?.paymentMethod) || paymentMethod;
+  const activePaymentMethod = normalizePaymentMethod(checkoutStatus?.paymentMethod);
 
   const loadCheckoutStatus = useCallback(async (targetOrderNo = orderNo, isActive: () => boolean = () => true) => {
     if (!targetOrderNo) return;
@@ -61,10 +59,6 @@ export function CheckoutView() {
       const data = await CheckoutService.fetchCheckoutStatus(targetOrderNo);
       if (isActive()) {
         setCheckoutStatus(data);
-        const normalizedMethod = normalizePaymentMethod(data.paymentMethod);
-        if (normalizedMethod) {
-          setPaymentMethod(normalizedMethod);
-        }
       }
     } catch (error) {
       if (isActive()) {
@@ -95,7 +89,7 @@ export function CheckoutView() {
     if (moneyCents(amount) <= 0) return;
     setIsProcessing(true);
     try {
-      const result = await RechargeService.submitRecharge(formatMoneyAmount(amount), paymentMethod);
+      const result = await RechargeService.submitRecharge(formatMoneyAmount(amount), 'CNY');
       if (!result.orderNo) {
         setCheckoutError(t('console.checkout.orderMissing', '支付订单创建失败，请重新发起充值。'));
         return;
@@ -108,7 +102,7 @@ export function CheckoutView() {
     } finally {
       setIsProcessing(false);
     }
-  }, [amount, loadCheckoutStatus, navigate, paymentMethod, t]);
+  }, [amount, loadCheckoutStatus, navigate, t]);
 
   if (status === 'success' && checkoutStatus) {
     return (
@@ -192,30 +186,30 @@ export function CheckoutView() {
             <div className="space-y-4">
               <PaymentMethodOption
                 active={activePaymentMethod === 'wechat'}
-                disabled={Boolean(orderNo)}
+                disabled
                 tone="emerald"
                 badge={t("console.billing.checkoutview.text.1bisz1t", "微")}
                 title={t("console.billing.checkoutview.text.hecndi", "微信支付 (WeChat Pay)")}
                 description={t("console.billing.checkoutview.text.m500ke", "支持扫码支付")}
-                onSelect={() => setPaymentMethod('wechat')}
+                onSelect={() => {}}
               />
               <PaymentMethodOption
                 active={activePaymentMethod === 'alipay'}
-                disabled={Boolean(orderNo)}
+                disabled
                 tone="blue"
                 badge={t("console.billing.checkoutview.text.btluu6", "支")}
                 title={t("console.billing.checkoutview.text.1fn7bha", "支付宝 (Alipay)")}
                 description={t("console.billing.checkoutview.text.m500ke", "支持扫码支付")}
-                onSelect={() => setPaymentMethod('alipay')}
+                onSelect={() => {}}
               />
               <PaymentMethodOption
                 active={activePaymentMethod === 'card'}
-                disabled={Boolean(orderNo)}
+                disabled
                 tone="slate"
                 icon={<CreditCard className="w-5 h-5" />}
                 title={t("console.billing.checkoutview.text.kap9ev", "国际信用卡 (Stripe)")}
                 description={t("console.billing.checkoutview.text.1fihska", "支持 Visa, Mastercard")}
-                onSelect={() => setPaymentMethod('card')}
+                onSelect={() => {}}
               />
             </div>
           </div>
@@ -451,7 +445,7 @@ function formatMoneyAmount(amount: string): string {
   return `${whole}.${fraction}`;
 }
 
-function normalizePaymentMethod(value?: string): PaymentMethod | null {
+function normalizePaymentMethod(value?: string): CheckoutStatus['paymentMethod'] | null {
   const normalized = (value || '').toLowerCase();
   if (normalized.includes('wechat')) {
     return 'wechat';

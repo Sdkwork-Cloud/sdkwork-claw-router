@@ -24,7 +24,11 @@ use sdkwork_claw_product::ports::{
 };
 use serde_json::json;
 use serde_json::Value;
+use tokio::sync::Notify;
 use tower::ServiceExt;
+
+const DELAYED_STREAM_SECOND_CHUNK_MILLIS: u64 = 120;
+const STREAM_COMPLETION_TIMEOUT_MILLIS: u64 = 250;
 
 #[tokio::test]
 async fn app_runtime_create_invocation_uses_product_runtime_namespace_and_store_contract() {
@@ -675,7 +679,12 @@ async fn app_runtime_stream_execution_continues_after_client_disconnect_and_reco
     );
     drop(disconnected_body);
 
-    tokio::time::sleep(Duration::from_millis(350)).await;
+    tokio::time::timeout(
+        Duration::from_millis(STREAM_COMPLETION_TIMEOUT_MILLIS),
+        store.wait_for_complete_invocation(),
+    )
+    .await
+    .expect("runtime execution should finalize after the browser stream disconnects");
     let event_commands = store.create_event_commands.lock().unwrap();
     let delta_events = event_commands_of_type(&event_commands, "response.output_text.delta");
     assert_eq!(
@@ -1079,17 +1088,12 @@ async fn app_runtime_stream_completion_preserves_existing_cancelled_terminal_eve
         "{body}"
     );
 
-    for _ in 0..20 {
-        if !store
-            .complete_invocation_commands
-            .lock()
-            .unwrap()
-            .is_empty()
-        {
-            break;
-        }
-        tokio::time::sleep(Duration::from_millis(25)).await;
-    }
+    tokio::time::timeout(
+        Duration::from_millis(STREAM_COMPLETION_TIMEOUT_MILLIS),
+        store.wait_for_complete_invocation(),
+    )
+    .await
+    .expect("stream completion should still finalize the invocation snapshot");
     let commands = store.complete_invocation_commands.lock().unwrap();
     assert!(
         !commands.is_empty(),
@@ -3326,6 +3330,7 @@ async fn runtime_stream_request(router: axum::Router) -> axum::response::Respons
 struct TestAppRuntimeStore {
     create_invocation_commands: Mutex<Vec<CreateAppRuntimeInvocationCommand>>,
     complete_invocation_commands: Mutex<Vec<CompleteAppRuntimeInvocationCommand>>,
+    complete_invocation_notify: Notify,
     create_event_commands: Mutex<Vec<CreateAppRuntimeEventCommand>>,
     create_artifact_commands: Mutex<Vec<CreateAppRuntimeArtifactCommand>>,
     list_invocation_subjects: Mutex<Vec<AppRuntimeSubject>>,
@@ -3342,6 +3347,16 @@ impl TestAppRuntimeStore {
             ..Self::default()
         }
     }
+
+    async fn wait_for_complete_invocation(&self) {
+        loop {
+            let notified = self.complete_invocation_notify.notified();
+            if !self.complete_invocation_commands.lock().unwrap().is_empty() {
+                return;
+            }
+            notified.await;
+        }
+    }
 }
 
 impl Default for TestAppRuntimeStore {
@@ -3349,6 +3364,7 @@ impl Default for TestAppRuntimeStore {
         Self {
             create_invocation_commands: Mutex::new(Vec::new()),
             complete_invocation_commands: Mutex::new(Vec::new()),
+            complete_invocation_notify: Notify::new(),
             create_event_commands: Mutex::new(Vec::new()),
             create_artifact_commands: Mutex::new(Vec::new()),
             list_invocation_subjects: Mutex::new(Vec::new()),
@@ -3424,6 +3440,7 @@ impl AppRuntimeStore for TestAppRuntimeStore {
                 .lock()
                 .unwrap()
                 .push(command);
+            self.complete_invocation_notify.notify_waiters();
             Ok(AppRuntimeInvocationItem {
                 status,
                 provider_response_id: Some("msg_123".to_owned()),
@@ -3874,7 +3891,18 @@ impl sdkwork_claw_product::ports::PricingCatalog for TestRuntimeCatalog {
         }
         vec![
             sdkwork_claw_product::domain::ProviderChannelRoute::new("openai", 3001)
-                .with_provider_endpoint(Some("https://provider.example/v1"), Some("secret-ref")),
+                .with_provider_endpoint(Some("https://provider.example/v1"), Some("secret-ref"))
+                .with_resource_scoped_group_binding(
+                    10,
+                    1,
+                    100,
+                    vec![self.catalog_key.clone(), self.model.clone()],
+                    vec![
+                        "openai.chat_completions".to_owned(),
+                        "openai.responses".to_owned(),
+                    ],
+                    vec!["llm".to_owned(), "chat".to_owned()],
+                ),
         ]
     }
 
@@ -3974,19 +4002,37 @@ impl sdkwork_claw_product::ports::PricingCatalog for TestRuntimeCatalog {
 
     fn list_model_prices(
         &self,
-        _model: &str,
-        _price_side: sdkwork_claw_product::domain::PriceSide,
-        _billing_meter: sdkwork_claw_product::domain::BillingMeter,
+        model: &str,
+        price_side: sdkwork_claw_product::domain::PriceSide,
+        billing_meter: sdkwork_claw_product::domain::BillingMeter,
     ) -> Vec<sdkwork_claw_product::domain::ModelPrice> {
-        Vec::new()
+        if model != self.catalog_key
+            || price_side != sdkwork_claw_product::domain::PriceSide::OfficialReference
+            || billing_meter != sdkwork_claw_product::domain::BillingMeter::LlmInputToken
+        {
+            return Vec::new();
+        }
+        vec![
+            sdkwork_claw_product::domain::ModelPrice::new_for_catalog_key(
+                &self.catalog_key,
+                &self.model,
+                sdkwork_claw_product::domain::PriceSide::OfficialReference,
+                sdkwork_claw_product::domain::BillingMeter::LlmInputToken,
+                sdkwork_claw_product::domain::Money::usd("0.150000").unwrap(),
+            ),
+        ]
     }
 
     fn list_model_prices_for_side(
         &self,
-        _model: &str,
-        _price_side: sdkwork_claw_product::domain::PriceSide,
+        model: &str,
+        price_side: sdkwork_claw_product::domain::PriceSide,
     ) -> Vec<sdkwork_claw_product::domain::ModelPrice> {
-        Vec::new()
+        self.list_model_prices(
+            model,
+            price_side,
+            sdkwork_claw_product::domain::BillingMeter::LlmInputToken,
+        )
     }
 
     fn find_api_key(&self, api_key_id: i64) -> Option<sdkwork_claw_product::domain::GatewayApiKey> {
@@ -4485,7 +4531,8 @@ impl ChatCompletionStreamRelay for SlowStreamRelay {
                 if chunk.as_ref().is_ok_and(|bytes| {
                     bytes.starts_with(b"data: {\"choices\":[{\"delta\":{\"content\":\" second\"")
                 }) {
-                    tokio::time::sleep(Duration::from_millis(250)).await;
+                    tokio::time::sleep(Duration::from_millis(DELAYED_STREAM_SECOND_CHUNK_MILLIS))
+                        .await;
                 }
                 chunk
             });
@@ -4538,7 +4585,8 @@ impl ChatCompletionStreamRelay for CountingSlowStreamRelay {
                 if chunk.as_ref().is_ok_and(|bytes| {
                     bytes.starts_with(b"data: {\"choices\":[{\"delta\":{\"content\":\" second\"")
                 }) {
-                    tokio::time::sleep(Duration::from_millis(250)).await;
+                    tokio::time::sleep(Duration::from_millis(DELAYED_STREAM_SECOND_CHUNK_MILLIS))
+                        .await;
                 }
                 chunk
             });

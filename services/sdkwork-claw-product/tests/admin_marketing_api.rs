@@ -1,5 +1,6 @@
 mod common;
 use common::InternalTrustedSubjectHeaders;
+use std::collections::BTreeMap;
 use std::sync::{Arc, Mutex};
 
 use axum::body::Body;
@@ -7,17 +8,18 @@ use axum::http::{Request, StatusCode};
 use sdkwork_claw_product::application::EntityUuidGenerator;
 use sdkwork_claw_product::domain::DomainResult;
 use sdkwork_claw_product::ports::{
-    AdminExchangeRuleItem, AdminMarketingCommandFuture, AdminMarketingStore,
+    AdminExchangeRuleItem, AdminMarketingCommandFuture, AdminMarketingStore, AdminMarketingSubject,
     AdminPaymentAttemptItem, AdminRechargePackageItem, AdminRechargeRecordItem,
-    AdminReferralStatItem, CreateAdminRechargePackageCommand, CreatePromotionOfferCommand,
-    DeleteAdminRechargePackageCommand, DeletePromotionOfferCommand,
+    AdminRechargeSettingsItem, AdminReferralStatItem, CreateAdminRechargePackageCommand,
+    CreatePromotionOfferCommand, DeleteAdminRechargePackageCommand, DeletePromotionOfferCommand,
     GeneratePromotionCouponStockCommand, ListAdminExchangeRulesQuery,
     ListAdminPaymentAttemptsQuery, ListAdminRechargePackagesQuery, ListAdminRechargeRecordsQuery,
     ListAdminReferralStatsQuery, ListPromotionCodeRedemptionsQuery, ListPromotionCodesQuery,
     ListPromotionCouponStocksQuery, ListPromotionOffersQuery, LoadAdminRechargeRecordQuery,
     PromotionCodeItem, PromotionCodeRedemptionItem, PromotionCouponStockItem, PromotionOfferItem,
-    UpdateAdminExchangeRuleCommand, UpdateAdminRechargePackageCommand,
-    UpdatePromotionCodeStatusCommand, UpdatePromotionOfferCommand,
+    RechargeSettingsUpdateCommand, UpdateAdminExchangeRuleCommand,
+    UpdateAdminRechargePackageCommand, UpdatePromotionCodeStatusCommand,
+    UpdatePromotionOfferCommand,
 };
 use serde_json::Value;
 use tower::ServiceExt;
@@ -117,9 +119,24 @@ async fn admin_marketing_route_lists_all_marketing_read_models() {
     )
     .await;
     assert_eq!("100", recharge_packages["data"]["items"][0]["id"]);
-    assert_eq!("10.00", recharge_packages["data"]["items"][0]["rmb"]);
-    assert_eq!(25, recharge_packages["data"]["items"][0]["bonus"]);
+    assert_eq!(
+        "10.00",
+        recharge_packages["data"]["items"][0]["priceAmount"]
+    );
+    assert_eq!("CNY", recharge_packages["data"]["items"][0]["currencyCode"]);
+    assert_eq!(25, recharge_packages["data"]["items"][0]["bonusPoints"]);
+    assert_eq!(125, recharge_packages["data"]["items"][0]["grantAmount"]);
     assert_eq!(125, recharge_packages["data"]["items"][0]["points"]);
+
+    let recharge_settings = request_json(
+        router.clone(),
+        signed_request("GET", "/backend/v3/api/recharges/settings", ""),
+    )
+    .await;
+    assert_eq!("CNY", recharge_settings["data"]["baseCurrencyCode"]);
+    assert_eq!("10", recharge_settings["data"]["basePointsPerCny"]);
+    assert_eq!("1", recharge_settings["data"]["currencyToCnyRates"]["CNY"]);
+    assert_eq!("7", recharge_settings["data"]["currencyToCnyRates"]["USD"]);
 
     let exchange_rules = request_json(
         router.clone(),
@@ -337,7 +354,7 @@ async fn admin_marketing_route_creates_deletes_generates_and_updates_codes() {
         signed_request(
             "POST",
             "/backend/v3/api/recharges/packages",
-            r#"{"rmb":"12.00","bonus":30,"status":"active"}"#,
+            r#"{"priceAmount":"12.00","currencyCode":"CNY","bonusPoints":30,"status":"active"}"#,
         ),
     )
     .await;
@@ -345,16 +362,33 @@ async fn admin_marketing_route_creates_deletes_generates_and_updates_codes() {
         "recharge-package-10-20-901",
         create_package["data"]["item"]["id"]
     );
-    assert_eq!("12.00", create_package["data"]["item"]["rmb"]);
-    assert_eq!(30, create_package["data"]["item"]["bonus"]);
+    assert_eq!("12.00", create_package["data"]["item"]["priceAmount"]);
+    assert_eq!("CNY", create_package["data"]["item"]["currencyCode"]);
+    assert_eq!(30, create_package["data"]["item"]["bonusPoints"]);
+    assert_eq!(150, create_package["data"]["item"]["grantAmount"]);
     assert_eq!(150, create_package["data"]["item"]["points"]);
+
+    let update_recharge_settings = request_json(
+        router.clone(),
+        signed_request(
+            "PUT",
+            "/backend/v3/api/recharges/settings",
+            r#"{"baseCurrencyCode":"CNY","basePointsPerCny":"10","currencyToCnyRates":{"CNY":"1","USD":"7.5"}}"#,
+        ),
+    )
+    .await;
+    assert_eq!("10", update_recharge_settings["data"]["basePointsPerCny"]);
+    assert_eq!(
+        "7.5",
+        update_recharge_settings["data"]["currencyToCnyRates"]["USD"]
+    );
 
     let update_package = request_json(
         router.clone(),
         signed_request(
             "PATCH",
             "/backend/v3/api/recharges/packages/recharge-package-10-20-901",
-            r#"{"rmb":"20.00","bonus":50,"status":"inactive"}"#,
+            r#"{"priceAmount":"20.00","currencyCode":"USD","bonusPoints":50,"status":"inactive"}"#,
         ),
     )
     .await;
@@ -362,9 +396,11 @@ async fn admin_marketing_route_creates_deletes_generates_and_updates_codes() {
         "recharge-package-10-20-901",
         update_package["data"]["item"]["id"]
     );
-    assert_eq!("20.00", update_package["data"]["item"]["rmb"]);
-    assert_eq!(50, update_package["data"]["item"]["bonus"]);
-    assert_eq!(250, update_package["data"]["item"]["points"]);
+    assert_eq!("20.00", update_package["data"]["item"]["priceAmount"]);
+    assert_eq!("USD", update_package["data"]["item"]["currencyCode"]);
+    assert_eq!(50, update_package["data"]["item"]["bonusPoints"]);
+    assert_eq!(1550, update_package["data"]["item"]["grantAmount"]);
+    assert_eq!(1550, update_package["data"]["item"]["points"]);
 
     let update_exchange_rule = request_json(
         router.clone(),
@@ -415,6 +451,7 @@ async fn admin_marketing_route_creates_deletes_generates_and_updates_codes() {
             "generate_promotion_coupon_stock",
             "update_promotion_code_status",
             "create_recharge_package",
+            "update_recharge_settings",
             "update_recharge_package",
             "update_exchange_rule",
             "delete_recharge_package",
@@ -780,9 +817,16 @@ impl AdminMarketingStore for TestAdminMarketingStore {
             assert_eq!(10, query.subject.tenant_id);
             Ok(vec![AdminRechargePackageItem {
                 id: "100".to_owned(),
-                rmb: "10.00".to_owned(),
-                bonus: 25,
+                package_no: "RECHARGE-PACKAGE-100".to_owned(),
+                name: "Starter Recharge Pack".to_owned(),
+                sku_id: "recharge-sku-100".to_owned(),
+                price_amount: "10.00".to_owned(),
+                currency_code: "CNY".to_owned(),
+                bonus_points: 25,
+                grant_amount: 125,
                 points: 125,
+                status: "active".to_owned(),
+                updated_at: "2026-04-29 10:00:00".to_owned(),
             }])
         })
     }
@@ -821,13 +865,21 @@ impl AdminMarketingStore for TestAdminMarketingStore {
                 .lock()
                 .unwrap()
                 .push("create_recharge_package");
-            assert_eq!("12.00", command.rmb);
-            assert_eq!(30, command.bonus);
+            assert_eq!("12.00", command.price_amount);
+            assert_eq!("CNY", command.currency_code);
+            assert_eq!(30, command.bonus_points);
             Ok(AdminRechargePackageItem {
                 id: "recharge-package-10-20-901".to_owned(),
-                rmb: command.rmb,
-                bonus: command.bonus,
+                package_no: "RECHARGE-PACKAGE-901".to_owned(),
+                name: "Points recharge 12.00 CNY".to_owned(),
+                sku_id: "recharge-sku-10-20-901".to_owned(),
+                price_amount: command.price_amount,
+                currency_code: command.currency_code,
+                bonus_points: command.bonus_points,
+                grant_amount: 150,
                 points: 150,
+                status: "active".to_owned(),
+                updated_at: "2026-04-29 10:05:00".to_owned(),
             })
         })
     }
@@ -842,13 +894,38 @@ impl AdminMarketingStore for TestAdminMarketingStore {
                 .unwrap()
                 .push("update_recharge_package");
             assert_eq!("recharge-package-10-20-901", command.package_id);
-            assert_eq!("20.00", command.rmb);
-            assert_eq!(50, command.bonus);
+            assert_eq!("20.00", command.price_amount);
+            assert_eq!("USD", command.currency_code);
+            assert_eq!(50, command.bonus_points);
             Ok(AdminRechargePackageItem {
                 id: command.package_id,
-                rmb: command.rmb,
-                bonus: command.bonus,
-                points: 250,
+                package_no: "RECHARGE-PACKAGE-901".to_owned(),
+                name: "Points recharge 20.00 USD".to_owned(),
+                sku_id: "recharge-sku-10-20-901".to_owned(),
+                price_amount: command.price_amount,
+                currency_code: command.currency_code,
+                bonus_points: command.bonus_points,
+                grant_amount: 1550,
+                points: 1550,
+                status: "inactive".to_owned(),
+                updated_at: "2026-04-29 10:06:00".to_owned(),
+            })
+        })
+    }
+
+    fn load_recharge_settings<'a>(
+        &'a self,
+        subject: AdminMarketingSubject,
+    ) -> AdminMarketingCommandFuture<'a, AdminRechargeSettingsItem> {
+        Box::pin(async move {
+            assert_eq!(10, subject.tenant_id);
+            Ok(AdminRechargeSettingsItem {
+                base_currency_code: "CNY".to_owned(),
+                base_points_per_cny: "10".to_owned(),
+                currency_to_cny_rates: BTreeMap::from([
+                    ("CNY".to_owned(), "1".to_owned()),
+                    ("USD".to_owned(), "7".to_owned()),
+                ]),
             })
         })
     }
@@ -870,6 +947,29 @@ impl AdminMarketingStore for TestAdminMarketingStore {
                 target_asset_type: command.target_asset_type,
                 rate: command.rate,
                 status: "active".to_owned(),
+            })
+        })
+    }
+
+    fn update_recharge_settings<'a>(
+        &'a self,
+        command: RechargeSettingsUpdateCommand,
+    ) -> AdminMarketingCommandFuture<'a, AdminRechargeSettingsItem> {
+        Box::pin(async move {
+            self.commands
+                .lock()
+                .unwrap()
+                .push("update_recharge_settings");
+            assert_eq!("CNY", command.base_currency_code);
+            assert_eq!("10", command.base_points_per_cny);
+            assert_eq!(
+                Some(&"7.5".to_owned()),
+                command.currency_to_cny_rates.get("USD")
+            );
+            Ok(AdminRechargeSettingsItem {
+                base_currency_code: command.base_currency_code,
+                base_points_per_cny: command.base_points_per_cny,
+                currency_to_cny_rates: command.currency_to_cny_rates,
             })
         })
     }

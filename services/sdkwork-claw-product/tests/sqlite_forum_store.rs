@@ -1,12 +1,9 @@
-#[path = "common/installed_sqlite.rs"]
-mod installed_sqlite_common;
-
-use installed_sqlite_common::{repair_sqlite_pool, schema_sqlite_pool};
 use sdkwork_claw_product::infrastructure::sql::sqlite::SqliteForumStore;
 use sdkwork_claw_product::ports::{
     CreateForumCommentCommand, CreateForumFeedCommand, ForumCommentCommandStore,
     ForumCommentReadStore, ForumFeedCommandStore, ForumFeedQuery, ForumFeedReadStore, ForumSubject,
 };
+use sdkwork_claw_product_test_support::{repair_sqlite_pool, schema_sqlite_pool};
 
 #[tokio::test]
 async fn sqlite_forum_store_uses_java_plus_feeds_and_comments_contract() {

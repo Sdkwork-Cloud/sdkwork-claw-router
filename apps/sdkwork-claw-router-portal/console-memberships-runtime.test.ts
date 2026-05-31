@@ -360,9 +360,9 @@ test("console membership service exposes purchase, renew, upgrade, reward, and s
         "/app/v3/api/memberships/points/daily_rewards",
         "/app/v3/api/memberships/privileges/speed_ups",
       ]);
-      assert.deepEqual(JSON.parse(captured[0]?.body ?? "{}"), { packageId: 401, paymentMethod: "wechat" });
-      assert.deepEqual(JSON.parse(captured[1]?.body ?? "{}"), { packageId: 401, paymentMethod: "wechat" });
-      assert.deepEqual(JSON.parse(captured[2]?.body ?? "{}"), { packageId: 402, paymentMethod: "wechat" });
+      assert.deepEqual(JSON.parse(captured[0]?.body ?? "{}"), { packageId: 401 });
+      assert.deepEqual(JSON.parse(captured[1]?.body ?? "{}"), { packageId: 401 });
+      assert.deepEqual(JSON.parse(captured[2]?.body ?? "{}"), { packageId: 402 });
     },
   );
 });

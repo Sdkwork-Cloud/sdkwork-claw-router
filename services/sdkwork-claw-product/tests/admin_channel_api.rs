@@ -5,7 +5,12 @@ use std::sync::{Arc, Mutex};
 
 use axum::body::Body;
 use axum::http::{Request, StatusCode};
-use sdkwork_claw_product::application::EntityUuidGenerator;
+use sdkwork_claw_product::application::{
+    default_desktop_cache_manager, AiRoutingCacheInvalidatingAdminChannelStore,
+    EntityUuidGenerator, ROUTING_CONFIG_VERSION_CACHE_NAMESPACE,
+    ROUTING_DISABLED_CHANNEL_CACHE_NAMESPACE, ROUTING_PROVIDER_OBJECT_ROUTE_CACHE_NAMESPACE,
+    ROUTING_SNAPSHOT_CACHE_NAMESPACE,
+};
 use sdkwork_claw_product::domain::DomainResult;
 use sdkwork_claw_product::ports::{
     AdminChannelCommandFuture, AdminChannelItem, AdminChannelStore, CreateAdminChannelCommand,
@@ -233,6 +238,94 @@ async fn admin_channel_route_creates_lists_updates_and_soft_deletes_items() {
 
     let commands = store.commands.lock().unwrap();
     assert_eq!(vec!["create", "update", "test", "delete"], *commands);
+}
+
+#[tokio::test]
+async fn admin_channel_route_invalidates_routing_cache_after_successful_mutation() {
+    let store = Arc::new(TestChannelStore::default());
+    let manager = default_desktop_cache_manager();
+    manager
+        .set_json(
+            ROUTING_SNAPSHOT_CACHE_NAMESPACE,
+            "tenant:10:org:20",
+            serde_json::json!({ "status": "warm" }),
+        )
+        .await
+        .unwrap();
+    manager
+        .set_json(
+            ROUTING_CONFIG_VERSION_CACHE_NAMESPACE,
+            "tenant:10:org:20",
+            serde_json::json!({ "version": 7 }),
+        )
+        .await
+        .unwrap();
+    manager
+        .set_json(
+            ROUTING_DISABLED_CHANNEL_CACHE_NAMESPACE,
+            "tenant:10:org:20:channel:1",
+            serde_json::json!({ "disabled": true }),
+        )
+        .await
+        .unwrap();
+    manager
+        .set_json(
+            ROUTING_PROVIDER_OBJECT_ROUTE_CACHE_NAMESPACE,
+            "tenant:10:org:20:object:resp_123",
+            serde_json::json!({ "channelId": 1 }),
+        )
+        .await
+        .unwrap();
+    let router = sdkwork_claw_product::api::admin_channel_router_with_store(
+        Arc::new(AiRoutingCacheInvalidatingAdminChannelStore::new(
+            store,
+            manager.clone(),
+        )),
+        Arc::new(TestUuidGenerator),
+    );
+
+    let response = router
+        .oneshot(
+            Request::builder()
+                .method("POST")
+                .uri("/backend/v3/api/channel")
+                .header("content-type", "application/json")
+                .internal_trusted_subject(10, 20, 30)
+                .body(Body::from(
+                    r#"{"name":"OpenAI primary","vendor":"OpenAI","channelType":"official","protocol":"OpenAI","accessType":"api-key","baseUrl":"https://api.openai.com/v1","secretRef":"vault://providers/openai/account/main","models":["openai/gpt-4o-mini"],"capabilities":["llm"],"resourceCodes":["vendor.openai"],"weight":80,"status":"active"}"#,
+                ))
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+
+    assert_eq!(StatusCode::OK, response.status());
+    assert!(manager
+        .get_json(ROUTING_SNAPSHOT_CACHE_NAMESPACE, "tenant:10:org:20")
+        .await
+        .unwrap()
+        .is_none());
+    assert!(manager
+        .get_json(ROUTING_CONFIG_VERSION_CACHE_NAMESPACE, "tenant:10:org:20")
+        .await
+        .unwrap()
+        .is_none());
+    assert!(manager
+        .get_json(
+            ROUTING_DISABLED_CHANNEL_CACHE_NAMESPACE,
+            "tenant:10:org:20:channel:1"
+        )
+        .await
+        .unwrap()
+        .is_none());
+    assert!(manager
+        .get_json(
+            ROUTING_PROVIDER_OBJECT_ROUTE_CACHE_NAMESPACE,
+            "tenant:10:org:20:object:resp_123"
+        )
+        .await
+        .unwrap()
+        .is_some());
 }
 
 #[tokio::test]

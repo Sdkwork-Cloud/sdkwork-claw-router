@@ -2,6 +2,7 @@ import {
   getClawRouterAppSdkClient,
   createIdempotencyParams,
   createClientOperationToken,
+  hasStoredPortalSession,
   isRecord,
   readApiItems,
   readApiRecord,
@@ -70,9 +71,15 @@ export interface VipPurchaseResult {
   success: boolean;
   requestNo: string;
   status: string;
+  providerCode?: string;
+  paymentMethod?: string;
+  paymentProduct?: string;
+  nextAction?: 'scan_qr' | 'request_payment' | 'open_url' | 'completed' | 'pending';
   paymentId?: string;
+  cashierUrl?: string;
   qrCodePayload?: string;
   qrCodeImageUrl?: string;
+  requestPaymentPayload?: string;
 }
 
 export interface VipRedeemResult {
@@ -84,9 +91,12 @@ export interface VipRedeemResult {
 
 export class VipService {
   static async fetchVipCatalog(): Promise<VipCatalog> {
+    const summaryPromise = hasStoredPortalSession()
+      ? appMembershipsCurrentRetrieve()
+      : null;
     const [groupsResult, summaryResult] = await Promise.allSettled([
       appMembershipsPackageGroupsList(),
-      appMembershipsCurrentRetrieve(),
+      summaryPromise,
     ]);
 
     const summary = readVipSummaryResult(summaryResult);
@@ -133,16 +143,28 @@ export class VipService {
     if (!success) {
       throw new Error('VIP purchase was not accepted');
     }
+    const providerCode = readFirstString(data, ['providerCode', 'provider_code']);
+    const paymentMethod = readFirstString(data, ['paymentMethod', 'payment_method']);
+    const paymentProduct = readFirstString(data, ['paymentProduct', 'payment_product']);
+    const nextAction = readPurchaseNextAction(readFirstString(data, ['nextAction', 'next_action']));
     const paymentId = readFirstString(data, ['paymentId', 'payment_id', 'paymentIntentId', 'payment_intent_id']);
-    const qrCodePayload = readFirstString(data, ['qrCodePayload', 'qr_code_payload', 'paymentUrl', 'payment_url', 'qrcode', 'qrCode']);
+    const qrCodePayload = readStandardQrCodePayload(data, 'VIP');
+    const cashierUrl = readStandardCashierUrl(data, 'VIP', qrCodePayload);
     const qrCodeImageUrl = readFirstString(data, ['qrCodeImageUrl', 'qr_code_image_url', 'qrCodeUrl', 'qr_code_url']);
+    const requestPaymentPayload = readStandardRequestPaymentPayload(data);
     return {
       success,
       requestNo,
       status,
+      ...(providerCode ? { providerCode } : {}),
+      ...(paymentMethod ? { paymentMethod } : {}),
+      ...(paymentProduct ? { paymentProduct } : {}),
+      ...(nextAction ? { nextAction } : {}),
       ...(paymentId ? { paymentId } : {}),
+      ...(cashierUrl ? { cashierUrl } : {}),
       ...(qrCodePayload ? { qrCodePayload } : {}),
       ...(qrCodeImageUrl ? { qrCodeImageUrl } : {}),
+      ...(requestPaymentPayload ? { requestPaymentPayload } : {}),
     };
   }
 
@@ -510,6 +532,56 @@ function readPurchaseAccepted(item: ApiRecord, status: string): boolean {
     return false;
   }
   return true;
+}
+
+function readStandardQrCodePayload(item: ApiRecord, scopeLabel: string): string {
+  const value = readFirstString(item, ['qrCodePayload', 'qr_code_payload', 'cashierUrl', 'cashier_url']);
+  if (!value) {
+    return '';
+  }
+  if (!/^https?:\/\//iu.test(value.trim())) {
+    throw new Error(`${scopeLabel} qrCodePayload must be an http(s) url when present`);
+  }
+  return value;
+}
+
+function readStandardCashierUrl(item: ApiRecord, scopeLabel: string, fallbackUrl = ''): string {
+  const value = readFirstString(item, ['cashierUrl', 'cashier_url']) || fallbackUrl;
+  if (!value) {
+    return '';
+  }
+  if (!/^https?:\/\//iu.test(value.trim())) {
+    throw new Error(`${scopeLabel} cashierUrl must be an http(s) url when present`);
+  }
+  return value;
+}
+
+function readStandardRequestPaymentPayload(item: ApiRecord): string {
+  const value = item.requestPaymentPayload ?? item.request_payment_payload;
+  if (value === undefined || value === null || value === '') {
+    return '';
+  }
+  return typeof value === 'string' ? value : JSON.stringify(value);
+}
+
+function readPurchaseNextAction(value: string): VipPurchaseResult['nextAction'] | undefined {
+  const normalized = value.trim().toLowerCase();
+  if (!normalized) {
+    return undefined;
+  }
+  if (normalized === 'request_payment') {
+    return 'request_payment';
+  }
+  if (normalized === 'open_url' || normalized === 'redirect') {
+    return 'open_url';
+  }
+  if (normalized === 'completed' || normalized === 'success') {
+    return 'completed';
+  }
+  if (normalized === 'pending') {
+    return 'pending';
+  }
+  return 'scan_qr';
 }
 
 function inferPlanId(item: ApiRecord): string {

@@ -21,12 +21,14 @@ fn account_service_contract_declares_wallet_and_token_read_models() {
 
     assert_eq!(contract.domain, "account");
     assert_eq!(contract.service_name, "commerce.account");
-    assert!(contract.read_queries.contains(&"summary.retrieve"));
+    assert!(contract
+        .read_queries
+        .contains(&"accounts.current.summary.retrieve"));
     assert!(contract.read_queries.contains(&"wallet.accounts.list"));
-    assert!(contract.read_queries.contains(&"tokens.retrieve"));
+    assert!(contract.read_queries.contains(&"wallet.tokens.retrieve"));
     assert!(contract
         .write_commands
-        .contains(&"tokens.deductions.create"));
+        .contains(&"wallet.adjustments.create"));
     assert!(contract.ports.contains(&"account.wallet.read"));
 }
 

@@ -149,15 +149,17 @@ pub use admin_ip_rate_limit_store::{
 pub use admin_marketing_store::{
     AdminExchangeRuleItem, AdminMarketingCommandFuture, AdminMarketingStore, AdminMarketingSubject,
     AdminPaymentAttemptItem, AdminRechargePackageItem, AdminRechargePackageStatus,
-    AdminRechargeRecordItem, AdminReferralStatItem, CreateAdminRechargePackageCommand,
-    CreatePromotionOfferCommand, DeleteAdminRechargePackageCommand, DeletePromotionOfferCommand,
+    AdminRechargeRecordItem, AdminRechargeSettingsItem, AdminReferralStatItem,
+    CreateAdminRechargePackageCommand, CreatePromotionOfferCommand,
+    DeleteAdminRechargePackageCommand, DeletePromotionOfferCommand,
     GeneratePromotionCouponStockCommand, ListAdminExchangeRulesQuery,
     ListAdminPaymentAttemptsQuery, ListAdminRechargePackagesQuery, ListAdminRechargeRecordsQuery,
     ListAdminReferralStatsQuery, ListPromotionCodeRedemptionsQuery, ListPromotionCodesQuery,
     ListPromotionCouponStocksQuery, ListPromotionOffersQuery, LoadAdminRechargeRecordQuery,
     PromotionCodeItem, PromotionCodeRedemptionItem, PromotionCouponStockItem, PromotionOfferItem,
-    UpdateAdminExchangeRuleCommand, UpdateAdminRechargePackageCommand,
-    UpdatePromotionCodeStatusCommand, UpdatePromotionOfferCommand,
+    RechargeSettingsUpdateCommand, UpdateAdminExchangeRuleCommand,
+    UpdateAdminRechargePackageCommand, UpdatePromotionCodeStatusCommand,
+    UpdatePromotionOfferCommand,
 };
 pub use admin_mcp_store::{
     AdminMcpBindingItem, AdminMcpCommandFuture, AdminMcpDiscoveryResult, AdminMcpHealthCheckItem,

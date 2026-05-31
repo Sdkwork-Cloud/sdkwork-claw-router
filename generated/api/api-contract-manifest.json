@@ -23628,12 +23628,18 @@
           "additionalProperties": false,
           "name": "CommerceRechargePackageMutationRequest",
           "properties": {
-            "bonus": {
+            "bonusPoints": {
               "format": "int64",
               "minimum": 0,
               "type": "integer"
             },
-            "rmb": {
+            "currencyCode": {
+              "maxLength": 16,
+              "minLength": 3,
+              "pattern": "^[A-Z0-9_-]+$",
+              "type": "string"
+            },
+            "priceAmount": {
               "pattern": "^\\d+(?:\\.\\d{1,2})?$",
               "type": "string"
             },
@@ -23646,8 +23652,9 @@
             }
           },
           "required": [
-            "rmb",
-            "bonus"
+            "priceAmount",
+            "currencyCode",
+            "bonusPoints"
           ],
           "type": "object"
         }
@@ -23660,8 +23667,20 @@
           "properties": {
             "item": {
               "additionalProperties": false,
+              "name": "AdminRechargePackageItem",
               "properties": {
-                "bonus": {
+                "bonusPoints": {
+                  "format": "int64",
+                  "minimum": 0,
+                  "type": "integer"
+                },
+                "currencyCode": {
+                  "maxLength": 16,
+                  "minLength": 3,
+                  "pattern": "^[A-Z0-9_-]+$",
+                  "type": "string"
+                },
+                "grantAmount": {
                   "format": "int64",
                   "minimum": 0,
                   "type": "integer"
@@ -23671,23 +23690,50 @@
                   "minLength": 1,
                   "type": "string"
                 },
+                "name": {
+                  "maxLength": 256,
+                  "type": "string"
+                },
+                "packageNo": {
+                  "maxLength": 128,
+                  "minLength": 1,
+                  "type": "string"
+                },
                 "points": {
                   "format": "int64",
                   "minimum": 0,
                   "type": "integer"
                 },
-                "rmb": {
-                  "maxLength": 64,
+                "priceAmount": {
+                  "pattern": "^\\d+(?:\\.\\d{1,2})?$",
+                  "type": "string"
+                },
+                "skuId": {
+                  "maxLength": 128,
+                  "minLength": 1,
                   "type": "string"
                 },
                 "status": {
                   "maxLength": 64,
-                  "nullable": true,
+                  "type": "string"
+                },
+                "updatedAt": {
+                  "maxLength": 64,
+                  "minLength": 1,
                   "type": "string"
                 }
               },
               "required": [
-                "id"
+                "id",
+                "packageNo",
+                "skuId",
+                "priceAmount",
+                "currencyCode",
+                "bonusPoints",
+                "grantAmount",
+                "points",
+                "status",
+                "updatedAt"
               ],
               "type": "object"
             }
@@ -23829,65 +23875,89 @@
       "request_body_required": null,
       "request_id_header": false,
       "response_schema": {
-        "name": "CommerceStandardCollectionResponse",
+        "name": "AdminRechargePackageListResponse",
         "schema": {
           "additionalProperties": false,
-          "name": "CommerceStandardCollectionResponse",
+          "name": "AdminRechargePackageListResponse",
           "properties": {
             "items": {
               "items": {
                 "additionalProperties": false,
+                "name": "AdminRechargePackageItem",
                 "properties": {
-                  "createdAt": {
-                    "maxLength": 64,
-                    "nullable": true,
+                  "bonusPoints": {
+                    "format": "int64",
+                    "minimum": 0,
+                    "type": "integer"
+                  },
+                  "currencyCode": {
+                    "maxLength": 16,
+                    "minLength": 3,
+                    "pattern": "^[A-Z0-9_-]+$",
                     "type": "string"
+                  },
+                  "grantAmount": {
+                    "format": "int64",
+                    "minimum": 0,
+                    "type": "integer"
                   },
                   "id": {
                     "maxLength": 128,
                     "minLength": 1,
                     "type": "string"
                   },
+                  "name": {
+                    "maxLength": 256,
+                    "type": "string"
+                  },
+                  "packageNo": {
+                    "maxLength": 128,
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "points": {
+                    "format": "int64",
+                    "minimum": 0,
+                    "type": "integer"
+                  },
+                  "priceAmount": {
+                    "pattern": "^\\d+(?:\\.\\d{1,2})?$",
+                    "type": "string"
+                  },
+                  "skuId": {
+                    "maxLength": 128,
+                    "minLength": 1,
+                    "type": "string"
+                  },
                   "status": {
                     "maxLength": 64,
-                    "nullable": true,
                     "type": "string"
                   },
                   "updatedAt": {
                     "maxLength": 64,
-                    "nullable": true,
+                    "minLength": 1,
                     "type": "string"
                   }
                 },
                 "required": [
-                  "id"
+                  "id",
+                  "packageNo",
+                  "skuId",
+                  "priceAmount",
+                  "currencyCode",
+                  "bonusPoints",
+                  "grantAmount",
+                  "points",
+                  "status",
+                  "updatedAt"
                 ],
                 "type": "object"
               },
               "type": "array"
-            },
-            "page": {
-              "format": "int64",
-              "minimum": 1,
-              "type": "integer"
-            },
-            "pageSize": {
-              "format": "int64",
-              "maximum": 200,
-              "minimum": 1,
-              "type": "integer"
-            },
-            "total": {
-              "format": "int64",
-              "minimum": 0,
-              "type": "integer"
             }
           },
           "required": [
-            "items",
-            "total",
-            "page",
-            "pageSize"
+            "items"
           ],
           "type": "object"
         }
@@ -23934,12 +24004,18 @@
           "additionalProperties": false,
           "name": "CommerceRechargePackageMutationRequest",
           "properties": {
-            "bonus": {
+            "bonusPoints": {
               "format": "int64",
               "minimum": 0,
               "type": "integer"
             },
-            "rmb": {
+            "currencyCode": {
+              "maxLength": 16,
+              "minLength": 3,
+              "pattern": "^[A-Z0-9_-]+$",
+              "type": "string"
+            },
+            "priceAmount": {
               "pattern": "^\\d+(?:\\.\\d{1,2})?$",
               "type": "string"
             },
@@ -23952,8 +24028,9 @@
             }
           },
           "required": [
-            "rmb",
-            "bonus"
+            "priceAmount",
+            "currencyCode",
+            "bonusPoints"
           ],
           "type": "object"
         }
@@ -23966,8 +24043,20 @@
           "properties": {
             "item": {
               "additionalProperties": false,
+              "name": "AdminRechargePackageItem",
               "properties": {
-                "bonus": {
+                "bonusPoints": {
+                  "format": "int64",
+                  "minimum": 0,
+                  "type": "integer"
+                },
+                "currencyCode": {
+                  "maxLength": 16,
+                  "minLength": 3,
+                  "pattern": "^[A-Z0-9_-]+$",
+                  "type": "string"
+                },
+                "grantAmount": {
                   "format": "int64",
                   "minimum": 0,
                   "type": "integer"
@@ -23977,23 +24066,50 @@
                   "minLength": 1,
                   "type": "string"
                 },
+                "name": {
+                  "maxLength": 256,
+                  "type": "string"
+                },
+                "packageNo": {
+                  "maxLength": 128,
+                  "minLength": 1,
+                  "type": "string"
+                },
                 "points": {
                   "format": "int64",
                   "minimum": 0,
                   "type": "integer"
                 },
-                "rmb": {
-                  "maxLength": 64,
+                "priceAmount": {
+                  "pattern": "^\\d+(?:\\.\\d{1,2})?$",
+                  "type": "string"
+                },
+                "skuId": {
+                  "maxLength": 128,
+                  "minLength": 1,
                   "type": "string"
                 },
                 "status": {
                   "maxLength": 64,
-                  "nullable": true,
+                  "type": "string"
+                },
+                "updatedAt": {
+                  "maxLength": 64,
+                  "minLength": 1,
                   "type": "string"
                 }
               },
               "required": [
-                "id"
+                "id",
+                "packageNo",
+                "skuId",
+                "priceAmount",
+                "currencyCode",
+                "bonusPoints",
+                "grantAmount",
+                "points",
+                "status",
+                "updatedAt"
               ],
               "type": "object"
             }
@@ -24017,6 +24133,170 @@
         "commerce_recharge_package",
         "commerce_product_spu",
         "commerce_product_sku",
+        "ops_audit_log"
+      ]
+    },
+    {
+      "api_method": "GET",
+      "api_path": "/backend/v3/api/recharges/settings",
+      "api_surface": "backend",
+      "description": "Retrieve the member-center cash-to-points recharge settings used to calculate grant points across currencies.",
+      "file_targets": [],
+      "idempotency_required": false,
+      "key": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts#backendMembershipsRechargeSettingsRetrieve",
+      "kind": "read",
+      "module": "admin-memberships",
+      "openapi_exposed": true,
+      "operation": "backendMembershipsRechargeSettingsRetrieve",
+      "operation_id": "recharges.settings.retrieve",
+      "path_params": [],
+      "query_parameters": [],
+      "query_parameters_declared": true,
+      "read_sources": [
+        "commerce_exchange_rule"
+      ],
+      "request_body_required": null,
+      "request_id_header": false,
+      "response_schema": {
+        "name": "AdminRechargeSettingsResponse",
+        "schema": {
+          "additionalProperties": false,
+          "name": "AdminRechargeSettingsResponse",
+          "properties": {
+            "baseCurrencyCode": {
+              "maxLength": 16,
+              "minLength": 3,
+              "pattern": "^[A-Z0-9_-]+$",
+              "type": "string"
+            },
+            "basePointsPerCny": {
+              "pattern": "^\\d+(?:\\.\\d{1,6})?$",
+              "type": "string"
+            },
+            "currencyToCnyRates": {
+              "additionalProperties": {
+                "pattern": "^\\d+(?:\\.\\d{1,6})?$",
+                "type": "string"
+              },
+              "type": "object"
+            }
+          },
+          "required": [
+            "baseCurrencyCode",
+            "basePointsPerCny",
+            "currencyToCnyRates"
+          ],
+          "type": "object"
+        }
+      },
+      "route": "/admin/memberships/recharge-packages",
+      "route_scope": "admin",
+      "sdk_api_prefix": "/backend/v3/api",
+      "sdk_client": "SdkworkBackendClient",
+      "sdk_domain": "commerce",
+      "sdk_family": "clawrouter-backend-sdk",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts",
+      "summary": "Recharges Settings Retrieve",
+      "tag": "commerce",
+      "write_tables": []
+    },
+    {
+      "api_method": "PUT",
+      "api_path": "/backend/v3/api/recharges/settings",
+      "api_surface": "backend",
+      "description": "Update the member-center cash-to-points recharge settings, including the base CNY ratio and currency-to-CNY conversion rates.",
+      "file_targets": [],
+      "idempotency_required": false,
+      "key": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts#backendMembershipsRechargeSettingsUpdate",
+      "kind": "update",
+      "module": "admin-memberships",
+      "openapi_exposed": true,
+      "operation": "backendMembershipsRechargeSettingsUpdate",
+      "operation_id": "recharges.settings.update",
+      "path_params": [],
+      "query_parameters": [],
+      "query_parameters_declared": false,
+      "read_sources": [
+        "commerce_exchange_rule"
+      ],
+      "request_body_required": null,
+      "request_id_header": false,
+      "request_schema": {
+        "name": "CommerceRechargeSettingsUpdateRequest",
+        "schema": {
+          "additionalProperties": false,
+          "name": "CommerceRechargeSettingsUpdateRequest",
+          "properties": {
+            "baseCurrencyCode": {
+              "maxLength": 16,
+              "minLength": 3,
+              "pattern": "^[A-Z0-9_-]+$",
+              "type": "string"
+            },
+            "basePointsPerCny": {
+              "pattern": "^\\d+(?:\\.\\d{1,6})?$",
+              "type": "string"
+            },
+            "currencyToCnyRates": {
+              "additionalProperties": {
+                "pattern": "^\\d+(?:\\.\\d{1,6})?$",
+                "type": "string"
+              },
+              "minProperties": 1,
+              "type": "object"
+            }
+          },
+          "required": [
+            "baseCurrencyCode",
+            "basePointsPerCny",
+            "currencyToCnyRates"
+          ],
+          "type": "object"
+        }
+      },
+      "response_schema": {
+        "name": "AdminRechargeSettingsResponse",
+        "schema": {
+          "additionalProperties": false,
+          "name": "AdminRechargeSettingsResponse",
+          "properties": {
+            "baseCurrencyCode": {
+              "maxLength": 16,
+              "minLength": 3,
+              "pattern": "^[A-Z0-9_-]+$",
+              "type": "string"
+            },
+            "basePointsPerCny": {
+              "pattern": "^\\d+(?:\\.\\d{1,6})?$",
+              "type": "string"
+            },
+            "currencyToCnyRates": {
+              "additionalProperties": {
+                "pattern": "^\\d+(?:\\.\\d{1,6})?$",
+                "type": "string"
+              },
+              "type": "object"
+            }
+          },
+          "required": [
+            "baseCurrencyCode",
+            "basePointsPerCny",
+            "currencyToCnyRates"
+          ],
+          "type": "object"
+        }
+      },
+      "route": "/admin/memberships/recharge-packages",
+      "route_scope": "admin",
+      "sdk_api_prefix": "/backend/v3/api",
+      "sdk_client": "SdkworkBackendClient",
+      "sdk_domain": "commerce",
+      "sdk_family": "clawrouter-backend-sdk",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts",
+      "summary": "Recharges Settings Update",
+      "tag": "commerce",
+      "write_tables": [
+        "commerce_exchange_rule",
         "ops_audit_log"
       ]
     },
@@ -24362,12 +24642,18 @@
           "additionalProperties": false,
           "name": "CommerceRechargePackageMutationRequest",
           "properties": {
-            "bonus": {
+            "bonusPoints": {
               "format": "int64",
               "minimum": 0,
               "type": "integer"
             },
-            "rmb": {
+            "currencyCode": {
+              "maxLength": 16,
+              "minLength": 3,
+              "pattern": "^[A-Z0-9_-]+$",
+              "type": "string"
+            },
+            "priceAmount": {
               "pattern": "^\\d+(?:\\.\\d{1,2})?$",
               "type": "string"
             },
@@ -24380,8 +24666,9 @@
             }
           },
           "required": [
-            "rmb",
-            "bonus"
+            "priceAmount",
+            "currencyCode",
+            "bonusPoints"
           ],
           "type": "object"
         }
@@ -24394,8 +24681,20 @@
           "properties": {
             "item": {
               "additionalProperties": false,
+              "name": "AdminRechargePackageItem",
               "properties": {
-                "bonus": {
+                "bonusPoints": {
+                  "format": "int64",
+                  "minimum": 0,
+                  "type": "integer"
+                },
+                "currencyCode": {
+                  "maxLength": 16,
+                  "minLength": 3,
+                  "pattern": "^[A-Z0-9_-]+$",
+                  "type": "string"
+                },
+                "grantAmount": {
                   "format": "int64",
                   "minimum": 0,
                   "type": "integer"
@@ -24405,23 +24704,50 @@
                   "minLength": 1,
                   "type": "string"
                 },
+                "name": {
+                  "maxLength": 256,
+                  "type": "string"
+                },
+                "packageNo": {
+                  "maxLength": 128,
+                  "minLength": 1,
+                  "type": "string"
+                },
                 "points": {
                   "format": "int64",
                   "minimum": 0,
                   "type": "integer"
                 },
-                "rmb": {
-                  "maxLength": 64,
+                "priceAmount": {
+                  "pattern": "^\\d+(?:\\.\\d{1,2})?$",
+                  "type": "string"
+                },
+                "skuId": {
+                  "maxLength": 128,
+                  "minLength": 1,
                   "type": "string"
                 },
                 "status": {
                   "maxLength": 64,
-                  "nullable": true,
+                  "type": "string"
+                },
+                "updatedAt": {
+                  "maxLength": 64,
+                  "minLength": 1,
                   "type": "string"
                 }
               },
               "required": [
-                "id"
+                "id",
+                "packageNo",
+                "skuId",
+                "priceAmount",
+                "currencyCode",
+                "bonusPoints",
+                "grantAmount",
+                "points",
+                "status",
+                "updatedAt"
               ],
               "type": "object"
             }
@@ -24914,6 +25240,38 @@
       "sdk_family": "clawrouter-backend-sdk",
       "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts",
       "summary": "Fetch membership admin recharge packages",
+      "tag": "commerce",
+      "write_tables": []
+    },
+    {
+      "api_method": "GET",
+      "api_path": "/backend/v3/api/recharges/settings",
+      "api_surface": "backend",
+      "description": "Admin member center wrapper over the standard recharge settings retrieve API.",
+      "file_targets": [],
+      "idempotency_required": false,
+      "key": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts#fetchMembershipAdminRechargeSettings",
+      "kind": "read",
+      "module": "admin-memberships",
+      "openapi_exposed": false,
+      "operation": "fetchMembershipAdminRechargeSettings",
+      "operation_id": "memberships.admin.rechargeSettings.fetch",
+      "path_params": [],
+      "query_parameters": [],
+      "query_parameters_declared": false,
+      "read_sources": [
+        "commerce_exchange_rule"
+      ],
+      "request_body_required": null,
+      "request_id_header": false,
+      "route": "/admin/memberships/recharge-packages",
+      "route_scope": "admin",
+      "sdk_api_prefix": "/backend/v3/api",
+      "sdk_client": "SdkworkBackendClient",
+      "sdk_domain": "commerce",
+      "sdk_family": "clawrouter-backend-sdk",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts",
+      "summary": "Fetch membership admin recharge settings",
       "tag": "commerce",
       "write_tables": []
     },
@@ -25488,12 +25846,18 @@
           "additionalProperties": false,
           "name": "CommerceRechargePackageMutationRequest",
           "properties": {
-            "bonus": {
+            "bonusPoints": {
               "format": "int64",
               "minimum": 0,
               "type": "integer"
             },
-            "rmb": {
+            "currencyCode": {
+              "maxLength": 16,
+              "minLength": 3,
+              "pattern": "^[A-Z0-9_-]+$",
+              "type": "string"
+            },
+            "priceAmount": {
               "pattern": "^\\d+(?:\\.\\d{1,2})?$",
               "type": "string"
             },
@@ -25506,8 +25870,9 @@
             }
           },
           "required": [
-            "rmb",
-            "bonus"
+            "priceAmount",
+            "currencyCode",
+            "bonusPoints"
           ],
           "type": "object"
         }
@@ -25520,8 +25885,20 @@
           "properties": {
             "item": {
               "additionalProperties": false,
+              "name": "AdminRechargePackageItem",
               "properties": {
-                "bonus": {
+                "bonusPoints": {
+                  "format": "int64",
+                  "minimum": 0,
+                  "type": "integer"
+                },
+                "currencyCode": {
+                  "maxLength": 16,
+                  "minLength": 3,
+                  "pattern": "^[A-Z0-9_-]+$",
+                  "type": "string"
+                },
+                "grantAmount": {
                   "format": "int64",
                   "minimum": 0,
                   "type": "integer"
@@ -25531,23 +25908,50 @@
                   "minLength": 1,
                   "type": "string"
                 },
+                "name": {
+                  "maxLength": 256,
+                  "type": "string"
+                },
+                "packageNo": {
+                  "maxLength": 128,
+                  "minLength": 1,
+                  "type": "string"
+                },
                 "points": {
                   "format": "int64",
                   "minimum": 0,
                   "type": "integer"
                 },
-                "rmb": {
-                  "maxLength": 64,
+                "priceAmount": {
+                  "pattern": "^\\d+(?:\\.\\d{1,2})?$",
+                  "type": "string"
+                },
+                "skuId": {
+                  "maxLength": 128,
+                  "minLength": 1,
                   "type": "string"
                 },
                 "status": {
                   "maxLength": 64,
-                  "nullable": true,
+                  "type": "string"
+                },
+                "updatedAt": {
+                  "maxLength": 64,
+                  "minLength": 1,
                   "type": "string"
                 }
               },
               "required": [
-                "id"
+                "id",
+                "packageNo",
+                "skuId",
+                "priceAmount",
+                "currencyCode",
+                "bonusPoints",
+                "grantAmount",
+                "points",
+                "status",
+                "updatedAt"
               ],
               "type": "object"
             }
@@ -25571,6 +25975,106 @@
         "commerce_recharge_package",
         "commerce_product_spu",
         "commerce_product_sku",
+        "ops_audit_log"
+      ]
+    },
+    {
+      "api_method": "PUT",
+      "api_path": "/backend/v3/api/recharges/settings",
+      "api_surface": "backend",
+      "description": "Admin member center wrapper over the standard recharge settings update API.",
+      "file_targets": [],
+      "idempotency_required": false,
+      "key": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts#updateMembershipAdminRechargeSettings",
+      "kind": "update",
+      "module": "admin-memberships",
+      "openapi_exposed": false,
+      "operation": "updateMembershipAdminRechargeSettings",
+      "operation_id": "memberships.admin.rechargeSettings.update",
+      "path_params": [],
+      "query_parameters": [],
+      "query_parameters_declared": false,
+      "read_sources": [
+        "commerce_exchange_rule"
+      ],
+      "request_body_required": null,
+      "request_id_header": false,
+      "request_schema": {
+        "name": "CommerceRechargeSettingsUpdateRequest",
+        "schema": {
+          "additionalProperties": false,
+          "name": "CommerceRechargeSettingsUpdateRequest",
+          "properties": {
+            "baseCurrencyCode": {
+              "maxLength": 16,
+              "minLength": 3,
+              "pattern": "^[A-Z0-9_-]+$",
+              "type": "string"
+            },
+            "basePointsPerCny": {
+              "pattern": "^\\d+(?:\\.\\d{1,6})?$",
+              "type": "string"
+            },
+            "currencyToCnyRates": {
+              "additionalProperties": {
+                "pattern": "^\\d+(?:\\.\\d{1,6})?$",
+                "type": "string"
+              },
+              "minProperties": 1,
+              "type": "object"
+            }
+          },
+          "required": [
+            "baseCurrencyCode",
+            "basePointsPerCny",
+            "currencyToCnyRates"
+          ],
+          "type": "object"
+        }
+      },
+      "response_schema": {
+        "name": "AdminRechargeSettingsResponse",
+        "schema": {
+          "additionalProperties": false,
+          "name": "AdminRechargeSettingsResponse",
+          "properties": {
+            "baseCurrencyCode": {
+              "maxLength": 16,
+              "minLength": 3,
+              "pattern": "^[A-Z0-9_-]+$",
+              "type": "string"
+            },
+            "basePointsPerCny": {
+              "pattern": "^\\d+(?:\\.\\d{1,6})?$",
+              "type": "string"
+            },
+            "currencyToCnyRates": {
+              "additionalProperties": {
+                "pattern": "^\\d+(?:\\.\\d{1,6})?$",
+                "type": "string"
+              },
+              "type": "object"
+            }
+          },
+          "required": [
+            "baseCurrencyCode",
+            "basePointsPerCny",
+            "currencyToCnyRates"
+          ],
+          "type": "object"
+        }
+      },
+      "route": "/admin/memberships/recharge-packages",
+      "route_scope": "admin",
+      "sdk_api_prefix": "/backend/v3/api",
+      "sdk_client": "SdkworkBackendClient",
+      "sdk_domain": "commerce",
+      "sdk_family": "clawrouter-backend-sdk",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts",
+      "summary": "Update membership admin recharge settings",
+      "tag": "commerce",
+      "write_tables": [
+        "commerce_exchange_rule",
         "ops_audit_log"
       ]
     },
@@ -38079,6 +38583,215 @@
       "sdk_family": "clawrouter-backend-sdk",
       "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-payments/src/paymentsService.ts",
       "summary": "Payments Route Rules List",
+      "tag": "commerce",
+      "write_tables": []
+    },
+    {
+      "api_method": "GET",
+      "api_path": "/backend/v3/api/payments/runtime/snapshot",
+      "api_surface": "backend",
+      "description": "Read-only payment provider runtime assembly diagnostics for the selected environment. The response contains sanitized status events and never exposes provider secrets, certificates, adapters, or live registry instances.",
+      "file_targets": [],
+      "idempotency_required": false,
+      "key": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-payments/src/paymentsService.ts#backendPaymentsRuntimeSnapshotRetrieve",
+      "kind": "read",
+      "module": "admin-payments",
+      "openapi_exposed": true,
+      "operation": "backendPaymentsRuntimeSnapshotRetrieve",
+      "operation_id": "payments.runtime.snapshot.retrieve",
+      "path_params": [],
+      "query_parameters": [
+        {
+          "in": "query",
+          "name": "environment",
+          "required": false,
+          "schema": {
+            "enum": [
+              "sandbox",
+              "production"
+            ],
+            "type": "string"
+          }
+        }
+      ],
+      "query_parameters_declared": true,
+      "read_sources": [
+        "commerce_payment_provider",
+        "commerce_payment_provider_account",
+        "commerce_payment_method",
+        "commerce_payment_channel",
+        "commerce_payment_route_rule",
+        "commerce_payment_intent",
+        "commerce_payment_attempt",
+        "commerce_payment_webhook_event",
+        "commerce_payment_reconciliation_run"
+      ],
+      "request_body_required": null,
+      "request_id_header": false,
+      "response_schema": {
+        "name": "CommercePaymentRuntimeSnapshotResponse",
+        "schema": {
+          "additionalProperties": false,
+          "name": "CommercePaymentRuntimeSnapshotResponse",
+          "properties": {
+            "environment": {
+              "enum": [
+                "sandbox",
+                "production"
+              ],
+              "type": "string"
+            },
+            "events": {
+              "items": {
+                "additionalProperties": false,
+                "name": "CommercePaymentRuntimeAssemblyEvent",
+                "properties": {
+                  "accountNo": {
+                    "maxLength": 128,
+                    "minLength": 1,
+                    "pattern": "^[A-Za-z0-9_-]+$",
+                    "type": "string"
+                  },
+                  "kind": {
+                    "enum": [
+                      "registered",
+                      "failed",
+                      "skipped"
+                    ],
+                    "type": "string"
+                  },
+                  "message": {
+                    "maxLength": 1024,
+                    "nullable": true,
+                    "type": "string"
+                  },
+                  "providerCode": {
+                    "enum": [
+                      "wechat_pay",
+                      "alipay",
+                      "paypal",
+                      "stripe",
+                      "apple_pay",
+                      "google_pay"
+                    ],
+                    "type": "string"
+                  },
+                  "reason": {
+                    "maxLength": 128,
+                    "nullable": true,
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "kind",
+                  "accountNo",
+                  "providerCode"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "recordedAt": {
+              "maxLength": 64,
+              "minLength": 1,
+              "type": "string"
+            },
+            "summary": {
+              "additionalProperties": false,
+              "name": "CommercePaymentRuntimeAssemblySummary",
+              "properties": {
+                "failed": {
+                  "format": "int64",
+                  "minimum": 0,
+                  "type": "integer"
+                },
+                "failedProviderCodes": {
+                  "items": {
+                    "enum": [
+                      "wechat_pay",
+                      "alipay",
+                      "paypal",
+                      "stripe",
+                      "apple_pay",
+                      "google_pay"
+                    ],
+                    "type": "string"
+                  },
+                  "type": "array"
+                },
+                "registered": {
+                  "format": "int64",
+                  "minimum": 0,
+                  "type": "integer"
+                },
+                "registeredProviderCodes": {
+                  "items": {
+                    "enum": [
+                      "wechat_pay",
+                      "alipay",
+                      "paypal",
+                      "stripe",
+                      "apple_pay",
+                      "google_pay"
+                    ],
+                    "type": "string"
+                  },
+                  "type": "array"
+                },
+                "skipped": {
+                  "format": "int64",
+                  "minimum": 0,
+                  "type": "integer"
+                },
+                "skippedProviderCodes": {
+                  "items": {
+                    "enum": [
+                      "wechat_pay",
+                      "alipay",
+                      "paypal",
+                      "stripe",
+                      "apple_pay",
+                      "google_pay"
+                    ],
+                    "type": "string"
+                  },
+                  "type": "array"
+                },
+                "total": {
+                  "format": "int64",
+                  "minimum": 0,
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "total",
+                "registered",
+                "failed",
+                "skipped",
+                "registeredProviderCodes",
+                "failedProviderCodes",
+                "skippedProviderCodes"
+              ],
+              "type": "object"
+            }
+          },
+          "required": [
+            "environment",
+            "recordedAt",
+            "summary",
+            "events"
+          ],
+          "type": "object"
+        }
+      },
+      "route": "/admin/payments",
+      "route_scope": "admin",
+      "sdk_api_prefix": "/backend/v3/api",
+      "sdk_client": "SdkworkBackendClient",
+      "sdk_domain": "commerce",
+      "sdk_family": "clawrouter-backend-sdk",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-payments/src/paymentsService.ts",
+      "summary": "Payments Runtime Snapshot Retrieve",
       "tag": "commerce",
       "write_tables": []
     },
@@ -64685,43 +65398,127 @@
       "request_body_required": null,
       "request_id_header": false,
       "response_schema": {
-        "name": "CommerceStandardResourceResponse",
+        "name": "CommerceRechargeCheckoutStatusResponse",
         "schema": {
           "additionalProperties": false,
-          "name": "CommerceStandardResourceResponse",
+          "name": "CommerceRechargeCheckoutStatusResponse",
           "properties": {
-            "item": {
-              "additionalProperties": false,
-              "properties": {
-                "createdAt": {
-                  "maxLength": 64,
-                  "nullable": true,
-                  "type": "string"
-                },
-                "id": {
-                  "maxLength": 128,
-                  "minLength": 1,
-                  "type": "string"
-                },
-                "status": {
-                  "maxLength": 64,
-                  "nullable": true,
-                  "type": "string"
-                },
-                "updatedAt": {
-                  "maxLength": 64,
-                  "nullable": true,
-                  "type": "string"
-                }
-              },
-              "required": [
-                "id"
-              ],
+            "amount": {
+              "pattern": "^\\d+(?:\\.\\d{1,2})?$",
+              "type": "string"
+            },
+            "cashierUrl": {
+              "description": "Standard cashier page URL for scan_qr and open_url payment flows.",
+              "maxLength": 2048,
+              "minLength": 1,
+              "type": "string"
+            },
+            "createdAt": {
+              "maxLength": 64,
+              "minLength": 1,
+              "type": "string"
+            },
+            "currencyCode": {
+              "maxLength": 16,
+              "minLength": 3,
+              "pattern": "^[A-Z0-9_-]+$",
+              "type": "string"
+            },
+            "expiresAt": {
+              "maxLength": 64,
+              "minLength": 1,
+              "type": "string"
+            },
+            "nextAction": {
+              "description": "For PC qr checkout, scan_qr means the client should render a QR image from qrCodePayload and ask the user to scan it with the target payment app. request_payment means the H5 cashier should invoke a bridge payment request. open_url means the client should open cashierUrl in a browser context.",
+              "maxLength": 64,
+              "minLength": 1,
+              "type": "string"
+            },
+            "orderNo": {
+              "maxLength": 128,
+              "minLength": 1,
+              "type": "string"
+            },
+            "orderStatus": {
+              "maxLength": 64,
+              "minLength": 1,
+              "type": "string"
+            },
+            "outTradeNo": {
+              "maxLength": 128,
+              "type": "string"
+            },
+            "paidAt": {
+              "maxLength": 64,
+              "type": "string"
+            },
+            "paymentMethod": {
+              "maxLength": 50,
+              "minLength": 1,
+              "type": "string"
+            },
+            "paymentProduct": {
+              "maxLength": 64,
+              "minLength": 1,
+              "type": "string"
+            },
+            "paymentStatus": {
+              "maxLength": 64,
+              "minLength": 1,
+              "type": "string"
+            },
+            "points": {
+              "format": "int64",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "providerCode": {
+              "maxLength": 64,
+              "minLength": 1,
+              "type": "string"
+            },
+            "qrCodePayload": {
+              "description": "Standard QR payload field for recharge checkout. When nextAction is scan_qr, this value must be an http or https payment page URL rather than a native app scheme.",
+              "maxLength": 2048,
+              "minLength": 1,
+              "type": "string"
+            },
+            "rechargeStatus": {
+              "maxLength": 64,
+              "minLength": 1,
+              "type": "string"
+            },
+            "requestPaymentPayload": {
+              "additionalProperties": true,
+              "nullable": true,
               "type": "object"
+            },
+            "status": {
+              "maxLength": 64,
+              "minLength": 1,
+              "type": "string"
             }
           },
           "required": [
-            "item"
+            "orderNo",
+            "outTradeNo",
+            "amount",
+            "currencyCode",
+            "points",
+            "providerCode",
+            "paymentMethod",
+            "paymentProduct",
+            "orderStatus",
+            "paymentStatus",
+            "rechargeStatus",
+            "status",
+            "createdAt",
+            "expiresAt",
+            "paidAt",
+            "nextAction",
+            "cashierUrl",
+            "qrCodePayload"
           ],
           "type": "object"
         }
@@ -66989,8 +67786,38 @@
           "additionalProperties": false,
           "name": "CommerceOperationResponse",
           "properties": {
+            "cashierUrl": {
+              "maxLength": 2048,
+              "minLength": 1,
+              "nullable": true,
+              "type": "string"
+            },
+            "nextAction": {
+              "maxLength": 64,
+              "minLength": 1,
+              "nullable": true,
+              "type": "string"
+            },
             "paymentId": {
               "maxLength": 128,
+              "minLength": 1,
+              "nullable": true,
+              "type": "string"
+            },
+            "paymentMethod": {
+              "maxLength": 64,
+              "minLength": 1,
+              "nullable": true,
+              "type": "string"
+            },
+            "paymentProduct": {
+              "maxLength": 64,
+              "minLength": 1,
+              "nullable": true,
+              "type": "string"
+            },
+            "providerCode": {
+              "maxLength": 64,
               "minLength": 1,
               "nullable": true,
               "type": "string"
@@ -67002,6 +67829,7 @@
               "type": "string"
             },
             "qrCodePayload": {
+              "description": "Standard QR payload field for membership purchase checkout. When the purchase requires PC qr scanning, this value must be an http or https payment page URL.",
               "maxLength": 2048,
               "minLength": 1,
               "nullable": true,
@@ -67011,6 +67839,11 @@
               "maxLength": 128,
               "minLength": 1,
               "type": "string"
+            },
+            "requestPaymentPayload": {
+              "additionalProperties": true,
+              "nullable": true,
+              "type": "object"
             },
             "status": {
               "maxLength": 64,
@@ -67164,11 +67997,6 @@
               "format": "int64",
               "minimum": 1,
               "type": "integer"
-            },
-            "paymentMethod": {
-              "maxLength": 50,
-              "pattern": "^[\\x21-\\x7E]+$",
-              "type": "string"
             }
           },
           "required": [
@@ -67183,8 +68011,38 @@
           "additionalProperties": false,
           "name": "CommerceOperationResponse",
           "properties": {
+            "cashierUrl": {
+              "maxLength": 2048,
+              "minLength": 1,
+              "nullable": true,
+              "type": "string"
+            },
+            "nextAction": {
+              "maxLength": 64,
+              "minLength": 1,
+              "nullable": true,
+              "type": "string"
+            },
             "paymentId": {
               "maxLength": 128,
+              "minLength": 1,
+              "nullable": true,
+              "type": "string"
+            },
+            "paymentMethod": {
+              "maxLength": 64,
+              "minLength": 1,
+              "nullable": true,
+              "type": "string"
+            },
+            "paymentProduct": {
+              "maxLength": 64,
+              "minLength": 1,
+              "nullable": true,
+              "type": "string"
+            },
+            "providerCode": {
+              "maxLength": 64,
               "minLength": 1,
               "nullable": true,
               "type": "string"
@@ -67196,6 +68054,7 @@
               "type": "string"
             },
             "qrCodePayload": {
+              "description": "Standard QR payload field for membership purchase checkout. When the purchase requires PC qr scanning, this value must be an http or https payment page URL.",
               "maxLength": 2048,
               "minLength": 1,
               "nullable": true,
@@ -67205,6 +68064,11 @@
               "maxLength": 128,
               "minLength": 1,
               "type": "string"
+            },
+            "requestPaymentPayload": {
+              "additionalProperties": true,
+              "nullable": true,
+              "type": "object"
             },
             "status": {
               "maxLength": 64,
@@ -67285,11 +68149,6 @@
               "format": "int64",
               "minimum": 1,
               "type": "integer"
-            },
-            "paymentMethod": {
-              "maxLength": 50,
-              "pattern": "^[\\x21-\\x7E]+$",
-              "type": "string"
             }
           },
           "required": [
@@ -67304,8 +68163,38 @@
           "additionalProperties": false,
           "name": "CommerceOperationResponse",
           "properties": {
+            "cashierUrl": {
+              "maxLength": 2048,
+              "minLength": 1,
+              "nullable": true,
+              "type": "string"
+            },
+            "nextAction": {
+              "maxLength": 64,
+              "minLength": 1,
+              "nullable": true,
+              "type": "string"
+            },
             "paymentId": {
               "maxLength": 128,
+              "minLength": 1,
+              "nullable": true,
+              "type": "string"
+            },
+            "paymentMethod": {
+              "maxLength": 64,
+              "minLength": 1,
+              "nullable": true,
+              "type": "string"
+            },
+            "paymentProduct": {
+              "maxLength": 64,
+              "minLength": 1,
+              "nullable": true,
+              "type": "string"
+            },
+            "providerCode": {
+              "maxLength": 64,
               "minLength": 1,
               "nullable": true,
               "type": "string"
@@ -67317,6 +68206,7 @@
               "type": "string"
             },
             "qrCodePayload": {
+              "description": "Standard QR payload field for membership purchase checkout. When the purchase requires PC qr scanning, this value must be an http or https payment page URL.",
               "maxLength": 2048,
               "minLength": 1,
               "nullable": true,
@@ -67326,6 +68216,11 @@
               "maxLength": 128,
               "minLength": 1,
               "type": "string"
+            },
+            "requestPaymentPayload": {
+              "additionalProperties": true,
+              "nullable": true,
+              "type": "object"
             },
             "status": {
               "maxLength": 64,
@@ -67406,11 +68301,6 @@
               "format": "int64",
               "minimum": 1,
               "type": "integer"
-            },
-            "paymentMethod": {
-              "maxLength": 50,
-              "pattern": "^[\\x21-\\x7E]+$",
-              "type": "string"
             }
           },
           "required": [
@@ -67425,8 +68315,38 @@
           "additionalProperties": false,
           "name": "CommerceOperationResponse",
           "properties": {
+            "cashierUrl": {
+              "maxLength": 2048,
+              "minLength": 1,
+              "nullable": true,
+              "type": "string"
+            },
+            "nextAction": {
+              "maxLength": 64,
+              "minLength": 1,
+              "nullable": true,
+              "type": "string"
+            },
             "paymentId": {
               "maxLength": 128,
+              "minLength": 1,
+              "nullable": true,
+              "type": "string"
+            },
+            "paymentMethod": {
+              "maxLength": 64,
+              "minLength": 1,
+              "nullable": true,
+              "type": "string"
+            },
+            "paymentProduct": {
+              "maxLength": 64,
+              "minLength": 1,
+              "nullable": true,
+              "type": "string"
+            },
+            "providerCode": {
+              "maxLength": 64,
               "minLength": 1,
               "nullable": true,
               "type": "string"
@@ -67438,6 +68358,7 @@
               "type": "string"
             },
             "qrCodePayload": {
+              "description": "Standard QR payload field for membership purchase checkout. When the purchase requires PC qr scanning, this value must be an http or https payment page URL.",
               "maxLength": 2048,
               "minLength": 1,
               "nullable": true,
@@ -67447,6 +68368,11 @@
               "maxLength": 128,
               "minLength": 1,
               "type": "string"
+            },
+            "requestPaymentPayload": {
+              "additionalProperties": true,
+              "nullable": true,
+              "type": "object"
             },
             "status": {
               "maxLength": 64,
@@ -67931,30 +68857,28 @@
     },
     {
       "api_method": "POST",
-      "api_path": "/app/v3/api/recharges/orders",
+      "api_path": "/app/v3/api/recharges/orders/{orderId}/cancellations",
       "api_surface": "app",
-      "description": "Standard appbase commerce API for recharges.orders.create; no legacy billing compatibility route is exposed.",
+      "description": "Standard appbase commerce API for recharges.orders.cancel; no legacy billing compatibility route is exposed.",
       "file_targets": [],
       "idempotency_required": true,
-      "key": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-recharge/src/rechargeService.ts#appRechargesOrdersCreate",
+      "key": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-recharge/src/rechargeService.ts#appRechargesOrdersCancel",
       "kind": "create",
       "module": "console-recharge",
       "openapi_exposed": true,
-      "operation": "appRechargesOrdersCreate",
-      "operation_id": "recharges.orders.create",
-      "path_params": [],
+      "operation": "appRechargesOrdersCancel",
+      "operation_id": "recharges.orders.cancel",
+      "path_params": [
+        "orderId"
+      ],
       "query_parameters": [],
       "query_parameters_declared": false,
       "read_sources": [
-        "commerce_recharge_package",
-        "commerce_product_spu",
-        "commerce_product_sku",
         "commerce_order",
         "commerce_order_item",
         "commerce_payment_intent",
         "commerce_payment_attempt",
-        "commerce_account",
-        "commerce_account_ledger_entry"
+        "commerce_order_cancellation"
       ],
       "request_body_required": null,
       "request_id_header": false,
@@ -68023,6 +68947,178 @@
             "success",
             "requestNo",
             "status"
+          ],
+          "type": "object"
+        }
+      },
+      "route": "/console/recharge",
+      "route_scope": "console",
+      "sdk_api_prefix": "/app/v3/api",
+      "sdk_client": "SdkworkAppClient",
+      "sdk_domain": "commerce",
+      "sdk_family": "clawrouter-app-sdk",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-recharge/src/rechargeService.ts",
+      "summary": "Recharges Orders Cancel",
+      "tag": "commerce",
+      "write_tables": [
+        "commerce_order_cancellation",
+        "commerce_order_event",
+        "ops_audit_log"
+      ]
+    },
+    {
+      "api_method": "POST",
+      "api_path": "/app/v3/api/recharges/orders",
+      "api_surface": "app",
+      "description": "Standard appbase commerce API for recharges.orders.create; no legacy billing compatibility route is exposed.",
+      "file_targets": [],
+      "idempotency_required": true,
+      "key": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-recharge/src/rechargeService.ts#appRechargesOrdersCreate",
+      "kind": "create",
+      "module": "console-recharge",
+      "openapi_exposed": true,
+      "operation": "appRechargesOrdersCreate",
+      "operation_id": "recharges.orders.create",
+      "path_params": [],
+      "query_parameters": [],
+      "query_parameters_declared": false,
+      "read_sources": [
+        "commerce_recharge_package",
+        "commerce_product_spu",
+        "commerce_product_sku",
+        "commerce_order",
+        "commerce_order_item",
+        "commerce_payment_intent",
+        "commerce_payment_attempt",
+        "commerce_account",
+        "commerce_account_ledger_entry"
+      ],
+      "request_body_required": null,
+      "request_id_header": false,
+      "request_schema": {
+        "name": "CommerceRechargeOrderCreateRequest",
+        "schema": {
+          "additionalProperties": false,
+          "name": "CommerceRechargeOrderCreateRequest",
+          "properties": {
+            "amount": {
+              "pattern": "^\\d+(?:\\.\\d{1,2})?$",
+              "type": "string"
+            },
+            "clientRequestNo": {
+              "maxLength": 128,
+              "minLength": 1,
+              "type": "string"
+            },
+            "currencyCode": {
+              "maxLength": 16,
+              "minLength": 3,
+              "pattern": "^[A-Z0-9_-]+$",
+              "type": "string"
+            },
+            "packageId": {
+              "maxLength": 128,
+              "minLength": 1,
+              "type": "string"
+            },
+            "source": {
+              "maxLength": 64,
+              "minLength": 1,
+              "type": "string"
+            }
+          },
+          "required": [
+            "amount",
+            "currencyCode",
+            "source"
+          ],
+          "type": "object"
+        }
+      },
+      "response_schema": {
+        "name": "CommerceRechargeOrderCreateResponse",
+        "schema": {
+          "additionalProperties": false,
+          "name": "CommerceRechargeOrderCreateResponse",
+          "properties": {
+            "amount": {
+              "pattern": "^\\d+(?:\\.\\d{1,2})?$",
+              "type": "string"
+            },
+            "cashierUrl": {
+              "maxLength": 2048,
+              "minLength": 1,
+              "type": "string"
+            },
+            "currencyCode": {
+              "maxLength": 16,
+              "minLength": 3,
+              "pattern": "^[A-Z0-9_-]+$",
+              "type": "string"
+            },
+            "nextAction": {
+              "maxLength": 64,
+              "minLength": 1,
+              "type": "string"
+            },
+            "orderNo": {
+              "maxLength": 128,
+              "minLength": 1,
+              "type": "string"
+            },
+            "paymentMethod": {
+              "description": "Standardized payment method code for portal consumption. Prefer business-facing values such as wechat, alipay, or card.",
+              "maxLength": 50,
+              "minLength": 1,
+              "type": "string"
+            },
+            "paymentProduct": {
+              "maxLength": 64,
+              "minLength": 1,
+              "type": "string"
+            },
+            "points": {
+              "format": "int64",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "providerCode": {
+              "maxLength": 64,
+              "minLength": 1,
+              "type": "string"
+            },
+            "qrCodePayload": {
+              "maxLength": 2048,
+              "minLength": 1,
+              "type": "string"
+            },
+            "requestPaymentPayload": {
+              "additionalProperties": true,
+              "nullable": true,
+              "type": "object"
+            },
+            "status": {
+              "maxLength": 64,
+              "minLength": 1,
+              "type": "string"
+            },
+            "success": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "success",
+            "orderNo",
+            "amount",
+            "currencyCode",
+            "points",
+            "providerCode",
+            "paymentMethod",
+            "paymentProduct",
+            "status",
+            "nextAction",
+            "cashierUrl",
+            "qrCodePayload"
           ],
           "type": "object"
         }
@@ -68105,23 +69201,56 @@
       "request_body_required": null,
       "request_id_header": false,
       "response_schema": {
-        "name": "CommerceStandardCollectionResponse",
+        "name": "CommerceRechargePackageListResponse",
         "schema": {
           "additionalProperties": false,
-          "name": "CommerceStandardCollectionResponse",
+          "name": "CommerceRechargePackageListResponse",
           "properties": {
             "items": {
               "items": {
                 "additionalProperties": false,
+                "name": "CommerceRechargePackageItem",
                 "properties": {
-                  "createdAt": {
-                    "maxLength": 64,
-                    "nullable": true,
+                  "bonusPoints": {
+                    "format": "int64",
+                    "minimum": 0,
+                    "type": "integer"
+                  },
+                  "currencyCode": {
+                    "maxLength": 16,
+                    "minLength": 3,
+                    "pattern": "^[A-Z0-9_-]+$",
                     "type": "string"
+                  },
+                  "grantAmount": {
+                    "format": "int64",
+                    "minimum": 0,
+                    "type": "integer"
                   },
                   "id": {
                     "maxLength": 128,
                     "minLength": 1,
+                    "type": "string"
+                  },
+                  "name": {
+                    "maxLength": 256,
+                    "type": "string"
+                  },
+                  "packageNo": {
+                    "maxLength": 128,
+                    "type": "string"
+                  },
+                  "points": {
+                    "format": "int64",
+                    "minimum": 0,
+                    "type": "integer"
+                  },
+                  "priceAmount": {
+                    "pattern": "^\\d+(?:\\.\\d{1,2})?$",
+                    "type": "string"
+                  },
+                  "skuId": {
+                    "maxLength": 128,
                     "type": "string"
                   },
                   "status": {
@@ -68136,34 +69265,20 @@
                   }
                 },
                 "required": [
-                  "id"
+                  "id",
+                  "priceAmount",
+                  "currencyCode",
+                  "bonusPoints",
+                  "grantAmount",
+                  "points"
                 ],
                 "type": "object"
               },
               "type": "array"
-            },
-            "page": {
-              "format": "int64",
-              "minimum": 1,
-              "type": "integer"
-            },
-            "pageSize": {
-              "format": "int64",
-              "maximum": 200,
-              "minimum": 1,
-              "type": "integer"
-            },
-            "total": {
-              "format": "int64",
-              "minimum": 0,
-              "type": "integer"
             }
           },
           "required": [
-            "items",
-            "total",
-            "page",
-            "pageSize"
+            "items"
           ],
           "type": "object"
         }
@@ -68178,6 +69293,131 @@
       "summary": "Recharges Packages List",
       "tag": "commerce",
       "write_tables": []
+    },
+    {
+      "api_method": "GET",
+      "api_path": "/app/v3/api/recharges/settings",
+      "api_surface": "app",
+      "description": "Returns the standard cash-to-points recharge settings, including base CNY points ratio, currency-to-CNY rates, and preview examples.",
+      "file_targets": [],
+      "idempotency_required": false,
+      "key": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-recharge/src/rechargeService.ts#appRechargesSettingsRetrieve",
+      "kind": "read",
+      "module": "console-recharge",
+      "openapi_exposed": true,
+      "operation": "appRechargesSettingsRetrieve",
+      "operation_id": "recharges.settings.retrieve",
+      "path_params": [],
+      "query_parameters": [],
+      "query_parameters_declared": true,
+      "read_sources": [
+        "commerce_exchange_rule",
+        "commerce_recharge_package"
+      ],
+      "request_body_required": null,
+      "request_id_header": false,
+      "response_schema": {
+        "name": "CommerceRechargeSettingsResponse",
+        "schema": {
+          "additionalProperties": false,
+          "name": "CommerceRechargeSettingsResponse",
+          "properties": {
+            "baseCurrencyCode": {
+              "maxLength": 16,
+              "minLength": 3,
+              "pattern": "^[A-Z0-9_-]+$",
+              "type": "string"
+            },
+            "basePointsPerCny": {
+              "pattern": "^\\d+(?:\\.\\d{1,6})?$",
+              "type": "string"
+            },
+            "currencyToCnyRates": {
+              "additionalProperties": {
+                "pattern": "^\\d+(?:\\.\\d{1,6})?$",
+                "type": "string"
+              },
+              "type": "object"
+            },
+            "previewExamples": {
+              "additionalProperties": {
+                "additionalProperties": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "grantAmount": {
+                      "format": "int64",
+                      "minimum": 0,
+                      "type": "integer"
+                    }
+                  },
+                  "required": [
+                    "grantAmount"
+                  ],
+                  "type": "object"
+                },
+                "type": "object"
+              },
+              "type": "object"
+            }
+          },
+          "required": [
+            "baseCurrencyCode",
+            "basePointsPerCny",
+            "currencyToCnyRates"
+          ],
+          "type": "object"
+        }
+      },
+      "route": "/console/recharge",
+      "route_scope": "console",
+      "sdk_api_prefix": "/app/v3/api",
+      "sdk_client": "SdkworkAppClient",
+      "sdk_domain": "commerce",
+      "sdk_family": "clawrouter-app-sdk",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-recharge/src/rechargeService.ts",
+      "summary": "Recharges Settings Retrieve",
+      "tag": "commerce",
+      "write_tables": []
+    },
+    {
+      "api_method": "POST",
+      "api_path": "/app/v3/api/recharges/orders/{orderId}/cancellations",
+      "api_surface": "app",
+      "file_targets": [],
+      "idempotency_required": true,
+      "key": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-recharge/src/rechargeService.ts#cancelRechargeOrder",
+      "kind": "create",
+      "module": "console-recharge",
+      "openapi_exposed": false,
+      "operation": "cancelRechargeOrder",
+      "operation_id": "console.rechargeOrders.cancel",
+      "path_params": [
+        "orderId"
+      ],
+      "query_parameters": [],
+      "query_parameters_declared": false,
+      "read_sources": [
+        "commerce_order",
+        "commerce_order_item",
+        "commerce_payment_intent",
+        "commerce_payment_attempt",
+        "commerce_order_cancellation"
+      ],
+      "request_body_required": null,
+      "request_id_header": false,
+      "route": "/console/recharge",
+      "route_scope": "console",
+      "sdk_api_prefix": "/app/v3/api",
+      "sdk_client": "SdkworkAppClient",
+      "sdk_domain": "commerce",
+      "sdk_family": "clawrouter-app-sdk",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-recharge/src/rechargeService.ts",
+      "tag": "commerce",
+      "write_tables": [
+        "commerce_order_cancellation",
+        "commerce_order_event",
+        "ops_audit_log"
+      ]
     },
     {
       "api_method": "GET",
@@ -68260,6 +69500,37 @@
         "commerce_recharge_package",
         "commerce_product_spu",
         "commerce_product_sku"
+      ],
+      "request_body_required": null,
+      "request_id_header": false,
+      "route": "/console/recharge",
+      "route_scope": "console",
+      "sdk_api_prefix": "/app/v3/api",
+      "sdk_client": "SdkworkAppClient",
+      "sdk_domain": "commerce",
+      "sdk_family": "clawrouter-app-sdk",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-recharge/src/rechargeService.ts",
+      "tag": "commerce",
+      "write_tables": []
+    },
+    {
+      "api_method": "GET",
+      "api_path": "/app/v3/api/recharges/settings",
+      "api_surface": "app",
+      "file_targets": [],
+      "idempotency_required": false,
+      "key": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-recharge/src/rechargeService.ts#fetchRechargeSettings",
+      "kind": "read",
+      "module": "console-recharge",
+      "openapi_exposed": false,
+      "operation": "fetchRechargeSettings",
+      "operation_id": "console.rechargeSettings.retrieve",
+      "path_params": [],
+      "query_parameters": [],
+      "query_parameters_declared": false,
+      "read_sources": [
+        "commerce_exchange_rule",
+        "commerce_recharge_package"
       ],
       "request_body_required": null,
       "request_id_header": false,
@@ -94638,24 +95909,24 @@
   "summary": {
     "api_method_counts": {
       "DELETE": 47,
-      "GET": 295,
+      "GET": 300,
       "PATCH": 33,
-      "POST": 182,
-      "PUT": 30
+      "POST": 184,
+      "PUT": 32
     },
     "api_surface_counts": {
-      "app": 228,
-      "backend": 359
+      "app": 232,
+      "backend": 364
     },
-    "operation_count": 587,
+    "operation_count": 596,
     "route_scope_counts": {
-      "admin": 359,
-      "console": 105,
+      "admin": 364,
+      "console": 109,
       "public": 123
     },
     "sdk_client_counts": {
-      "SdkworkAppClient": 228,
-      "SdkworkBackendClient": 359
+      "SdkworkAppClient": 232,
+      "SdkworkBackendClient": 364
     }
   }
 }

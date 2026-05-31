@@ -178,9 +178,11 @@ test("console business services use standard membership, recharge, checkout, wal
         items: [
           {
             id: "pkg-100",
-            price_amount: "100.00",
-            points: 1000,
-            bonus: 100,
+            priceAmount: "100.00",
+            currencyCode: "USD",
+            bonusPoints: 100,
+            grantAmount: 7100,
+            points: 7100,
           },
         ],
       },
@@ -203,12 +205,13 @@ test("console business services use standard membership, recharge, checkout, wal
       },
     },
     async (captured) => {
-      const result = await RechargeService.submitRecharge("99.90", "wechat", "pkg-100");
+      const result = await RechargeService.submitRecharge("99.90", "USD", "wechat", "pkg-100");
 
       assert.deepEqual(result, { success: true, orderNo: "recharge-order-1" });
       assert.equal(requestPath(captured[0]?.url), "/app/v3/api/recharges/orders");
       assert.equal(captured[0]?.method, "POST");
       assert.match(captured[0]?.body ?? "", /console-recharge/);
+      assert.match(captured[0]?.body ?? "", /USD/);
       assert.match(captured[0]?.body ?? "", /wechat/);
     },
   );
@@ -274,7 +277,6 @@ test("console business services use standard membership, recharge, checkout, wal
       assert.equal(captured[0]?.method, "POST");
       assert.deepEqual(JSON.parse(captured[0]?.body ?? "{}"), {
         packageId: 1,
-        paymentMethod: "wechat",
       });
     },
   );
@@ -449,6 +451,46 @@ test("admin commerce packages are split by product, inventory, order, payment, m
       assert.doesNotMatch(serviceSource, /recharges\.packages\.list/);
       assert.doesNotMatch(serviceSource, /backendRechargesPackagesList/);
     }
+  }
+});
+
+test("admin orders center uses server pagination and exposes common row actions", () => {
+  const viewSource = readPortalFile("./packages/sdkwork-claw-router-admin-orders/src/index.tsx");
+  const serviceSource = readPortalFile("./packages/sdkwork-claw-router-admin-orders/src/ordersService.ts");
+  const resourceCenterSource = readPortalFile("./packages/sdkwork-claw-router-commons/src/components/AdminResourceCenter.tsx");
+  const i18nSource = readPortalFile("./packages/sdkwork-claw-router-i18n/src/resources/admin-commerce/orders.ts");
+
+  assert.match(viewSource, /load:\s*\(params\)\s*=>\s*backendOrdersList\(params\)/);
+  assert.doesNotMatch(viewSource, /backendOrdersList\(DEFAULT_PAGE_PARAMS\)/);
+  assert.match(viewSource, /pagination:\s*\{\s*initialPageSize:\s*50\s*\}/);
+  assert.match(viewSource, /rowActions:\s*\[/);
+  assert.match(viewSource, /label:\s*t\('admin\.commerce\.orders\.actions\.view', 'View'\)/);
+  assert.match(viewSource, /label:\s*t\('admin\.commerce\.orders\.actions\.cancel', 'Cancel order'\)/);
+  assert.match(viewSource, /isDisabled:\s*\(record\)\s*=>\s*!canCancelOrderRecord\(record\)/);
+  assert.match(viewSource, /cancelled_at/);
+  assert.match(viewSource, /pending_payment/);
+
+  assert.match(resourceCenterSource, /import \{ BottomPagination \} from '\.\/BottomPagination'/);
+  assert.match(resourceCenterSource, /export type AdminResourcePagination/);
+  assert.match(resourceCenterSource, /readAdminResourceCollectionMeta/);
+  assert.match(resourceCenterSource, /section\.load\(section\.pagination \? pageState : undefined\)/);
+  assert.match(resourceCenterSource, /footer=\{paginationFooter\}/);
+  assert.match(resourceCenterSource, /recordRowActions/);
+  assert.match(resourceCenterSource, /className="m-5 mt-4 min-h-0 flex-1 rounded-xl"/);
+  assert.match(resourceCenterSource, /disabled=\{actionDisabled\}/);
+
+  assert.match(serviceSource, /backendOrdersList\(params\?: Parameters<BackendCommerce\['orders'\]\['list'\]>\[0\]\)/);
+  assert.doesNotMatch(serviceSource, /\bfetch\s*\(|axios|XMLHttpRequest/);
+
+  for (const key of [
+    "admin.commerce.orders.actions.view",
+    "admin.commerce.orders.actions.cancel",
+    "admin.commerce.orders.actions.cancelUnavailable",
+    "admin.commerce.orders.pagination.showing",
+    "admin.commerce.orders.pagination.page",
+    "admin.commerce.orders.pagination.pageSize",
+  ]) {
+    assert.match(i18nSource, new RegExp(`"${escapeRegExp(key)}"`));
   }
 });
 
@@ -665,7 +707,7 @@ function checkoutStatusResponse(): Record<string, unknown> {
     expiresAt: "2026-05-21T00:15:00Z",
     paidAt: "",
     nextAction: "scan_qr",
-    qrCodePayload: "weixin://wxpay/bizpayurl?pr=recharge-order-1",
+    qrCodePayload: "https://pay.example.com/cashier/recharge-order-1",
   };
 }
 

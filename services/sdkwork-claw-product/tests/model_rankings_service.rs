@@ -1,6 +1,6 @@
-use std::sync::atomic::{AtomicI64, Ordering};
+use std::sync::atomic::{AtomicI64, AtomicU64, Ordering};
 use std::sync::{Arc, Mutex};
-use std::time::Duration;
+use std::time::{Duration, Instant};
 
 use sdkwork_claw_product::application::ModelRankingsService;
 use sdkwork_claw_product::domain::DomainResult;
@@ -13,10 +13,38 @@ use sdkwork_claw_product::ports::{
     ModelRankingsReadStore, ModelRankingsSnapshot, ModelRankingsSource, ModelRankingsSubject,
 };
 
+#[derive(Clone)]
+struct ManualClock {
+    origin: Instant,
+    elapsed_millis: Arc<AtomicU64>,
+}
+
+impl ManualClock {
+    fn new() -> Self {
+        Self {
+            origin: Instant::now(),
+            elapsed_millis: Arc::new(AtomicU64::new(0)),
+        }
+    }
+
+    fn now(&self) -> Instant {
+        self.origin + Duration::from_millis(self.elapsed_millis.load(Ordering::Relaxed))
+    }
+
+    fn advance(&self, duration: Duration) {
+        let delta = duration.as_millis().min(u128::from(u64::MAX)) as u64;
+        self.elapsed_millis.fetch_add(delta, Ordering::Relaxed);
+    }
+}
+
 #[tokio::test]
 async fn model_rankings_service_respects_snapshot_cache_max_age_before_fallback_ttl() {
     let store = Arc::new(CountingModelRankingsReadStore::new(1));
-    let service = ModelRankingsService::with_fallback_ttl_seconds(store.clone(), 30);
+    let clock = ManualClock::new();
+    let service = ModelRankingsService::with_fallback_ttl_seconds_and_clock(store.clone(), 30, {
+        let clock = clock.clone();
+        move || clock.now()
+    });
     let query = ModelRankingsQuery {
         limit: 200,
         ..ModelRankingsQuery::default()
@@ -26,7 +54,7 @@ async fn model_rankings_service_respects_snapshot_cache_max_age_before_fallback_
         .load_model_rankings(query.clone(), None)
         .await
         .unwrap();
-    tokio::time::sleep(Duration::from_millis(1_100)).await;
+    clock.advance(Duration::from_millis(1_100));
     let second = service.load_model_rankings(query, None).await.unwrap();
 
     assert_eq!("snapshot-1", first.source.observed_at);

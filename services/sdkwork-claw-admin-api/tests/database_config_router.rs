@@ -5,7 +5,7 @@ use axum::routing::post;
 use axum::{Json, Router};
 use sdkwork_claw_config::{
     ApiKeySecurityConfig, AppSessionConfig, DatabaseConfig, ProviderSecretMapConfig,
-    TrustedSubjectConfig,
+    StartupInstallMode, TrustedSubjectConfig,
 };
 use sdkwork_claw_http::TrustedRequestSubject;
 use sdkwork_claw_test_support::{
@@ -36,7 +36,7 @@ struct CapturedProviderHealthProbe {
 async fn database_config_router_uses_sqlite_catalog_for_backend_model_list() {
     let catalog = seeded_sqlite_catalog().await.unwrap();
 
-    let router = sdkwork_claw_admin_api::router_with_database_and_api_key_config(
+    let router = configured_router_from_database_config(
         catalog.database_config().unwrap(),
         Some(catalog.api_key_security_config().unwrap()),
         Some(trusted_subject_config()),
@@ -76,11 +76,13 @@ async fn database_config_router_uses_sqlite_catalog_for_backend_model_list() {
         .await
         .unwrap();
 
-    assert_eq!(StatusCode::OK, response.status());
+    let status = response.status();
     let body = axum::body::to_bytes(response.into_body(), usize::MAX)
         .await
         .unwrap();
-    let payload: serde_json::Value = serde_json::from_slice(&body).unwrap();
+    let body_text = String::from_utf8(body.to_vec()).unwrap();
+    assert_eq!(StatusCode::OK, status, "{body_text}");
+    let payload: serde_json::Value = serde_json::from_str(&body_text).unwrap();
 
     assert_eq!("2000", payload["code"]);
     let item = &payload["data"]["items"][0];
@@ -89,25 +91,27 @@ async fn database_config_router_uses_sqlite_catalog_for_backend_model_list() {
         .as_str()
         .is_some_and(|value| !value.is_empty()));
     assert_eq!("openai", item["vendorCode"]);
-    assert_eq!("gpt-5.5-pro", item["model"]);
-    assert_eq!("GPT-5.5 Pro", item["displayName"]);
-    assert_eq!("GPT-5.5 Pro", item["name"]);
+    assert_eq!("gpt-4o-mini", item["model"]);
+    assert_eq!("GPT-4o mini", item["displayName"]);
+    assert_eq!("GPT-4o mini", item["name"]);
     assert_eq!("Chat", item["type"]);
-    assert_eq!("15.000000", item["priceIn"]);
-    assert_eq!("120.000000", item["priceOut"]);
+    assert_eq!("0.150000", item["priceIn"]);
+    assert_eq!("0.600000", item["priceOut"]);
     assert_eq!("active", item["status"]);
     assert_eq!("0", item["calls"]);
-    assert_eq!(1_050_000, item["contextTokens"]);
+    assert_eq!(128_000, item["contextTokens"]);
     assert!(item.get("priceAvailability").is_none());
     let items = payload["data"]["items"].as_array().unwrap();
-    assert!(items.iter().any(|item| item["model"] == "claude-opus-4-7"));
+    assert!(items
+        .iter()
+        .any(|item| item["model"] == "text-embedding-3-small"));
 }
 
 #[tokio::test]
 async fn database_config_router_requires_admin_subject_for_backend_model_management() {
     let catalog = seeded_sqlite_catalog().await.unwrap();
 
-    let router = sdkwork_claw_admin_api::router_with_database_and_api_key_config(
+    let router = configured_router_from_database_config(
         catalog.database_config().unwrap(),
         Some(catalog.api_key_security_config().unwrap()),
         Some(trusted_subject_config()),
@@ -145,16 +149,18 @@ async fn database_config_router_requires_admin_subject_for_backend_model_managem
         .await
         .unwrap();
 
-    assert_eq!(StatusCode::OK, response.status());
+    let status = response.status();
     let body = axum::body::to_bytes(response.into_body(), usize::MAX)
         .await
         .unwrap();
-    let payload: serde_json::Value = serde_json::from_slice(&body).unwrap();
+    let body_text = String::from_utf8(body.to_vec()).unwrap();
+    assert_eq!(StatusCode::OK, status, "{body_text}");
+    let payload: serde_json::Value = serde_json::from_str(&body_text).unwrap();
 
     assert_eq!("2000", payload["code"]);
-    assert_eq!("gpt-5.5-pro", payload["data"]["items"][0]["model"]);
-    assert_eq!("GPT-5.5 Pro", payload["data"]["items"][0]["displayName"]);
-    assert_eq!("GPT-5.5 Pro", payload["data"]["items"][0]["name"]);
+    assert_eq!("gpt-4o-mini", payload["data"]["items"][0]["model"]);
+    assert_eq!("GPT-4o mini", payload["data"]["items"][0]["displayName"]);
+    assert_eq!("GPT-4o mini", payload["data"]["items"][0]["name"]);
     assert_eq!("Chat", payload["data"]["items"][0]["type"]);
     assert!(payload["data"]["items"][0]
         .get("priceAvailability")
@@ -165,7 +171,7 @@ async fn database_config_router_requires_admin_subject_for_backend_model_managem
 async fn database_config_router_rejects_regular_user_session_for_backend_admin_routes() {
     let catalog = seeded_sqlite_catalog().await.unwrap();
 
-    let router = sdkwork_claw_admin_api::router_with_database_and_api_key_config(
+    let router = configured_router_from_database_config(
         catalog.database_config().unwrap(),
         Some(catalog.api_key_security_config().unwrap()),
         Some(trusted_subject_config()),
@@ -202,7 +208,7 @@ async fn database_config_router_serves_signed_subject_model_catalog_commands() {
     seed_catalog(&pool).await;
     pool.close().await;
 
-    let router = sdkwork_claw_admin_api::router_with_database_and_api_key_config(
+    let router = configured_router_from_database_config(
         DatabaseConfig::from_url_with_max_connections(database_url.as_str(), 1).unwrap(),
         Some(api_key_security_config()),
         Some(trusted_subject_config()),
@@ -299,7 +305,7 @@ async fn database_config_router_serves_signed_subject_model_catalog_commands() {
 async fn database_config_router_rejects_missing_api_key_pepper_for_runtime_catalog() {
     let catalog = seeded_sqlite_catalog().await.unwrap();
 
-    let error = sdkwork_claw_admin_api::router_with_database_and_api_key_config(
+    let error = configured_router_from_database_config(
         catalog.database_config().unwrap(),
         None,
         Some(trusted_subject_config()),
@@ -317,7 +323,7 @@ async fn database_config_router_rejects_missing_api_key_pepper_for_runtime_catal
 async fn database_config_router_rejects_missing_trusted_subject_secret_for_runtime_catalog() {
     let catalog = seeded_sqlite_catalog().await.unwrap();
 
-    let error = sdkwork_claw_admin_api::router_with_database_and_api_key_config(
+    let error = configured_router_from_database_config(
         catalog.database_config().unwrap(),
         Some(catalog.api_key_security_config().unwrap()),
         None,
@@ -339,7 +345,7 @@ async fn database_config_router_serves_backend_auth_settings() {
     seed_catalog(&pool).await;
     pool.close().await;
 
-    let router = sdkwork_claw_admin_api::router_with_database_and_api_key_config(
+    let router = configured_router_from_database_config(
         DatabaseConfig::from_url_with_max_connections(database_url.as_str(), 1).unwrap(),
         Some(api_key_security_config()),
         Some(trusted_subject_config()),
@@ -458,7 +464,7 @@ async fn database_config_router_rejects_empty_backend_auth_setting_method_lists(
     seed_catalog(&pool).await;
     pool.close().await;
 
-    let router = sdkwork_claw_admin_api::router_with_database_and_api_key_config(
+    let router = configured_router_from_database_config(
         DatabaseConfig::from_url_with_max_connections(database_url.as_str(), 1).unwrap(),
         Some(api_key_security_config()),
         Some(trusted_subject_config()),
@@ -499,7 +505,7 @@ async fn database_config_router_normalizes_backend_auth_setting_cross_field_poli
     seed_catalog(&pool).await;
     pool.close().await;
 
-    let router = sdkwork_claw_admin_api::router_with_database_and_api_key_config(
+    let router = configured_router_from_database_config(
         DatabaseConfig::from_url_with_max_connections(database_url.as_str(), 1).unwrap(),
         Some(api_key_security_config()),
         Some(trusted_subject_config()),
@@ -583,7 +589,7 @@ async fn database_config_router_serves_signed_subject_announcement_crud() {
     seed_catalog(&pool).await;
     pool.close().await;
 
-    let router = sdkwork_claw_admin_api::router_with_database_and_api_key_config(
+    let router = configured_router_from_database_config(
         DatabaseConfig::from_url_with_max_connections(database_url.as_str(), 1).unwrap(),
         Some(api_key_security_config()),
         Some(trusted_subject_config()),
@@ -622,13 +628,13 @@ async fn database_config_router_serves_signed_subject_announcement_crud() {
         ))
         .await
         .unwrap();
-    assert_eq!(StatusCode::OK, update_response.status());
-    let update_payload: serde_json::Value = serde_json::from_slice(
-        &axum::body::to_bytes(update_response.into_body(), usize::MAX)
-            .await
-            .unwrap(),
-    )
-    .unwrap();
+    let update_status = update_response.status();
+    let update_body = axum::body::to_bytes(update_response.into_body(), usize::MAX)
+        .await
+        .unwrap();
+    let update_body_text = String::from_utf8(update_body.to_vec()).unwrap();
+    assert_eq!(StatusCode::OK, update_status, "{update_body_text}");
+    let update_payload: serde_json::Value = serde_json::from_str(&update_body_text).unwrap();
     assert_eq!("published", update_payload["data"]["item"]["status"]);
     assert_eq!("vip", update_payload["data"]["item"]["target"]);
 
@@ -677,7 +683,7 @@ async fn database_config_router_does_not_expose_admin_notification_management() 
     seed_catalog(&pool).await;
     pool.close().await;
 
-    let router = sdkwork_claw_admin_api::router_with_database_and_api_key_config(
+    let router = configured_router_from_database_config(
         DatabaseConfig::from_url_with_max_connections(database_url.as_str(), 1).unwrap(),
         Some(api_key_security_config()),
         Some(trusted_subject_config()),
@@ -717,7 +723,7 @@ async fn database_config_router_serves_signed_subject_channel_crud() {
     seed_catalog(&pool).await;
     pool.close().await;
 
-    let router = sdkwork_claw_admin_api::router_with_database_and_api_key_config(
+    let router = configured_router_from_database_config(
         DatabaseConfig::from_url_with_max_connections(database_url.as_str(), 1).unwrap(),
         Some(api_key_security_config()),
         Some(trusted_subject_config()),
@@ -771,13 +777,13 @@ async fn database_config_router_serves_signed_subject_channel_crud() {
         ))
         .await
         .unwrap();
-    assert_eq!(StatusCode::OK, update_response.status());
-    let update_payload: serde_json::Value = serde_json::from_slice(
-        &axum::body::to_bytes(update_response.into_body(), usize::MAX)
-            .await
-            .unwrap(),
-    )
-    .unwrap();
+    let update_status = update_response.status();
+    let update_body = axum::body::to_bytes(update_response.into_body(), usize::MAX)
+        .await
+        .unwrap();
+    let update_body_text = String::from_utf8(update_body.to_vec()).unwrap();
+    assert_eq!(StatusCode::OK, update_status, "{update_body_text}");
+    let update_payload: serde_json::Value = serde_json::from_str(&update_body_text).unwrap();
     assert_eq!("disabled", update_payload["data"]["item"]["status"]);
     assert_eq!(25, update_payload["data"]["item"]["weight"]);
     assert_eq!(120_000, update_payload["data"]["item"]["timeoutMs"]);
@@ -1139,7 +1145,7 @@ async fn database_config_router_serves_signed_subject_provider_secret_crud_witho
     seed_catalog(&pool).await;
     pool.close().await;
 
-    let router = sdkwork_claw_admin_api::router_with_database_and_api_key_config(
+    let router = configured_router_from_database_config(
         DatabaseConfig::from_url_with_max_connections(database_url.as_str(), 1).unwrap(),
         Some(api_key_security_config()),
         Some(trusted_subject_config()),
@@ -1185,13 +1191,13 @@ async fn database_config_router_serves_signed_subject_provider_secret_crud_witho
         ))
         .await
         .unwrap();
-    assert_eq!(StatusCode::OK, update_response.status());
-    let update_payload: serde_json::Value = serde_json::from_slice(
-        &axum::body::to_bytes(update_response.into_body(), usize::MAX)
-            .await
-            .unwrap(),
-    )
-    .unwrap();
+    let update_status = update_response.status();
+    let update_body = axum::body::to_bytes(update_response.into_body(), usize::MAX)
+        .await
+        .unwrap();
+    let update_body_text = String::from_utf8(update_body.to_vec()).unwrap();
+    assert_eq!(StatusCode::OK, update_status, "{update_body_text}");
+    let update_payload: serde_json::Value = serde_json::from_str(&update_body_text).unwrap();
     assert_eq!("OpenAI rotated", update_payload["data"]["item"]["name"]);
     assert_eq!(
         "ref:***rotated",
@@ -1246,7 +1252,7 @@ async fn database_config_router_serves_signed_subject_access_group_crud() {
     pool.close().await;
     let expected_create_name = format!("{} enterprise", "\u{4e2d}\u{6587}");
 
-    let router = sdkwork_claw_admin_api::router_with_database_and_api_key_config(
+    let router = configured_router_from_database_config(
         DatabaseConfig::from_url_with_max_connections(database_url.as_str(), 1).unwrap(),
         Some(api_key_security_config()),
         Some(trusted_subject_config()),
@@ -1297,13 +1303,13 @@ async fn database_config_router_serves_signed_subject_access_group_crud() {
         ))
         .await
         .unwrap();
-    assert_eq!(StatusCode::OK, update_response.status());
-    let update_payload: serde_json::Value = serde_json::from_slice(
-        &axum::body::to_bytes(update_response.into_body(), usize::MAX)
-            .await
-            .unwrap(),
-    )
-    .unwrap();
+    let update_status = update_response.status();
+    let update_body = axum::body::to_bytes(update_response.into_body(), usize::MAX)
+        .await
+        .unwrap();
+    let update_body_text = String::from_utf8(update_body.to_vec()).unwrap();
+    assert_eq!(StatusCode::OK, update_status, "{update_body_text}");
+    let update_payload: serde_json::Value = serde_json::from_str(&update_body_text).unwrap();
     assert_eq!("OpenAI dedicated", update_payload["data"]["item"]["name"]);
     assert_eq!(1.5, update_payload["data"]["item"]["rateMultiplier"]);
     assert_eq!(750.0, update_payload["data"]["item"]["capacity"]["total"]);
@@ -1384,7 +1390,7 @@ async fn database_config_router_serves_signed_subject_ip_rate_limit_create_and_l
     pool.close().await;
     let expected_name = format!("{} crawler guard", "\u{4e2d}\u{6587}");
 
-    let router = sdkwork_claw_admin_api::router_with_database_and_api_key_config(
+    let router = configured_router_from_database_config(
         DatabaseConfig::from_url_with_max_connections(database_url.as_str(), 1).unwrap(),
         Some(api_key_security_config()),
         Some(trusted_subject_config()),
@@ -1509,7 +1515,7 @@ async fn database_config_router_serves_signed_subject_api_key_rate_limit_create_
     seed_catalog(&pool).await;
     pool.close().await;
 
-    let router = sdkwork_claw_admin_api::router_with_database_and_api_key_config(
+    let router = configured_router_from_database_config(
         DatabaseConfig::from_url_with_max_connections(database_url.as_str(), 1).unwrap(),
         Some(api_key_security_config()),
         Some(trusted_subject_config()),
@@ -1570,7 +1576,7 @@ async fn database_config_router_serves_signed_subject_model_rate_limit_create_an
     seed_catalog(&pool).await;
     pool.close().await;
 
-    let router = sdkwork_claw_admin_api::router_with_database_and_api_key_config(
+    let router = configured_router_from_database_config(
         DatabaseConfig::from_url_with_max_connections(database_url.as_str(), 1).unwrap(),
         Some(api_key_security_config()),
         Some(trusted_subject_config()),
@@ -1635,7 +1641,7 @@ async fn database_config_router_serves_signed_subject_firewall_rule_crud() {
     pool.close().await;
     let expected_reason = format!("{} crawler source", "\u{4e2d}\u{6587}");
 
-    let router = sdkwork_claw_admin_api::router_with_database_and_api_key_config(
+    let router = configured_router_from_database_config(
         DatabaseConfig::from_url_with_max_connections(database_url.as_str(), 1).unwrap(),
         Some(api_key_security_config()),
         Some(trusted_subject_config()),
@@ -1803,7 +1809,7 @@ async fn database_config_router_serves_backend_sdk_contract_aliases() {
     seed_admin_marketing(&pool).await;
     pool.close().await;
 
-    let router = sdkwork_claw_admin_api::router_with_database_and_api_key_config(
+    let router = configured_router_from_database_config(
         DatabaseConfig::from_url_with_max_connections(database_url.as_str(), 1).unwrap(),
         Some(api_key_security_config()),
         Some(trusted_subject_config()),
@@ -1880,7 +1886,7 @@ async fn database_config_router_serves_signed_subject_admin_dashboard_overview()
     seed_admin_record(&pool).await;
     pool.close().await;
 
-    let router = sdkwork_claw_admin_api::router_with_database_and_api_key_config(
+    let router = configured_router_from_database_config(
         DatabaseConfig::from_url_with_max_connections(database_url.as_str(), 1).unwrap(),
         Some(api_key_security_config()),
         Some(trusted_subject_config()),
@@ -1945,7 +1951,7 @@ async fn database_config_router_serves_signed_subject_monitor_reads() {
     seed_monitoring(&pool).await;
     pool.close().await;
 
-    let router = sdkwork_claw_admin_api::router_with_database_and_api_key_config(
+    let router = configured_router_from_database_config(
         DatabaseConfig::from_url_with_max_connections(database_url.as_str(), 1).unwrap(),
         Some(api_key_security_config()),
         Some(trusted_subject_config()),
@@ -2034,7 +2040,7 @@ async fn database_config_router_serves_signed_subject_admin_user_management() {
     seed_admin_users(&pool).await;
     pool.close().await;
 
-    let router = sdkwork_claw_admin_api::router_with_database_and_api_key_config(
+    let router = configured_router_from_database_config(
         DatabaseConfig::from_url_with_max_connections(database_url.as_str(), 1).unwrap(),
         Some(api_key_security_config()),
         Some(trusted_subject_config()),
@@ -2138,7 +2144,7 @@ async fn database_config_router_serves_signed_subject_admin_marketing() {
     seed_admin_marketing(&pool).await;
     pool.close().await;
 
-    let router = sdkwork_claw_admin_api::router_with_database_and_api_key_config(
+    let router = configured_router_from_database_config(
         DatabaseConfig::from_url_with_max_connections(database_url.as_str(), 1).unwrap(),
         Some(api_key_security_config()),
         Some(trusted_subject_config()),
@@ -2287,10 +2293,38 @@ async fn database_config_router_serves_signed_subject_admin_marketing() {
     .await;
     assert_eq!(
         "10.00",
-        recharge_packages_payload["data"]["items"][0]["rmb"]
+        recharge_packages_payload["data"]["items"][0]["priceAmount"]
     );
-    assert_eq!(25, recharge_packages_payload["data"]["items"][0]["bonus"]);
+    assert_eq!(
+        "CNY",
+        recharge_packages_payload["data"]["items"][0]["currencyCode"]
+    );
+    assert_eq!(
+        25,
+        recharge_packages_payload["data"]["items"][0]["bonusPoints"]
+    );
+    assert_eq!(
+        125,
+        recharge_packages_payload["data"]["items"][0]["grantAmount"]
+    );
     assert_eq!(125, recharge_packages_payload["data"]["items"][0]["points"]);
+
+    let recharge_settings_payload = request_json(
+        router.clone(),
+        signed_request("GET", "/backend/v3/api/recharges/settings", Body::empty()),
+    )
+    .await;
+    assert_eq!("2000", recharge_settings_payload["code"]);
+    assert_eq!("CNY", recharge_settings_payload["data"]["baseCurrencyCode"]);
+    assert_eq!("10", recharge_settings_payload["data"]["basePointsPerCny"]);
+    assert_eq!(
+        "1",
+        recharge_settings_payload["data"]["currencyToCnyRates"]["CNY"]
+    );
+    assert_eq!(
+        "7",
+        recharge_settings_payload["data"]["currencyToCnyRates"]["USD"]
+    );
 
     let exchange_rules_payload = request_json(
         router.clone(),
@@ -2460,41 +2494,80 @@ async fn database_config_router_serves_signed_subject_admin_marketing() {
         signed_request(
             "POST",
             "/backend/v3/api/recharges/packages",
-            Body::from(r#"{"rmb":"12.00","bonus":30,"status":"active"}"#),
+            Body::from(
+                r#"{"priceAmount":"12.00","currencyCode":"CNY","bonusPoints":30,"status":"active"}"#,
+            ),
         ),
     )
     .await;
     assert_eq!(
         "12.00",
-        create_recharge_package_payload["data"]["item"]["rmb"]
+        create_recharge_package_payload["data"]["item"]["priceAmount"]
     );
-    assert_eq!(30, create_recharge_package_payload["data"]["item"]["bonus"]);
+    assert_eq!(
+        "CNY",
+        create_recharge_package_payload["data"]["item"]["currencyCode"]
+    );
+    assert_eq!(
+        30,
+        create_recharge_package_payload["data"]["item"]["bonusPoints"]
+    );
     assert_eq!(
         150,
-        create_recharge_package_payload["data"]["item"]["points"]
+        create_recharge_package_payload["data"]["item"]["grantAmount"]
     );
     let new_recharge_package_id = create_recharge_package_payload["data"]["item"]["id"]
         .as_str()
         .unwrap()
         .to_owned();
 
+    let update_recharge_settings_payload = request_json(
+        router.clone(),
+        signed_request(
+            "PUT",
+            "/backend/v3/api/recharges/settings",
+            Body::from(
+                r#"{"baseCurrencyCode":"CNY","basePointsPerCny":"10","currencyToCnyRates":{"CNY":"1","USD":"7.5"}}"#,
+            ),
+        ),
+    )
+    .await;
+    assert_eq!("2000", update_recharge_settings_payload["code"]);
+    assert_eq!(
+        "10",
+        update_recharge_settings_payload["data"]["basePointsPerCny"]
+    );
+    assert_eq!(
+        "7.5",
+        update_recharge_settings_payload["data"]["currencyToCnyRates"]["USD"]
+    );
+
     let update_recharge_package_payload = request_json(
         router.clone(),
         signed_request(
             "PATCH",
             format!("/backend/v3/api/recharges/packages/{new_recharge_package_id}").as_str(),
-            Body::from(r#"{"rmb":"20.00","bonus":50,"status":"inactive"}"#),
+            Body::from(
+                r#"{"priceAmount":"20.00","currencyCode":"USD","bonusPoints":50,"status":"inactive"}"#,
+            ),
         ),
     )
     .await;
     assert_eq!(
         "20.00",
-        update_recharge_package_payload["data"]["item"]["rmb"]
+        update_recharge_package_payload["data"]["item"]["priceAmount"]
     );
-    assert_eq!(50, update_recharge_package_payload["data"]["item"]["bonus"]);
     assert_eq!(
-        250,
-        update_recharge_package_payload["data"]["item"]["points"]
+        "USD",
+        update_recharge_package_payload["data"]["item"]["currencyCode"]
+    );
+    assert_eq!(
+        50,
+        update_recharge_package_payload["data"]["item"]["bonusPoints"]
+    );
+    assert_eq!(
+        1550,
+        update_recharge_package_payload["data"]["item"]["grantAmount"]
     );
 
     let delete_recharge_package_payload = request_json(
@@ -2686,7 +2759,7 @@ async fn database_config_router_serves_signed_subject_admin_finance() {
     seed_admin_finance(&pool).await;
     pool.close().await;
 
-    let router = sdkwork_claw_admin_api::router_with_database_and_api_key_config(
+    let router = configured_router_from_database_config(
         DatabaseConfig::from_url_with_max_connections(database_url.as_str(), 1).unwrap(),
         Some(api_key_security_config()),
         Some(trusted_subject_config()),
@@ -2757,7 +2830,7 @@ async fn database_config_router_serves_signed_subject_admin_record() {
     seed_admin_record(&pool).await;
     pool.close().await;
 
-    let router = sdkwork_claw_admin_api::router_with_database_and_api_key_config(
+    let router = configured_router_from_database_config(
         DatabaseConfig::from_url_with_max_connections(database_url.as_str(), 1).unwrap(),
         Some(api_key_security_config()),
         Some(trusted_subject_config()),
@@ -2816,7 +2889,7 @@ async fn database_config_router_rejects_admin_record_when_trace_latency_is_missi
     seed_admin_record_missing_latency(&pool).await;
     pool.close().await;
 
-    let router = sdkwork_claw_admin_api::router_with_database_and_api_key_config(
+    let router = configured_router_from_database_config(
         DatabaseConfig::from_url_with_max_connections(database_url.as_str(), 1).unwrap(),
         Some(api_key_security_config()),
         Some(trusted_subject_config()),
@@ -3004,15 +3077,32 @@ async fn configured_router_with_provider_secret_map(
     database_url: &str,
     provider_secret_map_config: ProviderSecretMapConfig,
 ) -> axum::Router {
-    sdkwork_claw_admin_api::router_with_database_api_key_trusted_subject_app_session_and_provider_secret_map_config(
+    sdkwork_claw_admin_api::router_with_database_api_key_trusted_subject_app_session_provider_secret_map_config_and_startup_install_mode(
         DatabaseConfig::from_url_with_max_connections(database_url, 1).unwrap(),
         api_key_security_config(),
         trusted_subject_config(),
         app_session_config(),
         provider_secret_map_config,
+        StartupInstallMode::Skip,
     )
     .await
     .unwrap()
+}
+
+async fn configured_router_from_database_config(
+    config: DatabaseConfig,
+    api_key_config: Option<ApiKeySecurityConfig>,
+    trusted_subject_config: Option<TrustedSubjectConfig>,
+    app_session_config: Option<AppSessionConfig>,
+) -> Result<axum::Router, sdkwork_claw_admin_api::ProductCatalogRouterError> {
+    sdkwork_claw_admin_api::router_with_database_and_api_key_config_and_startup_install_mode(
+        config,
+        api_key_config,
+        trusted_subject_config,
+        app_session_config,
+        StartupInstallMode::Skip,
+    )
+    .await
 }
 
 fn app_session_request_builder(method: &str, path: &str) -> axum::http::request::Builder {
@@ -3030,11 +3120,13 @@ fn app_session_request_builder(method: &str, path: &str) -> axum::http::request:
 
 async fn request_json(router: axum::Router, request: Request<Body>) -> serde_json::Value {
     let response = router.oneshot(request).await.unwrap();
-    assert_eq!(StatusCode::OK, response.status());
+    let status = response.status();
     let body = axum::body::to_bytes(response.into_body(), usize::MAX)
         .await
         .unwrap();
-    serde_json::from_slice(&body).unwrap()
+    let body_text = String::from_utf8(body.to_vec()).unwrap();
+    assert_eq!(StatusCode::OK, status, "{body_text}");
+    serde_json::from_str(&body_text).unwrap()
 }
 
 async fn request_json_with_status(
@@ -3106,12 +3198,24 @@ async fn create_schema(pool: &SqlitePool) {
             metadata TEXT NOT NULL DEFAULT '{}',
             vendor_code TEXT NOT NULL,
             display_name TEXT NOT NULL,
+            legal_name TEXT,
             description TEXT,
+            website_url TEXT,
+            docs_url TEXT,
+            logo_url TEXT,
+            icon_url TEXT,
             color_token TEXT,
+            country_region TEXT,
+            vendor_type INTEGER,
+            model_families TEXT,
+            capabilities TEXT,
+            open_source INTEGER,
             status INTEGER NOT NULL,
             deleted_at TEXT,
+            deleted_by INTEGER,
             sort_order INTEGER NOT NULL
         )"#,
+        "CREATE UNIQUE INDEX uk_ai_model_vendor_tenant_code ON ai_model_vendor (tenant_id, organization_id, vendor_code)",
         r#"CREATE TABLE ai_model (
             id INTEGER PRIMARY KEY,
             uuid TEXT,
@@ -3170,6 +3274,7 @@ async fn create_schema(pool: &SqlitePool) {
             deleted_by INTEGER,
             rank_score TEXT
         )"#,
+        "CREATE UNIQUE INDEX uk_ai_model_catalog_key ON ai_model (tenant_id, organization_id, catalog_key)",
         r#"CREATE TABLE ai_provider (
             id INTEGER PRIMARY KEY,
             uuid TEXT NOT NULL DEFAULT 'seed-ai-provider',
@@ -3255,6 +3360,7 @@ async fn create_schema(pool: &SqlitePool) {
             circuit_breaker_policy TEXT,
             model_mode INTEGER,
             environment INTEGER,
+            region_code TEXT,
             capabilities TEXT,
             proxy_id INTEGER,
             upstream_balance_amount TEXT,
@@ -3263,6 +3369,7 @@ async fn create_schema(pool: &SqlitePool) {
             created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
             updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
             version INTEGER NOT NULL DEFAULT 0,
+            metadata TEXT NOT NULL DEFAULT '{}',
             deleted_at TEXT,
             deleted_by INTEGER,
             priority INTEGER NOT NULL,
@@ -3297,11 +3404,273 @@ async fn create_schema(pool: &SqlitePool) {
             effective_from TEXT,
             effective_to TEXT
         )"#,
+        r#"CREATE TABLE ai_modality (
+            id INTEGER PRIMARY KEY,
+            uuid TEXT NOT NULL,
+            tenant_id INTEGER NOT NULL DEFAULT 0,
+            organization_id INTEGER NOT NULL DEFAULT 0,
+            data_scope INTEGER NOT NULL DEFAULT 0,
+            status INTEGER NOT NULL DEFAULT 1,
+            created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+            updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+            version INTEGER NOT NULL DEFAULT 0,
+            deleted_at TEXT,
+            deleted_by INTEGER,
+            metadata TEXT NOT NULL DEFAULT '{}',
+            modality_code TEXT NOT NULL,
+            display_name TEXT NOT NULL,
+            modality_group TEXT,
+            description TEXT,
+            input_supported INTEGER,
+            output_supported INTEGER,
+            sort_order INTEGER
+        )"#,
+        "CREATE UNIQUE INDEX uk_ai_modality_tenant_code ON ai_modality (tenant_id, organization_id, modality_code)",
+        r#"CREATE TABLE ai_api_endpoint (
+            id INTEGER PRIMARY KEY,
+            uuid TEXT NOT NULL,
+            tenant_id INTEGER NOT NULL DEFAULT 0,
+            organization_id INTEGER NOT NULL DEFAULT 0,
+            data_scope INTEGER NOT NULL DEFAULT 0,
+            status INTEGER NOT NULL DEFAULT 1,
+            created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+            updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+            version INTEGER NOT NULL DEFAULT 0,
+            deleted_at TEXT,
+            deleted_by INTEGER,
+            metadata TEXT NOT NULL DEFAULT '{}',
+            endpoint_code TEXT NOT NULL,
+            protocol_code TEXT NOT NULL,
+            display_name TEXT,
+            method TEXT,
+            path_template TEXT NOT NULL,
+            request_schema TEXT,
+            response_schema TEXT,
+            streaming_supported INTEGER,
+            sort_order INTEGER
+        )"#,
+        "CREATE UNIQUE INDEX uk_ai_api_endpoint_tenant_code ON ai_api_endpoint (tenant_id, organization_id, endpoint_code)",
+        r#"CREATE TABLE ai_vendor_modality (
+            id INTEGER PRIMARY KEY,
+            uuid TEXT NOT NULL,
+            tenant_id INTEGER NOT NULL DEFAULT 0,
+            organization_id INTEGER NOT NULL DEFAULT 0,
+            data_scope INTEGER NOT NULL DEFAULT 0,
+            status INTEGER NOT NULL DEFAULT 1,
+            created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+            updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+            version INTEGER NOT NULL DEFAULT 0,
+            deleted_at TEXT,
+            deleted_by INTEGER,
+            metadata TEXT NOT NULL DEFAULT '{}',
+            vendor_id INTEGER,
+            vendor_code TEXT NOT NULL,
+            modality_id INTEGER,
+            modality_code TEXT NOT NULL,
+            supported INTEGER,
+            sort_order INTEGER
+        )"#,
+        "CREATE UNIQUE INDEX uk_ai_vendor_modality ON ai_vendor_modality (tenant_id, organization_id, vendor_code, modality_code)",
+        r#"CREATE TABLE ai_vendor_api_endpoint (
+            id INTEGER PRIMARY KEY,
+            uuid TEXT NOT NULL,
+            tenant_id INTEGER NOT NULL DEFAULT 0,
+            organization_id INTEGER NOT NULL DEFAULT 0,
+            data_scope INTEGER NOT NULL DEFAULT 0,
+            status INTEGER NOT NULL DEFAULT 1,
+            created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+            updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+            version INTEGER NOT NULL DEFAULT 0,
+            deleted_at TEXT,
+            deleted_by INTEGER,
+            metadata TEXT NOT NULL DEFAULT '{}',
+            vendor_id INTEGER,
+            vendor_code TEXT NOT NULL,
+            api_endpoint_id INTEGER,
+            endpoint_code TEXT NOT NULL,
+            supported INTEGER,
+            sort_order INTEGER
+        )"#,
+        "CREATE UNIQUE INDEX uk_ai_vendor_api_endpoint ON ai_vendor_api_endpoint (tenant_id, organization_id, vendor_code, endpoint_code)",
+        r#"CREATE TABLE ai_modality_api_endpoint (
+            id INTEGER PRIMARY KEY,
+            uuid TEXT NOT NULL,
+            tenant_id INTEGER NOT NULL DEFAULT 0,
+            organization_id INTEGER NOT NULL DEFAULT 0,
+            data_scope INTEGER NOT NULL DEFAULT 0,
+            status INTEGER NOT NULL DEFAULT 1,
+            created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+            updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+            version INTEGER NOT NULL DEFAULT 0,
+            deleted_at TEXT,
+            deleted_by INTEGER,
+            metadata TEXT NOT NULL DEFAULT '{}',
+            modality_id INTEGER,
+            modality_code TEXT NOT NULL,
+            api_endpoint_id INTEGER,
+            endpoint_code TEXT NOT NULL,
+            supported INTEGER,
+            sort_order INTEGER
+        )"#,
+        "CREATE UNIQUE INDEX uk_ai_modality_api_endpoint ON ai_modality_api_endpoint (tenant_id, organization_id, modality_code, endpoint_code)",
+        r#"CREATE TABLE ai_model_modality (
+            id INTEGER PRIMARY KEY,
+            uuid TEXT NOT NULL,
+            tenant_id INTEGER NOT NULL DEFAULT 0,
+            organization_id INTEGER NOT NULL DEFAULT 0,
+            data_scope INTEGER NOT NULL DEFAULT 0,
+            status INTEGER NOT NULL DEFAULT 1,
+            created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+            updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+            version INTEGER NOT NULL DEFAULT 0,
+            deleted_at TEXT,
+            deleted_by INTEGER,
+            metadata TEXT NOT NULL DEFAULT '{}',
+            model_id INTEGER,
+            catalog_key TEXT NOT NULL,
+            model TEXT,
+            vendor_code TEXT,
+            modality_id INTEGER,
+            modality_code TEXT NOT NULL,
+            direction TEXT,
+            supported INTEGER,
+            sort_order INTEGER
+        )"#,
+        "CREATE UNIQUE INDEX uk_ai_model_modality ON ai_model_modality (tenant_id, organization_id, catalog_key, modality_code, direction)",
+        r#"CREATE TABLE ai_model_api_endpoint (
+            id INTEGER PRIMARY KEY,
+            uuid TEXT NOT NULL,
+            tenant_id INTEGER NOT NULL DEFAULT 0,
+            organization_id INTEGER NOT NULL DEFAULT 0,
+            data_scope INTEGER NOT NULL DEFAULT 0,
+            status INTEGER NOT NULL DEFAULT 1,
+            created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+            updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+            version INTEGER NOT NULL DEFAULT 0,
+            deleted_at TEXT,
+            deleted_by INTEGER,
+            metadata TEXT NOT NULL DEFAULT '{}',
+            model_id INTEGER,
+            catalog_key TEXT NOT NULL,
+            model TEXT,
+            vendor_code TEXT,
+            api_endpoint_id INTEGER,
+            endpoint_code TEXT NOT NULL,
+            provider_native_model TEXT,
+            default_parameters TEXT,
+            supports_streaming INTEGER,
+            supported INTEGER,
+            sort_order INTEGER
+        )"#,
+        "CREATE UNIQUE INDEX uk_ai_model_api_endpoint ON ai_model_api_endpoint (tenant_id, organization_id, catalog_key, endpoint_code)",
+        r#"CREATE TABLE ai_model_family (
+            id INTEGER PRIMARY KEY,
+            uuid TEXT NOT NULL,
+            tenant_id INTEGER NOT NULL DEFAULT 0,
+            organization_id INTEGER NOT NULL DEFAULT 0,
+            data_scope INTEGER NOT NULL DEFAULT 0,
+            status INTEGER NOT NULL DEFAULT 1,
+            created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+            updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+            version INTEGER NOT NULL DEFAULT 0,
+            deleted_at TEXT,
+            deleted_by INTEGER,
+            metadata TEXT NOT NULL DEFAULT '{}',
+            vendor_id INTEGER,
+            vendor_code TEXT NOT NULL,
+            family_code TEXT NOT NULL,
+            display_name TEXT,
+            description TEXT,
+            docs_url TEXT,
+            icon_url TEXT,
+            color_token TEXT,
+            family_type INTEGER,
+            primary_modality INTEGER,
+            model_count INTEGER,
+            default_model_id INTEGER,
+            default_model TEXT,
+            sort_order INTEGER
+        )"#,
+        "CREATE UNIQUE INDEX uk_ai_model_family_tenant_vendor_code ON ai_model_family (tenant_id, organization_id, vendor_code, family_code)",
+        r#"CREATE TABLE ai_routing_policy (
+            id INTEGER PRIMARY KEY,
+            uuid TEXT NOT NULL DEFAULT 'seed-routing-policy',
+            tenant_id INTEGER NOT NULL DEFAULT 10,
+            organization_id INTEGER NOT NULL DEFAULT 20,
+            data_scope INTEGER,
+            status INTEGER NOT NULL,
+            created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+            updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+            version INTEGER DEFAULT 0,
+            deleted_at TEXT,
+            deleted_by INTEGER,
+            metadata TEXT NOT NULL DEFAULT '{}',
+            policy_code TEXT,
+            name TEXT,
+            policy_scope INTEGER,
+            subject_id INTEGER,
+            capability INTEGER,
+            default_profile_id INTEGER,
+            fallback_mode INTEGER,
+            slo_latency_ms INTEGER,
+            slo_success_rate TEXT,
+            cost_ceiling TEXT,
+            currency TEXT
+        )"#,
+        r#"CREATE TABLE ai_routing_profile (
+            id INTEGER PRIMARY KEY,
+            uuid TEXT NOT NULL DEFAULT 'seed-routing-profile',
+            tenant_id INTEGER NOT NULL DEFAULT 10,
+            organization_id INTEGER NOT NULL DEFAULT 20,
+            data_scope INTEGER,
+            status INTEGER NOT NULL,
+            created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+            updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+            version INTEGER DEFAULT 0,
+            deleted_at TEXT,
+            deleted_by INTEGER,
+            metadata TEXT NOT NULL DEFAULT '{}',
+            policy_id INTEGER,
+            profile_version INTEGER,
+            profile_name TEXT,
+            release_status INTEGER,
+            traffic_percent TEXT,
+            config_hash TEXT,
+            published_at TEXT,
+            published_by INTEGER,
+            rollback_from_profile_id INTEGER
+        )"#,
+        r#"CREATE TABLE ai_routing_rule (
+            id INTEGER PRIMARY KEY,
+            uuid TEXT NOT NULL DEFAULT 'seed-routing-rule',
+            tenant_id INTEGER NOT NULL DEFAULT 10,
+            organization_id INTEGER NOT NULL DEFAULT 20,
+            data_scope INTEGER,
+            status INTEGER NOT NULL,
+            created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+            updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+            version INTEGER DEFAULT 0,
+            deleted_at TEXT,
+            deleted_by INTEGER,
+            metadata TEXT NOT NULL DEFAULT '{}',
+            profile_id INTEGER,
+            rule_code TEXT,
+            priority INTEGER,
+            match_expression TEXT,
+            target_model TEXT,
+            candidate_channels TEXT,
+            fallback_chain TEXT,
+            constraints TEXT,
+            rate_limit_policy_id INTEGER,
+            effective_from TEXT,
+            effective_to TEXT
+        )"#,
         r#"CREATE TABLE ai_resource (
             id INTEGER PRIMARY KEY,
             uuid TEXT,
             tenant_id INTEGER,
             organization_id INTEGER,
+            data_scope INTEGER NOT NULL DEFAULT 0,
             resource_code TEXT,
             resource_type TEXT,
             display_name TEXT,
@@ -3311,10 +3680,24 @@ async fn create_schema(pool: &SqlitePool) {
             model_code TEXT,
             catalog_key TEXT,
             model TEXT,
+            provider_native_model TEXT,
             status INTEGER NOT NULL,
+            created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+            updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+            version INTEGER NOT NULL DEFAULT 0,
             deleted_at TEXT,
+            deleted_by INTEGER,
+            metadata TEXT NOT NULL DEFAULT '{}',
+            vendor_id INTEGER,
+            modality_id INTEGER,
+            api_endpoint_id INTEGER,
+            model_id INTEGER,
+            resource_schema TEXT,
+            metadata_schema TEXT,
+            description TEXT,
             sort_order INTEGER
         )"#,
+        "CREATE UNIQUE INDEX uk_ai_resource_tenant_code ON ai_resource (tenant_id, organization_id, resource_code)",
         r#"CREATE TABLE ai_resource_group (
             id INTEGER PRIMARY KEY,
             uuid TEXT,
@@ -3326,6 +3709,28 @@ async fn create_schema(pool: &SqlitePool) {
             selection_mode TEXT,
             status INTEGER NOT NULL,
             deleted_at TEXT,
+            sort_order INTEGER
+        )"#,
+        r#"CREATE TABLE ai_resource_group_item (
+            id INTEGER PRIMARY KEY,
+            uuid TEXT,
+            tenant_id INTEGER NOT NULL DEFAULT 10,
+            organization_id INTEGER NOT NULL DEFAULT 20,
+            data_scope INTEGER,
+            status INTEGER NOT NULL,
+            created_at TEXT,
+            updated_at TEXT,
+            version INTEGER DEFAULT 0,
+            deleted_at TEXT,
+            deleted_by INTEGER,
+            resource_group_id INTEGER NOT NULL,
+            resource_group_code TEXT,
+            item_type TEXT NOT NULL,
+            resource_id INTEGER,
+            resource_code TEXT,
+            child_resource_group_id INTEGER,
+            child_resource_group_code TEXT,
+            item_role TEXT,
             sort_order INTEGER
         )"#,
         r#"CREATE TABLE ai_channel_resource (
@@ -3428,6 +3833,50 @@ async fn create_schema(pool: &SqlitePool) {
             updated_at TEXT,
             status INTEGER NOT NULL
         )"#,
+        r#"CREATE TABLE ai_config_version (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            uuid TEXT NOT NULL,
+            tenant_id INTEGER NOT NULL DEFAULT 0,
+            organization_id INTEGER NOT NULL DEFAULT 0,
+            data_scope INTEGER NOT NULL DEFAULT 0,
+            status INTEGER NOT NULL DEFAULT 1,
+            created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+            updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+            version INTEGER NOT NULL DEFAULT 0,
+            deleted_at TEXT,
+            deleted_by INTEGER,
+            metadata TEXT NOT NULL DEFAULT '{}',
+            config_scope TEXT NOT NULL,
+            config_version INTEGER NOT NULL DEFAULT 0,
+            changed_object_type TEXT,
+            changed_object_id INTEGER,
+            published_at TEXT
+        )"#,
+        "CREATE UNIQUE INDEX uk_ai_config_version_scope ON ai_config_version (tenant_id, organization_id, config_scope)",
+        r#"CREATE TABLE ai_config_change_event (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            uuid TEXT NOT NULL,
+            tenant_id INTEGER NOT NULL DEFAULT 0,
+            organization_id INTEGER NOT NULL DEFAULT 0,
+            user_id INTEGER,
+            request_id TEXT,
+            trace_id TEXT,
+            payload_hash TEXT,
+            status INTEGER NOT NULL DEFAULT 1,
+            created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+            retention_until TEXT,
+            legal_hold INTEGER NOT NULL DEFAULT 0,
+            metadata TEXT NOT NULL DEFAULT '{}',
+            config_scope TEXT NOT NULL,
+            changed_object_type TEXT,
+            changed_object_id INTEGER,
+            config_version INTEGER NOT NULL,
+            event_status TEXT NOT NULL DEFAULT 'pending',
+            event_payload TEXT,
+            published_at TEXT,
+            publish_attempts INTEGER NOT NULL DEFAULT 0,
+            last_error_message TEXT
+        )"#,
         r#"CREATE TABLE integration_provider_health_snapshot (
             id INTEGER PRIMARY KEY,
             uuid TEXT NOT NULL DEFAULT 'seed-health',
@@ -3504,8 +3953,10 @@ async fn create_schema(pool: &SqlitePool) {
             provider_model TEXT,
             endpoint TEXT,
             request_path TEXT,
+            http_method TEXT,
             http_status INTEGER,
             provider_error_code TEXT,
+            error_message_masked TEXT,
             error_type INTEGER,
             started_at TEXT,
             latency_ms INTEGER,
@@ -3720,34 +4171,36 @@ async fn create_schema(pool: &SqlitePool) {
             UNIQUE (tenant_id, coupon_no),
             UNIQUE (tenant_id, coupon_code)
         )"#,
-        r#"CREATE TABLE commerce_product (
+        r#"CREATE TABLE commerce_product_spu (
             id TEXT PRIMARY KEY,
             tenant_id TEXT NOT NULL,
             organization_id TEXT,
-            product_no TEXT NOT NULL,
+            spu_no TEXT NOT NULL,
             title TEXT NOT NULL,
             subtitle TEXT,
             description TEXT,
+            product_type TEXT NOT NULL,
             category_id TEXT,
-            status TEXT NOT NULL,
+            sales_status TEXT NOT NULL,
+            visible_surfaces TEXT NOT NULL,
             created_at TEXT NOT NULL,
             updated_at TEXT NOT NULL,
-            UNIQUE (tenant_id, product_no)
+            UNIQUE (tenant_id, spu_no)
         )"#,
-        r#"CREATE TABLE commerce_sku (
+        r#"CREATE TABLE commerce_product_sku (
             id TEXT PRIMARY KEY,
             tenant_id TEXT NOT NULL,
             organization_id TEXT,
-            product_id TEXT NOT NULL,
+            spu_id TEXT NOT NULL,
             sku_no TEXT NOT NULL,
             name TEXT NOT NULL,
             title TEXT NOT NULL,
             price_amount TEXT NOT NULL,
             original_price_amount TEXT,
             currency_code TEXT NOT NULL,
-            stock_quantity INTEGER NOT NULL DEFAULT 0,
-            sold_quantity INTEGER NOT NULL DEFAULT 0,
-            status TEXT NOT NULL,
+            delivery_mode TEXT NOT NULL,
+            inventory_tracking TEXT NOT NULL,
+            sales_status TEXT NOT NULL,
             spec_json TEXT,
             created_at TEXT NOT NULL,
             updated_at TEXT NOT NULL,
@@ -3994,6 +4447,40 @@ async fn create_schema(pool: &SqlitePool) {
             created_at TEXT NOT NULL,
             UNIQUE (tenant_id, user_id, role_id, organization_id)
         )"#,
+        r#"CREATE TABLE plus_app (
+            id INTEGER PRIMARY KEY,
+            uuid TEXT NOT NULL UNIQUE,
+            created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+            updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+            v INTEGER NOT NULL DEFAULT 0,
+            tenant_id INTEGER NOT NULL DEFAULT 0,
+            organization_id INTEGER NOT NULL DEFAULT 0,
+            data_scope INTEGER NOT NULL DEFAULT 0,
+            user_id INTEGER,
+            name TEXT NOT NULL,
+            icon TEXT,
+            resource_list TEXT,
+            project_id INTEGER,
+            description TEXT,
+            version TEXT,
+            icon_url TEXT,
+            access_url TEXT,
+            config TEXT NOT NULL DEFAULT '{}',
+            status INTEGER NOT NULL DEFAULT 1,
+            app_type TEXT,
+            platforms TEXT,
+            install_platforms TEXT,
+            install_skill TEXT,
+            install_config TEXT,
+            release_notes TEXT,
+            package_name TEXT,
+            bundle_id TEXT,
+            store_url TEXT,
+            download_url TEXT
+        )"#,
+        "CREATE INDEX idx_app_user_id ON plus_app (user_id)",
+        "CREATE INDEX idx_app_project_id ON plus_app (project_id)",
+        "CREATE INDEX idx_app_status ON plus_app (status)",
         r#"CREATE TABLE plus_order_worker_dispatch_profile (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             uuid TEXT NOT NULL UNIQUE,
@@ -4013,6 +4500,111 @@ async fn create_schema(pool: &SqlitePool) {
         "CREATE UNIQUE INDEX uk_order_worker_dispatch_profile_user_id ON plus_order_worker_dispatch_profile (user_id)",
         "CREATE INDEX idx_order_worker_dispatch_profile_enabled ON plus_order_worker_dispatch_profile (enabled)",
         "CREATE INDEX idx_order_worker_dispatch_profile_rating_level ON plus_order_worker_dispatch_profile (rating_level)",
+        r#"CREATE TABLE plus_category (
+            id INTEGER PRIMARY KEY,
+            uuid TEXT NOT NULL UNIQUE,
+            created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+            updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+            v INTEGER NOT NULL DEFAULT 0,
+            tenant_id INTEGER NOT NULL DEFAULT 0,
+            organization_id INTEGER NOT NULL DEFAULT 0,
+            data_scope INTEGER NOT NULL DEFAULT 0,
+            name TEXT NOT NULL,
+            description TEXT,
+            shop_id INTEGER,
+            type INTEGER NOT NULL,
+            group_name TEXT,
+            code TEXT,
+            tags TEXT NOT NULL DEFAULT '[]',
+            icon TEXT,
+            sort_weight INTEGER NOT NULL DEFAULT 0,
+            parent_id INTEGER,
+            path TEXT,
+            visible INTEGER NOT NULL DEFAULT 1,
+            status INTEGER NOT NULL DEFAULT 1
+        )"#,
+        r#"CREATE TABLE plus_agent_skill_package (
+            id INTEGER PRIMARY KEY,
+            uuid TEXT NOT NULL UNIQUE,
+            created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+            updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+            v INTEGER NOT NULL DEFAULT 0,
+            tenant_id INTEGER NOT NULL DEFAULT 0,
+            organization_id INTEGER NOT NULL DEFAULT 0,
+            data_scope INTEGER NOT NULL DEFAULT 0,
+            user_id INTEGER,
+            package_key TEXT NOT NULL,
+            name TEXT NOT NULL,
+            summary TEXT,
+            description TEXT,
+            icon TEXT,
+            cover_image TEXT,
+            category_id INTEGER,
+            enabled INTEGER NOT NULL DEFAULT 1,
+            featured INTEGER NOT NULL DEFAULT 0,
+            sort_weight INTEGER NOT NULL DEFAULT 0,
+            tags TEXT NOT NULL DEFAULT '[]',
+            latest_published_at TEXT
+        )"#,
+        "CREATE UNIQUE INDEX uk_plus_agent_skill_package_key ON plus_agent_skill_package (tenant_id, organization_id, package_key)",
+        "CREATE INDEX idx_plus_agent_skill_package_user ON plus_agent_skill_package (user_id)",
+        "CREATE INDEX idx_plus_agent_skill_package_category ON plus_agent_skill_package (category_id)",
+        "CREATE INDEX idx_plus_agent_skill_package_market ON plus_agent_skill_package (enabled, featured, sort_weight)",
+        r#"CREATE TABLE plus_agent_skill (
+            id INTEGER PRIMARY KEY,
+            uuid TEXT NOT NULL UNIQUE,
+            created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+            updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+            v INTEGER NOT NULL DEFAULT 0,
+            tenant_id INTEGER NOT NULL DEFAULT 0,
+            organization_id INTEGER NOT NULL DEFAULT 0,
+            data_scope INTEGER NOT NULL DEFAULT 0,
+            user_id INTEGER,
+            skill_key TEXT NOT NULL,
+            name TEXT NOT NULL,
+            summary TEXT,
+            description TEXT,
+            icon TEXT,
+            cover_image TEXT,
+            category_id INTEGER,
+            package_id INTEGER,
+            provider TEXT,
+            version TEXT,
+            version_name TEXT,
+            runtime TEXT,
+            entrypoint TEXT,
+            manifest_url TEXT,
+            repository_url TEXT,
+            homepage_url TEXT,
+            documentation_url TEXT,
+            license_name TEXT,
+            source_type TEXT NOT NULL,
+            market_status TEXT NOT NULL,
+            visibility TEXT NOT NULL,
+            review_status TEXT NOT NULL,
+            review_comment TEXT,
+            reviewed_by INTEGER,
+            reviewed_at TEXT,
+            builtin INTEGER NOT NULL DEFAULT 0,
+            is_builtin INTEGER NOT NULL DEFAULT 0,
+            enabled INTEGER NOT NULL DEFAULT 1,
+            featured INTEGER NOT NULL DEFAULT 0,
+            recommend_weight INTEGER NOT NULL DEFAULT 0,
+            price TEXT,
+            currency TEXT NOT NULL DEFAULT 'CNY',
+            install_count INTEGER NOT NULL DEFAULT 0,
+            rating_avg TEXT NOT NULL DEFAULT '0',
+            rating_count INTEGER NOT NULL DEFAULT 0,
+            tags TEXT NOT NULL DEFAULT '[]',
+            capabilities TEXT NOT NULL DEFAULT '[]',
+            config_schema TEXT NOT NULL DEFAULT '{}',
+            default_config TEXT NOT NULL DEFAULT '{}',
+            latest_published_at TEXT
+        )"#,
+        "CREATE UNIQUE INDEX uk_plus_agent_skill_key ON plus_agent_skill (tenant_id, organization_id, skill_key)",
+        "CREATE INDEX idx_plus_agent_skill_package ON plus_agent_skill (package_id)",
+        "CREATE INDEX idx_plus_agent_skill_category ON plus_agent_skill (category_id)",
+        "CREATE INDEX idx_plus_agent_skill_market ON plus_agent_skill (enabled, visibility, review_status, market_status, featured, recommend_weight)",
         r#"CREATE TABLE iam_user_login_event (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             uuid TEXT NOT NULL,
@@ -4069,11 +4661,17 @@ async fn create_schema(pool: &SqlitePool) {
             uuid TEXT,
             tenant_id INTEGER NOT NULL DEFAULT 0,
             organization_id INTEGER NOT NULL DEFAULT 0,
+            data_scope INTEGER NOT NULL DEFAULT 0,
+            created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+            updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+            version INTEGER NOT NULL DEFAULT 0,
+            deleted_by INTEGER,
+            metadata TEXT NOT NULL DEFAULT '{}',
             channel_group_id INTEGER NOT NULL,
             channel_id INTEGER NOT NULL,
-            priority INTEGER,
-            weight INTEGER,
-            enabled INTEGER,
+            priority INTEGER NOT NULL DEFAULT 100,
+            weight INTEGER NOT NULL DEFAULT 100,
+            enabled INTEGER NOT NULL DEFAULT 1,
             effective_from TEXT,
             effective_to TEXT,
             status INTEGER NOT NULL,
@@ -4084,6 +4682,12 @@ async fn create_schema(pool: &SqlitePool) {
             uuid TEXT,
             tenant_id INTEGER NOT NULL DEFAULT 0,
             organization_id INTEGER NOT NULL DEFAULT 0,
+            data_scope INTEGER NOT NULL DEFAULT 0,
+            created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+            updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+            version INTEGER NOT NULL DEFAULT 0,
+            deleted_by INTEGER,
+            metadata TEXT NOT NULL DEFAULT '{}',
             channel_group_id INTEGER NOT NULL,
             resource_id INTEGER,
             resource_code TEXT,
@@ -4091,9 +4695,15 @@ async fn create_schema(pool: &SqlitePool) {
             resource_group_code TEXT,
             grant_type TEXT NOT NULL DEFAULT 'allow',
             priority INTEGER,
+            effective_from TEXT,
+            effective_to TEXT,
             status INTEGER NOT NULL,
             deleted_at TEXT
         )"#,
+        "CREATE UNIQUE INDEX uk_ai_channel_group_member ON ai_channel_group_member (tenant_id, organization_id, channel_group_id, channel_id)",
+        "CREATE UNIQUE INDEX uk_ai_channel_group_resource ON ai_channel_group_resource (tenant_id, organization_id, channel_group_id, resource_code, resource_group_code)",
+        "CREATE UNIQUE INDEX uk_ai_channel_resource ON ai_channel_resource (tenant_id, organization_id, channel_id, resource_code, resource_group_code)",
+        "CREATE UNIQUE INDEX uk_ai_channel_vendor ON ai_channel_vendor (tenant_id, organization_id, channel_id, vendor_code)",
         r#"CREATE TABLE iam_gateway_api_key (
             id INTEGER PRIMARY KEY,
             uuid TEXT NOT NULL DEFAULT 'seed-api-key',
@@ -4179,6 +4789,8 @@ async fn create_schema(pool: &SqlitePool) {
             channel_group_id INTEGER NOT NULL,
             account_available_count INTEGER,
             account_total_count INTEGER,
+            channel_available_count INTEGER,
+            channel_total_count INTEGER,
             capacity_used TEXT,
             capacity_limit TEXT,
             usage_amount_today TEXT,
@@ -4187,6 +4799,19 @@ async fn create_schema(pool: &SqlitePool) {
             health_status INTEGER,
             created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
             status INTEGER NOT NULL
+        )"#,
+        r#"CREATE TABLE commerce_refund (
+            id TEXT PRIMARY KEY,
+            tenant_id TEXT NOT NULL,
+            payment_attempt_id TEXT NOT NULL,
+            refund_no TEXT NOT NULL,
+            amount TEXT NOT NULL,
+            status TEXT NOT NULL,
+            request_no TEXT NOT NULL,
+            idempotency_key TEXT NOT NULL,
+            created_at TEXT NOT NULL,
+            updated_at TEXT NOT NULL,
+            UNIQUE (tenant_id, refund_no)
         )"#,
         r#"CREATE TABLE iam_gateway_risk_rule (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -4265,18 +4890,74 @@ async fn create_schema(pool: &SqlitePool) {
             vendor_code TEXT,
             region_code TEXT,
             price_side INTEGER NOT NULL,
+            pricing_scope INTEGER NOT NULL DEFAULT 1,
+            billing_type INTEGER,
+            billing_mode INTEGER,
+            billing_meter_id INTEGER,
             billing_meter_code TEXT NOT NULL,
+            price_item_type INTEGER,
+            unit INTEGER,
+            unit_size TEXT,
+            metering_mode INTEGER,
+            quantity_source INTEGER,
+            minimum_quantity TEXT,
+            quantity_step TEXT,
+            included_quantity TEXT,
             unit_price TEXT NOT NULL,
             currency TEXT NOT NULL,
+            rounding_mode INTEGER,
+            min_charge_amount TEXT,
+            pricing_formula_mode INTEGER,
+            price_origin INTEGER,
+            reference_multiplier TEXT,
+            markup_amount TEXT,
+            price_version TEXT,
+            source_url TEXT,
+            observed_at TEXT,
             provider_code TEXT,
             channel_id INTEGER,
+            pricing_plan_id INTEGER,
             pricing_plan_code TEXT,
             status INTEGER NOT NULL,
             deleted_at TEXT,
+            deleted_by INTEGER,
             effective_from TEXT,
             effective_to TEXT,
             priority INTEGER NOT NULL
         )"#,
+        "CREATE UNIQUE INDEX uk_ai_model_pricing_uuid ON ai_model_pricing (uuid)",
+        r#"CREATE TABLE ai_billing_meter (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            uuid TEXT NOT NULL,
+            tenant_id INTEGER NOT NULL DEFAULT 0,
+            organization_id INTEGER NOT NULL DEFAULT 0,
+            data_scope INTEGER NOT NULL DEFAULT 0,
+            status INTEGER NOT NULL DEFAULT 1,
+            created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+            updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+            version INTEGER NOT NULL DEFAULT 0,
+            deleted_at TEXT,
+            deleted_by INTEGER,
+            metadata TEXT NOT NULL DEFAULT '{}',
+            meter_code TEXT NOT NULL,
+            display_name TEXT NOT NULL,
+            description TEXT,
+            modality INTEGER,
+            usage_type INTEGER,
+            billing_mode INTEGER NOT NULL,
+            default_unit INTEGER NOT NULL,
+            default_unit_size TEXT NOT NULL,
+            quantity_precision INTEGER,
+            quantity_source INTEGER,
+            aggregation_mode INTEGER,
+            result_selector TEXT,
+            supports_tier INTEGER,
+            supports_expression INTEGER,
+            allow_negative_quantity INTEGER,
+            canonical_price_item_type INTEGER,
+            sort_order INTEGER
+        )"#,
+        "CREATE UNIQUE INDEX uk_ai_billing_meter_tenant_code ON ai_billing_meter (tenant_id, organization_id, meter_code)",
         r#"CREATE TABLE ai_model_capability (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             uuid TEXT,
@@ -4289,7 +4970,9 @@ async fn create_schema(pool: &SqlitePool) {
             version INTEGER NOT NULL DEFAULT 0,
             metadata TEXT NOT NULL DEFAULT '{}',
             deleted_at TEXT,
+            deleted_by INTEGER,
             model_id INTEGER,
+            catalog_key TEXT,
             model TEXT,
             vendor_code TEXT,
             capability INTEGER,
@@ -4297,10 +4980,17 @@ async fn create_schema(pool: &SqlitePool) {
             modality INTEGER,
             input_modalities TEXT,
             output_modalities TEXT,
+            endpoint_formats TEXT,
+            parameter_name TEXT,
+            parameter_schema TEXT,
             supported INTEGER,
+            limit_unit TEXT,
+            limit_value TEXT,
             schema_version TEXT,
-            sort_order INTEGER
+            sort_order INTEGER,
+            description TEXT
         )"#,
+        "CREATE UNIQUE INDEX uk_ai_model_capability_uuid ON ai_model_capability (uuid)",
         r#"CREATE TABLE ai_pricing_import_snapshot (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             uuid TEXT NOT NULL,
@@ -4320,6 +5010,124 @@ async fn create_schema(pool: &SqlitePool) {
             rejected_count INTEGER,
             currency TEXT,
             observed_at TEXT
+        )"#,
+        r#"CREATE TABLE ai_model_rank_snapshot (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            uuid TEXT NOT NULL,
+            tenant_id INTEGER NOT NULL DEFAULT 0,
+            organization_id INTEGER NOT NULL DEFAULT 0,
+            source_type TEXT,
+            source_id INTEGER,
+            source_version INTEGER,
+            status INTEGER NOT NULL DEFAULT 1,
+            created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+            updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+            rebuild_version INTEGER NOT NULL DEFAULT 0,
+            metadata TEXT NOT NULL DEFAULT '{}',
+            snapshot_date TEXT,
+            snapshot_period INTEGER,
+            rank_scope TEXT,
+            model_id INTEGER,
+            catalog_key TEXT NOT NULL,
+            model TEXT,
+            vendor_code TEXT,
+            region_code TEXT NOT NULL,
+            vendor_name_snapshot TEXT,
+            provider_code TEXT,
+            modality INTEGER,
+            rank_no INTEGER,
+            previous_rank_no INTEGER,
+            base_volume INTEGER,
+            cost_indicator INTEGER,
+            context_size_text TEXT,
+            is_new INTEGER,
+            color_token TEXT,
+            pricing_text TEXT,
+            license_type INTEGER,
+            strengths TEXT,
+            request_count INTEGER,
+            token_count INTEGER,
+            cost_amount TEXT,
+            currency TEXT,
+            latency_p50_ms INTEGER,
+            latency_p95_ms INTEGER,
+            success_rate TEXT,
+            win_rate TEXT,
+            trend_score TEXT,
+            rank_payload TEXT
+        )"#,
+        "CREATE UNIQUE INDEX uk_ai_model_rank_snapshot_uuid ON ai_model_rank_snapshot (uuid)",
+        "CREATE UNIQUE INDEX uk_ai_model_rank_snapshot_scope_catalog_key ON ai_model_rank_snapshot (tenant_id, organization_id, snapshot_date, snapshot_period, rank_scope, vendor_code, region_code, catalog_key)",
+        "CREATE INDEX idx_ai_model_rank_snapshot_tenant_rank ON ai_model_rank_snapshot (tenant_id, organization_id, status, snapshot_date, snapshot_period, rank_scope, rank_no)",
+        r#"CREATE TABLE ai_model_catalog_source (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            uuid TEXT NOT NULL,
+            tenant_id INTEGER NOT NULL DEFAULT 0,
+            organization_id INTEGER NOT NULL DEFAULT 0,
+            data_scope INTEGER NOT NULL DEFAULT 0,
+            status INTEGER NOT NULL DEFAULT 1,
+            created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+            updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+            version INTEGER NOT NULL DEFAULT 0,
+            deleted_at TEXT,
+            deleted_by INTEGER,
+            metadata TEXT NOT NULL DEFAULT '{}',
+            source_code TEXT NOT NULL,
+            vendor_code TEXT,
+            region_code TEXT,
+            provider_code TEXT,
+            source_name TEXT NOT NULL,
+            source_url TEXT,
+            source_kind INTEGER NOT NULL,
+            trust_level INTEGER NOT NULL,
+            parser_kind TEXT NOT NULL,
+            refresh_interval_seconds INTEGER,
+            last_observed_at TEXT,
+            last_success_at TEXT,
+            catalog_version TEXT,
+            source_hash TEXT,
+            raw_payload_ref TEXT,
+            normalized_payload_hash TEXT,
+            schema_version TEXT,
+            error_message_masked TEXT
+        )"#,
+        "CREATE UNIQUE INDEX uk_ai_model_catalog_source_tenant_code ON ai_model_catalog_source (tenant_id, organization_id, source_code)",
+        r#"CREATE TABLE ai_model_catalog_sync_run (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            uuid TEXT NOT NULL,
+            tenant_id INTEGER NOT NULL DEFAULT 0,
+            organization_id INTEGER NOT NULL DEFAULT 0,
+            user_id INTEGER,
+            request_id TEXT,
+            trace_id TEXT,
+            payload_hash TEXT,
+            status INTEGER NOT NULL DEFAULT 1,
+            created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+            retention_until TEXT,
+            legal_hold INTEGER NOT NULL DEFAULT 0,
+            metadata TEXT NOT NULL DEFAULT '{}',
+            source_type TEXT,
+            source_id INTEGER,
+            source_version INTEGER,
+            source_code TEXT NOT NULL,
+            vendor_code TEXT,
+            region_code TEXT,
+            provider_code TEXT,
+            run_status INTEGER NOT NULL,
+            started_at TEXT NOT NULL,
+            finished_at TEXT,
+            observed_at TEXT,
+            catalog_version TEXT,
+            source_hash TEXT,
+            observed_vendor_count INTEGER,
+            observed_model_count INTEGER,
+            observed_meter_count INTEGER,
+            observed_price_count INTEGER,
+            accepted_count INTEGER,
+            rejected_count INTEGER,
+            skipped_count INTEGER,
+            change_summary TEXT,
+            error_message_masked TEXT
         )"#,
         r#"CREATE TABLE content_announcement (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -4589,18 +5397,39 @@ async fn create_schema(pool: &SqlitePool) {
 
 async fn seed_catalog(pool: &SqlitePool) {
     for statement in [
-        "INSERT INTO ai_model_vendor (id, vendor_code, display_name, status, sort_order) VALUES (1, 'openai', 'OpenAI', 1, 1)",
+        "INSERT INTO ai_model_vendor (id, tenant_id, organization_id, vendor_code, display_name, status, sort_order) VALUES (1, 10, 20, 'openai', 'OpenAI', 1, 1)",
         r#"INSERT INTO ai_model
             (id, catalog_key, model, display_name, vendor_code, capabilities, status, rank_score)
             VALUES (1, 'openai/gpt-4o-mini', 'gpt-4o-mini', 'GPT-4o mini', 'openai', '["chat"]', 1, '100.0')"#,
         "INSERT INTO ai_provider (id, tenant_id, organization_id, provider_code, default_vendor_code, provider_type, protocol_code, base_url, status) VALUES (2, 10, 20, 'openrouter', 'openai', 'relay_aggregator', 'openai_v1', 'http://provider-proxy.internal/openrouter-template', 1)",
         "INSERT INTO ai_channel (id, tenant_id, organization_id, provider_id, provider_code, channel_code, channel_name, channel_type, base_url, credential_ref, status, priority, weight, health_status) VALUES (3001, 10, 20, 2, 'openrouter', 'openrouter-main', 'OpenRouter Main', 'relay', 'http://provider-proxy.internal/openrouter', 'vault://providers/openrouter/account/main', 1, 10, 100, 1)",
         "INSERT INTO ai_channel_model (id, tenant_id, organization_id, catalog_key, model, channel_id, vendor_code, provider_model, provider_native_model, api_code, status) VALUES (1, 10, 20, 'openai/gpt-4o-mini', 'gpt-4o-mini', 3001, 'openai', 'gpt-4o-mini', 'gpt-4o-mini', 'openai.chat_completions', 1)",
+        r#"INSERT INTO ai_routing_profile
+            (id, uuid, tenant_id, organization_id, policy_id, profile_version, profile_name, release_status, traffic_percent, config_hash, status)
+            VALUES (9301, 'routing-profile-standard-group-admin-api-test', 10, 20, 9300, 1, 'Standard Group Profile', 2, '100.000000', 'standard-group-profile-hash', 1)"#,
+        r#"INSERT INTO ai_routing_policy
+            (id, uuid, tenant_id, organization_id, policy_code, name, policy_scope, subject_id, capability, default_profile_id, fallback_mode, status)
+            VALUES (9300, 'routing-policy-standard-group-admin-api-test', 10, 20, 'standard-group-policy', 'Standard Group Policy', 5, 10, NULL, 9301, 1, 1)"#,
+        r#"INSERT INTO ai_routing_rule
+            (id, uuid, tenant_id, organization_id, profile_id, rule_code, priority, match_expression, target_model, candidate_channels, fallback_chain, constraints, status)
+            VALUES (9302, 'routing-rule-standard-group-default-admin-api-test', 10, 20, 9301, 'standard-group-default', 1, '{"catalogKey":"*"}', NULL, '[{"channel_id":3001,"weight":100}]', '[]', '{}', 1)"#,
         "INSERT INTO ai_route_candidate (id, uuid, tenant_id, organization_id, channel_group_id, channel_id, provider_code, channel_type, vendor_code, api_code, model_code, catalog_key, region_code, priority, weight, health_status, status) VALUES (1, 'route-openrouter-gpt-4o-mini-chat', 10, 20, 10, 3001, 'openrouter', 'relay', 'openai', 'openai.chat_completions', 'gpt-4o-mini', 'openai/gpt-4o-mini', 'global', 1, 100, 1, 1)",
         "INSERT INTO ai_pricing_plan (id, plan_code, base_price_side, default_multiplier, default_markup_amount, currency, status, priority) VALUES (1, 'standard', 1, '1.200000', '0.000000', 'USD', 1, 1)",
         "INSERT INTO ai_channel_group (id, tenant_id, organization_id, group_code, group_name, provider_code, group_type, pricing_plan_code, billing_type, rate_multiplier, official_price_multiplier, status) VALUES (10, 10, 20, 'standard-group', 'Standard Group', 'openai', 2, 'standard', 1, '1.000000', '1.100000', 1)",
         "INSERT INTO ai_channel_group_member (id, tenant_id, organization_id, channel_group_id, channel_id, priority, weight, enabled, status) VALUES (600, 10, 20, 10, 3001, 1, 100, 1, 1)",
+        "INSERT INTO ai_channel_group_metric_snapshot (id, uuid, tenant_id, organization_id, provider_code, channel_group_id, account_available_count, account_total_count, channel_available_count, channel_total_count, capacity_used, capacity_limit, usage_amount_today, usage_amount_total, snapshot_at, health_status, status) VALUES (800, 'channel-group-metric-standard-admin-api-test', 10, 20, 'openrouter', 10, 1, 1, 1, 1, '37.500000', '1000.000000', '12.500000', '37.500000', '2026-04-29 00:00:00', 1, 1)",
+        "INSERT INTO ai_resource (id, uuid, tenant_id, organization_id, resource_code, resource_type, display_name, vendor_code, status, sort_order) VALUES (9101, 'resource-vendor-openai-admin-api-test', 10, 20, 'vendor.openai', 'vendor', 'OpenAI', 'openai', 1, 1)",
+        "INSERT INTO ai_resource (id, uuid, tenant_id, organization_id, resource_code, resource_type, display_name, modality_code, status, sort_order) VALUES (9102, 'resource-modality-llm-admin-api-test', 10, 20, 'modality.llm', 'modality', 'LLM', 'llm', 1, 2)",
+        "INSERT INTO ai_resource (id, uuid, tenant_id, organization_id, resource_code, resource_type, display_name, api_code, status, sort_order) VALUES (9103, 'resource-api-openai-chat-admin-api-test', 10, 20, 'api.openai.chat_completions', 'api_endpoint', 'OpenAI Chat Completions', 'openai.chat_completions', 1, 3)",
+        "INSERT INTO ai_resource (id, uuid, tenant_id, organization_id, resource_code, resource_type, display_name, vendor_code, modality_code, api_code, catalog_key, model, provider_native_model, status, sort_order) VALUES (9104, 'resource-model-openai-gpt-4o-mini-admin-api-test', 10, 20, 'model.openai.gpt-4o-mini.chat', 'model_api', 'GPT-4o mini Chat', 'openai', 'chat', 'openai.chat_completions', 'openai/gpt-4o-mini', 'gpt-4o-mini', 'gpt-4o-mini', 1, 4)",
+        "INSERT INTO ai_resource (id, uuid, tenant_id, organization_id, resource_code, resource_type, display_name, modality_code, status, sort_order) VALUES (9105, 'resource-modality-image-admin-api-test', 10, 20, 'modality.image', 'modality', 'Image', 'image', 1, 5)",
+        "INSERT INTO ai_resource_group (id, uuid, tenant_id, organization_id, group_code, group_name, group_type, selection_mode, status, sort_order) VALUES (9201, 'resource-group-openrouter-openai-admin-api-test', 10, 20, 'bundle.openrouter.openai.standard', 'OpenRouter OpenAI Standard', 'relay_bundle', 'manual', 1, 1)",
+        "INSERT INTO ai_resource_group_item (id, uuid, tenant_id, organization_id, resource_group_id, resource_group_code, item_type, resource_id, resource_code, item_role, status, sort_order) VALUES (9202, 'resource-group-item-openrouter-gpt-4o-mini-admin-api-test', 10, 20, 9201, 'bundle.openrouter.openai.standard', 'resource', 9104, 'model.openai.gpt-4o-mini.chat', 'include', 1, 1)",
+        "INSERT INTO ai_channel_resource (id, uuid, tenant_id, organization_id, channel_id, provider_code, channel_code, resource_group_id, resource_group_code, grant_type, priority, status) VALUES (9203, 'channel-resource-openrouter-openai-admin-api-test', 10, 20, 3001, 'openrouter', 'openrouter-main', 9201, 'bundle.openrouter.openai.standard', 'allow', 1, 1)",
+        "INSERT INTO ai_channel_group_resource (id, uuid, tenant_id, organization_id, channel_group_id, resource_group_id, resource_group_code, grant_type, priority, status) VALUES (9204, 'channel-group-resource-openrouter-openai-admin-api-test', 10, 20, 10, 9201, 'bundle.openrouter.openai.standard', 'allow', 1, 1)",
         "INSERT INTO iam_gateway_api_key (id, tenant_id, organization_id, user_id, channel_group_id, key_prefix, key_hash, idempotency_key, status) VALUES (100, 10, 20, 30, 10, 'sk-test', 'hash:sk-test', 'seed-api-key-100', 1)",
+        "INSERT INTO iam_user (id, tenant_id, username, display_name, email, phone, avatar_url, status, created_at, updated_at) VALUES ('1', '10', 'bootstrap-admin', 'Bootstrap Admin', 'bootstrap-admin@example.com', '', '', 'active', '2026-04-01 08:00:00', '2026-04-29 08:30:00')",
+        "INSERT INTO iam_organization_member (id, tenant_id, organization_id, user_id, role_code, status, joined_at, left_at, remark) VALUES ('member-1-admin', '10', '20', '1', 'admin', 'active', '2026-04-01 08:00:00', NULL, 'seed bootstrap admin membership')",
         "INSERT INTO ai_model_pricing (id, catalog_key, model, vendor_code, region_code, price_side, billing_meter_code, unit_price, currency, status, priority) VALUES (1, 'openai/gpt-4o-mini', 'gpt-4o-mini', 'openai', 'global', 1, 'llm_input_token', '0.150000', 'USD', 1, 1)",
         "INSERT INTO ai_model_pricing (id, catalog_key, model, vendor_code, region_code, price_side, billing_meter_code, unit_price, currency, provider_code, channel_id, status, priority) VALUES (2, 'openai/gpt-4o-mini', 'gpt-4o-mini', 'openai', 'global', 2, 'llm_input_token', '0.110000', 'USD', 'openrouter', 3001, 1, 1)",
     ] {
@@ -4662,12 +5491,12 @@ async fn seed_admin_marketing(pool: &SqlitePool) {
         r#"INSERT INTO commerce_payment_method
             (id, tenant_id, organization_id, method_key, display_name, provider, status, sort_weight, created_at, updated_at)
             VALUES ('payment-method-7', '10', '20', '7', 'provider-7', 'provider-7', 'active', 1, '2026-04-01 08:00:00', '2026-04-01 08:00:00')"#,
-        r#"INSERT INTO commerce_product
-            (id, tenant_id, organization_id, product_no, title, subtitle, description, category_id, status, created_at, updated_at)
-            VALUES ('recharge-product-10-20-801', '10', '20', 'recharge-product-801', 'Starter Recharge Pack', '', 'seed recharge product', 'recharge', 'active', '2026-04-29 10:00:00', '2026-04-29 10:00:00')"#,
-        r#"INSERT INTO commerce_sku
-            (id, tenant_id, organization_id, product_id, sku_no, name, title, price_amount, original_price_amount, currency_code, stock_quantity, sold_quantity, status, spec_json, created_at, updated_at)
-            VALUES ('recharge-sku-10-20-801', '10', '20', 'recharge-product-10-20-801', 'recharge-sku-801', 'Starter Recharge Pack', 'Starter Recharge Pack', '10.00', '10.00', 'CNY', 999999, 0, 'active', '{}', '2026-04-29 10:00:00', '2026-04-29 10:00:00')"#,
+        r#"INSERT INTO commerce_product_spu
+            (id, tenant_id, organization_id, spu_no, title, subtitle, description, product_type, category_id, sales_status, visible_surfaces, created_at, updated_at)
+            VALUES ('recharge-product-10-20-801', '10', '20', 'recharge-product-801', 'Starter Recharge Pack', '', 'seed recharge product', 'points_recharge', 'commerce-recharge', 'active', '["app","console","admin"]', '2026-04-29 10:00:00', '2026-04-29 10:00:00')"#,
+        r#"INSERT INTO commerce_product_sku
+            (id, tenant_id, organization_id, spu_id, sku_no, name, title, price_amount, original_price_amount, currency_code, delivery_mode, inventory_tracking, sales_status, spec_json, created_at, updated_at)
+            VALUES ('recharge-sku-10-20-801', '10', '20', 'recharge-product-10-20-801', 'recharge-sku-801', 'Starter Recharge Pack', 'Starter Recharge Pack', '10.00', '10.00', 'CNY', 'points_credit', 'untracked', 'active', '{}', '2026-04-29 10:00:00', '2026-04-29 10:00:00')"#,
         r#"INSERT INTO commerce_recharge_package
             (id, tenant_id, organization_id, external_id, package_no, sku_id, name, price_amount, currency_code, bonus_points, status, valid_from, valid_to, sort_weight, request_no, idempotency_key, created_at, updated_at)
             VALUES ('recharge-package-10-20-801', '10', '20', 801, 'recharge-package-801', 'recharge-sku-10-20-801', 'Starter Recharge Pack', '10.00', 'CNY', 25, 'active', NULL, NULL, 1, 'recharge-package-801', 'recharge-package-801', '2026-04-29 10:00:00', '2026-04-29 10:00:00')"#,

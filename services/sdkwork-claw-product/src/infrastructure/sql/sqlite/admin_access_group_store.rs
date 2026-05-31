@@ -4,6 +4,9 @@ use sha2::{Digest, Sha256};
 use sqlx::{Row, Sqlite, SqlitePool, Transaction};
 
 use crate::domain::{DomainError, DomainResult};
+use crate::infrastructure::sql::routing_config_change::{
+    record_sqlite_ai_routing_config_change, AiRoutingConfigChange,
+};
 use crate::ports::{
     AdminAccessGroupChannelBindingItem, AdminAccessGroupCommandFuture, AdminAccessGroupItem,
     AdminAccessGroupStore, CreateAdminAccessGroupCommand, DeleteAdminAccessGroupCommand,
@@ -109,6 +112,25 @@ impl AdminAccessGroupStore for SqliteAdminAccessGroupStore {
                 }),
             )
             .await?;
+            record_sqlite_ai_routing_config_change(
+                &mut tx,
+                access_group_routing_config_change(
+                    command.subject.tenant_id,
+                    command.subject.organization_id,
+                    command.subject.operator_id,
+                    &command.request_id,
+                    &command.requested_at,
+                    "create_access_group",
+                    id,
+                    serde_json::json!({
+                        "accessGroupId": id,
+                        "groupCode": &command.code,
+                        "groupType": &command.group_type,
+                        "status": &command.status
+                    }),
+                ),
+            )
+            .await?;
             let item = load_access_group_by_id(
                 &mut tx,
                 id,
@@ -139,6 +161,17 @@ impl AdminAccessGroupStore for SqliteAdminAccessGroupStore {
                     store_error("failed to commit access group transaction", error)
                 })?;
                 return Ok(None);
+            }
+            if let Some(status) = command.status.as_deref() {
+                sync_access_group_relationship_status(
+                    &mut tx,
+                    command.subject.tenant_id,
+                    command.subject.organization_id,
+                    command.group_id,
+                    status_code(status),
+                    &command.requested_at,
+                )
+                .await?;
             }
             if let Some(rate_multiplier) = command.rate_multiplier {
                 if let Some((pricing_plan_id, pricing_plan_code)) = find_group_pricing_plan(
@@ -216,6 +249,26 @@ impl AdminAccessGroupStore for SqliteAdminAccessGroupStore {
                 }),
             )
             .await?;
+            record_sqlite_ai_routing_config_change(
+                &mut tx,
+                access_group_routing_config_change(
+                    command.subject.tenant_id,
+                    command.subject.organization_id,
+                    command.subject.operator_id,
+                    &command.request_id,
+                    &command.requested_at,
+                    "update_access_group",
+                    command.group_id,
+                    serde_json::json!({
+                        "accessGroupId": command.group_id,
+                        "groupTypeChanged": command.group_type.is_some(),
+                        "capacityChanged": command.capacity_total.is_some(),
+                        "rateMultiplierChanged": command.rate_multiplier.is_some(),
+                        "statusChanged": command.status.is_some()
+                    }),
+                ),
+            )
+            .await?;
             let item = load_access_group_by_id(
                 &mut tx,
                 command.group_id,
@@ -273,6 +326,23 @@ impl AdminAccessGroupStore for SqliteAdminAccessGroupStore {
                         "action": "delete_access_group",
                         "accessGroupId": command.group_id
                     }),
+                )
+                .await?;
+                record_sqlite_ai_routing_config_change(
+                    &mut tx,
+                    access_group_routing_config_change(
+                        command.subject.tenant_id,
+                        command.subject.organization_id,
+                        command.subject.operator_id,
+                        &command.request_id,
+                        &command.requested_at,
+                        "delete_access_group",
+                        command.group_id,
+                        serde_json::json!({
+                            "accessGroupId": command.group_id,
+                            "deleted": true
+                        }),
+                    ),
                 )
                 .await?;
             }
@@ -336,6 +406,24 @@ impl AdminAccessGroupStore for SqliteAdminAccessGroupStore {
                 }),
             )
             .await?;
+            record_sqlite_ai_routing_config_change(
+                &mut tx,
+                access_group_routing_config_change(
+                    command.subject.tenant_id,
+                    command.subject.organization_id,
+                    command.subject.operator_id,
+                    &command.request_id,
+                    &command.requested_at,
+                    "replace_access_group_channel_bindings",
+                    command.group_id,
+                    serde_json::json!({
+                        "accessGroupId": command.group_id,
+                        "channelIds": items.iter().map(|item| item.channel_id).collect::<Vec<_>>(),
+                        "resourceBindingsChanged": true
+                    }),
+                ),
+            )
+            .await?;
             tx.commit().await.map_err(|error| {
                 store_error(
                     "failed to commit access group channel binding transaction",
@@ -376,6 +464,13 @@ async fn replace_channel_bindings(
     command: &ReplaceAdminAccessGroupChannelBindingsCommand,
 ) -> DomainResult<Vec<AdminAccessGroupChannelBindingItem>> {
     ensure_group_exists(
+        tx,
+        command.subject.tenant_id,
+        command.subject.organization_id,
+        command.group_id,
+    )
+    .await?;
+    let group_status = load_group_status(
         tx,
         command.subject.tenant_id,
         command.subject.organization_id,
@@ -466,12 +561,15 @@ async fn replace_channel_bindings(
             .get(index)
             .cloned()
             .unwrap_or_else(|| format!("group-channel-{}-{}", command.group_id, item.channel_id));
+        let requested_status = status_code(&item.status);
+        let persisted_status = relationship_status_for_group(group_status, requested_status);
+        let metadata = relationship_metadata_for_group(group_status, requested_status);
         sqlx::query(
             r#"
             INSERT INTO ai_channel_group_member
                 (uuid, tenant_id, organization_id, data_scope, status, created_at, updated_at, version, channel_group_id, channel_id, priority, weight, metadata)
             VALUES
-                (?, ?, ?, 1, ?, ?, ?, 0, ?, ?, ?, ?, '{}')
+                (?, ?, ?, 1, ?, ?, ?, 0, ?, ?, ?, ?, ?)
             ON CONFLICT(tenant_id, organization_id, channel_group_id, channel_id)
             DO UPDATE SET
                 status = excluded.status,
@@ -480,19 +578,21 @@ async fn replace_channel_bindings(
                 deleted_by = NULL,
                 version = COALESCE(ai_channel_group_member.version, 0) + 1,
                 priority = excluded.priority,
-                weight = excluded.weight
+                weight = excluded.weight,
+                metadata = excluded.metadata
             "#,
         )
         .bind(binding_uuid)
         .bind(command.subject.tenant_id)
         .bind(command.subject.organization_id)
-        .bind(status_code(&item.status))
+        .bind(persisted_status)
         .bind(&command.requested_at)
         .bind(&command.requested_at)
         .bind(command.group_id)
         .bind(item.channel_id)
         .bind(item.priority)
         .bind(item.weight)
+        .bind(metadata)
         .execute(&mut **tx)
         .await
         .map_err(|error| {
@@ -500,7 +600,7 @@ async fn replace_channel_bindings(
         })?;
     }
 
-    replace_group_resources(tx, command).await?;
+    replace_group_resources(tx, command, group_status).await?;
 
     list_channel_bindings_for_tx(tx, command).await
 }
@@ -527,6 +627,31 @@ async fn list_channel_bindings_for_tx(
     rows.into_iter()
         .map(channel_binding_item_from_row)
         .collect()
+}
+
+async fn load_group_status(
+    tx: &mut Transaction<'_, Sqlite>,
+    tenant_id: i64,
+    organization_id: i64,
+    group_id: i64,
+) -> DomainResult<i32> {
+    let status: i32 = sqlx::query_scalar(
+        r#"
+        SELECT status
+        FROM ai_channel_group
+        WHERE id = ?
+          AND tenant_id = ?
+          AND organization_id = ?
+          AND deleted_at IS NULL
+        "#,
+    )
+    .bind(group_id)
+    .bind(tenant_id)
+    .bind(organization_id)
+    .fetch_one(&mut **tx)
+    .await
+    .map_err(|error| store_error("failed to load access group status", error))?;
+    Ok(status)
 }
 
 async fn ensure_group_exists(
@@ -590,6 +715,7 @@ async fn ensure_channel_exists(
 async fn replace_group_resources(
     tx: &mut Transaction<'_, Sqlite>,
     command: &ReplaceAdminAccessGroupChannelBindingsCommand,
+    group_status: i32,
 ) -> DomainResult<()> {
     sqlx::query(
         r#"
@@ -618,20 +744,20 @@ async fn replace_group_resources(
     let resource_codes = command
         .items
         .iter()
-        .flat_map(|item| item.model_scope.iter().chain(item.capabilities.iter()))
+        .flat_map(|item| item.resource_codes.iter())
         .map(|value| value.trim())
         .filter(|value| !value.is_empty())
         .map(str::to_owned)
         .collect::<BTreeSet<_>>();
 
     for (index, requested_resource_code) in resource_codes.iter().enumerate() {
-        let resource_row = sqlx::query(
+        let resource_group_row = sqlx::query(
             r#"
             SELECT id
-            FROM ai_resource
+            FROM ai_resource_group
             WHERE tenant_id = ?
               AND organization_id = ?
-              AND resource_code = ?
+              AND group_code = ?
               AND deleted_at IS NULL
             LIMIT 1
             "#,
@@ -641,35 +767,39 @@ async fn replace_group_resources(
         .bind(requested_resource_code)
         .fetch_optional(&mut **tx)
         .await
-        .map_err(|error| store_error("failed to resolve access group resource", error))?;
-        let resource_id = resource_row
+        .map_err(|error| store_error("failed to resolve access group resource group", error))?;
+        let resource_group_id = resource_group_row
             .as_ref()
             .and_then(|row| optional_integer_cell(row, "id"));
-
-        let resource_group_row = if resource_id.is_none() {
+        let resource_row = if resource_group_id.is_none() {
             sqlx::query(
                 r#"
-                SELECT id
-                FROM ai_resource_group
-                WHERE tenant_id = ?
-                  AND organization_id = ?
-                  AND group_code = ?
-                  AND deleted_at IS NULL
-                LIMIT 1
-                "#,
+            SELECT id
+            FROM ai_resource
+            WHERE tenant_id = ?
+              AND organization_id = ?
+              AND resource_code = ?
+              AND deleted_at IS NULL
+            LIMIT 1
+            "#,
             )
             .bind(command.subject.tenant_id)
             .bind(command.subject.organization_id)
             .bind(requested_resource_code)
             .fetch_optional(&mut **tx)
             .await
-            .map_err(|error| store_error("failed to resolve access group resource group", error))?
+            .map_err(|error| store_error("failed to resolve access group resource", error))?
         } else {
             None
         };
-        let resource_group_id = resource_group_row
+        let resource_id = resource_row
             .as_ref()
             .and_then(|row| optional_integer_cell(row, "id"));
+        if resource_group_id.is_none() && resource_id.is_none() {
+            return Err(DomainError::not_found(format!(
+                "AI resource was not found: {requested_resource_code}"
+            )));
+        }
         let resource_code = if resource_group_id.is_some() {
             ""
         } else {
@@ -681,15 +811,17 @@ async fn replace_group_resources(
             ""
         };
         let resource_hash = digest_hex(requested_resource_code);
+        let persisted_status = relationship_status_for_group(group_status, 1);
+        let metadata = relationship_metadata_for_group(group_status, 1);
         sqlx::query(
             r#"
             INSERT INTO ai_channel_group_resource
                 (uuid, tenant_id, organization_id, data_scope, status, created_at, updated_at, version, metadata, channel_group_id, resource_id, resource_code, resource_group_id, resource_group_code, grant_type, priority)
             VALUES
-                (?, ?, ?, 1, 1, ?, ?, 0, '{}', ?, ?, ?, ?, ?, 'allow', ?)
+                (?, ?, ?, 1, ?, ?, ?, 0, ?, ?, ?, ?, ?, ?, 'allow', ?)
             ON CONFLICT(tenant_id, organization_id, channel_group_id, resource_code, resource_group_code)
             DO UPDATE SET
-                status = 1,
+                status = excluded.status,
                 deleted_at = NULL,
                 deleted_by = NULL,
                 updated_at = excluded.updated_at,
@@ -697,6 +829,7 @@ async fn replace_group_resources(
                 resource_group_id = excluded.resource_group_id,
                 grant_type = excluded.grant_type,
                 priority = excluded.priority,
+                metadata = excluded.metadata,
                 version = COALESCE(ai_channel_group_resource.version, 0) + 1
             "#,
         )
@@ -706,8 +839,10 @@ async fn replace_group_resources(
         ))
         .bind(command.subject.tenant_id)
         .bind(command.subject.organization_id)
+        .bind(persisted_status)
         .bind(&command.requested_at)
         .bind(&command.requested_at)
+        .bind(metadata)
         .bind(command.group_id)
         .bind(resource_id)
         .bind(resource_code)
@@ -872,7 +1007,7 @@ async fn insert_access_group(
     .bind(&command.name)
     .bind(&command.code)
     .bind(&command.platform)
-    .bind(group_type_code(&command.group_type))
+    .bind(&command.group_type)
     .bind(pricing_plan_id)
     .bind(pricing_plan_code)
     .bind(decimal_string(command.rate_multiplier))
@@ -922,12 +1057,7 @@ async fn update_access_group(
     )
     .bind(command.rate_multiplier.map(decimal_string))
     .bind(command.rate_multiplier.map(decimal_string))
-    .bind(
-        command
-            .group_type
-            .as_ref()
-            .map(|value| group_type_code(value)),
-    )
+    .bind(command.group_type.as_ref().map(String::as_str))
     .bind(command.capacity_total.map(|value| value.round() as i64))
     .bind(command.status.as_ref().map(|value| status_code(value)))
     .bind(&command.requested_at)
@@ -939,6 +1069,148 @@ async fn update_access_group(
     .map_err(|error| store_error("failed to update access group", error))?;
 
     Ok(result.rows_affected() > 0)
+}
+
+async fn sync_access_group_relationship_status(
+    tx: &mut Transaction<'_, Sqlite>,
+    tenant_id: i64,
+    organization_id: i64,
+    group_id: i64,
+    status: i32,
+    requested_at: &str,
+) -> DomainResult<()> {
+    if status == 0 {
+        sqlx::query(
+            r#"
+            UPDATE ai_channel_group_member
+            SET status = 0,
+                metadata = json_set(COALESCE(NULLIF(metadata, ''), '{}'), '$.disabledByParent', 1),
+                updated_at = ?,
+                version = COALESCE(version, 0) + 1
+            WHERE tenant_id = ?
+              AND organization_id = ?
+              AND channel_group_id = ?
+              AND status = 1
+              AND deleted_at IS NULL
+            "#,
+        )
+        .bind(requested_at)
+        .bind(tenant_id)
+        .bind(organization_id)
+        .bind(group_id)
+        .execute(&mut **tx)
+        .await
+        .map_err(|error| store_error("failed to disable access group members", error))?;
+
+        sqlx::query(
+            r#"
+            UPDATE ai_channel_group_resource
+            SET status = 0,
+                metadata = json_set(COALESCE(NULLIF(metadata, ''), '{}'), '$.disabledByParent', 1),
+                updated_at = ?,
+                version = COALESCE(version, 0) + 1
+            WHERE tenant_id = ?
+              AND organization_id = ?
+              AND channel_group_id = ?
+              AND status = 1
+              AND deleted_at IS NULL
+            "#,
+        )
+        .bind(requested_at)
+        .bind(tenant_id)
+        .bind(organization_id)
+        .bind(group_id)
+        .execute(&mut **tx)
+        .await
+        .map_err(|error| store_error("failed to disable access group resources", error))?;
+    } else if status == 1 {
+        sqlx::query(
+            r#"
+            UPDATE ai_channel_group_member
+            SET status = 1,
+                metadata = json_remove(COALESCE(NULLIF(metadata, ''), '{}'), '$.disabledByParent'),
+                updated_at = ?,
+                version = COALESCE(version, 0) + 1
+            WHERE tenant_id = ?
+              AND organization_id = ?
+              AND channel_group_id = ?
+              AND status = 0
+              AND deleted_at IS NULL
+              AND json_extract(COALESCE(NULLIF(metadata, ''), '{}'), '$.disabledByParent') = 1
+            "#,
+        )
+        .bind(requested_at)
+        .bind(tenant_id)
+        .bind(organization_id)
+        .bind(group_id)
+        .execute(&mut **tx)
+        .await
+        .map_err(|error| store_error("failed to enable access group members", error))?;
+
+        sqlx::query(
+            r#"
+            UPDATE ai_channel_group_resource
+            SET status = 1,
+                metadata = json_remove(COALESCE(NULLIF(metadata, ''), '{}'), '$.disabledByParent'),
+                updated_at = ?,
+                version = COALESCE(version, 0) + 1
+            WHERE tenant_id = ?
+              AND organization_id = ?
+              AND channel_group_id = ?
+              AND status = 0
+              AND deleted_at IS NULL
+              AND json_extract(COALESCE(NULLIF(metadata, ''), '{}'), '$.disabledByParent') = 1
+            "#,
+        )
+        .bind(requested_at)
+        .bind(tenant_id)
+        .bind(organization_id)
+        .bind(group_id)
+        .execute(&mut **tx)
+        .await
+        .map_err(|error| store_error("failed to enable access group resources", error))?;
+    }
+
+    Ok(())
+}
+
+fn relationship_status_for_group(group_status: i32, requested_status: i32) -> i32 {
+    if group_status == 0 && requested_status == 1 {
+        0
+    } else {
+        requested_status
+    }
+}
+
+fn relationship_metadata_for_group(group_status: i32, requested_status: i32) -> &'static str {
+    if group_status == 0 && requested_status == 1 {
+        r#"{"disabledByParent":true}"#
+    } else {
+        "{}"
+    }
+}
+
+fn access_group_routing_config_change<'a>(
+    tenant_id: i64,
+    organization_id: i64,
+    operator_id: i64,
+    request_id: &'a str,
+    requested_at: &'a str,
+    action: &'a str,
+    group_id: i64,
+    event_payload: serde_json::Value,
+) -> AiRoutingConfigChange<'a> {
+    AiRoutingConfigChange {
+        tenant_id,
+        organization_id,
+        operator_id,
+        request_id,
+        requested_at,
+        changed_object_type: "ai_channel_group",
+        changed_object_id: group_id,
+        action,
+        event_payload,
+    }
 }
 
 async fn soft_delete_access_group(
@@ -1098,6 +1370,54 @@ async fn soft_delete_group_bindings(
     .execute(&mut **tx)
     .await
     .map_err(|error| store_error("failed to delete access group pricing bindings", error))?;
+
+    sqlx::query(
+        r#"
+        UPDATE ai_channel_group_member
+        SET status = -1,
+            deleted_at = ?,
+            deleted_by = ?,
+            updated_at = ?,
+            version = COALESCE(version, 0) + 1
+        WHERE tenant_id = ?
+          AND organization_id = ?
+          AND channel_group_id = ?
+          AND deleted_at IS NULL
+        "#,
+    )
+    .bind(&command.requested_at)
+    .bind(command.subject.operator_id)
+    .bind(&command.requested_at)
+    .bind(command.subject.tenant_id)
+    .bind(command.subject.organization_id)
+    .bind(command.group_id)
+    .execute(&mut **tx)
+    .await
+    .map_err(|error| store_error("failed to delete access group channel bindings", error))?;
+
+    sqlx::query(
+        r#"
+        UPDATE ai_channel_group_resource
+        SET status = -1,
+            deleted_at = ?,
+            deleted_by = ?,
+            updated_at = ?,
+            version = COALESCE(version, 0) + 1
+        WHERE tenant_id = ?
+          AND organization_id = ?
+          AND channel_group_id = ?
+          AND deleted_at IS NULL
+        "#,
+    )
+    .bind(&command.requested_at)
+    .bind(command.subject.operator_id)
+    .bind(&command.requested_at)
+    .bind(command.subject.tenant_id)
+    .bind(command.subject.organization_id)
+    .bind(command.group_id)
+    .execute(&mut **tx)
+    .await
+    .map_err(|error| store_error("failed to delete access group resources", error))?;
     Ok(())
 }
 
@@ -1230,7 +1550,7 @@ fn item_from_row(row: sqlx::sqlite::SqliteRow) -> DomainResult<AdminAccessGroupI
             "billing_type",
         )?)?,
         rate_multiplier: decimal_cell(&row, "rate_multiplier"),
-        group_type: group_type_label(required_integer_cell(&row, "group_type", "group_type")?)?,
+        group_type: group_type_cell(&row)?,
         account_available: optional_integer_cell(&row, "account_available").unwrap_or(0),
         account_total: optional_integer_cell(&row, "account_total").unwrap_or(0),
         capacity_used: decimal_cell(&row, "capacity_used"),
@@ -1289,8 +1609,75 @@ fn channel_binding_select_sql(predicate: &str) -> &'static str {
                           AND gr.organization_id = b.organization_id
                           AND gr.deleted_at IS NULL
                           AND gr.status = 1
-                          AND COALESCE(r.resource_type, rg.group_type, '') NOT IN ('model', 'model_api')
                           AND COALESCE(NULLIF(gr.resource_code, ''), gr.resource_group_code, '') <> ''
+                        ORDER BY code
+                    ) selected
+                ),
+                '[]'
+            ) AS resource_codes_json,
+            COALESCE(
+                (
+                    SELECT json_group_array(selected.code)
+                    FROM (
+                        SELECT DISTINCT COALESCE(r.api_code, NULLIF(gr.resource_code, ''), gr.resource_group_code) AS code
+                        FROM ai_channel_group_resource gr
+                        LEFT JOIN ai_resource r
+                          ON r.resource_code = gr.resource_code
+                         AND r.tenant_id = gr.tenant_id
+                         AND r.organization_id = gr.organization_id
+                         AND r.deleted_at IS NULL
+                        LEFT JOIN ai_resource_group rg
+                          ON rg.group_code = gr.resource_group_code
+                         AND rg.tenant_id = gr.tenant_id
+                         AND rg.organization_id = gr.organization_id
+                         AND rg.deleted_at IS NULL
+                        WHERE gr.channel_group_id = b.channel_group_id
+                          AND gr.tenant_id = b.tenant_id
+                          AND gr.organization_id = b.organization_id
+                          AND gr.deleted_at IS NULL
+                          AND gr.status = 1
+                          AND COALESCE(NULLIF(gr.resource_code, ''), gr.resource_group_code, '') <> ''
+                          AND (
+                              COALESCE(r.resource_type, rg.group_type, '') = 'api_endpoint'
+                              OR COALESCE(NULLIF(r.api_code, ''), NULLIF(gr.resource_code, ''), gr.resource_group_code, '') LIKE 'api.%'
+                              OR COALESCE(NULLIF(r.api_code, ''), NULLIF(gr.resource_code, ''), gr.resource_group_code, '') LIKE '%.%_%'
+                          )
+                        ORDER BY code
+                    ) selected
+                ),
+                '[]'
+            ) AS api_scope_json,
+            COALESCE(
+                (
+                    SELECT json_group_array(selected.code)
+                    FROM (
+                        SELECT DISTINCT COALESCE(NULLIF(r.modality_code, ''), NULLIF(gr.resource_code, ''), gr.resource_group_code) AS code
+                        FROM ai_channel_group_resource gr
+                        LEFT JOIN ai_resource r
+                          ON r.resource_code = gr.resource_code
+                         AND r.tenant_id = gr.tenant_id
+                         AND r.organization_id = gr.organization_id
+                         AND r.deleted_at IS NULL
+                        LEFT JOIN ai_resource_group rg
+                          ON rg.group_code = gr.resource_group_code
+                         AND rg.tenant_id = gr.tenant_id
+                         AND rg.organization_id = gr.organization_id
+                         AND rg.deleted_at IS NULL
+                        WHERE gr.channel_group_id = b.channel_group_id
+                          AND gr.tenant_id = b.tenant_id
+                          AND gr.organization_id = b.organization_id
+                          AND gr.deleted_at IS NULL
+                          AND gr.status = 1
+                          AND COALESCE(NULLIF(gr.resource_code, ''), gr.resource_group_code, '') <> ''
+                          AND (
+                              COALESCE(r.resource_type, rg.group_type, '') = 'modality'
+                              OR (
+                                  COALESCE(r.resource_type, rg.group_type, '') NOT IN ('model', 'model_api', 'api_endpoint')
+                                  AND COALESCE(NULLIF(gr.resource_code, ''), gr.resource_group_code, '') NOT LIKE 'api.%'
+                                  AND COALESCE(NULLIF(gr.resource_code, ''), gr.resource_group_code, '') NOT LIKE '%.%'
+                                  AND COALESCE(NULLIF(gr.resource_code, ''), gr.resource_group_code, '') NOT LIKE '%/%'
+                              )
+                          )
                         ORDER BY code
                     ) selected
                 ),
@@ -1300,7 +1687,7 @@ fn channel_binding_select_sql(predicate: &str) -> &'static str {
                 (
                     SELECT json_group_array(selected.code)
                     FROM (
-                        SELECT DISTINCT COALESCE(NULLIF(gr.resource_code, ''), gr.resource_group_code) AS code
+                        SELECT DISTINCT COALESCE(NULLIF(r.catalog_key, ''), NULLIF(r.model, ''), NULLIF(r.provider_native_model, ''), NULLIF(gr.resource_code, ''), gr.resource_group_code) AS code
                         FROM ai_channel_group_resource gr
                         LEFT JOIN ai_resource r
                           ON r.resource_code = gr.resource_code
@@ -1368,6 +1755,8 @@ fn channel_binding_item_from_row(
         provider_code: row.try_get("provider_code").map_err(row_error)?,
         provider_name: row.try_get("provider_name").map_err(row_error)?,
         channel_code: row.try_get("channel_code").map_err(row_error)?,
+        resource_codes: json_string_array_cell(&row, "resource_codes_json")?,
+        api_scope: json_string_array_cell(&row, "api_scope_json")?,
         models: json_string_array_cell(&row, "models_json")?,
         capabilities: json_string_array_cell(&row, "capabilities_json")?,
         model_scope: json_string_array_cell(&row, "model_scope_json")?,
@@ -1410,23 +1799,25 @@ fn billing_type_label(value: i64) -> DomainResult<String> {
     .map(str::to_owned)
 }
 
-fn group_type_code(value: &str) -> i32 {
-    if value == "dedicated" {
-        2
-    } else {
-        1
+fn group_type_cell(row: &sqlx::sqlite::SqliteRow) -> DomainResult<String> {
+    if let Ok(Some(value)) = row.try_get::<Option<String>, _>("group_type") {
+        return match value.as_str() {
+            "public" | "dedicated" => Ok(value),
+            "1" => Ok("public".to_owned()),
+            "2" => Ok("dedicated".to_owned()),
+            value => Err(DomainError::new(format!(
+                "invalid admin access group group_type from database row: {value}"
+            ))),
+        };
     }
-}
-
-fn group_type_label(value: i64) -> DomainResult<String> {
+    let value = required_integer_cell(row, "group_type", "group_type")?;
     match value {
-        1 => Ok("public"),
-        2 => Ok("dedicated"),
+        1 => Ok("public".to_owned()),
+        2 => Ok("dedicated".to_owned()),
         value => Err(DomainError::new(format!(
             "invalid admin access group group_type from database row: {value}"
         ))),
     }
-    .map(str::to_owned)
 }
 
 fn status_code(value: &str) -> i32 {

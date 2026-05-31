@@ -22,6 +22,7 @@ const TEXT_FILE_EXTENSIONS = new Set(['.bat', '.cmd', '.cs', '.dart', '.go', '.g
 const TEXT_FILE_NAMES = new Set(['.gitattributes', '.gitignore', 'Dockerfile', 'LICENSE', 'Makefile', 'NOTICE']);
 
 const languages = parseLanguages(process.argv.slice(2));
+syncFamilyOpenApiSnapshots();
 for (const language of languages) {
   runLanguage(language);
 }
@@ -62,6 +63,26 @@ function parseLanguages(argv) {
   });
 }
 
+function syncFamilyOpenApiSnapshots() {
+  const python = process.env.PYTHON_BIN || 'python';
+  const result = spawnSync(python, [
+    '-B',
+    '-m',
+    'tools.clawrouter_sdk_runtime_standardizer',
+    '--root',
+    workspaceRoot,
+    '--sdk-dir',
+    sdkFamily,
+    '--openapi-only',
+  ], { cwd: workspaceRoot, stdio: 'inherit' });
+  if (result.error) {
+    throw result.error;
+  }
+  if ((result.status ?? 1) !== 0) {
+    process.exit(result.status ?? 1);
+  }
+}
+
 function splitLanguages(value) {
   return String(value).split(',').map((item) => item.trim()).filter(Boolean);
 }
@@ -91,9 +112,7 @@ function runLanguage(language) {
   if ((result.status ?? 1) !== 0) {
     process.exit(result.status ?? 1);
   }
-  if (language !== 'typescript') {
-    cleanGeneratedOutput(language);
-  }
+  cleanGeneratedOutput(language);
 }
 
 function strictTypeScriptArgs() {
@@ -140,6 +159,9 @@ function generatorArgs(language) {
 }
 
 function cleanGeneratedOutput(language) {
+  if (language === 'typescript') {
+    return;
+  }
   const outputRoot = path.join(workspaceRoot, `sdks/${sdkFamily}/${sdkFamily}-${language}/generated/server-openapi`);
   if (!existsSync(outputRoot)) {
     return;

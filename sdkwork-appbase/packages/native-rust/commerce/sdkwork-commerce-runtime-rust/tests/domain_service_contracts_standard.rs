@@ -224,6 +224,9 @@ fn app_operation_ids_are_bound_to_their_runtime_services() {
     assert_eq!(unique_operation_ids.len(), bindings.len());
     for retired_operation_id in [
         "catalog.spu.list",
+        "catalog.spu.retrieve",
+        "catalog.spu.create",
+        "catalog.spu.update",
         "wallet.topups.create",
         "wallet.tokens.deductions.create",
         "checkout.preflight.estimates.create",

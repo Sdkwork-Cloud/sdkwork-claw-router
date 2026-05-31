@@ -43,10 +43,10 @@ AI_CHANNEL_ROUTE_CONTRACT_PATHS = (
     ROOT / "services" / "sdkwork-claw-product" / "src" / "infrastructure" / "sql" / "sqlite" / "admin_access_group_store.rs",
     ROOT / "services" / "sdkwork-claw-product" / "src" / "infrastructure" / "sql" / "postgres" / "admin_channel_store.rs",
     ROOT / "services" / "sdkwork-claw-product" / "src" / "infrastructure" / "sql" / "sqlite" / "admin_channel_store.rs",
-    ROOT / "services" / "sdkwork-claw-product" / "src" / "infrastructure" / "sql" / "postgres" / "admin_capability_resource_store.rs",
-    ROOT / "services" / "sdkwork-claw-product" / "src" / "infrastructure" / "sql" / "sqlite" / "admin_capability_resource_store.rs",
-    ROOT / "services" / "sdkwork-claw-product" / "src" / "infrastructure" / "sql" / "postgres" / "admin_provider_account_endpoint_store.rs",
-    ROOT / "services" / "sdkwork-claw-product" / "src" / "infrastructure" / "sql" / "sqlite" / "admin_provider_account_endpoint_store.rs",
+    ROOT / "services" / "sdkwork-claw-product" / "src" / "infrastructure" / "sql" / "postgres" / "admin_ai_resource_store.rs",
+    ROOT / "services" / "sdkwork-claw-product" / "src" / "infrastructure" / "sql" / "sqlite" / "admin_ai_resource_store.rs",
+    ROOT / "services" / "sdkwork-claw-product" / "src" / "infrastructure" / "sql" / "postgres" / "admin_channel_endpoint_store.rs",
+    ROOT / "services" / "sdkwork-claw-product" / "src" / "infrastructure" / "sql" / "sqlite" / "admin_channel_endpoint_store.rs",
 )
 AI_CHANNEL_ROUTE_REQUIRED_TABLES = (
     "ai_provider",

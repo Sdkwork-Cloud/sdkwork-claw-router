@@ -237,7 +237,7 @@ Start sdkwork-claw-router through a root pnpm-compatible entrypoint.
 Modes:
   desktop  Start the full install-checked workspace with desktop environment flags (default)
   service  Start the full install-checked workspace with service-mode environment flags
-  server   Start Rust gateway/admin/app services plus the portal dev server
+  server   Start the all-in-one Rust edge runtime plus the portal dev server
   plan     Print the resolved server development URLs and command plan
   check    Run the portal product check
   browser  Start only the standalone portal browser dev server
@@ -251,6 +251,7 @@ Examples:
   pnpm desktop:dev
   pnpm service:dev
   pnpm server:dev -- --gateway-bind 0.0.0.0:19080
+  pnpm server:dev:distributed
   pnpm server:plan
 `);
 }

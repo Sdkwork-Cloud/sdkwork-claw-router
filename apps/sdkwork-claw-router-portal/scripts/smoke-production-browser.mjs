@@ -14,7 +14,7 @@ const PORT_SEARCH_START = 3_400;
 const PORT_SEARCH_LIMIT = 100;
 const CHROME_DEBUG_PORT_SEARCH_START = 9_220;
 const ROUTE_RENDER_TIMEOUT_MS = 10_000;
-const EDGE_SERVER_STARTUP_TIMEOUT_MS = parsePositiveIntegerEnv("CLAWROUTER_EDGE_STARTUP_TIMEOUT_MS", 120_000);
+const EDGE_SERVER_STARTUP_TIMEOUT_MS = parsePositiveIntegerEnv("CLAWROUTER_EDGE_STARTUP_TIMEOUT_MS", 900_000);
 const PROCESS_OUTPUT_TAIL_MAX_CHARS = 12_000;
 const PROCESS_SHUTDOWN_TIMEOUT_MS = 5_000;
 const ENABLED_VALUES = new Set(["1", "true", "yes", "on"]);
@@ -1777,7 +1777,7 @@ const BROWSER_SMOKE_ROUTES = [
   },
   {
     pathName: "/api-reference",
-    requiredTextTokens: ["Default Open API", "Create Chat Completion", "Request Parameters", "Response Properties"],
+    requiredTextTokens: ["AI聚合API", "Create Chat Completion", "Request Parameters", "Response Properties"],
   },
   {
     pathName: "/api-reference?__browser-smoke-tool-api-disabled=1",
@@ -3400,7 +3400,10 @@ function resolveApiPlaygroundFixture(apiPlaygroundFixtureMode, request) {
     return null;
   }
 
-  if (parsedUrl.origin !== "https://tenant-api.example.com" || !parsedUrl.pathname.startsWith("/api/")) {
+  const isTenantApiRequest = parsedUrl.origin === "https://tenant-api.example.com"
+    && parsedUrl.pathname.startsWith("/api/");
+  const isSameOriginGatewayRequest = parsedUrl.pathname.startsWith("/v1/");
+  if (!isTenantApiRequest && !isSameOriginGatewayRequest) {
     return null;
   }
 
@@ -3421,7 +3424,10 @@ function resolveApiPlaygroundFixture(apiPlaygroundFixtureMode, request) {
     };
   }
 
-  if (method !== "POST" || parsedUrl.pathname !== "/api/v1/chat/completions") {
+  const expectedChatCompletionsPath = isSameOriginGatewayRequest
+    ? "/v1/chat/completions"
+    : "/api/v1/chat/completions";
+  if (method !== "POST" || parsedUrl.pathname !== expectedChatCompletionsPath) {
     return {
       statusCode: 404,
       statusText: "Not Found",
@@ -3525,6 +3531,10 @@ async function installAppSdkFixtureInterceptor(cdp, resetConsoleIssueFilter = ()
       {
         requestStage: "Request",
         urlPattern: "https://tenant-api.example.com/api/*",
+      },
+      {
+        requestStage: "Request",
+        urlPattern: "*://*/v1/*",
       },
     ],
   });

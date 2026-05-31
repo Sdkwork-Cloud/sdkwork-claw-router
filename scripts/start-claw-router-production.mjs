@@ -40,6 +40,7 @@ Options:
                   Rust edge server target origin for /backend/v3/api.
   --app-api-forward-url <url>
                   Rust edge server target origin for /app/v3/api.
+  --distributed  Start the edge server in forwarding mode instead of the default all-in-one API runtime.
   --deployment-mode <mode>
                   Runtime config profile: server or desktop (default server).
   --config-file <path>
@@ -159,6 +160,7 @@ function parseStartProductionArgs(argv) {
     help: false,
     dryRun: false,
     initConfigOnly: false,
+    distributed: false,
     deploymentMode: null,
     configFile: null,
     databaseUrl: null,
@@ -187,6 +189,9 @@ function parseStartProductionArgs(argv) {
       case '--init-config-only':
         settings.initConfigOnly = true;
         break;
+      case '--distributed':
+        settings.distributed = true;
+        break;
       case '--deployment-mode':
         settings.deploymentMode = normalizeDeploymentMode(requireValue(argv, index, arg), arg);
         index += 1;
@@ -213,14 +218,17 @@ function parseStartProductionArgs(argv) {
         break;
       case '--gateway-forward-url':
         settings.gatewayForwardUrl = originUrl(requireValue(argv, index, arg), arg);
+        settings.distributed = true;
         index += 1;
         break;
       case '--backend-api-forward-url':
         settings.backendApiForwardUrl = originUrl(requireValue(argv, index, arg), arg);
+        settings.distributed = true;
         index += 1;
         break;
       case '--app-api-forward-url':
         settings.appApiForwardUrl = originUrl(requireValue(argv, index, arg), arg);
+        settings.distributed = true;
         index += 1;
         break;
       case '--external-scheme':
@@ -874,24 +882,35 @@ function resolveStartProductionEnv(
   settings = parseStartProductionArgs([]),
 ) {
   const defaultSdkArchiveRoot = path.join(distRoot, 'sdk-archives');
+  const serverBind = settings.serverBind ?? baseEnv.SDKWORK_CLAW_SERVER_BIND ?? '0.0.0.0:3900';
+  const edgeBaseUrl = edgeAccessBaseUrl({ SDKWORK_CLAW_SERVER_BIND: serverBind });
+  const allInOne = !settings.distributed;
   return {
     ...baseEnv,
     SDKWORK_CLAW_EDGE_SERVER: '1',
+    SDKWORK_CLAW_ALL_IN_ONE_RUNTIME: allInOne ? '1' : '0',
     SDKWORK_CLAW_EDGE_PORTAL_STATIC_DIST: distRoot,
-    SDKWORK_CLAW_SERVER_BIND:
-      settings.serverBind ?? baseEnv.SDKWORK_CLAW_SERVER_BIND ?? '0.0.0.0:3900',
+    SDKWORK_CLAW_SERVER_BIND: serverBind,
     SDKWORK_CLAW_EDGE_GATEWAY_BASE_URL:
       settings.gatewayForwardUrl
       ?? baseEnv.SDKWORK_CLAW_EDGE_GATEWAY_BASE_URL
-      ?? 'http://127.0.0.1:18080',
+      ?? (allInOne ? edgeBaseUrl : 'http://127.0.0.1:18080'),
     SDKWORK_CLAW_EDGE_BACKEND_API_BASE_URL:
       settings.backendApiForwardUrl
       ?? baseEnv.SDKWORK_CLAW_EDGE_BACKEND_API_BASE_URL
-      ?? 'http://127.0.0.1:18081',
+      ?? (allInOne ? edgeBaseUrl : 'http://127.0.0.1:18081'),
     SDKWORK_CLAW_EDGE_APP_API_BASE_URL:
       settings.appApiForwardUrl
       ?? baseEnv.SDKWORK_CLAW_EDGE_APP_API_BASE_URL
-      ?? 'http://127.0.0.1:18082',
+      ?? (allInOne ? edgeBaseUrl : 'http://127.0.0.1:18082'),
+    ...(
+      baseEnv.SDKWORK_CLAW_APP_RUNTIME_GATEWAY_BASE_URL || allInOne
+        ? {
+          SDKWORK_CLAW_APP_RUNTIME_GATEWAY_BASE_URL:
+            baseEnv.SDKWORK_CLAW_APP_RUNTIME_GATEWAY_BASE_URL ?? edgeBaseUrl,
+        }
+        : {}
+    ),
     SDKWORK_CLAW_EDGE_EXTERNAL_SCHEME:
       settings.externalScheme ?? baseEnv.SDKWORK_CLAW_EDGE_EXTERNAL_SCHEME ?? 'http',
     SDKWORK_CLAW_EDGE_TRUST_FORWARDED_HEADERS:
@@ -930,7 +949,9 @@ function buildStartProductionAccessLines(env) {
   const gatewayTarget = env.SDKWORK_CLAW_EDGE_GATEWAY_BASE_URL ?? 'http://127.0.0.1:18080';
   const backendTarget = env.SDKWORK_CLAW_EDGE_BACKEND_API_BASE_URL ?? 'http://127.0.0.1:18081';
   const appTarget = env.SDKWORK_CLAW_EDGE_APP_API_BASE_URL ?? 'http://127.0.0.1:18082';
-  return [
+  const allInOne = env.SDKWORK_CLAW_ALL_IN_ONE_RUNTIME !== '0';
+  const lines = [
+    `[start-production] Runtime Mode: ${allInOne ? 'all-in-one' : 'distributed'}`,
     '[start-production] Edge Server Access',
     `[start-production]   Portal: ${baseUrl}/`,
     `[start-production]   Gateway API: ${baseUrl}/v1`,
@@ -941,6 +962,9 @@ function buildStartProductionAccessLines(env) {
     `[start-production]   App API OpenAPI: ${baseUrl}/app/v3/api/openapi.json`,
     `[start-production]   Edge Server Health: ${baseUrl}/healthz`,
     `[start-production]   Edge Server Ready: ${baseUrl}/readyz`,
+  ];
+  if (!allInOne) {
+    lines.push(
     '[start-production] Edge Forwarding Targets',
     `[start-production]   Gateway Target: ${gatewayTarget}`,
     `[start-production]   Backend/Admin Target: ${backendTarget}`,
@@ -952,6 +976,9 @@ function buildStartProductionAccessLines(env) {
     `[start-production]   OpenAI-compatible Gateway API: ${appendPath(gatewayTarget, '/v1')}`,
     `[start-production]   Backend/Admin API: ${appendPath(backendTarget, '/backend/v3/api')}`,
     `[start-production]   App API: ${appendPath(appTarget, '/app/v3/api')}`,
+    );
+  }
+  lines.push(
     `[start-production]   PORTAL_PUBLIC_API_BASE_URL=${env.PORTAL_PUBLIC_API_BASE_URL}`,
     `[start-production]   PORTAL_PUBLIC_OPEN_API_BASE_URL=${env.PORTAL_PUBLIC_OPEN_API_BASE_URL}`,
     `[start-production]   PORTAL_PUBLIC_BACKEND_API_BASE_URL=${env.PORTAL_PUBLIC_BACKEND_API_BASE_URL}`,
@@ -962,7 +989,8 @@ function buildStartProductionAccessLines(env) {
     `[start-production]   PORTAL_TOOL_API_SDK_ARCHIVE_ROOT=${env.PORTAL_TOOL_API_SDK_ARCHIVE_ROOT || '(not configured)'}`,
     `[start-production]   SDKWORK_CLAW_EDGE_EXTERNAL_SCHEME=${env.SDKWORK_CLAW_EDGE_EXTERNAL_SCHEME}`,
     `[start-production]   SDKWORK_CLAW_EDGE_TRUST_FORWARDED_HEADERS=${env.SDKWORK_CLAW_EDGE_TRUST_FORWARDED_HEADERS}`,
-  ];
+  );
+  return lines;
 }
 
 function assertPortalDistReadyForStart(dryRun, distRoot = portalDist) {

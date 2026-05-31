@@ -22,9 +22,9 @@ use crate::api::openai_invocation::{
     OpenAiInvocationRelayOutcome,
 };
 use crate::api::openai_runtime::{
-    authenticate_api_key, resolve_openai_provider_route_plan, route_http_status_is_retryable,
-    OpenAiRouteError, OpenAiRuntimeFailureStrategy, OpenAiRuntimeRouteConfig,
-    ResolvedOpenAiProviderRoute, ResolvedOpenAiProviderRoutePlan,
+    authenticate_api_key, provider_relay_attempt_retry_policy, resolve_openai_provider_route_plan,
+    route_http_status_is_retryable, OpenAiRouteError, OpenAiRuntimeFailureStrategy,
+    OpenAiRuntimeRouteConfig, ResolvedOpenAiProviderRoute, ResolvedOpenAiProviderRoutePlan,
 };
 use crate::api::openai_usage::{
     build_request_trace_command, provider_error_code_from_body, provider_error_message_from_body,
@@ -509,6 +509,8 @@ async fn relay_embedding(
             &route,
             &requested_model,
             request_body.clone(),
+            failure_strategy,
+            route_count,
             default_retry_policy,
         )
         .await
@@ -553,8 +555,12 @@ async fn relay_embedding_route(
     route: &ResolvedOpenAiProviderRoute,
     requested_model: &str,
     request_body: serde_json::Value,
+    failure_strategy: OpenAiRuntimeFailureStrategy,
+    route_count: usize,
     default_retry_policy: &ProviderRetryPolicy,
 ) -> Result<Response, RouteRelayFailure> {
+    let provider_retry_policy =
+        provider_relay_attempt_retry_policy(route, failure_strategy, route_count);
     let started_at = Instant::now();
     let response = match relay
         .create_embedding(EmbeddingsRelayRequest {
@@ -573,7 +579,7 @@ async fn relay_embedding_route(
             provider_secret_ref: route.provider_secret_ref.clone(),
             provider_auth_profile: route.provider_auth_profile.clone(),
             provider_timeout_ms: route.provider_timeout_ms,
-            provider_retry_policy: route.provider_retry_policy.clone(),
+            provider_retry_policy,
             request_body,
         })
         .await

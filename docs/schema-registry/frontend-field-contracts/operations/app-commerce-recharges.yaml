@@ -21,7 +21,7 @@ frontend_operations:
   - commerce_payment_attempt
   - commerce_account
   - commerce_account_ledger_entry
-  query_parameters:
+  query_parameters: &id001
   - name: page
     schema:
       type: integer
@@ -37,33 +37,61 @@ frontend_operations:
     schema:
       type: string
       maxLength: 32
-  response_schema:
-    name: CommerceStandardCollectionResponse
+  response_schema: &id002
+    name: CommerceRechargePackageListResponse
     type: object
     additionalProperties: false
     required:
     - items
-    - total
-    - page
-    - pageSize
     properties:
       items:
         type: array
-        items:
+        items: &id003
+          name: CommerceRechargePackageItem
           type: object
           additionalProperties: false
           required:
           - id
+          - priceAmount
+          - currencyCode
+          - bonusPoints
+          - grantAmount
+          - points
           properties:
             id:
               type: string
               minLength: 1
               maxLength: 128
-            status:
+            packageNo:
               type: string
-              nullable: true
-              maxLength: 64
-            createdAt:
+              maxLength: 128
+            skuId:
+              type: string
+              maxLength: 128
+            name:
+              type: string
+              maxLength: 256
+            priceAmount:
+              type: string
+              pattern: ^\d+(?:\.\d{1,2})?$
+            currencyCode:
+              type: string
+              minLength: 3
+              maxLength: 16
+              pattern: ^[A-Z0-9_-]+$
+            bonusPoints:
+              type: integer
+              format: int64
+              minimum: 0
+            grantAmount:
+              type: integer
+              format: int64
+              minimum: 0
+            points:
+              type: integer
+              format: int64
+              minimum: 0
+            status:
               type: string
               nullable: true
               maxLength: 64
@@ -71,19 +99,57 @@ frontend_operations:
               type: string
               nullable: true
               maxLength: 64
-      total:
-        type: integer
-        format: int64
-        minimum: 0
-      page:
-        type: integer
-        format: int64
-        minimum: 1
-      pageSize:
-        type: integer
-        format: int64
-        minimum: 1
-        maximum: 200
+- route: /console/recharge
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-recharge/src/rechargeService.ts
+  operation: appRechargesSettingsRetrieve
+  operation_id: recharges.settings.retrieve
+  kind: read
+  api_surface: app
+  api_method: GET
+  api_path: /app/v3/api/recharges/settings
+  sdk_domain: commerce
+  summary: Recharges Settings Retrieve
+  description: Returns the standard cash-to-points recharge settings, including base CNY points ratio, currency-to-CNY rates, and preview examples.
+  query_parameters: []
+  read_sources:
+  - commerce_exchange_rule
+  - commerce_recharge_package
+  response_schema: &id004
+    name: CommerceRechargeSettingsResponse
+    type: object
+    additionalProperties: false
+    required:
+    - baseCurrencyCode
+    - basePointsPerCny
+    - currencyToCnyRates
+    properties:
+      baseCurrencyCode:
+        type: string
+        minLength: 3
+        maxLength: 16
+        pattern: ^[A-Z0-9_-]+$
+      basePointsPerCny:
+        type: string
+        pattern: ^\d+(?:\.\d{1,6})?$
+      currencyToCnyRates:
+        type: object
+        additionalProperties:
+          type: string
+          pattern: ^\d+(?:\.\d{1,6})?$
+      previewExamples:
+        type: object
+        additionalProperties:
+          type: object
+          additionalProperties:
+            type: object
+            additionalProperties: false
+            required:
+            - grantAmount
+            properties:
+              grantAmount:
+                type: integer
+                format: int64
+                minimum: 0
 - route: /console/recharge
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-recharge/src/rechargeService.ts
   operation: appRechargesOrdersCreate
@@ -111,6 +177,126 @@ frontend_operations:
   - commerce_order_item
   - commerce_payment_intent
   - commerce_account_ledger_entry
+  - ops_audit_log
+  request_schema:
+    name: CommerceRechargeOrderCreateRequest
+    type: object
+    additionalProperties: false
+    required:
+    - amount
+    - currencyCode
+    - source
+    properties:
+      amount:
+        type: string
+        pattern: ^\d+(?:\.\d{1,2})?$
+      clientRequestNo:
+        type: string
+        minLength: 1
+        maxLength: 128
+      currencyCode:
+        type: string
+        minLength: 3
+        maxLength: 16
+        pattern: ^[A-Z0-9_-]+$
+      packageId:
+        type: string
+        minLength: 1
+        maxLength: 128
+      source:
+        type: string
+        minLength: 1
+        maxLength: 64
+  response_schema:
+    name: CommerceRechargeOrderCreateResponse
+    type: object
+    additionalProperties: false
+    required:
+    - success
+    - orderNo
+    - amount
+    - currencyCode
+    - points
+    - providerCode
+    - paymentMethod
+    - paymentProduct
+    - status
+    - nextAction
+    - cashierUrl
+    - qrCodePayload
+    properties:
+      success:
+        type: boolean
+      orderNo:
+        type: string
+        minLength: 1
+        maxLength: 128
+      amount:
+        type: string
+        pattern: ^\d+(?:\.\d{1,2})?$
+      currencyCode:
+        type: string
+        minLength: 3
+        maxLength: 16
+        pattern: ^[A-Z0-9_-]+$
+      points:
+        type: integer
+        format: int64
+        minimum: 0
+      providerCode:
+        type: string
+        minLength: 1
+        maxLength: 64
+      paymentMethod:
+        type: string
+        minLength: 1
+        maxLength: 50
+        description: Standardized payment method code for portal consumption. Prefer business-facing values such as wechat, alipay, or card.
+      paymentProduct:
+        type: string
+        minLength: 1
+        maxLength: 64
+      nextAction:
+        type: string
+        minLength: 1
+        maxLength: 64
+      cashierUrl:
+        type: string
+        minLength: 1
+        maxLength: 2048
+      qrCodePayload:
+        type: string
+        minLength: 1
+        maxLength: 2048
+      requestPaymentPayload:
+        type: object
+        nullable: true
+        additionalProperties: true
+      status:
+        type: string
+        minLength: 1
+        maxLength: 64
+- route: /console/recharge
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-recharge/src/rechargeService.ts
+  operation: appRechargesOrdersCancel
+  operation_id: recharges.orders.cancel
+  kind: create
+  api_surface: app
+  api_method: POST
+  api_path: /app/v3/api/recharges/orders/{orderId}/cancellations
+  sdk_domain: commerce
+  summary: Recharges Orders Cancel
+  description: Standard appbase commerce API for recharges.orders.cancel; no legacy billing compatibility route is exposed.
+  read_sources:
+  - commerce_order
+  - commerce_order_item
+  - commerce_payment_intent
+  - commerce_payment_attempt
+  - commerce_order_cancellation
+  idempotency_required: true
+  write_tables:
+  - commerce_order_cancellation
+  - commerce_order_event
   - ops_audit_log
   request_schema:
     name: CommerceStandardCommandRequest
@@ -184,34 +370,106 @@ frontend_operations:
   - commerce_account_ledger_entry
   query_parameters: []
   response_schema:
-    name: CommerceStandardResourceResponse
+    name: CommerceRechargeCheckoutStatusResponse
     type: object
     additionalProperties: false
     required:
-    - item
+    - orderNo
+    - outTradeNo
+    - amount
+    - currencyCode
+    - points
+    - providerCode
+    - paymentMethod
+    - paymentProduct
+    - orderStatus
+    - paymentStatus
+    - rechargeStatus
+    - status
+    - createdAt
+    - expiresAt
+    - paidAt
+    - nextAction
+    - cashierUrl
+    - qrCodePayload
     properties:
-      item:
+      orderNo:
+        type: string
+        minLength: 1
+        maxLength: 128
+      outTradeNo:
+        type: string
+        maxLength: 128
+      amount:
+        type: string
+        pattern: ^\d+(?:\.\d{1,2})?$
+      currencyCode:
+        type: string
+        minLength: 3
+        maxLength: 16
+        pattern: ^[A-Z0-9_-]+$
+      points:
+        type: integer
+        format: int64
+        minimum: 0
+      providerCode:
+        type: string
+        minLength: 1
+        maxLength: 64
+      paymentMethod:
+        type: string
+        minLength: 1
+        maxLength: 50
+      paymentProduct:
+        type: string
+        minLength: 1
+        maxLength: 64
+      orderStatus:
+        type: string
+        minLength: 1
+        maxLength: 64
+      paymentStatus:
+        type: string
+        minLength: 1
+        maxLength: 64
+      rechargeStatus:
+        type: string
+        minLength: 1
+        maxLength: 64
+      status:
+        type: string
+        minLength: 1
+        maxLength: 64
+      createdAt:
+        type: string
+        minLength: 1
+        maxLength: 64
+      expiresAt:
+        type: string
+        minLength: 1
+        maxLength: 64
+      paidAt:
+        type: string
+        maxLength: 64
+      nextAction:
+        type: string
+        minLength: 1
+        maxLength: 64
+        description: For PC qr checkout, scan_qr means the client should render a QR image from qrCodePayload and ask the user to scan it with the target payment app. request_payment means the H5 cashier should invoke a bridge payment request. open_url means the client should open cashierUrl in a browser context.
+      cashierUrl:
+        type: string
+        minLength: 1
+        maxLength: 2048
+        description: Standard cashier page URL for scan_qr and open_url payment flows.
+      qrCodePayload:
+        type: string
+        minLength: 1
+        maxLength: 2048
+        description: Standard QR payload field for recharge checkout. When nextAction is scan_qr, this value must be an http or https payment page URL rather than a native app scheme.
+      requestPaymentPayload:
         type: object
-        additionalProperties: false
-        required:
-        - id
-        properties:
-          id:
-            type: string
-            minLength: 1
-            maxLength: 128
-          status:
-            type: string
-            nullable: true
-            maxLength: 64
-          createdAt:
-            type: string
-            nullable: true
-            maxLength: 64
-          updatedAt:
-            type: string
-            nullable: true
-            maxLength: 64
+        nullable: true
+        additionalProperties: true
 - route: /console/recharge
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-recharge/src/rechargeService.ts
   operation: fetchRechargePackages
@@ -225,7 +483,6 @@ frontend_operations:
   - commerce_recharge_package
   - commerce_product_spu
   - commerce_product_sku
-  write_tables: []
   file_targets: []
   openapi_exposed: false
 - route: /console/recharge
@@ -241,7 +498,20 @@ frontend_operations:
   - commerce_recharge_package
   - commerce_product_spu
   - commerce_product_sku
-  write_tables: []
+  file_targets: []
+  openapi_exposed: false
+- route: /console/recharge
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-recharge/src/rechargeService.ts
+  operation: fetchRechargeSettings
+  operation_id: console.rechargeSettings.retrieve
+  operation_scope: app_shell
+  kind: read
+  api_surface: app
+  api_method: GET
+  api_path: /app/v3/api/recharges/settings
+  read_sources:
+  - commerce_exchange_rule
+  - commerce_recharge_package
   file_targets: []
   openapi_exposed: false
 - route: /console/recharge
@@ -263,6 +533,28 @@ frontend_operations:
   - ops_audit_log
   file_targets: []
   openapi_exposed: false
+- route: /console/recharge
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-recharge/src/rechargeService.ts
+  operation: cancelRechargeOrder
+  operation_id: console.rechargeOrders.cancel
+  operation_scope: app_shell
+  kind: create
+  api_surface: app
+  api_method: POST
+  api_path: /app/v3/api/recharges/orders/{orderId}/cancellations
+  read_sources:
+  - commerce_order
+  - commerce_order_item
+  - commerce_payment_intent
+  - commerce_payment_attempt
+  - commerce_order_cancellation
+  idempotency_required: true
+  write_tables:
+  - commerce_order_cancellation
+  - commerce_order_event
+  - ops_audit_log
+  file_targets: []
+  openapi_exposed: false
 - route: /console/checkout
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-checkout/src/checkoutService.ts
   operation: fetchCheckoutStatus
@@ -276,6 +568,5 @@ frontend_operations:
   - commerce_order
   - commerce_payment_intent
   - commerce_payment_attempt
-  write_tables: []
   file_targets: []
   openapi_exposed: false

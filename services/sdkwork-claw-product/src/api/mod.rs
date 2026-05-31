@@ -21,6 +21,7 @@ mod admin_model_command;
 mod admin_model_rate_limit;
 mod admin_monitor;
 mod admin_open_platform;
+mod admin_payment_runtime;
 mod admin_prompts;
 mod admin_provider_secret;
 mod admin_record;
@@ -69,6 +70,7 @@ mod openai_models;
 mod openai_responses;
 mod openai_runtime;
 mod openai_usage;
+mod payment_aggregate;
 mod request_id;
 mod response;
 mod site_settings;
@@ -99,6 +101,9 @@ pub use admin_model_command::admin_model_management_router_with_store;
 pub use admin_model_rate_limit::admin_model_rate_limit_router_with_store;
 pub use admin_monitor::admin_monitor_router_with_read_store;
 pub use admin_open_platform::admin_open_platform_router_with_store;
+pub use admin_payment_runtime::{
+    admin_payment_runtime_router, admin_payment_runtime_router_with_snapshot_store,
+};
 pub use admin_prompts::admin_prompt_router_with_store;
 pub use admin_provider_secret::admin_provider_secret_router_with_store;
 pub use admin_record::admin_record_router_with_store;
@@ -237,6 +242,9 @@ pub use openai_responses::openai_responses_router_with_relay_usage_recorder_plug
 pub use openai_responses::openai_responses_router_with_relay_usage_recorder_plugins_and_runtime_config;
 pub use openai_runtime::{OpenAiRuntimeFailureStrategy, OpenAiRuntimeRouteConfig};
 pub use openai_usage::OpenAiUsageRecorder;
+pub use payment_aggregate::{
+    payment_aggregate_router, payment_aggregate_router_with_runtime_store,
+};
 pub use site_settings::admin_site_settings_router_with_store;
 pub use site_settings::app_site_settings_router;
 pub use site_settings::app_site_settings_router_with_store;

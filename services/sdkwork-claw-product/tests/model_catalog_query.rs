@@ -273,6 +273,40 @@ fn list_models_reads_backend_group_bindings_and_applies_catalog_filters() {
 }
 
 #[test]
+fn list_models_matches_vendor_scoped_group_binding_against_base_catalog_keys() {
+    let mut catalog = catalog_for_model_list();
+    catalog.add_provider_channel_route(
+        ProviderChannelRoute::new("openrouter", 3001).with_scoped_group_binding(
+            10,
+            10,
+            100,
+            vec!["openai"],
+            vec!["llm"],
+        ),
+    );
+    let service = ModelCatalogQueryService::new(&catalog);
+
+    let page = service
+        .list_models(ListModelCatalogQuery {
+            api_key_id: None,
+            billing_meter: BillingMeter::LlmInputToken,
+            vendor_code: None,
+            vendor_codes: vec!["openai".to_owned()],
+            modalities: Vec::new(),
+            capabilities: Vec::new(),
+            categories: Vec::new(),
+            groups: vec!["standard-group".to_owned()],
+            search_query: None,
+            limit: Some(10),
+        })
+        .unwrap();
+
+    assert_eq!(1, page.items.len());
+    assert_eq!("openai/gpt-4o-mini", page.items[0].catalog_key);
+    assert_eq!(vec!["standard-group"], page.items[0].groups);
+}
+
+#[test]
 fn list_models_returns_complete_admin_group_catalog_independent_of_item_filters() {
     let mut catalog = catalog_for_model_list();
     catalog.add_api_key_group(

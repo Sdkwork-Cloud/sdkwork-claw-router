@@ -28,6 +28,7 @@ export interface OpenApiJsonSchema {
 }
 
 export interface OpenApiParameter {
+  $ref?: string;
   in?: string;
   name?: string;
   description?: string;
@@ -92,8 +93,10 @@ export interface OpenApiDocument {
   paths: Record<string, OpenApiPathItem>;
   components?: {
     schemas?: Record<string, OpenApiJsonSchema>;
+    parameters?: Record<string, OpenApiParameter>;
     [key: string]: unknown;
   };
+  "x-api-prefix"?: string;
   [key: string]: unknown;
 }
 
@@ -138,6 +141,7 @@ export function isOpenApiParameter(value: unknown): value is OpenApiParameter {
   }
 
   return (
+    (typeof value.$ref === 'undefined' || typeof value.$ref === 'string') &&
     (typeof value.in === 'undefined' || typeof value.in === 'string') &&
     (typeof value.name === 'undefined' || typeof value.name === 'string') &&
     (typeof value.description === 'undefined' || typeof value.description === 'string') &&

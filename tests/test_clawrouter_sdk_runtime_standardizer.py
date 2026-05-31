@@ -205,6 +205,84 @@ class SdkRuntimeStandardizerTest(unittest.TestCase):
             self.assertIn("async create(body: CourseApplicationVideoUploadRequest)", content)
             self.assertNotIn("async create(body: FormData)", content)
 
+    def test_syncs_family_openapi_snapshots_without_typescript_workspace(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            generated_openapi = root / "generated" / "openapi"
+            generated_openapi.mkdir(parents=True, exist_ok=True)
+            app_authority = {
+                "openapi": "3.1.0",
+                "info": {"title": "fresh app", "version": "0.1.0"},
+                "paths": {"/app/v3/api/fresh": {"get": {"responses": {"200": {"description": "OK"}}}}},
+            }
+            backend_authority = {
+                "openapi": "3.1.0",
+                "info": {"title": "fresh backend", "version": "0.1.0"},
+                "paths": {"/backend/v3/api/fresh": {"get": {"responses": {"200": {"description": "OK"}}}}},
+            }
+            (generated_openapi / "clawrouter-app-openapi.json").write_text(
+                json.dumps(app_authority, indent=2) + "\n",
+                encoding="utf-8",
+            )
+            (generated_openapi / "clawrouter-backend-openapi.json").write_text(
+                json.dumps(backend_authority, indent=2) + "\n",
+                encoding="utf-8",
+            )
+
+            stale_spec = {
+                "openapi": "3.1.0",
+                "info": {"title": "stale", "version": "0.1.0"},
+                "paths": {},
+            }
+            for sdk_dir in ("clawrouter-app-sdk", "clawrouter-backend-sdk"):
+                sdk_openapi = root / "sdks" / sdk_dir / "openapi"
+                sdk_openapi.mkdir(parents=True, exist_ok=True)
+                (sdk_openapi / f"{sdk_dir}.openapi.json").write_text(
+                    json.dumps(stale_spec, indent=2) + "\n",
+                    encoding="utf-8",
+                )
+                (sdk_openapi / f"{sdk_dir}.sdkgen.json").write_text(
+                    json.dumps(stale_spec, indent=2) + "\n",
+                    encoding="utf-8",
+                )
+
+            updated = self.standardizer(root).sync_openapi_snapshots()
+
+            self.assertEqual(
+                {
+                    root / "sdks" / "clawrouter-app-sdk" / "openapi" / "clawrouter-app-sdk.openapi.json",
+                    root / "sdks" / "clawrouter-app-sdk" / "openapi" / "clawrouter-app-sdk.sdkgen.json",
+                    root / "sdks" / "clawrouter-backend-sdk" / "openapi" / "clawrouter-backend-sdk.openapi.json",
+                    root / "sdks" / "clawrouter-backend-sdk" / "openapi" / "clawrouter-backend-sdk.sdkgen.json",
+                },
+                set(updated),
+            )
+            self.assertEqual(
+                app_authority,
+                json.loads(
+                    (
+                        root
+                        / "sdks"
+                        / "clawrouter-app-sdk"
+                        / "openapi"
+                        / "clawrouter-app-sdk.openapi.json"
+                    ).read_text(encoding="utf-8")
+                ),
+            )
+            self.assertEqual(
+                app_authority,
+                json.loads(
+                    (
+                        root
+                        / "sdks"
+                        / "clawrouter-app-sdk"
+                        / "openapi"
+                        / "clawrouter-app-sdk.sdkgen.json"
+                    ).read_text(encoding="utf-8")
+                ),
+            )
+            self.assertFalse((root / "sdks" / "clawrouter-app-sdk" / "clawrouter-app-sdk-typescript").exists())
+
     def test_writes_open_sdk_derived_spec_without_recursive_schema_cycles(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
@@ -317,6 +395,8 @@ class SdkRuntimeStandardizerTest(unittest.TestCase):
                 self.assertNotIn("'-i', sdkgenInputPath", generator_body)
                 self.assertIn("cleanGeneratedOutput(language);", generate_script)
                 self.assertIn("function cleanGeneratedOutput(language) {", generate_script)
+                self.assertIn("syncFamilyOpenApiSnapshots();", generate_script)
+                self.assertIn("function syncFamilyOpenApiSnapshots() {", generate_script)
 
     def test_verify_script_checks_family_generation_input_contract(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:

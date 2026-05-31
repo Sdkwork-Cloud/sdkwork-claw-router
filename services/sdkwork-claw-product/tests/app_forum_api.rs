@@ -1,8 +1,6 @@
 mod common;
-#[path = "common/installed_sqlite.rs"]
-mod installed_sqlite_common;
 use common::InternalTrustedSubjectHeaders;
-use installed_sqlite_common::{repair_sqlite_pool, schema_sqlite_pool};
+use sdkwork_claw_product_test_support::{repair_sqlite_pool, schema_sqlite_pool};
 use std::sync::atomic::{AtomicU64, Ordering};
 use std::sync::Arc;
 use std::sync::{Mutex, OnceLock};

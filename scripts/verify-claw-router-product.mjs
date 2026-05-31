@@ -10,6 +10,7 @@ Run the standard sdkwork-claw-router verification sequence.
 
 Options:
   --fast                 Run the low-cost local iteration gate for Codex loops.
+  --build-jobs <count>   Override Cargo build parallelism for Rust verify steps.
   --with-edge-dev-smoke  Also run the real pnpm dev edge server smoke.
   --skip-edge-dev-smoke
                          Skip the real pnpm dev edge server smoke even when CI or env opts in.
@@ -25,6 +26,7 @@ Options:
 
 function parseArgs(argv) {
   const settings = {
+    buildJobs: null,
     fast: false,
     withEdgeDevSmoke: false,
     skipEdgeDevSmoke: false,
@@ -36,11 +38,19 @@ function parseArgs(argv) {
     help: false,
   };
 
-  for (const arg of argv) {
+  for (let index = 0; index < argv.length; index += 1) {
+    const arg = argv[index];
     if (arg === '--') {
       continue;
     }
     switch (arg) {
+      case '--build-jobs':
+        index += 1;
+        if (!argv[index] || !/^[1-9][0-9]*$/u.test(argv[index])) {
+          throw new Error('--build-jobs requires a positive integer');
+        }
+        settings.buildJobs = argv[index];
+        break;
       case '--fast':
         settings.fast = true;
         break;
@@ -110,10 +120,25 @@ function shouldRunEdgeDevSmoke(settings, env = process.env) {
 }
 
 function cargoVerifyEnv(env = process.env) {
-  return {
+  const verifyEnv = {
     ...env,
     CARGO_TARGET_DIR: env.CLAWROUTER_VERIFY_CARGO_TARGET_DIR || env.CARGO_TARGET_DIR || 'target-verify',
+    CARGO_INCREMENTAL: '0',
+    CARGO_PROFILE_DEV_DEBUG: '0',
+    CARGO_PROFILE_DEV_INCREMENTAL: 'false',
+    CARGO_PROFILE_TEST_DEBUG: '0',
+    CARGO_PROFILE_TEST_INCREMENTAL: 'false',
   };
+  delete verifyEnv.CARGO_BUILD_JOBS;
+  return verifyEnv;
+}
+
+function buildCargoVerificationEnv(env = process.env, settings = {}) {
+  const verifyEnv = cargoVerifyEnv(env);
+  if (settings.buildJobs) {
+    verifyEnv.CARGO_BUILD_JOBS = settings.buildJobs;
+  }
+  return verifyEnv;
 }
 
 const COMMERCIAL_CONTRACT_GUARDIANS = [
@@ -201,7 +226,7 @@ function buildVerificationPlan(settings, env = process.env) {
     return buildFastVerificationPlan(env);
   }
 
-  const rustEnv = cargoVerifyEnv(env);
+  const rustEnv = buildCargoVerificationEnv(env, settings);
   const plan = [
     {
       label: 'sdkwork-models catalog check',
@@ -307,7 +332,7 @@ function buildVerificationPlan(settings, env = process.env) {
     label: 'portal production browser DOM smoke',
     command: 'node',
     args: ['apps/sdkwork-claw-router-portal/scripts/smoke-production-browser.mjs'],
-    env,
+    env: rustEnv,
   });
   plan.push({
     label: 'portal commons runtime tests',
@@ -484,10 +509,21 @@ function buildVerificationPlan(settings, env = process.env) {
     env,
   });
   if (!settings.skipRustTests) {
+    const rustWorkspaceTestArgs = [
+      'scripts/run-claw-router-rust-tests.mjs',
+      'full',
+      '--target-dir',
+      rustEnv.CARGO_TARGET_DIR,
+      '--test-threads',
+      '1',
+    ];
+    if (settings.buildJobs) {
+      rustWorkspaceTestArgs.push('--build-jobs', settings.buildJobs);
+    }
     plan.push({
       label: 'rust workspace tests',
-      command: 'cargo',
-      args: ['test', '--workspace'],
+      command: 'node',
+      args: rustWorkspaceTestArgs,
       env: rustEnv,
     });
   }

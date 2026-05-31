@@ -10,6 +10,8 @@ import {
 import {
   createCommerceRuntime,
   createMemoryCommerceFeatureFlagStore,
+  detectCommercePaymentEnvironment,
+  requestCommercePayment,
 } from "../src/index";
 
 const RETIRED_TIER_ROOT = "v" + "ip";
@@ -164,6 +166,67 @@ describe("SDKWork commerce runtime", () => {
 
     featureFlagStore.set("commerce.wallet.withdrawals", true);
     expect(featureFlagStore.isEnabled("commerce.wallet.withdrawals")).toBe(true);
+  });
+
+  it("detects payment bridge environments and dispatches standardized H5 requestPayment calls", async () => {
+    const originalNavigator = globalThis.navigator;
+    const invoke = vi.fn((_name: string, _payload: unknown, callback?: (result: unknown) => void) => {
+      callback?.({ err_msg: "get_brand_wcpay_request:ok" });
+    });
+
+    Object.defineProperty(globalThis, "navigator", {
+      configurable: true,
+      value: {
+        userAgent: "Mozilla/5.0 MicroMessenger",
+      },
+    });
+    Object.defineProperty(window, "WeixinJSBridge", {
+      configurable: true,
+      value: {
+        invoke,
+      },
+    });
+
+    expect(detectCommercePaymentEnvironment()).toBe("wechat_official_account");
+    await expect(
+      requestCommercePayment({
+        paymentProduct: "wechat_jsapi",
+        payload: {
+          appId: "wx-app-id",
+          nonceStr: "nonce-value",
+          package: "prepay_id=wx-prepay",
+          paySign: "signature-value",
+          signType: "RSA",
+          timeStamp: "1717000000",
+        },
+      }),
+    ).resolves.toEqual({
+      rawResult: { err_msg: "get_brand_wcpay_request:ok" },
+      status: "success",
+    });
+    expect(invoke).toHaveBeenCalledTimes(1);
+    expect(invoke).toHaveBeenCalledWith(
+      "getBrandWCPayRequest",
+      expect.objectContaining({
+        appId: "wx-app-id",
+        nonceStr: "nonce-value",
+        package: "prepay_id=wx-prepay",
+        paySign: "signature-value",
+        signType: "RSA",
+        timeStamp: "1717000000",
+      }),
+      expect.any(Function),
+    );
+    delete (window as typeof window & { WeixinJSBridge?: unknown }).WeixinJSBridge;
+
+    if (originalNavigator === undefined) {
+      delete (globalThis as { navigator?: unknown }).navigator;
+    } else {
+      Object.defineProperty(globalThis, "navigator", {
+        configurable: true,
+        value: originalNavigator,
+      });
+    }
   });
 });
 

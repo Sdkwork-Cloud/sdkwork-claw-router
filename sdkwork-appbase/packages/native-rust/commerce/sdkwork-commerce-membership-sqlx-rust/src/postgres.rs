@@ -7,8 +7,9 @@ use crate::read_model::is_missing_postgres_read_model;
 use crate::shared::{
     benefits_for_plan, build_package_group_from_packages, decimal_string,
     map_membership_package_record, method_alias, normalize_payment_method, parse_points_amount,
-    plan_code_from_rank, plan_rank_from_code, privilege_usage_from_benefits,
-    ParsedMembershipPackage, StoredMembershipPlan, POINTS_ASSET_TYPE, POINTS_CURRENCY_CODE,
+    payment_product_for_scan_qr, payment_provider_code, plan_code_from_rank, plan_rank_from_code,
+    privilege_usage_from_benefits, ParsedMembershipPackage, StoredMembershipPlan,
+    POINTS_ASSET_TYPE, POINTS_CURRENCY_CODE,
 };
 use crate::{
     AdminMembershipEntitlementItem, AdminMembershipFuture, AdminMembershipMemberItem,
@@ -1985,12 +1986,18 @@ async fn submit_purchase(
         success: true,
         request_no: command.order_no.clone(),
         order_id: command.order_no.clone(),
+        provider_code: payment_provider_code(&method.method_key).to_owned(),
+        payment_method: method.method_key.clone(),
+        payment_product: payment_product_for_scan_qr(&method.method_key).to_owned(),
+        next_action: "scan_qr".to_owned(),
         payment_id: command.payment_uuid.clone(),
+        cashier_url: membership_payment_qr_code_payload(&command.payment_uuid, &command.order_no),
         qr_code_payload: membership_payment_qr_code_payload(
             &command.payment_uuid,
             &command.order_no,
         ),
         qr_code_image_url: None,
+        request_payment_payload: None,
         package_id: package.item.id,
         package_name: package.item.name,
         amount: package.item.price,
@@ -2002,7 +2009,9 @@ async fn submit_purchase(
 }
 
 fn membership_payment_qr_code_payload(payment_id: &str, order_id: &str) -> String {
-    format!("https://im.sdkwork.com/pay?type=qrcode&paymentId={payment_id}&orderId={order_id}")
+    format!(
+        "https://im.sdkwork.com/cashier?scene=membership&orderId={order_id}&paymentId={payment_id}"
+    )
 }
 
 async fn load_package_for_purchase(
@@ -2028,7 +2037,7 @@ async fn load_payment_method(
     tx: &mut Transaction<'_, Postgres>,
     command: &SubmitMembershipPurchaseCommand,
 ) -> AppMembershipResult<MembershipPaymentMethod> {
-    let method = normalize_payment_method(&command.payment_method);
+    let method = "wechat".to_owned();
     let alias = method_alias(&method);
     let row = sqlx::query(LOAD_PAYMENT_METHOD)
         .bind(command.subject.tenant_id)
@@ -2352,28 +2361,15 @@ async fn insert_entitlements(
         .await
         .map_err(|error| store_error("failed to insert entitlement grant", error))?;
 
-        sqlx::query(
-            r#"
-            INSERT INTO entitlement_account
-                (id, tenant_id, organization_id, account_no, benefit_id, subject_type,
-                 subject_id, total_granted, total_used, balance, status, expires_at,
-                 version, created_at, updated_at)
-            VALUES
-                ($1, CAST($2 AS TEXT), CAST($3 AS TEXT), $1, $4, 'user',
-                 CAST($5 AS TEXT), $6, '0', $6, 'active', $7, 0, $8, $8)
-            "#,
+        let account = upsert_entitlement_account(
+            tx,
+            command,
+            &account_id,
+            &benefit_id,
+            &quantity,
+            expires_at,
         )
-        .bind(&account_id)
-        .bind(command.subject.tenant_id)
-        .bind(command.subject.organization_id)
-        .bind(&benefit_id)
-        .bind(command.subject.user_id)
-        .bind(&quantity)
-        .bind(expires_at)
-        .bind(&command.requested_at)
-        .execute(&mut **tx)
-        .await
-        .map_err(|error| store_error("failed to insert entitlement account", error))?;
+        .await?;
 
         sqlx::query(
             r#"
@@ -2383,18 +2379,19 @@ async fn insert_entitlements(
                  source_type, source_id, request_no, idempotency_key, occurred_at, created_at)
             VALUES
                 ($1, CAST($2 AS TEXT), CAST($3 AS TEXT), $1, $4, $5, $6,
-                 'user', CAST($7 AS TEXT), 'credit', $8, $8, 'membership_grant',
-                 'membership_subscription', $9, $10, $11, $12, $12)
+                 'user', CAST($7 AS TEXT), 'credit', $8, $9, 'membership_grant',
+                 'membership_subscription', $10, $11, $12, $13, $13)
             "#,
         )
         .bind(&ledger_id)
         .bind(command.subject.tenant_id)
         .bind(command.subject.organization_id)
-        .bind(&account_id)
+        .bind(&account.account_id)
         .bind(&grant_id)
         .bind(&benefit_id)
         .bind(command.subject.user_id)
         .bind(&quantity)
+        .bind(&account.balance_after)
         .bind(&command.membership_uuid)
         .bind(format!("{}-ledger-{}", command.order_no, index + 1))
         .bind(&command.out_trade_no)
@@ -2404,6 +2401,60 @@ async fn insert_entitlements(
         .map_err(|error| store_error("failed to insert entitlement ledger", error))?;
     }
     Ok(())
+}
+
+#[derive(Debug, Clone)]
+struct EntitlementAccountBalance {
+    account_id: String,
+    balance_after: String,
+}
+
+async fn upsert_entitlement_account(
+    tx: &mut Transaction<'_, Postgres>,
+    command: &SubmitMembershipPurchaseCommand,
+    account_id: &str,
+    benefit_id: &str,
+    quantity: &str,
+    expires_at: &str,
+) -> AppMembershipResult<EntitlementAccountBalance> {
+    let row = sqlx::query(
+        r#"
+        INSERT INTO entitlement_account
+            (id, tenant_id, organization_id, account_no, benefit_id, subject_type,
+             subject_id, total_granted, total_used, balance, status, expires_at,
+             version, created_at, updated_at)
+        VALUES
+            ($1, CAST($2 AS TEXT), CAST($3 AS TEXT), $1, $4, 'user',
+             CAST($5 AS TEXT), $6, '0', $6, 'active', $7, 0, $8, $8)
+        ON CONFLICT(tenant_id, subject_type, subject_id, benefit_id) DO UPDATE SET
+            total_granted = CAST((CAST(entitlement_account.total_granted AS BIGINT) + CAST(EXCLUDED.total_granted AS BIGINT)) AS TEXT),
+            balance = CAST((CAST(entitlement_account.balance AS BIGINT) + CAST(EXCLUDED.balance AS BIGINT)) AS TEXT),
+            status = 'active',
+            expires_at = CASE
+                WHEN entitlement_account.expires_at IS NULL OR EXCLUDED.expires_at > entitlement_account.expires_at THEN EXCLUDED.expires_at
+                ELSE entitlement_account.expires_at
+            END,
+            version = entitlement_account.version + 1,
+            updated_at = EXCLUDED.updated_at
+        RETURNING id, balance
+        "#,
+    )
+    .bind(account_id)
+    .bind(command.subject.tenant_id)
+    .bind(command.subject.organization_id)
+    .bind(benefit_id)
+    .bind(command.subject.user_id)
+    .bind(quantity)
+    .bind(expires_at)
+    .bind(&command.requested_at)
+    .fetch_one(&mut **tx)
+    .await
+    .map_err(|error| store_error("failed to insert entitlement account", error))?;
+
+    Ok(EntitlementAccountBalance {
+        account_id: string_cell(&row, "id"),
+        balance_after: string_cell(&row, "balance"),
+    })
 }
 
 async fn consume_speed_up(

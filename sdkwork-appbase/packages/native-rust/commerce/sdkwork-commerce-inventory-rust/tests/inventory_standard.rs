@@ -157,23 +157,16 @@ fn inventory_service_contract_exposes_domain_operations() {
     assert_eq!(contract.service_name, "commerce.inventory");
     assert!(contract.validate().is_ok());
     for query in [
-        "inventory.stocks.retrieve",
         "inventory.stocks.list",
         "inventory.reservations.list",
-        "inventory.movements.list",
+        "inventory.ledgerEntries.list",
     ] {
         assert!(
             contract.read_queries.contains(&query),
             "inventory contract must expose read query {query}",
         );
     }
-    for command in [
-        "inventory.stocks.upsert",
-        "inventory.reservations.create",
-        "inventory.reservations.consume",
-        "inventory.reservations.release",
-        "inventory.adjustments.create",
-    ] {
+    for command in ["inventory.stocks.update"] {
         assert!(
             contract.write_commands.contains(&command),
             "inventory contract must expose write command {command}",

@@ -2790,6 +2790,39 @@
       ]
     },
     {
+      "api_method": "GET",
+      "api_path": "/backend/v3/api/recharges/settings",
+      "api_surface": "backend",
+      "file_targets": [],
+      "kind": "read",
+      "operation": "backendMembershipsRechargeSettingsRetrieve",
+      "operation_scope": null,
+      "read_sources": [
+        "commerce_exchange_rule"
+      ],
+      "route": "/admin/memberships/recharge-packages",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts",
+      "write_tables": []
+    },
+    {
+      "api_method": "PUT",
+      "api_path": "/backend/v3/api/recharges/settings",
+      "api_surface": "backend",
+      "file_targets": [],
+      "kind": "update",
+      "operation": "backendMembershipsRechargeSettingsUpdate",
+      "operation_scope": null,
+      "read_sources": [
+        "commerce_exchange_rule"
+      ],
+      "route": "/admin/memberships/recharge-packages",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts",
+      "write_tables": [
+        "commerce_exchange_rule",
+        "ops_audit_log"
+      ]
+    },
+    {
       "api_method": "POST",
       "api_path": "/backend/v3/api/memberships/packages",
       "api_surface": "backend",
@@ -3087,6 +3120,21 @@
       "write_tables": []
     },
     {
+      "api_method": "GET",
+      "api_path": "/backend/v3/api/recharges/settings",
+      "api_surface": "backend",
+      "file_targets": [],
+      "kind": "read",
+      "operation": "fetchMembershipAdminRechargeSettings",
+      "operation_scope": "app_shell",
+      "read_sources": [
+        "commerce_exchange_rule"
+      ],
+      "route": "/admin/memberships/recharge-packages",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts",
+      "write_tables": []
+    },
+    {
       "api_method": "PATCH",
       "api_path": "/backend/v3/api/memberships/members/{membershipId}/status",
       "api_surface": "backend",
@@ -3188,6 +3236,24 @@
         "commerce_recharge_package",
         "commerce_product_spu",
         "commerce_product_sku",
+        "ops_audit_log"
+      ]
+    },
+    {
+      "api_method": "PUT",
+      "api_path": "/backend/v3/api/recharges/settings",
+      "api_surface": "backend",
+      "file_targets": [],
+      "kind": "update",
+      "operation": "updateMembershipAdminRechargeSettings",
+      "operation_scope": "app_shell",
+      "read_sources": [
+        "commerce_exchange_rule"
+      ],
+      "route": "/admin/memberships/recharge-packages",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts",
+      "write_tables": [
+        "commerce_exchange_rule",
         "ops_audit_log"
       ]
     },
@@ -4413,6 +4479,29 @@
       "file_targets": [],
       "kind": "read",
       "operation": "backendPaymentsRouteRulesList",
+      "operation_scope": null,
+      "read_sources": [
+        "commerce_payment_provider",
+        "commerce_payment_provider_account",
+        "commerce_payment_method",
+        "commerce_payment_channel",
+        "commerce_payment_route_rule",
+        "commerce_payment_intent",
+        "commerce_payment_attempt",
+        "commerce_payment_webhook_event",
+        "commerce_payment_reconciliation_run"
+      ],
+      "route": "/admin/payments",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-payments/src/paymentsService.ts",
+      "write_tables": []
+    },
+    {
+      "api_method": "GET",
+      "api_path": "/backend/v3/api/payments/runtime/snapshot",
+      "api_surface": "backend",
+      "file_targets": [],
+      "kind": "read",
+      "operation": "backendPaymentsRuntimeSnapshotRetrieve",
       "operation_scope": null,
       "read_sources": [
         "commerce_payment_provider",
@@ -8397,6 +8486,29 @@
     },
     {
       "api_method": "POST",
+      "api_path": "/app/v3/api/recharges/orders/{orderId}/cancellations",
+      "api_surface": "app",
+      "file_targets": [],
+      "kind": "create",
+      "operation": "appRechargesOrdersCancel",
+      "operation_scope": null,
+      "read_sources": [
+        "commerce_order",
+        "commerce_order_item",
+        "commerce_payment_intent",
+        "commerce_payment_attempt",
+        "commerce_order_cancellation"
+      ],
+      "route": "/console/recharge",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-recharge/src/rechargeService.ts",
+      "write_tables": [
+        "commerce_order_cancellation",
+        "commerce_order_event",
+        "ops_audit_log"
+      ]
+    },
+    {
+      "api_method": "POST",
       "api_path": "/app/v3/api/recharges/orders",
       "api_surface": "app",
       "file_targets": [],
@@ -8449,6 +8561,45 @@
     },
     {
       "api_method": "GET",
+      "api_path": "/app/v3/api/recharges/settings",
+      "api_surface": "app",
+      "file_targets": [],
+      "kind": "read",
+      "operation": "appRechargesSettingsRetrieve",
+      "operation_scope": null,
+      "read_sources": [
+        "commerce_exchange_rule",
+        "commerce_recharge_package"
+      ],
+      "route": "/console/recharge",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-recharge/src/rechargeService.ts",
+      "write_tables": []
+    },
+    {
+      "api_method": "POST",
+      "api_path": "/app/v3/api/recharges/orders/{orderId}/cancellations",
+      "api_surface": "app",
+      "file_targets": [],
+      "kind": "create",
+      "operation": "cancelRechargeOrder",
+      "operation_scope": "app_shell",
+      "read_sources": [
+        "commerce_order",
+        "commerce_order_item",
+        "commerce_payment_intent",
+        "commerce_payment_attempt",
+        "commerce_order_cancellation"
+      ],
+      "route": "/console/recharge",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-recharge/src/rechargeService.ts",
+      "write_tables": [
+        "commerce_order_cancellation",
+        "commerce_order_event",
+        "ops_audit_log"
+      ]
+    },
+    {
+      "api_method": "GET",
       "api_path": "/app/v3/api/billing/history",
       "api_surface": "app",
       "file_targets": [],
@@ -8491,6 +8642,22 @@
         "commerce_recharge_package",
         "commerce_product_spu",
         "commerce_product_sku"
+      ],
+      "route": "/console/recharge",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-recharge/src/rechargeService.ts",
+      "write_tables": []
+    },
+    {
+      "api_method": "GET",
+      "api_path": "/app/v3/api/recharges/settings",
+      "api_surface": "app",
+      "file_targets": [],
+      "kind": "read",
+      "operation": "fetchRechargeSettings",
+      "operation_scope": "app_shell",
+      "read_sources": [
+        "commerce_exchange_rule",
+        "commerce_recharge_package"
       ],
       "route": "/console/recharge",
       "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-recharge/src/rechargeService.ts",
@@ -11204,8 +11371,8 @@
     }
   ],
   "summary": {
-    "operation_count": 587,
+    "operation_count": 596,
     "source_file_count": 63,
-    "write_operation_count": 292
+    "write_operation_count": 296
   }
 }

@@ -2,6 +2,8 @@ import {
   createIdempotencyParams,
   getClawRouterBackendSdkClient,
   isRecord,
+  normalizeRechargeSettings,
+  normalizeCurrencyCode,
   readRequiredApiItem,
   readRequiredApiItems,
   readString,
@@ -58,16 +60,30 @@ export interface MembershipsAdminRechargePackageItem {
   skuId: string;
   priceAmount: string;
   currencyCode: string;
-  bonusAmount: string;
-  grantAmount: string;
+  bonusPoints: number;
+  grantAmount: number;
+  points: number;
   status: string;
   updatedAt: string;
 }
 
 export interface MembershipsAdminRechargePackageMutationInput {
-  rmb: string;
-  bonus: number;
+  priceAmount: string;
+  currencyCode: string;
+  bonusPoints: number;
   status?: 'active' | 'inactive';
+}
+
+export interface MembershipsAdminRechargeSettingsItem {
+  baseCurrencyCode: string;
+  basePointsPerCny: string;
+  currencyToCnyRates: Record<string, string>;
+}
+
+export interface MembershipsAdminRechargeSettingsUpdateInput {
+  baseCurrencyCode: string;
+  basePointsPerCny: string;
+  currencyToCnyRates: Record<string, string>;
 }
 
 export interface MembershipsAdminPlanBenefitInput {
@@ -303,6 +319,16 @@ export async function backendMembershipsRechargePackagesDelete(
   return getClawRouterBackendSdkClient().commerce.recharges.packages.delete(
     packageId,
   );
+}
+
+export async function backendMembershipsRechargeSettingsRetrieve() {
+  return getClawRouterBackendSdkClient().commerce.recharges.settings.retrieve();
+}
+
+export async function backendMembershipsRechargeSettingsUpdate(
+  body: Parameters<BackendCommerce['recharges']['settings']['update']>[0],
+) {
+  return getClawRouterBackendSdkClient().commerce.recharges.settings.update(body);
 }
 
 export async function fetchMembershipAdminPackageCatalog(): Promise<MembershipsAdminPackageCatalog> {
@@ -544,6 +570,20 @@ export async function deleteMembershipAdminRechargePackage(packageId: string): P
   );
 }
 
+export async function fetchMembershipAdminRechargeSettings(): Promise<MembershipsAdminRechargeSettingsItem> {
+  const result = await backendMembershipsRechargeSettingsRetrieve();
+  return normalizeAdminRechargeSettings(readRequiredApiItem(result, 'Recharge settings could not be loaded'));
+}
+
+export async function updateMembershipAdminRechargeSettings(
+  input: MembershipsAdminRechargeSettingsUpdateInput,
+): Promise<MembershipsAdminRechargeSettingsItem> {
+  const result = await backendMembershipsRechargeSettingsUpdate(
+    buildRechargeSettingsUpdateRequest(input),
+  );
+  return normalizeAdminRechargeSettings(readRequiredApiItem(result, 'Recharge settings could not be updated'));
+}
+
 function normalizeAdminPackage(value: unknown): MembershipsAdminPackageItem {
   const item = isRecord(value) ? value as ApiRecord : {} as ApiRecord;
   const code = readFirstString(item, ['package_no', 'packageNo', 'code']);
@@ -582,9 +622,9 @@ function normalizeAdminPackageGroup(value: unknown): MembershipsAdminPackageGrou
 
 function normalizeAdminRechargePackage(value: unknown): MembershipsAdminRechargePackageItem {
   const item = isRecord(value) ? value as ApiRecord : {} as ApiRecord;
-  const priceAmount = readFirstString(item, ['price_amount', 'priceAmount', 'rmb']);
-  const bonus = readFirstString(item, ['bonus', 'bonus_amount', 'bonusAmount']);
-  const points = readFirstString(item, ['points', 'points_amount', 'pointsAmount', 'grant_amount', 'grantAmount']);
+  const priceAmount = readFirstString(item, ['price_amount', 'priceAmount']);
+  const bonusPoints = readInteger(item, ['bonus_points', 'bonusPoints'], 0);
+  const grantAmount = readInteger(item, ['grant_amount', 'grantAmount', 'points'], 0);
   return {
     id: readFirstString(item, ['id', 'package_id', 'packageId', 'package_no', 'packageNo']) || 'recharge-package',
     packageNo: readFirstString(item, ['package_no', 'packageNo', 'id']),
@@ -592,11 +632,24 @@ function normalizeAdminRechargePackage(value: unknown): MembershipsAdminRecharge
     skuId: readFirstString(item, ['sku_id', 'skuId']),
     priceAmount: priceAmount || '0',
     currencyCode: readFirstString(item, ['currency_code', 'currencyCode']) || 'CNY',
-    bonusAmount: bonus || '0',
-    grantAmount: points || bonus || '0',
+    bonusPoints,
+    grantAmount,
+    points: readInteger(item, ['points'], grantAmount),
     status: readFirstString(item, ['status']) || 'active',
     updatedAt: readFirstString(item, ['updated_at', 'updatedAt', 'created_at', 'createdAt']),
   };
+}
+
+function normalizeAdminRechargeSettings(value: unknown): MembershipsAdminRechargeSettingsItem {
+  const item = isRecord(value) ? value as ApiRecord : {} as ApiRecord;
+  const currencyToCnyRates = readRecord(item, ['currencyToCnyRates', 'currency_to_cny_rates']);
+  return normalizeRechargeSettings({
+    baseCurrencyCode: readFirstString(item, ['baseCurrencyCode', 'base_currency_code']) || 'CNY',
+    basePointsPerCny: readFirstString(item, ['basePointsPerCny', 'base_points_per_cny']) || '10',
+    currencyToCnyRates: Object.fromEntries(
+      Object.entries(currencyToCnyRates).map(([currencyCode, rate]) => [currencyCode, String(rate ?? '')]),
+    ),
+  });
 }
 
 function normalizeAdminPlan(value: unknown): MembershipsAdminPlanItem {
@@ -732,31 +785,38 @@ function buildPackageMutationRequest(input: MembershipsAdminPackageMutationInput
 function buildRechargePackageMutationRequest(
   input: MembershipsAdminRechargePackageMutationInput,
 ): MembershipsAdminRechargePackageMutationInput {
-  const rmb = requiredMembershipText(input.rmb, 'rmb');
-  if (!/^\d+(?:\.\d{1,2})?$/.test(rmb)) {
-    throw new Error('rmb must be a valid amount');
-  }
-  if (!Number.isInteger(input.bonus) || input.bonus < 0) {
-    throw new Error('bonus must be a non-negative integer');
-  }
   return {
-    rmb,
-    bonus: input.bonus,
+    priceAmount: requiredMoneyAmount(input.priceAmount, 'priceAmount'),
+    currencyCode: normalizeCurrencyCode(input.currencyCode),
+    bonusPoints: requiredNonNegativeInteger(input.bonusPoints, 'bonusPoints'),
     status: input.status ?? 'active',
   };
 }
 
-function normalizeCurrencyCode(value: string | undefined): string {
-  const normalized = (value ?? 'CNY').trim().toUpperCase();
-  if (!/^[A-Z0-9_-]{3,16}$/.test(normalized)) {
-    throw new Error('currencyCode is invalid');
-  }
-  return normalized;
+function buildRechargeSettingsUpdateRequest(
+  input: MembershipsAdminRechargeSettingsUpdateInput,
+): MembershipsAdminRechargeSettingsUpdateInput {
+  const normalized = normalizeRechargeSettings(input);
+  return {
+    baseCurrencyCode: normalized.baseCurrencyCode,
+    basePointsPerCny: normalized.basePointsPerCny,
+    currencyToCnyRates: normalized.currencyToCnyRates,
+  };
 }
 
 function optionalBoundedText(value: string | undefined): string | undefined {
   const normalized = value?.trim();
   return normalized || undefined;
+}
+
+function readRecord(record: ApiRecord, keys: string[]): ApiRecord {
+  for (const key of keys) {
+    const value = record[key];
+    if (isRecord(value)) {
+      return value as ApiRecord;
+    }
+  }
+  return {};
 }
 
 function readFirstString(record: ApiRecord, keys: string[]): string {

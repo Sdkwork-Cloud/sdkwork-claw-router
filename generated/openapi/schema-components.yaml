@@ -2394,6 +2394,138 @@ components:
         currency:
           type: string
           maxLength: 16
+    AiConfigChangeEventRecord:
+      type: object
+      x-table: ai_config_change_event
+      x-domain: ai
+      x-generated-by-this-project: true
+      properties:
+        id:
+          type: string
+          format: int64
+        uuid:
+          type: string
+          maxLength: 64
+        tenant_id:
+          type: string
+          format: int64
+        organization_id:
+          type: string
+          format: int64
+        user_id:
+          type: string
+          format: int64
+        request_id:
+          type: string
+          maxLength: 128
+        trace_id:
+          type: string
+          maxLength: 128
+        payload_hash:
+          type: string
+          maxLength: 128
+        status:
+          type: string
+          x-db-type: enum_int32
+        created_at:
+          type: string
+          format: date-time
+        retention_until:
+          type: string
+          format: date-time
+        legal_hold:
+          type: boolean
+        metadata:
+          type: object
+          additionalProperties: true
+        config_scope:
+          type: string
+          maxLength: 64
+        changed_object_type:
+          type: string
+          maxLength: 64
+        changed_object_id:
+          type: string
+          format: int64
+        config_version:
+          type: string
+          format: int64
+        event_payload:
+          type: object
+          additionalProperties: true
+        published_at:
+          type: string
+          format: date-time
+        last_error_message:
+          type: string
+          maxLength: 512
+      required:
+      - uuid
+      - tenant_id
+      - organization_id
+      - status
+      - config_scope
+      - config_version
+    AiConfigVersionRecord:
+      type: object
+      x-table: ai_config_version
+      x-domain: ai
+      x-generated-by-this-project: true
+      properties:
+        id:
+          type: string
+          format: int64
+        uuid:
+          type: string
+          maxLength: 64
+        tenant_id:
+          type: string
+          format: int64
+        organization_id:
+          type: string
+          format: int64
+        data_scope:
+          type: string
+          x-db-type: enum_int32
+        status:
+          type: string
+          x-db-type: enum_int32
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+        version:
+          type: string
+          format: int64
+        deleted_at:
+          type: string
+          format: date-time
+        deleted_by:
+          type: string
+          format: int64
+        metadata:
+          type: object
+          additionalProperties: true
+        config_scope:
+          type: string
+          maxLength: 64
+        changed_object_type:
+          type: string
+          maxLength: 64
+        changed_object_id:
+          type: string
+          format: int64
+        published_at:
+          type: string
+          format: date-time
+      required:
+      - uuid
+      - tenant_id
+      - organization_id
+      - status
+      - config_scope
     AiGenerationAssetActionRecord:
       type: object
       x-table: ai_generation_asset_action
@@ -5673,6 +5805,111 @@ components:
         deprecated_at:
           type: string
           format: date-time
+    AiProviderObjectRouteRecord:
+      type: object
+      x-table: ai_provider_object_route
+      x-domain: ai
+      x-generated-by-this-project: true
+      properties:
+        id:
+          type: string
+          format: int64
+        uuid:
+          type: string
+          maxLength: 64
+        tenant_id:
+          type: string
+          format: int64
+        organization_id:
+          type: string
+          format: int64
+        data_scope:
+          type: string
+          x-db-type: enum_int32
+        status:
+          type: string
+          x-db-type: enum_int32
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+        version:
+          type: string
+          format: int64
+        deleted_at:
+          type: string
+          format: date-time
+        deleted_by:
+          type: string
+          format: int64
+        metadata:
+          type: object
+          additionalProperties: true
+        api_key_id:
+          type: string
+          format: int64
+        channel_group_id:
+          type: string
+          format: int64
+        object_type:
+          type: string
+          maxLength: 64
+        object_id:
+          type: string
+          maxLength: 256
+        object_key_hash:
+          type: string
+          maxLength: 128
+        parent_object_type:
+          type: string
+          maxLength: 64
+        parent_object_id:
+          type: string
+          maxLength: 256
+        provider_code:
+          type: string
+          maxLength: 64
+        channel_id:
+          type: string
+          format: int64
+        endpoint_id:
+          type: string
+          format: int64
+        vendor_code:
+          type: string
+          maxLength: 64
+        api_code:
+          type: string
+          maxLength: 128
+        catalog_key:
+          type: string
+          maxLength: 256
+        provider_model:
+          type: string
+          maxLength: 256
+        region_code:
+          type: string
+          maxLength: 64
+        sticky_scope:
+          type: string
+          maxLength: 64
+        expires_at:
+          type: string
+          format: date-time
+        last_seen_at:
+          type: string
+          format: date-time
+      required:
+      - uuid
+      - tenant_id
+      - organization_id
+      - status
+      - object_type
+      - object_id
+      - object_key_hash
+      - channel_id
     AiProviderRecord:
       type: object
       x-table: ai_provider
@@ -6368,6 +6605,97 @@ components:
       - status
       - resource_code
       - resource_type
+    AiResourceRouteProfileRecord:
+      type: object
+      x-table: ai_resource_route_profile
+      x-domain: ai
+      x-generated-by-this-project: true
+      properties:
+        id:
+          type: string
+          format: int64
+        uuid:
+          type: string
+          maxLength: 64
+        tenant_id:
+          type: string
+          format: int64
+        organization_id:
+          type: string
+          format: int64
+        data_scope:
+          type: string
+          x-db-type: enum_int32
+        status:
+          type: string
+          x-db-type: enum_int32
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+        version:
+          type: string
+          format: int64
+        deleted_at:
+          type: string
+          format: date-time
+        deleted_by:
+          type: string
+          format: int64
+        metadata:
+          type: object
+          additionalProperties: true
+        resource_id:
+          type: string
+          format: int64
+        resource_code:
+          type: string
+          maxLength: 192
+        route_key:
+          type: string
+          maxLength: 192
+        http_method:
+          type: string
+          maxLength: 16
+        path_pattern:
+          type: string
+          maxLength: 512
+        capability:
+          type: string
+          x-db-type: enum_int32
+        billing_meter_code:
+          type: string
+          maxLength: 64
+        sticky_object_type:
+          type: string
+          maxLength: 64
+        sticky_scope:
+          type: string
+          maxLength: 64
+        parent_object_types:
+          type: object
+          additionalProperties: true
+        request_extractors:
+          type: object
+          additionalProperties: true
+        response_bindings:
+          type: object
+          additionalProperties: true
+        cache_ttl_seconds:
+          type: string
+          format: int64
+        sort_order:
+          type: integer
+          format: int32
+      required:
+      - uuid
+      - tenant_id
+      - organization_id
+      - status
+      - resource_code
+      - route_key
     AiRouteCandidateRecord:
       type: object
       x-table: ai_route_candidate
@@ -6460,6 +6788,89 @@ components:
       - tenant_id
       - organization_id
       - status
+    AiRouteIdempotencyRecord:
+      type: object
+      x-table: ai_route_idempotency
+      x-domain: ai
+      x-generated-by-this-project: true
+      properties:
+        id:
+          type: string
+          format: int64
+        uuid:
+          type: string
+          maxLength: 64
+        tenant_id:
+          type: string
+          format: int64
+        organization_id:
+          type: string
+          format: int64
+        data_scope:
+          type: string
+          x-db-type: enum_int32
+        status:
+          type: string
+          x-db-type: enum_int32
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+        version:
+          type: string
+          format: int64
+        deleted_at:
+          type: string
+          format: date-time
+        deleted_by:
+          type: string
+          format: int64
+        metadata:
+          type: object
+          additionalProperties: true
+        api_key_id:
+          type: string
+          format: int64
+        channel_group_id:
+          type: string
+          format: int64
+        idempotency_key:
+          type: string
+          maxLength: 256
+        request_hash:
+          type: string
+          maxLength: 128
+        route_strategy:
+          type: string
+          maxLength: 64
+        channel_id:
+          type: string
+          format: int64
+        endpoint_id:
+          type: string
+          format: int64
+        object_type:
+          type: string
+          maxLength: 64
+        object_id:
+          type: string
+          maxLength: 256
+        response_status:
+          type: integer
+          format: int32
+        expires_at:
+          type: string
+          format: date-time
+      required:
+      - uuid
+      - tenant_id
+      - organization_id
+      - status
+      - api_key_id
+      - idempotency_key
+      - request_hash
     AiRoutingDecisionLogRecord:
       type: object
       x-table: ai_routing_decision_log
@@ -9625,6 +10036,81 @@ components:
       - status
       - created_at
       - updated_at
+    CommercePaymentCaptureRecord:
+      type: object
+      x-table: commerce_payment_capture
+      x-domain: commerce
+      x-generated-by-this-project: false
+      properties:
+        tenant_id:
+          type: string
+          maxLength: 512
+        organization_id:
+          type: string
+          maxLength: 512
+        capture_no:
+          type: string
+          maxLength: 128
+        payment_attempt_id:
+          type: string
+          maxLength: 512
+        provider_code:
+          type: string
+          maxLength: 128
+        provider_account_id:
+          type: string
+          maxLength: 512
+        native_capture_id:
+          type: string
+          maxLength: 256
+        amount:
+          type: string
+          maxLength: 64
+        currency_code:
+          type: string
+          maxLength: 16
+        status:
+          type: string
+          maxLength: 64
+        failure_code:
+          type: string
+          maxLength: 128
+        failure_message:
+          type: string
+          maxLength: 1024
+        submitted_at:
+          type: string
+          maxLength: 512
+        succeeded_at:
+          type: string
+          maxLength: 512
+        failed_at:
+          type: string
+          maxLength: 512
+        request_no:
+          type: string
+          maxLength: 512
+        idempotency_key:
+          type: string
+          maxLength: 512
+        created_at:
+          type: string
+          maxLength: 512
+        updated_at:
+          type: string
+          maxLength: 512
+      required:
+      - tenant_id
+      - capture_no
+      - payment_attempt_id
+      - provider_code
+      - amount
+      - currency_code
+      - status
+      - request_no
+      - idempotency_key
+      - created_at
+      - updated_at
     CommercePaymentChannelRecord:
       type: object
       x-table: commerce_payment_channel
@@ -9675,6 +10161,169 @@ components:
       - status
       - created_at
       - updated_at
+    CommercePaymentDisputeEventRecord:
+      type: object
+      x-table: commerce_payment_dispute_event
+      x-domain: commerce
+      x-generated-by-this-project: false
+      properties:
+        tenant_id:
+          type: string
+          maxLength: 512
+        organization_id:
+          type: string
+          maxLength: 512
+        event_no:
+          type: string
+          maxLength: 128
+        dispute_id:
+          type: string
+          maxLength: 512
+        event_type:
+          type: string
+          maxLength: 128
+        from_status:
+          type: string
+          maxLength: 64
+        to_status:
+          type: string
+          maxLength: 64
+        actor_type:
+          type: string
+          maxLength: 64
+        actor_id:
+          type: string
+          maxLength: 512
+        payload_json:
+          type: object
+          additionalProperties: true
+        created_at:
+          type: string
+          maxLength: 512
+      required:
+      - tenant_id
+      - event_no
+      - dispute_id
+      - event_type
+      - to_status
+      - actor_type
+      - created_at
+    CommercePaymentDisputeRecord:
+      type: object
+      x-table: commerce_payment_dispute
+      x-domain: commerce
+      x-generated-by-this-project: false
+      properties:
+        tenant_id:
+          type: string
+          maxLength: 512
+        organization_id:
+          type: string
+          maxLength: 512
+        dispute_no:
+          type: string
+          maxLength: 128
+        provider_code:
+          type: string
+          maxLength: 128
+        provider_account_id:
+          type: string
+          maxLength: 512
+        payment_attempt_id:
+          type: string
+          maxLength: 512
+        native_dispute_id:
+          type: string
+          maxLength: 256
+        reason_code:
+          type: string
+          maxLength: 128
+        amount:
+          type: string
+          maxLength: 64
+        currency_code:
+          type: string
+          maxLength: 16
+        status:
+          type: string
+          maxLength: 64
+        evidence_due_at:
+          type: string
+          maxLength: 512
+        opened_at:
+          type: string
+          maxLength: 512
+        closed_at:
+          type: string
+          maxLength: 512
+        created_at:
+          type: string
+          maxLength: 512
+        updated_at:
+          type: string
+          maxLength: 512
+      required:
+      - tenant_id
+      - dispute_no
+      - provider_code
+      - payment_attempt_id
+      - native_dispute_id
+      - amount
+      - currency_code
+      - status
+      - opened_at
+      - created_at
+      - updated_at
+    CommercePaymentFeeRecord:
+      type: object
+      x-table: commerce_payment_fee
+      x-domain: commerce
+      x-generated-by-this-project: false
+      properties:
+        tenant_id:
+          type: string
+          maxLength: 512
+        organization_id:
+          type: string
+          maxLength: 512
+        provider_code:
+          type: string
+          maxLength: 128
+        provider_account_id:
+          type: string
+          maxLength: 512
+        payment_attempt_id:
+          type: string
+          maxLength: 512
+        refund_id:
+          type: string
+          maxLength: 512
+        statement_item_id:
+          type: string
+          maxLength: 512
+        fee_type:
+          type: string
+          maxLength: 64
+        amount:
+          type: string
+          maxLength: 64
+        currency_code:
+          type: string
+          maxLength: 16
+        occurred_at:
+          type: string
+          maxLength: 512
+        created_at:
+          type: string
+          maxLength: 512
+      required:
+      - tenant_id
+      - provider_code
+      - fee_type
+      - amount
+      - currency_code
+      - occurred_at
+      - created_at
     CommercePaymentIntentRecord:
       type: object
       x-table: commerce_payment_intent
@@ -9693,7 +10342,22 @@ components:
         order_id:
           type: string
           maxLength: 512
+        merchant_order_no:
+          type: string
+          maxLength: 512
+        subject:
+          type: string
+          maxLength: 512
         provider:
+          type: string
+          maxLength: 512
+        provider_code:
+          type: string
+          maxLength: 512
+        payment_method:
+          type: string
+          maxLength: 512
+        scene_code:
           type: string
           maxLength: 512
         amount:
@@ -9711,6 +10375,18 @@ components:
         idempotency_key:
           type: string
           maxLength: 512
+        metadata_json:
+          type: string
+        provider_native_json:
+          type: string
+        next_action_json:
+          type: string
+        captured_amount:
+          type: string
+          maxLength: 512
+        refunded_amount:
+          type: string
+          maxLength: 512
         created_at:
           type: string
           maxLength: 512
@@ -9721,12 +10397,19 @@ components:
       - tenant_id
       - owner_user_id
       - order_id
+      - merchant_order_no
+      - subject
       - provider
+      - provider_code
+      - payment_method
+      - scene_code
       - amount
       - currency_code
       - status
       - request_no
       - idempotency_key
+      - captured_amount
+      - refunded_amount
       - created_at
       - updated_at
     CommercePaymentMethodRecord:
@@ -9775,6 +10458,93 @@ components:
       - idempotency_key
       - created_at
       - updated_at
+    CommercePaymentOperationAttemptRecord:
+      type: object
+      x-table: commerce_payment_operation_attempt
+      x-domain: commerce
+      x-generated-by-this-project: false
+      properties:
+        tenant_id:
+          type: string
+          maxLength: 512
+        organization_id:
+          type: string
+          maxLength: 512
+        operation_no:
+          type: string
+          maxLength: 128
+        provider_code:
+          type: string
+          maxLength: 128
+        provider_account_id:
+          type: string
+          maxLength: 512
+        channel_id:
+          type: string
+          maxLength: 512
+        operation_code:
+          type: string
+          maxLength: 128
+        sdkwork_resource_type:
+          type: string
+          maxLength: 128
+        sdkwork_resource_id:
+          type: string
+          maxLength: 512
+        idempotency_key:
+          type: string
+          maxLength: 512
+        request_digest:
+          type: string
+          maxLength: 128
+        response_digest:
+          type: string
+          maxLength: 128
+        native_request_id:
+          type: string
+          maxLength: 256
+        native_trade_id:
+          type: string
+          maxLength: 256
+        native_refund_id:
+          type: string
+          maxLength: 256
+        http_status:
+          type: string
+          format: int64
+        provider_error_code:
+          type: string
+          maxLength: 128
+        provider_error_message:
+          type: string
+          maxLength: 1024
+        retryable:
+          type: string
+          maxLength: 64
+        status:
+          type: string
+          maxLength: 64
+        started_at:
+          type: string
+          maxLength: 512
+        completed_at:
+          type: string
+          maxLength: 512
+        created_at:
+          type: string
+          maxLength: 512
+      required:
+      - tenant_id
+      - operation_no
+      - provider_code
+      - operation_code
+      - sdkwork_resource_type
+      - sdkwork_resource_id
+      - idempotency_key
+      - request_digest
+      - status
+      - started_at
+      - created_at
     CommercePaymentProviderAccountRecord:
       type: object
       x-table: commerce_payment_provider_account
@@ -9838,6 +10608,79 @@ components:
       - status
       - created_at
       - updated_at
+    CommercePaymentProviderCapabilityRecord:
+      type: object
+      x-table: commerce_payment_provider_capability
+      x-domain: commerce
+      x-generated-by-this-project: false
+      properties:
+        tenant_id:
+          type: string
+          maxLength: 512
+        organization_id:
+          type: string
+          maxLength: 512
+        provider_code:
+          type: string
+          maxLength: 128
+        provider_account_id:
+          type: string
+          maxLength: 512
+        capability_code:
+          type: string
+          maxLength: 128
+        method_code:
+          type: string
+          maxLength: 128
+        scene_code:
+          type: string
+          maxLength: 128
+        country_code:
+          type: string
+          maxLength: 16
+        currency_code:
+          type: string
+          maxLength: 16
+        min_amount:
+          type: string
+          maxLength: 64
+        max_amount:
+          type: string
+          maxLength: 64
+        supported_statement_types:
+          type: object
+          additionalProperties: true
+        supported_webhook_events:
+          type: object
+          additionalProperties: true
+        native_operation_codes:
+          type: object
+          additionalProperties: true
+        status:
+          type: string
+          maxLength: 64
+        effective_from:
+          type: string
+          maxLength: 512
+        effective_to:
+          type: string
+          maxLength: 512
+        metadata_json:
+          type: object
+          additionalProperties: true
+        created_at:
+          type: string
+          maxLength: 512
+        updated_at:
+          type: string
+          maxLength: 512
+      required:
+      - tenant_id
+      - provider_code
+      - capability_code
+      - status
+      - created_at
+      - updated_at
     CommercePaymentProviderRecord:
       type: object
       x-table: commerce_payment_provider
@@ -9883,6 +10726,90 @@ components:
       - display_name
       - provider_type
       - status
+      - created_at
+      - updated_at
+    CommercePaymentReconciliationItemRecord:
+      type: object
+      x-table: commerce_payment_reconciliation_item
+      x-domain: commerce
+      x-generated-by-this-project: false
+      properties:
+        tenant_id:
+          type: string
+          maxLength: 512
+        organization_id:
+          type: string
+          maxLength: 512
+        reconciliation_run_id:
+          type: string
+          maxLength: 512
+        statement_id:
+          type: string
+          maxLength: 512
+        statement_item_id:
+          type: string
+          maxLength: 512
+        payment_attempt_id:
+          type: string
+          maxLength: 512
+        refund_id:
+          type: string
+          maxLength: 512
+        refund_attempt_id:
+          type: string
+          maxLength: 512
+        provider_code:
+          type: string
+          maxLength: 128
+        difference_type:
+          type: string
+          maxLength: 128
+        match_status:
+          type: string
+          maxLength: 64
+        internal_amount:
+          type: string
+          maxLength: 64
+        provider_amount:
+          type: string
+          maxLength: 64
+        difference_amount:
+          type: string
+          maxLength: 64
+        currency_code:
+          type: string
+          maxLength: 16
+        internal_status:
+          type: string
+          maxLength: 64
+        provider_status:
+          type: string
+          maxLength: 64
+        resolution_status:
+          type: string
+          maxLength: 64
+        resolution_note:
+          type: string
+          maxLength: 1024
+        resolved_by:
+          type: string
+          maxLength: 512
+        resolved_at:
+          type: string
+          maxLength: 512
+        created_at:
+          type: string
+          maxLength: 512
+        updated_at:
+          type: string
+          maxLength: 512
+      required:
+      - tenant_id
+      - reconciliation_run_id
+      - provider_code
+      - difference_type
+      - match_status
+      - resolution_status
       - created_at
       - updated_at
     CommercePaymentReconciliationRunRecord:
@@ -9979,6 +10906,74 @@ components:
       - idempotency_key
       - created_at
       - updated_at
+    CommercePaymentRouteDecisionRecord:
+      type: object
+      x-table: commerce_payment_route_decision
+      x-domain: commerce
+      x-generated-by-this-project: false
+      properties:
+        tenant_id:
+          type: string
+          maxLength: 512
+        organization_id:
+          type: string
+          maxLength: 512
+        payment_intent_id:
+          type: string
+          maxLength: 512
+        payment_attempt_id:
+          type: string
+          maxLength: 512
+        route_rule_id:
+          type: string
+          maxLength: 512
+        channel_id:
+          type: string
+          maxLength: 512
+        provider_code:
+          type: string
+          maxLength: 128
+        provider_account_id:
+          type: string
+          maxLength: 512
+        method_code:
+          type: string
+          maxLength: 128
+        scene_code:
+          type: string
+          maxLength: 128
+        country_code:
+          type: string
+          maxLength: 16
+        currency_code:
+          type: string
+          maxLength: 16
+        amount:
+          type: string
+          maxLength: 64
+        risk_level:
+          type: string
+          maxLength: 64
+        decision_reason:
+          type: string
+          maxLength: 512
+        fallback_from_channel_id:
+          type: string
+          maxLength: 512
+        created_at:
+          type: string
+          maxLength: 512
+      required:
+      - tenant_id
+      - payment_intent_id
+      - payment_attempt_id
+      - channel_id
+      - provider_code
+      - method_code
+      - scene_code
+      - currency_code
+      - amount
+      - created_at
     CommercePaymentRouteRuleRecord:
       type: object
       x-table: commerce_payment_route_rule
@@ -10041,6 +11036,276 @@ components:
       - rule_no
       - channel_id
       - status
+      - created_at
+      - updated_at
+    CommercePaymentStatementItemRecord:
+      type: object
+      x-table: commerce_payment_statement_item
+      x-domain: commerce
+      x-generated-by-this-project: false
+      properties:
+        tenant_id:
+          type: string
+          maxLength: 512
+        organization_id:
+          type: string
+          maxLength: 512
+        statement_id:
+          type: string
+          maxLength: 512
+        provider_code:
+          type: string
+          maxLength: 128
+        provider_account_id:
+          type: string
+          maxLength: 512
+        row_no:
+          type: string
+          maxLength: 128
+        native_trade_id:
+          type: string
+          maxLength: 256
+        native_refund_id:
+          type: string
+          maxLength: 256
+        native_order_no:
+          type: string
+          maxLength: 256
+        sdkwork_out_trade_no:
+          type: string
+          maxLength: 128
+        sdkwork_out_refund_no:
+          type: string
+          maxLength: 128
+        transaction_type:
+          type: string
+          maxLength: 64
+        occurred_at:
+          type: string
+          maxLength: 512
+        settled_at:
+          type: string
+          maxLength: 512
+        gross_amount:
+          type: string
+          maxLength: 64
+        fee_amount:
+          type: string
+          maxLength: 64
+        net_amount:
+          type: string
+          maxLength: 64
+        currency_code:
+          type: string
+          maxLength: 16
+        provider_status:
+          type: string
+          maxLength: 64
+        raw_row_digest:
+          type: string
+          maxLength: 128
+        metadata_json:
+          type: object
+          additionalProperties: true
+        created_at:
+          type: string
+          maxLength: 512
+      required:
+      - tenant_id
+      - statement_id
+      - provider_code
+      - row_no
+      - transaction_type
+      - occurred_at
+      - gross_amount
+      - fee_amount
+      - net_amount
+      - currency_code
+      - raw_row_digest
+      - created_at
+    CommercePaymentStatementRecord:
+      type: object
+      x-table: commerce_payment_statement
+      x-domain: commerce
+      x-generated-by-this-project: false
+      properties:
+        tenant_id:
+          type: string
+          maxLength: 512
+        organization_id:
+          type: string
+          maxLength: 512
+        statement_no:
+          type: string
+          maxLength: 128
+        provider_code:
+          type: string
+          maxLength: 128
+        provider_account_id:
+          type: string
+          maxLength: 512
+        statement_type:
+          type: string
+          maxLength: 64
+        settlement_currency:
+          type: string
+          maxLength: 16
+        period_start:
+          type: string
+          maxLength: 512
+        period_end:
+          type: string
+          maxLength: 512
+        provider_statement_id:
+          type: string
+          maxLength: 256
+        file_ref:
+          type: string
+          maxLength: 512
+        file_digest:
+          type: string
+          maxLength: 128
+        download_status:
+          type: string
+          maxLength: 64
+        parse_status:
+          type: string
+          maxLength: 64
+        total_amount:
+          type: string
+          maxLength: 64
+        fee_amount:
+          type: string
+          maxLength: 64
+        net_amount:
+          type: string
+          maxLength: 64
+        downloaded_at:
+          type: string
+          maxLength: 512
+        parsed_at:
+          type: string
+          maxLength: 512
+        request_no:
+          type: string
+          maxLength: 512
+        idempotency_key:
+          type: string
+          maxLength: 512
+        created_at:
+          type: string
+          maxLength: 512
+        updated_at:
+          type: string
+          maxLength: 512
+      required:
+      - tenant_id
+      - statement_no
+      - provider_code
+      - statement_type
+      - settlement_currency
+      - period_start
+      - period_end
+      - download_status
+      - parse_status
+      - total_amount
+      - fee_amount
+      - net_amount
+      - request_no
+      - idempotency_key
+      - created_at
+      - updated_at
+    CommercePaymentWebhookDeliveryRecord:
+      type: object
+      x-table: commerce_payment_webhook_delivery
+      x-domain: commerce
+      x-generated-by-this-project: false
+      properties:
+        tenant_id:
+          type: string
+          maxLength: 512
+        organization_id:
+          type: string
+          maxLength: 512
+        delivery_no:
+          type: string
+          maxLength: 128
+        provider_code:
+          type: string
+          maxLength: 128
+        provider_account_id:
+          type: string
+          maxLength: 512
+        event_id:
+          type: string
+          maxLength: 512
+        nonce:
+          type: string
+          maxLength: 512
+        request_timestamp:
+          type: string
+          format: int64
+        signature:
+          type: string
+          maxLength: 1024
+        signature_algorithm:
+          type: string
+          maxLength: 128
+        headers_json:
+          type: object
+          additionalProperties: true
+        payload_digest:
+          type: string
+          maxLength: 128
+        payload_ref:
+          type: string
+          maxLength: 512
+        source_ip:
+          type: string
+          maxLength: 128
+        user_agent:
+          type: string
+          maxLength: 512
+        verification_status:
+          type: string
+          maxLength: 64
+        delivery_status:
+          type: string
+          maxLength: 64
+        failure_code:
+          type: string
+          maxLength: 128
+        failure_message:
+          type: string
+          maxLength: 1024
+        received_at:
+          type: string
+          maxLength: 512
+        verified_at:
+          type: string
+          maxLength: 512
+        normalized_event_id:
+          type: string
+          maxLength: 512
+        processed_at:
+          type: string
+          maxLength: 512
+        created_at:
+          type: string
+          maxLength: 512
+        updated_at:
+          type: string
+          maxLength: 512
+      required:
+      - tenant_id
+      - delivery_no
+      - provider_code
+      - event_id
+      - nonce
+      - payload_digest
+      - verification_status
+      - delivery_status
+      - received_at
       - created_at
       - updated_at
     CommercePaymentWebhookEventRecord:
@@ -10762,6 +12027,12 @@ components:
         tenant_id:
           type: string
           maxLength: 512
+        organization_id:
+          type: string
+          maxLength: 512
+        payment_intent_id:
+          type: string
+          maxLength: 512
         payment_attempt_id:
           type: string
           maxLength: 512
@@ -10771,6 +12042,15 @@ components:
         amount:
           type: string
           maxLength: 512
+        currency_code:
+          type: string
+          maxLength: 512
+        provider_code:
+          type: string
+          maxLength: 512
+        reason:
+          type: string
+          maxLength: 1024
         status:
           type: string
           maxLength: 512
@@ -14134,6 +15414,89 @@ components:
         default_channel:
           type: string
           maxLength: 32
+    IntegrationProviderAccountRecord:
+      type: object
+      x-table: integration_provider_account
+      x-domain: integration
+      x-generated-by-this-project: true
+      properties:
+        id:
+          type: string
+          format: int64
+        uuid:
+          type: string
+          maxLength: 64
+        tenant_id:
+          type: string
+          format: int64
+        organization_id:
+          type: string
+          format: int64
+        data_scope:
+          type: string
+          x-db-type: enum_int32
+        status:
+          type: string
+          x-db-type: enum_int32
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+        version:
+          type: string
+          format: int64
+        deleted_at:
+          type: string
+          format: date-time
+        deleted_by:
+          type: string
+          format: int64
+        metadata:
+          type: object
+          additionalProperties: true
+        provider_id:
+          type: string
+          format: int64
+        secret_ref:
+          type: string
+          maxLength: 512
+        secret_hash:
+          type: string
+          maxLength: 128
+        masked_label:
+          type: string
+          maxLength: 128
+        base_url:
+          type: string
+          maxLength: 512
+        region_code:
+          type: string
+          maxLength: 64
+        last_latency_ms:
+          type: integer
+          format: int32
+        quota_snapshot:
+          type: object
+          additionalProperties: true
+        last_verified_at:
+          type: string
+          format: date-time
+        last_used_at:
+          type: string
+          format: date-time
+        last_rotated_at:
+          type: string
+          format: date-time
+        next_rotate_at:
+          type: string
+          format: date-time
+      required:
+      - uuid
+      - tenant_id
+      - organization_id
+      - status
     IntegrationProviderHealthSnapshotRecord:
       type: object
       x-table: integration_provider_health_snapshot

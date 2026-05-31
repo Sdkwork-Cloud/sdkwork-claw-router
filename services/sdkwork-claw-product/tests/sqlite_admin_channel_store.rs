@@ -1,21 +1,19 @@
-#[path = "common/installed_sqlite.rs"]
-mod installed_sqlite_common;
-
 use std::sync::Arc;
 
-use installed_sqlite_common::schema_sqlite_pool;
 use sdkwork_claw_product::application::ApiKeySecretCodec;
 use sdkwork_claw_product::infrastructure::crypto::RingAeadApiKeySecretCodec;
 use sdkwork_claw_product::infrastructure::sql::sqlite::SqliteAdminChannelStore;
 use sdkwork_claw_product::ports::{
-    AdminChannelStore, AdminChannelSubject, CreateAdminChannelCommand, ListAdminChannelsQuery,
-    UpdateAdminChannelCommand,
+    AdminChannelStore, AdminChannelSubject, CreateAdminChannelCommand, DeleteAdminChannelCommand,
+    ListAdminChannelsQuery, UpdateAdminChannelCommand,
 };
+use sdkwork_claw_product_test_support::schema_sqlite_pool;
 use serde_json::Value;
 
 #[tokio::test]
 async fn sqlite_admin_channel_store_encrypts_channel_api_key_material() {
     let pool = schema_sqlite_pool().await;
+    seed_channel_capability_prerequisites(&pool).await;
     let codec = Arc::new(RingAeadApiKeySecretCodec::new("test-pepper").unwrap());
     let store = SqliteAdminChannelStore::with_api_key_secret_codec(pool.clone(), codec.clone());
 
@@ -163,11 +161,87 @@ async fn sqlite_admin_channel_store_encrypts_channel_api_key_material() {
     .await
     .unwrap();
     assert_eq!(3, channel_resource_count);
+
+    let (config_version, changed_object_type, changed_object_id): (i64, String, i64) =
+        sqlx::query_as(
+            r#"
+            SELECT config_version, changed_object_type, changed_object_id
+            FROM ai_config_version
+            WHERE tenant_id = 10
+              AND organization_id = 20
+              AND config_scope = 'routing'
+            "#,
+        )
+        .fetch_one(&pool)
+        .await
+        .unwrap();
+    assert_eq!(1, config_version);
+    assert_eq!("ai_channel", changed_object_type);
+    assert_eq!(item.id, changed_object_id);
+
+    let (event_version, event_status, event_action): (i64, String, String) = sqlx::query_as(
+        r#"
+        SELECT config_version, event_status, event_payload ->> 'action' AS event_action
+        FROM ai_config_change_event
+        WHERE tenant_id = 10
+          AND organization_id = 20
+          AND config_scope = 'routing'
+          AND changed_object_type = 'ai_channel'
+          AND changed_object_id = ?
+        "#,
+    )
+    .bind(item.id)
+    .fetch_one(&pool)
+    .await
+    .unwrap();
+    assert_eq!(1, event_version);
+    assert_eq!("pending", event_status);
+    assert_eq!("create_channel", event_action);
+}
+
+#[tokio::test]
+async fn sqlite_admin_channel_store_prefers_resource_group_for_group_backed_resource_code() {
+    let pool = schema_sqlite_pool().await;
+    seed_channel_capability_prerequisites(&pool).await;
+    seed_bundle_resource_group(&pool, "bundle.test.standard").await;
+    let codec = Arc::new(RingAeadApiKeySecretCodec::new("test-pepper").unwrap());
+    let store = SqliteAdminChannelStore::with_api_key_secret_codec(pool.clone(), codec);
+    let mut command =
+        duplicate_secret_channel_command("bundle-resource-group", "2026-05-18 12:02:00");
+    command.resource_codes = vec!["bundle.test.standard".to_owned()];
+
+    let created = store.create_channel(command).await.unwrap();
+
+    let (resource_id, resource_code, resource_group_id, resource_group_code): (
+        Option<i64>,
+        Option<String>,
+        Option<i64>,
+        Option<String>,
+    ) = sqlx::query_as(
+        r#"
+        SELECT resource_id, resource_code, resource_group_id, resource_group_code
+        FROM ai_channel_resource
+        WHERE channel_id = ?
+          AND resource_group_code = 'bundle.test.standard'
+          AND status = 1
+          AND deleted_at IS NULL
+        "#,
+    )
+    .bind(created.id)
+    .fetch_one(&pool)
+    .await
+    .unwrap();
+
+    assert_eq!(None, resource_id);
+    assert_eq!(Some(String::new()), resource_code);
+    assert_eq!(Some(990301), resource_group_id);
+    assert_eq!(Some("bundle.test.standard".to_owned()), resource_group_code);
 }
 
 #[tokio::test]
 async fn sqlite_admin_channel_store_updates_modality_resources_without_clearing_vendor_resources() {
     let pool = schema_sqlite_pool().await;
+    seed_channel_capability_prerequisites(&pool).await;
     let codec = Arc::new(RingAeadApiKeySecretCodec::new("test-pepper").unwrap());
     let store = SqliteAdminChannelStore::with_api_key_secret_codec(pool.clone(), codec);
 
@@ -270,6 +344,7 @@ async fn sqlite_admin_channel_store_updates_modality_resources_without_clearing_
 #[tokio::test]
 async fn sqlite_admin_channel_store_allows_duplicate_secret_hash_for_distinct_channels() {
     let pool = schema_sqlite_pool().await;
+    seed_channel_capability_prerequisites(&pool).await;
     let codec = Arc::new(RingAeadApiKeySecretCodec::new("test-pepper").unwrap());
     let store = SqliteAdminChannelStore::with_api_key_secret_codec(pool.clone(), codec);
 
@@ -312,6 +387,86 @@ async fn sqlite_admin_channel_store_allows_duplicate_secret_hash_for_distinct_ch
     );
 }
 
+#[tokio::test]
+async fn sqlite_admin_channel_store_soft_delete_cascades_channel_relationships() {
+    let pool = schema_sqlite_pool().await;
+    seed_channel_capability_prerequisites(&pool).await;
+    let codec = Arc::new(RingAeadApiKeySecretCodec::new("test-pepper").unwrap());
+    let store = SqliteAdminChannelStore::with_api_key_secret_codec(pool.clone(), codec);
+
+    let created = store
+        .create_channel(duplicate_secret_channel_command(
+            "delete-cascade",
+            "2026-05-18 12:10:00",
+        ))
+        .await
+        .unwrap();
+    seed_channel_endpoint(&pool, created.id).await;
+
+    let deleted = store
+        .delete_channel(DeleteAdminChannelCommand {
+            subject: AdminChannelSubject {
+                tenant_id: 10,
+                organization_id: 20,
+                operator_id: 30,
+                operator_type: 1,
+            },
+            channel_id: created.id,
+            audit_log_uuid: "audit-delete-channel-cascade".to_owned(),
+            config_snapshot_uuid: "snapshot-delete-channel-cascade".to_owned(),
+            request_id: "req-delete-channel-cascade".to_owned(),
+            requested_at: "2026-05-18 12:11:00".to_owned(),
+        })
+        .await
+        .unwrap();
+    assert!(deleted);
+
+    let active_relation_count: i64 = sqlx::query_scalar(
+        r#"
+        SELECT (
+            SELECT COUNT(1)
+            FROM ai_channel_model
+            WHERE tenant_id = 10
+              AND organization_id = 20
+              AND channel_id = ?
+              AND deleted_at IS NULL
+        ) + (
+            SELECT COUNT(1)
+            FROM ai_channel_resource
+            WHERE tenant_id = 10
+              AND organization_id = 20
+              AND channel_id = ?
+              AND deleted_at IS NULL
+        ) + (
+            SELECT COUNT(1)
+            FROM ai_channel_vendor
+            WHERE tenant_id = 10
+              AND organization_id = 20
+              AND channel_id = ?
+              AND deleted_at IS NULL
+        ) + (
+            SELECT COUNT(1)
+            FROM ai_channel_endpoint
+            WHERE tenant_id = 10
+              AND organization_id = 20
+              AND channel_id = ?
+              AND deleted_at IS NULL
+        )
+        "#,
+    )
+    .bind(created.id)
+    .bind(created.id)
+    .bind(created.id)
+    .bind(created.id)
+    .fetch_one(&pool)
+    .await
+    .unwrap();
+    assert_eq!(
+        0, active_relation_count,
+        "soft-deleting a channel must soft-delete every channel-owned relationship row"
+    );
+}
+
 fn duplicate_secret_channel_command(suffix: &str, requested_at: &str) -> CreateAdminChannelCommand {
     CreateAdminChannelCommand {
         subject: AdminChannelSubject {
@@ -348,4 +503,129 @@ fn duplicate_secret_channel_command(suffix: &str, requested_at: &str) -> CreateA
         request_id: format!("req-duplicate-secret-{suffix}"),
         requested_at: requested_at.to_owned(),
     }
+}
+
+async fn seed_channel_endpoint(pool: &sqlx::SqlitePool, channel_id: i64) {
+    sqlx::query(
+        r#"
+        INSERT INTO ai_channel_endpoint
+            (uuid, tenant_id, organization_id, status, channel_id, provider_code, channel_code, channel_type, vendor_code, region_code, api_code, base_url)
+        VALUES
+            (?, 10, 20, 1, ?, 'openai', 'openai-delete-cascade', 'official', 'openai', 'global', 'openai.chat_completions', 'https://api.openai.com/v1')
+        "#,
+    )
+    .bind(format!("endpoint-delete-cascade-{channel_id}"))
+    .bind(channel_id)
+    .execute(pool)
+    .await
+    .unwrap();
+}
+
+async fn seed_channel_capability_prerequisites(pool: &sqlx::SqlitePool) {
+    for statement in [
+        r#"
+        INSERT INTO ai_model_vendor
+            (id, uuid, tenant_id, organization_id, vendor_code, display_name, status)
+        VALUES
+            (990200, 'vendor-openai-channel-test', 10, 20, 'openai', 'OpenAI', 1)
+        ON CONFLICT(tenant_id, organization_id, vendor_code) DO UPDATE SET
+            display_name = excluded.display_name,
+            status = excluded.status,
+            deleted_at = NULL
+        "#,
+        r#"
+        INSERT INTO ai_resource
+            (id, uuid, tenant_id, organization_id, status, resource_code, resource_type, display_name, vendor_code)
+        VALUES
+            (990201, 'resource-vendor-openai-channel-test', 10, 20, 1, 'vendor.openai', 'vendor', 'OpenAI', 'openai')
+        ON CONFLICT(tenant_id, organization_id, resource_code) DO UPDATE SET
+            resource_type = excluded.resource_type,
+            display_name = excluded.display_name,
+            vendor_code = excluded.vendor_code,
+            status = excluded.status,
+            deleted_at = NULL
+        "#,
+        r#"
+        INSERT INTO ai_resource
+            (id, uuid, tenant_id, organization_id, status, resource_code, resource_type, display_name, modality_code)
+        VALUES
+            (990202, 'resource-modality-llm-channel-test', 10, 20, 1, 'modality.llm', 'modality', 'LLM', 'llm')
+        ON CONFLICT(tenant_id, organization_id, resource_code) DO UPDATE SET
+            resource_type = excluded.resource_type,
+            display_name = excluded.display_name,
+            modality_code = excluded.modality_code,
+            status = excluded.status,
+            deleted_at = NULL
+        "#,
+        r#"
+        INSERT INTO ai_resource
+            (id, uuid, tenant_id, organization_id, status, resource_code, resource_type, display_name, vendor_code, modality_code, api_code, catalog_key, model, provider_native_model)
+        VALUES
+            (990203, 'resource-model-openai-gpt-4o-mini-channel-test', 10, 20, 1, 'model.openai.gpt-4o-mini.chat', 'model_api', 'GPT-4o mini Chat', 'openai', 'chat', 'openai.chat_completions', 'openai/gpt-4o-mini', 'gpt-4o-mini', 'gpt-4o-mini')
+        ON CONFLICT(tenant_id, organization_id, resource_code) DO UPDATE SET
+            resource_type = excluded.resource_type,
+            display_name = excluded.display_name,
+            vendor_code = excluded.vendor_code,
+            modality_code = excluded.modality_code,
+            api_code = excluded.api_code,
+            catalog_key = excluded.catalog_key,
+            model = excluded.model,
+            provider_native_model = excluded.provider_native_model,
+            status = excluded.status,
+            deleted_at = NULL
+        "#,
+        r#"
+        INSERT INTO ai_resource
+            (id, uuid, tenant_id, organization_id, status, resource_code, resource_type, display_name, api_code)
+        VALUES
+            (990204, 'resource-api-openai-chat-channel-test', 10, 20, 1, 'api.openai.chat_completions', 'api_endpoint', 'OpenAI Chat Completions', 'openai.chat_completions')
+        ON CONFLICT(tenant_id, organization_id, resource_code) DO UPDATE SET
+            resource_type = excluded.resource_type,
+            display_name = excluded.display_name,
+            api_code = excluded.api_code,
+            status = excluded.status,
+            deleted_at = NULL
+        "#,
+        r#"
+        INSERT INTO ai_resource
+            (id, uuid, tenant_id, organization_id, status, resource_code, resource_type, display_name, modality_code)
+        VALUES
+            (990205, 'resource-modality-image-channel-test', 10, 20, 1, 'modality.image', 'modality', 'Image', 'image')
+        ON CONFLICT(tenant_id, organization_id, resource_code) DO UPDATE SET
+            resource_type = excluded.resource_type,
+            display_name = excluded.display_name,
+            modality_code = excluded.modality_code,
+            status = excluded.status,
+            deleted_at = NULL
+        "#,
+    ] {
+        sqlx::query(statement).execute(pool).await.unwrap();
+    }
+}
+
+async fn seed_bundle_resource_group(pool: &sqlx::SqlitePool, resource_code: &str) {
+    sqlx::query(
+        r#"
+        INSERT INTO ai_resource
+            (id, uuid, tenant_id, organization_id, status, resource_code, resource_type, display_name)
+        VALUES
+            (990300, 'resource-bundle-test-standard', 10, 20, 1, ?, 'bundle', 'Test Bundle')
+        "#,
+    )
+    .bind(resource_code)
+    .execute(pool)
+    .await
+    .unwrap();
+    sqlx::query(
+        r#"
+        INSERT INTO ai_resource_group
+            (id, uuid, tenant_id, organization_id, status, group_code, group_name, group_type)
+        VALUES
+            (990301, 'resource-group-bundle-test-standard', 10, 20, 1, ?, 'Test Bundle', 'bundle')
+        "#,
+    )
+    .bind(resource_code)
+    .execute(pool)
+    .await
+    .unwrap();
 }

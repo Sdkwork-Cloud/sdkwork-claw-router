@@ -1,7 +1,7 @@
 import { appApiPath } from './paths';
 import type { HttpClient } from '../http/client';
 
-import type { AccountsCurrentSummaryRetrieveResult, AddressesCreateResult, AddressesDefaultSelectionCreateResult, AddressesDeleteResult, AddressesListResult, AddressesUpdateResult, BillingHistoryListResult, CartCurrentRetrieveResult, CartItemsCreateResult, CartItemsDeleteResult, CartItemsUpdateResult, CatalogCategoriesListResult, CatalogProductsListResult, CatalogProductsRetrieveResult, CatalogSkusRetrieveResult, CheckoutSessionsCreateResult, CheckoutSessionsOrdersCreateResult, CheckoutSessionsQuotesCreateResult, CheckoutSessionsRetrieveResult, CommerceMembershipPurchaseRequest, CommercePaymentAttemptCreateRequest, CommercePaymentIntentCreateRequest, CommerceStandardCommandRequest, FulfillmentsListResult, FulfillmentsRetrieveResult, InvoicesCreateResult, InvoicesListResult, InvoicesRetrieveResult, MembershipsBenefitsListResult, MembershipsCurrentRetrieveResult, MembershipsCurrentStatusRetrieveResult, MembershipsPackageGroupsListResult, MembershipsPackageGroupsPackagesListResult, MembershipsPackageGroupsRetrieveResult, MembershipsPackagesListResult, MembershipsPackagesRetrieveResult, MembershipsPlansListResult, MembershipsPointsBalanceRetrieveResult, MembershipsPointsDailyRewardsCreateRequest, MembershipsPointsDailyRewardsCreateResult, MembershipsPointsDailyRewardsStatusRetrieveResult, MembershipsPointsHistoryListResult, MembershipsPrivilegesSpeedUpsCreateRequest, MembershipsPrivilegesSpeedUpsCreateResult, MembershipsPrivilegesUsageRetrieveResult, MembershipsPurchasesCreateResult, MembershipsPurchasesRenewResult, MembershipsPurchasesUpgradeResult, OrdersCancellationsCreateResult, OrdersEventsListResult, OrdersListResult, OrdersRetrieveResult, PaymentsAttemptsRetrieveResult, PaymentsIntentsAttemptsCreateResult, PaymentsIntentsCreateResult, PaymentsIntentsRetrieveResult, PaymentsMethodsListResult, RechargesOrdersCreateResult, RechargesOrdersRetrieveResult, RechargesPackagesListResult, RefundsCreateResult, RefundsListResult, RefundsRetrieveResult, ShipmentsRetrieveResult, WalletAccountsListResult, WalletExchangeRateRetrieveResult, WalletLedgerEntriesListResult, WalletOverviewRetrieveResult, WalletPointsExchangeRulesListResult, WalletTokensRetrieveResult } from '../types';
+import type { AccountsCurrentSummaryRetrieveResult, AddressesCreateResult, AddressesDefaultSelectionCreateResult, AddressesDeleteResult, AddressesListResult, AddressesUpdateResult, BillingHistoryListResult, CartCurrentRetrieveResult, CartItemsCreateResult, CartItemsDeleteResult, CartItemsUpdateResult, CatalogCategoriesListResult, CatalogProductsListResult, CatalogProductsRetrieveResult, CatalogSkusRetrieveResult, CheckoutSessionsCreateResult, CheckoutSessionsOrdersCreateResult, CheckoutSessionsQuotesCreateResult, CheckoutSessionsRetrieveResult, CommerceMembershipPurchaseRequest, CommercePaymentAttemptCreateRequest, CommercePaymentIntentCreateRequest, CommerceRechargeOrderCreateRequest, CommerceStandardCommandRequest, FulfillmentsListResult, FulfillmentsRetrieveResult, InvoicesCreateResult, InvoicesListResult, InvoicesRetrieveResult, MembershipsBenefitsListResult, MembershipsCurrentRetrieveResult, MembershipsCurrentStatusRetrieveResult, MembershipsPackageGroupsListResult, MembershipsPackageGroupsPackagesListResult, MembershipsPackageGroupsRetrieveResult, MembershipsPackagesListResult, MembershipsPackagesRetrieveResult, MembershipsPlansListResult, MembershipsPointsBalanceRetrieveResult, MembershipsPointsDailyRewardsCreateRequest, MembershipsPointsDailyRewardsCreateResult, MembershipsPointsDailyRewardsStatusRetrieveResult, MembershipsPointsHistoryListResult, MembershipsPrivilegesSpeedUpsCreateRequest, MembershipsPrivilegesSpeedUpsCreateResult, MembershipsPrivilegesUsageRetrieveResult, MembershipsPurchasesCreateResult, MembershipsPurchasesRenewResult, MembershipsPurchasesUpgradeResult, OrdersCancellationsCreateResult, OrdersEventsListResult, OrdersListResult, OrdersRetrieveResult, PaymentsAttemptsRetrieveResult, PaymentsIntentsAttemptsCreateResult, PaymentsIntentsCreateResult, PaymentsIntentsRetrieveResult, PaymentsMethodsListResult, RechargesOrdersCancelResult, RechargesOrdersCreateResult, RechargesOrdersRetrieveResult, RechargesPackagesListResult, RechargesSettingsRetrieveResult, RefundsCreateResult, RefundsListResult, RefundsRetrieveResult, ShipmentsRetrieveResult, WalletAccountsListResult, WalletExchangeRateRetrieveResult, WalletLedgerEntriesListResult, WalletOverviewRetrieveResult, WalletPointsExchangeRulesListResult, WalletTokensRetrieveResult } from '../types';
 
 
 export class CommerceWalletTokensApi {
@@ -210,6 +210,20 @@ export class CommerceRefundsApi {
   }
 }
 
+export class CommerceRechargesSettingsApi {
+  private client: HttpClient;
+
+  constructor(client: HttpClient) {
+    this.client = client;
+  }
+
+
+/** Recharges Settings Retrieve */
+  async retrieve(): Promise<RechargesSettingsRetrieveResult> {
+    return this.client.get<RechargesSettingsRetrieveResult>(appApiPath(`/recharges/settings`));
+  }
+}
+
 export interface CommerceRechargesPackagesListParams {
   page?: number;
   pageSize?: number;
@@ -239,6 +253,10 @@ export interface CommerceRechargesOrdersCreateParams {
   idempotencyKey: string;
 }
 
+export interface CommerceRechargesOrdersCancelParams {
+  idempotencyKey: string;
+}
+
 export class CommerceRechargesOrdersApi {
   private client: HttpClient;
 
@@ -248,7 +266,7 @@ export class CommerceRechargesOrdersApi {
 
 
 /** Recharges Orders Create */
-  async create(body: CommerceStandardCommandRequest, params: CommerceRechargesOrdersCreateParams): Promise<RechargesOrdersCreateResult> {
+  async create(body: CommerceRechargeOrderCreateRequest, params: CommerceRechargesOrdersCreateParams): Promise<RechargesOrdersCreateResult> {
     const requestHeaders = buildRequestHeaders(
       {
         'Idempotency-Key': { value: params.idempotencyKey, style: 'simple', explode: false },
@@ -262,17 +280,30 @@ export class CommerceRechargesOrdersApi {
   async retrieve(orderId: string): Promise<RechargesOrdersRetrieveResult> {
     return this.client.get<RechargesOrdersRetrieveResult>(appApiPath(`/recharges/orders/${serializePathParameter(orderId, { name: 'orderId', style: 'simple', explode: false })}`));
   }
+
+/** Recharges Orders Cancel */
+  async cancel(orderId: string, body: CommerceStandardCommandRequest, params: CommerceRechargesOrdersCancelParams): Promise<RechargesOrdersCancelResult> {
+    const requestHeaders = buildRequestHeaders(
+      {
+        'Idempotency-Key': { value: params.idempotencyKey, style: 'simple', explode: false },
+      },
+      {}
+    );
+    return this.client.post<RechargesOrdersCancelResult>(appApiPath(`/recharges/orders/${serializePathParameter(orderId, { name: 'orderId', style: 'simple', explode: false })}/cancellations`), body, undefined, requestHeaders, 'application/json');
+  }
 }
 
 export class CommerceRechargesApi {
   private client: HttpClient;
   public readonly orders: CommerceRechargesOrdersApi;
   public readonly packages: CommerceRechargesPackagesApi;
+  public readonly settings: CommerceRechargesSettingsApi;
 
   constructor(client: HttpClient) {
     this.client = client;
     this.orders = new CommerceRechargesOrdersApi(client);
     this.packages = new CommerceRechargesPackagesApi(client);
+    this.settings = new CommerceRechargesSettingsApi(client);
   }
 
 }

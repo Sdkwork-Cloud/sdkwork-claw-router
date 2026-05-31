@@ -3,6 +3,10 @@ const POSTGRES_STORE: &str =
 const SQLITE_STORE: &str =
     include_str!("../src/infrastructure/sql/sqlite/admin_transaction_center_store.rs");
 const API: &str = include_str!("../src/api/admin_transaction_center.rs");
+const PAYMENT_ACCOUNT_RESOLVER: &str =
+    include_str!("../src/application/payment_provider_account_resolver.rs");
+const PAYMENT_OPENAPI: &str =
+    include_str!("../../../crates/sdkwork-claw-http/specs/payment-aggregate-openapi.json");
 
 #[test]
 fn transaction_center_postgres_provider_json_projection_tolerates_blank_text_columns() {
@@ -112,15 +116,93 @@ fn transaction_center_api_enforces_generated_provider_account_contract() {
         "MAX_MERCHANT_ID_LEN",
         "MAX_SECRET_REF_LEN",
         "is_ascii_identifier(&account_no)",
+        "validate_secret_ref(",
     ] {
         assert!(
             API.contains(expected),
             "transaction center API must enforce provider account contract fragment {expected}"
         );
     }
+    for expected in [
+        "validate_payment_secret_ref(",
+        "secretRef must start with vault:// or secret://",
+    ] {
+        assert!(
+            PAYMENT_ACCOUNT_RESOLVER.contains(expected),
+            "payment account resolver must enforce provider account secret contract fragment {expected}"
+        );
+    }
     assert!(
         API.contains("MAX_QUERY_STATUS_LEN") && API.contains("MAX_BUSINESS_DATE_LEN"),
         "transaction center API must align list query string length limits with the generated OpenAPI contract"
+    );
+}
+
+#[test]
+fn transaction_center_mainstream_payment_provider_codes_match_aggregate_contract() {
+    let spec: serde_json::Value =
+        serde_json::from_str(PAYMENT_OPENAPI).expect("payment aggregate OpenAPI parses");
+    let supported = spec
+        .get("x-supported-provider-codes")
+        .and_then(|value| value.as_array())
+        .expect("payment aggregate OpenAPI declares supported provider codes")
+        .iter()
+        .map(|value| value.as_str().expect("provider code is a string"))
+        .collect::<Vec<_>>();
+    let expected = vec![
+        "wechat_pay",
+        "alipay",
+        "stripe",
+        "paypal",
+        "apple_pay",
+        "google_pay",
+    ];
+    assert_eq!(
+        supported, expected,
+        "payment aggregate OpenAPI must expose only the initial mainstream provider set"
+    );
+
+    let provider_codes = API
+        .split("const PAYMENT_PROVIDER_CODES")
+        .nth(1)
+        .expect("transaction center provider code allowlist")
+        .split("const PAYMENT_METHOD_CODES")
+        .next()
+        .expect("transaction center provider code block");
+    for provider in &expected {
+        assert!(
+            provider_codes.contains(&format!("\"{provider}\"")),
+            "transaction center provider account mutations must allow mainstream provider {provider}"
+        );
+    }
+    for extension in [
+        "unionpay",
+        "yeepay",
+        "jd_pay",
+        "lianlian_pay",
+        "lakala",
+        "allinpay",
+        "china_ums",
+        "fuiou_pay",
+        "sandpay",
+        "huifu_pay",
+        "baofoo",
+        "bill99",
+        "pingan_pay",
+        "icbc_pay",
+        "cmb_pay",
+        "ccb_pay",
+        "boc_pay",
+        "psbc_pay",
+    ] {
+        assert!(
+            !provider_codes.contains(&format!("\"{extension}\"")),
+            "extension provider {extension} must not be accepted by active transaction center mutations yet"
+        );
+    }
+    assert!(
+        provider_codes.find("\"stripe\"") < provider_codes.find("\"paypal\""),
+        "transaction center provider allowlist order must match payment aggregate supported provider order"
     );
 }
 

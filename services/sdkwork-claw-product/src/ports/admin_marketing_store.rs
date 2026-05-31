@@ -1,3 +1,4 @@
+use std::collections::BTreeMap;
 use std::future::Future;
 use std::pin::Pin;
 
@@ -68,6 +69,18 @@ pub struct UpdateAdminExchangeRuleCommand {
     pub source_asset_type: String,
     pub target_asset_type: String,
     pub rate: String,
+    pub remark: String,
+    pub request_id: String,
+    pub requested_at: String,
+}
+
+#[derive(Debug, Clone, PartialEq, Eq)]
+pub struct RechargeSettingsUpdateCommand {
+    pub subject: AdminMarketingSubject,
+    pub audit_log_uuid: String,
+    pub base_currency_code: String,
+    pub base_points_per_cny: String,
+    pub currency_to_cny_rates: BTreeMap<String, String>,
     pub request_id: String,
     pub requested_at: String,
 }
@@ -157,8 +170,9 @@ pub struct CreateAdminRechargePackageCommand {
     pub product_uuid: String,
     pub sku_uuid: String,
     pub audit_log_uuid: String,
-    pub rmb: String,
-    pub bonus: i64,
+    pub price_amount: String,
+    pub currency_code: String,
+    pub bonus_points: i64,
     pub status: AdminRechargePackageStatus,
     pub request_id: String,
     pub requested_at: String,
@@ -171,8 +185,9 @@ pub struct UpdateAdminRechargePackageCommand {
     pub product_uuid: String,
     pub sku_uuid: String,
     pub audit_log_uuid: String,
-    pub rmb: String,
-    pub bonus: i64,
+    pub price_amount: String,
+    pub currency_code: String,
+    pub bonus_points: i64,
     pub status: AdminRechargePackageStatus,
     pub request_id: String,
     pub requested_at: String,
@@ -252,9 +267,16 @@ pub struct AdminRechargeRecordItem {
 #[serde(rename_all = "camelCase")]
 pub struct AdminRechargePackageItem {
     pub id: String,
-    pub rmb: String,
-    pub bonus: i64,
+    pub package_no: String,
+    pub name: String,
+    pub sku_id: String,
+    pub price_amount: String,
+    pub currency_code: String,
+    pub bonus_points: i64,
+    pub grant_amount: i64,
     pub points: i64,
+    pub status: String,
+    pub updated_at: String,
 }
 
 #[derive(Debug, Clone, PartialEq, Eq, Serialize)]
@@ -265,6 +287,14 @@ pub struct AdminExchangeRuleItem {
     pub target_asset_type: String,
     pub rate: String,
     pub status: String,
+}
+
+#[derive(Debug, Clone, PartialEq, Eq, Serialize)]
+#[serde(rename_all = "camelCase")]
+pub struct AdminRechargeSettingsItem {
+    pub base_currency_code: String,
+    pub base_points_per_cny: String,
+    pub currency_to_cny_rates: BTreeMap<String, String>,
 }
 
 #[derive(Debug, Clone, PartialEq, Eq, Serialize)]
@@ -354,6 +384,11 @@ pub trait AdminMarketingStore {
         query: ListAdminExchangeRulesQuery,
     ) -> AdminMarketingCommandFuture<'a, Vec<AdminExchangeRuleItem>>;
 
+    fn load_recharge_settings<'a>(
+        &'a self,
+        subject: AdminMarketingSubject,
+    ) -> AdminMarketingCommandFuture<'a, AdminRechargeSettingsItem>;
+
     fn create_recharge_package<'a>(
         &'a self,
         command: CreateAdminRechargePackageCommand,
@@ -373,6 +408,11 @@ pub trait AdminMarketingStore {
         &'a self,
         command: UpdateAdminExchangeRuleCommand,
     ) -> AdminMarketingCommandFuture<'a, AdminExchangeRuleItem>;
+
+    fn update_recharge_settings<'a>(
+        &'a self,
+        command: RechargeSettingsUpdateCommand,
+    ) -> AdminMarketingCommandFuture<'a, AdminRechargeSettingsItem>;
 
     fn list_payment_attempts<'a>(
         &'a self,

@@ -1714,7 +1714,7 @@ test("admin channel table keeps channel and provider content on one line", () =>
   assert.match(channelSource, /text-sm flex min-w-0 items-center gap-1\.5 whitespace-nowrap/);
   assert.match(channelSource, /<span className="min-w-0 truncate">\{channel\.vendor\}<\/span>/);
   assert.match(channelSource, /text-xs text-slate-500 min-w-0 whitespace-nowrap/);
-  assert.match(channelSource, /<span className="min-w-0 truncate">\{channel\.protocol\}<\/span>/);
+  assert.doesNotMatch(channelSource, /<span className="min-w-0 truncate">\{channel\.protocol\}<\/span>/);
   assert.match(channelSource, /<span className="min-w-0 truncate">\{channel\.accessType\}<\/span>/);
 });
 
@@ -2121,9 +2121,12 @@ test("admin app center splits WeChat official account and mini program into inde
   assert.match(appCenterMenu, /path:\s*'\/admin\/open-platform\/mini-programs\/accounts',\s*labelKey:\s*'admin\.menu\.openPlatformMiniProgramAccounts'/);
   assert.match(appCenterMenu, /path:\s*'\/admin\/open-platform\/mini-programs\/urls',\s*labelKey:\s*'admin\.menu\.openPlatformMiniProgramUrls'/);
   assert.doesNotMatch(appCenterMenu, /path:\s*'\/admin\/open-platform\/mini-programs',\s*labelKey:\s*'admin\.menu\.openPlatformMiniPrograms'/);
-  assert.doesNotMatch(adminLayoutSource, /function isSidebarItemExact\(item: AdminMenuItem\): boolean/);
+  assert.match(adminLayoutSource, /from '\.\/adminSidebarActive'/);
+  assert.match(adminLayoutSource, /hasActiveSidebarGroupItem\(location\.pathname, group\)/);
+  assert.match(adminLayoutSource, /isSidebarItemActive\(location\.pathname, item, group\.items\)/);
+  assert.match(adminLayoutSource, /isSidebarItemActive\(location\.pathname, item, siblingItems\)/);
+  assert.match(adminLayoutSource, /aria-current=\{isActive \? 'page' : undefined\}/);
   assert.doesNotMatch(adminLayoutSource, /item\.path === '\/admin\/open-platform'/);
-  assert.match(adminLayoutSource, /function isSidebarItemActive\(pathname: string, item: AdminMenuItem\): boolean/);
   assert.doesNotMatch(adminLayoutSource, /end=\{isSidebarItemExact\(item\)\}/);
 
   assert.doesNotMatch(appSource, /const OpenPlatformAdmin = lazyRoute\(\(\) => import\('sdkwork-claw-router-admin-open-platform'\), 'OpenPlatformAdmin'\);/);

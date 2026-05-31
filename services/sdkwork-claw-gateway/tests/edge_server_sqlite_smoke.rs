@@ -1,4 +1,8 @@
+use std::fs::{self, File, OpenOptions};
+use std::io::ErrorKind;
+use std::path::{Path, PathBuf};
 use std::sync::{Arc, Mutex};
+use std::thread;
 use std::time::{SystemTime, UNIX_EPOCH};
 
 use axum::body::{to_bytes, Body};
@@ -6,9 +10,21 @@ use axum::http::{header, Method, Request, StatusCode};
 use axum::response::IntoResponse;
 use axum::routing::get;
 use axum::{Json, Router};
+use sdkwork_claw_config::{DeploymentMode, RequestLimitsConfig, StartupInstallMode};
+use sdkwork_claw_product::application::{
+    default_desktop_cache_manager, InMemoryRuntimeStreamBus, ModelRankingRefreshWorkerConfig,
+    UsageSettlementWorkerConfig,
+};
+use sdkwork_claw_product::infrastructure::sql::catalog::RefreshableSqlPricingCatalog;
+use sdkwork_claw_product::infrastructure::sql::installer::{
+    DatabaseInstallOptions, DatabaseInstaller,
+};
+use sdkwork_claw_product::infrastructure::sql::sqlite::SqlitePricingCatalogLoader;
+use sdkwork_claw_product::infrastructure::AppRuntimeGatewayHttpClient;
 use sdkwork_claw_test_support::{
     app_session_config, app_session_dual_token_headers, default_trusted_request_subject,
     payment_webhook_config, seeded_sqlite_catalog, trusted_request_subject, trusted_subject_config,
+    SeededSqliteCatalog,
 };
 use serde_json::json;
 use tokio::net::TcpListener;
@@ -32,44 +48,376 @@ use sdkwork_claw_product::ports::{
     UpdateAppRoutingStrategyOutcome,
 };
 
+const SEEDED_INSTALLED_GATEWAY_TEMPLATE_REVISION: &str = "v1";
+const SQLITE_TEMPLATE_LOCK_RETRY_INITIAL_MILLIS: u64 = 10;
+const SQLITE_TEMPLATE_LOCK_RETRY_MAX_MILLIS: u64 = 100;
+
 struct RunningService {
     base_url: String,
     stop: oneshot::Sender<()>,
 }
 
+struct TemplateFileLock {
+    path: PathBuf,
+    _file: File,
+}
+
+impl Drop for TemplateFileLock {
+    fn drop(&mut self) {
+        let _ = fs::remove_file(&self.path);
+    }
+}
+
+struct SeededSharedSqliteRuntime {
+    pool: sqlx::SqlitePool,
+    catalog: Arc<RefreshableSqlPricingCatalog>,
+    database_installer: Arc<DatabaseInstaller>,
+}
+
+#[tokio::test]
+async fn seeded_installed_gateway_catalog_supports_skip_startup_install_mode_for_smoke_suite() {
+    let catalog = seeded_installed_gateway_catalog().await;
+    let router = seeded_gateway_router(&catalog).await;
+
+    let models = json_request(router, Method::GET, "/v1/models", Body::empty())
+        .with_authorization(catalog.gateway_authorization_header())
+        .send()
+        .await;
+
+    assert_eq!(StatusCode::OK, models.status);
+    assert_eq!("list", models.json["object"]);
+    assert_eq!("gpt-5.5-pro", models.json["data"][0]["id"]);
+    assert_eq!("openai", models.json["data"][0]["owned_by"]);
+}
+
+async fn seeded_installed_gateway_catalog() -> SeededSqliteCatalog {
+    let template_path = seeded_installed_gateway_template_path();
+    ensure_seeded_installed_gateway_template(&template_path).await;
+    SeededSqliteCatalog::from_database_path(&template_path)
+        .fork()
+        .unwrap()
+}
+
+async fn ensure_seeded_installed_gateway_template(template_path: &Path) {
+    if seeded_installed_gateway_template_current(template_path).await {
+        return;
+    }
+
+    let _lock = acquire_template_file_lock(template_path).unwrap();
+    if seeded_installed_gateway_template_current(template_path).await {
+        return;
+    }
+
+    let source_catalog = seeded_sqlite_catalog().await.unwrap();
+    let source_path = sqlite_path_from_database_url(source_catalog.database_url()).unwrap();
+    let pool = source_catalog.open_pool().await.unwrap();
+    DatabaseInstaller::for_sqlite(pool.clone())
+        .with_options(DatabaseInstallOptions::new("test", "commercial").unwrap())
+        .unwrap()
+        .ensure_installed()
+        .await
+        .unwrap();
+    sqlx::query("VACUUM").execute(&pool).await.unwrap();
+    pool.close().await;
+
+    remove_sqlite_database_files(template_path);
+    copy_sqlite_database_files(&source_path, template_path).unwrap();
+    remove_sqlite_database_files(&source_path);
+}
+
+async fn seeded_installed_gateway_template_current(template_path: &Path) -> bool {
+    if !template_path.exists() {
+        return false;
+    }
+
+    let database_url = sqlite_database_url(template_path);
+    let pool = match sqlx::sqlite::SqlitePoolOptions::new()
+        .max_connections(1)
+        .connect(database_url.as_str())
+        .await
+    {
+        Ok(pool) => pool,
+        Err(_) => return false,
+    };
+    let installed_status = sqlx::query_scalar::<_, String>(
+        "SELECT status FROM system_installation_state WHERE id = 1",
+    )
+    .fetch_optional(&pool)
+    .await
+    .ok()
+    .flatten();
+    let installed_model_count = sqlx::query_scalar::<_, i64>(
+        r#"
+        SELECT COUNT(1)
+        FROM ai_model
+        WHERE model = 'gpt-5.5-pro'
+          AND status = 1
+        "#,
+    )
+    .fetch_one(&pool)
+    .await
+    .unwrap_or_default();
+    pool.close().await;
+
+    matches!(installed_status.as_deref(), Some("installed")) && installed_model_count > 0
+}
+
+fn acquire_template_file_lock(template_path: &Path) -> anyhow::Result<TemplateFileLock> {
+    let lock_path = template_lock_path(template_path);
+    if let Some(parent) = lock_path.parent() {
+        fs::create_dir_all(parent).map_err(|error| {
+            anyhow::Error::msg(format!(
+                "failed to create sqlite lock directory {}: {error}",
+                parent.display()
+            ))
+        })?;
+    }
+
+    let started_at = SystemTime::now();
+    let mut attempt = 0_u32;
+    loop {
+        match OpenOptions::new()
+            .write(true)
+            .create_new(true)
+            .open(&lock_path)
+        {
+            Ok(file) => {
+                return Ok(TemplateFileLock {
+                    path: lock_path,
+                    _file: file,
+                });
+            }
+            Err(error) if error.kind() == ErrorKind::AlreadyExists => {
+                if started_at.elapsed().unwrap_or_default().as_secs() >= 120 {
+                    anyhow::bail!(
+                        "timed out waiting for sqlite template lock {}",
+                        lock_path.display()
+                    );
+                }
+                thread::sleep(template_lock_retry_delay(attempt));
+                attempt = attempt.saturating_add(1);
+            }
+            Err(error) => {
+                anyhow::bail!(
+                    "failed to acquire sqlite template lock {}: {error}",
+                    lock_path.display()
+                );
+            }
+        }
+    }
+}
+
+fn template_lock_retry_delay(attempt: u32) -> std::time::Duration {
+    let factor = if attempt >= 63 {
+        u64::MAX
+    } else {
+        1_u64 << attempt
+    };
+    let millis = SQLITE_TEMPLATE_LOCK_RETRY_INITIAL_MILLIS
+        .saturating_mul(factor)
+        .min(SQLITE_TEMPLATE_LOCK_RETRY_MAX_MILLIS);
+    std::time::Duration::from_millis(millis)
+}
+
+fn template_lock_path(template_path: &Path) -> PathBuf {
+    let file_name = template_path
+        .file_name()
+        .and_then(|value| value.to_str())
+        .unwrap_or("claw-gateway-edge-server.template.db");
+    template_path.with_file_name(format!("{file_name}.lock"))
+}
+
+fn seeded_installed_gateway_template_path() -> PathBuf {
+    let mut path = sqlite_test_database_dir();
+    path.push(format!(
+        "claw-gateway-edge-server-seeded-installed-{SEEDED_INSTALLED_GATEWAY_TEMPLATE_REVISION}.template.db"
+    ));
+    path
+}
+
+fn sqlite_test_database_dir() -> PathBuf {
+    std::env::var_os("CARGO_TARGET_DIR")
+        .map(PathBuf::from)
+        .unwrap_or_else(std::env::temp_dir)
+        .join("test-dbs")
+}
+
+fn sqlite_database_url(path: &Path) -> String {
+    format!("sqlite://{}", path.to_string_lossy().replace('\\', "/"))
+}
+
+fn sqlite_path_from_database_url(database_url: &str) -> anyhow::Result<PathBuf> {
+    let path = database_url.strip_prefix("sqlite://").ok_or_else(|| {
+        anyhow::Error::msg(format!("unsupported sqlite database url: {database_url}"))
+    })?;
+    if path.is_empty() {
+        anyhow::bail!("sqlite database url must include a filesystem path");
+    }
+    Ok(PathBuf::from(path))
+}
+
+fn copy_sqlite_database_files(source_path: &Path, destination_path: &Path) -> anyhow::Result<()> {
+    if let Some(parent) = destination_path.parent() {
+        fs::create_dir_all(parent).map_err(|error| {
+            anyhow::Error::msg(format!(
+                "failed to create sqlite template directory {}: {error}",
+                parent.display()
+            ))
+        })?;
+    }
+    copy_sqlite_sidecar(source_path, destination_path, "")?;
+    copy_sqlite_sidecar(source_path, destination_path, "-wal")?;
+    copy_sqlite_sidecar(source_path, destination_path, "-shm")?;
+    copy_sqlite_sidecar(source_path, destination_path, "-journal")?;
+    Ok(())
+}
+
+fn copy_sqlite_sidecar(
+    source_path: &Path,
+    destination_path: &Path,
+    suffix: &str,
+) -> anyhow::Result<()> {
+    let source = sqlite_sidecar_path(source_path, suffix);
+    if !source.exists() {
+        return Ok(());
+    }
+    let destination = sqlite_sidecar_path(destination_path, suffix);
+    fs::copy(&source, &destination).map_err(|error| {
+        anyhow::Error::msg(format!(
+            "failed to copy sqlite catalog file from {} to {}: {error}",
+            source.display(),
+            destination.display()
+        ))
+    })?;
+    Ok(())
+}
+
+fn sqlite_sidecar_path(path: &Path, suffix: &str) -> PathBuf {
+    if suffix.is_empty() {
+        return path.to_path_buf();
+    }
+    PathBuf::from(format!("{}{}", path.to_string_lossy(), suffix))
+}
+
+fn remove_sqlite_database_files(path: &Path) {
+    for suffix in ["", "-wal", "-shm", "-journal"] {
+        let _ = fs::remove_file(sqlite_sidecar_path(path, suffix));
+    }
+}
+
+async fn seeded_shared_sqlite_runtime(catalog: &SeededSqliteCatalog) -> SeededSharedSqliteRuntime {
+    let pool = catalog.open_pool().await.unwrap();
+    let database_installer = Arc::new(
+        DatabaseInstaller::for_sqlite(pool.clone())
+            .with_options(DatabaseInstallOptions::new("test", "commercial").unwrap())
+            .unwrap(),
+    );
+    let api_key_secret_codec =
+        sdkwork_claw_product::infrastructure::crypto::RingAeadApiKeySecretCodec::new(
+            sdkwork_claw_test_support::API_KEY_PEPPER,
+        )
+        .unwrap();
+    let snapshot = SqlitePricingCatalogLoader::with_api_key_secret_codec(
+        pool.clone(),
+        Arc::new(api_key_secret_codec),
+    )
+    .load_snapshot()
+    .await
+    .unwrap();
+
+    SeededSharedSqliteRuntime {
+        pool: pool.clone(),
+        catalog: Arc::new(RefreshableSqlPricingCatalog::new(snapshot)),
+        database_installer,
+    }
+}
+
+async fn seeded_gateway_router(catalog: &SeededSqliteCatalog) -> Router {
+    sdkwork_claw_gateway::runtime::router_with_database_api_key_provider_configs_usage_settlement_worker_config_and_startup_install_mode(
+        catalog.database_config().unwrap(),
+        Some(catalog.api_key_security_config().unwrap()),
+        None,
+        None,
+        UsageSettlementWorkerConfig::disabled(),
+        StartupInstallMode::Skip,
+    )
+    .await
+    .unwrap()
+}
+
+fn seeded_admin_router(
+    catalog: &SeededSqliteCatalog,
+    runtime: &SeededSharedSqliteRuntime,
+    trusted_subject_config: sdkwork_claw_config::TrustedSubjectConfig,
+    app_session_config: sdkwork_claw_config::AppSessionConfig,
+) -> Router {
+    sdkwork_claw_admin_api::router_with_sqlite_shared_runtime(
+        catalog.database_config().unwrap(),
+        runtime.pool.clone(),
+        Arc::clone(&runtime.catalog),
+        catalog.api_key_security_config().unwrap(),
+        trusted_subject_config,
+        app_session_config,
+        Arc::new(sdkwork_claw_product::ports::UnconfiguredProviderHealthProbe),
+        default_desktop_cache_manager(),
+        Arc::clone(&runtime.database_installer),
+        RequestLimitsConfig::default(),
+        None,
+    )
+    .unwrap()
+}
+
+async fn seeded_app_router(
+    catalog: &SeededSqliteCatalog,
+    runtime: &SeededSharedSqliteRuntime,
+    trusted_subject_config: sdkwork_claw_config::TrustedSubjectConfig,
+    app_session_config: sdkwork_claw_config::AppSessionConfig,
+    payment_webhook_config: sdkwork_claw_config::PaymentWebhookConfig,
+    deployment_mode: DeploymentMode,
+) -> Router {
+    sdkwork_claw_app_api::router_with_sqlite_shared_runtime(
+        catalog.database_config().unwrap(),
+        runtime.pool.clone(),
+        Arc::clone(&runtime.catalog),
+        catalog.api_key_security_config().unwrap(),
+        trusted_subject_config,
+        app_session_config,
+        payment_webhook_config,
+        Arc::new(sdkwork_claw_product::ports::UnconfiguredProviderHealthProbe),
+        deployment_mode,
+        RequestLimitsConfig::default(),
+        Arc::new(AppRuntimeGatewayHttpClient::new("http://127.0.0.1:1".to_owned()).unwrap()),
+        Arc::new(InMemoryRuntimeStreamBus::default()),
+        ModelRankingRefreshWorkerConfig::disabled(),
+    )
+    .await
+    .unwrap()
+}
+
 #[tokio::test]
 async fn edge_server_proxies_real_sqlite_gateway_admin_and_app_services() {
-    let catalog = seeded_sqlite_catalog().await.unwrap();
-    let database_config = catalog.database_config().unwrap();
-    let api_key_config = catalog.api_key_security_config().unwrap();
+    let catalog = seeded_installed_gateway_catalog().await;
+    let shared_runtime = seeded_shared_sqlite_runtime(&catalog).await;
     let trusted_subject_config = trusted_subject_config().unwrap();
     let app_session_config = app_session_config().unwrap();
     let payment_webhook_config = payment_webhook_config().unwrap();
 
-    let gateway_router = sdkwork_claw_gateway::router_with_database_and_api_key_config(
-        database_config.clone(),
-        Some(api_key_config.clone()),
+    let gateway_router = seeded_gateway_router(&catalog).await;
+    let admin_router = seeded_admin_router(
+        &catalog,
+        &shared_runtime,
+        trusted_subject_config.clone(),
+        app_session_config.clone(),
+    );
+    let app_router = seeded_app_router(
+        &catalog,
+        &shared_runtime,
+        trusted_subject_config,
+        app_session_config,
+        payment_webhook_config,
+        DeploymentMode::from_env(),
     )
-    .await
-    .unwrap();
-    let admin_router = sdkwork_claw_admin_api::router_with_database_and_api_key_config(
-        database_config.clone(),
-        Some(api_key_config.clone()),
-        Some(trusted_subject_config.clone()),
-        Some(app_session_config.clone()),
-    )
-    .await
-    .unwrap();
-    let app_router =
-        sdkwork_claw_app_api::router_with_database_config_api_key_trusted_subject_and_app_session_config(
-            database_config,
-            api_key_config,
-            trusted_subject_config,
-            app_session_config,
-            payment_webhook_config,
-        )
-        .await
-        .unwrap();
+    .await;
 
     let gateway = spawn_router(gateway_router).await;
     let admin = spawn_router(admin_router).await;
@@ -193,10 +541,99 @@ async fn edge_server_proxies_real_sqlite_gateway_admin_and_app_services() {
 }
 
 #[tokio::test]
+async fn all_in_one_edge_router_serves_sqlite_gateway_admin_and_app_without_service_ports() {
+    let catalog = seeded_installed_gateway_catalog().await;
+    let shared_runtime = seeded_shared_sqlite_runtime(&catalog).await;
+    let trusted_subject_config = trusted_subject_config().unwrap();
+    let app_session_config = app_session_config().unwrap();
+    let payment_webhook_config = payment_webhook_config().unwrap();
+    let gateway_router = seeded_gateway_router(&catalog).await;
+    let admin_router = seeded_admin_router(
+        &catalog,
+        &shared_runtime,
+        trusted_subject_config.clone(),
+        app_session_config.clone(),
+    );
+    let app_router = seeded_app_router(
+        &catalog,
+        &shared_runtime,
+        trusted_subject_config,
+        app_session_config,
+        payment_webhook_config,
+        DeploymentMode::Desktop,
+    )
+    .await;
+    let portal = spawn_router(portal_router()).await;
+
+    let edge_router = sdkwork_claw_gateway::edge_server_router_with_in_process_upstreams(
+        sdkwork_claw_gateway::EdgeServerConfig::try_new(
+            "http://127.0.0.1:1",
+            "http://127.0.0.1:1",
+            "http://127.0.0.1:1",
+            &portal.base_url,
+        )
+        .unwrap(),
+        sdkwork_claw_gateway::EdgeInProcessUpstreams::new(gateway_router, admin_router, app_router),
+    );
+
+    let readyz = json_request(edge_router.clone(), Method::GET, "/readyz", Body::empty())
+        .send()
+        .await;
+    assert_eq!(StatusCode::OK, readyz.status);
+    assert_eq!("ok", readyz.json["status"]);
+    assert_eq!("ok", readyz.json["upstreams"]["gateway"]["status"]);
+    assert_eq!("ok", readyz.json["upstreams"]["backend"]["status"]);
+    assert_eq!("ok", readyz.json["upstreams"]["app"]["status"]);
+    assert_eq!("ok", readyz.json["upstreams"]["portal"]["status"]);
+
+    let catalog_models = json_request(
+        edge_router.clone(),
+        Method::GET,
+        "/v1/models",
+        Body::empty(),
+    )
+    .with_authorization(catalog.gateway_authorization_header())
+    .send()
+    .await;
+    assert_eq!(StatusCode::OK, catalog_models.status);
+    assert_eq!("list", catalog_models.json["object"]);
+    assert_eq!("gpt-5.5-pro", catalog_models.json["data"][0]["id"]);
+
+    let admin_models = json_request(
+        edge_router.clone(),
+        Method::GET,
+        "/backend/v3/api/ai/models",
+        Body::empty(),
+    )
+    .with_app_session(admin_app_session_headers())
+    .send()
+    .await;
+    assert_eq!(StatusCode::OK, admin_models.status);
+    assert_eq!("2000", admin_models.json["code"]);
+    assert_eq!(
+        "gpt-5.5-pro",
+        admin_models.json["data"]["items"][0]["model"]
+    );
+
+    let app_models = json_request(
+        edge_router,
+        Method::GET,
+        "/app/v3/api/ai/models",
+        Body::empty(),
+    )
+    .send()
+    .await;
+    assert_eq!(StatusCode::OK, app_models.status);
+    assert_eq!("2000", app_models.json["code"]);
+    assert_eq!("gpt-5.5-pro", app_models.json["data"]["items"][0]["model"]);
+
+    let _ = portal.stop.send(());
+}
+
+#[tokio::test]
 async fn edge_server_proxies_app_router_console_routing_api_through_generated_sdk_paths() {
-    let catalog = seeded_sqlite_catalog().await.unwrap();
-    let database_config = catalog.database_config().unwrap();
-    let api_key_config = catalog.api_key_security_config().unwrap();
+    let catalog = seeded_installed_gateway_catalog().await;
+    let shared_runtime = seeded_shared_sqlite_runtime(&catalog).await;
     let trusted_subject_config = trusted_subject_config().unwrap();
     let app_session_config = app_session_config().unwrap();
     let routing_store = Arc::new(InMemoryAppRoutingStore::default());
@@ -228,20 +665,13 @@ async fn edge_server_proxies_app_router_console_routing_api_through_generated_sd
         ),
         sdkwork_claw_http::app_request_subject_boundary,
     ));
-    let gateway_router = sdkwork_claw_gateway::router_with_database_and_api_key_config(
-        database_config.clone(),
-        Some(api_key_config.clone()),
-    )
-    .await
-    .unwrap();
-    let admin_router = sdkwork_claw_admin_api::router_with_database_and_api_key_config(
-        database_config,
-        Some(api_key_config),
-        Some(trusted_subject_config),
-        Some(app_session_config),
-    )
-    .await
-    .unwrap();
+    let gateway_router = seeded_gateway_router(&catalog).await;
+    let admin_router = seeded_admin_router(
+        &catalog,
+        &shared_runtime,
+        trusted_subject_config,
+        app_session_config,
+    );
 
     let gateway = spawn_router(gateway_router).await;
     let admin = spawn_router(admin_router).await;

@@ -21,7 +21,7 @@ pub use error::{DomainError, DomainResult};
 pub use money::{DecimalValue, Money};
 pub use pricing::{ModelPrice, PriceSide, PricingPlan};
 pub use routing::{
-    RouteCandidate, RoutingCapability, RoutingFallbackMode, RoutingPolicy, RoutingPolicyScope,
-    RoutingRule,
+    AiRouteFailureStrategy, AiRouteModelRequirement, AiRouteStrategy, RouteCandidate,
+    RoutingCapability, RoutingFallbackMode, RoutingPolicy, RoutingPolicyScope, RoutingRule,
 };
 pub use types::{BillingMeter, IntegrationProviderType, ModelVendor};

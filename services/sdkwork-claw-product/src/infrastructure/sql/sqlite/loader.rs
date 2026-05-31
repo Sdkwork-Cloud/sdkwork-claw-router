@@ -7,6 +7,7 @@ use crate::domain::{
     DomainError, DomainResult, DEFAULT_PROVIDER_CIRCUIT_BREAKER_RECOVERY_WINDOW_SECONDS,
 };
 use crate::infrastructure::sql::catalog::{PricingCatalogRows, SqlPricingCatalogSnapshot};
+use crate::infrastructure::sql::routing_config_change::AI_ROUTING_CONFIG_SCOPE;
 use crate::infrastructure::sql::rows::GatewayApiKeyRow;
 use crate::infrastructure::sql::sqlite::error::SqlCatalogLoadError;
 use crate::infrastructure::sql::sqlite::queries;
@@ -107,6 +108,39 @@ impl SqlitePricingCatalogLoader {
                 managed_provider_secrets,
             )?,
         )
+    }
+
+    pub async fn load_routing_config_version(&self) -> Result<i64, SqlCatalogLoadError> {
+        sqlx::query_scalar(
+            r#"
+            SELECT COALESCE(
+                (
+                    SELECT config_version
+                    FROM ai_config_version
+                    WHERE tenant_id = 0
+                      AND organization_id = 0
+                      AND config_scope = ?
+                      AND status = 1
+                      AND deleted_at IS NULL
+                    LIMIT 1
+                ),
+                (
+                    SELECT COALESCE(SUM(config_version), 0)
+                    FROM ai_config_version
+                    WHERE config_scope = ?
+                      AND status = 1
+                      AND deleted_at IS NULL
+                      AND NOT (tenant_id = 0 AND organization_id = 0)
+                ),
+                0
+            )
+            "#,
+        )
+        .bind(AI_ROUTING_CONFIG_SCOPE)
+        .bind(AI_ROUTING_CONFIG_SCOPE)
+        .fetch_one(&self.pool)
+        .await
+        .map_err(SqlCatalogLoadError::from)
     }
 
     async fn load_api_key_rows(&self) -> Result<Vec<GatewayApiKeyRow>, SqlCatalogLoadError> {

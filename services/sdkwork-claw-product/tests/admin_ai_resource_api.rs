@@ -6,7 +6,12 @@ use std::sync::Arc;
 
 use axum::body::Body;
 use axum::http::{Request, StatusCode};
-use sdkwork_claw_product::application::EntityUuidGenerator;
+use sdkwork_claw_product::application::{
+    default_desktop_cache_manager, AiRoutingCacheInvalidatingAdminAiResourceStore,
+    EntityUuidGenerator, ROUTING_CONFIG_VERSION_CACHE_NAMESPACE,
+    ROUTING_PROVIDER_OBJECT_ROUTE_CACHE_NAMESPACE, ROUTING_SNAPSHOT_CACHE_NAMESPACE,
+};
+use sdkwork_claw_product::domain::DomainError;
 use sdkwork_claw_product::ports::{
     AdminAiResourceItem, AdminAiResourceMemberItem, AdminAiResourceReadFuture,
     AdminAiResourceStore, AdminAiResourceSubject, CreateAdminAiResourceCommand,
@@ -116,6 +121,132 @@ async fn admin_ai_resource_route_creates_and_updates_resources() {
             .unwrap()
             .len()
     );
+}
+
+#[tokio::test]
+async fn admin_ai_resource_route_invalidates_routing_cache_after_successful_mutation() {
+    let manager = default_desktop_cache_manager();
+    manager
+        .set_json(
+            ROUTING_SNAPSHOT_CACHE_NAMESPACE,
+            "tenant:10:org:20",
+            serde_json::json!({ "status": "warm" }),
+        )
+        .await
+        .unwrap();
+    manager
+        .set_json(
+            ROUTING_CONFIG_VERSION_CACHE_NAMESPACE,
+            "tenant:10:org:20",
+            serde_json::json!({ "version": 7 }),
+        )
+        .await
+        .unwrap();
+    manager
+        .set_json(
+            ROUTING_PROVIDER_OBJECT_ROUTE_CACHE_NAMESPACE,
+            "tenant:10:org:20:object:resp_123",
+            serde_json::json!({ "channelId": 1 }),
+        )
+        .await
+        .unwrap();
+    let router = sdkwork_claw_product::api::admin_ai_resource_router_with_store(
+        Arc::new(AiRoutingCacheInvalidatingAdminAiResourceStore::new(
+            Arc::new(TestAiResourceStore),
+            manager.clone(),
+        )),
+        Arc::new(TestUuidGenerator::default()),
+    );
+
+    let response = router
+        .oneshot(
+            Request::builder()
+                .method("POST")
+                .uri("/backend/v3/api/ai/resources")
+                .internal_trusted_subject(10, 20, 30)
+                .header("content-type", "application/json")
+                .body(Body::from(
+                    r#"{"resourceCode":"bundle.openrouter.openai.standard","resourceType":"bundle","displayName":"OpenRouter OpenAI Standard","vendorCode":"OpenAI","compositionMode":"all","status":"active","sortOrder":5,"members":[{"memberResourceCode":"model.openai.gpt-4o-mini.chat"}]}"#,
+                ))
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+
+    assert_eq!(StatusCode::OK, response.status());
+    assert!(manager
+        .get_json(ROUTING_SNAPSHOT_CACHE_NAMESPACE, "tenant:10:org:20")
+        .await
+        .unwrap()
+        .is_none());
+    assert!(manager
+        .get_json(ROUTING_CONFIG_VERSION_CACHE_NAMESPACE, "tenant:10:org:20")
+        .await
+        .unwrap()
+        .is_none());
+    assert!(manager
+        .get_json(
+            ROUTING_PROVIDER_OBJECT_ROUTE_CACHE_NAMESPACE,
+            "tenant:10:org:20:object:resp_123"
+        )
+        .await
+        .unwrap()
+        .is_some());
+}
+
+#[tokio::test]
+async fn admin_ai_resource_route_maps_missing_member_resource_to_not_found() {
+    let router = sdkwork_claw_product::api::admin_ai_resource_router_with_store(
+        Arc::new(MissingMemberAiResourceStore),
+        Arc::new(TestUuidGenerator::default()),
+    );
+
+    let create_response = router
+        .clone()
+        .oneshot(
+            Request::builder()
+                .method("POST")
+                .uri("/backend/v3/api/ai/resources")
+                .internal_trusted_subject(10, 20, 30)
+                .header("content-type", "application/json")
+                .body(Body::from(
+                    r#"{"resourceCode":"bundle.openrouter.openai.invalid","resourceType":"bundle","displayName":"Invalid Bundle","members":[{"memberResourceCode":"model.openai.missing.chat"}]}"#,
+                ))
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+
+    assert_eq!(StatusCode::NOT_FOUND, create_response.status());
+    let create_payload = json_payload(create_response).await;
+    assert_eq!("4040", create_payload["code"]);
+    assert!(create_payload["msg"]
+        .as_str()
+        .unwrap()
+        .contains("model.openai.missing.chat"));
+
+    let update_response = router
+        .oneshot(
+            Request::builder()
+                .method("PUT")
+                .uri("/backend/v3/api/ai/resources/5")
+                .internal_trusted_subject(10, 20, 30)
+                .header("content-type", "application/json")
+                .body(Body::from(
+                    r#"{"members":[{"memberResourceCode":"model.openai.missing.chat"}]}"#,
+                ))
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+
+    assert_eq!(StatusCode::NOT_FOUND, update_response.status());
+    let update_payload = json_payload(update_response).await;
+    assert_eq!("4040", update_payload["code"]);
+    assert!(update_payload["msg"]
+        .as_str()
+        .unwrap()
+        .contains("model.openai.missing.chat"));
 }
 
 async fn json_payload(response: axum::response::Response) -> Value {
@@ -261,6 +392,35 @@ impl AdminAiResourceStore for TestAiResourceStore {
             }))
         })
     }
+}
+
+struct MissingMemberAiResourceStore;
+
+impl AdminAiResourceStore for MissingMemberAiResourceStore {
+    fn list_ai_resources<'a>(
+        &'a self,
+        _query: ListAdminAiResourcesQuery,
+    ) -> AdminAiResourceReadFuture<'a, Vec<AdminAiResourceItem>> {
+        Box::pin(async { Ok(Vec::new()) })
+    }
+
+    fn create_ai_resource<'a>(
+        &'a self,
+        _command: CreateAdminAiResourceCommand,
+    ) -> AdminAiResourceReadFuture<'a, AdminAiResourceItem> {
+        Box::pin(async { Err(missing_member_error()) })
+    }
+
+    fn update_ai_resource<'a>(
+        &'a self,
+        _command: UpdateAdminAiResourceCommand,
+    ) -> AdminAiResourceReadFuture<'a, Option<AdminAiResourceItem>> {
+        Box::pin(async { Err(missing_member_error()) })
+    }
+}
+
+fn missing_member_error() -> DomainError {
+    DomainError::not_found("AI resource member was not found: model.openai.missing.chat")
 }
 
 struct TestUuidGenerator {

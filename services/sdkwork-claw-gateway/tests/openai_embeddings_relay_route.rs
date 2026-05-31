@@ -31,15 +31,15 @@ fn catalog_with_hashed_api_key(key_hash: String) -> InMemoryPricingCatalog {
             "openai",
             vec!["embedding"],
         )
-        .with_catalog_key("openai/global/text-embedding-3-small"),
+        .with_catalog_key("openai/text-embedding-3-small"),
     );
     catalog.add_provider_route(
         ModelProviderRoute::new_for_catalog_key(
-            "openai/global/text-embedding-3-small",
+            "openai/text-embedding-3-small",
             "text-embedding-3-small",
             "openrouter",
             3001,
-            "openai/global/text-embedding-3-small",
+            "openai/text-embedding-3-small",
         )
         .with_provider_endpoint(
             Some("http://provider-proxy.internal/openrouter"),
@@ -72,7 +72,7 @@ fn catalog_with_hashed_api_key(key_hash: String) -> InMemoryPricingCatalog {
     ));
     catalog.add_api_key(GatewayApiKey::new(101, 10, "sk-live", &key_hash).with_owner(10, 20, 30));
     catalog.add_price(ModelPrice::new_for_catalog_key(
-        "openai/global/text-embedding-3-small",
+        "openai/text-embedding-3-small",
         "text-embedding-3-small",
         PriceSide::OfficialReference,
         BillingMeter::EmbeddingInputToken,
@@ -80,7 +80,7 @@ fn catalog_with_hashed_api_key(key_hash: String) -> InMemoryPricingCatalog {
     ));
     catalog.add_price(
         ModelPrice::new_for_catalog_key(
-            "openai/global/text-embedding-3-small",
+            "openai/text-embedding-3-small",
             "text-embedding-3-small",
             PriceSide::UpstreamCost,
             BillingMeter::EmbeddingInputToken,
@@ -108,8 +108,8 @@ fn catalog_with_hashed_api_key(key_hash: String) -> InMemoryPricingCatalog {
             9101,
             "standard-group-text-embedding-3-small",
             1,
-            r#"{"catalogKey":"openai/global/text-embedding-3-small"}"#,
-            "openai/global/text-embedding-3-small",
+            r#"{"catalogKey":"openai/text-embedding-3-small"}"#,
+            "openai/text-embedding-3-small",
         )
         .with_candidate_channels(vec![RouteCandidate::new(3001, 100)]),
     );
@@ -140,7 +140,7 @@ impl EmbeddingsRelay for GatewayRecordingEmbeddingsRelay {
                 200,
                 serde_json::json!({
                     "object": "list",
-                    "model": "openai/global/text-embedding-3-small",
+                    "model": "openai/text-embedding-3-small",
                     "data": [
                         {"object": "embedding", "index": 0, "embedding": [0.1, 0.2, 0.3]}
                     ],

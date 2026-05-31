@@ -46,7 +46,7 @@ fn bootstrap_manifest_is_complete_for_first_slice_host_startup() {
         manifest.runtime.operation_contracts.len(),
         operation_contracts().len()
     );
-    assert_eq!(manifest.storage.tables.len(), 53);
+    assert_eq!(manifest.storage.tables.len(), 67);
     assert_eq!(manifest.storage.business_repositories.len(), 14);
     assert_eq!(
         manifest.http.execution_metadata.len(),
@@ -107,7 +107,7 @@ fn commerce_experience_seed_manifest_initializes_reusable_membership_and_recharg
     let plan_benefits = membership_plan_benefit_seeds();
     let groups = membership_package_group_seeds();
     let packages = membership_package_seeds();
-    let _recharge_packages = commerce_recharge_package_seeds();
+    let recharge_packages = commerce_recharge_package_seeds();
     let payment_methods = commerce_payment_method_seeds();
     let payment_providers = commerce_payment_provider_seeds();
     let payment_provider_accounts = commerce_payment_provider_account_seeds();
@@ -131,7 +131,8 @@ fn commerce_experience_seed_manifest_initializes_reusable_membership_and_recharg
     assert_eq!(manifest.promotion_coupon_stock_count, 2);
     assert_eq!(manifest.promotion_code_count, 2);
     assert_eq!(manifest.promotion_user_coupon_count, 2);
-    assert_eq!(manifest.recharge_package_count, 4);
+    assert_eq!(manifest.recharge_package_count, 18);
+    assert_eq!(manifest.recharge_settings_count, 1);
     assert_eq!(manifest.payment_method_count, 7);
     assert_eq!(manifest.payment_provider_count, 6);
     assert_eq!(manifest.payment_provider_account_count, 6);
@@ -220,6 +221,28 @@ fn commerce_experience_seed_manifest_initializes_reusable_membership_and_recharg
     assert!(!manifest.payload_json.contains("region_code"));
     assert!(!manifest.payload_json.contains("regionCode"));
     assert_eq!(
+        recharge_packages
+            .iter()
+            .filter(|package| package.status == "active")
+            .count(),
+        9,
+    );
+    assert_eq!(
+        recharge_packages
+            .iter()
+            .filter(|package| package.status == "inactive")
+            .count(),
+        9,
+    );
+    assert!(recharge_packages
+        .iter()
+        .filter(|package| package.currency_code == "CNY")
+        .all(|package| package.status == "active"));
+    assert!(recharge_packages
+        .iter()
+        .filter(|package| package.currency_code == "USD")
+        .all(|package| package.status == "inactive"));
+    assert_eq!(
         payment_methods
             .iter()
             .map(|method| method.method_key)
@@ -242,8 +265,8 @@ fn commerce_experience_seed_manifest_initializes_reusable_membership_and_recharg
         vec![
             "wechat_pay",
             "alipay",
-            "paypal",
             "stripe",
+            "paypal",
             "apple_pay",
             "google_pay",
         ],
@@ -472,7 +495,7 @@ fn bootstrap_preflight_exposes_host_startup_plan_after_validation() {
         preflight.runtime_operations,
         manifest.runtime.operation_contracts.len()
     );
-    assert_eq!(preflight.storage_tables, 53);
+    assert_eq!(preflight.storage_tables, 67);
     assert_eq!(preflight.storage_repositories, 15);
     assert_eq!(
         preflight.storage_migration_lock_table,

@@ -1,9 +1,6 @@
-#[path = "common/installed_sqlite.rs"]
-mod installed_sqlite_common;
-
-use installed_sqlite_common::repair_sqlite_pool;
 use sdkwork_claw_product::infrastructure::sql::sqlite::SqliteAppStoreReadStore;
 use sdkwork_claw_product::ports::{AppStoreReadStore, AppStoreSubject};
+use sdkwork_claw_product_test_support::repair_sqlite_pool;
 
 #[tokio::test]
 async fn sqlite_app_store_reads_installed_seed_media_and_release_artifacts_by_app_key() {

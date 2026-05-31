@@ -5,13 +5,44 @@ frontend_models:
   interface: RechargePackage
   fields:
   - id
-  - rmb
-  - bonus
+  - priceAmount
+  - currencyCode
+  - bonusPoints
+  - grantAmount
   - points
   data_sources:
   - commerce_recharge_package
   - commerce_product_spu
   - commerce_product_sku
+- route: /console/recharge
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-recharge/src/rechargeService.ts
+  interface: RechargeOrderCreateResult
+  fields:
+  - success
+  - orderNo
+  - providerCode
+  - paymentMethod
+  - paymentProduct
+  - nextAction
+  - cashierUrl
+  - qrCodePayload
+  - requestPaymentPayload
+  data_sources:
+  - commerce_recharge_package
+  - commerce_order
+  - commerce_payment_intent
+  - commerce_payment_attempt
+- route: /console/recharge
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-recharge/src/rechargeService.ts
+  interface: RechargeSettingsSnapshot
+  fields:
+  - baseCurrencyCode
+  - basePointsPerCny
+  - currencyToCnyRates
+  - previewExamples
+  data_sources:
+  - commerce_exchange_rule
+  - commerce_recharge_package
 - route: /console/recharge
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-recharge/src/rechargeService.ts
   interface: BillingHistoryItem
@@ -32,5 +63,7 @@ frontend_models:
   - relatedOrderNo
   - paymentMethod
   - occurredAt
+  derived_fields:
+  - method
   data_sources:
   - commerce_billing_history

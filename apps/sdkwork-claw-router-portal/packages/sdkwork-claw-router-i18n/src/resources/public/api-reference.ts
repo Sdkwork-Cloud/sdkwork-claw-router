@@ -33,7 +33,7 @@ export const publicApiReferenceMessages = {
     "api.response": "Response",
     "api.searchDocs": "Search docs...",
     "api.selectEndpoint": "Select an endpoint from the sidebar to view its documentation.",
-    "api.system.open": "Default Open API",
+    "api.system.open": "AI Aggregation API",
     "api.system.management": "Management API",
     "api.system.portal": "Portal API",
     "api.searchPlaceholder": "Search endpoints...",

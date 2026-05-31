@@ -1,6 +1,3 @@
-#[path = "common/installed_sqlite.rs"]
-mod installed_sqlite_common;
-
 use std::fs;
 use std::path::PathBuf;
 use std::sync::Arc;
@@ -9,13 +6,13 @@ use std::time::{SystemTime, UNIX_EPOCH};
 
 use axum::body::Body;
 use axum::http::{header, Request, StatusCode};
-use installed_sqlite_common::{repair_sqlite_pool, schema_sqlite_pool};
 use sdkwork_claw_product::api::{
     app_course_router_with_store, app_course_router_with_store_and_upload_root,
     app_course_router_with_store_upload_root_and_upload_limits, configured_course_upload_limits,
     configured_course_upload_root, CourseUploadLimits,
 };
 use sdkwork_claw_product::infrastructure::sql::sqlite::SqliteCourseStore;
+use sdkwork_claw_product_test_support::{repair_sqlite_pool, schema_sqlite_pool};
 use serde_json::Value;
 use tower::ServiceExt;
 

@@ -2,6 +2,9 @@ use sha2::{Digest, Sha256};
 use sqlx::{Row, Sqlite, SqlitePool, Transaction};
 
 use crate::domain::{DomainError, DomainResult};
+use crate::infrastructure::sql::routing_config_change::{
+    record_sqlite_ai_routing_config_change, AiRoutingConfigChange,
+};
 use crate::ports::{
     AdminProviderSecretCommandFuture, AdminProviderSecretItem, AdminProviderSecretStore,
     CreateAdminProviderSecretCommand, DeleteAdminProviderSecretCommand,
@@ -76,6 +79,25 @@ impl AdminProviderSecretStore for SqliteAdminProviderSecretStore {
                 }),
             )
             .await?;
+            record_sqlite_ai_routing_config_change(
+                &mut tx,
+                provider_secret_routing_config_change(
+                    command.subject.tenant_id,
+                    command.subject.organization_id,
+                    command.subject.operator_id,
+                    &command.request_id,
+                    &command.requested_at,
+                    "create_provider_secret",
+                    id,
+                    serde_json::json!({
+                        "providerSecretId": id,
+                        "providerCode": &command.provider_code,
+                        "secretStoredAsRef": true,
+                        "status": &command.status
+                    }),
+                ),
+            )
+            .await?;
             let item = load_provider_secret_by_id(
                 &mut tx,
                 id,
@@ -148,6 +170,27 @@ impl AdminProviderSecretStore for SqliteAdminProviderSecretStore {
                 }),
             )
             .await?;
+            record_sqlite_ai_routing_config_change(
+                &mut tx,
+                provider_secret_routing_config_change(
+                    command.subject.tenant_id,
+                    command.subject.organization_id,
+                    command.subject.operator_id,
+                    &command.request_id,
+                    &command.requested_at,
+                    "update_provider_secret",
+                    command.secret_id,
+                    serde_json::json!({
+                        "providerSecretId": command.secret_id,
+                        "providerChanged": command.provider_code.is_some(),
+                        "nameChanged": command.name.is_some(),
+                        "authTypeChanged": command.auth_type.is_some(),
+                        "secretRefChanged": command.secret_ref.is_some(),
+                        "statusChanged": command.status.is_some()
+                    }),
+                ),
+            )
+            .await?;
             let item = load_provider_secret_by_id(
                 &mut tx,
                 command.secret_id,
@@ -202,6 +245,23 @@ impl AdminProviderSecretStore for SqliteAdminProviderSecretStore {
                         "action": "delete_provider_secret",
                         "providerSecretId": command.secret_id
                     }),
+                )
+                .await?;
+                record_sqlite_ai_routing_config_change(
+                    &mut tx,
+                    provider_secret_routing_config_change(
+                        command.subject.tenant_id,
+                        command.subject.organization_id,
+                        command.subject.operator_id,
+                        &command.request_id,
+                        &command.requested_at,
+                        "delete_provider_secret",
+                        command.secret_id,
+                        serde_json::json!({
+                            "providerSecretId": command.secret_id,
+                            "deleted": true
+                        }),
+                    ),
                 )
                 .await?;
             }
@@ -508,6 +568,29 @@ async fn insert_config_snapshot(
     .map_err(|error| store_error("failed to write provider secret config snapshot", error))?;
     let _ = action;
     Ok(())
+}
+
+fn provider_secret_routing_config_change<'a>(
+    tenant_id: i64,
+    organization_id: i64,
+    operator_id: i64,
+    request_id: &'a str,
+    requested_at: &'a str,
+    action: &'a str,
+    provider_secret_id: i64,
+    event_payload: serde_json::Value,
+) -> AiRoutingConfigChange<'a> {
+    AiRoutingConfigChange {
+        tenant_id,
+        organization_id,
+        operator_id,
+        request_id,
+        requested_at,
+        changed_object_type: "integration_provider_account",
+        changed_object_id: provider_secret_id,
+        action,
+        event_payload,
+    }
 }
 
 fn item_from_row(row: sqlx::sqlite::SqliteRow) -> DomainResult<AdminProviderSecretItem> {

@@ -1,5 +1,6 @@
 use std::collections::hash_map::DefaultHasher;
 use std::collections::BTreeMap;
+use std::fmt;
 use std::hash::{Hash, Hasher};
 use std::sync::atomic::{AtomicU64, Ordering};
 use std::sync::Arc;
@@ -15,6 +16,11 @@ use tokio::sync::RwLock;
 use crate::domain::{DomainError, DomainResult};
 
 pub const AUTH_QR_CACHE_NAMESPACE: &str = "auth.qr.challenge";
+pub const ROUTING_SNAPSHOT_CACHE_NAMESPACE: &str = "routing.snapshot";
+pub const ROUTING_PROVIDER_OBJECT_ROUTE_CACHE_NAMESPACE: &str = "routing.provider_object_route";
+pub const ROUTING_IDEMPOTENCY_CACHE_NAMESPACE: &str = "routing.idempotency";
+pub const ROUTING_CONFIG_VERSION_CACHE_NAMESPACE: &str = "routing.config_version";
+pub const ROUTING_DISABLED_CHANNEL_CACHE_NAMESPACE: &str = "routing.disabled_channel";
 pub const DEFAULT_DESKTOP_CACHE_INSTANCE_NAME: &str = "local-default";
 pub const DEFAULT_SERVICE_CACHE_INSTANCE_NAME: &str = "redis-default";
 pub const DEFAULT_CACHE_KEY_PREFIX: &str = "claw";
@@ -335,10 +341,26 @@ pub trait CacheBackend: Send + Sync {
 pub type CacheBackendFuture<'a, T> =
     std::pin::Pin<Box<dyn std::future::Future<Output = DomainResult<T>> + Send + 'a>>;
 
-#[derive(Debug, Default)]
+type MonotonicNow = Arc<dyn Fn() -> Instant + Send + Sync>;
+
 pub struct LocalCacheBackend {
     entries: RwLock<BTreeMap<String, CacheValueEntry>>,
     max_entries: Option<usize>,
+    now: MonotonicNow,
+}
+
+impl fmt::Debug for LocalCacheBackend {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        f.debug_struct("LocalCacheBackend")
+            .field("max_entries", &self.max_entries)
+            .finish_non_exhaustive()
+    }
+}
+
+impl Default for LocalCacheBackend {
+    fn default() -> Self {
+        Self::with_max_entries(None)
+    }
 }
 
 impl LocalCacheBackend {
@@ -347,9 +369,17 @@ impl LocalCacheBackend {
     }
 
     pub fn with_max_entries(max_entries: Option<usize>) -> Self {
+        Self::with_max_entries_and_clock(max_entries, Instant::now)
+    }
+
+    pub fn with_max_entries_and_clock(
+        max_entries: Option<usize>,
+        now: impl Fn() -> Instant + Send + Sync + 'static,
+    ) -> Self {
         Self {
             entries: RwLock::new(BTreeMap::new()),
             max_entries,
+            now: Arc::new(now),
         }
     }
 }
@@ -361,7 +391,7 @@ impl CacheBackend for LocalCacheBackend {
             let Some(entry) = entries.get(key) else {
                 return Ok(None);
             };
-            if entry.expires_at <= Instant::now() {
+            if entry.expires_at <= (self.now.as_ref())() {
                 entries.remove(key);
                 return Ok(None);
             }
@@ -376,7 +406,7 @@ impl CacheBackend for LocalCacheBackend {
         ttl: Duration,
     ) -> CacheBackendFuture<'a, ()> {
         Box::pin(async move {
-            let inserted_at = Instant::now();
+            let inserted_at = (self.now.as_ref())();
             let expires_at = inserted_at
                 .checked_add(ttl)
                 .ok_or_else(|| DomainError::new("cache ttl overflowed"))?;
@@ -423,7 +453,7 @@ impl CacheBackend for LocalCacheBackend {
         prefix: String,
     ) -> CacheBackendFuture<'a, CacheOperationOutcome> {
         Box::pin(async move {
-            let now = Instant::now();
+            let now = (self.now.as_ref())();
             let mut entries = self.entries.write().await;
             let before = entries.len();
             entries.retain(|key, entry| !key.starts_with(&prefix) || entry.expires_at > now);
@@ -446,7 +476,7 @@ impl CacheBackend for LocalCacheBackend {
     fn stats_prefix<'a>(&'a self, prefix: String) -> CacheBackendFuture<'a, CacheBackendStats> {
         Box::pin(async move {
             let entries = self.entries.read().await;
-            let now = Instant::now();
+            let now = (self.now.as_ref())();
             let expired_entry_count = entries
                 .iter()
                 .filter(|(key, entry)| key.starts_with(&prefix) && entry.expires_at <= now)
@@ -477,7 +507,7 @@ impl CacheBackend for LocalCacheBackend {
                 None => 0,
             };
             let entries = self.entries.read().await;
-            let now = Instant::now();
+            let now = (self.now.as_ref())();
             let matched_items: Vec<CacheBackendKeyMetadata> = entries
                 .iter()
                 .filter_map(|(key, entry)| {
@@ -1968,12 +1998,88 @@ pub fn default_service_cache_manager(
 }
 
 fn default_cache_namespace_policies(instance_name: &str) -> Vec<CacheNamespacePolicy> {
-    vec![CacheNamespacePolicy::new(
+    let mut auth_qr = CacheNamespacePolicy::new(
         AUTH_QR_CACHE_NAMESPACE,
         instance_name,
         300,
         "session",
         "sensitive",
         vec!["auth".to_owned(), "qr".to_owned(), "login".to_owned()],
-    )]
+    );
+    auth_qr.failure_mode = "fail_closed".to_owned();
+    auth_qr.consistency = "coordination_critical".to_owned();
+
+    let mut route_snapshot = CacheNamespacePolicy::new(
+        ROUTING_SNAPSHOT_CACHE_NAMESPACE,
+        instance_name,
+        86_400,
+        "tenant",
+        "internal",
+        vec!["routing".to_owned(), "snapshot".to_owned(), "ai".to_owned()],
+    );
+    route_snapshot.failure_mode = "serve_stale".to_owned();
+    route_snapshot.consistency = "bounded_stale".to_owned();
+    route_snapshot.stale_while_revalidate_seconds = 300;
+    route_snapshot.jitter_percent = 5;
+
+    let mut provider_object_route = CacheNamespacePolicy::new(
+        ROUTING_PROVIDER_OBJECT_ROUTE_CACHE_NAMESPACE,
+        instance_name,
+        3_600,
+        "tenant",
+        "private",
+        vec!["routing".to_owned(), "sticky".to_owned(), "ai".to_owned()],
+    );
+    provider_object_route.failure_mode = "origin_fallback".to_owned();
+    provider_object_route.consistency = "coordination_critical".to_owned();
+    provider_object_route.jitter_percent = 5;
+
+    let mut idempotency = CacheNamespacePolicy::new(
+        ROUTING_IDEMPOTENCY_CACHE_NAMESPACE,
+        instance_name,
+        86_400,
+        "tenant",
+        "private",
+        vec![
+            "routing".to_owned(),
+            "idempotency".to_owned(),
+            "ai".to_owned(),
+        ],
+    );
+    idempotency.failure_mode = "origin_fallback".to_owned();
+    idempotency.consistency = "coordination_critical".to_owned();
+    idempotency.jitter_percent = 2;
+
+    let mut config_version = CacheNamespacePolicy::new(
+        ROUTING_CONFIG_VERSION_CACHE_NAMESPACE,
+        instance_name,
+        300,
+        "global",
+        "internal",
+        vec!["routing".to_owned(), "config".to_owned(), "ai".to_owned()],
+    );
+    config_version.failure_mode = "origin_fallback".to_owned();
+    config_version.consistency = "coordination_critical".to_owned();
+    config_version.jitter_percent = 0;
+
+    let mut disabled_channel = CacheNamespacePolicy::new(
+        ROUTING_DISABLED_CHANNEL_CACHE_NAMESPACE,
+        instance_name,
+        300,
+        "tenant",
+        "internal",
+        vec!["routing".to_owned(), "health".to_owned(), "ai".to_owned()],
+    );
+    disabled_channel.failure_mode = "fail_closed".to_owned();
+    disabled_channel.consistency = "coordination_critical".to_owned();
+    disabled_channel.jitter_percent = 0;
+
+    vec![
+        auth_qr,
+        route_snapshot,
+        provider_object_route,
+        idempotency,
+        config_version,
+        disabled_channel,
+    ]
 }

@@ -10,37 +10,123 @@
   },
   "status": "ok",
   "mode": "apply",
-  "hasChanges": false,
+  "hasChanges": true,
   "hasDestructiveChanges": false,
-  "changeFingerprint": "0220b05bc41fca04e6343c94a4569604f65a301598a4426ff932ca724c6bcb26",
+  "changeFingerprint": "17a3589acc1fe465b650cb89dd6d56287e3071196f60bde7a1255f52bae2f3ea",
   "changeImpact": {
     "schemaVersion": 1,
-    "areas": [],
-    "details": [],
-    "requiresVerification": false,
-    "summary": "No generated, scaffold, or backup changes detected. Verification can be skipped."
+    "areas": [
+      "models"
+    ],
+    "details": [
+      {
+        "area": "models",
+        "paths": [
+          "src/types/commerce-membership-purchase-request.ts",
+          "src/types/commerce-recharge-checkout-status-response.ts",
+          "src/types/commerce-recharge-order-create-request.ts",
+          "src/types/commerce-recharge-order-create-response.ts"
+        ]
+      }
+    ],
+    "requiresVerification": true,
+    "summary": "Detected impact areas: models. Verification is required."
   },
   "executionDecision": {
     "schemaVersion": 1,
-    "riskLevel": "low",
-    "nextAction": "skip",
+    "riskLevel": "medium",
+    "nextAction": "verify",
     "requiresManualReview": false,
     "applyRequiresExpectedFingerprint": false,
-    "summary": "No actionable changes were detected. No apply or verification step is required.",
+    "summary": "Changes have been applied. Run the required verification plan now.",
     "reasons": [
-      "no-actionable-changes"
+      "verification-required"
     ]
   },
   "executionHandoff": {
     "schemaVersion": 1,
-    "summary": "No further commands are required.",
-    "steps": []
+    "summary": "Run the required verification commands now.",
+    "steps": [
+      {
+        "id": "verify-check",
+        "title": "Unified package check",
+        "required": true,
+        "rationale": "Validate the generated package with the unified publish helper. Triggered by: models.",
+        "workingDirectory": "D:\\javasource\\spring-ai-plus\\spring-ai-plus-business\\apps\\sdkwork-claw-router\\sdks\\clawrouter-app-sdk\\clawrouter-app-sdk-typescript",
+        "command": "node",
+        "args": [
+          "./bin/publish-core.mjs",
+          "--language",
+          "typescript",
+          "--project-dir",
+          ".",
+          "--action",
+          "check"
+        ],
+        "displayCommand": "node ./bin/publish-core.mjs --language typescript --project-dir . --action check"
+      },
+      {
+        "id": "verify-build",
+        "title": "Unified package build",
+        "required": true,
+        "rationale": "Run the full package build because this language uses a lighter check path than the final build. Triggered by: models.",
+        "workingDirectory": "D:\\javasource\\spring-ai-plus\\spring-ai-plus-business\\apps\\sdkwork-claw-router\\sdks\\clawrouter-app-sdk\\clawrouter-app-sdk-typescript",
+        "command": "node",
+        "args": [
+          "./bin/publish-core.mjs",
+          "--language",
+          "typescript",
+          "--project-dir",
+          ".",
+          "--action",
+          "build"
+        ],
+        "displayCommand": "node ./bin/publish-core.mjs --language typescript --project-dir . --action build"
+      }
+    ]
   },
   "verificationPlan": {
-    "shouldRun": false,
-    "runPhase": "skip",
-    "summary": "No generated, scaffold, or backup changes detected. Verification can be skipped.",
-    "steps": []
+    "shouldRun": true,
+    "runPhase": "now",
+    "summary": "Detected impact areas: models. Verification is required. Run the required verification commands now against the generated SDK output.",
+    "steps": [
+      {
+        "id": "check",
+        "title": "Unified package check",
+        "required": true,
+        "rationale": "Validate the generated package with the unified publish helper. Triggered by: models.",
+        "workingDirectory": "D:\\javasource\\spring-ai-plus\\spring-ai-plus-business\\apps\\sdkwork-claw-router\\sdks\\clawrouter-app-sdk\\clawrouter-app-sdk-typescript",
+        "command": "node",
+        "args": [
+          "./bin/publish-core.mjs",
+          "--language",
+          "typescript",
+          "--project-dir",
+          ".",
+          "--action",
+          "check"
+        ],
+        "displayCommand": "node ./bin/publish-core.mjs --language typescript --project-dir . --action check"
+      },
+      {
+        "id": "build",
+        "title": "Unified package build",
+        "required": true,
+        "rationale": "Run the full package build because this language uses a lighter check path than the final build. Triggered by: models.",
+        "workingDirectory": "D:\\javasource\\spring-ai-plus\\spring-ai-plus-business\\apps\\sdkwork-claw-router\\sdks\\clawrouter-app-sdk\\clawrouter-app-sdk-typescript",
+        "command": "node",
+        "args": [
+          "./bin/publish-core.mjs",
+          "--language",
+          "typescript",
+          "--project-dir",
+          ".",
+          "--action",
+          "build"
+        ],
+        "displayCommand": "node ./bin/publish-core.mjs --language typescript --project-dir . --action build"
+      }
+    ]
   },
   "sdk": {
     "name": "clawrouter-app-sdk",
@@ -55,10 +141,10 @@
     "localVersions": []
   },
   "stats": {
-    "totalFiles": 741,
-    "models": 703,
+    "totalFiles": 766,
+    "models": 728,
     "apis": 15,
-    "types": 705
+    "types": 730
   },
   "warnings": [
     {
@@ -240,15 +326,20 @@
   ],
   "syncSummary": {
     "dryRun": false,
-    "writtenFiles": 0,
+    "writtenFiles": 4,
     "skippedScaffoldFiles": 2,
-    "skippedUnchangedGeneratedFiles": 738,
+    "skippedUnchangedGeneratedFiles": 759,
     "deletedGeneratedFiles": 0,
     "changeSummaryPath": ".sdkwork/sdkwork-generator-changes.json",
-    "changeFingerprint": "0220b05bc41fca04e6343c94a4569604f65a301598a4426ff932ca724c6bcb26",
+    "changeFingerprint": "17a3589acc1fe465b650cb89dd6d56287e3071196f60bde7a1255f52bae2f3ea",
     "changes": {
       "createdGeneratedFiles": [],
-      "updatedGeneratedFiles": [],
+      "updatedGeneratedFiles": [
+        "src/types/commerce-membership-purchase-request.ts",
+        "src/types/commerce-recharge-checkout-status-response.ts",
+        "src/types/commerce-recharge-order-create-request.ts",
+        "src/types/commerce-recharge-order-create-response.ts"
+      ],
       "unchangedGeneratedFiles": [
         "bin/publish-core.mjs",
         "bin/publish.ps1",
@@ -347,6 +438,8 @@
         "src/types/ai-chat-message-part-record.ts",
         "src/types/ai-chat-message-record.ts",
         "src/types/ai-chat-turn-record.ts",
+        "src/types/ai-config-change-event-record.ts",
+        "src/types/ai-config-version-record.ts",
         "src/types/ai-generation-asset-action-record.ts",
         "src/types/ai-generation-asset-record.ts",
         "src/types/ai-generation-job-record.ts",
@@ -381,6 +474,7 @@
         "src/types/ai-prompt-binding-record.ts",
         "src/types/ai-prompt-record.ts",
         "src/types/ai-prompt-version-record.ts",
+        "src/types/ai-provider-object-route-record.ts",
         "src/types/ai-provider-record.ts",
         "src/types/ai-quota-policy-record.ts",
         "src/types/ai-rate-limit-bucket-record.ts",
@@ -388,7 +482,9 @@
         "src/types/ai-resource-group-item-record.ts",
         "src/types/ai-resource-group-record.ts",
         "src/types/ai-resource-record.ts",
+        "src/types/ai-resource-route-profile-record.ts",
         "src/types/ai-route-candidate-record.ts",
+        "src/types/ai-route-idempotency-record.ts",
         "src/types/ai-routing-decision-log-record.ts",
         "src/types/ai-routing-policy-record.ts",
         "src/types/ai-routing-profile-record.ts",
@@ -499,7 +595,6 @@
         "src/types/commerce-membership-package-group-record.ts",
         "src/types/commerce-membership-package-record.ts",
         "src/types/commerce-membership-plan-record.ts",
-        "src/types/commerce-membership-purchase-request.ts",
         "src/types/commerce-membership-record.ts",
         "src/types/commerce-operation-response.ts",
         "src/types/commerce-order-address-snapshot-record.ts",
@@ -512,7 +607,11 @@
         "src/types/commerce-payment-attempt-item.ts",
         "src/types/commerce-payment-attempt-record.ts",
         "src/types/commerce-payment-attempt-response.ts",
+        "src/types/commerce-payment-capture-record.ts",
         "src/types/commerce-payment-channel-record.ts",
+        "src/types/commerce-payment-dispute-event-record.ts",
+        "src/types/commerce-payment-dispute-record.ts",
+        "src/types/commerce-payment-fee-record.ts",
         "src/types/commerce-payment-intent-create-request.ts",
         "src/types/commerce-payment-intent-item.ts",
         "src/types/commerce-payment-intent-record.ts",
@@ -520,10 +619,17 @@
         "src/types/commerce-payment-method-item.ts",
         "src/types/commerce-payment-method-list-response.ts",
         "src/types/commerce-payment-method-record.ts",
+        "src/types/commerce-payment-operation-attempt-record.ts",
         "src/types/commerce-payment-provider-account-record.ts",
+        "src/types/commerce-payment-provider-capability-record.ts",
         "src/types/commerce-payment-provider-record.ts",
+        "src/types/commerce-payment-reconciliation-item-record.ts",
         "src/types/commerce-payment-reconciliation-run-record.ts",
+        "src/types/commerce-payment-route-decision-record.ts",
         "src/types/commerce-payment-route-rule-record.ts",
+        "src/types/commerce-payment-statement-item-record.ts",
+        "src/types/commerce-payment-statement-record.ts",
+        "src/types/commerce-payment-webhook-delivery-record.ts",
         "src/types/commerce-payment-webhook-event-record.ts",
         "src/types/commerce-price-list-item-record.ts",
         "src/types/commerce-price-list-record.ts",
@@ -543,7 +649,10 @@
         "src/types/commerce-product-spu-item.ts",
         "src/types/commerce-product-spu-list-response.ts",
         "src/types/commerce-product-spu-record.ts",
+        "src/types/commerce-recharge-package-item.ts",
+        "src/types/commerce-recharge-package-list-response.ts",
         "src/types/commerce-recharge-package-record.ts",
+        "src/types/commerce-recharge-settings-response.ts",
         "src/types/commerce-refund-attempt-record.ts",
         "src/types/commerce-refund-event-record.ts",
         "src/types/commerce-refund-item-record.ts",
@@ -705,6 +814,7 @@
         "src/types/iam-verification-policy-retrieve-result.ts",
         "src/types/iam-verification-scene-policy-record.ts",
         "src/types/index.ts",
+        "src/types/integration-provider-account-record.ts",
         "src/types/integration-provider-health-snapshot-record.ts",
         "src/types/integration-provider-invoice-import-record.ts",
         "src/types/integration-provider-invoice-item-record.ts",
@@ -895,9 +1005,11 @@
         "src/types/qr-auth-sessions-scans-create-result.ts",
         "src/types/ranking-vendor-option.ts",
         "src/types/ranking-vendor-options-response.ts",
+        "src/types/recharges-orders-cancel-result.ts",
         "src/types/recharges-orders-create-result.ts",
         "src/types/recharges-orders-retrieve-result.ts",
         "src/types/recharges-packages-list-result.ts",
+        "src/types/recharges-settings-retrieve-result.ts",
         "src/types/refunds-create-result.ts",
         "src/types/refunds-list-result.ts",
         "src/types/refunds-retrieve-result.ts",
@@ -999,26 +1111,75 @@
     },
     "impact": {
       "schemaVersion": 1,
-      "areas": [],
-      "details": [],
-      "requiresVerification": false,
-      "summary": "No generated, scaffold, or backup changes detected. Verification can be skipped."
+      "areas": [
+        "models"
+      ],
+      "details": [
+        {
+          "area": "models",
+          "paths": [
+            "src/types/commerce-membership-purchase-request.ts",
+            "src/types/commerce-recharge-checkout-status-response.ts",
+            "src/types/commerce-recharge-order-create-request.ts",
+            "src/types/commerce-recharge-order-create-response.ts"
+          ]
+        }
+      ],
+      "requiresVerification": true,
+      "summary": "Detected impact areas: models. Verification is required."
     },
     "verificationPlan": {
-      "shouldRun": false,
-      "runPhase": "skip",
-      "summary": "No generated, scaffold, or backup changes detected. Verification can be skipped.",
-      "steps": []
+      "shouldRun": true,
+      "runPhase": "now",
+      "summary": "Detected impact areas: models. Verification is required. Run the required verification commands now against the generated SDK output.",
+      "steps": [
+        {
+          "id": "check",
+          "title": "Unified package check",
+          "required": true,
+          "rationale": "Validate the generated package with the unified publish helper. Triggered by: models.",
+          "workingDirectory": "D:\\javasource\\spring-ai-plus\\spring-ai-plus-business\\apps\\sdkwork-claw-router\\sdks\\clawrouter-app-sdk\\clawrouter-app-sdk-typescript",
+          "command": "node",
+          "args": [
+            "./bin/publish-core.mjs",
+            "--language",
+            "typescript",
+            "--project-dir",
+            ".",
+            "--action",
+            "check"
+          ],
+          "displayCommand": "node ./bin/publish-core.mjs --language typescript --project-dir . --action check"
+        },
+        {
+          "id": "build",
+          "title": "Unified package build",
+          "required": true,
+          "rationale": "Run the full package build because this language uses a lighter check path than the final build. Triggered by: models.",
+          "workingDirectory": "D:\\javasource\\spring-ai-plus\\spring-ai-plus-business\\apps\\sdkwork-claw-router\\sdks\\clawrouter-app-sdk\\clawrouter-app-sdk-typescript",
+          "command": "node",
+          "args": [
+            "./bin/publish-core.mjs",
+            "--language",
+            "typescript",
+            "--project-dir",
+            ".",
+            "--action",
+            "build"
+          ],
+          "displayCommand": "node ./bin/publish-core.mjs --language typescript --project-dir . --action build"
+        }
+      ]
     },
     "executionDecision": {
       "schemaVersion": 1,
-      "riskLevel": "low",
-      "nextAction": "skip",
+      "riskLevel": "medium",
+      "nextAction": "verify",
       "requiresManualReview": false,
       "applyRequiresExpectedFingerprint": false,
-      "summary": "No actionable changes were detected. No apply or verification step is required.",
+      "summary": "Changes have been applied. Run the required verification plan now.",
       "reasons": [
-        "no-actionable-changes"
+        "verification-required"
       ]
     },
     "backedUpFiles": [],

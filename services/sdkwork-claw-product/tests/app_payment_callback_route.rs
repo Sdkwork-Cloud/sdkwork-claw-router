@@ -112,8 +112,7 @@ async fn app_payment_callback_route_accepts_signed_json_and_passes_canonical_com
 
     let captured = captured.lock().unwrap();
     assert_eq!(1, captured.len());
-    assert_eq!(7, captured[0].provider);
-    assert_eq!("stripe", captured[0].provider_key);
+    assert_eq!("stripe", captured[0].provider_code);
     assert_eq!("evt-1001", captured[0].event_id);
     assert_eq!("nonce-1001", captured[0].nonce);
     assert_eq!(Some(timestamp), captured[0].request_timestamp);
@@ -253,12 +252,54 @@ async fn wechat_payment_callback_route_accepts_signed_xml_and_returns_provider_a
 
     let captured = captured.lock().unwrap();
     assert_eq!(1, captured.len());
-    assert_eq!(1, captured[0].provider);
-    assert_eq!("wechat", captured[0].provider_key);
+    assert_eq!("wechat_pay", captured[0].provider_code);
     assert_eq!("wx-order-1001", captured[0].out_trade_no);
     assert_eq!("wx-txn-9001", captured[0].transaction_id);
     assert_eq!(Some("12.34".to_owned()), captured[0].amount);
     assert_eq!(PaymentCallbackStatus::Success, captured[0].status);
+}
+
+#[tokio::test]
+async fn payment_callback_route_normalizes_provider_aliases_through_registry() {
+    let store = RecordingPaymentCallbackStore::default();
+    let captured = store.captured();
+    let router = sdkwork_claw_product::api::app_payment_callback_router_with_store(
+        Arc::new(store),
+        Arc::new(TestUuidGenerator::new()),
+        PaymentWebhookConfig::from_signing_secret(PAYMENT_WEBHOOK_SECRET).unwrap(),
+    );
+    let timestamp = current_unix_timestamp();
+    let body = concat!(
+        "<xml>",
+        "<out_trade_no><![CDATA[wx-order-1002]]></out_trade_no>",
+        "<transaction_id><![CDATA[wx-txn-9002]]></transaction_id>",
+        "<trade_state><![CDATA[SUCCESS]]></trade_state>",
+        "<total_fee>990</total_fee>",
+        "</xml>"
+    );
+    let signature = sign_payment_callback_body(timestamp, body.as_bytes());
+
+    let response = router
+        .oneshot(
+            Request::builder()
+                .method("POST")
+                .uri("/app/v3/api/payments/callback/wxpay")
+                .header("content-type", "application/xml")
+                .header("x-sdkwork-event-id", "evt-wx-1002")
+                .header("x-sdkwork-nonce", "nonce-wx-1002")
+                .header("x-sdkwork-timestamp", timestamp.to_string())
+                .header("Wechatpay-Signature", signature)
+                .body(Body::from(body))
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+
+    assert_eq!(StatusCode::OK, response.status());
+
+    let captured = captured.lock().unwrap();
+    assert_eq!(1, captured.len());
+    assert_eq!("wechat_pay", captured[0].provider_code);
 }
 
 fn current_unix_timestamp() -> i64 {

@@ -140,6 +140,7 @@ test("VIP service preserves product purchase APIs while using generated app SDK 
     "VipView",
     "VipPurchasePage",
     "VipPurchaseModal",
+    "formatRechargeCurrencyAmount",
     "VipService.fetchVipCatalog",
     "VipService.purchaseVipPackage",
     "handlePurchase",
@@ -190,6 +191,53 @@ test("VIP service preserves product purchase APIs while using generated app SDK 
   assert.doesNotMatch(serviceSource, /fetch\(/);
   assert.doesNotMatch(serviceSource, /axios/);
   assert.doesNotMatch(serviceSource, /billing\(\)\.vip|\/billing\/vip|\/app\/v3\/api\/vip|\/backend\/v3\/api\/vip/);
+});
+
+test("VIP public page skips current membership and current user requests when no portal session is stored", async () => {
+  const viewSource = readPortalFile("./packages/sdkwork-claw-router-vip/src/VipView.tsx");
+  const serviceSource = readPortalFile("./packages/sdkwork-claw-router-vip/src/vipService.ts");
+
+  assert.match(viewSource, /hasStoredPortalSession/);
+  assert.match(viewSource, /if \(!hasStoredPortalSession\(\)\) \{\s*setCurrentUser\(null\);\s*return;\s*\}/u);
+  assert.doesNotMatch(serviceSource, /Promise\.resolve\s*\(/u);
+
+  await withMembershipSdkResponses(
+    (path) => {
+      if (path === "/app/v3/api/memberships/current") {
+        throw new Error("VIP public page should not request current membership without a stored portal session");
+      }
+      if (path === "/app/v3/api/memberships/package_groups") {
+        return {
+          code: "2000",
+          data: {
+            items: [
+              {
+                id: 1,
+                name: "Monthly purchase",
+                packages: [
+                  {
+                    id: 101,
+                    name: "Monthly Lite",
+                    planName: "Lite member",
+                    price: "19.90",
+                    durationDays: 30,
+                  },
+                ],
+              },
+            ],
+          },
+        };
+      }
+      return { code: "2000", data: { items: [] } };
+    },
+    async (captured) => {
+      const catalog = await VipService.fetchVipCatalog();
+
+      assert.equal(catalog.groups.length, 1);
+      assert.equal(captured.some((request) => requestPath(request.url) === "/app/v3/api/memberships/current"), false);
+      assert.equal(requestPath(captured[0]?.url), "/app/v3/api/memberships/package_groups");
+    },
+  );
 });
 
 test("VIP page localizes public tab, package, and feature copy", () => {
@@ -286,11 +334,12 @@ test("VIP points purchase modal creates in-dialog recharge checkout QR instead o
   for (const marker of [
     "RechargePackageSelector",
     "RechargeService.submitRecharge",
+    "RechargeService.cancelRechargeOrder",
     "CheckoutService.fetchCheckoutStatus",
     "toDataURL(pointsCheckoutStatus.qrCodePayload",
     "selectedRechargeOptionId",
     "handleRechargeOptionChange",
-    "handlePointsCheckout",
+    "activeCheckoutOrderRef",
     "pointsCheckoutStatus",
     "document.body.style.overflow",
     "vip.pointsPurchase.scanTitle",
@@ -307,12 +356,25 @@ test("VIP points purchase modal creates in-dialog recharge checkout QR instead o
     "RechargeService.fetchPackages",
     "rechargePackages.map",
     "createPointsCheckout(firstPackage",
+    "handlePointsCheckout",
   ]) {
     assert.doesNotMatch(viewSource, new RegExp(escapeRegExp(retiredMarker)));
   }
 
   assert.match(vipPackageJson, /"sdkwork-claw-router-console-recharge": "workspace:\*"/);
   assert.match(vipPackageJson, /"sdkwork-claw-router-console-checkout": "workspace:\*"/);
+});
+
+test("VIP points purchase modal automatically updates the payment code on package selection and cancels superseded pending orders", () => {
+  const viewSource = readPortalFile("./packages/sdkwork-claw-router-vip/src/VipView.tsx");
+
+  assert.match(viewSource, /RechargeService\.cancelRechargeOrder/);
+  assert.match(viewSource, /activeCheckoutOrderRef/);
+  assert.match(viewSource, /void createPointsCheckout\(option/);
+  assert.match(viewSource, /setTimeout\(/);
+  assert.doesNotMatch(viewSource, /handleCheckoutAction/);
+  assert.doesNotMatch(viewSource, /vip\.pointsPurchase\.checkoutAction/);
+  assert.doesNotMatch(viewSource, /vip\.pointsPurchase\.refreshAction/);
 });
 
 test("VIP points purchase modal uses current user avatar with localized fallback identity copy", () => {
@@ -346,7 +408,6 @@ test("VIP points purchase modal uses current user avatar with localized fallback
     "vip.pointsPurchase.userAvatarAlt",
     "vip.pointsPurchase.accountLabel",
     "vip.pointsPurchase.packageTitle",
-    "vip.pointsPurchase.createCheckout",
     "vip.pointsPurchase.selectPackageHint",
     "vip.pointsPurchase.paymentHint",
     "vip.pointsPurchase.rules",
@@ -361,6 +422,48 @@ test("VIP points purchase modal uses current user avatar with localized fallback
     " 积分规则",
   ]) {
     assert.doesNotMatch(i18nSource, new RegExp(escapeRegExp(staleCopy)));
+  }
+});
+
+test("VIP points purchase product design treats credits as the primary product and money as secondary context", () => {
+  const rechargeViewSource = readPortalFile("./packages/sdkwork-claw-router-console-recharge/src/RechargeView.tsx");
+  const viewSource = readPortalFile("./packages/sdkwork-claw-router-vip/src/VipView.tsx");
+  const i18nSource = readPortalFile("./packages/sdkwork-claw-router-i18n/src/resources/admin-commerce/vip.ts");
+
+  for (const marker of [
+    "vip.pointsPurchase.pointsPrimary",
+    "vip.pointsPurchase.paySecondary",
+    "vip.pointsPurchase.bonusLabel",
+  ]) {
+    assert.match(i18nSource, new RegExp(escapeRegExp(marker)));
+  }
+
+  for (const marker of [
+    "variant === 'vip'",
+    "vip.pointsPurchase.pointsPrimary",
+    "vip.pointsPurchase.paySecondary",
+    "vip.pointsPurchase.bonusLabel",
+    "option.points.toLocaleString('en-US')",
+  ]) {
+    assert.match(rechargeViewSource, new RegExp(escapeRegExp(marker)));
+  }
+
+  for (const marker of [
+    "paymentStatusText",
+    ]) {
+    assert.match(viewSource, new RegExp(escapeRegExp(marker)));
+  }
+
+  for (const retiredMarker of [
+    "vip.pointsPurchase.receiveSummary",
+    "vip.pointsPurchase.paymentSummary",
+    "selectedPointsText",
+    "selectedPaymentAmountText",
+    "selectedBonusPointsText",
+    "vip.pointsPurchase.waitingOrder",
+  ]) {
+    assert.doesNotMatch(viewSource, new RegExp(escapeRegExp(retiredMarker)));
+    assert.doesNotMatch(i18nSource, new RegExp(escapeRegExp(retiredMarker)));
   }
 });
 
@@ -476,6 +579,8 @@ test("VIP catalog uses the generated app SDK standard membership package group p
     },
     async (captured) => {
       const catalog = await VipService.fetchVipCatalog();
+      const packageGroupsRequest = captured.find((request) => requestPath(request.url) === "/app/v3/api/memberships/package_groups");
+      const groupPackagesRequest = captured.find((request) => requestPath(request.url) === "/app/v3/api/memberships/package_groups/2/packages");
 
       assert.equal(catalog.groups.length, 1);
       assert.equal(catalog.groups[0]?.id, "2");
@@ -484,9 +589,9 @@ test("VIP catalog uses the generated app SDK standard membership package group p
       assert.equal(catalog.groups[0]?.packages[0]?.groupId, "2");
       assert.equal(catalog.groups[0]?.packages[0]?.planName, "Yearly Premium");
       assert.equal(catalog.groups[0]?.packages[0]?.planId, "premium");
-      assert.equal(requestPath(captured[0]?.url), "/app/v3/api/memberships/package_groups");
-      assert.equal(requestPath(captured[2]?.url), "/app/v3/api/memberships/package_groups/2/packages");
-      assert.equal(captured[0]?.method, "GET");
+      assert.ok(packageGroupsRequest, "package groups request must be captured");
+      assert.ok(groupPackagesRequest, "group packages request must be captured");
+      assert.equal(packageGroupsRequest.method, "GET");
       assert.equal(captured.some((request) => requestPath(request.url) === "/app/v3/api/memberships/packages"), false);
     },
   );
@@ -551,6 +656,7 @@ test("VIP catalog loads tabs from generated app SDK membership package groups", 
     },
     async (captured) => {
       const catalog = await VipService.fetchVipCatalog();
+      const packageGroupsRequest = captured.find((request) => requestPath(request.url) === "/app/v3/api/memberships/package_groups");
 
       assert.equal(catalog.groups.length, 2);
       assert.equal(catalog.groups[0]?.id, "1");
@@ -564,7 +670,7 @@ test("VIP catalog loads tabs from generated app SDK membership package groups", 
       assert.equal(catalog.groups[0]?.packages[0]?.pointsPerMonth, 45000);
       assert.equal(catalog.groups[1]?.id, "2");
       assert.equal(catalog.groups[1]?.packages[0]?.durationUnit, "year");
-      assert.equal(requestPath(captured[0]?.url), "/app/v3/api/memberships/package_groups");
+      assert.ok(packageGroupsRequest, "package groups request must be captured");
       assert.equal(captured.some((request) => requestPath(request.url) === "/app/v3/api/memberships/packages"), false);
     },
   );
@@ -653,9 +759,14 @@ test("VIP purchase uses idempotent generated app SDK membership purchase path", 
     {
       code: "2000",
       data: {
+        cashierUrl: "https://im.sdkwork.com/cashier?scene=membership&orderId=vip-request-1&paymentId=payment-vip-1",
+        nextAction: "scan_qr",
         paymentId: "payment-vip-1",
+        paymentMethod: "wechat",
+        paymentProduct: "wechat_native",
+        providerCode: "wechat_pay",
         qrCodeImageUrl: "https://im.sdkwork.com/pay/qrcode/payment-vip-1.png",
-        qrCodePayload: "https://im.sdkwork.com/pay?type=qrcode&paymentId=payment-vip-1&orderId=vip-request-1",
+        qrCodePayload: "https://im.sdkwork.com/cashier?scene=membership&orderId=vip-request-1&paymentId=payment-vip-1",
         requestNo: "vip-request-1",
         status: "accepted",
         success: true,
@@ -665,9 +776,14 @@ test("VIP purchase uses idempotent generated app SDK membership purchase path", 
       const result = await VipService.purchaseVipPackage("1");
 
       assert.deepEqual(result, {
+        cashierUrl: "https://im.sdkwork.com/cashier?scene=membership&orderId=vip-request-1&paymentId=payment-vip-1",
+        nextAction: "scan_qr",
         paymentId: "payment-vip-1",
+        paymentMethod: "wechat",
+        paymentProduct: "wechat_native",
+        providerCode: "wechat_pay",
         qrCodeImageUrl: "https://im.sdkwork.com/pay/qrcode/payment-vip-1.png",
-        qrCodePayload: "https://im.sdkwork.com/pay?type=qrcode&paymentId=payment-vip-1&orderId=vip-request-1",
+        qrCodePayload: "https://im.sdkwork.com/cashier?scene=membership&orderId=vip-request-1&paymentId=payment-vip-1",
         requestNo: "vip-request-1",
         status: "accepted",
         success: true,
@@ -681,13 +797,75 @@ test("VIP purchase uses idempotent generated app SDK membership purchase path", 
   );
 });
 
+test("VIP purchase keeps qrCodePayload as the standard public field for payment links", async () => {
+  await withMembershipSdkResponse(
+    {
+      code: "2000",
+      data: {
+        cashierUrl: "https://im.sdkwork.com/cashier?scene=membership&paymentId=payment-vip-link-1",
+        nextAction: "scan_qr",
+        paymentId: "payment-vip-link-1",
+        paymentMethod: "wechat",
+        paymentProduct: "wechat_native",
+        providerCode: "wechat_pay",
+        qrCodePayload: "https://im.sdkwork.com/cashier?scene=membership&paymentId=payment-vip-link-1",
+        requestNo: "vip-request-link-1",
+        status: "accepted",
+        success: true,
+      },
+    },
+    async () => {
+      const result = await VipService.purchaseVipPackage("1");
+
+      assert.deepEqual(result, {
+        cashierUrl: "https://im.sdkwork.com/cashier?scene=membership&paymentId=payment-vip-link-1",
+        nextAction: "scan_qr",
+        paymentId: "payment-vip-link-1",
+        paymentMethod: "wechat",
+        paymentProduct: "wechat_native",
+        providerCode: "wechat_pay",
+        qrCodePayload: "https://im.sdkwork.com/cashier?scene=membership&paymentId=payment-vip-link-1",
+        requestNo: "vip-request-link-1",
+        status: "accepted",
+        success: true,
+      });
+    },
+  );
+});
+
+test("VIP purchase rejects non-http qrCodePayload values for qr scan payments", async () => {
+  await withMembershipSdkResponse(
+    {
+      code: "2000",
+      data: {
+        paymentId: "payment-vip-link-2",
+        qrCodePayload: "weixin://wxpay/bizpayurl?pr=vip-request-link-2",
+        requestNo: "vip-request-link-2",
+        status: "accepted",
+        success: true,
+      },
+    },
+    async () => {
+      await assert.rejects(
+        () => VipService.purchaseVipPackage("1"),
+        /VIP qrCodePayload must be an http\(s\) url when present/,
+      );
+    },
+  );
+});
+
 test("VIP purchase accepts backend responses that omit the success flag when an order request exists", async () => {
   await withMembershipSdkResponse(
     {
       code: "2000",
       data: {
+        cashierUrl: "https://im.sdkwork.com/cashier?scene=membership&orderId=vip-request-without-success&paymentId=payment-without-success",
+        nextAction: "scan_qr",
         paymentId: "payment-without-success",
-        qrCodePayload: "https://im.sdkwork.com/pay?type=qrcode&paymentId=payment-without-success&orderId=vip-request-without-success",
+        paymentMethod: "wechat",
+        paymentProduct: "wechat_native",
+        providerCode: "wechat_pay",
+        qrCodePayload: "https://im.sdkwork.com/cashier?scene=membership&orderId=vip-request-without-success&paymentId=payment-without-success",
         requestNo: "vip-request-without-success",
         status: "accepted",
       },
@@ -696,8 +874,13 @@ test("VIP purchase accepts backend responses that omit the success flag when an 
       const result = await VipService.purchaseVipPackage("1");
 
       assert.deepEqual(result, {
+        cashierUrl: "https://im.sdkwork.com/cashier?scene=membership&orderId=vip-request-without-success&paymentId=payment-without-success",
+        nextAction: "scan_qr",
         paymentId: "payment-without-success",
-        qrCodePayload: "https://im.sdkwork.com/pay?type=qrcode&paymentId=payment-without-success&orderId=vip-request-without-success",
+        paymentMethod: "wechat",
+        paymentProduct: "wechat_native",
+        providerCode: "wechat_pay",
+        qrCodePayload: "https://im.sdkwork.com/cashier?scene=membership&orderId=vip-request-without-success&paymentId=payment-without-success",
         requestNo: "vip-request-without-success",
         status: "accepted",
         success: true,
@@ -827,7 +1010,6 @@ test("membership purchase uses idempotent generated app SDK purchase path", asyn
       assert.equal(captured[0]?.method, "POST");
       assert.deepEqual(JSON.parse(captured[0]?.body ?? "{}"), {
         packageId: 1,
-        paymentMethod: "wechat",
       });
     },
   );
@@ -930,6 +1112,9 @@ test("OpenAPI and generated SDK expose standard membership APIs and reject billi
   ]) {
     assert.match(appOpenapi, new RegExp(escapeRegExp(marker)));
   }
+  assert.doesNotMatch(appOpenapi, /"qrcodeContent"/);
+  assert.doesNotMatch(appOpenapi, /"qrCodeContent"/);
+  assert.doesNotMatch(appOpenapi, /"paymentUrl"/);
 
   const commerceOperationResponseSource = readPortalFile("../../sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/src/types/commerce-operation-response.ts");
   for (const marker of [

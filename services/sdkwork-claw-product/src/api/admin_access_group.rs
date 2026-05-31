@@ -81,6 +81,8 @@ struct AdminAccessGroupChannelBindingRequestItem {
     priority: Option<i64>,
     weight: Option<i64>,
     status: Option<String>,
+    resource_codes: Option<Vec<String>>,
+    api_scope: Option<Vec<String>>,
     model_scope: Option<Vec<String>>,
     capabilities: Option<Vec<String>>,
 }
@@ -168,6 +170,8 @@ struct AdminAccessGroupChannelBindingItemResponse {
     provider_code: String,
     provider_name: String,
     channel_code: String,
+    resource_codes: Vec<String>,
+    api_scope: Vec<String>,
     models: Vec<String>,
     capabilities: Vec<String>,
     model_scope: Vec<String>,
@@ -590,6 +594,14 @@ fn normalize_channel_binding_replace_request(
                 MAX_CHANNEL_BINDING_WEIGHT,
             )?,
             status: normalize_binding_status(item.status.as_deref())?,
+            resource_codes: normalize_scope_items(
+                item.resource_codes.unwrap_or_default(),
+                "access group channel binding resourceCodes",
+            )?,
+            api_scope: normalize_scope_items(
+                item.api_scope.unwrap_or_default(),
+                "access group channel binding apiScope",
+            )?,
             model_scope: normalize_scope_items(
                 item.model_scope.unwrap_or_default(),
                 "access group channel binding modelScope",
@@ -898,6 +910,8 @@ fn to_channel_binding_item_response(
         provider_code: item.provider_code,
         provider_name: item.provider_name,
         channel_code: item.channel_code,
+        resource_codes: item.resource_codes,
+        api_scope: item.api_scope,
         models: item.models,
         capabilities: item.capabilities,
         model_scope: item.model_scope,

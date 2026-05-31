@@ -396,11 +396,11 @@ async fn sqlite_seed_integrity_report_detects_broken_membership_links() {
             "invalid_membership_sku_product",
         ),
         (
-            "UPDATE commerce_recharge_package SET sku_id = 'missing-recharge-sku' WHERE package_no = 'points-990'",
+            "UPDATE commerce_recharge_package SET sku_id = 'missing-recharge-sku' WHERE package_no = 'points-cny-5'",
             "orphan_recharge_package_sku",
         ),
         (
-            "UPDATE commerce_product_sku SET spu_id = 'seed-product-membership' WHERE id = 'seed-sku-points-recharge-990'",
+            "UPDATE commerce_product_sku SET spu_id = 'seed-product-membership' WHERE id = 'seed-sku-points-recharge-cny-500'",
             "invalid_recharge_sku_product",
         ),
     ] {
@@ -646,7 +646,6 @@ async fn sqlite_purchase_creates_order_payment_membership_and_entitlements() {
                 user_id: 30,
             },
             package_id: 301,
-            payment_method: "wechat".to_owned(),
             order_uuid: "order-membership-301".to_owned(),
             order_item_uuid: "order-item-membership-301".to_owned(),
             payment_uuid: "payment-membership-301".to_owned(),
@@ -664,12 +663,21 @@ async fn sqlite_purchase_creates_order_payment_membership_and_entitlements() {
     assert_eq!("MEMBERSHIP20260519001", outcome.order_id);
     assert_eq!(true, outcome.success);
     assert_eq!("MEMBERSHIP20260519001", outcome.request_no);
+    assert_eq!("wechat_pay", outcome.provider_code);
+    assert_eq!("wechat", outcome.payment_method);
+    assert_eq!("wechat_native", outcome.payment_product);
     assert_eq!("payment-membership-301", outcome.payment_id);
     assert_eq!(
-        "https://im.sdkwork.com/pay?type=qrcode&paymentId=payment-membership-301&orderId=MEMBERSHIP20260519001",
+        "https://im.sdkwork.com/cashier?scene=membership&orderId=MEMBERSHIP20260519001&paymentId=payment-membership-301",
         outcome.qr_code_payload
     );
+    assert_eq!(
+        "https://im.sdkwork.com/cashier?scene=membership&orderId=MEMBERSHIP20260519001&paymentId=payment-membership-301",
+        outcome.cashier_url
+    );
     assert_eq!(None, outcome.qr_code_image_url);
+    assert_eq!(None, outcome.request_payment_payload);
+    assert_eq!("scan_qr", outcome.next_action);
     assert_eq!(301, outcome.package_id);
     assert_eq!("69.90", outcome.amount);
     assert_eq!(30, outcome.duration_days);
@@ -715,6 +723,87 @@ async fn sqlite_purchase_creates_order_payment_membership_and_entitlements() {
     .await
     .expect("entitlement count");
     assert!(entitlement_count > 0);
+}
+
+#[tokio::test]
+async fn sqlite_purchase_accumulates_existing_entitlement_accounts_for_same_subject() {
+    let pool = seeded_pool().await;
+    activate_payment_method_for_purchase(&pool, "wechat_pay").await;
+    let store = SqliteCommerceMembershipStore::new(pool.clone());
+
+    store
+        .submit_purchase(SubmitMembershipPurchaseCommand {
+            subject: AppMembershipSubject {
+                tenant_id: 10,
+                organization_id: 20,
+                user_id: 30,
+            },
+            package_id: 301,
+            order_uuid: "order-membership-first-301".to_owned(),
+            order_item_uuid: "order-item-membership-first-301".to_owned(),
+            payment_uuid: "payment-membership-first-301".to_owned(),
+            attempt_uuid: "payment-attempt-membership-first-301".to_owned(),
+            membership_uuid: "membership-first-301".to_owned(),
+            order_no: "MEMBERSHIP20260519011".to_owned(),
+            out_trade_no: "MEMBERSHIPTRADE20260519011".to_owned(),
+            requested_at: "2026-05-19 00:00:00".to_owned(),
+            expire_at: "2026-05-19 00:30:00".to_owned(),
+            action: "purchase".to_owned(),
+        })
+        .await
+        .expect("submit first membership purchase");
+
+    let first_accounts = membership_entitlement_accounts_for_subject(&pool).await;
+    assert!(
+        !first_accounts.is_empty(),
+        "first purchase must create entitlement accounts"
+    );
+
+    store
+        .submit_purchase(SubmitMembershipPurchaseCommand {
+            subject: AppMembershipSubject {
+                tenant_id: 10,
+                organization_id: 20,
+                user_id: 30,
+            },
+            package_id: 301,
+            order_uuid: "order-membership-second-301".to_owned(),
+            order_item_uuid: "order-item-membership-second-301".to_owned(),
+            payment_uuid: "payment-membership-second-301".to_owned(),
+            attempt_uuid: "payment-attempt-membership-second-301".to_owned(),
+            membership_uuid: "membership-second-301".to_owned(),
+            order_no: "MEMBERSHIP20260519012".to_owned(),
+            out_trade_no: "MEMBERSHIPTRADE20260519012".to_owned(),
+            requested_at: "2026-05-20 00:00:00".to_owned(),
+            expire_at: "2026-05-20 00:30:00".to_owned(),
+            action: "purchase".to_owned(),
+        })
+        .await
+        .expect("submit second membership purchase");
+
+    let second_accounts = membership_entitlement_accounts_for_subject(&pool).await;
+    assert_eq!(first_accounts.len(), second_accounts.len());
+    for (first, second) in first_accounts.iter().zip(second_accounts.iter()) {
+        assert_eq!(first.0, second.0);
+        assert_eq!(first.1 * 2, second.1);
+        assert_eq!(first.2 * 2, second.2);
+    }
+
+    let second_grant_count: i64 = sqlx::query_scalar(
+        "SELECT COUNT(1) FROM entitlement_grant WHERE source_type = 'membership_subscription' AND source_id = 'membership-second-301'",
+    )
+    .fetch_one(&pool)
+    .await
+    .expect("second entitlement grant count");
+    assert_eq!(first_accounts.len() as i64, second_grant_count);
+
+    let ledger_count: i64 = sqlx::query_scalar(
+        "SELECT COUNT(1) FROM entitlement_ledger_entry WHERE tenant_id = '10' AND subject_type = 'user' AND subject_id = '30' AND business_type = 'membership_grant'",
+    )
+    .fetch_one(&pool)
+    .await
+    .expect("membership entitlement ledger count");
+    assert_eq!((first_accounts.len() * 2) as i64, ledger_count);
 }
 
 #[tokio::test]
@@ -1279,6 +1368,34 @@ async fn seed_points_history(pool: &SqlitePool) {
         .await
         .expect("insert points history fixture");
     }
+}
+
+async fn membership_entitlement_accounts_for_subject(pool: &SqlitePool) -> Vec<(String, i64, i64)> {
+    sqlx::query(
+        r#"
+        SELECT benefit_id, total_granted, balance
+        FROM entitlement_account
+        WHERE tenant_id = '10'
+          AND subject_type = 'user'
+          AND subject_id = '30'
+        ORDER BY benefit_id
+        "#,
+    )
+    .fetch_all(pool)
+    .await
+    .expect("membership entitlement accounts")
+    .into_iter()
+    .map(|row| {
+        let benefit_id: String = row.try_get("benefit_id").expect("benefit id");
+        let total_granted: String = row.try_get("total_granted").expect("total granted");
+        let balance: String = row.try_get("balance").expect("balance");
+        (
+            benefit_id,
+            total_granted.parse().expect("numeric total granted"),
+            balance.parse().expect("numeric balance"),
+        )
+    })
+    .collect()
 }
 
 fn signed_request(method: &str, uri: &str, body: &str) -> Request<Body> {

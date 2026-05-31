@@ -117,6 +117,7 @@ impl AiModelRow {
 pub struct ModelProviderRouteRow {
     pub catalog_key: String,
     pub model: String,
+    pub api_code: Option<String>,
     pub region_code: String,
     pub provider_code: String,
     pub channel_id: i64,
@@ -185,6 +186,7 @@ impl ModelProviderRouteRow {
         Ok(ModelProviderRoute {
             catalog_key: self.catalog_key,
             model: self.model,
+            api_code: normalized_optional_api_code(self.api_code),
             region_code: normalized_region_code(self.region_code),
             provider_code: self.provider_code,
             channel_id: self.channel_id,
@@ -196,6 +198,12 @@ impl ModelProviderRouteRow {
             retry_policy,
         })
     }
+}
+
+fn normalized_optional_api_code(value: Option<String>) -> Option<String> {
+    value
+        .map(|value| value.trim().to_owned())
+        .filter(|value| !value.is_empty())
 }
 
 fn ensure_base_catalog_key(catalog_key: &str, message: &str) -> DomainResult<()> {
@@ -635,12 +643,14 @@ fn parse_provider_channel_route_group_binding(
         })?
         .unwrap_or(100);
     let model_scope = parse_binding_string_array(&object, "modelScope", "model_scope", index)?;
+    let api_scope = parse_binding_string_array(&object, "apiScope", "api_scope", index)?;
     let capabilities = parse_binding_string_array(&object, "capabilities", "capabilities", index)?;
-    Ok(ProviderChannelGroupBinding::new_scoped(
+    Ok(ProviderChannelGroupBinding::new_resource_scoped(
         group_id,
         priority,
         weight,
         model_scope,
+        api_scope,
         capabilities,
     ))
 }

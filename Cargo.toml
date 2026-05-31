@@ -11,6 +11,7 @@ members = [
     "crates/sdkwork-claw-http",
     "crates/sdkwork-claw-observability",
     "crates/sdkwork-claw-test-support",
+    "crates/sdkwork-claw-product-test-support",
     "crates/provider-adapters/tencent-cloud",
     "crates/provider-adapters/alicloud",
     "services/sdkwork-claw-gateway",
@@ -41,7 +42,33 @@ members = [
     "sdkwork-appbase/packages/native-rust/commerce/sdkwork-commerce-tauri-rust",
     "sdkwork-appbase/packages/native-rust/studio/sdkwork-studio-storage-sqlx-rust",
 ]
+default-members = [
+    "crates/sdkwork-claw-contract",
+    "crates/sdkwork-claw-config",
+    "crates/sdkwork-claw-core",
+    "crates/sdkwork-claw-provider-adapter-contract",
+    "crates/sdkwork-claw-provider-adapter-core",
+    "crates/sdkwork-claw-provider-adapter-http",
+    "crates/sdkwork-claw-provider-adapter-registry",
+    "crates/sdkwork-claw-security",
+    "crates/sdkwork-claw-http",
+    "crates/sdkwork-claw-observability",
+    "crates/sdkwork-claw-test-support",
+    "crates/sdkwork-claw-product-test-support",
+    "crates/provider-adapters/tencent-cloud",
+    "crates/provider-adapters/alicloud",
+    "services/sdkwork-claw-gateway",
+    "services/sdkwork-claw-admin-api",
+    "services/sdkwork-claw-app-api",
+    "services/sdkwork-claw-installer",
+    "services/sdkwork-claw-provider-adapter",
+    "services/sdkwork-claw-product",
+    "data/sdkwork-models/sdkwork-models-rust",
+]
 resolver = "2"
+
+[profile.test]
+debug = 1
 
 [workspace.package]
 edition = "2021"

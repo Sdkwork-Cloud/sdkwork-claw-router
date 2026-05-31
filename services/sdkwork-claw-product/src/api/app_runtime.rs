@@ -1932,7 +1932,6 @@ where
         DomainError::new("runtime invocation model is required for gateway execution")
     })?;
     let catalog_model = find_runtime_catalog_model(catalog, requested_model_key);
-    let provider_model = provider_native_model_id(requested_model_key, catalog_model.as_ref());
     let routing_model = catalog_model
         .as_ref()
         .map(|model| model.catalog_key.trim())
@@ -1944,6 +1943,7 @@ where
         catalog_model.as_ref(),
         &execution.request_json,
     );
+    let provider_model = runtime_gateway_model_id(requested_model_key, catalog_model.as_ref(), api);
     let mut request = match api {
         RuntimeGatewayApi::OpenAiChatCompletions => AppRuntimeGatewayRequest::new(
             Method::POST,
@@ -3068,10 +3068,91 @@ fn gemini_parts_from_message_content(content: Option<&Value>) -> Option<Value> {
     }
 }
 
+fn runtime_gateway_model_id(
+    requested_model_key: &str,
+    catalog_model: Option<&AiModel>,
+    api: RuntimeGatewayApi,
+) -> String {
+    match api {
+        RuntimeGatewayApi::OpenAiChatCompletions => {
+            openai_chat_gateway_model_id(requested_model_key, catalog_model)
+        }
+        RuntimeGatewayApi::OpenAiResponses
+        | RuntimeGatewayApi::OpenAiImageGenerations
+        | RuntimeGatewayApi::OpenAiImageEdits
+        | RuntimeGatewayApi::OpenAiAudioSpeech => requested_model_key.trim().to_owned(),
+        RuntimeGatewayApi::SunoMusicGenerations
+        | RuntimeGatewayApi::ElevenLabsSoundGeneration
+        | RuntimeGatewayApi::ElevenLabsTextToSpeech
+        | RuntimeGatewayApi::AnthropicMessages
+        | RuntimeGatewayApi::GeminiGenerateContent => {
+            provider_native_model_id(requested_model_key, catalog_model)
+        }
+    }
+}
+
+fn openai_chat_gateway_model_id(
+    requested_model_key: &str,
+    catalog_model: Option<&AiModel>,
+) -> String {
+    let api_format = catalog_model
+        .and_then(|model| model.api_format.as_deref())
+        .unwrap_or_default()
+        .to_ascii_lowercase();
+    if api_format.contains("responses") || api_format.contains("response") {
+        return requested_model_key.trim().to_owned();
+    }
+    let vendor_code = catalog_model
+        .map(|model| model.vendor_code.as_str())
+        .or_else(|| requested_model_key.split('/').next())
+        .unwrap_or_default();
+    if vendor_code.eq_ignore_ascii_case("openai") {
+        return provider_native_model_id(requested_model_key, catalog_model);
+    }
+    requested_model_key.trim().to_owned()
+}
+
 fn provider_native_model_id(requested_model_key: &str, catalog_model: Option<&AiModel>) -> String {
     catalog_model
-        .map(|model| model.model.clone())
-        .unwrap_or_else(|| crate::domain::provider_native_model_id(requested_model_key))
+        .map(|model| runtime_provider_native_model_id(&model.model))
+        .filter(|model| !model.is_empty())
+        .unwrap_or_else(|| runtime_provider_native_model_id(requested_model_key))
+}
+
+fn runtime_provider_native_model_id(model_key: &str) -> String {
+    let value = model_key.trim();
+    let parts = value
+        .split('/')
+        .map(str::trim)
+        .filter(|part| !part.is_empty())
+        .collect::<Vec<_>>();
+    match parts.as_slice() {
+        [_vendor, region, native_model @ ..]
+            if runtime_known_region_segment(region) && !native_model.is_empty() =>
+        {
+            native_model.join("/")
+        }
+        _ => crate::domain::provider_native_model_id(value),
+    }
+}
+
+fn runtime_known_region_segment(value: &str) -> bool {
+    matches!(
+        value.trim().to_ascii_lowercase().as_str(),
+        "global"
+            | "cn"
+            | "us"
+            | "eu"
+            | "ap"
+            | "apac"
+            | "jp"
+            | "sg"
+            | "hk"
+            | "aws"
+            | "azure"
+            | "gcp"
+            | "local"
+    )
 }
 
 fn remove_runtime_only_fields(object: &mut Map<String, Value>) {
@@ -3865,6 +3946,7 @@ where
         context,
         catalog_key: routing_catalog_key.clone(),
         requested_model: requested_model_key.to_owned(),
+        api_code: runtime_openai_route_probe_api_code(capability_label).to_owned(),
         capability,
         billing_meter,
     }) {
@@ -3907,6 +3989,14 @@ where
             );
             Err(failure)
         }
+    }
+}
+
+fn runtime_openai_route_probe_api_code(capability_label: &str) -> &'static str {
+    match capability_label {
+        "responses" | "response" => "openai.responses",
+        "embeddings" | "embedding" => "openai.embeddings",
+        _ => "openai.chat_completions",
     }
 }
 

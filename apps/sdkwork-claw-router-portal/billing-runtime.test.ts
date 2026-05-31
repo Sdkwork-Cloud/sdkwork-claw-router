@@ -254,7 +254,7 @@ test("wallet redeem history fails closed when billing history rows omit stable i
   );
 });
 
-test("recharge package list and order creation use standard recharge paths", async () => {
+test("recharge package list, recharge settings, and order creation use standard recharge paths", async () => {
   await withBillingSdkResponse(
     {
       code: "2000",
@@ -263,8 +263,10 @@ test("recharge package list and order creation use standard recharge paths", asy
           {
             id: "pkg-100",
             priceAmount: "100",
-            points: 1000,
-            bonus: 100,
+            currencyCode: "USD",
+            bonusPoints: 100,
+            grantAmount: 7100,
+            points: 7100,
           },
         ],
       },
@@ -272,28 +274,108 @@ test("recharge package list and order creation use standard recharge paths", asy
     async (captured) => {
       const packages = await RechargeService.fetchPackages();
 
-      assert.deepEqual(packages, [{ bonus: 100, id: "pkg-100", points: 1000, rmb: "100.00" }]);
+      assert.deepEqual(packages, [{
+        bonusPoints: 100,
+        currencyCode: "USD",
+        grantAmount: 7100,
+        id: "pkg-100",
+        points: 7100,
+        priceAmount: "100.00",
+      }]);
       assert.equal(requestPath(captured[0]?.url), "/app/v3/api/recharges/packages");
       assert.equal(captured[0]?.method, "GET");
     },
   );
 
   await withBillingSdkResponse(
-    { code: "2000", data: { orderNo: "recharge-order-1", success: true } },
+    {
+      code: "2000",
+      data: {
+        baseCurrencyCode: "CNY",
+        basePointsPerCny: "10",
+        currencyToCnyRates: {
+          CNY: "1",
+          USD: "7",
+        },
+      },
+    },
     async (captured) => {
-      const result = await RechargeService.submitRecharge("99.90", "wechat", "pkg-100");
+      const settings = await RechargeService.fetchRechargeSettings();
 
-      assert.deepEqual(result, { orderNo: "recharge-order-1", success: true });
+      assert.deepEqual(settings, {
+        baseCurrencyCode: "CNY",
+        basePointsPerCny: "10",
+        currencyToCnyRates: {
+          CNY: "1",
+          USD: "7",
+        },
+      });
+      assert.equal(requestPath(captured[0]?.url), "/app/v3/api/recharges/settings");
+      assert.equal(captured[0]?.method, "GET");
+    },
+  );
+
+  await withBillingSdkResponse(
+    {
+      code: "2000",
+      data: {
+        orderNo: "recharge-order-1",
+        success: true,
+        providerCode: "wechat_pay",
+        paymentMethod: "wechat",
+        paymentProduct: "wechat_native",
+        nextAction: "scan_qr",
+        cashierUrl: "https://im.sdkwork.com/cashier?scene=recharge&orderId=recharge-order-1&outTradeNo=provider-order-1",
+        qrCodePayload: "https://im.sdkwork.com/cashier?scene=recharge&orderId=recharge-order-1&outTradeNo=provider-order-1",
+      },
+    },
+    async (captured) => {
+      const result = await RechargeService.submitRecharge("99.90", "USD", "pkg-100");
+
+      assert.deepEqual(result, {
+        cashierUrl: "https://im.sdkwork.com/cashier?scene=recharge&orderId=recharge-order-1&outTradeNo=provider-order-1",
+        nextAction: "scan_qr",
+        orderNo: "recharge-order-1",
+        paymentMethod: "wechat",
+        paymentProduct: "wechat_native",
+        providerCode: "wechat_pay",
+        qrCodePayload: "https://im.sdkwork.com/cashier?scene=recharge&orderId=recharge-order-1&outTradeNo=provider-order-1",
+        success: true,
+      });
       assert.equal(requestPath(captured[0]?.url), "/app/v3/api/recharges/orders");
       assert.equal(captured[0]?.method, "POST");
       const body = JSON.parse(captured[0]?.body ?? "{}");
       assert.equal(body.clientRequestNo.startsWith("recharge-"), true);
-      assert.deepEqual(body.metadata, {
+      assert.deepEqual(body, {
         amount: "99.90",
+        clientRequestNo: body.clientRequestNo,
+        currencyCode: "USD",
         packageId: "pkg-100",
-        paymentMethod: "wechat",
         source: "console-recharge",
       });
+    },
+  );
+});
+
+test("recharge order cancellation uses the standard recharge cancellation path", async () => {
+  const rechargeServiceSource = readPortalFile(
+    "./packages/sdkwork-claw-router-console-recharge/src/rechargeService.ts",
+  );
+
+  assert.match(rechargeServiceSource, /appRechargesOrdersCancel/);
+  assert.match(rechargeServiceSource, /static async cancelRechargeOrder/);
+  assert.match(rechargeServiceSource, /commerce\.orders\.cancellations\.create/);
+
+  await withBillingSdkResponse(
+    { code: "2000", data: { requestNo: "recharge-cancel-1", status: "cancelled", success: true } },
+    async (captured) => {
+      await RechargeService.cancelRechargeOrder("recharge-order-1");
+
+      assert.equal(requestPath(captured[0]?.url), "/app/v3/api/orders/recharge-order-1/cancellations");
+      assert.equal(captured[0]?.method, "POST");
+      const body = JSON.parse(captured[0]?.body ?? "{}");
+      assert.equal(body.clientRequestNo.startsWith("recharge-cancel-"), true);
+      assert.equal(body.note, "package-switch");
     },
   );
 });
@@ -333,15 +415,27 @@ test("console recharge page matches the product recharge reference layout", () =
   assert.match(rechargeViewSource, /console\.recharge\.records\.tabs\.all/);
   assert.match(rechargeViewSource, /console\.recharge\.records\.tabs\.redeem/);
   assert.match(rechargeViewSource, /console\.recharge\.records\.tabs\.recharge/);
-  assert.match(rechargeViewSource, /选择充值金额 \(USD\)/);
+  assert.match(rechargeViewSource, /console\.recharge\.amountTitle/);
   assert.match(rechargeViewSource, /自定义金额/);
   assert.match(rechargeViewSource, /获得积分:/);
   assert.match(rechargeViewSource, /实际支付金额:/);
   assert.match(rechargeViewSource, /去支付/);
 
   assert.match(rechargeServiceSource, /RechargeService\.fetchPackages/);
+  assert.match(rechargeServiceSource, /RechargeService\.fetchRechargeSettings/);
+  assert.doesNotMatch(rechargeServiceSource, /metadata:\s*\{/);
+  assert.match(rechargeViewSource, /fetchRechargeSettings/);
+  assert.match(rechargeViewSource, /computeGrantAmount/);
+  assert.match(rechargeViewSource, /formatRechargeCurrencyAmount/);
+  assert.match(rechargeViewSource, /currencyToCnyRates/);
+  assert.match(rechargeViewSource, /listRechargeCurrencyCodes/);
+  assert.match(rechargeViewSource, /customCurrencyCodes/);
+  assert.match(rechargeViewSource, /handleCustomCurrencyChange/);
+  assert.match(rechargeViewSource, /console\.recharge\.currency/);
+  assert.doesNotMatch(rechargeViewSource, /pointsForAmount\(/);
   assert.doesNotMatch(rechargeViewSource, /referenceRechargeOptions/);
   assert.doesNotMatch(rechargeViewSource, /return referenceRechargeOptions/);
+  assert.doesNotMatch(rechargeViewSource, /\{option\.currencyCode\}\s+\{formatDisplayAmount\(option\.amount\)\}/);
 
   for (const retiredLayoutToken of [
     "AccountService",
@@ -372,17 +466,17 @@ test("vip points purchase uses the shared server configured recharge options", (
   assert.doesNotMatch(vipViewSource, /createPointsCheckout\(firstPackage/);
 });
 
-test("recharge order creation validates amount and method before calling app SDK", async () => {
+test("recharge order creation validates amount and currency before calling app SDK", async () => {
   await withBillingSdkResponse(
     { code: "2000", data: { orderNo: "unexpected", success: true } },
     async (captured) => {
       await assert.rejects(
-        () => RechargeService.submitRecharge("0", "wechat", "pkg-100"),
+        () => RechargeService.submitRecharge("0", "USD", "pkg-100"),
         /amount must be greater than zero/,
       );
       await assert.rejects(
         () => RechargeService.submitRecharge("99.90", "   ", "pkg-100"),
-        /method is required/,
+        /currencyCode is required/,
       );
       assert.equal(captured.length, 0);
     },
@@ -402,6 +496,49 @@ test("checkout status uses the generated app SDK recharge order path", async () 
   );
 });
 
+test("checkout status standardizes payment method values and keeps qrCodePayload as the only public qr field", async () => {
+  await withBillingSdkResponse(
+    {
+      code: "2000",
+      data: {
+        ...checkoutStatusResponse(),
+        providerCode: "wechat_pay",
+        paymentMethod: "wechat_pay",
+        paymentProduct: "wechat_native",
+        cashierUrl: "https://im.sdkwork.com/cashier?scene=recharge&orderId=recharge-order-1",
+        qrCodePayload: "https://im.sdkwork.com/cashier?scene=recharge&orderId=recharge-order-1",
+      },
+    },
+    async () => {
+      const result = await CheckoutService.fetchCheckoutStatus("recharge-order-1");
+
+      assert.equal(result.providerCode, "wechat_pay");
+      assert.equal(result.paymentMethod, "wechat");
+      assert.equal(result.paymentProduct, "wechat_native");
+      assert.equal(result.cashierUrl, "https://im.sdkwork.com/cashier?scene=recharge&orderId=recharge-order-1");
+      assert.equal(result.qrCodePayload, "https://im.sdkwork.com/cashier?scene=recharge&orderId=recharge-order-1");
+    },
+  );
+});
+
+test("checkout status requires scan_qr payloads to be web urls for pc qr payments", async () => {
+  await withBillingSdkResponse(
+    {
+      code: "2000",
+      data: {
+        ...checkoutStatusResponse(),
+        qrCodePayload: "weixin://wxpay/bizpayurl?pr=recharge-order-1",
+      },
+    },
+    async () => {
+      await assert.rejects(
+        () => CheckoutService.fetchCheckoutStatus("recharge-order-1"),
+        /Checkout qrCodePayload must be an http\(s\) url for scan_qr payments/,
+      );
+    },
+  );
+});
+
 test("checkout status fails closed for malformed recharge order records", async () => {
   await withBillingSdkResponse(
     { code: "2000", data: { ...checkoutStatusResponse(), amount: "free" } },
@@ -417,6 +554,7 @@ test("checkout status fails closed for malformed recharge order records", async 
 function checkoutStatusResponse(): Record<string, unknown> {
   return {
     amount: "99.90",
+    cashierUrl: "https://im.sdkwork.com/cashier?scene=recharge&orderId=recharge-order-1",
     createdAt: "2026-05-21T00:00:00Z",
     expiresAt: "2026-05-21T00:15:00Z",
     nextAction: "scan_qr",
@@ -424,10 +562,13 @@ function checkoutStatusResponse(): Record<string, unknown> {
     orderStatus: "pending",
     outTradeNo: "provider-order-1",
     paidAt: "",
+    paymentProduct: "wechat_native",
+    providerCode: "wechat_pay",
     paymentMethod: "wechat",
     paymentStatus: "pending",
     points: 999,
-    qrCodePayload: "weixin://wxpay/bizpayurl?pr=recharge-order-1",
+    qrCodePayload: "https://im.sdkwork.com/cashier?scene=recharge&orderId=recharge-order-1",
+    requestPaymentPayload: null,
     rechargeStatus: "pending",
     status: "pending",
   };

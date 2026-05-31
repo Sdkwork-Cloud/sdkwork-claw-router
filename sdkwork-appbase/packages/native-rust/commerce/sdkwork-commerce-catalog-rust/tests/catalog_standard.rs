@@ -193,12 +193,15 @@ fn catalog_service_contract_exposes_domain_operations() {
     for query in [
         "catalog.categories.list",
         "catalog.attributes.list",
-        "catalog.spu.list",
-        "catalog.spu.retrieve",
+        "catalog.products.list",
+        "catalog.products.retrieve",
+        "catalog.spus.list",
+        "catalog.spus.retrieve",
         "catalog.skus.list",
         "catalog.skus.retrieve",
-        "cart.items.list",
-        "buyer.addresses.list",
+        "catalog.skus.prices.retrieve",
+        "cart.current.retrieve",
+        "addresses.list",
     ] {
         assert!(
             contract.read_queries.contains(&query),
@@ -208,12 +211,20 @@ fn catalog_service_contract_exposes_domain_operations() {
     for command in [
         "catalog.categories.create",
         "catalog.attributes.create",
-        "catalog.spu.create",
-        "catalog.spu.update",
+        "catalog.products.create",
+        "catalog.products.update",
+        "catalog.spus.create",
+        "catalog.spus.update",
+        "catalog.spus.publish",
+        "catalog.spus.archive",
         "catalog.skus.create",
+        "catalog.skus.update",
         "cart.items.create",
         "cart.items.delete",
-        "buyer.addresses.upsert",
+        "addresses.create",
+        "addresses.update",
+        "addresses.delete",
+        "addresses.defaultSelection.create",
     ] {
         assert!(
             contract.write_commands.contains(&command),

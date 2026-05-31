@@ -2,15 +2,17 @@ use std::sync::Arc;
 
 use axum::Router;
 use sdkwork_claw_config::{
-    ApiKeySecurityConfig, DatabaseConfig, DatabaseEngine, ProviderAdapterConfig,
-    ProviderAdapterManifestDiscoveryConfig, ProviderRelayConfig, ProviderSecretMapConfig,
-    RuntimeConfigProfile, RuntimeTomlConfig, StartupInstallMode,
+    ApiKeySecurityConfig, AppSessionConfig, DatabaseConfig, DatabaseEngine, DeploymentMode,
+    PaymentWebhookConfig, ProviderAdapterConfig, ProviderAdapterManifestDiscoveryConfig,
+    ProviderRelayConfig, ProviderSecretMapConfig, RequestLimitsConfig, RuntimeConfigProfile,
+    RuntimeTomlConfig, StartupInstallMode, TrustedSubjectConfig,
 };
 use sdkwork_claw_product::api::{
     OpenAiInvocationPluginRef, OpenAiRuntimeFailureStrategy, OpenAiRuntimeRouteConfig,
 };
 use sdkwork_claw_product::application::{
-    ApiKeySecretCodec, ApiKeySecretHasher, UsageSettlementWorker, UsageSettlementWorkerConfig,
+    ApiKeySecretCodec, ApiKeySecretHasher, RuntimeCacheManager, RuntimeStreamBus,
+    UsageSettlementWorker, UsageSettlementWorkerConfig,
 };
 use sdkwork_claw_product::domain::{
     ProviderRetryPolicy, DEFAULT_PROVIDER_CIRCUIT_BREAKER_RECOVERY_WINDOW_SECONDS,
@@ -45,17 +47,21 @@ use sdkwork_claw_product::infrastructure::sql::sqlite::{
     SqlitePricingCatalogLoader, SqliteUsageSettlementStore,
 };
 use sdkwork_claw_product::ports::{
-    ChatCompletionRelay, ChatCompletionStreamRelay, EmbeddingsRelay, GatewayUsageRecorder,
-    PricingCatalog, ProviderSecretResolver, ResponsesRelay, UsageSettlementStore,
+    ChatCompletionRelay, ChatCompletionStreamRelay, EmbeddingsRelay, GatewayRequestTraceCommand,
+    GatewayUsageRecordCommand, GatewayUsageRecordFuture, GatewayUsageRecorder, PricingCatalog,
+    ProviderHealthProbe, ProviderSecretResolver, ResponsesRelay, UsageSettlementStore,
 };
 use sdkwork_claw_provider_adapter_contract::AdapterRouteStatus;
 use sdkwork_claw_provider_adapter_http::ProviderAdapterHttpClient;
 use sdkwork_claw_provider_adapter_registry::{ProviderAdapterRegistry, ProviderAdapterRouteConfig};
-use sqlx::sqlite::{SqliteConnectOptions, SqlitePool, SqlitePoolOptions};
+use sqlx::sqlite::{SqliteConnectOptions, SqliteJournalMode, SqlitePool, SqlitePoolOptions};
 use sqlx::PgPool;
 use std::str::FromStr;
+use tokio::sync::Notify;
 use tokio::time::{sleep, Duration};
 
+use crate::edge_server::EdgeInProcessUpstreams;
+use crate::route_scoped_openai_passthrough::StickyObjectRouteStore;
 use crate::router;
 use crate::router_with_database_status_and_passthrough_placeholder;
 
@@ -68,7 +74,127 @@ type ResponseRelay = Arc<dyn ResponsesRelay + Send + Sync>;
 type UsageRecorder = Arc<dyn GatewayUsageRecorder + Send + Sync>;
 type SettlementStore = Arc<dyn UsageSettlementStore + Send + Sync>;
 
+#[derive(Clone)]
+struct NotifyingGatewayUsageRecorder {
+    inner: UsageRecorder,
+    usage_settlement_wakeup: Arc<Notify>,
+}
+
+impl NotifyingGatewayUsageRecorder {
+    fn new(inner: UsageRecorder, usage_settlement_wakeup: Arc<Notify>) -> Self {
+        Self {
+            inner,
+            usage_settlement_wakeup,
+        }
+    }
+}
+
+impl GatewayUsageRecorder for NotifyingGatewayUsageRecorder {
+    fn record_gateway_trace<'a>(
+        &'a self,
+        command: GatewayRequestTraceCommand,
+    ) -> GatewayUsageRecordFuture<'a> {
+        self.inner.record_gateway_trace(command)
+    }
+
+    fn record_gateway_usage<'a>(
+        &'a self,
+        command: GatewayUsageRecordCommand,
+    ) -> GatewayUsageRecordFuture<'a> {
+        Box::pin(async move {
+            self.inner.record_gateway_usage(command).await?;
+            self.usage_settlement_wakeup.notify_one();
+            Ok(())
+        })
+    }
+}
+
 const DEFAULT_OPENAI_RUNTIME_CATALOG_REFRESH_INTERVAL_MILLIS: u64 = 5_000;
+const CATALOG_REFRESH_FALLBACK_TICKS: u64 = 12;
+const SQLITE_RUNTIME_MIN_POOL_CONNECTIONS: u32 =
+    DatabaseConfig::DESKTOP_SQLITE_DEFAULT_MAX_CONNECTIONS;
+const SQLITE_POOL_ACQUIRE_TIMEOUT_SECONDS: u64 = 10;
+const SQLITE_BUSY_TIMEOUT_SECONDS: u64 = 30;
+
+fn effective_sqlite_runtime_pool_max_connections(database_url: &str, configured: u32) -> u32 {
+    if is_sqlite_in_memory_database_url(database_url) {
+        return configured;
+    }
+    configured.max(SQLITE_RUNTIME_MIN_POOL_CONNECTIONS)
+}
+
+fn is_sqlite_in_memory_database_url(database_url: &str) -> bool {
+    let lower = database_url.to_ascii_lowercase();
+    lower == "sqlite::memory:" || lower.contains(":memory:") || lower.contains("mode=memory")
+}
+
+fn build_sqlite_runtime_pool_options(
+    database_url: &str,
+    configured_max_connections: u32,
+) -> SqlitePoolOptions {
+    SqlitePoolOptions::new()
+        .max_connections(effective_sqlite_runtime_pool_max_connections(
+            database_url,
+            configured_max_connections,
+        ))
+        .acquire_timeout(Duration::from_secs(SQLITE_POOL_ACQUIRE_TIMEOUT_SECONDS))
+}
+
+fn build_sqlite_runtime_connect_options(
+    database_url: &str,
+) -> Result<SqliteConnectOptions, GatewayRouterError> {
+    SqliteConnectOptions::from_str(database_url)
+        .map_err(|error| GatewayRouterError::Sqlite(SqlCatalogLoadError::Database(error)))
+        .map(|options| {
+            options
+                .create_if_missing(true)
+                .foreign_keys(true)
+                .journal_mode(SqliteJournalMode::Wal)
+                .busy_timeout(Duration::from_secs(SQLITE_BUSY_TIMEOUT_SECONDS))
+        })
+}
+
+async fn connect_sqlite_runtime_pool(
+    config: &DatabaseConfig,
+) -> Result<SqlitePool, GatewayRouterError> {
+    build_sqlite_runtime_pool_options(&config.url, config.max_connections)
+        .connect_with(build_sqlite_runtime_connect_options(&config.url)?)
+        .await
+        .map_err(|error| GatewayRouterError::Sqlite(SqlCatalogLoadError::Database(error)))
+}
+
+#[derive(Clone)]
+enum SharedDatabasePool {
+    Sqlite(SqlitePool),
+    Postgres(PgPool),
+}
+
+struct AllInOneRuntimeContext {
+    database_config: DatabaseConfig,
+    database_pool: SharedDatabasePool,
+    database_installer: Arc<DatabaseInstaller>,
+    catalog: Arc<RefreshableSqlPricingCatalog>,
+    api_key_security_config: ApiKeySecurityConfig,
+    provider_relay_config: Option<ProviderRelayConfig>,
+    provider_adapter_config: Option<ProviderAdapterConfig>,
+    provider_runtime: ProviderRelayRuntimeConfig,
+    provider_secret_resolver: Option<Arc<RefreshableProviderSecretMapResolver>>,
+    prefer_secret_ref_openai_runtime: bool,
+    trusted_subject_config: TrustedSubjectConfig,
+    app_session_config: AppSessionConfig,
+    payment_webhook_config: PaymentWebhookConfig,
+    provider_health_probe: Arc<dyn ProviderHealthProbe + Send + Sync>,
+    cache_manager: RuntimeCacheManager,
+    request_limits_config: RequestLimitsConfig,
+    models_catalog_root: Option<String>,
+    deployment_mode: DeploymentMode,
+    app_runtime_gateway_client:
+        Arc<dyn sdkwork_claw_product::ports::AppRuntimeGatewayClient + Send + Sync>,
+    app_runtime_stream_bus: Arc<dyn RuntimeStreamBus + Send + Sync>,
+    model_ranking_refresh_worker_config:
+        sdkwork_claw_product::application::ModelRankingRefreshWorkerConfig,
+    usage_settlement_wakeup: Option<Arc<Notify>>,
+}
 
 #[derive(Default)]
 struct OpenAiRuntimeRelays {
@@ -98,6 +224,7 @@ where
         None,
         None,
         false,
+        None,
     )
 }
 
@@ -127,6 +254,7 @@ where
         None,
         None,
         false,
+        None,
     )
 }
 
@@ -156,6 +284,7 @@ where
         None,
         None,
         false,
+        None,
     )
 }
 
@@ -185,6 +314,7 @@ where
         None,
         None,
         false,
+        None,
     )
 }
 
@@ -214,6 +344,7 @@ where
         None,
         None,
         false,
+        None,
     )
 }
 
@@ -229,17 +360,13 @@ fn router_with_openai_runtime_routes<C>(
     provider_passthrough_config: Option<ProviderRelayConfig>,
     provider_adapter_config: Option<ProviderAdapterConfig>,
     provider_secret_resolver: Option<Arc<RefreshableProviderSecretMapResolver>>,
-    prefer_secret_ref_openai_runtime: bool,
+    _prefer_secret_ref_openai_runtime: bool,
+    sticky_store: Option<StickyObjectRouteStore>,
 ) -> Router
 where
     C: PricingCatalog + Send + Sync + 'static,
 {
-    let has_static_openai_passthrough = provider_passthrough_config
-        .as_ref()
-        .and_then(ProviderRelayConfig::openai_relay)
-        .is_some();
-    let has_route_scoped_openai_passthrough = provider_secret_resolver.is_some()
-        && (prefer_secret_ref_openai_runtime || !has_static_openai_passthrough);
+    let has_route_scoped_openai_passthrough = provider_secret_resolver.is_some();
     let base_router = if !has_route_scoped_openai_passthrough {
         match provider_passthrough_config.clone() {
             Some(config) => base_router.merge(
@@ -309,6 +436,7 @@ where
             Arc::clone(&api_key_hasher),
         ),
     };
+    let responses_failure_strategy = OpenAiRuntimeFailureStrategy::FailClosed;
     let responses_router = match relays.responses {
         Some(relay) => {
             if let Some(usage_recorder) = usage_recorder.clone() {
@@ -318,7 +446,10 @@ where
                     relay,
                     usage_recorder,
                     invocation_plugins.clone(),
-                    OpenAiRuntimeRouteConfig::new(default_retry_policy.clone(), failure_strategy),
+                    OpenAiRuntimeRouteConfig::new(
+                        default_retry_policy.clone(),
+                        responses_failure_strategy,
+                    ),
                 )
             } else {
                 sdkwork_claw_product::api::openai_responses_router_with_relay_plugins_and_failure_strategy(
@@ -326,7 +457,7 @@ where
                     Arc::clone(&api_key_hasher),
                     relay,
                     invocation_plugins.clone(),
-                    failure_strategy,
+                    responses_failure_strategy,
                 )
             }
         }
@@ -380,6 +511,7 @@ where
             Arc::clone(&api_key_hasher),
             secret_resolver,
             usage_recorder.clone(),
+            sticky_store,
         ))
     } else {
         router
@@ -406,7 +538,7 @@ where
                 usage_recorder.clone(),
             ),
         ),
-        (None, true) if provider_adapter_config.is_some() => router.merge(
+        (None, true) => router.merge(
             crate::passthrough::authenticated_provider_native_passthrough_router_with_adapter_config(
                 None,
                 catalog,
@@ -478,6 +610,27 @@ pub async fn router_with_database_api_key_provider_configs_and_adapter_config(
     .await
 }
 
+pub async fn router_with_database_api_key_provider_configs_adapter_config_and_startup_install_mode(
+    config: DatabaseConfig,
+    api_key_config: Option<ApiKeySecurityConfig>,
+    provider_relay_config: Option<ProviderRelayConfig>,
+    provider_secret_map_config: Option<ProviderSecretMapConfig>,
+    provider_adapter_config: Option<ProviderAdapterConfig>,
+    startup_install_mode: StartupInstallMode,
+) -> Result<Router, GatewayRouterError> {
+    router_with_database_api_key_provider_configs_usage_settlement_worker_config_startup_install_mode_and_runtime_toml(
+        config,
+        api_key_config,
+        provider_relay_config,
+        provider_secret_map_config,
+        UsageSettlementWorkerConfig::disabled(),
+        startup_install_mode,
+        None,
+        provider_adapter_config,
+    )
+    .await
+}
+
 pub async fn router_with_database_api_key_provider_configs_and_usage_settlement_worker_config(
     config: DatabaseConfig,
     api_key_config: Option<ApiKeySecurityConfig>,
@@ -496,7 +649,7 @@ pub async fn router_with_database_api_key_provider_configs_and_usage_settlement_
     .await
 }
 
-async fn router_with_database_api_key_provider_configs_usage_settlement_worker_config_and_startup_install_mode(
+pub async fn router_with_database_api_key_provider_configs_usage_settlement_worker_config_and_startup_install_mode(
     config: DatabaseConfig,
     api_key_config: Option<ApiKeySecurityConfig>,
     provider_relay_config: Option<ProviderRelayConfig>,
@@ -542,16 +695,7 @@ async fn router_with_database_api_key_provider_configs_usage_settlement_worker_c
     };
     match config.engine {
         DatabaseEngine::Sqlite => {
-            let sqlite_options = SqliteConnectOptions::from_str(config.url.as_str())
-                .map_err(|error| GatewayRouterError::Sqlite(SqlCatalogLoadError::Database(error)))?
-                .create_if_missing(true);
-            let pool = SqlitePoolOptions::new()
-                .max_connections(config.max_connections)
-                .connect_with(sqlite_options)
-                .await
-                .map_err(|error| {
-                    GatewayRouterError::Sqlite(SqlCatalogLoadError::Database(error))
-                })?;
+            let pool = connect_sqlite_runtime_pool(&config).await?;
             if startup_install_mode.should_ensure() {
                 let install_report = DatabaseInstaller::for_sqlite(pool.clone())
                     .with_env_options()?
@@ -569,15 +713,11 @@ async fn router_with_database_api_key_provider_configs_usage_settlement_worker_c
             .load_snapshot()
             .await?;
             log_gateway_runtime_catalog_snapshot_summary("sqlite", "startup", snapshot.summary());
-            let provider_secret_resolver = Some(openai_runtime_relay_secret_resolver(
+            let provider_secret_resolver = openai_runtime_relay_secret_resolver(
                 provider_secret_map_config.clone(),
                 snapshot.managed_provider_secrets(),
-            ));
-            let prefer_secret_ref_openai_runtime = provider_secret_map_config.is_some()
-                || provider_relay_config
-                    .as_ref()
-                    .and_then(ProviderRelayConfig::openai_relay)
-                    .is_none();
+            );
+            let prefer_secret_ref_openai_runtime = provider_secret_resolver.is_some();
             let relays = apply_provider_adapter_config(
                 build_openai_runtime_relays(
                     provider_relay_config.clone(),
@@ -592,15 +732,18 @@ async fn router_with_database_api_key_provider_configs_usage_settlement_worker_c
                 }),
             )?;
             let catalog = Arc::new(RefreshableSqlPricingCatalog::new(snapshot));
-            let usage_recorder: UsageRecorder =
-                Arc::new(SqliteGatewayUsageRecorder::new(pool.clone()));
+            let usage_settlement_wakeup =
+                maybe_spawn_sqlite_usage_settlement_worker(&pool, usage_settlement_worker_config)
+                    .await?;
+            let usage_recorder = wrap_usage_recorder_with_settlement_wakeup(
+                Arc::new(SqliteGatewayUsageRecorder::new(pool.clone())),
+                usage_settlement_wakeup,
+            );
             let invocation_plugins =
                 vec![
                     Arc::new(SqliteOpenAiInvocationTelemetryPlugin::new(pool.clone()))
                         as OpenAiInvocationPluginRef,
                 ];
-            maybe_spawn_sqlite_usage_settlement_worker(&pool, usage_settlement_worker_config)
-                .await?;
             spawn_sqlite_catalog_refresh_worker(
                 &pool,
                 Arc::clone(&catalog),
@@ -625,6 +768,7 @@ async fn router_with_database_api_key_provider_configs_usage_settlement_worker_c
                 provider_adapter_config.clone(),
                 provider_secret_resolver.clone(),
                 prefer_secret_ref_openai_runtime,
+                Some(StickyObjectRouteStore::sqlite(pool.clone())),
             ))
         }
         DatabaseEngine::Postgres => {
@@ -652,15 +796,11 @@ async fn router_with_database_api_key_provider_configs_usage_settlement_worker_c
             .load_snapshot()
             .await?;
             log_gateway_runtime_catalog_snapshot_summary("postgres", "startup", snapshot.summary());
-            let provider_secret_resolver = Some(openai_runtime_relay_secret_resolver(
+            let provider_secret_resolver = openai_runtime_relay_secret_resolver(
                 provider_secret_map_config.clone(),
                 snapshot.managed_provider_secrets(),
-            ));
-            let prefer_secret_ref_openai_runtime = provider_secret_map_config.is_some()
-                || provider_relay_config
-                    .as_ref()
-                    .and_then(ProviderRelayConfig::openai_relay)
-                    .is_none();
+            );
+            let prefer_secret_ref_openai_runtime = provider_secret_resolver.is_some();
             let relays = apply_provider_adapter_config(
                 build_openai_runtime_relays(
                     provider_relay_config.clone(),
@@ -675,15 +815,18 @@ async fn router_with_database_api_key_provider_configs_usage_settlement_worker_c
                 }),
             )?;
             let catalog = Arc::new(RefreshableSqlPricingCatalog::new(snapshot));
-            let usage_recorder: UsageRecorder =
-                Arc::new(PostgresGatewayUsageRecorder::new(pool.clone()));
+            let usage_settlement_wakeup =
+                maybe_spawn_postgres_usage_settlement_worker(&pool, usage_settlement_worker_config)
+                    .await?;
+            let usage_recorder = wrap_usage_recorder_with_settlement_wakeup(
+                Arc::new(PostgresGatewayUsageRecorder::new(pool.clone())),
+                usage_settlement_wakeup,
+            );
             let invocation_plugins =
                 vec![
                     Arc::new(PostgresOpenAiInvocationTelemetryPlugin::new(pool.clone()))
                         as OpenAiInvocationPluginRef,
                 ];
-            maybe_spawn_postgres_usage_settlement_worker(&pool, usage_settlement_worker_config)
-                .await?;
             spawn_postgres_catalog_refresh_worker(
                 &pool,
                 Arc::clone(&catalog),
@@ -708,6 +851,7 @@ async fn router_with_database_api_key_provider_configs_usage_settlement_worker_c
                 provider_adapter_config.clone(),
                 provider_secret_resolver.clone(),
                 prefer_secret_ref_openai_runtime,
+                Some(StickyObjectRouteStore::postgres(pool.clone())),
             ))
         }
     }
@@ -790,6 +934,428 @@ pub async fn router_from_env() -> Result<Router, GatewayRouterError> {
     }
 }
 
+pub async fn all_in_one_in_process_upstreams_from_env() -> anyhow::Result<EdgeInProcessUpstreams> {
+    let context = all_in_one_runtime_context_from_env().await?;
+    let gateway_router = build_gateway_router_from_all_in_one_context(&context)?;
+    let (backend_router, app_router) = match &context.database_pool {
+        SharedDatabasePool::Sqlite(pool) => (
+            sdkwork_claw_admin_api::router_with_sqlite_shared_runtime(
+                context.database_config.clone(),
+                pool.clone(),
+                Arc::clone(&context.catalog),
+                context.api_key_security_config.clone(),
+                context.trusted_subject_config.clone(),
+                context.app_session_config.clone(),
+                Arc::clone(&context.provider_health_probe),
+                context.cache_manager.clone(),
+                Arc::clone(&context.database_installer),
+                context.request_limits_config.clone(),
+                context.models_catalog_root.clone(),
+            )
+            .map_err(anyhow::Error::new)?,
+            sdkwork_claw_app_api::router_with_sqlite_shared_runtime(
+                context.database_config.clone(),
+                pool.clone(),
+                Arc::clone(&context.catalog),
+                context.api_key_security_config.clone(),
+                context.trusted_subject_config.clone(),
+                context.app_session_config.clone(),
+                context.payment_webhook_config.clone(),
+                Arc::clone(&context.provider_health_probe),
+                context.deployment_mode,
+                context.request_limits_config.clone(),
+                Arc::clone(&context.app_runtime_gateway_client),
+                Arc::clone(&context.app_runtime_stream_bus),
+                context.model_ranking_refresh_worker_config.clone(),
+            )
+            .await
+            .map_err(anyhow::Error::new)?,
+        ),
+        SharedDatabasePool::Postgres(pool) => (
+            sdkwork_claw_admin_api::router_with_postgres_shared_runtime(
+                context.database_config.clone(),
+                pool.clone(),
+                Arc::clone(&context.catalog),
+                context.api_key_security_config.clone(),
+                context.trusted_subject_config.clone(),
+                context.app_session_config.clone(),
+                Arc::clone(&context.provider_health_probe),
+                context.cache_manager.clone(),
+                Arc::clone(&context.database_installer),
+                context.request_limits_config.clone(),
+                context.models_catalog_root.clone(),
+            )
+            .map_err(anyhow::Error::new)?,
+            sdkwork_claw_app_api::router_with_postgres_shared_runtime(
+                context.database_config.clone(),
+                pool.clone(),
+                Arc::clone(&context.catalog),
+                context.api_key_security_config.clone(),
+                context.trusted_subject_config.clone(),
+                context.app_session_config.clone(),
+                context.payment_webhook_config.clone(),
+                Arc::clone(&context.provider_health_probe),
+                context.deployment_mode,
+                context.request_limits_config.clone(),
+                Arc::clone(&context.app_runtime_gateway_client),
+                Arc::clone(&context.app_runtime_stream_bus),
+                context.model_ranking_refresh_worker_config.clone(),
+            )
+            .await
+            .map_err(anyhow::Error::new)?,
+        ),
+    };
+    Ok(EdgeInProcessUpstreams::new(
+        gateway_router,
+        backend_router,
+        app_router,
+    ))
+}
+
+async fn all_in_one_runtime_context_from_env() -> anyhow::Result<AllInOneRuntimeContext> {
+    let runtime_toml = RuntimeTomlConfig::from_env_config_file().map_err(anyhow::Error::msg)?;
+    let runtime_toml_ref = runtime_toml.as_ref();
+    let profile = RuntimeConfigProfile::from_env_or_runtime_toml(runtime_toml_ref)
+        .unwrap_or(RuntimeConfigProfile::Server);
+    let database_config = DatabaseConfig::from_env_or_runtime_toml_or_initialize(runtime_toml_ref)
+        .map_err(anyhow::Error::msg)?
+        .ok_or_else(|| {
+            anyhow::Error::msg(format!(
+                "SDKWORK_CLAW_DATABASE_URL is required for all-in-one startup.\n{}",
+                DatabaseConfig::startup_help_text(profile)
+            ))
+        })?;
+    let api_key_security_config = require_api_key_security_config(
+        ApiKeySecurityConfig::from_env_or_runtime_toml(runtime_toml_ref)
+            .map_err(GatewayRouterError::Config)?,
+    )
+    .map_err(anyhow::Error::new)?;
+    let trusted_subject_config = TrustedSubjectConfig::from_env_or_runtime_toml(runtime_toml_ref)
+        .map_err(anyhow::Error::msg)?
+        .ok_or_else(|| {
+            anyhow::Error::msg(format!(
+                "{} is required when all-in-one runtime is enabled",
+                TrustedSubjectConfig::ENV_TRUSTED_SUBJECT_SECRET
+            ))
+        })?;
+    let app_session_config = AppSessionConfig::from_env_or_runtime_toml(runtime_toml_ref)
+        .map_err(anyhow::Error::msg)?
+        .ok_or_else(|| {
+            anyhow::Error::msg(format!(
+                "{} is required when all-in-one runtime is enabled",
+                AppSessionConfig::ENV_APP_SESSION_SECRET
+            ))
+        })?;
+    let payment_webhook_config = PaymentWebhookConfig::from_env_or_runtime_toml(runtime_toml_ref)
+        .map_err(anyhow::Error::msg)?
+        .ok_or_else(|| {
+            anyhow::Error::msg(format!(
+                "{} is required when all-in-one runtime is enabled",
+                PaymentWebhookConfig::ENV_PAYMENT_WEBHOOK_SECRET
+            ))
+        })?;
+    let provider_relay_config = ProviderRelayConfig::from_env_or_runtime_toml(runtime_toml_ref)
+        .map_err(anyhow::Error::msg)?;
+    let provider_secret_map_config =
+        ProviderSecretMapConfig::from_env_or_runtime_toml(runtime_toml_ref)
+            .map_err(anyhow::Error::msg)?;
+    let startup_install_mode = StartupInstallMode::from_env_or_runtime_toml(runtime_toml_ref)
+        .map_err(anyhow::Error::msg)?;
+    let usage_settlement_worker_config =
+        usage_settlement_worker_config_from_env_or_toml(runtime_toml_ref)
+            .map_err(anyhow::Error::msg)?;
+    let provider_runtime = provider_relay_runtime_config_from_env_or_toml(runtime_toml_ref)
+        .map_err(anyhow::Error::msg)?;
+    let provider_adapter_config =
+        provider_adapter_config_from_env_or_runtime_toml(runtime_toml_ref)
+            .await
+            .map_err(anyhow::Error::msg)?;
+    let deployment_mode = DeploymentMode::from_optional_part(
+        std::env::var(DeploymentMode::ENV_DEPLOYMENT_MODE)
+            .ok()
+            .or_else(|| runtime_toml_ref.and_then(|config| config.runtime.deployment_mode.clone())),
+    )
+    .map_err(anyhow::Error::msg)?;
+    let provider_health_probe =
+        sdkwork_claw_admin_api::shared_provider_health_probe_from_runtime_toml(
+            provider_secret_map_config.clone(),
+            runtime_toml_ref,
+        )
+        .map_err(anyhow::Error::new)?;
+    let cache_manager =
+        sdkwork_claw_admin_api::shared_cache_manager_from_runtime_toml(runtime_toml_ref)
+            .map_err(anyhow::Error::new)?;
+    let request_limits_config = RequestLimitsConfig::from_env_or_runtime_toml(runtime_toml_ref)
+        .map_err(anyhow::Error::msg)?;
+    let models_catalog_root =
+        sdkwork_claw_admin_api::shared_models_catalog_root_from_runtime_toml(runtime_toml_ref);
+    let app_runtime_gateway_client =
+        sdkwork_claw_app_api::shared_runtime_gateway_client_from_runtime_toml(runtime_toml_ref)
+            .map_err(anyhow::Error::msg)?;
+    let app_runtime_stream_bus = sdkwork_claw_app_api::shared_runtime_stream_bus_from_runtime_toml(
+        runtime_toml_ref,
+        deployment_mode,
+    )
+    .await
+    .map_err(anyhow::Error::new)?;
+    let model_ranking_refresh_worker_config =
+        sdkwork_claw_app_api::shared_model_ranking_refresh_worker_config_from_toml(
+            runtime_toml_ref,
+        )
+        .map_err(anyhow::Error::msg)?;
+    let app_catalog_refresh_interval =
+        sdkwork_claw_app_api::shared_runtime_catalog_refresh_interval_from_toml(runtime_toml_ref)
+            .map_err(anyhow::Error::msg)?;
+    let shared_catalog_refresh_interval = provider_runtime
+        .catalog_refresh_interval
+        .min(app_catalog_refresh_interval);
+    let api_key_secret_codec =
+        api_key_secret_codec_from_config(&api_key_security_config).map_err(anyhow::Error::new)?;
+
+    match database_config.engine {
+        DatabaseEngine::Sqlite => {
+            let sqlite_options = SqliteConnectOptions::from_str(database_config.url.as_str())
+                .map_err(|error| {
+                    anyhow::Error::new(GatewayRouterError::Sqlite(SqlCatalogLoadError::Database(
+                        error,
+                    )))
+                })?
+                .create_if_missing(true)
+                .foreign_keys(true)
+                .journal_mode(SqliteJournalMode::Wal)
+                .busy_timeout(Duration::from_secs(SQLITE_BUSY_TIMEOUT_SECONDS));
+            let sqlite_pool_max_connections = effective_sqlite_runtime_pool_max_connections(
+                &database_config.url,
+                database_config.max_connections,
+            );
+            if sqlite_pool_max_connections > database_config.max_connections {
+                tracing::warn!(
+                    configured_max_connections = database_config.max_connections,
+                    effective_max_connections = sqlite_pool_max_connections,
+                    "SQLite runtime database pool max_connections was raised to protect all-in-one background tasks"
+                );
+            }
+            let pool = SqlitePoolOptions::new()
+                .max_connections(sqlite_pool_max_connections)
+                .acquire_timeout(Duration::from_secs(SQLITE_POOL_ACQUIRE_TIMEOUT_SECONDS))
+                .connect_with(sqlite_options)
+                .await
+                .map_err(|error| {
+                    anyhow::Error::new(GatewayRouterError::Sqlite(SqlCatalogLoadError::Database(
+                        error,
+                    )))
+                })?;
+            let database_installer = Arc::new(
+                DatabaseInstaller::for_sqlite(pool.clone())
+                    .with_env_options()
+                    .map_err(anyhow::Error::new)?,
+            );
+            if startup_install_mode.should_ensure() {
+                let install_report = database_installer
+                    .ensure_installed()
+                    .await
+                    .map_err(anyhow::Error::new)?;
+                log_bootstrap_admin_report("sdkwork-claw-all-in-one", &install_report);
+            }
+            let snapshot = SqlitePricingCatalogLoader::with_api_key_secret_codec(
+                pool.clone(),
+                api_key_secret_codec.clone(),
+            )
+            .with_circuit_breaker_recovery_window_seconds(
+                provider_runtime.circuit_breaker_recovery_window_seconds,
+            )
+            .load_snapshot()
+            .await
+            .map_err(anyhow::Error::new)?;
+            log_gateway_runtime_catalog_snapshot_summary("sqlite", "startup", snapshot.summary());
+            let provider_secret_resolver = openai_runtime_relay_secret_resolver(
+                provider_secret_map_config.clone(),
+                snapshot.managed_provider_secrets(),
+            );
+            let prefer_secret_ref_openai_runtime = provider_secret_resolver.is_some();
+            let catalog = Arc::new(RefreshableSqlPricingCatalog::new(snapshot));
+            let usage_settlement_wakeup =
+                maybe_spawn_sqlite_usage_settlement_worker(&pool, usage_settlement_worker_config)
+                    .await
+                    .map_err(anyhow::Error::new)?;
+            spawn_sqlite_catalog_refresh_worker(
+                &pool,
+                Arc::clone(&catalog),
+                provider_secret_resolver.clone(),
+                api_key_secret_codec,
+                shared_catalog_refresh_interval,
+                provider_runtime.circuit_breaker_recovery_window_seconds,
+            );
+            Ok(AllInOneRuntimeContext {
+                database_config,
+                database_pool: SharedDatabasePool::Sqlite(pool),
+                database_installer,
+                catalog,
+                api_key_security_config,
+                provider_relay_config,
+                provider_adapter_config,
+                provider_runtime,
+                provider_secret_resolver,
+                prefer_secret_ref_openai_runtime,
+                trusted_subject_config,
+                app_session_config,
+                payment_webhook_config,
+                provider_health_probe,
+                cache_manager,
+                request_limits_config,
+                models_catalog_root,
+                deployment_mode,
+                app_runtime_gateway_client,
+                app_runtime_stream_bus,
+                model_ranking_refresh_worker_config,
+                usage_settlement_wakeup,
+            })
+        }
+        DatabaseEngine::Postgres => {
+            let pool = sqlx::postgres::PgPoolOptions::new()
+                .max_connections(database_config.max_connections)
+                .connect(&database_config.url)
+                .await
+                .map_err(|error| {
+                    anyhow::Error::new(GatewayRouterError::Postgres(
+                        PostgresCatalogLoadError::Database(error),
+                    ))
+                })?;
+            let database_installer = Arc::new(
+                DatabaseInstaller::for_postgres(pool.clone())
+                    .with_env_options()
+                    .map_err(anyhow::Error::new)?,
+            );
+            if startup_install_mode.should_ensure() {
+                let install_report = database_installer
+                    .ensure_installed()
+                    .await
+                    .map_err(anyhow::Error::new)?;
+                log_bootstrap_admin_report("sdkwork-claw-all-in-one", &install_report);
+            }
+            let snapshot = PostgresPricingCatalogLoader::with_api_key_secret_codec(
+                pool.clone(),
+                api_key_secret_codec.clone(),
+            )
+            .with_circuit_breaker_recovery_window_seconds(
+                provider_runtime.circuit_breaker_recovery_window_seconds,
+            )
+            .load_snapshot()
+            .await
+            .map_err(anyhow::Error::new)?;
+            log_gateway_runtime_catalog_snapshot_summary("postgres", "startup", snapshot.summary());
+            let provider_secret_resolver = openai_runtime_relay_secret_resolver(
+                provider_secret_map_config.clone(),
+                snapshot.managed_provider_secrets(),
+            );
+            let prefer_secret_ref_openai_runtime = provider_secret_resolver.is_some();
+            let catalog = Arc::new(RefreshableSqlPricingCatalog::new(snapshot));
+            let usage_settlement_wakeup =
+                maybe_spawn_postgres_usage_settlement_worker(&pool, usage_settlement_worker_config)
+                    .await
+                    .map_err(anyhow::Error::new)?;
+            spawn_postgres_catalog_refresh_worker(
+                &pool,
+                Arc::clone(&catalog),
+                provider_secret_resolver.clone(),
+                api_key_secret_codec,
+                shared_catalog_refresh_interval,
+                provider_runtime.circuit_breaker_recovery_window_seconds,
+            );
+            Ok(AllInOneRuntimeContext {
+                database_config,
+                database_pool: SharedDatabasePool::Postgres(pool),
+                database_installer,
+                catalog,
+                api_key_security_config,
+                provider_relay_config,
+                provider_adapter_config,
+                provider_runtime,
+                provider_secret_resolver,
+                prefer_secret_ref_openai_runtime,
+                trusted_subject_config,
+                app_session_config,
+                payment_webhook_config,
+                provider_health_probe,
+                cache_manager,
+                request_limits_config,
+                models_catalog_root,
+                deployment_mode,
+                app_runtime_gateway_client,
+                app_runtime_stream_bus,
+                model_ranking_refresh_worker_config,
+                usage_settlement_wakeup,
+            })
+        }
+    }
+}
+
+fn build_gateway_router_from_all_in_one_context(
+    context: &AllInOneRuntimeContext,
+) -> anyhow::Result<Router> {
+    let api_key_hasher =
+        build_api_key_hasher(&context.api_key_security_config).map_err(anyhow::Error::new)?;
+    let relays = apply_provider_adapter_config(
+        build_openai_runtime_relays(
+            context.provider_relay_config.clone(),
+            context.provider_secret_resolver.clone(),
+            context.provider_runtime.clone(),
+            context.prefer_secret_ref_openai_runtime,
+        )
+        .map_err(anyhow::Error::new)?,
+        context.provider_adapter_config.clone(),
+        context.provider_secret_resolver.clone().map(|resolver| {
+            let resolver: Arc<dyn ProviderSecretResolver + Send + Sync> = resolver;
+            resolver
+        }),
+    )
+    .map_err(anyhow::Error::new)?;
+
+    let (usage_recorder, invocation_plugins): (UsageRecorder, Vec<OpenAiInvocationPluginRef>) =
+        match &context.database_pool {
+            SharedDatabasePool::Sqlite(pool) => (
+                Arc::new(SqliteGatewayUsageRecorder::new(pool.clone())),
+                vec![
+                    Arc::new(SqliteOpenAiInvocationTelemetryPlugin::new(pool.clone()))
+                        as OpenAiInvocationPluginRef,
+                ],
+            ),
+            SharedDatabasePool::Postgres(pool) => (
+                Arc::new(PostgresGatewayUsageRecorder::new(pool.clone())),
+                vec![
+                    Arc::new(PostgresOpenAiInvocationTelemetryPlugin::new(pool.clone()))
+                        as OpenAiInvocationPluginRef,
+                ],
+            ),
+        };
+    let usage_recorder = wrap_usage_recorder_with_settlement_wakeup(
+        usage_recorder,
+        context.usage_settlement_wakeup.clone(),
+    );
+
+    Ok(router_with_openai_runtime_routes(
+        router_with_database_status_and_passthrough_placeholder(
+            Some(&context.database_config),
+            context.provider_relay_config.is_none() && context.provider_secret_resolver.is_none(),
+        ),
+        Arc::clone(&context.catalog),
+        api_key_hasher,
+        relays,
+        Some(usage_recorder),
+        invocation_plugins,
+        context.provider_runtime.failure_strategy,
+        context.provider_runtime.default_retry_policy.clone(),
+        context.provider_relay_config.clone(),
+        context.provider_adapter_config.clone(),
+        context.provider_secret_resolver.clone(),
+        context.prefer_secret_ref_openai_runtime,
+        Some(match &context.database_pool {
+            SharedDatabasePool::Sqlite(pool) => StickyObjectRouteStore::sqlite(pool.clone()),
+            SharedDatabasePool::Postgres(pool) => StickyObjectRouteStore::postgres(pool.clone()),
+        }),
+    ))
+}
+
 fn database_config_from_env_for_startup(
     runtime_toml: Option<&RuntimeTomlConfig>,
 ) -> Result<Option<DatabaseConfig>, GatewayRouterError> {
@@ -814,10 +1380,10 @@ fn database_config_from_env_for_startup(
 async fn maybe_spawn_sqlite_usage_settlement_worker(
     pool: &SqlitePool,
     config: UsageSettlementWorkerConfig,
-) -> Result<(), GatewayRouterError> {
+) -> Result<Option<Arc<Notify>>, GatewayRouterError> {
     let config = config.normalized();
     if !config.enabled {
-        return Ok(());
+        return Ok(None);
     }
     if !sqlite_usage_settlement_schema_ready(pool)
         .await
@@ -826,20 +1392,21 @@ async fn maybe_spawn_sqlite_usage_settlement_worker(
         tracing::warn!(
             "usage settlement worker is enabled but SQLite settlement schema is incomplete"
         );
-        return Ok(());
+        return Ok(None);
     }
     let store: SettlementStore = Arc::new(SqliteUsageSettlementStore::new(pool.clone()));
-    spawn_usage_settlement_worker(store, config);
-    Ok(())
+    let usage_settlement_wakeup = Arc::new(Notify::new());
+    spawn_usage_settlement_worker(store, config, Some(Arc::clone(&usage_settlement_wakeup)));
+    Ok(Some(usage_settlement_wakeup))
 }
 
 async fn maybe_spawn_postgres_usage_settlement_worker(
     pool: &PgPool,
     config: UsageSettlementWorkerConfig,
-) -> Result<(), GatewayRouterError> {
+) -> Result<Option<Arc<Notify>>, GatewayRouterError> {
     let config = config.normalized();
     if !config.enabled {
-        return Ok(());
+        return Ok(None);
     }
     if !postgres_usage_settlement_schema_ready(pool)
         .await
@@ -848,16 +1415,31 @@ async fn maybe_spawn_postgres_usage_settlement_worker(
         tracing::warn!(
             "usage settlement worker is enabled but Postgres settlement schema is incomplete"
         );
-        return Ok(());
+        return Ok(None);
     }
     let store: SettlementStore = Arc::new(PostgresUsageSettlementStore::new(pool.clone()));
-    spawn_usage_settlement_worker(store, config);
-    Ok(())
+    let usage_settlement_wakeup = Arc::new(Notify::new());
+    spawn_usage_settlement_worker(store, config, Some(Arc::clone(&usage_settlement_wakeup)));
+    Ok(Some(usage_settlement_wakeup))
+}
+
+fn wrap_usage_recorder_with_settlement_wakeup(
+    usage_recorder: UsageRecorder,
+    usage_settlement_wakeup: Option<Arc<Notify>>,
+) -> UsageRecorder {
+    match usage_settlement_wakeup {
+        Some(usage_settlement_wakeup) => Arc::new(NotifyingGatewayUsageRecorder::new(
+            usage_recorder,
+            usage_settlement_wakeup,
+        )),
+        None => usage_recorder,
+    }
 }
 
 fn spawn_usage_settlement_worker(
     store: SettlementStore,
     config: UsageSettlementWorkerConfig,
+    usage_settlement_wakeup: Option<Arc<Notify>>,
 ) -> tokio::task::JoinHandle<()> {
     let worker = UsageSettlementWorker::new(store, config);
     let interval = Duration::from_millis(worker.config().interval_millis);
@@ -866,7 +1448,14 @@ fn spawn_usage_settlement_worker(
             if let Err(error) = worker.run_once().await {
                 tracing::warn!(error = %error, "usage settlement worker run failed");
             }
-            sleep(interval).await;
+            if let Some(usage_settlement_wakeup) = usage_settlement_wakeup.as_ref() {
+                tokio::select! {
+                    _ = usage_settlement_wakeup.notified() => {}
+                    _ = sleep(interval) => {}
+                }
+            } else {
+                sleep(interval).await;
+            }
         }
     })
 }
@@ -881,16 +1470,29 @@ fn spawn_sqlite_catalog_refresh_worker(
 ) -> tokio::task::JoinHandle<()> {
     let pool = pool.clone();
     tokio::spawn(async move {
+        let mut refresh_state = CatalogRefreshDecisionState::default();
         loop {
             sleep(interval).await;
-            match SqlitePricingCatalogLoader::with_api_key_secret_codec(
+            let loader = SqlitePricingCatalogLoader::with_api_key_secret_codec(
                 pool.clone(),
                 api_key_secret_codec.clone(),
             )
-            .with_circuit_breaker_recovery_window_seconds(circuit_breaker_recovery_window_seconds)
-            .load_snapshot()
-            .await
-            {
+            .with_circuit_breaker_recovery_window_seconds(circuit_breaker_recovery_window_seconds);
+            let observed_version = match loader.load_routing_config_version().await {
+                Ok(version) => Some(version),
+                Err(error) => {
+                    tracing::warn!(
+                        error = %error,
+                        "SQLite OpenAI runtime catalog version probe failed; attempting full refresh"
+                    );
+                    None
+                }
+            };
+            if !catalog_refresh_snapshot_due(refresh_state, observed_version) {
+                refresh_state = refresh_state.after_catalog_refresh_skip(observed_version);
+                continue;
+            }
+            match loader.load_snapshot().await {
                 Ok(snapshot) => {
                     let summary = snapshot.summary();
                     if let Some(resolver) = provider_secret_resolver.as_ref() {
@@ -898,6 +1500,7 @@ fn spawn_sqlite_catalog_refresh_worker(
                     }
                     catalog.replace_snapshot(snapshot);
                     log_gateway_runtime_catalog_snapshot_summary("sqlite", "refresh", summary);
+                    refresh_state = refresh_state.after_catalog_refresh_success(observed_version);
                 }
                 Err(error) => {
                     tracing::warn!(
@@ -920,16 +1523,29 @@ fn spawn_postgres_catalog_refresh_worker(
 ) -> tokio::task::JoinHandle<()> {
     let pool = pool.clone();
     tokio::spawn(async move {
+        let mut refresh_state = CatalogRefreshDecisionState::default();
         loop {
             sleep(interval).await;
-            match PostgresPricingCatalogLoader::with_api_key_secret_codec(
+            let loader = PostgresPricingCatalogLoader::with_api_key_secret_codec(
                 pool.clone(),
                 api_key_secret_codec.clone(),
             )
-            .with_circuit_breaker_recovery_window_seconds(circuit_breaker_recovery_window_seconds)
-            .load_snapshot()
-            .await
-            {
+            .with_circuit_breaker_recovery_window_seconds(circuit_breaker_recovery_window_seconds);
+            let observed_version = match loader.load_routing_config_version().await {
+                Ok(version) => Some(version),
+                Err(error) => {
+                    tracing::warn!(
+                        error = %error,
+                        "Postgres OpenAI runtime catalog version probe failed; attempting full refresh"
+                    );
+                    None
+                }
+            };
+            if !catalog_refresh_snapshot_due(refresh_state, observed_version) {
+                refresh_state = refresh_state.after_catalog_refresh_skip(observed_version);
+                continue;
+            }
+            match loader.load_snapshot().await {
                 Ok(snapshot) => {
                     let summary = snapshot.summary();
                     if let Some(resolver) = provider_secret_resolver.as_ref() {
@@ -937,6 +1553,7 @@ fn spawn_postgres_catalog_refresh_worker(
                     }
                     catalog.replace_snapshot(snapshot);
                     log_gateway_runtime_catalog_snapshot_summary("postgres", "refresh", summary);
+                    refresh_state = refresh_state.after_catalog_refresh_success(observed_version);
                 }
                 Err(error) => {
                     tracing::warn!(
@@ -947,6 +1564,41 @@ fn spawn_postgres_catalog_refresh_worker(
             }
         }
     })
+}
+
+#[derive(Debug, Clone, Copy, Default, PartialEq, Eq)]
+struct CatalogRefreshDecisionState {
+    last_seen_version: Option<i64>,
+    ticks_since_full_refresh: u64,
+}
+
+impl CatalogRefreshDecisionState {
+    fn after_catalog_refresh_success(self, observed_version: Option<i64>) -> Self {
+        Self {
+            last_seen_version: observed_version.or(self.last_seen_version),
+            ticks_since_full_refresh: 0,
+        }
+    }
+
+    fn after_catalog_refresh_skip(self, observed_version: Option<i64>) -> Self {
+        Self {
+            last_seen_version: observed_version.or(self.last_seen_version),
+            ticks_since_full_refresh: self.ticks_since_full_refresh.saturating_add(1),
+        }
+    }
+}
+
+fn catalog_refresh_snapshot_due(
+    state: CatalogRefreshDecisionState,
+    observed_version: Option<i64>,
+) -> bool {
+    match observed_version {
+        None => true,
+        Some(version) if state.last_seen_version != Some(version) => true,
+        Some(_) => {
+            state.ticks_since_full_refresh.saturating_add(1) >= CATALOG_REFRESH_FALLBACK_TICKS
+        }
+    }
 }
 
 fn log_gateway_runtime_catalog_snapshot_summary(
@@ -1219,14 +1871,17 @@ fn require_api_key_security_config(
 fn openai_runtime_relay_secret_resolver(
     provider_secret_map_config: Option<ProviderSecretMapConfig>,
     managed_provider_secrets: std::collections::BTreeMap<String, String>,
-) -> Arc<RefreshableProviderSecretMapResolver> {
+) -> Option<Arc<RefreshableProviderSecretMapResolver>> {
     let external_secrets = provider_secret_map_config
         .map(ProviderSecretMapConfig::into_secret_map)
         .unwrap_or_default();
-    Arc::new(RefreshableProviderSecretMapResolver::from_maps(
+    if external_secrets.is_empty() && managed_provider_secrets.is_empty() {
+        return None;
+    }
+    Some(Arc::new(RefreshableProviderSecretMapResolver::from_maps(
         external_secrets,
         managed_provider_secrets,
-    ))
+    )))
 }
 
 fn build_openai_runtime_relays(
@@ -1694,13 +2349,107 @@ mod tests {
     }
 
     #[test]
+    fn runtime_catalog_refresh_decision_refreshes_first_observed_version() {
+        assert!(catalog_refresh_snapshot_due(
+            CatalogRefreshDecisionState::default(),
+            Some(7)
+        ));
+    }
+
+    #[test]
+    fn runtime_catalog_refresh_decision_skips_unchanged_version_before_fallback() {
+        let state = CatalogRefreshDecisionState {
+            last_seen_version: Some(7),
+            ticks_since_full_refresh: 0,
+        };
+
+        assert!(!catalog_refresh_snapshot_due(state, Some(7)));
+        assert_eq!(
+            CatalogRefreshDecisionState {
+                last_seen_version: Some(7),
+                ticks_since_full_refresh: 1,
+            },
+            state.after_catalog_refresh_skip(Some(7))
+        );
+    }
+
+    #[test]
+    fn runtime_catalog_refresh_decision_refreshes_changed_version() {
+        let state = CatalogRefreshDecisionState {
+            last_seen_version: Some(7),
+            ticks_since_full_refresh: 3,
+        };
+
+        assert!(catalog_refresh_snapshot_due(state, Some(8)));
+        assert_eq!(
+            CatalogRefreshDecisionState {
+                last_seen_version: Some(8),
+                ticks_since_full_refresh: 0,
+            },
+            state.after_catalog_refresh_success(Some(8))
+        );
+    }
+
+    #[test]
+    fn runtime_catalog_refresh_decision_refreshes_unchanged_version_on_fallback_tick() {
+        let state = CatalogRefreshDecisionState {
+            last_seen_version: Some(7),
+            ticks_since_full_refresh: CATALOG_REFRESH_FALLBACK_TICKS - 1,
+        };
+
+        assert!(catalog_refresh_snapshot_due(state, Some(7)));
+    }
+
+    #[test]
+    fn runtime_catalog_refresh_decision_refreshes_when_version_probe_fails() {
+        let state = CatalogRefreshDecisionState {
+            last_seen_version: Some(7),
+            ticks_since_full_refresh: 0,
+        };
+
+        assert!(catalog_refresh_snapshot_due(state, None));
+        assert_eq!(
+            CatalogRefreshDecisionState {
+                last_seen_version: Some(7),
+                ticks_since_full_refresh: 0,
+            },
+            state.after_catalog_refresh_success(None)
+        );
+    }
+
+    #[test]
+    fn gateway_runtime_sqlite_pool_options_raise_file_database_max_connections_and_set_acquire_timeout(
+    ) {
+        let options =
+            build_sqlite_runtime_pool_options("sqlite://D:/tmp/sdkwork-claw-router.db", 1);
+
+        assert_eq!(
+            SQLITE_RUNTIME_MIN_POOL_CONNECTIONS,
+            options.get_max_connections()
+        );
+        assert_eq!(
+            Duration::from_secs(SQLITE_POOL_ACQUIRE_TIMEOUT_SECONDS),
+            options.get_acquire_timeout()
+        );
+    }
+
+    #[test]
+    fn gateway_runtime_sqlite_pool_options_preserve_in_memory_configured_max_connections() {
+        let options = build_sqlite_runtime_pool_options("sqlite::memory:", 1);
+
+        assert_eq!(1, options.get_max_connections());
+    }
+
+    #[test]
     fn database_runtime_mounts_secret_ref_chat_relays_without_static_provider_relay_config() {
+        let mut managed_provider_secrets = std::collections::BTreeMap::new();
+        managed_provider_secrets.insert(
+            "vault://providers/openrouter/account/main".to_owned(),
+            "sk-managed-provider-secret".to_owned(),
+        );
         let relays = build_openai_runtime_relays(
             None,
-            Some(openai_runtime_relay_secret_resolver(
-                None,
-                std::collections::BTreeMap::new(),
-            )),
+            openai_runtime_relay_secret_resolver(None, managed_provider_secrets),
             provider_relay_runtime_for_test(),
             true,
         )
@@ -1713,6 +2462,17 @@ mod tests {
         assert!(
             relays.chat_stream.is_some(),
             "database-backed gateway streaming chat completions must not fall through to 501"
+        );
+    }
+
+    #[test]
+    fn database_runtime_does_not_enable_empty_secret_ref_resolver() {
+        let resolver =
+            openai_runtime_relay_secret_resolver(None, std::collections::BTreeMap::new());
+
+        assert!(
+            resolver.is_none(),
+            "an empty resolver must not override an explicit provider relay config"
         );
     }
 

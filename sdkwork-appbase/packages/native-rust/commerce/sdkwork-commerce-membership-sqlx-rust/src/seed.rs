@@ -2,10 +2,11 @@ use sdkwork_commerce_bootstrap::{
     commerce_benefit_definition_seeds, commerce_payment_channel_seeds,
     commerce_payment_method_seeds, commerce_payment_provider_account_seeds,
     commerce_payment_provider_seeds, commerce_payment_route_rule_seeds,
-    commerce_recharge_package_seeds, membership_package_group_seeds, membership_package_seeds,
-    membership_plan_benefit_seeds, membership_plan_seeds, membership_plan_version_seeds,
-    CommerceMembershipPackageGroupSeed, CommerceMembershipPackageSeed, CommercePaymentMethodSeed,
-    CommerceRechargePackageSeed,
+    commerce_recharge_package_seeds, commerce_recharge_settings_seeds,
+    membership_package_group_seeds, membership_package_seeds, membership_plan_benefit_seeds,
+    membership_plan_seeds, membership_plan_version_seeds, CommerceMembershipPackageGroupSeed,
+    CommerceMembershipPackageSeed, CommercePaymentMethodSeed, CommerceRechargePackageSeed,
+    CommerceRechargeSettingsSeed,
 };
 use sdkwork_commerce_core::CommerceServiceError;
 use sqlx::{PgPool, SqlitePool};
@@ -44,6 +45,7 @@ pub async fn upsert_sqlite_commerce_experience_seed(
     upsert_sqlite_membership_package_groups(pool).await?;
     upsert_sqlite_membership_packages(pool).await?;
     upsert_sqlite_recharge_packages(pool).await?;
+    upsert_sqlite_recharge_settings(pool).await?;
     upsert_sqlite_payment_center_seed(pool).await?;
     Ok(())
 }
@@ -59,6 +61,7 @@ pub async fn upsert_postgres_commerce_experience_seed(
     upsert_postgres_membership_package_groups(pool).await?;
     upsert_postgres_membership_packages(pool).await?;
     upsert_postgres_recharge_packages(pool).await?;
+    upsert_postgres_recharge_settings(pool).await?;
     upsert_postgres_payment_center_seed(pool).await?;
     Ok(())
 }
@@ -82,6 +85,7 @@ pub async fn repair_sqlite_commerce_experience_seed_from_report(
     let mut upsert_membership_groups = false;
     let mut upsert_membership_packages = false;
     let mut upsert_recharge_packages = false;
+    let mut upsert_recharge_settings = false;
     let mut upsert_payment_methods = false;
     let mut upsert_payment_providers = false;
     let mut upsert_payment_provider_accounts = false;
@@ -118,6 +122,9 @@ pub async fn repair_sqlite_commerce_experience_seed_from_report(
             | "invalid_recharge_sku_product" => {
                 upsert_products = true;
                 upsert_recharge_packages = true;
+            }
+            "missing_recharge_settings" => {
+                upsert_recharge_settings = true;
             }
             "missing_payment_method" => {
                 upsert_payment_methods = true;
@@ -162,6 +169,9 @@ pub async fn repair_sqlite_commerce_experience_seed_from_report(
     }
     if upsert_recharge_packages {
         upsert_sqlite_recharge_packages(pool).await?;
+    }
+    if upsert_recharge_settings {
+        upsert_sqlite_recharge_settings(pool).await?;
     }
     if upsert_payment_methods {
         upsert_sqlite_payment_methods(pool).await?;
@@ -976,7 +986,7 @@ async fn upsert_sqlite_recharge_packages(pool: &SqlitePool) -> Result<(), Commer
             INSERT INTO commerce_recharge_package
                 (id, tenant_id, organization_id, external_id, package_no, sku_id, name, price_amount, currency_code, bonus_points, status, valid_from, valid_to, sort_weight, request_no, idempotency_key, created_at, updated_at)
             VALUES
-                (?, '0', '0', ?, ?, ?, ?, ?, ?, ?, 'active', NULL, NULL, ?, ?, ?, ?, ?)
+                (?, '0', '0', ?, ?, ?, ?, ?, ?, ?, ?, NULL, NULL, ?, ?, ?, ?, ?)
             ON CONFLICT(tenant_id, package_no) DO UPDATE SET
                 id = excluded.id,
                 organization_id = excluded.organization_id,
@@ -1003,6 +1013,7 @@ async fn upsert_sqlite_recharge_packages(pool: &SqlitePool) -> Result<(), Commer
         .bind(package.price_amount)
         .bind(package.currency_code)
         .bind(package.bonus_points)
+        .bind(package.status)
         .bind(package.sort_weight)
         .bind(format!("seed-recharge-package-{}", package.package_no))
         .bind(format!("seed-recharge-package-{}", package.package_no))
@@ -1023,7 +1034,7 @@ async fn upsert_postgres_recharge_packages(pool: &PgPool) -> Result<(), Commerce
             INSERT INTO commerce_recharge_package
                 (id, tenant_id, organization_id, external_id, package_no, sku_id, name, price_amount, currency_code, bonus_points, status, valid_from, valid_to, sort_weight, request_no, idempotency_key, created_at, updated_at)
             VALUES
-                ($1, '0', '0', $2, $3, $4, $5, $6, $7, $8, 'active', NULL, NULL, $9, $10, $11, $12, $13)
+                ($1, '0', '0', $2, $3, $4, $5, $6, $7, $8, $9, NULL, NULL, $10, $11, $12, $13, $14)
             ON CONFLICT(tenant_id, package_no) DO UPDATE SET
                 id = excluded.id,
                 organization_id = excluded.organization_id,
@@ -1050,6 +1061,7 @@ async fn upsert_postgres_recharge_packages(pool: &PgPool) -> Result<(), Commerce
         .bind(package.price_amount)
         .bind(package.currency_code)
         .bind(package.bonus_points)
+        .bind(package.status)
         .bind(package.sort_weight)
         .bind(format!("seed-recharge-package-{}", package.package_no))
         .bind(format!("seed-recharge-package-{}", package.package_no))
@@ -1142,6 +1154,104 @@ async fn upsert_postgres_recharge_package_sku(
     .await
     .map_err(|error| storage_error("failed to upsert recharge sku", error))?;
     Ok(())
+}
+
+async fn upsert_sqlite_recharge_settings(pool: &SqlitePool) -> Result<(), CommerceServiceError> {
+    for setting in commerce_recharge_settings_seeds() {
+        let remark_json = recharge_settings_remark_json(&setting);
+        sqlx::query(
+            r#"
+            INSERT INTO commerce_exchange_rule
+                (id, tenant_id, organization_id, rule_no, source_asset_type, target_asset_type, rate, status, remark, request_no, idempotency_key, created_at, updated_at)
+            VALUES
+                (?, '0', '0', ?, ?, ?, ?, 'active', ?, ?, ?, ?, ?)
+            ON CONFLICT(tenant_id, organization_id, source_asset_type, target_asset_type) DO UPDATE SET
+                id = excluded.id,
+                rule_no = excluded.rule_no,
+                organization_id = excluded.organization_id,
+                source_asset_type = excluded.source_asset_type,
+                target_asset_type = excluded.target_asset_type,
+                rate = excluded.rate,
+                status = excluded.status,
+                remark = excluded.remark,
+                request_no = excluded.request_no,
+                idempotency_key = excluded.idempotency_key,
+                updated_at = excluded.updated_at
+            "#,
+        )
+        .bind(setting.rule_id)
+        .bind(setting.rule_no)
+        .bind(setting.source_asset_type)
+        .bind(setting.target_asset_type)
+        .bind(setting.rate)
+        .bind(&remark_json)
+        .bind(format!("seed-recharge-settings-{}", setting.rule_no.to_ascii_lowercase()))
+        .bind(format!("seed-recharge-settings-{}", setting.rule_no.to_ascii_lowercase()))
+        .bind(SEED_TIMESTAMP)
+        .bind(SEED_TIMESTAMP)
+        .execute(pool)
+        .await
+        .map_err(|error| storage_error("failed to upsert recharge settings", error))?;
+    }
+    Ok(())
+}
+
+async fn upsert_postgres_recharge_settings(pool: &PgPool) -> Result<(), CommerceServiceError> {
+    for setting in commerce_recharge_settings_seeds() {
+        let remark_json = recharge_settings_remark_json(&setting);
+        sqlx::query(
+            r#"
+            INSERT INTO commerce_exchange_rule
+                (id, tenant_id, organization_id, rule_no, source_asset_type, target_asset_type, rate, status, remark, request_no, idempotency_key, created_at, updated_at)
+            VALUES
+                ($1, '0', '0', $2, $3, $4, $5, 'active', $6, $7, $8, $9, $10)
+            ON CONFLICT(tenant_id, organization_id, source_asset_type, target_asset_type) DO UPDATE SET
+                id = excluded.id,
+                rule_no = excluded.rule_no,
+                organization_id = excluded.organization_id,
+                source_asset_type = excluded.source_asset_type,
+                target_asset_type = excluded.target_asset_type,
+                rate = excluded.rate,
+                status = excluded.status,
+                remark = excluded.remark,
+                request_no = excluded.request_no,
+                idempotency_key = excluded.idempotency_key,
+                updated_at = excluded.updated_at
+            "#,
+        )
+        .bind(setting.rule_id)
+        .bind(setting.rule_no)
+        .bind(setting.source_asset_type)
+        .bind(setting.target_asset_type)
+        .bind(setting.rate)
+        .bind(&remark_json)
+        .bind(format!("seed-recharge-settings-{}", setting.rule_no.to_ascii_lowercase()))
+        .bind(format!("seed-recharge-settings-{}", setting.rule_no.to_ascii_lowercase()))
+        .bind(SEED_TIMESTAMP)
+        .bind(SEED_TIMESTAMP)
+        .execute(pool)
+        .await
+        .map_err(|error| storage_error("failed to upsert recharge settings", error))?;
+    }
+    Ok(())
+}
+
+fn recharge_settings_remark_json(setting: &CommerceRechargeSettingsSeed) -> String {
+    let currency_to_cny_rates = setting
+        .currency_to_cny_rates
+        .iter()
+        .map(|(currency_code, rate)| {
+            (
+                currency_code.to_string(),
+                serde_json::Value::String((*rate).to_string()),
+            )
+        })
+        .collect::<serde_json::Map<String, serde_json::Value>>();
+    serde_json::json!({
+        "baseCurrencyCode": setting.base_currency_code,
+        "currencyToCnyRates": currency_to_cny_rates,
+    })
+    .to_string()
 }
 
 async fn upsert_sqlite_payment_methods(pool: &SqlitePool) -> Result<(), CommerceServiceError> {
@@ -1707,15 +1817,21 @@ const COMMERCE_EXPERIENCE_SEED_INTEGRITY_CHECKS: &[SeedIntegrityCheck] = &[
     },
     SeedIntegrityCheck {
         code: "missing_recharge_package",
-        message: "expected four active points recharge packages",
-        expected_count: 4,
+        message: "expected nine active default points recharge packages",
+        expected_count: 9,
         statement: COMPLETE_RECHARGE_PACKAGE_COUNT_SQL,
     },
     SeedIntegrityCheck {
         code: "missing_recharge_sku",
-        message: "expected four active points recharge SKUs",
-        expected_count: 4,
+        message: "expected eighteen seeded points recharge SKUs",
+        expected_count: 18,
         statement: COMPLETE_RECHARGE_SKU_COUNT_SQL,
+    },
+    SeedIntegrityCheck {
+        code: "missing_recharge_settings",
+        message: "expected default cash to points recharge settings",
+        expected_count: 1,
+        statement: COMPLETE_RECHARGE_SETTINGS_COUNT_SQL,
     },
     SeedIntegrityCheck {
         code: "missing_payment_method",
@@ -1852,7 +1968,7 @@ SELECT COUNT(1)
 FROM commerce_recharge_package
 WHERE tenant_id = '0'
   AND organization_id = '0'
-  AND package_no IN ('points-990', 'points-1990', 'points-4990', 'points-9990')
+  AND package_no LIKE 'points-%'
   AND status = 'active'
 "#;
 
@@ -1862,8 +1978,18 @@ FROM commerce_product_sku
 WHERE tenant_id = '0'
   AND organization_id = '0'
   AND spu_id = 'seed-product-points-recharge'
-  AND sku_no IN ('points-recharge-990', 'points-recharge-1990', 'points-recharge-4990', 'points-recharge-9990')
-  AND sales_status = 'active'
+  AND sku_no LIKE 'points-recharge-%'
+"#;
+
+const COMPLETE_RECHARGE_SETTINGS_COUNT_SQL: &str = r#"
+SELECT COUNT(1)
+FROM commerce_exchange_rule
+WHERE tenant_id = '0'
+  AND organization_id = '0'
+  AND rule_no = 'CASH_TO_POINTS'
+  AND source_asset_type = 'cash'
+  AND target_asset_type = 'points'
+  AND status = 'active'
 "#;
 
 const COMPLETE_PAYMENT_METHOD_COUNT_SQL: &str = r#"
@@ -1982,7 +2108,7 @@ LEFT JOIN commerce_product_sku sku
  AND sku.sales_status = 'active'
 WHERE package.tenant_id = '0'
   AND package.organization_id = '0'
-  AND package.package_no IN ('points-990', 'points-1990', 'points-4990', 'points-9990')
+  AND package.package_no LIKE 'points-%'
   AND package.status = 'active'
   AND sku.id IS NULL
 "#;
@@ -1996,7 +2122,7 @@ JOIN commerce_product_sku sku
  AND sku.organization_id = package.organization_id
 WHERE package.tenant_id = '0'
   AND package.organization_id = '0'
-  AND package.package_no IN ('points-990', 'points-1990', 'points-4990', 'points-9990')
+  AND package.package_no LIKE 'points-%'
   AND package.status = 'active'
   AND sku.spu_id <> 'seed-product-points-recharge'
 "#;

@@ -50,6 +50,12 @@ async fn seed_recharge_data(pool: &SqlitePool) {
         VALUES
             ('method-wechat', 'tenant-1', 'org-1', 'wechat', 'WeChat Pay', 'wechat', 'active', 1, 'seed-method-wechat', 'seed-method-wechat', '2026-05-20 00:00:00', '2026-05-20 00:00:00')
         "#,
+        r#"
+        INSERT INTO commerce_exchange_rule
+            (id, tenant_id, organization_id, rule_no, source_asset_type, target_asset_type, rate, status, remark, request_no, idempotency_key, created_at, updated_at)
+        VALUES
+            ('exchange-cash-points-owner', 'tenant-1', 'org-1', 'CASH_TO_POINTS', 'cash', 'points', '10.000000', 'active', '{"baseCurrencyCode":"CNY","currencyToCnyRates":{"CNY":"1","USD":"7"}}', 'seed-exchange-cash-points-owner', 'seed-exchange-cash-points-owner', '2026-05-20 00:00:00', '2026-05-20 00:00:00')
+        "#,
     ] {
         sqlx::query(statement)
             .execute(pool)
@@ -125,15 +131,19 @@ async fn app_recharge_router_lists_packages_from_sqlite_store() {
     assert_eq!(StatusCode::OK, response.status());
     let payload = response_json(response).await;
     assert_eq!("2000", payload["code"]);
-    assert_eq!(2, payload["data"].as_array().unwrap().len());
-    assert_eq!("pack-owner-10", payload["data"][0]["id"]);
-    assert_eq!("10.00", payload["data"][0]["rmb"]);
-    assert_eq!(25, payload["data"][0]["bonus"]);
-    assert_eq!(125, payload["data"][0]["points"]);
-    assert_eq!("pack-tenant-20", payload["data"][1]["id"]);
-    assert_eq!("20.00", payload["data"][1]["rmb"]);
-    assert_eq!(50, payload["data"][1]["bonus"]);
-    assert_eq!(250, payload["data"][1]["points"]);
+    assert_eq!(2, payload["data"]["items"].as_array().unwrap().len());
+    assert_eq!("pack-owner-10", payload["data"]["items"][0]["id"]);
+    assert_eq!("10.00", payload["data"]["items"][0]["priceAmount"]);
+    assert_eq!("CNY", payload["data"]["items"][0]["currencyCode"]);
+    assert_eq!(25, payload["data"]["items"][0]["bonusPoints"]);
+    assert_eq!(125, payload["data"]["items"][0]["grantAmount"]);
+    assert_eq!(125, payload["data"]["items"][0]["points"]);
+    assert_eq!("pack-tenant-20", payload["data"]["items"][1]["id"]);
+    assert_eq!("20.00", payload["data"]["items"][1]["priceAmount"]);
+    assert_eq!("CNY", payload["data"]["items"][1]["currencyCode"]);
+    assert_eq!(50, payload["data"]["items"][1]["bonusPoints"]);
+    assert_eq!(250, payload["data"]["items"][1]["grantAmount"]);
+    assert_eq!(250, payload["data"]["items"][1]["points"]);
 }
 
 #[tokio::test]
@@ -156,23 +166,18 @@ async fn app_recharge_router_lists_default_seed_packages_for_current_tenant() {
     assert_eq!(StatusCode::OK, response.status());
     let payload = response_json(response).await;
     assert_eq!("2000", payload["code"]);
-    assert_eq!(4, payload["data"].as_array().unwrap().len());
-    assert_eq!("seed-recharge-package-990", payload["data"][0]["id"]);
-    assert_eq!("9.90", payload["data"][0]["rmb"]);
-    assert_eq!(50, payload["data"][0]["bonus"]);
-    assert_eq!(149, payload["data"][0]["points"]);
-    assert_eq!("seed-recharge-package-1990", payload["data"][1]["id"]);
-    assert_eq!("19.90", payload["data"][1]["rmb"]);
-    assert_eq!(150, payload["data"][1]["bonus"]);
-    assert_eq!(349, payload["data"][1]["points"]);
-    assert_eq!("seed-recharge-package-4990", payload["data"][2]["id"]);
-    assert_eq!("49.90", payload["data"][2]["rmb"]);
-    assert_eq!(600, payload["data"][2]["bonus"]);
-    assert_eq!(1099, payload["data"][2]["points"]);
-    assert_eq!("seed-recharge-package-9990", payload["data"][3]["id"]);
-    assert_eq!("99.90", payload["data"][3]["rmb"]);
-    assert_eq!(1500, payload["data"][3]["bonus"]);
-    assert_eq!(2499, payload["data"][3]["points"]);
+    let items = payload["data"]["items"].as_array().expect("seeded items");
+    assert_eq!(9, items.len());
+    assert_eq!("5.00", payload["data"]["items"][0]["priceAmount"]);
+    assert_eq!("CNY", payload["data"]["items"][0]["currencyCode"]);
+    assert_eq!(50, payload["data"]["items"][0]["grantAmount"]);
+    assert_eq!("10.00", payload["data"]["items"][1]["priceAmount"]);
+    assert_eq!("CNY", payload["data"]["items"][1]["currencyCode"]);
+    assert_eq!(100, payload["data"]["items"][1]["grantAmount"]);
+    assert_eq!("1000.00", payload["data"]["items"][8]["priceAmount"]);
+    assert_eq!("CNY", payload["data"]["items"][8]["currencyCode"]);
+    assert_eq!(10000, payload["data"]["items"][8]["grantAmount"]);
+    assert!(items.iter().all(|item| item["currencyCode"] == "CNY"));
 }
 
 #[tokio::test]
@@ -201,7 +206,7 @@ async fn app_recharge_router_creates_current_tenant_order_from_default_seed_pack
             "POST",
             "/app/v3/api/recharges/orders",
             Body::from(
-                r#"{"clientRequestNo":"seed-recharge-1","metadata":{"amount":"9.90","paymentMethod":"alipay","packageId":"seed-recharge-package-990","source":"console-recharge"}}"#,
+                r#"{"clientRequestNo":"seed-recharge-1","amount":"5.00","currencyCode":"CNY","packageId":"seed-recharge-package-cny-500","source":"console-recharge"}"#,
             ),
         ))
         .await
@@ -211,10 +216,22 @@ async fn app_recharge_router_creates_current_tenant_order_from_default_seed_pack
     let payload = response_json(response).await;
     assert_eq!("2000", payload["code"]);
     assert_eq!(true, payload["data"]["success"]);
-    assert_eq!("9.90", payload["data"]["amount"]);
-    assert_eq!(149, payload["data"]["points"]);
-    assert_eq!("alipay", payload["data"]["paymentMethod"]);
+    assert_eq!("5.00", payload["data"]["amount"]);
+    assert_eq!("CNY", payload["data"]["currencyCode"]);
+    assert_eq!(50, payload["data"]["points"]);
+    assert_eq!("wechat_pay", payload["data"]["providerCode"]);
+    assert_eq!("wechat", payload["data"]["paymentMethod"]);
+    assert_eq!("wechat_native", payload["data"]["paymentProduct"]);
     assert_eq!("pending", payload["data"]["status"]);
+    assert_eq!("scan_qr", payload["data"]["nextAction"]);
+    assert_eq!(
+        payload["data"]["cashierUrl"],
+        payload["data"]["qrCodePayload"]
+    );
+    assert_eq!(
+        serde_json::Value::Null,
+        payload["data"]["requestPaymentPayload"]
+    );
 
     let order_no = payload["data"]["orderNo"].as_str().expect("orderNo");
     let row: (String, String, String) = sqlx::query_as(
@@ -234,6 +251,38 @@ async fn app_recharge_router_creates_current_tenant_order_from_default_seed_pack
 }
 
 #[tokio::test]
+async fn app_recharge_router_serves_recharge_settings_for_current_tenant() {
+    let pool = migrated_pool().await;
+    seed_recharge_data(&pool).await;
+    let app = app_recharge_checkout_router_with_sqlite_pool(pool);
+
+    let response = app
+        .oneshot(subject_request(
+            "GET",
+            "/app/v3/api/recharges/settings",
+            Body::empty(),
+        ))
+        .await
+        .expect("settings response");
+
+    assert_eq!(StatusCode::OK, response.status());
+    let payload = response_json(response).await;
+    assert_eq!("2000", payload["code"]);
+    assert_eq!("CNY", payload["data"]["baseCurrencyCode"]);
+    assert_eq!("10", payload["data"]["basePointsPerCny"]);
+    assert_eq!("1", payload["data"]["currencyToCnyRates"]["CNY"]);
+    assert_eq!("7", payload["data"]["currencyToCnyRates"]["USD"]);
+    assert_eq!(
+        50,
+        payload["data"]["previewExamples"]["CNY"]["5"]["grantAmount"]
+    );
+    assert_eq!(
+        350,
+        payload["data"]["previewExamples"]["USD"]["5"]["grantAmount"]
+    );
+}
+
+#[tokio::test]
 async fn app_recharge_router_creates_recharge_order_and_checkout_reads_status() {
     let pool = migrated_pool().await;
     seed_recharge_data(&pool).await;
@@ -244,7 +293,7 @@ async fn app_recharge_router_creates_recharge_order_and_checkout_reads_status() 
         .oneshot(subject_request(
             "POST",
             "/app/v3/api/recharges/orders",
-            Body::from(r#"{"amount":"10.00","method":"wechat"}"#),
+            Body::from(r#"{"amount":"10.00","currencyCode":"CNY","packageId":"pack-owner-10"}"#),
         ))
         .await
         .expect("recharge response");
@@ -254,13 +303,27 @@ async fn app_recharge_router_creates_recharge_order_and_checkout_reads_status() 
     assert_eq!("2000", payload["code"]);
     assert_eq!(true, payload["data"]["success"]);
     assert_eq!("10.00", payload["data"]["amount"]);
+    assert_eq!("CNY", payload["data"]["currencyCode"]);
     assert_eq!(125, payload["data"]["points"]);
+    assert_eq!("wechat_pay", payload["data"]["providerCode"]);
     assert_eq!("wechat", payload["data"]["paymentMethod"]);
+    assert_eq!("wechat_native", payload["data"]["paymentProduct"]);
     assert_eq!("pending", payload["data"]["status"]);
+    assert_eq!("scan_qr", payload["data"]["nextAction"]);
     let order_no = payload["data"]["orderNo"]
         .as_str()
         .expect("orderNo")
         .to_owned();
+    let expected_cashier_url = format!(
+        "https://im.sdkwork.com/cashier?scene=recharge&orderId={order_no}&outTradeNo={}",
+        payload["data"]["outTradeNo"].as_str().unwrap_or_default()
+    );
+    assert_eq!(expected_cashier_url, payload["data"]["cashierUrl"]);
+    assert_eq!(expected_cashier_url, payload["data"]["qrCodePayload"]);
+    assert_eq!(
+        serde_json::Value::Null,
+        payload["data"]["requestPaymentPayload"]
+    );
 
     let response = app
         .oneshot(subject_request(
@@ -276,11 +339,29 @@ async fn app_recharge_router_creates_recharge_order_and_checkout_reads_status() 
     assert_eq!("2000", payload["code"]);
     assert_eq!(order_no, payload["data"]["orderNo"]);
     assert_eq!("10.00", payload["data"]["amount"]);
+    assert_eq!("CNY", payload["data"]["currencyCode"]);
     assert_eq!(125, payload["data"]["points"]);
+    assert_eq!("wechat_pay", payload["data"]["providerCode"]);
     assert_eq!("wechat", payload["data"]["paymentMethod"]);
+    assert_eq!("wechat_native", payload["data"]["paymentProduct"]);
     assert_eq!("pending", payload["data"]["status"]);
     assert_eq!("pending", payload["data"]["paymentStatus"]);
-    assert_eq!("awaitPayment", payload["data"]["nextAction"]);
+    assert_eq!("scan_qr", payload["data"]["nextAction"]);
+    assert_eq!(
+        format!(
+            "https://im.sdkwork.com/cashier?scene=recharge&orderId={order_no}&outTradeNo={}",
+            payload["data"]["outTradeNo"].as_str().expect("outTradeNo")
+        ),
+        payload["data"]["qrCodePayload"]
+    );
+    assert_eq!(
+        payload["data"]["cashierUrl"],
+        payload["data"]["qrCodePayload"]
+    );
+    assert_eq!(
+        serde_json::Value::Null,
+        payload["data"]["requestPaymentPayload"]
+    );
 }
 
 #[tokio::test]
@@ -295,7 +376,7 @@ async fn app_recharge_router_does_not_use_frontend_request_id_as_business_reques
             "POST",
             "/app/v3/api/recharges/orders",
             "recharge-idem-header-only",
-            Body::from(r#"{"amount":"10.00","method":"wechat"}"#),
+            Body::from(r#"{"amount":"10.00","currencyCode":"CNY","packageId":"pack-owner-10"}"#),
         ))
         .await
         .expect("recharge response");
@@ -322,7 +403,7 @@ async fn app_recharge_router_does_not_use_frontend_request_id_as_business_reques
 }
 
 #[tokio::test]
-async fn app_recharge_router_accepts_standard_command_metadata_payload() {
+async fn app_recharge_router_accepts_standard_top_level_payload() {
     let pool = migrated_pool().await;
     seed_recharge_data(&pool).await;
     let app = app_recharge_checkout_router_with_sqlite_pool(pool);
@@ -332,7 +413,7 @@ async fn app_recharge_router_accepts_standard_command_metadata_payload() {
             "POST",
             "/app/v3/api/recharges/orders",
             Body::from(
-                r#"{"clientRequestNo":"console-recharge-1","metadata":{"amount":"10.00","paymentMethod":"wechat","packageId":"pack-owner-10","source":"console-recharge"}}"#,
+                r#"{"clientRequestNo":"console-recharge-1","amount":"10.00","currencyCode":"CNY","packageId":"pack-owner-10","source":"console-recharge"}"#,
             ),
         ))
         .await
@@ -343,16 +424,20 @@ async fn app_recharge_router_accepts_standard_command_metadata_payload() {
     assert_eq!("2000", payload["code"]);
     assert_eq!(true, payload["data"]["success"]);
     assert_eq!("10.00", payload["data"]["amount"]);
+    assert_eq!("CNY", payload["data"]["currencyCode"]);
     assert_eq!(125, payload["data"]["points"]);
     assert_eq!("wechat", payload["data"]["paymentMethod"]);
 }
 
 #[tokio::test]
-async fn app_recharge_router_requires_authenticated_runtime_context() {
+async fn app_recharge_router_allows_public_recharge_reads_but_still_requires_auth_for_order_create()
+{
     let pool = migrated_pool().await;
+    seed_recharge_data(&pool).await;
     let app = app_recharge_checkout_router_with_sqlite_pool(pool);
 
-    let response = app
+    let packages_response = app
+        .clone()
         .oneshot(
             Request::builder()
                 .uri("/app/v3/api/recharges/packages")
@@ -360,10 +445,38 @@ async fn app_recharge_router_requires_authenticated_runtime_context() {
                 .expect("request"),
         )
         .await
+        .expect("packages response");
+    assert_eq!(StatusCode::OK, packages_response.status());
+
+    let settings_response = app
+        .clone()
+        .oneshot(
+            Request::builder()
+                .uri("/app/v3/api/recharges/settings")
+                .body(Body::empty())
+                .expect("request"),
+        )
+        .await
+        .expect("settings response");
+    assert_eq!(StatusCode::OK, settings_response.status());
+
+    let create_response = app
+        .oneshot(
+            Request::builder()
+                .method("POST")
+                .uri("/app/v3/api/recharges/orders")
+                .header("content-type", "application/json")
+                .header("Idempotency-Key", "public-recharge-idem")
+                .body(Body::from(
+                    r#"{"amount":"10.00","currencyCode":"CNY","packageId":"pack-owner-10"}"#,
+                ))
+                .expect("request"),
+        )
+        .await
         .expect("response");
 
-    assert_eq!(StatusCode::UNAUTHORIZED, response.status());
-    let payload = response_json(response).await;
+    assert_eq!(StatusCode::UNAUTHORIZED, create_response.status());
+    let payload = response_json(create_response).await;
     assert_eq!("4010", payload["code"]);
 }
 

@@ -80,7 +80,7 @@ export function MembershipSelectField<TValue extends string>({
       <select
         value={value}
         onChange={(event) => onChange(event.target.value as TValue | '')}
-        className="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm dark:border-white/20 dark:bg-white/5 dark:text-white"
+        className="w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 dark:border-white/20 dark:bg-white/5 dark:text-white"
       >
         {placeholder ? <option value="">{placeholder}</option> : null}
         {options.map((option) => (

@@ -4,7 +4,7 @@ import { ChevronRight, ChevronDown, Play } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { ApiPlayground } from './ApiPlayground';
 import { CopyButton, JsonSyntaxHighlight } from 'sdkwork-claw-router-commons';
-import { API_BASE_URL, resolveClawRouterRuntimeBoolean } from 'sdkwork-claw-router-commons/runtime';
+import { resolveClawRouterRuntimeBoolean } from 'sdkwork-claw-router-commons/runtime';
 import {
   buildStaticCodeSnippet,
   CODEGEN_LANGUAGES,
@@ -21,6 +21,7 @@ const localToolApiEnabled = resolveClawRouterRuntimeBoolean('VITE_TOOL_API_ENABL
 
 interface ApiEndpointProps {
   endpoint: ApiReferenceEndpoint;
+  requestBaseUrl: string;
 }
 
 const ParameterRow: React.FC<{ param: ApiParameter, depth?: number, isResponse?: boolean, isLast?: boolean }> = ({ param, depth = 0, isResponse = false, isLast = false }) => {
@@ -175,7 +176,7 @@ function ParameterTable({ parameters, isResponse = false }: { parameters: ApiPar
   );
 }
 
-export function ApiEndpointView({ endpoint }: ApiEndpointProps) {
+export function ApiEndpointView({ endpoint, requestBaseUrl }: ApiEndpointProps) {
   const { t } = useTranslation();
   const responseProperties = endpoint.responseProperties ?? [];
   const hasResponseDocumentation = Boolean(
@@ -190,7 +191,10 @@ export function ApiEndpointView({ endpoint }: ApiEndpointProps) {
   const [selectedLang, setSelectedLang] = useState<CodegenLanguage>('typescript');
   const [selectedLib, setSelectedLib] = useState<string>('axios');
   const [generatedCode, setGeneratedCode] = useState(endpoint.curl);
-  const requestUrl = useMemo(() => joinRequestUrl(API_BASE_URL, endpoint.path), [endpoint.path]);
+  const requestUrl = useMemo(
+    () => joinRequestUrl(requestBaseUrl, endpoint.path),
+    [endpoint.path, requestBaseUrl],
+  );
 
   const [showPlayground, setShowPlayground] = useState(false);
 
@@ -226,7 +230,7 @@ export function ApiEndpointView({ endpoint }: ApiEndpointProps) {
       method: endpoint.method.toLowerCase(),
       operation: endpoint.openApiOperation || {},
       pathItem: endpoint.openApiPathItem || {},
-      baseUrl: API_BASE_URL,
+      baseUrl: requestBaseUrl,
       language: selectedLang,
       library: selectedLib,
       openAPISpec: endpoint.openApiSpec || {},
@@ -349,6 +353,7 @@ export function ApiEndpointView({ endpoint }: ApiEndpointProps) {
             >
               <ApiPlayground
                 endpoint={endpoint}
+                requestBaseUrl={requestBaseUrl}
                 onClose={() => setShowPlayground(false)}
               />
             </motion.div>

@@ -3,11 +3,11 @@ use axum::extract::State;
 use axum::http::{HeaderMap, Request, StatusCode};
 use axum::routing::post;
 use axum::{Json, Router};
-use sdkwork_claw_config::{ProviderRelayConfig, ProviderSecretMapConfig};
+use sdkwork_claw_config::{ProviderRelayConfig, ProviderSecretMapConfig, StartupInstallMode};
 use sdkwork_claw_product::application::UsageSettlementWorkerConfig;
 use sdkwork_claw_product::infrastructure::sql::sqlite::SqlitePricingCatalogLoader;
 use sdkwork_claw_product::ports::PricingCatalog;
-use sdkwork_claw_test_support::seeded_sqlite_catalog;
+use sdkwork_claw_test_support::{seeded_sqlite_catalog, SeededSqliteCatalog};
 use serde_json::json;
 use sqlx::{Row, SqlitePool};
 use std::sync::{Arc, Mutex};
@@ -35,16 +35,48 @@ fn assert_server_generated_request_id(actual: &str, client_request_id: &str) {
     );
 }
 
+async fn set_openrouter_test_base_url(pool: &SqlitePool, base_url: &str) {
+    sqlx::query("UPDATE ai_channel SET base_url = ? WHERE id = 3001")
+        .bind(base_url)
+        .execute(pool)
+        .await
+        .unwrap();
+    sqlx::query("UPDATE ai_channel_endpoint SET base_url = ? WHERE channel_id = 3001")
+        .bind(base_url)
+        .execute(pool)
+        .await
+        .unwrap();
+}
+
+async fn router_with_seeded_sqlite_catalog_provider_configs(
+    catalog: &SeededSqliteCatalog,
+    provider_relay_config: Option<ProviderRelayConfig>,
+    provider_secret_map_config: Option<ProviderSecretMapConfig>,
+    usage_settlement_worker_config: UsageSettlementWorkerConfig,
+) -> Router {
+    sdkwork_claw_gateway::runtime::router_with_database_api_key_provider_configs_usage_settlement_worker_config_and_startup_install_mode(
+        catalog.database_config().unwrap(),
+        Some(catalog.api_key_security_config().unwrap()),
+        provider_relay_config,
+        provider_secret_map_config,
+        usage_settlement_worker_config,
+        StartupInstallMode::Skip,
+    )
+    .await
+    .unwrap()
+}
+
 #[tokio::test]
 async fn database_config_router_loads_sqlite_catalog_for_openai_models() {
     let catalog = seeded_sqlite_catalog().await.unwrap();
 
-    let router = sdkwork_claw_gateway::router_with_database_and_api_key_config(
-        catalog.database_config().unwrap(),
-        Some(catalog.api_key_security_config().unwrap()),
+    let router = router_with_seeded_sqlite_catalog_provider_configs(
+        &catalog,
+        None,
+        None,
+        UsageSettlementWorkerConfig::disabled(),
     )
-    .await
-    .unwrap();
+    .await;
 
     let health = router
         .clone()
@@ -98,6 +130,33 @@ async fn database_config_router_loads_sqlite_catalog_for_openai_models() {
     assert_eq!("openai", openai_mini["owned_by"]);
 }
 
+#[tokio::test]
+async fn database_config_router_seeded_catalog_supports_skip_startup_install_mode() {
+    let catalog = seeded_sqlite_catalog().await.unwrap();
+
+    let router = router_with_seeded_sqlite_catalog_provider_configs(
+        &catalog,
+        None,
+        None,
+        UsageSettlementWorkerConfig::disabled(),
+    )
+    .await;
+
+    let response = router
+        .oneshot(
+            Request::builder()
+                .method("GET")
+                .uri("/v1/models")
+                .header("authorization", catalog.gateway_authorization_header())
+                .body(Body::empty())
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+
+    assert_eq!(StatusCode::OK, response.status());
+}
+
 #[derive(Debug, Default)]
 struct CapturedProviderRequest {
     authorization: Option<String>,
@@ -121,9 +180,8 @@ async fn database_config_router_uses_provider_relay_config_for_chat_completions(
         axum::serve(listener, provider).await.unwrap();
     });
 
-    let router = sdkwork_claw_gateway::router_with_database_api_key_and_provider_relay_config(
-        catalog.database_config().unwrap(),
-        Some(catalog.api_key_security_config().unwrap()),
+    let router = router_with_seeded_sqlite_catalog_provider_configs(
+        &catalog,
         Some(
             ProviderRelayConfig::from_parts(
                 format!("http://{addr}"),
@@ -131,9 +189,10 @@ async fn database_config_router_uses_provider_relay_config_for_chat_completions(
             )
             .unwrap(),
         ),
+        None,
+        UsageSettlementWorkerConfig::disabled(),
     )
-    .await
-    .unwrap();
+    .await;
 
     let response = router
         .oneshot(
@@ -188,9 +247,8 @@ async fn database_config_router_records_non_stream_chat_usage_when_provider_succ
         axum::serve(listener, provider).await.unwrap();
     });
 
-    let router = sdkwork_claw_gateway::router_with_database_api_key_and_provider_relay_config(
-        catalog.database_config().unwrap(),
-        Some(catalog.api_key_security_config().unwrap()),
+    let router = router_with_seeded_sqlite_catalog_provider_configs(
+        &catalog,
         Some(
             ProviderRelayConfig::from_parts(
                 format!("http://{addr}"),
@@ -198,9 +256,10 @@ async fn database_config_router_records_non_stream_chat_usage_when_provider_succ
             )
             .unwrap(),
         ),
+        None,
+        UsageSettlementWorkerConfig::disabled(),
     )
-    .await
-    .unwrap();
+    .await;
 
     let response = router
         .oneshot(
@@ -219,7 +278,12 @@ async fn database_config_router_records_non_stream_chat_usage_when_provider_succ
         .await
         .unwrap();
 
-    assert_eq!(StatusCode::OK, response.status());
+    let response_status = response.status();
+    let response_body = axum::body::to_bytes(response.into_body(), usize::MAX)
+        .await
+        .unwrap();
+    let response_body = String::from_utf8(response_body.to_vec()).unwrap();
+    assert_eq!(StatusCode::OK, response_status, "{response_body}");
     let read_pool = catalog.open_pool().await.unwrap();
     let trace = sqlx::query(
         r#"
@@ -317,24 +381,23 @@ async fn database_config_router_applies_database_retry_policy_without_duplicate_
 
     let catalog = seeded_sqlite_catalog().await.unwrap();
     let pool = catalog.open_pool().await.unwrap();
+    let upstream_base_url = format!("http://{addr}");
+    set_openrouter_test_base_url(&pool, &upstream_base_url).await;
     sqlx::query(
         r#"
         UPDATE ai_channel
-        SET base_url = ?,
-            retry_policy = '{"max_attempts":3,"retryable_status_codes":[503],"backoff_ms":0}'
+        SET retry_policy = '{"max_attempts":3,"retryable_status_codes":[503],"backoff_ms":0}'
         WHERE id = 3001
         "#,
     )
-    .bind(format!("http://{addr}"))
     .execute(&pool)
     .await
     .unwrap();
     pool.close().await;
 
     let secret_ref = "vault://providers/openrouter/account/main";
-    let router = sdkwork_claw_gateway::router_with_database_api_key_and_provider_configs(
-        catalog.database_config().unwrap(),
-        Some(catalog.api_key_security_config().unwrap()),
+    let router = router_with_seeded_sqlite_catalog_provider_configs(
+        &catalog,
         None,
         Some(
             ProviderSecretMapConfig::from_json(
@@ -342,9 +405,9 @@ async fn database_config_router_applies_database_retry_policy_without_duplicate_
             )
             .unwrap(),
         ),
+        UsageSettlementWorkerConfig::disabled(),
     )
-    .await
-    .unwrap();
+    .await;
 
     let response = router
         .oneshot(
@@ -492,28 +555,25 @@ async fn database_config_router_background_settlement_worker_settles_recorded_ch
         axum::serve(listener, provider).await.unwrap();
     });
 
-    let router =
-        sdkwork_claw_gateway::router_with_database_api_key_provider_configs_and_usage_settlement_worker_config(
-            catalog.database_config().unwrap(),
-            Some(catalog.api_key_security_config().unwrap()),
-            Some(
-                ProviderRelayConfig::from_parts(
-                    format!("http://{addr}"),
-                    "sk-upstream-provider-secret",
-                )
-                .unwrap(),
-            ),
-            None,
-            UsageSettlementWorkerConfig {
-                enabled: true,
-                tenant_id: 0,
-                organization_id: 0,
-                batch_size: 50,
-                interval_millis: 1_000,
-            },
-        )
-        .await
-        .unwrap();
+    let router = router_with_seeded_sqlite_catalog_provider_configs(
+        &catalog,
+        Some(
+            ProviderRelayConfig::from_parts(
+                format!("http://{addr}"),
+                "sk-upstream-provider-secret",
+            )
+            .unwrap(),
+        ),
+        None,
+        UsageSettlementWorkerConfig {
+            enabled: true,
+            tenant_id: 0,
+            organization_id: 0,
+            batch_size: 50,
+            interval_millis: 1_000,
+        },
+    )
+    .await;
 
     let response = router
         .oneshot(
@@ -532,7 +592,12 @@ async fn database_config_router_background_settlement_worker_settles_recorded_ch
         .await
         .unwrap();
 
-    assert_eq!(StatusCode::OK, response.status());
+    let response_status = response.status();
+    let response_body = axum::body::to_bytes(response.into_body(), usize::MAX)
+        .await
+        .unwrap();
+    let response_body = String::from_utf8(response_body.to_vec()).unwrap();
+    assert_eq!(StatusCode::OK, response_status, "{response_body}");
     let read_pool = catalog.open_pool().await.unwrap();
     let request_id: String =
         sqlx::query_scalar("SELECT request_id FROM ai_usage_fact WHERE trace_id = ? LIMIT 1")
@@ -577,6 +642,95 @@ async fn database_config_router_background_settlement_worker_settles_recorded_ch
 }
 
 #[tokio::test]
+async fn database_config_router_background_settlement_worker_wakes_on_new_usage_without_waiting_full_interval(
+) {
+    let catalog = seeded_sqlite_catalog().await.unwrap();
+    let pool = catalog.open_pool().await.unwrap();
+    catalog
+        .seed_usage_settlement_points_account(&pool, 701, 1000)
+        .await
+        .unwrap();
+    pool.close().await;
+
+    let captured = Arc::new(Mutex::new(Vec::new()));
+    let provider = Router::new()
+        .route(
+            "/v1/chat/completions",
+            post(capture_provider_chat_completion_billable_usage),
+        )
+        .with_state(Arc::clone(&captured));
+    let listener = tokio::net::TcpListener::bind("127.0.0.1:0").await.unwrap();
+    let addr = listener.local_addr().unwrap();
+    tokio::spawn(async move {
+        axum::serve(listener, provider).await.unwrap();
+    });
+
+    let router = router_with_seeded_sqlite_catalog_provider_configs(
+        &catalog,
+        Some(
+            ProviderRelayConfig::from_parts(
+                format!("http://{addr}"),
+                "sk-upstream-provider-secret",
+            )
+            .unwrap(),
+        ),
+        None,
+        UsageSettlementWorkerConfig {
+            enabled: true,
+            tenant_id: 0,
+            organization_id: 0,
+            batch_size: 50,
+            interval_millis: 30_000,
+        },
+    )
+    .await;
+
+    let response = router
+        .oneshot(
+            Request::builder()
+                .method("POST")
+                .uri("/v1/chat/completions")
+                .header("authorization", catalog.gateway_authorization_header())
+                .header("content-type", "application/json")
+                .header("x-request-id", "req-gateway-usage-wakeup-1")
+                .header("x-trace-id", "trace-gateway-usage-wakeup-1")
+                .body(Body::from(
+                    r#"{"model":"gpt-4o-mini","messages":[{"role":"user","content":"ping"}],"stream":false}"#,
+                ))
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+
+    assert_eq!(StatusCode::OK, response.status());
+    let read_pool = catalog.open_pool().await.unwrap();
+    let request_id: String =
+        sqlx::query_scalar("SELECT request_id FROM ai_usage_fact WHERE trace_id = ? LIMIT 1")
+            .bind("trace-gateway-usage-wakeup-1")
+            .fetch_one(&read_pool)
+            .await
+            .unwrap();
+    assert_server_generated_request_id(&request_id, "req-gateway-usage-wakeup-1");
+
+    tokio::time::timeout(
+        Duration::from_millis(750),
+        wait_for_usage_settlement_success(&read_pool, &request_id),
+    )
+    .await
+    .expect("usage settlement worker should wake on newly recorded usage");
+
+    assert_eq!(
+        990,
+        scalar_i64(
+            &read_pool,
+            "SELECT CAST(available_amount AS INTEGER) FROM commerce_account WHERE id = 'account-701'"
+        )
+        .await
+    );
+    read_pool.close().await;
+}
+
+#[tokio::test]
 async fn database_config_router_uses_provider_relay_config_for_streaming_chat_completions() {
     let catalog = seeded_sqlite_catalog().await.unwrap();
 
@@ -593,9 +747,8 @@ async fn database_config_router_uses_provider_relay_config_for_streaming_chat_co
         axum::serve(listener, provider).await.unwrap();
     });
 
-    let router = sdkwork_claw_gateway::router_with_database_api_key_and_provider_relay_config(
-        catalog.database_config().unwrap(),
-        Some(catalog.api_key_security_config().unwrap()),
+    let router = router_with_seeded_sqlite_catalog_provider_configs(
+        &catalog,
         Some(
             ProviderRelayConfig::from_parts(
                 format!("http://{addr}"),
@@ -603,9 +756,10 @@ async fn database_config_router_uses_provider_relay_config_for_streaming_chat_co
             )
             .unwrap(),
         ),
+        None,
+        UsageSettlementWorkerConfig::disabled(),
     )
-    .await
-    .unwrap();
+    .await;
 
     let response = router
         .oneshot(
@@ -719,9 +873,8 @@ async fn database_config_router_uses_provider_relay_config_for_responses() {
         axum::serve(listener, provider).await.unwrap();
     });
 
-    let router = sdkwork_claw_gateway::router_with_database_api_key_and_provider_relay_config(
-        catalog.database_config().unwrap(),
-        Some(catalog.api_key_security_config().unwrap()),
+    let router = router_with_seeded_sqlite_catalog_provider_configs(
+        &catalog,
         Some(
             ProviderRelayConfig::from_parts(
                 format!("http://{addr}"),
@@ -729,9 +882,10 @@ async fn database_config_router_uses_provider_relay_config_for_responses() {
             )
             .unwrap(),
         ),
+        None,
+        UsageSettlementWorkerConfig::disabled(),
     )
-    .await
-    .unwrap();
+    .await;
 
     let response = router
         .oneshot(
@@ -779,9 +933,8 @@ async fn database_config_router_uses_provider_relay_config_for_embeddings() {
         axum::serve(listener, provider).await.unwrap();
     });
 
-    let router = sdkwork_claw_gateway::router_with_database_api_key_and_provider_relay_config(
-        catalog.database_config().unwrap(),
-        Some(catalog.api_key_security_config().unwrap()),
+    let router = router_with_seeded_sqlite_catalog_provider_configs(
+        &catalog,
         Some(
             ProviderRelayConfig::from_parts(
                 format!("http://{addr}"),
@@ -789,9 +942,10 @@ async fn database_config_router_uses_provider_relay_config_for_embeddings() {
             )
             .unwrap(),
         ),
+        None,
+        UsageSettlementWorkerConfig::disabled(),
     )
-    .await
-    .unwrap();
+    .await;
 
     let response = router
         .oneshot(
@@ -844,17 +998,13 @@ async fn database_config_router_uses_provider_secret_map_for_route_scoped_chat_r
 
     let catalog = seeded_sqlite_catalog().await.unwrap();
     let pool = catalog.open_pool().await.unwrap();
-    sqlx::query("UPDATE ai_channel SET base_url = ? WHERE id = 3001")
-        .bind(format!("http://{addr}"))
-        .execute(&pool)
-        .await
-        .unwrap();
+    let upstream_base_url = format!("http://{addr}");
+    set_openrouter_test_base_url(&pool, &upstream_base_url).await;
     pool.close().await;
 
     let secret_ref = "vault://providers/openrouter/account/main";
-    let router = sdkwork_claw_gateway::router_with_database_api_key_and_provider_configs(
-        catalog.database_config().unwrap(),
-        Some(catalog.api_key_security_config().unwrap()),
+    let router = router_with_seeded_sqlite_catalog_provider_configs(
+        &catalog,
         None,
         Some(
             ProviderSecretMapConfig::from_json(
@@ -862,9 +1012,9 @@ async fn database_config_router_uses_provider_secret_map_for_route_scoped_chat_r
             )
             .unwrap(),
         ),
+        UsageSettlementWorkerConfig::disabled(),
     )
-    .await
-    .unwrap();
+    .await;
 
     let response = router
         .oneshot(
@@ -916,17 +1066,13 @@ async fn database_config_router_uses_provider_secret_map_for_route_scoped_stream
 
     let catalog = seeded_sqlite_catalog().await.unwrap();
     let pool = catalog.open_pool().await.unwrap();
-    sqlx::query("UPDATE ai_channel SET base_url = ? WHERE id = 3001")
-        .bind(format!("http://{addr}"))
-        .execute(&pool)
-        .await
-        .unwrap();
+    let upstream_base_url = format!("http://{addr}");
+    set_openrouter_test_base_url(&pool, &upstream_base_url).await;
     pool.close().await;
 
     let secret_ref = "vault://providers/openrouter/account/main";
-    let router = sdkwork_claw_gateway::router_with_database_api_key_and_provider_configs(
-        catalog.database_config().unwrap(),
-        Some(catalog.api_key_security_config().unwrap()),
+    let router = router_with_seeded_sqlite_catalog_provider_configs(
+        &catalog,
         None,
         Some(
             ProviderSecretMapConfig::from_json(
@@ -934,9 +1080,9 @@ async fn database_config_router_uses_provider_secret_map_for_route_scoped_stream
             )
             .unwrap(),
         ),
+        UsageSettlementWorkerConfig::disabled(),
     )
-    .await
-    .unwrap();
+    .await;
 
     let response = router
         .oneshot(
@@ -988,17 +1134,13 @@ async fn database_config_router_keeps_channel_route_after_streaming_chat_success
 
     let catalog = seeded_sqlite_catalog().await.unwrap();
     let pool = catalog.open_pool().await.unwrap();
-    sqlx::query("UPDATE ai_channel SET base_url = ? WHERE id = 3001")
-        .bind(format!("http://{addr}"))
-        .execute(&pool)
-        .await
-        .unwrap();
+    let upstream_base_url = format!("http://{addr}");
+    set_openrouter_test_base_url(&pool, &upstream_base_url).await;
     pool.close().await;
 
     let secret_ref = "vault://providers/openrouter/account/main";
-    let router = sdkwork_claw_gateway::router_with_database_api_key_and_provider_configs(
-        catalog.database_config().unwrap(),
-        Some(catalog.api_key_security_config().unwrap()),
+    let router = router_with_seeded_sqlite_catalog_provider_configs(
+        &catalog,
         None,
         Some(
             ProviderSecretMapConfig::from_json(
@@ -1006,9 +1148,9 @@ async fn database_config_router_keeps_channel_route_after_streaming_chat_success
             )
             .unwrap(),
         ),
+        UsageSettlementWorkerConfig::disabled(),
     )
-    .await
-    .unwrap();
+    .await;
 
     for request_no in 1..=2 {
         let response = router
@@ -1075,17 +1217,13 @@ async fn database_config_router_uses_provider_secret_map_for_route_scoped_respon
 
     let catalog = seeded_sqlite_catalog().await.unwrap();
     let pool = catalog.open_pool().await.unwrap();
-    sqlx::query("UPDATE ai_channel SET base_url = ? WHERE id = 3001")
-        .bind(format!("http://{addr}"))
-        .execute(&pool)
-        .await
-        .unwrap();
+    let upstream_base_url = format!("http://{addr}");
+    set_openrouter_test_base_url(&pool, &upstream_base_url).await;
     pool.close().await;
 
     let secret_ref = "vault://providers/openrouter/account/main";
-    let router = sdkwork_claw_gateway::router_with_database_api_key_and_provider_configs(
-        catalog.database_config().unwrap(),
-        Some(catalog.api_key_security_config().unwrap()),
+    let router = router_with_seeded_sqlite_catalog_provider_configs(
+        &catalog,
         None,
         Some(
             ProviderSecretMapConfig::from_json(
@@ -1093,9 +1231,9 @@ async fn database_config_router_uses_provider_secret_map_for_route_scoped_respon
             )
             .unwrap(),
         ),
+        UsageSettlementWorkerConfig::disabled(),
     )
-    .await
-    .unwrap();
+    .await;
 
     let response = router
         .oneshot(
@@ -1142,17 +1280,13 @@ async fn database_config_router_uses_provider_secret_map_for_route_scoped_embedd
 
     let catalog = seeded_sqlite_catalog().await.unwrap();
     let pool = catalog.open_pool().await.unwrap();
-    sqlx::query("UPDATE ai_channel SET base_url = ? WHERE id = 3001")
-        .bind(format!("http://{addr}"))
-        .execute(&pool)
-        .await
-        .unwrap();
+    let upstream_base_url = format!("http://{addr}");
+    set_openrouter_test_base_url(&pool, &upstream_base_url).await;
     pool.close().await;
 
     let secret_ref = "vault://providers/openrouter/account/main";
-    let router = sdkwork_claw_gateway::router_with_database_api_key_and_provider_configs(
-        catalog.database_config().unwrap(),
-        Some(catalog.api_key_security_config().unwrap()),
+    let router = router_with_seeded_sqlite_catalog_provider_configs(
+        &catalog,
         None,
         Some(
             ProviderSecretMapConfig::from_json(
@@ -1160,9 +1294,9 @@ async fn database_config_router_uses_provider_secret_map_for_route_scoped_embedd
             )
             .unwrap(),
         ),
+        UsageSettlementWorkerConfig::disabled(),
     )
-    .await
-    .unwrap();
+    .await;
 
     let response = router
         .oneshot(

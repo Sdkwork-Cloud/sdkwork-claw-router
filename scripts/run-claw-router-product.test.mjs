@@ -1,6 +1,6 @@
 ﻿import assert from 'node:assert/strict';
 import { execFile } from 'node:child_process';
-import { existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
+import { existsSync, mkdirSync, readFileSync, readdirSync, rmSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
 import { pathToFileURL } from 'node:url';
 import { promisify } from 'node:util';
@@ -27,6 +27,62 @@ const tests = [];
 
 function test(name, fn) {
   tests.push({ name, fn });
+}
+
+function createFixtureDir(name) {
+  const directory = path.join(
+    workspaceRoot,
+    'target-test-fixtures',
+    `${name}-${process.pid}-${Date.now()}-${Math.random().toString(16).slice(2)}`,
+  );
+  mkdirSync(directory, { recursive: true });
+  return directory;
+}
+
+function writeFixtureFile(rootDir, relativePath, contents = '// fixture\n') {
+  const filePath = path.join(rootDir, relativePath);
+  mkdirSync(path.dirname(filePath), { recursive: true });
+  writeFileSync(filePath, contents);
+}
+
+function listFilesRecursive(rootDir, suffix) {
+  const files = [];
+  for (const entry of readdirSync(rootDir, { withFileTypes: true })) {
+    const entryPath = path.join(rootDir, entry.name);
+    if (entry.isDirectory()) {
+      files.push(...listFilesRecursive(entryPath, suffix));
+      continue;
+    }
+    if (!suffix || entry.name.endsWith(suffix)) {
+      files.push(entryPath);
+    }
+  }
+  return files;
+}
+
+async function runGit(cwd, args) {
+  await execFileAsync('git', args, { cwd });
+}
+
+async function createRustAutoFixtureRepo() {
+  const repoDir = createFixtureDir('rust-auto-git');
+  await runGit(repoDir, ['init']);
+  await runGit(repoDir, ['checkout', '-b', 'main']);
+  await runGit(repoDir, ['config', 'user.email', 'codex@example.com']);
+  await runGit(repoDir, ['config', 'user.name', 'Codex']);
+
+  writeFixtureFile(repoDir, 'services/sdkwork-claw-product/src/api/app_runtime.rs');
+  writeFixtureFile(repoDir, 'services/sdkwork-claw-product/tests/app_runtime_api.rs');
+  writeFixtureFile(repoDir, 'services/sdkwork-claw-product/tests/postgres_app_runtime_sql_contract.rs');
+  writeFixtureFile(repoDir, 'services/sdkwork-claw-product/tests/sqlite_app_runtime_store.rs');
+  writeFixtureFile(repoDir, 'services/sdkwork-claw-product/tests/openai_compatible_http_relay.rs');
+  writeFixtureFile(repoDir, 'services/sdkwork-claw-gateway/src/edge_server.rs');
+  writeFixtureFile(repoDir, 'services/sdkwork-claw-gateway/src/runtime.rs');
+  writeFixtureFile(repoDir, 'services/sdkwork-claw-gateway/tests/edge_server.rs');
+
+  await runGit(repoDir, ['add', '.']);
+  await runGit(repoDir, ['commit', '-m', 'fixture']);
+  return repoDir;
 }
 
 test('root package exposes pnpm product entrypoints', () => {
@@ -103,6 +159,14 @@ test('root package exposes pnpm product entrypoints', () => {
   assert.equal(
     rootPackage.scripts['verify:fast'],
     'node scripts/verify-claw-router-product.mjs --fast',
+  );
+  assert.equal(
+    rootPackage.scripts['test:rust:auto'],
+    'node scripts/run-claw-router-rust-tests.mjs auto',
+  );
+  assert.equal(
+    rootPackage.scripts['test:rust:smoke'],
+    'node scripts/run-claw-router-rust-tests.mjs smoke',
   );
   assert.equal(
     rootPackage.scripts['test:rust:quick'],
@@ -198,6 +262,32 @@ test('root package exposes pnpm product entrypoints', () => {
   );
 });
 
+test('product sqlite integration tests consume a shared test-support crate instead of path-including installed sqlite helpers', () => {
+  const productCargoToml = readFileSync(
+    path.join(workspaceRoot, 'services', 'sdkwork-claw-product', 'Cargo.toml'),
+    'utf8',
+  );
+  assert.match(
+    productCargoToml,
+    /sdkwork-claw-product-test-support = \{ path = "\.\.\/\.\.\/crates\/sdkwork-claw-product-test-support" \}/u,
+  );
+
+  const rustTestFiles = listFilesRecursive(
+    path.join(workspaceRoot, 'services', 'sdkwork-claw-product', 'tests'),
+    '.rs',
+  );
+  const inlineInstalledSqliteUsers = rustTestFiles.filter((filePath) => {
+    const source = readFileSync(filePath, 'utf8');
+    return source.includes('#[path = "common/installed_sqlite.rs"]')
+      || source.includes('mod installed_sqlite_common;')
+      || source.includes('use installed_sqlite_common::');
+  });
+  assert.deepEqual(
+    inlineInstalledSqliteUsers.map((filePath) => path.relative(workspaceRoot, filePath).replaceAll('\\', '/')),
+    [],
+  );
+});
+
 test('rust test runner exposes isolated daily-maintenance profiles', async () => {
   const module = await import(
     pathToFileURL(path.join(workspaceRoot, 'scripts', 'run-claw-router-rust-tests.mjs')).href
@@ -212,7 +302,29 @@ test('rust test runner exposes isolated daily-maintenance profiles', async () =>
   assert.deepEqual(quick.steps[0].args.slice(0, 2), ['fmt', '-p']);
   assert.equal(quick.steps[0].env.CARGO_TARGET_DIR, 'target-rust-tests\\daily');
   assert.equal(quick.steps[0].env.SDKWORK_CLAW_HTTP_OPENAPI_BUILD_MODE, 'copy');
+  assert.equal('CARGO_BUILD_JOBS' in quick.steps[0].env, false);
   assert.equal(quick.steps.some((step) => step.args.includes('sdkwork-claw-config')), true);
+
+  const inheritedSingleJob = module.buildRustTestPlan(module.parseArgs(['gateway']), {
+    env: { CARGO_BUILD_JOBS: '1' },
+    platform: 'linux',
+  });
+  assert.equal('CARGO_BUILD_JOBS' in inheritedSingleJob.steps[0].env, false);
+
+  const smoke = module.buildRustTestPlan(module.parseArgs(['smoke']), {
+    env: {},
+    platform: 'linux',
+  });
+  assert.equal(smoke.profile, 'smoke');
+  assert.equal(smoke.steps.length, 2);
+  assert.equal(smoke.steps[0].args.includes('sdkwork-claw-test-support'), true);
+  assert.equal(smoke.steps[1].args.includes('sqlite_product_model_route'), true);
+
+  const explicitBuildJobs = module.buildRustTestPlan(module.parseArgs(['gateway', '--build-jobs', '6']), {
+    env: { CARGO_BUILD_JOBS: '1' },
+    platform: 'linux',
+  });
+  assert.equal(explicitBuildJobs.steps[0].env.CARGO_BUILD_JOBS, '6');
 
   const adminApi = module.buildRustTestPlan(module.parseArgs(['admin-api', '--test-threads', '4']), {
     env: {},
@@ -279,6 +391,380 @@ test('rust test runner exposes isolated daily-maintenance profiles', async () =>
     '-p',
     'sdkwork-claw-installer',
   ]);
+
+  const full = module.buildRustTestPlan(module.parseArgs(['full', '--test-threads', '1']), {
+    env: {},
+    platform: 'linux',
+  });
+  assert.equal(full.profile, 'full');
+  assert.equal(full.targetDir, 'target-rust-tests/full');
+  assert.ok(full.steps.length > 1);
+  assert.deepEqual(full.steps[0].args.slice(0, 2), ['test', '--workspace']);
+  assert.equal(full.steps[0].args.includes('--exclude'), true);
+  assert.equal(full.steps.some((step) => step.args.join(' ') === 'test --workspace -- --test-threads 1'), false);
+  assert.equal(
+    full.steps.some((step) =>
+      step.args.includes('-p')
+      && step.args.includes('sdkwork-claw-product')
+      && step.args.includes('--all-targets')
+    ),
+    true,
+  );
+  assert.equal(
+    full.steps.every((step) => step.args.slice(-3).join(' ') === '-- --test-threads 1'),
+    true,
+  );
+
+  const autoDefault = module.buildRustTestPlan(module.parseArgs(['auto']), {
+    env: {},
+    platform: 'linux',
+    cwd: path.join(workspaceRoot, 'target-no-git'),
+  });
+  assert.equal(autoDefault.profile, 'auto');
+  assert.equal(autoDefault.resolvedProfile, 'quick');
+  assert.equal(autoDefault.steps[0].label, 'rust format for frequently touched packages');
+
+  const autoExactTestTarget = module.buildRustTestPlan(
+    module.parseArgs([
+      'auto',
+      '--changed-file',
+      'services/sdkwork-claw-product/tests/openai_compatible_http_relay.rs',
+    ]),
+    {
+      env: {},
+      platform: 'linux',
+    },
+  );
+  assert.equal(autoExactTestTarget.profile, 'auto');
+  assert.equal(autoExactTestTarget.resolvedProfile, 'auto-targets');
+  assert.equal(autoExactTestTarget.steps.length, 1);
+  assert.deepEqual(autoExactTestTarget.steps[0].args, [
+    'test',
+    '-p',
+    'sdkwork-claw-product',
+    '--test',
+    'openai_compatible_http_relay',
+  ]);
+
+  const autoGatewayServiceChange = module.buildRustTestPlan(
+    module.parseArgs([
+      'auto',
+      '--changed-file',
+      'services/sdkwork-claw-gateway/src/edge_server.rs',
+    ]),
+    {
+      env: {},
+      platform: 'linux',
+      cwd: workspaceRoot,
+    },
+  );
+  assert.equal(autoGatewayServiceChange.resolvedProfile, 'auto-targets');
+  assert.deepEqual(autoGatewayServiceChange.steps[0].args, [
+    'test',
+    '-p',
+    'sdkwork-claw-gateway',
+    '--test',
+    'edge_server',
+  ]);
+
+  const autoProductServiceChange = module.buildRustTestPlan(
+    module.parseArgs([
+      'auto',
+      '--changed-file',
+      'services/sdkwork-claw-product/src/api/app_runtime.rs',
+    ]),
+    {
+      env: {},
+      platform: 'linux',
+      cwd: workspaceRoot,
+    },
+  );
+  assert.equal(autoProductServiceChange.resolvedProfile, 'auto-targets');
+  assert.deepEqual(autoProductServiceChange.steps[0].args, [
+    'test',
+    '-p',
+    'sdkwork-claw-product',
+    '--test',
+    'app_runtime_api',
+  ]);
+
+  const autoFallbackServiceChange = module.buildRustTestPlan(
+    module.parseArgs([
+      'auto',
+      '--changed-file',
+      'services/sdkwork-claw-gateway/src/runtime.rs',
+    ]),
+    {
+      env: {},
+      platform: 'linux',
+      cwd: workspaceRoot,
+    },
+  );
+  assert.equal(autoFallbackServiceChange.resolvedProfile, 'gateway');
+
+  const autoMixedServiceChange = module.buildRustTestPlan(
+    module.parseArgs([
+      'auto',
+      '--changed-file',
+      'services/sdkwork-claw-gateway/src/edge_server.rs',
+      '--changed-file',
+      'services/sdkwork-claw-product/src/api/app_runtime.rs',
+    ]),
+    {
+      env: {},
+      platform: 'linux',
+      cwd: workspaceRoot,
+    },
+  );
+  assert.equal(autoMixedServiceChange.resolvedProfile, 'auto-targets');
+  assert.equal(autoMixedServiceChange.steps.some((step) => step.args.includes('edge_server')), true);
+  assert.equal(autoMixedServiceChange.steps.some((step) => step.args.includes('app_runtime_api')), true);
+  assert.equal(
+    autoMixedServiceChange.steps.some((step) => step.args.includes('postgres_app_runtime_sql_contract')),
+    true,
+  );
+  assert.equal(autoMixedServiceChange.steps.some((step) => step.args.includes('sqlite_app_runtime_store')), true);
+
+  const autoProductInstalledSqliteHelperChange = module.buildRustTestPlan(
+    module.parseArgs([
+      'auto',
+      '--changed-file',
+      'crates/sdkwork-claw-product-test-support/src/lib.rs',
+    ]),
+    {
+      env: {},
+      platform: 'linux',
+      cwd: workspaceRoot,
+    },
+  );
+  assert.equal(autoProductInstalledSqliteHelperChange.resolvedProfile, 'auto-targets');
+  assert.equal(
+    autoProductInstalledSqliteHelperChange.steps.some((step) => step.args.includes('sqlite_admin_access_group_store')),
+    true,
+  );
+  assert.equal(
+    autoProductInstalledSqliteHelperChange.steps.some((step) => step.args.includes('sqlite_admin_channel_store')),
+    true,
+  );
+  assert.equal(
+    autoProductInstalledSqliteHelperChange.steps.some((step) => step.args.includes('app_runtime_api')),
+    false,
+  );
+
+  const autoProductSchemaFixtureChange = module.buildRustTestPlan(
+    module.parseArgs([
+      'auto',
+      '--changed-file',
+      'crates/sdkwork-claw-product-test-support/src/schema.rs',
+    ]),
+    {
+      env: {},
+      platform: 'linux',
+      cwd: workspaceRoot,
+    },
+  );
+  assert.equal(autoProductSchemaFixtureChange.resolvedProfile, 'auto-targets');
+  assert.equal(
+    autoProductSchemaFixtureChange.steps.some((step) => step.args.includes('sqlite_admin_access_group_store')),
+    true,
+  );
+  assert.equal(
+    autoProductSchemaFixtureChange.steps.some((step) => step.args.includes('app_course_api')),
+    true,
+  );
+  assert.equal(
+    autoProductSchemaFixtureChange.steps.some((step) => step.args.includes('sqlite_app_store_installed_seed')),
+    false,
+  );
+  assert.equal(
+    autoProductSchemaFixtureChange.steps.some((step) => step.args.includes('database_installer')),
+    false,
+  );
+
+  const autoProductRepairFixtureChange = module.buildRustTestPlan(
+    module.parseArgs([
+      'auto',
+      '--changed-file',
+      'crates/sdkwork-claw-product-test-support/src/repair.rs',
+    ]),
+    {
+      env: {},
+      platform: 'linux',
+      cwd: workspaceRoot,
+    },
+  );
+  assert.equal(autoProductRepairFixtureChange.resolvedProfile, 'auto-targets');
+  assert.equal(
+    autoProductRepairFixtureChange.steps.some((step) => step.args.includes('database_installer')),
+    true,
+  );
+  assert.equal(
+    autoProductRepairFixtureChange.steps.some((step) => step.args.includes('sqlite_app_store_installed_seed')),
+    true,
+  );
+  assert.equal(
+    autoProductRepairFixtureChange.steps.some((step) => step.args.includes('app_course_api')),
+    true,
+  );
+  assert.equal(
+    autoProductRepairFixtureChange.steps.some((step) => step.args.includes('sqlite_admin_access_group_store')),
+    false,
+  );
+
+  const autoProductInstalledFixtureChange = module.buildRustTestPlan(
+    module.parseArgs([
+      'auto',
+      '--changed-file',
+      'crates/sdkwork-claw-product-test-support/src/installed.rs',
+    ]),
+    {
+      env: {},
+      platform: 'linux',
+      cwd: workspaceRoot,
+    },
+  );
+  assert.equal(autoProductInstalledFixtureChange.resolvedProfile, 'auto-targets');
+  assert.equal(
+    autoProductInstalledFixtureChange.steps.some((step) => step.args.includes('database_installer')),
+    false,
+  );
+  assert.equal(
+    autoProductInstalledFixtureChange.steps.some((step) => step.args.includes('database_installer_installed')),
+    true,
+  );
+  assert.equal(
+    autoProductInstalledFixtureChange.steps.some((step) => step.args.includes('app_course_api')),
+    false,
+  );
+  assert.equal(
+    autoProductInstalledFixtureChange.steps.some((step) => step.args.includes('sqlite_admin_access_group_store')),
+    false,
+  );
+
+  const autoProductCommonModuleChange = module.buildRustTestPlan(
+    module.parseArgs([
+      'auto',
+      '--changed-file',
+      'services/sdkwork-claw-product/tests/common/mod.rs',
+    ]),
+    {
+      env: {},
+      platform: 'linux',
+      cwd: workspaceRoot,
+    },
+  );
+  assert.equal(autoProductCommonModuleChange.resolvedProfile, 'auto-targets');
+  assert.equal(
+    autoProductCommonModuleChange.steps.some((step) => step.args.includes('admin_access_group_api')),
+    true,
+  );
+  assert.equal(
+    autoProductCommonModuleChange.steps.some((step) => step.args.includes('app_runtime_api')),
+    true,
+  );
+  assert.equal(
+    autoProductCommonModuleChange.steps.some((step) => step.args.includes('sqlite_admin_access_group_store')),
+    false,
+  );
+
+  assert.deepEqual(module.parseArgs(['auto', '--staged']), {
+    profile: 'auto',
+    changedFiles: [],
+    staged: true,
+    baseRef: null,
+    targetDir: null,
+    buildJobs: null,
+    testThreads: null,
+    dryRun: false,
+    help: false,
+  });
+  assert.deepEqual(module.parseArgs(['auto', '--base-ref', 'main']), {
+    profile: 'auto',
+    changedFiles: [],
+    staged: false,
+    baseRef: 'main',
+    targetDir: null,
+    buildJobs: null,
+    testThreads: null,
+    dryRun: false,
+    help: false,
+  });
+  assert.throws(
+    () => module.parseArgs(['auto', '--staged', '--base-ref', 'main']),
+    /Choose only one auto change selector/u,
+  );
+
+  const stagedFixtureRepo = await createRustAutoFixtureRepo();
+  try {
+    writeFixtureFile(
+      stagedFixtureRepo,
+      'services/sdkwork-claw-product/tests/openai_compatible_http_relay.rs',
+      '// staged relay change\n',
+    );
+    await runGit(stagedFixtureRepo, ['add', 'services/sdkwork-claw-product/tests/openai_compatible_http_relay.rs']);
+    writeFixtureFile(
+      stagedFixtureRepo,
+      'services/sdkwork-claw-gateway/src/runtime.rs',
+      '// unstaged runtime noise\n',
+    );
+
+    const autoStagedSelection = module.buildRustTestPlan(
+      module.parseArgs(['auto', '--staged']),
+      {
+        env: {},
+        platform: 'linux',
+        cwd: stagedFixtureRepo,
+      },
+    );
+    assert.equal(autoStagedSelection.resolvedProfile, 'auto-targets');
+    assert.equal(autoStagedSelection.steps.length, 1);
+    assert.deepEqual(autoStagedSelection.steps[0].args, [
+      'test',
+      '-p',
+      'sdkwork-claw-product',
+      '--test',
+      'openai_compatible_http_relay',
+    ]);
+  } finally {
+    rmSync(stagedFixtureRepo, { recursive: true, force: true });
+  }
+
+  const baseRefFixtureRepo = await createRustAutoFixtureRepo();
+  try {
+    await runGit(baseRefFixtureRepo, ['checkout', '-b', 'feature/edge-server']);
+    writeFixtureFile(
+      baseRefFixtureRepo,
+      'services/sdkwork-claw-gateway/src/edge_server.rs',
+      '// committed feature change\n',
+    );
+    await runGit(baseRefFixtureRepo, ['add', 'services/sdkwork-claw-gateway/src/edge_server.rs']);
+    await runGit(baseRefFixtureRepo, ['commit', '-m', 'feature change']);
+    writeFixtureFile(
+      baseRefFixtureRepo,
+      'services/sdkwork-claw-product/src/api/app_runtime.rs',
+      '// dirty local noise\n',
+    );
+
+    const autoBaseRefSelection = module.buildRustTestPlan(
+      module.parseArgs(['auto', '--base-ref', 'main']),
+      {
+        env: {},
+        platform: 'linux',
+        cwd: baseRefFixtureRepo,
+      },
+    );
+    assert.equal(autoBaseRefSelection.resolvedProfile, 'auto-targets');
+    assert.equal(autoBaseRefSelection.steps.length, 1);
+    assert.deepEqual(autoBaseRefSelection.steps[0].args, [
+      'test',
+      '-p',
+      'sdkwork-claw-gateway',
+      '--test',
+      'edge_server',
+    ]);
+  } finally {
+    rmSync(baseRefFixtureRepo, { recursive: true, force: true });
+  }
 });
 
 test('workspace rust formatter uses per-package cargo-fmt to avoid Windows argument limits', () => {
@@ -438,6 +924,16 @@ test('rust target measurement plan covers known slow integration surfaces', asyn
     true,
   );
   assert.equal(plan.steps[0].env.SDKWORK_CLAW_HTTP_OPENAPI_BUILD_MODE, 'copy');
+  assert.equal('CARGO_BUILD_JOBS' in plan.steps[0].env, false);
+
+  const explicitBuildJobsPlan = module.buildMeasurementPlan(
+    module.parseArgs(['--dry-run', '--build-jobs', '5']),
+    {
+      env: { CARGO_BUILD_JOBS: '1' },
+      platform: 'linux',
+    },
+  );
+  assert.equal(explicitBuildJobsPlan.steps[0].env.CARGO_BUILD_JOBS, '5');
 });
 
 test('nginx examples use the production edge upstream and full-domain filenames', () => {
@@ -852,7 +1348,7 @@ test('claw router product launcher preserves forwarded mode arguments after --',
   assert.deepEqual(parsed.extraArgs, ['--help']);
 });
 
-test('claw router workspace launch plan starts Rust services, portal, and edge Rust server', async () => {
+test('claw router workspace launch plan defaults to all-in-one Rust edge runtime', async () => {
   const module = await import(
     pathToFileURL(path.join(workspaceRoot, 'scripts', 'dev', 'start-workspace.mjs')).href
   );
@@ -864,12 +1360,10 @@ test('claw router workspace launch plan starts Rust services, portal, and edge R
   assert.equal(settings.portalBind, '127.0.0.1:3901');
   assert.equal(settings.portalDevBind, undefined);
   assert.equal(settings.databaseUrl, 'sqlite://target/dev/clawrouter.sqlite');
+  assert.equal(settings.runtimeMode, 'all-in-one');
   assert.deepEqual(plan.steps.map((step) => step.name), [
     'installer',
     'model-catalog-refresh',
-    'gateway',
-    'admin-api',
-    'app-api',
     'portal',
     'server',
   ]);
@@ -911,66 +1405,69 @@ test('claw router workspace launch plan starts Rust services, portal, and edge R
     path.join(workspaceRoot, 'data', 'sdkwork-models'),
   );
   assert.deepEqual(plan.steps[2].args, [
-    'run',
-    '-p',
-    'sdkwork-claw-gateway',
-  ]);
-  assert.equal(plan.steps[2].env.SDKWORK_CLAW_GATEWAY_BIND, '0.0.0.0:19080');
-  assert.equal(plan.steps[2].env.SDKWORK_CLAW_DEPLOYMENT_MODE, 'server');
-  assert.equal(plan.steps[2].env.SDKWORK_CLAW_DATABASE_URL, settings.databaseUrl);
-  assert.equal(plan.steps[2].env.SDKWORK_CLAW_DATABASE_MAX_CONNECTIONS, '1');
-  assert.equal(plan.steps[2].env.SDKWORK_CLAW_STARTUP_INSTALL_MODE, 'skip');
-  assert.equal(plan.steps[2].env.SDKWORK_CLAW_USAGE_SETTLEMENT_WORKER_ENABLED, 'false');
-  assert.equal(plan.steps[2].env.SDKWORK_CLAW_MODEL_RANKING_RUN_ON_STARTUP, 'false');
-  assert.equal(plan.steps[2].env.SDKWORK_CLAW_API_KEY_PEPPER.length >= 32, true);
-  assert.equal(
-    plan.steps[2].env.SDKWORK_MODELS_CATALOG_ROOT,
-    path.join(workspaceRoot, 'data', 'sdkwork-models'),
-  );
-  assert.equal(plan.steps[3].env.SDKWORK_CLAW_DATABASE_MAX_CONNECTIONS, '1');
-  assert.equal(plan.steps[3].env.SDKWORK_CLAW_STARTUP_INSTALL_MODE, 'skip');
-  assert.equal(plan.steps[4].env.SDKWORK_CLAW_DATABASE_MAX_CONNECTIONS, '1');
-  assert.equal(plan.steps[4].env.SDKWORK_CLAW_STARTUP_INSTALL_MODE, 'skip');
-  assert.equal(plan.steps[4].env.SDKWORK_CLAW_MODEL_RANKING_RUN_ON_STARTUP, 'false');
-  assert.equal(
-    plan.steps[4].env.SDKWORK_CLAW_APP_RUNTIME_GATEWAY_BASE_URL,
-    'http://127.0.0.1:19080',
-  );
-  assert.deepEqual(plan.steps[5].args, [
     '--dir',
     'apps/sdkwork-claw-router-portal',
     'browser:dev',
   ]);
-  assert.equal(plan.steps[5].env.PORT, '3901');
-  assert.equal(plan.steps[5].env.SDKWORK_CLAW_PORTAL_BIND, '127.0.0.1:3901');
-  assert.equal(plan.steps[5].env.OPENAPI_DEV_URL, 'http://127.0.0.1:19080/openapi.json');
-  assert.equal(plan.steps[5].env.PORTAL_FORWARDING_ENABLED, undefined);
-  assert.equal(plan.steps[5].env.PORTAL_FORWARD_GATEWAY_BASE_URL, undefined);
-  assert.equal(plan.steps[5].env.PORTAL_FORWARD_BACKEND_API_BASE_URL, undefined);
-  assert.equal(plan.steps[5].env.PORTAL_FORWARD_APP_API_BASE_URL, undefined);
-  assert.equal(plan.steps[5].env.PORTAL_PUBLIC_API_BASE_URL, '/v1');
-  assert.equal(plan.steps[5].env.PORTAL_PUBLIC_OPEN_API_BASE_URL, '/v1');
-  assert.equal(plan.steps[5].env.PORTAL_PUBLIC_BACKEND_API_BASE_URL, '/backend/v3/api');
-  assert.equal(plan.steps[5].env.PORTAL_PUBLIC_APP_API_BASE_URL, '/app/v3/api');
-  assert.equal(plan.steps[5].env.PORTAL_DEV_PROXY_GATEWAY_TARGET, 'http://127.0.0.1:19080');
-  assert.equal(plan.steps[5].env.PORTAL_DEV_PROXY_BACKEND_API_TARGET, 'http://127.0.0.1:18081');
-  assert.equal(plan.steps[5].env.PORTAL_DEV_PROXY_APP_API_TARGET, 'http://127.0.0.1:18082');
-  assert.deepEqual(plan.steps[6].args, [
+  assert.equal(plan.steps[2].env.PORT, '3901');
+  assert.equal(plan.steps[2].env.SDKWORK_CLAW_PORTAL_BIND, '127.0.0.1:3901');
+  assert.equal(plan.steps[2].env.OPENAPI_DEV_URL, 'http://127.0.0.1:3900/openapi.json');
+  assert.equal(plan.steps[2].env.PORTAL_FORWARDING_ENABLED, undefined);
+  assert.equal(plan.steps[2].env.PORTAL_FORWARD_GATEWAY_BASE_URL, undefined);
+  assert.equal(plan.steps[2].env.PORTAL_FORWARD_BACKEND_API_BASE_URL, undefined);
+  assert.equal(plan.steps[2].env.PORTAL_FORWARD_APP_API_BASE_URL, undefined);
+  assert.equal(plan.steps[2].env.PORTAL_PUBLIC_API_BASE_URL, '/v1');
+  assert.equal(plan.steps[2].env.PORTAL_PUBLIC_OPEN_API_BASE_URL, '/v1');
+  assert.equal(plan.steps[2].env.PORTAL_PUBLIC_BACKEND_API_BASE_URL, '/backend/v3/api');
+  assert.equal(plan.steps[2].env.PORTAL_PUBLIC_APP_API_BASE_URL, '/app/v3/api');
+  assert.equal(plan.steps[2].env.PORTAL_DEV_PROXY_GATEWAY_TARGET, 'http://127.0.0.1:3900');
+  assert.equal(plan.steps[2].env.PORTAL_DEV_PROXY_BACKEND_API_TARGET, 'http://127.0.0.1:3900');
+  assert.equal(plan.steps[2].env.PORTAL_DEV_PROXY_APP_API_TARGET, 'http://127.0.0.1:3900');
+  assert.deepEqual(plan.steps[3].args, [
     'run',
     '-p',
     'sdkwork-claw-gateway',
   ]);
-  assert.equal(plan.steps[6].env.SDKWORK_CLAW_EDGE_SERVER, '1');
-  assert.equal(plan.steps[6].env.SDKWORK_CLAW_SERVER_BIND, '0.0.0.0:3900');
-  assert.equal(plan.steps[6].env.SDKWORK_CLAW_STARTUP_INSTALL_MODE, 'skip');
-  assert.equal(plan.steps[6].env.SDKWORK_CLAW_EDGE_GATEWAY_BASE_URL, 'http://127.0.0.1:19080');
-  assert.equal(plan.steps[6].env.SDKWORK_CLAW_EDGE_BACKEND_API_BASE_URL, 'http://127.0.0.1:18081');
-  assert.equal(plan.steps[6].env.SDKWORK_CLAW_EDGE_APP_API_BASE_URL, 'http://127.0.0.1:18082');
-  assert.equal(plan.steps[6].env.SDKWORK_CLAW_EDGE_PORTAL_BASE_URL, 'http://127.0.0.1:3901');
+  assert.equal(plan.steps[3].env.SDKWORK_CLAW_EDGE_SERVER, '1');
+  assert.equal(plan.steps[3].env.SDKWORK_CLAW_ALL_IN_ONE_RUNTIME, '1');
+  assert.equal(plan.steps[3].env.SDKWORK_CLAW_SERVER_BIND, '0.0.0.0:3900');
+  assert.equal(plan.steps[3].env.SDKWORK_CLAW_STARTUP_INSTALL_MODE, 'skip');
+  assert.equal(plan.steps[3].env.SDKWORK_CLAW_EDGE_GATEWAY_BASE_URL, 'http://127.0.0.1:3900');
+  assert.equal(plan.steps[3].env.SDKWORK_CLAW_EDGE_BACKEND_API_BASE_URL, 'http://127.0.0.1:3900');
+  assert.equal(plan.steps[3].env.SDKWORK_CLAW_EDGE_APP_API_BASE_URL, 'http://127.0.0.1:3900');
+  assert.equal(plan.steps[3].env.SDKWORK_CLAW_EDGE_PORTAL_BASE_URL, 'http://127.0.0.1:3901');
+  assert.equal(plan.steps[3].env.SDKWORK_CLAW_APP_RUNTIME_GATEWAY_BASE_URL, 'http://127.0.0.1:3900');
   assert.equal(
-    plan.steps[6].env.SDKWORK_MODELS_CATALOG_ROOT,
+    plan.steps[3].env.SDKWORK_MODELS_CATALOG_ROOT,
     path.join(workspaceRoot, 'data', 'sdkwork-models'),
   );
+});
+
+test('claw router workspace launch plan preserves distributed service topology when requested', async () => {
+  const module = await import(
+    pathToFileURL(path.join(workspaceRoot, 'scripts', 'dev', 'start-workspace.mjs')).href
+  );
+
+  const settings = module.parseWorkspaceArgs(['--distributed', '--gateway-bind', '0.0.0.0:19080']);
+  const plan = module.buildWorkspaceCommandPlan(settings, { workspaceRoot });
+
+  assert.equal(settings.runtimeMode, 'distributed');
+  assert.deepEqual(plan.steps.map((step) => step.name), [
+    'installer',
+    'model-catalog-refresh',
+    'gateway',
+    'admin-api',
+    'app-api',
+    'portal',
+    'server',
+  ]);
+  assert.equal(plan.steps[2].env.SDKWORK_CLAW_GATEWAY_BIND, '0.0.0.0:19080');
+  assert.equal(plan.steps[4].env.SDKWORK_CLAW_APP_RUNTIME_GATEWAY_BASE_URL, 'http://127.0.0.1:19080');
+  assert.equal(plan.steps[5].env.PORTAL_DEV_PROXY_GATEWAY_TARGET, 'http://127.0.0.1:19080');
+  assert.equal(plan.steps[5].env.PORTAL_DEV_PROXY_BACKEND_API_TARGET, 'http://127.0.0.1:18081');
+  assert.equal(plan.steps[5].env.PORTAL_DEV_PROXY_APP_API_TARGET, 'http://127.0.0.1:18082');
+  assert.equal(plan.steps[6].env.SDKWORK_CLAW_ALL_IN_ONE_RUNTIME, '0');
+  assert.equal(plan.steps[6].env.SDKWORK_CLAW_EDGE_GATEWAY_BASE_URL, 'http://127.0.0.1:19080');
 });
 
 test('claw router workspace reports occupied service ports before startup', async () => {
@@ -985,13 +1482,13 @@ test('claw router workspace reports occupied service ports before startup', asyn
 
   assert.deepEqual(
     unavailable.map((target) => `${target.name} ${target.bind}`),
-    ['app-api 127.0.0.1:18082', 'server 0.0.0.0:3900'],
+    ['server 0.0.0.0:3900'],
   );
   await assert.rejects(
     () => module.assertWorkspaceBindsAvailable(settings, async (target) =>
       !['18082', '3900'].includes(target.port),
     ),
-    /workspace ports are already in use: app-api 127\.0\.0\.1:18082, server 0\.0\.0\.0:3900/u,
+    /workspace ports are already in use: server 0\.0\.0\.0:3900/u,
   );
 });
 
@@ -1092,9 +1589,6 @@ test('claw router workspace pins startup install ownership to installer steps', 
     assert.deepEqual(Object.fromEntries(modesByStep), {
       installer: 'ensure',
       'model-catalog-refresh': 'ensure',
-      gateway: 'skip',
-      'admin-api': 'skip',
-      'app-api': 'skip',
       server: 'skip',
     });
   } finally {
@@ -1473,6 +1967,7 @@ test('workspace access output includes portal, openapi, and api route URLs', asy
   );
 
   const settings = module.parseWorkspaceArgs([
+    '--distributed',
     '--gateway-bind',
     '0.0.0.0:19080',
     '--admin-api-bind',
@@ -1485,7 +1980,7 @@ test('workspace access output includes portal, openapi, and api route URLs', asy
   const lines = module.workspaceAccessLines(settings);
 
   assert.deepEqual(lines, [
-    '[start-workspace] Mode: server',
+    '[start-workspace] Mode: server (distributed)',
     '[start-workspace] Edge Server Access',
     '[start-workspace]   Portal: http://127.0.0.1:12900/',
     '[start-workspace]   Gateway API: http://127.0.0.1:12900/v1',
@@ -1543,6 +2038,7 @@ test('workspace access output defaults to edge server port 3900', async () => {
   assert.ok(lines.includes('[start-workspace]   Direct Portal App API OpenAPI Proxy: http://127.0.0.1:3901/app/v3/api/openapi.json'));
   assert.ok(lines.includes('[start-workspace]   Edge Server Health: http://127.0.0.1:3900/healthz'));
   assert.ok(lines.includes('[start-workspace]   Edge Server Ready: http://127.0.0.1:3900/readyz'));
+  assert.equal(lines.some((line) => line.includes('Gateway Health: http://127.0.0.1:18080')), false);
 });
 
 test('claw router product launcher desktop mode runs install-checked workspace and installs portal dependencies when requested', async () => {
@@ -1660,6 +2156,7 @@ test('production starter supports help, dry-run, and full edge access matrix', a
     help: true,
     dryRun: false,
     initConfigOnly: false,
+    distributed: false,
     deploymentMode: null,
     configFile: null,
     databaseUrl: null,
@@ -1675,6 +2172,7 @@ test('production starter supports help, dry-run, and full edge access matrix', a
     help: false,
     dryRun: true,
     initConfigOnly: false,
+    distributed: false,
     deploymentMode: null,
     configFile: null,
     databaseUrl: null,
@@ -1708,11 +2206,13 @@ test('production starter supports help, dry-run, and full edge access matrix', a
       '--external-scheme',
       'https',
       '--trust-forwarded-headers',
+      '--distributed',
     ]),
     {
       help: false,
       dryRun: true,
       initConfigOnly: false,
+      distributed: true,
       deploymentMode: 'server',
       configFile: '/etc/clawrouter/clawrouter.toml',
       databaseUrl: 'postgresql://sdkwork:secret@db.internal:5432/sdkwork_claw_router',
@@ -1768,6 +2268,7 @@ test('production starter supports help, dry-run, and full edge access matrix', a
     ]),
   );
   assert.equal(env.SDKWORK_CLAW_EDGE_SERVER, '1');
+  assert.equal(env.SDKWORK_CLAW_ALL_IN_ONE_RUNTIME, '0');
   assert.equal(env.SDKWORK_CLAW_SERVER_BIND, '0.0.0.0:12900');
   assert.equal(env.SDKWORK_CLAW_EDGE_GATEWAY_BASE_URL, 'http://gateway.internal:18080');
   assert.equal(env.SDKWORK_CLAW_EDGE_BACKEND_API_BASE_URL, 'https://admin.internal');
@@ -1834,6 +2335,28 @@ test('production starter supports help, dry-run, and full edge access matrix', a
   )));
   assert.ok(lines.includes('[start-production]   SDKWORK_CLAW_EDGE_EXTERNAL_SCHEME=https'));
   assert.ok(lines.includes('[start-production]   SDKWORK_CLAW_EDGE_TRUST_FORWARDED_HEADERS=1'));
+});
+
+test('production starter defaults to all-in-one runtime without forwarding targets', async () => {
+  const module = await import(
+    pathToFileURL(path.join(workspaceRoot, 'scripts', 'start-claw-router-production.mjs')).href
+  );
+
+  const env = module.resolveStartProductionEnv(
+    {
+      SDKWORK_CLAW_SERVER_BIND: '0.0.0.0:12900',
+    },
+    path.join(workspaceRoot, 'apps', 'sdkwork-claw-router-portal', 'dist'),
+    module.parseStartProductionArgs([]),
+  );
+  const lines = module.buildStartProductionAccessLines(env);
+
+  assert.equal(env.SDKWORK_CLAW_EDGE_SERVER, '1');
+  assert.equal(env.SDKWORK_CLAW_ALL_IN_ONE_RUNTIME, '1');
+  assert.equal(env.SDKWORK_CLAW_APP_RUNTIME_GATEWAY_BASE_URL, 'http://127.0.0.1:12900');
+  assert.ok(lines.includes('[start-production] Runtime Mode: all-in-one'));
+  assert.equal(lines.includes('[start-production] Edge Forwarding Targets'), false);
+  assert.ok(module.buildStartProductionHelpText().includes('--distributed'));
 });
 
 test('production starter resolves OS-standard runtime config locations', async () => {
@@ -4577,6 +5100,87 @@ test('verification plan treats Rust warnings as compile failures', async () => {
   assert.equal(rustCheck.env.RUSTFLAGS, '-C debuginfo=0 -D warnings');
 });
 
+test('verification plan clears inherited single-job Cargo settings by default', async () => {
+  const module = await import(
+    pathToFileURL(path.join(workspaceRoot, 'scripts', 'verify-claw-router-product.mjs')).href
+  );
+
+  const plan = module.buildVerificationPlan(
+    { skipRustTests: false, skipPythonTests: true, skipSchemaGate: true },
+    { CARGO_BUILD_JOBS: '1' },
+  );
+  const rustCheck = plan.find((step) => step.label === 'rust compile warnings gate');
+  const rustWorkspaceTests = plan.find((step) => step.label === 'rust workspace tests');
+
+  assert.equal('CARGO_BUILD_JOBS' in rustCheck.env, false);
+  assert.equal('CARGO_BUILD_JOBS' in rustWorkspaceTests.env, false);
+});
+
+test('verification plan constrains Cargo artifact size for full workspace gates', async () => {
+  const module = await import(
+    pathToFileURL(path.join(workspaceRoot, 'scripts', 'verify-claw-router-product.mjs')).href
+  );
+
+  const plan = module.buildVerificationPlan(
+    { skipRustTests: false, skipPythonTests: true, skipSchemaGate: true },
+    { CARGO_INCREMENTAL: '1', CARGO_PROFILE_TEST_DEBUG: '2' },
+  );
+  const rustCheck = plan.find((step) => step.label === 'rust compile warnings gate');
+  const rustWorkspaceTests = plan.find((step) => step.label === 'rust workspace tests');
+
+  assert.equal(rustCheck.env.CARGO_INCREMENTAL, '0');
+  assert.equal(rustWorkspaceTests.env.CARGO_INCREMENTAL, '0');
+  assert.equal(rustCheck.env.CARGO_PROFILE_DEV_DEBUG, '0');
+  assert.equal(rustWorkspaceTests.env.CARGO_PROFILE_TEST_DEBUG, '0');
+  assert.equal(rustWorkspaceTests.env.CARGO_PROFILE_TEST_INCREMENTAL, 'false');
+});
+
+test('verification plan runs full Rust tests through the scoped Rust test runner', async () => {
+  const module = await import(
+    pathToFileURL(path.join(workspaceRoot, 'scripts', 'verify-claw-router-product.mjs')).href
+  );
+
+  const plan = module.buildVerificationPlan(
+    { skipRustTests: false, skipPythonTests: true, skipSchemaGate: true },
+    {},
+  );
+  const rustWorkspaceTests = plan.find((step) => step.label === 'rust workspace tests');
+
+  assert.equal(rustWorkspaceTests.command, 'node');
+  assert.deepEqual(rustWorkspaceTests.args, [
+    'scripts/run-claw-router-rust-tests.mjs',
+    'full',
+    '--target-dir',
+    'target-verify',
+    '--test-threads',
+    '1',
+  ]);
+});
+
+test('verification plan supports explicit Cargo build job overrides', async () => {
+  const module = await import(
+    pathToFileURL(path.join(workspaceRoot, 'scripts', 'verify-claw-router-product.mjs')).href
+  );
+
+  const parsed = module.parseArgs(['--build-jobs', '6']);
+  assert.equal(parsed.buildJobs, '6');
+
+  const plan = module.buildVerificationPlan(
+    {
+      buildJobs: '6',
+      skipRustTests: false,
+      skipPythonTests: true,
+      skipSchemaGate: true,
+    },
+    { CARGO_BUILD_JOBS: '1' },
+  );
+  const rustCheck = plan.find((step) => step.label === 'rust compile warnings gate');
+  const rustWorkspaceTests = plan.find((step) => step.label === 'rust workspace tests');
+
+  assert.equal(rustCheck.env.CARGO_BUILD_JOBS, '6');
+  assert.equal(rustWorkspaceTests.env.CARGO_BUILD_JOBS, '6');
+});
+
 test('verification plan isolates cargo check and test targets from shared debug artifacts', async () => {
   const module = await import(
     pathToFileURL(path.join(workspaceRoot, 'scripts', 'verify-claw-router-product.mjs')).href
@@ -4595,11 +5199,13 @@ test('verification plan isolates cargo check and test targets from shared debug 
   const productionBuild = plan.find((step) => step.label === 'production artifact build');
   const edgeDevSmoke = plan.find((step) => step.label === 'edge dev server smoke');
   const edgeSmoke = plan.find((step) => step.label === 'portal production edge smoke');
+  const browserSmoke = plan.find((step) => step.label === 'portal production browser DOM smoke');
   const rustWorkspaceTests = plan.find((step) => step.label === 'rust workspace tests');
 
   assert.equal(rustCheck.env.CARGO_TARGET_DIR, 'target-verify');
   assert.equal(edgeDevSmoke.env.CARGO_TARGET_DIR, 'target-verify');
   assert.equal(edgeSmoke.env.CARGO_TARGET_DIR, 'target-verify');
+  assert.equal(browserSmoke.env.CARGO_TARGET_DIR, 'target-verify');
   assert.equal(rustWorkspaceTests.env.CARGO_TARGET_DIR, 'target-verify');
   assert.equal(productionBuild.env.CARGO_TARGET_DIR, undefined);
 });
@@ -4610,6 +5216,7 @@ test('verification runner handles package-manager argument separators', async ()
   );
 
   assert.deepEqual(module.parseArgs(['--', '--dry-run']), {
+    buildJobs: null,
     fast: false,
     withEdgeDevSmoke: false,
     skipEdgeDevSmoke: false,
@@ -4624,6 +5231,7 @@ test('verification runner handles package-manager argument separators', async ()
   assert.deepEqual(module.parseArgs(['--', '--skip-edge-dev-smoke']).skipEdgeDevSmoke, true);
   assert.deepEqual(module.parseArgs(['--', '--skip-contract-guardians']).skipContractGuardians, true);
   assert.deepEqual(module.parseArgs(['--fast']), {
+    buildJobs: null,
     fast: true,
     withEdgeDevSmoke: false,
     skipEdgeDevSmoke: false,
@@ -4935,7 +5543,46 @@ test('workspace cleanup plan defaults to rebuildable local artifacts only', asyn
   const deepRelativePaths = deepPlan.map((entry) => entry.relativePath);
 
   assert.ok(deepRelativePaths.includes('target'));
+  assert.ok(deepRelativePaths.includes('target-rust-tests'));
+  assert.ok(deepRelativePaths.includes('target-verify'));
+  assert.ok(deepRelativePaths.includes('target-verify2'));
+  assert.ok(deepRelativePaths.includes('target-verify-split'));
+  assert.ok(deepRelativePaths.includes('target-test-fixtures'));
+  assert.deepEqual(deepRelativePaths.slice(0, 6), [
+    'target',
+    'target-rust-tests',
+    'target-verify',
+    'target-verify2',
+    'target-verify-split',
+    'target-test-fixtures',
+  ]);
   assert.ok(deepRelativePaths.includes(path.join('apps', 'sdkwork-claw-router-portal', 'node_modules')));
+});
+
+test('workspace cleanup continues after a single artifact removal fails', async () => {
+  const module = await import(
+    pathToFileURL(path.join(workspaceRoot, 'scripts', 'clean-claw-router-workspace.mjs')).href
+  );
+
+  const attempted = [];
+  const failures = await module.removeEntries(
+    [
+      { relativePath: 'locked-artifact', absolutePath: path.join(workspaceRoot, 'locked-artifact') },
+      { relativePath: 'rebuildable-artifact', absolutePath: path.join(workspaceRoot, 'rebuildable-artifact') },
+    ],
+    {
+      removeEntry: async (entry) => {
+        attempted.push(entry.relativePath);
+        if (entry.relativePath === 'locked-artifact') {
+          throw new Error('file is locked');
+        }
+      },
+      logWarning: () => {},
+    },
+  );
+
+  assert.deepEqual(attempted, ['locked-artifact', 'rebuildable-artifact']);
+  assert.deepEqual(failures.map((failure) => failure.relativePath), ['locked-artifact']);
 });
 
 test('release preflight parser supports strict, json, dry-run, and root cleanliness options', async () => {
@@ -6400,6 +7047,10 @@ test('verification plan includes real browser DOM smoke after production HTTP sm
   assert.match(browserSmokeSource, /Chrome DevTools Protocol/);
   assert.match(browserSmokeSource, /findChromeExecutable/);
   assert.match(browserSmokeSource, /spawnRustEdgeServer/);
+  assert.match(
+    browserSmokeSource,
+    /parsePositiveIntegerEnv\("CLAWROUTER_EDGE_STARTUP_TIMEOUT_MS", 900_000\)/,
+  );
   assert.match(browserSmokeSource, /processSpawnPermissionDiagnostic/);
   assert.doesNotMatch(browserSmokeSource, /process\.env\.TOOL_API_ENABLED/);
   assert.match(browserSmokeSource, /verifyRuntimeEnvironment/);

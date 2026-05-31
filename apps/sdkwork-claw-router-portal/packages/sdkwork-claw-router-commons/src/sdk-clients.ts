@@ -6,6 +6,7 @@ import {
   getStoredAppSessionAccessToken,
   getStoredAppSessionAuthToken,
 } from './app-session-token.ts';
+import { resetClawRouterIamRuntime } from './iam-runtime.ts';
 import { buildPortalAuthLoginRedirect } from './portal-auth.ts';
 import { normalizeGeneratedSdkBaseUrl } from './sdk-base-url.ts';
 import { readClawRouterRuntimeEnv } from './utils/env.ts';
@@ -252,7 +253,7 @@ export function handleClawRouterSdkSessionAuthError(error: unknown): boolean {
 
   clearStoredAppSessionToken();
   resetClawRouterSdkClients();
-  void resetClawRouterIamRuntimeAfterSessionAuthError();
+  resetClawRouterIamRuntimeAfterSessionAuthError();
   redirectBrowserToPortalLoginAfterSessionAuthError(readBrowserWindow());
   return true;
 }
@@ -328,13 +329,8 @@ function redirectBrowserToPortalLoginAfterSessionAuthError(
   location.replace(redirectTo);
 }
 
-async function resetClawRouterIamRuntimeAfterSessionAuthError(): Promise<void> {
-  try {
-    const { resetClawRouterIamRuntime } = await import('./iam-runtime.ts');
-    resetClawRouterIamRuntime();
-  } catch {
-    // Session state and SDK clients have already been cleared; redirect can continue.
-  }
+function resetClawRouterIamRuntimeAfterSessionAuthError(): void {
+  resetClawRouterIamRuntime();
 }
 
 function normalizeBrowserLocationPathname(pathname: string | undefined): string {

@@ -204,7 +204,7 @@ const params = {
   page: 3,
   page_size: 4,
 };
-const result = await client.notification.listNotifications(params);
+const result = await client.notification.list(params);
 ```
 
 ### open_platform

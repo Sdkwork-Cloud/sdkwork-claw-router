@@ -904,6 +904,263 @@ CREATE TABLE IF NOT EXISTS commerce_payment_route_rule (
   UNIQUE (tenant_id, rule_no)
 );
 
+CREATE TABLE IF NOT EXISTS commerce_payment_provider_capability (
+  id TEXT PRIMARY KEY,
+  tenant_id TEXT NOT NULL,
+  organization_id TEXT,
+  provider_code TEXT NOT NULL,
+  provider_account_id TEXT,
+  capability_code TEXT NOT NULL,
+  method_code TEXT,
+  scene_code TEXT,
+  country_code TEXT,
+  currency_code TEXT,
+  min_amount TEXT,
+  max_amount TEXT,
+  supported_statement_types TEXT,
+  supported_webhook_events TEXT,
+  native_operation_codes TEXT,
+  status TEXT NOT NULL,
+  effective_from TEXT,
+  effective_to TEXT,
+  metadata_json TEXT,
+  created_at TEXT NOT NULL,
+  updated_at TEXT NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS commerce_payment_operation_attempt (
+  id TEXT PRIMARY KEY,
+  tenant_id TEXT NOT NULL,
+  organization_id TEXT,
+  operation_no TEXT NOT NULL,
+  provider_code TEXT NOT NULL,
+  provider_account_id TEXT,
+  channel_id TEXT,
+  operation_code TEXT NOT NULL,
+  sdkwork_resource_type TEXT NOT NULL,
+  sdkwork_resource_id TEXT NOT NULL,
+  idempotency_key TEXT NOT NULL,
+  request_digest TEXT NOT NULL,
+  response_digest TEXT,
+  native_request_id TEXT,
+  native_trade_id TEXT,
+  native_refund_id TEXT,
+  http_status INTEGER,
+  provider_error_code TEXT,
+  provider_error_message TEXT,
+  retryable TEXT,
+  status TEXT NOT NULL,
+  started_at TEXT NOT NULL,
+  completed_at TEXT,
+  created_at TEXT NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS commerce_payment_route_decision (
+  id TEXT PRIMARY KEY,
+  tenant_id TEXT NOT NULL,
+  organization_id TEXT,
+  payment_intent_id TEXT NOT NULL,
+  payment_attempt_id TEXT NOT NULL,
+  route_rule_id TEXT,
+  channel_id TEXT NOT NULL,
+  provider_code TEXT NOT NULL,
+  provider_account_id TEXT,
+  method_code TEXT NOT NULL,
+  scene_code TEXT NOT NULL,
+  country_code TEXT,
+  currency_code TEXT NOT NULL,
+  amount TEXT NOT NULL,
+  risk_level TEXT,
+  decision_reason TEXT,
+  fallback_from_channel_id TEXT,
+  created_at TEXT NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS commerce_payment_capture (
+  id TEXT PRIMARY KEY,
+  tenant_id TEXT NOT NULL,
+  organization_id TEXT,
+  capture_no TEXT NOT NULL,
+  payment_attempt_id TEXT NOT NULL,
+  provider_code TEXT NOT NULL,
+  provider_account_id TEXT,
+  native_capture_id TEXT,
+  amount TEXT NOT NULL,
+  currency_code TEXT NOT NULL,
+  final_capture INTEGER NOT NULL DEFAULT 1,
+  status TEXT NOT NULL,
+  failure_code TEXT,
+  failure_message TEXT,
+  submitted_at TEXT,
+  succeeded_at TEXT,
+  failed_at TEXT,
+  request_no TEXT NOT NULL,
+  idempotency_key TEXT NOT NULL,
+  created_at TEXT NOT NULL,
+  updated_at TEXT NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS commerce_payment_webhook_delivery (
+  id TEXT PRIMARY KEY,
+  tenant_id TEXT NOT NULL,
+  organization_id TEXT,
+  delivery_no TEXT NOT NULL,
+  provider_code TEXT NOT NULL,
+  provider_account_id TEXT,
+  event_id TEXT NOT NULL,
+  nonce TEXT NOT NULL,
+  request_timestamp INTEGER,
+  signature TEXT,
+  signature_algorithm TEXT,
+  headers_json TEXT,
+  payload_digest TEXT NOT NULL,
+  payload_ref TEXT,
+  source_ip TEXT,
+  user_agent TEXT,
+  verification_status TEXT NOT NULL,
+  delivery_status TEXT NOT NULL,
+  failure_code TEXT,
+  failure_message TEXT,
+  received_at TEXT NOT NULL,
+  verified_at TEXT,
+  normalized_event_id TEXT,
+  processed_at TEXT,
+  created_at TEXT NOT NULL,
+  updated_at TEXT NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS commerce_payment_statement (
+  id TEXT PRIMARY KEY,
+  tenant_id TEXT NOT NULL,
+  organization_id TEXT,
+  statement_no TEXT NOT NULL,
+  provider_code TEXT NOT NULL,
+  provider_account_id TEXT,
+  statement_type TEXT NOT NULL,
+  settlement_currency TEXT NOT NULL,
+  period_start TEXT NOT NULL,
+  period_end TEXT NOT NULL,
+  provider_statement_id TEXT,
+  file_ref TEXT,
+  file_digest TEXT,
+  download_status TEXT NOT NULL,
+  parse_status TEXT NOT NULL,
+  row_count INTEGER NOT NULL DEFAULT 0,
+  total_amount TEXT NOT NULL DEFAULT '0',
+  fee_amount TEXT NOT NULL DEFAULT '0',
+  net_amount TEXT NOT NULL DEFAULT '0',
+  downloaded_at TEXT,
+  parsed_at TEXT,
+  request_no TEXT NOT NULL,
+  idempotency_key TEXT NOT NULL,
+  created_at TEXT NOT NULL,
+  updated_at TEXT NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS commerce_payment_statement_item (
+  id TEXT PRIMARY KEY,
+  tenant_id TEXT NOT NULL,
+  organization_id TEXT,
+  statement_id TEXT NOT NULL,
+  provider_code TEXT NOT NULL,
+  provider_account_id TEXT,
+  row_no TEXT NOT NULL,
+  native_trade_id TEXT,
+  native_refund_id TEXT,
+  native_order_no TEXT,
+  sdkwork_out_trade_no TEXT,
+  sdkwork_out_refund_no TEXT,
+  transaction_type TEXT NOT NULL,
+  occurred_at TEXT NOT NULL,
+  settled_at TEXT,
+  gross_amount TEXT NOT NULL,
+  fee_amount TEXT NOT NULL DEFAULT '0',
+  net_amount TEXT NOT NULL,
+  currency_code TEXT NOT NULL,
+  provider_status TEXT,
+  raw_row_digest TEXT NOT NULL,
+  metadata_json TEXT,
+  created_at TEXT NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS commerce_payment_reconciliation_item (
+  id TEXT PRIMARY KEY,
+  tenant_id TEXT NOT NULL,
+  organization_id TEXT,
+  reconciliation_run_id TEXT NOT NULL,
+  statement_id TEXT,
+  statement_item_id TEXT,
+  payment_attempt_id TEXT,
+  refund_id TEXT,
+  refund_attempt_id TEXT,
+  provider_code TEXT NOT NULL,
+  difference_type TEXT NOT NULL,
+  match_status TEXT NOT NULL,
+  internal_amount TEXT,
+  provider_amount TEXT,
+  difference_amount TEXT,
+  currency_code TEXT,
+  internal_status TEXT,
+  provider_status TEXT,
+  resolution_status TEXT NOT NULL,
+  resolution_note TEXT,
+  resolved_by TEXT,
+  resolved_at TEXT,
+  created_at TEXT NOT NULL,
+  updated_at TEXT NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS commerce_payment_fee (
+  id TEXT PRIMARY KEY,
+  tenant_id TEXT NOT NULL,
+  organization_id TEXT,
+  provider_code TEXT NOT NULL,
+  provider_account_id TEXT,
+  payment_attempt_id TEXT,
+  refund_id TEXT,
+  statement_item_id TEXT,
+  fee_type TEXT NOT NULL,
+  amount TEXT NOT NULL,
+  currency_code TEXT NOT NULL,
+  occurred_at TEXT NOT NULL,
+  created_at TEXT NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS commerce_payment_dispute (
+  id TEXT PRIMARY KEY,
+  tenant_id TEXT NOT NULL,
+  organization_id TEXT,
+  dispute_no TEXT NOT NULL,
+  provider_code TEXT NOT NULL,
+  provider_account_id TEXT,
+  payment_attempt_id TEXT NOT NULL,
+  native_dispute_id TEXT NOT NULL,
+  reason_code TEXT,
+  amount TEXT NOT NULL,
+  currency_code TEXT NOT NULL,
+  status TEXT NOT NULL,
+  evidence_due_at TEXT,
+  opened_at TEXT NOT NULL,
+  closed_at TEXT,
+  created_at TEXT NOT NULL,
+  updated_at TEXT NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS commerce_payment_dispute_event (
+  id TEXT PRIMARY KEY,
+  tenant_id TEXT NOT NULL,
+  organization_id TEXT,
+  event_no TEXT NOT NULL,
+  dispute_id TEXT NOT NULL,
+  event_type TEXT NOT NULL,
+  from_status TEXT,
+  to_status TEXT NOT NULL,
+  actor_type TEXT NOT NULL,
+  actor_id TEXT,
+  payload_json TEXT,
+  created_at TEXT NOT NULL
+);
+
 CREATE TABLE IF NOT EXISTS commerce_refund (
   id TEXT PRIMARY KEY,
   tenant_id TEXT NOT NULL,
@@ -916,6 +1173,60 @@ CREATE TABLE IF NOT EXISTS commerce_refund (
   created_at TEXT NOT NULL,
   updated_at TEXT NOT NULL,
   UNIQUE (tenant_id, refund_no)
+);
+
+CREATE TABLE IF NOT EXISTS commerce_refund_item (
+  id TEXT PRIMARY KEY,
+  tenant_id TEXT NOT NULL,
+  organization_id TEXT,
+  refund_id TEXT NOT NULL,
+  order_item_id TEXT NOT NULL,
+  quantity INTEGER NOT NULL DEFAULT 1,
+  refund_amount TEXT NOT NULL,
+  tax_refund_amount TEXT NOT NULL DEFAULT '0',
+  shipping_refund_amount TEXT NOT NULL DEFAULT '0',
+  created_at TEXT NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS commerce_refund_attempt (
+  id TEXT PRIMARY KEY,
+  tenant_id TEXT NOT NULL,
+  organization_id TEXT,
+  refund_attempt_no TEXT NOT NULL,
+  refund_id TEXT NOT NULL,
+  provider_code TEXT NOT NULL,
+  provider_account_id TEXT,
+  out_refund_no TEXT NOT NULL,
+  provider_refund_id TEXT,
+  amount TEXT NOT NULL,
+  currency_code TEXT NOT NULL,
+  status TEXT NOT NULL,
+  failure_code TEXT,
+  failure_message TEXT,
+  submitted_at TEXT,
+  succeeded_at TEXT,
+  failed_at TEXT,
+  created_at TEXT NOT NULL,
+  updated_at TEXT NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS commerce_refund_event (
+  id TEXT PRIMARY KEY,
+  tenant_id TEXT NOT NULL,
+  organization_id TEXT,
+  event_no TEXT NOT NULL,
+  refund_id TEXT NOT NULL,
+  event_type TEXT NOT NULL,
+  from_status TEXT,
+  to_status TEXT NOT NULL,
+  actor_type TEXT NOT NULL,
+  actor_id TEXT,
+  reason_code TEXT,
+  message TEXT,
+  payload_json TEXT,
+  request_id TEXT,
+  idempotency_key TEXT NOT NULL,
+  created_at TEXT NOT NULL
 );
 
 CREATE TABLE IF NOT EXISTS commerce_exchange_rule (
@@ -1097,8 +1408,113 @@ CREATE INDEX IF NOT EXISTS idx_commerce_payment_channel_route
 CREATE INDEX IF NOT EXISTS idx_commerce_payment_route_rule_match
   ON commerce_payment_route_rule (tenant_id, organization_id, status, purchase_type, country_code, currency_code, client_platform, priority);
 
+CREATE UNIQUE INDEX IF NOT EXISTS uk_pay_capability_scope
+  ON commerce_payment_provider_capability (tenant_id, provider_account_id, capability_code, method_code, scene_code, country_code, currency_code);
+
+CREATE INDEX IF NOT EXISTS idx_pay_capability_lookup
+  ON commerce_payment_provider_capability (tenant_id, organization_id, provider_code, capability_code, status);
+
+CREATE UNIQUE INDEX IF NOT EXISTS uk_pay_op_attempt_no
+  ON commerce_payment_operation_attempt (tenant_id, operation_no);
+
+CREATE UNIQUE INDEX IF NOT EXISTS uk_pay_op_attempt_idem
+  ON commerce_payment_operation_attempt (tenant_id, provider_code, operation_code, idempotency_key);
+
+CREATE INDEX IF NOT EXISTS idx_pay_op_attempt_resource
+  ON commerce_payment_operation_attempt (tenant_id, sdkwork_resource_type, sdkwork_resource_id, created_at);
+
+CREATE INDEX IF NOT EXISTS idx_pay_op_attempt_native_req
+  ON commerce_payment_operation_attempt (tenant_id, provider_code, native_request_id);
+
+CREATE UNIQUE INDEX IF NOT EXISTS uk_pay_route_decision_attempt
+  ON commerce_payment_route_decision (tenant_id, payment_attempt_id);
+
+CREATE INDEX IF NOT EXISTS idx_pay_route_decision_intent
+  ON commerce_payment_route_decision (tenant_id, payment_intent_id, created_at);
+
+CREATE UNIQUE INDEX IF NOT EXISTS uk_pay_capture_no
+  ON commerce_payment_capture (tenant_id, capture_no);
+
+CREATE UNIQUE INDEX IF NOT EXISTS uk_pay_capture_native
+  ON commerce_payment_capture (tenant_id, provider_code, native_capture_id);
+
+CREATE INDEX IF NOT EXISTS idx_pay_capture_attempt_status
+  ON commerce_payment_capture (tenant_id, payment_attempt_id, status);
+
+CREATE UNIQUE INDEX IF NOT EXISTS uk_pay_webhook_delivery_event
+  ON commerce_payment_webhook_delivery (tenant_id, provider_code, event_id);
+
+CREATE UNIQUE INDEX IF NOT EXISTS uk_pay_webhook_delivery_nonce
+  ON commerce_payment_webhook_delivery (tenant_id, provider_code, nonce);
+
+CREATE INDEX IF NOT EXISTS idx_pay_webhook_delivery_status
+  ON commerce_payment_webhook_delivery (tenant_id, provider_code, delivery_status, received_at);
+
+CREATE UNIQUE INDEX IF NOT EXISTS uk_pay_statement_no
+  ON commerce_payment_statement (tenant_id, statement_no);
+
+CREATE UNIQUE INDEX IF NOT EXISTS uk_pay_statement_scope
+  ON commerce_payment_statement (tenant_id, provider_code, provider_account_id, statement_type, period_start, period_end);
+
+CREATE INDEX IF NOT EXISTS idx_pay_statement_period
+  ON commerce_payment_statement (tenant_id, provider_code, period_start, period_end);
+
+CREATE UNIQUE INDEX IF NOT EXISTS uk_pay_statement_item_row
+  ON commerce_payment_statement_item (tenant_id, statement_id, row_no);
+
+CREATE INDEX IF NOT EXISTS idx_pay_statement_item_trade
+  ON commerce_payment_statement_item (tenant_id, provider_code, native_trade_id);
+
+CREATE INDEX IF NOT EXISTS idx_pay_statement_item_out_trade
+  ON commerce_payment_statement_item (tenant_id, sdkwork_out_trade_no);
+
+CREATE INDEX IF NOT EXISTS idx_pay_recon_item_run_status
+  ON commerce_payment_reconciliation_item (tenant_id, reconciliation_run_id, match_status);
+
+CREATE INDEX IF NOT EXISTS idx_pay_recon_item_resolution
+  ON commerce_payment_reconciliation_item (tenant_id, difference_type, resolution_status);
+
+CREATE INDEX IF NOT EXISTS idx_pay_recon_item_payment
+  ON commerce_payment_reconciliation_item (tenant_id, payment_attempt_id);
+
+CREATE INDEX IF NOT EXISTS idx_pay_fee_payment
+  ON commerce_payment_fee (tenant_id, payment_attempt_id);
+
+CREATE INDEX IF NOT EXISTS idx_pay_fee_refund
+  ON commerce_payment_fee (tenant_id, refund_id);
+
+CREATE UNIQUE INDEX IF NOT EXISTS uk_pay_dispute_no
+  ON commerce_payment_dispute (tenant_id, dispute_no);
+
+CREATE UNIQUE INDEX IF NOT EXISTS uk_pay_dispute_native
+  ON commerce_payment_dispute (tenant_id, provider_code, native_dispute_id);
+
+CREATE INDEX IF NOT EXISTS idx_pay_dispute_payment_status
+  ON commerce_payment_dispute (tenant_id, payment_attempt_id, status);
+
+CREATE UNIQUE INDEX IF NOT EXISTS uk_pay_dispute_event_no
+  ON commerce_payment_dispute_event (tenant_id, event_no);
+
+CREATE INDEX IF NOT EXISTS idx_pay_dispute_event_created
+  ON commerce_payment_dispute_event (tenant_id, dispute_id, created_at);
+
 CREATE INDEX IF NOT EXISTS idx_commerce_refund_payment
   ON commerce_refund (tenant_id, payment_attempt_id);
+
+CREATE INDEX IF NOT EXISTS idx_commerce_refund_item_refund
+  ON commerce_refund_item (tenant_id, refund_id, order_item_id);
+
+CREATE UNIQUE INDEX IF NOT EXISTS uk_refund_attempt_out_no
+  ON commerce_refund_attempt (tenant_id, provider_code, out_refund_no);
+
+CREATE INDEX IF NOT EXISTS idx_refund_attempt_status
+  ON commerce_refund_attempt (tenant_id, refund_id, status);
+
+CREATE UNIQUE INDEX IF NOT EXISTS uk_refund_event_no
+  ON commerce_refund_event (tenant_id, event_no);
+
+CREATE INDEX IF NOT EXISTS idx_refund_event_created
+  ON commerce_refund_event (tenant_id, refund_id, created_at);
 
 CREATE INDEX IF NOT EXISTS idx_commerce_exchange_rule_pair_status
   ON commerce_exchange_rule (tenant_id, organization_id, source_asset_type, target_asset_type, status);

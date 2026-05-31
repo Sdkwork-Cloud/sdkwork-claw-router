@@ -58,13 +58,17 @@ export async function buildSdkReferenceSystems(
   manifest: ApiSchemaTabsDocument,
   fetchJson: (url: string) => Promise<unknown>,
 ): Promise<SdkReferenceSystemData[]> {
+  const sdkManifest: ApiSchemaTabsDocument = {
+    ...manifest,
+    tabs: manifest.tabs.filter((tab) => isSdkReferenceSystemId(tab.id)),
+  };
   const schemaUrlById = new Map(
-    manifest.tabs.map((tab) => [
+    sdkManifest.tabs.map((tab) => [
       tab.id,
       tab.defaultSchemaUrl || tab.schemaUrls[0] || defaultSchemaUrlForSystem(tab.id),
     ]),
   );
-  const systems = await buildApiReferenceSystemsFromTabs(manifest, fetchJson);
+  const systems = await buildApiReferenceSystemsFromTabs(sdkManifest, fetchJson);
   return systems
     .filter(isSdkReferenceSystemData)
     .map((system) => ({
@@ -162,7 +166,11 @@ function readBrowserOrigin(): string | undefined {
 }
 
 function isSdkReferenceSystemData(system: ApiReferenceSystemData): system is ApiReferenceSystemData & { id: SdkReferenceSystem } {
-  return system.id === 'gateway' || system.id === 'app' || system.id === 'backend';
+  return isSdkReferenceSystemId(system.id);
+}
+
+function isSdkReferenceSystemId(system: string): system is SdkReferenceSystem {
+  return system === 'gateway' || system === 'app' || system === 'backend';
 }
 
 function iconForSdkSystem(system: SdkReferenceSystem): ElementType {

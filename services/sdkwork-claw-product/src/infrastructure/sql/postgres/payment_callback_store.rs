@@ -43,6 +43,7 @@ async fn process_payment_callback(
         .begin()
         .await
         .map_err(|error| store_error("failed to begin payment callback transaction", error))?;
+    let delivery = begin_webhook_delivery(&mut tx, &command).await?;
     let webhook = begin_webhook_event(&mut tx, &command).await?;
     if webhook.duplicate {
         tx.commit().await.map_err(|error| {
@@ -66,6 +67,15 @@ async fn process_payment_callback(
     let result = process_payment_status(&mut tx, &command).await;
     match result {
         Ok(outcome) => {
+            finish_webhook_delivery(
+                &mut tx,
+                &delivery.id,
+                "SUCCESS",
+                "VERIFIED",
+                Some(&webhook.id),
+                &outcome.message,
+            )
+            .await?;
             finish_webhook_event(&mut tx, &webhook.id, "SUCCESS", &command, &outcome.message)
                 .await?;
             tx.commit().await.map_err(|error| {
@@ -75,6 +85,15 @@ async fn process_payment_callback(
         }
         Err(error) => {
             let message = error.to_string();
+            finish_webhook_delivery(
+                &mut tx,
+                &delivery.id,
+                "FAILED",
+                "VERIFIED",
+                Some(&webhook.id),
+                &message,
+            )
+            .await?;
             finish_webhook_event(&mut tx, &webhook.id, "FAILED", &command, &message).await?;
             tx.commit().await.map_err(|commit_error| {
                 store_error(
@@ -93,6 +112,123 @@ struct WebhookEvent {
     duplicate: bool,
 }
 
+#[derive(Debug, Clone)]
+struct WebhookDelivery {
+    id: String,
+}
+
+async fn begin_webhook_delivery(
+    tx: &mut Transaction<'_, Postgres>,
+    command: &PaymentCallbackCommand,
+) -> Result<WebhookDelivery, DomainError> {
+    let nonce_replay = sqlx::query(
+        r#"
+        SELECT event_id
+        FROM commerce_payment_webhook_delivery
+        WHERE tenant_id = $1
+          AND provider_code = $2
+          AND nonce = $3
+        LIMIT 1
+        "#,
+    )
+    .bind("0")
+    .bind(&command.provider_code)
+    .bind(&command.nonce)
+    .fetch_optional(&mut **tx)
+    .await
+    .map_err(|error| {
+        store_error(
+            "failed to check payment webhook delivery nonce replay",
+            error,
+        )
+    })?;
+    if let Some(row) = nonce_replay {
+        let existing_event_id = string_cell(&row, "event_id");
+        if existing_event_id != command.event_id {
+            return Err(DomainError::conflict(
+                "payment callback nonce replay detected",
+            ));
+        }
+    }
+
+    let existing = sqlx::query(
+        r#"
+        SELECT id
+        FROM commerce_payment_webhook_delivery
+        WHERE tenant_id = $1
+          AND provider_code = $2
+          AND event_id = $3
+        LIMIT 1
+        FOR UPDATE
+        "#,
+    )
+    .bind("0")
+    .bind(&command.provider_code)
+    .bind(&command.event_id)
+    .fetch_optional(&mut **tx)
+    .await
+    .map_err(|error| store_error("failed to load payment webhook delivery", error))?;
+    if let Some(row) = existing {
+        return Ok(WebhookDelivery {
+            id: string_cell(&row, "id"),
+        });
+    }
+
+    let id: String = sqlx::query_scalar(
+        r#"
+        INSERT INTO commerce_payment_webhook_delivery
+            (id, tenant_id, organization_id, delivery_no, provider_code, provider_account_id, event_id, nonce, request_timestamp, signature, signature_algorithm, headers_json, payload_digest, payload_ref, source_ip, user_agent, verification_status, delivery_status, failure_code, failure_message, received_at, verified_at, normalized_event_id, processed_at, created_at, updated_at)
+        VALUES
+            ($1, '0', NULL, $2, $3, NULL, $4, $5, $6, $7, 'HMAC_SHA256', NULL, $8, NULL, NULL, NULL, 'VERIFIED', 'RECEIVED', NULL, 'received webhook delivery', $9::timestamp AT TIME ZONE 'UTC', CURRENT_TIMESTAMP, NULL, NULL, $9::timestamp AT TIME ZONE 'UTC', $9::timestamp AT TIME ZONE 'UTC')
+        RETURNING id
+        "#,
+    )
+    .bind(&command.delivery_uuid)
+    .bind(&command.event_id)
+    .bind(&command.provider_code)
+    .bind(&command.event_id)
+    .bind(&command.nonce)
+    .bind(command.request_timestamp)
+    .bind(command.signature.as_deref())
+    .bind(&command.payload_digest)
+    .bind(&command.received_at)
+    .fetch_one(&mut **tx)
+    .await
+    .map_err(|error| store_error("failed to insert payment webhook delivery", error))?;
+    Ok(WebhookDelivery { id })
+}
+
+async fn finish_webhook_delivery(
+    tx: &mut Transaction<'_, Postgres>,
+    delivery_id: &str,
+    delivery_status: &str,
+    verification_status: &str,
+    normalized_event_id: Option<&str>,
+    message: &str,
+) -> Result<(), DomainError> {
+    sqlx::query(
+        r#"
+        UPDATE commerce_payment_webhook_delivery
+        SET delivery_status = $1,
+            verification_status = $2,
+            failure_message = $3,
+            normalized_event_id = $4,
+            processed_at = CURRENT_TIMESTAMP,
+            updated_at = CURRENT_TIMESTAMP
+        WHERE id = $5
+        "#,
+    )
+    .bind(delivery_status)
+    .bind(verification_status)
+    .bind(truncate_message(message))
+    .bind(normalized_event_id)
+    .bind(delivery_id)
+    .execute(&mut **tx)
+    .await
+    .map_err(|error| store_error("failed to finish payment webhook delivery", error))?;
+    Ok(())
+}
+
 async fn begin_webhook_event(
     tx: &mut Transaction<'_, Postgres>,
     command: &PaymentCallbackCommand,
@@ -108,7 +244,7 @@ async fn begin_webhook_event(
         "#,
     )
     .bind("0")
-    .bind(&command.provider_key)
+    .bind(&command.provider_code)
     .bind(&command.nonce)
     .fetch_optional(&mut **tx)
     .await
@@ -134,7 +270,7 @@ async fn begin_webhook_event(
         "#,
     )
     .bind("0")
-    .bind(&command.provider_key)
+    .bind(&command.provider_code)
     .bind(&command.event_id)
     .fetch_optional(&mut **tx)
     .await
@@ -183,7 +319,7 @@ async fn begin_webhook_event(
         "#,
     )
     .bind(&command.event_uuid)
-    .bind(&command.provider_key)
+    .bind(&command.provider_code)
     .bind(&command.event_id)
     .bind(&command.nonce)
     .bind(command.signature.as_deref())
@@ -345,7 +481,7 @@ async fn load_payment_for_callback(
         FOR UPDATE OF pa, o, pi
         "#,
     )
-    .bind(&command.provider_key)
+    .bind(&command.provider_code)
     .bind(&command.out_trade_no)
     .fetch_optional(&mut **tx)
     .await
@@ -353,7 +489,7 @@ async fn load_payment_for_callback(
     .ok_or_else(|| DomainError::conflict("payment callback payment was not found"))?;
 
     let provider = string_cell(&row, "provider");
-    if provider != command.provider_key {
+    if provider != command.provider_code {
         return Err(DomainError::conflict(
             "payment callback provider does not match payment provider",
         ));

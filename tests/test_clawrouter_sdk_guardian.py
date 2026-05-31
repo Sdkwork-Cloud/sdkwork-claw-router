@@ -819,7 +819,7 @@ class ClawRouterSdkGuardianTest(unittest.TestCase):
                 result.messages,
             )
 
-    def test_reports_missing_runtime_export_artifacts(self) -> None:
+    def test_accepts_standard_ignored_runtime_export_paths_without_dist_artifacts(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
             self.write_sdk(
@@ -844,21 +844,43 @@ class ClawRouterSdkGuardianTest(unittest.TestCase):
 
             result = ClawRouterSdkGuardian(root=root).run()
 
+            self.assertTrue(result.ok, "\n".join(result.messages))
+
+    def test_reports_non_standard_runtime_export_paths(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            self.write_sdk(
+                root,
+                "clawrouter-app-sdk",
+                "@sdkwork/clawrouter-app-sdk",
+                "app",
+                "SdkworkAppClient",
+                "/app/v3/api",
+            )
+            self.write_sdk(
+                root,
+                "clawrouter-backend-sdk",
+                "@sdkwork/clawrouter-backend-sdk",
+                "backend",
+                "SdkworkBackendClient",
+                "/backend/v3/api",
+            )
+            package_path = root / "sdks" / "clawrouter-app-sdk" / "clawrouter-app-sdk-typescript" / "package.json"
+            package = json.loads(package_path.read_text(encoding="utf-8"))
+            package["main"] = "./src/index.ts"
+            package["exports"]["."]["require"] = "../dist/index.cjs"
+            package_path.write_text(json.dumps(package) + "\n", encoding="utf-8")
+            self.write_portal_sdk_boundary(root)
+
+            result = ClawRouterSdkGuardian(root=root).run()
+
             self.assertFalse(result.ok)
             self.assertIn(
-                "clawrouter-app-sdk-typescript package.json main points to missing file: dist/index.cjs",
+                "clawrouter-app-sdk-typescript package.json main must be dist/index.cjs",
                 result.messages,
             )
             self.assertIn(
-                "clawrouter-app-sdk-typescript package.json module points to missing file: dist/index.js",
-                result.messages,
-            )
-            self.assertIn(
-                "clawrouter-app-sdk-typescript package.json types points to missing file: dist/index.d.ts",
-                result.messages,
-            )
-            self.assertIn(
-                "clawrouter-backend-sdk-typescript package.json exports[.].require points to missing file: dist/index.cjs",
+                "clawrouter-app-sdk-typescript package.json exports[.].require must stay inside SDK package: ../dist/index.cjs",
                 result.messages,
             )
 

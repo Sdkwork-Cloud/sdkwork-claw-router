@@ -712,7 +712,6 @@ async function createMembershipPackageAction(
 ): Promise<MembershipActionResult> {
   const result = await action({
     packageId: requiredPositiveIntegerId(packageId, 'packageId'),
-    paymentMethod: 'wechat',
   });
   return normalizeMembershipActionResult(result, 'Membership purchase request number is required');
 }

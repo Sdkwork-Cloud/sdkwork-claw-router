@@ -201,6 +201,7 @@ async fn create_ai_resource(
             item: to_item_response(item),
         }))
         .into_response(),
+        Err(error) if error.is_not_found() => not_found_response(error.to_string()),
         Err(error) if error.is_conflict() => conflict_response(error),
         Err(error) => {
             ai_resource_system_response("AI resource command store is unavailable", error)
@@ -237,6 +238,7 @@ async fn update_ai_resource(
         }))
         .into_response(),
         Ok(None) => not_found_response("AI resource was not found"),
+        Err(error) if error.is_not_found() => not_found_response(error.to_string()),
         Err(error) if error.is_conflict() => conflict_response(error),
         Err(error) => {
             ai_resource_system_response("AI resource command store is unavailable", error)
@@ -673,10 +675,10 @@ fn bad_request(message: String) -> Response {
         .into_response()
 }
 
-fn not_found_response(message: &'static str) -> Response {
+fn not_found_response(message: impl Into<String>) -> Response {
     (
         StatusCode::NOT_FOUND,
-        Json(PlusApiResult::error("4040", message)),
+        Json(PlusApiResult::error("4040", message.into())),
     )
         .into_response()
 }

@@ -2,13 +2,21 @@ import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { AlertCircle, CheckCircle2, CreditCard, Gift, Loader2, ReceiptText, RefreshCw } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
+import {
+  computeGrantAmount,
+  defaultRechargeSettings,
+  formatRechargeCurrencyAmount,
+  listRechargeCurrencyCodes,
+  type RechargeSettingsSnapshot,
+} from 'sdkwork-claw-router-commons';
 import { RechargeService, type BillingHistoryItem, type BillingHistoryTab, type RechargePackage } from './rechargeService';
 
 type TranslationFunction = ReturnType<typeof useTranslation>['t'];
 
 export type RechargeOption = {
   amount: string;
-  bonus: number;
+  bonusPoints: number;
+  currencyCode: string;
   id: string;
   packageId?: string;
   points: number;
@@ -22,6 +30,7 @@ export interface RechargePanelProps {
 export interface RechargePackageSelectorProps {
   className?: string;
   disabled?: boolean;
+  onOptionClick?: (option: RechargeOption) => void;
   onSelectionChange: (option: RechargeOption | null) => void;
   selectedOptionId: string;
   variant?: 'console' | 'vip';
@@ -54,6 +63,7 @@ export function RechargeView() {
 export function RechargePackageSelector({
   className = '',
   disabled = false,
+  onOptionClick,
   onSelectionChange,
   selectedOptionId,
   variant = 'console',
@@ -107,8 +117,6 @@ export function RechargePackageSelector({
   const optionGridClassName = variant === 'vip'
     ? 'grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4'
     : 'grid grid-cols-2 gap-3 sm:grid-cols-4';
-  const amountPrefix = variant === 'vip' ? '¥' : '$';
-
   return (
     <div
       data-business-state={packagesLoadError ? 'error' : packages.length === 0 && !packagesLoading ? 'empty' : undefined}
@@ -119,7 +127,7 @@ export function RechargePackageSelector({
         <h2 className="text-left text-base font-semibold text-white">
           {variant === 'vip'
             ? t('vip.pointsPurchase.packageTitle', 'Choose a credit package')
-            : t('console.recharge.amountTitle', '选择充值金额 (USD)')}
+            : t('console.recharge.amountTitle', '选择充值金额')}
         </h2>
         {packagesLoading ? (
           <span className="inline-flex items-center gap-1.5 text-xs text-slate-400">
@@ -149,12 +157,17 @@ export function RechargePackageSelector({
           {rechargeOptions.map(option => {
             const isSelected = selectedOptionId === option.id;
             const pointsLabel = option.points.toLocaleString('en-US');
+            const bonusLabel = option.bonusPoints.toLocaleString('en-US');
+            const amountLabel = formatRechargeOptionAmount(option.amount, option.currencyCode);
             return (
               <button
                 key={option.id}
                 type="button"
                 disabled={disabled}
-                onClick={() => onSelectionChange(option)}
+                onClick={() => {
+                  onSelectionChange(option);
+                  onOptionClick?.(option);
+                }}
                 className={`relative flex min-h-[104px] flex-col items-start justify-between rounded-md border px-3 py-4 text-left transition-colors disabled:cursor-not-allowed disabled:opacity-60 ${
                   isSelected
                     ? 'border-[#1677ff] bg-[#142b45] text-white'
@@ -166,17 +179,38 @@ export function RechargePackageSelector({
                 {isSelected ? (
                   <CheckCircle2 className="absolute right-2 top-2 h-4 w-4 text-[#1677ff]" />
                 ) : null}
-                <span className="pr-6 text-xl font-semibold leading-none">
-                  {amountPrefix}{formatDisplayAmount(option.amount)}
-                </span>
-                <span className="mt-3 text-xs font-medium leading-5 text-slate-400">
-                  {t('console.recharge.pointsIncluded', '得 {{points}} 积分', { points: pointsLabel })}
-                </span>
-                {option.bonus > 0 ? (
-                  <span className="mt-1 text-[11px] font-semibold leading-4 text-emerald-300">
-                    {t('console.recharge.bonusIncluded', '+{{bonus}} bonus', { bonus: option.bonus.toLocaleString('en-US') })}
-                  </span>
-                ) : null}
+                {variant === 'vip' ? (
+                  <>
+                    <span className="pr-6 text-[11px] font-semibold uppercase tracking-[0.24em] text-slate-400">
+                      {t('vip.pointsPurchase.pointsPrimary', 'Credits')}
+                    </span>
+                    <span className="mt-2 pr-6 text-2xl font-bold leading-none text-white">
+                      {pointsLabel}
+                    </span>
+                    <span className="mt-3 text-xs font-medium leading-5 text-slate-400">
+                      {t('vip.pointsPurchase.paySecondary', 'Pay {{amount}}', { amount: amountLabel })}
+                    </span>
+                    {option.bonusPoints > 0 ? (
+                      <span className="mt-1 inline-flex items-center rounded-full bg-emerald-400/15 px-2 py-1 text-[11px] font-semibold leading-4 text-emerald-300">
+                        {t('vip.pointsPurchase.bonusLabel', 'Bonus +{{bonus}}', { bonus: bonusLabel })}
+                      </span>
+                    ) : null}
+                  </>
+                ) : (
+                  <>
+                    <span className="pr-6 text-xl font-semibold leading-none">
+                      {amountLabel}
+                    </span>
+                    <span className="mt-3 text-xs font-medium leading-5 text-slate-400">
+                      {t('console.recharge.pointsIncluded', '得 {{points}} 积分', { points: pointsLabel })}
+                    </span>
+                    {option.bonusPoints > 0 ? (
+                      <span className="mt-1 text-[11px] font-semibold leading-4 text-emerald-300">
+                        {t('console.recharge.bonusIncluded', '+{{bonus}} bonus', { bonus: bonusLabel })}
+                      </span>
+                    ) : null}
+                  </>
+                )}
               </button>
             );
           })}
@@ -227,9 +261,32 @@ export function RechargePanel({ embedded = false, showTabs = true }: RechargePan
   const [selectedOptionId, setSelectedOptionId] = useState('');
   const [selectedOption, setSelectedOption] = useState<RechargeOption | null>(null);
   const [customAmount, setCustomAmount] = useState('');
+  const [rechargeSettings, setRechargeSettings] = useState<RechargeSettingsSnapshot>(defaultRechargeSettings());
+  const [customCurrencyCode, setCustomCurrencyCode] = useState(defaultRechargeSettings().baseCurrencyCode);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [successMsg, setSuccessMsg] = useState('');
   const [submitError, setSubmitError] = useState<string | null>(null);
+
+  useEffect(() => {
+    let active = true;
+    void RechargeService.fetchRechargeSettings()
+      .then((settings) => {
+        if (active) {
+          setRechargeSettings(settings);
+          setCustomCurrencyCode(settings.baseCurrencyCode);
+        }
+      })
+      .catch(() => {
+        if (active) {
+          const fallbackSettings = defaultRechargeSettings();
+          setRechargeSettings(fallbackSettings);
+          setCustomCurrencyCode(fallbackSettings.baseCurrencyCode);
+        }
+      });
+    return () => {
+      active = false;
+    };
+  }, []);
 
   const handleOptionChange = useCallback((option: RechargeOption | null) => {
     setSelectedOption(option);
@@ -242,10 +299,18 @@ export function RechargePanel({ embedded = false, showTabs = true }: RechargePan
   }, []);
 
   const customSelectionAmount = normalizeCustomAmount(customAmount);
+  const customCurrencyCodes = useMemo(
+    () => listRechargeCurrencyCodes(rechargeSettings),
+    [rechargeSettings],
+  );
   const currentSelectionAmount = selectedOption?.amount || customSelectionAmount;
   const currentSelectionCents = moneyCents(currentSelectionAmount);
+  const currentCurrencyCode = selectedOption?.currencyCode || customCurrencyCode;
+  const currentCurrencyRate = rechargeSettings.currencyToCnyRates[currentCurrencyCode]
+    ?? rechargeSettings.currencyToCnyRates[rechargeSettings.baseCurrencyCode]
+    ?? '1';
   const currentPoints = currentSelectionCents > 0
-    ? selectedOption?.points ?? pointsForAmount(currentSelectionAmount)
+    ? selectedOption?.points ?? computeGrantAmount(currentSelectionAmount, currentCurrencyCode, 0, rechargeSettings)
     : 0;
   const isPayDisabled = currentSelectionCents <= 0 || isSubmitting;
 
@@ -253,6 +318,14 @@ export function RechargePanel({ embedded = false, showTabs = true }: RechargePan
     setSelectedOptionId('');
     setSelectedOption(null);
     setCustomAmount(sanitizeMoneyInput(event.target.value));
+    setSuccessMsg('');
+    setSubmitError(null);
+  };
+
+  const handleCustomCurrencyChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    setSelectedOptionId('');
+    setSelectedOption(null);
+    setCustomCurrencyCode(event.target.value || rechargeSettings.baseCurrencyCode);
     setSuccessMsg('');
     setSubmitError(null);
   };
@@ -265,7 +338,7 @@ export function RechargePanel({ embedded = false, showTabs = true }: RechargePan
     try {
       const response = await RechargeService.submitRecharge(
         formatMoneyAmount(currentSelectionAmount),
-        'card',
+        currentCurrencyCode,
         selectedOption?.packageId,
       );
       if (response.success && response.orderNo) {
@@ -318,17 +391,36 @@ export function RechargePanel({ embedded = false, showTabs = true }: RechargePan
           <label htmlFor={embedded ? 'console-wallet-recharge-custom-amount' : 'console-recharge-custom-amount'} className="block text-base font-semibold text-white">
             {t('console.recharge.customAmount', '自定义金额')}
           </label>
-          <div className="relative">
-            <span className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-sm font-semibold text-slate-400">$</span>
-            <input
-              id={embedded ? 'console-wallet-recharge-custom-amount' : 'console-recharge-custom-amount'}
-              type="text"
-              inputMode="decimal"
-              value={customAmount}
-              onChange={handleCustomChange}
-              placeholder={t('console.recharge.customPlaceholder', '输入其他金额')}
-              className="h-12 w-full rounded-md border border-[#3a3a3a] bg-[#252525] pl-8 pr-4 text-sm text-white outline-none transition-colors placeholder:text-slate-500 focus:border-[#1677ff] focus:ring-2 focus:ring-[#1677ff]/20"
-            />
+          <div className="grid gap-3 sm:grid-cols-[160px_minmax(0,1fr)]">
+            <label className="block">
+              <span className="mb-1 block text-sm font-medium text-slate-400">
+                {t('console.recharge.currency', 'Currency')}
+              </span>
+              <select
+                value={currentCurrencyCode}
+                disabled={Boolean(selectedOption) || isSubmitting}
+                onChange={handleCustomCurrencyChange}
+                className="h-12 w-full rounded-md border border-[#3a3a3a] bg-[#252525] px-3 text-sm text-white outline-none transition-colors focus:border-[#1677ff] focus:ring-2 focus:ring-[#1677ff]/20 disabled:cursor-not-allowed disabled:opacity-60"
+              >
+                {customCurrencyCodes.map((currencyCode) => (
+                  <option key={currencyCode} value={currencyCode}>
+                    {currencyCode}
+                  </option>
+                ))}
+              </select>
+            </label>
+            <div className="relative">
+              <span className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-sm font-semibold text-slate-400">{currentCurrencyCode}</span>
+              <input
+                id={embedded ? 'console-wallet-recharge-custom-amount' : 'console-recharge-custom-amount'}
+                type="text"
+                inputMode="decimal"
+                value={customAmount}
+                onChange={handleCustomChange}
+                placeholder={t('console.recharge.customPlaceholder', '输入其他金额')}
+                className="h-12 w-full rounded-md border border-[#3a3a3a] bg-[#252525] pl-16 pr-4 text-sm text-white outline-none transition-colors placeholder:text-slate-500 focus:border-[#1677ff] focus:ring-2 focus:ring-[#1677ff]/20"
+              />
+            </div>
           </div>
         </div>
 
@@ -339,7 +431,12 @@ export function RechargePanel({ embedded = false, showTabs = true }: RechargePan
           </div>
           <div className="flex items-center justify-between gap-4 text-slate-300">
             <span>{t('console.recharge.actualPayment', '实际支付金额:')}</span>
-            <span className="font-semibold text-white">${formatMoneyAmount(currentSelectionAmount)}</span>
+            <span
+              className="font-semibold text-white"
+              title={`1 ${currentCurrencyCode} = ${currentCurrencyRate} CNY`}
+            >
+              {formatRechargeCurrencyAmount(currentSelectionAmount, currentCurrencyCode)}
+            </span>
           </div>
         </div>
 
@@ -573,7 +670,7 @@ function formatPointsDelta(pointsDelta: number): string {
 
 function formatBillingAmount(record: BillingHistoryItem): string {
   const currency = record.currencyCode || 'USD';
-  return `${record.amount} ${currency}`;
+  return formatRechargeCurrencyAmount(record.amount, currency);
 }
 
 function billingReference(record: BillingHistoryItem): string {
@@ -582,11 +679,12 @@ function billingReference(record: BillingHistoryItem): string {
 
 function mapRechargePackageToOption(pkg: RechargePackage): RechargeOption {
   return {
-    amount: pkg.rmb,
-    bonus: pkg.bonus,
+    amount: pkg.priceAmount,
+    bonusPoints: pkg.bonusPoints,
+    currencyCode: pkg.currencyCode,
     id: `package-${pkg.id}`,
     packageId: pkg.id,
-    points: pkg.points > 0 ? pkg.points : pointsForAmount(pkg.rmb),
+    points: pkg.points > 0 ? pkg.points : pkg.grantAmount,
   };
 }
 
@@ -620,12 +718,13 @@ function moneyCents(amount: string): number {
   return Number.isSafeInteger(cents) ? cents : 0;
 }
 
-function pointsForAmount(amount: string): number {
-  return Math.floor(moneyCents(amount) / 10);
-}
-
 function formatDisplayAmount(amount: string): string {
   const formatted = formatMoneyAmount(amount);
+  return formatted.endsWith('.00') ? formatted.slice(0, -3) : formatted;
+}
+
+function formatRechargeOptionAmount(amount: string, currencyCode: string): string {
+  const formatted = formatRechargeCurrencyAmount(amount, currencyCode);
   return formatted.endsWith('.00') ? formatted.slice(0, -3) : formatted;
 }
 

@@ -6515,6 +6515,7 @@ tables:
   write_owner: sdkwork-appbase-commerce
   generated_by_this_project: false
   frontend_routes:
+  - /console/recharge
   - /console/checkout
   - /admin/orders
   - /admin/orders/orders
@@ -6574,6 +6575,7 @@ tables:
   write_owner: sdkwork-appbase-commerce
   generated_by_this_project: false
   frontend_routes:
+  - /console/recharge
   - /console/checkout
   - /admin/orders
   - /admin/orders/orders
@@ -6630,6 +6632,7 @@ tables:
   write_owner: sdkwork-appbase-commerce
   generated_by_this_project: false
   frontend_routes:
+  - /console/recharge
   - /console/checkout
   - /admin/orders
   - /admin/orders/orders
@@ -6933,6 +6936,554 @@ tables:
     - currency_code
     - client_platform
     - priority
+- table: commerce_payment_provider_capability
+  domain: commerce
+  profile: appbase_standard
+  compliance_level: L3
+  system_of_record: true
+  write_owner: sdkwork-appbase-commerce
+  generated_by_this_project: false
+  frontend_routes:
+  - /admin/payments/providers
+  - /admin/payments/provider-accounts
+  - /admin/payments/channels
+  api_surfaces:
+  - backend
+  - worker
+  columns:
+    id:
+      type: string(512)
+      constraints: PRIMARY KEY
+    tenant_id: string(512)
+    organization_id: string(512)
+    provider_code: string(128)
+    provider_account_id: string(512)
+    capability_code: string(128)
+    method_code: string(128)
+    scene_code: string(128)
+    country_code: string(16)
+    currency_code: string(16)
+    min_amount: string(64)
+    max_amount: string(64)
+    supported_statement_types: json
+    supported_webhook_events: json
+    native_operation_codes: json
+    status: string(64)
+    effective_from: string(512)
+    effective_to: string(512)
+    metadata_json: json
+    created_at: string(512)
+    updated_at: string(512)
+  not_null_columns:
+  - tenant_id
+  - provider_code
+  - capability_code
+  - status
+  - created_at
+  - updated_at
+  indexes:
+  - name: idx_pay_capability_lookup
+    columns:
+    - tenant_id
+    - organization_id
+    - provider_code
+    - capability_code
+    - status
+- table: commerce_payment_operation_attempt
+  domain: commerce
+  profile: appbase_standard
+  compliance_level: L3
+  system_of_record: true
+  write_owner: sdkwork-appbase-commerce
+  generated_by_this_project: false
+  frontend_routes:
+  - /admin/payments/attempts
+  - /admin/payments/providers
+  api_surfaces:
+  - backend
+  - worker
+  columns:
+    id:
+      type: string(512)
+      constraints: PRIMARY KEY
+    tenant_id: string(512)
+    organization_id: string(512)
+    operation_no: string(128)
+    provider_code: string(128)
+    provider_account_id: string(512)
+    channel_id: string(512)
+    operation_code: string(128)
+    sdkwork_resource_type: string(128)
+    sdkwork_resource_id: string(512)
+    idempotency_key: string(512)
+    request_digest: string(128)
+    response_digest: string(128)
+    native_request_id: string(256)
+    native_trade_id: string(256)
+    native_refund_id: string(256)
+    http_status: int64
+    provider_error_code: string(128)
+    provider_error_message: string(1024)
+    retryable: string(64)
+    status: string(64)
+    started_at: string(512)
+    completed_at: string(512)
+    created_at: string(512)
+  not_null_columns:
+  - tenant_id
+  - operation_no
+  - provider_code
+  - operation_code
+  - sdkwork_resource_type
+  - sdkwork_resource_id
+  - idempotency_key
+  - request_digest
+  - status
+  - started_at
+  - created_at
+  unique_constraints:
+  - columns:
+    - tenant_id
+    - operation_no
+  - columns:
+    - tenant_id
+    - provider_code
+    - operation_code
+    - idempotency_key
+  indexes:
+  - name: idx_pay_op_attempt_resource
+    columns:
+    - tenant_id
+    - sdkwork_resource_type
+    - sdkwork_resource_id
+    - created_at
+- table: commerce_payment_route_decision
+  domain: commerce
+  profile: appbase_standard
+  compliance_level: L3
+  system_of_record: true
+  write_owner: sdkwork-appbase-commerce
+  generated_by_this_project: false
+  frontend_routes:
+  - /admin/payments/attempts
+  - /admin/payments/route-rules
+  api_surfaces:
+  - backend
+  - worker
+  columns:
+    id:
+      type: string(512)
+      constraints: PRIMARY KEY
+    tenant_id: string(512)
+    organization_id: string(512)
+    payment_intent_id: string(512)
+    payment_attempt_id: string(512)
+    route_rule_id: string(512)
+    channel_id: string(512)
+    provider_code: string(128)
+    provider_account_id: string(512)
+    method_code: string(128)
+    scene_code: string(128)
+    country_code: string(16)
+    currency_code: string(16)
+    amount: string(64)
+    risk_level: string(64)
+    decision_reason: string(512)
+    fallback_from_channel_id: string(512)
+    created_at: string(512)
+  not_null_columns:
+  - tenant_id
+  - payment_intent_id
+  - payment_attempt_id
+  - channel_id
+  - provider_code
+  - method_code
+  - scene_code
+  - currency_code
+  - amount
+  - created_at
+  unique_constraints:
+  - columns:
+    - tenant_id
+    - payment_attempt_id
+- table: commerce_payment_capture
+  domain: commerce
+  profile: appbase_standard
+  compliance_level: L3
+  system_of_record: true
+  write_owner: sdkwork-appbase-commerce
+  generated_by_this_project: false
+  frontend_routes:
+  - /admin/payments/attempts
+  api_surfaces:
+  - backend
+  - worker
+  columns:
+    id:
+      type: string(512)
+      constraints: PRIMARY KEY
+    tenant_id: string(512)
+    organization_id: string(512)
+    capture_no: string(128)
+    payment_attempt_id: string(512)
+    provider_code: string(128)
+    provider_account_id: string(512)
+    native_capture_id: string(256)
+    amount: string(64)
+    currency_code: string(16)
+    final_capture:
+      type: int64
+      constraints: DEFAULT 1
+    status: string(64)
+    failure_code: string(128)
+    failure_message: string(1024)
+    submitted_at: string(512)
+    succeeded_at: string(512)
+    failed_at: string(512)
+    request_no: string(512)
+    idempotency_key: string(512)
+    created_at: string(512)
+    updated_at: string(512)
+  not_null_columns:
+  - tenant_id
+  - capture_no
+  - payment_attempt_id
+  - provider_code
+  - amount
+  - currency_code
+  - final_capture
+  - status
+  - request_no
+  - idempotency_key
+  - created_at
+  - updated_at
+- table: commerce_payment_webhook_delivery
+  domain: commerce
+  profile: appbase_standard
+  compliance_level: L3
+  system_of_record: true
+  write_owner: sdkwork-appbase-commerce
+  generated_by_this_project: false
+  frontend_routes:
+  - /admin/payments/webhook-events
+  api_surfaces:
+  - backend
+  - worker
+  columns:
+    id:
+      type: string(512)
+      constraints: PRIMARY KEY
+    tenant_id: string(512)
+    organization_id: string(512)
+    delivery_no: string(128)
+    provider_code: string(128)
+    provider_account_id: string(512)
+    event_id: string(512)
+    nonce: string(512)
+    request_timestamp: int64
+    signature: string(1024)
+    signature_algorithm: string(128)
+    headers_json: json
+    payload_digest: string(128)
+    payload_ref: string(512)
+    source_ip: string(128)
+    user_agent: string(512)
+    verification_status: string(64)
+    delivery_status: string(64)
+    failure_code: string(128)
+    failure_message: string(1024)
+    received_at: string(512)
+    verified_at: string(512)
+    normalized_event_id: string(512)
+    processed_at: string(512)
+    created_at: string(512)
+    updated_at: string(512)
+  not_null_columns:
+  - tenant_id
+  - delivery_no
+  - provider_code
+  - event_id
+  - nonce
+  - payload_digest
+  - verification_status
+  - delivery_status
+  - received_at
+  - created_at
+  - updated_at
+- table: commerce_payment_statement
+  domain: commerce
+  profile: appbase_standard
+  compliance_level: L3
+  system_of_record: true
+  write_owner: sdkwork-appbase-commerce
+  generated_by_this_project: false
+  frontend_routes:
+  - /admin/payments/reconciliation-runs
+  api_surfaces:
+  - backend
+  - worker
+  columns:
+    id:
+      type: string(512)
+      constraints: PRIMARY KEY
+    tenant_id: string(512)
+    organization_id: string(512)
+    statement_no: string(128)
+    provider_code: string(128)
+    provider_account_id: string(512)
+    statement_type: string(64)
+    settlement_currency: string(16)
+    period_start: string(512)
+    period_end: string(512)
+    provider_statement_id: string(256)
+    file_ref: string(512)
+    file_digest: string(128)
+    download_status: string(64)
+    parse_status: string(64)
+    row_count:
+      type: int64
+      constraints: DEFAULT 0
+    total_amount: string(64)
+    fee_amount: string(64)
+    net_amount: string(64)
+    downloaded_at: string(512)
+    parsed_at: string(512)
+    request_no: string(512)
+    idempotency_key: string(512)
+    created_at: string(512)
+    updated_at: string(512)
+  not_null_columns:
+  - tenant_id
+  - statement_no
+  - provider_code
+  - statement_type
+  - settlement_currency
+  - period_start
+  - period_end
+  - download_status
+  - parse_status
+  - row_count
+  - total_amount
+  - fee_amount
+  - net_amount
+  - request_no
+  - idempotency_key
+  - created_at
+  - updated_at
+- table: commerce_payment_statement_item
+  domain: commerce
+  profile: appbase_standard
+  compliance_level: L3
+  system_of_record: true
+  write_owner: sdkwork-appbase-commerce
+  generated_by_this_project: false
+  frontend_routes:
+  - /admin/payments/reconciliation-runs
+  api_surfaces:
+  - backend
+  - worker
+  columns:
+    id:
+      type: string(512)
+      constraints: PRIMARY KEY
+    tenant_id: string(512)
+    organization_id: string(512)
+    statement_id: string(512)
+    provider_code: string(128)
+    provider_account_id: string(512)
+    row_no: string(128)
+    native_trade_id: string(256)
+    native_refund_id: string(256)
+    native_order_no: string(256)
+    sdkwork_out_trade_no: string(128)
+    sdkwork_out_refund_no: string(128)
+    transaction_type: string(64)
+    occurred_at: string(512)
+    settled_at: string(512)
+    gross_amount: string(64)
+    fee_amount: string(64)
+    net_amount: string(64)
+    currency_code: string(16)
+    provider_status: string(64)
+    raw_row_digest: string(128)
+    metadata_json: json
+    created_at: string(512)
+  not_null_columns:
+  - tenant_id
+  - statement_id
+  - provider_code
+  - row_no
+  - transaction_type
+  - occurred_at
+  - gross_amount
+  - fee_amount
+  - net_amount
+  - currency_code
+  - raw_row_digest
+  - created_at
+- table: commerce_payment_reconciliation_item
+  domain: commerce
+  profile: appbase_standard
+  compliance_level: L3
+  system_of_record: true
+  write_owner: sdkwork-appbase-commerce
+  generated_by_this_project: false
+  frontend_routes:
+  - /admin/payments/reconciliation-runs
+  api_surfaces:
+  - backend
+  - worker
+  columns:
+    id:
+      type: string(512)
+      constraints: PRIMARY KEY
+    tenant_id: string(512)
+    organization_id: string(512)
+    reconciliation_run_id: string(512)
+    statement_id: string(512)
+    statement_item_id: string(512)
+    payment_attempt_id: string(512)
+    refund_id: string(512)
+    refund_attempt_id: string(512)
+    provider_code: string(128)
+    difference_type: string(128)
+    match_status: string(64)
+    internal_amount: string(64)
+    provider_amount: string(64)
+    difference_amount: string(64)
+    currency_code: string(16)
+    internal_status: string(64)
+    provider_status: string(64)
+    resolution_status: string(64)
+    resolution_note: string(1024)
+    resolved_by: string(512)
+    resolved_at: string(512)
+    created_at: string(512)
+    updated_at: string(512)
+  not_null_columns:
+  - tenant_id
+  - reconciliation_run_id
+  - provider_code
+  - difference_type
+  - match_status
+  - resolution_status
+  - created_at
+  - updated_at
+- table: commerce_payment_fee
+  domain: commerce
+  profile: appbase_standard
+  compliance_level: L3
+  system_of_record: true
+  write_owner: sdkwork-appbase-commerce
+  generated_by_this_project: false
+  frontend_routes:
+  - /admin/payments/reconciliation-runs
+  api_surfaces:
+  - backend
+  - worker
+  columns:
+    id:
+      type: string(512)
+      constraints: PRIMARY KEY
+    tenant_id: string(512)
+    organization_id: string(512)
+    provider_code: string(128)
+    provider_account_id: string(512)
+    payment_attempt_id: string(512)
+    refund_id: string(512)
+    statement_item_id: string(512)
+    fee_type: string(64)
+    amount: string(64)
+    currency_code: string(16)
+    occurred_at: string(512)
+    created_at: string(512)
+  not_null_columns:
+  - tenant_id
+  - provider_code
+  - fee_type
+  - amount
+  - currency_code
+  - occurred_at
+  - created_at
+- table: commerce_payment_dispute
+  domain: commerce
+  profile: appbase_standard
+  compliance_level: L3
+  system_of_record: true
+  write_owner: sdkwork-appbase-commerce
+  generated_by_this_project: false
+  frontend_routes:
+  - /admin/payments/attempts
+  api_surfaces:
+  - backend
+  - worker
+  columns:
+    id:
+      type: string(512)
+      constraints: PRIMARY KEY
+    tenant_id: string(512)
+    organization_id: string(512)
+    dispute_no: string(128)
+    provider_code: string(128)
+    provider_account_id: string(512)
+    payment_attempt_id: string(512)
+    native_dispute_id: string(256)
+    reason_code: string(128)
+    amount: string(64)
+    currency_code: string(16)
+    status: string(64)
+    evidence_due_at: string(512)
+    opened_at: string(512)
+    closed_at: string(512)
+    created_at: string(512)
+    updated_at: string(512)
+  not_null_columns:
+  - tenant_id
+  - dispute_no
+  - provider_code
+  - payment_attempt_id
+  - native_dispute_id
+  - amount
+  - currency_code
+  - status
+  - opened_at
+  - created_at
+  - updated_at
+- table: commerce_payment_dispute_event
+  domain: commerce
+  profile: appbase_standard
+  compliance_level: L3
+  system_of_record: true
+  write_owner: sdkwork-appbase-commerce
+  generated_by_this_project: false
+  frontend_routes:
+  - /admin/payments/attempts
+  api_surfaces:
+  - backend
+  - worker
+  columns:
+    id:
+      type: string(512)
+      constraints: PRIMARY KEY
+    tenant_id: string(512)
+    organization_id: string(512)
+    event_no: string(128)
+    dispute_id: string(512)
+    event_type: string(128)
+    from_status: string(64)
+    to_status: string(64)
+    actor_type: string(64)
+    actor_id: string(512)
+    payload_json: json
+    created_at: string(512)
+  not_null_columns:
+  - tenant_id
+  - event_no
+  - dispute_id
+  - event_type
+  - to_status
+  - actor_type
+  - created_at
 - table: commerce_payment_intent
   domain: commerce
   profile: appbase_standard
@@ -6980,24 +7531,41 @@ tables:
     organization_id: string(512)
     owner_user_id: string(512)
     order_id: string(512)
+    merchant_order_no: string(512)
+    subject: string(512)
     provider: string(512)
+    provider_code: string(512)
+    payment_method: string(512)
+    scene_code: string(512)
     amount: string(512)
     currency_code: string(512)
     status: string(512)
     request_no: string(512)
     idempotency_key: string(512)
+    metadata_json: text
+    provider_native_json: text
+    next_action_json: text
+    captured_amount: string(512)
+    refunded_amount: string(512)
     created_at: string(512)
     updated_at: string(512)
   not_null_columns:
   - tenant_id
   - owner_user_id
   - order_id
+  - merchant_order_no
+  - subject
   - provider
+  - provider_code
+  - payment_method
+  - scene_code
   - amount
   - currency_code
   - status
   - request_no
   - idempotency_key
+  - captured_amount
+  - refunded_amount
   - created_at
   - updated_at
   indexes:
@@ -7005,6 +7573,15 @@ tables:
     columns:
     - tenant_id
     - order_id
+  - name: idx_commerce_payment_intent_merchant_order
+    columns:
+    - tenant_id
+    - merchant_order_no
+  - name: idx_commerce_payment_intent_provider_status
+    columns:
+    - tenant_id
+    - provider_code
+    - status
 - table: commerce_payment_attempt
   domain: commerce
   profile: appbase_standard
@@ -7377,9 +7954,14 @@ tables:
       type: string(512)
       constraints: PRIMARY KEY
     tenant_id: string(512)
+    organization_id: string(512)
+    payment_intent_id: string(512)
     payment_attempt_id: string(512)
     refund_no: string(512)
     amount: string(512)
+    currency_code: string(512)
+    provider_code: string(512)
+    reason: string(1024)
     status: string(512)
     request_no: string(512)
     idempotency_key: string(512)
@@ -7876,6 +8458,7 @@ tables:
   frontend_routes:
   - /admin/marketing
   - /console/wallet
+  - /console/recharge
   - /admin/wallet
   - /admin/memberships/recharge-packages
   - /admin/wallet/recharge-orders
@@ -9296,6 +9879,120 @@ tables:
     pii: true
     sensitivity: AUTH_EVENT
     payload_stored: metadata_only
+    stores_secret_plaintext: false
+    audit_required: true
+- table: integration_provider_account
+  domain: integration
+  profile: provider_account_secret_ref
+  compliance_level: L3
+  system_of_record: true
+  write_owner: integration-service
+  common_columns: tenant_entity
+  source_tables:
+  - ai_provider
+  - messaging_provider
+  frontend_routes:
+  - /admin/channel
+  - /admin/channel/secrets
+  - /admin/integration/provider-secrets
+  api_surfaces:
+  - backend
+  - worker
+  not_null_columns:
+  - uuid
+  - tenant_id
+  - organization_id
+  - status
+  - provider_code
+  - account_code
+  - account_name
+  columns:
+    provider_id: int64
+    provider_code:
+      type: string(64)
+      constraints: NOT NULL DEFAULT ''
+    account_code:
+      type: string(64)
+      constraints: NOT NULL DEFAULT ''
+    account_name:
+      type: string(128)
+      constraints: NOT NULL DEFAULT ''
+    account_type:
+      type: string(32)
+      constraints: NOT NULL DEFAULT 'official'
+    channel_type:
+      type: string(32)
+      constraints: NOT NULL DEFAULT 'official'
+    auth_type:
+      type: enum_int32
+      constraints: NOT NULL DEFAULT 1
+    credential_profile:
+      type: enum_int32
+      constraints: NOT NULL DEFAULT 1
+    auth_config:
+      type: json
+      constraints: NOT NULL DEFAULT '{}'::jsonb
+    secret_ref: string(512)
+    secret_hash: string(128)
+    masked_label: string(128)
+    credential_version:
+      type: int64
+      constraints: NOT NULL DEFAULT 1
+    base_url: string(512)
+    region_code: string(64)
+    environment:
+      type: enum_int32
+      constraints: NOT NULL DEFAULT 1
+    health_status:
+      type: enum_int32
+      constraints: NOT NULL DEFAULT 1
+    last_latency_ms: int32
+    consecutive_error_count:
+      type: int64
+      constraints: NOT NULL DEFAULT 0
+    risk_level:
+      type: enum_int32
+      constraints: NOT NULL DEFAULT 1
+    quota_snapshot: json
+    last_verified_at: instant
+    last_used_at: instant
+    last_rotated_at: instant
+    next_rotate_at: instant
+  unique_constraints:
+  - columns:
+    - uuid
+    source: column_unique
+  - name: uk_integration_provider_account_code
+    columns:
+    - tenant_id
+    - organization_id
+    - account_code
+  indexes:
+  - name: idx_integration_provider_account_provider
+    columns:
+    - tenant_id
+    - organization_id
+    - provider_code
+    - account_type
+    - status
+    - id
+  - name: idx_integration_provider_account_secret
+    columns:
+    - tenant_id
+    - organization_id
+    - secret_hash
+    - status
+    - id
+  - name: idx_integration_provider_account_health
+    columns:
+    - tenant_id
+    - organization_id
+    - status
+    - health_status
+    - risk_level
+    - id
+  security:
+    sensitivity: SECRET_REF
     stores_secret_plaintext: false
     audit_required: true
 - table: ai_provider
@@ -11908,6 +12605,399 @@ tables:
     - priority
     - weight
     - id
+- table: ai_resource_route_profile
+  domain: ai
+  profile: routing_policy_entity
+  compliance_level: L3
+  system_of_record: true
+  write_owner: ai-routing-service
+  common_columns: tenant_entity
+  source_tables:
+  - ai_resource
+  - ai_api_endpoint
+  frontend_routes:
+  - /admin/channel/resources
+  - /admin/channel/routing
+  api_surfaces:
+  - backend
+  - worker
+  - openai_v1
+  required_columns:
+  - resource_code
+  - route_key
+  - route_strategy
+  - model_requirement
+  not_null_columns:
+  - uuid
+  - tenant_id
+  - organization_id
+  - status
+  - resource_code
+  - route_key
+  - route_strategy
+  - failure_strategy
+  - selection_strategy
+  - model_requirement
+  unique_constraints:
+  - columns:
+    - uuid
+    source: column_unique
+  - name: uk_ai_resource_route_profile_route
+    columns:
+    - tenant_id
+    - organization_id
+    - resource_code
+    - route_key
+  columns:
+    resource_id: int64
+    resource_code: string(192)
+    route_key: string(192)
+    http_method: string(16)
+    path_pattern: string(512)
+    capability: enum_int32
+    billing_meter_code: string(64)
+    model_requirement:
+      type: string(32)
+      constraints: NOT NULL DEFAULT 'ignored'
+    route_strategy:
+      type: string(64)
+      constraints: NOT NULL DEFAULT 'stateless_failover'
+    failure_strategy:
+      type: string(64)
+      constraints: NOT NULL DEFAULT 'fail_closed'
+    selection_strategy:
+      type: string(64)
+      constraints: NOT NULL DEFAULT 'priority_weighted'
+    sticky_object_type: string(64)
+    sticky_scope: string(64)
+    parent_object_types: json
+    request_extractors: json
+    response_bindings: json
+    endpoint_failover_scope:
+      type: string(64)
+      constraints: NOT NULL DEFAULT 'same_channel'
+    idempotency_mode:
+      type: string(32)
+      constraints: NOT NULL DEFAULT 'none'
+    cache_ttl_seconds: int64
+    sort_order: int32
+  indexes:
+  - name: idx_ai_resource_route_profile_lookup
+    columns:
+    - tenant_id
+    - organization_id
+    - status
+    - route_key
+    - resource_code
+    - id
+  - name: idx_ai_resource_route_profile_strategy
+    columns:
+    - tenant_id
+    - organization_id
+    - status
+    - route_strategy
+    - model_requirement
+    - id
+  security:
+    sensitivity: ROUTING_POLICY
+    stores_secret_plaintext: false
+    audit_required: true
+- table: ai_provider_object_route
+  domain: ai
+  profile: runtime_binding
+  compliance_level: L3
+  system_of_record: true
+  write_owner: gateway-runtime
+  common_columns: tenant_entity
+  source_tables:
+  - ai_channel
+  - ai_channel_endpoint
+  - ai_channel_group
+  - iam_gateway_api_key
+  frontend_routes:
+  - /admin/channel/routing
+  - /admin/system/cache
+  api_surfaces:
+  - backend
+  - worker
+  - openai_v1
+  required_columns:
+  - object_type
+  - object_id
+  - object_key_hash
+  - channel_id
+  not_null_columns:
+  - uuid
+  - tenant_id
+  - organization_id
+  - status
+  - object_type
+  - object_id
+  - object_key_hash
+  - channel_id
+  unique_constraints:
+  - columns:
+    - uuid
+    source: column_unique
+  - name: uk_ai_provider_object_route_object
+    columns:
+    - tenant_id
+    - organization_id
+    - object_type
+    - object_id
+  columns:
+    api_key_id: int64
+    channel_group_id: int64
+    object_type: string(64)
+    object_id: string(256)
+    object_key_hash: string(128)
+    parent_object_type: string(64)
+    parent_object_id: string(256)
+    provider_code: string(64)
+    channel_id: int64
+    endpoint_id: int64
+    vendor_code: string(64)
+    api_code: string(128)
+    catalog_key: string(256)
+    provider_model: string(256)
+    region_code: string(64)
+    sticky_scope: string(64)
+    expires_at: instant
+    last_seen_at: instant
+  indexes:
+  - name: idx_ai_provider_object_route_fast
+    columns:
+    - tenant_id
+    - organization_id
+    - object_key_hash
+    - status
+    - id
+  - name: idx_ai_provider_object_route_parent
+    columns:
+    - tenant_id
+    - organization_id
+    - parent_object_type
+    - parent_object_id
+    - status
+    - id
+  - name: idx_ai_provider_object_route_channel
+    columns:
+    - tenant_id
+    - organization_id
+    - channel_group_id
+    - channel_id
+    - status
+    - id
+  - name: idx_ai_provider_object_route_expiry
+    columns:
+    - tenant_id
+    - organization_id
+    - expires_at
+    - status
+    - id
+  security:
+    sensitivity: PROVIDER_OBJECT_ROUTE
+    stores_secret_plaintext: false
+    audit_required: true
+- table: ai_route_idempotency
+  domain: ai
+  profile: runtime_binding
+  compliance_level: L3
+  system_of_record: true
+  write_owner: gateway-runtime
+  common_columns: tenant_entity
+  source_tables:
+  - iam_gateway_api_key
+  - ai_provider_object_route
+  - ai_channel
+  frontend_routes:
+  - /admin/channel/routing
+  - /admin/system/cache
+  api_surfaces:
+  - backend
+  - worker
+  - openai_v1
+  required_columns:
+  - api_key_id
+  - idempotency_key
+  - request_hash
+  not_null_columns:
+  - uuid
+  - tenant_id
+  - organization_id
+  - status
+  - api_key_id
+  - idempotency_key
+  - request_hash
+  unique_constraints:
+  - columns:
+    - uuid
+    source: column_unique
+  - name: uk_ai_route_idempotency_key
+    columns:
+    - tenant_id
+    - organization_id
+    - api_key_id
+    - idempotency_key
+  columns:
+    api_key_id: int64
+    channel_group_id: int64
+    idempotency_key: string(256)
+    request_hash: string(128)
+    route_strategy: string(64)
+    channel_id: int64
+    endpoint_id: int64
+    object_type: string(64)
+    object_id: string(256)
+    response_status: int32
+    expires_at: instant
+  indexes:
+  - name: idx_ai_route_idempotency_lookup
+    columns:
+    - tenant_id
+    - organization_id
+    - api_key_id
+    - idempotency_key
+    - status
+    - id
+  - name: idx_ai_route_idempotency_expiry
+    columns:
+    - tenant_id
+    - organization_id
+    - expires_at
+    - status
+    - id
+  security:
+    sensitivity: ROUTING_IDEMPOTENCY
+    stores_secret_plaintext: false
+    audit_required: true
+- table: ai_config_version
+  domain: ai
+  profile: runtime_coordination
+  compliance_level: L3
+  system_of_record: true
+  write_owner: ai-routing-service
+  common_columns: tenant_entity
+  source_tables:
+  - ai_resource
+  - ai_channel
+  - ai_channel_group
+  - ai_routing_policy
+  frontend_routes:
+  - /admin/system/cache
+  - /admin/channel/routing
+  api_surfaces:
+  - backend
+  - worker
+  required_columns:
+  - config_scope
+  - config_version
+  not_null_columns:
+  - uuid
+  - tenant_id
+  - organization_id
+  - status
+  - config_scope
+  - config_version
+  unique_constraints:
+  - columns:
+    - uuid
+    source: column_unique
+  - name: uk_ai_config_version_scope
+    columns:
+    - tenant_id
+    - organization_id
+    - config_scope
+  columns:
+    config_scope: string(64)
+    config_version:
+      type: int64
+      constraints: NOT NULL DEFAULT 0
+    changed_object_type: string(64)
+    changed_object_id: int64
+    published_at: instant
+  indexes:
+  - name: idx_ai_config_version_scope_updated
+    columns:
+    - tenant_id
+    - organization_id
+    - config_scope
+    - updated_at
+    - id
+  - name: idx_ai_config_version_scope_status
+    columns:
+    - config_scope
+    - status
+    - deleted_at
+    - id
+  security:
+    sensitivity: RUNTIME_COORDINATION
+    stores_secret_plaintext: false
+    audit_required: true
+- table: ai_config_change_event
+  domain: ai
+  profile: runtime_coordination_event
+  compliance_level: L3
+  system_of_record: true
+  write_owner: ai-routing-service
+  common_columns: event_log
+  source_tables:
+  - ai_config_version
+  frontend_routes:
+  - /admin/system/cache
+  - /admin/channel/routing
+  api_surfaces:
+  - backend
+  - worker
+  required_columns:
+  - config_scope
+  - config_version
+  - event_status
+  not_null_columns:
+  - uuid
+  - tenant_id
+  - organization_id
+  - status
+  - config_scope
+  - config_version
+  - event_status
+  unique_constraints:
+  - columns:
+    - uuid
+    source: column_unique
+  columns:
+    config_scope: string(64)
+    changed_object_type: string(64)
+    changed_object_id: int64
+    config_version: int64
+    event_status:
+      type: string(32)
+      constraints: NOT NULL DEFAULT 'pending'
+    event_payload: json
+    published_at: instant
+    publish_attempts:
+      type: int32
+      constraints: NOT NULL DEFAULT 0
+    last_error_message: string(512)
+  indexes:
+  - name: idx_ai_config_change_event_pending
+    columns:
+    - tenant_id
+    - organization_id
+    - event_status
+    - created_at
+    - id
+  - name: idx_ai_config_change_event_scope_version
+    columns:
+    - tenant_id
+    - organization_id
+    - config_scope
+    - config_version
+    - id
+  security:
+    sensitivity: RUNTIME_COORDINATION
+    stores_secret_plaintext: false
+    audit_required: true
 - table: ai_model_family
   domain: ai
   profile: dictionary_entity

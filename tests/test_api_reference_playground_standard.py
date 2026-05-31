@@ -316,6 +316,24 @@ class ApiReferencePlaygroundStandardTest(unittest.TestCase):
         self.assertIn("headers.Authorization = `Bearer ${input.authToken.trim()}`", request_source)
         self.assertIn("credentials: input.authType === 'current_user' ? 'include' : 'omit'", request_source)
 
+    def test_api_reference_playground_production_browser_smoke_intercepts_gateway_prefix_requests(self) -> None:
+        schema_tabs_source = (API_REFERENCE_ROOT / "apiReferenceSchemaTabs.ts").read_text(encoding="utf-8")
+        browser_smoke = (
+            ROOT
+            / "apps"
+            / "sdkwork-claw-router-portal"
+            / "scripts"
+            / "smoke-production-browser.mjs"
+        ).read_text(encoding="utf-8")
+
+        self.assertIn("x-api-prefix", schema_tabs_source)
+        self.assertIn('requestBaseUrl: resolveApiSystemRequestBaseUrl', schema_tabs_source)
+        self.assertIn('urlPattern: "*://*/v1/*"', browser_smoke)
+        self.assertIn('parsedUrl.pathname.startsWith("/v1/")', browser_smoke)
+        self.assertIn("expectedChatCompletionsPath", browser_smoke)
+        self.assertIn('"/v1/chat/completions"', browser_smoke)
+        self.assertIn('"/api/v1/chat/completions"', browser_smoke)
+
     def test_api_reference_production_browser_smoke_blocks_disabled_local_tool_api_runtime_calls(self) -> None:
         endpoint_view = (API_REFERENCE_ROOT / "components" / "ApiEndpointView.tsx").read_text(encoding="utf-8")
         code_snippet_source = (API_REFERENCE_ROOT / "codeSnippetClient.ts").read_text(encoding="utf-8")

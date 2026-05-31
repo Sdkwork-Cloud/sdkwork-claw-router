@@ -325,10 +325,6 @@ frontend_operations:
         type: integer
         format: int64
         minimum: 1
-      paymentMethod:
-        type: string
-        maxLength: 50
-        pattern: ^[\x21-\x7E]+$
       couponId:
         type: string
         nullable: true
@@ -352,21 +348,51 @@ frontend_operations:
         type: string
         minLength: 1
         maxLength: 64
+      providerCode:
+        type: string
+        nullable: true
+        minLength: 1
+        maxLength: 64
+      paymentMethod:
+        type: string
+        nullable: true
+        minLength: 1
+        maxLength: 64
+      paymentProduct:
+        type: string
+        nullable: true
+        minLength: 1
+        maxLength: 64
+      nextAction:
+        type: string
+        nullable: true
+        minLength: 1
+        maxLength: 64
       paymentId:
         type: string
         nullable: true
         minLength: 1
         maxLength: 128
+      cashierUrl:
+        type: string
+        nullable: true
+        minLength: 1
+        maxLength: 2048
       qrCodePayload:
         type: string
         nullable: true
         minLength: 1
         maxLength: 2048
+        description: Standard QR payload field for membership purchase checkout. When the purchase requires PC qr scanning, this value must be an http or https payment page URL.
       qrCodeImageUrl:
         type: string
         nullable: true
         minLength: 1
         maxLength: 2048
+      requestPaymentPayload:
+        type: object
+        nullable: true
+        additionalProperties: true
 - route: /console/memberships
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-memberships/src/membershipService.ts
   operation: appMembershipsPurchasesRenew

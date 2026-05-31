@@ -25,9 +25,9 @@ use crate::api::openai_invocation::{
     OpenAiInvocationRelayOutcome,
 };
 use crate::api::openai_runtime::{
-    authenticate_api_key, resolve_openai_provider_route_plan, route_http_status_is_retryable,
-    OpenAiRuntimeFailureStrategy, OpenAiRuntimeRouteConfig, ResolvedOpenAiProviderRoute,
-    ResolvedOpenAiProviderRoutePlan,
+    authenticate_api_key, provider_relay_attempt_retry_policy, resolve_openai_provider_route_plan,
+    route_http_status_is_retryable, OpenAiRuntimeFailureStrategy, OpenAiRuntimeRouteConfig,
+    ResolvedOpenAiProviderRoute, ResolvedOpenAiProviderRoutePlan,
 };
 use crate::api::openai_usage::{
     build_request_trace_command, build_usage_record_command_builder, chat_usage_billing_profile,
@@ -723,6 +723,7 @@ async fn relay_chat_completion_stream(
     let request_body = request.request_body;
     let mut last_error = None;
     let route_count = route_plan.routes.len();
+    let relay_failure_strategy = failure_strategy;
     for (index, mut route) in route_plan.routes.into_iter().enumerate() {
         let is_last_route = index + 1 == route_count;
         if let Err(error) = notify_before_relay(plugins, invocation_context, &mut route).await {
@@ -740,6 +741,8 @@ async fn relay_chat_completion_stream(
             &route,
             &requested_model,
             request_body.clone(),
+            relay_failure_strategy,
+            route_count,
             default_retry_policy,
         )
         .await
@@ -776,8 +779,12 @@ async fn relay_chat_completion_stream_route(
     route: &ResolvedOpenAiProviderRoute,
     requested_model: &str,
     request_body: serde_json::Value,
+    failure_strategy: OpenAiRuntimeFailureStrategy,
+    route_count: usize,
     default_retry_policy: &ProviderRetryPolicy,
 ) -> Result<Response, RouteRelayFailure> {
+    let provider_retry_policy =
+        provider_relay_attempt_retry_policy(route, failure_strategy, route_count);
     let started_at = Instant::now();
     let response = match relay
         .create_chat_completion_stream(ChatCompletionRelayRequest {
@@ -796,7 +803,7 @@ async fn relay_chat_completion_stream_route(
             provider_secret_ref: route.provider_secret_ref.clone(),
             provider_auth_profile: route.provider_auth_profile.clone(),
             provider_timeout_ms: route.provider_timeout_ms,
-            provider_retry_policy: route.provider_retry_policy.clone(),
+            provider_retry_policy,
             request_body,
         })
         .await
@@ -1003,6 +1010,7 @@ async fn relay_chat_completion(
     let request_body = request.request_body;
     let mut last_error = None;
     let route_count = route_plan.routes.len();
+    let relay_failure_strategy = failure_strategy;
     for (index, mut route) in route_plan.routes.into_iter().enumerate() {
         let is_last_route = index + 1 == route_count;
         if let Err(error) = notify_before_relay(plugins, invocation_context, &mut route).await {
@@ -1019,6 +1027,8 @@ async fn relay_chat_completion(
             &route,
             &requested_model,
             request_body.clone(),
+            relay_failure_strategy,
+            route_count,
             default_retry_policy,
         )
         .await
@@ -1065,8 +1075,12 @@ async fn relay_chat_completion_route(
     route: &ResolvedOpenAiProviderRoute,
     requested_model: &str,
     request_body: serde_json::Value,
+    failure_strategy: OpenAiRuntimeFailureStrategy,
+    route_count: usize,
     default_retry_policy: &ProviderRetryPolicy,
 ) -> Result<Response, RouteRelayFailure> {
+    let provider_retry_policy =
+        provider_relay_attempt_retry_policy(route, failure_strategy, route_count);
     let started_at = Instant::now();
     let response = match relay
         .create_chat_completion(ChatCompletionRelayRequest {
@@ -1085,7 +1099,7 @@ async fn relay_chat_completion_route(
             provider_secret_ref: route.provider_secret_ref.clone(),
             provider_auth_profile: route.provider_auth_profile.clone(),
             provider_timeout_ms: route.provider_timeout_ms,
-            provider_retry_policy: route.provider_retry_policy.clone(),
+            provider_retry_policy,
             request_body,
         })
         .await

@@ -68,7 +68,6 @@ fn sql_queries_use_schema_registry_tables_and_never_forbidden_synonyms() {
         "ai_channel",
         "ai_channel_endpoint",
         "ai_channel_model",
-        "ai_route_candidate",
         "ai_routing_policy",
         "ai_routing_profile",
         "ai_routing_rule",
@@ -139,7 +138,7 @@ fn provider_route_queries_use_explicit_region_context_not_catalog_key_segments()
     let postgres_sql = PricingCatalogSql::load_provider_routes();
     assert!(postgres_sql.contains("AS region_code"));
     assert!(postgres_sql.contains(
-        "COALESCE(NULLIF(e.region_code, ''), NULLIF(rc.region_code, ''), NULLIF(c.region_code, ''), 'global') AS region_code"
+        "COALESCE(NULLIF(e.region_code, ''), NULLIF(c.region_code, ''), 'global') AS region_code"
     ));
     assert!(PricingCatalogSql::load_provider_channel_routes().contains(
         "endpoint.region_code IN (COALESCE(NULLIF(c.region_code, ''), 'global'), 'global')"
@@ -158,7 +157,7 @@ fn provider_route_queries_use_explicit_region_context_not_catalog_key_segments()
     let sqlite_sql = include_str!("../src/infrastructure/sql/sqlite/queries.rs");
     assert!(sqlite_sql.contains("AS region_code"));
     assert!(sqlite_sql.contains(
-        "COALESCE(NULLIF(e.region_code, ''), NULLIF(rc.region_code, ''), NULLIF(c.region_code, ''), 'global') AS region_code"
+        "COALESCE(NULLIF(e.region_code, ''), NULLIF(c.region_code, ''), 'global') AS region_code"
     ));
     assert!(sqlite_sql.contains(
         "endpoint.region_code IN (COALESCE(NULLIF(c.region_code, ''), 'global'), 'global')"
@@ -191,7 +190,6 @@ fn snapshot_load_queries_are_parameterless_and_cover_every_catalog_row_set() {
         "ai_channel",
         "ai_channel_endpoint",
         "ai_channel_model",
-        "ai_route_candidate",
         "ai_routing_policy",
         "ai_routing_profile",
         "ai_routing_rule",
@@ -247,8 +245,8 @@ fn snapshot_load_queries_are_parameterless_and_cover_every_catalog_row_set() {
         "provider route snapshot query must project resolved provider base_url"
     );
     assert!(
-        PricingCatalogSql::load_provider_routes().contains("ai_route_candidate"),
-        "provider route snapshot query must read the precomputed route candidate projection"
+        !PricingCatalogSql::load_provider_routes().contains("ai_route_candidate"),
+        "provider route snapshot query must not read the precomputed route candidate projection"
     );
     assert!(
         PricingCatalogSql::load_provider_routes().contains("ai_channel_endpoint"),
@@ -273,8 +271,8 @@ fn snapshot_load_queries_are_parameterless_and_cover_every_catalog_row_set() {
         "provider route snapshot query must require an active channel for callable routing"
     );
     assert!(
-        PricingCatalogSql::load_provider_routes().contains("JOIN ai_channel_model cm"),
-        "provider route snapshot query must join channel model support for model-scoped routing"
+        PricingCatalogSql::load_provider_routes().contains("FROM ai_channel_model cm"),
+        "provider route snapshot query must drive model-scoped routing from channel model support"
     );
     assert!(
         PricingCatalogSql::load_provider_routes().contains("secret_ref"),
@@ -344,8 +342,69 @@ fn snapshot_load_queries_are_parameterless_and_cover_every_catalog_row_set() {
         "channel group snapshot query must read active AI channels for callable forwarding"
     );
     assert!(
-        PricingCatalogSql::load_provider_channel_routes().contains("FROM ai_route_candidate b"),
-        "channel group snapshot query must derive group bindings from route candidate projections"
+        PricingCatalogSql::load_provider_channel_routes().contains("ai_channel_group_member"),
+        "channel group snapshot query must derive group membership from ai_channel_group_member"
+    );
+    assert!(
+        PricingCatalogSql::load_provider_channel_routes().contains("ai_channel_group_resource"),
+        "channel group snapshot query must derive group resource scope from ai_channel_group_resource"
+    );
+    assert!(
+        PricingCatalogSql::load_provider_channel_routes().contains("ai_channel_resource"),
+        "channel group snapshot query must derive channel resource scope from ai_channel_resource"
+    );
+    assert!(
+        PricingCatalogSql::load_provider_channel_routes().contains("ai_resource_group_item"),
+        "channel group snapshot query must expand resource group members when building routing scopes"
+    );
+    assert!(
+        PricingCatalogSql::load_provider_channel_routes().contains("apiScope"),
+        "channel group snapshot query must include API scope separately from modality capability scope"
+    );
+    assert!(
+        PricingCatalogSql::load_provider_channel_routes().contains("matched_resource_scope"),
+        "channel group snapshot query must route from the intersection of channel and group resource scopes"
+    );
+    assert!(
+        PricingCatalogSql::load_provider_channel_routes().contains("resource_group_tree")
+            && PricingCatalogSql::load_provider_channel_routes().contains("resource_group_leaf")
+            && PricingCatalogSql::load_provider_channel_routes()
+                .contains("child_resource_group_code"),
+        "channel group snapshot query must recursively expand reusable resource groups"
+    );
+    assert!(
+        PricingCatalogSql::load_provider_channel_routes().contains("r.vendor_code")
+            && PricingCatalogSql::load_provider_channel_routes()
+                .contains("gr.vendor_code = cr.vendor_code")
+            && PricingCatalogSql::load_provider_channel_routes()
+                .contains("gr.resource_type = 'vendor' OR cr.resource_type = 'vendor'"),
+        "channel group snapshot query must allow vendor resources to intersect with more specific vendor-owned resources"
+    );
+    assert!(
+        PricingCatalogSql::load_provider_channel_routes()
+            .contains("gr.resource_type = 'api_endpoint' OR cr.resource_type = 'api_endpoint'")
+            && PricingCatalogSql::load_provider_channel_routes()
+                .contains("gr.resource_type = 'modality' OR cr.resource_type = 'modality'"),
+        "channel group snapshot query must not match distinct model resources only by shared API or modality"
+    );
+    assert!(
+        PricingCatalogSql::load_provider_channel_routes().contains("'__deny__'"),
+        "channel group snapshot query must deny routes when channel/group resources do not overlap"
+    );
+    assert!(
+        PricingCatalogSql::load_provider_channel_routes().contains("COALESCE(b.enabled, true)")
+            && PricingCatalogSql::load_provider_channel_routes()
+                .contains("COALESCE(member.enabled, true)"),
+        "channel group snapshot query must exclude disabled group-channel bindings"
+    );
+    assert!(
+        PricingCatalogSql::load_provider_channel_routes().contains("endpoint.timeout_ms")
+            && PricingCatalogSql::load_provider_channel_routes().contains("endpoint.retry_policy"),
+        "channel group snapshot query must project endpoint timeout and retry policy through the lateral endpoint selection"
+    );
+    assert!(
+        !PricingCatalogSql::load_provider_channel_routes().contains("FROM ai_route_candidate b"),
+        "channel group snapshot query must not derive resource authorization from route candidate projections"
     );
     assert!(
         PricingCatalogSql::load_provider_channel_routes().contains("secret_ref"),
@@ -400,6 +459,32 @@ fn snapshot_load_queries_are_parameterless_and_cover_every_catalog_row_set() {
 }
 
 #[test]
+fn provider_route_snapshot_derives_model_routes_from_normalized_channel_facts() {
+    let sql = PricingCatalogSql::load_provider_routes();
+
+    assert!(
+        !sql.contains("ai_route_candidate"),
+        "provider route snapshot must not depend on the precomputed route candidate projection; it would grow as channel_group x api x model data"
+    );
+    for required_table in [
+        "ai_channel_model",
+        "ai_channel_endpoint",
+        "ai_channel",
+        "ai_provider",
+    ] {
+        assert!(
+            sql.contains(required_table),
+            "provider route snapshot must derive callable model routes from normalized table {required_table}"
+        );
+    }
+    assert!(
+        sql.contains("cm.catalog_key AS catalog_key")
+            && sql.contains("COALESCE(NULLIF(e.region_code, ''), NULLIF(c.region_code, ''), 'global') AS region_code"),
+        "provider route snapshot must keep model identity region-free and resolve region only from endpoint/channel context"
+    );
+}
+
+#[test]
 fn row_mappers_convert_sql_rows_into_domain_objects() {
     let vendor = ModelVendorRow {
         vendor_code: "openai".to_owned(),
@@ -426,6 +511,7 @@ fn row_mappers_convert_sql_rows_into_domain_objects() {
     let route = ModelProviderRouteRow {
         catalog_key: "openai/gpt-4o-mini".to_owned(),
         model: "gpt-4o-mini".to_owned(),
+        api_code: Some("openai.chat_completions".to_owned()),
         region_code: "global".to_owned(),
         provider_code: "openrouter".to_owned(),
         channel_id: 3001,
@@ -472,7 +558,7 @@ fn row_mappers_convert_sql_rows_into_domain_objects() {
             r#"{"max_attempts":3,"retryable_status_codes":[429,500,503],"backoff_ms":25}"#
                 .to_owned(),
         ),
-        group_bindings_json: r#"[{"groupId":10,"priority":7,"weight":80,"modelScope":["openai/gpt-4o-mini"],"capabilities":["llm"]}]"#.to_owned(),
+        group_bindings_json: r#"[{"groupId":10,"priority":7,"weight":80,"modelScope":["openai/gpt-4o-mini"],"apiScope":["openai.chat_completions"],"capabilities":["llm"]}]"#.to_owned(),
     }
     .try_into_domain()
     .unwrap();
@@ -507,6 +593,10 @@ fn row_mappers_convert_sql_rows_into_domain_objects() {
     assert_eq!(
         vec!["openai/gpt-4o-mini".to_owned()],
         channel_route.group_bindings[0].model_scope
+    );
+    assert_eq!(
+        vec!["openai.chat_completions".to_owned()],
+        channel_route.group_bindings[0].api_scope
     );
     assert_eq!(
         vec!["llm".to_owned()],
@@ -700,6 +790,7 @@ fn row_mappers_reject_invalid_decimal_and_unknown_price_side() {
     let invalid_timeout = ModelProviderRouteRow {
         catalog_key: "openai/gpt-4o-mini".to_owned(),
         model: "gpt-4o-mini".to_owned(),
+        api_code: Some("openai.chat_completions".to_owned()),
         region_code: "global".to_owned(),
         provider_code: "openrouter".to_owned(),
         channel_id: 3001,
@@ -717,6 +808,7 @@ fn row_mappers_reject_invalid_decimal_and_unknown_price_side() {
     let invalid_retry_policy = ModelProviderRouteRow {
         catalog_key: "openai/gpt-4o-mini".to_owned(),
         model: "gpt-4o-mini".to_owned(),
+        api_code: Some("openai.chat_completions".to_owned()),
         region_code: "global".to_owned(),
         provider_code: "openrouter".to_owned(),
         channel_id: 3001,
@@ -737,6 +829,7 @@ fn model_provider_route_row_normalizes_catalog_key_provider_model_to_native_mode
     let route = ModelProviderRouteRow {
         catalog_key: "openai/gpt-5.5".to_owned(),
         model: "gpt-5.5".to_owned(),
+        api_code: Some("openai.chat_completions".to_owned()),
         region_code: "global".to_owned(),
         provider_code: "openai".to_owned(),
         channel_id: 3001,
@@ -762,6 +855,7 @@ fn model_provider_route_row_normalizes_slash_catalog_provider_model_to_native_mo
     let route = ModelProviderRouteRow {
         catalog_key: "openrouter/anthropic/claude-3-opus".to_owned(),
         model: "anthropic/claude-3-opus".to_owned(),
+        api_code: Some("openai.chat_completions".to_owned()),
         region_code: "global".to_owned(),
         provider_code: "openrouter".to_owned(),
         channel_id: 3001,
@@ -852,6 +946,7 @@ fn sql_catalog_snapshot_rejects_legacy_regional_route_identity() {
     rows.provider_routes.push(ModelProviderRouteRow {
         catalog_key: "openai/global/gpt-4o-mini".to_owned(),
         model: "gpt-4o-mini".to_owned(),
+        api_code: Some("openai.chat_completions".to_owned()),
         region_code: "global".to_owned(),
         provider_code: "legacy-region-route".to_owned(),
         channel_id: 4001,
@@ -1050,6 +1145,7 @@ fn priced_catalog_rows() -> PricingCatalogRows {
             ModelProviderRouteRow {
                 catalog_key: "openai/gpt-4o-mini".to_owned(),
                 model: "gpt-4o-mini".to_owned(),
+                api_code: Some("openai.chat_completions".to_owned()),
                 region_code: "global".to_owned(),
                 provider_code: "openrouter".to_owned(),
                 channel_id: 3001,
@@ -1067,6 +1163,7 @@ fn priced_catalog_rows() -> PricingCatalogRows {
             ModelProviderRouteRow {
                 catalog_key: "openai/gpt-4o-mini".to_owned(),
                 model: "gpt-4o-mini".to_owned(),
+                api_code: Some("openai.chat_completions".to_owned()),
                 region_code: "global".to_owned(),
                 provider_code: "azure_openai".to_owned(),
                 channel_id: 2001,

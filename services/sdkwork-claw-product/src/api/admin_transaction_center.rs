@@ -12,6 +12,7 @@ use serde::{Deserialize, Serialize};
 
 use crate::api::request_id::{generate_server_request_id, RequestIdError};
 use crate::api::response::PlusApiResult;
+use crate::application::{validate_payment_secret_ref, PaymentProviderRegistryError};
 use crate::domain::DomainError;
 use crate::ports::{
     AdminTransactionCenterStore, AdminTransactionCenterSubject, AdminTransactionCollection,
@@ -37,8 +38,8 @@ const IDEMPOTENCY_KEY_HEADER: &str = "Idempotency-Key";
 const PAYMENT_PROVIDER_CODES: &[&str] = &[
     "wechat_pay",
     "alipay",
-    "paypal",
     "stripe",
+    "paypal",
     "apple_pay",
     "google_pay",
 ];
@@ -590,6 +591,25 @@ fn build_create_payment_provider_account_command(
     let client_request_no =
         normalize_optional_text(request.client_request_no, "clientRequestNo", MAX_ID_LEN)?;
     let note = normalize_optional_text(request.note, "note", MAX_TEXT_LEN)?;
+    let secret_ref = normalize_required_text(request.secret_ref, "secretRef", MAX_SECRET_REF_LEN)?;
+    validate_secret_ref(&provider_code, &secret_ref)?;
+    let webhook_secret_ref = normalize_optional_text(
+        request.webhook_secret_ref,
+        "webhookSecretRef",
+        MAX_SECRET_REF_LEN,
+    )?;
+    if let Some(secret_ref) = webhook_secret_ref.as_deref() {
+        validate_secret_ref(&provider_code, secret_ref)?;
+    }
+    let certificate_ref = normalize_optional_text(
+        request.certificate_ref,
+        "certificateRef",
+        MAX_SECRET_REF_LEN,
+    )?;
+    if let Some(secret_ref) = certificate_ref.as_deref() {
+        validate_secret_ref(&provider_code, secret_ref)?;
+    }
+
     Ok(CreateAdminPaymentProviderAccountCommand {
         subject,
         account_no,
@@ -602,17 +622,9 @@ fn build_create_payment_provider_account_command(
         environment,
         country_code,
         settlement_currency,
-        secret_ref: normalize_required_text(request.secret_ref, "secretRef", MAX_SECRET_REF_LEN)?,
-        webhook_secret_ref: normalize_optional_text(
-            request.webhook_secret_ref,
-            "webhookSecretRef",
-            MAX_SECRET_REF_LEN,
-        )?,
-        certificate_ref: normalize_optional_text(
-            request.certificate_ref,
-            "certificateRef",
-            MAX_SECRET_REF_LEN,
-        )?,
+        secret_ref,
+        webhook_secret_ref,
+        certificate_ref,
         rotated_at: normalize_optional_text(request.rotated_at, "rotatedAt", MAX_CODE_LEN)?,
         client_request_no,
         note,
@@ -620,6 +632,15 @@ fn build_create_payment_provider_account_command(
         idempotency_key: required_header(headers, IDEMPOTENCY_KEY_HEADER)?,
         request_id: Some(server_request_id()?),
         requested_at: current_timestamp_string(),
+    })
+}
+
+fn validate_secret_ref(provider_code: &str, value: &str) -> Result<(), Response> {
+    validate_payment_secret_ref(provider_code, value).map_err(|error| match error {
+        PaymentProviderRegistryError::InvalidProviderRequest { message, .. } => {
+            bad_request(message)
+        }
+        other => bad_request(other.to_string()),
     })
 }
 

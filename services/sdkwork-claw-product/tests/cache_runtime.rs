@@ -1,13 +1,40 @@
+use std::sync::atomic::{AtomicU64, Ordering};
 use std::sync::Arc;
-use std::time::Duration;
+use std::time::{Duration, Instant};
 
 use sdkwork_claw_product::application::{
     CacheBackend, CacheBackendCursor, CacheBackendFuture, CacheBackendKeyList, CacheBackendStats,
     CacheInstanceSpec, CacheNamespacePolicy, CacheOperationOutcome, CacheProviderKind,
     CacheRuntime, CacheRuntimeTarget, LocalCacheBackend, RuntimeCacheManager,
-    DEFAULT_REDIS_CONNECTION_PROFILE_NAME,
+    DEFAULT_REDIS_CONNECTION_PROFILE_NAME, ROUTING_CONFIG_VERSION_CACHE_NAMESPACE,
+    ROUTING_DISABLED_CHANNEL_CACHE_NAMESPACE, ROUTING_IDEMPOTENCY_CACHE_NAMESPACE,
+    ROUTING_PROVIDER_OBJECT_ROUTE_CACHE_NAMESPACE, ROUTING_SNAPSHOT_CACHE_NAMESPACE,
 };
 use sdkwork_claw_product::domain::{DomainError, DomainResult};
+
+#[derive(Clone)]
+struct ManualClock {
+    origin: Instant,
+    elapsed_millis: Arc<AtomicU64>,
+}
+
+impl ManualClock {
+    fn new() -> Self {
+        Self {
+            origin: Instant::now(),
+            elapsed_millis: Arc::new(AtomicU64::new(0)),
+        }
+    }
+
+    fn now(&self) -> Instant {
+        self.origin + Duration::from_millis(self.elapsed_millis.load(Ordering::Relaxed))
+    }
+
+    fn advance(&self, duration: Duration) {
+        let delta = duration.as_millis().min(u128::from(u64::MAX)) as u64;
+        self.elapsed_millis.fetch_add(delta, Ordering::Relaxed);
+    }
+}
 
 #[tokio::test]
 async fn local_cache_runtime_tracks_entries_and_deletes_by_namespace() {
@@ -66,7 +93,49 @@ async fn local_cache_runtime_tracks_entries_and_deletes_by_namespace() {
 }
 
 #[tokio::test]
+async fn default_cache_runtime_declares_ai_routing_namespaces_for_multilevel_cache() {
+    let desktop = sdkwork_claw_product::application::default_desktop_cache_runtime();
+    let service = sdkwork_claw_product::application::default_service_cache_runtime(
+        DEFAULT_REDIS_CONNECTION_PROFILE_NAME,
+        "claw",
+    );
+
+    for runtime in [desktop, service] {
+        let namespaces = runtime
+            .namespace_policies
+            .iter()
+            .map(|policy| policy.namespace.as_str())
+            .collect::<Vec<_>>();
+        for namespace in [
+            ROUTING_SNAPSHOT_CACHE_NAMESPACE,
+            ROUTING_PROVIDER_OBJECT_ROUTE_CACHE_NAMESPACE,
+            ROUTING_IDEMPOTENCY_CACHE_NAMESPACE,
+            ROUTING_CONFIG_VERSION_CACHE_NAMESPACE,
+            ROUTING_DISABLED_CHANNEL_CACHE_NAMESPACE,
+        ] {
+            assert!(
+                namespaces.contains(&namespace),
+                "default cache runtime must include routing cache namespace {namespace}"
+            );
+        }
+
+        let sticky_policy = runtime
+            .namespace_policies
+            .iter()
+            .find(|policy| policy.namespace == ROUTING_PROVIDER_OBJECT_ROUTE_CACHE_NAMESPACE)
+            .unwrap();
+        assert_eq!("coordination_critical", sticky_policy.consistency);
+        assert_eq!("origin_fallback", sticky_policy.failure_mode);
+        assert!(
+            sticky_policy.ttl_seconds <= 3600,
+            "sticky L1 cache must be bounded so DB remains authoritative"
+        );
+    }
+}
+
+#[tokio::test]
 async fn cache_runtime_refreshes_one_namespace_without_touching_other_namespaces() {
+    let clock = ManualClock::new();
     let manager = RuntimeCacheManager::new(CacheRuntime {
         runtime_target: CacheRuntimeTarget::DesktopPackaged,
         instances: vec![CacheInstanceSpec::local(
@@ -95,7 +164,13 @@ async fn cache_runtime_refreshes_one_namespace_without_touching_other_namespaces
             ),
         ],
     })
-    .with_backend("desktop-default", Arc::new(LocalCacheBackend::new()));
+    .with_backend(
+        "desktop-default",
+        Arc::new(LocalCacheBackend::with_max_entries_and_clock(None, {
+            let clock = clock.clone();
+            move || clock.now()
+        })),
+    );
 
     manager
         .set_json(
@@ -113,7 +188,7 @@ async fn cache_runtime_refreshes_one_namespace_without_touching_other_namespaces
         )
         .await
         .unwrap();
-    tokio::time::sleep(Duration::from_millis(1_100)).await;
+    clock.advance(Duration::from_millis(1_100));
 
     let outcome = manager
         .refresh_namespace("auth.qr.challenge")
@@ -702,6 +777,7 @@ async fn cache_namespace_key_listing_rejects_expired_cursor() {
 
 #[tokio::test]
 async fn cache_writes_use_namespace_policy_ttl() {
+    let clock = ManualClock::new();
     let manager = RuntimeCacheManager::new(CacheRuntime {
         runtime_target: CacheRuntimeTarget::DesktopPackaged,
         instances: vec![CacheInstanceSpec::local(
@@ -720,7 +796,13 @@ async fn cache_writes_use_namespace_policy_ttl() {
             vec!["auth".to_owned(), "qr".to_owned()],
         )],
     })
-    .with_backend("desktop-default", Arc::new(LocalCacheBackend::new()));
+    .with_backend(
+        "desktop-default",
+        Arc::new(LocalCacheBackend::with_max_entries_and_clock(None, {
+            let clock = clock.clone();
+            move || clock.now()
+        })),
+    );
 
     manager
         .set_json(
@@ -731,7 +813,7 @@ async fn cache_writes_use_namespace_policy_ttl() {
         .await
         .unwrap();
 
-    tokio::time::sleep(Duration::from_millis(1_100)).await;
+    clock.advance(Duration::from_millis(1_100));
 
     assert!(manager
         .get_json("auth.qr.challenge", "policy-ttl")
@@ -742,6 +824,7 @@ async fn cache_writes_use_namespace_policy_ttl() {
 
 #[tokio::test]
 async fn cache_writes_apply_namespace_policy_ttl_jitter() {
+    let clock = ManualClock::new();
     let mut policy = CacheNamespacePolicy::new(
         "auth.qr.challenge",
         "desktop-default",
@@ -762,7 +845,13 @@ async fn cache_writes_apply_namespace_policy_ttl_jitter() {
         )],
         namespace_policies: vec![policy],
     })
-    .with_backend("desktop-default", Arc::new(LocalCacheBackend::new()));
+    .with_backend(
+        "desktop-default",
+        Arc::new(LocalCacheBackend::with_max_entries_and_clock(None, {
+            let clock = clock.clone();
+            move || clock.now()
+        })),
+    );
 
     manager
         .set_json(
@@ -773,14 +862,14 @@ async fn cache_writes_apply_namespace_policy_ttl_jitter() {
         .await
         .unwrap();
 
-    tokio::time::sleep(Duration::from_millis(1_100)).await;
+    clock.advance(Duration::from_millis(1_100));
     assert!(manager
         .get_json("auth.qr.challenge", "policy-jitter")
         .await
         .unwrap()
         .is_some());
 
-    tokio::time::sleep(Duration::from_millis(1_100)).await;
+    clock.advance(Duration::from_millis(1_100));
     assert!(manager
         .get_json("auth.qr.challenge", "policy-jitter")
         .await

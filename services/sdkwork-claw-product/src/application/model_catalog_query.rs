@@ -456,16 +456,9 @@ fn model_scope_value_matches_key(scope: &str, key: &str) -> bool {
         .split('/')
         .filter(|part| !part.is_empty())
         .collect::<Vec<_>>();
-    let key_parts = key
-        .split('/')
-        .filter(|part| !part.is_empty())
-        .collect::<Vec<_>>();
-    if key_parts.len() < 3 {
+    let Some((vendor, native_model_parts)) = model_scope_key_parts(&key) else {
         return false;
-    }
-    let vendor = key_parts[0];
-    let region = key_parts[1];
-    let native_model_parts = &key_parts[2..];
+    };
     let native_model = native_model_parts.join("/");
     match scope_parts.as_slice() {
         [scope_value] => {
@@ -475,17 +468,42 @@ fn model_scope_value_matches_key(scope: &str, key: &str) -> bool {
                     .last()
                     .is_some_and(|model| *scope_value == *model)
         }
-        [scope_vendor, scope_region] => {
-            (*scope_vendor == vendor && *scope_region == region) || scope == native_model
-        }
-        [scope_vendor, scope_region, scope_model @ ..] => {
-            (*scope_vendor == vendor
-                && *scope_region == region
-                && scope_model == native_model_parts)
-                || scope == native_model
+        [scope_vendor, scope_model @ ..] => {
+            (*scope_vendor == vendor && scope_model == native_model_parts) || scope == native_model
         }
         [] => false,
     }
+}
+
+fn model_scope_key_parts(value: &str) -> Option<(&str, Vec<&str>)> {
+    let parts = value
+        .split('/')
+        .filter(|part| !part.is_empty())
+        .collect::<Vec<_>>();
+    match parts.as_slice() {
+        [_vendor, region, _model @ ..] if known_region_segment(region) => None,
+        [vendor, model @ ..] if !model.is_empty() => Some((*vendor, model.to_vec())),
+        _ => None,
+    }
+}
+
+fn known_region_segment(value: &str) -> bool {
+    matches!(
+        value.trim().to_ascii_lowercase().as_str(),
+        "global"
+            | "cn"
+            | "us"
+            | "eu"
+            | "ap"
+            | "apac"
+            | "jp"
+            | "sg"
+            | "hk"
+            | "aws"
+            | "azure"
+            | "gcp"
+            | "local"
+    )
 }
 
 fn normalize_model_scope_value(value: &str) -> String {

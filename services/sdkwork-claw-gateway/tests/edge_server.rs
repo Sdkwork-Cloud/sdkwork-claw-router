@@ -668,6 +668,99 @@ async fn edge_server_exposes_own_health_check_without_upstream_probe() {
 }
 
 #[tokio::test]
+async fn edge_server_can_dispatch_to_in_process_upstreams() {
+    let portal_dist = temp_portal_dist_dir("in-process-upstreams");
+    write_portal_dist_fixture(&portal_dist);
+    let gateway_router = Router::new()
+        .route(
+            "/healthz",
+            axum::routing::get(|| async {
+                Json(json!({
+                    "status": "ok",
+                    "service": "embedded-gateway",
+                }))
+            }),
+        )
+        .route(
+            "/v1/models",
+            axum::routing::get(|| async {
+                Json(json!({
+                    "surface": "gateway",
+                }))
+            }),
+        );
+    let backend_router = Router::new()
+        .route(
+            "/healthz",
+            axum::routing::get(|| async {
+                Json(json!({
+                    "status": "ok",
+                    "service": "embedded-backend",
+                }))
+            }),
+        )
+        .route(
+            "/backend/v3/api/ai/models",
+            axum::routing::get(|| async {
+                Json(json!({
+                    "surface": "backend",
+                }))
+            }),
+        );
+    let app_router = Router::new()
+        .route(
+            "/healthz",
+            axum::routing::get(|| async {
+                Json(json!({
+                    "status": "ok",
+                    "service": "embedded-app",
+                }))
+            }),
+        )
+        .route(
+            "/app/v3/api/ai/models",
+            axum::routing::get(|| async {
+                Json(json!({
+                    "surface": "app",
+                }))
+            }),
+        );
+    let router = sdkwork_claw_gateway::edge_server_router_with_in_process_upstreams(
+        sdkwork_claw_gateway::EdgeServerConfig::try_new(
+            "http://127.0.0.1:1",
+            "http://127.0.0.1:1",
+            "http://127.0.0.1:1",
+            "http://127.0.0.1:1",
+        )
+        .unwrap()
+        .with_portal_static_dist(portal_dist.clone())
+        .unwrap(),
+        sdkwork_claw_gateway::EdgeInProcessUpstreams::new(
+            gateway_router,
+            backend_router,
+            app_router,
+        ),
+    );
+
+    let gateway = json_request(router.clone(), Method::GET, "/v1/models", "").await;
+    assert_eq!("gateway", gateway["surface"]);
+
+    let backend = json_request(router.clone(), Method::GET, "/backend/v3/api/ai/models", "").await;
+    assert_eq!("backend", backend["surface"]);
+
+    let app = json_request(router.clone(), Method::GET, "/app/v3/api/ai/models", "").await;
+    assert_eq!("app", app["surface"]);
+
+    let ready = json_request(router, Method::GET, "/readyz", "").await;
+    assert_eq!("ok", ready["status"]);
+    assert_eq!("embedded-gateway", ready["upstreams"]["gateway"]["service"]);
+    assert_eq!("embedded-backend", ready["upstreams"]["backend"]["service"]);
+    assert_eq!("embedded-app", ready["upstreams"]["app"]["service"]);
+
+    let _ = std::fs::remove_dir_all(&portal_dist);
+}
+
+#[tokio::test]
 async fn edge_server_readyz_reports_all_upstreams_ready() {
     let gateway = spawn_health_upstream("gateway", true).await;
     let admin = spawn_health_upstream("admin", true).await;
@@ -1114,22 +1207,56 @@ async fn edge_server_can_serve_portal_dist_without_node_server() {
 
     let schema_tabs_payload =
         json_request(router.clone(), Method::GET, "/openapi/schema-tabs.json", "").await;
-    assert_eq!(3, schema_tabs_payload["tabs"].as_array().unwrap().len());
+    assert_eq!(5, schema_tabs_payload["tabs"].as_array().unwrap().len());
     assert_eq!("gateway", schema_tabs_payload["tabs"][0]["id"]);
-    assert_eq!(
-        "Claw Router Open API",
-        schema_tabs_payload["tabs"][0]["name"]
-    );
+    assert_eq!("AI聚合API", schema_tabs_payload["tabs"][0]["name"]);
+    assert_eq!("available", schema_tabs_payload["tabs"][0]["status"]);
     assert_eq!(
         "/openapi.json",
         schema_tabs_payload["tabs"][0]["schemaUrls"][0]
     );
+    assert_eq!("payment-aggregate", schema_tabs_payload["tabs"][1]["id"]);
+    assert_eq!("支付聚合API", schema_tabs_payload["tabs"][1]["name"]);
+    assert_eq!("available", schema_tabs_payload["tabs"][1]["status"]);
+    assert_eq!(
+        "/payments/v3/openapi.json",
+        schema_tabs_payload["tabs"][1]["schemaUrls"][0]
+    );
+    assert_eq!(
+        "/payments/v3/openapi.json",
+        schema_tabs_payload["tabs"][1]["defaultSchemaUrl"]
+    );
+    assert_eq!("cloud-services", schema_tabs_payload["tabs"][2]["id"]);
+    assert_eq!("基础云服务API", schema_tabs_payload["tabs"][2]["name"]);
+    assert_eq!("planned", schema_tabs_payload["tabs"][2]["status"]);
+    assert!(schema_tabs_payload["tabs"][2]["schemaUrls"]
+        .as_array()
+        .unwrap()
+        .is_empty());
+    assert!(schema_tabs_payload["tabs"][2]
+        .get("defaultSchemaUrl")
+        .is_none());
+    assert_eq!("app", schema_tabs_payload["tabs"][3]["id"]);
+    assert_eq!(40, schema_tabs_payload["tabs"][3]["order"]);
+    assert_eq!("backend", schema_tabs_payload["tabs"][4]["id"]);
+    assert_eq!(50, schema_tabs_payload["tabs"][4]["order"]);
 
     let openapi_payload = json_request(router.clone(), Method::GET, "/openapi.json", "").await;
     assert_eq!("3.0.3", openapi_payload["openapi"]);
     assert_eq!("Claw Router Open API", openapi_payload["info"]["title"]);
     assert!(openapi_payload["paths"]
         .get("/v1/chat/completions")
+        .is_some());
+
+    let payment_openapi_payload =
+        json_request(router.clone(), Method::GET, "/payments/v3/openapi.json", "").await;
+    assert_eq!("3.1.2", payment_openapi_payload["openapi"]);
+    assert_eq!(
+        "SDKWork Payment Aggregate API",
+        payment_openapi_payload["info"]["title"]
+    );
+    assert!(payment_openapi_payload["paths"]
+        .get("/payments/v3/payment_intents")
         .is_some());
 
     let app_openapi_payload =

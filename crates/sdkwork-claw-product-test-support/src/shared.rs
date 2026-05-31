@@ -1,8 +1,9 @@
 #![allow(dead_code)]
 
 use sdkwork_claw_product::infrastructure::sql::installer::{
-    CatalogRefreshOptions, DatabaseInstallOptions, DatabaseInstaller, CURRENT_SCHEMA_VERSION,
+    DatabaseInstallOptions, DatabaseInstaller, CURRENT_SCHEMA_VERSION,
 };
+use sdkwork_commerce_bootstrap::commerce_recharge_package_seeds;
 use sqlx::sqlite::{SqliteConnectOptions, SqlitePoolOptions};
 use sqlx::{Row, SqlitePool};
 use std::ffi::OsString;
@@ -13,14 +14,16 @@ use std::str::FromStr;
 use std::sync::atomic::{AtomicU64, Ordering};
 use std::time::{Duration, Instant, SystemTime, UNIX_EPOCH};
 
-const INSTALLED_SQLITE_TEMPLATE_REVISION: &str = "v2";
-const REPAIR_SQLITE_TEMPLATE_REVISION: &str = "v1";
-const SCHEMA_SQLITE_TEMPLATE_REVISION: &str = "v2";
+const GENERATED_POSTGRES_SCHEMA: &str =
+    include_str!("../../../generated/schema/postgres/schema.sql");
+const SQLITE_TEMPLATE_LOCK_RETRY_INITIAL_MILLIS: u64 = 10;
+const SQLITE_TEMPLATE_LOCK_RETRY_MAX_MILLIS: u64 = 100;
 
 static SQLITE_DB_COUNTER: AtomicU64 = AtomicU64::new(0);
-static INSTALLED_SQLITE_TEMPLATE_LOCK: tokio::sync::Mutex<()> = tokio::sync::Mutex::const_new(());
+pub(crate) static INSTALLED_SQLITE_TEMPLATE_LOCK: tokio::sync::Mutex<()> =
+    tokio::sync::Mutex::const_new(());
 
-struct TemplateFileLock {
+pub(crate) struct TemplateFileLock {
     path: PathBuf,
     _file: File,
 }
@@ -31,32 +34,7 @@ impl Drop for TemplateFileLock {
     }
 }
 
-pub async fn installed_sqlite_pool() -> SqlitePool {
-    let template_path = sqlite_template_path("installed", INSTALLED_SQLITE_TEMPLATE_REVISION);
-    ensure_sqlite_template(&template_path, SqliteTemplateKind::Installed).await;
-    copy_sqlite_template_pool(&template_path, "installed").await
-}
-
-#[allow(dead_code)]
-pub async fn repair_sqlite_pool() -> SqlitePool {
-    let template_path = sqlite_template_path("repair", REPAIR_SQLITE_TEMPLATE_REVISION);
-    if !sqlite_template_current(&template_path, SqliteTemplateKind::RepairBaseline).await {
-        let installed_template_path =
-            sqlite_template_path("installed", INSTALLED_SQLITE_TEMPLATE_REVISION);
-        ensure_sqlite_template(&installed_template_path, SqliteTemplateKind::Installed).await;
-    }
-    ensure_sqlite_template(&template_path, SqliteTemplateKind::RepairBaseline).await;
-    copy_sqlite_template_pool(&template_path, "repair").await
-}
-
-#[allow(dead_code)]
-pub async fn schema_sqlite_pool() -> SqlitePool {
-    let template_path = sqlite_template_path("schema", SCHEMA_SQLITE_TEMPLATE_REVISION);
-    ensure_sqlite_template(&template_path, SqliteTemplateKind::SchemaOnly).await;
-    copy_sqlite_template_pool(&template_path, "schema").await
-}
-
-async fn copy_sqlite_template_pool(template_path: &Path, label: &str) -> SqlitePool {
+pub(crate) async fn copy_sqlite_template_pool(template_path: &Path, label: &str) -> SqlitePool {
     prune_sqlite_test_databases(&template_path);
     let database_path = unique_sqlite_database_path(label);
     fs::copy(&template_path, &database_path).unwrap_or_else(|error| {
@@ -83,84 +61,34 @@ pub fn test_database_install_options() -> DatabaseInstallOptions {
 }
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
-enum SqliteTemplateKind {
+pub(crate) enum SqliteTemplateKind {
     Installed,
     RepairBaseline,
     SchemaOnly,
 }
 
-fn test_database_installer(pool: SqlitePool) -> DatabaseInstaller {
+pub(crate) fn test_database_installer(pool: SqlitePool) -> DatabaseInstaller {
     DatabaseInstaller::for_sqlite(pool)
         .with_options(test_database_install_options())
         .unwrap()
 }
 
-async fn ensure_sqlite_template(template_path: &Path, kind: SqliteTemplateKind) {
-    if sqlite_template_current(template_path, kind).await {
-        return;
-    }
-    let _guard = INSTALLED_SQLITE_TEMPLATE_LOCK.lock().await;
-    let _file_guard = acquire_template_file_lock(template_path).await;
-    if sqlite_template_current(template_path, kind).await {
-        return;
-    }
+pub(crate) fn reset_sqlite_template_path(template_path: &Path) {
     if let Some(parent) = template_path.parent() {
         fs::create_dir_all(parent).unwrap();
     }
     if template_path.exists() {
         fs::remove_file(template_path).unwrap();
     }
-
-    match kind {
-        SqliteTemplateKind::Installed => {
-            let pool = sqlite_file_pool(template_path).await;
-            test_database_installer(pool.clone())
-                .ensure_installed()
-                .await
-                .unwrap();
-            sqlx::query("VACUUM").execute(&pool).await.unwrap();
-            pool.close().await;
-        }
-        SqliteTemplateKind::RepairBaseline => {
-            let installed_template_path =
-                sqlite_template_path("installed", INSTALLED_SQLITE_TEMPLATE_REVISION);
-            fs::copy(&installed_template_path, template_path).unwrap_or_else(|error| {
-                panic!(
-                    "failed to derive repair sqlite test template from {} to {}: {error}",
-                    installed_template_path.display(),
-                    template_path.display()
-                )
-            });
-            let pool = sqlite_file_pool(template_path).await;
-            retain_core_skill_seed_rows(&pool).await;
-            sqlx::query("VACUUM").execute(&pool).await.unwrap();
-            pool.close().await;
-        }
-        SqliteTemplateKind::SchemaOnly => {
-            let pool = sqlite_file_pool(template_path).await;
-            test_database_installer(pool.clone())
-                .refresh_catalog(CatalogRefreshOptions {
-                    source: "schema_test_template".to_owned(),
-                    mode: "dry_run".to_owned(),
-                    vendor_codes: vec!["openai".to_owned()],
-                    force: false,
-                    catalog_root: None,
-                    catalog_version: Some("2026.05.08.1".to_owned()),
-                })
-                .await
-                .unwrap();
-            sqlx::query("VACUUM").execute(&pool).await.unwrap();
-            pool.close().await;
-        }
-    }
 }
 
-async fn acquire_template_file_lock(template_path: &Path) -> TemplateFileLock {
+pub(crate) async fn acquire_template_file_lock(template_path: &Path) -> TemplateFileLock {
     let lock_path = template_lock_path(template_path);
     if let Some(parent) = lock_path.parent() {
         fs::create_dir_all(parent).unwrap();
     }
     let started_at = Instant::now();
+    let mut attempt = 0_u32;
     loop {
         match OpenOptions::new()
             .write(true)
@@ -180,7 +108,8 @@ async fn acquire_template_file_lock(template_path: &Path) -> TemplateFileLock {
                         lock_path.display()
                     );
                 }
-                tokio::time::sleep(Duration::from_millis(100)).await;
+                tokio::time::sleep(template_lock_retry_delay(attempt)).await;
+                attempt = attempt.saturating_add(1);
             }
             Err(error) => {
                 panic!(
@@ -192,6 +121,18 @@ async fn acquire_template_file_lock(template_path: &Path) -> TemplateFileLock {
     }
 }
 
+pub(crate) fn template_lock_retry_delay(attempt: u32) -> Duration {
+    let factor = if attempt >= 63 {
+        u64::MAX
+    } else {
+        1_u64 << attempt
+    };
+    let millis = SQLITE_TEMPLATE_LOCK_RETRY_INITIAL_MILLIS
+        .saturating_mul(factor)
+        .min(SQLITE_TEMPLATE_LOCK_RETRY_MAX_MILLIS);
+    Duration::from_millis(millis)
+}
+
 fn template_lock_path(template_path: &Path) -> PathBuf {
     let mut file_name = template_path
         .file_name()
@@ -201,7 +142,10 @@ fn template_lock_path(template_path: &Path) -> PathBuf {
     template_path.with_file_name(file_name)
 }
 
-async fn sqlite_template_current(template_path: &Path, kind: SqliteTemplateKind) -> bool {
+pub(crate) async fn sqlite_template_current(
+    template_path: &Path,
+    kind: SqliteTemplateKind,
+) -> bool {
     if !template_path.exists() {
         return false;
     }
@@ -220,7 +164,7 @@ async fn sqlite_template_current(template_path: &Path, kind: SqliteTemplateKind)
     current
 }
 
-async fn installed_sqlite_template_state_current(pool: &SqlitePool) -> bool {
+pub(crate) async fn installed_sqlite_template_state_current(pool: &SqlitePool) -> bool {
     let expected_catalog_version = match test_database_installer(pool.clone()).catalog_version() {
         Ok(value) => value,
         Err(_) => return false,
@@ -243,9 +187,58 @@ async fn installed_sqlite_template_state_current(pool: &SqlitePool) -> bool {
         && row.get::<String, _>("environment") == "test"
         && row.get::<String, _>("seed_profile") == "commercial"
         && row.get::<String, _>("status") == "installed"
+        && installed_sqlite_recharge_catalog_current(pool).await
 }
 
-async fn repair_sqlite_template_state_current(pool: &SqlitePool) -> bool {
+async fn installed_sqlite_recharge_catalog_current(pool: &SqlitePool) -> bool {
+    let expected = commerce_recharge_package_seeds();
+    let total_count: i64 = match sqlx::query_scalar(
+        r#"
+        SELECT COUNT(1)
+        FROM commerce_recharge_package
+        WHERE tenant_id = '0'
+          AND organization_id = '0'
+          AND status <> 'deleted'
+        "#,
+    )
+    .fetch_one(pool)
+    .await
+    {
+        Ok(count) => count,
+        Err(_) => return false,
+    };
+    if total_count != expected.len() as i64 {
+        return false;
+    }
+
+    for package in expected {
+        let status = match sqlx::query_scalar::<_, String>(
+            r#"
+            SELECT status
+            FROM commerce_recharge_package
+            WHERE tenant_id = '0'
+              AND organization_id = '0'
+              AND package_no = ?
+              AND currency_code = ?
+            "#,
+        )
+        .bind(package.package_no)
+        .bind(package.currency_code)
+        .fetch_optional(pool)
+        .await
+        {
+            Ok(Some(status)) => status,
+            _ => return false,
+        };
+        if status != package.status {
+            return false;
+        }
+    }
+
+    true
+}
+
+pub(crate) async fn repair_sqlite_template_state_current(pool: &SqlitePool) -> bool {
     let skill_count: i64 = match sqlx::query_scalar(
         r#"
         SELECT COUNT(1)
@@ -293,7 +286,7 @@ async fn repair_sqlite_template_state_current(pool: &SqlitePool) -> bool {
     skill_count == 3 && asset_count == 3 && artifact_count == 3
 }
 
-async fn schema_sqlite_template_state_current(pool: &SqlitePool) -> bool {
+pub(crate) async fn schema_sqlite_template_state_current(pool: &SqlitePool) -> bool {
     let row = match sqlx::query(
         r#"
         SELECT schema_version, environment, seed_profile, status
@@ -313,15 +306,11 @@ async fn schema_sqlite_template_state_current(pool: &SqlitePool) -> bool {
         && row.get::<String, _>("status") == "installing"
 }
 
-async fn sqlite_template_objects_current(pool: &SqlitePool) -> bool {
+pub(crate) async fn sqlite_template_objects_current(pool: &SqlitePool) -> bool {
     let required_schema_objects = [
         ("table", "system_installation_state"),
         ("table", "ai_channel_group_member"),
         ("table", "iam_verification_scene_policy"),
-        ("table", "ai_resource"),
-        ("table", "ai_resource_group"),
-        ("table", "ai_resource_group_item"),
-        ("table", "ai_channel_endpoint"),
         ("table", "messaging_template"),
         ("table", "plus_app"),
         ("table", "plus_agent_skill"),
@@ -351,7 +340,55 @@ async fn sqlite_template_objects_current(pool: &SqlitePool) -> bool {
             return false;
         }
     }
+    for (object_type, name) in generated_schema_object_names() {
+        let exists: i64 = match sqlx::query_scalar(
+            "SELECT COUNT(1) FROM sqlite_master WHERE type = ? AND name = ?",
+        )
+        .bind(object_type)
+        .bind(name.as_str())
+        .fetch_one(pool)
+        .await
+        {
+            Ok(exists) => exists,
+            Err(_) => return false,
+        };
+        if exists != 1 {
+            return false;
+        }
+    }
     true
+}
+
+fn generated_schema_object_names() -> Vec<(&'static str, String)> {
+    let mut objects = Vec::new();
+    for line in GENERATED_POSTGRES_SCHEMA.lines() {
+        let line = line.trim();
+        let upper = line.to_ascii_uppercase();
+        if upper.starts_with("CREATE TABLE IF NOT EXISTS ") {
+            if let Some(name) = created_object_name(line, "CREATE TABLE IF NOT EXISTS ") {
+                objects.push(("table", name));
+            }
+        } else if upper.starts_with("CREATE UNIQUE INDEX IF NOT EXISTS ") {
+            if let Some(name) = created_object_name(line, "CREATE UNIQUE INDEX IF NOT EXISTS ") {
+                objects.push(("index", name));
+            }
+        } else if upper.starts_with("CREATE INDEX IF NOT EXISTS ") {
+            if let Some(name) = created_object_name(line, "CREATE INDEX IF NOT EXISTS ") {
+                objects.push(("index", name));
+            }
+        }
+    }
+    objects
+}
+
+fn created_object_name(statement: &str, prefix: &str) -> Option<String> {
+    statement
+        .get(prefix.len()..)?
+        .trim_start()
+        .split(|character: char| character.is_whitespace() || character == '(')
+        .next()
+        .map(|name| name.trim_matches('"').to_ascii_lowercase())
+        .filter(|name| !name.is_empty())
 }
 
 fn prune_sqlite_test_databases(template_path: &Path) {
@@ -416,7 +453,7 @@ fn sqlite_template_label(path: &Path) -> Option<&'static str> {
     }
 }
 
-async fn retain_core_skill_seed_rows(pool: &SqlitePool) {
+pub(crate) async fn retain_core_skill_seed_rows(pool: &SqlitePool) {
     sqlx::query(
         r#"
         DELETE FROM studio_catalog_asset
@@ -454,7 +491,7 @@ async fn retain_core_skill_seed_rows(pool: &SqlitePool) {
     .unwrap();
 }
 
-fn sqlite_template_path(label: &str, revision: &str) -> PathBuf {
+pub(crate) fn sqlite_template_path(label: &str, revision: &str) -> PathBuf {
     let mut path = sqlite_test_database_dir();
     path.push(format!(
         "sdkwork-claw-product-{label}-{CURRENT_SCHEMA_VERSION}-{revision}.template.db"
@@ -484,7 +521,7 @@ fn sqlite_test_database_dir() -> PathBuf {
         .unwrap_or_else(|| PathBuf::from("target/test-dbs"))
 }
 
-async fn sqlite_file_pool(path: &Path) -> SqlitePool {
+pub(crate) async fn sqlite_file_pool(path: &Path) -> SqlitePool {
     if let Some(parent) = path.parent() {
         fs::create_dir_all(parent).unwrap();
     }
@@ -499,10 +536,26 @@ async fn sqlite_file_pool(path: &Path) -> SqlitePool {
         .unwrap()
 }
 
-async fn sqlite_existing_file_pool(path: &Path) -> Result<SqlitePool, sqlx::Error> {
+pub(crate) async fn sqlite_existing_file_pool(path: &Path) -> Result<SqlitePool, sqlx::Error> {
     let database_url = format!("sqlite://{}", path.to_string_lossy().replace('\\', "/"));
     SqlitePoolOptions::new()
         .max_connections(1)
         .connect(database_url.as_str())
         .await
+}
+
+#[cfg(test)]
+mod tests {
+    use super::template_lock_retry_delay;
+    use std::time::Duration;
+
+    #[test]
+    fn installed_sqlite_template_lock_retry_delay_starts_small_and_caps() {
+        assert_eq!(Duration::from_millis(10), template_lock_retry_delay(0));
+        assert_eq!(Duration::from_millis(20), template_lock_retry_delay(1));
+        assert_eq!(Duration::from_millis(40), template_lock_retry_delay(2));
+        assert_eq!(Duration::from_millis(80), template_lock_retry_delay(3));
+        assert_eq!(Duration::from_millis(100), template_lock_retry_delay(4));
+        assert_eq!(Duration::from_millis(100), template_lock_retry_delay(12));
+    }
 }

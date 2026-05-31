@@ -1093,7 +1093,7 @@ declare module '@sdkwork/i18n-pc-react' {
 
   export interface SdkworkNotificationGeneratedClient {
     notification: {
-      listNotifications(params?: {
+      list(params?: {
         appId?: string;
         includeArchived?: boolean;
         page?: number;

@@ -25,6 +25,7 @@ async fn sqlite_admin_marketing_upserts_exchange_rule_into_appbase_commerce_rule
         source_asset_type: "POINTS".to_owned(),
         target_asset_type: "CASH".to_owned(),
         rate: "250.000000".to_owned(),
+        remark: "POINTS to CASH exchange rate".to_owned(),
         request_id: "req-exchange-rule".to_owned(),
         requested_at: "2026-05-18T10:00:00Z".to_owned(),
     };

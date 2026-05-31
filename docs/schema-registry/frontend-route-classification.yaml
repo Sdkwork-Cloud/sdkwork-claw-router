@@ -907,6 +907,25 @@ routes:
   route_scope: console
   delivery_kind: sdk_backed_business_runtime
   api_surface: app
+  required_tables:
+  - commerce_billing_history
+  - commerce_recharge_package
+  - commerce_exchange_rule
+  - commerce_payment_method
+  - commerce_order
+  - commerce_order_item
+  - commerce_order_amount_breakdown
+  - commerce_order_cancellation
+  - commerce_order_event
+  - commerce_payment_intent
+  - commerce_payment_attempt
+  - commerce_product_spu
+  - commerce_product_sku
+  - commerce_product_category
+  - commerce_product_media
+  - commerce_price_list
+  - commerce_price_list_item
+  - commerce_product_attribute
   evidence:
   - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-recharge/src/RechargeView.tsx
   - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-recharge/src/rechargeService.ts

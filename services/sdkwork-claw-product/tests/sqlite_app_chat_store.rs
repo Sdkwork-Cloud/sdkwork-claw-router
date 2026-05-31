@@ -1,12 +1,9 @@
-#[path = "common/installed_sqlite.rs"]
-mod installed_sqlite_common;
-
-use installed_sqlite_common::schema_sqlite_pool;
 use sdkwork_claw_product::infrastructure::sql::sqlite::SqliteAppChatStore;
 use sdkwork_claw_product::ports::{
     AppChatStore, AppChatSubject, AppChatUsageSnapshot, CompleteAppChatTurnCommand,
     CreateAppChatConversationCommand, CreateAppChatTurnCommand,
 };
+use sdkwork_claw_product_test_support::schema_sqlite_pool;
 use serde_json::json;
 use sqlx::sqlite::SqlitePoolOptions;
 use sqlx::Row;

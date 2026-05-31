@@ -2037,23 +2037,32 @@ async fn database_config_billing_reads_return_empty_defaults_when_optional_read_
         "2000", recharge_packages_payload["code"],
         "{recharge_packages_body_text}"
     );
-    let default_recharge_packages = recharge_packages_payload["data"].as_array().unwrap();
+    let default_recharge_packages = recharge_packages_payload["data"]["items"]
+        .as_array()
+        .unwrap();
     assert_eq!(
-        4,
+        9,
         default_recharge_packages.len(),
         "{recharge_packages_body_text}"
     );
-    for package_id in [
-        "seed-recharge-package-990",
-        "seed-recharge-package-1990",
-        "seed-recharge-package-4990",
-        "seed-recharge-package-9990",
+    for (price_amount, points) in [
+        ("5.00", 50),
+        ("10.00", 100),
+        ("20.00", 200),
+        ("30.00", 300),
+        ("50.00", 500),
+        ("100.00", 1000),
+        ("200.00", 2000),
+        ("500.00", 5000),
+        ("1000.00", 10000),
     ] {
         assert!(
             default_recharge_packages
                 .iter()
-                .any(|package| package["id"] == package_id),
-            "{package_id}: {recharge_packages_body_text}"
+                .any(|package| package["priceAmount"] == price_amount
+                    && package["currencyCode"] == "CNY"
+                    && package["points"] == points),
+            "{price_amount}: {recharge_packages_body_text}"
         );
     }
 
@@ -2203,6 +2212,178 @@ async fn database_config_api_key_create_persists_and_scopes_created_key_to_subje
 }
 
 #[tokio::test]
+async fn database_config_payment_aggregate_create_uses_sqlite_runtime_store_and_is_idempotent() {
+    let database_url = unique_sqlite_url();
+    let pool = create_sqlite_pool(&database_url).await;
+    create_schema(&pool).await;
+    seed_catalog_with_two_user_api_keys(&pool).await;
+    pool.close().await;
+
+    let router = configured_router(&database_url).await;
+    let request_body = json!({
+        "merchantOrderNo": "aggregate-order-1001",
+        "amount": {"currency": "CNY", "value": "88.50"},
+        "subject": "standard checkout",
+        "providerCode": "stripe",
+        "paymentMethod": "card",
+        "scene": "web"
+    })
+    .to_string();
+
+    let (create_status, create_payload, create_body_text) = request_json(
+        router.clone(),
+        session_request_builder("POST", "/payments/v3/payment_intents", 10, 20, 30)
+            .header("content-type", "application/json")
+            .header("Idempotency-Key", "aggregate-create-idem-1001")
+            .body(Body::from(request_body.clone()))
+            .unwrap(),
+    )
+    .await;
+    let first_intent_id = create_payload["data"]["item"]["id"]
+        .as_str()
+        .unwrap()
+        .to_owned();
+
+    assert_eq!(StatusCode::OK, create_status, "{create_body_text}");
+    assert_eq!("2000", create_payload["code"], "{create_body_text}");
+    assert_eq!(
+        "aggregate-order-1001",
+        create_payload["data"]["item"]["merchantOrderNo"]
+    );
+    assert_eq!("stripe", create_payload["data"]["item"]["providerCode"]);
+    assert_eq!(
+        "requires_confirmation",
+        create_payload["data"]["item"]["status"]
+    );
+
+    let (duplicate_status, duplicate_payload, duplicate_body_text) = request_json(
+        router.clone(),
+        session_request_builder("POST", "/payments/v3/payment_intents", 10, 20, 30)
+            .header("content-type", "application/json")
+            .header("Idempotency-Key", "aggregate-create-idem-1001")
+            .body(Body::from(request_body))
+            .unwrap(),
+    )
+    .await;
+
+    assert_eq!(StatusCode::OK, duplicate_status, "{duplicate_body_text}");
+    assert_eq!(
+        first_intent_id,
+        duplicate_payload["data"]["item"]["id"].as_str().unwrap()
+    );
+
+    let (refund_status, refund_payload, refund_body_text) = request_json(
+        router,
+        session_request_builder("POST", "/payments/v3/refunds", 10, 20, 30)
+            .header("content-type", "application/json")
+            .header("Idempotency-Key", "aggregate-refund-idem-1001")
+            .body(Body::from(
+                json!({
+                    "paymentIntentId": first_intent_id,
+                    "merchantRefundNo": "aggregate-refund-1001",
+                    "amount": {"currency": "CNY", "value": "10.00"},
+                    "reason": "customer requested refund",
+                    "items": [
+                        {
+                            "orderItemId": "aggregate-order-item-1001-1",
+                            "quantity": 1,
+                            "refundAmount": {"currency": "CNY", "value": "7.00"},
+                            "taxRefundAmount": {"currency": "CNY", "value": "1.00"},
+                            "shippingRefundAmount": {"currency": "CNY", "value": "0.00"}
+                        },
+                        {
+                            "orderItemId": "aggregate-order-item-1001-2",
+                            "quantity": 1,
+                            "refundAmount": {"currency": "CNY", "value": "2.00"}
+                        }
+                    ]
+                })
+                .to_string(),
+            ))
+            .unwrap(),
+    )
+    .await;
+
+    assert_eq!(
+        StatusCode::UNPROCESSABLE_ENTITY,
+        refund_status,
+        "{refund_body_text}"
+    );
+    assert_eq!("4220", refund_payload["code"], "{refund_body_text}");
+    assert!(refund_payload["msg"]
+        .as_str()
+        .unwrap()
+        .contains("CreateRefund"));
+
+    let pool = create_sqlite_pool(&database_url).await;
+    assert_eq!(
+        1,
+        scalar_i64(
+            &pool,
+            "SELECT COUNT(1) FROM commerce_payment_intent WHERE tenant_id = '10' AND organization_id = '20' AND owner_user_id = '30' AND merchant_order_no = 'aggregate-order-1001' AND subject = 'standard checkout' AND provider_code = 'stripe' AND payment_method = 'card' AND scene_code = 'web' AND idempotency_key = 'aggregate-create-idem-1001'"
+        )
+        .await
+    );
+    assert_eq!(
+        1,
+        scalar_i64(
+            &pool,
+            "SELECT COUNT(1) FROM commerce_payment_attempt WHERE tenant_id = '10' AND provider = 'stripe' AND out_trade_no = 'aggregate-order-1001'"
+        )
+        .await
+    );
+    assert_eq!(
+        1,
+        scalar_i64(
+            &pool,
+            "SELECT COUNT(1) FROM commerce_payment_route_decision WHERE tenant_id = '10' AND provider_code = 'stripe' AND method_code = 'card' AND scene_code = 'web'"
+        )
+        .await
+    );
+    assert_eq!(
+        1,
+        scalar_i64(
+            &pool,
+            "SELECT COUNT(1) FROM commerce_refund WHERE tenant_id = '10' AND refund_no = 'aggregate-refund-1001' AND status = 'failed'"
+        )
+        .await
+    );
+    assert_eq!(
+        1,
+        scalar_i64(
+            &pool,
+            "SELECT COUNT(1) FROM commerce_refund_attempt WHERE tenant_id = '10' AND out_refund_no = 'aggregate-refund-1001' AND status = 'FAILED'"
+        )
+        .await
+    );
+    assert_eq!(
+        1,
+        scalar_i64(
+            &pool,
+            "SELECT COUNT(1) FROM commerce_refund_event WHERE tenant_id = '10' AND event_type = 'refund.failed'"
+        )
+        .await
+    );
+    assert_eq!(
+        2,
+        scalar_i64(
+            &pool,
+            "SELECT COUNT(1) FROM commerce_refund_item WHERE tenant_id = '10' AND refund_id = (SELECT id FROM commerce_refund WHERE refund_no = 'aggregate-refund-1001')"
+        )
+        .await
+    );
+    assert_eq!(
+        1,
+        scalar_i64(
+            &pool,
+            "SELECT COUNT(1) FROM commerce_refund_item WHERE order_item_id = 'aggregate-order-item-1001-1' AND refund_amount = '7.00'"
+        )
+        .await
+    );
+    pool.close().await;
+}
+
+#[tokio::test]
 async fn database_config_app_routing_routes_require_session_scope_and_redact_sensitive_data() {
     let database_url = unique_sqlite_url();
     let pool = create_sqlite_pool(&database_url).await;
@@ -2237,7 +2418,7 @@ async fn database_config_app_routing_routes_require_session_scope_and_redact_sen
         ),
     )
     .await;
-    assert_eq!(StatusCode::OK, channels_status);
+    assert_eq!(StatusCode::OK, channels_status, "{channels_body_text}");
     assert_eq!("2000", channels_payload["code"]);
     assert_eq!(
         "OpenAI Primary",
@@ -3153,12 +3334,15 @@ async fn database_config_app_providers_require_session_scope_and_hide_secret_ref
     assert_eq!(StatusCode::OK, status);
     assert_eq!("2000", payload["code"]);
     let items = payload["data"]["items"].as_array().unwrap();
-    assert!(items
-        .iter()
-        .any(|item| item["name"] == "Tenant OpenAI Provider"
-            && item["status"] == "active"
-            && item["providerFamily"] == "codex"
-            && item["integrationType"] == "model_vendor_direct"));
+    assert!(
+        items
+            .iter()
+            .any(|item| item["name"] == "Tenant OpenAI Provider"
+                && item["status"] == "active"
+                && item["providerFamily"] == "codex"
+                && item["integrationType"] == "model_vendor_direct"),
+        "unexpected providers payload: {body_text}"
+    );
     assert!(!body_text.contains("vault://providers/openai/main"));
     assert!(!body_text.contains("sk-provider-secret"));
     assert!(!body_text.contains("Other Tenant Provider"));
@@ -3412,7 +3596,7 @@ async fn database_config_recharge_lists_packages_and_persists_pending_payment_or
     pool.close().await;
 
     let router = configured_router(&database_url).await;
-    let unauthenticated_response = router
+    let public_response = router
         .clone()
         .oneshot(
             Request::builder()
@@ -3423,7 +3607,27 @@ async fn database_config_recharge_lists_packages_and_persists_pending_payment_or
         )
         .await
         .unwrap();
-    assert_eq!(StatusCode::UNAUTHORIZED, unauthenticated_response.status());
+    assert_eq!(StatusCode::OK, public_response.status());
+    let public_body = axum::body::to_bytes(public_response.into_body(), usize::MAX)
+        .await
+        .unwrap();
+    let public_body_text = String::from_utf8(public_body.to_vec()).unwrap();
+    let public_payload: serde_json::Value = serde_json::from_slice(&public_body).unwrap();
+    assert_eq!("2000", public_payload["code"], "{public_body_text}");
+    let public_packs = public_payload["data"]["items"].as_array().unwrap();
+    assert_eq!(9, public_packs.len(), "{public_body_text}");
+    assert!(public_packs
+        .iter()
+        .any(|pack| pack["id"] == "seed-recharge-package-cny-500"
+            && pack["priceAmount"] == "5.00"
+            && pack["points"] == 50));
+    assert!(public_packs
+        .iter()
+        .any(|pack| pack["id"] == "seed-recharge-package-cny-100000"
+            && pack["priceAmount"] == "1000.00"
+            && pack["points"] == 10000));
+    assert!(!public_body_text.contains("Starter Recharge Pack"));
+    assert!(!public_body_text.contains("Other Org Recharge Pack"));
 
     let (packs_status, packs_payload, packs_body_text) = request_json(
         router.clone(),
@@ -3439,27 +3643,26 @@ async fn database_config_recharge_lists_packages_and_persists_pending_payment_or
     .await;
     assert_eq!(StatusCode::OK, packs_status);
     assert_eq!("2000", packs_payload["code"]);
-    let packs = packs_payload["data"].as_array().unwrap();
-    assert_eq!(6, packs.len(), "{packs_body_text}");
-    for package_id in [
-        "seed-recharge-package-990",
-        "seed-recharge-package-1990",
-        "seed-recharge-package-4990",
-        "seed-recharge-package-9990",
-    ] {
-        assert!(
-            packs.iter().any(|pack| pack["id"] == package_id),
-            "{package_id}: {packs_body_text}"
-        );
-    }
+    let packs = packs_payload["data"]["items"].as_array().unwrap();
+    assert_eq!(11, packs.len(), "{packs_body_text}");
     assert!(packs.iter().any(|pack| pack["id"] == "6101"
-        && pack["rmb"] == "10.00"
-        && pack["bonus"] == 25
+        && pack["priceAmount"] == "10.00"
+        && pack["bonusPoints"] == 25
         && pack["points"] == 125));
     assert!(packs.iter().any(|pack| pack["id"] == "6102"
-        && pack["rmb"] == "20.00"
-        && pack["bonus"] == 50
+        && pack["priceAmount"] == "20.00"
+        && pack["bonusPoints"] == 50
         && pack["points"] == 250));
+    assert!(packs.iter().any(
+        |pack| pack["id"] == "bootstrap-admin-recharge-package-10-501"
+            && pack["priceAmount"] == "5.00"
+            && pack["points"] == 50
+    ));
+    assert!(packs.iter().any(
+        |pack| pack["id"] == "bootstrap-admin-recharge-package-10-509"
+            && pack["priceAmount"] == "1000.00"
+            && pack["points"] == 10000
+    ));
     assert!(!packs_body_text.contains("6103"));
     assert!(!packs_body_text.contains("Other Org Recharge Pack"));
 
@@ -3469,7 +3672,9 @@ async fn database_config_recharge_lists_packages_and_persists_pending_payment_or
             .header("content-type", "application/json")
             .header("Idempotency-Key", "recharge-owner-idem-1")
             .header("Sdkwork-Request-No", "recharge-owner-request-1")
-            .body(Body::from(r#"{"amount":"10.00","method":"wechat"}"#))
+            .body(Body::from(
+                r#"{"amount":"10.00","currencyCode":"CNY","method":"wechat","packageId":"6101","source":"app-api-test"}"#,
+            ))
             .unwrap(),
     )
     .await;
@@ -3506,7 +3711,7 @@ async fn database_config_recharge_lists_packages_and_persists_pending_payment_or
     .await
     .unwrap();
     let owner_payment_attempt_count: i64 = sqlx::query_scalar(
-        "SELECT COUNT(1) FROM commerce_payment_attempt p JOIN commerce_order o ON o.id = p.order_id WHERE o.owner_user_id = '30' AND p.amount = '10.00' AND p.status = 'pending' AND p.callback_payload = '{\"points\":125}'",
+        "SELECT COUNT(1) FROM commerce_payment_attempt p JOIN commerce_order o ON o.id = p.order_id WHERE o.owner_user_id = '30' AND p.amount = '10.00' AND p.status = 'pending' AND json_extract(p.callback_payload, '$.points') = 125 AND json_extract(p.callback_payload, '$.packageId') = '6101' AND json_extract(p.callback_payload, '$.source') = 'app-api-test'",
     )
     .fetch_one(&verification_pool)
     .await
@@ -3898,6 +4103,15 @@ async fn request_json(router: axum::Router, request: Request<Body>) -> (StatusCo
     (status, payload, body_text)
 }
 
+async fn scalar_i64(pool: &SqlitePool, sql: &str) -> i64 {
+    sqlx::query(sql)
+        .fetch_one(pool)
+        .await
+        .unwrap()
+        .try_get::<i64, _>(0)
+        .unwrap()
+}
+
 fn model_catalog_contains(payload: &Value, model: &str) -> bool {
     payload["data"]["items"]
         .as_array()
@@ -4139,7 +4353,7 @@ async fn create_schema(pool: &SqlitePool) {
             channel_name TEXT,
             channel_type TEXT,
             protocol_code TEXT,
-            auth_type TEXT,
+            auth_type INTEGER,
             auth_config TEXT,
             credential_ref TEXT,
             credential_hash TEXT,
@@ -4411,6 +4625,8 @@ async fn create_schema(pool: &SqlitePool) {
             resource_group_code TEXT,
             grant_type TEXT NOT NULL DEFAULT 'allow',
             priority INTEGER,
+            effective_from TEXT,
+            effective_to TEXT,
             status INTEGER NOT NULL,
             deleted_at TEXT
         )"#,
@@ -5552,12 +5768,22 @@ async fn create_schema(pool: &SqlitePool) {
             organization_id TEXT,
             owner_user_id TEXT NOT NULL,
             order_id TEXT NOT NULL,
+            merchant_order_no TEXT,
+            subject TEXT,
             provider TEXT NOT NULL,
+            provider_code TEXT,
+            payment_method TEXT,
+            scene_code TEXT,
             amount TEXT NOT NULL,
             currency_code TEXT NOT NULL,
             status TEXT NOT NULL,
             request_no TEXT NOT NULL,
             idempotency_key TEXT NOT NULL,
+            metadata_json TEXT,
+            provider_native_json TEXT,
+            next_action_json TEXT,
+            captured_amount TEXT,
+            refunded_amount TEXT,
             created_at TEXT NOT NULL,
             updated_at TEXT NOT NULL
         )"#,
@@ -5578,6 +5804,117 @@ async fn create_schema(pool: &SqlitePool) {
             paid_at TEXT,
             updated_at TEXT NOT NULL,
             UNIQUE (tenant_id, provider, out_trade_no)
+        )"#,
+        r#"CREATE TABLE commerce_payment_route_decision (
+            id TEXT PRIMARY KEY,
+            tenant_id TEXT NOT NULL,
+            organization_id TEXT,
+            payment_intent_id TEXT NOT NULL,
+            payment_attempt_id TEXT NOT NULL,
+            route_rule_id TEXT,
+            channel_id TEXT NOT NULL,
+            provider_code TEXT NOT NULL,
+            provider_account_id TEXT,
+            method_code TEXT NOT NULL,
+            scene_code TEXT NOT NULL,
+            country_code TEXT,
+            currency_code TEXT NOT NULL,
+            amount TEXT NOT NULL,
+            risk_level TEXT,
+            decision_reason TEXT,
+            fallback_from_channel_id TEXT,
+            created_at TEXT NOT NULL,
+            UNIQUE (tenant_id, payment_attempt_id)
+        )"#,
+        r#"CREATE TABLE commerce_payment_operation_attempt (
+            id TEXT PRIMARY KEY,
+            tenant_id TEXT NOT NULL,
+            organization_id TEXT,
+            operation_no TEXT NOT NULL,
+            provider_code TEXT NOT NULL,
+            provider_account_id TEXT,
+            channel_id TEXT,
+            operation_code TEXT NOT NULL,
+            sdkwork_resource_type TEXT NOT NULL,
+            sdkwork_resource_id TEXT NOT NULL,
+            idempotency_key TEXT NOT NULL,
+            request_digest TEXT NOT NULL,
+            response_digest TEXT,
+            native_request_id TEXT,
+            native_trade_id TEXT,
+            native_refund_id TEXT,
+            http_status INTEGER,
+            provider_error_code TEXT,
+            provider_error_message TEXT,
+            retryable TEXT,
+            status TEXT NOT NULL,
+            started_at TEXT NOT NULL,
+            completed_at TEXT,
+            created_at TEXT NOT NULL,
+            UNIQUE (tenant_id, provider_code, operation_code, idempotency_key)
+        )"#,
+        r#"CREATE TABLE commerce_refund (
+            id TEXT PRIMARY KEY,
+            tenant_id TEXT NOT NULL,
+            organization_id TEXT,
+            payment_intent_id TEXT,
+            payment_attempt_id TEXT NOT NULL,
+            refund_no TEXT NOT NULL,
+            amount TEXT NOT NULL,
+            currency_code TEXT,
+            provider_code TEXT,
+            reason TEXT,
+            status TEXT NOT NULL,
+            request_no TEXT NOT NULL,
+            idempotency_key TEXT NOT NULL,
+            created_at TEXT NOT NULL,
+            updated_at TEXT NOT NULL,
+            UNIQUE (tenant_id, refund_no)
+        )"#,
+        r#"CREATE TABLE commerce_refund_attempt (
+            id TEXT PRIMARY KEY,
+            tenant_id TEXT NOT NULL,
+            organization_id TEXT,
+            refund_attempt_no TEXT NOT NULL,
+            refund_id TEXT NOT NULL,
+            provider_code TEXT NOT NULL,
+            provider_account_id TEXT,
+            out_refund_no TEXT NOT NULL,
+            provider_refund_id TEXT,
+            amount TEXT NOT NULL,
+            currency_code TEXT NOT NULL,
+            status TEXT NOT NULL,
+            failure_code TEXT,
+            failure_message TEXT,
+            submitted_at TEXT,
+            succeeded_at TEXT,
+            failed_at TEXT,
+            created_at TEXT NOT NULL,
+            updated_at TEXT NOT NULL,
+            UNIQUE (tenant_id, provider_code, out_refund_no)
+        )"#,
+        r#"CREATE TABLE commerce_refund_item (
+            id TEXT PRIMARY KEY,
+            tenant_id TEXT NOT NULL,
+            organization_id TEXT,
+            refund_id TEXT NOT NULL,
+            order_item_id TEXT NOT NULL,
+            quantity INTEGER NOT NULL DEFAULT 1,
+            refund_amount TEXT NOT NULL,
+            tax_refund_amount TEXT NOT NULL DEFAULT '0',
+            shipping_refund_amount TEXT NOT NULL DEFAULT '0',
+            created_at TEXT NOT NULL
+        )"#,
+        r#"CREATE TABLE commerce_refund_event (
+            id TEXT PRIMARY KEY,
+            tenant_id TEXT NOT NULL,
+            organization_id TEXT,
+            refund_id TEXT NOT NULL,
+            event_type TEXT NOT NULL,
+            from_status TEXT,
+            to_status TEXT NOT NULL,
+            reason TEXT,
+            created_at TEXT NOT NULL
         )"#,
         r#"CREATE TABLE commerce_payment_method (
             id TEXT PRIMARY KEY,
@@ -5998,8 +6335,8 @@ async fn seed_billing_data(pool: &SqlitePool) {
 async fn seed_app_routing_runtime_data(pool: &SqlitePool) {
     for statement in [
         r#"INSERT INTO ai_provider
-            (id, tenant_id, organization_id, provider_code, default_vendor_code, provider_type, protocol_code, display_name, description, base_url, status, sort_order)
-            VALUES (4001, 10, 20, 'openai', 'openai', 'official', 'openai_v1', 'Routing OpenAI Provider', 'Owner routing provider', 'https://api.openai.example/v1', 1, 1)"#,
+            (id, tenant_id, organization_id, provider_code, default_vendor_code, provider_type, protocol_code, display_name, description, base_url, auth_type, status, sort_order)
+            VALUES (4001, 10, 20, 'openai', 'openai', 'official', 'openai_v1', 'Routing OpenAI Provider', 'Owner routing provider', 'https://api.openai.example/v1', 1, 1, 1)"#,
         r#"INSERT INTO ai_channel
             (id, tenant_id, organization_id, provider_id, provider_code, channel_code,
              channel_name, channel_type, protocol_code, auth_type, base_url, credential_ref,
@@ -6007,7 +6344,7 @@ async fn seed_app_routing_runtime_data(pool: &SqlitePool) {
              status, priority, weight, health_status, last_latency_ms, rpm_limit,
              consecutive_error_count)
             VALUES (4003, 10, 20, 4001, 'openai', 'openai-primary',
-             'OpenAI Primary', 'official', 'openai_v1', 'bearer',
+             'OpenAI Primary', 'official', 'openai_v1', 1,
              'https://api.openai.example/v1', 'vault://providers/openai/main',
              'vault-label-openai-main', '42.50', 'USD', '["llm","vision"]',
              1, 1, 100, 1, 321, 600, 0)"#,
@@ -6027,7 +6364,7 @@ async fn seed_app_routing_runtime_data(pool: &SqlitePool) {
              credential_ref, capabilities, status, priority, weight, health_status,
              last_latency_ms, rpm_limit, consecutive_error_count)
             VALUES (4013, 10, 21, 4001, 'openai', 'other-tenant-channel',
-             'Other Tenant Channel', 'official', 'openai_v1', 'bearer',
+             'Other Tenant Channel', 'official', 'openai_v1', 1,
              'https://other-tenant.example/v1', 'vault://providers/openai/main',
              '["llm"]', 1, 1, 100, 1, 111, 100, 0)"#,
         r#"INSERT INTO ai_usage_fact
@@ -6071,8 +6408,8 @@ async fn seed_app_routing_runtime_data(pool: &SqlitePool) {
 async fn seed_app_providers_runtime_data(pool: &SqlitePool) {
     for statement in [
         r#"INSERT INTO ai_provider
-            (id, tenant_id, organization_id, provider_code, default_vendor_code, provider_type, protocol_code, display_name, description, base_url, status, sort_order)
-            VALUES (4101, 10, 20, 'openai', 'openai', 'official', 'openai_v1', 'Tenant OpenAI Provider', 'Tenant-owned OpenAI compatible provider', 'https://api.openai.example/v1', 1, 1)"#,
+            (id, tenant_id, organization_id, provider_code, default_vendor_code, provider_type, protocol_code, display_name, description, base_url, auth_type, status, sort_order)
+            VALUES (4101, 10, 20, 'openai', 'openai', 'official', 'openai_v1', 'Tenant OpenAI Provider', 'Tenant-owned OpenAI compatible provider', 'https://api.openai.example/v1', 1, 1, 1)"#,
         r#"INSERT INTO ai_channel
             (id, tenant_id, organization_id, provider_id, provider_code, channel_code,
              channel_name, channel_type, protocol_code, auth_type, base_url, credential_ref,
@@ -6080,7 +6417,7 @@ async fn seed_app_providers_runtime_data(pool: &SqlitePool) {
              status, priority, weight, health_status, last_latency_ms, rpm_limit,
              consecutive_error_count)
             VALUES (4103, 10, 20, 4101, 'openai', 'tenant-openai-primary',
-             'Tenant OpenAI Primary', 'official', 'openai_v1', 'bearer',
+             'Tenant OpenAI Primary', 'official', 'openai_v1', 1,
              'https://tenant-openai.example/v1', 'vault://providers/openai/main',
              'sk-provider-secret', '10.00', 'USD', '["llm"]',
              1, 1, 100, 1, 111, 600, 0)"#,
@@ -6088,8 +6425,8 @@ async fn seed_app_providers_runtime_data(pool: &SqlitePool) {
             (id, tenant_id, organization_id, catalog_key, model, channel_id, vendor_code, provider_model, provider_native_model, api_code, status)
             VALUES (4104, 10, 20, 'openai/gpt-4o-mini', 'gpt-4o-mini', 4103, 'openai', 'gpt-4o-mini', 'gpt-4o-mini', 'openai.chat_completions', 1)"#,
         r#"INSERT INTO ai_provider
-            (id, tenant_id, organization_id, provider_code, default_vendor_code, provider_type, protocol_code, display_name, description, base_url, status, sort_order)
-            VALUES (4105, 10, 21, 'anthropic', 'anthropic', 'official', 'anthropic', 'Other Tenant Provider', 'Other tenant provider', 'https://other-provider.example/v1', 1, 1)"#,
+            (id, tenant_id, organization_id, provider_code, default_vendor_code, provider_type, protocol_code, display_name, description, base_url, auth_type, status, sort_order)
+            VALUES (4105, 10, 21, 'anthropic', 'anthropic', 'official', 'anthropic', 'Other Tenant Provider', 'Other tenant provider', 'https://other-provider.example/v1', 1, 1, 1)"#,
     ] {
         sqlx::query(statement).execute(pool).await.unwrap();
     }

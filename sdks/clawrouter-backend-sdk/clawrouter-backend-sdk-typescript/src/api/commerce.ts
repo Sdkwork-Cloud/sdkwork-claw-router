@@ -1,7 +1,7 @@
 import { backendApiPath } from './paths';
 import type { HttpClient } from '../http/client';
 
-import type { AuditCommerceEventsListResult, CatalogAttributesCreateResult, CatalogAttributesListResult, CatalogCategoriesCreateResult, CatalogCategoriesDeleteResult, CatalogCategoriesListResult, CatalogCategoriesUpdateResult, CatalogPriceListsCreateResult, CatalogPriceListsListResult, CatalogProductsCreateResult, CatalogProductsListResult, CatalogProductsUpdateResult, CatalogSkusCreateResult, CatalogSkusListResult, CatalogSkusUpdateResult, CommerceInventoryStockUpdateRequest, CommerceMembershipMemberStatusRequest, CommerceMembershipPackageGroupMutationRequest, CommerceMembershipPackageMutationRequest, CommerceMembershipPlanMutationRequest, CommercePaymentProviderAccountMutationRequest, CommercePriceListMutationRequest, CommerceProductAttributeMutationRequest, CommerceProductCategoryMutationRequest, CommerceProductSkuMutationRequest, CommerceProductSpuMutationRequest, CommerceRechargePackageMutationRequest, CommerceReportsOrderRevenueListResult, CommerceReportsPaymentReconciliationRetrieveResult, CommerceReportsRefundsListResult, CommerceStandardCommandRequest, FulfillmentsListResult, InventoryLedgerEntriesListResult, InventoryReservationsListResult, InventoryStocksListResult, InventoryStocksUpdateResult, InvoicesListResult, InvoicesRetrieveResult, InvoicesTitlesListResult, MembershipsEntitlementsListResult, MembershipsMembersListResult, MembershipsMembersStatusUpdateResult, MembershipsPackageGroupsCreateResult, MembershipsPackageGroupsDeleteResult, MembershipsPackageGroupsListResult, MembershipsPackageGroupsUpdateResult, MembershipsPackagesCreateResult, MembershipsPackagesDeleteResult, MembershipsPackagesListResult, MembershipsPackagesUpdateResult, MembershipsPlansCreateResult, MembershipsPlansDeleteResult, MembershipsPlansListResult, MembershipsPlansUpdateResult, OrdersEventsListResult, OrdersListResult, OrdersRetrieveResult, PaymentsAttemptsListResult, PaymentsChannelsListResult, PaymentsIntentsListResult, PaymentsMethodsListResult, PaymentsProviderAccountsCreateResult, PaymentsProviderAccountsListResult, PaymentsProvidersListResult, PaymentsReconciliationRunsListResult, PaymentsRouteRulesListResult, PaymentsWebhookEventsListResult, RechargesOrdersListResult, RechargesPackagesCreateResult, RechargesPackagesDeleteResult, RechargesPackagesListResult, RechargesPackagesUpdateResult, RefundsListResult, RefundsRetrieveResult, ShipmentsListResult, ShipmentsTrackingEventsListResult, WalletAccountsListResult, WalletAdjustmentsCreateResult, WalletExchangeRulesListResult, WalletLedgerEntriesListResult } from '../types';
+import type { AuditCommerceEventsListResult, CatalogAttributesCreateResult, CatalogAttributesListResult, CatalogCategoriesCreateResult, CatalogCategoriesDeleteResult, CatalogCategoriesListResult, CatalogCategoriesUpdateResult, CatalogPriceListsCreateResult, CatalogPriceListsListResult, CatalogProductsCreateResult, CatalogProductsListResult, CatalogProductsUpdateResult, CatalogSkusCreateResult, CatalogSkusListResult, CatalogSkusUpdateResult, CommerceInventoryStockUpdateRequest, CommerceMembershipMemberStatusRequest, CommerceMembershipPackageGroupMutationRequest, CommerceMembershipPackageMutationRequest, CommerceMembershipPlanMutationRequest, CommercePaymentProviderAccountMutationRequest, CommercePriceListMutationRequest, CommerceProductAttributeMutationRequest, CommerceProductCategoryMutationRequest, CommerceProductSkuMutationRequest, CommerceProductSpuMutationRequest, CommerceRechargePackageMutationRequest, CommerceRechargeSettingsUpdateRequest, CommerceReportsOrderRevenueListResult, CommerceReportsPaymentReconciliationRetrieveResult, CommerceReportsRefundsListResult, CommerceStandardCommandRequest, FulfillmentsListResult, InventoryLedgerEntriesListResult, InventoryReservationsListResult, InventoryStocksListResult, InventoryStocksUpdateResult, InvoicesListResult, InvoicesRetrieveResult, InvoicesTitlesListResult, MembershipsEntitlementsListResult, MembershipsMembersListResult, MembershipsMembersStatusUpdateResult, MembershipsPackageGroupsCreateResult, MembershipsPackageGroupsDeleteResult, MembershipsPackageGroupsListResult, MembershipsPackageGroupsUpdateResult, MembershipsPackagesCreateResult, MembershipsPackagesDeleteResult, MembershipsPackagesListResult, MembershipsPackagesUpdateResult, MembershipsPlansCreateResult, MembershipsPlansDeleteResult, MembershipsPlansListResult, MembershipsPlansUpdateResult, OrdersEventsListResult, OrdersListResult, OrdersRetrieveResult, PaymentsAttemptsListResult, PaymentsChannelsListResult, PaymentsIntentsListResult, PaymentsMethodsListResult, PaymentsProviderAccountsCreateResult, PaymentsProviderAccountsListResult, PaymentsProvidersListResult, PaymentsReconciliationRunsListResult, PaymentsRouteRulesListResult, PaymentsRuntimeSnapshotRetrieveResult, PaymentsWebhookEventsListResult, RechargesOrdersListResult, RechargesPackagesCreateResult, RechargesPackagesDeleteResult, RechargesPackagesListResult, RechargesPackagesUpdateResult, RechargesSettingsRetrieveResult, RechargesSettingsUpdateResult, RefundsListResult, RefundsRetrieveResult, ShipmentsListResult, ShipmentsTrackingEventsListResult, WalletAccountsListResult, WalletAdjustmentsCreateResult, WalletExchangeRulesListResult, WalletLedgerEntriesListResult } from '../types';
 
 
 export interface CommerceWalletLedgerEntriesListParams {
@@ -202,6 +202,25 @@ export class CommerceRefundsApi {
   }
 }
 
+export class CommerceRechargesSettingsApi {
+  private client: HttpClient;
+
+  constructor(client: HttpClient) {
+    this.client = client;
+  }
+
+
+/** Recharges Settings Retrieve */
+  async retrieve(): Promise<RechargesSettingsRetrieveResult> {
+    return this.client.get<RechargesSettingsRetrieveResult>(backendApiPath(`/recharges/settings`));
+  }
+
+/** Recharges Settings Update */
+  async update(body: CommerceRechargeSettingsUpdateRequest): Promise<RechargesSettingsUpdateResult> {
+    return this.client.put<RechargesSettingsUpdateResult>(backendApiPath(`/recharges/settings`), body, undefined, undefined, 'application/json');
+  }
+}
+
 export interface CommerceRechargesPackagesListParams {
   page?: number;
   pageSize?: number;
@@ -291,11 +310,13 @@ export class CommerceRechargesApi {
   private client: HttpClient;
   public readonly orders: CommerceRechargesOrdersApi;
   public readonly packages: CommerceRechargesPackagesApi;
+  public readonly settings: CommerceRechargesSettingsApi;
 
   constructor(client: HttpClient) {
     this.client = client;
     this.orders = new CommerceRechargesOrdersApi(client);
     this.packages = new CommerceRechargesPackagesApi(client);
+    this.settings = new CommerceRechargesSettingsApi(client);
   }
 
 }
@@ -325,6 +346,38 @@ export class CommercePaymentsWebhookEventsApi {
     ]);
     return this.client.get<PaymentsWebhookEventsListResult>(appendQueryString(backendApiPath(`/payments/webhook_events`), query));
   }
+}
+
+export interface CommercePaymentsRuntimeSnapshotRetrieveParams {
+  environment?: 'sandbox' | 'production';
+}
+
+export class CommercePaymentsRuntimeSnapshotApi {
+  private client: HttpClient;
+
+  constructor(client: HttpClient) {
+    this.client = client;
+  }
+
+
+/** Payments Runtime Snapshot Retrieve */
+  async retrieve(params?: CommercePaymentsRuntimeSnapshotRetrieveParams): Promise<PaymentsRuntimeSnapshotRetrieveResult> {
+    const query = buildQueryString([
+      { name: 'environment', value: params?.environment, style: 'form', explode: true, allowReserved: false },
+    ]);
+    return this.client.get<PaymentsRuntimeSnapshotRetrieveResult>(appendQueryString(backendApiPath(`/payments/runtime/snapshot`), query));
+  }
+}
+
+export class CommercePaymentsRuntimeApi {
+  private client: HttpClient;
+  public readonly snapshot: CommercePaymentsRuntimeSnapshotApi;
+
+  constructor(client: HttpClient) {
+    this.client = client;
+    this.snapshot = new CommercePaymentsRuntimeSnapshotApi(client);
+  }
+
 }
 
 export interface CommercePaymentsRouteRulesListParams {
@@ -576,6 +629,7 @@ export class CommercePaymentsApi {
   public readonly providers: CommercePaymentsProvidersApi;
   public readonly reconciliationRuns: CommercePaymentsReconciliationRunsApi;
   public readonly routeRules: CommercePaymentsRouteRulesApi;
+  public readonly runtime: CommercePaymentsRuntimeApi;
   public readonly webhookEvents: CommercePaymentsWebhookEventsApi;
 
   constructor(client: HttpClient) {
@@ -588,6 +642,7 @@ export class CommercePaymentsApi {
     this.providers = new CommercePaymentsProvidersApi(client);
     this.reconciliationRuns = new CommercePaymentsReconciliationRunsApi(client);
     this.routeRules = new CommercePaymentsRouteRulesApi(client);
+    this.runtime = new CommercePaymentsRuntimeApi(client);
     this.webhookEvents = new CommercePaymentsWebhookEventsApi(client);
   }
 

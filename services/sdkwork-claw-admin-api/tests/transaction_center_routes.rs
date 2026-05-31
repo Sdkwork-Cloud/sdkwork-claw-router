@@ -1,13 +1,13 @@
 use axum::body::Body;
 use axum::http::{Request, StatusCode};
-use sdkwork_claw_config::DatabaseConfig;
 use sdkwork_claw_http::TrustedRequestSubject;
+use sdkwork_claw_product::infrastructure::sql::sqlite::SqliteAdminTransactionCenterStore;
 use sdkwork_claw_test_support::{
-    api_key_security_config, app_session_config, default_trusted_request_subject,
-    seeded_sqlite_catalog, trusted_subject_config, trusted_subject_signature,
+    default_trusted_request_subject, seeded_sqlite_catalog, trusted_subject_signature,
 };
 use serde_json::{json, Value};
 use sqlx::SqlitePool;
+use std::sync::Arc;
 use std::time::{SystemTime, UNIX_EPOCH};
 use tower::ServiceExt;
 
@@ -17,16 +17,7 @@ async fn transaction_center_backend_routes_use_real_database_handlers() {
     let pool = catalog.open_pool().await.unwrap();
     create_transaction_center_schema(&pool).await;
     seed_transaction_center_data(&pool).await;
-    pool.close().await;
-
-    let router = sdkwork_claw_admin_api::router_with_database_and_api_key_config(
-        DatabaseConfig::from_url_with_max_connections(catalog.database_url(), 1).unwrap(),
-        Some(api_key_security_config().unwrap()),
-        Some(trusted_subject_config().unwrap()),
-        Some(app_session_config().unwrap()),
-    )
-    .await
-    .unwrap();
+    let router = transaction_center_router(&pool);
 
     for path in [
         "/backend/v3/api/orders",
@@ -111,6 +102,7 @@ async fn transaction_center_backend_routes_use_real_database_handlers() {
         attempts_payload["data"]["items"][0]["intentId"]
     );
     assert_eq!("card", attempts_payload["data"]["items"][0]["methodCode"]);
+    pool.close().await;
 }
 
 #[tokio::test]
@@ -119,16 +111,7 @@ async fn transaction_center_provider_account_create_persists_to_database() {
     let pool = catalog.open_pool().await.unwrap();
     create_transaction_center_schema(&pool).await;
     seed_transaction_center_data(&pool).await;
-    pool.close().await;
-
-    let router = sdkwork_claw_admin_api::router_with_database_and_api_key_config(
-        DatabaseConfig::from_url_with_max_connections(catalog.database_url(), 1).unwrap(),
-        Some(api_key_security_config().unwrap()),
-        Some(trusted_subject_config().unwrap()),
-        Some(app_session_config().unwrap()),
-    )
-    .await
-    .unwrap();
+    let router = transaction_center_router(&pool);
 
     let body = Body::from(
         json!({
@@ -335,6 +318,7 @@ async fn transaction_center_provider_account_create_persists_to_database() {
         "sandbox account for payment acceptance smoke coverage",
         change_summary["note"]
     );
+    pool.close().await;
 }
 
 #[tokio::test]
@@ -343,103 +327,85 @@ async fn transaction_center_provider_account_create_rejects_contract_invalid_fie
     let pool = catalog.open_pool().await.unwrap();
     create_transaction_center_schema(&pool).await;
     seed_transaction_center_data(&pool).await;
-    pool.close().await;
+    let router = transaction_center_router(&pool);
 
-    let router = sdkwork_claw_admin_api::router_with_database_and_api_key_config(
-        DatabaseConfig::from_url_with_max_connections(catalog.database_url(), 1).unwrap(),
-        Some(api_key_security_config().unwrap()),
-        Some(trusted_subject_config().unwrap()),
-        Some(app_session_config().unwrap()),
+    assert_provider_account_create_rejects_patch(
+        router.clone(),
+        "account-no-pattern",
+        json!({ "accountNo": "acct paypal sandbox" }),
+        "accountNo must match ^[A-Za-z0-9_-]+$",
     )
-    .await
-    .unwrap();
-
-    for (case, patch, expected_message) in [
-        (
-            "account-no-pattern",
-            json!({ "accountNo": "acct paypal sandbox" }),
-            "accountNo must match ^[A-Za-z0-9_-]+$",
-        ),
-        (
-            "provider-enum",
-            json!({ "providerCode": "venmo" }),
-            "providerCode must be one of",
-        ),
-        (
-            "environment-enum",
-            json!({ "environment": "test" }),
-            "environment must be one of",
-        ),
-        (
-            "country-code-pattern",
-            json!({ "countryCode": "USA" }),
-            "countryCode must match ^[A-Z]{2}$",
-        ),
-        (
-            "currency-code-pattern",
-            json!({ "settlementCurrency": "US" }),
-            "settlementCurrency must match ^[A-Z]{3}$",
-        ),
-        (
-            "status-enum",
-            json!({ "status": "paused" }),
-            "status must be one of",
-        ),
-        (
-            "unknown-field",
-            json!({ "metadata": { "team": "payments" } }),
-            "unknown field",
-        ),
-        (
-            "merchant-id-length",
-            json!({ "merchantId": "m".repeat(129) }),
-            "merchantId must be visible ASCII and at most 128 characters",
-        ),
-        (
-            "secret-ref-length",
-            json!({ "secretRef": format!("vault://{}", "s".repeat(250)) }),
-            "secretRef must be visible ASCII and at most 256 characters",
-        ),
-        (
-            "webhook-secret-ref-length",
-            json!({ "webhookSecretRef": format!("vault://{}", "w".repeat(250)) }),
-            "webhookSecretRef must be visible ASCII and at most 256 characters",
-        ),
-        (
-            "certificate-ref-length",
-            json!({ "certificateRef": format!("vault://{}", "c".repeat(250)) }),
-            "certificateRef must be visible ASCII and at most 256 characters",
-        ),
-    ] {
-        let mut body = valid_provider_account_body();
-        let body_object = body.as_object_mut().unwrap();
-        for (key, value) in patch.as_object().unwrap() {
-            body_object.insert(key.clone(), value.clone());
-        }
-
-        let request = signed_request_builder(
-            "POST",
-            "/backend/v3/api/payments/provider_accounts",
-            default_trusted_request_subject(),
-        )
-        .header(
-            "idempotency-key",
-            format!("provider-account-invalid-{case}"),
-        )
-        .body(Body::from(body.to_string()))
-        .unwrap();
-        let (status, payload) = request_value(router.clone(), request).await;
-
-        assert_eq!(StatusCode::BAD_REQUEST, status, "{case}");
-        assert_eq!("4001", payload["code"], "{case}");
-        assert!(
-            payload["msg"]
-                .as_str()
-                .is_some_and(|message| message.contains(expected_message)),
-            "{case}: {}",
-            payload["msg"]
-        );
-    }
+    .await;
+    assert_provider_account_create_rejects_patch(
+        router.clone(),
+        "provider-enum",
+        json!({ "providerCode": "venmo" }),
+        "providerCode must be one of",
+    )
+    .await;
+    assert_provider_account_create_rejects_patch(
+        router.clone(),
+        "environment-enum",
+        json!({ "environment": "test" }),
+        "environment must be one of",
+    )
+    .await;
+    assert_provider_account_create_rejects_patch(
+        router.clone(),
+        "country-code-pattern",
+        json!({ "countryCode": "USA" }),
+        "countryCode must match ^[A-Z]{2}$",
+    )
+    .await;
+    assert_provider_account_create_rejects_patch(
+        router.clone(),
+        "currency-code-pattern",
+        json!({ "settlementCurrency": "US" }),
+        "settlementCurrency must match ^[A-Z]{3}$",
+    )
+    .await;
+    assert_provider_account_create_rejects_patch(
+        router.clone(),
+        "status-enum",
+        json!({ "status": "paused" }),
+        "status must be one of",
+    )
+    .await;
+    assert_provider_account_create_rejects_patch(
+        router.clone(),
+        "unknown-field",
+        json!({ "metadata": { "team": "payments" } }),
+        "unknown field",
+    )
+    .await;
+    assert_provider_account_create_rejects_patch(
+        router.clone(),
+        "merchant-id-length",
+        json!({ "merchantId": "m".repeat(129) }),
+        "merchantId must be visible ASCII and at most 128 characters",
+    )
+    .await;
+    assert_provider_account_create_rejects_patch(
+        router.clone(),
+        "secret-ref-length",
+        json!({ "secretRef": format!("vault://{}", "s".repeat(250)) }),
+        "secretRef must be visible ASCII and at most 256 characters",
+    )
+    .await;
+    assert_provider_account_create_rejects_patch(
+        router.clone(),
+        "webhook-secret-ref-length",
+        json!({ "webhookSecretRef": format!("vault://{}", "w".repeat(250)) }),
+        "webhookSecretRef must be visible ASCII and at most 256 characters",
+    )
+    .await;
+    assert_provider_account_create_rejects_patch(
+        router.clone(),
+        "certificate-ref-length",
+        json!({ "certificateRef": format!("vault://{}", "c".repeat(250)) }),
+        "certificateRef must be visible ASCII and at most 256 characters",
+    )
+    .await;
 
     let list_payload = request_json(
         router,
@@ -455,6 +421,43 @@ async fn transaction_center_provider_account_create_rejects_contract_invalid_fie
         .unwrap()
         .iter()
         .any(|item| item["accountNo"] == "acct-paypal-sandbox"));
+    pool.close().await;
+}
+
+async fn assert_provider_account_create_rejects_patch(
+    router: axum::Router,
+    case: &str,
+    patch: Value,
+    expected_message: &str,
+) {
+    let mut body = valid_provider_account_body();
+    let body_object = body.as_object_mut().unwrap();
+    for (key, value) in patch.as_object().unwrap() {
+        body_object.insert(key.clone(), value.clone());
+    }
+
+    let request = signed_request_builder(
+        "POST",
+        "/backend/v3/api/payments/provider_accounts",
+        default_trusted_request_subject(),
+    )
+    .header(
+        "idempotency-key",
+        format!("provider-account-invalid-{case}"),
+    )
+    .body(Body::from(body.to_string()))
+    .unwrap();
+    let (status, payload) = request_value(router, request).await;
+
+    assert_eq!(StatusCode::BAD_REQUEST, status, "{case}");
+    assert_eq!("4001", payload["code"], "{case}");
+    assert!(
+        payload["msg"]
+            .as_str()
+            .is_some_and(|message| message.contains(expected_message)),
+        "{case}: {}",
+        payload["msg"]
+    );
 }
 
 #[tokio::test]
@@ -463,16 +466,7 @@ async fn transaction_center_list_filters_reject_invalid_standard_codes() {
     let pool = catalog.open_pool().await.unwrap();
     create_transaction_center_schema(&pool).await;
     seed_transaction_center_data(&pool).await;
-    pool.close().await;
-
-    let router = sdkwork_claw_admin_api::router_with_database_and_api_key_config(
-        DatabaseConfig::from_url_with_max_connections(catalog.database_url(), 1).unwrap(),
-        Some(api_key_security_config().unwrap()),
-        Some(trusted_subject_config().unwrap()),
-        Some(app_session_config().unwrap()),
-    )
-    .await
-    .unwrap();
+    let router = transaction_center_router(&pool);
 
     for (path, expected_message) in [
         (
@@ -517,6 +511,7 @@ async fn transaction_center_list_filters_reject_invalid_standard_codes() {
             payload["msg"]
         );
     }
+    pool.close().await;
 }
 
 #[tokio::test]
@@ -555,16 +550,7 @@ async fn transaction_center_payment_runtime_projection_standardizes_appbase_meth
     .execute(&pool)
     .await
     .unwrap();
-    pool.close().await;
-
-    let router = sdkwork_claw_admin_api::router_with_database_and_api_key_config(
-        DatabaseConfig::from_url_with_max_connections(catalog.database_url(), 1).unwrap(),
-        Some(api_key_security_config().unwrap()),
-        Some(trusted_subject_config().unwrap()),
-        Some(app_session_config().unwrap()),
-    )
-    .await
-    .unwrap();
+    let router = transaction_center_router(&pool);
 
     let intents_payload = request_json(
         router.clone(),
@@ -601,6 +587,7 @@ async fn transaction_center_payment_runtime_projection_standardizes_appbase_meth
         "stripe",
         attempts_payload["data"]["items"][0]["providerCode"]
     );
+    pool.close().await;
 }
 
 fn valid_provider_account_body() -> Value {
@@ -621,6 +608,12 @@ fn valid_provider_account_body() -> Value {
     })
 }
 
+fn transaction_center_router(pool: &SqlitePool) -> axum::Router {
+    sdkwork_claw_product::api::admin_transaction_center_router_with_store(Arc::new(
+        SqliteAdminTransactionCenterStore::new(pool.clone()),
+    ))
+}
+
 fn signed_request(method: &str, path: &str, body: Body) -> Request<Body> {
     signed_request_builder(method, path, default_trusted_request_subject())
         .body(body)
@@ -638,6 +631,12 @@ fn signed_request_builder(
         .method(method)
         .uri(path)
         .header("content-type", "application/json")
+        .header("x-sdkwork-tenant-id", subject.tenant_id.to_string())
+        .header(
+            "x-sdkwork-organization-id",
+            subject.organization_id.to_string(),
+        )
+        .header("x-sdkwork-user-id", subject.user_id.to_string())
         .header("x-sdkwork-subject-tenant-id", subject.tenant_id.to_string())
         .header(
             "x-sdkwork-subject-organization-id",

@@ -4,7 +4,6 @@ import { useTranslation } from 'react-i18next';
 import { motion } from 'motion/react';
 import { CopyButton, JsonSyntaxHighlight } from 'sdkwork-claw-router-commons';
 import {
-  API_BASE_URL,
   buildPortalAuthLoginRedirect,
   getStoredAppSessionAccessToken,
   getStoredAppSessionAuthToken,
@@ -27,10 +26,11 @@ import type { OpenApiParameter, OpenApiRequestBody } from '../openapiTypes';
 
 interface ApiPlaygroundProps {
   endpoint: ApiReferenceEndpoint;
+  requestBaseUrl: string;
   onClose: () => void;
 }
 
-export function ApiPlayground({ endpoint, onClose }: ApiPlaygroundProps) {
+export function ApiPlayground({ endpoint, requestBaseUrl, onClose }: ApiPlaygroundProps) {
   const { t } = useTranslation();
   const location = useLocation();
   const navigate = useNavigate();
@@ -175,7 +175,7 @@ export function ApiPlayground({ endpoint, onClose }: ApiPlaygroundProps) {
 
   const buildUrl = () => {
     return buildPlaygroundUrl({
-      baseUrl: API_BASE_URL,
+      baseUrl: requestBaseUrl,
       endpoint,
       pathParams,
       queryParams,
@@ -190,7 +190,7 @@ export function ApiPlayground({ endpoint, onClose }: ApiPlaygroundProps) {
     const authToken = getStoredAppSessionAuthToken();
     const accessToken = getStoredAppSessionAccessToken();
     const request = buildPlaygroundRequest({
-      baseUrl: API_BASE_URL,
+      baseUrl: requestBaseUrl,
       endpoint,
       pathParams,
       queryParams,

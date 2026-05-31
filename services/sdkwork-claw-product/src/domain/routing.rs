@@ -48,6 +48,123 @@ pub enum RoutingCapability {
     Network,
 }
 
+#[derive(Debug, Clone, Copy, PartialEq, Eq, PartialOrd, Ord)]
+pub enum AiRouteStrategy {
+    StatelessFailover,
+    StatelessFailClosed,
+    CreateThenSticky,
+    ParentSticky,
+    LookupSticky,
+    PrimaryChannel,
+    FanoutAggregate,
+}
+
+impl AiRouteStrategy {
+    pub fn from_code(value: i32) -> DomainResult<Self> {
+        match value {
+            1 => Ok(Self::StatelessFailover),
+            2 => Ok(Self::StatelessFailClosed),
+            3 => Ok(Self::CreateThenSticky),
+            4 => Ok(Self::ParentSticky),
+            5 => Ok(Self::LookupSticky),
+            6 => Ok(Self::PrimaryChannel),
+            7 => Ok(Self::FanoutAggregate),
+            value => Err(DomainError::new(format!(
+                "ai_resource_route_profile.route_strategy contains unsupported value: {value}"
+            ))),
+        }
+    }
+
+    pub fn code(self) -> i32 {
+        match self {
+            Self::StatelessFailover => 1,
+            Self::StatelessFailClosed => 2,
+            Self::CreateThenSticky => 3,
+            Self::ParentSticky => 4,
+            Self::LookupSticky => 5,
+            Self::PrimaryChannel => 6,
+            Self::FanoutAggregate => 7,
+        }
+    }
+
+    pub fn failure_strategy(self) -> AiRouteFailureStrategy {
+        match self {
+            Self::StatelessFailover => AiRouteFailureStrategy::Failover,
+            Self::StatelessFailClosed
+            | Self::CreateThenSticky
+            | Self::ParentSticky
+            | Self::LookupSticky
+            | Self::PrimaryChannel
+            | Self::FanoutAggregate => AiRouteFailureStrategy::FailClosed,
+        }
+    }
+}
+
+#[derive(Debug, Clone, Copy, PartialEq, Eq, PartialOrd, Ord)]
+pub enum AiRouteFailureStrategy {
+    Failover,
+    FailClosed,
+}
+
+impl AiRouteFailureStrategy {
+    pub fn from_code(value: i32) -> DomainResult<Self> {
+        match value {
+            1 => Ok(Self::Failover),
+            2 => Ok(Self::FailClosed),
+            value => Err(DomainError::new(format!(
+                "ai_resource_route_profile.failure_strategy contains unsupported value: {value}"
+            ))),
+        }
+    }
+
+    pub fn code(self) -> i32 {
+        match self {
+            Self::Failover => 1,
+            Self::FailClosed => 2,
+        }
+    }
+
+    pub fn should_try_next_route(self, is_last_route: bool) -> bool {
+        matches!(self, Self::Failover) && !is_last_route
+    }
+}
+
+#[derive(Debug, Clone, Copy, PartialEq, Eq, PartialOrd, Ord)]
+pub enum AiRouteModelRequirement {
+    Required,
+    Optional,
+    Ignored,
+}
+
+impl AiRouteModelRequirement {
+    pub fn from_code(value: i32) -> DomainResult<Self> {
+        match value {
+            1 => Ok(Self::Required),
+            2 => Ok(Self::Optional),
+            3 => Ok(Self::Ignored),
+            value => Err(DomainError::new(format!(
+                "ai_resource_route_profile.model_requirement contains unsupported value: {value}"
+            ))),
+        }
+    }
+
+    pub fn code(self) -> i32 {
+        match self {
+            Self::Required => 1,
+            Self::Optional => 2,
+            Self::Ignored => 3,
+        }
+    }
+
+    pub fn routes_model_when_present(self) -> bool {
+        matches!(self, Self::Required | Self::Optional)
+    }
+
+    pub fn permits_missing_model(self) -> bool {
+        matches!(self, Self::Optional | Self::Ignored)
+    }
+}
+
 impl RoutingCapability {
     pub fn from_code(value: i32) -> DomainResult<Self> {
         match value {

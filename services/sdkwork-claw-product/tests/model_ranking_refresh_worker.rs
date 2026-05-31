@@ -1,4 +1,4 @@
-use std::sync::atomic::{AtomicUsize, Ordering};
+use std::sync::atomic::{AtomicBool, AtomicUsize, Ordering};
 use std::sync::{Arc, Mutex};
 use std::time::Duration;
 
@@ -11,6 +11,7 @@ use sdkwork_claw_product::ports::{
     ModelRankingRefreshFuture, ModelRankingRefreshOutcome, ModelRankingRefreshRunStatus,
     ModelRankingRefreshStore,
 };
+use tokio::sync::Notify;
 
 #[tokio::test]
 async fn model_ranking_refresh_worker_run_once_builds_windowed_snapshot_command() {
@@ -304,9 +305,19 @@ async fn model_ranking_refresh_worker_times_out_slow_refresh_and_records_failed_
 
 #[tokio::test]
 async fn model_ranking_refresh_worker_skips_overlapping_run_for_same_worker() {
-    let store = Arc::new(RecordingRankingRefreshStore::slow(Duration::from_millis(
-        50,
-    )));
+    let store = Arc::new(RecordingRankingRefreshStore::with_hold_gate(
+        ModelRankingRefreshOutcome {
+            generated_count: 1,
+            source_count: 1,
+            rank_scope: "commercial-default".to_owned(),
+            snapshot_date: "2026-05-08".to_owned(),
+            snapshot_period: "daily".to_owned(),
+            window_start: "2026-05-01T00:00:00Z".to_owned(),
+            window_end: "2026-05-08T00:00:00Z".to_owned(),
+            next_refresh_at: "2026-05-08T01:00:00Z".to_owned(),
+            run_status: ModelRankingRefreshRunStatus::Succeeded,
+        },
+    ));
     let worker = ModelRankingRefreshWorker::new(
         store.clone(),
         ModelRankingRefreshWorkerConfig {
@@ -317,9 +328,10 @@ async fn model_ranking_refresh_worker_skips_overlapping_run_for_same_worker() {
     );
     let first_worker = worker.clone();
     let first_run = tokio::spawn(async move { first_worker.run_once().await });
-    tokio::time::sleep(Duration::from_millis(5)).await;
+    store.wait_until_started().await;
 
     let skipped = worker.run_once().await.unwrap();
+    store.release();
     let first = first_run.await.unwrap().unwrap();
 
     assert_eq!(ModelRankingRefreshRunStatus::Skipped, skipped.run_status);
@@ -343,6 +355,7 @@ async fn model_ranking_refresh_worker_recommends_alert_after_delayed_failure_thr
         store.clone(),
         ModelRankingRefreshWorkerConfig {
             enabled: true,
+            max_retry_attempts: 0,
             alert_after_consecutive_failures: 2,
             ..ModelRankingRefreshWorkerConfig::default()
         },
@@ -368,6 +381,7 @@ struct RecordingRankingRefreshStore {
     failure: Option<String>,
     failures_before_success: AtomicUsize,
     delay: Duration,
+    gate: Option<RefreshGate>,
 }
 
 impl RecordingRankingRefreshStore {
@@ -379,6 +393,7 @@ impl RecordingRankingRefreshStore {
             failure: None,
             failures_before_success: AtomicUsize::new(0),
             delay: Duration::ZERO,
+            gate: None,
         }
     }
 
@@ -390,6 +405,7 @@ impl RecordingRankingRefreshStore {
             failure: Some(message.to_owned()),
             failures_before_success: AtomicUsize::new(usize::MAX),
             delay: Duration::ZERO,
+            gate: None,
         }
     }
 
@@ -401,6 +417,7 @@ impl RecordingRankingRefreshStore {
             failure: Some("transient usage aggregate failed".to_owned()),
             failures_before_success: AtomicUsize::new(failures_before_success),
             delay: Duration::ZERO,
+            gate: None,
         }
     }
 
@@ -422,6 +439,31 @@ impl RecordingRankingRefreshStore {
             failure: None,
             failures_before_success: AtomicUsize::new(0),
             delay,
+            gate: None,
+        }
+    }
+
+    fn with_hold_gate(outcome: ModelRankingRefreshOutcome) -> Self {
+        Self {
+            commands: Mutex::new(Vec::new()),
+            audits: Mutex::new(Vec::new()),
+            outcome,
+            failure: None,
+            failures_before_success: AtomicUsize::new(0),
+            delay: Duration::ZERO,
+            gate: Some(RefreshGate::new()),
+        }
+    }
+
+    async fn wait_until_started(&self) {
+        if let Some(gate) = &self.gate {
+            gate.wait_until_started().await;
+        }
+    }
+
+    fn release(&self) {
+        if let Some(gate) = &self.gate {
+            gate.release();
         }
     }
 }
@@ -432,6 +474,10 @@ impl ModelRankingRefreshStore for RecordingRankingRefreshStore {
         command: ModelRankingRefreshCommand,
     ) -> ModelRankingRefreshFuture<'a> {
         Box::pin(async move {
+            if let Some(gate) = &self.gate {
+                gate.mark_started();
+                gate.wait_until_released().await;
+            }
             if self.delay > Duration::ZERO {
                 tokio::time::sleep(self.delay).await;
             }
@@ -457,5 +503,54 @@ impl ModelRankingRefreshStore for RecordingRankingRefreshStore {
             self.audits.lock().unwrap().push(command);
             DomainResult::Ok(())
         })
+    }
+}
+
+#[derive(Debug)]
+struct RefreshGate {
+    started: AtomicBool,
+    started_notify: Notify,
+    released: AtomicBool,
+    released_notify: Notify,
+}
+
+impl RefreshGate {
+    fn new() -> Self {
+        Self {
+            started: AtomicBool::new(false),
+            started_notify: Notify::new(),
+            released: AtomicBool::new(false),
+            released_notify: Notify::new(),
+        }
+    }
+
+    fn mark_started(&self) {
+        self.started.store(true, Ordering::SeqCst);
+        self.started_notify.notify_waiters();
+    }
+
+    async fn wait_until_started(&self) {
+        loop {
+            let notified = self.started_notify.notified();
+            if self.started.load(Ordering::SeqCst) {
+                return;
+            }
+            notified.await;
+        }
+    }
+
+    fn release(&self) {
+        self.released.store(true, Ordering::SeqCst);
+        self.released_notify.notify_waiters();
+    }
+
+    async fn wait_until_released(&self) {
+        loop {
+            let notified = self.released_notify.notified();
+            if self.released.load(Ordering::SeqCst) {
+                return;
+            }
+            notified.await;
+        }
     }
 }

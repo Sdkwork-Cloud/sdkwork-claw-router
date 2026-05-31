@@ -18,6 +18,7 @@ fn payment_callback_uses_appbase_order_payment_and_accounting_schema() {
     assert!(appbase_tables.contains(&"commerce_payment_intent"));
     assert!(appbase_tables.contains(&"commerce_payment_attempt"));
     assert!(appbase_tables.contains(&"commerce_payment_webhook_event"));
+    assert!(appbase_tables.contains(&"commerce_payment_webhook_delivery"));
     assert!(appbase_tables.contains(&"commerce_account"));
     assert!(appbase_tables.contains(&"commerce_account_ledger_entry"));
 
@@ -29,6 +30,7 @@ fn payment_callback_uses_appbase_order_payment_and_accounting_schema() {
         assert!(source.contains("commerce_payment_intent"));
         assert!(source.contains("commerce_payment_attempt"));
         assert!(source.contains("commerce_payment_webhook_event"));
+        assert!(source.contains("commerce_payment_webhook_delivery"));
         assert!(source.contains("commerce_account"));
         assert!(source.contains("commerce_account_ledger_entry"));
         assert!(!source.contains("plus_order"));
@@ -40,6 +42,22 @@ fn payment_callback_uses_appbase_order_payment_and_accounting_schema() {
         assert!(!source.contains("plus_account_history"));
         assert!(!source.contains("plus_vip_point_change"));
         assert!(!source.contains("vip_recharge"));
+    }
+}
+
+#[test]
+fn payment_callback_uses_canonical_provider_code_without_legacy_provider_fields() {
+    let port_source = include_str!("../src/ports/payment_callback_store.rs");
+    let api_source = include_str!("../src/api/app_payment_callback.rs");
+    for source in [
+        port_source,
+        api_source,
+        SQLITE_PAYMENT_CALLBACK_STORE,
+        POSTGRES_PAYMENT_CALLBACK_STORE,
+    ] {
+        assert!(source.contains("provider_code"));
+        assert!(!source.contains("provider_key"));
+        assert!(!source.contains("legacy_provider_id"));
     }
 }
 
@@ -146,6 +164,22 @@ async fn sqlite_payment_callback_fulfills_appbase_recharge_once_and_records_webh
         )
         .await
     );
+    assert_eq!(
+        "SUCCESS",
+        scalar_string(
+            &pool,
+            "SELECT delivery_status FROM commerce_payment_webhook_delivery WHERE event_id = 'evt-1001'"
+        )
+        .await
+    );
+    assert_eq!(
+        "VERIFIED",
+        scalar_string(
+            &pool,
+            "SELECT verification_status FROM commerce_payment_webhook_delivery WHERE event_id = 'evt-1001'"
+        )
+        .await
+    );
 }
 
 #[tokio::test]
@@ -190,6 +224,14 @@ async fn sqlite_payment_callback_duplicate_event_does_not_credit_twice() {
         scalar_i64(
             &pool,
             "SELECT COUNT(1) FROM commerce_account_ledger_entry WHERE transaction_no = 'order-1002'"
+        )
+        .await
+    );
+    assert_eq!(
+        1,
+        scalar_i64(
+            &pool,
+            "SELECT COUNT(1) FROM commerce_payment_webhook_delivery WHERE event_id = 'evt-1002'"
         )
         .await
     );
@@ -283,6 +325,14 @@ async fn sqlite_payment_callback_rejects_amount_mismatch_and_marks_webhook_faile
         scalar_string(
             &pool,
             "SELECT status FROM commerce_payment_webhook_event WHERE event_id = 'evt-1004'"
+        )
+        .await
+    );
+    assert_eq!(
+        "FAILED",
+        scalar_string(
+            &pool,
+            "SELECT delivery_status FROM commerce_payment_webhook_delivery WHERE event_id = 'evt-1004'"
         )
         .await
     );
@@ -461,6 +511,36 @@ async fn create_schema(pool: &SqlitePool) {
             UNIQUE (tenant_id, provider, event_id),
             UNIQUE (tenant_id, provider, nonce)
         )"#,
+        r#"CREATE TABLE commerce_payment_webhook_delivery (
+            id TEXT PRIMARY KEY,
+            tenant_id TEXT NOT NULL,
+            organization_id TEXT,
+            delivery_no TEXT NOT NULL,
+            provider_code TEXT NOT NULL,
+            provider_account_id TEXT,
+            event_id TEXT NOT NULL,
+            nonce TEXT NOT NULL,
+            request_timestamp INTEGER,
+            signature TEXT,
+            signature_algorithm TEXT,
+            headers_json TEXT,
+            payload_digest TEXT NOT NULL,
+            payload_ref TEXT,
+            source_ip TEXT,
+            user_agent TEXT,
+            verification_status TEXT NOT NULL,
+            delivery_status TEXT NOT NULL,
+            failure_code TEXT,
+            failure_message TEXT,
+            received_at TEXT NOT NULL,
+            verified_at TEXT,
+            normalized_event_id TEXT,
+            processed_at TEXT,
+            created_at TEXT NOT NULL,
+            updated_at TEXT NOT NULL,
+            UNIQUE (tenant_id, provider_code, event_id),
+            UNIQUE (tenant_id, provider_code, nonce)
+        )"#,
         r#"CREATE TABLE commerce_order (
             id TEXT PRIMARY KEY,
             tenant_id TEXT NOT NULL,
@@ -629,9 +709,9 @@ fn success_command(
     amount: Option<&str>,
 ) -> PaymentCallbackCommand {
     PaymentCallbackCommand {
-        provider: 7,
-        provider_key: "stripe".to_owned(),
+        provider_code: "stripe".to_owned(),
         event_uuid: format!("{event_id}-uuid"),
+        delivery_uuid: format!("{event_id}-delivery"),
         account_uuid: format!("{event_id}-account"),
         account_history_uuid: format!("{event_id}-history"),
         event_id: event_id.to_owned(),

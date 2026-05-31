@@ -1,8 +1,8 @@
 import { MethodBadge } from '../components/MethodBadge';
-import React, { useState, useEffect, useMemo, useCallback } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { ApiEndpointView } from '../components/ApiEndpointView';
-import { ChevronRight, Search, Loader2, X } from 'lucide-react';
+import { ChevronRight, Search, Loader2, X, Clock3 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import {
   createReferenceSidebarGroupElementId,
@@ -78,6 +78,7 @@ export function ApiReference() {
   }
 
   const activeSystemDisplayName = activeSystemData ? getApiSystemDisplayName(activeSystemData) : t('api.title');
+  const activeSystemIsPlanned = activeSystemData?.status === 'planned';
 
   const handleEndpointClick = (endpointId: string) => {
     setActiveEndpointId(endpointId);
@@ -225,6 +226,8 @@ export function ApiReference() {
                   const defaultEndpoint = getDefaultApiReferenceEndpoint(system);
                   if (defaultEndpoint) {
                     setActiveEndpointId(defaultEndpoint.id);
+                  } else {
+                    setActiveEndpointId('');
                   }
                 }}
                 className={`flex items-center gap-2 py-4 text-sm font-medium border-b-2 transition-colors whitespace-nowrap ${
@@ -235,6 +238,11 @@ export function ApiReference() {
               >
                 <Icon className="w-4 h-4" />
                 {getApiSystemDisplayName(system)}
+                {system.status === 'planned' && (
+                  <span className="rounded-full bg-slate-100 px-2 py-0.5 text-[11px] font-semibold text-slate-500 dark:bg-white/10 dark:text-slate-300">
+                    {t('api.planned.badge', 'Planned')}
+                  </span>
+                )}
               </button>
             );
           })}
@@ -286,6 +294,11 @@ export function ApiReference() {
                 ) : (
                   sidebarTree.map((node) => renderSidebarNode(node))
                 )}
+                {sidebarTree.length === 0 && activeSystemIsPlanned && (
+                  <div className="rounded-lg border border-dashed border-slate-200 bg-white p-4 text-sm text-slate-500 dark:border-white/10 dark:bg-white/5 dark:text-slate-400">
+                    {t('api.planned.sidebar', 'API groups in planning do not expose endpoints yet.')}
+                  </div>
+                )}
               </motion.div>
             </AnimatePresence>
           </div>
@@ -297,13 +310,30 @@ export function ApiReference() {
             <div className="mb-12 pb-8 border-b border-slate-200 dark:border-white/10">
               <h1 className="text-4xl font-bold text-slate-900 dark:text-white mb-4">{activeSystemDisplayName}</h1>
               <p className="text-lg text-slate-600 dark:text-slate-400 max-w-3xl leading-relaxed">
-                {t('api.description')} Explore the {activeSystemDisplayName} endpoints using the sidebar.
+                {activeSystemData?.description || `${t('api.description')} Explore the ${activeSystemDisplayName} endpoints using the sidebar.`}
               </p>
             </div>
 
             <div className="space-y-16">
               <AnimatePresence mode="wait">
-                {activeEndpoint ? (
+                {activeSystemIsPlanned ? (
+                  <motion.div
+                    key={`${activeSystem}-planned`}
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -10 }}
+                    transition={{ duration: 0.2 }}
+                    className="flex min-h-[360px] flex-col items-center justify-center rounded-lg border border-dashed border-slate-200 bg-slate-50 px-6 py-16 text-center dark:border-white/10 dark:bg-white/5"
+                  >
+                    <Clock3 className="mb-5 h-10 w-10 text-blue-500 dark:text-blue-400" />
+                    <h2 className="text-2xl font-semibold text-slate-900 dark:text-white">
+                      {t('api.planned.title', 'API group in planning')}
+                    </h2>
+                    <p className="mt-3 max-w-xl text-sm leading-6 text-slate-600 dark:text-slate-400">
+                      {activeSystemData?.description || t('api.planned.description', 'This API group is reserved for upcoming aggregation APIs. Endpoints will appear here after the OpenAPI contract is implemented.')}
+                    </p>
+                  </motion.div>
+                ) : activeEndpoint ? (
                   <motion.div
                     key={activeEndpoint.id}
                     initial={{ opacity: 0, y: 10 }}
@@ -311,7 +341,10 @@ export function ApiReference() {
                     exit={{ opacity: 0, y: -10 }}
                     transition={{ duration: 0.2 }}
                   >
-                    <ApiEndpointView endpoint={activeEndpoint} />
+                    <ApiEndpointView
+                      endpoint={activeEndpoint}
+                      requestBaseUrl={activeSystemData.requestBaseUrl}
+                    />
                   </motion.div>
                 ) : (
                   <div className="text-center py-20 text-slate-500">

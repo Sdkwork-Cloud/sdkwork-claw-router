@@ -720,9 +720,9 @@ fn success_command(
     amount: Option<&str>,
 ) -> PaymentCallbackCommand {
     PaymentCallbackCommand {
-        provider: 7,
-        provider_key: "stripe".to_owned(),
+        provider_code: "stripe".to_owned(),
         event_uuid: format!("{event_id}-uuid"),
+        delivery_uuid: format!("{event_id}-delivery"),
         account_uuid: format!("{event_id}-account"),
         account_history_uuid: format!("{event_id}-history"),
         event_id: event_id.to_owned(),

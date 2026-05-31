@@ -1625,8 +1625,9 @@
         "skuId",
         "priceAmount",
         "currencyCode",
-        "bonusAmount",
+        "bonusPoints",
         "grantAmount",
+        "points",
         "status",
         "updatedAt"
       ],
@@ -1640,12 +1641,41 @@
         "commerce_recharge_package"
       ],
       "fields": [
-        "rmb",
-        "bonus",
+        "priceAmount",
+        "currencyCode",
+        "bonusPoints",
         "status"
       ],
       "file_targets": [],
       "interface": "MembershipsAdminRechargePackageMutationInput",
+      "route": "/admin/memberships/recharge-packages",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts"
+    },
+    {
+      "data_sources": [
+        "commerce_exchange_rule"
+      ],
+      "fields": [
+        "baseCurrencyCode",
+        "basePointsPerCny",
+        "currencyToCnyRates"
+      ],
+      "file_targets": [],
+      "interface": "MembershipsAdminRechargeSettingsItem",
+      "route": "/admin/memberships/recharge-packages",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts"
+    },
+    {
+      "data_sources": [
+        "commerce_exchange_rule"
+      ],
+      "fields": [
+        "baseCurrencyCode",
+        "basePointsPerCny",
+        "currencyToCnyRates"
+      ],
+      "file_targets": [],
+      "interface": "MembershipsAdminRechargeSettingsUpdateInput",
       "route": "/admin/memberships/recharge-packages",
       "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts"
     },
@@ -3952,7 +3982,9 @@
         "outTradeNo",
         "amount",
         "points",
+        "providerCode",
         "paymentMethod",
+        "paymentProduct",
         "orderStatus",
         "paymentStatus",
         "rechargeStatus",
@@ -3961,7 +3993,9 @@
         "expiresAt",
         "paidAt",
         "nextAction",
-        "qrCodePayload"
+        "cashierUrl",
+        "qrCodePayload",
+        "requestPaymentPayload"
       ],
       "file_targets": [],
       "interface": "CheckoutStatus",
@@ -4359,6 +4393,7 @@
         "pointsDelta",
         "status",
         "title",
+        "method",
         "referenceNo",
         "sourceType",
         "sourceId",
@@ -4374,17 +4409,58 @@
     {
       "data_sources": [
         "commerce_recharge_package",
+        "commerce_order",
+        "commerce_payment_intent",
+        "commerce_payment_attempt"
+      ],
+      "fields": [
+        "success",
+        "orderNo",
+        "providerCode",
+        "paymentMethod",
+        "paymentProduct",
+        "nextAction",
+        "cashierUrl",
+        "qrCodePayload",
+        "requestPaymentPayload"
+      ],
+      "file_targets": [],
+      "interface": "RechargeOrderCreateResult",
+      "route": "/console/recharge",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-recharge/src/rechargeService.ts"
+    },
+    {
+      "data_sources": [
+        "commerce_recharge_package",
         "commerce_product_spu",
         "commerce_product_sku"
       ],
       "fields": [
         "id",
-        "rmb",
-        "bonus",
+        "priceAmount",
+        "currencyCode",
+        "bonusPoints",
+        "grantAmount",
         "points"
       ],
       "file_targets": [],
       "interface": "RechargePackage",
+      "route": "/console/recharge",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-recharge/src/rechargeService.ts"
+    },
+    {
+      "data_sources": [
+        "commerce_exchange_rule",
+        "commerce_recharge_package"
+      ],
+      "fields": [
+        "baseCurrencyCode",
+        "basePointsPerCny",
+        "currencyToCnyRates",
+        "previewExamples"
+      ],
+      "file_targets": [],
+      "interface": "RechargeSettingsSnapshot",
       "route": "/console/recharge",
       "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-recharge/src/rechargeService.ts"
     },
@@ -5509,9 +5585,15 @@
         "success",
         "requestNo",
         "status",
+        "providerCode",
+        "paymentMethod",
+        "paymentProduct",
+        "nextAction",
         "paymentId",
+        "cashierUrl",
         "qrCodePayload",
-        "qrCodeImageUrl"
+        "qrCodeImageUrl",
+        "requestPaymentPayload"
       ],
       "file_targets": [],
       "interface": "VipPurchaseResult",
@@ -5558,7 +5640,7 @@
     }
   ],
   "summary": {
-    "interface_count": 230,
+    "interface_count": 234,
     "source_file_count": 50
   }
 }
