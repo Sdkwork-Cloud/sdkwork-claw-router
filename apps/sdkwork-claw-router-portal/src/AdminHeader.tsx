@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AnimatePresence, motion } from 'motion/react';
 import {
@@ -7,6 +7,7 @@ import {
   Globe,
   Menu,
   Moon,
+  MoreHorizontal,
   Shield,
   Sun,
   Terminal,
@@ -31,18 +32,83 @@ interface AdminHeaderProps {
   onModuleChange: (moduleId: AdminModuleId) => void;
 }
 
+const MODULE_NAV_GAP_PX = 4;
+const MODULE_MORE_BUTTON_WIDTH_PX = 108;
+const MODULE_NAV_PADDING_PX = 16;
+const MIN_VISIBLE_MODULES = 1;
+
 export function AdminHeader({ isDark, toggleTheme, activeModule, onModuleChange }: AdminHeaderProps) {
   const { t, i18n } = useTranslation();
   const siteBranding = useSiteBranding();
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isLangMenuOpen, setIsLangMenuOpen] = useState(false);
+  const [isModuleMoreMenuOpen, setIsModuleMoreMenuOpen] = useState(false);
+  const [visibleModuleIds, setVisibleModuleIds] = useState<AdminModuleId[]>(() => ADMIN_MODULES.map((mod) => mod.id));
   const [isPortalSessionStored, setIsPortalSessionStored] = useState(() => hasStoredPortalSession());
+  const moduleNavRef = useRef<HTMLElement>(null);
+  const moduleMoreMenuRef = useRef<HTMLDivElement>(null);
+  const moduleMeasureRefs = useRef(new Map<AdminModuleId, HTMLButtonElement>());
   const langMenuRef = useRef<HTMLDivElement>(null);
   const location = useLocation();
   const navigate = useNavigate();
   const displaySiteName = siteBranding.shortName || siteBranding.siteName;
   const logoSource = readMediaResourceUrl(siteBranding.logo);
+
+  const setModuleMeasureRef = useCallback((moduleId: AdminModuleId) => {
+    return (node: HTMLButtonElement | null) => {
+      if (node) {
+        moduleMeasureRefs.current.set(moduleId, node);
+        return;
+      }
+      moduleMeasureRefs.current.delete(moduleId);
+    };
+  }, []);
+
+  const calculateVisibleModules = useCallback(() => {
+    const navWidth = moduleNavRef.current?.clientWidth ?? 0;
+    if (navWidth <= 0) {
+      return;
+    }
+
+    const moduleWidths = ADMIN_MODULES.map((mod) => ({
+      moduleId: mod.id,
+      width: moduleMeasureRefs.current.get(mod.id)?.offsetWidth ?? 0,
+    }));
+    if (moduleWidths.some((item) => item.width <= 0)) {
+      return;
+    }
+    const moduleWidthById = new Map(moduleWidths.map((item) => [item.moduleId, item.width]));
+
+    const fitsModules = (moduleIds: AdminModuleId[]) => {
+      const hasOverflow = moduleIds.length < ADMIN_MODULES.length;
+      const visibleWidth = moduleIds.reduce((total, moduleId, index) => {
+        return total + (moduleWidthById.get(moduleId) ?? 0) + (index > 0 ? MODULE_NAV_GAP_PX : 0);
+      }, 0);
+      const moreWidth = hasOverflow ? MODULE_MORE_BUTTON_WIDTH_PX + (moduleIds.length > 0 ? MODULE_NAV_GAP_PX : 0) : 0;
+      return visibleWidth + moreWidth + MODULE_NAV_PADDING_PX <= navWidth;
+    };
+
+    const nextVisibleIds = ADMIN_MODULES.map((mod) => mod.id);
+    while (nextVisibleIds.length > MIN_VISIBLE_MODULES && !fitsModules(nextVisibleIds)) {
+      const removableIndex = [...nextVisibleIds].reverse().findIndex((moduleId) => moduleId !== activeModule);
+      if (removableIndex === -1) {
+        break;
+      }
+      nextVisibleIds.splice(nextVisibleIds.length - 1 - removableIndex, 1);
+    }
+
+    setVisibleModuleIds((currentIds) => {
+      if (currentIds.length === nextVisibleIds.length && currentIds.every((id, index) => id === nextVisibleIds[index])) {
+        return currentIds;
+      }
+      return nextVisibleIds;
+    });
+  }, [activeModule]);
+
+  const visibleModuleIdSet = new Set(visibleModuleIds);
+  const visibleModules = ADMIN_MODULES.filter((mod) => visibleModuleIdSet.has(mod.id));
+  const overflowModules = ADMIN_MODULES.filter((mod) => !visibleModuleIdSet.has(mod.id));
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20);
@@ -61,10 +127,35 @@ export function AdminHeader({ isDark, toggleTheme, activeModule, onModuleChange 
       if (langMenuRef.current && !langMenuRef.current.contains(event.target as Node)) {
         setIsLangMenuOpen(false);
       }
+      if (moduleMoreMenuRef.current && !moduleMoreMenuRef.current.contains(event.target as Node)) {
+        setIsModuleMoreMenuOpen(false);
+      }
     };
     document.addEventListener('mousedown', handleClickOutside);
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
+
+  useLayoutEffect(() => {
+    calculateVisibleModules();
+  }, [calculateVisibleModules, i18n.resolvedLanguage, displaySiteName, isPortalSessionStored]);
+
+  useEffect(() => {
+    const nav = moduleNavRef.current;
+    if (!nav) {
+      return undefined;
+    }
+
+    calculateVisibleModules();
+    const resizeObserver = new ResizeObserver(() => calculateVisibleModules());
+    resizeObserver.observe(nav);
+    return () => resizeObserver.disconnect();
+  }, [calculateVisibleModules]);
+
+  useEffect(() => {
+    if (overflowModules.length === 0) {
+      setIsModuleMoreMenuOpen(false);
+    }
+  }, [overflowModules.length]);
 
   const changeLanguage = (lang: string) => {
     localStorage.setItem('user_explicit_lang', lang);
@@ -76,6 +167,7 @@ export function AdminHeader({ isDark, toggleTheme, activeModule, onModuleChange 
   const handleModuleClick = (mod: AdminModuleDef) => {
     onModuleChange(mod.id);
     navigate(mod.defaultPath);
+    setIsModuleMoreMenuOpen(false);
   };
 
   const handleSignIn = () => {
@@ -115,26 +207,105 @@ export function AdminHeader({ isDark, toggleTheme, activeModule, onModuleChange 
           </div>
         </div>
 
-        <nav className="hidden min-w-0 flex-1 items-center gap-1 overflow-x-auto px-3 md:flex">
-          {ADMIN_MODULES.map((mod) => {
-            const isActive = activeModule === mod.id;
-            const Icon = mod.icon;
-            return (
+        <nav ref={moduleNavRef} className="relative hidden min-w-0 flex-1 items-center gap-1 px-3 md:flex" data-admin-header-module-nav>
+          <div className="pointer-events-none absolute inset-x-3 top-1/2 h-10 -translate-y-1/2 overflow-hidden" aria-hidden="true">
+            <div className="invisible flex w-max items-center gap-1">
+              {ADMIN_MODULES.map((mod) => {
+                const Icon = mod.icon;
+                return (
+                  <button
+                    key={mod.id}
+                    ref={setModuleMeasureRef(mod.id)}
+                    className="flex max-w-48 shrink-0 items-center gap-2 rounded-md px-3 py-2 text-sm font-medium lg:px-4"
+                    tabIndex={-1}
+                    type="button"
+                  >
+                    <Icon className="h-4 w-4 shrink-0" />
+                    <span className="min-w-0 truncate">{t(mod.nameKey)}</span>
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+
+          <div className="flex min-w-0 shrink-0 items-center gap-1 overflow-hidden" data-admin-header-visible-modules>
+            {visibleModules.map((mod) => {
+              const isActive = activeModule === mod.id;
+              const Icon = mod.icon;
+              return (
+                <button
+                  key={mod.id}
+                  onClick={() => handleModuleClick(mod)}
+                  className={`flex max-w-48 shrink-0 items-center gap-2 rounded-md px-3 py-2 text-sm font-medium transition-all lg:px-4 ${
+                    isActive
+                      ? 'bg-white/15 text-white shadow-sm'
+                      : 'text-slate-300 hover:bg-white/10 hover:text-white'
+                  }`}
+                  type="button"
+                >
+                  <Icon className="h-4 w-4 shrink-0" />
+                  <span className="min-w-0 truncate">{t(mod.nameKey)}</span>
+                </button>
+              );
+            })}
+          </div>
+
+          {overflowModules.length > 0 ? (
+            <div className="relative shrink-0" ref={moduleMoreMenuRef}>
               <button
-                key={mod.id}
-                onClick={() => handleModuleClick(mod)}
-                className={`flex shrink-0 items-center gap-2 rounded-md px-3 py-2 text-sm font-medium transition-all lg:px-4 ${
-                  isActive
+                aria-expanded={isModuleMoreMenuOpen}
+                aria-haspopup="menu"
+                className={`flex items-center gap-1.5 rounded-md px-3 py-2 text-sm font-medium transition-all ${
+                  overflowModules.some((mod) => mod.id === activeModule)
                     ? 'bg-white/15 text-white shadow-sm'
                     : 'text-slate-300 hover:bg-white/10 hover:text-white'
                 }`}
+                onClick={() => setIsModuleMoreMenuOpen((open) => !open)}
                 type="button"
               >
-                <Icon className="h-4 w-4" />
-                {t(mod.nameKey)}
+                <MoreHorizontal className="h-4 w-4" />
+                <span>{t('admin.header.more', 'More')}</span>
+                <ChevronDown className={`h-3.5 w-3.5 transition-transform ${isModuleMoreMenuOpen ? 'rotate-180' : ''}`} />
               </button>
-            );
-          })}
+              <AnimatePresence>
+                {isModuleMoreMenuOpen ? (
+                  <motion.div
+                    initial={{ opacity: 0, y: 8, scale: 0.96 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    exit={{ opacity: 0, y: 8, scale: 0.96 }}
+                    transition={{ duration: 0.15 }}
+                    className="absolute right-0 z-50 mt-2 w-64 overflow-hidden rounded-lg bg-slate-800 py-1 shadow-2xl ring-1 ring-white/10"
+                    data-admin-header-more-menu
+                    role="menu"
+                  >
+                    <div className="max-h-[min(26rem,calc(100vh-6rem))] overflow-y-auto py-1">
+                      {overflowModules.map((mod) => {
+                        const isActive = activeModule === mod.id;
+                        const Icon = mod.icon;
+                        return (
+                          <button
+                            key={mod.id}
+                            className={`flex w-full items-center gap-3 px-4 py-2.5 text-left text-sm transition-colors ${
+                              isActive
+                                ? 'bg-white/10 font-medium text-white'
+                                : 'text-slate-300 hover:bg-white/10 hover:text-white'
+                            }`}
+                            onClick={() => handleModuleClick(mod)}
+                            role="menuitem"
+                            type="button"
+                          >
+                            <Icon className="h-4 w-4 shrink-0" />
+                            <span className="min-w-0 flex-1 truncate">{t(mod.nameKey)}</span>
+                            {isActive ? <Check className="h-4 w-4 shrink-0 text-lobster-400" /> : null}
+                          </button>
+                        );
+                      })}
+                    </div>
+                  </motion.div>
+                ) : null}
+              </AnimatePresence>
+            </div>
+          ) : null}
         </nav>
 
         <div className="hidden shrink-0 items-center gap-3 md:flex">

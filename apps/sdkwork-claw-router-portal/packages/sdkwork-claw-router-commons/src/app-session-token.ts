@@ -45,7 +45,7 @@ export function storeAppSessionFromResult(result: unknown): StoredAppSessionToke
 
   memoryToken = stored;
   storageLoaded = true;
-  writeSessionStorage(stored);
+  writeBrowserStorage(stored);
   dispatchPortalSessionChange();
   return stored;
 }
@@ -84,7 +84,7 @@ export function loadStoredAppSessionToken(): StoredAppSessionToken | null {
   }
 
   storageLoaded = true;
-  const raw = readSessionStorage();
+  const raw = readBrowserStorage();
   if (!raw) {
     return null;
   }
@@ -96,6 +96,7 @@ export function loadStoredAppSessionToken(): StoredAppSessionToken | null {
       return null;
     }
     memoryToken = parsed;
+    writeBrowserStorage(parsed);
     return parsed;
   } catch {
     clearStoredAppSessionToken();
@@ -106,7 +107,7 @@ export function loadStoredAppSessionToken(): StoredAppSessionToken | null {
 export function clearStoredAppSessionToken(): void {
   memoryToken = null;
   storageLoaded = true;
-  removeSessionStorage();
+  removeBrowserStorage();
   dispatchPortalSessionChange();
 }
 
@@ -181,6 +182,44 @@ function isRecord(value: unknown): value is Record<string, unknown> {
 
 function currentUnixSeconds(): number {
   return Math.floor(Date.now() / 1000);
+}
+
+function readBrowserStorage(): string | null {
+  return readLocalStorage() ?? readSessionStorage();
+}
+
+function writeBrowserStorage(token: StoredAppSessionToken): void {
+  writeLocalStorage(token);
+  writeSessionStorage(token);
+}
+
+function removeBrowserStorage(): void {
+  removeLocalStorage();
+  removeSessionStorage();
+}
+
+function readLocalStorage(): string | null {
+  try {
+    return globalThis.localStorage?.getItem(APP_SESSION_STORAGE_KEY) ?? null;
+  } catch {
+    return null;
+  }
+}
+
+function writeLocalStorage(token: StoredAppSessionToken): void {
+  try {
+    globalThis.localStorage?.setItem(APP_SESSION_STORAGE_KEY, JSON.stringify(token));
+  } catch {
+    // Session storage and memory storage remain available for restrictive browser contexts.
+  }
+}
+
+function removeLocalStorage(): void {
+  try {
+    globalThis.localStorage?.removeItem(APP_SESSION_STORAGE_KEY);
+  } catch {
+    // Nothing to clear when storage is unavailable.
+  }
 }
 
 function readSessionStorage(): string | null {

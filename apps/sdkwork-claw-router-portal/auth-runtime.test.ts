@@ -244,6 +244,58 @@ function installPortalAuthRedirectWindow({
   };
 }
 
+function createPortalSessionStorageHarness(): { openNewTab: () => void; restore: () => void } {
+  const localStorageDescriptor = Object.getOwnPropertyDescriptor(globalThis, "localStorage");
+  const sessionStorageDescriptor = Object.getOwnPropertyDescriptor(globalThis, "sessionStorage");
+  const localStore = new Map<string, string>();
+  const createStorage = (store: Map<string, string>) => ({
+    getItem: (key: string) => store.get(key) ?? null,
+    removeItem: (key: string) => {
+      store.delete(key);
+    },
+    setItem: (key: string, value: string) => {
+      store.set(key, value);
+    },
+  });
+  const installSessionStorage = (store: Map<string, string>) => {
+    Object.defineProperty(globalThis, "sessionStorage", {
+      configurable: true,
+      value: createStorage(store),
+    });
+  };
+
+  Object.defineProperty(globalThis, "localStorage", {
+    configurable: true,
+    value: createStorage(localStore),
+  });
+  installSessionStorage(new Map<string, string>());
+
+  return {
+    openNewTab: () => {
+      installSessionStorage(new Map<string, string>());
+    },
+    restore: () => {
+      if (localStorageDescriptor) {
+        Object.defineProperty(globalThis, "localStorage", localStorageDescriptor);
+      } else {
+        delete (globalThis as typeof globalThis & { localStorage?: unknown }).localStorage;
+      }
+      if (sessionStorageDescriptor) {
+        Object.defineProperty(globalThis, "sessionStorage", sessionStorageDescriptor);
+      } else {
+        delete (globalThis as typeof globalThis & { sessionStorage?: unknown }).sessionStorage;
+      }
+    },
+  };
+}
+
+let freshAppSessionTokenModuleImportIndex = 0;
+
+async function importFreshAppSessionTokenModule(): Promise<typeof import("./packages/sdkwork-claw-router-commons/src/app-session-token.ts")> {
+  freshAppSessionTokenModuleImportIndex += 1;
+  return import(`./packages/sdkwork-claw-router-commons/src/app-session-token.ts?fresh=${freshAppSessionTokenModuleImportIndex}`);
+}
+
 test("portal exposes appbase auth routes as standalone React routes", () => {
   const appSource = readPortalFile("./src/App.tsx");
   const authRouteSource = readPortalFile("./src/auth/ClawRouterAuthRoutes.tsx");
@@ -1211,6 +1263,53 @@ test("appbase IAM runtime auth service persists sessions before portal redirects
       },
       `${name} persisted token store payload must match returned session`,
     );
+  }
+});
+
+test("claw router app session survives opening protected links in a new browser tab", async () => {
+  const storageHarness = createPortalSessionStorageHarness();
+  const expiresAt = Math.floor(Date.now() / 1000) + 3600;
+
+  try {
+    const firstTab = await importFreshAppSessionTokenModule();
+    firstTab.storeAppSessionFromResult({
+      code: "200",
+      data: {
+        accessToken: "shared-access-token",
+        authToken: "shared-auth-token",
+        expiresAt,
+        refreshToken: "shared-refresh-token",
+        sessionId: "shared-session-id",
+      },
+    });
+
+    storageHarness.openNewTab();
+    const newTab = await importFreshAppSessionTokenModule();
+    const restored = newTab.loadStoredAppSessionToken();
+
+    assert.ok(restored);
+    assert.deepEqual(
+      {
+        accessToken: restored.accessToken,
+        authToken: restored.authToken,
+        expiresAt: restored.expiresAt,
+        refreshToken: restored.refreshToken,
+        sessionId: restored.sessionId,
+      },
+      {
+        accessToken: "shared-access-token",
+        authToken: "shared-auth-token",
+        expiresAt,
+        refreshToken: "shared-refresh-token",
+        sessionId: "shared-session-id",
+      },
+    );
+    assert.equal(Number.isFinite(restored.storedAt), true);
+    assert.equal(newTab.getStoredAppSessionAuthToken(), "shared-auth-token");
+    assert.equal(newTab.getStoredAppSessionAccessToken(), "shared-access-token");
+  } finally {
+    clearStoredAppSessionToken();
+    storageHarness.restore();
   }
 });
 

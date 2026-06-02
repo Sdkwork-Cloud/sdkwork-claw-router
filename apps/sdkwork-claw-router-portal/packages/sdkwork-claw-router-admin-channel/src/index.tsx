@@ -39,6 +39,7 @@ import {
   type AiResource,
   type AiResourceCreateInput,
   type AiResourceUpdateInput,
+  type ChannelEndpointChannelOption,
   type ChannelItem,
   type ChannelModelCatalogItem,
   type ChannelUpdateInput,
@@ -191,7 +192,7 @@ function toDateTimeLocalValue(value: string | undefined): string {
   return local.toISOString().slice(0, 16);
 }
 
-function displayChannelTime(value: string | undefined, fallback = ''): string {
+function displayChannelTime(value: string | null | undefined, fallback = ''): string {
   const normalized = value?.trim();
   if (!normalized) {
     return fallback;
@@ -1814,7 +1815,7 @@ function ChannelEndpointFormModal({
 }: {
   mode: ChannelEndpointModalMode;
   endpoint: ChannelEndpoint | null;
-  channels: ChannelItem[];
+  channels: ChannelEndpointChannelOption[];
   isSaving: boolean;
   onClose: () => void;
   onCreateSubmit: (input: ChannelEndpointCreateInput) => Promise<void>;
@@ -2361,7 +2362,7 @@ export function AiResourceAdmin() {
 export function ChannelEndpointAdmin() {
   const { t } = useTranslation();
   const [endpoints, setEndpoints] = useState<ChannelEndpoint[]>([]);
-  const [channels, setChannels] = useState<ChannelItem[]>([]);
+  const [channels, setChannels] = useState<ChannelEndpointChannelOption[]>([]);
   const [search, setSearch] = useState('');
   const [loading, setLoading] = useState(true);
   const [loadError, setLoadError] = useState<string | null>(null);
@@ -2378,7 +2379,7 @@ export function ChannelEndpointAdmin() {
     try {
       const [endpointItems, channelItems] = await Promise.all([
         ChannelEndpointService.fetchChannelEndpoints(),
-        ChannelService.fetchChannels(),
+        ChannelService.fetchChannelEndpointOptions(),
       ]);
       if (isActive()) {
         setEndpoints(endpointItems);

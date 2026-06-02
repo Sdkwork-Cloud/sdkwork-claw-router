@@ -1786,8 +1786,12 @@ routes:
     - request_id
 - route: /admin/channel/endpoints
   required_tables:
+  - ai_provider
   - ai_channel
+  - ai_channel_model
+  - ai_channel_resource
   - ai_channel_endpoint
+  - integration_provider_health_snapshot
   - ai_model_vendor
   - ai_api_endpoint
   - ops_audit_log

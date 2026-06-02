@@ -8386,6 +8386,81 @@
     },
     {
       "api_method": "GET",
+      "api_path": "/backend/v3/api/integration/channels",
+      "api_surface": "backend",
+      "file_targets": [],
+      "idempotency_required": false,
+      "key": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts#fetchChannelEndpointOptions",
+      "kind": "read",
+      "module": "admin-channel",
+      "openapi_exposed": false,
+      "operation": "fetchChannelEndpointOptions",
+      "operation_id": "channels.list",
+      "path_params": [],
+      "query_parameters": [],
+      "query_parameters_declared": true,
+      "read_sources": [
+        "ai_channel"
+      ],
+      "request_body_required": null,
+      "request_id_header": false,
+      "response_schema": {
+        "name": "AdminChannelEndpointChannelOptionsResponse",
+        "schema": {
+          "additionalProperties": false,
+          "name": "AdminChannelEndpointChannelOptionsResponse",
+          "properties": {
+            "items": {
+              "items": {
+                "additionalProperties": false,
+                "name": "AdminChannelEndpointChannelOption",
+                "properties": {
+                  "channelId": {
+                    "description": "Scoped ai_channel id used by channel endpoint configuration.",
+                    "maxLength": 128,
+                    "minLength": 1,
+                    "pattern": "^[1-9][0-9]*$",
+                    "type": "string"
+                  },
+                  "name": {
+                    "maxLength": 128,
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "vendor": {
+                    "maxLength": 64,
+                    "minLength": 1,
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "channelId",
+                  "name",
+                  "vendor"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            }
+          },
+          "required": [
+            "items"
+          ],
+          "type": "object"
+        }
+      },
+      "route": "/admin/channel/endpoints",
+      "route_scope": "admin",
+      "sdk_api_prefix": "/backend/v3/api",
+      "sdk_client": "SdkworkBackendClient",
+      "sdk_domain": "integration",
+      "sdk_family": "clawrouter-backend-sdk",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts",
+      "tag": "integration",
+      "write_tables": []
+    },
+    {
+      "api_method": "GET",
       "api_path": "/backend/v3/api/integration/channel_endpoints",
       "api_surface": "backend",
       "file_targets": [],
@@ -97006,24 +97081,24 @@
   "summary": {
     "api_method_counts": {
       "DELETE": 51,
-      "GET": 301,
+      "GET": 302,
       "PATCH": 36,
       "POST": 184,
       "PUT": 32
     },
     "api_surface_counts": {
       "app": 230,
-      "backend": 374
+      "backend": 375
     },
-    "operation_count": 604,
+    "operation_count": 605,
     "route_scope_counts": {
-      "admin": 374,
+      "admin": 375,
       "console": 107,
       "public": 123
     },
     "sdk_client_counts": {
       "SdkworkAppClient": 230,
-      "SdkworkBackendClient": 374
+      "SdkworkBackendClient": 375
     }
   }
 }

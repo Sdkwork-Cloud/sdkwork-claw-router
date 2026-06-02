@@ -574,7 +574,11 @@
         "ai_api_endpoint",
         "ai_channel",
         "ai_channel_endpoint",
+        "ai_channel_model",
+        "ai_channel_resource",
         "ai_model_vendor",
+        "ai_provider",
+        "integration_provider_health_snapshot",
         "ops_audit_log"
       ]
     },
@@ -9677,7 +9681,8 @@
         "/console/routing",
         "/console/providers",
         "/admin/group",
-        "/admin/channel"
+        "/admin/channel",
+        "/admin/channel/endpoints"
       ],
       "generated_by_this_project": true,
       "indexes": [
@@ -9967,6 +9972,7 @@
       "foreign_keys": [],
       "frontend_routes": [
         "/admin/channel",
+        "/admin/channel/endpoints",
         "/admin/channel/resources"
       ],
       "generated_by_this_project": true,
@@ -24045,7 +24051,8 @@
         "/console/routing",
         "/console/providers",
         "/admin/group",
-        "/admin/channel"
+        "/admin/channel",
+        "/admin/channel/endpoints"
       ],
       "generated_by_this_project": true,
       "indexes": [
@@ -53632,6 +53639,7 @@
       "foreign_keys": [],
       "frontend_routes": [
         "/admin/channel",
+        "/admin/channel/endpoints",
         "/admin/monitor"
       ],
       "generated_by_this_project": true,

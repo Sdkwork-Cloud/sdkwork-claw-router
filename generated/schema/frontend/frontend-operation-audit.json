@@ -816,6 +816,21 @@
     },
     {
       "api_method": "GET",
+      "api_path": "/backend/v3/api/integration/channels",
+      "api_surface": "backend",
+      "file_targets": [],
+      "kind": "read",
+      "operation": "fetchChannelEndpointOptions",
+      "operation_scope": null,
+      "read_sources": [
+        "ai_channel"
+      ],
+      "route": "/admin/channel/endpoints",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts",
+      "write_tables": []
+    },
+    {
+      "api_method": "GET",
       "api_path": "/backend/v3/api/integration/channel_endpoints",
       "api_surface": "backend",
       "file_targets": [],
@@ -11532,7 +11547,7 @@
     }
   ],
   "summary": {
-    "operation_count": 604,
+    "operation_count": 605,
     "source_file_count": 63,
     "write_operation_count": 303
   }

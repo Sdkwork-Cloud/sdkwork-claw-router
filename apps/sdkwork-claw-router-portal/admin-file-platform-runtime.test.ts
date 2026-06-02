@@ -172,3 +172,22 @@ test("admin file platform is composed from storage and drive module blocks", () 
     assert.match(i18nSource, new RegExp(`"${key.replaceAll(".", "\\.")}"`), `${key} must be present in i18n resources`);
   }
 });
+
+test("admin header keeps overflowing desktop modules behind a More menu", () => {
+  const adminHeaderSource = readPortalFile("./src/AdminHeader.tsx");
+
+  assert.doesNotMatch(adminHeaderSource, /overflow-x-auto/, "desktop admin header navigation must not expose a horizontal scrollbar");
+  assert.match(adminHeaderSource, /visibleModules/);
+  assert.match(adminHeaderSource, /overflowModules/);
+  assert.match(adminHeaderSource, /isModuleMoreMenuOpen/);
+  assert.match(adminHeaderSource, /data-admin-header-module-nav/);
+  assert.match(adminHeaderSource, /data-admin-header-visible-modules/);
+  assert.match(adminHeaderSource, /data-admin-header-more-menu/);
+  assert.match(adminHeaderSource, /ResizeObserver/);
+  assert.match(adminHeaderSource, /aria-expanded=\{isModuleMoreMenuOpen\}/);
+  assert.doesNotMatch(
+    adminHeaderSource,
+    /data-admin-header-visible-modules[^>]*className="[^"]*\bflex-1\b/,
+    "More must stay next to visible header menu items instead of being pushed to the far right",
+  );
+});

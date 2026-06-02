@@ -181,6 +181,15 @@ frontend_models:
   - ai_channel
 - route: /admin/channel/endpoints
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts
+  interface: ChannelEndpointChannelOption
+  fields:
+  - channelId
+  - name
+  - vendor
+  data_sources:
+  - ai_channel
+- route: /admin/channel/endpoints
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts
   interface: ChannelEndpoint
   fields:
   - id

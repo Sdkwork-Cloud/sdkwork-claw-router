@@ -17,6 +17,7 @@ class AdminChannelRuntimeStandardTest(unittest.TestCase):
         source = "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts"
 
         fetch_channels = operations[f"{source}#fetchChannels"]
+        fetch_channel_endpoint_options = operations[f"{source}#fetchChannelEndpointOptions"]
         add_channel = operations[f"{source}#addChannel"]
         update_channel = operations[f"{source}#updateChannel"]
         test_channel = operations[f"{source}#testChannel"]
@@ -28,6 +29,13 @@ class AdminChannelRuntimeStandardTest(unittest.TestCase):
         update_provider_account_endpoint = operations[f"{source}#updateChannelEndpoint"]
 
         self.assertIsNone(fetch_channels.get("request_schema"))
+        self.assertEqual(
+            "/backend/v3/api/integration/channels",
+            fetch_channel_endpoint_options["api_path"],
+        )
+        self.assertEqual("channels.list", fetch_channel_endpoint_options["operation_id"])
+        self.assertFalse(fetch_channel_endpoint_options["openapi_exposed"])
+        self.assertIsNone(fetch_channel_endpoint_options.get("request_schema"))
 
         self.assertEqual("AdminChannelCreateRequest", add_channel["request_schema"]["name"])
         self.assertEqual(["name", "vendor", "apiKey", "models"], add_channel["request_schema"]["schema"]["required"])

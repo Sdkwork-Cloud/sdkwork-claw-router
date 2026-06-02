@@ -217,6 +217,51 @@ frontend_operations:
           name: AdminAssignableChannelItem
           type: object
           additionalProperties: true
+- route: /admin/channel/endpoints
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts
+  operation: fetchChannelEndpointOptions
+  operation_id: channels.list
+  kind: read
+  api_surface: backend
+  api_method: GET
+  api_path: /backend/v3/api/integration/channels
+  sdk_domain: integration
+  read_sources:
+  - ai_channel
+  query_parameters: []
+  openapi_exposed: false
+  response_schema:
+    name: AdminChannelEndpointChannelOptionsResponse
+    type: object
+    additionalProperties: false
+    required:
+    - items
+    properties:
+      items:
+        type: array
+        items:
+          name: AdminChannelEndpointChannelOption
+          type: object
+          additionalProperties: false
+          required:
+          - channelId
+          - name
+          - vendor
+          properties:
+            channelId:
+              type: string
+              minLength: 1
+              maxLength: 128
+              pattern: ^[1-9][0-9]*$
+              description: Scoped ai_channel id used by channel endpoint configuration.
+            name:
+              type: string
+              minLength: 1
+              maxLength: 128
+            vendor:
+              type: string
+              minLength: 1
+              maxLength: 64
 - route: /admin/channel
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts
   operation: addChannel

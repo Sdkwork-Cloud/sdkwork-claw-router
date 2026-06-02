@@ -1022,7 +1022,7 @@ test("admin channel endpoint admin exposes regional endpoint management", () => 
   assert.match(source, /ChannelEndpointService\.fetchChannelEndpoints\(\)/);
   assert.match(source, /ChannelEndpointService\.createChannelEndpoint/);
   assert.match(source, /ChannelEndpointService\.updateChannelEndpoint/);
-  assert.match(source, /ChannelService\.fetchChannels\(\)/);
+  assert.match(source, /ChannelService\.fetchChannelEndpointOptions\(\)/);
   assert.match(source, /channelId/);
   assert.match(source, /name="channelId"/);
   assert.match(source, /name="vendorCode"/);
@@ -2197,6 +2197,42 @@ test("admin channel endpoint service uses generated backend SDK and normalizes r
           "POST /backend/v3/api/integration/channel_endpoints",
           "PUT /backend/v3/api/integration/channel_endpoints/2",
         ],
+      );
+    },
+  );
+});
+
+test("admin channel endpoint channel options tolerate backend channel records without models", async () => {
+  await withBackendSdkFetch(
+    (url, init) => {
+      if (url === "/backend/v3/api/integration/channels" && init?.method === "GET") {
+        return {
+          items: [
+            {
+              id: "channel-1",
+              channelId: "9001",
+              name: "OpenRouter Main",
+              vendor: "OpenRouter",
+              channelType: "relay",
+            },
+          ],
+        };
+      }
+      throw new Error(`Unexpected SDK request ${init?.method ?? "GET"} ${url}`);
+    },
+    async (captured) => {
+      const channels = await ChannelService.fetchChannelEndpointOptions();
+
+      assert.deepEqual(channels, [
+        {
+          channelId: "9001",
+          name: "OpenRouter Main",
+          vendor: "OpenRouter",
+        },
+      ]);
+      assert.deepEqual(
+        captured.map((request) => `${request.method} ${request.url}`),
+        ["GET /backend/v3/api/integration/channels"],
       );
     },
   );

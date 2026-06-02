@@ -722,6 +722,20 @@
     },
     {
       "data_sources": [
+        "ai_channel"
+      ],
+      "fields": [
+        "channelId",
+        "name",
+        "vendor"
+      ],
+      "file_targets": [],
+      "interface": "ChannelEndpointChannelOption",
+      "route": "/admin/channel/endpoints",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts"
+    },
+    {
+      "data_sources": [
         "ai_channel",
         "ai_channel_endpoint",
         "ai_model_vendor",
@@ -5642,7 +5656,7 @@
     }
   ],
   "summary": {
-    "interface_count": 234,
+    "interface_count": 235,
     "source_file_count": 50
   }
 }

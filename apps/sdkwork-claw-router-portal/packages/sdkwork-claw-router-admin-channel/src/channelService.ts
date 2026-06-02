@@ -60,6 +60,12 @@ export interface ChannelItem {
   errors: number;
 }
 
+export interface ChannelEndpointChannelOption {
+  channelId: string;
+  name: string;
+  vendor: string;
+}
+
 export interface ChannelModelCatalogItem {
   catalogKey: string;
   model: string;
@@ -216,6 +222,13 @@ export class ChannelService {
     ensureSdkworkApiSuccess(result, 'Failed to fetch channels');
     return readRequiredApiItems(result, 'Failed to fetch channels')
       .map(normalizeChannel);
+  }
+
+  static async fetchChannelEndpointOptions(): Promise<ChannelEndpointChannelOption[]> {
+    const result = await channelBackendClient().integration.channels.list();
+    ensureSdkworkApiSuccess(result, 'Failed to fetch channel endpoint channel options');
+    return readRequiredApiItems(result, 'Failed to fetch channel endpoint channel options')
+      .map(normalizeChannelEndpointOption);
   }
 
   static async addChannel(channel: ChannelCreateInput): Promise<ChannelItem> {
@@ -877,6 +890,15 @@ function normalizeChannel(value: unknown): ChannelItem {
     status: readChannelStatus(item),
     balance: readRequiredString(item, 'balance', 'Channel balance is required'),
     errors: readRequiredNonNegativeInteger(item, 'errors', 'Channel errors are required'),
+  };
+}
+
+function normalizeChannelEndpointOption(value: unknown): ChannelEndpointChannelOption {
+  const item = readRequiredRecord(value, 'Channel endpoint channel option is required');
+  return {
+    channelId: readPositiveIdText(item, 'channelId', 'Channel id is required'),
+    name: readRequiredString(item, 'name', 'Channel name is required'),
+    vendor: readRequiredString(item, 'vendor', 'Channel vendor is required'),
   };
 }
 
